@@ -26,12 +26,7 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close menus on route change or Escape
-  useEffect(() => {
-    setMobileMenuOpen(false);
-    setLangDropdownOpen(false);
-  }, [pathname]);
-
+  // Close dropdowns on Escape key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {

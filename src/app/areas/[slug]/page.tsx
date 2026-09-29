@@ -8,7 +8,6 @@ import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
-import { IconCircle } from "@/components/ui/IconCircle";
 import { BusinessCard } from "@/components/ui/BusinessCard";
 import { businessAreas } from "@/data/areas";
 
