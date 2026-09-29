@@ -2,20 +2,43 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, ChevronDown, Globe } from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
 import { Container } from "./Container";
-import { mainNavigation, languages } from "@/data/navigation";
+import { languages } from "@/data/navigation";
+import { getDictionary, locales, SupportedLocale } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
-export function Header() {
+interface HeaderProps {
+  currentLocale?: SupportedLocale;
+}
+
+export function Header({ currentLocale = "de" }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState("DE");
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+
+  // Detect current locale from pathname if possible
+  const pathSegments = pathname.split("/").filter(Boolean);
+  const activeLocale: SupportedLocale = locales.includes(pathSegments[0] as SupportedLocale)
+    ? (pathSegments[0] as SupportedLocale)
+    : currentLocale;
+
+  const dict = getDictionary(activeLocale);
+
+  const localizedNav = [
+    { label: dict.nav.home, href: `/${activeLocale}` },
+    { label: dict.nav.about, href: `/${activeLocale}/about` },
+    { label: dict.nav.areas, href: `/${activeLocale}/areas` },
+    { label: dict.nav.values, href: `/${activeLocale}/values` },
+    { label: dict.nav.career, href: `/${activeLocale}/career` },
+    { label: dict.nav.news, href: `/${activeLocale}/news` },
+    { label: dict.nav.contact, href: `/${activeLocale}/contact` },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,7 +49,7 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close dropdowns on Escape key
+  // Close on Escape key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -38,38 +61,50 @@ export function Header() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
+  const handleSwitchLanguage = (newLocale: string) => {
+    setLangDropdownOpen(false);
+    setMobileMenuOpen(false);
+
+    // Replace locale in path
+    if (locales.includes(pathSegments[0] as SupportedLocale)) {
+      const rest = pathSegments.slice(1).join("/");
+      router.push(`/${newLocale}${rest ? `/${rest}` : ""}`);
+    } else {
+      router.push(`/${newLocale}`);
+    }
+  };
+
   return (
     <>
       <header
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-400",
           isScrolled
-            ? "py-3 header-glass border-b border-white/10 shadow-lg"
-            : "py-5 sm:py-6 bg-gradient-to-b from-forest-950/80 via-forest-950/40 to-transparent"
+            ? "py-2.5 header-glass border-b border-white/10 shadow-lg"
+            : "py-4 sm:py-5 bg-gradient-to-b from-forest-950/85 via-forest-950/45 to-transparent"
         )}
       >
         <Container size="wide">
           <div className="flex items-center justify-between gap-4">
-            {/* Brand Logo */}
-            <Logo variant="dark" />
+            {/* Brand Logo with Official nLogo.svg Emblem */}
+            <Logo variant="dark" locale={activeLocale} />
 
             {/* Desktop Navigation Links */}
             <nav
-              className="hidden lg:flex items-center gap-7 xl:gap-8"
+              className="hidden lg:flex items-center gap-6 xl:gap-8"
               aria-label="Hauptnavigation"
             >
-              {mainNavigation.map((item) => {
+              {localizedNav.map((item) => {
                 const isActive =
-                  item.href === "/"
-                    ? pathname === "/"
-                    : pathname.startsWith(item.href);
+                  pathname === item.href ||
+                  (item.href !== `/${activeLocale}` && pathname.startsWith(item.href));
 
                 return (
                   <Link
                     key={item.href}
                     href={item.href}
                     className={cn(
-                      "relative py-1 text-sm font-medium tracking-wide transition-colors duration-200 focus:outline-none focus-visible:text-gold-300",
+                      "relative py-1 text-xs xl:text-sm font-medium tracking-wide transition-colors duration-200 focus:outline-none focus-visible:text-gold-300",
                       isActive
                         ? "text-ivory-50 font-semibold"
                         : "text-ivory-200/80 hover:text-gold-300"
@@ -91,28 +126,25 @@ export function Header() {
                 <button
                   type="button"
                   onClick={() => setLangDropdownOpen(!langDropdownOpen)}
-                  className="flex items-center gap-1.5 px-2.5 py-1.5 rounded text-xs font-semibold tracking-wider text-ivory-100 hover:text-gold-300 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-gold-400"
+                  className="flex items-center gap-1.5 px-2.5 py-1.5 rounded text-xs font-semibold tracking-wider text-ivory-100 hover:text-gold-300 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-gold-400 cursor-pointer"
                   aria-expanded={langDropdownOpen}
                   aria-haspopup="true"
                 >
                   <Globe className="w-3.5 h-3.5 text-gold-400" />
-                  <span>{currentLang}</span>
+                  <span className="uppercase">{activeLocale}</span>
                   <ChevronDown className="w-3 h-3 text-gold-400/80" />
                 </button>
 
                 {langDropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-32 py-1.5 rounded bg-forest-900 border border-gold-400/30 shadow-xl z-50">
+                  <div className="absolute right-0 mt-2 w-32 py-1.5 rounded-lg bg-forest-900 border border-gold-400/30 shadow-xl z-50 backdrop-blur-md">
                     {languages.map((lang) => (
                       <button
                         key={lang.code}
                         type="button"
-                        onClick={() => {
-                          setCurrentLang(lang.label);
-                          setLangDropdownOpen(false);
-                        }}
+                        onClick={() => handleSwitchLanguage(lang.code)}
                         className={cn(
-                          "w-full text-left px-3.5 py-1.5 text-xs font-medium transition-colors flex items-center justify-between",
-                          currentLang === lang.label
+                          "w-full text-left px-3.5 py-2 text-xs font-medium transition-colors flex items-center justify-between cursor-pointer",
+                          activeLocale === lang.code
                             ? "text-gold-400 bg-forest-800"
                             : "text-ivory-100 hover:bg-forest-800/60 hover:text-gold-300"
                         )}
@@ -131,17 +163,17 @@ export function Header() {
               <Button
                 variant="gold-outline"
                 size="sm"
-                href="/contact"
+                href={`/${activeLocale}/contact`}
                 className="hidden sm:inline-flex"
               >
-                Kontakt aufnehmen
+                {dict.nav.contactCta}
               </Button>
 
               {/* Mobile Burger Menu Button */}
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 rounded-md text-ivory-100 hover:text-gold-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-400"
+                className="lg:hidden p-2 rounded-md text-ivory-100 hover:text-gold-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 cursor-pointer"
                 aria-label={mobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
                 aria-expanded={mobileMenuOpen}
               >
@@ -158,13 +190,12 @@ export function Header() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-forest-950/95 backdrop-blur-xl lg:hidden flex flex-col pt-24 pb-8 px-6 overflow-y-auto">
-          <nav className="flex flex-col gap-5 my-auto" aria-label="Mobile Navigation">
-            {mainNavigation.map((item) => {
+        <div className="fixed inset-0 z-40 bg-forest-950/98 backdrop-blur-2xl lg:hidden flex flex-col pt-24 pb-8 px-6 overflow-y-auto">
+          <nav className="flex flex-col gap-4 my-auto" aria-label="Mobile Navigation">
+            {localizedNav.map((item) => {
               const isActive =
-                item.href === "/"
-                  ? pathname === "/"
-                  : pathname.startsWith(item.href);
+                pathname === item.href ||
+                (item.href !== `/${activeLocale}` && pathname.startsWith(item.href));
 
               return (
                 <Link
@@ -189,11 +220,11 @@ export function Header() {
             <Button
               variant="gold-solid"
               size="md"
-              href="/contact"
+              href={`/${activeLocale}/contact`}
               className="w-full"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Kontakt aufnehmen
+              {dict.nav.contactCta}
             </Button>
 
             <div className="flex items-center justify-center gap-4 pt-2 text-xs text-ivory-200/60">
@@ -201,12 +232,10 @@ export function Header() {
                 <button
                   key={l.code}
                   type="button"
-                  onClick={() => {
-                    setCurrentLang(l.label);
-                  }}
+                  onClick={() => handleSwitchLanguage(l.code)}
                   className={cn(
-                    "px-2 py-1 rounded transition-colors",
-                    currentLang === l.label
+                    "px-2.5 py-1 rounded transition-colors cursor-pointer",
+                    activeLocale === l.code
                       ? "text-gold-400 font-bold bg-white/10"
                       : "text-ivory-200/80 hover:text-white"
                   )}

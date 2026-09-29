@@ -1,125 +1,100 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { SupportedLocale } from "@/lib/i18n";
 
 interface LogoProps {
   variant?: "dark" | "light";
   className?: string;
   showText?: boolean;
+  size?: "sm" | "md" | "lg";
+  href?: string;
+  locale?: SupportedLocale;
 }
 
 export function Logo({
   variant = "dark",
   className,
   showText = true,
+  size = "md",
+  href,
+  locale,
 }: LogoProps) {
-  const isDarkBg = variant === "dark"; // on dark green bg (white/gold text)
+  const isDarkBg = variant === "dark";
+
+  const sizeClasses = {
+    sm: {
+      imgWidth: 44,
+      imgHeight: 37,
+      brandText: "text-lg md:text-xl",
+      subText: "text-[8px] md:text-[9px] tracking-[0.22em]",
+      gap: "gap-2.5",
+    },
+    md: {
+      imgWidth: 56,
+      imgHeight: 47,
+      brandText: "text-xl md:text-2xl",
+      subText: "text-[9px] md:text-[10px] tracking-[0.24em]",
+      gap: "gap-3",
+    },
+    lg: {
+      imgWidth: 72,
+      imgHeight: 60,
+      brandText: "text-2xl md:text-3xl",
+      subText: "text-[11px] md:text-[12px] tracking-[0.26em]",
+      gap: "gap-3.5",
+    },
+  };
+
+  const currentSize = sizeClasses[size];
+  const targetHref = href || (locale ? `/${locale}` : "/");
 
   return (
     <Link
-      href="/"
-      className={cn("flex items-center gap-3 group focus:outline-none", className)}
+      href={targetHref}
+      className={cn("flex items-center group focus:outline-none", currentSize.gap, className)}
       aria-label="NabiOta Health Group Germany - Startseite"
     >
-      {/* Golden Medical Emblem */}
-      <div className="relative w-10 h-10 md:w-11 md:h-11 flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
-        <svg
-          viewBox="0 0 100 100"
-          className="w-full h-full drop-shadow-[0_2px_8px_rgba(190,160,107,0.3)]"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#DFC89E" />
-              <stop offset="50%" stopColor="#BEA06B" />
-              <stop offset="100%" stopColor="#8F7745" />
-            </linearGradient>
-            <linearGradient id="innerGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#FFF3DC" stopOpacity="0.4" />
-              <stop offset="100%" stopColor="#BEA06B" stopOpacity="0.1" />
-            </linearGradient>
-          </defs>
-
-          {/* Outer Ring */}
-          <circle
-            cx="50"
-            cy="50"
-            r="46"
-            stroke="url(#goldGradient)"
-            strokeWidth="2.5"
-            strokeDasharray="1 0"
-          />
-
-          {/* Inner Accent Ring */}
-          <circle
-            cx="50"
-            cy="50"
-            r="41"
-            stroke="url(#goldGradient)"
-            strokeWidth="1"
-            strokeOpacity="0.6"
-          />
-
-          {/* Laurel / Botanical Leaves Motif */}
-          <path
-            d="M 22 58 C 21 44 26 30 38 21 C 36 26 37 34 40 37 C 36 31 38 24 45 19 C 45 27 49 32 50 35"
-            stroke="url(#goldGradient)"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            fill="none"
-            opacity="0.85"
-          />
-          <path
-            d="M 78 58 C 79 44 74 30 62 21 C 64 26 63 34 60 37 C 64 31 62 24 55 19 C 55 27 51 32 50 35"
-            stroke="url(#goldGradient)"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            fill="none"
-            opacity="0.85"
-          />
-
-          {/* Stylized N */}
-          <text
-            x="44"
-            y="66"
-            fontFamily="var(--font-serif), Georgia, serif"
-            fontSize="46"
-            fontWeight="500"
-            fill="url(#goldGradient)"
-            textAnchor="middle"
-          >
-            N
-          </text>
-
-          {/* Medical Cross Plus Symbol */}
-          <path
-            d="M 66 38 L 74 38 M 70 34 L 70 42"
-            stroke="url(#goldGradient)"
-            strokeWidth="3.2"
-            strokeLinecap="round"
-          />
-        </svg>
+      {/* Official Vector Emblem from nLogo.svg */}
+      <div className="relative flex-shrink-0 transition-transform duration-300 group-hover:scale-105">
+        <Image
+          src="/images/nLogo.svg"
+          alt="NabiOta Health Group Germany Emblem"
+          width={currentSize.imgWidth}
+          height={currentSize.imgHeight}
+          priority
+          className="object-contain drop-shadow-[0_2px_12px_rgba(190,160,107,0.3)]"
+        />
       </div>
 
-      {/* Brand Wordmark */}
+      {/* Brand Typography 1:1 matching reference */}
       {showText && (
-        <div className="flex flex-col tracking-tight">
+        <div className="flex flex-col justify-center select-none">
           <span
             className={cn(
-              "font-display text-xl md:text-2xl font-semibold leading-none tracking-wider uppercase",
-              isDarkBg ? "text-ivory-50" : "text-forest-950"
+              "font-display font-bold leading-none uppercase bg-clip-text text-transparent tracking-[0.14em]",
+              currentSize.brandText,
+              isDarkBg
+                ? "bg-gradient-to-r from-[#F7DEB0] via-[#E2C388] to-[#BEA06B]"
+                : "bg-gradient-to-r from-[#8F7745] via-[#BEA06B] to-[#735A27]"
             )}
+            style={{
+              textShadow: isDarkBg
+                ? "0 2px 10px rgba(0,0,0,0.5)"
+                : "0 1px 2px rgba(190,160,107,0.2)",
+            }}
           >
-            NabiOta
+            NABIOTA
           </span>
           <span
             className={cn(
-              "text-[9px] md:text-[10px] font-medium tracking-[0.24em] uppercase mt-1",
-              isDarkBg ? "text-gold-300" : "text-forest-700"
+              "font-sans font-bold uppercase mt-1 leading-none font-semibold",
+              currentSize.subText,
+              isDarkBg ? "text-[#E6D4B2]" : "text-[#7B6A45]"
             )}
           >
-            Health Group Germany
+            HEALTH GROUP GERMANY
           </span>
         </div>
       )}

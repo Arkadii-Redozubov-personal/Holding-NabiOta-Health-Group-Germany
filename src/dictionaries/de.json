@@ -1,0 +1,109 @@
+{
+  "locale": "de",
+  "meta": {
+    "title": "NabiOta® Health Group Germany | Kompetenz verbinden. Gesundheit gestalten.",
+    "description": "NabiOta® Health Group Germany GmbH – Eine zukunftsweisende Unternehmensgruppe im Gesundheitswesen. Ambulante Versorgung, Diagnostik, Rehabilitation, Pflege und Innovation."
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "areas": "Unsere Bereiche",
+    "values": "Unsere Werte",
+    "career": "Karriere",
+    "news": "News",
+    "contact": "Kontakt",
+    "contactCta": "Kontakt aufnehmen"
+  },
+  "hero": {
+    "eyebrow": "KOMPETENZ VERBINDEN.",
+    "headingLine1": "Gesundheit",
+    "headingLine2": "gestalten.",
+    "description": "Die NabiOta® Health Group Germany GmbH ist eine Unternehmensgruppe im Gesundheitswesen. Wir verbinden medizinische Kompetenz, moderne Strukturen und innovative Lösungen – für eine zukunftsfähige Gesundheitsversorgung.",
+    "ctaMore": "Mehr über uns",
+    "ctaAreas": "Unsere Bereiche",
+    "values": [
+      {
+        "id": "menschen",
+        "title": "MENSCHEN IM MITTELPUNKT",
+        "description": "Für Patienten, Angehörige, Fachkräfte und Partner."
+      },
+      {
+        "id": "qualitaet",
+        "title": "QUALITÄT UND VERTRAUEN",
+        "description": "Verlässlich. Transparent. Verantwortungsvoll."
+      },
+      {
+        "id": "nachhaltigkeit",
+        "title": "NACHHALTIGE GESUNDHEITSVERSORGUNG",
+        "description": "Heute handeln. Für morgen."
+      }
+    ]
+  },
+  "strip": {
+    "stats": [
+      { "value": "1", "label": "Starke Marke", "sublabel": "NabiOta® Health Group" },
+      { "value": "6+", "label": "Unternehmensbereiche", "sublabel": "Ganzheitliche Versorgung" },
+      { "value": "100+", "label": "Experten im Netzwerk", "sublabel": "Medizinische Fachkräfte" },
+      { "value": "∞", "label": "Eine Mission", "sublabel": "Gesundheit für morgen" }
+    ]
+  },
+  "about": {
+    "eyebrow": "ÜBER UNS",
+    "heading": "Eine starke Gruppe für eine gesündere Zukunft.",
+    "description": "Die NabiOta® Health Group Germany GmbH mit Sitz in Mönchengladbach ist eine Unternehmensgruppe im Gesundheitswesen. Wir bündeln medizinische Versorgung, Diagnostik, Rehabilitation, Pflege sowie weitere Leistungen unter einer gemeinsamen Marke und schaffen nachhaltig Mehrwert für Patienten, Fachkräfte und Partner.",
+    "cta": "Unsere Geschichte",
+    "benefits": [
+      {
+        "title": "Verlässlicher Partner",
+        "description": "Langfristige Zusammenarbeit auf Augenhöhe."
+      },
+      {
+        "title": "Innovative Lösungen",
+        "description": "Für eine moderne und leistungsfähige Gesundheitsversorgung."
+      },
+      {
+        "title": "Verantwortung leben",
+        "description": "Qualität, Transparenz und Menschlichkeit in allem, was wir tun."
+      }
+    ]
+  },
+  "areas": {
+    "eyebrow": "UNSERE UNTERNEHMENSBEREICHE",
+    "heading": "Vielfältige Kompetenzen. Eine gemeinsame Vision.",
+    "description": "Unsere Unternehmensbereiche decken zentrale Bereiche des Gesundheitswesens ab – von medizinischer Versorgung und Diagnostik über Rehabilitation und Pflege bis hin zu Beratung, Projektentwicklung und internationalen Kooperationen.",
+    "cta": "Alle Bereiche entdecken"
+  },
+  "services": {
+    "eyebrow": "UNSERE LEISTUNGEN",
+    "heading": "Ganzheitliche Gesundheitslösungen unter einem Dach.",
+    "cta": "Alle Leistungen entdecken"
+  },
+  "values": {
+    "eyebrow": "UNSERE WERTE",
+    "heading": "Was uns leitet.",
+    "description": "Unsere Werte bilden das Fundament unseres Handelns und prägen die Zusammenarbeit in der gesamten Unternehmensgruppe."
+  },
+  "split": {
+    "partners": {
+      "eyebrow": "PARTNER & KOOPERATIONEN",
+      "heading": "Gemeinsam mehr erreichen.",
+      "description": "Wir arbeiten eng mit medizinischen Einrichtungen, Kliniken, Rehabilitationszentren, Pflegeeinrichtungen, Bildungsträgern sowie nationalen und internationalen Partnern zusammen. Starke Kooperationen für eine starke Gesundheitsversorgung.",
+      "cta": "Mehr zu unseren Partnern",
+      "quote": "STARKE PARTNERSCHAFTEN FÜR EINE GESÜNDERE ZUKUNFT."
+    },
+    "career": {
+      "eyebrow": "KARRIERE",
+      "heading": "Gestalten Sie mit uns die Zukunft der Gesundheit.",
+      "description": "Wir suchen engagierte und qualifizierte Fachkräfte, die unsere Vision teilen und gemeinsam mit uns neue Wege in der Gesundheitsversorgung gehen möchten.",
+      "cta": "Jetzt bewerben"
+    }
+  },
+  "footer": {
+    "slogan": "Kompetenz verbinden. Gesundheit gestalten.",
+    "addressTitle": "Standort & Digital",
+    "phonesTitle": "Telefonische Erreichbarkeit",
+    "networkTitle": "Netzwerk & Medien",
+    "allRights": "Alle Rechte vorbehalten.",
+    "brandNotice": "NabiOta® ist eine eingetragene und geschützte Marke."
+  }
+}

@@ -4,19 +4,31 @@ import { MapPin, Globe, Mail, Phone, Linkedin, Instagram, Youtube, Briefcase } f
 import { Container } from "./Container";
 import { Logo } from "@/components/ui/Logo";
 import { companyInfo } from "@/data/company";
-import { footerLegalNavigation } from "@/data/navigation";
+import { getDictionary, SupportedLocale } from "@/lib/i18n";
 
-export function Footer() {
+interface FooterProps {
+  currentLocale?: SupportedLocale;
+}
+
+export function Footer({ currentLocale = "de" }: FooterProps) {
+  const dict = getDictionary(currentLocale);
+
+  const legalNav = [
+    { label: currentLocale === "ru" ? "Выходные данные" : currentLocale === "en" ? "Imprint" : "Impressum", href: `/${currentLocale}/imprint` },
+    { label: currentLocale === "ru" ? "Конфиденциальность" : currentLocale === "en" ? "Privacy Policy" : "Datenschutz", href: `/${currentLocale}/privacy` },
+    { label: currentLocale === "ru" ? "Настройки Cookies" : currentLocale === "en" ? "Cookie Settings" : "Cookie-Einstellungen", href: "#cookies" },
+  ];
+
   return (
-    <footer className="bg-[#F6F3EC] border-t border-forest-900/10 text-forest-950 pt-16 pb-12">
+    <footer className="bg-[#F7F4EE] border-t border-forest-900/10 text-forest-950 pt-16 pb-12">
       <Container size="wide">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-forest-900/10">
-          {/* Col 1: Brand & Logo (3 cols) */}
+          {/* Col 1: Brand & Logo with Official Vector Emblem */}
           <div className="lg:col-span-3 flex flex-col justify-between">
             <div>
-              <Logo variant="light" />
+              <Logo variant="light" locale={currentLocale} />
               <p className="mt-4 text-xs sm:text-sm text-text-secondary leading-relaxed font-sans max-w-xs">
-                {companyInfo.slogan}
+                {dict.footer.slogan}
               </p>
             </div>
             <div className="mt-6 text-[11px] text-text-secondary/80">
@@ -24,17 +36,17 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Col 2: Address & Digital (3 cols) */}
+          {/* Col 2: Address & Digital */}
           <div className="lg:col-span-3 space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-forest-950 mb-3">
-              Standort & Digital
+              {dict.footer.addressTitle}
             </h4>
             <div className="flex items-start gap-3 text-xs sm:text-sm text-text-secondary">
               <MapPin className="w-4 h-4 text-gold-600 flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-semibold text-forest-950">{companyInfo.legalName}</p>
                 <p>{companyInfo.street}</p>
-                <p>{companyInfo.postalCode} {companyInfo.city}, {companyInfo.country}</p>
+                <p>{companyInfo.postalCode} {companyInfo.city}, Deutschland</p>
               </div>
             </div>
 
@@ -61,10 +73,10 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Col 3: Direct Phone Lines (3 cols) */}
+          {/* Col 3: Direct Phone Lines */}
           <div className="lg:col-span-3 space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-forest-950 mb-3">
-              Telefonische Erreichbarkeit
+              {dict.footer.phonesTitle}
             </h4>
             <div className="space-y-2 text-xs sm:text-sm text-text-secondary">
               <div className="flex items-center gap-3">
@@ -108,11 +120,11 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Col 4: Social & Legal (3 cols) */}
+          {/* Col 4: Social & Legal */}
           <div className="lg:col-span-3 flex flex-col justify-between">
             <div>
               <h4 className="text-xs font-bold uppercase tracking-wider text-forest-950 mb-3">
-                Netzwerk & Medien
+                {dict.footer.networkTitle}
               </h4>
               <div className="flex items-center gap-3">
                 <a
@@ -155,7 +167,7 @@ export function Footer() {
             </div>
 
             <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-text-secondary">
-              {footerLegalNavigation.map((legal) => (
+              {legalNav.map((legal) => (
                 <Link
                   key={legal.href}
                   href={legal.href}
@@ -170,8 +182,8 @@ export function Footer() {
 
         {/* Bottom copyright notice */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-text-secondary/70">
-          <p>© 2026 {companyInfo.legalName}. Alle Rechte vorbehalten.</p>
-          <p>NabiOta® ist eine eingetragene und geschützte Marke.</p>
+          <p>© 2026 {companyInfo.legalName}. {dict.footer.allRights}</p>
+          <p>{dict.footer.brandNotice}</p>
         </div>
       </Container>
     </footer>

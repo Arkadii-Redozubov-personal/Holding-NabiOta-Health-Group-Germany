@@ -1,0 +1,109 @@
+{
+  "locale": "en",
+  "meta": {
+    "title": "NabiOta® Health Group Germany | Connecting Competence. Shaping Health.",
+    "description": "NabiOta® Health Group Germany GmbH – A forward-looking healthcare holding group. Medical centers, diagnostics, rehabilitation, nursing care, and innovation."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "areas": "Our Divisions",
+    "values": "Our Values",
+    "career": "Career",
+    "news": "News",
+    "contact": "Contact",
+    "contactCta": "Get in Touch"
+  },
+  "hero": {
+    "eyebrow": "CONNECTING COMPETENCE.",
+    "headingLine1": "Shaping",
+    "headingLine2": "health.",
+    "description": "NabiOta® Health Group Germany GmbH is an integrated healthcare enterprise. We combine medical excellence, modern infrastructure, and innovative approaches for sustainable healthcare delivery.",
+    "ctaMore": "Discover More",
+    "ctaAreas": "Our Divisions",
+    "values": [
+      {
+        "id": "menschen",
+        "title": "PEOPLE AT THE CENTER",
+        "description": "For patients, relatives, healthcare professionals, and partners."
+      },
+      {
+        "id": "qualitaet",
+        "title": "QUALITY AND TRUST",
+        "description": "Reliable. Transparent. Responsible."
+      },
+      {
+        "id": "nachhaltigkeit",
+        "title": "SUSTAINABLE HEALTHCARE",
+        "description": "Acting today. For tomorrow."
+      }
+    ]
+  },
+  "strip": {
+    "stats": [
+      { "value": "1", "label": "Strong Brand", "sublabel": "NabiOta® Health Group" },
+      { "value": "6+", "label": "Business Divisions", "sublabel": "Holistic Healthcare" },
+      { "value": "100+", "label": "Network Experts", "sublabel": "Doctors & Specialists" },
+      { "value": "∞", "label": "One Shared Mission", "sublabel": "Health for the Future" }
+    ]
+  },
+  "about": {
+    "eyebrow": "ABOUT US",
+    "heading": "A strong group for a healthier future.",
+    "description": "NabiOta® Health Group Germany GmbH based in Mönchengladbach unites primary medical care, diagnostics, rehabilitation, home care, and related healthcare services under one cohesive brand, creating long-term value for patients, staff, and partners.",
+    "cta": "Our History",
+    "benefits": [
+      {
+        "title": "Reliable Partner",
+        "description": "Long-term partnership built on mutual trust and respect."
+      },
+      {
+        "title": "Innovative Solutions",
+        "description": "Advancing modern, resilient, and forward-looking healthcare."
+      },
+      {
+        "title": "Living Responsibility",
+        "description": "Quality, transparency, and humanity in everything we do."
+      }
+    ]
+  },
+  "areas": {
+    "eyebrow": "OUR BUSINESS DIVISIONS",
+    "heading": "Diverse Competencies. One Shared Vision.",
+    "description": "Our divisions encompass essential sectors of modern healthcare – from specialized outpatient practices and high-end imaging to rehabilitation, homecare, real estate, and global partnerships.",
+    "cta": "Explore All Divisions"
+  },
+  "services": {
+    "eyebrow": "OUR SERVICES",
+    "heading": "Comprehensive Healthcare Solutions Under One Roof.",
+    "cta": "Discover All Services"
+  },
+  "values": {
+    "eyebrow": "OUR VALUES",
+    "heading": "What Guides Us.",
+    "description": "Our core principles form the foundation of our work and inspire trust and excellence across the entire corporate group."
+  },
+  "split": {
+    "partners": {
+      "eyebrow": "PARTNERS & COOPERATION",
+      "heading": "Achieving More Together.",
+      "description": "We collaborate closely with hospitals, specialized medical centers, rehabilitation clinics, nursing care facilities, and international healthcare partners.",
+      "cta": "Explore Partnerships",
+      "quote": "STRONG PARTNERSHIPS FOR A HEALTHIER TOMORROW."
+    },
+    "career": {
+      "eyebrow": "CAREER",
+      "heading": "Shape the Future of Healthcare with Us.",
+      "description": "We are seeking dedicated and qualified healthcare professionals who share our vision and wish to pave new paths in modern medical care.",
+      "cta": "Apply Now"
+    }
+  },
+  "footer": {
+    "slogan": "Connecting Competence. Shaping Health.",
+    "addressTitle": "Headquarters & Digital",
+    "phonesTitle": "Direct Telephone Lines",
+    "networkTitle": "Media & Networks",
+    "allRights": "All rights reserved.",
+    "brandNotice": "NabiOta® is a registered and protected trademark."
+  }
+}

@@ -3,17 +3,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowButton } from "./ArrowButton";
 import { BusinessArea } from "@/types/content";
+import { SupportedLocale } from "@/lib/i18n";
 
 interface BusinessCardProps {
   area: BusinessArea;
   priority?: boolean;
+  currentLocale?: SupportedLocale;
 }
 
-export function BusinessCard({ area, priority = false }: BusinessCardProps) {
+export function BusinessCard({ area, priority = false, currentLocale = "de" }: BusinessCardProps) {
   return (
     <Link
-      href={`/areas/${area.slug}`}
-      className="group flex flex-col bg-white rounded-md overflow-hidden border border-forest-900/10 shadow-[0_2px_12px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
+      href={`/${currentLocale}/areas/${area.slug}`}
+      className="group flex flex-col bg-white rounded-xl overflow-hidden border border-forest-900/10 shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
     >
       {/* Card Image */}
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-forest-950/10">

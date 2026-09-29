@@ -4,9 +4,16 @@ import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { IconCircle } from "@/components/ui/IconCircle";
-import { aboutBenefits } from "@/data/values";
+import { getDictionary, SupportedLocale } from "@/lib/i18n";
 
-export function AboutSection() {
+interface AboutSectionProps {
+  currentLocale?: SupportedLocale;
+}
+
+export function AboutSection({ currentLocale = "de" }: AboutSectionProps) {
+  const dict = getDictionary(currentLocale);
+  const benefitIcons = ["Handshake", "Lightbulb", "Shield"];
+
   return (
     <section className="bg-[#FAF8F5] py-16 sm:py-20 lg:py-28 overflow-hidden">
       <Container size="wide">
@@ -30,36 +37,30 @@ export function AboutSection() {
           {/* Right: Editorial Content & 3 Benefits (7 cols) */}
           <div className="lg:col-span-7 flex flex-col justify-center">
             <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
-              {/* Text content (7 cols in subgrid) */}
+              {/* Text content */}
               <div className="xl:col-span-7">
-                <Eyebrow variant="forest">ÜBER UNS</Eyebrow>
+                <Eyebrow variant="gold">{dict.about.eyebrow}</Eyebrow>
                 <h2 className="font-display text-3xl sm:text-4xl lg:text-[42px] font-normal leading-[1.12] tracking-tight text-forest-950 mb-5">
-                  Eine starke Gruppe<br />
-                  für eine gesündere Zukunft.
+                  {dict.about.heading}
                 </h2>
                 <p className="text-sm sm:text-base text-text-secondary leading-relaxed font-sans mb-8">
-                  Die NabiOta® Health Group Germany GmbH mit Sitz in
-                  Mönchengladbach ist eine Unternehmensgruppe im
-                  Gesundheitswesen. Wir bündeln medizinische Versorgung,
-                  Diagnostik, Rehabilitation, Pflege sowie weitere Leistungen
-                  unter einer gemeinsamen Marke und schaffen nachhaltig Mehrwert
-                  für Patienten, Fachkräfte und Partner.
+                  {dict.about.description}
                 </p>
                 <Button
                   variant="gold-solid"
                   size="md"
-                  href="/about"
+                  href={`/${currentLocale}/about`}
                 >
-                  Unsere Geschichte
+                  {dict.about.cta}
                 </Button>
               </div>
 
-              {/* 3 Benefits column with gold circle icons (5 cols in subgrid) */}
+              {/* 3 Benefits column with gold circle icons */}
               <div className="xl:col-span-5 space-y-6 pt-2 xl:pt-4 xl:border-l xl:border-forest-900/10 xl:pl-8">
-                {aboutBenefits.map((benefit, idx) => (
+                {dict.about.benefits.map((benefit, idx) => (
                   <div key={idx} className="flex items-start gap-3.5 group">
                     <IconCircle
-                      name={benefit.iconName}
+                      name={benefitIcons[idx]}
                       size="sm"
                       variant="gold"
                       className="mt-0.5 group-hover:scale-105 group-hover:border-gold-500"

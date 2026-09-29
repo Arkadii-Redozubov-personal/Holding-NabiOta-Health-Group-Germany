@@ -4,8 +4,15 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { BusinessCard } from "@/components/ui/BusinessCard";
 import { businessAreas } from "@/data/areas";
+import { getDictionary, SupportedLocale } from "@/lib/i18n";
 
-export function BusinessAreasSection() {
+interface BusinessAreasSectionProps {
+  currentLocale?: SupportedLocale;
+}
+
+export function BusinessAreasSection({ currentLocale = "de" }: BusinessAreasSectionProps) {
+  const dict = getDictionary(currentLocale);
+
   return (
     <section className="relative bg-forest-900 text-ivory-50 py-16 sm:py-20 lg:py-28 overflow-hidden bg-botanical-dark">
       {/* Subtle Botanical Leaf Artwork on Edges */}
@@ -24,33 +31,26 @@ export function BusinessAreasSection() {
       </div>
 
       <Container size="wide" className="relative z-10">
-        {/* Section Header */}
         <SectionHeading
           theme="dark"
-          eyebrow="UNSERE UNTERNEHMENSBEREICHE"
-          title={
-            <>
-              Vielfältige Kompetenzen.<br />
-              Eine gemeinsame Vision.
-            </>
-          }
-          description="Unsere Unternehmensbereiche decken zentrale Bereiche des Gesundheitswesens ab – von medizinischer Versorgung und Diagnostik über Rehabilitation und Pflege bis hin zu Beratung, Projektentwicklung und internationalen Kooperationen."
+          eyebrow={dict.areas.eyebrow}
+          title={dict.areas.heading}
+          description={dict.areas.description}
           action={
             <Button
               variant="cream"
               size="md"
-              href="/areas"
+              href={`/${currentLocale}/areas`}
               className="mt-2"
             >
-              Alle Bereiche entdecken
+              {dict.areas.cta}
             </Button>
           }
         />
 
-        {/* 6 Cards Grid (2 cols mobile, 3 cols tablet, 6 cols desktop or 2x3 grid) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-5">
           {businessAreas.map((area, idx) => (
-            <BusinessCard key={area.id} area={area} priority={idx < 2} />
+            <BusinessCard key={area.id} area={area} priority={idx < 2} currentLocale={currentLocale} />
           ))}
         </div>
       </Container>

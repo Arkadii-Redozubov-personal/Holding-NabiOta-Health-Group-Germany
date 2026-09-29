@@ -4,15 +4,17 @@ import Link from "next/link";
 import { ArrowButton } from "./ArrowButton";
 import { IconCircle } from "./IconCircle";
 import { Service } from "@/types/content";
+import { SupportedLocale } from "@/lib/i18n";
 
 interface ServiceCardProps {
   service: Service;
+  currentLocale?: SupportedLocale;
 }
 
-export function ServiceCard({ service }: ServiceCardProps) {
+export function ServiceCard({ service, currentLocale = "de" }: ServiceCardProps) {
   return (
     <Link
-      href={`/services/${service.slug}`}
+      href={`/${currentLocale}/services/${service.slug}`}
       className="group relative flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5 p-4 sm:p-5 rounded-md bg-white/95 border border-forest-900/10 shadow-[0_2px_12px_rgba(0,0,0,0.03)] transition-all duration-300 hover:border-gold-400/50 hover:shadow-[0_6px_20px_rgba(190,160,107,0.12)] hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-500"
     >
       {/* Thumbnail Image */}

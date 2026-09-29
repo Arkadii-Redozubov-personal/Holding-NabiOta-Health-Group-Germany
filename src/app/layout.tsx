@@ -4,14 +4,14 @@ import "./globals.css";
 import { companyInfo } from "@/data/company";
 
 const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
+  subsets: ["latin", "cyrillic"],
   variable: "--font-serif",
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
 const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
+  subsets: ["latin", "cyrillic-ext"],
   variable: "--font-sans",
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",

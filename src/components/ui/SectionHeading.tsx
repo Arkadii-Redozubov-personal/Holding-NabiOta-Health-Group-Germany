@@ -35,7 +35,7 @@ export function SectionHeading({
     >
       <div className={cn("max-w-2xl", align === "center" && "mx-auto")}>
         {eyebrow && (
-          <Eyebrow variant={isDark ? "gold" : "forest"}>{eyebrow}</Eyebrow>
+          <Eyebrow variant="gold">{eyebrow}</Eyebrow>
         )}
         <HeadingTag
           className={cn(
