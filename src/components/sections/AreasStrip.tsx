@@ -8,9 +8,9 @@ import {
   Network,
   Globe,
   LucideIcon,
+  Infinity,
 } from "lucide-react";
 import { Container } from "@/components/layout/Container";
-import { StatItem } from "@/components/ui/StatItem";
 import { getDictionary, SupportedLocale } from "@/lib/i18n";
 
 interface StripItem {
@@ -31,11 +31,7 @@ const stripItems: StripItem[] = [
   },
   {
     icon: Microscope,
-    label: {
-      de: "Diagnostik",
-      en: "Diagnostics",
-      ru: "Диагностика",
-    },
+    label: { de: "Diagnostik", en: "Diagnostics", ru: "Диагностика" },
     slug: "diagnostik",
   },
   {
@@ -49,11 +45,7 @@ const stripItems: StripItem[] = [
   },
   {
     icon: Users,
-    label: {
-      de: "Pflege",
-      en: "Nursing & Care",
-      ru: "Уход и патронаж",
-    },
+    label: { de: "Pflege", en: "Nursing & Care", ru: "Уход и патронаж" },
     slug: "pflege",
   },
   {
@@ -83,24 +75,25 @@ interface AreasStripProps {
 export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
   const dict = getDictionary(currentLocale);
 
+  // Stats with icons for right side
+  const statData = dict.strip.stats;
+
   return (
-    <section className="bg-[#FAF8F4] border-y border-forest-900/10 py-6 sm:py-8">
+    <section className="bg-[#F6F3ED] border-y border-[#E5E0D6] py-5 sm:py-6">
       <Container size="wide">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-10">
-          {/* Left: 6 Business Categories Icons */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-6 sm:gap-8 w-full lg:w-auto flex-1">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-4">
+          {/* Left: 6 category icons */}
+          <div className="grid grid-cols-3 sm:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 flex-1">
             {stripItems.map((item, idx) => {
               const Icon = item.icon;
               return (
                 <Link
                   key={idx}
                   href={`/${currentLocale}/areas/${item.slug}`}
-                  className="group flex flex-col items-center text-center p-2 rounded transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-1 focus-visible:ring-gold-500"
+                  className="group flex flex-col items-center text-center gap-1.5 py-1 transition-transform hover:-translate-y-0.5"
                 >
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-forest-800 group-hover:text-gold-600 transition-colors mb-2">
-                    <Icon className="w-6 h-6 stroke-[1.4]" />
-                  </div>
-                  <span className="text-xs font-medium text-forest-950 group-hover:text-gold-700 transition-colors leading-tight max-w-[130px]">
+                  <Icon className="w-6 h-6 stroke-[1.3] text-[#6B6556] group-hover:text-[#BEA06B] transition-colors" />
+                  <span className="text-[10px] sm:text-[11px] font-medium text-[#3B3929] group-hover:text-[#BEA06B] transition-colors leading-tight max-w-[110px]">
                     {item.label[currentLocale]}
                   </span>
                 </Link>
@@ -108,19 +101,36 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
             })}
           </div>
 
-          {/* Vertical Divider (hidden on mobile) */}
-          <div className="hidden lg:block w-[1px] h-14 bg-forest-900/15" />
+          {/* Divider */}
+          <div className="hidden lg:block w-[1px] h-12 bg-[#D8D3C8]" />
 
-          {/* Right: 4 Corporate Statistics */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 w-full lg:w-auto flex-shrink-0 pt-4 lg:pt-0 border-t lg:border-t-0 border-forest-900/10">
-            {dict.strip.stats.map((stat, idx) => (
-              <StatItem
+          {/* Right: 4 stats */}
+          <div className="grid grid-cols-4 gap-5 sm:gap-8 flex-shrink-0">
+            {statData.map((stat, idx) => (
+              <div
                 key={idx}
-                value={stat.value}
-                label={stat.label}
-                sublabel={stat.sublabel}
-              />
+                className="flex flex-col items-center text-center"
+              >
+                <span className="font-display text-2xl sm:text-3xl font-normal text-[#BEA06B] tracking-tight leading-none">
+                  {stat.value}
+                </span>
+                <span className="text-[10px] sm:text-[11px] font-semibold text-[#3B3929] uppercase tracking-wider leading-tight mt-1">
+                  {stat.label}
+                </span>
+              </div>
             ))}
+
+            {/* Infinity icon for "Eine Mission" */}
+            <div className="flex flex-col items-center text-center">
+              <Infinity className="w-7 h-7 sm:w-8 sm:h-8 text-[#BEA06B] stroke-[1.5]" />
+              <span className="text-[10px] sm:text-[11px] font-semibold text-[#3B3929] uppercase tracking-wider leading-tight mt-1">
+                {currentLocale === "ru"
+                  ? "Одна миссия"
+                  : currentLocale === "en"
+                  ? "One Mission"
+                  : "Eine Mission"}
+              </span>
+            </div>
           </div>
         </div>
       </Container>

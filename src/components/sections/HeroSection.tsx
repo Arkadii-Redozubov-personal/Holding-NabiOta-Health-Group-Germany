@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Users, Diamond, Leaf } from "lucide-react";
-import { Container } from "@/components/layout/Container";
 import { getDictionary, SupportedLocale } from "@/lib/i18n";
 
 interface HeroSectionProps {
@@ -16,127 +15,147 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
     {
       icon: Users,
       title: dict.hero.values[0]?.title || "MENSCHEN IM MITTELPUNKT",
-      description: dict.hero.values[0]?.description || "Für Patienten, Angehörige, Fachkräfte und Partner.",
+      description:
+        dict.hero.values[0]?.description ||
+        "Für Patienten, Angehörige, Fachkräfte und Partner.",
     },
     {
       icon: Diamond,
       title: dict.hero.values[1]?.title || "QUALITÄT UND VERTRAUEN",
-      description: dict.hero.values[1]?.description || "Verlässlich. Transparent. Verantwortungsvoll.",
+      description:
+        dict.hero.values[1]?.description ||
+        "Verlässlich. Transparent. Verantwortungsvoll.",
     },
     {
       icon: Leaf,
       title: dict.hero.values[2]?.title || "NACHHALTIGE GESUNDHEITSVERSORGUNG",
-      description: dict.hero.values[2]?.description || "Heute handeln. Für morgen.",
+      description:
+        dict.hero.values[2]?.description || "Heute handeln. Für morgen.",
     },
   ];
 
   return (
-    <section className="relative min-h-[640px] md:min-h-[700px] lg:min-h-[760px] flex items-center bg-[#0C1810] text-[#FAF8F5] overflow-hidden pt-28 lg:pt-32 pb-16 lg:pb-20">
-      {/* 1:1 Medical Clinic Building Facade Layer */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        {/* Deep base background */}
-        <div className="absolute inset-0 bg-[#0C1810]" />
+    <section className="relative h-screen min-h-[600px] max-h-[1100px] flex items-center bg-[#0D1910] text-[#FAF8F5] overflow-hidden">
+      {/* ── Background layers ─────────────────────────── */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Base deep forest */}
+        <div className="absolute inset-0 bg-[#0D1910]" />
 
-        {/* Building Image - Positioned centrally/right exactly matching reference screenshot */}
-        <div className="absolute top-0 right-0 lg:right-0 xl:right-0 w-full lg:w-[70%] xl:w-[65%] h-full opacity-75 lg:opacity-95">
+        {/* Building facade photo – fills entire hero */}
+        <div className="absolute inset-0">
           <Image
             src="/images/hero/building.png"
-            alt="NabiOta Health Group Germany Clinic Headquarters"
+            alt="NabiOta Health Group Germany Headquarters"
             fill
             priority
-            sizes="(max-width: 1024px) 100vw, 65vw"
-            className="object-cover object-center lg:object-right"
+            sizes="100vw"
+            className="object-cover object-center"
           />
-
-          {/* Seamless feathered vignette overlays merging image into #0C1810 */}
-          {/* Left blend mask */}
-          <div className="absolute inset-y-0 left-0 w-24 sm:w-48 lg:w-72 bg-gradient-to-r from-[#0C1810] via-[#0C1810]/70 to-transparent" />
-          {/* Right blend mask */}
-          <div className="absolute inset-y-0 right-0 w-24 sm:w-48 lg:w-72 bg-gradient-to-l from-[#0C1810] via-[#0C1810]/70 to-transparent" />
-          {/* Top blend mask under header */}
-          <div className="absolute inset-x-0 top-0 h-28 sm:h-36 bg-gradient-to-b from-[#0C1810] via-[#0C1810]/60 to-transparent" />
-          {/* Bottom blend mask towards strip */}
-          <div className="absolute inset-x-0 bottom-0 h-24 sm:h-32 bg-gradient-to-t from-[#0C1810] via-[#0C1810]/60 to-transparent" />
         </div>
 
-        {/* Overall text legibility gradient on mobile & tablet */}
-        <div className="absolute inset-0 lg:hidden bg-gradient-to-t from-[#0C1810] via-[#0C1810]/85 to-[#0C1810]/50" />
+        {/* Left side: heavy blur + dark gradient for text readability (NOT solid black) */}
+        <div
+          className="absolute inset-y-0 left-0 w-[55%] lg:w-[48%]"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(13,25,16,0.92) 0%, rgba(13,25,16,0.85) 40%, rgba(13,25,16,0.6) 70%, transparent 100%)",
+            backdropFilter: "blur(6px)",
+            WebkitBackdropFilter: "blur(6px)",
+          }}
+        />
 
-        {/* Framing Botanical Leaves Overlay (Top-Left & Top-Right) matching reference */}
-        <div className="absolute -top-10 -left-10 w-72 h-72 opacity-25 text-[#1A3822] pointer-events-none">
+        {/* Top gradient for header area */}
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#0D1910]/80 to-transparent" />
+
+        {/* Bottom gradient for strip transition */}
+        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#0D1910]/60 to-transparent" />
+
+        {/* Botanical leaves framing – top-left */}
+        <div className="absolute -top-6 -left-6 w-64 h-64 opacity-20 text-[#1A3822] pointer-events-none">
           <svg viewBox="0 0 300 300" fill="currentColor">
             <path d="M20 280 C40 140 160 30 280 20 C240 160 140 250 20 280 Z" />
-            <path d="M60 200 C100 130 180 80 260 40" stroke="#2D5E3A" strokeWidth="4" fill="none" />
           </svg>
         </div>
-        <div className="absolute top-0 right-0 w-80 h-80 opacity-30 text-[#142C1B] pointer-events-none translate-x-12 -translate-y-8">
+        {/* Botanical leaves framing – top-right */}
+        <div className="absolute top-0 right-0 w-72 h-72 opacity-20 text-[#142C1B] pointer-events-none translate-x-10 -translate-y-6">
           <svg viewBox="0 0 300 300" fill="currentColor">
             <path d="M280 20 C260 160 140 270 20 280 C60 140 160 50 280 20 Z" />
-            <path d="M240 100 C190 170 120 220 40 260" stroke="#2D5E3A" strokeWidth="4" fill="none" />
           </svg>
         </div>
       </div>
 
-      <Container size="wide" className="relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-          {/* Left Column: Eyebrow, Editorial Roman Headline & CTA Button (approx 5 cols) */}
-          <div className="lg:col-span-6 xl:col-span-5 flex flex-col items-start max-w-xl">
+      {/* ── Content grid ─────────────────────────────── */}
+      <div className="relative z-10 w-full max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-10 xl:px-14">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
+          {/* ── LEFT: Text column (5 cols) ────────────── */}
+          <div className="lg:col-span-5 flex flex-col items-start max-w-lg pt-20 lg:pt-0">
             {/* Eyebrow */}
-            <span className="text-[11px] sm:text-xs font-semibold tracking-[0.26em] text-[#C5A56A] uppercase mb-4 sm:mb-5">
+            <span className="text-[11px] sm:text-xs font-semibold tracking-[0.25em] text-[#C5A56A] uppercase mb-5">
               {dict.hero.eyebrow}
             </span>
 
-            {/* Headline 1:1 Roman Cormorant Garamond */}
-            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[82px] font-normal leading-[1.0] tracking-[-0.02em] text-[#FFFFFF] mb-6 drop-shadow-sm">
+            {/* Heading – line1 regular, line2 italic */}
+            <h1 className="font-display text-[52px] sm:text-[64px] md:text-[72px] lg:text-[78px] xl:text-[86px] font-normal leading-[0.95] tracking-[-0.02em] text-white mb-6">
               {dict.hero.headingLine1}
               <br />
-              {dict.hero.headingLine2}
+              <span className="italic">{dict.hero.headingLine2}</span>
             </h1>
 
-            {/* Subtitle Paragraph */}
-            <p className="text-sm sm:text-base text-[#D5D2C8] leading-relaxed font-sans max-w-lg mb-8 font-light">
+            {/* Description */}
+            <p className="text-[13px] sm:text-[15px] text-[#CCC9BF] leading-[1.7] font-sans max-w-md mb-8 font-light">
               {dict.hero.description}
             </p>
 
-            {/* Single Gold Pill CTA Button matching reference */}
+            {/* CTA – dark outlined pill, NOT gold gradient */}
             <Link
               href={`/${currentLocale}/about`}
-              className="group inline-flex items-center gap-2.5 px-6 sm:px-7 py-3 rounded-full bg-gradient-to-r from-[#D5B57A] via-[#C5A56A] to-[#B39358] text-[#0C1810] font-sans font-bold text-xs sm:text-sm tracking-wide shadow-[0_4px_20px_rgba(197,165,106,0.25)] hover:shadow-[0_6px_25px_rgba(197,165,106,0.4)] transition-all duration-300 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[#C5A56A]"
+              className="group inline-flex items-center gap-2.5 px-6 py-3 rounded-full border border-[#C5C0B4]/40 text-white font-sans font-medium text-[13px] tracking-wide hover:border-[#C5A56A]/70 hover:text-[#E8D5A8] transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-[#C5A56A]/50"
             >
               <span>{dict.hero.ctaMore}</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>
 
-          {/* Spacer / Center Clearance for Building Facade (3 cols on desktop) */}
-          <div className="hidden lg:block lg:col-span-2 xl:col-span-3 pointer-events-none" />
+          {/* ── CENTER: building visible through gap (3 cols) ─ */}
+          <div className="hidden lg:block lg:col-span-3 pointer-events-none" />
 
-          {/* Right Column: 3 Strategic Values on deep forest background (approx 4 cols) */}
-          <div className="lg:col-span-4 xl:col-span-4 flex flex-col justify-center space-y-6 sm:space-y-7 pl-0 lg:pl-4">
-            {heroValues.map((val, idx) => {
-              const IconComponent = val.icon;
-              return (
-                <div key={idx} className="flex items-start gap-4 sm:gap-4.5 group">
-                  {/* Gold Thin Circle Icon matching reference */}
-                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-[#C5A56A]/60 flex items-center justify-center flex-shrink-0 text-[#C5A56A] transition-all duration-300 group-hover:border-[#C5A56A] group-hover:scale-105 group-hover:bg-[#C5A56A]/10">
-                    <IconComponent className="w-5 h-5 stroke-[1.5]" />
-                  </div>
+          {/* ── RIGHT: Values panel with curved left edge (4 cols) ─ */}
+          <div className="lg:col-span-4 flex items-center justify-end">
+            <div
+              className="relative w-full max-w-[320px] xl:max-w-[340px] py-8 px-7 sm:px-8 space-y-7"
+              style={{
+                background:
+                  "linear-gradient(135deg, rgba(13,25,16,0.88) 0%, rgba(16,30,20,0.92) 50%, rgba(13,25,16,0.85) 100%)",
+                backdropFilter: "blur(14px)",
+                WebkitBackdropFilter: "blur(14px)",
+                borderRadius: "40px 20px 20px 40px",
+                border: "1px solid rgba(255,255,255,0.08)",
+              }}
+            >
+              {heroValues.map((val, idx) => {
+                const IconComponent = val.icon;
+                return (
+                  <div key={idx} className="flex items-start gap-4 group">
+                    {/* Circle icon */}
+                    <div className="w-11 h-11 rounded-full border border-[#C5A56A]/50 flex items-center justify-center flex-shrink-0 text-[#C5A56A] transition-all duration-300 group-hover:border-[#C5A56A] group-hover:bg-[#C5A56A]/10">
+                      <IconComponent className="w-[18px] h-[18px] stroke-[1.5]" />
+                    </div>
 
-                  {/* Text */}
-                  <div className="flex-1 pt-0.5">
-                    <h3 className="font-sans text-xs sm:text-[13px] font-bold uppercase tracking-wider text-[#FFFFFF] group-hover:text-[#C5A56A] transition-colors leading-snug">
-                      {val.title}
-                    </h3>
-                    <p className="text-xs sm:text-[13px] text-[#C5C2B7] leading-relaxed mt-1 font-light">
-                      {val.description}
-                    </p>
+                    <div className="flex-1 pt-0.5">
+                      <h3 className="font-sans text-[11px] sm:text-xs font-bold uppercase tracking-[0.08em] text-white leading-snug mb-1">
+                        {val.title}
+                      </h3>
+                      <p className="text-[11px] sm:text-xs text-[#A8A498] leading-relaxed font-light">
+                        {val.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }
