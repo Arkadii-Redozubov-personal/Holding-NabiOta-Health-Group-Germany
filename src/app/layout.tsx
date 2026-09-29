@@ -73,9 +73,9 @@ export default function RootLayout({
   return (
     <html
       lang="de"
-      className={`${playfair.variable} ${jakarta.variable} scroll-smooth`}
+      className={`${playfair.variable} ${jakarta.variable} scroll-smooth overflow-x-hidden max-w-full`}
     >
-      <body className="min-h-screen bg-[#FBFAF6] text-[#132018] font-sans antialiased selection:bg-[#BEA06B]/20 selection:text-[#112117]">
+      <body className="min-h-screen bg-[#FBFAF6] text-[#132018] font-sans antialiased selection:bg-[#BEA06B]/20 selection:text-[#112117] overflow-x-hidden w-full max-w-full">
         {children}
       </body>
     </html>

@@ -262,7 +262,7 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
   ];
 
   return (
-    <div className="w-full bg-[#FCFAF6] border-t border-[#EAE5DA] py-3.5 sm:py-4 lg:py-4.5 overflow-x-auto shadow-[0_-2px_14px_rgba(0,0,0,0.03)]">
+    <div className="w-full max-w-full bg-[#FCFAF6] border-t border-[#EAE5DA] py-3.5 sm:py-4 lg:py-4.5 overflow-x-auto overscroll-x-contain shadow-[0_-2px_14px_rgba(0,0,0,0.03)] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
       <Container size="wide">
         <div className="flex items-center justify-between min-w-[1040px] lg:min-w-0">
           {/* ── Left: 6 Category Icons with Labels (Larger size) ──── */}

@@ -121,8 +121,8 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
 
             {/* Right: Language + CTA */}
             <div className="flex items-center gap-3 sm:gap-4">
-              {/* Language Selector */}
-              <div className="relative">
+              {/* Language Selector - hidden on mobile screens, available in mobile drawer */}
+              <div className="relative hidden sm:block">
                 <button
                   type="button"
                   onClick={() => setLangDropdownOpen(!langDropdownOpen)}

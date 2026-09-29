@@ -31,6 +31,13 @@
   --container-max: 1220px;
 }
 
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+
 /* Custom editorial typography & aesthetics */
 .font-display {
   font-family: var(--font-serif), Georgia, serif;
