@@ -25,25 +25,25 @@ export function Logo({
 
   const sizeClasses = {
     sm: {
-      imgWidth: 48,
-      imgHeight: 42,
-      brandText: "text-[21px] sm:text-[23px]",
-      subText: "text-[8px] sm:text-[9px] tracking-[0.14em]",
+      imgWidth: 46,
+      imgHeight: 40,
+      brandText: "text-[19px] sm:text-[21px]",
+      subText: "text-[7.5px] sm:text-[8.2px] tracking-[0.14em]",
       gap: "gap-2.5",
     },
     md: {
-      imgWidth: 64,
-      imgHeight: 56,
-      brandText: "text-[26px] sm:text-[29px] xl:text-[32px]",
-      subText: "text-[9.5px] sm:text-[10.5px] xl:text-[11.2px] tracking-[0.15em]",
-      gap: "gap-3 sm:gap-3.5",
+      imgWidth: 62,
+      imgHeight: 54,
+      brandText: "text-[23px] sm:text-[25.5px] xl:text-[28px]",
+      subText: "text-[8.5px] sm:text-[9.2px] xl:text-[10px] tracking-[0.15em]",
+      gap: "gap-3",
     },
     lg: {
-      imgWidth: 78,
-      imgHeight: 68,
-      brandText: "text-[30px] sm:text-[34px] xl:text-[37px]",
-      subText: "text-[11px] sm:text-[12px] xl:text-[13px] tracking-[0.17em]",
-      gap: "gap-3.5 sm:gap-4",
+      imgWidth: 74,
+      imgHeight: 64,
+      brandText: "text-[27px] sm:text-[30px] xl:text-[33px]",
+      subText: "text-[9.5px] sm:text-[10.5px] xl:text-[11.5px] tracking-[0.16em]",
+      gap: "gap-3.5",
     },
   };
 
@@ -68,12 +68,12 @@ export function Logo({
         />
       </div>
 
-      {/* Brand Typography with exact gold gradient sheen matching reference */}
+      {/* Brand Typography with exact gold gradient sheen & tight locking matching reference */}
       {showText && (
-        <div className="flex flex-col justify-center select-none pt-0.5">
+        <div className="flex flex-col justify-center select-none">
           <span
             className={cn(
-              "font-display font-bold leading-none uppercase tracking-[0.02em]",
+              "font-display font-bold leading-[0.9] uppercase tracking-[0.02em]",
               currentSize.brandText,
               isDarkBg
                 ? "bg-clip-text text-transparent bg-gradient-to-b from-[#FFF5D5] via-[#E2B34B] to-[#9E731C]"
@@ -87,7 +87,7 @@ export function Logo({
           </span>
           <span
             className={cn(
-              "font-sans font-bold uppercase mt-1 leading-none",
+              "font-sans font-bold uppercase mt-[2px] leading-none",
               currentSize.subText,
               isDarkBg ? "text-[#E8CD8C]" : "text-[#7B6A45]"
             )}
