@@ -10,13 +10,13 @@ interface HeroSectionProps {
 }
 
 /* ── Custom SVGs matching Photo reference exactly ────────────────── */
-function PeopleIcon({ className = "w-6 h-6" }: { className?: string }) {
+function PeopleIcon({ className = "w-7 h-7" }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 28 28"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.6"
+      strokeWidth="1.7"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
@@ -31,13 +31,13 @@ function PeopleIcon({ className = "w-6 h-6" }: { className?: string }) {
   );
 }
 
-function DiamondIcon({ className = "w-6 h-6" }: { className?: string }) {
+function DiamondIcon({ className = "w-7 h-7" }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 28 28"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.6"
+      strokeWidth="1.7"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
@@ -50,13 +50,13 @@ function DiamondIcon({ className = "w-6 h-6" }: { className?: string }) {
   );
 }
 
-function LeafIcon({ className = "w-6 h-6" }: { className?: string }) {
+function LeafIcon({ className = "w-7 h-7" }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 28 28"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.6"
+      strokeWidth="1.7"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
@@ -193,16 +193,16 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
             />
           </svg>
 
-          {/* ── Light Frosted Glass Layer (Light 6px blur, airy transparent glass) ── */}
+          {/* ── Frosted Glass Layer (Light airy glass with soft backdrop) ── */}
           <div
             className="absolute inset-0 w-full h-full"
             style={{
               clipPath: "url(#heroCurvedPanelClip)",
               WebkitClipPath: "url(#heroCurvedPanelClip)",
               background:
-                "linear-gradient(180deg, rgba(10, 26, 17, 0.28) 0%, rgba(8, 22, 14, 0.36) 50%, rgba(6, 18, 11, 0.44) 100%)",
-              backdropFilter: "blur(6px) saturate(112%)",
-              WebkitBackdropFilter: "blur(6px) saturate(112%)",
+                "linear-gradient(180deg, rgba(8, 22, 14, 0.35) 0%, rgba(7, 20, 12, 0.44) 50%, rgba(5, 16, 10, 0.52) 100%)",
+              backdropFilter: "blur(8px) saturate(118%)",
+              WebkitBackdropFilter: "blur(8px) saturate(118%)",
             }}
           />
 
@@ -214,13 +214,13 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
                 return (
                   <div key={idx} className="group">
                     <div className="flex items-center gap-3.5 xl:gap-4.5">
-                      {/* Gold outlined circle icon */}
-                      <div className="w-12 h-12 xl:w-13 xl:h-13 rounded-full border border-[#C5A56A]/80 flex items-center justify-center flex-shrink-0 text-[#C5A56A] group-hover:border-[#DFCA98] group-hover:bg-[#C5A56A]/15 transition-all duration-300 shadow-[0_0_10px_rgba(197,165,106,0.18)]">
-                        <IconComp className="w-5 h-5 xl:w-6 xl:h-6 stroke-[1.6]" />
+                      {/* Lighter, Larger Gold outlined circle icon */}
+                      <div className="w-13.5 h-13.5 xl:w-15 xl:h-15 rounded-full border border-[#F5E2B8]/85 bg-[#142C1E]/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0 text-[#FCEECB] group-hover:border-[#FFF6E3] group-hover:text-white transition-all duration-300 shadow-[0_0_14px_rgba(245,226,184,0.22)]">
+                        <IconComp className="w-6.5 h-6.5 xl:w-7 xl:h-7 stroke-[1.7]" />
                       </div>
 
                       <div className="flex-1">
-                        <h3 className="font-sans text-[11px] xl:text-[12px] font-bold uppercase tracking-[0.08em] text-white leading-tight">
+                        <h3 className="font-sans text-[12px] xl:text-[13.5px] font-bold uppercase tracking-[0.09em] text-white leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.65)]">
                           {val.line1}
                           {val.line2 && (
                             <>
@@ -229,7 +229,8 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
                             </>
                           )}
                         </h3>
-                        <p className="text-[10.5px] xl:text-[11.5px] text-[#A8A498] leading-relaxed font-light mt-1 max-w-[210px]">
+                        {/* Light, clearly readable description text */}
+                        <p className="text-[11.5px] xl:text-[12.5px] text-[#FAF8F5]/90 leading-relaxed font-normal mt-1 max-w-[225px] drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]">
                           {val.description}
                         </p>
                       </div>
@@ -237,7 +238,7 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
 
                     {/* Faint divider line between items */}
                     {idx < heroValues.length - 1 && (
-                      <div className="mt-5 xl:mt-6 h-[1px] bg-gradient-to-r from-transparent via-[#C5A56A]/20 to-transparent" />
+                      <div className="mt-5 xl:mt-6 h-[1px] bg-gradient-to-r from-transparent via-[#F5E2B8]/25 to-transparent" />
                     )}
                   </div>
                 );
@@ -285,14 +286,14 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
               const IconComp = val.icon;
               return (
                 <div key={idx} className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-full border border-[#C5A56A]/70 flex items-center justify-center flex-shrink-0 text-[#C5A56A]">
-                    <IconComp className="w-5 h-5 stroke-[1.6]" />
+                  <div className="w-11 h-11 rounded-full border border-[#F5E2B8]/80 bg-[#142C1E]/30 flex items-center justify-center flex-shrink-0 text-[#FCEECB]">
+                    <IconComp className="w-5.5 h-5.5 stroke-[1.7]" />
                   </div>
                   <div>
-                    <h3 className="text-[11px] font-bold uppercase tracking-wider text-white">
+                    <h3 className="text-[11.5px] font-bold uppercase tracking-wider text-white">
                       {val.line1} {val.line2}
                     </h3>
-                    <p className="text-[10px] text-[#A8A498] mt-0.5">
+                    <p className="text-[11px] text-[#FAF8F5]/85 mt-0.5 leading-snug">
                       {val.description}
                     </p>
                   </div>

@@ -26,7 +26,7 @@ export function Footer({ currentLocale = "de" }: FooterProps) {
           {/* Col 1: Brand & Logo with Official Vector Emblem */}
           <div className="lg:col-span-3 flex flex-col justify-between">
             <div>
-              <Logo variant="light" locale={currentLocale} />
+              <Logo variant="light" locale={currentLocale} size="lg" />
               <p className="mt-4 text-xs sm:text-sm text-text-secondary leading-relaxed font-sans max-w-xs">
                 {dict.footer.slogan}
               </p>

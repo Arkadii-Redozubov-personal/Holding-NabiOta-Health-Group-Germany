@@ -25,25 +25,25 @@ export function Logo({
 
   const sizeClasses = {
     sm: {
-      imgWidth: 42,
-      imgHeight: 36,
-      brandText: "text-lg md:text-[20px]",
-      subText: "text-[7.5px] md:text-[8.5px] tracking-[0.13em]",
+      imgWidth: 48,
+      imgHeight: 42,
+      brandText: "text-[21px] sm:text-[23px]",
+      subText: "text-[8px] sm:text-[9px] tracking-[0.14em]",
       gap: "gap-2.5",
     },
     md: {
-      imgWidth: 52,
-      imgHeight: 44,
-      brandText: "text-xl md:text-[23px]",
-      subText: "text-[8.5px] md:text-[9.5px] tracking-[0.14em]",
-      gap: "gap-2.5",
+      imgWidth: 64,
+      imgHeight: 56,
+      brandText: "text-[26px] sm:text-[29px] xl:text-[32px]",
+      subText: "text-[9.5px] sm:text-[10.5px] xl:text-[11.2px] tracking-[0.15em]",
+      gap: "gap-3 sm:gap-3.5",
     },
     lg: {
-      imgWidth: 68,
-      imgHeight: 58,
-      brandText: "text-2xl md:text-[28px]",
-      subText: "text-[10px] md:text-[11px] tracking-[0.14em]",
-      gap: "gap-3",
+      imgWidth: 78,
+      imgHeight: 68,
+      brandText: "text-[30px] sm:text-[34px] xl:text-[37px]",
+      subText: "text-[11px] sm:text-[12px] xl:text-[13px] tracking-[0.17em]",
+      gap: "gap-3.5 sm:gap-4",
     },
   };
 
@@ -64,11 +64,11 @@ export function Logo({
           width={currentSize.imgWidth}
           height={currentSize.imgHeight}
           priority
-          className="object-contain drop-shadow-[0_2px_10px_rgba(190,160,107,0.3)]"
+          className="object-contain drop-shadow-[0_2px_12px_rgba(219,171,66,0.35)]"
         />
       </div>
 
-      {/* Brand Typography 1:1 matching Photo 3 */}
+      {/* Brand Typography with exact gold gradient sheen matching reference */}
       {showText && (
         <div className="flex flex-col justify-center select-none pt-0.5">
           <span
@@ -76,13 +76,11 @@ export function Logo({
               "font-display font-bold leading-none uppercase tracking-[0.02em]",
               currentSize.brandText,
               isDarkBg
-                ? "text-[#E2C388] bg-clip-text text-transparent bg-gradient-to-r from-[#F5DEB3] via-[#E2C388] to-[#C9A35A]"
-                : "text-[#8F7745] bg-clip-text text-transparent bg-gradient-to-r from-[#8F7745] via-[#A88C52] to-[#735A27]"
+                ? "bg-clip-text text-transparent bg-gradient-to-b from-[#FFF5D5] via-[#E2B34B] to-[#9E731C]"
+                : "bg-clip-text text-transparent bg-gradient-to-b from-[#9E7A32] via-[#856524] to-[#634912]"
             )}
             style={{
-              textShadow: isDarkBg
-                ? "0 2px 8px rgba(0,0,0,0.4)"
-                : "none",
+              filter: isDarkBg ? "drop-shadow(0 1px 2px rgba(0,0,0,0.5))" : "none",
             }}
           >
             NABIOTA
@@ -91,8 +89,11 @@ export function Logo({
             className={cn(
               "font-sans font-bold uppercase mt-1 leading-none",
               currentSize.subText,
-              isDarkBg ? "text-[#DFC48A]" : "text-[#7B6A45]"
+              isDarkBg ? "text-[#E8CD8C]" : "text-[#7B6A45]"
             )}
+            style={{
+              textShadow: isDarkBg ? "0 1px 2px rgba(0,0,0,0.4)" : "none",
+            }}
           >
             HEALTH GROUP GERMANY
           </span>
