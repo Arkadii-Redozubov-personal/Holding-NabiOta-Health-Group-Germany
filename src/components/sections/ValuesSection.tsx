@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { Container } from "@/components/layout/Container";
 import { Diamond, ShieldCheck, Handshake, Eye, Heart, Lightbulb, LucideIcon } from "lucide-react";
 import { getDictionary, SupportedLocale } from "@/lib/i18n";
@@ -105,25 +106,19 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
   const dict = getDictionary(currentLocale);
 
   return (
-    <section className="relative bg-[#FAF7F2] py-16 sm:py-20 lg:py-24 border-b border-[#EAE5DA] overflow-hidden">
-      {/* ── Botanical Leaf Framing (Top-Left) ─────────────── */}
-      <div className="absolute -top-12 -left-12 w-64 sm:w-80 h-64 sm:h-80 opacity-20 pointer-events-none text-[#1A3822]">
-        <svg viewBox="0 0 320 320" fill="currentColor">
-          <path d="M20 280 C40 140 160 30 280 20 C240 160 140 250 20 280 Z" />
-          <path d="M70 230 C120 170 180 120 260 40" stroke="currentColor" strokeWidth="2.5" fill="none" />
-          <circle cx="160" cy="130" r="5" fill="#E2C485" opacity="0.8" />
-          <circle cx="210" cy="90" r="3.5" fill="#E2C485" opacity="0.7" />
-        </svg>
-      </div>
-
-      {/* ── Botanical Leaf Framing (Bottom-Right) ──────────── */}
-      <div className="absolute -bottom-16 -right-12 w-72 sm:w-96 h-72 sm:h-96 opacity-25 pointer-events-none text-[#1A3822] rotate-12">
-        <svg viewBox="0 0 320 320" fill="currentColor">
-          <path d="M300 20 C260 160 140 270 20 280 C60 140 160 50 300 20 Z" />
-          <path d="M250 70 C190 140 130 190 40 260" stroke="currentColor" strokeWidth="2.5" fill="none" />
-          <circle cx="170" cy="150" r="6" fill="#E2C485" opacity="0.8" />
-          <circle cx="120" cy="190" r="4" fill="#E2C485" opacity="0.7" />
-        </svg>
+    <section className="relative py-16 sm:py-20 lg:py-24 border-b border-[#EAE5DA] overflow-hidden bg-[#FCFAF5]">
+      {/* ── Authentic Botanical Leaf Background Image (/images/bacground.png) ── */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <Image
+          src="/images/bacground.png"
+          alt="Botanical background with leaves and dew drops"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center opacity-90"
+        />
+        {/* Soft center ambient gradient to ensure crisp typography readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#FCFAF5]/30 to-transparent" />
       </div>
 
       <Container size="wide" className="relative z-10">
@@ -155,7 +150,7 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
                 className="flex flex-col items-center text-center px-2 sm:px-3 lg:px-4 py-2 group"
               >
                 {/* Gold outlined circle icon */}
-                <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-full border border-[#D5B878] flex items-center justify-center text-[#B89650] mb-3.5 shadow-[0_0_12px_rgba(213,184,120,0.18)] transition-all duration-300 group-hover:scale-105 group-hover:border-[#B89650] group-hover:bg-[#B89650]/10">
+                <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-full border border-[#D5B878] bg-white/60 backdrop-blur-sm flex items-center justify-center text-[#B89650] mb-3.5 shadow-[0_0_12px_rgba(213,184,120,0.18)] transition-all duration-300 group-hover:scale-105 group-hover:border-[#B89650] group-hover:bg-[#B89650]/15">
                   <Icon className="w-6 h-6 stroke-[1.5]" />
                 </div>
 
