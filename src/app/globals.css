@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-serif), Georgia, serif;
+  --font-sans: var(--font-sans), system-ui, sans-serif;
+
+  --color-forest-950: #0D1910;
+  --color-forest-900: #112117;
+  --color-forest-850: #14271B;
+  --color-forest-800: #1A3021;
+  --color-forest-700: #253B2D;
+  --color-forest-600: #334B3C;
+
+  --color-ivory-50: #FBFAF6;
+  --color-ivory-100: #F5F2ED;
+  --color-ivory-200: #EAE6DD;
+  --color-ivory-300: #DDD9CD;
+
+  --color-gold-300: #DFC89E;
+  --color-gold-400: #D7BF95;
+  --color-gold-500: #BEA06B;
+  --color-gold-600: #A79163;
+  --color-gold-700: #8F7745;
+
+  --color-text-primary: #132018;
+  --color-text-secondary: #5E625A;
+  --color-text-on-dark: #F8F5EE;
+}
+
+:root {
+  --container-max: 1220px;
+}
+
+/* Custom editorial typography & aesthetics */
+.font-display {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+/* Luxury hairline borders */
+.border-gold-subtle {
+  border-color: rgba(190, 160, 107, 0.45);
+}
+
+.border-forest-subtle {
+  border-color: rgba(25, 38, 28, 0.12);
+}
+
+.border-dark-subtle {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Botanical decorative backgrounds */
+.bg-botanical-dark {
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(53, 73, 54, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(190, 160, 107, 0.08) 0%, transparent 50%);
+}
+
+.bg-botanical-light {
+  background-image: 
+    radial-gradient(circle at 90% 10%, rgba(190, 160, 107, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(53, 73, 54, 0.04) 0%, transparent 45%);
+}
+
+/* Glassmorphism restrained for sticky header only */
+.header-glass {
+  background-color: rgba(17, 33, 23, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0D1910;
+}
+::-webkit-scrollbar-thumb {
+  background: #334B3C;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #BEA06B;
+}

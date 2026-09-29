@@ -1,0 +1,165 @@
+import { Service } from "@/types/content";
+
+export const holdingServices: Service[] = [
+  {
+    id: "mvz",
+    slug: "medizinische-versorgungszentren",
+    title: "Medizinische Versorgungszentren",
+    subtitle: "Ambulante Fachkompetenz",
+    shortDescription: "Moderne ambulante Versorgung auf höchstem medizinischem Niveau.",
+    description:
+      "Unsere MVZ bieten Patientinnen und Patienten eine wohnortnahe, sektorenübergreifende Diagnostik und Behandlung mit modernster Medizintechnik und interdisziplinärem Ärzteaustausch.",
+    image: "/images/services/mvz.jpg",
+    iconName: "Building2",
+    category: "Versorgung",
+    benefits: [
+      "Kurze Wege zwischen Haus- und Facharzt",
+      "Modernste apparative Ausstattung",
+      "Zentrale Terminvergabe ohne lange Wartezeiten",
+      "Ganzheitliche Fallbetreuung",
+    ],
+    processSteps: [
+      { step: 1, title: "Erstkonsultation", text: "Umfassende Anamnese und Klärung der Symptomatik." },
+      { step: 2, title: "Interdisziplinäre Diagnostik", text: "Zügige Abklärung direkt im Zentrum." },
+      { step: 3, title: "Individueller Therapieplan", text: "Abgestimmt mit Fachärzten und Reha-Spezialisten." },
+    ],
+  },
+  {
+    id: "diagnostikzentren",
+    slug: "diagnostikzentren",
+    title: "Diagnostikzentren",
+    subtitle: "Präzisionsradiologie & Bildgebung",
+    shortDescription: "Präzise Diagnostik für fundierte Entscheidungen.",
+    description:
+      "High-End Schnittbilddiagnostik mit schnellen Terminoptionen, Niedrigdosis-CT und hochauflösendem MRT zur Früherkennung und Behandlungsplanung.",
+    image: "/images/services/diagnostik.jpg",
+    iconName: "ActivitySquare",
+    category: "Diagnostik",
+    benefits: [
+      "Hochauflösende 3-Tesla-MRT und Niedrigdosis-CT",
+      "Erfahrene Fachärzte für Radiologie vor Ort",
+      "Digitaler Bild- und Befundabruf für zuweisende Ärzte",
+      "Angenehme Untersuchungsatmosphäre für Angstpatienten",
+    ],
+    processSteps: [
+      { step: 1, title: "Indikationsstellung", text: "Prüfung der Überweisung und Auswahl des schonendsten Verfahrens." },
+      { step: 2, title: "Scandurchführung", text: "Schmerzfreie, präzise Aufnahmen mit modernstem Komfort." },
+      { step: 3, title: "Facharztbefund", text: "Detaillierte Analyse und Befundbesprechung binnen 24 Stunden." },
+    ],
+  },
+  {
+    id: "therapie-reha",
+    slug: "therapie-rehabilitation",
+    title: "Therapie & Rehabilitation",
+    subtitle: "Mobilisation & Lebensqualität",
+    shortDescription: "Individuelle Therapiekonzepte für mehr Lebensqualität.",
+    description:
+      "Gezielte physiotherapeutische und rehabilitative Maßnahmen zur schnellen und nachhaltigen Wiederherstellung Ihrer Beweglichkeit und Alltagsfitness.",
+    image: "/images/services/therapie.jpg",
+    iconName: "UserCheck",
+    category: "Therapie",
+    benefits: [
+      "Zertifizierte Therapeuten mit langjähriger Erfahrung",
+      "Ganzheitliche Betrachtung des Bewegungsapparates",
+      "Enge Abstimmung mit operierenden Ärzten",
+      "Moderne Trainingsflächen und Regenerationsbereiche",
+    ],
+    processSteps: [
+      { step: 1, title: "Funktionsstatus", text: "Präzise Erfassung von Beweglichkeit, Kraft und Schmerzpunkten." },
+      { step: 2, title: "Therapieblock", text: "Kombination aus manuellen Techniken und gerätegestütztem Training." },
+      { step: 3, title: "Heimübungsprogramm", text: "Nachhaltige Sicherung der Mobilität im Alltag." },
+    ],
+  },
+  {
+    id: "homecare-pflege",
+    slug: "homecare-pflege",
+    title: "HomeCare & Pflege",
+    subtitle: "Häusliche Geborgenheit & Betreuung",
+    shortDescription: "Professionelle Pflege und Betreuung in einem vertrauten Umfeld.",
+    description:
+      "Einfühlsame Pflegekräfte sichern eine würdevolle und fachgerechte Versorgung in den eigenen vier Wänden, abgestimmt auf persönliche Bedürfnisse.",
+    image: "/images/services/homecare.jpg",
+    iconName: "Home",
+    category: "Pflege",
+    benefits: [
+      "Verlässliche Betreuung im gewohnten häuslichen Umfeld",
+      "Examinierte Fachkräfte für anspruchsvolle Behandlungspflege",
+      "Entlastung und professionelle Anleitung von Angehörigen",
+      "24h Rufbereitschaft bei medizinischen Notlagen",
+    ],
+    processSteps: [
+      { step: 1, title: "Pflegeberatung", text: "Gemeinsames Gespräch vor Ort zur Ermittlung des Pflegebedarfs." },
+      { step: 2, title: "Versorgungsplan", text: "Transparente Festlegung aller Pflegeleistungen und Termine." },
+      { step: 3, title: "Kontinuierliche Pflege", text: "Zuverlässige Begleitung durch feste Pflegekräfte." },
+    ],
+  },
+  {
+    id: "wundversorgung",
+    slug: "wundversorgung",
+    title: "Wundversorgung",
+    subtitle: "Moderne Wundtherapie",
+    shortDescription: "Spezialisierte Versorgung für eine bessere Heilung.",
+    description:
+      "Zertifizierte Wundexperten behandeln chronische und schwer heilende Wunden mit modernsten Verbandsmaterialien und phasengerechten Therapiekonzepten.",
+    image: "/images/services/wundversorgung.jpg",
+    iconName: "PlusCircle",
+    category: "Spezialversorgung",
+    benefits: [
+      "Zertifizierte ICW-Wundmanager",
+      "Moderne hydroaktive Wundauflagen und Unterdrucktherapie",
+      "Schmerzarme Verbandswechsel",
+      "Fotodokumentierte Heilungsverläufe",
+    ],
+    processSteps: [
+      { step: 1, title: "Wundanalyse", text: "Exakte Beurteilung von Wundstadium, Tiefe und Begleiterkrankungen." },
+      { step: 2, title: "Therapieeinleitung", text: "Phasengerechte Wundbettvorbereitung und moderner Verband." },
+      { step: 3, title: "Heilungskontrolle", text: "Regelmäßige Dokumentation und Anpassung der Therapiestrategie." },
+    ],
+  },
+  {
+    id: "personalvermittlung",
+    slug: "medizinische-personalvermittlung",
+    title: "Medizinische Personalvermittlung",
+    subtitle: "Fachkräfte für das Gesundheitswesen",
+    shortDescription: "Qualifizierte Fachkräfte für eine starke Gesundheitsversorgung.",
+    description:
+      "Passgenaue Vermittlung und nachhaltige Integration von ärztlichem Personal, Pflegefachkräften und medizinischen Assistenzberufen.",
+    image: "/images/services/staffing.jpg",
+    iconName: "Users2",
+    category: "Personal & Karriere",
+    benefits: [
+      "Strukturierte Auswahlprozesse nach deutschen Fachstandards",
+      "Begleitung bei Approbation, Berufserlaubnis und Sprachkursen",
+      "Langfristige Win-Win-Lösungen für Kliniken und Bewerber",
+      "Ganzheitliche Integrations- und Onboarding-Konzepte",
+    ],
+    processSteps: [
+      { step: 1, title: "Bedarfserfassung", text: "Detailliertes Anforderungsprofil für Kliniken oder Praxen." },
+      { step: 2, title: "Kandidatenmatching", text: "Sorgfältige Eignungsprüfung und persönliche Interviews." },
+      { step: 3, title: "Erfolgreiche Integration", text: "Unterstützung bis zum erfolgreichen Start und darüber hinaus." },
+    ],
+  },
+  {
+    id: "innovationsmanagement",
+    slug: "projekt-innovationsmanagement",
+    title: "Projekt- & Innovationsmanagement",
+    subtitle: "Zukunftskonzepte & Digitalisierung",
+    shortDescription: "Zukunftsorientierte Konzepte für ein modernes Gesundheitswesen.",
+    description:
+      "Entwicklung intelligenter Digitalisierungsstrategien, zukunftsfähiger Gesundheitscampus-Projekte und nachhaltiger Versorgungsmodelle.",
+    image: "/images/services/innovation.jpg",
+    iconName: "Cog",
+    category: "Innovation",
+    benefits: [
+      "Digitale Vernetzung aller Versorgungsstufen",
+      "Wirtschaftliche Tragfähigkeit medizinischer Großprojekte",
+      "ESG-orientierte Planung von Gesundheitsimmobilien",
+      "Agiles Projektmanagement für spürbare Qualitätsverbesserungen",
+    ],
+    processSteps: [
+      { step: 1, title: "Potenzialanalyse", text: "Identifikation von Effizienz- und Innovationschancen." },
+      { step: 2, title: "Konzeptdesign", text: "Entwicklung praxistauglicher und regulatorisch geprüfter Lösungen." },
+      { step: 3, title: "Rollout & Controlling", text: "Strukturierte Umsetzung mit messbaren Qualitätsmeilensteinen." },
+    ],
+  },
+];
