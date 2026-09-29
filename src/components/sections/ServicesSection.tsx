@@ -17,7 +17,7 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
   const rowTwoServices = holdingServices.slice(3, 7);
 
   return (
-    <section className="bg-[#FAF8F5] py-16 sm:py-20 lg:py-28 border-b border-forest-900/10">
+    <section className="bg-[#FAF8F5] py-14 sm:py-18 lg:py-22 border-b border-[#EAE5DA]">
       <Container size="wide">
         <SectionHeading
           theme="light"
@@ -26,22 +26,24 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
           action={
             <Link
               href={`/${currentLocale}/services`}
-              className="inline-flex items-center gap-2 text-sm font-semibold text-forest-900 hover:text-gold-600 transition-colors group mt-2"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#112117] hover:text-[#BEA06B] transition-colors group mt-2"
             >
               <span>{dict.services.cta}</span>
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-gold-500" />
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 text-[#BEA06B]" />
             </Link>
           }
         />
 
-        <div className="space-y-4 sm:space-y-5">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <div className="space-y-4 sm:space-y-4.5 mt-8 sm:mt-10">
+          {/* Row 1: 3 Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4.5">
             {rowOneServices.map((service) => (
               <ServiceCard key={service.id} service={service} currentLocale={currentLocale} />
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+          {/* Row 2: 4 Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-3.5 xl:gap-4">
             {rowTwoServices.map((service) => (
               <ServiceCard key={service.id} service={service} currentLocale={currentLocale} />
             ))}

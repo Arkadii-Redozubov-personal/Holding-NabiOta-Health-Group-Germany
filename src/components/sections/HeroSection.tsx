@@ -112,7 +112,7 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
 
   return (
     <section className="relative w-full h-screen min-h-[640px] max-h-[1100px] flex items-center bg-[#07130B] text-[#FAF8F5] overflow-hidden">
-      {/* ── Background: New High-Res Headquarters building image ──── */}
+      {/* ── Background: Building photo ─────────────────── */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <Image
           src="/images/hero/building_new.png"
@@ -152,12 +152,12 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
         <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#07130B]/50 to-transparent pointer-events-none" />
       </div>
 
-      {/* ── Desktop Right Panel: Curved Arc from Top to Bottom with GLASS EFFECT + SLIGHT ZOOM ── */}
-      <div className="hidden lg:block absolute top-0 right-0 bottom-0 w-[380px] xl:w-[440px] 2xl:w-[470px] z-10 pointer-events-auto overflow-hidden">
+      {/* ── Desktop Right Panel: Graceful Glassmorphism Arc from Top to Bottom ── */}
+      <div className="hidden lg:block absolute top-0 right-0 bottom-0 w-[340px] xl:w-[380px] 2xl:w-[410px] z-10 pointer-events-auto overflow-hidden">
         {/* SVG clip-path & curved gold line definition */}
         <svg
           className="absolute inset-0 w-full h-full pointer-events-none z-20"
-          viewBox="0 0 460 1000"
+          viewBox="0 0 400 1000"
           preserveAspectRatio="none"
         >
           <defs>
@@ -178,13 +178,13 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
             </filter>
 
             <clipPath id="heroCurvedPanelClip">
-              <path d="M 65 0 C 10 320, 10 680, 65 1000 L 460 1000 L 460 0 Z" />
+              <path d="M 45 0 C 15 350, 15 650, 45 1000 L 400 1000 L 400 0 Z" />
             </clipPath>
           </defs>
 
-          {/* Glowing golden arc stroke running from top to bottom */}
+          {/* Glowing golden arc stroke running gracefully from top to bottom */}
           <path
-            d="M 65 0 C 10 320, 10 680, 65 1000"
+            d="M 45 0 C 15 350, 15 650, 45 1000"
             fill="none"
             stroke="url(#heroGoldArcGrad)"
             strokeWidth="1.8"
@@ -192,38 +192,21 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
           />
         </svg>
 
-        {/* ── Glass Panel Body with Optical Zoom & Frosted Glass ── */}
+        {/* ── Frosted Dark Emerald Glass Layer ── */}
         <div
           className="absolute inset-0 w-full h-full"
           style={{
             clipPath: "url(#heroCurvedPanelClip)",
             WebkitClipPath: "url(#heroCurvedPanelClip)",
+            background:
+              "linear-gradient(180deg, rgba(8, 20, 12, 0.78) 0%, rgba(10, 26, 16, 0.86) 50%, rgba(7, 18, 11, 0.90) 100%)",
+            backdropFilter: "blur(22px) saturate(130%) brightness(0.9)",
+            WebkitBackdropFilter: "blur(22px) saturate(130%) brightness(0.9)",
           }}
-        >
-          {/* Magnified & softly blurred background for glass refraction effect */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <Image
-              src="/images/hero/building_new.png"
-              alt="Refraction backdrop"
-              fill
-              className="object-cover object-right scale-[1.08] filter blur-[4px] opacity-75"
-            />
-          </div>
-
-          {/* Frosted glass tint & backdrop blur */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(8, 20, 12, 0.72) 0%, rgba(10, 26, 16, 0.82) 50%, rgba(7, 18, 11, 0.88) 100%)",
-              backdropFilter: "blur(20px) saturate(135%) brightness(0.88)",
-              WebkitBackdropFilter: "blur(20px) saturate(135%) brightness(0.88)",
-            }}
-          />
-        </div>
+        />
 
         {/* Content inside the curved glass panel */}
-        <div className="relative z-30 h-full flex flex-col justify-center pl-16 pr-8 xl:pr-12 pt-16">
+        <div className="relative z-30 h-full flex flex-col justify-center pl-14 xl:pl-16 pr-8 xl:pr-10 pt-20">
           <div className="space-y-7 xl:space-y-8">
             {heroValues.map((val, idx) => {
               const IconComp = val.icon;
@@ -245,7 +228,7 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
                           </>
                         )}
                       </h3>
-                      <p className="text-[11px] xl:text-[12px] text-[#A8A498] leading-relaxed font-light mt-1 max-w-[240px]">
+                      <p className="text-[11px] xl:text-[12px] text-[#A8A498] leading-relaxed font-light mt-1 max-w-[230px]">
                         {val.description}
                       </p>
                     </div>

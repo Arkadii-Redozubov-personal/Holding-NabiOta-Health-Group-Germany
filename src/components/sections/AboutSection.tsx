@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Handshake, Lightbulb, ShieldCheck } from "lucide-react";
 import { getDictionary, SupportedLocale } from "@/lib/i18n";
@@ -17,12 +16,11 @@ export function AboutSection({ currentLocale = "de" }: AboutSectionProps) {
     <section className="bg-[#FAF7F0] overflow-hidden relative border-b border-[#E8E2D4]">
       {/* ── Full-width banner: Image FLUSH to left edge ─────────── */}
       <div className="w-full flex flex-col lg:flex-row items-stretch">
-        {/* ── LEFT: Doctor-Patient Photo FLUSH TO THE EDGE with GOLD METALLIC ARC ─ */}
-        <div className="w-full lg:w-[42%] xl:w-[40%] 2xl:w-[38%] relative min-h-[380px] sm:min-h-[460px] lg:min-h-[520px] flex-shrink-0 overflow-hidden">
-          {/* SVG Definition & Metallic Golden Arc Border */}
+        {/* ── LEFT: Doctor-Patient Photo FLUSH TO THE EDGE with LOCKED GOLD METALLIC ARC ─ */}
+        <div className="w-full lg:w-[44%] xl:w-[42%] 2xl:w-[40%] relative min-h-[360px] sm:min-h-[440px] lg:min-h-[500px] flex-shrink-0">
           <svg
-            className="absolute inset-0 w-full h-full pointer-events-none z-20"
-            viewBox="0 0 500 500"
+            className="w-full h-full block"
+            viewBox="0 0 540 500"
             preserveAspectRatio="none"
           >
             <defs>
@@ -35,71 +33,55 @@ export function AboutSection({ currentLocale = "de" }: AboutSectionProps) {
                 <stop offset="100%" stopColor="#DFC894" />
               </linearGradient>
 
-              {/* Soft gold ambient shadow for depth */}
-              <filter id="goldArcShadow" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="4.5" result="blur" />
-                <feMerge>
-                  <feMergeNode in="blur" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-
               {/* ClipPath: Left side touches screen edge (x=0), right side sweeps out in convex curve */}
               <clipPath id="aboutDoctorArcMask">
-                <path d="M 0 0 L 385 0 C 475 140, 475 360, 385 500 L 0 500 Z" />
+                <path d="M 0 0 L 415 0 C 510 140, 510 360, 415 500 L 0 500 Z" />
               </clipPath>
             </defs>
 
+            {/* Doctor and patient photo clipped to the exact arc with zero gap */}
+            <g clipPath="url(#aboutDoctorArcMask)">
+              <image
+                href="/images/about/doctor-patient.jpg"
+                x="0"
+                y="0"
+                width="540"
+                height="500"
+                preserveAspectRatio="xMidYMid slice"
+              />
+            </g>
+
             {/* Ambient gold glow */}
             <path
-              d="M 385 0 C 475 140, 475 360, 385 500"
+              d="M 415 0 C 510 140, 510 360, 415 500"
               fill="none"
               stroke="#C9A35A"
               strokeWidth="11"
               strokeOpacity="0.25"
-              filter="url(#goldArcShadow)"
             />
 
             {/* Main metallic gold ribbon arc */}
             <path
-              d="M 385 0 C 475 140, 475 360, 385 500"
+              d="M 415 0 C 510 140, 510 360, 415 500"
               fill="none"
               stroke="url(#aboutGoldMetallic)"
-              strokeWidth="5"
+              strokeWidth="5.5"
               strokeLinecap="round"
             />
 
             {/* Sharp inner highlight reflection */}
             <path
-              d="M 385 0 C 475 140, 475 360, 385 500"
+              d="M 415 0 C 510 140, 510 360, 415 500"
               fill="none"
               stroke="#FFFFFF"
               strokeWidth="1.2"
               strokeOpacity="0.75"
             />
           </svg>
-
-          {/* Photo clipped to the golden arc, completely flush to the left edge */}
-          <div
-            className="absolute inset-0 w-full h-full"
-            style={{
-              clipPath: "url(#aboutDoctorArcMask)",
-              WebkitClipPath: "url(#aboutDoctorArcMask)",
-            }}
-          >
-            <Image
-              src="/images/about/doctor-patient.jpg"
-              alt="Ärztliche Fürsorge bei NabiOta Health Group"
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 42vw"
-              className="object-cover object-center scale-[1.03]"
-            />
-          </div>
         </div>
 
         {/* ── RIGHT: Center Content & Benefits (Structured matching Photo 2) ─ */}
-        <div className="flex-1 flex flex-col xl:flex-row items-center justify-between py-12 sm:py-16 lg:py-20 pl-6 sm:pl-10 lg:pl-10 xl:pl-14 pr-6 sm:pr-10 lg:pr-14 xl:pr-18 gap-8 xl:gap-10">
+        <div className="flex-1 flex flex-col xl:flex-row items-center justify-between py-10 sm:py-14 lg:py-16 pl-6 sm:pl-10 lg:pl-10 xl:pl-14 pr-6 sm:pr-10 lg:pr-12 xl:pr-16 gap-8 xl:gap-10">
           {/* ── Center Content: Eyebrow, Heading, Text, Button ── */}
           <div className="flex-1 max-w-xl flex flex-col justify-center">
             {/* Eyebrow */}
@@ -108,7 +90,7 @@ export function AboutSection({ currentLocale = "de" }: AboutSectionProps) {
             </span>
 
             {/* Heading in Playfair Display serif */}
-            <h2 className="font-display text-[32px] sm:text-[38px] xl:text-[42px] font-normal leading-[1.18] tracking-[-0.01em] text-[#1A1915] mb-5">
+            <h2 className="font-display text-[30px] sm:text-[36px] xl:text-[40px] font-normal leading-[1.18] tracking-[-0.01em] text-[#1A1915] mb-5">
               {dict.about.heading}
             </h2>
 

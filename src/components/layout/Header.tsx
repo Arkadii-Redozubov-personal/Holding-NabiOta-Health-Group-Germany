@@ -91,7 +91,7 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
 
             {/* Desktop Navigation Links */}
             <nav
-              className="hidden lg:flex items-center gap-6 xl:gap-8"
+              className="hidden lg:flex items-center gap-3.5 xl:gap-5 2xl:gap-7"
               aria-label="Hauptnavigation"
             >
               {localizedNav.map((item) => {
