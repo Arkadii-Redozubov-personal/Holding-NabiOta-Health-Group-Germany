@@ -7,16 +7,16 @@ interface AreasStripProps {
   currentLocale?: SupportedLocale;
 }
 
-/* ── Custom SVGs matching reference Photo exactly ───────────────── */
+/* ── Custom SVGs matching reference Photo ────────────────────────── */
 
 // 1. Stethoscope
-function StethoscopeIcon({ className = "w-6 h-6" }: { className?: string }) {
+function StethoscopeIcon({ className = "w-7 h-7" }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 28 28"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.25"
+      strokeWidth="1.3"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
@@ -30,13 +30,13 @@ function StethoscopeIcon({ className = "w-6 h-6" }: { className?: string }) {
 }
 
 // 2. Microscope
-function MicroscopeIcon({ className = "w-6 h-6" }: { className?: string }) {
+function MicroscopeIcon({ className = "w-7 h-7" }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 28 28"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.25"
+      strokeWidth="1.3"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
@@ -60,13 +60,13 @@ function MicroscopeIcon({ className = "w-6 h-6" }: { className?: string }) {
 }
 
 // 3. Heart with ECG pulse inside
-function HeartPulseIcon({ className = "w-6 h-6" }: { className?: string }) {
+function HeartPulseIcon({ className = "w-7 h-7" }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 28 28"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.25"
+      strokeWidth="1.3"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
@@ -77,25 +77,22 @@ function HeartPulseIcon({ className = "w-6 h-6" }: { className?: string }) {
   );
 }
 
-// 4. Pflege: 3 people bust outline (matching screenshot)
-function PflegeIcon({ className = "w-6 h-6" }: { className?: string }) {
+// 4. Pflege: 3 people bust outline
+function PflegeIcon({ className = "w-7 h-7" }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 28 28"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.25"
+      strokeWidth="1.3"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
     >
-      {/* Center person */}
       <circle cx="14" cy="9" r="3" />
       <path d="M8.5 21.5c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5" />
-      {/* Left person */}
       <circle cx="7.5" cy="11.5" r="2.2" />
       <path d="M3 21.5c0-2.2 1.8-4 4-4.2" />
-      {/* Right person */}
       <circle cx="20.5" cy="11.5" r="2.2" />
       <path d="M21 17.3c2.2.2 4 2 4 4.2" />
     </svg>
@@ -103,13 +100,13 @@ function PflegeIcon({ className = "w-6 h-6" }: { className?: string }) {
 }
 
 // 5. Org Chart: 1 box top, line down, 3 boxes bottom
-function OrgChartIcon({ className = "w-6 h-6" }: { className?: string }) {
+function OrgChartIcon({ className = "w-7 h-7" }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 28 28"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.25"
+      strokeWidth="1.3"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
@@ -126,13 +123,13 @@ function OrgChartIcon({ className = "w-6 h-6" }: { className?: string }) {
 }
 
 // 6. Globe with latitude & longitude lines
-function GlobeIcon({ className = "w-6 h-6" }: { className?: string }) {
+function GlobeIcon({ className = "w-7 h-7" }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 28 28"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.25"
+      strokeWidth="1.3"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
@@ -145,13 +142,13 @@ function GlobeIcon({ className = "w-6 h-6" }: { className?: string }) {
 }
 
 // Infinity icon for "Eine Mission"
-function InfinityIcon({ className = "w-6 h-6" }: { className?: string }) {
+function InfinityIcon({ className = "w-8 h-8" }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 32 32"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.4"
+      strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
@@ -265,23 +262,23 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
   ];
 
   return (
-    <div className="w-full bg-[#FCFAF6] border-t border-[#EAE5DA] py-2 sm:py-2.5 lg:py-3 overflow-x-auto shadow-[0_-2px_12px_rgba(0,0,0,0.03)]">
+    <div className="w-full bg-[#FCFAF6] border-t border-[#EAE5DA] py-3.5 sm:py-4 lg:py-4.5 overflow-x-auto shadow-[0_-2px_14px_rgba(0,0,0,0.03)]">
       <Container size="wide">
-        <div className="flex items-center justify-between min-w-[980px] lg:min-w-0">
-          {/* ── Left: 6 Category Icons with Labels ──────────── */}
-          <div className="flex items-center justify-between flex-1 gap-2 xl:gap-3">
+        <div className="flex items-center justify-between min-w-[1040px] lg:min-w-0">
+          {/* ── Left: 6 Category Icons with Labels (Larger size) ──── */}
+          <div className="flex items-center justify-between flex-1 gap-2 xl:gap-4">
             {categories.map((cat, idx) => {
               const IconComp = cat.icon;
               return (
                 <Link
                   key={idx}
                   href={`/${currentLocale}/areas/${cat.slug}`}
-                  className="group flex flex-col items-center text-center gap-1 px-1.5 py-0.5 transition-all duration-200 hover:-translate-y-0.5 flex-1"
+                  className="group flex flex-col items-center text-center gap-1.5 px-2 py-1 transition-all duration-200 hover:-translate-y-0.5 flex-1"
                 >
-                  <div className="w-7 h-7 flex items-center justify-center text-[#554F42] group-hover:text-[#BFA267] transition-colors">
-                    <IconComp className="w-5 h-5 stroke-[1.25]" />
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center text-[#4E483C] group-hover:text-[#BFA267] transition-colors">
+                    <IconComp className="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.3]" />
                   </div>
-                  <span className="text-[10px] xl:text-[10.5px] font-medium text-[#2C2A24] group-hover:text-[#BFA267] transition-colors leading-[1.2] text-center max-w-[105px]">
+                  <span className="text-[11px] sm:text-[11.5px] xl:text-[12.5px] font-semibold text-[#25231C] group-hover:text-[#BFA267] transition-colors leading-[1.25] text-center max-w-[115px]">
                     {cat.label}
                   </span>
                 </Link>
@@ -290,25 +287,25 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
           </div>
 
           {/* ── Vertical Hairline Divider ──────────────────── */}
-          <div className="w-[1px] h-9 bg-[#D8D0BF] mx-3 xl:mx-5 flex-shrink-0" />
+          <div className="w-[1px] h-11 sm:h-12 bg-[#D8D0BF] mx-4 xl:mx-6 flex-shrink-0" />
 
-          {/* ── Right: 4 Stats in one horizontal row ───────── */}
-          <div className="flex items-center gap-5 xl:gap-7 flex-shrink-0 pr-1">
+          {/* ── Right: 4 Stats in one horizontal row (Larger numbers & text) ── */}
+          <div className="flex items-center gap-6 xl:gap-8 flex-shrink-0 pr-2">
             {stats.map((stat, idx) => (
               <div
                 key={idx}
-                className="flex flex-col items-center text-center min-w-[65px] xl:min-w-[80px]"
+                className="flex flex-col items-center text-center min-w-[75px] xl:min-w-[95px]"
               >
                 {stat.num === "inf" ? (
-                  <div className="h-6 xl:h-7 flex items-center justify-center text-[#BFA267]">
-                    <InfinityIcon className="w-6 h-6 xl:w-7 xl:h-7 stroke-[1.4]" />
+                  <div className="h-8 sm:h-9 flex items-center justify-center text-[#BFA267]">
+                    <InfinityIcon className="w-8 h-8 xl:w-9 xl:h-9 stroke-[1.5]" />
                   </div>
                 ) : (
-                  <span className="font-display text-[22px] xl:text-[26px] font-normal text-[#BFA267] leading-none tracking-tight">
+                  <span className="font-display text-[28px] sm:text-[32px] xl:text-[36px] font-normal text-[#BFA267] leading-none tracking-tight">
                     {stat.num}
                   </span>
                 )}
-                <span className="text-[9px] xl:text-[10px] font-semibold text-[#2C2A24] tracking-normal whitespace-nowrap mt-0.5">
+                <span className="text-[10px] sm:text-[11px] xl:text-[11.5px] font-bold text-[#25231C] tracking-tight whitespace-nowrap mt-1">
                   {stat.label}
                 </span>
               </div>

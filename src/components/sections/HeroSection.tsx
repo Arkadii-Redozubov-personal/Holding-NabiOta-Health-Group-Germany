@@ -152,12 +152,12 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
           <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#07130B]/75 to-transparent pointer-events-none" />
         </div>
 
-        {/* ── Desktop Right Panel: Narrow at top, wider at bottom, light blur without dark occlusion ── */}
-        <div className="hidden lg:block absolute top-0 right-0 bottom-0 w-[350px] xl:w-[410px] 2xl:w-[440px] z-10 pointer-events-auto overflow-hidden">
-          {/* SVG clip-path & curved gold line definition */}
+        {/* ── Desktop Right Panel: Graceful Glassmorphism Arc from Top to Bottom ── */}
+        <div className="hidden lg:block absolute top-0 right-0 bottom-0 w-[380px] xl:w-[440px] 2xl:w-[480px] z-10 pointer-events-auto overflow-hidden">
+          {/* SVG Definitions with normalized objectBoundingBox for 100% bug-free lock */}
           <svg
             className="absolute inset-0 w-full h-full pointer-events-none z-20"
-            viewBox="0 0 450 900"
+            viewBox="0 0 1000 1000"
             preserveAspectRatio="none"
           >
             <defs>
@@ -170,50 +170,50 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
               </linearGradient>
 
               <filter id="heroArcGlow" x="-30%" y="-10%" width="160%" height="120%">
-                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feGaussianBlur stdDeviation="3.5" result="blur" />
                 <feMerge>
                   <feMergeNode in="blur" />
                   <feMergeNode in="SourceGraphic" />
                 </feMerge>
               </filter>
 
-              {/* Arc path: x=140 at top (narrower), x=18 at bottom (wider) */}
-              <clipPath id="heroCurvedPanelClip">
-                <path d="M 140 0 C 115 320, 65 620, 18 900 L 450 900 L 450 0 Z" />
+              {/* Normalized clip-path: 100% synchronized with the gold line */}
+              <clipPath id="heroCurvedPanelClip" clipPathUnits="objectBoundingBox">
+                <path d="M 0.36 0 C 0.29 0.32, 0.15 0.66, 0.02 1 L 1 1 L 1 0 Z" />
               </clipPath>
             </defs>
 
-            {/* Glowing golden arc stroke running gracefully from top to bottom */}
+            {/* Glowing golden arc stroke running gracefully from top to bottom (exactly matching 0.36 -> 0.02) */}
             <path
-              d="M 140 0 C 115 320, 65 620, 18 900"
+              d="M 360 0 C 290 320, 150 660, 20 1000"
               fill="none"
               stroke="url(#heroGoldArcGrad)"
-              strokeWidth="1.6"
+              strokeWidth="1.8"
               filter="url(#heroArcGlow)"
             />
           </svg>
 
-          {/* ── Light Frosted Glass Layer (Light blur, no heavy black darkness) ── */}
+          {/* ── Light Frosted Glass Layer (Light 6px blur, airy transparent glass) ── */}
           <div
             className="absolute inset-0 w-full h-full"
             style={{
               clipPath: "url(#heroCurvedPanelClip)",
               WebkitClipPath: "url(#heroCurvedPanelClip)",
               background:
-                "linear-gradient(180deg, rgba(10, 26, 17, 0.38) 0%, rgba(9, 24, 15, 0.46) 50%, rgba(7, 19, 12, 0.52) 100%)",
-              backdropFilter: "blur(14px) saturate(118%)",
-              WebkitBackdropFilter: "blur(14px) saturate(118%)",
+                "linear-gradient(180deg, rgba(10, 26, 17, 0.28) 0%, rgba(8, 22, 14, 0.36) 50%, rgba(6, 18, 11, 0.44) 100%)",
+              backdropFilter: "blur(6px) saturate(112%)",
+              WebkitBackdropFilter: "blur(6px) saturate(112%)",
             }}
           />
 
-          {/* Content inside the curved glass panel */}
-          <div className="relative z-30 h-full flex flex-col justify-center pl-16 xl:pl-20 pr-8 xl:pr-10 pt-16 pb-4">
+          {/* Content inside the curved glass panel (Placed safely to the right of the arc curve) */}
+          <div className="relative z-30 h-full flex flex-col justify-center pl-36 xl:pl-44 pr-6 sm:pr-8 xl:pr-10 pt-16 pb-4">
             <div className="space-y-6 xl:space-y-7">
               {heroValues.map((val, idx) => {
                 const IconComp = val.icon;
                 return (
                   <div key={idx} className="group">
-                    <div className="flex items-center gap-4 xl:gap-5">
+                    <div className="flex items-center gap-3.5 xl:gap-4.5">
                       {/* Gold outlined circle icon */}
                       <div className="w-12 h-12 xl:w-13 xl:h-13 rounded-full border border-[#C5A56A]/80 flex items-center justify-center flex-shrink-0 text-[#C5A56A] group-hover:border-[#DFCA98] group-hover:bg-[#C5A56A]/15 transition-all duration-300 shadow-[0_0_10px_rgba(197,165,106,0.18)]">
                         <IconComp className="w-5 h-5 xl:w-6 xl:h-6 stroke-[1.6]" />
@@ -229,7 +229,7 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
                             </>
                           )}
                         </h3>
-                        <p className="text-[10.5px] xl:text-[11.5px] text-[#A8A498] leading-relaxed font-light mt-1 max-w-[230px]">
+                        <p className="text-[10.5px] xl:text-[11.5px] text-[#A8A498] leading-relaxed font-light mt-1 max-w-[210px]">
                           {val.description}
                         </p>
                       </div>
@@ -237,7 +237,7 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
 
                     {/* Faint divider line between items */}
                     {idx < heroValues.length - 1 && (
-                      <div className="mt-6 xl:mt-7 h-[1px] bg-gradient-to-r from-transparent via-[#C5A56A]/20 to-transparent" />
+                      <div className="mt-5 xl:mt-6 h-[1px] bg-gradient-to-r from-transparent via-[#C5A56A]/20 to-transparent" />
                     )}
                   </div>
                 );
