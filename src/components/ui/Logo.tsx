@@ -29,6 +29,7 @@ export function Logo({
       imgHeight: 40,
       brandText: "text-[19px] sm:text-[21px]",
       subText: "text-[7.5px] sm:text-[8.2px] tracking-[0.14em]",
+      spacing: "-mt-[4px]",
       gap: "gap-2.5",
     },
     md: {
@@ -36,6 +37,7 @@ export function Logo({
       imgHeight: 54,
       brandText: "text-[23px] sm:text-[25.5px] xl:text-[28px]",
       subText: "text-[8.5px] sm:text-[9.2px] xl:text-[10px] tracking-[0.15em]",
+      spacing: "-mt-[5.5px] sm:-mt-[6.5px]",
       gap: "gap-3",
     },
     lg: {
@@ -43,6 +45,7 @@ export function Logo({
       imgHeight: 64,
       brandText: "text-[27px] sm:text-[30px] xl:text-[33px]",
       subText: "text-[9.5px] sm:text-[10.5px] xl:text-[11.5px] tracking-[0.16em]",
+      spacing: "-mt-[6.5px] sm:-mt-[8px]",
       gap: "gap-3.5",
     },
   };
@@ -73,7 +76,7 @@ export function Logo({
         <div className="flex flex-col justify-center select-none">
           <span
             className={cn(
-              "font-display font-bold leading-[0.9] uppercase tracking-[0.02em]",
+              "font-display font-bold leading-[0.82] uppercase tracking-[0.02em] block",
               currentSize.brandText,
               isDarkBg
                 ? "bg-clip-text text-transparent bg-gradient-to-b from-[#FFF5D5] via-[#E2B34B] to-[#9E731C]"
@@ -87,8 +90,9 @@ export function Logo({
           </span>
           <span
             className={cn(
-              "font-sans font-bold uppercase mt-[2px] leading-none",
+              "font-sans font-bold uppercase leading-none block",
               currentSize.subText,
+              currentSize.spacing,
               isDarkBg ? "text-[#E8CD8C]" : "text-[#7B6A45]"
             )}
             style={{
