@@ -3,12 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getDictionary, SupportedLocale } from "@/lib/i18n";
+import { AreasStrip } from "@/components/sections/AreasStrip";
 
 interface HeroSectionProps {
   currentLocale?: SupportedLocale;
 }
 
-/* ── Custom SVGs matching Photo 1 reference exactly ──────────────── */
+/* ── Custom SVGs matching Photo reference exactly ────────────────── */
 function PeopleIcon({ className = "w-6 h-6" }: { className?: string }) {
   return (
     <svg
@@ -111,133 +112,190 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
   ];
 
   return (
-    <section className="relative w-full h-screen min-h-[640px] max-h-[1100px] flex items-center bg-[#07130B] text-[#FAF8F5] overflow-hidden">
-      {/* ── Background: Building photo ─────────────────── */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <Image
-          src="/images/hero/building_new.png"
-          alt="NabiOta Health Group Germany Headquarters"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-
-        {/* ── Left side: Ultra-smooth feathered blur layer ────────── */}
-        <div
-          className="absolute inset-y-0 left-0 w-full sm:w-[70%] lg:w-[58%] pointer-events-none"
-          style={{
-            backdropFilter: "blur(20px)",
-            WebkitBackdropFilter: "blur(20px)",
-            maskImage:
-              "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 25%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.15) 75%, transparent 100%)",
-            WebkitMaskImage:
-              "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 25%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.15) 75%, transparent 100%)",
-          }}
-        />
-
-        {/* ── Left side: Smooth dark gradient overlay for text readability ── */}
-        <div
-          className="absolute inset-y-0 left-0 w-full sm:w-[75%] lg:w-[60%] pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(to right, rgba(7,19,11,0.94) 0%, rgba(7,19,11,0.88) 32%, rgba(7,19,11,0.50) 58%, rgba(7,19,11,0.15) 78%, transparent 100%)",
-          }}
-        />
-
-        {/* Top subtle vignette for header integration */}
-        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#07130B]/75 to-transparent pointer-events-none" />
-
-        {/* Bottom subtle transition to strip */}
-        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#07130B]/50 to-transparent pointer-events-none" />
-      </div>
-
-      {/* ── Desktop Right Panel: Graceful Glassmorphism Arc from Top to Bottom ── */}
-      <div className="hidden lg:block absolute top-0 right-0 bottom-0 w-[340px] xl:w-[380px] 2xl:w-[410px] z-10 pointer-events-auto overflow-hidden">
-        {/* SVG clip-path & curved gold line definition */}
-        <svg
-          className="absolute inset-0 w-full h-full pointer-events-none z-20"
-          viewBox="0 0 400 1000"
-          preserveAspectRatio="none"
-        >
-          <defs>
-            <linearGradient id="heroGoldArcGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#DFCA98" stopOpacity="0.4" />
-              <stop offset="25%" stopColor="#D4B06A" stopOpacity="0.95" />
-              <stop offset="50%" stopColor="#ECCF93" stopOpacity="1" />
-              <stop offset="75%" stopColor="#C9A257" stopOpacity="0.9" />
-              <stop offset="100%" stopColor="#DFCA98" stopOpacity="0.4" />
-            </linearGradient>
-
-            <filter id="heroArcGlow" x="-30%" y="-10%" width="160%" height="120%">
-              <feGaussianBlur stdDeviation="3.5" result="blur" />
-              <feMerge>
-                <feMergeNode in="blur" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
-
-            <clipPath id="heroCurvedPanelClip">
-              <path d="M 45 0 C 15 350, 15 650, 45 1000 L 400 1000 L 400 0 Z" />
-            </clipPath>
-          </defs>
-
-          {/* Glowing golden arc stroke running gracefully from top to bottom */}
-          <path
-            d="M 45 0 C 15 350, 15 650, 45 1000"
-            fill="none"
-            stroke="url(#heroGoldArcGrad)"
-            strokeWidth="1.8"
-            filter="url(#heroArcGlow)"
+    <section className="relative w-full h-screen min-h-[640px] max-h-[1080px] flex flex-col justify-between bg-[#07130B] text-[#FAF8F5] overflow-hidden">
+      {/* ── Main Hero Area (Fills height from Header down to Strip) ─ */}
+      <div className="relative flex-1 flex items-center overflow-hidden w-full">
+        {/* ── Background: Building photo ─────────────────── */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <Image
+            src="/images/hero/building_new.png"
+            alt="NabiOta Health Group Germany Headquarters"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
           />
-        </svg>
 
-        {/* ── Frosted Dark Emerald Glass Layer ── */}
-        <div
-          className="absolute inset-0 w-full h-full"
-          style={{
-            clipPath: "url(#heroCurvedPanelClip)",
-            WebkitClipPath: "url(#heroCurvedPanelClip)",
-            background:
-              "linear-gradient(180deg, rgba(8, 20, 12, 0.78) 0%, rgba(10, 26, 16, 0.86) 50%, rgba(7, 18, 11, 0.90) 100%)",
-            backdropFilter: "blur(22px) saturate(130%) brightness(0.9)",
-            WebkitBackdropFilter: "blur(22px) saturate(130%) brightness(0.9)",
-          }}
-        />
+          {/* ── Left side: Ultra-smooth feathered blur layer ────────── */}
+          <div
+            className="absolute inset-y-0 left-0 w-full sm:w-[70%] lg:w-[58%] pointer-events-none"
+            style={{
+              backdropFilter: "blur(20px)",
+              WebkitBackdropFilter: "blur(20px)",
+              maskImage:
+                "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 25%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.15) 75%, transparent 100%)",
+              WebkitMaskImage:
+                "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 25%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.15) 75%, transparent 100%)",
+            }}
+          />
 
-        {/* Content inside the curved glass panel */}
-        <div className="relative z-30 h-full flex flex-col justify-center pl-14 xl:pl-16 pr-8 xl:pr-10 pt-20">
-          <div className="space-y-7 xl:space-y-8">
+          {/* ── Left side: Smooth dark gradient overlay for text readability ── */}
+          <div
+            className="absolute inset-y-0 left-0 w-full sm:w-[75%] lg:w-[60%] pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(to right, rgba(7,19,11,0.92) 0%, rgba(7,19,11,0.86) 32%, rgba(7,19,11,0.48) 58%, rgba(7,19,11,0.12) 78%, transparent 100%)",
+            }}
+          />
+
+          {/* Top subtle vignette for header integration */}
+          <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#07130B]/75 to-transparent pointer-events-none" />
+        </div>
+
+        {/* ── Desktop Right Panel: Narrow at top, wider at bottom, light blur without dark occlusion ── */}
+        <div className="hidden lg:block absolute top-0 right-0 bottom-0 w-[350px] xl:w-[410px] 2xl:w-[440px] z-10 pointer-events-auto overflow-hidden">
+          {/* SVG clip-path & curved gold line definition */}
+          <svg
+            className="absolute inset-0 w-full h-full pointer-events-none z-20"
+            viewBox="0 0 450 900"
+            preserveAspectRatio="none"
+          >
+            <defs>
+              <linearGradient id="heroGoldArcGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#DFCA98" stopOpacity="0.4" />
+                <stop offset="25%" stopColor="#D4B06A" stopOpacity="0.95" />
+                <stop offset="50%" stopColor="#ECCF93" stopOpacity="1" />
+                <stop offset="75%" stopColor="#C9A257" stopOpacity="0.9" />
+                <stop offset="100%" stopColor="#DFCA98" stopOpacity="0.4" />
+              </linearGradient>
+
+              <filter id="heroArcGlow" x="-30%" y="-10%" width="160%" height="120%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+
+              {/* Arc path: x=140 at top (narrower), x=18 at bottom (wider) */}
+              <clipPath id="heroCurvedPanelClip">
+                <path d="M 140 0 C 115 320, 65 620, 18 900 L 450 900 L 450 0 Z" />
+              </clipPath>
+            </defs>
+
+            {/* Glowing golden arc stroke running gracefully from top to bottom */}
+            <path
+              d="M 140 0 C 115 320, 65 620, 18 900"
+              fill="none"
+              stroke="url(#heroGoldArcGrad)"
+              strokeWidth="1.6"
+              filter="url(#heroArcGlow)"
+            />
+          </svg>
+
+          {/* ── Light Frosted Glass Layer (Light blur, no heavy black darkness) ── */}
+          <div
+            className="absolute inset-0 w-full h-full"
+            style={{
+              clipPath: "url(#heroCurvedPanelClip)",
+              WebkitClipPath: "url(#heroCurvedPanelClip)",
+              background:
+                "linear-gradient(180deg, rgba(10, 26, 17, 0.38) 0%, rgba(9, 24, 15, 0.46) 50%, rgba(7, 19, 12, 0.52) 100%)",
+              backdropFilter: "blur(14px) saturate(118%)",
+              WebkitBackdropFilter: "blur(14px) saturate(118%)",
+            }}
+          />
+
+          {/* Content inside the curved glass panel */}
+          <div className="relative z-30 h-full flex flex-col justify-center pl-16 xl:pl-20 pr-8 xl:pr-10 pt-16 pb-4">
+            <div className="space-y-6 xl:space-y-7">
+              {heroValues.map((val, idx) => {
+                const IconComp = val.icon;
+                return (
+                  <div key={idx} className="group">
+                    <div className="flex items-center gap-4 xl:gap-5">
+                      {/* Gold outlined circle icon */}
+                      <div className="w-12 h-12 xl:w-13 xl:h-13 rounded-full border border-[#C5A56A]/80 flex items-center justify-center flex-shrink-0 text-[#C5A56A] group-hover:border-[#DFCA98] group-hover:bg-[#C5A56A]/15 transition-all duration-300 shadow-[0_0_10px_rgba(197,165,106,0.18)]">
+                        <IconComp className="w-5 h-5 xl:w-6 xl:h-6 stroke-[1.6]" />
+                      </div>
+
+                      <div className="flex-1">
+                        <h3 className="font-sans text-[11px] xl:text-[12px] font-bold uppercase tracking-[0.08em] text-white leading-tight">
+                          {val.line1}
+                          {val.line2 && (
+                            <>
+                              <br />
+                              {val.line2}
+                            </>
+                          )}
+                        </h3>
+                        <p className="text-[10.5px] xl:text-[11.5px] text-[#A8A498] leading-relaxed font-light mt-1 max-w-[230px]">
+                          {val.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Faint divider line between items */}
+                    {idx < heroValues.length - 1 && (
+                      <div className="mt-6 xl:mt-7 h-[1px] bg-gradient-to-r from-transparent via-[#C5A56A]/20 to-transparent" />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        {/* ── Left Content: Typography 1:1 Matching Photo 1 ─────── */}
+        <div className="relative z-10 w-full max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12 xl:px-14">
+          <div className="max-w-xl lg:max-w-2xl pt-20 lg:pt-0">
+            {/* Eyebrow */}
+            <span className="inline-block text-[11px] sm:text-xs font-semibold tracking-[0.25em] text-[#C5A56A] uppercase mb-4">
+              {dict.hero.eyebrow}
+            </span>
+
+            {/* Heading: Line 1 White, Line 2 Warm Gold (Upright Playfair serif) */}
+            <h1 className="font-display text-[52px] sm:text-[66px] md:text-[74px] lg:text-[78px] xl:text-[86px] font-normal leading-[0.95] tracking-[-0.01em] mb-5">
+              <span className="text-white block">
+                {dict.hero.headingLine1}
+              </span>
+              <span className="text-[#DEC085] block font-normal">
+                {dict.hero.headingLine2}
+              </span>
+            </h1>
+
+            {/* Description text */}
+            <p className="text-[13px] sm:text-[14.5px] text-[#FAF8F5] leading-[1.65] font-sans max-w-lg mb-7 font-light">
+              {dict.hero.description}
+            </p>
+
+            {/* CTA: Golden pill button matching Photo 1 exactly */}
+            <Link
+              href={`/${currentLocale}/about`}
+              className="group inline-flex items-center gap-2.5 px-6 sm:px-7 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-[#ECCF96] to-[#D8B772] text-[#142217] font-sans font-semibold text-[13px] sm:text-[13.5px] tracking-wide shadow-md hover:from-[#F2DAB0] hover:to-[#DEBD7A] transition-all duration-300"
+            >
+              <span>{dict.hero.ctaMore}</span>
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+          </div>
+
+          {/* Mobile / Tablet fallback for values panel (< lg) */}
+          <div className="lg:hidden mt-8 pt-6 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-5">
             {heroValues.map((val, idx) => {
               const IconComp = val.icon;
               return (
-                <div key={idx} className="group">
-                  <div className="flex items-center gap-4 xl:gap-5">
-                    {/* Gold outlined circle icon */}
-                    <div className="w-13 h-13 xl:w-14 xl:h-14 rounded-full border border-[#C5A56A]/75 flex items-center justify-center flex-shrink-0 text-[#C5A56A] group-hover:border-[#DFCA98] group-hover:bg-[#C5A56A]/10 transition-all duration-300 shadow-[0_0_12px_rgba(197,165,106,0.18)]">
-                      <IconComp className="w-6 h-6 stroke-[1.6]" />
-                    </div>
-
-                    <div className="flex-1">
-                      <h3 className="font-sans text-[11.5px] xl:text-[12.5px] font-bold uppercase tracking-[0.1em] text-white leading-tight">
-                        {val.line1}
-                        {val.line2 && (
-                          <>
-                            <br />
-                            {val.line2}
-                          </>
-                        )}
-                      </h3>
-                      <p className="text-[11px] xl:text-[12px] text-[#A8A498] leading-relaxed font-light mt-1 max-w-[230px]">
-                        {val.description}
-                      </p>
-                    </div>
+                <div key={idx} className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-full border border-[#C5A56A]/70 flex items-center justify-center flex-shrink-0 text-[#C5A56A]">
+                    <IconComp className="w-5 h-5 stroke-[1.6]" />
                   </div>
-
-                  {/* Faint divider line between items */}
-                  {idx < heroValues.length - 1 && (
-                    <div className="mt-7 xl:mt-8 h-[1px] bg-gradient-to-r from-transparent via-[#C5A56A]/20 to-transparent" />
-                  )}
+                  <div>
+                    <h3 className="text-[11px] font-bold uppercase tracking-wider text-white">
+                      {val.line1} {val.line2}
+                    </h3>
+                    <p className="text-[10px] text-[#A8A498] mt-0.5">
+                      {val.description}
+                    </p>
+                  </div>
                 </div>
               );
             })}
@@ -245,60 +303,9 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
         </div>
       </div>
 
-      {/* ── Left Content: Typography 1:1 Matching Photo 1 ─────── */}
-      <div className="relative z-10 w-full max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12 xl:px-14">
-        <div className="max-w-xl lg:max-w-2xl pt-24 lg:pt-0">
-          {/* Eyebrow */}
-          <span className="inline-block text-[11px] sm:text-xs font-semibold tracking-[0.25em] text-[#C5A56A] uppercase mb-4">
-            {dict.hero.eyebrow}
-          </span>
-
-          {/* Heading: Line 1 White, Line 2 Warm Gold (Upright serif, NOT italic!) */}
-          <h1 className="font-display text-[56px] sm:text-[72px] md:text-[80px] lg:text-[84px] xl:text-[92px] font-normal leading-[0.95] tracking-[-0.01em] mb-6">
-            <span className="text-white block">
-              {dict.hero.headingLine1}
-            </span>
-            <span className="text-[#DEC085] block font-normal">
-              {dict.hero.headingLine2}
-            </span>
-          </h1>
-
-          {/* Description text */}
-          <p className="text-[13.5px] sm:text-[15px] text-[#FAF8F5] leading-[1.7] font-sans max-w-lg mb-8 font-light">
-            {dict.hero.description}
-          </p>
-
-          {/* CTA: Golden pill button matching Photo 1 exactly */}
-          <Link
-            href={`/${currentLocale}/about`}
-            className="group inline-flex items-center gap-2.5 px-7 py-3 rounded-full bg-gradient-to-r from-[#ECCF96] to-[#D8B772] text-[#142217] font-sans font-semibold text-[13.5px] tracking-wide shadow-md hover:from-[#F2DAB0] hover:to-[#DEBD7A] transition-all duration-300"
-          >
-            <span>{dict.hero.ctaMore}</span>
-            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
-        </div>
-
-        {/* Mobile / Tablet fallback for values panel (< lg) */}
-        <div className="lg:hidden mt-10 pt-8 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {heroValues.map((val, idx) => {
-            const IconComp = val.icon;
-            return (
-              <div key={idx} className="flex items-start gap-3">
-                <div className="w-11 h-11 rounded-full border border-[#C5A56A]/70 flex items-center justify-center flex-shrink-0 text-[#C5A56A]">
-                  <IconComp className="w-5 h-5 stroke-[1.6]" />
-                </div>
-                <div>
-                  <h3 className="text-xs font-bold uppercase tracking-wider text-white">
-                    {val.line1} {val.line2}
-                  </h3>
-                  <p className="text-[11px] text-[#A8A498] mt-0.5">
-                    {val.description}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+      {/* ── Bottom Docked Strip: Embedded inside 100vh First Screen! ── */}
+      <div className="relative z-30 flex-shrink-0 w-full">
+        <AreasStrip currentLocale={currentLocale} />
       </div>
     </section>
   );
