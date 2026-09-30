@@ -98,21 +98,25 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
                 const isActive =
                   pathname === item.href ||
                   (item.href !== `/${activeLocale}` && pathname.startsWith(item.href));
+                const isAreas = item.href.includes("/areas");
 
                 return (
                   <Link
                     key={item.href}
                     href={item.href}
                     className={cn(
-                      "relative py-1 text-xs xl:text-sm font-medium tracking-wide transition-colors duration-200 focus:outline-none focus-visible:text-gold-300",
+                      "relative py-1 text-xs xl:text-sm font-medium tracking-wide transition-colors duration-200 inline-flex items-center gap-1 focus:outline-none focus-visible:text-gold-300",
                       isActive
                         ? "text-ivory-50 font-semibold"
-                        : "text-ivory-200/80 hover:text-gold-300"
+                        : "text-ivory-200/85 hover:text-gold-300"
                     )}
                   >
-                    {item.label}
+                    <span>{item.label}</span>
+                    {isAreas && (
+                      <ChevronDown className="w-3.5 h-3.5 opacity-70 transition-transform group-hover:translate-y-0.5" />
+                    )}
                     {isActive && (
-                      <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-gold-400 to-gold-500 rounded-full" />
+                      <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#ECCF96] to-[#D8B772] rounded-full" />
                     )}
                   </Link>
                 );
@@ -159,15 +163,14 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
                 )}
               </div>
 
-              {/* Header CTA */}
-              <Button
-                variant="gold-outline"
-                size="sm"
+              {/* Header CTA - Solid Warm Sand/Gold Pill with Arrow matching 1:1 */}
+              <Link
                 href={`/${activeLocale}/contact`}
-                className="hidden sm:inline-flex"
+                className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#ECCF96] to-[#D8B772] text-[#142217] font-sans font-semibold text-xs tracking-wide shadow-md hover:from-[#F2DAB0] hover:to-[#DEBD7A] transition-all duration-300 group"
               >
-                {dict.nav.contactCta}
-              </Button>
+                <span>{dict.nav.contactCta}</span>
+                <span className="transition-transform duration-200 group-hover:translate-x-0.5 font-bold">→</span>
+              </Link>
 
               {/* Mobile Burger Menu Button */}
               <button

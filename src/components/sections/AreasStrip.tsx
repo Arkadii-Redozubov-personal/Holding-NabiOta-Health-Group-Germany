@@ -1,13 +1,13 @@
 import React from "react";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
-import { SupportedLocale } from "@/lib/i18n";
+import { getDictionary, SupportedLocale } from "@/lib/i18n";
 
 interface AreasStripProps {
   currentLocale?: SupportedLocale;
 }
 
-/* ── Custom SVGs matching reference Photo ────────────────────────── */
+/* ── Custom SVGs matching Reference Photo 1:1 ────────────────────────── */
 
 // 1. Stethoscope
 function StethoscopeIcon({ className = "w-7 h-7" }: { className?: string }) {
@@ -16,7 +16,7 @@ function StethoscopeIcon({ className = "w-7 h-7" }: { className?: string }) {
       viewBox="0 0 28 28"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.3"
+      strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
@@ -36,13 +36,13 @@ function MicroscopeIcon({ className = "w-7 h-7" }: { className?: string }) {
       viewBox="0 0 28 28"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.3"
+      strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
     >
-      <path d="M7 23.5h14" />
-      <path d="M11 20.5h6" />
+      <path d="M6 23.5h16" />
+      <path d="M10 20.5h8" />
       <path d="M14 20.5v-4" />
       <rect
         x="13"
@@ -59,20 +59,20 @@ function MicroscopeIcon({ className = "w-7 h-7" }: { className?: string }) {
   );
 }
 
-// 3. Heart with ECG pulse inside
+// 3. Heart with ECG pulse inside (Rehabilitation)
 function HeartPulseIcon({ className = "w-7 h-7" }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 28 28"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.3"
+      strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
     >
       <path d="M22.5 12.5 C24 9 22.5 5.5 19 4.8 C16.5 4.2 14.5 6.2 14 7 C13.5 6.2 11.5 4.2 9 4.8 C5.5 5.5 4 9 5.5 12.5 C7.5 16.5 14 23 14 23 C14 23 20.5 16.5 22.5 12.5 Z" />
-      <path d="M8 12.5 h2.5 l1.8 -3.2 l2.2 6.5 l2 -4.3 h2.2" />
+      <path d="M8.5 13.5 h2 l1.5 -3 l2 5.5 l1.8 -3.5 h2.2" />
     </svg>
   );
 }
@@ -84,7 +84,7 @@ function PflegeIcon({ className = "w-7 h-7" }: { className?: string }) {
       viewBox="0 0 28 28"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.3"
+      strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
@@ -99,14 +99,14 @@ function PflegeIcon({ className = "w-7 h-7" }: { className?: string }) {
   );
 }
 
-// 5. Org Chart: 1 box top, line down, 3 boxes bottom
+// 5. Org Chart: 1 box top, 3 boxes bottom (Beratung & Projektentwicklung)
 function OrgChartIcon({ className = "w-7 h-7" }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 28 28"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.3"
+      strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
@@ -122,14 +122,14 @@ function OrgChartIcon({ className = "w-7 h-7" }: { className?: string }) {
   );
 }
 
-// 6. Globe with latitude & longitude lines
+// 6. Globe with latitude & longitude lines (Internationale Kooperationen)
 function GlobeIcon({ className = "w-7 h-7" }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 28 28"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.3"
+      strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
@@ -141,14 +141,76 @@ function GlobeIcon({ className = "w-7 h-7" }: { className?: string }) {
   );
 }
 
-// Infinity icon for "Eine Mission"
-function InfinityIcon({ className = "w-8 h-8" }: { className?: string }) {
+// Stats Icon 1: Shield with checkmark (Starke Marke)
+function ShieldCheckIcon({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 28 28"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M14 3.5 L4.5 7.5 L4.5 13.5 C4.5 19.5 8.5 23.5 14 25.5 C19.5 23.5 23.5 19.5 23.5 13.5 L23.5 7.5 Z" />
+      <path d="M10 13.5 L12.8 16.5 L18 10.5" />
+    </svg>
+  );
+}
+
+// Stats Icon 2: 3 Network Boxes (6+ Unternehmensbereiche)
+function NetworkBoxesIcon({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 28 28"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <rect x="11" y="4" width="6" height="5" rx="0.75" />
+      <path d="M14 9v4" />
+      <path d="M7 13h14" />
+      <path d="M7 13v4M21 13v4" />
+      <rect x="4" y="17" width="6" height="5" rx="0.75" />
+      <rect x="18" y="17" width="6" height="5" rx="0.75" />
+    </svg>
+  );
+}
+
+// Stats Icon 3: Team People (100+ Experten)
+function TeamIcon({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 28 28"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <circle cx="14" cy="9" r="3" />
+      <path d="M8.5 21.5c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5" />
+      <circle cx="7.5" cy="11.5" r="2.2" />
+      <path d="M3 21.5c0-2.2 1.8-4 4-4.2" />
+      <circle cx="20.5" cy="11.5" r="2.2" />
+      <path d="M21 17.3c2.2.2 4 2 4 4.2" />
+    </svg>
+  );
+}
+
+// Stats Icon 4: Infinity Icon (Eine Mission)
+function InfinityIcon({ className = "w-6 h-6" }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 32 32"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.5"
+      strokeWidth="1.6"
       strokeLinecap="round"
       strokeLinejoin="round"
       className={className}
@@ -159,16 +221,18 @@ function InfinityIcon({ className = "w-8 h-8" }: { className?: string }) {
 }
 
 export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
+  const dict = getDictionary(currentLocale);
+
   const categories = [
     {
       icon: StethoscopeIcon,
       slug: "medizinische-fachbereiche",
       label:
         currentLocale === "ru"
-          ? "Медицинские направления"
+          ? "Медицинские\nнаправления"
           : currentLocale === "en"
-          ? "Medical Specialties"
-          : "Medizinische Fachbereiche",
+          ? "Medical\nSpecialties"
+          : "Medizinische\nFachbereiche",
     },
     {
       icon: MicroscopeIcon,
@@ -195,9 +259,9 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
       slug: "pflege",
       label:
         currentLocale === "ru"
-          ? "Уход и патронаж"
+          ? "Уход и\nпатронаж"
           : currentLocale === "en"
-          ? "Nursing & Care"
+          ? "Nursing &\nCare"
           : "Pflege",
     },
     {
@@ -205,114 +269,201 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
       slug: "beratung-projektentwicklung",
       label:
         currentLocale === "ru"
-          ? "Консалтинг и проекты"
+          ? "Консалтинг &\nпроекты"
           : currentLocale === "en"
-          ? "Consulting & Projects"
-          : "Beratung & Projektentwicklung",
+          ? "Consulting &\nDevelopment"
+          : "Beratung &\nProjektentwicklung",
     },
     {
       icon: GlobeIcon,
       slug: "internationale-kooperationen",
       label:
         currentLocale === "ru"
-          ? "Международное сотрудничество"
+          ? "Международное\nсотрудничество"
           : currentLocale === "en"
-          ? "International Cooperation"
-          : "Internationale Kooperationen",
+          ? "International\nCooperation"
+          : "Internationale\nKooperationen",
     },
   ];
 
   const stats = [
     {
-      num: "1",
-      label:
+      icon: ShieldCheckIcon,
+      number: null,
+      title:
         currentLocale === "ru"
-          ? "Starke Marke"
+          ? "Сильный бренд"
           : currentLocale === "en"
           ? "Strong Brand"
           : "Starke Marke",
+      subtitle:
+        currentLocale === "ru"
+          ? "Для более здорового общества."
+          : currentLocale === "en"
+          ? "For a healthier society."
+          : "Für eine gesündere Gesellschaft.",
     },
     {
-      num: "6+",
-      label:
+      icon: NetworkBoxesIcon,
+      number: "6+",
+      title:
         currentLocale === "ru"
-          ? "Unternehmensbereiche"
+          ? "Направлений бизнеса"
           : currentLocale === "en"
-          ? "Divisions"
+          ? "Business Divisions"
           : "Unternehmensbereiche",
-    },
-    {
-      num: "100+",
-      label:
+      subtitle:
         currentLocale === "ru"
-          ? "Experten im Netzwerk"
+          ? "Компетенции под одной крышей."
           : currentLocale === "en"
-          ? "Network Experts"
-          : "Experten im Netzwerk",
+          ? "Competence under one roof."
+          : "Kompetenz unter einem Dach.",
     },
     {
-      num: "inf",
-      label:
+      icon: TeamIcon,
+      number: "100+",
+      title:
         currentLocale === "ru"
-          ? "Eine Mission"
+          ? "Экспертов в сети"
+          : currentLocale === "en"
+          ? "Experts in Network"
+          : "Experten im Netzwerk",
+      subtitle:
+        currentLocale === "ru"
+          ? "Опыт. Вовлеченность. Результат."
+          : currentLocale === "en"
+          ? "Experience. Commitment. Impact."
+          : "Erfahrung. Engagement. Wirkung.",
+    },
+    {
+      icon: InfinityIcon,
+      number: null,
+      title:
+        currentLocale === "ru"
+          ? "Одна миссия"
           : currentLocale === "en"
           ? "One Mission"
           : "Eine Mission",
+      subtitle:
+        currentLocale === "ru"
+          ? "Устойчивое здравоохранение для будущих поколений."
+          : currentLocale === "en"
+          ? "Sustainable healthcare for coming generations."
+          : "Nachhaltige Gesundheitsversorgung für kommende Generationen.",
     },
   ];
 
   return (
-    <div className="w-full max-w-full bg-[#FCFAF6] border-t border-[#EAE5DA] py-3.5 sm:py-4 lg:py-4.5 overflow-x-auto overscroll-x-contain shadow-[0_-2px_14px_rgba(0,0,0,0.03)] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-      <Container size="wide">
-        <div className="flex items-center justify-between min-w-[1040px] lg:min-w-0">
-          {/* ── Left: 6 Category Icons with Labels (Larger size) ──── */}
-          <div className="flex items-center justify-between flex-1 gap-2 xl:gap-4">
-            {categories.map((cat, idx) => {
-              const IconComp = cat.icon;
+    <div className="w-full max-w-full overflow-hidden select-none">
+      {/* ═══════════ ROW 1: White/Cream Areas Grid Section (Compact Height) ═══════════ */}
+      <div className="bg-[#FFFFFF] border-t border-[#EDE8DE] py-3.5 sm:py-4 lg:py-4.5">
+        <Container size="wide">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-6 xl:gap-8">
+            {/* Left: Heading block */}
+            <div className="flex-shrink-0 w-full lg:w-[260px] xl:w-[290px] text-left">
+              <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.22em] text-[#C5A56A] uppercase block mb-1">
+                {currentLocale === "ru"
+                  ? "НАШИ НАПРАВЛЕНИЯ"
+                  : currentLocale === "en"
+                  ? "OUR DIVISIONS"
+                  : "UNSERE BEREICHE"}
+              </span>
+              <h2 className="font-display text-[22px] sm:text-[25px] lg:text-[28px] font-medium leading-[1.12] tracking-[-0.01em] text-[#142318]">
+                {currentLocale === "ru" ? (
+                  <>Многогранная компетенция для здорового будущего.</>
+                ) : currentLocale === "en" ? (
+                  <>Diverse expertise for a healthier future.</>
+                ) : (
+                  <>
+                    Vielfältige Kompetenz
+                    <br />
+                    für eine gesündere Zukunft.
+                  </>
+                )}
+              </h2>
+            </div>
+
+            {/* Right: 6 Category Cards (Barely noticeable background, larger icons & text, compact height) */}
+            <div className="flex-1 w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-2.5 xl:gap-3">
+              {categories.map((cat, idx) => {
+                const IconComp = cat.icon;
+                return (
+                  <Link
+                    key={idx}
+                    href={`/${currentLocale}/areas/${cat.slug}`}
+                    className="group bg-[#FAF8F3]/60 hover:bg-[#F3EFE6] border border-[#EFECE3]/70 hover:border-[#DFD5C2] rounded-xl sm:rounded-2xl px-2.5 py-3 sm:py-3.5 flex flex-col items-center justify-between text-center min-h-[120px] sm:min-h-[132px] transition-all duration-200 hover:shadow-sm"
+                  >
+                    {/* Icon inside soft circular disc */}
+                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#F3EEE3]/80 group-hover:bg-[#EBE3D3] flex items-center justify-center text-[#1A261D] group-hover:text-black transition-all mb-1 flex-shrink-0">
+                      <IconComp className="w-6 h-6 sm:w-6.5 sm:h-6.5 stroke-[1.6]" />
+                    </div>
+
+                    {/* Centered Category Label (Larger font size) */}
+                    <span className="text-[12px] sm:text-[12.5px] xl:text-[13px] font-bold text-[#18261C] leading-[1.22] text-center whitespace-pre-line px-0.5 my-auto">
+                      {cat.label}
+                    </span>
+
+                    {/* Gold Arrow at bottom */}
+                    <span className="text-[#C5A56A] font-bold text-xs sm:text-sm leading-none mt-1 transition-transform duration-200 group-hover:translate-x-0.5">
+                      →
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </Container>
+      </div>
+
+      {/* ═══════════ ROW 2: Deep Forest Green Stats Bar (Generous Height & Padding) ═══════════ */}
+      <div className="bg-[#07160D] border-t border-[#122E1B] py-4 sm:py-5 lg:py-6">
+        <Container size="wide">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-0 lg:divide-x lg:divide-white/10">
+            {stats.map((stat, idx) => {
+              const IconComp = stat.icon;
               return (
-                <Link
+                <div
                   key={idx}
-                  href={`/${currentLocale}/areas/${cat.slug}`}
-                  className="group flex flex-col items-center text-center gap-1.5 px-2 py-1 transition-all duration-200 hover:-translate-y-0.5 flex-1"
+                  className="flex items-center gap-3.5 sm:gap-4 px-3 sm:px-4 lg:px-6 xl:px-8"
                 >
-                  <div className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center text-[#4E483C] group-hover:text-[#BFA267] transition-colors">
-                    <IconComp className="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.3]" />
+                  {/* Gold outlined circle icon (larger size & warm glow) */}
+                  <div className="w-12 h-12 sm:w-13 sm:h-13 rounded-full border border-[#D8BC7E]/80 bg-[#142A1D]/60 text-[#ECCF96] flex items-center justify-center flex-shrink-0 shadow-[0_0_12px_rgba(216,188,126,0.18)]">
+                    <IconComp className="w-6 h-6 sm:w-6.5 sm:h-6.5 stroke-[1.6]" />
                   </div>
-                  <span className="text-[11px] sm:text-[11.5px] xl:text-[12.5px] font-semibold text-[#25231C] group-hover:text-[#BFA267] transition-colors leading-[1.25] text-center max-w-[115px]">
-                    {cat.label}
-                  </span>
-                </Link>
+
+                  {/* Text content (untruncated, clear line-height) */}
+                  <div className="flex-1 min-w-0">
+                    {stat.number ? (
+                      <div>
+                        <div className="flex items-baseline gap-1.5 flex-wrap">
+                          <span className="font-sans font-bold text-[18px] sm:text-[20px] text-white leading-none">
+                            {stat.number}
+                          </span>
+                          <span className="text-[13px] sm:text-[13.5px] font-bold text-white leading-tight">
+                            {stat.title}
+                          </span>
+                        </div>
+                        <span className="block text-[11px] sm:text-[11.5px] text-[#A2B3A7] leading-snug mt-1">
+                          {stat.subtitle}
+                        </span>
+                      </div>
+                    ) : (
+                      <div>
+                        <span className="block text-[13px] sm:text-[13.5px] font-bold text-white leading-tight">
+                          {stat.title}
+                        </span>
+                        <span className="block text-[11px] sm:text-[11.5px] text-[#A2B3A7] leading-snug mt-1">
+                          {stat.subtitle}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                </div>
               );
             })}
           </div>
-
-          {/* ── Vertical Hairline Divider ──────────────────── */}
-          <div className="w-[1px] h-11 sm:h-12 bg-[#D8D0BF] mx-4 xl:mx-6 flex-shrink-0" />
-
-          {/* ── Right: 4 Stats in one horizontal row (Larger numbers & text) ── */}
-          <div className="flex items-center gap-6 xl:gap-8 flex-shrink-0 pr-2">
-            {stats.map((stat, idx) => (
-              <div
-                key={idx}
-                className="flex flex-col items-center text-center min-w-[75px] xl:min-w-[95px]"
-              >
-                {stat.num === "inf" ? (
-                  <div className="h-8 sm:h-9 flex items-center justify-center text-[#BFA267]">
-                    <InfinityIcon className="w-8 h-8 xl:w-9 xl:h-9 stroke-[1.5]" />
-                  </div>
-                ) : (
-                  <span className="font-display text-[28px] sm:text-[32px] xl:text-[36px] font-normal text-[#BFA267] leading-none tracking-tight">
-                    {stat.num}
-                  </span>
-                )}
-                <span className="text-[10px] sm:text-[11px] xl:text-[11.5px] font-bold text-[#25231C] tracking-tight whitespace-nowrap mt-1">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CalendarDays } from "lucide-react";
 import { getDictionary, SupportedLocale } from "@/lib/i18n";
 import { AreasStrip } from "@/components/sections/AreasStrip";
 
@@ -112,9 +112,9 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
   ];
 
   return (
-    <section className="relative w-full h-screen min-h-[640px] max-h-[1080px] flex flex-col justify-between bg-[#07130B] text-[#FAF8F5] overflow-hidden">
+    <section className="relative w-full min-h-screen lg:h-screen lg:min-h-[700px] lg:max-h-[1080px] flex flex-col justify-between bg-[#07130B] text-[#FAF8F5] overflow-x-hidden">
       {/* ── Main Hero Area (Fills height from Header down to Strip) ─ */}
-      <div className="relative flex-1 flex items-center overflow-hidden w-full">
+      <div className="relative flex-1 flex items-center overflow-hidden w-full py-10 lg:py-0">
         {/* ── Background: Building photo ─────────────────── */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <Image
@@ -183,7 +183,7 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
               </clipPath>
             </defs>
 
-            {/* Glowing golden arc stroke running gracefully from top to bottom (exactly matching 0.36 -> 0.02) */}
+            {/* Glowing golden arc stroke running gracefully from top to bottom */}
             <path
               d="M 360 0 C 290 320, 150 660, 20 1000"
               fill="none"
@@ -193,7 +193,7 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
             />
           </svg>
 
-          {/* ── Frosted Glass Layer (Light airy glass with soft backdrop) ── */}
+          {/* ── Frosted Glass Layer ── */}
           <div
             className="absolute inset-0 w-full h-full"
             style={{
@@ -206,7 +206,7 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
             }}
           />
 
-          {/* Content inside the curved glass panel (Placed safely to the right of the arc curve) */}
+          {/* Content inside the curved glass panel */}
           <div className="relative z-30 h-full flex flex-col justify-center pl-36 xl:pl-44 pr-6 sm:pr-8 xl:pr-10 pt-16 pb-4">
             <div className="space-y-6 xl:space-y-7">
               {heroValues.map((val, idx) => {
@@ -247,40 +247,52 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
           </div>
         </div>
 
-        {/* ── Left Content: Typography 1:1 Matching Photo 1 ─────── */}
+        {/* ── Left Content: Typography 1:1 Matching Reference ─────── */}
         <div className="relative z-10 w-full max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12 xl:px-14">
-          <div className="max-w-xl lg:max-w-2xl pt-20 lg:pt-0">
+          <div className="max-w-xl lg:max-w-2xl pt-16 sm:pt-20 lg:pt-0">
             {/* Eyebrow */}
-            <span className="inline-block text-[11px] sm:text-xs font-semibold tracking-[0.25em] text-[#C5A56A] uppercase mb-4">
+            <span className="inline-block text-[10.5px] sm:text-xs font-semibold tracking-[0.25em] text-[#C5A56A] uppercase mb-3 sm:mb-4">
               {dict.hero.eyebrow}
             </span>
 
-            {/* Heading: Line 1 White, Line 2 Warm Gold (Upright Playfair serif) */}
-            <h1 className="font-display text-[52px] sm:text-[66px] md:text-[74px] lg:text-[78px] xl:text-[86px] font-normal leading-[0.95] tracking-[-0.01em] mb-5">
+            {/* Heading: Both lines white (Upright elegant serif) matching reference 1:1 */}
+            <h1 className="font-display text-[44px] sm:text-[60px] md:text-[70px] lg:text-[78px] xl:text-[86px] font-normal leading-[0.96] tracking-[-0.01em] mb-4 sm:mb-5">
               <span className="text-white block">
                 {dict.hero.headingLine1}
               </span>
-              <span className="text-[#DEC085] block font-normal">
+              <span className="text-white block font-normal">
                 {dict.hero.headingLine2}
               </span>
             </h1>
 
             {/* Description text */}
-            <p className="text-[13px] sm:text-[14.5px] text-[#FAF8F5] leading-[1.65] font-sans max-w-lg mb-7 font-light">
+            <p className="text-[13.5px] sm:text-[14.5px] text-[#FAF8F5] leading-[1.65] font-sans max-w-lg mb-7 font-light drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
               {dict.hero.description}
             </p>
 
-            {/* CTA: Golden pill button matching Photo 1 exactly */}
-            <Link
-              href={`/${currentLocale}/about`}
-              className="group inline-flex items-center gap-2.5 px-6 sm:px-7 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-[#ECCF96] to-[#D8B772] text-[#142217] font-sans font-semibold text-[13px] sm:text-[13.5px] tracking-wide shadow-md hover:from-[#F2DAB0] hover:to-[#DEBD7A] transition-all duration-300"
-            >
-              <span>{dict.hero.ctaMore}</span>
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
+            {/* CTAs: Golden pill + Outlined "Termin anfragen" */}
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+              {/* Primary: Warm sand/gold filled pill */}
+              <Link
+                href={`/${currentLocale}/about`}
+                className="group inline-flex items-center gap-2.5 px-6 sm:px-7 py-3 rounded-full bg-gradient-to-r from-[#ECCF96] to-[#D8B772] text-[#142217] font-sans font-semibold text-[13px] sm:text-[13.5px] tracking-wide shadow-lg hover:from-[#F2DAB0] hover:to-[#DEBD7A] transition-all duration-300"
+              >
+                <span>{dict.hero.ctaMore}</span>
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+
+              {/* Secondary: Outlined "Termin anfragen" with calendar icon */}
+              <Link
+                href={`/${currentLocale}/contact`}
+                className="group inline-flex items-center gap-2.5 px-6 sm:px-7 py-3 rounded-full border border-white/60 hover:border-white bg-black/25 hover:bg-white/10 backdrop-blur-sm text-white font-sans font-semibold text-[13px] sm:text-[13.5px] tracking-wide transition-all duration-300"
+              >
+                <CalendarDays className="w-4 h-4 text-white/90" />
+                <span>{dict.hero.ctaTermin}</span>
+              </Link>
+            </div>
           </div>
 
-          {/* Mobile / Tablet fallback for values panel (< lg) */}
+          {/* Mobile / Tablet fallback for values panel (<lg) */}
           <div className="lg:hidden mt-8 pt-6 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-5">
             {heroValues.map((val, idx) => {
               const IconComp = val.icon;

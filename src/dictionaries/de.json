@@ -18,8 +18,9 @@
     "eyebrow": "KOMPETENZ VERBINDEN.",
     "headingLine1": "Gesundheit",
     "headingLine2": "gestalten.",
-    "description": "Die NabiOta® Health Group Germany GmbH ist eine Unternehmensgruppe im Gesundheitswesen. Wir verbinden medizinische Kompetenz, moderne Strukturen und innovative Lösungen – für eine zukunftsfähige Gesundheitsversorgung.",
-    "ctaMore": "Mehr über uns",
+    "description": "Die NabiOta® Health Group Germany GmbH ist eine Unternehmensgruppe im Gesundheitswesen. Wir verbinden medizinische Kompetenz, moderne Strukturen und innovative Lösungen – für eine nachhaltige Gesundheitsversorgung.",
+    "ctaMore": "Mehr erfahren",
+    "ctaTermin": "Termin anfragen",
     "ctaAreas": "Unsere Bereiche",
     "values": [
       {
@@ -41,10 +42,10 @@
   },
   "strip": {
     "stats": [
-      { "value": "1", "label": "Starke Marke", "sublabel": "NabiOta® Health Group" },
-      { "value": "6+", "label": "Unternehmensbereiche", "sublabel": "Ganzheitliche Versorgung" },
-      { "value": "100+", "label": "Experten im Netzwerk", "sublabel": "Medizinische Fachkräfte" },
-      { "value": "∞", "label": "Eine Mission", "sublabel": "Gesundheit für morgen" }
+      { "value": "1", "label": "Starke Marke", "sublabel": "Für eine gesündere Gesellschaft." },
+      { "value": "6+", "label": "Unternehmensbereiche", "sublabel": "Kompetenz unter einem Dach." },
+      { "value": "100+", "label": "Experten im Netzwerk", "sublabel": "Erfahrung. Engagement. Wirkung." },
+      { "value": "∞", "label": "Eine Mission", "sublabel": "Nachhaltige Gesundheitsversorgung für kommende Generationen." }
     ]
   },
   "about": {
@@ -68,8 +69,8 @@
     ]
   },
   "areas": {
-    "eyebrow": "UNSERE UNTERNEHMENSBEREICHE",
-    "heading": "Vielfältige Kompetenzen. Eine gemeinsame Vision.",
+    "eyebrow": "UNSERE BEREICHE",
+    "heading": "Vielfältige Kompetenz\nfür eine gesündere Zukunft.",
     "description": "Unsere Unternehmensbereiche decken zentrale Bereiche des Gesundheitswesens ab – von medizinischer Versorgung und Diagnostik über Rehabilitation und Pflege bis hin zu Beratung, Projektentwicklung und internationalen Kooperationen.",
     "cta": "Alle Bereiche entdecken"
   },
