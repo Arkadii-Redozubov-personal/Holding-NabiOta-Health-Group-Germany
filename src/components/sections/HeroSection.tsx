@@ -270,23 +270,23 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
               {dict.hero.description}
             </p>
 
-            {/* CTAs: Golden pill + Outlined "Termin anfragen" */}
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+            {/* CTAs: 2 buttons side-by-side in one row on mobile without column wrapping */}
+            <div className="flex flex-row items-center gap-2 sm:gap-4 w-full sm:w-auto">
               {/* Primary: Warm sand/gold filled pill */}
               <Link
                 href={`/${currentLocale}/about`}
-                className="group inline-flex items-center gap-2.5 px-6 sm:px-7 py-3 rounded-full bg-gradient-to-r from-[#ECCF96] to-[#D8B772] text-[#142217] font-sans font-semibold text-[13px] sm:text-[13.5px] tracking-wide shadow-lg hover:from-[#F2DAB0] hover:to-[#DEBD7A] transition-all duration-300"
+                className="group flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 sm:gap-2.5 px-3.5 sm:px-7 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-[#ECCF96] to-[#D8B772] text-[#142217] font-sans font-semibold text-[12px] sm:text-[13.5px] tracking-wide shadow-lg hover:from-[#F2DAB0] hover:to-[#DEBD7A] transition-all duration-300 text-center whitespace-nowrap"
               >
                 <span>{dict.hero.ctaMore}</span>
-                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-1 shrink-0" />
               </Link>
 
               {/* Secondary: Outlined "Termin anfragen" with calendar icon */}
               <Link
                 href={`/${currentLocale}/contact`}
-                className="group inline-flex items-center gap-2.5 px-6 sm:px-7 py-3 rounded-full border border-white/60 hover:border-white bg-black/25 hover:bg-white/10 backdrop-blur-sm text-white font-sans font-semibold text-[13px] sm:text-[13.5px] tracking-wide transition-all duration-300"
+                className="group flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 sm:gap-2.5 px-3.5 sm:px-7 py-2.5 sm:py-3 rounded-full border border-white/60 hover:border-white bg-black/25 hover:bg-white/10 backdrop-blur-sm text-white font-sans font-semibold text-[12px] sm:text-[13.5px] tracking-wide transition-all duration-300 text-center whitespace-nowrap"
               >
-                <CalendarDays className="w-4 h-4 text-white/90" />
+                <CalendarDays className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white/90 shrink-0" />
                 <span>{dict.hero.ctaTermin}</span>
               </Link>
             </div>

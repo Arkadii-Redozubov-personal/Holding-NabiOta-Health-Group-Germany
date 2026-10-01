@@ -5,7 +5,8 @@ import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
-import { Eyebrow } from "@/components/ui/Eyebrow";
+import { PageHero } from "@/components/layout/PageHero";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { newsArticles } from "@/data/news";
 import { locales, SupportedLocale } from "@/lib/i18n";
 import { Metadata } from "next";
@@ -47,26 +48,33 @@ export default async function LocalizedNewsPage({ params }: LocalizedNewsProps) 
   return (
     <div className="flex flex-col min-h-screen">
       <Header currentLocale={locale} />
-      <main className="flex-1 pt-24 lg:pt-32 pb-20">
-        <section className="bg-forest-950 text-ivory-50 py-16 sm:py-24 relative overflow-hidden bg-botanical-dark">
-          <Container size="wide">
-            <div className="max-w-3xl">
-              <Eyebrow variant="gold">
-                {locale === "ru" ? "АКТУАЛЬНОЕ И ИНСАЙТЫ" : locale === "en" ? "LATEST & INSIGHTS" : "AKTUELLES & EINBLICKE"}
-              </Eyebrow>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.05] tracking-tight mb-6">
-                {locale === "ru" ? "Новости и события." : locale === "en" ? "News & Developments." : "News & Entwicklungen."}
-              </h1>
-              <p className="text-base sm:text-lg text-ivory-100/90 leading-relaxed font-light">
-                {locale === "ru"
-                  ? "Узнайте больше о наших текущих проектах, технологических инновациях и расширении центров холдинга."
-                  : locale === "en"
-                  ? "Learn more about our clinical initiatives, medical technology investments, and strategic growth."
-                  : "Erfahren Sie mehr über unsere aktuellen Projekte, medizinische Innovationen und den strategischen Ausbau unserer Standorte."}
-              </p>
-            </div>
-          </Container>
-        </section>
+      <main className="flex-1 pb-20">
+        <PageHero
+          breadcrumb={
+            <Breadcrumb
+              items={[
+                { label: locale === "ru" ? "Главная" : locale === "en" ? "Home" : "Startseite", href: `/${locale}` },
+                { label: locale === "ru" ? "Новости" : locale === "en" ? "News" : "Aktuelles" },
+              ]}
+            />
+          }
+          title={
+            locale === "ru"
+              ? "Новости и события."
+              : locale === "en"
+              ? "News & Developments."
+              : "News & Entwicklungen."
+          }
+          description={
+            locale === "ru"
+              ? "Узнайте больше о наших текущих проектах, технологических инновациях и расширении центров холдинга."
+              : locale === "en"
+              ? "Learn more about our clinical initiatives, medical technology investments, and strategic growth."
+              : "Erfahren Sie mehr über unsere aktuellen Projekte, medizinische Innovationen und den strategischen Ausbau unserer Standorte."
+          }
+          imageSrc="/images/heroes/hero-news.jpg"
+          imageAlt="NabiOta Health Group Germany Aktuelles"
+        />
 
         {/* Featured Story */}
         <section className="py-16 sm:py-20 bg-[#FAF8F5]">

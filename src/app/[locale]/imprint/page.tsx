@@ -2,7 +2,7 @@ import React from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
-import { Eyebrow } from "@/components/ui/Eyebrow";
+import { PageHero } from "@/components/layout/PageHero";
 import { companyInfo } from "@/data/company";
 import { locales, SupportedLocale } from "@/lib/i18n";
 import { Metadata } from "next";
@@ -42,26 +42,32 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
   return (
     <div className="flex flex-col min-h-screen">
       <Header currentLocale={locale} />
-      <main className="flex-1 pt-24 lg:pt-32 pb-20">
-        <section className="bg-forest-950 text-ivory-50 py-14 sm:py-20 relative overflow-hidden bg-botanical-dark">
-          <Container size="wide">
-            <div className="max-w-3xl">
-              <Eyebrow variant="gold">
-                {locale === "ru" ? "ЮРИДИЧЕСКАЯ ИНФОРМАЦИЯ" : locale === "en" ? "LEGAL NOTICE" : "RECHTLICHE PFLICHTANGABEN"}
-              </Eyebrow>
-              <h1 className="font-display text-4xl sm:text-5xl font-normal leading-tight mb-4">
-                {locale === "ru" ? "Выходные данные (Impressum)" : locale === "en" ? "Imprint & Legal Notice" : "Impressum"}
-              </h1>
-              <p className="text-sm sm:text-base text-ivory-200/80 font-light">
-                {locale === "ru"
-                  ? "Сведения в соответствии с § 5 Закона о средствах телекоммуникации Германии (TMG) и § 18 разд. 2 MStV."
-                  : locale === "en"
-                  ? "Information pursuant to § 5 Telemedia Act (TMG) and § 18 para. 2 Interstate Media Treaty (MStV)."
-                  : "Angaben gemäß § 5 Telemediengesetz (TMG) und § 18 Abs. 2 Medienstaatsvertrag (MStV)."}
-              </p>
-            </div>
-          </Container>
-        </section>
+      <main className="flex-1 pb-20">
+        <PageHero
+          eyebrow={
+            locale === "ru"
+              ? "ЮРИДИЧЕСКАЯ ИНФОРМАЦИЯ"
+              : locale === "en"
+              ? "LEGAL NOTICE"
+              : "RECHTLICHE PFLICHTANGABEN"
+          }
+          title={
+            locale === "ru"
+              ? "Выходные данные (Impressum)"
+              : locale === "en"
+              ? "Imprint & Legal Notice"
+              : "Impressum"
+          }
+          description={
+            locale === "ru"
+              ? "Сведения в соответствии с § 5 Закона о средствах телекоммуникации Германии (TMG) и § 18 разд. 2 MStV."
+              : locale === "en"
+              ? "Information pursuant to § 5 Telemedia Act (TMG) and § 18 para. 2 Interstate Media Treaty (MStV)."
+              : "Angaben gemäß § 5 Telemediengesetz (TMG) und § 18 Abs. 2 Medienstaatsvertrag (MStV)."
+          }
+          imageSrc="/images/heroes/hero-campus.jpg"
+          imageAlt="NabiOta Health Group Germany Impressum"
+        />
 
         <section className="py-16 sm:py-20 bg-[#FAF8F5]">
           <Container size="narrow" className="max-w-[800px]">
@@ -154,16 +160,27 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
 
               <div className="pt-6 border-t border-forest-900/10">
                 <h2 className="font-display text-2xl text-forest-950 mb-3">
-                  {locale === "ru" ? "Защита товарного знака и авторское право" : locale === "en" ? "Trademark & Copyright Protection" : "Markenschutz & Urheberrecht"}
+                  {locale === "ru" ? "Защита товарного знака и авторское право" : locale === "en" ? "Trademark & Copyright Protection" : "Markenschutz"}
                 </h2>
                 <p>
-                  NabiOta® ist eine eingetragene und geschützte Marke der NabiOta®
-                  Health Group Germany GmbH. Die Nutzung der Marke, der Logos,
-                  Unternehmenskennzeichen sowie sonstiger geschützter Bestandteile
-                  bedarf der vorherigen schriftlichen Zustimmung der Rechteinhaberin.
+                  NabiOta® ist eine eingetragene und geschützte Marke der NabiOta® Health Group Germany GmbH. Die Nutzung der Marke, der Logos, Unternehmenskennzeichen sowie sonstiger geschützter Bestandteile bedarf der vorherigen schriftlichen Zustimmung der Rechteinhaberin.
                 </p>
-                <p className="mt-2 text-xs text-text-secondary/80">
+              </div>
+
+              <div className="pt-6 border-t border-forest-900/10">
+                <h2 className="font-display text-2xl text-forest-950 mb-3">
+                  {locale === "ru" ? "Правовое указание" : locale === "en" ? "Legal Notice" : "Hinweis"}
+                </h2>
+                <p>
+                  Die NabiOta® Health Group Germany GmbH ist eine im Handelsregister eingetragene Gesellschaft mit beschränkter Haftung nach deutschem Recht.
+                </p>
+                <p className="mt-2">
+                  NabiOta® ist eine geschützte Marke der NabiOta® Health Group Germany GmbH. Die Nutzung der Marke, der Logos, Unternehmenskennzeichen oder sonstiger geschützter Bestandteile bedarf der vorherigen schriftlichen Zustimmung der Rechteinhaberin.
+                </p>
+                <p className="mt-4 text-xs text-text-secondary/80 font-medium">
                   © 2026 NabiOta® Health Group Germany GmbH. Alle Rechte vorbehalten.
+                  <br />
+                  NabiOta® ist eine eingetragene Marke der NabiOta® Health Group Germany GmbH.
                 </p>
               </div>
             </div>

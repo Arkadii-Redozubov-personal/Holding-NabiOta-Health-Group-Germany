@@ -383,28 +383,28 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
               </h2>
             </div>
 
-            {/* Right: 6 Category Cards (Barely noticeable background, larger icons & text, compact height) */}
-            <div className="flex-1 w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-2.5 xl:gap-3">
+            {/* Right: 6 Category Cards arranged into 3 cards per row on mobile matching user request */}
+            <div className="flex-1 w-full grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-6 gap-1.5 sm:gap-2.5 xl:gap-3">
               {categories.map((cat, idx) => {
                 const IconComp = cat.icon;
                 return (
                   <Link
                     key={idx}
                     href={`/${currentLocale}/areas/${cat.slug}`}
-                    className="group bg-[#FAF8F3]/60 hover:bg-[#F3EFE6] border border-[#EFECE3]/70 hover:border-[#DFD5C2] rounded-xl sm:rounded-2xl px-2.5 py-3 sm:py-3.5 flex flex-col items-center justify-between text-center min-h-[120px] sm:min-h-[132px] transition-all duration-200 hover:shadow-sm"
+                    className="group bg-[#FAF8F3]/60 hover:bg-[#F3EFE6] border border-[#EFECE3]/70 hover:border-[#DFD5C2] rounded-xl sm:rounded-2xl px-1.5 py-2 sm:px-2.5 sm:py-3.5 flex flex-col items-center justify-between text-center min-h-[102px] sm:min-h-[132px] transition-all duration-200 hover:shadow-sm"
                   >
                     {/* Icon inside soft circular disc */}
-                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#F3EEE3]/80 group-hover:bg-[#EBE3D3] flex items-center justify-center text-[#1A261D] group-hover:text-black transition-all mb-1 flex-shrink-0">
-                      <IconComp className="w-6 h-6 sm:w-6.5 sm:h-6.5 stroke-[1.6]" />
+                    <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-[#F3EEE3]/80 group-hover:bg-[#EBE3D3] flex items-center justify-center text-[#1A261D] group-hover:text-black transition-all mb-1 flex-shrink-0">
+                      <IconComp className="w-5 h-5 sm:w-6.5 sm:h-6.5 stroke-[1.6]" />
                     </div>
 
-                    {/* Centered Category Label (Larger font size) */}
-                    <span className="text-[12px] sm:text-[12.5px] xl:text-[13px] font-bold text-[#18261C] leading-[1.22] text-center whitespace-pre-line px-0.5 my-auto">
+                    {/* Centered Category Label */}
+                    <span className="text-[10px] sm:text-[12.5px] xl:text-[13px] font-bold text-[#18261C] leading-[1.18] text-center whitespace-pre-line px-0.5 my-auto">
                       {cat.label}
                     </span>
 
                     {/* Gold Arrow at bottom */}
-                    <span className="text-[#C5A56A] font-bold text-xs sm:text-sm leading-none mt-1 transition-transform duration-200 group-hover:translate-x-0.5">
+                    <span className="text-[#C5A56A] font-bold text-[10px] sm:text-sm leading-none mt-0.5 transition-transform duration-200 group-hover:translate-x-0.5">
                       →
                     </span>
                   </Link>

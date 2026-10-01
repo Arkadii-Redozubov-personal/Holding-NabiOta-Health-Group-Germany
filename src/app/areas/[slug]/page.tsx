@@ -9,6 +9,8 @@ import { Container } from "@/components/layout/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { BusinessCard } from "@/components/ui/BusinessCard";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import { PageHero } from "@/components/layout/PageHero";
 import { businessAreas } from "@/data/areas";
 
 interface AreaDetailPageProps {
@@ -45,39 +47,31 @@ export default async function AreaDetailPage({ params }: AreaDetailPageProps) {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1 pt-24 lg:pt-32 pb-20">
-        {/* Breadcrumb Navigation */}
-        <div className="bg-[#FAF8F5] border-b border-forest-900/10 py-3">
-          <Container size="wide">
-            <nav className="flex items-center gap-2 text-xs text-text-secondary" aria-label="Breadcrumb">
-              <Link href="/" className="hover:text-gold-600 transition-colors">Startseite</Link>
-              <ChevronRight className="w-3.5 h-3.5 text-text-secondary/50" />
-              <Link href="/areas" className="hover:text-gold-600 transition-colors">Unternehmensbereiche</Link>
-              <ChevronRight className="w-3.5 h-3.5 text-text-secondary/50" />
-              <span className="text-forest-950 font-medium">{area.title}</span>
-            </nav>
-          </Container>
-        </div>
-
-        {/* Hero Section */}
-        <section className="bg-forest-950 text-ivory-50 py-16 sm:py-24 relative overflow-hidden bg-botanical-dark">
-          <Container size="wide">
-            <div className="max-w-3xl">
-              <Eyebrow variant="gold">UNTERNEHMENSBEREICH</Eyebrow>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.08] tracking-tight mb-4 text-ivory-50">
-                {area.title}
-              </h1>
+      <main className="flex-1 pb-20">
+        {/* Hero Section with Breadcrumb */}
+        <PageHero
+          breadcrumb={
+            <Breadcrumb
+              items={[
+                { label: "Startseite", href: "/" },
+                { label: "Unternehmensbereiche", href: "/areas" },
+                { label: area.title },
+              ]}
+            />
+          }
+          title={
+            <>
+              {area.title}
               {area.subtitle && (
-                <p className="text-lg sm:text-xl text-gold-300 font-light mb-6 font-display">
+                <span className="block text-xl sm:text-2xl text-[#ECCF93] font-light mt-1 font-serif">
                   {area.subtitle}
-                </p>
+                </span>
               )}
-              <p className="text-base sm:text-lg text-ivory-100/90 leading-relaxed font-light font-sans max-w-2xl">
-                {area.description}
-              </p>
-            </div>
-          </Container>
-        </section>
+            </>
+          }
+          description={area.description}
+          imageSrc={area.image || "/images/heroes/hero-areas.jpg"}
+        />
 
         {/* Overview & Image Section */}
         <section className="py-16 sm:py-20 bg-[#FAF8F5]">

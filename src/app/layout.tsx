@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+import { Playfair_Display, Plus_Jakarta_Sans, Alex_Brush } from "next/font/google";
 import "./globals.css";
 import { companyInfo } from "@/data/company";
 
@@ -14,6 +14,13 @@ const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin", "cyrillic-ext"],
   variable: "--font-sans",
   weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
+const alexBrush = Alex_Brush({
+  subsets: ["latin"],
+  variable: "--font-signature",
+  weight: ["400"],
   display: "swap",
 });
 
@@ -73,7 +80,7 @@ export default function RootLayout({
   return (
     <html
       lang="de"
-      className={`${playfair.variable} ${jakarta.variable} scroll-smooth overflow-x-hidden max-w-full`}
+      className={`${playfair.variable} ${jakarta.variable} ${alexBrush.variable} scroll-smooth overflow-x-hidden max-w-full`}
     >
       <body className="min-h-screen bg-[#FBFAF6] text-[#132018] font-sans antialiased selection:bg-[#BEA06B]/20 selection:text-[#112117] overflow-x-hidden w-full max-w-full">
         {children}

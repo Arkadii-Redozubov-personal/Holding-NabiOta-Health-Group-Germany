@@ -5,6 +5,8 @@ import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
+import { PageHero } from "@/components/layout/PageHero";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 
 export const metadata = {
   title: "Partner & Kooperationen | NabiOta® Health Group Germany",
@@ -16,21 +18,21 @@ export default function PartnersPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1 pt-24 lg:pt-32 pb-20">
-        <section className="bg-forest-950 text-ivory-50 py-16 sm:py-24 relative overflow-hidden bg-botanical-dark">
-          <Container size="wide">
-            <div className="max-w-3xl">
-              <Eyebrow variant="gold">KOOPERATIONEN & NETZWERK</Eyebrow>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.05] tracking-tight mb-6">
-                Gemeinsam mehr erreichen.
-              </h1>
-              <p className="text-base sm:text-lg text-ivory-100/90 leading-relaxed font-light">
-                Nachhaltige Entwicklungen und moderne Versorgungskonzepte entstehen
-                durch den Austausch von Wissen, Erfahrung und Kompetenzen.
-              </p>
-            </div>
-          </Container>
-        </section>
+      <main className="flex-1 pb-20">
+        <PageHero
+          breadcrumb={
+            <Breadcrumb
+              items={[
+                { label: "Startseite", href: "/" },
+                { label: "Partner" },
+              ]}
+            />
+          }
+          title="Gemeinsam mehr erreichen."
+          description="Nachhaltige Entwicklungen und moderne Versorgungskonzepte entstehen durch den Austausch von Wissen, Erfahrung und Kompetenzen."
+          imageSrc="/images/heroes/hero-partners.jpg"
+          imageAlt="NabiOta Health Group Germany Partner"
+        />
 
         <section className="py-16 sm:py-20 bg-[#FAF8F5]">
           <Container size="wide">

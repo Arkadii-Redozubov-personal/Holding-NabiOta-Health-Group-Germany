@@ -2,7 +2,7 @@ import React from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
-import { Eyebrow } from "@/components/ui/Eyebrow";
+import { PageHero } from "@/components/layout/PageHero";
 import { companyInfo } from "@/data/company";
 
 export const metadata = {
@@ -15,20 +15,14 @@ export default function PrivacyPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1 pt-24 lg:pt-32 pb-20">
-        <section className="bg-forest-950 text-ivory-50 py-14 sm:py-20 relative overflow-hidden bg-botanical-dark">
-          <Container size="wide">
-            <div className="max-w-3xl">
-              <Eyebrow variant="gold">DATENSCHUTZ & TRANSPARENZ</Eyebrow>
-              <h1 className="font-display text-4xl sm:text-5xl font-normal leading-tight mb-4">
-                Datenschutzerklärung
-              </h1>
-              <p className="text-sm sm:text-base text-ivory-200/80 font-light">
-                Informationen über die Art, den Umfang und Zweck der Verarbeitung von personenbezogenen Daten.
-              </p>
-            </div>
-          </Container>
-        </section>
+      <main className="flex-1 pb-20">
+        <PageHero
+          eyebrow="DATENSCHUTZ & TRANSPARENZ"
+          title="Datenschutzerklärung"
+          description="Informationen über die Art, den Umfang und Zweck der Verarbeitung von personenbezogenen Daten."
+          imageSrc="/images/heroes/hero-campus.jpg"
+          imageAlt="NabiOta Health Group Germany Datenschutz"
+        />
 
         <section className="py-16 sm:py-20 bg-[#FAF8F5]">
           <Container size="narrow" className="max-w-[800px]">

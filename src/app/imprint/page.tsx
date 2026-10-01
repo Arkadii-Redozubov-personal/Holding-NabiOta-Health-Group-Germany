@@ -2,7 +2,7 @@ import React from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
-import { Eyebrow } from "@/components/ui/Eyebrow";
+import { PageHero } from "@/components/layout/PageHero";
 import { companyInfo } from "@/data/company";
 
 export const metadata = {
@@ -15,20 +15,14 @@ export default function ImprintPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1 pt-24 lg:pt-32 pb-20">
-        <section className="bg-forest-950 text-ivory-50 py-14 sm:py-20 relative overflow-hidden bg-botanical-dark">
-          <Container size="wide">
-            <div className="max-w-3xl">
-              <Eyebrow variant="gold">RECHTLICHE PFLICHTANGABEN</Eyebrow>
-              <h1 className="font-display text-4xl sm:text-5xl font-normal leading-tight mb-4">
-                Impressum
-              </h1>
-              <p className="text-sm sm:text-base text-ivory-200/80 font-light">
-                Angaben gemäß § 5 Telemediengesetz (TMG) und § 18 Abs. 2 Medienstaatsvertrag (MStV).
-              </p>
-            </div>
-          </Container>
-        </section>
+      <main className="flex-1 pb-20">
+        <PageHero
+          eyebrow="RECHTLICHE PFLICHTANGABEN"
+          title="Impressum"
+          description="Angaben gemäß § 5 Telemediengesetz (TMG) und § 18 Abs. 2 Medienstaatsvertrag (MStV)."
+          imageSrc="/images/heroes/hero-campus.jpg"
+          imageAlt="NabiOta Health Group Germany Impressum"
+        />
 
         <section className="py-16 sm:py-20 bg-[#FAF8F5]">
           <Container size="narrow" className="max-w-[800px]">

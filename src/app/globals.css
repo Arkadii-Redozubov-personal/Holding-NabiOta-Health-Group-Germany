@@ -3,6 +3,7 @@
 @theme {
   --font-serif: var(--font-serif), Georgia, serif;
   --font-sans: var(--font-sans), system-ui, sans-serif;
+  --font-signature: var(--font-signature), cursive;
 
   --color-forest-950: #0D1910;
   --color-forest-900: #112117;
@@ -41,6 +42,10 @@ body {
 /* Custom editorial typography & aesthetics */
 .font-display {
   font-family: var(--font-serif), Georgia, serif;
+}
+
+.font-signature {
+  font-family: var(--font-signature), 'Alex Brush', cursive;
 }
 
 /* Luxury hairline borders */

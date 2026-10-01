@@ -1,9 +1,20 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Menu, X, ChevronDown, Globe } from "lucide-react";
+import {
+  Menu,
+  X,
+  ChevronDown,
+  Globe,
+  Stethoscope,
+  Microscope,
+  HeartPulse,
+  Users,
+  Network,
+  ArrowRight,
+} from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
 import { Container } from "./Container";
@@ -15,10 +26,115 @@ interface HeaderProps {
   currentLocale?: SupportedLocale;
 }
 
+const areaNavItems = [
+  {
+    slug: "medizinische-fachbereiche",
+    icon: Stethoscope,
+    titles: {
+      de: "Medizinische Fachbereiche",
+      en: "Medical Departments",
+      ru: "Медицинские направления",
+    },
+    subtitles: {
+      de: "Ambulante & Fachärztliche Spitzenmedizin",
+      en: "Outpatient & Specialist Medicine",
+      ru: "Амбулаторная и специализированная медицина",
+    },
+  },
+  {
+    slug: "diagnostik",
+    icon: Microscope,
+    titles: {
+      de: "Diagnostik",
+      en: "Diagnostics",
+      ru: "Диагностика",
+    },
+    subtitles: {
+      de: "MRT, CT & Präzisionstechnologie",
+      en: "MRI, CT & High-Precision Imaging",
+      ru: "МРТ, КТ и высокоточная диагностика",
+    },
+  },
+  {
+    slug: "rehabilitation",
+    icon: HeartPulse,
+    titles: {
+      de: "Rehabilitation",
+      en: "Rehabilitation",
+      ru: "Реабилитация",
+    },
+    subtitles: {
+      de: "Ganzheitliche Genesung & Therapie",
+      en: "Holistic Recovery & Therapy",
+      ru: "Комплексное восстановление и терапия",
+    },
+  },
+  {
+    slug: "pflege",
+    icon: Users,
+    titles: {
+      de: "Pflege",
+      en: "Nursing Care",
+      ru: "Патронаж и уход",
+    },
+    subtitles: {
+      de: "Ambulante Pflege & HomeCare",
+      en: "Outpatient Care & HomeCare",
+      ru: "Амбулаторная помощь и HomeCare",
+    },
+  },
+  {
+    slug: "beratung-projektentwicklung",
+    icon: Network,
+    titles: {
+      de: "Beratung & Projektentwicklung",
+      en: "Consulting & Development",
+      ru: "Консалтинг и девелопмент",
+    },
+    subtitles: {
+      de: "Gesundheitsimmobilien & MVZ-Strukturen",
+      en: "Healthcare Facilities & Centers",
+      ru: "Медицинские центры и девелопмент",
+    },
+  },
+  {
+    slug: "internationale-kooperationen",
+    icon: Globe,
+    titles: {
+      de: "Internationale Kooperationen",
+      en: "International Cooperations",
+      ru: "Международное сотрудничество",
+    },
+    subtitles: {
+      de: "Partnerschaften & Wissenstransfer",
+      en: "Partnerships & Knowledge Transfer",
+      ru: "Партнёрство и трансфер знаний",
+    },
+  },
+];
+
+const overviewLabels = {
+  de: "Alle Bereiche im Überblick",
+  en: "All Divisions Overview",
+  ru: "Все направления холдинга",
+};
+
+const dropdownEyebrow = {
+  de: "UNTERNEHMENSBEREICHE",
+  en: "BUSINESS DIVISIONS",
+  ru: "НАПРАВЛЕНИЯ ХОЛДИНГА",
+};
+
 export function Header({ currentLocale = "de" }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileAreasOpen, setMobileAreasOpen] = useState(true);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
+  const [areasDropdownOpen, setAreasDropdownOpen] = useState(false);
+
+  const areasDropdownRef = useRef<HTMLDivElement>(null);
+  const areasTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
   const pathname = usePathname();
   const router = useRouter();
 
@@ -49,21 +165,72 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        areasDropdownRef.current &&
+        !areasDropdownRef.current.contains(e.target as Node)
+      ) {
+        setAreasDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   // Close on Escape key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setMobileMenuOpen(false);
         setLangDropdownOpen(false);
+        setAreasDropdownOpen(false);
       }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
+  // Close dropdowns on route navigation
+  useEffect(() => {
+    setAreasDropdownOpen(false);
+    setMobileMenuOpen(false);
+    setLangDropdownOpen(false);
+  }, [pathname]);
+
+  const handleAreasMouseEnter = () => {
+    if (areasTimeoutRef.current) {
+      clearTimeout(areasTimeoutRef.current);
+      areasTimeoutRef.current = null;
+    }
+    setAreasDropdownOpen(true);
+  };
+
+  const handleAreasMouseLeave = () => {
+    if (areasTimeoutRef.current) {
+      clearTimeout(areasTimeoutRef.current);
+    }
+    areasTimeoutRef.current = setTimeout(() => {
+      setAreasDropdownOpen(false);
+    }, 180);
+  };
+
+  const handleAreasButtonClick = (e: React.MouseEvent) => {
+    // If not open, open it. If already open, navigate to overview page
+    if (!areasDropdownOpen) {
+      e.preventDefault();
+      setAreasDropdownOpen(true);
+    } else {
+      setAreasDropdownOpen(false);
+      router.push(`/${activeLocale}/areas`);
+    }
+  };
+
   const handleSwitchLanguage = (newLocale: string) => {
     setLangDropdownOpen(false);
     setMobileMenuOpen(false);
+    setAreasDropdownOpen(false);
 
     // Replace locale in path
     if (locales.includes(pathSegments[0] as SupportedLocale)) {
@@ -100,6 +267,136 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
                   (item.href !== `/${activeLocale}` && pathname.startsWith(item.href));
                 const isAreas = item.href.includes("/areas");
 
+                if (isAreas) {
+                  return (
+                    <div
+                      key={item.href}
+                      ref={areasDropdownRef}
+                      className="relative"
+                      onMouseEnter={handleAreasMouseEnter}
+                      onMouseLeave={handleAreasMouseLeave}
+                    >
+                      <button
+                        type="button"
+                        onClick={handleAreasButtonClick}
+                        className={cn(
+                          "relative py-1 text-xs xl:text-sm font-medium tracking-wide transition-colors duration-200 inline-flex items-center gap-1.5 focus:outline-none focus-visible:text-gold-300 cursor-pointer",
+                          isActive
+                            ? "text-ivory-50 font-semibold"
+                            : areasDropdownOpen
+                            ? "text-gold-300"
+                            : "text-ivory-200/85 hover:text-gold-300"
+                        )}
+                        aria-expanded={areasDropdownOpen}
+                        aria-haspopup="true"
+                        aria-label={item.label}
+                      >
+                        <span>{item.label}</span>
+                        <ChevronDown
+                          className={cn(
+                            "w-3.5 h-3.5 transition-transform duration-200",
+                            areasDropdownOpen
+                              ? "rotate-180 text-gold-300"
+                              : "opacity-75 group-hover:translate-y-0.5"
+                          )}
+                        />
+                        {isActive && (
+                          <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#ECCF96] to-[#D8B772] rounded-full" />
+                        )}
+                      </button>
+
+                      {/* Desktop Dropdown — compact glassmorphism */}
+                      {areasDropdownOpen && (
+                        <div
+                          className="absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50 pointer-events-auto"
+                          onMouseEnter={handleAreasMouseEnter}
+                          onMouseLeave={handleAreasMouseLeave}
+                        >
+                          <div
+                            className="relative"
+                            style={{
+                              animation: "dropdownFadeIn 0.16s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+                            }}
+                          >
+                            {/* arrow tip */}
+                            <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2.5 h-2.5 rotate-45 bg-[#0a140d] border-l border-t border-[#D5B878]/30 z-10 pointer-events-none" />
+
+                            <div
+                              className="w-[260px] rounded-xl overflow-hidden relative z-0"
+                              style={{
+                                background: "rgba(8, 14, 10, 0.78)",
+                                backdropFilter: "blur(24px) saturate(160%)",
+                                WebkitBackdropFilter: "blur(24px) saturate(160%)",
+                                border: "1px solid rgba(213,184,120,0.18)",
+                                boxShadow: "0 16px 48px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.04) inset",
+                              }}
+                            >
+                              {/* compact list */}
+                              <div className="py-1.5">
+                                {areaNavItems.map((area) => {
+                                  const isSubActive =
+                                    pathname === `/${activeLocale}/areas/${area.slug}`;
+                                  const AreaIcon = area.icon;
+
+                                  return (
+                                    <Link
+                                      key={area.slug}
+                                      href={`/${activeLocale}/areas/${area.slug}`}
+                                      onClick={() => setAreasDropdownOpen(false)}
+                                      className={cn(
+                                        "group/item flex items-center gap-2.5 px-3.5 py-2 transition-all duration-150",
+                                        isSubActive
+                                          ? "bg-gold-400/12 text-gold-300"
+                                          : "text-ivory-200/85 hover:bg-white/[0.06] hover:text-ivory-50"
+                                      )}
+                                    >
+                                      <AreaIcon
+                                        className={cn(
+                                          "w-3.5 h-3.5 shrink-0 transition-colors",
+                                          isSubActive
+                                            ? "text-gold-400"
+                                            : "text-gold-400/60 group-hover/item:text-gold-400"
+                                        )}
+                                      />
+                                      <span className="text-[13px] font-medium leading-none truncate">
+                                        {area.titles[activeLocale]}
+                                      </span>
+                                    </Link>
+                                  );
+                                })}
+                              </div>
+
+                              {/* overview link */}
+                              <div className="border-t border-white/10 mx-3 mb-1.5" />
+                              <Link
+                                href={`/${activeLocale}/areas`}
+                                onClick={() => setAreasDropdownOpen(false)}
+                                className="flex items-center justify-between px-3.5 pb-2.5 pt-1.5 text-[11px] font-semibold tracking-wide text-gold-400/80 hover:text-gold-300 transition-colors group/overview"
+                              >
+                                <span>{overviewLabels[activeLocale]}</span>
+                                <ArrowRight className="w-3 h-3 transition-transform duration-150 group-hover/overview:translate-x-0.5" />
+                              </Link>
+                            </div>
+                          </div>
+
+                          <style>{`
+                            @keyframes dropdownFadeIn {
+                              from {
+                                opacity: 0;
+                                transform: translateY(-5px);
+                              }
+                              to {
+                                opacity: 1;
+                                transform: translateY(0);
+                              }
+                            }
+                          `}</style>
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+
                 return (
                   <Link
                     key={item.href}
@@ -112,9 +409,6 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
                     )}
                   >
                     <span>{item.label}</span>
-                    {isAreas && (
-                      <ChevronDown className="w-3.5 h-3.5 opacity-70 transition-transform group-hover:translate-y-0.5" />
-                    )}
                     {isActive && (
                       <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#ECCF96] to-[#D8B772] rounded-full" />
                     )}
@@ -194,11 +488,82 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-forest-950/98 backdrop-blur-2xl lg:hidden flex flex-col pt-24 pb-8 px-6 overflow-y-auto">
-          <nav className="flex flex-col gap-4 my-auto" aria-label="Mobile Navigation">
+          <nav className="flex flex-col gap-2 my-auto" aria-label="Mobile Navigation">
             {localizedNav.map((item) => {
               const isActive =
                 pathname === item.href ||
                 (item.href !== `/${activeLocale}` && pathname.startsWith(item.href));
+              const isAreas = item.href.includes("/areas");
+
+              if (isAreas) {
+                return (
+                  <div key={item.href} className="border-b border-white/5 py-1">
+                    <div className="flex items-center justify-between py-2">
+                      <Link
+                        href={item.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={cn(
+                          "text-xl font-display tracking-wide flex-1",
+                          isActive ? "text-gold-400 font-medium" : "text-ivory-100"
+                        )}
+                      >
+                        {item.label}
+                      </Link>
+                      <button
+                        type="button"
+                        onClick={() => setMobileAreasOpen(!mobileAreasOpen)}
+                        className="p-2 text-gold-400 hover:text-gold-300 focus:outline-none cursor-pointer"
+                        aria-label="Bereiche aufklappen"
+                      >
+                        <ChevronDown
+                          className={cn(
+                            "w-5 h-5 transition-transform duration-200",
+                            mobileAreasOpen && "rotate-180"
+                          )}
+                        />
+                      </button>
+                    </div>
+
+                    {mobileAreasOpen && (
+                      <div className="pl-2 pr-1 pb-3 pt-1 flex flex-col gap-1.5 bg-forest-900/60 rounded-xl mb-2 border border-gold-400/15">
+                        {areaNavItems.map((area) => {
+                          const AreaIcon = area.icon;
+                          const isSubActive =
+                            pathname === `/${activeLocale}/areas/${area.slug}`;
+                          return (
+                            <Link
+                              key={area.slug}
+                              href={`/${activeLocale}/areas/${area.slug}`}
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                              }}
+                              className={cn(
+                                "flex items-center gap-2.5 py-2 px-3 rounded-lg text-sm transition-colors",
+                                isSubActive
+                                  ? "text-gold-300 bg-gold-400/15 font-semibold"
+                                  : "text-ivory-200/85 hover:text-gold-300 hover:bg-white/5"
+                              )}
+                            >
+                              <AreaIcon className="w-4 h-4 text-gold-400 shrink-0" />
+                              <span className="truncate">{area.titles[activeLocale]}</span>
+                            </Link>
+                          );
+                        })}
+                        <Link
+                          href={`/${activeLocale}/areas`}
+                          onClick={() => {
+                            setMobileMenuOpen(false);
+                          }}
+                          className="flex items-center justify-between py-2 px-3 text-xs font-semibold text-gold-400 hover:text-gold-300 pt-2 border-t border-white/10"
+                        >
+                          <span>{overviewLabels[activeLocale]}</span>
+                          <span>→</span>
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                );
+              }
 
               return (
                 <Link
@@ -206,7 +571,7 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    "text-xl font-display tracking-wide py-2 border-b border-white/5 flex items-center justify-between",
+                    "text-xl font-display tracking-wide py-2.5 border-b border-white/5 flex items-center justify-between",
                     isActive ? "text-gold-400 font-medium" : "text-ivory-100"
                   )}
                 >

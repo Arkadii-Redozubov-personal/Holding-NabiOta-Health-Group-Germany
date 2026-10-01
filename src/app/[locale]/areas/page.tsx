@@ -2,7 +2,8 @@ import React from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
-import { Eyebrow } from "@/components/ui/Eyebrow";
+import { PageHero } from "@/components/layout/PageHero";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { BusinessCard } from "@/components/ui/BusinessCard";
 import { businessAreas } from "@/data/areas";
 import { locales, SupportedLocale, getDictionary } from "@/lib/i18n";
@@ -41,24 +42,25 @@ export default async function LocalizedAreasPage({ params }: LocalizedAreasProps
   return (
     <div className="flex flex-col min-h-screen">
       <Header currentLocale={locale} />
-      <main className="flex-1 pt-24 lg:pt-32 pb-20">
-        <section className="bg-forest-950 text-ivory-50 py-16 sm:py-24 relative overflow-hidden bg-botanical-dark">
-          <Container size="wide">
-            <div className="max-w-3xl">
-              <Eyebrow variant="gold">{dict.areas.eyebrow}</Eyebrow>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.05] tracking-tight mb-6">
-                {dict.areas.heading}
-              </h1>
-              <p className="text-base sm:text-lg text-ivory-100/90 leading-relaxed font-light">
-                {dict.areas.description}
-              </p>
-            </div>
-          </Container>
-        </section>
+      <main className="flex-1 pb-20">
+        <PageHero
+          breadcrumb={
+            <Breadcrumb
+              items={[
+                { label: dict.nav.home, href: `/${locale}` },
+                { label: dict.nav.areas },
+              ]}
+            />
+          }
+          title={dict.areas.heading}
+          description={dict.areas.description}
+          imageSrc="/images/heroes/hero-areas.jpg"
+          imageAlt="NabiOta Health Group Germany Unternehmensbereiche"
+        />
 
         <section className="py-16 sm:py-20 bg-[#FAF8F5]">
           <Container size="wide">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {businessAreas.map((area) => (
                 <BusinessCard key={area.id} area={area} currentLocale={locale} />
               ))}

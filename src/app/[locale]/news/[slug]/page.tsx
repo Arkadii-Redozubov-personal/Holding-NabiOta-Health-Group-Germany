@@ -6,6 +6,8 @@ import { ChevronRight, Calendar, Clock, ArrowLeft } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
+import { PageHero } from "@/components/layout/PageHero";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { newsArticles } from "@/data/news";
 import { locales, SupportedLocale } from "@/lib/i18n";
@@ -58,21 +60,22 @@ export default async function LocalizedArticleDetailPage({ params }: LocalizedAr
   return (
     <div className="flex flex-col min-h-screen">
       <Header currentLocale={locale} />
-      <main className="flex-1 pt-24 lg:pt-32 pb-20">
-        {/* Breadcrumb */}
-        <div className="bg-[#FAF8F5] border-b border-forest-900/10 py-3">
-          <Container size="wide">
-            <nav className="flex items-center gap-2 text-xs text-text-secondary" aria-label="Breadcrumb">
-              <Link href={`/${locale}`} className="hover:text-gold-600 transition-colors">Startseite</Link>
-              <ChevronRight className="w-3.5 h-3.5 text-text-secondary/50" />
-              <Link href={`/${locale}/news`} className="hover:text-gold-600 transition-colors">News</Link>
-              <ChevronRight className="w-3.5 h-3.5 text-text-secondary/50" />
-              <span className="text-forest-950 font-medium truncate max-w-[200px] sm:max-w-none">
-                {article.title}
-              </span>
-            </nav>
-          </Container>
-        </div>
+      <main className="flex-1">
+        {/* Hero Header with Breadcrumb */}
+        <PageHero
+          breadcrumb={
+            <Breadcrumb
+              items={[
+                { label: locale === "ru" ? "Главная" : locale === "en" ? "Home" : "Startseite", href: `/${locale}` },
+                { label: locale === "ru" ? "Новости" : locale === "en" ? "News" : "News", href: `/${locale}/news` },
+                { label: article.title },
+              ]}
+            />
+          }
+          title={article.title}
+          description={article.summary}
+          imageSrc={article.image || "/images/heroes/hero-news.jpg"}
+        />
 
         {/* Article Header & Body */}
         <article className="py-16 sm:py-20 bg-[#FAF8F5]">

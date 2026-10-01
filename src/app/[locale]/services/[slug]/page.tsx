@@ -10,6 +10,8 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { IconCircle } from "@/components/ui/IconCircle";
 import { ServiceCard } from "@/components/ui/ServiceCard";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import { PageHero } from "@/components/layout/PageHero";
 import { holdingServices } from "@/data/services";
 import { locales, SupportedLocale, getDictionary } from "@/lib/i18n";
 import { Metadata } from "next";
@@ -62,51 +64,34 @@ export default async function LocalizedServiceDetailPage({ params }: LocalizedSe
   return (
     <div className="flex flex-col min-h-screen">
       <Header currentLocale={locale} />
-      <main className="flex-1 pt-24 lg:pt-32 pb-20">
-        {/* Breadcrumb */}
-        <div className="bg-[#FAF8F5] border-b border-forest-900/10 py-3">
-          <Container size="wide">
-            <nav className="flex items-center gap-2 text-xs text-text-secondary" aria-label="Breadcrumb">
-              <Link href={`/${locale}`} className="hover:text-gold-600 transition-colors">
-                {dict.nav.home}
-              </Link>
-              <ChevronRight className="w-3.5 h-3.5 text-text-secondary/50" />
-              <Link href={`/${locale}/services`} className="hover:text-gold-600 transition-colors">
-                {locale === "ru" ? "Услуги" : locale === "en" ? "Services" : "Leistungen"}
-              </Link>
-              <ChevronRight className="w-3.5 h-3.5 text-text-secondary/50" />
-              <span className="text-forest-950 font-medium">{service.title}</span>
-            </nav>
-          </Container>
-        </div>
-
-        {/* Hero Section */}
-        <section className="bg-forest-950 text-ivory-50 py-16 sm:py-24 relative overflow-hidden bg-botanical-dark">
-          <Container size="wide">
-            <div className="max-w-3xl">
-              <div className="flex items-center gap-3 mb-4">
-                <IconCircle
-                  name={service.iconName}
-                  size="sm"
-                  variant="dark"
-                  className="w-8 h-8"
-                />
-                <Eyebrow variant="gold">{service.category}</Eyebrow>
-              </div>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-normal leading-[1.08] tracking-tight mb-4 text-ivory-50">
-                {service.title}
-              </h1>
+      <main className="flex-1 pb-20">
+        {/* Hero Section with Integrated Breadcrumb matching Photo 2 */}
+        <PageHero
+          breadcrumb={
+            <Breadcrumb
+              items={[
+                { label: dict.nav.home, href: `/${locale}` },
+                {
+                  label: locale === "ru" ? "Услуги" : locale === "en" ? "Services" : "Leistungen",
+                  href: `/${locale}/services`,
+                },
+                { label: service.title },
+              ]}
+            />
+          }
+          title={
+            <>
+              {service.title}
               {service.subtitle && (
-                <p className="text-lg sm:text-xl text-gold-300 font-light mb-6 font-display">
+                <span className="block text-xl sm:text-2xl text-[#ECCF93] font-light mt-1 font-serif">
                   {service.subtitle}
-                </p>
+                </span>
               )}
-              <p className="text-base sm:text-lg text-ivory-100/90 leading-relaxed font-light font-sans max-w-2xl">
-                {service.shortDescription}
-              </p>
-            </div>
-          </Container>
-        </section>
+            </>
+          }
+          description={service.shortDescription}
+          imageSrc={service.image || "/images/heroes/hero-services.jpg"}
+        />
 
         {/* Overview & Detail Section */}
         <section className="py-16 sm:py-20 bg-[#FAF8F5]">
