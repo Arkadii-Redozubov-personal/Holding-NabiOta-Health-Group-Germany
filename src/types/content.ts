@@ -69,6 +69,7 @@ export type NewsArticle = {
   readingTime: string;
   image: string;
   content: string[];
+  featured?: boolean;
 };
 
 export type HoldingCompanyInfo = {
