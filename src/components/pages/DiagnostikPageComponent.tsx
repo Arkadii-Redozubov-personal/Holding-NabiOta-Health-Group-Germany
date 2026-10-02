@@ -5,42 +5,32 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
-  Award,
-  Stethoscope,
-  Building2,
-  CheckCircle2,
-  ShieldCheck,
-  Activity,
-  Layers,
+  ArrowLeft,
+  Calendar,
   Clock,
-  Sparkles,
+  CheckCircle2,
   ChevronRight,
+  Heart,
+  Activity,
   FileText,
-  UserCheck,
-  Radio,
-  Eye,
-  Info,
+  User,
+  Phone,
+  Sparkles,
+  ShieldCheck,
+  Stethoscope,
+  Microscope,
 } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Container } from "@/components/layout/Container";
 import { PageHero } from "@/components/layout/PageHero";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { SupportedLocale } from "@/lib/i18n";
 import { businessAreas } from "@/data/areas";
 
-// ── Custom Medical Technology SVG Icons ──
-function MriScannerIcon({ className = "w-5 h-5" }: { className?: string }) {
+// ── Custom SVG Modality Icons ──
+function MriScannerIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <circle cx="12" cy="12" r="9" />
       <circle cx="12" cy="12" r="5" />
       <path d="M4 14h6M14 14h6" />
@@ -49,17 +39,9 @@ function MriScannerIcon({ className = "w-5 h-5" }: { className?: string }) {
   );
 }
 
-function CtScannerIcon({ className = "w-5 h-5" }: { className?: string }) {
+function CtScannerIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <circle cx="12" cy="12" r="9" />
       <path d="M12 3v3M12 18v3M3 12h3M18 12h3" />
       <circle cx="12" cy="12" r="3.5" />
@@ -68,34 +50,9 @@ function CtScannerIcon({ className = "w-5 h-5" }: { className?: string }) {
   );
 }
 
-function XrayPulseIcon({ className = "w-5 h-5" }: { className?: string }) {
+function UltrasoundWaveIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <rect x="4" y="3" width="16" height="18" rx="2" />
-      <path d="M12 7v10M9 9h6M8 12h8M10 15h4" />
-    </svg>
-  );
-}
-
-function UltrasoundWaveIcon({ className = "w-5 h-5" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={className}>
       <path d="M4 12c0-4.4 3.6-8 8-8s8 3.6 8 8" />
       <path d="M7 12c0-2.8 2.2-5 5-5s5 2.2 5 5" />
       <path d="M10 12c0-1.1.9-2 2-2s2 .9 2 2" />
@@ -105,42 +62,30 @@ function UltrasoundWaveIcon({ className = "w-5 h-5" }: { className?: string }) {
   );
 }
 
-function PacsNetworkIcon({ className = "w-5 h-5" }: { className?: string }) {
+function XrayPulseIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <rect x="3" y="4" width="18" height="12" rx="2" />
-      <path d="M7 20h10M12 16v4" />
-      <circle cx="9" cy="10" r="1.5" />
-      <circle cx="15" cy="10" r="1.5" />
-      <path d="M9 10h6" />
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <rect x="4" y="3" width="16" height="18" rx="2" />
+      <path d="M12 7v10M9 9h6M8 12h8M10 15h4" />
     </svg>
   );
 }
 
-function CloverEmblemIcon({ className = "w-5 h-5" }: { className?: string }) {
+function TestTubesIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="M12 4.5C10.5 4.5 9 5.5 9 7.5c0 2.2 3 4.5 3 4.5s3-2.3 3-4.5c0-2-1.5-3-3-3Z" />
-      <path d="M12 19.5c1.5 0 3-1 3-3 0-2.2-3-4.5-3-4.5s-3 2.3-3 4.5c0 2 1.5 3 3 3Z" />
-      <path d="M4.5 12C4.5 10.5 5.5 9 7.5 9c2.2 0 4.5 3 4.5 3s-2.3 3-4.5 3c-2 0-3-1.5-3-3Z" />
-      <path d="M19.5 12c0 1.5-1 3-3 3-2.2 0-4.5-3-4.5-3s2.3-3 4.5-3c2 0 3 1.5 3 3Z" />
-      <circle cx="12" cy="12" r="1.5" />
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M9 3h6M10 3v12a2 2 0 0 0 4 0V3M14 9h-4" />
+      <path d="M5 6h4M7 6v9a2 2 0 0 0 4 0V6" />
+      <path d="M15 6h4M17 6v9a2 2 0 0 0 4 0V6" />
+    </svg>
+  );
+}
+
+function HeartCardioIcon({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+      <path d="M7 12h2l1.5-3 2 6 1.5-3H17" />
     </svg>
   );
 }
@@ -152,6 +97,8 @@ interface Props {
 export function DiagnostikPageComponent({ locale = "de" }: Props) {
   const isRu = locale === "ru";
   const isEn = locale === "en";
+
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
 
   const area = businessAreas.find((a) => a.slug === "diagnostik") || {
     id: "diagnostik",
@@ -195,295 +142,207 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
     ],
   };
 
-  // ── Modality Cards Data ──
-  const modalities = [
+  // ── Section 1: 6 Modality Cards matching Photo 2 ──
+  const procedures = [
     {
       id: "mrt",
-      tag: isRu ? "3.0 ТЕСЛА • БЕЗ ОБЛУЧЕНИЯ" : isEn ? "3.0 TESLA • RADIATION-FREE" : "3.0 TESLA • STRAHLENFREI",
-      title: isRu ? "3-Тесла Высокопольный МРТ" : isEn ? "3-Tesla High-Field MRI" : "3-Tesla-High-Field-MRT",
-      subtitle: isRu
-        ? "Максимальное пространственное разрешение мягких тканей, сосудов и суставов"
-        : isEn
-        ? "Ultra-high soft tissue resolution for neurology, joints, and internal organs"
-        : "Höchste Weichteilauflösung für Neurologie, Gelenke und innere Organe",
+      title: "MRT",
       desc: isRu
-        ? "Широкий 70-сантиметровый туннель и технологии акустического шумоподавления обеспечивают комфортное обследование даже для пациентов с клаустрофобией."
+        ? "Снимки высокого разрешения для точной диагностики."
         : isEn
-        ? "Our 70 cm open-bore design and acoustic noise reduction create an anxiety-free scan environment for claustrophobic patients and children."
-        : "Der 70 cm breite Tunnel und akustische Geräuschunterdrückung ermöglichen eine angstfreie Untersuchung mit höchstem Patientenkomfort.",
+        ? "High-resolution imaging for detailed diagnosis."
+        : "Hochauflösende Bilder für eine detaillierte Diagnose.",
+      image: "/images/diagnostik/modality-mrt.jpg",
       icon: MriScannerIcon,
-      points: isRu
-        ? [
-            "Головной мозг, церебральные сосуды и гипофиз",
-            "Все отделы позвоночника и межпозвоночные диски",
-            "Крупные и мелкие суставы (колено, плечо, тазобедренный)",
-            "Мультипараметрическая МРТ простаты и органов малого таза",
-          ]
-        : isEn
-        ? [
-            "Brain, cerebral vessels, and pituitary diagnostics",
-            "Full spine analysis and intervertebral disc imaging",
-            "Joint pathology (knee, shoulder, hip, ankle cartilage)",
-            "Multiparametric prostate and pelvic MRI protocols",
-          ]
-        : [
-            "Gehirn, Schädelbasis und Hirngefäßdarstellung (Angio)",
-            "Gesamte Wirbelsäule und Bandscheibendiagnostik",
-            "Gelenkdiagnostik (Knie, Schulter, Hüfte, Knorpelanalyse)",
-            "Multiparametrische MRT von Prostata und Beckenorganen",
-          ],
     },
     {
       id: "ct",
-      tag: isRu ? "НИЗКОДОЗОВАЯ ТЕХНОЛОГИЯ" : isEn ? "ULTRA-LOW DOSE" : "LOW-DOSE-SPEKTRAL-CT",
-      title: isRu ? "Мультиспиральная Компьютерная Томография" : isEn ? "Multislice Low-Dose CT" : "Low-Dose-Computertomographie",
-      subtitle: isRu
-        ? "Сверхбыстрое 3D-сканирование с минимальной лучевой нагрузкой"
-        : isEn
-        ? "Sub-second 3D volume imaging with iterative radiation reduction algorithms"
-        : "Sekundenschnelle 3D-Volumenscans mit adaptiver Dosisreduktion",
+      title: "CT",
       desc: isRu
-        ? "Интеллектуальные итеративные алгоритмы реконструкции снижают дозу облучения до 80% при сохранении безупречной микроструктурной детализации."
+        ? "Быстрые и точные послойные 3D-сканы."
         : isEn
-        ? "Intelligent iterative reconstruction algorithms reduce radiation exposure by up to 80% while preserving microscopic anatomical detail."
-        : "Moderne iterative Rekonstruktionsalgorithmen senken die Strahlenexposition um bis zu 80 % bei unverminderter Detailschärfe.",
+        ? "Fast and precise cross-sectional imaging."
+        : "Schnelle und präzise Querschnittsbilder.",
+      image: "/images/diagnostik/modality-ct.jpg",
       icon: CtScannerIcon,
-      points: isRu
-        ? [
-            "Кардио-КТ: оценка кальциевого индекса и коронарных артерий",
-            "Низкодозовый скрининг легких и органов грудной клетки",
-            "Костная система, сложные переломы и предоперационное планирование",
-            "Брюшная полость, забрюшинное пространство и ангиография",
-          ]
-        : isEn
-        ? [
-            "Cardio-CT: calcium scoring and non-invasive coronary angiography",
-            "Low-dose pulmonary screening and thoracic diagnostics",
-            "Bone micro-architecture, complex trauma and surgical planning",
-            "Abdominal, retroperitoneal and vascular CT angiography",
-          ]
-        : [
-            "Kardio-CT: Calcium-Scoring und Koronarangiographie",
-            "Niedrigdosis-Screening der Lunge und Thoraxorgane",
-            "Knöcherne Strukturen, Frakturabklärung und OP-Planung",
-            "Abdomen, Retroperitoneum und CT-Gefäßdarstellungen",
-          ],
     },
     {
-      id: "xray",
-      tag: isRu ? "ЦИФРОВЫЕ ДЕТЕКТОРЫ" : isEn ? "DIRECT DIGITAL FPD" : "VOLLDIGITAL (FLAT-PANEL)",
-      title: isRu ? "Цифровой Рентген и Функциональная Графика" : isEn ? "Digital Radiography & Fluoroscopy" : "Digitales Röntgen & Funktionsdiagnostik",
-      subtitle: isRu
-        ? "Мгновенное получение снимков высочайшей четкости при минимальной дозе"
-        : isEn
-        ? "Instant digital radiograms with high contrast and minimal exposure"
-        : "Sofortige Bildverfügbarkeit mit maximalem Kontrastumfang",
+      id: "ultraschall",
+      title: isRu ? "УЗИ" : isEn ? "Ultrasound" : "Ultraschall",
       desc: isRu
-        ? "Прямые цифровые плоскопанельные детекторы последнего поколения позволяют выполнять панорамные снимки всей длины позвоночника и конечностей."
+        ? "Бережно, надежно и универсально в применении."
         : isEn
-        ? "Latest-generation flat-panel detectors allow full-length spine and lower extremity stitching with zero geometric distortion."
-        : "Hochpräzise Flachdetektoren ermöglichen Ganzwirbelsäulen- und Ganzbeinaufnahmen ohne geometrische Verzerrungen.",
-      icon: XrayPulseIcon,
-      points: isRu
-        ? [
-            "Ортопедическая диагностика суставов и костной ткани",
-            "Панорамные снимки позвоночника и оси нижних конечностей",
-            "Функциональные снимки шейного и поясничного отделов",
-            "Обзорная рентгенография органов грудной клетки",
-          ]
-        : isEn
-        ? [
-            "Orthopedic skeletal and degenerative joint diagnostics",
-            "Full-length spine alignment and leg axis stitching",
-            "Functional movement radiography of cervical/lumbar spine",
-            "Thoracic radiography for pulmonary and cardiac assessment",
-          ]
-        : [
-            "Orthopädische Skelett- und Gelenkdiagnostik",
-            "Ganzwirbelsäulen- und Ganzbein-Achsenvermessung",
-            "Funktionsaufnahmen der Hals- und Lendenwirbelsäule",
-            "Übersichtsaufnahmen des Thorax und knöchernen Skeletts",
-          ],
-    },
-    {
-      id: "sonography",
-      tag: isRu ? "В РЕАЛЬНОМ ВРЕМЕНИ" : isEn ? "REAL-TIME DUPLEX" : "HIGH-END FARBDOPPLER",
-      title: isRu ? "Экспертное УЗИ и Цветовой Допплер" : isEn ? "High-End Sonography & Color Doppler" : "Ultraschall & Gefäßdoppler",
-      subtitle: isRu
-        ? "Неинвазивная оценка сосудистого русла и мягких тканей в реальном времени"
-        : isEn
-        ? "Non-invasive hemodynamic and soft-tissue evaluation in real-time"
-        : "Strahlenfreie Gefäß- und Weichteildiagnostik in Echtzeit",
-      desc: isRu
-        ? "Цветовое дуплексное сканирование с тканевой гармоникой и эластографией дает точную оценку кровотока, структуры щитовидной железы и внутренних органов."
-        : isEn
-        ? "Color duplex ultrasonography with elastography and tissue harmonics provides precise hemodynamics and organ parenchymal analysis."
-        : "Farbduplex-Sonographie mit Gewebeelastographie ermöglicht die exakte Flussmessung von Gefäßen und Organparenchym.",
+        ? "Gentle, reliable, and versatile application."
+        : "Schonend, zuverlässig und vielseitig einsetzbar.",
+      image: "/images/diagnostik/modality-ultraschall.jpg",
       icon: UltrasoundWaveIcon,
-      points: isRu
-        ? [
-            "Брахиоцефальные сосуды (сонные и позвоночные артерии)",
-            "Вены и артерии верхних и нижних конечностей (тромбозы, ХВН)",
-            "Органы брюшной полости, забрюшинного пространства и почки",
-            "Щитовидная железа с эластографией узловых образований",
-          ]
+    },
+    {
+      id: "roentgen",
+      title: isRu ? "Цифровой рентген" : isEn ? "Digital X-Ray" : "Digitales Röntgen",
+      desc: isRu
+        ? "Быстрое обследование с минимальной лучевой нагрузкой."
         : isEn
-        ? [
-            "Extracranial carotid and vertebral artery duplex",
-            "Peripheral arterial and venous duplex for DVT/insufficiency",
-            "Abdominal, retroperitoneal, and kidney sonography",
-            "High-resolution thyroid imaging with elastography",
-          ]
-        : [
-            "Extrakranielle Karotis- und Vertebralarterien-Doppler",
-            "Venöse und arterielle Gefäßdiagnostik der Extremitäten",
-            "Abdomen- und Nierensonographie auf High-End-Niveau",
-            "Schilddrüsendiagnostik inklusive Elastographie",
-          ],
+        ? "Rapid examination with minimal radiation exposure."
+        : "Schnelle Untersuchung mit geringer Strahlenbelastung.",
+      image: "/images/diagnostik/modality-roentgen.jpg",
+      icon: XrayPulseIcon,
+    },
+    {
+      id: "labor",
+      title: isRu ? "Лабораторные исследования" : isEn ? "Laboratory Diagnostics" : "Laboruntersuchungen",
+      desc: isRu
+        ? "Точные лабораторные показатели для верного диагноза."
+        : isEn
+        ? "Crucial biomarker values for exact diagnosis."
+        : "Wichtige Werte für eine exakte Diagnose.",
+      image: "/images/diagnostik/modality-labor.jpg",
+      icon: TestTubesIcon,
+    },
+    {
+      id: "kardio",
+      title: isRu ? "Кардиологическая диагностика" : isEn ? "Cardiological Diagnostics" : "Kardiologische Diagnostik",
+      desc: isRu
+        ? "Для здорового сердца и крепкой сосудистой системы."
+        : isEn
+        ? "For a healthy heart and strong circulation."
+        : "Für ein gesundes Herz und einen starken Kreislauf.",
+      image: "/images/diagnostik/modality-kardio.jpg",
+      icon: HeartCardioIcon,
     },
   ];
 
-  // ── Spotlight 3T MRI Showcase Data ──
-  const spotlightMri = {
-    eyebrow: isRu ? "ТЕХНОЛОГИИ И КОМФОРТ ПАЦИЕНТА" : isEn ? "HIGH-END TECHNOLOGY & PATIENT CARE" : "TECHNOLOGIE & PATIENTENKOMFORT",
-    title: isRu
-      ? "3-Тесла МРТ:\nТочность без тревоги и клаустрофобии"
-      : isEn
-      ? "3-Tesla MRI:\nClinical Precision with Zero Anxiety"
-      : "3-Tesla-MRT:\nPräzision ohne Angst & Beklemmung",
-    desc: isRu
-      ? "Широкий туннель диаметром 70 см, мягкое фоновое освещение и запатентованное снижение акустического шума (Silent Scan) превращают исследование в спокойный и предсказуемый процесс даже для детей и тревожных пациентов. При этом магнитное поле 3 Тесла гарантирует субмиллиметровую четкость срезов."
-      : isEn
-      ? "Our 70 cm open-bore design, ambient daylight illumination, and proprietary acoustic noise dampening (Silent Scan) transform magnetic resonance imaging into a calm, reassuring experience—even for claustrophobic individuals. Meanwhile, 3.0 Tesla magnet strength delivers sub-millimeter anatomical detail."
-      : "Der 70 cm weite Magnet-Tunnel, stimmungsvolles Tageslichtdesign und flüsterleise Sequenzen (Silent Scan) verwandeln die Untersuchung in ein entspanntes Erlebnis – selbst für angstsensible Patienten. Das 3-Tesla-Hochfeld garantiert dabei mikrometergenaue Schnittbilder.",
-    pillTitle: isRu ? "Siemens & Philips 3T MRT Suite" : isEn ? "Siemens & Philips 3T MRI Suite" : "Siemens & Philips 3T MRT Suite",
-    pillSubtitle: isRu ? "70 см туннель • Бесшумные режимы • Без клаустрофобии" : isEn ? "70 cm Bore • Silent Scan • Anxiety-Free" : "70 cm Tunnel • Silent Scan • Angstfrei",
-    features: [
-      {
-        icon: MriScannerIcon,
-        label: isRu ? "70 см открытый туннель" : isEn ? "70 cm Open Bore" : "70 cm offener Tunnel",
-      },
-      {
-        icon: ShieldCheck,
-        label: isRu ? "100% без облучения" : isEn ? "Zero Radiation" : "100% strahlenfrei",
-      },
-      {
-        icon: Activity,
-        label: isRu ? "Субмиллиметровые срезы" : isEn ? "Sub-mm Precision" : "Sub-mm Auflösung",
-      },
-    ],
-    linkText: isRu ? "Записаться на 3T МРТ исследование" : isEn ? "Request 3T MRI Appointment" : "Termin für 3T-MRT anfragen",
-  };
-
-  // ── Edge-to-Edge Dark Forest Green Section (Photo 2 Style) ──
-  const whySection = {
-    eyebrow: isRu ? "СТАНДАРТЫ НАДЕЖНОСТИ" : isEn ? "CLINICAL EXCELLENCE" : "QUALITÄTSSTANDARD",
-    title: isRu ? "Почему диагностика в NabiOta®?" : isEn ? "Why NabiOta® Diagnostics?" : "Warum NabiOta® Diagnostik?",
-    desc: isRu
-      ? "Современные аппараты — это только половина успеха. Главное преимущество NabiOta® — опытные врачи-рентгенологи, протоколы двойной верификации (четыре глаза) и прямая связь с хирургами и клиниками нашего холдинга. Вы получаете исчерпывающий результат без задержек."
-      : isEn
-      ? "Cutting-edge hardware is only one half of precision medicine. The decisive advantage of NabiOta® is our fellowship-trained radiologists, mandatory dual-reading protocols, and instant digital integration with our surgical and orthopedic centers."
-      : "Hochmoderne Geräte sind nur die Basis. Der entscheidende Vorteil von NabiOta® liegt in der radiologischen Fachexpertise, standardisierter Doppelbefundung und der nahtlosen Integration mit unseren Facharztzentren und OP-Kliniken.",
-    btn: isRu ? "Записаться на обследование" : isEn ? "Schedule Diagnostic Scan" : "Diagnostik-Termin vereinbaren",
-    stats: [
-      {
-        icon: Clock,
-        title: "< 24h",
-        label: isRu ? "Готовность заключения и снимков" : isEn ? "Report & image delivery turnaround" : "Digitaler Befund innerhalb von 24h",
-      },
-      {
-        icon: Eye,
-        title: isRu ? "Двойное чтение" : isEn ? "Dual Reading" : "Vier-Augen-Prinzip",
-        label: isRu ? "Обязательная проверка сложных случаев" : isEn ? "Dual specialist review on complex cases" : "Fachärztliche Doppelbefundung",
-      },
-      {
-        icon: PacsNetworkIcon,
-        title: "PACS Portal",
-        label: isRu ? "Защищенный онлайн-доступ к DICOM" : isEn ? "Secure cloud access to full DICOM scans" : "Sicherer digitaler Bildabruf für Zuweiser",
-      },
-      {
-        icon: Award,
-        title: isRu ? "Стандарты РФК" : isEn ? "University Level" : "Universitäre Standards",
-        label: isRu ? "Стандартизированные немецкие протоколы" : isEn ? "Certified German diagnostic standards" : "Standardisierte Untersuchungsprotokolle",
-      },
-    ],
-  };
-
-  // ── Step-by-Step Patient Pathway ──
-  const workflowSteps = [
+  // ── Section 3: 4 Process Steps matching Photo 2 ──
+  const processSteps = [
     {
-      step: "01",
-      title: isRu ? "Быстрая запись и подготовка" : isEn ? "Rapid Booking & Preparation" : "Terminvergabe & Vorbereitung",
+      num: "01",
+      icon: Calendar,
+      title: isRu ? "Запись на прием" : isEn ? "Appointment Booking" : "Terminvereinbarung",
       desc: isRu
-        ? "Короткие сроки ожидания. Четкие инструкции по подготовке к контрастированию или исследованию без очередей."
+        ? "Быстро и удобно онлайн или по телефону."
         : isEn
-        ? "Immediate appointments without months of waiting. Clear preparation instructions for contrast and fasting if needed."
-        : "Zeitnahe Terminvergabe ohne monatelange Wartezeiten. Verständliche Aufklärung über Vorbereitung und Kontrastmittel.",
+        ? "Fast and uncomplicated online or by phone."
+        : "Schnell und unkompliziert online oder telefonisch.",
     },
     {
-      step: "02",
-      title: isRu ? "Комфортное обследование" : isEn ? "Comfortable Patient Scan" : "Schonende Untersuchung",
+      num: "02",
+      icon: Activity,
+      title: isRu ? "Обследование" : isEn ? "Examination" : "Untersuchung",
       desc: isRu
-        ? "Заботливая поддержка ассистентов, удобное позиционирование, музыкальные наушники и связь с оператором."
+        ? "Передовые технологии, бережное проведение."
         : isEn
-        ? "Attentive care by certified technicians, ergonomic cushions, acoustic headphones, and continuous communication."
-        : "Einfühlsame Betreuung durch erfahrene MTRAs, bequeme Lagerung, Musikkopfhörer und ständiger Sprechkontakt.",
+        ? "Modern technology, professionally conducted."
+        : "Moderne Technik, professionell durchgeführt.",
     },
     {
-      step: "03",
-      title: isRu ? "Анализ и двойная верификация" : isEn ? "AI-Assisted Dual Analysis" : "KI-unterstützte Doppelbefundung",
+      num: "03",
+      icon: FileText,
+      title: isRu ? "Анализ и заключение" : isEn ? "Evaluation" : "Auswertung",
       desc: isRu
-        ? "Высокоточные 3D-реконструкции, цифровая обработка и оценка профильным врачом-рентгенологом."
+        ? "Экспертное заключение нашими специалистами."
         : isEn
-        ? "High-resolution 3D reconstructions, algorithmic noise reduction, and evaluation by specialized radiologists."
-        : "Modernste 3D-Rekonstruktionen, KI-gestützte Detailerkennung und Zweitbefundung durch Fachradiologen.",
+        ? "Diagnostic reporting by fellowship specialists."
+        : "Befundung durch unsere Spezialisten.",
     },
     {
-      step: "04",
-      title: isRu ? "Быстрое получение и консультация" : isEn ? "Instant Report Delivery" : "Befundbesprechung & Weiterleitung",
+      num: "04",
+      icon: User,
+      title: isRu ? "Личная консультация" : isEn ? "Personal Consultation" : "Persönliches Gespräch",
       desc: isRu
-        ? "Заключение в течение 24 часов в цифровом виде и на защищенном носителе для вашего лечащего врача."
+        ? "Понятные результаты и индивидуальные рекомендации."
         : isEn
-        ? "Written diagnostic report and high-res images delivered in under 24 hours directly to you and your referring doctor."
-        : "Detaillierter Befundbericht und digitale Bilddaten in unter 24h direkt für Sie und Ihren überweisenden Facharzt.",
+        ? "Clear results and tailored recommendations."
+        : "Klare Ergebnisse und individuelle Empfehlungen.",
     },
   ];
 
-  // ── Clinical Indications Grid ──
-  const indications = [
+  // ── Section 4: Indications List matching Photo 2 ──
+  const indicationsCol1 = isRu
+    ? [
+        "Головной мозг и нервная система",
+        "Позвоночник и суставы",
+        "Сердце и кровообращение",
+        "Легкие и дыхательные пути",
+        "Органы брюшной полости и пищеварение",
+      ]
+    : isEn
+    ? [
+        "Brain and nervous system",
+        "Spine and musculoskeletal joints",
+        "Heart and cardiovascular system",
+        "Lungs and respiratory tract",
+        "Abdominal organs and digestion",
+      ]
+    : [
+        "Gehirn und Nervensystem",
+        "Wirbelsäule und Gelenke",
+        "Herz und Kreislauf",
+        "Lunge und Atemwege",
+        "Bauchorgane und Verdauung",
+      ];
+
+  const indicationsCol2 = isRu
+    ? [
+        "Ранняя диагностика онкологии",
+        "Воспалительные процессы и инфекции",
+        "Гормональные и метаболические нарушения",
+        "Сосуды и кровоснабжение",
+        "Спортивно-медицинские обследования",
+      ]
+    : isEn
+    ? [
+        "Early cancer detection screening",
+        "Inflammatory conditions and infections",
+        "Hormonal and metabolic disorders",
+        "Vascular health and blood circulation",
+        "Sports medicine evaluations",
+      ]
+    : [
+        "Krebsfrüherkennung",
+        "Entzündungen und Infektionen",
+        "Hormon- und Stoffwechselerkrankungen",
+        "Gefäße und Durchblutung",
+        "Sportmedizinische Untersuchungen",
+      ];
+
+  // ── Section 5: Testimonials Carousel matching Photo 2 ──
+  const testimonials = [
     {
-      category: isRu ? "Неврология и Позвоночник" : isEn ? "Neurology & Spine" : "Neurologie & Wirbelsäule",
-      items: isRu
-        ? ["Грыжи и протрузии дисков", "Хронические головные боли и мигрень", "Подозрение на рассеянный склероз", "Сосудистые аневризмы и инсульты"]
+      quote: isRu
+        ? "Профессиональная и чуткая забота мне очень помогла. Благодаря быстрой и точной диагностике верное лечение было начато без промедления."
         : isEn
-        ? ["Disc herniation and spinal stenosis", "Chronic headache and migraine", "Multiple sclerosis monitoring", "Cerebral vascular aneurysms and stroke"]
-        : ["Bandscheibenvorfälle & Spinalkanalstenosen", "Chronische Kopfschmerzen & Migräne", "Verdacht auf Multiple Sklerose", "Aneurysmen & zerebrovaskuläre Abklärung"],
+        ? "The professional and empathetic care helped me tremendously. Thanks to rapid, high-precision diagnostics, the right therapy was initiated immediately."
+        : "Die professionelle und einfühlsame Betreuung hat mir sehr geholfen. Dank der schnellen und präzisen Diagnostik konnte die richtige Therapie rasch eingeleitet werden.",
+      author: "Anna Müller",
+      role: isRu ? "Пациентка" : isEn ? "Patient" : "Patientin",
+      patientImage: "/images/diagnostik/patient-anna.jpg",
+      scanImage: "/images/diagnostik/scan-review.jpg",
     },
     {
-      category: isRu ? "Ортопедия и Спортивная Травма" : isEn ? "Orthopedics & Sports Medicine" : "Orthopädie & Sporttraumatologie",
-      items: isRu
-        ? ["Разрывы менисков и связок колена", "Повреждения ротаторной манжеты плеча", "Артроз тазобедренного и коленного суставов", "Стрессовые и скрытые микропереломы"]
+      quote: isRu
+        ? "Впечатляющее качество томографии 3 Тесла и подробное разъяснение каждого снимка врачом-рентгенологом. Полное чувство уверенности."
         : isEn
-        ? ["Meniscus and cruciate ligament tears", "Rotator cuff tears and shoulder impingement", "Hip and knee osteoarthritis", "Stress and occult microfractures"]
-        : ["Meniskus- & Kreuzbandrupturen", "Rotatorenmanschettenläsionen der Schulter", "Arthrose von Hüfte, Knie und Sprunggelenk", "Stress- und okkulte Knochenfrakturen"],
+        ? "Impressive 3-Tesla image resolution and clear explanation of every slice by the radiologist. Total clinical confidence."
+        : "Beeindruckende Bildauflösung des 3-Tesla-MRT und verständliche Erläuterung aller Befunde durch den Radiologen. Höchste Sicherheit.",
+      author: "Thomas Becker",
+      role: isRu ? "Пациент" : isEn ? "Patient" : "Patient",
+      patientImage: "/images/testimonials/thomas-becker.jpg",
+      scanImage: "/images/services/diagnostik.jpg",
     },
     {
-      category: isRu ? "Кардиология и Сосуды" : isEn ? "Cardiology & Vascular Medicine" : "Kardiologie & Gefäßmedizin",
-      items: isRu
-        ? ["Кальциноз коронарных артерий (Calcium Scoring)", "Стенозы сонных артерий и риск инсульта", "Тромбозы глубоких вен и флебиты", "Облитерирующий атеросклероз артерий ног"]
+      quote: isRu
+        ? "Очень быстрое получение заключения в течение суток. Мой хирург смог моментально спланировать операцию благодаря цифровому доступу."
         : isEn
-        ? ["Coronary calcium scoring & plaque analysis", "Carotid artery stenosis & stroke prevention", "Deep vein thrombosis (DVT)", "Peripheral arterial occlusive disease"]
-        : ["Kardio-CT: Calcium-Score & Plaque-Analyse", "Karotisstenosen & Schlaganfallvorsorge", "Tiefe Beinvenenthrombosen (TVT)", "Periphere arterielle Verschlusskrankheit (pAVK)"],
-    },
-    {
-      category: isRu ? "Онкопоиск и Профилактика" : isEn ? "Oncology & Preventive Care" : "Onkologische Vorsorge & Check-up",
-      items: isRu
-        ? ["Низкодозовый скрининг легких у курильщиков", "Мультипараметрическая МРТ простаты (PI-RADS)", "УЗИ брюшной полости и щитовидной железы", "Комплексные чек-ап программы холдинга"]
-        : isEn
-        ? ["Low-dose lung cancer screening", "Multiparametric prostate MRI (PI-RADS)", "Abdominal and thyroid ultrasound", "Comprehensive health check-up protocols"]
-        : ["Low-Dose-Lungenkrebs-Früherkennung", "Multiparametrische Prostata-MRT (PI-RADS)", "Abdomen- und Schilddrüsen-Screening", "Ganzheitliche Vorsorgeprogramme des Verbunds"],
+        ? "Report ready in less than 24 hours. My orthopedist accessed the full digital scans immediately to plan targeted therapy."
+        : "Befundbereitstellung in unter 24 Stunden. Mein Orthopäde konnte dank digitalem Bildzugang direkt die gezielte Therapie planen.",
+      author: "Elena Fischer",
+      role: isRu ? "Пациентка" : isEn ? "Patient" : "Patientin",
+      patientImage: "/images/testimonials/elena-fischer.jpg",
+      scanImage: "/images/diagnostik/scan-review.jpg",
     },
   ];
+
+  const currentTestimonial = testimonials[activeTestimonial];
 
   return (
     <div className="flex flex-col min-h-screen bg-[#FAF8F5]">
@@ -517,419 +376,474 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         badges={heroData.badges}
       />
 
-      <main className="flex-1">
+      <main className="flex-1 py-10 sm:py-16 space-y-16 sm:space-y-20 lg:space-y-24 bg-[#FAF8F5]">
+        
         {/* ══════════════════════════════════════════════════════════
-            SECTION 1: SPOTLIGHT 3T MRT (PHOTO 1 STYLE)
-            - Left: Large MRI scanner suite photo with floating badge
-            - Right: Technical specs, 3 circular gold badges, link
+            SECTION 1 (PHOTO 2 TOP): UNSERE DIAGNOSTIKVERFAHREN
+            - Left: Eyebrow, Title, Description, Button
+            - Right: 6 Modality Cards (MRT, CT, Ultraschall, Röntgen, Labor, Kardio)
         ══════════════════════════════════════════════════════════ */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-[#FAF8F5] relative overflow-hidden">
-          {/* Subtle Scanner Waves Vector Accent in Top-Right */}
-          <div className="absolute top-4 sm:top-8 right-6 sm:right-16 w-60 sm:w-80 h-60 sm:h-80 pointer-events-none opacity-40 z-0">
-            <svg
-              viewBox="0 0 200 200"
-              fill="none"
-              className="w-full h-full text-[#D5B878]"
-            >
-              <circle cx="100" cy="100" r="85" stroke="currentColor" strokeWidth="0.8" strokeDasharray="3 3" />
-              <circle cx="100" cy="100" r="60" stroke="currentColor" strokeWidth="1.2" />
-              <circle cx="100" cy="100" r="35" stroke="currentColor" strokeWidth="1" strokeDasharray="2 2" />
-              <path d="M15 100h170M100 15v170" stroke="#C5A56A" strokeWidth="0.6" opacity="0.6" />
-            </svg>
-          </div>
+        <section className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            
+            {/* Left Header Column */}
+            <div className="lg:col-span-4 space-y-4 pt-2">
+              <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
+                {isRu ? "НАШИ МЕТОДЫ ДИАГНОСТИКИ" : isEn ? "OUR DIAGNOSTIC PROCEDURES" : "UNSERE DIAGNOSTIKVERFAHREN"}
+              </span>
 
-          <Container size="wide" className="relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-              {/* Left Column: MRI Suite Photo + Floating Bottom Pill Badge */}
-              <div className="lg:col-span-6 relative">
-                <div className="relative aspect-[16/10] sm:aspect-[16/10.5] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-[#EDE8DE]">
-                  <Image
-                    src="/images/services/diagnostik.jpg"
-                    alt={spotlightMri.title}
-                    fill
-                    className="object-cover object-center"
-                    priority
-                  />
-                  {/* Subtle vignette on bottom for card contrast */}
-                  <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/45 to-transparent pointer-events-none" />
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] text-[#132218] font-normal leading-[1.18]">
+                {isRu
+                  ? "Современные методы для точных результатов"
+                  : isEn
+                  ? "Advanced Methods for Accurate Results"
+                  : "Moderne Verfahren für genaue Ergebnisse"}
+              </h2>
 
-                  {/* Floating Pill Overlay Card */}
-                  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-auto sm:max-w-md bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-full px-4 sm:px-5 py-2.5 sm:py-3 shadow-lg flex items-center justify-between gap-3 border border-white/60">
-                    <div className="flex items-center gap-3 min-w-0">
-                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#0C1C11] border border-[#D5B878]/60 flex items-center justify-center text-[#ECCF96] shadow-sm shrink-0">
-                        <CloverEmblemIcon className="w-4.5 h-4.5 stroke-[1.6]" />
+              <p className="text-xs sm:text-[13.5px] text-[#556358] leading-relaxed font-sans max-w-md">
+                {isRu
+                  ? "Наша диагностика объединяет передовую медицинскую технику с многолетним клиническим опытом. Это позволяет распознавать заболевания на ранних стадиях и назначать оптимальную терапию."
+                  : isEn
+                  ? "Our diagnostic division unites cutting-edge medical technology with decades of clinical experience. We detect conditions early, evaluate them accurately, and establish the best possible treatment."
+                  : "Unsere Diagnostik vereint modernste Medizintechnik mit langjähriger Erfahrung. So können wir Erkrankungen frühzeitig erkennen, präzise beurteilen und die bestmögliche Therapie für Sie einleiten."}
+              </p>
+
+              <div className="pt-2">
+                <Link
+                  href={`/${locale}/contact`}
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-[#D5B878] text-[#142318] hover:bg-[#D5B878] hover:text-[#0C1C11] font-semibold text-xs tracking-wide transition-all shadow-sm group bg-white/60"
+                >
+                  <span>{isRu ? "Все процедуры →" : isEn ? "View all procedures →" : "Alle Verfahren ansehen →"}</span>
+                </Link>
+              </div>
+            </div>
+
+            {/* Right 6 Cards Grid (2 rows x 3 columns) */}
+            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
+              {procedures.map((proc) => {
+                const ProcIcon = proc.icon;
+                return (
+                  <div
+                    key={proc.id}
+                    className="bg-white rounded-2xl border border-[#EDE8DE] shadow-[0_2px_14px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] transition-all duration-300 overflow-hidden flex flex-col justify-between group hover:-translate-y-0.5"
+                  >
+                    <div>
+                      {/* Card Image */}
+                      <div className="relative aspect-[16/8.5] w-full overflow-hidden bg-neutral-900">
+                        <Image
+                          src={proc.image}
+                          alt={proc.title}
+                          fill
+                          className="object-cover group-hover:scale-104 transition-transform duration-500"
+                        />
                       </div>
-                      <div className="min-w-0">
-                        <h4 className="text-[13.5px] sm:text-[14px] font-bold text-[#142318] truncate leading-tight">
-                          {spotlightMri.pillTitle}
-                        </h4>
-                        <p className="text-[11px] text-[#6E756D] truncate font-sans mt-0.5">
-                          {spotlightMri.pillSubtitle}
+
+                      {/* Card Body */}
+                      <div className="p-4 sm:p-4.5">
+                        <div className="flex items-center gap-2.5 mb-2">
+                          <div className="w-8 h-8 rounded-full bg-[#08170D] border border-[#D5B878]/60 flex items-center justify-center text-[#ECCF96] shrink-0 shadow-sm">
+                            <ProcIcon className="w-4 h-4 stroke-[1.6]" />
+                          </div>
+                          <h3 className="font-serif text-base sm:text-[17px] text-[#142318] font-medium leading-snug group-hover:text-[#B89650] transition-colors">
+                            {proc.title}
+                          </h3>
+                        </div>
+
+                        <p className="text-[11.5px] text-[#556358] leading-relaxed font-sans line-clamp-2">
+                          {proc.desc}
                         </p>
                       </div>
                     </div>
 
-                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#142318]/15 bg-white flex items-center justify-center text-[#142318] hover:bg-[#D5B878] hover:border-[#D5B878] hover:text-[#0C1C11] transition-all shrink-0 ml-1">
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Column: Title, Description, 3 Badges, Link */}
-              <div className="lg:col-span-6 space-y-4 sm:space-y-5 lg:pl-2">
-                <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
-                  {spotlightMri.eyebrow}
-                </span>
-
-                <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] text-[#132218] font-normal leading-[1.18] whitespace-pre-line">
-                  {spotlightMri.title}
-                </h2>
-
-                <p className="text-xs sm:text-[13.5px] text-[#556358] leading-relaxed font-sans max-w-lg">
-                  {spotlightMri.desc}
-                </p>
-
-                {/* 3 Horizontal Badges with Gold Outline Icons */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2 sm:pt-3">
-                  {spotlightMri.features.map((feat, idx) => {
-                    const FeatureIcon = feat.icon;
-                    return (
-                      <div key={idx} className="flex items-center gap-2.5">
-                        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D5B878] bg-[#FAF8F5] flex items-center justify-center text-[#B89650] shrink-0 shadow-sm">
-                          <FeatureIcon className="w-4 h-4 stroke-[1.6]" />
-                        </div>
-                        <span className="text-[11.5px] sm:text-xs font-medium text-[#425046] leading-snug">
-                          {feat.label}
-                        </span>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {/* Link with underline and arrow */}
-                <div className="pt-2 sm:pt-4">
-                  <Link
-                    href={`/${locale}/contact`}
-                    className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-semibold text-[#142318] hover:text-[#B89650] underline decoration-[#D5B878] underline-offset-4 transition-colors"
-                  >
-                    <span>{spotlightMri.linkText}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
-
-        {/* ══════════════════════════════════════════════════════════
-            SECTION 2: CORE MODALITIES GRID (4 HIGH-END CARDS)
-            - 3T MRT, Low-Dose CT, Digitales Röntgen, Farbduplex
-        ══════════════════════════════════════════════════════════ */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-[#FAF8F5] border-t border-[#EDE8DE]/70">
-          <Container size="wide">
-            {/* Header row */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end mb-10 sm:mb-12">
-              <div className="lg:col-span-6 space-y-2">
-                <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
-                  {isRu ? "СПЕКТР ОБОРУДОВАНИЯ" : isEn ? "ADVANCED MODALITIES" : "MODERNE VERFAHREN"}
-                </span>
-                <h2 className="font-serif text-3xl sm:text-4xl text-[#132218] font-normal leading-tight">
-                  {isRu
-                    ? "С Schnittbilddiagnostik экспертного уровня"
-                    : isEn
-                    ? "Diagnostic Imaging on University Standards"
-                    : "Schnittbilddiagnostik auf universitärem Niveau"}
-                </h2>
-              </div>
-              <div className="lg:col-span-6 border-l-2 border-[#D5B878]/60 pl-5 sm:pl-7">
-                <p className="text-xs sm:text-[13.5px] text-[#556358] leading-relaxed font-sans">
-                  {isRu
-                    ? "Каждый метод решает конкретную клиническую задачу: МРТ для идеальной детализации мягких тканей и нервов, КТ для сверхбыстрого костного и сосудистого 3D-анализа, рентген и сонография для мгновенного функционального контроля."
-                    : isEn
-                    ? "Each modality serves targeted diagnostic accuracy: high-field MRI for unrivaled soft tissue and neuro detail, low-dose CT for rapid 3D bone and vascular imaging, and digital radiography for immediate functional evaluation."
-                    : "Jede Modalität erfüllt eine gezielte klinische Aufgabe: High-Field-MRT für unübertroffene Weichteil- und Nervendarstellung, Niedrigdosis-CT für sekundenschnelle 3D-Knochen- und Gefäßanalysen sowie volldigitales Röntgen."}
-                </p>
-              </div>
-            </div>
-
-            {/* 4 Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-              {modalities.map((mod) => {
-                const IconComponent = mod.icon;
-                return (
-                  <div
-                    key={mod.id}
-                    className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-[#EDE8DE] shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)] transition-all duration-300 flex flex-col justify-between group"
-                  >
-                    <div>
-                      {/* Top Row: Icon + Badge Tag */}
-                      <div className="flex items-center justify-between gap-3 mb-5">
-                        <div className="w-11 h-11 rounded-full border border-[#D5B878] bg-[#FAF8F5] flex items-center justify-center text-[#B89650] group-hover:bg-[#0C1C11] group-hover:text-[#ECCF96] transition-colors">
-                          <IconComponent className="w-5 h-5 stroke-[1.6]" />
-                        </div>
-                        <span className="text-[10px] font-bold tracking-[0.16em] uppercase px-3 py-1 rounded-full bg-[#FAF8F5] text-[#8C6D2B] border border-[#D5B878]/50">
-                          {mod.tag}
-                        </span>
-                      </div>
-
-                      <h3 className="font-serif text-2xl text-[#142318] font-normal leading-snug">
-                        {mod.title}
-                      </h3>
-                      <p className="text-xs sm:text-[13px] font-medium text-[#B89650] mt-1 mb-3">
-                        {mod.subtitle}
-                      </p>
-
-                      <p className="text-xs sm:text-[13px] text-[#556358] leading-relaxed font-sans mb-5">
-                        {mod.desc}
-                      </p>
-
-                      {/* Diagnostic Points */}
-                      <div className="space-y-2.5 pt-4 border-t border-[#EDE8DE]">
-                        {mod.points.map((pt, idx) => (
-                          <div key={idx} className="flex items-start gap-2.5">
-                            <CheckCircle2 className="w-4 h-4 text-[#B89650] shrink-0 mt-0.5" />
-                            <span className="text-xs sm:text-[12.5px] text-[#2C3B30] font-medium leading-snug">
-                              {pt}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="pt-6 mt-6 border-t border-[#EDE8DE] flex items-center justify-between">
+                    {/* Bottom Action: Arrow Button */}
+                    <div className="px-4 sm:px-4.5 pb-3.5 pt-1 flex justify-end">
                       <Link
                         href={`/${locale}/contact`}
-                        className="inline-flex items-center gap-2 text-xs font-semibold text-[#142318] hover:text-[#B89650] transition-colors"
+                        aria-label={proc.title}
+                        className="w-7 h-7 rounded-full border border-[#EDE8DE] bg-[#FAF8F5] group-hover:bg-[#D5B878] group-hover:border-[#D5B878] flex items-center justify-center text-[#6E756D] group-hover:text-[#0C1C11] transition-all"
                       >
-                        <span>{isRu ? "Записаться на процедуру" : isEn ? "Book Examination" : "Termin anfragen"}</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </Link>
-                      <span className="text-[11px] text-[#8C938D] font-mono">NabiOta® Standards</span>
                     </div>
                   </div>
                 );
               })}
             </div>
-          </Container>
+          </div>
         </section>
 
         {/* ══════════════════════════════════════════════════════════
-            SECTION 3: EDGE-TO-EDGE PANORAMIC DARK GREEN (PHOTO 2 STYLE)
-            - "фото 2 до краев доходит"
-            - Left: Dark forest green with eyebrow, title, desc, gold button
-            - Middle: 4 points with circular gold icons
-            - Right: High-tech diagnostics clinic photo flush to screen edge
+            SECTION 2 (PHOTO 2 MIDDLE BANNER):
+            "MODERNE TECHNOLOGIE - Mehr als nur Bilder – klare Antworten."
+            - Dark forest green banner with botanical line art
+            - Left: Scanner room image
+            - Center: Heading & Description
+            - Right: 3 Stats (3T, <24h, 99%)
         ══════════════════════════════════════════════════════════ */}
-        <section className="w-full bg-[#08170D] text-white relative overflow-hidden border-y border-[#D5B878]/30">
-          <div className="w-full flex flex-col lg:flex-row items-stretch min-h-[400px] lg:min-h-[460px]">
-            {/* Left Content Area */}
-            <div className="w-full lg:w-[45%] xl:w-[42%] p-6 sm:p-10 lg:p-14 lg:pl-16 xl:pl-24 flex flex-col justify-center relative z-20">
-              <div className="max-w-md space-y-3">
-                <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
-                  {whySection.eyebrow}
+        <section className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16">
+          <div className="relative rounded-2xl sm:rounded-3xl bg-[#08170D] text-white overflow-hidden border border-[#D5B878]/30 shadow-xl">
+            {/* Subtle Gold Botanical Line Art on Far Right */}
+            <div className="absolute right-0 top-0 w-80 h-full pointer-events-none opacity-25 z-0 select-none">
+              <Image
+                src="/images/areas/botanical-branch-clean.png"
+                alt="Botanical Accent"
+                fill
+                className="object-contain object-right"
+              />
+            </div>
+
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 items-center">
+              {/* Left Column: Scanner Image */}
+              <div className="lg:col-span-4 relative aspect-[16/10] lg:aspect-auto lg:h-full min-h-[220px] sm:min-h-[260px] overflow-hidden">
+                <Image
+                  src="/images/diagnostik/scanner-suite.jpg"
+                  alt="NabiOta CT Scanner Suite"
+                  fill
+                  className="object-cover object-center"
+                  priority
+                />
+                {/* Seamless gradient fade into dark forest green */}
+                <div className="hidden lg:block absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#08170D] to-transparent pointer-events-none z-10" />
+                <div className="lg:hidden absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#08170D] to-transparent pointer-events-none z-10" />
+              </div>
+
+              {/* Middle Column: Heading & Description */}
+              <div className="lg:col-span-5 p-6 sm:p-8 lg:p-10 space-y-2.5">
+                <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
+                  {isRu ? "ПЕРЕДОВЫЕ ТЕХНОЛОГИИ" : isEn ? "MODERN TECHNOLOGY" : "MODERNE TECHNOLOGIE"}
                 </span>
 
-                <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-white font-normal leading-[1.15]">
-                  {whySection.title}
-                </h2>
+                <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal leading-tight">
+                  {isRu
+                    ? "Больше чем снимки — ясные ответы."
+                    : isEn
+                    ? "More than Images – Clear Answers."
+                    : "Mehr als nur Bilder – klare Antworten."}
+                </h3>
 
-                <p className="text-white/80 text-xs sm:text-[13.5px] leading-relaxed font-sans">
-                  {whySection.desc}
+                <p className="text-white/80 text-xs sm:text-[13px] leading-relaxed font-sans max-w-md">
+                  {isRu
+                    ? "Наше высокотехнологичное оборудование обеспечивает исключительно точную и щадящую диагностику — для максимальной уверенности, правильных решений и эффективного лечения."
+                    : isEn
+                    ? "Our cutting-edge equipment enables exceptionally precise and gentle diagnostics—for greater security, informed clinical decisions, and targeted therapy."
+                    : "Unsere hochmodernen Geräte ermöglichen eine besonders präzise und schonende Diagnostik – für mehr Sicherheit, bessere Entscheidungen und eine gezielte Behandlung."}
                 </p>
+              </div>
 
-                <div className="pt-3">
-                  <Link
-                    href={`/${locale}/contact`}
-                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs sm:text-[13px] tracking-wide shadow-md transition-all duration-200 hover:scale-[1.02]"
-                  >
-                    <span>{whySection.btn}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
+              {/* Right Column: 3 Stats separated by dividers */}
+              <div className="lg:col-span-3 p-6 sm:p-8 lg:p-6 lg:border-l lg:border-white/15 grid grid-cols-3 lg:grid-cols-1 gap-4 lg:gap-5">
+                <div className="space-y-0.5">
+                  <span className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-[#ECCF96] font-normal leading-none block">
+                    3T
+                  </span>
+                  <span className="text-[10.5px] sm:text-[11.5px] text-white/70 font-sans leading-tight block">
+                    {isRu ? "Мощность поля МРТ" : isEn ? "MRI Magnet Strength" : "MRT-Magnetfeldstärke"}
+                  </span>
+                </div>
+
+                <div className="space-y-0.5 pt-0 lg:pt-3 lg:border-t lg:border-white/10">
+                  <span className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-[#ECCF96] font-normal leading-none block">
+                    &lt;24h
+                  </span>
+                  <span className="text-[10.5px] sm:text-[11.5px] text-white/70 font-sans leading-tight block">
+                    {isRu ? "Готовность заключения" : isEn ? "Report Turnaround" : "Befunderstellung"}
+                  </span>
+                </div>
+
+                <div className="space-y-0.5 pt-0 lg:pt-3 lg:border-t lg:border-white/10">
+                  <span className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-[#ECCF96] font-normal leading-none block">
+                    99%
+                  </span>
+                  <span className="text-[10.5px] sm:text-[11.5px] text-white/70 font-sans leading-tight block">
+                    {isRu ? "Удовлетворенность пациентов" : isEn ? "Patient Satisfaction" : "Patientenzufriedenheit"}
+                  </span>
                 </div>
               </div>
             </div>
+          </div>
+        </section>
 
-            {/* Middle Column: 4 Vertical Points with Circular Gold Icons */}
-            <div className="w-full lg:w-[27%] xl:w-[25%] px-6 sm:px-10 lg:px-4 py-6 sm:py-8 lg:py-0 flex flex-col justify-center space-y-4 sm:space-y-5 relative z-20">
-              {whySection.stats.map((item, idx) => {
-                const ItemIcon = item.icon;
+        {/* ══════════════════════════════════════════════════════════
+            SECTION 3 (PHOTO 2): UNSER DIAGNOSTIK-PROZESS (4 STEPS)
+            - Left: Eyebrow, Title, Description, Button
+            - Right: 4 horizontal numbered process cards
+        ══════════════════════════════════════════════════════════ */}
+        <section className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+            
+            {/* Left Header Area */}
+            <div className="lg:col-span-4 space-y-3">
+              <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
+                {isRu ? "НАШ ПРОЦЕСС ДИАГНОСТИКИ" : isEn ? "OUR DIAGNOSTIC PROCESS" : "UNSER DIAGNOSTIK-PROZESS"}
+              </span>
+
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#132218] font-normal leading-tight">
+                {isRu
+                  ? "В 4 шага к ясным результатам"
+                  : isEn
+                  ? "In 4 Steps to Clear Results"
+                  : "In 4 Schritten zu klaren Ergebnissen"}
+              </h2>
+
+              <p className="text-xs sm:text-[13.5px] text-[#556358] leading-relaxed font-sans max-w-sm">
+                {isRu
+                  ? "От первого обращения до получения заключения — мы бережно сопровождаем вас на каждом этапе."
+                  : isEn
+                  ? "From initial inquiry to diagnostic report—we guide you through every single step."
+                  : "Von der ersten Untersuchung bis zum Befund – wir begleiten Sie auf jedem Schritt."}
+              </p>
+
+              <div className="pt-2">
+                <Link
+                  href={`/${locale}/contact`}
+                  className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[#D5B878] text-[#142318] hover:bg-[#D5B878] hover:text-[#0C1C11] font-semibold text-xs tracking-wide transition-all shadow-sm bg-white"
+                >
+                  <span>{isRu ? "Как это работает →" : isEn ? "How it works →" : "So funktioniert es →"}</span>
+                </Link>
+              </div>
+            </div>
+
+            {/* Right 4 Horizontal Process Cards */}
+            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-4.5">
+              {processSteps.map((step) => {
+                const StepIcon = step.icon;
                 return (
-                  <div key={idx} className="flex items-start gap-3.5">
-                    <div className="w-10 h-10 rounded-full border border-[#D5B878]/70 bg-[#08170D] flex items-center justify-center text-[#ECCF96] shrink-0 shadow-sm mt-0.5">
-                      <ItemIcon className="w-4.5 h-4.5 stroke-[1.6]" />
-                    </div>
+                  <div
+                    key={step.num}
+                    className="bg-white rounded-2xl border border-[#EDE8DE] p-5 shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.04)] transition-all flex flex-col justify-between"
+                  >
                     <div>
-                      <h4 className="text-xs sm:text-[13.5px] font-semibold text-[#ECCF96] leading-tight">
-                        {item.title}
-                      </h4>
-                      <p className="text-[11.5px] text-white/80 leading-snug mt-0.5 font-sans">
-                        {item.label}
+                      {/* Top Row: Icon inside gold/beige circle + Number */}
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-full bg-[#FAF5EB] border border-[#D5B878]/60 flex items-center justify-center text-[#B89650] shrink-0">
+                          <StepIcon className="w-5 h-5 stroke-[1.6]" />
+                        </div>
+                        <span className="font-serif text-lg font-normal text-[#B89650]">
+                          {step.num}
+                        </span>
+                      </div>
+
+                      <h3 className="font-serif text-base sm:text-[17px] text-[#142318] font-medium leading-snug mb-1.5">
+                        {step.title}
+                      </h3>
+
+                      <p className="text-xs text-[#556358] leading-relaxed font-sans">
+                        {step.desc}
                       </p>
                     </div>
                   </div>
                 );
               })}
             </div>
-
-            {/* Right Side: Campus & Lab Architecture Photo extending to the far right edge */}
-            <div className="w-full lg:w-[28%] xl:w-[33%] relative min-h-[260px] sm:min-h-[320px] lg:min-h-full shrink-0">
-              <Image
-                src="/images/areas/diagnostics.jpg"
-                alt="NabiOta Diagnostics Excellence"
-                fill
-                className="object-cover object-center"
-                priority
-              />
-              {/* Seamless gradient fade from left dark forest green into photo */}
-              <div className="hidden lg:block absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-[#08170D] to-transparent pointer-events-none z-10" />
-              <div className="lg:hidden absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#08170D] to-transparent pointer-events-none z-10" />
-            </div>
           </div>
         </section>
 
         {/* ══════════════════════════════════════════════════════════
-            SECTION 4: THE 4-STEP DIAGNOSTIC JOURNEY (UNTERSUCHUNGSWEG)
+            SECTION 4 (PHOTO 2): 2-COLUMN SECTION
+            - Left: "Fragen zur Diagnostik?" Dark Green Card + Consultation photo + Button
+            - Right: "Was wir für Sie untersuchen können" White card with 2-col checklist
         ══════════════════════════════════════════════════════════ */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-[#FAF8F5] relative overflow-hidden">
-          {/* Subtle Botanical Watermark Accent in Top-Left */}
-          <div className="absolute -top-6 -left-6 w-48 sm:w-64 md:w-80 h-48 sm:h-64 md:h-80 pointer-events-none opacity-70 z-0 select-none">
-            <Image
-              src="/images/areas/botanical-branch-clean.png"
-              alt="Botanical Foliage"
-              fill
-              className="object-contain object-top-left -scale-x-100"
-              priority
-            />
-          </div>
-
-          <Container size="wide" className="relative z-10">
-            <div className="max-w-2xl mb-12 sm:mb-14">
-              <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#B89650] uppercase block mb-2">
-                {isRu ? "СТРУКТУРИРОВАННЫЙ ПРОЦЕСС" : isEn ? "PATIENT JOURNEY" : "DER UNTERSUCHUNGSABLAUF"}
-              </span>
-              <h2 className="font-serif text-3xl sm:text-4xl text-[#132218] font-normal leading-tight">
-                {isRu
-                  ? "4 шага к точному и безопасному диагнозу"
-                  : isEn
-                  ? "4 Steps to Precise Diagnostic Clarity"
-                  : "In 4 Schritten zu Ihrem präzisen Befund"}
-              </h2>
-              <p className="text-xs sm:text-[13.5px] text-[#556358] mt-2 font-sans">
-                {isRu
-                  ? "От первого звонка до передачи цифровых данных вашему врачу — прозрачный, комфортный и быстрый маршрут."
-                  : isEn
-                  ? "From your first appointment inquiry to seamless digital image transfer—structured, reassuring, and swift."
-                  : "Von der schnellen Terminvereinbarung bis zur sicheren Befundübermittlung an Ihren behandelnden Arzt."}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {workflowSteps.map((ws, idx) => (
-                <div
-                  key={idx}
-                  className="bg-white rounded-2xl p-6 sm:p-7 border border-[#EDE8DE] shadow-[0_4px_20px_rgba(0,0,0,0.02)] relative flex flex-col justify-between group hover:-translate-y-1 transition-all duration-300"
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="font-serif text-2xl sm:text-3xl text-[#B89650] font-normal">
-                        {ws.step}
-                      </span>
-                      <div className="w-8 h-8 rounded-full bg-[#FAF8F5] border border-[#D5B878]/50 flex items-center justify-center text-[#B89650]">
-                        <ChevronRight className="w-4 h-4" />
-                      </div>
-                    </div>
-                    <h3 className="font-serif text-lg sm:text-xl text-[#142318] font-normal mb-2 leading-snug">
-                      {ws.title}
-                    </h3>
-                    <p className="text-xs sm:text-[13px] text-[#556358] leading-relaxed font-sans">
-                      {ws.desc}
-                    </p>
-                  </div>
-
-                  <div className="pt-4 mt-4 border-t border-[#EDE8DE]/60 text-[11px] text-[#B89650] font-medium flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#B89650]" />
-                    <span>NabiOta® Service</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
-
-        {/* ══════════════════════════════════════════════════════════
-            SECTION 5: CLINICAL INDICATIONS OVERVIEW
-        ══════════════════════════════════════════════════════════ */}
-        <section className="py-12 sm:py-16 bg-[#FAF8F5] border-t border-[#EDE8DE]">
-          <Container size="wide">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-10">
-              <div className="lg:col-span-5 space-y-3">
-                <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
-                  {isRu ? "ПОКАЗАНИЯ К ИССЛЕДОВАНИЯМ" : isEn ? "INDICATIONS SPECTRUM" : "INDIKATIONSSPEKTRUM"}
-                </span>
-                <h2 className="font-serif text-3xl sm:text-4xl text-[#132218] font-normal leading-tight">
+        <section className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
+            
+            {/* Left Card: Fragen zur Diagnostik? */}
+            <div className="lg:col-span-5 rounded-2xl sm:rounded-3xl bg-[#08170D] text-white overflow-hidden border border-[#D5B878]/30 shadow-lg flex flex-col justify-between">
+              <div className="p-6 sm:p-8 space-y-3">
+                <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal leading-tight">
                   {isRu
-                    ? "Когда необходима специализированная диагностика?"
+                    ? "Вопросы по диагностике?"
                     : isEn
-                    ? "When is High-End Imaging Indicated?"
-                    : "Wann ist bildgebende Diagnostik indiziert?"}
-                </h2>
-                <p className="text-xs sm:text-[13.5px] text-[#556358] leading-relaxed font-sans">
+                    ? "Questions About Diagnostics?"
+                    : "Fragen zur Diagnostik?"}
+                </h3>
+                <p className="text-white/80 text-xs sm:text-[13px] font-sans leading-relaxed">
                   {isRu
-                    ? "Своевременная визуализация позволяет обнаружить патологии на ранних бессимптомных стадиях, предотвратить осложнения и составить точный план консервативного или хирургического лечения."
+                    ? "Наша команда всегда к вашим услугам и с радостью проконсультирует вас обо всех обследованиях и возможностях."
                     : isEn
-                    ? "Early imaging detects pathologies before symptoms escalate, preventing complications and guiding targeted surgical or conservative clinical care."
-                    : "Frühzeitige Schnittbildgebung erkennt Veränderungen vor Symptomverschärfungen und ermöglicht die exakte Planung konservativer oder operativer Therapien."}
+                    ? "Our team is always at your disposal and happy to advise you on all examinations and modalities."
+                    : "Unser Team steht Ihnen jederzeit zur Verfügung und berät Sie gerne zu allen Untersuchungen und Möglichkeiten."}
                 </p>
-
                 <div className="pt-2">
-                  <div className="p-4 rounded-xl bg-white border border-[#D5B878]/40 shadow-sm flex items-start gap-3">
-                    <Info className="w-5 h-5 text-[#B89650] shrink-0 mt-0.5" />
-                    <p className="text-xs text-[#556358] leading-snug">
-                      {isRu
-                        ? "Мы принимаем пациентов по направлениям всех страховых касс, частных страховок, а также по самообращению."
-                        : isEn
-                        ? "We serve privately insured, statutory health insured (with referral), and self-paying patients."
-                        : "Wir betreuen Privatversicherte, Selbstzahler sowie gesetzlich versicherte Patienten nach fachärztlicher Überweisung."}
-                    </p>
+                  <Link
+                    href={`/${locale}/contact`}
+                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs tracking-wide shadow-md transition-all hover:scale-102"
+                  >
+                    <span>{isRu ? "Связаться с нами →" : isEn ? "Get in touch →" : "Kontakt aufnehmen →"}</span>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Consultation Photo inside card */}
+              <div className="relative aspect-[16/9] w-full overflow-hidden">
+                <Image
+                  src="/images/diagnostik/consultation.jpg"
+                  alt="Doctor consultation with patient"
+                  fill
+                  className="object-cover object-center"
+                />
+                <div className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-[#08170D] to-transparent pointer-events-none" />
+              </div>
+            </div>
+
+            {/* Right Card: Was wir für Sie untersuchen können */}
+            <div className="lg:col-span-7 bg-white rounded-2xl sm:rounded-3xl border border-[#EDE8DE] p-6 sm:p-8 lg:p-9 shadow-[0_2px_16px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+              <div>
+                <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase block mb-1">
+                  {isRu ? "ЧАСТЫЕ ДИАГНОЗЫ И ОБСЛЕДОВАНИЯ" : isEn ? "FREQUENT DIAGNOSES & EXAMINATIONS" : "HÄUFIGE DIAGNOSEN & UNTERSUCHUNGEN"}
+                </span>
+
+                <h3 className="font-serif text-2xl sm:text-3xl text-[#132218] font-normal leading-tight mb-6">
+                  {isRu
+                    ? "Что мы можем исследовать для вас"
+                    : isEn
+                    ? "What We Can Examine for You"
+                    : "Was wir für Sie untersuchen können"}
+                </h3>
+
+                {/* 2-Column Checklist with Gold Checkmarks */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5">
+                  <div className="space-y-3.5">
+                    {indicationsCol1.map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-2.5">
+                        <CheckCircle2 className="w-4 h-4 text-[#B89650] shrink-0" />
+                        <span className="text-xs sm:text-[13px] text-[#2C3B30] font-medium leading-snug">
+                          {item}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="space-y-3.5">
+                    {indicationsCol2.map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-2.5">
+                        <CheckCircle2 className="w-4 h-4 text-[#B89650] shrink-0" />
+                        <span className="text-xs sm:text-[13px] text-[#2C3B30] font-medium leading-snug">
+                          {item}
+                        </span>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
 
-              {/* 4 Indication Categories */}
-              <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                {indications.map((ind, idx) => (
-                  <div
-                    key={idx}
-                    className="bg-white rounded-2xl p-5 sm:p-6 border border-[#EDE8DE] shadow-[0_4px_16px_rgba(0,0,0,0.02)]"
-                  >
-                    <h4 className="font-serif text-base sm:text-lg text-[#142318] font-normal pb-2.5 mb-3 border-b border-[#EDE8DE] flex items-center justify-between">
-                      <span>{ind.category}</span>
-                      <span className="w-2 h-2 rounded-full bg-[#B89650]" />
-                    </h4>
-                    <ul className="space-y-2">
-                      {ind.items.map((item, itemIdx) => (
-                        <li key={itemIdx} className="flex items-start gap-2 text-xs text-[#425046] font-medium leading-snug">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#B89650] shrink-0 mt-0.5" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+              <div className="pt-6 mt-6 border-t border-[#EDE8DE] flex items-center justify-between text-xs text-[#6E756D] font-sans">
+                <span>{isRu ? "Все виды медицинских страховок и частный прием" : isEn ? "All insurance classes and private consultations" : "Alle Kassen, Privatversicherte & Selbstzahler"}</span>
+                <span className="font-semibold text-[#142318]">NabiOta® Diagnostics</span>
               </div>
             </div>
-          </Container>
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════════════════════════
+            SECTION 5 (PHOTO 2): PATIENTENSTIMMEN (TESTIMONIAL BANNER)
+            - Dark forest green banner
+            - Left: Patient portrait
+            - Center: Eyebrow, Heading, Quote, Author, Carousel controls
+            - Right: Scan review photo
+        ══════════════════════════════════════════════════════════ */}
+        <section className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16">
+          <div className="relative rounded-2xl sm:rounded-3xl bg-[#08170D] text-white overflow-hidden border border-[#D5B878]/30 shadow-xl">
+            <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
+              
+              {/* Left Column: Patient Portrait */}
+              <div className="lg:col-span-3 relative aspect-[16/10] lg:aspect-auto lg:h-full min-h-[220px] overflow-hidden">
+                <Image
+                  src={currentTestimonial.patientImage}
+                  alt={currentTestimonial.author}
+                  fill
+                  className="object-cover object-center"
+                />
+                <div className="hidden lg:block absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#08170D] to-transparent pointer-events-none" />
+                <div className="lg:hidden absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#08170D] to-transparent pointer-events-none" />
+              </div>
+
+              {/* Center Column: Quote, Author, Controls */}
+              <div className="lg:col-span-6 p-6 sm:p-8 lg:p-10 text-center space-y-3.5">
+                <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
+                  {isRu ? "ОТЗЫВЫ ПАЦИЕНТОВ" : isEn ? "PATIENT VOICES" : "PATIENTENSTIMMEN"}
+                </span>
+
+                <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal leading-tight">
+                  {isRu
+                    ? "Доверие, основанное на опыте."
+                    : isEn
+                    ? "Trust Built on Experience."
+                    : "Vertrauen durch Erfahrung."}
+                </h3>
+
+                <blockquote className="text-white/85 text-xs sm:text-[13.5px] italic leading-relaxed font-sans max-w-lg mx-auto">
+                  „{currentTestimonial.quote}“
+                </blockquote>
+
+                <div className="pt-1">
+                  <span className="text-xs font-semibold text-[#ECCF96] block">
+                    {currentTestimonial.author}, {currentTestimonial.role}
+                  </span>
+                </div>
+
+                {/* Carousel Controls */}
+                <div className="flex items-center justify-center gap-3 pt-2">
+                  <button
+                    onClick={() =>
+                      setActiveTestimonial((prev) =>
+                        prev === 0 ? testimonials.length - 1 : prev - 1
+                      )
+                    }
+                    aria-label="Previous testimonial"
+                    className="w-8 h-8 rounded-full border border-white/20 hover:border-[#D5B878] bg-white/5 hover:bg-[#D5B878] hover:text-[#08170D] text-white flex items-center justify-center transition-all"
+                  >
+                    <ArrowLeft className="w-3.5 h-3.5" />
+                  </button>
+
+                  <div className="flex items-center gap-1.5 px-2">
+                    {testimonials.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setActiveTestimonial(idx)}
+                        aria-label={`Slide ${idx + 1}`}
+                        className={`h-1.5 rounded-full transition-all ${
+                          activeTestimonial === idx
+                            ? "w-5 bg-[#ECCF96]"
+                            : "w-1.5 bg-white/30"
+                        }`}
+                      />
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={() =>
+                      setActiveTestimonial((prev) =>
+                        prev === testimonials.length - 1 ? 0 : prev + 1
+                      )
+                    }
+                    aria-label="Next testimonial"
+                    className="w-8 h-8 rounded-full border border-white/20 hover:border-[#D5B878] bg-white/5 hover:bg-[#D5B878] hover:text-[#08170D] text-white flex items-center justify-center transition-all"
+                  >
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Right Column: Scan Review Image */}
+              <div className="hidden lg:block lg:col-span-3 relative h-full min-h-[260px] overflow-hidden">
+                <Image
+                  src={currentTestimonial.scanImage}
+                  alt="Specialist reviewing MRI scan"
+                  fill
+                  className="object-cover object-center"
+                />
+                <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#08170D] to-transparent pointer-events-none" />
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* ══════════════════════════════════════════════════════════
             SECTION 6: SIGNATURE PANORAMIC MOUNTAIN CTA BANNER
-            - Mountain background photo with dark forest green overlay
-            - Gold border lines top and bottom
-            - Eyebrow, Title, Description, Gold Button
+            - Background mountain image with dark overlay
+            - Gold borders, Eyebrow, Title, Appointment CTA buttons
         ══════════════════════════════════════════════════════════ */}
         <section className="relative w-full py-16 sm:py-20 lg:py-24 overflow-hidden border-y border-[#D5B878]/60">
-          {/* Background Mountain Photo */}
           <div className="absolute inset-0 z-0">
             <Image
               src="/images/values/mountains-bg.jpg"
@@ -938,12 +852,11 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
               className="object-cover object-center"
               priority
             />
-            {/* Dark Forest Green gradient overlay for luxury contrast */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#08170D]/94 via-[#08170D]/88 to-[#08170D]/94" />
           </div>
 
-          <Container size="wide" className="relative z-10">
-            <div className="max-w-2xl mx-auto text-center space-y-4 sm:space-y-5">
+          <div className="relative z-10 w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 text-center">
+            <div className="max-w-2xl mx-auto space-y-4 sm:space-y-5">
               <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.26em] text-[#C5A56A] uppercase block">
                 {isRu ? "ЗДОРОВЬЕ НАЧИНАЕТСЯ С ТОЧНОСТИ" : isEn ? "PRECISION FOR YOUR HEALTH" : "GESUNDHEIT BEGINNT MIT PRÄZISION"}
               </span>
@@ -958,7 +871,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
 
               <p className="text-white/85 text-xs sm:text-[14px] leading-relaxed font-sans max-w-xl mx-auto">
                 {isRu
-                  ? "Запишитесь на МРТ 3 Тесла, низкодозовую КТ или рентген в центрах NabiOta®. Мы гарантируем бережное отношение, минимальные сроки ожидания и исчерпывающее врачебное заключение."
+                  ? "Запишитесь на МРТ 3 Тесла, низкодозовую КТ или цифровой рентген в центрах NabiOta®. Мы гарантируем бережное отношение, минимальные сроки ожидания и исчерпывающее врачебное заключение."
                   : isEn
                   ? "Schedule your 3-Tesla MRI, low-dose CT, or digital X-ray at NabiOta® diagnostics centers. Fast appointments, maximum patient comfort, and reliable reports for you and your physicians."
                   : "Vereinbaren Sie Ihren Untersuchungstermin für 3T-MRT, Niedrigdosis-CT oder volldigitales Röntgen – schnell, digital und mit höchster radiologischer Fachexpertise."}
@@ -967,7 +880,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
               <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5">
                 <Link
                   href={`/${locale}/contact`}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs sm:text-[13.5px] tracking-wide shadow-lg transition-all duration-200 hover:scale-[1.02]"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs sm:text-[13.5px] tracking-wide shadow-lg transition-all duration-200 hover:scale-102"
                 >
                   <span>{isRu ? "Записаться на прием" : isEn ? "Book an Appointment" : "Termin vereinbaren"}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -981,7 +894,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                 </Link>
               </div>
             </div>
-          </Container>
+          </div>
         </section>
       </main>
 
