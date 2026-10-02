@@ -319,122 +319,10 @@ export function NewsPageComponent({ locale = "de" }: Props) {
                   </div>
                 </div>
               </div>
-
-              {/* ── 2. "LATEST ARTICLES" HEADER & SORT CONTROLS ── */}
-              <div>
-                <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-[#EDE8DE]">
-                  <div>
-                    <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
-                      {isRu ? "ВСЕ СТАТЬИ" : isEn ? "ALL NEWS" : "ALL NEWS"}
-                    </span>
-                    <h3 className="font-serif text-2xl sm:text-3xl text-[#132218] font-normal leading-tight mt-1">
-                      {isRu ? "Последние публикации" : isEn ? "Latest Articles" : "Latest Articles"}
-                    </h3>
-                  </div>
-
-                  {/* Sort by dropdown */}
-                  <div className="flex items-center gap-2 self-start sm:self-auto">
-                    <span className="text-xs text-[#6E756D] font-sans">
-                      {isRu ? "Сортировка:" : isEn ? "Sort by:" : "Sortieren:"}
-                    </span>
-                    <div className="relative">
-                      <select
-                        value={sortOrder}
-                        onChange={(e) => setSortOrder(e.target.value as "recent" | "oldest")}
-                        className="appearance-none bg-white border border-[#EDE8DE] rounded-full pl-3.5 pr-8 py-1.5 text-xs text-[#142318] font-medium shadow-sm hover:border-[#D5B878] focus:outline-none focus:border-[#D5B878] cursor-pointer"
-                      >
-                        <option value="recent">
-                          {isRu ? "Сначала новые" : isEn ? "Most recent" : "Neueste zuerst"}
-                        </option>
-                        <option value="oldest">
-                          {isRu ? "Сначала старые" : isEn ? "Oldest" : "Älteste zuerst"}
-                        </option>
-                      </select>
-                      <ChevronDown className="w-3.5 h-3.5 text-[#6E756D] absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* ── 3. 6 ARTICLES GRID (2 ROWS X 3 CARDS) ── */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 pt-6">
-                  {filteredArticles.map((art) => (
-                    <article
-                      key={art.id}
-                      className="bg-white rounded-2xl border border-[#EDE8DE] shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] transition-all duration-300 overflow-hidden flex flex-col justify-between group"
-                    >
-                      <div>
-                        {/* Article Image */}
-                        <Link href={`/${locale}/news/${art.slug}`} className="block relative aspect-[16/10] w-full overflow-hidden">
-                          <Image
-                            src={art.image}
-                            alt={art.title}
-                            fill
-                            className="object-cover group-hover:scale-104 transition-transform duration-500"
-                          />
-                        </Link>
-
-                        {/* Article Body */}
-                        <div className="p-4 sm:p-5">
-                          {/* Category Tag + Date */}
-                          <div className="flex items-center justify-between gap-2 mb-2">
-                            <span className="text-[9.5px] font-bold tracking-[0.14em] uppercase text-[#8C6D2B] bg-[#FAF8F5] border border-[#EDE8DE] px-2 py-0.5 rounded">
-                              {art.category}
-                            </span>
-                            <span className="text-[11px] text-[#8C938D] font-sans">
-                              {art.date}
-                            </span>
-                          </div>
-
-                          {/* Title */}
-                          <Link href={`/${locale}/news/${art.slug}`}>
-                            <h4 className="font-serif text-base sm:text-[17px] text-[#142318] font-normal leading-snug line-clamp-2 mt-2.5 mb-2 group-hover:text-[#B89650] transition-colors">
-                              {art.title}
-                            </h4>
-                          </Link>
-
-                          {/* Excerpt */}
-                          <p className="text-xs text-[#556358] leading-relaxed line-clamp-3 font-sans">
-                            {art.summary}
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Read more → */}
-                      <div className="px-4 sm:px-5 pb-4 sm:pb-5 pt-1 mt-auto">
-                        <Link
-                          href={`/${locale}/news/${art.slug}`}
-                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#142318] group-hover:text-[#B89650] transition-colors"
-                        >
-                          <span>{isRu ? "Подробнее" : isEn ? "Read more" : "Weiterlesen"}</span>
-                          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                        </Link>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-
-                {filteredArticles.length === 0 && (
-                  <div className="py-12 text-center bg-white rounded-2xl border border-[#EDE8DE] p-8">
-                    <p className="text-sm text-[#556358] font-sans">
-                      {isRu
-                        ? "В этой категории пока нет новостей."
-                        : isEn
-                        ? "No articles found in this category."
-                        : "Keine Artikel in dieser Kategorie gefunden."}
-                    </p>
-                    <button
-                      onClick={() => setActiveCategory("all")}
-                      className="mt-3 text-xs font-semibold text-[#B89650] hover:underline"
-                    >
-                      {isRu ? "Показать все новости" : isEn ? "Show all news" : "Alle Artikel anzeigen"}
-                    </button>
-                  </div>
-                )}
-              </div>
             </div>
 
-            {/* ── RIGHT COLUMN (~29% width): STICKY SIDEBAR ── */}
-            <aside className="lg:col-span-4 space-y-6 sm:space-y-8 lg:sticky lg:top-24">
+            {/* ── RIGHT COLUMN (~33% width): SIDEBAR ── */}
+            <aside className="lg:col-span-4 space-y-6 sm:space-y-8">
               
               {/* Card 1: News Categories */}
               <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#EDE8DE] shadow-[0_2px_16px_rgba(0,0,0,0.02)] p-5 sm:p-6">
@@ -546,6 +434,123 @@ export function NewsPageComponent({ locale = "de" }: Props) {
                 </div>
               </div>
             </aside>
+          </div>
+
+          {/* ══════════════════════════════════════════════════════════
+              FULL-WIDTH ARTICLES SECTION (100% OF CONTAINER WIDTH)
+              - Lowered with generous breathing room (mt-12 sm:mt-16)
+              - 3 Columns spanning the full container width
+              - Cards end exactly where the sidebar ends on the right!
+          ══════════════════════════════════════════════════════════ */}
+          <div className="mt-12 sm:mt-16">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-[#EDE8DE]">
+              <div>
+                <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
+                  {isRu ? "ВСЕ СТАТЬИ" : isEn ? "ALL NEWS" : "ALL NEWS"}
+                </span>
+                <h3 className="font-serif text-2xl sm:text-3xl text-[#132218] font-normal leading-tight mt-1">
+                  {isRu ? "Последние публикации" : isEn ? "Latest Articles" : "Latest Articles"}
+                </h3>
+              </div>
+
+              {/* Sort by dropdown */}
+              <div className="flex items-center gap-2 self-start sm:self-auto">
+                <span className="text-xs text-[#6E756D] font-sans">
+                  {isRu ? "Сортировка:" : isEn ? "Sort by:" : "Sortieren:"}
+                </span>
+                <div className="relative">
+                  <select
+                    value={sortOrder}
+                    onChange={(e) => setSortOrder(e.target.value as "recent" | "oldest")}
+                    className="appearance-none bg-white border border-[#EDE8DE] rounded-full pl-3.5 pr-8 py-1.5 text-xs text-[#142318] font-medium shadow-sm hover:border-[#D5B878] focus:outline-none focus:border-[#D5B878] cursor-pointer"
+                  >
+                    <option value="recent">
+                      {isRu ? "Сначала новые" : isEn ? "Most recent" : "Neueste zuerst"}
+                    </option>
+                    <option value="oldest">
+                      {isRu ? "Сначала старые" : isEn ? "Oldest" : "Älteste zuerst"}
+                    </option>
+                  </select>
+                  <ChevronDown className="w-3.5 h-3.5 text-[#6E756D] absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                </div>
+              </div>
+            </div>
+
+            {/* 3-Column Grid across 100% width */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 pt-6">
+              {filteredArticles.map((art) => (
+                <article
+                  key={art.id}
+                  className="bg-white rounded-2xl border border-[#EDE8DE] shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] transition-all duration-300 overflow-hidden flex flex-col justify-between group hover:-translate-y-0.5"
+                >
+                  <div>
+                    {/* Article Image */}
+                    <Link href={`/${locale}/news/${art.slug}`} className="block relative aspect-[16/10] w-full overflow-hidden">
+                      <Image
+                        src={art.image}
+                        alt={art.title}
+                        fill
+                        className="object-cover group-hover:scale-104 transition-transform duration-500"
+                      />
+                    </Link>
+
+                    {/* Article Body */}
+                    <div className="p-4 sm:p-5">
+                      {/* Category Tag + Date */}
+                      <div className="flex items-center justify-between gap-2 mb-2">
+                        <span className="text-[9.5px] font-bold tracking-[0.14em] uppercase text-[#8C6D2B] bg-[#FAF8F5] border border-[#EDE8DE] px-2 py-0.5 rounded">
+                          {art.category}
+                        </span>
+                        <span className="text-[11px] text-[#8C938D] font-sans">
+                          {art.date}
+                        </span>
+                      </div>
+
+                      {/* Title */}
+                      <Link href={`/${locale}/news/${art.slug}`}>
+                        <h4 className="font-serif text-base sm:text-[17px] text-[#142318] font-normal leading-snug line-clamp-2 mt-2.5 mb-2 group-hover:text-[#B89650] transition-colors">
+                          {art.title}
+                        </h4>
+                      </Link>
+
+                      {/* Excerpt */}
+                      <p className="text-xs text-[#556358] leading-relaxed line-clamp-3 font-sans">
+                        {art.summary}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Read more → */}
+                  <div className="px-4 sm:px-5 pb-4 sm:pb-5 pt-1 mt-auto">
+                    <Link
+                      href={`/${locale}/news/${art.slug}`}
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#142318] group-hover:text-[#B89650] transition-colors"
+                    >
+                      <span>{isRu ? "Подробнее" : isEn ? "Read more" : "Weiterlesen"}</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            {filteredArticles.length === 0 && (
+              <div className="py-12 text-center bg-white rounded-2xl border border-[#EDE8DE] p-8 mt-6">
+                <p className="text-sm text-[#556358] font-sans">
+                  {isRu
+                    ? "В этой категории пока нет новостей."
+                    : isEn
+                    ? "No articles found in this category."
+                    : "Keine Artikel in dieser Kategorie gefunden."}
+                </p>
+                <button
+                  onClick={() => setActiveCategory("all")}
+                  className="mt-3 text-xs font-semibold text-[#B89650] hover:underline"
+                >
+                  {isRu ? "Показать все новости" : isEn ? "Show all news" : "Alle Artikel anzeigen"}
+                </button>
+              </div>
+            )}
           </div>
 
           {/* ══════════════════════════════════════════════════════════
