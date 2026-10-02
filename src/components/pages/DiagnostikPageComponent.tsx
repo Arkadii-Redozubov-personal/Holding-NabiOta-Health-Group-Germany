@@ -90,6 +90,25 @@ function HeartCardioIcon({ className = "w-4 h-4" }: { className?: string }) {
   );
 }
 
+function ScannerArchIcon({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 20V11a8 8 0 0 1 16 0v9" />
+      <path d="M8 20v-9a4 4 0 0 1 8 0v9" />
+      <circle cx="12" cy="14" r="1.5" fill="currentColor" />
+    </svg>
+  );
+}
+
+function GoldCircleCheckIcon({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="none">
+      <circle cx="10" cy="10" r="8.5" stroke="#B89650" strokeWidth="1.2" />
+      <path d="M6.5 10.2L8.8 12.5L13.5 7.8" stroke="#B89650" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 interface Props {
   locale?: SupportedLocale;
 }
@@ -226,7 +245,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
     },
     {
       num: "02",
-      icon: Activity,
+      icon: ScannerArchIcon,
       title: isRu ? "Обследование" : isEn ? "Examination" : "Untersuchung",
       desc: isRu
         ? "Передовые технологии, бережное проведение."
@@ -383,16 +402,16 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             - Left: Eyebrow, Title, Description, Button
             - Right: 6 Modality Cards (MRT, CT, Ultraschall, Röntgen, Labor, Kardio)
         ══════════════════════════════════════════════════════════ */}
-        <section className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
             
             {/* Left Header Column */}
-            <div className="lg:col-span-4 space-y-4 pt-2">
+            <div className="lg:col-span-4 space-y-4 pt-1">
               <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
                 {isRu ? "НАШИ МЕТОДЫ ДИАГНОСТИКИ" : isEn ? "OUR DIAGNOSTIC PROCEDURES" : "UNSERE DIAGNOSTIKVERFAHREN"}
               </span>
 
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] text-[#132218] font-normal leading-[1.18]">
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-[38px] text-[#132218] font-normal leading-[1.18]">
                 {isRu
                   ? "Современные методы для точных результатов"
                   : isEn
@@ -400,7 +419,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                   : "Moderne Verfahren für genaue Ergebnisse"}
               </h2>
 
-              <p className="text-xs sm:text-[13.5px] text-[#556358] leading-relaxed font-sans max-w-md">
+              <p className="text-xs sm:text-[13px] text-[#556358] leading-relaxed font-sans max-w-md">
                 {isRu
                   ? "Наша диагностика объединяет передовую медицинскую технику с многолетним клиническим опытом. Это позволяет распознавать заболевания на ранних стадиях и назначать оптимальную терапию."
                   : isEn
@@ -411,25 +430,25 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
               <div className="pt-2">
                 <Link
                   href={`/${locale}/contact`}
-                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-[#D5B878] text-[#142318] hover:bg-[#D5B878] hover:text-[#0C1C11] font-semibold text-xs tracking-wide transition-all shadow-sm group bg-white/60"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#D5B878] text-[#142318] hover:bg-[#D5B878] hover:text-[#0C1C11] font-semibold text-xs tracking-wide transition-all shadow-sm group bg-white/70"
                 >
                   <span>{isRu ? "Все процедуры →" : isEn ? "View all procedures →" : "Alle Verfahren ansehen →"}</span>
                 </Link>
               </div>
             </div>
 
-            {/* Right 6 Cards Grid (2 rows x 3 columns) */}
-            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
+            {/* Right 6 Cards Grid (2 rows x 3 columns) - Compact height matching Photo 1 */}
+            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5 sm:gap-4">
               {procedures.map((proc) => {
                 const ProcIcon = proc.icon;
                 return (
                   <div
                     key={proc.id}
-                    className="bg-white rounded-2xl border border-[#EDE8DE] shadow-[0_2px_14px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] transition-all duration-300 overflow-hidden flex flex-col justify-between group hover:-translate-y-0.5"
+                    className="bg-white rounded-2xl border border-[#EDE8DE] shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.06)] transition-all duration-300 p-2 sm:p-2.5 flex flex-col justify-between group hover:-translate-y-0.5"
                   >
                     <div>
-                      {/* Card Image */}
-                      <div className="relative aspect-[16/8.5] w-full overflow-hidden bg-neutral-900">
+                      {/* Compact Inset Image */}
+                      <div className="relative aspect-[16/7.8] w-full rounded-xl overflow-hidden bg-neutral-900">
                         <Image
                           src={proc.image}
                           alt={proc.title}
@@ -438,32 +457,29 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                         />
                       </div>
 
-                      {/* Card Body */}
-                      <div className="p-4 sm:p-4.5">
-                        <div className="flex items-center gap-2.5 mb-2">
-                          <div className="w-8 h-8 rounded-full bg-[#08170D] border border-[#D5B878]/60 flex items-center justify-center text-[#ECCF96] shrink-0 shadow-sm">
-                            <ProcIcon className="w-4 h-4 stroke-[1.6]" />
-                          </div>
-                          <h3 className="font-serif text-base sm:text-[17px] text-[#142318] font-medium leading-snug group-hover:text-[#B89650] transition-colors">
-                            {proc.title}
-                          </h3>
+                      {/* Compact Bottom Content Row (Icon + Title/Desc + Arrow) */}
+                      <div className="flex items-center gap-2.5 pt-2.5 pb-0.5 px-1">
+                        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#08170D] border border-[#D5B878]/60 flex items-center justify-center text-[#ECCF96] shrink-0 shadow-xs">
+                          <ProcIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[1.6]" />
                         </div>
 
-                        <p className="text-[11.5px] text-[#556358] leading-relaxed font-sans line-clamp-2">
-                          {proc.desc}
-                        </p>
-                      </div>
-                    </div>
+                        <div className="flex-1 min-w-0">
+                          <h3 className="font-serif text-[13.5px] sm:text-[14.5px] text-[#142318] font-medium leading-tight group-hover:text-[#B89650] transition-colors truncate">
+                            {proc.title}
+                          </h3>
+                          <p className="text-[10px] sm:text-[10.5px] text-[#556358] leading-tight line-clamp-1 mt-0.5 font-sans">
+                            {proc.desc}
+                          </p>
+                        </div>
 
-                    {/* Bottom Action: Arrow Button */}
-                    <div className="px-4 sm:px-4.5 pb-3.5 pt-1 flex justify-end">
-                      <Link
-                        href={`/${locale}/contact`}
-                        aria-label={proc.title}
-                        className="w-7 h-7 rounded-full border border-[#EDE8DE] bg-[#FAF8F5] group-hover:bg-[#D5B878] group-hover:border-[#D5B878] flex items-center justify-center text-[#6E756D] group-hover:text-[#0C1C11] transition-all"
-                      >
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </Link>
+                        <Link
+                          href={`/${locale}/contact`}
+                          aria-label={proc.title}
+                          className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border border-[#EDE8DE] bg-[#FAF8F5] group-hover:bg-[#D5B878] group-hover:border-[#D5B878] flex items-center justify-center text-[#6E756D] group-hover:text-[#0C1C11] shrink-0 transition-all"
+                        >
+                          <ArrowRight className="w-3 h-3" />
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 );
@@ -480,7 +496,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             - Center: Heading & Description
             - Right: 3 Stats (3T, <24h, 99%)
         ══════════════════════════════════════════════════════════ */}
-        <section className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16">
+        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-2xl sm:rounded-3xl bg-[#08170D] text-white overflow-hidden border border-[#D5B878]/30 shadow-xl">
             {/* Subtle Gold Botanical Line Art on Far Right */}
             <div className="absolute right-0 top-0 w-80 h-full pointer-events-none opacity-25 z-0 select-none">
@@ -564,11 +580,11 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ══════════════════════════════════════════════════════════
-            SECTION 3 (PHOTO 2): UNSER DIAGNOSTIK-PROZESS (4 STEPS)
+            SECTION 3 (PHOTO 2): UNSER DIAGNOSTIK-PROZESS (1-IN-1 DESIGN)
             - Left: Eyebrow, Title, Description, Button
-            - Right: 4 horizontal numbered process cards
+            - Right: 4 Connected steps directly on background with connecting line
         ══════════════════════════════════════════════════════════ */}
-        <section className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16">
+        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
             {/* Left Header Area */}
@@ -585,7 +601,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                   : "In 4 Schritten zu klaren Ergebnissen"}
               </h2>
 
-              <p className="text-xs sm:text-[13.5px] text-[#556358] leading-relaxed font-sans max-w-sm">
+              <p className="text-xs sm:text-[13px] text-[#556358] leading-relaxed font-sans max-w-sm">
                 {isRu
                   ? "От первого обращения до получения заключения — мы бережно сопровождаем вас на каждом этапе."
                   : isEn
@@ -596,244 +612,251 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
               <div className="pt-2">
                 <Link
                   href={`/${locale}/contact`}
-                  className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[#D5B878] text-[#142318] hover:bg-[#D5B878] hover:text-[#0C1C11] font-semibold text-xs tracking-wide transition-all shadow-sm bg-white"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#D5B878] text-[#142318] hover:bg-[#D5B878] hover:text-[#0C1C11] font-semibold text-xs tracking-wide transition-all shadow-sm bg-transparent"
                 >
                   <span>{isRu ? "Как это работает →" : isEn ? "How it works →" : "So funktioniert es →"}</span>
                 </Link>
               </div>
             </div>
 
-            {/* Right 4 Horizontal Process Cards */}
-            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-4.5">
-              {processSteps.map((step) => {
-                const StepIcon = step.icon;
-                return (
-                  <div
-                    key={step.num}
-                    className="bg-white rounded-2xl border border-[#EDE8DE] p-5 shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.04)] transition-all flex flex-col justify-between"
-                  >
-                    <div>
-                      {/* Top Row: Icon inside gold/beige circle + Number */}
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-full bg-[#FAF5EB] border border-[#D5B878]/60 flex items-center justify-center text-[#B89650] shrink-0">
-                          <StepIcon className="w-5 h-5 stroke-[1.6]" />
+            {/* Right Area: 4 Connected Steps directly on the warm cream background (Photo 2) */}
+            <div className="lg:col-span-8 relative">
+              {/* Subtle decorative leaf on the right edge */}
+              <div className="hidden xl:block absolute -right-6 top-1/2 -translate-y-1/2 w-24 h-36 pointer-events-none opacity-20 select-none z-0">
+                <svg viewBox="0 0 100 160" fill="none" className="w-full h-full text-[#2C4A34]">
+                  <path d="M20 150 C 40 100, 60 60, 90 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+                  <path d="M40 100 C 25 85, 20 70, 35 65 C 50 60, 48 85, 40 100 Z" fill="currentColor" opacity="0.6" />
+                  <path d="M60 65 C 75 50, 85 45, 80 35 C 75 25, 60 45, 60 65 Z" fill="currentColor" opacity="0.6" />
+                  <path d="M75 35 C 90 20, 98 15, 95 8 C 90 2, 75 18, 75 35 Z" fill="currentColor" opacity="0.6" />
+                </svg>
+              </div>
+
+              {/* Thin horizontal connecting line between step headers on desktop */}
+              <div className="hidden md:block absolute top-[21px] left-[35px] right-[45px] h-[1px] bg-[#E2DDD2] z-0" />
+
+              {/* 4 Process Step Columns */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-6 relative z-10">
+                {processSteps.map((step) => {
+                  const StepIcon = step.icon;
+                  return (
+                    <div key={step.num} className="flex flex-col">
+                      {/* Header Row: Beige Circle Badge with Icon + Step Number */}
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-11 h-11 rounded-full bg-[#F3EDE2] border border-[#E5DECF] shadow-xs flex items-center justify-center text-[#142318] shrink-0">
+                          <StepIcon className="w-5 h-5 stroke-[1.5]" />
                         </div>
-                        <span className="font-serif text-lg font-normal text-[#B89650]">
+                        <span className="font-serif text-[17px] text-[#B89650] font-normal tracking-wide">
                           {step.num}
                         </span>
                       </div>
 
-                      <h3 className="font-serif text-base sm:text-[17px] text-[#142318] font-medium leading-snug mb-1.5">
-                        {step.title}
-                      </h3>
-
-                      <p className="text-xs text-[#556358] leading-relaxed font-sans">
-                        {step.desc}
-                      </p>
+                      {/* Title & Description directly on background */}
+                      <div className="mt-3.5">
+                        <h3 className="font-serif text-[16px] sm:text-[17px] text-[#142318] font-medium leading-snug">
+                          {step.title}
+                        </h3>
+                        <p className="text-xs sm:text-[12.5px] text-[#556358] leading-relaxed font-sans mt-1.5">
+                          {step.desc}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           </div>
         </section>
 
         {/* ══════════════════════════════════════════════════════════
-            SECTION 4 (PHOTO 2): 2-COLUMN SECTION
-            - Left: "Fragen zur Diagnostik?" Dark Green Card + Consultation photo + Button
-            - Right: "Was wir für Sie untersuchen können" White card with 2-col checklist
+            SECTION 4 (PHOTO 3): UNIFIED 2-COLUMN SECTION
+            - Compact height matching Photo 3
+            - Left (Deep Forest Green): "Fragen zur Diagnostik?" + consultation photo on right + button
+            - Right (Pure White): "Was wir für Sie untersuchen können" + 2-col checklist with gold checkmarks
         ══════════════════════════════════════════════════════════ */}
-        <section className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
+        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#EDE8DE] shadow-[0_4px_24px_rgba(0,0,0,0.03)] overflow-hidden grid grid-cols-1 lg:grid-cols-12 items-stretch">
             
-            {/* Left Card: Fragen zur Diagnostik? */}
-            <div className="lg:col-span-5 rounded-2xl sm:rounded-3xl bg-[#08170D] text-white overflow-hidden border border-[#D5B878]/30 shadow-lg flex flex-col justify-between">
-              <div className="p-6 sm:p-8 space-y-3">
-                <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal leading-tight">
-                  {isRu
-                    ? "Вопросы по диагностике?"
-                    : isEn
-                    ? "Questions About Diagnostics?"
-                    : "Fragen zur Diagnostik?"}
-                </h3>
-                <p className="text-white/80 text-xs sm:text-[13px] font-sans leading-relaxed">
-                  {isRu
-                    ? "Наша команда всегда к вашим услугам и с радостью проконсультирует вас обо всех обследованиях и возможностях."
-                    : isEn
-                    ? "Our team is always at your disposal and happy to advise you on all examinations and modalities."
-                    : "Unser Team steht Ihnen jederzeit zur Verfügung und berät Sie gerne zu allen Untersuchungen und Möglichkeiten."}
-                </p>
-                <div className="pt-2">
-                  <Link
-                    href={`/${locale}/contact`}
-                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs tracking-wide shadow-md transition-all hover:scale-102"
-                  >
-                    <span>{isRu ? "Связаться с нами →" : isEn ? "Get in touch →" : "Kontakt aufnehmen →"}</span>
-                  </Link>
-                </div>
-              </div>
-
-              {/* Consultation Photo inside card */}
-              <div className="relative aspect-[16/9] w-full overflow-hidden">
+            {/* Left Part: Deep Forest Green with consultation photo on right */}
+            <div className="lg:col-span-5 relative bg-[#08170D] text-white p-6 sm:p-7 flex flex-col justify-between overflow-hidden min-h-[260px] sm:min-h-[280px]">
+              {/* Background Image on Right side of the dark card */}
+              <div className="absolute right-0 top-0 bottom-0 w-[55%] sm:w-[50%] overflow-hidden pointer-events-none">
                 <Image
                   src="/images/diagnostik/consultation.jpg"
                   alt="Doctor consultation with patient"
                   fill
                   className="object-cover object-center"
                 />
-                <div className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-[#08170D] to-transparent pointer-events-none" />
+                {/* Smooth horizontal gradient into dark green on left */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#08170D] via-[#08170D]/75 to-transparent" />
+              </div>
+
+              {/* Content over background on left */}
+              <div className="relative z-10 max-w-[230px] sm:max-w-[250px] space-y-2">
+                <h3 className="font-serif text-2xl sm:text-[27px] text-white font-normal leading-tight">
+                  {isRu
+                    ? "Вопросы по диагностике?"
+                    : isEn
+                    ? "Questions about Diagnostics?"
+                    : "Fragen zur Diagnostik?"}
+                </h3>
+                <p className="text-white/80 text-[11.5px] sm:text-xs font-sans leading-relaxed">
+                  {isRu
+                    ? "Наша команда всегда к вашим услугам и с радостью проконсультирует вас обо всех обследованиях и возможностях."
+                    : isEn
+                    ? "Our team is always at your service and will gladly advise you on all examinations and modalities."
+                    : "Unser Team steht Ihnen jederzeit zur Verfügung und berät Sie gerne zu allen Untersuchungen und Möglichkeiten."}
+                </p>
+              </div>
+
+              <div className="relative z-10 pt-3">
+                <Link
+                  href={`/${locale}/contact`}
+                  className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full bg-[#ECCF96] hover:bg-[#D5B878] text-[#0C1C11] font-semibold text-xs tracking-wide transition-all shadow-sm"
+                >
+                  <span>{isRu ? "Связаться с нами →" : isEn ? "Contact us →" : "Kontakt aufnehmen →"}</span>
+                </Link>
               </div>
             </div>
 
-            {/* Right Card: Was wir für Sie untersuchen können */}
-            <div className="lg:col-span-7 bg-white rounded-2xl sm:rounded-3xl border border-[#EDE8DE] p-6 sm:p-8 lg:p-9 shadow-[0_2px_16px_rgba(0,0,0,0.02)] flex flex-col justify-between">
-              <div>
-                <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase block mb-1">
-                  {isRu ? "ЧАСТЫЕ ДИАГНОЗЫ И ОБСЛЕДОВАНИЯ" : isEn ? "FREQUENT DIAGNOSES & EXAMINATIONS" : "HÄUFIGE DIAGNOSEN & UNTERSUCHUNGEN"}
-                </span>
+            {/* Right Part: Pure White with Checklist */}
+            <div className="lg:col-span-7 bg-white p-6 sm:p-7 lg:p-8 flex flex-col justify-center">
+              <span className="text-[9.5px] font-bold tracking-[0.22em] text-[#8C948D] uppercase block mb-1">
+                {isRu ? "ЧАСТЫЕ ДИАГНОЗЫ И ОБСЛЕДОВАНИЯ" : isEn ? "FREQUENT DIAGNOSES & EXAMINATIONS" : "HÄUFIGE DIAGNOSEN & UNTERSUCHUNGEN"}
+              </span>
 
-                <h3 className="font-serif text-2xl sm:text-3xl text-[#132218] font-normal leading-tight mb-6">
-                  {isRu
-                    ? "Что мы можем исследовать для вас"
-                    : isEn
-                    ? "What We Can Examine for You"
-                    : "Was wir für Sie untersuchen können"}
-                </h3>
+              <h3 className="font-serif text-xl sm:text-[23px] text-[#142318] font-normal leading-tight mb-4 sm:mb-5">
+                {isRu
+                  ? "Что мы можем исследовать для вас"
+                  : isEn
+                  ? "What We Can Examine for You"
+                  : "Was wir für Sie untersuchen können"}
+              </h3>
 
-                {/* 2-Column Checklist with Gold Checkmarks */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3.5">
-                  <div className="space-y-3.5">
-                    {indicationsCol1.map((item, idx) => (
-                      <div key={idx} className="flex items-center gap-2.5">
-                        <CheckCircle2 className="w-4 h-4 text-[#B89650] shrink-0" />
-                        <span className="text-xs sm:text-[13px] text-[#2C3B30] font-medium leading-snug">
-                          {item}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="space-y-3.5">
-                    {indicationsCol2.map((item, idx) => (
-                      <div key={idx} className="flex items-center gap-2.5">
-                        <CheckCircle2 className="w-4 h-4 text-[#B89650] shrink-0" />
-                        <span className="text-xs sm:text-[13px] text-[#2C3B30] font-medium leading-snug">
-                          {item}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
+              {/* 2-Column Checklist with Gold Checkmarks */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 sm:gap-y-2.5">
+                <div className="space-y-2 sm:space-y-2.5">
+                  {indicationsCol1.map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-2.5">
+                      <GoldCircleCheckIcon className="w-3.5 h-3.5 text-[#B89650] shrink-0" />
+                      <span className="text-xs sm:text-[12.5px] text-[#2C3B30] font-normal leading-snug">
+                        {item}
+                      </span>
+                    </div>
+                  ))}
                 </div>
-              </div>
 
-              <div className="pt-6 mt-6 border-t border-[#EDE8DE] flex items-center justify-between text-xs text-[#6E756D] font-sans">
-                <span>{isRu ? "Все виды медицинских страховок и частный прием" : isEn ? "All insurance classes and private consultations" : "Alle Kassen, Privatversicherte & Selbstzahler"}</span>
-                <span className="font-semibold text-[#142318]">NabiOta® Diagnostics</span>
+                <div className="space-y-2 sm:space-y-2.5">
+                  {indicationsCol2.map((item, idx) => (
+                    <div key={idx} className="flex items-center gap-2.5">
+                      <GoldCircleCheckIcon className="w-3.5 h-3.5 text-[#B89650] shrink-0" />
+                      <span className="text-xs sm:text-[12.5px] text-[#2C3B30] font-normal leading-snug">
+                        {item}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* ══════════════════════════════════════════════════════════
-            SECTION 5 (PHOTO 2): PATIENTENSTIMMEN (TESTIMONIAL BANNER)
-            - Dark forest green banner
-            - Left: Patient portrait
-            - Center: Eyebrow, Heading, Quote, Author, Carousel controls
-            - Right: Scan review photo
+            SECTION 5 (PHOTO 4): PATIENTENSTIMMEN (FULL-WIDTH EDGE-TO-EDGE)
+            - Full width touching edges (w-full, no max-w, no rounded corners)
+            - Left: Patient portrait fading into center
+            - Center: Eyebrow, Title, Quote flanked by Left/Right arrows, Author, Dots
+            - Right: Scan review photo fading into center
         ══════════════════════════════════════════════════════════ */}
-        <section className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16">
-          <div className="relative rounded-2xl sm:rounded-3xl bg-[#08170D] text-white overflow-hidden border border-[#D5B878]/30 shadow-xl">
-            <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
-              
-              {/* Left Column: Patient Portrait */}
-              <div className="lg:col-span-3 relative aspect-[16/10] lg:aspect-auto lg:h-full min-h-[220px] overflow-hidden">
-                <Image
-                  src={currentTestimonial.patientImage}
-                  alt={currentTestimonial.author}
-                  fill
-                  className="object-cover object-center"
-                />
-                <div className="hidden lg:block absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#08170D] to-transparent pointer-events-none" />
-                <div className="lg:hidden absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#08170D] to-transparent pointer-events-none" />
-              </div>
+        <section className="w-full bg-[#08170D] text-white overflow-hidden border-y border-[#D5B878]/30 relative">
+          <div className="w-full flex items-center justify-between min-h-[240px] sm:min-h-[260px] lg:min-h-[280px]">
+            
+            {/* Left Column: Patient Portrait fading towards center */}
+            <div className="relative hidden md:block w-[24%] lg:w-[26%] h-[240px] sm:h-[260px] lg:h-[280px] overflow-hidden shrink-0">
+              <Image
+                src={currentTestimonial.patientImage}
+                alt={currentTestimonial.author}
+                fill
+                className="object-cover object-center"
+              />
+              <div className="absolute inset-y-0 right-0 w-28 bg-gradient-to-l from-[#08170D] to-transparent pointer-events-none" />
+            </div>
 
-              {/* Center Column: Quote, Author, Controls */}
-              <div className="lg:col-span-6 p-6 sm:p-8 lg:p-10 text-center space-y-3.5">
-                <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
-                  {isRu ? "ОТЗЫВЫ ПАЦИЕНТОВ" : isEn ? "PATIENT VOICES" : "PATIENTENSTIMMEN"}
-                </span>
+            {/* Center Column: Quote, Author, Carousel Flanked by Arrows */}
+            <div className="flex-1 py-7 sm:py-8 px-4 sm:px-6 lg:px-10 text-center flex flex-col items-center justify-center relative z-10 max-w-2xl mx-auto">
+              <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-1.5">
+                {isRu ? "ОТЗЫВЫ ПАЦИЕНТОВ" : isEn ? "PATIENT VOICES" : "PATIENTENSTIMMEN"}
+              </span>
 
-                <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal leading-tight">
-                  {isRu
-                    ? "Доверие, основанное на опыте."
-                    : isEn
-                    ? "Trust Built on Experience."
-                    : "Vertrauen durch Erfahrung."}
-                </h3>
+              <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal leading-tight mb-2.5">
+                {isRu
+                  ? "Доверие, основанное на опыте."
+                  : isEn
+                  ? "Trust Built on Experience."
+                  : "Vertrauen durch Erfahrung."}
+              </h3>
 
-                <blockquote className="text-white/85 text-xs sm:text-[13.5px] italic leading-relaxed font-sans max-w-lg mx-auto">
+              {/* Quote row flanked by Left & Right Arrows (Photo 4) */}
+              <div className="w-full flex items-center justify-between gap-3 sm:gap-5 my-1.5">
+                <button
+                  onClick={() =>
+                    setActiveTestimonial((prev) =>
+                      prev === 0 ? testimonials.length - 1 : prev - 1
+                    )
+                  }
+                  aria-label="Previous testimonial"
+                  className="w-8 h-8 rounded-full border border-white/20 hover:border-[#D5B878] bg-white/5 hover:bg-[#D5B878] hover:text-[#08170D] text-white flex items-center justify-center shrink-0 transition-all cursor-pointer"
+                >
+                  <ArrowLeft className="w-3.5 h-3.5" />
+                </button>
+
+                <blockquote className="text-white/90 text-xs sm:text-[13px] italic leading-relaxed font-sans flex-1 text-center max-w-lg mx-auto">
                   „{currentTestimonial.quote}“
                 </blockquote>
 
-                <div className="pt-1">
-                  <span className="text-xs font-semibold text-[#ECCF96] block">
-                    {currentTestimonial.author}, {currentTestimonial.role}
-                  </span>
-                </div>
-
-                {/* Carousel Controls */}
-                <div className="flex items-center justify-center gap-3 pt-2">
-                  <button
-                    onClick={() =>
-                      setActiveTestimonial((prev) =>
-                        prev === 0 ? testimonials.length - 1 : prev - 1
-                      )
-                    }
-                    aria-label="Previous testimonial"
-                    className="w-8 h-8 rounded-full border border-white/20 hover:border-[#D5B878] bg-white/5 hover:bg-[#D5B878] hover:text-[#08170D] text-white flex items-center justify-center transition-all"
-                  >
-                    <ArrowLeft className="w-3.5 h-3.5" />
-                  </button>
-
-                  <div className="flex items-center gap-1.5 px-2">
-                    {testimonials.map((_, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => setActiveTestimonial(idx)}
-                        aria-label={`Slide ${idx + 1}`}
-                        className={`h-1.5 rounded-full transition-all ${
-                          activeTestimonial === idx
-                            ? "w-5 bg-[#ECCF96]"
-                            : "w-1.5 bg-white/30"
-                        }`}
-                      />
-                    ))}
-                  </div>
-
-                  <button
-                    onClick={() =>
-                      setActiveTestimonial((prev) =>
-                        prev === testimonials.length - 1 ? 0 : prev + 1
-                      )
-                    }
-                    aria-label="Next testimonial"
-                    className="w-8 h-8 rounded-full border border-white/20 hover:border-[#D5B878] bg-white/5 hover:bg-[#D5B878] hover:text-[#08170D] text-white flex items-center justify-center transition-all"
-                  >
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
+                <button
+                  onClick={() =>
+                    setActiveTestimonial((prev) =>
+                      prev === testimonials.length - 1 ? 0 : prev + 1
+                    )
+                  }
+                  aria-label="Next testimonial"
+                  className="w-8 h-8 rounded-full border border-white/20 hover:border-[#D5B878] bg-white/5 hover:bg-[#D5B878] hover:text-[#08170D] text-white flex items-center justify-center shrink-0 transition-all cursor-pointer"
+                >
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
               </div>
 
-              {/* Right Column: Scan Review Image */}
-              <div className="hidden lg:block lg:col-span-3 relative h-full min-h-[260px] overflow-hidden">
-                <Image
-                  src={currentTestimonial.scanImage}
-                  alt="Specialist reviewing MRI scan"
-                  fill
-                  className="object-cover object-center"
-                />
-                <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#08170D] to-transparent pointer-events-none" />
+              {/* Author in Gold */}
+              <span className="text-xs text-[#ECCF96] font-medium block mt-1.5">
+                {currentTestimonial.author}, {currentTestimonial.role}
+              </span>
+
+              {/* Dots Indicator: Active Gold Pill + Inactive Circular Dots */}
+              <div className="flex items-center gap-1.5 mt-3">
+                {testimonials.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveTestimonial(idx)}
+                    aria-label={`Slide ${idx + 1}`}
+                    className={`transition-all ${
+                      activeTestimonial === idx
+                        ? "w-5 h-1.5 rounded-full bg-[#ECCF96]"
+                        : "w-1.5 h-1.5 rounded-full bg-white/30 hover:bg-white/50"
+                    }`}
+                  />
+                ))}
               </div>
+            </div>
+
+            {/* Right Column: Scan Review Image fading towards center */}
+            <div className="relative hidden md:block w-[24%] lg:w-[26%] h-[240px] sm:h-[260px] lg:h-[280px] overflow-hidden shrink-0">
+              <Image
+                src={currentTestimonial.scanImage}
+                alt="Specialist reviewing MRI scan"
+                fill
+                className="object-cover object-center"
+              />
+              <div className="absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-[#08170D] to-transparent pointer-events-none" />
             </div>
           </div>
         </section>
