@@ -297,8 +297,8 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
         <section className="py-10 sm:py-12 lg:py-14 bg-[#FAF8F5]">
           <Container size="wide">
             {/* Header row */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-end mb-8 sm:mb-10">
-              <div className="lg:col-span-5 space-y-1.5">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-end mb-7 sm:mb-9">
+              <div className="lg:col-span-6 space-y-1.5">
                 <span className="text-[11px] sm:text-xs font-bold tracking-[0.24em] text-[#B89650] uppercase block">
                   {divisionsHeading.eyebrow}
                 </span>
@@ -307,20 +307,10 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
                 </h2>
               </div>
 
-              <div className="lg:col-span-5 border-l-2 border-[#D5B878]/60 pl-5 sm:pl-7">
+              <div className="lg:col-span-6 border-l-2 border-[#D5B878]/60 pl-5 sm:pl-7">
                 <p className="text-xs sm:text-sm text-[#556358] leading-relaxed font-sans">
                   {divisionsHeading.description}
                 </p>
-              </div>
-
-              <div className="lg:col-span-2 lg:text-right">
-                <Link
-                  href={`/${locale}/contact`}
-                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#142318] hover:text-[#B89650] transition-colors group"
-                >
-                  <span>{divisionsHeading.viewAll}</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                </Link>
               </div>
             </div>
 
@@ -382,49 +372,92 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
             - Middle: Dark green block with smooth convex curve & gold rim
             - Right: 4 pillars on ivory + lush botanical leaves on far right
             - Reduced vertical height
+        {/* ══════════════════════════════════════════════════════════
+            SECTION 2: WHY NABIOTA (PANORAMIC FULL-WIDTH AS IN PHOTO 3)
+            - Completely flush to the edges (container прилегает к краям)
+            - Left: Clear building photo with soft blurred right edge transition
+            - Middle: Dark green block with asymmetrical downward sweeping curve & gold rim
+            - Right: 4 pillars on ivory + lush botanical leaves on far right
+            - Reduced vertical height
         ══════════════════════════════════════════════════════════ */}
         <section className="w-full bg-[#FAF8F5] py-4 sm:py-6 overflow-hidden">
           <div className="w-full relative flex flex-col lg:flex-row items-stretch min-h-[360px] lg:min-h-[400px] bg-[#FAF8F5]">
-            {/* 1. Left Hospital Campus Photo (Clear, crisp, full color) */}
-            <div className="relative w-full lg:w-[30%] xl:w-[32%] min-h-[260px] lg:min-h-[400px] shrink-0 overflow-hidden">
-              <Image
-                src="/images/hero/campus.jpg"
-                alt="NabiOta Healthcare Campus"
-                fill
-                className="object-cover object-left"
-                priority
-              />
-            </div>
+            {/* Left & Middle Block: Building Photo with Blurred Right Edge + Dark Forest Content + Asymmetrical Curve */}
+            <div className="relative flex-1 flex flex-col lg:flex-row items-stretch bg-[#08170D] text-white overflow-hidden">
+              {/* 1. Left Hospital Campus Photo with soft blurred right edge (smooth transition into dark forest) */}
+              <div className="relative lg:absolute lg:left-0 lg:top-0 lg:bottom-0 w-full lg:w-[46%] xl:w-[48%] h-56 sm:h-72 lg:h-full overflow-hidden shrink-0">
+                <Image
+                  src="/images/hero/campus.jpg"
+                  alt="NabiOta Healthcare Campus"
+                  fill
+                  className="object-cover object-left"
+                  priority
+                />
+                {/* Soft right edge blur & gradient fade into dark forest green */}
+                <div className="hidden lg:block absolute inset-y-0 right-0 w-28 sm:w-36 bg-gradient-to-r from-transparent via-[#08170D]/75 to-[#08170D] backdrop-blur-[3px] pointer-events-none" />
+                <div className="lg:hidden absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#08170D] to-transparent pointer-events-none" />
+              </div>
 
-            {/* 2. Middle Dark Forest Block with Convex Arc Curve & Gold Border Rim */}
-            <div className="relative flex-1 z-10 bg-[#08170D] text-white p-7 sm:p-9 lg:p-11 flex flex-col justify-center lg:rounded-r-[100px] xl:rounded-r-[120px] border-r-2 border-[#D5B878]/70 shadow-[8px_0_30px_rgba(0,0,0,0.18)]">
-              <div className="max-w-xl space-y-3">
-                <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
-                  {whyNabiota.eyebrow}
-                </span>
+              {/* 2. Text Content inside Dark Forest Block */}
+              <div className="relative z-10 p-6 sm:p-8 lg:p-10 lg:pl-10 lg:ml-auto w-full lg:w-[56%] xl:w-[54%] flex flex-col justify-center">
+                <div className="max-w-md space-y-2.5">
+                  <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
+                    {whyNabiota.eyebrow}
+                  </span>
 
-                <h2 className="font-serif text-2xl sm:text-3xl lg:text-[36px] text-white font-normal leading-[1.15] whitespace-pre-line">
-                  {whyNabiota.title}
-                </h2>
+                  <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-white font-normal leading-[1.15] whitespace-pre-line">
+                    {whyNabiota.title}
+                  </h2>
 
-                <p className="text-white/80 text-xs sm:text-[13px] leading-relaxed font-sans max-w-lg">
-                  {whyNabiota.description}
-                </p>
+                  <p className="text-white/80 text-xs sm:text-[13px] leading-relaxed font-sans">
+                    {whyNabiota.description}
+                  </p>
 
-                <div className="pt-2 sm:pt-3">
-                  <Link
-                    href={`/${locale}/values`}
-                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs tracking-wide shadow-md transition-all duration-200 hover:scale-[1.02]"
-                  >
-                    <span>{whyNabiota.btn}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
+                  <div className="pt-2 sm:pt-3">
+                    <Link
+                      href={`/${locale}/values`}
+                      className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs tracking-wide shadow-md transition-all duration-200 hover:scale-[1.02]"
+                    >
+                      <span>{whyNabiota.btn}</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
                 </div>
+              </div>
+
+              {/* 3. Asymmetrical downward sweeping curve with gold rim (matching Photo 3: starts wide at top, curves down-inwards) */}
+              <div className="hidden lg:block absolute top-0 bottom-0 right-0 w-24 xl:w-32 pointer-events-none z-20">
+                <svg
+                  viewBox="0 0 100 400"
+                  preserveAspectRatio="none"
+                  className="w-full h-full"
+                >
+                  <defs>
+                    <linearGradient id="whyNabiotaGoldRim" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#C5A56A" />
+                      <stop offset="35%" stopColor="#ECCF96" />
+                      <stop offset="70%" stopColor="#D5B878" />
+                      <stop offset="100%" stopColor="#B38F44" />
+                    </linearGradient>
+                  </defs>
+                  {/* Ivory background outside the downward sweep */}
+                  <path
+                    d="M 100 0 L 100 400 L 0 400 C 50 350, 85 240, 96 110 L 96 24 Q 96 0, 72 0 Z"
+                    fill="#FAF8F5"
+                  />
+                  {/* Gold accent rim along the downward sweep */}
+                  <path
+                    d="M 72 0 Q 96 0, 96 24 L 96 110 C 85 240, 50 350, 0 400"
+                    stroke="url(#whyNabiotaGoldRim)"
+                    strokeWidth="2.5"
+                    fill="none"
+                  />
+                </svg>
               </div>
             </div>
 
-            {/* 3. Right Ivory Block with 4 Core Pillars & Botanical Leaves Background */}
-            <div className="relative w-full lg:w-[40%] xl:w-[38%] bg-[#FAF8F5] p-6 sm:p-8 lg:p-10 flex items-center shrink-0 overflow-hidden">
+            {/* 4. Right Ivory Block with 4 Core Pillars & Botanical Leaves Background */}
+            <div className="relative w-full lg:w-[38%] xl:w-[40%] bg-[#FAF8F5] p-6 sm:p-8 lg:p-9 flex items-center shrink-0 overflow-hidden">
               {/* Botanical leaves coming in from the right edge (as in Photo 3) */}
               <div className="absolute right-0 top-0 bottom-0 w-44 sm:w-56 pointer-events-none opacity-85 overflow-hidden flex items-center justify-end">
                 <svg
@@ -475,16 +508,16 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
               </div>
 
               {/* 2x2 Grid Pillars */}
-              <div className="relative z-10 grid grid-cols-2 gap-x-6 gap-y-5 sm:gap-x-8 sm:gap-y-6 w-full max-w-sm">
+              <div className="relative z-10 grid grid-cols-2 gap-x-5 gap-y-4 sm:gap-x-7 sm:gap-y-5 w-full max-w-sm">
                 {whyNabiota.pillars.map((pillar, idx) => {
                   const PillarIcon = pillar.icon;
                   return (
                     <div key={idx} className="space-y-1.5">
-                      <div className="w-10 h-10 rounded-full border border-[#142318]/15 bg-white shadow-sm flex items-center justify-center text-[#142318]">
-                        <PillarIcon className="w-4.5 h-4.5 stroke-[1.6]" />
+                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#142318]/15 bg-white shadow-sm flex items-center justify-center text-[#142318]">
+                        <PillarIcon className="w-4 h-4 stroke-[1.6]" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-[#142318] text-sm sm:text-[14.5px]">
+                        <h4 className="font-bold text-[#142318] text-sm sm:text-[14px]">
                           {pillar.title}
                         </h4>
                         <p className="text-[11px] sm:text-xs text-[#6E756D] leading-snug font-sans mt-0.5">
