@@ -225,7 +225,7 @@ export function NewsPageComponent({ locale = "de" }: Props) {
         </div>
 
         {/* Content container on left */}
-        <div className="relative z-20 w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 py-10 sm:py-14">
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
           <div className="max-w-xl space-y-3">
             {/* Breadcrumb: Home › News */}
             <div className="flex items-center gap-1.5 text-xs text-white/70 font-sans tracking-wide">
@@ -258,11 +258,11 @@ export function NewsPageComponent({ locale = "de" }: Props) {
           MAIN CONTENT AREA (2 COLUMNS: ARTICLES ON LEFT, SIDEBAR ON RIGHT)
       ══════════════════════════════════════════════════════════ */}
       <main className="flex-1 py-10 sm:py-14 bg-[#FAF8F5]">
-        <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-start">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
             
-            {/* ── LEFT COLUMN: FEATURED + ARTICLES GRID ── */}
-            <div className="lg:col-span-8 xl:col-span-9 space-y-10 sm:space-y-12">
+            {/* ── LEFT COLUMN (~71% width): FEATURED + ARTICLES GRID ── */}
+            <div className="lg:col-span-8 space-y-10 sm:space-y-12">
               
               {/* ── 1. FEATURED ARTICLE CARD (PHOTO 1-IN-1) ── */}
               <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#EDE8DE] shadow-[0_4px_24px_rgba(0,0,0,0.02)] overflow-hidden hover:shadow-[0_8px_32px_rgba(0,0,0,0.05)] transition-all duration-300">
@@ -433,8 +433,8 @@ export function NewsPageComponent({ locale = "de" }: Props) {
               </div>
             </div>
 
-            {/* ── RIGHT COLUMN: STICKY SIDEBAR ── */}
-            <aside className="lg:col-span-4 xl:col-span-3 space-y-6 sm:space-y-8 lg:sticky lg:top-24">
+            {/* ── RIGHT COLUMN (~29% width): STICKY SIDEBAR ── */}
+            <aside className="lg:col-span-4 space-y-6 sm:space-y-8 lg:sticky lg:top-24">
               
               {/* Card 1: News Categories */}
               <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#EDE8DE] shadow-[0_2px_16px_rgba(0,0,0,0.02)] p-5 sm:p-6">
