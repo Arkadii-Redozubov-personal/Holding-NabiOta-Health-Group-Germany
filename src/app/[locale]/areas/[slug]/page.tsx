@@ -12,6 +12,7 @@ import { BusinessCard } from "@/components/ui/BusinessCard";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { PageHero } from "@/components/layout/PageHero";
 import { businessAreas } from "@/data/areas";
+import { MedizinischeFachbereichePageComponent } from "@/components/pages/MedizinischeFachbereichePageComponent";
 import { locales, SupportedLocale, getDictionary } from "@/lib/i18n";
 import { Metadata } from "next";
 
@@ -56,6 +57,10 @@ export default async function LocalizedAreaDetailPage({ params }: LocalizedAreaD
 
   if (!area) {
     notFound();
+  }
+
+  if (slug === "medizinische-fachbereiche") {
+    return <MedizinischeFachbereichePageComponent locale={locale} />;
   }
 
   const relatedAreas = businessAreas.filter((a) => a.slug !== slug).slice(0, 3);
