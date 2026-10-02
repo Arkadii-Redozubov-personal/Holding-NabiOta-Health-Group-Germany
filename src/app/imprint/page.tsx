@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { PageHero } from "@/components/layout/PageHero";
+import { Scale, Building2, FileCheck } from "lucide-react";
 import { companyInfo } from "@/data/company";
 
 export const metadata = {
@@ -10,6 +11,24 @@ export const metadata = {
   description:
     "Impressum und Pflichtangaben der NabiOta® Health Group Germany GmbH gemäß § 5 TMG und § 18 Abs. 2 MStV.",
 };
+
+const imprintBadges = [
+  {
+    icon: <Scale className="w-5 h-5 text-[#ECCF96]" />,
+    title: "Rechtssicherheit",
+    sub: "nach § 5 TMG",
+  },
+  {
+    icon: <Building2 className="w-5 h-5 text-[#ECCF96]" />,
+    title: "NabiOta GmbH",
+    sub: "Holding",
+  },
+  {
+    icon: <FileCheck className="w-5 h-5 text-[#ECCF96]" />,
+    title: "Transparenz",
+    sub: "& Register",
+  },
+];
 
 export default function ImprintPage() {
   return (
@@ -22,6 +41,7 @@ export default function ImprintPage() {
           description="Angaben gemäß § 5 Telemediengesetz (TMG) und § 18 Abs. 2 Medienstaatsvertrag (MStV)."
           imageSrc="/images/heroes/hero-campus.jpg"
           imageAlt="NabiOta Health Group Germany Impressum"
+          badges={imprintBadges}
         />
 
         <section className="py-16 sm:py-20 bg-[#FAF8F5]">

@@ -19,6 +19,8 @@ import {
   Globe2,
   CheckCircle2,
   ArrowRight,
+  Stethoscope,
+  Activity,
 } from "lucide-react";
 
 interface ServicesPageComponentProps {
@@ -109,6 +111,23 @@ export function ServicesPageComponent({ locale = "de" }: ServicesPageComponentPr
           }
           title={t.heroHeading}
           description={t.heroLead}
+          badges={[
+            {
+              icon: Stethoscope,
+              title: locale === "ru" ? "Комплексная" : locale === "en" ? "Holistic" : "Ganzheitliche",
+              sub: locale === "ru" ? "медицина" : locale === "en" ? "care" : "Versorgung",
+            },
+            {
+              icon: Activity,
+              title: locale === "ru" ? "Точная" : locale === "en" ? "Precise" : "Präzise",
+              sub: locale === "ru" ? "диагностика" : locale === "en" ? "diagnostics" : "Diagnostik",
+            },
+            {
+              icon: Building2,
+              title: locale === "ru" ? "Единая" : locale === "en" ? "Connected" : "Vernetzte",
+              sub: locale === "ru" ? "сеть экспертов" : locale === "en" ? "network" : "Kompetenz",
+            },
+          ]}
           imageSrc="/images/heroes/hero-services.jpg"
           imageAlt="NabiOta Health Group Germany Leistungen"
         />

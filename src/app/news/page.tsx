@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Calendar, Clock } from "lucide-react";
+import { ArrowRight, Calendar, Clock, Newspaper, Sparkles, TrendingUp } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
@@ -34,6 +34,23 @@ export default function NewsPage() {
           }
           title="News & Entwicklungen."
           description="Erfahren Sie mehr über unsere aktuellen Projekte, medizinische Innovationen und den strategischen Ausbau unserer Standorte."
+          badges={[
+            {
+              icon: Newspaper,
+              title: "Aktuelle",
+              sub: "Einblicke",
+            },
+            {
+              icon: Sparkles,
+              title: "Moderne",
+              sub: "Innovation",
+            },
+            {
+              icon: TrendingUp,
+              title: "Holding",
+              sub: "Wachstum",
+            },
+          ]}
           imageSrc="/images/heroes/hero-news.jpg"
           imageAlt="NabiOta Health Group Germany Aktuelles"
         />

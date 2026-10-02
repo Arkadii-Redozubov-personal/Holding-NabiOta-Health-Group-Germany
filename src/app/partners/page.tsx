@@ -6,6 +6,7 @@ import { Container } from "@/components/layout/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { PageHero } from "@/components/layout/PageHero";
+import { Handshake, Target, ShieldCheck } from "lucide-react";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 
 export const metadata = {
@@ -13,6 +14,24 @@ export const metadata = {
   description:
     "Gemeinsam mehr erreichen: Zusammenarbeit mit medizinischen Einrichtungen, Kliniken, Fachärzten, Bildungsträgern und internationalen Partnern.",
 };
+
+const partnerBadges = [
+  {
+    icon: <Handshake className="w-5 h-5 text-[#ECCF96]" />,
+    title: "Verlässliche",
+    sub: "Kooperation",
+  },
+  {
+    icon: <Target className="w-5 h-5 text-[#ECCF96]" />,
+    title: "Gemeinsame",
+    sub: "Zukunft",
+  },
+  {
+    icon: <ShieldCheck className="w-5 h-5 text-[#ECCF96]" />,
+    title: "Starke",
+    sub: "Synergien",
+  },
+];
 
 export default function PartnersPage() {
   return (
@@ -32,6 +51,7 @@ export default function PartnersPage() {
           description="Nachhaltige Entwicklungen und moderne Versorgungskonzepte entstehen durch den Austausch von Wissen, Erfahrung und Kompetenzen."
           imageSrc="/images/heroes/hero-partners.jpg"
           imageAlt="NabiOta Health Group Germany Partner"
+          badges={partnerBadges}
         />
 
         <section className="py-16 sm:py-20 bg-[#FAF8F5]">

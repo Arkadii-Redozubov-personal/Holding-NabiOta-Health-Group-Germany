@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronRight, CheckCircle2 } from "lucide-react";
+import { ChevronRight, CheckCircle2, Stethoscope, Activity, Sparkles } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
@@ -61,6 +61,24 @@ export default async function LocalizedServiceDetailPage({ params }: LocalizedSe
 
   const relatedServices = holdingServices.filter((s) => s.slug !== slug).slice(0, 3);
 
+  const serviceBadges = [
+    {
+      icon: <Stethoscope className="w-5 h-5 text-[#ECCF96]" />,
+      title: locale === "ru" ? "Врачебное" : locale === "en" ? "Specialist" : "Fachärztlich",
+      sub: locale === "ru" ? "Ведение" : locale === "en" ? "Supervised" : "Geleitet",
+    },
+    {
+      icon: <Activity className="w-5 h-5 text-[#ECCF96]" />,
+      title: locale === "ru" ? "Современная" : locale === "en" ? "Modern" : "Moderne",
+      sub: locale === "ru" ? "Терапия" : locale === "en" ? "Therapy" : "Therapie",
+    },
+    {
+      icon: <Sparkles className="w-5 h-5 text-[#ECCF96]" />,
+      title: locale === "ru" ? "Высокое" : locale === "en" ? "Highest" : "Höchste",
+      sub: locale === "ru" ? "Качество" : locale === "en" ? "Quality" : "Qualität",
+    },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header currentLocale={locale} />
@@ -91,6 +109,7 @@ export default async function LocalizedServiceDetailPage({ params }: LocalizedSe
           }
           description={service.shortDescription}
           imageSrc={service.image || "/images/heroes/hero-services.jpg"}
+          badges={serviceBadges}
         />
 
         {/* Overview & Detail Section */}

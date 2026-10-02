@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
+import { HeroBadges } from "@/components/ui/HeroBadges";
 import { SupportedLocale } from "@/lib/i18n";
 import {
   Heart,
@@ -68,6 +69,12 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
           "Bei NabiOta® Health Group Germany glauben wir an die Kraft engagierter Menschen. Werden Sie Teil unseres Teams und gestalten Sie die Zukunft der Gesundheitsversorgung aktiv mit.",
         cta: "Offene Stellen entdecken",
         floatingQuote: "„Mehr als ein Job – eine sinnvolle Aufgabe.“",
+        badge1Title: "Starkes Team",
+        badge1Sub: "und Zusammenhalt",
+        badge2Title: "Entwicklung",
+        badge2Sub: "und Förderung",
+        badge3Title: "Wertschätzung",
+        badge3Sub: "auf Augenhöhe",
       },
       mission: {
         eyebrow: "UNSERE MISSION",
@@ -222,6 +229,12 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
           "At NabiOta® Health Group Germany, we believe in the power of dedicated people. Become part of our team and actively shape the future of healthcare.",
         cta: "Explore Open Positions",
         floatingQuote: "“More than a job – a meaningful mission.”",
+        badge1Title: "Strong Team",
+        badge1Sub: "and culture",
+        badge2Title: "Growth",
+        badge2Sub: "and education",
+        badge3Title: "Appreciation",
+        badge3Sub: "at every level",
       },
       mission: {
         eyebrow: "OUR MISSION",
@@ -376,6 +389,12 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
           "В NabiOta® Health Group Germany мы верим в силу увлеченных и преданных своему делу людей. Станьте частью нашей команды и активно формируйте будущее здравоохранения.",
         cta: "Смотреть открытые вакансии",
         floatingQuote: "«Больше чем просто работа — благородная миссия.»",
+        badge1Title: "Сильная команда",
+        badge1Sub: "и единство",
+        badge2Title: "Развитие",
+        badge2Sub: "и поддержка",
+        badge3Title: "Забота",
+        badge3Sub: "и признание",
       },
       mission: {
         eyebrow: "НАША МИССИЯ",
@@ -654,9 +673,32 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
                 </span>
               </h1>
 
-              <p className="text-[13.5px] sm:text-[14.5px] text-[#D2DED5] leading-[1.72] font-sans max-w-xl mb-7 font-normal">
+              <p className="text-[13.5px] sm:text-[14.5px] text-[#D2DED5] leading-[1.72] font-sans max-w-xl mb-6 font-normal">
                 {t.hero.description}
               </p>
+
+              {/* 3 Circular Feature Badges matching reference photo */}
+              <div className="mb-8">
+                <HeroBadges
+                  items={[
+                    {
+                      icon: Users,
+                      title: t.hero.badge1Title,
+                      sub: t.hero.badge1Sub,
+                    },
+                    {
+                      icon: GraduationCap,
+                      title: t.hero.badge2Title,
+                      sub: t.hero.badge2Sub,
+                    },
+                    {
+                      icon: Heart,
+                      title: t.hero.badge3Title,
+                      sub: t.hero.badge3Sub,
+                    },
+                  ]}
+                />
+              </div>
 
               <div>
                 <Link

@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronRight, CheckCircle2 } from "lucide-react";
+import { ChevronRight, CheckCircle2, Award, Stethoscope, Building2 } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
@@ -33,6 +33,24 @@ export async function generateMetadata({ params }: AreaDetailPageProps) {
     description: area.description,
   };
 }
+
+const areaBadges = [
+  {
+    icon: <Award className="w-5 h-5 text-[#ECCF96]" />,
+    title: "Höchste",
+    sub: "Standards",
+  },
+  {
+    icon: <Stethoscope className="w-5 h-5 text-[#ECCF96]" />,
+    title: "Fachärztliche",
+    sub: "Expertise",
+  },
+  {
+    icon: <Building2 className="w-5 h-5 text-[#ECCF96]" />,
+    title: "Holding",
+    sub: "Verbund",
+  },
+];
 
 export default async function AreaDetailPage({ params }: AreaDetailPageProps) {
   const { slug } = await params;
@@ -71,6 +89,7 @@ export default async function AreaDetailPage({ params }: AreaDetailPageProps) {
           }
           description={area.description}
           imageSrc={area.image || "/images/heroes/hero-areas.jpg"}
+          badges={areaBadges}
         />
 
         {/* Overview & Image Section */}

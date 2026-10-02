@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronRight, Calendar, Clock, ArrowLeft } from "lucide-react";
+import { ChevronRight, Calendar, Clock, ArrowLeft, Newspaper, Sparkles, TrendingUp } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
@@ -57,6 +57,24 @@ export default async function LocalizedArticleDetailPage({ params }: LocalizedAr
 
   const related = newsArticles.filter((a) => a.slug !== slug);
 
+  const newsBadges = [
+    {
+      icon: <Newspaper className="w-5 h-5 text-[#ECCF96]" />,
+      title: locale === "ru" ? "Актуальная" : locale === "en" ? "Latest" : "Aktueller",
+      sub: locale === "ru" ? "Публикация" : locale === "en" ? "Article" : "Beitrag",
+    },
+    {
+      icon: <Sparkles className="w-5 h-5 text-[#ECCF96]" />,
+      title: locale === "ru" ? "Новости" : locale === "en" ? "Group" : "Holding",
+      sub: locale === "ru" ? "Холдинга" : locale === "en" ? "Insights" : "Einblick",
+    },
+    {
+      icon: <TrendingUp className="w-5 h-5 text-[#ECCF96]" />,
+      title: locale === "ru" ? "Развитие" : locale === "en" ? "Future" : "Zukunft",
+      sub: locale === "ru" ? "И Рост" : locale === "en" ? "Growth" : "Gestalten",
+    },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header currentLocale={locale} />
@@ -75,6 +93,7 @@ export default async function LocalizedArticleDetailPage({ params }: LocalizedAr
           title={article.title}
           description={article.summary}
           imageSrc={article.image || "/images/heroes/hero-news.jpg"}
+          badges={newsBadges}
         />
 
         {/* Article Header & Body */}

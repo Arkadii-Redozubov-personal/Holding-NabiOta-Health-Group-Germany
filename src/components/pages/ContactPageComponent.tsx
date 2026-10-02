@@ -14,6 +14,7 @@ import {
   Phone,
   Mail,
   Clock,
+  UserCheck,
   ChevronRight,
   ArrowRight,
   QrCode,
@@ -286,6 +287,23 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
               ? "We look forward to hearing from you. Our team is available by phone, email, or in person at our Mönchengladbach headquarters."
               : "Wir freuen uns über Ihre Nachricht. Unser Team hilft Ihnen gerne weiter und ist für Sie da – telefonisch, per E-Mail oder vor Ort in Mönchengladbach."
           }
+          badges={[
+            {
+              icon: Clock,
+              title: locale === "ru" ? "Быстрая" : locale === "en" ? "Fast" : "Schnelle",
+              sub: locale === "ru" ? "доступность" : locale === "en" ? "availability" : "Erreichbarkeit",
+            },
+            {
+              icon: UserCheck,
+              title: locale === "ru" ? "Личная" : locale === "en" ? "Personal" : "Persönliche",
+              sub: locale === "ru" ? "консультация" : locale === "en" ? "consultation" : "Beratung",
+            },
+            {
+              icon: MapPin,
+              title: locale === "ru" ? "Удобная" : locale === "en" ? "Central" : "Zentraler",
+              sub: locale === "ru" ? "локация" : locale === "en" ? "location" : "Standort",
+            },
+          ]}
           imageSrc="/images/heroes/hero-contact.jpg"
           imageAlt="NabiOta Health Group Germany Kontakt"
         />

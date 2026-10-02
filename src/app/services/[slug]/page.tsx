@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronRight, CheckCircle2 } from "lucide-react";
+import { ChevronRight, CheckCircle2, Stethoscope, Activity, Sparkles } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
@@ -34,6 +34,24 @@ export async function generateMetadata({ params }: ServiceDetailPageProps) {
     description: service.shortDescription,
   };
 }
+
+const serviceBadges = [
+  {
+    icon: <Stethoscope className="w-5 h-5 text-[#ECCF96]" />,
+    title: "Fachärztlich",
+    sub: "Geleitet",
+  },
+  {
+    icon: <Activity className="w-5 h-5 text-[#ECCF96]" />,
+    title: "Moderne",
+    sub: "Therapie",
+  },
+  {
+    icon: <Sparkles className="w-5 h-5 text-[#ECCF96]" />,
+    title: "Höchste",
+    sub: "Qualität",
+  },
+];
 
 export default async function ServiceDetailPage({ params }: ServiceDetailPageProps) {
   const { slug } = await params;
@@ -72,6 +90,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
           }
           description={service.shortDescription}
           imageSrc={service.image || "/images/heroes/hero-services.jpg"}
+          badges={serviceBadges}
         />
 
         {/* Overview & Detail Section */}

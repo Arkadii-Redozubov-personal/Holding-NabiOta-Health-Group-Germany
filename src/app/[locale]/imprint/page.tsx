@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { PageHero } from "@/components/layout/PageHero";
+import { Scale, Building2, FileCheck } from "lucide-react";
 import { companyInfo } from "@/data/company";
 import { locales, SupportedLocale } from "@/lib/i18n";
 import { Metadata } from "next";
@@ -39,6 +40,24 @@ export async function generateMetadata({ params }: LocalizedImprintProps): Promi
 export default async function LocalizedImprintPage({ params }: LocalizedImprintProps) {
   const { locale } = await params;
 
+  const imprintBadges = [
+    {
+      icon: <Scale className="w-5 h-5 text-[#ECCF96]" />,
+      title: locale === "ru" ? "Правовые" : locale === "en" ? "Legal" : "Rechtssicherheit",
+      sub: locale === "ru" ? "Нормы (§5 TMG)" : locale === "en" ? "Compliance" : "nach § 5 TMG",
+    },
+    {
+      icon: <Building2 className="w-5 h-5 text-[#ECCF96]" />,
+      title: locale === "ru" ? "Структура" : locale === "en" ? "Corporate" : "NabiOta GmbH",
+      sub: locale === "ru" ? "Холдинга" : locale === "en" ? "Structure" : "Holding",
+    },
+    {
+      icon: <FileCheck className="w-5 h-5 text-[#ECCF96]" />,
+      title: locale === "ru" ? "Прозрачность" : locale === "en" ? "Registry" : "Transparenz",
+      sub: locale === "ru" ? "И Реестр" : locale === "en" ? "Transparency" : "& Register",
+    },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header currentLocale={locale} />
@@ -67,6 +86,7 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
           }
           imageSrc="/images/heroes/hero-campus.jpg"
           imageAlt="NabiOta Health Group Germany Impressum"
+          badges={imprintBadges}
         />
 
         <section className="py-16 sm:py-20 bg-[#FAF8F5]">

@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { PageHero } from "@/components/layout/PageHero";
+import { ShieldCheck, Lock, FileText } from "lucide-react";
 import { companyInfo } from "@/data/company";
 import { locales, SupportedLocale } from "@/lib/i18n";
 import { Metadata } from "next";
@@ -39,6 +40,24 @@ export async function generateMetadata({ params }: LocalizedPrivacyProps): Promi
 export default async function LocalizedPrivacyPage({ params }: LocalizedPrivacyProps) {
   const { locale } = await params;
 
+  const privacyBadges = [
+    {
+      icon: <ShieldCheck className="w-5 h-5 text-[#ECCF96]" />,
+      title: locale === "ru" ? "100% GDPR" : locale === "en" ? "100% GDPR" : "100% DSGVO",
+      sub: locale === "ru" ? "Соответствие" : locale === "en" ? "Compliant" : "Konformität",
+    },
+    {
+      icon: <Lock className="w-5 h-5 text-[#ECCF96]" />,
+      title: locale === "ru" ? "Защита" : locale === "en" ? "Secure" : "Sichere",
+      sub: locale === "ru" ? "Данных" : locale === "en" ? "Data" : "Daten",
+    },
+    {
+      icon: <FileText className="w-5 h-5 text-[#ECCF96]" />,
+      title: locale === "ru" ? "Полная" : locale === "en" ? "Full" : "Volle",
+      sub: locale === "ru" ? "Прозрачность" : locale === "en" ? "Transparency" : "Transparenz",
+    },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header currentLocale={locale} />
@@ -67,6 +86,7 @@ export default async function LocalizedPrivacyPage({ params }: LocalizedPrivacyP
           }
           imageSrc="/images/heroes/hero-campus.jpg"
           imageAlt="NabiOta Health Group Germany Datenschutz"
+          badges={privacyBadges}
         />
 
         <section className="py-16 sm:py-20 bg-[#FAF8F5]">

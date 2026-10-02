@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronRight, Calendar, Clock, ArrowLeft } from "lucide-react";
+import { ChevronRight, Calendar, Clock, ArrowLeft, Newspaper, Sparkles, TrendingUp } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
@@ -32,6 +32,24 @@ export async function generateMetadata({ params }: ArticleDetailPageProps) {
   };
 }
 
+const newsBadges = [
+  {
+    icon: <Newspaper className="w-5 h-5 text-[#ECCF96]" />,
+    title: "Aktueller",
+    sub: "Beitrag",
+  },
+  {
+    icon: <Sparkles className="w-5 h-5 text-[#ECCF96]" />,
+    title: "Holding",
+    sub: "Einblick",
+  },
+  {
+    icon: <TrendingUp className="w-5 h-5 text-[#ECCF96]" />,
+    title: "Zukunft",
+    sub: "Gestalten",
+  },
+];
+
 export default async function ArticleDetailPage({ params }: ArticleDetailPageProps) {
   const { slug } = await params;
   const article = newsArticles.find((a) => a.slug === slug);
@@ -60,6 +78,7 @@ export default async function ArticleDetailPage({ params }: ArticleDetailPagePro
           title={article.title}
           description={article.summary}
           imageSrc={article.image || "/images/heroes/hero-news.jpg"}
+          badges={newsBadges}
         />
 
         {/* Article Header & Body (max-w-[740px] for editorial excellence) */}

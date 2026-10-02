@@ -9,6 +9,8 @@ import { businessAreas } from "@/data/areas";
 import { locales, SupportedLocale, getDictionary } from "@/lib/i18n";
 import { Metadata } from "next";
 
+import { Network, ShieldCheck, Sparkles } from "lucide-react";
+
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
@@ -54,6 +56,23 @@ export default async function LocalizedAreasPage({ params }: LocalizedAreasProps
           }
           title={dict.areas.heading}
           description={dict.areas.description}
+          badges={[
+            {
+              icon: Network,
+              title: locale === "ru" ? "6 Ключевых" : locale === "en" ? "6 Core" : "6 Starke",
+              sub: locale === "ru" ? "направлений" : locale === "en" ? "divisions" : "Bereiche",
+            },
+            {
+              icon: ShieldCheck,
+              title: locale === "ru" ? "Высокие" : locale === "en" ? "Highest" : "Höchste",
+              sub: locale === "ru" ? "стандарты" : locale === "en" ? "standards" : "Standards",
+            },
+            {
+              icon: Sparkles,
+              title: locale === "ru" ? "Передовая" : locale === "en" ? "Future" : "Moderne",
+              sub: locale === "ru" ? "медицина" : locale === "en" ? "medicine" : "Medizin",
+            },
+          ]}
           imageSrc="/images/heroes/hero-areas.jpg"
           imageAlt="NabiOta Health Group Germany Unternehmensbereiche"
         />

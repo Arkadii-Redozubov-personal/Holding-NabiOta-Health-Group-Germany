@@ -1,14 +1,14 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
 import { Container } from "@/components/layout/Container";
+import { HeroBadges, HeroBadgeItem } from "@/components/ui/HeroBadges";
 
 interface PageHeroProps {
   eyebrow?: string;
   breadcrumb?: React.ReactNode;
   title: React.ReactNode;
   description?: React.ReactNode;
+  badges?: HeroBadgeItem[];
   children?: React.ReactNode; // e.g. badges, buttons, breadcrumbs
   imageSrc?: string;
   imageAlt?: string;
@@ -21,6 +21,7 @@ export function PageHero({
   breadcrumb,
   title,
   description,
+  badges,
   children,
   imageSrc = "/images/about/hero-doctors.jpg",
   imageAlt = "NabiOta Health Group Germany",
@@ -130,7 +131,7 @@ export function PageHero({
 
       {/* ── Content Container (Comfortable max-w within narrower left wing) ── */}
       <Container size="wide" className="relative z-20">
-        <div className="max-w-xl lg:max-w-[500px]">
+        <div className="max-w-xl lg:max-w-2xl">
           {breadcrumb && <div className="mb-3.5 sm:mb-4">{breadcrumb}</div>}
 
           <div className="font-serif text-[30px] sm:text-[38px] lg:text-[42px] xl:text-[46px] font-normal leading-[1.1] tracking-[-0.01em] text-white mb-3 sm:mb-3.5">
@@ -138,8 +139,14 @@ export function PageHero({
           </div>
 
           {description && (
-            <div className="text-[12.5px] sm:text-[13.5px] lg:text-[14px] text-[#D2DED5] leading-[1.65] font-sans max-w-lg font-normal mb-4 sm:mb-5">
+            <div className="text-[12.5px] sm:text-[13.5px] lg:text-[14px] text-[#D2DED5] leading-[1.65] font-sans max-w-xl font-normal mb-4 sm:mb-5">
               {description}
+            </div>
+          )}
+
+          {badges && badges.length > 0 && (
+            <div className="mb-4 sm:mb-5">
+              <HeroBadges items={badges} />
             </div>
           )}
 

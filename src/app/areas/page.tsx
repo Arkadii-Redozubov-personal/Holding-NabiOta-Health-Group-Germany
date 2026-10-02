@@ -6,6 +6,7 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { BusinessCard } from "@/components/ui/BusinessCard";
 import { businessAreas } from "@/data/areas";
+import { Network, ShieldCheck, Sparkles } from "lucide-react";
 
 export const metadata = {
   title: "Unternehmensbereiche | NabiOta® Health Group Germany",
@@ -33,6 +34,23 @@ export default function AreasPage() {
             </>
           }
           description="Unsere Unternehmensbereiche decken zentrale Segmente der modernen Gesundheitsversorgung ab – von der ambulanten Spitzenmedizin über präzise Diagnostik bis hin zu internationalen Partnerschaften."
+          badges={[
+            {
+              icon: Network,
+              title: "6 Starke",
+              sub: "Bereiche",
+            },
+            {
+              icon: ShieldCheck,
+              title: "Höchste",
+              sub: "Standards",
+            },
+            {
+              icon: Sparkles,
+              title: "Moderne",
+              sub: "Medizin",
+            },
+          ]}
           imageSrc="/images/heroes/hero-areas.jpg"
           imageAlt="NabiOta Health Group Germany Unternehmensbereiche"
         />

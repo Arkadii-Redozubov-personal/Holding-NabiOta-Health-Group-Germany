@@ -6,6 +6,7 @@ import { Container } from "@/components/layout/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { PageHero } from "@/components/layout/PageHero";
+import { Handshake, Target, ShieldCheck } from "lucide-react";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { locales, SupportedLocale, getDictionary } from "@/lib/i18n";
 import { Metadata } from "next";
@@ -43,6 +44,24 @@ export default async function LocalizedPartnersPage({ params }: LocalizedPartner
   const { locale } = await params;
   const dict = getDictionary(locale);
 
+  const partnerBadges = [
+    {
+      icon: <Handshake className="w-5 h-5 text-[#ECCF96]" />,
+      title: locale === "ru" ? "Надежное" : locale === "en" ? "Reliable" : "Verlässliche",
+      sub: locale === "ru" ? "Партнерство" : locale === "en" ? "Cooperation" : "Kooperation",
+    },
+    {
+      icon: <Target className="w-5 h-5 text-[#ECCF96]" />,
+      title: locale === "ru" ? "Общее" : locale === "en" ? "Shared" : "Gemeinsame",
+      sub: locale === "ru" ? "Будущее" : locale === "en" ? "Future" : "Zukunft",
+    },
+    {
+      icon: <ShieldCheck className="w-5 h-5 text-[#ECCF96]" />,
+      title: locale === "ru" ? "Сильные" : locale === "en" ? "Strong" : "Starke",
+      sub: locale === "ru" ? "Синергии" : locale === "en" ? "Synergies" : "Synergien",
+    },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header currentLocale={locale} />
@@ -60,6 +79,7 @@ export default async function LocalizedPartnersPage({ params }: LocalizedPartner
           description={dict.split.partners.description}
           imageSrc="/images/heroes/hero-partners.jpg"
           imageAlt="NabiOta Health Group Germany Partner"
+          badges={partnerBadges}
         />
 
         <section className="py-16 sm:py-20 bg-[#FAF8F5]">

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
+import { HeroBadges } from "@/components/ui/HeroBadges";
 import { SupportedLocale } from "@/lib/i18n";
 import {
   Stethoscope,
@@ -88,6 +89,12 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
       ? "NabiOta® Health Group Germany GmbH is an integrated healthcare enterprise uniting modern medicine, innovative solutions, and human compassion. Our goal is to sustainably enhance the quality of life for people – today and in the future."
       : "NabiOta® Health Group Germany GmbH ist ein integriertes Gesundheitsunternehmen, das moderne Medizin, innovative Lösungen und menschliche Fürsorge vereint. Unser Ziel ist es, die Lebensqualität von Menschen nachhaltig zu verbessern – heute und in Zukunft.",
     heroBtn: isRu ? "Наша история" : isEn ? "Our Story" : "Unsere Geschichte",
+    badge1Title: isRu ? "Партнерство" : isEn ? "Partnership" : "Partnerschaft",
+    badge1Sub: isRu ? "на равных" : isEn ? "on equal footing" : "auf Augenhöhe",
+    badge2Title: isRu ? "Ответственность" : isEn ? "Responsibility" : "Verantwortung",
+    badge2Sub: isRu ? "перед обществом" : isEn ? "in all we do" : "im Handeln",
+    badge3Title: isRu ? "Инновации" : isEn ? "Innovation" : "Innovation",
+    badge3Sub: isRu ? "для будущего" : isEn ? "for the future" : "für die Zukunft",
 
     // Section 2: Mission Section
     missionEyebrow: isRu ? "НАША МИССИЯ" : isEn ? "OUR MISSION" : "UNSERE MISSION",
@@ -313,9 +320,32 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
               </h1>
 
               {/* Description */}
-              <p className="text-[13.5px] sm:text-[14.5px] text-[#D2DED5] leading-[1.72] font-sans max-w-xl mb-8 sm:mb-10 font-normal">
+              <p className="text-[13.5px] sm:text-[14.5px] text-[#D2DED5] leading-[1.72] font-sans max-w-xl mb-6 sm:mb-7 font-normal">
                 {t.heroDesc}
               </p>
+
+              {/* 3 Circular Feature Badges matching reference photo */}
+              <div className="mb-8">
+                <HeroBadges
+                  items={[
+                    {
+                      icon: HeartHandshake,
+                      title: t.badge1Title,
+                      sub: t.badge1Sub,
+                    },
+                    {
+                      icon: Shield,
+                      title: t.badge2Title,
+                      sub: t.badge2Sub,
+                    },
+                    {
+                      icon: Sparkles,
+                      title: t.badge3Title,
+                      sub: t.badge3Sub,
+                    },
+                  ]}
+                />
+              </div>
 
               {/* CTA Button: Unsere Geschichte -> */}
               <Link

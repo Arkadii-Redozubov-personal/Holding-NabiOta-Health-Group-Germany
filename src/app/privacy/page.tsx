@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { PageHero } from "@/components/layout/PageHero";
+import { ShieldCheck, Lock, FileText } from "lucide-react";
 import { companyInfo } from "@/data/company";
 
 export const metadata = {
@@ -10,6 +11,24 @@ export const metadata = {
   description:
     "Datenschutzerklärung der NabiOta® Health Group Germany GmbH gemäß Datenschutz-Grundverordnung (DSGVO).",
 };
+
+const privacyBadges = [
+  {
+    icon: <ShieldCheck className="w-5 h-5 text-[#ECCF96]" />,
+    title: "100% DSGVO",
+    sub: "Konformität",
+  },
+  {
+    icon: <Lock className="w-5 h-5 text-[#ECCF96]" />,
+    title: "Sichere",
+    sub: "Daten",
+  },
+  {
+    icon: <FileText className="w-5 h-5 text-[#ECCF96]" />,
+    title: "Volle",
+    sub: "Transparenz",
+  },
+];
 
 export default function PrivacyPage() {
   return (
@@ -22,6 +41,7 @@ export default function PrivacyPage() {
           description="Informationen über die Art, den Umfang und Zweck der Verarbeitung von personenbezogenen Daten."
           imageSrc="/images/heroes/hero-campus.jpg"
           imageAlt="NabiOta Health Group Germany Datenschutz"
+          badges={privacyBadges}
         />
 
         <section className="py-16 sm:py-20 bg-[#FAF8F5]">
