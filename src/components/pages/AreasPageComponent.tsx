@@ -23,6 +23,104 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { SupportedLocale } from "@/lib/i18n";
 
+// ── Decorative SVG Icons for Photo 1 ──
+function CloverIcon({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M12 4.5C10.5 4.5 9 5.5 9 7.5c0 2.2 3 4.5 3 4.5s3-2.3 3-4.5c0-2-1.5-3-3-3Z" />
+      <path d="M12 19.5c1.5 0 3-1 3-3 0-2.2-3-4.5-3-4.5s-3 2.3-3 4.5c0 2 1.5 3 3 3Z" />
+      <path d="M4.5 12C4.5 10.5 5.5 9 7.5 9c2.2 0 4.5 3 4.5 3s-2.3 3-4.5 3c-2 0-3-1.5-3-3Z" />
+      <path d="M19.5 12c0 1.5-1 3-3 3-2.2 0-4.5-3-4.5-3s2.3-3 4.5-3c2 0 3 1.5 3 3Z" />
+      <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+    </svg>
+  );
+}
+
+function QualityHeartIcon({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+    </svg>
+  );
+}
+
+function CollaborationIcon({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M12 4.5C10.5 4.5 9 5.5 9 7.5c0 2.2 3 4.5 3 4.5s3-2.3 3-4.5c0-2-1.5-3-3-3Z" />
+      <path d="M12 19.5c1.5 0 3-1 3-3 0-2.2-3-4.5-3-4.5s-3 2.3-3 4.5c0 2 1.5 3 3 3Z" />
+      <path d="M4.5 12C4.5 10.5 5.5 9 7.5 9c2.2 0 4.5 3 4.5 3s-2.3 3-4.5 3c-2 0-3-1.5-3-3Z" />
+      <path d="M19.5 12c0 1.5-1 3-3 3-2.2 0-4.5-3-4.5-3s2.3-3 4.5-3c2 0 3 1.5 3 3Z" />
+      <circle cx="12" cy="12" r="1.5" />
+    </svg>
+  );
+}
+
+function TechnologyIcon({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <circle cx="8" cy="8" r="2.2" />
+      <circle cx="16" cy="8" r="2.2" />
+      <circle cx="8" cy="16" r="2.2" />
+      <circle cx="16" cy="16" r="2.2" />
+      <path d="M10.2 8h3.6M8 10.2v3.6M16 10.2v3.6M10.2 16h3.6" />
+    </svg>
+  );
+}
+
+function CarePeopleIcon({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <circle cx="12" cy="8" r="2.5" />
+      <path d="M7 19v-2a5 5 0 0 1 10 0v2" />
+      <circle cx="5" cy="11" r="1.8" />
+      <path d="M2.5 19v-1.5a3.5 3.5 0 0 1 3.5-3.5" />
+      <circle cx="19" cy="11" r="1.8" />
+      <path d="M21.5 19v-1.5a3.5 3.5 0 0 0-3.5-3.5" />
+    </svg>
+  );
+}
+
 interface AreasPageComponentProps {
   locale: SupportedLocale;
 }
@@ -67,20 +165,64 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
     ],
   };
 
-  // ── Section 1: 6 Division Cards (Restoring Original Cards 4, 5, 6 from Photo 2) ──
-  const divisionsHeading = {
-    eyebrow: isRu ? "НАШИ НАПРАВЛЕНИЯ" : isEn ? "OUR DIVISIONS" : "UNTERNEHMENSBEREICHE",
+  // ── Photo 1: Top 3-Column Intro Section (Spezialisierte Versorgung für jeden Bedarf) ──
+  const introData = {
+    eyebrow: isRu ? "НАШИ НАПРАВЛЕНИЯ" : isEn ? "OUR SPECIALTIES" : "UNSERE FACHBEREICHE",
     title: isRu
-      ? "Специализированная помощь для каждого пациента"
+      ? "Специализированная помощь\nдля каждого пациента"
       : isEn
-      ? "Specialized Care for Every Need"
-      : "Spezialisierte Versorgung für jeden Bedarf",
+      ? "Specialized Care\nfor Every Need"
+      : "Spezialisierte Versorgung\nfür jeden Bedarf",
     description: isRu
-      ? "Наши медицинские направления охватывают широкий спектр специализаций, гарантируя своевременную помощь ведущих экспертов. Узнайте больше о наших услугах, команде и подходах к лечению."
+      ? "Наши медицинские направления охватывают широкий спектр услуг — от профилактики до высокотехнологичной хирургии. Благодаря передовому оснащению и междисциплинарному взаимодействию вы получаете индивидуально подобранную и комплексную помощь."
       : isEn
-      ? "Our medical divisions cover a wide range of specialties, ensuring you receive the right care, from the right experts. Explore our departments to learn more about our services, team and approach to treatment."
-      : "Unsere medizinischen Fachbereiche decken ein breites Spektrum an Spezialisierungen ab und stellen sicher, dass Sie die richtige Versorgung von den richtigen Experten erhalten. Entdecken Sie unsere Bereiche, um mehr über unsere Leistungen, Teams und Behandlungsansätze zu erfahren.",
-    viewAll: isRu ? "Все направления" : isEn ? "View All Divisions" : "Alle Bereiche ansehen",
+      ? "Our medical departments cover a broad spectrum – from prevention to highly specialized surgery. Thanks to state-of-the-art technology and interdisciplinary collaboration, you receive individually tailored and holistic care."
+      : "Unsere medizinischen Fachbereiche decken ein breites Spektrum ab – von der Prävention bis zur hochspezialisierten Chirurgie. Dank modernster Technologie und interdisziplinärer Zusammenarbeit erhalten Sie eine individuell abgestimmte und ganzheitliche Betreuung.",
+    btn: isRu ? "Все направления" : isEn ? "Explore All Divisions" : "Alle Bereiche entdecken",
+    cardTitle: isRu
+      ? "От диагностики до реабилитации"
+      : isEn
+      ? "From Diagnosis to Aftercare"
+      : "Von der Diagnose bis zur Nachsorge",
+    cardDescription: isRu
+      ? "Наши отделения работают в тесном сотрудничестве, чтобы предоставить вам наилучшее лечение — современное, щадящее и ориентированное на ваши индивидуальные потребности."
+      : isEn
+      ? "Our departments work closely together to provide you with the best possible treatment – modern, gentle, and tailored to your individual needs."
+      : "Unsere Fachbereiche arbeiten eng zusammen, um Ihnen die bestmögliche Behandlung zu bieten – modern, schonend und auf Ihre individuellen Bedürfnisse abgestimmt.",
+    features: [
+      {
+        icon: QualityHeartIcon,
+        label: isRu
+          ? "Высочайшие медицинские стандарты качества"
+          : isEn
+          ? "Highest Medical Quality Standards"
+          : "Höchste medizinische Qualitätsstandards",
+      },
+      {
+        icon: CollaborationIcon,
+        label: isRu
+          ? "Междисциплинарное сотрудничество"
+          : isEn
+          ? "Interdisciplinary Collaboration"
+          : "Interdisziplinäre Zusammenarbeit",
+      },
+      {
+        icon: TechnologyIcon,
+        label: isRu
+          ? "Передовые технологии и инновации"
+          : isEn
+          ? "State-of-the-Art Technology & Innovation"
+          : "Modernste Technik und Innovation",
+      },
+      {
+        icon: CarePeopleIcon,
+        label: isRu
+          ? "Индивидуальная забота и человечность"
+          : isEn
+          ? "Personal Care & Human Touch"
+          : "Individuelle Betreuung und Menschlichkeit",
+      },
+    ],
   };
 
   const divisions = [
@@ -256,16 +398,20 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
   const currentFirstStory = patientStories.stories[activeStoryIndex];
   const currentSecondStory = patientStories.stories[(activeStoryIndex + 1) % totalStories];
 
-  // ── Section 4: Pre-footer CTA ──
+  // ── Section 4: Pre-footer CTA with Mountains Background (Photo 2) ──
   const ctaData = {
     eyebrow: isRu ? "СВЯЖИТЕСЬ С НАМИ" : isEn ? "GET IN TOUCH" : "GET IN TOUCH",
-    title: isRu ? "Ваше здоровье. Наша миссия." : isEn ? "Your Health. Our Mission." : "Your Health. Our Mission.",
-    desc: isRu
-      ? "Есть вопросы или требуется помощь?\nНаша команда готова помочь вам выбрать нужное направление."
+    title: isRu
+      ? "Ваше здоровье —\nнаша миссия."
       : isEn
-      ? "Have questions or need assistance?\nOur team is here to help you find the right care."
-      : "Have questions or need assistance?\nOur team is here to help you find the right care.",
-    btn: isRu ? "Связаться с нами" : isEn ? "Contact Us" : "Contact Us",
+      ? "Your Health is\nOur Mission."
+      : "Ihre Gesundheit ist\nunsere Mission.",
+    desc: isRu
+      ? "У вас есть вопросы о наших направлениях или вы хотите записаться на прием? Мы всегда готовы помочь вам."
+      : isEn
+      ? "Do you have questions about our specialties or would you like to schedule an appointment? We are here for you."
+      : "Haben Sie Fragen zu unseren Fachbereichen oder möchten Sie einen Termin vereinbaren? Wir sind gerne für Sie da.",
+    btn: isRu ? "Связаться с нами" : isEn ? "Contact Us" : "Kontakt aufnehmen",
   };
 
   return (
@@ -291,28 +437,87 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
 
       <main className="flex-1 bg-[#FAF8F5]">
         {/* ══════════════════════════════════════════════════════════
-            SECTION 1: SPECIALIZED CARE FOR EVERY NEED (6 CARDS)
-            Reduced vertical padding as requested
+            SECTION 1: 3-COLUMN INTRO SECTION (1-TO-1 AS IN PHOTO 1)
+            + 6 DIVISION CARDS GRID DIRECTLY BELOW
         ══════════════════════════════════════════════════════════ */}
-        <section className="py-10 sm:py-12 lg:py-14 bg-[#FAF8F5]">
-          <Container size="wide">
-            {/* Header row */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-end mb-7 sm:mb-9">
-              <div className="lg:col-span-6 space-y-1.5">
-                <span className="text-[11px] sm:text-xs font-bold tracking-[0.24em] text-[#B89650] uppercase block">
-                  {divisionsHeading.eyebrow}
+        <section className="pt-10 sm:pt-12 lg:pt-14 pb-12 sm:pb-16 lg:pb-20 bg-[#FAF8F5] relative overflow-hidden">
+          {/* Top-Right Botanical Foliage Accent matching Photo 1 */}
+          <div className="absolute -top-3 -right-3 w-52 sm:w-64 md:w-80 lg:w-[420px] h-52 sm:h-64 md:h-80 lg:h-[420px] pointer-events-none z-0 opacity-85 select-none">
+            <Image
+              src="/images/areas/botanical-branch-clean.png"
+              alt="Botanical Foliage"
+              fill
+              className="object-contain object-top-right"
+              priority
+            />
+          </div>
+
+          <Container size="wide" className="relative z-10">
+            {/* ── Photo 1: 3-Column Intro Block ── */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center mb-10 sm:mb-12 lg:mb-14">
+              {/* Column 1 (Left): Eyebrow, Serif Title, Paragraph, Gold Pill Button */}
+              <div className="lg:col-span-5 space-y-4">
+                <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
+                  {introData.eyebrow}
                 </span>
-                <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] text-[#132218] font-normal leading-tight">
-                  {divisionsHeading.title}
+
+                <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] text-[#132218] font-normal leading-[1.15] whitespace-pre-line">
+                  {introData.title}
                 </h2>
+
+                <p className="text-xs sm:text-[13.5px] text-[#556358] leading-relaxed font-sans max-w-md">
+                  {introData.description}
+                </p>
+
+                <div className="pt-2">
+                  <a
+                    href="#divisions-grid"
+                    className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#132218] font-semibold text-xs sm:text-[13px] tracking-wide shadow-sm hover:shadow transition-all duration-200 hover:scale-[1.02]"
+                  >
+                    <span>{introData.btn}</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                </div>
               </div>
 
-              <div className="lg:col-span-6 border-l-2 border-[#D5B878]/60 pl-5 sm:pl-7">
-                <p className="text-xs sm:text-sm text-[#556358] leading-relaxed font-sans">
-                  {divisionsHeading.description}
-                </p>
+              {/* Column 2 (Center): Rounded Floating Card */}
+              <div className="lg:col-span-4">
+                <div className="bg-[#FAF7F2] rounded-[28px] p-6 sm:p-7 border border-[#EDE8DE] shadow-[0_4px_24px_rgba(0,0,0,0.02)] flex flex-col justify-center min-h-[250px]">
+                  {/* Circular Gold Icon Badge */}
+                  <div className="w-12 h-12 rounded-full border border-[#D5B878] bg-[#FAF8F5] flex items-center justify-center text-[#B89650] mb-4 shadow-sm">
+                    <CloverIcon className="w-5 h-5 stroke-[1.6]" />
+                  </div>
+
+                  <h3 className="font-sans text-[15px] sm:text-[16px] font-bold text-[#142318] mb-2 leading-snug">
+                    {introData.cardTitle}
+                  </h3>
+
+                  <p className="text-xs sm:text-[12.5px] text-[#556358] leading-relaxed font-sans">
+                    {introData.cardDescription}
+                  </p>
+                </div>
+              </div>
+
+              {/* Column 3 (Right): 4 Points with Circular Gold Icons */}
+              <div className="lg:col-span-3 flex flex-col justify-center space-y-4 sm:space-y-4.5 lg:pl-2">
+                {introData.features.map((item, idx) => {
+                  const FeatureIcon = item.icon;
+                  return (
+                    <div key={idx} className="flex items-center gap-3.5">
+                      <div className="w-10 h-10 rounded-full border border-[#D5B878] bg-white flex items-center justify-center text-[#B89650] shrink-0 shadow-sm">
+                        <FeatureIcon className="w-4.5 h-4.5 stroke-[1.6]" />
+                      </div>
+                      <span className="text-xs sm:text-[12.5px] font-medium text-[#425046] leading-snug">
+                        {item.label}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
+
+            {/* Anchor for smooth scroll */}
+            <div id="divisions-grid" className="scroll-mt-24" />
 
             {/* 6 Cards Grid (3 cols x 2 rows, matching exact layout & restored original cards 4, 5, 6) */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
@@ -679,49 +884,56 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
         </section>
 
         {/* ══════════════════════════════════════════════════════════
-            SECTION 4: PRE-FOOTER CTA RIBBON (GET IN TOUCH)
-            Reduced vertical padding
+            SECTION 4: PRE-FOOTER CTA BANNER WITH MOUNTAINS (PHOTO 2)
+            - Full-width panoramic container
+            - Mountains landscape background (/images/values/mountains-bg.jpg)
+            - Gold top & bottom accent borders (border-y border-[#D5B878]/60)
+            - Left: GET IN TOUCH + Ihre Gesundheit ist unsere Mission.
+            - Center: Haben Sie Fragen zu unseren Fachbereichen...
+            - Right: Gold pill button Kontakt aufnehmen →
         ══════════════════════════════════════════════════════════ */}
-        <section className="pb-10 sm:pb-14 bg-[#FAF8F5]">
-          <Container size="wide">
-            <div className="bg-[#07160D] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-9 relative overflow-hidden shadow-xl border border-[#D5B878]/30">
-              {/* Botanical Leaf Silhouettes on Left & Right */}
-              <div className="absolute inset-0 pointer-events-none opacity-25 overflow-hidden mix-blend-screen">
-                <Image
-                  src="/images/bacground.png"
-                  alt="Watermark"
-                  fill
-                  className="object-cover object-center"
-                />
+        <section className="relative w-full overflow-hidden border-y border-[#D5B878]/60 bg-[#08170D]">
+          {/* Mountains Background Image */}
+          <div className="absolute inset-0 pointer-events-none">
+            <Image
+              src="/images/values/mountains-bg.jpg"
+              alt="Mountain Forest Landscape"
+              fill
+              className="object-cover object-[center_60%]"
+              priority
+            />
+            {/* Dark green overlay matching Photo 2 */}
+            <div className="absolute inset-0 bg-[#06140B]/55 backdrop-blur-[0.5px]" />
+          </div>
+
+          <Container size="wide" className="relative z-10 py-10 sm:py-12 lg:py-14">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 lg:gap-10">
+              {/* Left: Eyebrow + Title */}
+              <div className="space-y-1.5 lg:max-w-xs shrink-0">
+                <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
+                  {ctaData.eyebrow}
+                </span>
+                <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-white font-normal leading-[1.2] whitespace-pre-line">
+                  {ctaData.title}
+                </h2>
               </div>
 
-              <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-                {/* Left/Middle Title and Subtitle */}
-                <div className="space-y-1.5">
-                  <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
-                    {ctaData.eyebrow}
-                  </span>
-                  <h2 className="font-serif text-2xl sm:text-3xl text-white font-normal leading-tight">
-                    {ctaData.title}
-                  </h2>
-                </div>
+              {/* Middle: Text */}
+              <div className="max-w-md lg:max-w-lg">
+                <p className="text-xs sm:text-[13.5px] text-white/85 leading-relaxed font-sans">
+                  {ctaData.desc}
+                </p>
+              </div>
 
-                <div className="max-w-md">
-                  <p className="text-xs sm:text-[13px] text-white/80 leading-relaxed font-light whitespace-pre-line font-sans">
-                    {ctaData.desc}
-                  </p>
-                </div>
-
-                {/* Right Button */}
-                <div className="flex-shrink-0">
-                  <Link
-                    href={`/${locale}/contact`}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs sm:text-sm tracking-wide shadow-md transition-all duration-200 hover:scale-[1.02]"
-                  >
-                    <span>{ctaData.btn}</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
+              {/* Right: Gold Pill Button */}
+              <div className="shrink-0">
+                <Link
+                  href={`/${locale}/contact`}
+                  className="inline-flex items-center gap-2.5 px-7 py-3 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs sm:text-sm tracking-wide shadow-md transition-all duration-200 hover:scale-[1.03]"
+                >
+                  <span>{ctaData.btn}</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
           </Container>

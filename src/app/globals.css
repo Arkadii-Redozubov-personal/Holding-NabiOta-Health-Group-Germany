@@ -32,6 +32,10 @@
   --container-max: 1220px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   overflow-x: hidden;
