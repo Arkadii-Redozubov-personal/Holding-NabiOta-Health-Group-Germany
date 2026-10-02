@@ -1,15 +1,7 @@
 import React from "react";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { Container } from "@/components/layout/Container";
-import { PageHero } from "@/components/layout/PageHero";
-import { Breadcrumb } from "@/components/ui/Breadcrumb";
-import { BusinessCard } from "@/components/ui/BusinessCard";
-import { businessAreas } from "@/data/areas";
+import { AreasPageComponent } from "@/components/pages/AreasPageComponent";
 import { locales, SupportedLocale, getDictionary } from "@/lib/i18n";
 import { Metadata } from "next";
-
-import { Network, ShieldCheck, Sparkles } from "lucide-react";
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -39,55 +31,5 @@ export async function generateMetadata({ params }: LocalizedAreasProps): Promise
 
 export default async function LocalizedAreasPage({ params }: LocalizedAreasProps) {
   const { locale } = await params;
-  const dict = getDictionary(locale);
-
-  return (
-    <div className="flex flex-col min-h-screen">
-      <Header currentLocale={locale} />
-      <main className="flex-1 pb-20">
-        <PageHero
-          breadcrumb={
-            <Breadcrumb
-              items={[
-                { label: dict.nav.home, href: `/${locale}` },
-                { label: dict.nav.areas },
-              ]}
-            />
-          }
-          title={dict.areas.heading}
-          description={dict.areas.description}
-          badges={[
-            {
-              icon: Network,
-              title: locale === "ru" ? "6 Ключевых" : locale === "en" ? "6 Core" : "6 Starke",
-              sub: locale === "ru" ? "направлений" : locale === "en" ? "divisions" : "Bereiche",
-            },
-            {
-              icon: ShieldCheck,
-              title: locale === "ru" ? "Высокие" : locale === "en" ? "Highest" : "Höchste",
-              sub: locale === "ru" ? "стандарты" : locale === "en" ? "standards" : "Standards",
-            },
-            {
-              icon: Sparkles,
-              title: locale === "ru" ? "Передовая" : locale === "en" ? "Future" : "Moderne",
-              sub: locale === "ru" ? "медицина" : locale === "en" ? "medicine" : "Medizin",
-            },
-          ]}
-          imageSrc="/images/heroes/hero-areas.jpg"
-          imageAlt="NabiOta Health Group Germany Unternehmensbereiche"
-        />
-
-        <section className="py-16 sm:py-20 bg-[#FAF8F5]">
-          <Container size="wide">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {businessAreas.map((area) => (
-                <BusinessCard key={area.id} area={area} currentLocale={locale} />
-              ))}
-            </div>
-          </Container>
-        </section>
-      </main>
-      <Footer currentLocale={locale} />
-    </div>
-  );
+  return <AreasPageComponent locale={locale} />;
 }
