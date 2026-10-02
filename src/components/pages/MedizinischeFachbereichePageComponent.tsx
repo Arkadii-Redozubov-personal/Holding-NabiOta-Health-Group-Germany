@@ -197,6 +197,66 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
     ],
   };
 
+  // ── Overview & Core Capabilities Section (From PDF & Previous Version) ──
+  const overviewData = {
+    eyebrow: isRu ? "КОМПЕТЕНЦИИ И СТАНДАРТЫ" : isEn ? "COMPETENCE & QUALITY" : "KOMPETENZ & ANSPRUCH",
+    title: isRu
+      ? "Высокотехнологичная медицинская помощь немецкого качества"
+      : isEn
+      ? "Structured Healthcare Excellence according to German Standards"
+      : "Strukturierte Spitzenversorgung nach deutschen Standards",
+    desc: isRu
+      ? "Медицинские направления группы NabiOta® объединяют базовую терапевтическую помощь с высокоспециализированными хирургическими центрами. В наших специализированных центрах (MVZ) представлены ортопедия, нейрохирургия, пластическая хирургия и общая хирургия по высшим немецким стандартам качества."
+      : isEn
+      ? "The medical divisions of the NabiOta® Group combine primary general medical care with highly specialized surgical centers. In our outpatient medical centers (MVZ), we cover orthopedics, neurosurgery, plastic surgery, and general surgery according to the highest German quality standards."
+      : "Die medizinischen Fachbereiche der NabiOta® Gruppe verbinden hausärztliche Grundversorgung mit hochspezialisierten chirurgischen Zentren. In unseren Facharztzentren decken wir Orthopädie, Neurochirurgie, plastische Chirurgie sowie Allgemeinchirurgie nach höchsten deutschen Qualitätsstandards ab.",
+    capabilitiesTitle: isRu ? "Ключевые направления" : isEn ? "Core Capabilities" : "Leistungsschwerpunkte",
+    capabilities: [
+      isRu ? "Терапевтическая помощь и профилактика" : isEn ? "Primary Care & Preventive Medicine" : "Hausärztliche Versorgung & Prävention",
+      isRu ? "Ортопедия и травматология" : isEn ? "Orthopedics & Traumatology" : "Orthopädie und Traumatologie",
+      isRu ? "Нейрохирургические консультации и операции" : isEn ? "Neurosurgical Consultations & Surgery" : "Neurochirurgische Sprechstunden & Eingriffe",
+      isRu ? "Пластическая и реконструктивная хирургия" : isEn ? "Plastic & Reconstructive Surgery" : "Plastische & Rekonstruktive Chirurgie",
+      isRu ? "Общая хирургия и амбулаторные операции" : isEn ? "General Surgery & Outpatient Operations" : "Allgemeinchirurgie & ambulantes Operieren",
+    ],
+    advantagesTitle: isRu ? "Преимущества в составе холдинга" : isEn ? "Group Advantages" : "Ihre Vorteile im Verbund",
+    advantages: [
+      isRu
+        ? "Междисциплинарное сотрудничество всех специалистов под одной крышей"
+        : isEn
+        ? "Interdisciplinary collaboration of all specialists under one roof"
+        : "Interdisziplinäre Zusammenarbeit aller Fachärzte unter einem Dach",
+      isRu
+        ? "Современные кабинеты с безбарьерной доступной средой"
+        : isEn
+        ? "Modern medical practice facilities with barrier-free accessibility"
+        : "Moderne Praxisräume mit barrierefreiem Zugang",
+      isRu
+        ? "Быстрая запись на прием и цифровая передача медицинских заключений"
+        : isEn
+        ? "Rapid appointment scheduling and digital report transfer"
+        : "Schnelle Terminvergabe und digitale Befundübermittlung",
+      isRu
+        ? "Тесная интеграция с центрами диагностики и реабилитации"
+        : isEn
+        ? "Seamless networking with diagnostics and rehabilitation centers"
+        : "Enge Verzahnung mit Diagnostik- und Rehazentren",
+    ],
+    stats: [
+      {
+        value: "4+",
+        label: isRu ? "Хирургических профиля" : isEn ? "Surgical Specialties" : "Chirurgische Schwerpunkte",
+      },
+      {
+        value: "100%",
+        label: isRu ? "Ориентация на пациента" : isEn ? "Patient-Centered" : "Patientenfokussiert",
+      },
+      {
+        value: "MVZ",
+        label: isRu ? "Лицензия по стандартам ФРГ" : isEn ? "German Medical Center" : "Zulassung nach dt. Recht",
+      },
+    ],
+  };
+
   // ── Photo 1: Spotlight Section (Kardiologie) ──
   const spotlight = {
     eyebrow: isRu ? "В ФОКУСЕ" : isEn ? "IN FOCUS" : "IM FOKUS",
@@ -366,6 +426,110 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
       />
 
       <main className="flex-1 bg-[#FAF8F5]">
+        {/* ══════════════════════════════════════════════════════════
+            OVERVIEW & CORE CAPABILITIES (PDF & PREVIOUS VERSION)
+            - Header row: Eyebrow, Title, Description
+            - 2-Column Grid: Core Capabilities & Group Advantages
+            - Stats Badges
+        ══════════════════════════════════════════════════════════ */}
+        <section className="pt-12 sm:pt-16 pb-8 sm:pb-12 bg-[#FAF8F5]">
+          <Container size="wide">
+            {/* Header row */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end mb-10 sm:mb-12">
+              <div className="lg:col-span-6 space-y-2">
+                <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
+                  {overviewData.eyebrow}
+                </span>
+                <h2 className="font-serif text-3xl sm:text-4xl text-[#132218] font-normal leading-tight">
+                  {overviewData.title}
+                </h2>
+              </div>
+              <div className="lg:col-span-6 border-l-2 border-[#D5B878]/60 pl-5 sm:pl-7">
+                <p className="text-xs sm:text-[13.5px] text-[#556358] leading-relaxed font-sans">
+                  {overviewData.desc}
+                </p>
+              </div>
+            </div>
+
+            {/* 2-Column Cards: Capabilities on Left, Advantages & Stats on Right */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+              {/* Card 1: Core Capabilities */}
+              <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-[#EDE8DE] shadow-[0_4px_20px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-10 h-10 rounded-full border border-[#D5B878] bg-[#FAF8F5] flex items-center justify-center text-[#B89650]">
+                      <Stethoscope className="w-5 h-5 stroke-[1.6]" />
+                    </div>
+                    <h3 className="font-serif text-xl sm:text-2xl text-[#142318] font-normal">
+                      {overviewData.capabilitiesTitle}
+                    </h3>
+                  </div>
+
+                  <div className="space-y-3.5">
+                    {overviewData.capabilities.map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-3">
+                        <CheckCircle2 className="w-4.5 h-4.5 text-[#B89650] shrink-0 mt-0.5" />
+                        <span className="text-xs sm:text-[13.5px] text-[#2C3B30] font-medium leading-snug">
+                          {item}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="pt-6 mt-6 border-t border-[#EDE8DE]">
+                  <Link
+                    href={`/${locale}/contact`}
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#142318] hover:text-[#B89650] transition-colors"
+                  >
+                    <span>{isRu ? "Записаться на прием" : isEn ? "Book an Appointment" : "Termin vereinbaren"}</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+
+              {/* Card 2: Group Advantages & Stats */}
+              <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-[#EDE8DE] shadow-[0_4px_20px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-10 h-10 rounded-full border border-[#D5B878] bg-[#FAF8F5] flex items-center justify-center text-[#B89650]">
+                      <ShieldCheck className="w-5 h-5 stroke-[1.6]" />
+                    </div>
+                    <h3 className="font-serif text-xl sm:text-2xl text-[#142318] font-normal">
+                      {overviewData.advantagesTitle}
+                    </h3>
+                  </div>
+
+                  <div className="space-y-3.5">
+                    {overviewData.advantages.map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-3">
+                        <CheckCircle2 className="w-4.5 h-4.5 text-[#3E5643] shrink-0 mt-0.5" />
+                        <span className="text-xs sm:text-[13.5px] text-[#556358] leading-snug">
+                          {item}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 3 Stats Counters */}
+                <div className="grid grid-cols-3 gap-3 pt-6 mt-6 border-t border-[#EDE8DE]">
+                  {overviewData.stats.map((stat, idx) => (
+                    <div key={idx} className="flex flex-col">
+                      <span className="font-serif text-2xl sm:text-3xl text-[#B89650] font-normal">
+                        {stat.value}
+                      </span>
+                      <span className="text-[11px] text-[#6E756D] font-sans mt-0.5 leading-snug">
+                        {stat.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+
         {/* ══════════════════════════════════════════════════════════
             SECTION 1 (PHOTO 1): SPOTLIGHT KARDIOLOGIE
             - Left: Ultrasound doctor photo with floating card
