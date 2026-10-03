@@ -15,6 +15,7 @@ import { businessAreas } from "@/data/areas";
 import { MedizinischeFachbereichePageComponent } from "@/components/pages/MedizinischeFachbereichePageComponent";
 import { DiagnostikPageComponent } from "@/components/pages/DiagnostikPageComponent";
 import { RehabilitationPageComponent } from "@/components/pages/RehabilitationPageComponent";
+import { PflegePageComponent } from "@/components/pages/PflegePageComponent";
 import { locales, SupportedLocale, getDictionary } from "@/lib/i18n";
 import { Metadata } from "next";
 
@@ -71,6 +72,10 @@ export default async function LocalizedAreaDetailPage({ params }: LocalizedAreaD
 
   if (slug === "rehabilitation") {
     return <RehabilitationPageComponent locale={locale} />;
+  }
+
+  if (slug === "pflege") {
+    return <PflegePageComponent locale={locale} />;
   }
 
   const relatedAreas = businessAreas.filter((a) => a.slug !== slug).slice(0, 3);

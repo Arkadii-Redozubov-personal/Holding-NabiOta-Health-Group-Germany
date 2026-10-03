@@ -15,6 +15,7 @@ import { PageHero } from "@/components/layout/PageHero";
 import { holdingServices } from "@/data/services";
 import { DiagnostikPageComponent } from "@/components/pages/DiagnostikPageComponent";
 import { RehabilitationPageComponent } from "@/components/pages/RehabilitationPageComponent";
+import { PflegePageComponent } from "@/components/pages/PflegePageComponent";
 
 interface ServiceDetailPageProps {
   params: Promise<{ slug: string }>;
@@ -69,6 +70,10 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
 
   if (slug === "therapie-rehabilitation") {
     return <RehabilitationPageComponent locale="de" />;
+  }
+
+  if (slug === "homecare-pflege") {
+    return <PflegePageComponent locale="de" />;
   }
 
   const relatedServices = holdingServices.filter((s) => s.slug !== slug).slice(0, 3);
