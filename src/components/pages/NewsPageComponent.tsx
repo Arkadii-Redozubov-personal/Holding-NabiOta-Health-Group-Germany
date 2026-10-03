@@ -238,7 +238,7 @@ export function NewsPageComponent({ locale = "de" }: Props) {
 
         {/* Content container on left */}
         <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-xl lg:max-w-[580px] xl:max-w-[660px] space-y-3">
+          <div className="max-w-xl lg:max-w-[500px] xl:max-w-[580px] space-y-3">
             {/* Breadcrumb: Home › News */}
             <div className="flex items-center gap-1.5 text-xs text-white/70 font-sans tracking-wide">
               <Link href={`/${locale}`} className="hover:text-white transition-colors">

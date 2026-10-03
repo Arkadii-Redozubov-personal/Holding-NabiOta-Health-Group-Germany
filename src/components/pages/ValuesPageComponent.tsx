@@ -80,8 +80,8 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
 
     // Section 1: Hero Section
     heroEyebrow: isRu ? "О ХОЛДИНГЕ" : isEn ? "ABOUT US" : "ÜBER UNS",
-    heroTitle1: isRu ? "Вместе ради" : isEn ? "Together for" : "Gemeinsam für",
-    heroTitle2: isRu ? "более здорового будущего." : isEn ? "a healthier future." : "eine gesündere Zukunft.",
+    heroTitle1: isRu ? "Вместе ради более" : isEn ? "Together for a" : "Gemeinsam für eine",
+    heroTitle2: isRu ? "здорового будущего." : isEn ? "healthier future." : "gesündere Zukunft.",
     heroTitle3: "",
     heroDesc: isRu
       ? "NabiOta® Health Group Germany GmbH — интегрированная компания в сфере здравоохранения, объединяющая современную медицину, инновационные решения и человеческую заботу. Наша цель — устойчиво улучшать качество жизни людей сегодня и в будущем."
@@ -302,7 +302,7 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
           <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#051208]/85 to-transparent pointer-events-none z-10" />
 
           <Container size="wide" className="relative z-20">
-            <div className="max-w-xl lg:max-w-[620px] xl:max-w-[700px]">
+            <div className="max-w-xl lg:max-w-[520px] xl:max-w-[580px]">
               {/* Breadcrumb: Startseite > Über uns */}
               <nav className="flex items-center gap-2 text-xs text-[#A2ADA4] mb-3.5 font-sans" aria-label="Breadcrumb">
                 <Link href={`/${locale}`} className="hover:text-[#D5B878] transition-colors">

@@ -62,8 +62,8 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
     de: {
       hero: {
         eyebrow: "KARRIERE",
-        titlePrefix: "Gemeinsam",
-        titleMid: "für eine gesündere",
+        titlePrefix: "Gemeinsam für eine",
+        titleMid: "gesündere",
         titleHighlight: "Zukunft.",
         description:
           "Bei NabiOta® Health Group Germany glauben wir an die Kraft engagierter Menschen. Werden Sie Teil unseres Teams und gestalten Sie die Zukunft der Gesundheitsversorgung aktiv mit.",
@@ -222,8 +222,8 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
     en: {
       hero: {
         eyebrow: "CAREER",
-        titlePrefix: "Together",
-        titleMid: "for a Healthier",
+        titlePrefix: "Together for a",
+        titleMid: "Healthier",
         titleHighlight: "Future.",
         description:
           "At NabiOta® Health Group Germany, we believe in the power of dedicated people. Become part of our team and actively shape the future of healthcare.",
@@ -382,8 +382,8 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
     ru: {
       hero: {
         eyebrow: "КАРЬЕРА",
-        titlePrefix: "Вместе",
-        titleMid: "ради более здорового",
+        titlePrefix: "Вместе ради более",
+        titleMid: "здорового",
         titleHighlight: "Будущего.",
         description:
           "В NabiOta® Health Group Germany мы верим в силу увлеченных и преданных своему делу людей. Станьте частью нашей команды и активно формируйте будущее здравоохранения.",
@@ -653,7 +653,7 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
           </div>
 
           <Container size="wide" className="relative z-20">
-            <div className="max-w-xl lg:max-w-[600px] xl:max-w-[680px]">
+            <div className="max-w-xl lg:max-w-[520px] xl:max-w-[580px]">
               {/* Breadcrumb matching Photo 2 */}
               <nav className="flex items-center gap-2 text-xs sm:text-[12.5px] text-[#A2ADA4] mb-3.5 font-sans" aria-label="Breadcrumb">
                 <Link href={`/${locale}`} className="hover:text-[#D5B878] transition-colors">
@@ -666,9 +666,10 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
               </nav>
 
               <h1 className="page-hero-title font-serif text-[32px] sm:text-[40px] lg:text-[44px] xl:text-[50px] text-white font-normal leading-[1.12] tracking-tight mb-4 break-words [overflow-wrap:anywhere] hyphens-auto">
-                {t.hero.titlePrefix}{" "}
+                {t.hero.titlePrefix}
+                <br />
                 {t.hero.titleMid}{" "}
-                <span className="italic font-serif text-[#C5A56A] font-normal block sm:inline">
+                <span className="italic font-serif text-[#C5A56A] font-normal inline">
                   {t.hero.titleHighlight}
                 </span>
               </h1>
