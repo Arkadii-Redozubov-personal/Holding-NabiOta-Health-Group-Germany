@@ -360,17 +360,32 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
     doctors: [
       {
         name: isRu ? "Д-р мед. Анна Келлер" : "Dr. med. Anna Keller",
-        role: isRu ? "Терапия и кардиология" : isEn ? "Internal Medicine" : "Innere Medizin",
+        role: isRu ? "Терапия и кардиология" : isEn ? "Internal Medicine & Cardiology" : "Innere Medizin & Kardiologie",
+        desc: isRu
+          ? "Ведущий специалист по комплексной терапии и неинвазивной кардиодиагностике с более чем 15-летним клиническим стажем."
+          : isEn
+          ? "Lead specialist in comprehensive internal medicine and non-invasive cardiovascular diagnostics with over 15 years of experience."
+          : "Leitende Fachärztin für Innere Medizin und nicht-invasive Kardiologie mit über 15 Jahren fundierter klinischer Erfahrung.",
         image: "/images/areas/doc-anna-keller.jpg",
       },
       {
         name: isRu ? "Проф. д-р Михаэль Вебер" : "Prof. Dr. Michael Weber",
-        role: isRu ? "Хирургия" : isEn ? "Surgery" : "Chirurgie",
+        role: isRu ? "Хирургия" : isEn ? "General & Visceral Surgery" : "Chirurgie & Operative Medizin",
+        desc: isRu
+          ? "Эксперт в области общей и малоинвазивной хирургии, руководитель междисциплинарного хирургического центра NabiOta."
+          : isEn
+          ? "Renowned specialist in general and minimally invasive surgery, leading our interdisciplinary surgical center."
+          : "Renommierter Experte für Allgemein- und minimalinvasive Chirurgie, Leitung unseres operativen Facharztzentrums.",
         image: "/images/areas/doc-michael-weber.jpg",
       },
       {
         name: isRu ? "Д-р мед. Сара Хоффманн" : "Dr. med. Sarah Hoffmann",
-        role: isRu ? "Неврология" : isEn ? "Neurology" : "Neurologie",
+        role: isRu ? "Неврология" : isEn ? "Neurology & Neurodiagnostics" : "Neurologie & Neurodiagnostik",
+        desc: isRu
+          ? "Специалист по клинической неврологии и нейродиагностике, эксперт по персонализированным схемам лечения."
+          : isEn
+          ? "Specialist in clinical neurology, neurodiagnostics, and individual therapy concepts for neurological health."
+          : "Fachärztin für Neurologie mit Schwerpunkt auf moderner Neurodiagnostik und ganzheitlichen Therapiekonzepten.",
         image: "/images/areas/doc-sarah-hoffmann.jpg",
       },
     ],
@@ -427,127 +442,13 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
 
       <main className="flex-1 bg-[#FAF8F5]">
         {/* ══════════════════════════════════════════════════════════
-            SECTION 1 (PHOTO 1): SPOTLIGHT KARDIOLOGIE (FIRST SECTION)
-            - Left: Ultrasound doctor photo with floating card
-            - Right: Heart contour background, Eyebrow, Title, Description, 3 feature icons, Link
-        ══════════════════════════════════════════════════════════ */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-[#FAF8F5] relative overflow-hidden">
-          {/* Subtle Decorative Heart Contour & Wavy Gold Line in Top-Right */}
-          <div className="absolute top-4 sm:top-8 right-6 sm:right-16 w-60 sm:w-80 h-60 sm:h-80 pointer-events-none opacity-45 z-0">
-            <svg
-              viewBox="0 0 200 200"
-              fill="none"
-              className="w-full h-full text-[#D5B878]"
-            >
-              {/* Delicate Heart Silhouette */}
-              <path
-                d="M100 65 C85 30, 42 35, 42 75 C42 115, 100 155, 100 155 C100 155, 158 115, 158 75 C158 35, 115 30, 100 65 Z"
-                stroke="currentColor"
-                strokeWidth="1.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              {/* Smooth Elegant Flow Line */}
-              <path
-                d="M10 110 Q 60 70, 100 115 T 195 105"
-                stroke="#C5A56A"
-                strokeWidth="0.8"
-                opacity="0.6"
-              />
-            </svg>
-          </div>
-
-          <Container size="wide" className="relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-              {/* Left Column: Ultrasound Photo + Floating Bottom Pill Badge */}
-              <div className="lg:col-span-6 relative">
-                <div className="relative aspect-[16/10] sm:aspect-[16/10.5] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-[#EDE8DE]">
-                  <Image
-                    src="/images/areas/cardiology-focus.jpg"
-                    alt={spotlight.title}
-                    fill
-                    className="object-cover object-center"
-                    priority
-                  />
-                  {/* Subtle vignette on bottom for card contrast */}
-                  <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
-
-                  {/* Floating Pill Overlay Card (Photo 1) */}
-                  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-auto sm:max-w-md bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-full px-4 sm:px-5 py-2.5 sm:py-3 shadow-lg flex items-center justify-between gap-3 border border-white/60">
-                    <div className="flex items-center gap-3 min-w-0">
-                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#0C1C11] border border-[#D5B878]/60 flex items-center justify-center text-[#ECCF96] shadow-sm shrink-0">
-                        <CloverEmblemIcon className="w-4.5 h-4.5 stroke-[1.6]" />
-                      </div>
-                      <div className="min-w-0">
-                        <h4 className="text-[13.5px] sm:text-[14px] font-bold text-[#142318] truncate leading-tight">
-                          {spotlight.pillTitle}
-                        </h4>
-                        <p className="text-[11px] text-[#6E756D] truncate font-sans mt-0.5">
-                          {spotlight.pillSubtitle}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#142318]/15 bg-white flex items-center justify-center text-[#142318] hover:bg-[#D5B878] hover:border-[#D5B878] hover:text-[#0C1C11] transition-all shrink-0 ml-1">
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Column: Title, Description, 3 Badges, Link */}
-              <div className="lg:col-span-6 space-y-4 sm:space-y-5 lg:pl-2">
-                <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
-                  {spotlight.eyebrow}
-                </span>
-
-                <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] text-[#132218] font-normal leading-[1.18] whitespace-pre-line">
-                  {spotlight.title}
-                </h2>
-
-                <p className="text-xs sm:text-[13.5px] text-[#556358] leading-relaxed font-sans max-w-lg">
-                  {spotlight.desc}
-                </p>
-
-                {/* 3 Horizontal Badges with Gold Outline Icons (Photo 1) */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2 sm:pt-3">
-                  {spotlight.features.map((feat, idx) => {
-                    const FeatureIcon = feat.icon;
-                    return (
-                      <div key={idx} className="flex items-center gap-2.5">
-                        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D5B878] bg-[#FAF8F5] flex items-center justify-center text-[#B89650] shrink-0 shadow-sm">
-                          <FeatureIcon className="w-4 h-4 stroke-[1.6]" />
-                        </div>
-                        <span className="text-[11.5px] sm:text-xs font-medium text-[#425046] leading-snug">
-                          {feat.label}
-                        </span>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {/* Link with underline and arrow */}
-                <div className="pt-2 sm:pt-4">
-                  <Link
-                    href={`/${locale}/contact`}
-                    className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-semibold text-[#142318] hover:text-[#B89650] underline decoration-[#D5B878] underline-offset-4 transition-colors"
-                  >
-                    <span>{spotlight.linkText}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
-
-        {/* ══════════════════════════════════════════════════════════
-            OVERVIEW & CORE CAPABILITIES (PDF & PREVIOUS VERSION)
+            SECTION 1 (PHOTO 4 MOVED TO TOP): OVERVIEW & CORE CAPABILITIES
+            - "фото 4 страница медицинского направления эту часть перенеси вверх"
             - Header row: Eyebrow, Title, Description
             - 2-Column Grid: Core Capabilities & Group Advantages
             - Stats Badges
         ══════════════════════════════════════════════════════════ */}
-        <section className="pt-4 sm:pt-6 pb-12 sm:pb-16 bg-[#FAF8F5] border-t border-[#EDE8DE]/60">
+        <section className="pt-10 sm:pt-14 pb-12 sm:pb-16 bg-[#FAF8F5]">
           <Container size="wide">
             {/* Header row */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end mb-10 sm:mb-12">
@@ -646,17 +547,144 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
         </section>
 
         {/* ══════════════════════════════════════════════════════════
-            SECTION 2 (PHOTO 2): WARUM NABIOTA? MEHR ALS MEDIZIN.
-            - "фото 2 до краев доходит" (FULL-WIDTH FLUSH TO SCREEN EDGES)
-            - Left: Dark forest green with eyebrow, title, desc, gold button
-            - Middle: 4 points with circular gold icons
+            SECTION 2: SPOTLIGHT KARDIOLOGIE
+            - Left: Ultrasound doctor photo with floating card
+            - Right: Heart contour background, Eyebrow, Title, Description, 3 feature icons, Link
+        ══════════════════════════════════════════════════════════ */}
+        <section className="py-12 sm:py-16 lg:py-20 bg-[#FAF8F5] relative overflow-hidden border-t border-[#EDE8DE]/60">
+          {/* Subtle Decorative Heart Contour & Wavy Gold Line in Top-Right */}
+          <div className="absolute top-4 sm:top-8 right-6 sm:right-16 w-60 sm:w-80 h-60 sm:h-80 pointer-events-none opacity-45 z-0">
+            <svg
+              viewBox="0 0 200 200"
+              fill="none"
+              className="w-full h-full text-[#D5B878]"
+            >
+              {/* Delicate Heart Silhouette */}
+              <path
+                d="M100 65 C85 30, 42 35, 42 75 C42 115, 100 155, 100 155 C100 155, 158 115, 158 75 C158 35, 115 30, 100 65 Z"
+                stroke="currentColor"
+                strokeWidth="1.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              {/* Smooth Elegant Flow Line */}
+              <path
+                d="M10 110 Q 60 70, 100 115 T 195 105"
+                stroke="#C5A56A"
+                strokeWidth="0.8"
+                opacity="0.6"
+              />
+            </svg>
+          </div>
+
+          <Container size="wide" className="relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              {/* Left Column: Ultrasound Photo + Floating Bottom Pill Badge */}
+              <div className="lg:col-span-6 relative">
+                <div className="relative aspect-[16/10] sm:aspect-[16/10.5] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-[#EDE8DE]">
+                  <Image
+                    src="/images/areas/cardiology-focus.jpg"
+                    alt={spotlight.title}
+                    fill
+                    className="object-cover object-center"
+                    priority
+                  />
+                  {/* Subtle vignette on bottom for card contrast */}
+                  <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+
+                  {/* Floating Pill Overlay Card */}
+                  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-auto sm:max-w-md bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-full px-4 sm:px-5 py-2.5 sm:py-3 shadow-lg flex items-center justify-between gap-3 border border-white/60">
+                    <div className="flex items-center gap-3 min-w-0">
+                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#0C1C11] border border-[#D5B878]/60 flex items-center justify-center text-[#ECCF96] shadow-sm shrink-0">
+                        <CloverEmblemIcon className="w-4.5 h-4.5 stroke-[1.6]" />
+                      </div>
+                      <div className="min-w-0">
+                        <h4 className="text-[13.5px] sm:text-[14px] font-bold text-[#142318] truncate leading-tight">
+                          {spotlight.pillTitle}
+                        </h4>
+                        <p className="text-[11px] text-[#6E756D] truncate font-sans mt-0.5">
+                          {spotlight.pillSubtitle}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#142318]/15 bg-white flex items-center justify-center text-[#142318] hover:bg-[#D5B878] hover:border-[#D5B878] hover:text-[#0C1C11] transition-all shrink-0 ml-1">
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Title, Description, 3 Badges, Link */}
+              <div className="lg:col-span-6 space-y-4 sm:space-y-5 lg:pl-2">
+                <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
+                  {spotlight.eyebrow}
+                </span>
+
+                <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] text-[#132218] font-normal leading-[1.18] whitespace-pre-line">
+                  {spotlight.title}
+                </h2>
+
+                <p className="text-xs sm:text-[13.5px] text-[#556358] leading-relaxed font-sans max-w-lg">
+                  {spotlight.desc}
+                </p>
+
+                {/* 3 Horizontal Badges with Gold Outline Icons */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2 sm:pt-3">
+                  {spotlight.features.map((feat, idx) => {
+                    const FeatureIcon = feat.icon;
+                    return (
+                      <div key={idx} className="flex items-center gap-2.5">
+                        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D5B878] bg-[#FAF8F5] flex items-center justify-center text-[#B89650] shrink-0 shadow-sm">
+                          <FeatureIcon className="w-4 h-4 stroke-[1.6]" />
+                        </div>
+                        <span className="text-[11.5px] sm:text-xs font-medium text-[#425046] leading-snug">
+                          {feat.label}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Link with underline and arrow */}
+                <div className="pt-2 sm:pt-4">
+                  <Link
+                    href={`/${locale}/contact`}
+                    className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-semibold text-[#142318] hover:text-[#B89650] underline decoration-[#D5B878] underline-offset-4 transition-colors"
+                  >
+                    <span>{spotlight.linkText}</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* ══════════════════════════════════════════════════════════
+            SECTION 3 (PHOTO 1): WARUM NABIOTA? MEHR ALS MEDIZIN.
+            - "страница мед направления сделай слева фон листочка возьми из фото сделай больше иконки и приведи этот блок в порядок"
+            - Full-width edge-to-edge
+            - Left: Delicate botanical branch watermark on left edge + Eyebrow + Title + Desc + Gold button
+            - Middle: 4 points with larger circular gold icons (w-13 h-13 / w-14 h-14)
             - Right: Sunny Atrium Lounge photo flush to screen right edge with smooth fade
         ══════════════════════════════════════════════════════════ */}
         <section className="w-full bg-[#08170D] text-white relative overflow-hidden border-y border-[#D5B878]/30">
-          <div className="w-full flex flex-col lg:flex-row items-stretch min-h-[380px] lg:min-h-[440px]">
-            {/* Left Content Area: Title & Description & Values Button */}
-            <div className="w-full lg:w-[45%] xl:w-[42%] p-6 sm:p-10 lg:p-14 lg:pl-16 xl:pl-24 flex flex-col justify-center relative z-20">
-              <div className="max-w-md space-y-3">
+          {/* Delicate Botanical Leaf Watermark on Left Edge (Photo 1) */}
+          <div className="absolute -left-6 sm:-left-10 -top-8 sm:-top-12 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 pointer-events-none opacity-20 md:opacity-25 select-none z-10 mix-blend-screen">
+            <Image
+              src="/images/areas/botanical-branch-clean.png"
+              alt="Botanical Foliage"
+              fill
+              className="object-contain object-top-left -scale-x-100"
+              priority
+            />
+          </div>
+
+          <div className="w-full flex flex-col lg:flex-row items-stretch min-h-[400px] lg:min-h-[460px]">
+            {/* Left Content Area: Eyebrow, Title, Description & Values Button */}
+            <div className="w-full lg:w-[42%] xl:w-[40%] p-6 sm:p-10 lg:p-14 lg:pl-16 xl:pl-24 flex flex-col justify-center relative z-20">
+              <div className="max-w-md space-y-3 sm:space-y-3.5">
                 <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
                   {whySection.eyebrow}
                 </span>
@@ -665,14 +693,14 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                   {whySection.title}
                 </h2>
 
-                <p className="text-white/80 text-xs sm:text-[13.5px] leading-relaxed font-sans">
+                <p className="text-white/85 text-xs sm:text-[13.5px] leading-relaxed font-sans">
                   {whySection.desc}
                 </p>
 
-                <div className="pt-3">
+                <div className="pt-2 sm:pt-3">
                   <Link
                     href={`/${locale}/values`}
-                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs sm:text-[13px] tracking-wide shadow-md transition-all duration-200 hover:scale-[1.02]"
+                    className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs sm:text-[13px] tracking-wide shadow-md transition-all duration-200 hover:scale-[1.02]"
                   >
                     <span>{whySection.btn}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -681,16 +709,17 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
               </div>
             </div>
 
-            {/* Middle Column: 4 Vertical Points with Circular Gold Icons (Photo 2) */}
-            <div className="w-full lg:w-[25%] xl:w-[23%] px-6 sm:px-10 lg:px-4 py-6 sm:py-8 lg:py-0 flex flex-col justify-center space-y-4 sm:space-y-5 relative z-20">
+            {/* Middle Column: 4 Vertical Points with LARGER Circular Gold Icons (Photo 1) */}
+            <div className="w-full lg:w-[28%] xl:w-[27%] px-6 sm:px-10 lg:px-6 py-6 sm:py-8 lg:py-0 flex flex-col justify-center space-y-5 sm:space-y-6 relative z-20">
               {whySection.stats.map((item, idx) => {
                 const ItemIcon = item.icon;
                 return (
-                  <div key={idx} className="flex items-center gap-3.5">
-                    <div className="w-10 h-10 rounded-full border border-[#D5B878]/70 bg-[#08170D] flex items-center justify-center text-[#ECCF96] shrink-0 shadow-sm">
-                      <ItemIcon className="w-4.5 h-4.5 stroke-[1.6]" />
+                  <div key={idx} className="flex items-center gap-4">
+                    {/* Enlarged Circular Gold Icon */}
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-[#D5B878]/80 bg-[#08170D] flex items-center justify-center text-[#ECCF96] shrink-0 shadow-[0_0_15px_rgba(213,184,120,0.12)]">
+                      <ItemIcon className="w-5 h-5 sm:w-6 sm:h-6 stroke-[1.6]" />
                     </div>
-                    <span className="text-xs sm:text-[13px] font-medium text-white/95 leading-snug">
+                    <span className="text-[13.5px] sm:text-[14.5px] font-medium text-white/95 leading-snug">
                       {item.label}
                     </span>
                   </div>
@@ -698,8 +727,8 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
               })}
             </div>
 
-            {/* Right Side: Hospital Atrium Lounge Photo extending to the far right edge (Photo 2) */}
-            <div className="w-full lg:w-[30%] xl:w-[35%] relative min-h-[260px] sm:min-h-[320px] lg:min-h-full shrink-0">
+            {/* Right Side: Hospital Atrium Lounge Photo extending to far right edge */}
+            <div className="w-full lg:w-[30%] xl:w-[33%] relative min-h-[260px] sm:min-h-[320px] lg:min-h-full shrink-0">
               <Image
                 src="/images/areas/atrium-lounge.jpg"
                 alt="NabiOta Atrium Lounge"
@@ -715,14 +744,15 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
         </section>
 
         {/* ══════════════════════════════════════════════════════════
-            SECTION 3 (PHOTO 3): UNSER TEAM
+            SECTION 4 (PHOTO 2): UNSER TEAM
+            - "фото 2 сделай карточки докторов больше и с небольшим описанием"
             - Light cream background with botanical watermark in top-left
-            - Left: UNSER TEAM, Kompetenz. Empathie. Teamgeist., desc, Mehr über unser Team →
-            - Right: 3 Doctor Profile Cards with Photos & Names
+            - Left: Header content
+            - Right: 3 ENLARGED Doctor Profile Cards with Descriptions & Photos
         ══════════════════════════════════════════════════════════ */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-[#FAF8F5] relative overflow-hidden">
-          {/* Top-Left Botanical Watermark Accent (Photo 3) */}
-          <div className="absolute -top-4 -left-4 w-48 sm:w-64 md:w-80 h-48 sm:h-64 md:h-80 pointer-events-none opacity-80 z-0 select-none">
+        <section className="py-14 sm:py-18 lg:py-24 bg-[#FAF8F5] relative overflow-hidden">
+          {/* Top-Left Botanical Watermark Accent (Photo 2) */}
+          <div className="absolute -top-4 -left-4 w-52 sm:w-72 md:w-88 h-52 sm:h-72 md:h-88 pointer-events-none opacity-85 z-0 select-none">
             <Image
               src="/images/areas/botanical-branch-clean.png"
               alt="Botanical Foliage"
@@ -733,9 +763,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
           </div>
 
           <Container size="wide" className="relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
               {/* Left Column: Eyebrow, Title, Description, Button */}
-              <div className="lg:col-span-5 space-y-4">
+              <div className="lg:col-span-4 space-y-4 pt-2">
                 <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
                   {teamSection.eyebrow}
                 </span>
@@ -759,39 +789,48 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                 </div>
               </div>
 
-              {/* Right Column: 3 Doctor Profile Cards (Photo 3) */}
-              <div className="lg:col-span-7">
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
+              {/* Right Column: 3 ENLARGED Doctor Profile Cards with Descriptions (Photo 2) */}
+              <div className="lg:col-span-8">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
                   {teamSection.doctors.map((doc, idx) => (
                     <div
                       key={idx}
-                      className="bg-white rounded-2xl p-3 sm:p-3.5 border border-[#EDE8DE] hover:border-[#D5B878] shadow-[0_3px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_24px_rgba(213,184,120,0.14)] transition-all duration-300 flex flex-col group"
+                      className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 border border-[#EDE8DE] hover:border-[#D5B878] shadow-[0_4px_16px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_28px_rgba(213,184,120,0.16)] transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
                     >
-                      {/* Doctor Photo */}
-                      <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden bg-[#0C1C11]/5 mb-3">
-                        <Image
-                          src={doc.image}
-                          alt={doc.name}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                          sizes="(max-width: 768px) 100vw, 240px"
-                        />
-                      </div>
-
-                      {/* Doctor Info Row */}
-                      <div className="flex items-center justify-between gap-2 px-1 pb-1">
-                        <div className="min-w-0">
-                          <h4 className="text-[13.5px] sm:text-[14px] font-bold text-[#142318] group-hover:text-[#B89650] transition-colors truncate leading-tight">
-                            {doc.name}
-                          </h4>
-                          <p className="text-[11.5px] text-[#6E756D] truncate font-sans mt-0.5">
-                            {doc.role}
-                          </p>
+                      <div>
+                        {/* Doctor Photo - Generous Aspect Ratio */}
+                        <div className="relative aspect-[4/3.2] w-full rounded-xl sm:rounded-2xl overflow-hidden bg-[#0C1C11]/5 mb-3.5">
+                          <Image
+                            src={doc.image}
+                            alt={doc.name}
+                            fill
+                            className="object-cover group-hover:scale-104 transition-transform duration-500 ease-out"
+                            sizes="(max-width: 768px) 100vw, 320px"
+                          />
                         </div>
 
-                        {/* Round Small Arrow */}
-                        <div className="w-7 h-7 rounded-full border border-[#142318]/15 group-hover:border-[#D5B878] group-hover:bg-[#D5B878] group-hover:text-[#0C1C11] flex items-center justify-center text-[#142318] transition-all shrink-0">
-                          <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
+                        {/* Doctor Info */}
+                        <div className="space-y-1 px-0.5">
+                          <span className="text-[11px] font-semibold tracking-wide text-[#B89650] uppercase block">
+                            {doc.role}
+                          </span>
+                          <h4 className="text-[15px] sm:text-[16.5px] font-serif font-medium text-[#142318] group-hover:text-[#B89650] transition-colors leading-snug">
+                            {doc.name}
+                          </h4>
+                          {/* Doctor Description */}
+                          <p className="text-[11.5px] sm:text-xs text-[#556358] leading-relaxed font-sans line-clamp-3 pt-1">
+                            {doc.desc}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Bottom Row with Arrow Button */}
+                      <div className="pt-3.5 mt-3.5 border-t border-[#EDE8DE]/70 flex items-center justify-between">
+                        <span className="text-[11px] font-medium text-[#142318]/70 group-hover:text-[#142318] transition-colors">
+                          {isRu ? "Профиль врача" : isEn ? "View Profile" : "Arztprofil"}
+                        </span>
+                        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#142318]/15 group-hover:border-[#D5B878] group-hover:bg-[#D5B878] group-hover:text-[#0C1C11] flex items-center justify-center text-[#142318] transition-all shrink-0">
+                          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
                         </div>
                       </div>
                     </div>

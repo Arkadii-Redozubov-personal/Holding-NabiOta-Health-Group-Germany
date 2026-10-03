@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
+  ArrowUpRight,
   Calendar,
   Building2,
   Lightbulb,
@@ -13,6 +14,8 @@ import {
   ChevronDown,
   Check,
   Search,
+  Bookmark,
+  ShieldCheck,
 } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -73,6 +76,15 @@ export function NewsPageComponent({ locale = "de" }: Props) {
   const [sidebarSubscribed, setSidebarSubscribed] = useState(false);
   const [bannerEmail, setBannerEmail] = useState("");
   const [bannerSubscribed, setBannerSubscribed] = useState(false);
+  const [bookmarkedIds, setBookmarkedIds] = useState<string[]>([]);
+
+  const toggleBookmark = (id: string, e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setBookmarkedIds((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+    );
+  };
 
   // ── Hero Content ──
   const heroData = {
@@ -255,82 +267,162 @@ export function NewsPageComponent({ locale = "de" }: Props) {
       </section>
 
       {/* ══════════════════════════════════════════════════════════
-          MAIN CONTENT AREA (2 COLUMNS: ARTICLES ON LEFT, SIDEBAR ON RIGHT)
+          MAIN CONTENT AREA (PHOTO 3: 1-IN-1 DESIGN)
+          - Header row: "— ALL NEWS / Latest Articles" + Sort by dropdown
+          - Grid: Left (2-column articles grid) + Right (3-card sidebar)
       ══════════════════════════════════════════════════════════ */}
       <main className="flex-1 py-10 sm:py-14 bg-[#FAF8F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-            
-            {/* ── LEFT COLUMN (~71% width): FEATURED + ARTICLES GRID ── */}
-            <div className="lg:col-span-8 space-y-10 sm:space-y-12">
-              
-              {/* ── 1. FEATURED ARTICLE CARD (PHOTO 1-IN-1) ── */}
-              <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#EDE8DE] shadow-[0_4px_24px_rgba(0,0,0,0.02)] overflow-hidden hover:shadow-[0_8px_32px_rgba(0,0,0,0.05)] transition-all duration-300">
-                <div className="grid grid-cols-1 md:grid-cols-12 items-stretch">
-                  {/* Left Column: Details */}
-                  <div className="md:col-span-6 p-6 sm:p-8 lg:p-9 flex flex-col justify-between">
-                    <div>
-                      {/* Badge pill FEATURED + Date */}
-                      <div className="flex items-center gap-3 mb-3.5">
-                        <span className="text-[10px] font-bold tracking-[0.16em] uppercase px-3 py-1 rounded-full bg-[#F3E8CE] text-[#8C6D2B] border border-[#D5B878]/60">
-                          {isRu ? "ГЛАВНОЕ" : isEn ? "FEATURED" : "FEATURED"}
-                        </span>
-                        <span className="text-xs text-[#6E756D] font-sans">
-                          {featuredArticle.date}
-                        </span>
-                      </div>
-
-                      {/* Title */}
-                      <Link href={`/${locale}/news/${featuredArticle.slug}`}>
-                        <h2 className="font-serif text-2xl sm:text-[27px] text-[#132218] font-normal leading-[1.22] hover:text-[#B89650] transition-colors mb-3">
-                          {featuredArticle.title}
-                        </h2>
-                      </Link>
-
-                      {/* Description */}
-                      <p className="text-xs sm:text-[13px] text-[#556358] leading-relaxed font-sans line-clamp-4 mb-6">
-                        {featuredArticle.summary}
-                      </p>
-                    </div>
-
-                    {/* Button Read full article → */}
-                    <div>
-                      <Link
-                        href={`/${locale}/news/${featuredArticle.slug}`}
-                        className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[#D5B878] text-[#142318] hover:bg-[#D5B878] hover:text-[#0C1C11] font-semibold text-xs tracking-wide transition-all shadow-sm group"
-                      >
-                        <span>{isRu ? "Читать полностью" : isEn ? "Read full article" : "Artikel lesen"}</span>
-                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                      </Link>
-                    </div>
-                  </div>
-
-                  {/* Right Column: Surgical Center OR Image */}
-                  <div className="md:col-span-6 relative min-h-[220px] sm:min-h-[260px] md:min-h-full overflow-hidden">
-                    <Link href={`/${locale}/news/${featuredArticle.slug}`} className="block w-full h-full relative">
-                      <Image
-                        src={featuredArticle.image || "/images/news/featured-or.jpg"}
-                        alt={featuredArticle.title}
-                        fill
-                        className="object-cover object-center hover:scale-104 transition-transform duration-500"
-                        priority
-                      />
-                    </Link>
-                  </div>
-                </div>
-              </div>
+          {/* Header Row (Photo 3) */}
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 mb-8 border-b border-[#EDE8DE]">
+            <div>
+              <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
+                {isRu ? "— ВСЕ СТАТЬИ" : isEn ? "— ALL NEWS" : "— ALL NEWS"}
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#132218] font-normal leading-tight mt-1">
+                {isRu ? "Последние публикации" : isEn ? "Latest Articles" : "Latest Articles"}
+              </h2>
             </div>
 
-            {/* ── RIGHT COLUMN (~33% width): SIDEBAR ── */}
-            <aside className="lg:col-span-4 space-y-6 sm:space-y-8">
-              
-              {/* Card 1: News Categories */}
-              <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#EDE8DE] shadow-[0_2px_16px_rgba(0,0,0,0.02)] p-5 sm:p-6">
-                <h3 className="font-serif text-lg sm:text-xl text-[#142318] font-normal mb-4">
-                  {isRu ? "Категории новостей" : isEn ? "News Categories" : "News Categories"}
-                </h3>
+            {/* Sort by dropdown (Photo 3) */}
+            <div className="flex items-center gap-2 self-start sm:self-auto">
+              <span className="text-xs text-[#6E756D] font-sans">
+                {isRu ? "Сортировка:" : isEn ? "Sort by:" : "Sortieren:"}
+              </span>
+              <div className="relative">
+                <select
+                  value={sortOrder}
+                  onChange={(e) => setSortOrder(e.target.value as "recent" | "oldest")}
+                  className="appearance-none bg-white border border-[#EDE8DE] rounded-full pl-3.5 pr-8 py-1.5 text-xs text-[#142318] font-medium shadow-sm hover:border-[#D5B878] focus:outline-none focus:border-[#D5B878] cursor-pointer"
+                >
+                  <option value="recent">
+                    {isRu ? "Сначала новые" : isEn ? "Newest first" : "Neueste zuerst"}
+                  </option>
+                  <option value="oldest">
+                    {isRu ? "Сначала старые" : isEn ? "Oldest first" : "Älteste zuerst"}
+                  </option>
+                </select>
+                <ChevronDown className="w-3.5 h-3.5 text-[#6E756D] absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+              </div>
+            </div>
+          </div>
 
-                <div className="space-y-1">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+            
+            {/* ── LEFT COLUMN (~67% width): 2-COLUMN ARTICLES GRID (PHOTO 3) ── */}
+            <div className="lg:col-span-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-7">
+                {filteredArticles.map((art) => {
+                  const isBookmarked = bookmarkedIds.includes(art.id);
+                  return (
+                    <article
+                      key={art.id}
+                      className="bg-white rounded-2xl border border-[#EDE8DE] shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] transition-all duration-300 overflow-hidden flex flex-col justify-between group hover:-translate-y-0.5"
+                    >
+                      <div>
+                        {/* Article Image */}
+                        <Link href={`/${locale}/news/${art.slug}`} className="block relative aspect-[16/10] w-full overflow-hidden bg-neutral-100">
+                          <Image
+                            src={art.image}
+                            alt={art.title}
+                            fill
+                            className="object-cover group-hover:scale-104 transition-transform duration-500"
+                          />
+                        </Link>
+
+                        {/* Article Body */}
+                        <div className="p-4 sm:p-5">
+                          {/* Row: Category Pill + Date + Bookmark Icon (Photo 3) */}
+                          <div className="flex items-center justify-between gap-2 mb-2.5">
+                            <span className="text-[9.5px] font-bold tracking-[0.12em] uppercase text-[#8C6D2B] bg-[#FAF5EC] border border-[#EADBBD] px-2.5 py-0.5 rounded">
+                              {art.category}
+                            </span>
+                            
+                            <div className="flex items-center gap-2">
+                              <span className="text-[11.5px] text-[#6E756D] font-sans">
+                                {art.date}
+                              </span>
+                              <button
+                                onClick={(e) => toggleBookmark(art.id, e)}
+                                aria-label="Bookmark article"
+                                className="p-1 rounded-full text-[#8C938D] hover:text-[#B89650] transition-colors"
+                              >
+                                <Bookmark
+                                  className={`w-3.5 h-3.5 ${
+                                    isBookmarked
+                                      ? "fill-[#D5B878] text-[#B89650]"
+                                      : "stroke-[1.6]"
+                                  }`}
+                                />
+                              </button>
+                            </div>
+                          </div>
+
+                          {/* Title */}
+                          <Link href={`/${locale}/news/${art.slug}`}>
+                            <h3 className="font-serif text-[17px] sm:text-[18.5px] text-[#132218] font-normal leading-[1.28] hover:text-[#B89650] transition-colors mb-2 line-clamp-2">
+                              {art.title}
+                            </h3>
+                          </Link>
+
+                          {/* Excerpt */}
+                          <p className="text-xs sm:text-[12.5px] text-[#556358] leading-relaxed font-sans line-clamp-3">
+                            {art.summary}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Read more → (Photo 3) */}
+                      <div className="px-4 sm:p-5 pt-0 pb-4 sm:pb-5">
+                        <Link
+                          href={`/${locale}/news/${art.slug}`}
+                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#142318] group-hover:text-[#B89650] transition-colors"
+                        >
+                          <span>{isRu ? "Читать далее" : isEn ? "Read more" : "Weiterlesen"}</span>
+                          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
+
+              {filteredArticles.length === 0 && (
+                <div className="py-12 text-center bg-white rounded-2xl border border-[#EDE8DE] p-8">
+                  <p className="text-sm text-[#556358] font-sans">
+                    {isRu
+                      ? "В этой категории пока нет новостей."
+                      : isEn
+                      ? "No articles found in this category."
+                      : "Keine Artikel in dieser Kategorie gefunden."}
+                  </p>
+                  <button
+                    onClick={() => setActiveCategory("all")}
+                    className="mt-3 text-xs font-semibold text-[#B89650] hover:underline"
+                  >
+                    {isRu ? "Показать все новости" : isEn ? "Show all news" : "Alle Artikel anzeigen"}
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* ── RIGHT COLUMN (~33% width): 3 SIDEBAR CARDS (PHOTO 3) ── */}
+            <aside className="lg:col-span-4 space-y-6 sm:space-y-7">
+              
+              {/* ── Card 1: News Categories with Dark Header (Photo 3) ── */}
+              <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#EDE8DE] shadow-[0_2px_16px_rgba(0,0,0,0.02)] overflow-hidden">
+                {/* Dark Forest Green Header Bar with Icon & Title */}
+                <div className="bg-[#0A180E] text-white px-5 py-4 border-b border-[#0A180E] flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full border border-[#D5B878]/60 bg-[#0A180E] flex items-center justify-center text-[#ECCF96] shadow-sm shrink-0">
+                    <FileText className="w-4 h-4 stroke-[1.6]" />
+                  </div>
+                  <h3 className="font-serif text-lg text-white font-normal">
+                    {isRu ? "Категории новостей" : isEn ? "News Categories" : "News Categories"}
+                  </h3>
+                </div>
+
+                {/* Categories List */}
+                <div className="p-3 sm:p-4 space-y-1">
                   {categories.map((cat) => {
                     const CatIcon = cat.icon;
                     const isActive =
@@ -341,7 +433,7 @@ export function NewsPageComponent({ locale = "de" }: Props) {
                         onClick={() => setActiveCategory(cat.id)}
                         className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs transition-all ${
                           isActive
-                            ? "bg-[#EAE0D0] text-[#142318] font-semibold shadow-sm"
+                            ? "bg-[#F5ECE0] text-[#142318] font-bold shadow-xs"
                             : "text-[#425046] hover:bg-[#FAF8F5] hover:text-[#142318]"
                         }`}
                       >
@@ -368,10 +460,10 @@ export function NewsPageComponent({ locale = "de" }: Props) {
                 </div>
               </div>
 
-              {/* Card 2: Get the latest updates (Mini Newsletter with Botanical Watermark) */}
+              {/* ── Card 2: Get the latest updates (Newsletter with Botanical Watermark, Photo 3) ── */}
               <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#EDE8DE] shadow-[0_2px_16px_rgba(0,0,0,0.02)] p-5 sm:p-6 relative overflow-hidden">
                 {/* Botanical leaf branch watermark on top-right */}
-                <div className="absolute -top-2 -right-2 w-28 h-28 pointer-events-none opacity-30 select-none">
+                <div className="absolute -top-2 -right-2 w-28 h-28 pointer-events-none opacity-25 select-none">
                   <Image
                     src="/images/areas/botanical-branch-clean.png"
                     alt="Botanical Foliage"
@@ -381,9 +473,14 @@ export function NewsPageComponent({ locale = "de" }: Props) {
                 </div>
 
                 <div className="relative z-10">
-                  <h3 className="font-serif text-base sm:text-lg text-[#142318] font-normal mb-1.5">
+                  <span className="text-[10px] font-bold tracking-[0.2em] text-[#B89650] uppercase block mb-1">
+                    {isRu ? "БУДЬТЕ В КУРСЕ" : isEn ? "STAY INFORMED" : "STAY INFORMED"}
+                  </span>
+                  
+                  <h3 className="font-serif text-lg sm:text-xl text-[#142318] font-normal mb-1.5 leading-snug">
                     {isRu ? "Будьте в курсе обновлений" : isEn ? "Get the latest updates" : "Get the latest updates"}
                   </h3>
+                  
                   <p className="text-xs text-[#556358] leading-relaxed font-sans mb-4">
                     {isRu
                       ? "Подпишитесь на рассылку и первыми узнавайте о новостях, событиях и разработках."
@@ -423,134 +520,81 @@ export function NewsPageComponent({ locale = "de" }: Props) {
                       </p>
                     )}
 
-                    <p className="text-[10px] text-[#8C938D] font-sans pt-1">
-                      {isRu
-                        ? "Мы уважаем конфиденциальность. Отписка в любое время."
-                        : isEn
-                        ? "We respect your privacy. Unsubscribe anytime."
-                        : "Wir respektieren Ihre Privatsphäre. Jederzeit kündbar."}
-                    </p>
+                    <div className="flex items-center gap-1.5 pt-1 text-[10px] text-[#8C938D] font-sans">
+                      <ShieldCheck className="w-3.5 h-3.5 text-[#B89650] shrink-0" />
+                      <span>
+                        {isRu
+                          ? "Мы уважаем конфиденциальность. Отписка в любое время."
+                          : isEn
+                          ? "We respect your privacy. Unsubscribe anytime."
+                          : "Wir respektieren Ihre Privatsphäre. Jederzeit kündbar."}
+                      </span>
+                    </div>
                   </form>
                 </div>
               </div>
-            </aside>
-          </div>
 
-          {/* ══════════════════════════════════════════════════════════
-              FULL-WIDTH ARTICLES SECTION (100% OF CONTAINER WIDTH)
-              - Lowered with generous breathing room (mt-12 sm:mt-16)
-              - 3 Columns spanning the full container width
-              - Cards end exactly where the sidebar ends on the right!
-          ══════════════════════════════════════════════════════════ */}
-          <div className="mt-12 sm:mt-16">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-[#EDE8DE]">
-              <div>
-                <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
-                  {isRu ? "ВСЕ СТАТЬИ" : isEn ? "ALL NEWS" : "ALL NEWS"}
-                </span>
-                <h3 className="font-serif text-2xl sm:text-3xl text-[#132218] font-normal leading-tight mt-1">
-                  {isRu ? "Последние публикации" : isEn ? "Latest Articles" : "Latest Articles"}
-                </h3>
-              </div>
+              {/* ── Card 3: Featured Innovation with Microscope Image (Photo 3) ── */}
+              <div className="relative rounded-2xl sm:rounded-3xl bg-[#08170D] text-white p-5 sm:p-6 overflow-hidden border border-[#D5B878]/30 shadow-lg">
+                {/* Microscope Background Photo */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <Image
+                    src="/images/news/cancer-research.jpg"
+                    alt="Medical Innovation Research"
+                    fill
+                    className="object-cover object-center"
+                  />
+                  {/* Dark gradient overlay for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#08170D] via-[#08170D]/90 to-[#08170D]/75" />
+                </div>
 
-              {/* Sort by dropdown */}
-              <div className="flex items-center gap-2 self-start sm:self-auto">
-                <span className="text-xs text-[#6E756D] font-sans">
-                  {isRu ? "Сортировка:" : isEn ? "Sort by:" : "Sortieren:"}
-                </span>
-                <div className="relative">
-                  <select
-                    value={sortOrder}
-                    onChange={(e) => setSortOrder(e.target.value as "recent" | "oldest")}
-                    className="appearance-none bg-white border border-[#EDE8DE] rounded-full pl-3.5 pr-8 py-1.5 text-xs text-[#142318] font-medium shadow-sm hover:border-[#D5B878] focus:outline-none focus:border-[#D5B878] cursor-pointer"
+                {/* Botanical leaf watermark accent */}
+                <div className="absolute -right-4 -bottom-4 w-28 h-28 pointer-events-none opacity-20 select-none">
+                  <Image
+                    src="/images/areas/botanical-branch-clean.png"
+                    alt="Botanical Foliage"
+                    fill
+                    className="object-contain object-bottom-right"
+                  />
+                </div>
+
+                <div className="relative z-10">
+                  {/* Top Round Button with Arrow pointing top-right ↗ (Photo 3) */}
+                  <div className="w-8 h-8 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-white mb-4">
+                    <ArrowUpRight className="w-4 h-4" />
+                  </div>
+
+                  <span className="text-[10px] font-bold tracking-[0.2em] text-[#C5A56A] uppercase block mb-1">
+                    {isRu ? "В ЦЕНТРЕ ВНИМАНИЯ" : isEn ? "FEATURED" : "FEATURED"}
+                  </span>
+
+                  <h3 className="font-serif text-lg sm:text-xl text-white font-normal mb-2 leading-snug">
+                    {isRu
+                      ? "Откройте наши последние инновации"
+                      : isEn
+                      ? "Explore Our Latest Innovations"
+                      : "Entdecken Sie unsere Innovationen"}
+                  </h3>
+
+                  <p className="text-xs text-white/80 leading-relaxed font-sans mb-4">
+                    {isRu
+                      ? "Узнайте, как наши исследования и технологии формируют будущее здравоохранения."
+                      : isEn
+                      ? "Discover how our research and technology are shaping the future of healthcare."
+                      : "Erfahren Sie, wie unsere Forschung und Medizintechnik die Zukunft gestalten."}
+                  </p>
+
+                  <Link
+                    href={`/${locale}/services/forschung-und-innovation`}
+                    className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs tracking-wide shadow-md transition-all duration-200 hover:scale-[1.02]"
                   >
-                    <option value="recent">
-                      {isRu ? "Сначала новые" : isEn ? "Most recent" : "Neueste zuerst"}
-                    </option>
-                    <option value="oldest">
-                      {isRu ? "Сначала старые" : isEn ? "Oldest" : "Älteste zuerst"}
-                    </option>
-                  </select>
-                  <ChevronDown className="w-3.5 h-3.5 text-[#6E756D] absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <span>{isRu ? "Узнать больше" : isEn ? "Learn more" : "Mehr erfahren"}</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
                 </div>
               </div>
-            </div>
 
-            {/* 3-Column Grid across 100% width */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 pt-6">
-              {filteredArticles.map((art) => (
-                <article
-                  key={art.id}
-                  className="bg-white rounded-2xl border border-[#EDE8DE] shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] transition-all duration-300 overflow-hidden flex flex-col justify-between group hover:-translate-y-0.5"
-                >
-                  <div>
-                    {/* Article Image */}
-                    <Link href={`/${locale}/news/${art.slug}`} className="block relative aspect-[16/10] w-full overflow-hidden">
-                      <Image
-                        src={art.image}
-                        alt={art.title}
-                        fill
-                        className="object-cover group-hover:scale-104 transition-transform duration-500"
-                      />
-                    </Link>
-
-                    {/* Article Body */}
-                    <div className="p-4 sm:p-5">
-                      {/* Category Tag + Date */}
-                      <div className="flex items-center justify-between gap-2 mb-2">
-                        <span className="text-[9.5px] font-bold tracking-[0.14em] uppercase text-[#8C6D2B] bg-[#FAF8F5] border border-[#EDE8DE] px-2 py-0.5 rounded">
-                          {art.category}
-                        </span>
-                        <span className="text-[11px] text-[#8C938D] font-sans">
-                          {art.date}
-                        </span>
-                      </div>
-
-                      {/* Title */}
-                      <Link href={`/${locale}/news/${art.slug}`}>
-                        <h4 className="font-serif text-base sm:text-[17px] text-[#142318] font-normal leading-snug line-clamp-2 mt-2.5 mb-2 group-hover:text-[#B89650] transition-colors">
-                          {art.title}
-                        </h4>
-                      </Link>
-
-                      {/* Excerpt */}
-                      <p className="text-xs text-[#556358] leading-relaxed line-clamp-3 font-sans">
-                        {art.summary}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Read more → */}
-                  <div className="px-4 sm:px-5 pb-4 sm:pb-5 pt-1 mt-auto">
-                    <Link
-                      href={`/${locale}/news/${art.slug}`}
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#142318] group-hover:text-[#B89650] transition-colors"
-                    >
-                      <span>{isRu ? "Подробнее" : isEn ? "Read more" : "Weiterlesen"}</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </div>
-                </article>
-              ))}
-            </div>
-
-            {filteredArticles.length === 0 && (
-              <div className="py-12 text-center bg-white rounded-2xl border border-[#EDE8DE] p-8 mt-6">
-                <p className="text-sm text-[#556358] font-sans">
-                  {isRu
-                    ? "В этой категории пока нет новостей."
-                    : isEn
-                    ? "No articles found in this category."
-                    : "Keine Artikel in dieser Kategorie gefunden."}
-                </p>
-                <button
-                  onClick={() => setActiveCategory("all")}
-                  className="mt-3 text-xs font-semibold text-[#B89650] hover:underline"
-                >
-                  {isRu ? "Показать все новости" : isEn ? "Show all news" : "Alle Artikel anzeigen"}
-                </button>
-              </div>
-            )}
+            </aside>
           </div>
 
           {/* ══════════════════════════════════════════════════════════

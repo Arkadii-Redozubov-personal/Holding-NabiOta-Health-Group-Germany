@@ -395,14 +395,14 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         badges={heroData.badges}
       />
 
-      <main className="flex-1 py-10 sm:py-16 space-y-16 sm:space-y-20 lg:space-y-24 bg-[#FAF8F5]">
+      <main className="flex-1 bg-[#FAF8F5]">
         
         {/* ══════════════════════════════════════════════════════════
             SECTION 1 (PHOTO 2 TOP): UNSERE DIAGNOSTIKVERFAHREN
             - Left: Eyebrow, Title, Description, Button
             - Right: 6 Modality Cards (MRT, CT, Ultraschall, Röntgen, Labor, Kardio)
         ══════════════════════════════════════════════════════════ */}
-        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-8 sm:pb-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
             
             {/* Left Header Column */}
@@ -496,7 +496,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             - Center: Heading & Description
             - Right: 3 Stats (3T, <24h, 99%)
         ══════════════════════════════════════════════════════════ */}
-        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
           <div className="relative rounded-2xl sm:rounded-3xl bg-[#08170D] text-white overflow-hidden border border-[#D5B878]/30 shadow-xl">
             {/* Subtle Gold Botanical Line Art on Far Right */}
             <div className="absolute right-0 top-0 w-80 h-full pointer-events-none opacity-25 z-0 select-none">
@@ -584,7 +584,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             - Left: Eyebrow, Title, Description, Button
             - Right: 4 Connected steps directly on background with connecting line
         ══════════════════════════════════════════════════════════ */}
-        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
             {/* Left Header Area */}
@@ -673,7 +673,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             - Left (Deep Forest Green): "Fragen zur Diagnostik?" + consultation photo on right + button
             - Right (Pure White): "Was wir für Sie untersuchen können" + 2-col checklist with gold checkmarks
         ══════════════════════════════════════════════════════════ */}
-        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 pb-14 sm:pb-20">
           <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#EDE8DE] shadow-[0_4px_24px_rgba(0,0,0,0.03)] overflow-hidden grid grid-cols-1 lg:grid-cols-12 items-stretch">
             
             {/* Left Part: Deep Forest Green with consultation photo on right */}
@@ -762,12 +762,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
 
         {/* ══════════════════════════════════════════════════════════
             SECTION 5 (PHOTO 4): PATIENTENSTIMMEN (FULL-WIDTH EDGE-TO-EDGE)
-            - Full width touching edges (w-full, no max-w, no rounded corners)
-            - Left: Patient portrait fading into center
-            - Center: Eyebrow, Title, Quote flanked by Left/Right arrows, Author, Dots
-            - Right: Scan review photo fading into center
+            - Seamlessly connected to Section 6 with NO white gap!
         ══════════════════════════════════════════════════════════ */}
-        <section className="w-full bg-[#08170D] text-white overflow-hidden border-y border-[#D5B878]/30 relative">
+        <section className="w-full bg-[#08170D] text-white overflow-hidden border-t border-[#D5B878]/30 relative">
           <div className="w-full flex items-center justify-between min-h-[240px] sm:min-h-[260px] lg:min-h-[280px]">
             
             {/* Left Column: Patient Portrait fading towards center */}
@@ -863,10 +860,11 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
 
         {/* ══════════════════════════════════════════════════════════
             SECTION 6: SIGNATURE PANORAMIC MOUNTAIN CTA BANNER
-            - Background mountain image with dark overlay
-            - Gold borders, Eyebrow, Title, Appointment CTA buttons
+            - "фото 5 лищние белые пробелы снизу и сверху"
+            - Directly adjacent to Section 5 with only a gold divider border
+            - Directly adjacent to Footer with NO bottom margin or padding!
         ══════════════════════════════════════════════════════════ */}
-        <section className="relative w-full py-16 sm:py-20 lg:py-24 overflow-hidden border-y border-[#D5B878]/60">
+        <section className="relative w-full py-16 sm:py-20 lg:py-24 overflow-hidden border-t border-[#D5B878]/30">
           <div className="absolute inset-0 z-0">
             <Image
               src="/images/values/mountains-bg.jpg"
