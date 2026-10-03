@@ -337,11 +337,14 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         {/* ========================================================================= */}
         {/* SECTION 1 (from Photo): UNSERE BERATUNGSLEISTUNGEN                        */}
         {/* ========================================================================= */}
-        <section className="py-14 sm:py-20 bg-[#FAF9F5]">
+        {/* ========================================================================= */}
+        {/* SECTION 1 (from Photo 3): UNSERE BERATUNGSLEISTUNGEN                      */}
+        {/* ========================================================================= */}
+        <section className="py-12 sm:py-16 bg-[#FAF9F5]">
           <Container size="wide">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
               {/* Left Column (Copy + Button) */}
-              <div className="lg:col-span-4 space-y-5">
+              <div className="lg:col-span-4 space-y-4 sm:space-y-5">
                 <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans">
                   {t.s1.eyebrow}
                 </span>
@@ -354,19 +357,20 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
                   {t.s1.desc}
                 </p>
 
-                <div className="pt-2">
+                {/* Larger Pill Button (Matching Photo 3) */}
+                <div className="pt-2 sm:pt-3">
                   <Link
                     href={`/${locale}/contact`}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#FAF9F5] hover:bg-white text-[#0D2619] border border-[#C8B896] text-xs sm:text-sm font-medium transition-all duration-300 shadow-sm group"
+                    className="inline-flex items-center gap-3 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#FAF9F5] hover:bg-white text-[#0D2619] border border-[#BFA87E] hover:border-[#9B7C38] text-sm sm:text-base font-medium transition-all duration-300 shadow-sm hover:shadow group hover:scale-[1.01]"
                   >
                     <span>{t.s1.btn}</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="w-4 h-4 text-[#0D2619] transition-transform group-hover:translate-x-1" />
                   </Link>
                 </div>
               </div>
 
               {/* Center Column: Meeting Photo */}
-              <div className="lg:col-span-5 relative aspect-[16/11] sm:aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-[#EAE5DC]">
+              <div className="lg:col-span-5 relative aspect-[16/11] sm:aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border border-[#EAE5DC]">
                 <Image
                   src="/images/beratung/consulting-meeting.webp"
                   alt={t.s1.title}
@@ -375,21 +379,21 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
                 />
               </div>
 
-              {/* Right Column: Consulting Approach Box */}
-              <div className="lg:col-span-3 bg-[#F6F5EF] rounded-2xl p-6 border border-[#EBE7DF] shadow-xs space-y-4">
-                <h3 className="font-serif text-base sm:text-lg font-medium text-[#0F2A1D] border-b border-[#E6E1D6] pb-3">
+              {/* Right Column: Consulting Approach Box (Matching Photo 3) */}
+              <div className="lg:col-span-3 bg-[#F4F2EC] rounded-2xl sm:rounded-3xl p-6 sm:p-7 border border-[#E5DFD1] shadow-xs space-y-4.5">
+                <h3 className="font-serif text-base sm:text-lg font-medium text-[#0F2A1D]">
                   {t.s1.cardTitle}
                 </h3>
 
-                <div className="space-y-3.5">
+                <div className="space-y-4 sm:space-y-4.5">
                   {t.s1.items.map((item, idx) => {
                     const IconComp = item.icon;
                     return (
-                      <div key={idx} className="flex items-start gap-3">
-                        <div className="w-7 h-7 rounded-full bg-white border border-[#DDD6C8] text-[#244E33] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-2xs">
-                          <IconComp className="w-3.5 h-3.5 stroke-[1.8]" />
+                      <div key={idx} className="flex items-start gap-3.5">
+                        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D5B878]/70 bg-white/80 text-[#1E3E2B] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-2xs">
+                          <IconComp className="w-4.5 h-4.5 sm:w-5 sm:h-5 stroke-[1.6]" />
                         </div>
-                        <span className="text-xs text-[#2C4737] font-medium leading-snug">
+                        <span className="text-xs sm:text-[13px] text-[#2C4737] font-medium leading-snug pt-1">
                           {item.text}
                         </span>
                       </div>
@@ -402,95 +406,95 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 2 (from Photo): PROJEKTENTWICKLUNG - VON DER IDEE ZUR UMSETZUNG    */}
+        {/* SECTION 2 (Photo 4): PROJEKTENTWICKLUNG - VON DER IDEE ZUR UMSETZUNG      */}
         {/* ========================================================================= */}
-        <section className="py-8 sm:py-14">
-          <Container size="wide">
-            <div className="bg-[#0B2516] rounded-3xl overflow-hidden shadow-2xl relative">
-              {/* Subtle Botanical texture */}
-              <div className="absolute inset-0 opacity-10 pointer-events-none mix-blend-overlay">
-                <Image
-                  src="/images/values/leaves-bg.webp"
-                  alt="Leaves texture"
-                  fill
-                  className="object-cover"
-                />
+        <section className="w-full bg-[#08170D] text-white relative overflow-hidden border-y border-[#D5B878]/30 my-8 sm:my-12">
+          {/* Botanical Gold Background with subtle overlay */}
+          <div className="absolute inset-0 pointer-events-none z-0">
+            <Image
+              src="/images/botanical-gold-bg.webp"
+              alt="Botanical Gold Texture"
+              fill
+              className="object-cover object-left opacity-35 mix-blend-screen"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#08170D]/95 via-[#08170D]/85 to-[#08170D]/40" />
+          </div>
+
+          <div className="w-full flex flex-col lg:flex-row items-stretch min-h-[300px] lg:min-h-[340px] relative z-10">
+            {/* Left: Text & CTA */}
+            <div className="w-full lg:w-[40%] xl:w-[38%] p-6 sm:p-8 lg:p-10 lg:pl-14 xl:pl-20 flex flex-col justify-center space-y-3.5 sm:space-y-4">
+              <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-[0.24em] text-[#C5A56A] block font-sans">
+                {t.s2.eyebrow}
+              </span>
+
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] xl:text-[36px] text-white font-normal leading-[1.15]">
+                {t.s2.title}
+              </h2>
+
+              <p className="text-white/85 text-xs sm:text-[13px] leading-relaxed max-w-lg font-sans">
+                {t.s2.desc}
+              </p>
+
+              <div className="pt-1.5 sm:pt-2">
+                <Link
+                  href={`/${locale}/contact`}
+                  className="inline-flex items-center gap-2.5 px-6 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-[#ECCF96] via-[#DFBF76] to-[#C8A050] hover:from-[#F4DCAC] hover:to-[#D4AC5B] text-[#08170D] text-xs sm:text-[13px] font-semibold transition-all duration-300 shadow-md group hover:scale-[1.02]"
+                >
+                  <span>{t.s2.btn}</span>
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                </Link>
               </div>
+            </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-12 items-center relative z-10">
-                {/* Left: Text & CTA */}
-                <div className="lg:col-span-5 p-8 sm:p-12 lg:p-14 space-y-5">
-                  <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#ECCF96] block font-sans">
-                    {t.s2.eyebrow}
-                  </span>
-
-                  <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-white font-normal leading-tight">
-                    {t.s2.title}
-                  </h2>
-
-                  <p className="text-xs sm:text-sm text-[#D4E2D8] leading-relaxed">
-                    {t.s2.desc}
-                  </p>
-
-                  <div className="pt-2">
-                    <Link
-                      href={`/${locale}/contact`}
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#ECCF96] to-[#D4AF37] hover:from-[#F2DCAE] hover:to-[#DFBB45] text-[#0B2516] text-xs sm:text-sm font-semibold transition-all duration-300 shadow-md group"
-                    >
-                      <span>{t.s2.btn}</span>
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Center: 4 Gold Circular Features */}
-                <div className="lg:col-span-3 px-8 py-4 sm:px-10 lg:px-4 space-y-4">
-                  {t.s2.features.map((feat, idx) => {
-                    const IconComp = feat.icon;
-                    return (
-                      <div key={idx} className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-full border border-[#D4AF37]/60 bg-white/5 flex items-center justify-center text-[#ECCF96] flex-shrink-0">
-                          <IconComp className="w-4 h-4 stroke-[1.5]" />
-                        </div>
-                        <span className="text-xs font-medium text-[#F4EFE6] leading-snug">
-                          {feat.text}
-                        </span>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {/* Right: Modern Building Photo with Cursive Stamp */}
-                <div className="lg:col-span-4 relative aspect-[4/3] lg:aspect-auto lg:h-full min-h-[300px] sm:min-h-[360px] overflow-hidden">
-                  <Image
-                    src="/images/beratung/project-building.webp"
-                    alt={t.s2.title}
-                    fill
-                    className="object-cover object-center"
-                  />
-                  {/* Soft gradient blend on the left edge on desktop */}
-                  <div className="hidden lg:block absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#0B2516] to-transparent pointer-events-none" />
-
-                  {/* Stamp Badge Bottom Right: "Nachhaltige Gesundheitsräume. ♡" */}
-                  <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-[#0B2516]/80 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-white/20 rotate-[-2deg] flex items-center gap-2 shadow-lg">
-                    <span className="font-serif italic text-xs sm:text-sm text-[#F7F3E8] font-medium">
-                      {t.s2.stamp}
+            {/* Center: 4 Gold Circular Features matching Photo 4 */}
+            <div className="w-full lg:w-[28%] xl:w-[27%] px-6 sm:px-8 lg:px-4 py-4 sm:py-6 lg:py-0 flex flex-col justify-center space-y-3.5 sm:space-y-4">
+              {t.s2.features.map((feat, idx) => {
+                const IconComp = feat.icon;
+                return (
+                  <div key={idx} className="flex items-center gap-3.5">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#D5B878]/80 bg-[#08170D] flex items-center justify-center text-[#ECCF96] flex-shrink-0 shadow-[0_0_12px_rgba(213,184,120,0.15)]">
+                      <IconComp className="w-4 h-4 sm:w-5 sm:h-5 stroke-[1.6]" />
+                    </div>
+                    <span className="text-[12.5px] sm:text-[13.5px] font-medium text-white/95 leading-snug">
+                      {feat.text}
                     </span>
-                    <Heart className="w-3.5 h-3.5 text-[#ECCF96] fill-[#ECCF96]/30 flex-shrink-0" />
                   </div>
+                );
+              })}
+            </div>
+
+            {/* Right: Modern Building Photo with smooth fade & handwritten cursive stamp */}
+            <div className="w-full lg:w-[32%] xl:w-[35%] relative min-h-[220px] sm:min-h-[260px] lg:min-h-full shrink-0 overflow-hidden">
+              <Image
+                src="/images/beratung/project-building.webp"
+                alt={t.s2.title}
+                fill
+                className="object-cover object-center"
+              />
+              {/* Ultra-smooth multi-stop gradient fade from left dark green into building photo */}
+              <div className="hidden lg:block absolute inset-y-0 left-0 w-36 sm:w-48 bg-gradient-to-r from-[#08170D] via-[#08170D]/80 via-[#08170D]/40 to-transparent pointer-events-none z-10" />
+              <div className="lg:hidden absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#08170D] via-[#08170D]/80 to-transparent pointer-events-none z-10" />
+
+              {/* Stamp Bottom Right: "Nachhaltige Gesundheitsräume. ♡" (Matching Photo 4) */}
+              <div className="absolute bottom-4 right-4 sm:bottom-5 sm:right-6 pointer-events-none select-none z-20 text-right">
+                <p className="font-serif italic text-white/95 text-base sm:text-lg md:text-xl tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]">
+                  {t.s2.stamp}
+                </p>
+                <div className="flex justify-end pt-1">
+                  <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-white/95 fill-transparent stroke-[1.5] drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]" />
                 </div>
               </div>
             </div>
-          </Container>
+          </div>
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 3 (from Photo): UNSER PROZESS (In 5 Schritten zu Ihrem Erfolg)    */}
+        {/* SECTION 3 (Photo 5): UNSER PROZESS (In 5 Schritten zu Ihrem Erfolg)       */}
         {/* ========================================================================= */}
-        <section className="py-14 sm:py-20 bg-[#FAF9F5] border-t border-[#EAE3D5]">
+        <section className="py-12 sm:py-16 bg-[#FAF9F5] border-t border-[#EAE3D5]">
           <Container size="wide">
             {/* Header */}
-            <div className="max-w-2xl mb-12 sm:mb-14">
+            <div className="max-w-2xl mb-10 sm:mb-12">
               <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans mb-2">
                 {t.s3.eyebrow}
               </span>
@@ -502,7 +506,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
               </p>
             </div>
 
-            {/* 5 Steps Connected in a Row */}
+            {/* 5 Steps Connected in a Row (Matching Photo 5) */}
             <div className="grid grid-cols-1 md:grid-cols-5 gap-6 sm:gap-4 relative">
               {t.s3.steps.map((st, idx) => {
                 const IconComp = st.icon;
@@ -510,29 +514,29 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
                   <div key={idx} className="relative flex flex-col space-y-3">
                     {/* Top Row: Number badge + Icon + Chevron divider */}
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <div className="w-7 h-7 rounded-full bg-[#0D2619] text-white flex items-center justify-center text-xs font-bold font-serif">
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#0D2619] text-white flex items-center justify-center text-xs sm:text-sm font-bold font-serif shrink-0 shadow-xs">
                           {st.num}
                         </div>
-                        <div className="w-8 h-8 rounded-full bg-[#EBF0EA] text-[#244E33] flex items-center justify-center">
-                          <IconComp className="w-4 h-4 stroke-[1.8]" />
+                        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D5B878]/80 bg-white flex items-center justify-center text-[#0D2619] shrink-0 shadow-2xs">
+                          <IconComp className="w-4.5 h-4.5 sm:w-5 sm:h-5 stroke-[1.8]" />
                         </div>
                       </div>
 
-                      {/* Arrow to next item (hidden on last item and mobile) */}
+                      {/* Prominent Golden Chevron Arrow between steps matching Photo 5 */}
                       {idx < 4 && (
-                        <span className="hidden md:block text-[#C8B896] text-sm pr-2">
-                          ›
-                        </span>
+                        <div className="hidden md:flex items-center text-[#C5A56A] pl-2 pr-1">
+                          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.4]" />
+                        </div>
                       )}
                     </div>
 
                     {/* Step Title & Text */}
                     <div className="pt-1">
-                      <h4 className="font-serif text-xs sm:text-sm font-semibold text-[#0F2A1D] mb-1.5 leading-snug">
+                      <h4 className="font-serif text-sm sm:text-base font-bold text-[#0F2A1D] mb-1.5 leading-snug">
                         {st.title}
                       </h4>
-                      <p className="text-[11px] sm:text-xs text-[#5A6E63] leading-relaxed">
+                      <p className="text-xs sm:text-[13px] text-[#4A5D52] leading-relaxed">
                         {st.desc}
                       </p>
                     </div>

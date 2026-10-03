@@ -473,7 +473,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         {/* SECTION 2: OUR COMMITMENT (FULL-WIDTH EDGE-TO-EDGE, Matching Photo 5)    */}
         {/* ========================================================================= */}
         <section className="w-full bg-[#0B2516] text-white relative overflow-hidden border-y border-[#D5B878]/30">
-          {/* Rich Botanical Bacground across the dark section */}
+          {/* Rich Botanical Background across the dark section */}
           <div className="absolute inset-0 pointer-events-none z-0">
             <Image
               src="/images/bacground.webp"
@@ -484,30 +484,27 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             <div className="absolute inset-0 bg-gradient-to-r from-[#0B2516]/95 via-[#0B2516]/85 to-[#0B2516]/60" />
           </div>
 
-          {/* Crisp Botanical Foliage on Far Right */}
-          <div className="absolute right-0 top-0 bottom-0 w-64 sm:w-80 md:w-96 pointer-events-none opacity-50 z-0 select-none overflow-hidden">
-            <Image
-              src="/images/areas/botanical-branch-clean.webp"
-              alt="Botanical Foliage"
-              fill
-              className="object-contain object-right"
-              priority
-            />
-          </div>
-
-          <div className="relative z-10 w-full flex flex-col lg:flex-row items-center">
-            {/* Left: Nurse in green scrub with senior woman */}
-            <div className="w-full lg:w-[36%] xl:w-[38%] relative aspect-[16/10] lg:aspect-auto lg:h-full min-h-[220px] sm:min-h-[260px] lg:min-h-[320px] xl:min-h-[340px] overflow-hidden shrink-0">
-              <Image
-                src="/images/nursing/commitment-nurse.webp"
-                alt={t.commitment.title}
-                fill
-                className="object-cover object-center"
-                priority
-              />
-              {/* Smooth multi-stop gradient into dark forest green */}
-              <div className="hidden lg:block absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#0B2516] via-[#0B2516]/80 to-transparent pointer-events-none z-10" />
-              <div className="lg:hidden absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0B2516] to-transparent pointer-events-none z-10" />
+          <div className="relative z-10 w-full flex flex-col lg:flex-row items-stretch">
+            {/* Left: Nurse in green scrub with senior woman - completely seamless transition */}
+            <div className="w-full lg:w-[36%] xl:w-[38%] relative min-h-[240px] sm:min-h-[280px] lg:min-h-[320px] xl:min-h-[340px] overflow-hidden shrink-0">
+              <div 
+                className="absolute inset-0 w-full h-full"
+                style={{
+                  WebkitMaskImage: 'linear-gradient(to right, black 65%, transparent 100%)',
+                  maskImage: 'linear-gradient(to right, black 65%, transparent 100%)'
+                }}
+              >
+                <Image
+                  src="/images/nursing/commitment-nurse.webp"
+                  alt={t.commitment.title}
+                  fill
+                  className="object-cover object-center"
+                  priority
+                />
+              </div>
+              {/* Multi-stop smooth gradient blend into dark forest green */}
+              <div className="hidden lg:block absolute inset-y-0 right-0 w-44 xl:w-56 bg-gradient-to-r from-transparent via-[#0B2516]/70 to-[#0B2516] pointer-events-none z-10" />
+              <div className="lg:hidden absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#0B2516] to-transparent pointer-events-none z-10" />
             </div>
 
             {/* Right: Copy & 4 Circular Gold Icons matching Photo 5 */}
@@ -714,28 +711,31 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 6: FAQ (FULL-WIDTH SECTION, Matching Request)                     */}
+        {/* SECTION 6: FAQ (EDGE-TO-EDGE, Matching Photo 2)                           */}
         {/* ========================================================================= */}
-        <section className="w-full py-16 sm:py-24 bg-[#FAF9F5] border-t border-[#EAE3D5]">
-          <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-              {/* Left Photo: Nurse & Senior */}
-              <div className="lg:col-span-5 relative aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-forest-900/10">
-                <Image
-                  src="/images/nursing/faq-nurse.webp"
-                  alt={t.faq.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
+        <section className="w-full bg-[#FAF9F5] border-t border-[#EAE3D5] relative overflow-hidden">
+          <div className="w-full flex flex-col lg:flex-row items-stretch">
+            {/* Left Photo: Flush to the left screen edge with smooth fade & blur on the right */}
+            <div className="w-full lg:w-[40%] xl:w-[38%] relative min-h-[260px] sm:min-h-[300px] lg:min-h-[380px] shrink-0 overflow-hidden">
+              <Image
+                src="/images/nursing/faq-nurse.webp"
+                alt={t.faq.title}
+                fill
+                className="object-cover object-center"
+              />
+              {/* Right edge blur and smooth fade into #FAF9F5 */}
+              <div className="hidden lg:block absolute inset-y-0 right-0 w-32 xl:w-48 bg-gradient-to-r from-transparent via-[#FAF9F5]/70 to-[#FAF9F5] backdrop-blur-[3px] pointer-events-none z-10" />
+              <div className="lg:hidden absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#FAF9F5] via-[#FAF9F5]/80 to-transparent backdrop-blur-[2px] pointer-events-none z-10" />
+            </div>
 
-              {/* Right: Accordion */}
-              <div className="lg:col-span-7 space-y-4">
-                <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans">
+            {/* Right: Accordion content */}
+            <div className="w-full lg:w-[60%] xl:w-[62%] py-8 sm:py-10 lg:py-10 px-6 sm:px-10 lg:px-12 xl:px-16 flex flex-col justify-center">
+              <div className="max-w-2xl">
+                <span className="text-[10.5px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans mb-1.5">
                   {t.faq.eyebrow}
                 </span>
 
-                <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-[#0F2A1D] font-normal leading-tight mb-6">
+                <h2 className="font-serif text-2xl sm:text-3xl text-[#0F2A1D] font-normal leading-tight mb-4">
                   {t.faq.title}
                 </h2>
 
@@ -743,26 +743,26 @@ export function PflegePageComponent({ locale = "de" }: Props) {
                   {t.faq.items.map((item, idx) => {
                     const isOpen = openFaq === idx;
                     return (
-                      <div key={idx} className="py-3.5 sm:py-4">
+                      <div key={idx} className="py-2.5 sm:py-3">
                         <button
                           type="button"
                           onClick={() => setOpenFaq(isOpen ? null : idx)}
                           className="w-full flex items-center justify-between gap-4 text-left group"
                         >
-                          <span className="font-serif text-xs sm:text-sm md:text-base text-[#153424] font-medium group-hover:text-[#0D2619] transition-colors">
+                          <span className="font-serif text-xs sm:text-[13.5px] md:text-sm text-[#153424] font-medium group-hover:text-[#0D2619] transition-colors">
                             {item.q}
                           </span>
-                          <span className="w-6 h-6 rounded-full flex items-center justify-center text-[#285038] group-hover:bg-[#EBF0EA] transition-colors flex-shrink-0">
+                          <span className="w-5 h-5 rounded-full flex items-center justify-center text-[#285038] group-hover:bg-[#EBF0EA] transition-colors flex-shrink-0">
                             {isOpen ? (
-                              <Minus className="w-4 h-4" />
+                              <Minus className="w-3.5 h-3.5" />
                             ) : (
-                              <Plus className="w-4 h-4" />
+                              <Plus className="w-3.5 h-3.5" />
                             )}
                           </span>
                         </button>
 
                         {isOpen && (
-                          <div className="pt-3 pr-8 text-xs sm:text-sm text-[#4E6256] leading-relaxed">
+                          <div className="pt-2 pr-6 text-xs sm:text-[13px] text-[#4E6256] leading-relaxed">
                             {item.a}
                           </div>
                         )}
