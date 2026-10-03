@@ -218,23 +218,25 @@ export function NewsPageComponent({ locale = "de" }: Props) {
                 </feMerge>
               </filter>
 
-              {/* Reduced dark opacity so botanical foliage is clearly visible (Photo 4) */}
+              {/* Subtle shading overlay that keeps botanical foliage crisp while ensuring high text contrast */}
               <linearGradient id="newsHeroDarkFill" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stopColor="#040F07" stopOpacity="0.45" />
-                <stop offset="35%" stopColor="#051309" stopOpacity="0.55" />
-                <stop offset="70%" stopColor="#07180D" stopOpacity="0.52" />
-                <stop offset="100%" stopColor="#0A1E13" stopOpacity="0.38" />
+                <stop offset="0%" stopColor="#040F07" stopOpacity="0.15" />
+                <stop offset="40%" stopColor="#040F07" stopOpacity="0.32" />
+                <stop offset="70%" stopColor="#07180D" stopOpacity="0.28" />
+                <stop offset="100%" stopColor="#0A1E13" stopOpacity="0.15" />
               </linearGradient>
             </defs>
 
-            {/* Botanical Gold Background in the Left Wing */}
+            {/* Botanical Gold Background in the Left Wing (xMin anchored for lush left leaves) */}
             <image
               href="/images/botanical-gold-bg.webp"
+              x="0"
+              y="0"
               width="1440"
               height="600"
-              preserveAspectRatio="xMidYMid slice"
+              preserveAspectRatio="xMinYMid slice"
               clipPath="url(#newsHeroLeftWingClip)"
-              opacity="0.95"
+              opacity="1"
             />
 
             {/* Shading overlay for high-contrast text readability */}
@@ -432,9 +434,9 @@ export function NewsPageComponent({ locale = "de" }: Props) {
                 </div>
               )}
 
-              {/* ── PAGINATION CONTROLS (PHOTO 3: 1-IN-1 DESIGN) ── */}
+              {/* ── PAGINATION CONTROLS (ALIGNED TO THE LEFT, PHOTO 3) ── */}
               {totalPages > 1 && (
-                <div className="flex items-center justify-center gap-2 pt-8 sm:pt-10">
+                <div className="flex items-center justify-start gap-2 pt-8 sm:pt-10">
                   {/* Previous Button (Photo 3) */}
                   <button
                     onClick={() => {
