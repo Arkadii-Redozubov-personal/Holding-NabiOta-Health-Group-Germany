@@ -16,6 +16,7 @@ import { MedizinischeFachbereichePageComponent } from "@/components/pages/Medizi
 import { DiagnostikPageComponent } from "@/components/pages/DiagnostikPageComponent";
 import { RehabilitationPageComponent } from "@/components/pages/RehabilitationPageComponent";
 import { PflegePageComponent } from "@/components/pages/PflegePageComponent";
+import { BeratungPageComponent } from "@/components/pages/BeratungPageComponent";
 
 interface AreaDetailPageProps {
   params: Promise<{ slug: string }>;
@@ -78,6 +79,10 @@ export default async function AreaDetailPage({ params }: AreaDetailPageProps) {
 
   if (slug === "pflege") {
     return <PflegePageComponent locale="de" />;
+  }
+
+  if (slug === "beratung-projektentwicklung") {
+    return <BeratungPageComponent locale="de" />;
   }
 
   const relatedAreas = businessAreas.filter((a) => a.slug !== slug).slice(0, 3);
