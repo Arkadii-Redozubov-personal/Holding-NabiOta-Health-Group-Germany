@@ -634,10 +634,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                   src="/images/botanical-gold-bg.webp"
                   alt="Botanical Texture"
                   fill
-                  className="object-cover object-center opacity-70 scale-x-[-1]"
+                  className="object-fill opacity-100"
                   priority
                 />
-                <div className="absolute inset-0 bg-[#07190F]/70" />
               </div>
 
               <div className="relative z-10 space-y-3 sm:space-y-4">
