@@ -302,7 +302,7 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
           <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#051208]/85 to-transparent pointer-events-none z-10" />
 
           <Container size="wide" className="relative z-20">
-            <div className="max-w-2xl">
+            <div className="max-w-xl lg:max-w-[480px] xl:max-w-[560px]">
               {/* Breadcrumb: Startseite > Über uns */}
               <nav className="flex items-center gap-2 text-xs text-[#A2ADA4] mb-3.5 font-sans" aria-label="Breadcrumb">
                 <Link href={`/${locale}`} className="hover:text-[#D5B878] transition-colors">
@@ -313,14 +313,14 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
               </nav>
 
               {/* Main Heading */}
-              <h1 className="font-serif text-[34px] sm:text-[42px] lg:text-[48px] xl:text-[54px] font-normal leading-[1.12] tracking-[-0.01em] text-white mb-5 sm:mb-6">
+              <h1 className="page-hero-title font-serif text-[32px] sm:text-[40px] lg:text-[44px] xl:text-[50px] font-normal leading-[1.12] tracking-[-0.01em] text-white mb-5 sm:mb-6 break-words [overflow-wrap:anywhere] hyphens-auto">
                 {t.heroTitle1}
                 <br />
                 {t.heroTitle2}
               </h1>
 
               {/* Description */}
-              <p className="text-[13.5px] sm:text-[14.5px] text-[#D2DED5] leading-[1.72] font-sans max-w-xl mb-6 sm:mb-7 font-normal">
+              <p className="hero-text-wrap text-[13.5px] sm:text-[14.5px] text-[#D2DED5] leading-[1.72] font-sans max-w-xl mb-6 sm:mb-7 font-normal break-words [overflow-wrap:anywhere] hyphens-auto">
                 {t.heroDesc}
               </p>
 

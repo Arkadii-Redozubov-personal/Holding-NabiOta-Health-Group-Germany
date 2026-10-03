@@ -238,7 +238,7 @@ export function NewsPageComponent({ locale = "de" }: Props) {
 
         {/* Content container on left */}
         <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-xl space-y-3">
+          <div className="max-w-xl lg:max-w-[480px] xl:max-w-[540px] space-y-3">
             {/* Breadcrumb: Home › News */}
             <div className="flex items-center gap-1.5 text-xs text-white/70 font-sans tracking-wide">
               <Link href={`/${locale}`} className="hover:text-white transition-colors">
@@ -254,12 +254,12 @@ export function NewsPageComponent({ locale = "de" }: Props) {
             </span>
 
             {/* Title: Latest News */}
-            <h1 className="font-serif text-3xl sm:text-4xl lg:text-[46px] text-white font-normal leading-[1.12]">
+            <h1 className="page-hero-title font-serif text-3xl sm:text-4xl lg:text-[42px] xl:text-[46px] text-white font-normal leading-[1.15] break-words [overflow-wrap:anywhere] hyphens-auto">
               {heroData.title}
             </h1>
 
             {/* Description */}
-            <p className="text-white/80 text-xs sm:text-[13.5px] leading-relaxed font-sans max-w-md pt-0.5">
+            <p className="hero-text-wrap text-white/80 text-xs sm:text-[13.5px] leading-relaxed font-sans max-w-md pt-0.5 break-words [overflow-wrap:anywhere] hyphens-auto">
               {heroData.desc}
             </p>
           </div>

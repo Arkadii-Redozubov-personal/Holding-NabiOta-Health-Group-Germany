@@ -99,3 +99,12 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #BEA06B;
 }
+
+/* Universal word breaking & overflow protection for hero headings */
+.page-hero-title,
+.hero-text-wrap {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}

@@ -653,7 +653,7 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
           </div>
 
           <Container size="wide" className="relative z-20">
-            <div className="max-w-2xl">
+            <div className="max-w-xl lg:max-w-[480px] xl:max-w-[560px]">
               {/* Breadcrumb matching Photo 2 */}
               <nav className="flex items-center gap-2 text-xs sm:text-[12.5px] text-[#A2ADA4] mb-3.5 font-sans" aria-label="Breadcrumb">
                 <Link href={`/${locale}`} className="hover:text-[#D5B878] transition-colors">
@@ -665,7 +665,7 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
                 </span>
               </nav>
 
-              <h1 className="font-serif text-[34px] sm:text-[42px] lg:text-[48px] xl:text-[52px] text-white font-normal leading-[1.08] tracking-tight mb-4">
+              <h1 className="page-hero-title font-serif text-[32px] sm:text-[40px] lg:text-[44px] xl:text-[50px] text-white font-normal leading-[1.12] tracking-tight mb-4 break-words [overflow-wrap:anywhere] hyphens-auto">
                 {t.hero.titlePrefix}{" "}
                 {t.hero.titleMid}{" "}
                 <span className="italic font-serif text-[#C5A56A] font-normal block sm:inline">
@@ -673,7 +673,7 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
                 </span>
               </h1>
 
-              <p className="text-[13.5px] sm:text-[14.5px] text-[#D2DED5] leading-[1.72] font-sans max-w-xl mb-6 font-normal">
+              <p className="hero-text-wrap text-[13.5px] sm:text-[14.5px] text-[#D2DED5] leading-[1.72] font-sans max-w-xl mb-6 font-normal break-words [overflow-wrap:anywhere] hyphens-auto">
                 {t.hero.description}
               </p>
 

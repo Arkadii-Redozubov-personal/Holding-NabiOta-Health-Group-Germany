@@ -429,7 +429,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
         title={
           <>
             {heroData.title}
-            <span className="block text-xl sm:text-2xl text-[#ECCF93] font-light mt-1 font-serif">
+            <span className="block text-xl sm:text-2xl text-[#ECCF93] font-light mt-1 font-serif break-words [overflow-wrap:anywhere] hyphens-auto">
               {heroData.subtitle}
             </span>
           </>

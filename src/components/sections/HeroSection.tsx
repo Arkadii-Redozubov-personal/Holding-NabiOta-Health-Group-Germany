@@ -249,14 +249,14 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
 
         {/* ── Left Content: Typography 1:1 Matching Reference ─────── */}
         <div className="relative z-10 w-full max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12 xl:px-14">
-          <div className="max-w-xl lg:max-w-2xl pt-16 sm:pt-20 lg:pt-0">
+          <div className="max-w-xl lg:max-w-[560px] xl:max-w-[660px] 2xl:max-w-[720px] pt-16 sm:pt-20 lg:pt-0">
             {/* Eyebrow */}
             <span className="inline-block text-[10.5px] sm:text-xs font-semibold tracking-[0.25em] text-[#C5A56A] uppercase mb-3 sm:mb-4">
               {dict.hero.eyebrow}
             </span>
 
             {/* Heading: Both lines white (Upright elegant serif) matching reference 1:1 */}
-            <h1 className="font-display text-[44px] sm:text-[60px] md:text-[70px] lg:text-[78px] xl:text-[86px] font-normal leading-[0.96] tracking-[-0.01em] mb-4 sm:mb-5">
+            <h1 className="font-display text-[40px] sm:text-[54px] md:text-[64px] lg:text-[68px] xl:text-[80px] 2xl:text-[86px] font-normal leading-[0.98] tracking-[-0.01em] mb-4 sm:mb-5 break-words [overflow-wrap:anywhere] hyphens-auto">
               <span className="text-white block">
                 {dict.hero.headingLine1}
               </span>
@@ -266,7 +266,7 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
             </h1>
 
             {/* Description text */}
-            <p className="text-[13.5px] sm:text-[14.5px] text-[#FAF8F5] leading-[1.65] font-sans max-w-lg mb-7 font-light drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
+            <p className="text-[13.5px] sm:text-[14.5px] text-[#FAF8F5] leading-[1.65] font-sans max-w-lg mb-7 font-light drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)] break-words [overflow-wrap:anywhere] hyphens-auto">
               {dict.hero.description}
             </p>
 

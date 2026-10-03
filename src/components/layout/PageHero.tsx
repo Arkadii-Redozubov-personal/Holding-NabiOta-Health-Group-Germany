@@ -131,15 +131,15 @@ export function PageHero({
 
       {/* ── Content Container (Comfortable max-w within narrower left wing) ── */}
       <Container size="wide" className="relative z-20">
-        <div className="max-w-xl lg:max-w-2xl">
+        <div className="max-w-xl lg:max-w-[480px] xl:max-w-[560px]">
           {breadcrumb && <div className="mb-3.5 sm:mb-4">{breadcrumb}</div>}
 
-          <div className="font-serif text-[30px] sm:text-[38px] lg:text-[42px] xl:text-[46px] font-normal leading-[1.1] tracking-[-0.01em] text-white mb-3 sm:mb-3.5">
+          <div className="page-hero-title font-serif text-[28px] sm:text-[36px] lg:text-[38px] xl:text-[44px] font-normal leading-[1.15] tracking-[-0.01em] text-white mb-3 sm:mb-3.5 break-words [overflow-wrap:anywhere] hyphens-auto">
             {title}
           </div>
 
           {description && (
-            <div className="text-[12.5px] sm:text-[13.5px] lg:text-[14px] text-[#D2DED5] leading-[1.65] font-sans max-w-xl font-normal mb-4 sm:mb-5">
+            <div className="hero-text-wrap text-[12.5px] sm:text-[13.5px] lg:text-[14px] text-[#D2DED5] leading-[1.65] font-sans max-w-xl font-normal mb-4 sm:mb-5 break-words [overflow-wrap:anywhere] hyphens-auto">
               {description}
             </div>
           )}
