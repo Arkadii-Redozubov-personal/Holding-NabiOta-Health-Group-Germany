@@ -8,20 +8,13 @@ import {
   Globe2,
   Users2,
   Leaf,
-  ShieldCheck,
   Network,
   GraduationCap,
   Award,
-  Building2,
   HeartHandshake,
   Heart,
   FolderKanban,
   Star,
-  Mail,
-  MapPin,
-  ExternalLink,
-  ChevronRight,
-  CheckCircle2,
 } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -82,64 +75,6 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
 
   // Content texts matching mockup 1:1
   const t = {
-    // Section 1: Hero Banner inside page
-    s1: {
-      eyebrow: isRu
-        ? "МЕЖДУНАРОДНОЕ СОТРУДНИЧЕСТВО"
-        : isEn
-        ? "INTERNATIONAL COOPERATION"
-        : "INTERNATIONALE KOOPERATIONEN",
-      titlePre: isRu
-        ? "Вместе ради лучшего "
-        : isEn
-        ? "Together for Better "
-        : "Gemeinsam für eine bessere ",
-      titleHighlight: isRu
-        ? "здравоохранения"
-        : isEn
-        ? "Healthcare"
-        : "Gesundheitsversorgung",
-      titlePost: isRu ? " во всем мире." : isEn ? " Worldwide." : " weltweit.",
-      desc: isRu
-        ? "Благодаря международным партнерствам мы объединяем знания, опыт и ресурсы для создания устойчивых решений для систем здравоохранения во всем мире."
-        : isEn
-        ? "Through international partnerships, we combine knowledge, experience, and resources to create sustainable solutions for healthcare systems worldwide."
-        : "Durch internationale Partnerschaften verbinden wir Wissen, Erfahrung und Ressourcen, um nachhaltige Lösungen für Gesundheitssysteme weltweit zu schaffen.",
-      btn: isRu
-        ? "Наши международные проекты"
-        : isEn
-        ? "Our International Projects"
-        : "Unsere internationalen Projekte",
-      stampText1: isRu ? "Сильные партнеры." : isEn ? "Strong Partners." : "Starke Partner.",
-      stampText2: isRu ? "Здоровое будущее. ♡" : isEn ? "Healthy Future. ♡" : "Gesunde Zukunft. ♡",
-      features: [
-        {
-          icon: <Globe2 className="w-5 h-5 text-[#B8934A]" />,
-          title: isRu ? "Трансфер знаний и экспертиза" : isEn ? "Knowledge Transfer & Expertise" : "Wissenstransfer und Expertise",
-        },
-        {
-          icon: <Users2 className="w-5 h-5 text-[#B8934A]" />,
-          title: isRu ? "Партнерство на равных" : isEn ? "Partnerships at Eye Level" : "Partnerschaften auf Augenhöhe",
-        },
-        {
-          icon: <Leaf className="w-5 h-5 text-[#B8934A]" />,
-          title: isRu ? "Устойчивое развитие" : isEn ? "Sustainable Development" : "Nachhaltige Entwicklung",
-        },
-        {
-          icon: <ShieldCheck className="w-5 h-5 text-[#B8934A]" />,
-          title: isRu ? "Укрепление местных систем" : isEn ? "Strengthening Local Systems" : "Stärkung lokaler Gesundheitssysteme",
-        },
-        {
-          icon: <Network className="w-5 h-5 text-[#B8934A]" />,
-          title: isRu ? "Международные сети" : isEn ? "International Networks" : "Internationale Netzwerke",
-        },
-        {
-          icon: <GraduationCap className="w-5 h-5 text-[#B8934A]" />,
-          title: isRu ? "Обучение и повышение квалификации" : isEn ? "Education & Training" : "Aus- und Weiterbildung",
-        },
-      ],
-    },
-
     // Section 2: Vision
     s2: {
       eyebrow: isRu ? "НАШЕ ВИДЕНИЕ" : isEn ? "OUR VISION" : "UNSERE VISION",
@@ -389,11 +324,6 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
       btn: isRu ? "Связаться с нами" : isEn ? "Contact Our Team" : "Kontakt aufnehmen",
       stampText1: isRu ? "Глобальные партнерства." : isEn ? "Global Partnerships." : "Globale Partnerschaften.",
       stampText2: isRu ? "Локальное действие. ♡" : isEn ? "Local Impact. ♡" : "Lokale Wirkung. ♡",
-      contactBar: {
-        website: "www.nabiota-health-group.de",
-        email: "international@nabiota-health-group.de",
-        location: "Mönchengladbach, Germany",
-      },
     },
   };
 
@@ -432,154 +362,49 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         />
 
         {/* ========================================================================= */}
-        {/* SECTION 1: HERO BANNER & 6 PILL BADGES (MATCHING MOCKUP 1:1)               */}
+        {/* SECTION 2: VISION (GESUNDHEIT KENNT KEINE GRENZEN) - FULL WIDTH BLEED     */}
         {/* ========================================================================= */}
-        <section className="relative pt-12 pb-16 bg-[#FBF9F5]">
-          <Container>
-            {/* Top Emerald Hero Card */}
-            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#0B2516] via-[#0E2C1A] to-[#081B10] text-white shadow-2xl p-8 sm:p-12 lg:p-14 border border-[#ECCF96]/20">
-              {/* Subtle background ambient light */}
-              <div className="absolute top-0 right-0 w-96 h-96 bg-[#ECCF96]/10 rounded-full blur-3xl pointer-events-none" />
-              <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-[#164227]/40 rounded-full blur-2xl pointer-events-none" />
+        <section className="relative w-full bg-[#FAF8F4] overflow-hidden border-t border-[#F0ECE1]">
+          {/* Right Visual: World Map & Joined Hands spanning right edge-to-edge */}
+          <div className="w-full lg:w-[58%] xl:w-[54%] h-[280px] sm:h-[360px] lg:h-full lg:absolute lg:top-0 lg:bottom-0 lg:right-0 relative pointer-events-none select-none overflow-hidden order-2 lg:order-none">
+            <Image
+              src="/images/international/world-hands.webp"
+              alt="World Map and Joined Hands - NabiOta Vision"
+              fill
+              className="object-cover object-right"
+              priority
+            />
+            {/* Soft left gradient fade into the cream background on desktop */}
+            <div className="hidden lg:block absolute inset-y-0 left-0 w-32 xl:w-44 bg-gradient-to-r from-[#FAF8F4] via-[#FAF8F4]/80 to-transparent pointer-events-none" />
+            <div className="lg:hidden absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#FAF8F4] to-transparent pointer-events-none" />
+          </div>
 
-              <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                {/* Left Text Column */}
-                <div className="lg:col-span-6 space-y-6">
-                  <div className="inline-block px-3.5 py-1.5 rounded-full bg-[#ECCF96]/15 border border-[#ECCF96]/30 text-[#ECCF96] text-xs font-semibold tracking-[0.2em] uppercase">
-                    {t.s1.eyebrow}
-                  </div>
+          {/* Left Content: Standard Container alignment */}
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-6 sm:pt-16 sm:pb-8 lg:py-24">
+            <div className="max-w-xl space-y-6">
+              <div className="text-xs font-semibold tracking-[0.25em] text-[#A07D3E] uppercase">
+                {t.s2.eyebrow}
+              </div>
 
-                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white leading-tight">
-                    {t.s1.titlePre}
-                    <span className="text-[#ECCF96] font-serif italic font-normal">
-                      {t.s1.titleHighlight}
-                    </span>
-                    {t.s1.titlePost}
-                  </h1>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#0B2516] leading-[1.15]">
+                {t.s2.title}
+              </h2>
 
-                  <p className="text-sm sm:text-base text-[#D1DDD5] leading-relaxed max-w-xl">
-                    {t.s1.desc}
-                  </p>
+              <p className="text-sm sm:text-base text-[#4A5D52] leading-relaxed max-w-lg">
+                {t.s2.desc}
+              </p>
 
-                  <div className="pt-2">
-                    <a
-                      href="#projekte"
-                      className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#ECCF96] to-[#D4AF37] hover:from-[#F2DCAE] hover:to-[#DFBB45] text-[#0B2516] text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 group"
-                    >
-                      <span>{t.s1.btn}</span>
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </a>
-                  </div>
-                </div>
-
-                {/* Right Image Column with Handwritten Stamp */}
-                <div className="lg:col-span-6 relative">
-                  <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/15 aspect-[4/3] group">
-                    <Image
-                      src="/images/international/hero-team.webp"
-                      alt="International Medical Team NabiOta"
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      priority
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
-
-                    {/* Floating Handwritten Stamp (Bottom-Right) */}
-                    <div className="absolute bottom-4 right-4 text-right pointer-events-none select-none">
-                      <div
-                        className="text-white/95 text-lg sm:text-xl font-serif italic tracking-wide leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
-                        style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-                      >
-                        <p>{t.s1.stampText1}</p>
-                        <p>{t.s1.stampText2}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="pt-2">
+                <a
+                  href="#partner"
+                  className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[#F3EAD8] hover:bg-[#ECCF96] text-[#0B2516] border border-[#D5C096] text-xs sm:text-sm font-semibold transition-all duration-300 shadow-sm group"
+                >
+                  <span>{t.s2.btn}</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </a>
               </div>
             </div>
-
-            {/* 6 Circular Feature Badges Row */}
-            <div className="mt-10 bg-white rounded-2xl p-6 sm:p-8 border border-[#EBE6DC] shadow-sm">
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-4 divide-y sm:divide-y-0 lg:divide-x divide-[#F0ECE1]">
-                {t.s1.features.map((feat, idx) => (
-                  <div
-                    key={idx}
-                    className={`flex flex-col items-center text-center group ${
-                      idx > 0 ? "pt-4 sm:pt-0 lg:pl-4" : ""
-                    }`}
-                  >
-                    <div className="w-12 h-12 rounded-full border border-[#D8C7A5]/60 bg-[#FAF7F2] flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#0B2516] group-hover:text-white group-hover:border-[#0B2516] shadow-sm">
-                      {React.cloneElement(feat.icon, {
-                        className: "w-5 h-5 text-[#B8934A] group-hover:text-[#ECCF96] transition-colors",
-                      })}
-                    </div>
-                    <span className="text-xs sm:text-[13px] font-medium text-[#1B3A29] leading-snug max-w-[140px]">
-                      {feat.title}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Container>
-        </section>
-
-        {/* ========================================================================= */}
-        {/* SECTION 2: VISION (GESUNDHEIT KENNT KEINE GRENZEN)                         */}
-        {/* ========================================================================= */}
-        <section className="py-16 sm:py-20 bg-white border-t border-[#F0ECE1]">
-          <Container>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-              {/* Left Column: Vision Statement */}
-              <div className="lg:col-span-6 space-y-6">
-                <div className="text-xs font-semibold tracking-[0.2em] text-[#B8934A] uppercase">
-                  {t.s2.eyebrow}
-                </div>
-
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#0B2516] leading-tight">
-                  {t.s2.title}
-                </h2>
-
-                <p className="text-sm sm:text-base text-[#4A5D52] leading-relaxed">
-                  {t.s2.desc}
-                </p>
-
-                <div className="pt-2">
-                  <a
-                    href="#partner"
-                    className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[#FAF7F2] hover:bg-[#ECCF96] text-[#0B2516] border border-[#D8C7A5] text-xs sm:text-sm font-semibold transition-all duration-300 shadow-sm group"
-                  >
-                    <span>{t.s2.btn}</span>
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </a>
-                </div>
-              </div>
-
-              {/* Right Column: World Map & Joined Hands Visual */}
-              <div className="lg:col-span-6 relative">
-                <div className="relative rounded-2xl overflow-hidden shadow-lg border border-[#EBE6DC] aspect-[16/10] bg-[#FAF8F5] group">
-                  <Image
-                    src="/images/international/world-hands.webp"
-                    alt="World Map and Joined Hands - NabiOta Vision"
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-
-                  {/* Floating Stamp */}
-                  <div className="absolute bottom-4 right-5 text-right pointer-events-none select-none">
-                    <div
-                      className="text-white text-base sm:text-lg font-serif italic tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
-                      style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-                    >
-                      <p>{t.s2.stampText1}</p>
-                      <p>{t.s2.stampText2}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Container>
+          </div>
         </section>
 
         {/* ========================================================================= */}
@@ -923,125 +748,46 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 7: BOTTOM CTA BANNER & CONTACT STRIP                              */}
+        {/* SECTION 7: BOTTOM CTA BANNER (FULL WIDTH PANORAMA - PHOTO 3)              */}
         {/* ========================================================================= */}
-        <section className="py-16 sm:py-20 bg-white border-t border-[#F0ECE1]">
-          <Container>
-            {/* Sunrise Mountain CTA Card matching Screenshot 3 1:1 */}
-            <div className="relative rounded-3xl overflow-hidden shadow-xl p-8 sm:p-12 lg:p-14 border border-[#EBE6DC] min-h-[300px] flex items-center">
-              {/* Background Panoramic Sunrise Mountain Photo (High-Res 2048px) */}
-              <Image
-                src="/images/international/cta-sunrise.webp"
-                alt="Sunrise Mountains NabiOta Health Group"
-                fill
-                className="object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#FAF7F2]/95 via-[#FAF7F2]/80 to-transparent pointer-events-none" />
+        <section className="relative w-full overflow-hidden min-h-[300px] sm:min-h-[360px] lg:min-h-[400px] flex items-center bg-[#FAF7F2] border-t border-[#EBE6DC]">
+          {/* Panoramic Sunrise Mountain Photo spanning full width edge-to-edge */}
+          <Image
+            src="/images/international/cta-sunrise.webp"
+            alt="Sunrise Mountains NabiOta Health Group"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          {/* Subtle soft gradient on left for contrast across languages & screens */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#FAF7F2]/90 via-[#FAF7F2]/60 to-transparent pointer-events-none" />
 
-              <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                {/* Left Text & CTA Button */}
-                <div className="lg:col-span-7 space-y-4">
-                  <div className="text-[10.5px] sm:text-xs font-semibold tracking-[0.2em] text-[#8C6527] uppercase">
-                    {t.s7.eyebrow}
-                  </div>
+          {/* Left Text & CTA Button aligned with site container */}
+          <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16 lg:py-20">
+            <div className="max-w-xl space-y-4">
+              <div className="text-[10.5px] sm:text-xs font-semibold tracking-[0.2em] text-[#8C6527] uppercase">
+                {t.s7.eyebrow}
+              </div>
 
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0B2516] leading-tight">
-                    {t.s7.title}
-                  </h2>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0B2516] leading-tight">
+                {t.s7.title}
+              </h2>
 
-                  <p className="text-xs sm:text-sm text-[#4A5D52] leading-relaxed max-w-xl">
-                    {t.s7.desc}
-                  </p>
+              <p className="text-xs sm:text-sm text-[#4A5D52] leading-relaxed max-w-lg">
+                {t.s7.desc}
+              </p>
 
-                  <div className="pt-2">
-                    <Link
-                      href={`/${locale}/contact`}
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#FAF7F2] hover:bg-[#ECCF96] text-[#0B2516] border border-[#D8C7A5] text-xs sm:text-sm font-semibold transition-all duration-300 shadow-sm group"
-                    >
-                      <span>{t.s7.btn}</span>
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Right Stamp */}
-                <div className="lg:col-span-5 flex justify-end">
-                  <div
-                    className="text-[#0B2516] text-xl sm:text-2xl font-serif italic tracking-wide text-right pointer-events-none select-none drop-shadow-sm pr-4"
-                    style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-                  >
-                    <p>{t.s7.stampText1}</p>
-                    <p>{t.s7.stampText2}</p>
-                  </div>
-                </div>
+              <div className="pt-2">
+                <Link
+                  href={`/${locale}/contact`}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#FAF7F2] hover:bg-[#ECCF96] text-[#0B2516] border border-[#D8C7A5] text-xs sm:text-sm font-semibold transition-all duration-300 shadow-sm group"
+                >
+                  <span>{t.s7.btn}</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
               </div>
             </div>
-
-
-            {/* Bottom Contact Strip (Matching Mockup 1:1) */}
-            <div className="mt-8 bg-white rounded-2xl p-5 sm:p-6 border border-[#E5DFD3] shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
-              {/* Web URL */}
-              <div className="flex items-center gap-2.5 text-xs text-[#1B3A29] font-medium">
-                <Globe2 className="w-4 h-4 text-[#B8934A]" />
-                <span>{t.s7.contactBar.website}</span>
-              </div>
-
-              {/* Email */}
-              <a
-                href={`mailto:${t.s7.contactBar.email}`}
-                className="flex items-center gap-2.5 text-xs text-[#1B3A29] hover:text-[#0B2516] font-medium transition-colors"
-              >
-                <Mail className="w-4 h-4 text-[#B8934A]" />
-                <span>{t.s7.contactBar.email}</span>
-              </a>
-
-              {/* Location */}
-              <div className="flex items-center gap-2.5 text-xs text-[#1B3A29] font-medium">
-                <MapPin className="w-4 h-4 text-[#B8934A]" />
-                <span>{t.s7.contactBar.location}</span>
-              </div>
-
-              {/* Social Icons */}
-              <div className="flex items-center gap-4 text-[#1B3A29]">
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-[#0077B5] transition-colors text-xs font-bold"
-                  aria-label="LinkedIn"
-                >
-                  in
-                </a>
-                <a
-                  href="https://xing.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-[#006567] transition-colors text-xs font-bold"
-                  aria-label="Xing"
-                >
-                  X
-                </a>
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-[#E4405F] transition-colors text-xs font-bold"
-                  aria-label="Instagram"
-                >
-                  IG
-                </a>
-                <a
-                  href="https://youtube.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-[#CD201F] transition-colors text-xs font-bold"
-                  aria-label="YouTube"
-                >
-                  YT
-                </a>
-              </div>
-            </div>
-          </Container>
+          </div>
         </section>
       </main>
 
