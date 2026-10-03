@@ -498,15 +498,17 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             - Right: 3 Stats (3T, <24h, 99%) + Crisp Botanical Leaves Background
         ══════════════════════════════════════════════════════════ */}
         <section className="w-full bg-[#08170D] text-white relative overflow-hidden border-y border-[#D5B878]/30 my-8 sm:my-12">
-          {/* Crisp Botanical Foliage on Far Right (Matching Photo 3) */}
-          <div className="absolute right-0 top-0 bottom-0 w-72 sm:w-96 pointer-events-none opacity-80 z-0 select-none overflow-hidden">
+          {/* Botanical Gold Background on Right Side */}
+          <div className="absolute right-0 top-0 bottom-0 w-full sm:w-[65%] lg:w-[48%] pointer-events-none z-0 select-none overflow-hidden">
             <Image
-              src="/images/areas/botanical-branch-clean.webp"
-              alt="Botanical Accent"
+              src="/images/botanical-gold-bg.webp"
+              alt="Botanical Gold Background"
               fill
-              className="object-contain object-right"
+              className="object-cover object-right opacity-70"
               priority
             />
+            {/* Multi-stop smooth fade from dark center into botanical-gold-bg */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#08170D] via-[#08170D]/70 to-[#08170D]/20" />
           </div>
 
           <div className="relative z-10 w-full flex flex-col lg:flex-row items-center">

@@ -473,19 +473,19 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         {/* SECTION 2: OUR COMMITMENT (FULL-WIDTH EDGE-TO-EDGE, Matching Photo 5)    */}
         {/* ========================================================================= */}
         <section className="w-full bg-[#0B2516] text-white relative overflow-hidden border-y border-[#D5B878]/30">
-          {/* Subtle leaves texture across dark section */}
+          {/* Rich Botanical Bacground across the dark section */}
           <div className="absolute inset-0 pointer-events-none z-0">
             <Image
-              src="/images/values/leaves-bg.webp"
-              alt="Leaves Texture"
+              src="/images/bacground.webp"
+              alt="Botanical Texture"
               fill
-              className="object-cover object-left opacity-35 mix-blend-screen"
+              className="object-cover object-center opacity-35 mix-blend-screen"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0B2516]/95 via-[#0B2516]/85 to-[#0B2516]/50" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0B2516]/95 via-[#0B2516]/85 to-[#0B2516]/60" />
           </div>
 
           {/* Crisp Botanical Foliage on Far Right */}
-          <div className="absolute right-0 top-0 bottom-0 w-64 sm:w-80 md:w-96 pointer-events-none opacity-60 z-0 select-none overflow-hidden">
+          <div className="absolute right-0 top-0 bottom-0 w-64 sm:w-80 md:w-96 pointer-events-none opacity-50 z-0 select-none overflow-hidden">
             <Image
               src="/images/areas/botanical-branch-clean.webp"
               alt="Botanical Foliage"
@@ -497,7 +497,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
 
           <div className="relative z-10 w-full flex flex-col lg:flex-row items-center">
             {/* Left: Nurse in green scrub with senior woman */}
-            <div className="w-full lg:w-[38%] xl:w-[40%] relative aspect-[4/3] lg:aspect-auto lg:h-full min-h-[300px] sm:min-h-[380px] lg:min-h-[460px] overflow-hidden shrink-0">
+            <div className="w-full lg:w-[36%] xl:w-[38%] relative aspect-[16/10] lg:aspect-auto lg:h-full min-h-[220px] sm:min-h-[260px] lg:min-h-[320px] xl:min-h-[340px] overflow-hidden shrink-0">
               <Image
                 src="/images/nursing/commitment-nurse.webp"
                 alt={t.commitment.title}
@@ -506,34 +506,34 @@ export function PflegePageComponent({ locale = "de" }: Props) {
                 priority
               />
               {/* Smooth multi-stop gradient into dark forest green */}
-              <div className="hidden lg:block absolute inset-y-0 right-0 w-36 bg-gradient-to-l from-[#0B2516] via-[#0B2516]/80 to-transparent pointer-events-none z-10" />
-              <div className="lg:hidden absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#0B2516] to-transparent pointer-events-none z-10" />
+              <div className="hidden lg:block absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#0B2516] via-[#0B2516]/80 to-transparent pointer-events-none z-10" />
+              <div className="lg:hidden absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0B2516] to-transparent pointer-events-none z-10" />
             </div>
 
             {/* Right: Copy & 4 Circular Gold Icons matching Photo 5 */}
-            <div className="w-full lg:w-[62%] xl:w-[60%] p-8 sm:p-12 lg:p-14 lg:pl-10 space-y-6 relative z-10">
-              <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#ECCF96] block font-sans">
+            <div className="w-full lg:w-[64%] xl:w-[62%] p-6 sm:p-8 lg:p-8 lg:pl-10 space-y-4 relative z-10">
+              <span className="text-[10.5px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-[#ECCF96] block font-sans">
                 {t.commitment.eyebrow}
               </span>
 
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-[44px] text-white font-normal leading-tight">
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] xl:text-[36px] text-white font-normal leading-tight">
                 {t.commitment.title}
               </h2>
 
-              <p className="text-xs sm:text-sm md:text-base text-[#D4E2D8] leading-relaxed max-w-2xl font-light">
+              <p className="text-xs sm:text-[13px] md:text-[13.5px] text-[#D4E2D8] leading-relaxed max-w-2xl font-light">
                 {t.commitment.desc}
               </p>
 
               {/* 4 Gold Circular Badges matching Photo 5 */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 border-t border-white/10 max-w-2xl">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4 border-t border-white/10 max-w-2xl">
                 {t.commitment.badges.map((b, idx) => {
                   const IconComp = b.icon;
                   return (
-                    <div key={idx} className="flex flex-col items-center text-center space-y-2.5 group">
-                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-[#D5B878]/70 bg-white/5 flex items-center justify-center text-[#ECCF96] transition-transform duration-300 group-hover:scale-105 shadow-[0_0_15px_rgba(213,184,120,0.12)]">
-                        <IconComp className="w-5 h-5 sm:w-6 sm:h-6 stroke-[1.6]" />
+                    <div key={idx} className="flex flex-col items-center text-center space-y-1.5 group">
+                      <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#D5B878]/70 bg-white/5 flex items-center justify-center text-[#ECCF96] transition-transform duration-300 group-hover:scale-105 shadow-[0_0_12px_rgba(213,184,120,0.12)]">
+                        <IconComp className="w-4 h-4 sm:w-5 sm:h-5 stroke-[1.6]" />
                       </div>
-                      <span className="text-xs sm:text-[13px] font-medium text-[#F4EFE6] leading-snug">
+                      <span className="text-[11.5px] sm:text-xs font-medium text-[#F4EFE6] leading-tight">
                         {b.title}
                       </span>
                     </div>

@@ -633,18 +633,18 @@ export function NewsPageComponent({ locale = "de" }: Props) {
                 </div>
               </div>
 
-              {/* ── Card 3: Featured Innovation with Microscope Image (Photo 1) ── */}
+              {/* ── Card 3: Featured Innovation with Botanical Gold Background ── */}
               <div className="relative rounded-2xl sm:rounded-3xl bg-[#08170D] text-white p-5 sm:p-6 overflow-hidden border border-[#D5B878]/30 shadow-lg">
-                {/* Microscope Background Photo */}
+                {/* Botanical Gold Background Photo */}
                 <div className="absolute inset-0 pointer-events-none">
                   <Image
-                    src="/images/news/cancer-research.webp"
+                    src="/images/botanical-gold-bg.webp"
                     alt="Medical Innovation Research"
                     fill
-                    className="object-cover object-center"
+                    className="object-cover object-center opacity-85"
                   />
-                  {/* Dark gradient overlay for text readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#08170D] via-[#08170D]/90 to-[#08170D]/75" />
+                  {/* Subtle dark gradient overlay for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#08170D]/90 via-[#08170D]/60 to-[#08170D]/40" />
                 </div>
 
                 {/* Botanical leaf watermark accent */}
@@ -698,21 +698,21 @@ export function NewsPageComponent({ locale = "de" }: Props) {
 
           {/* ══════════════════════════════════════════════════════════
               NEWSLETTER FULL-WIDTH BANNER (ABOVE FOOTER)
-              - Dark forest green background
+              - Using bacground.webp background
               - Left: STAY INFORMED, Subscribe to Our Newsletter, desc
               - Right: Pill input with gold round button
               - Botanical foliage branch on the far right
           ══════════════════════════════════════════════════════════ */}
           <div className="mt-14 sm:mt-18 relative rounded-2xl sm:rounded-3xl bg-[#08170D] text-white overflow-hidden p-6 sm:p-10 lg:p-12 border border-[#D5B878]/30 shadow-lg">
-            {/* Rich Botanical Leaf Background across the card */}
+            {/* Rich Botanical Leaf Background across the card using bacground.webp */}
             <div className="absolute inset-0 pointer-events-none z-0">
               <Image
-                src="/images/values/leaves-bg.webp"
+                src="/images/bacground.webp"
                 alt="Botanical Leaves Texture"
                 fill
-                className="object-cover object-left opacity-35 mix-blend-screen"
+                className="object-cover object-right opacity-35 mix-blend-screen"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#08170D]/95 via-[#08170D]/75 to-[#08170D]/50" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#08170D]/95 via-[#08170D]/80 to-[#08170D]/50" />
             </div>
 
             {/* Botanical Foliage on Far Right */}

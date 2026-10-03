@@ -697,26 +697,26 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
             />
           </div>
 
-          <div className="w-full flex flex-col lg:flex-row items-stretch min-h-[400px] lg:min-h-[460px] relative z-20">
+          <div className="w-full flex flex-col lg:flex-row items-stretch min-h-[300px] lg:min-h-[340px] relative z-20">
             {/* Left Content Area: Eyebrow, Title, Description & Values Button */}
-            <div className="w-full lg:w-[42%] xl:w-[40%] p-6 sm:p-10 lg:p-14 lg:pl-16 xl:pl-24 flex flex-col justify-center relative z-20">
-              <div className="max-w-md space-y-3 sm:space-y-3.5">
-                <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
+            <div className="w-full lg:w-[42%] xl:w-[40%] p-6 sm:p-8 lg:p-8 lg:pl-12 xl:pl-16 flex flex-col justify-center relative z-20">
+              <div className="max-w-md space-y-2.5 sm:space-y-3">
+                <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
                   {whySection.eyebrow}
                 </span>
 
-                <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-white font-normal leading-[1.15]">
+                <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-white font-normal leading-[1.15]">
                   {whySection.title}
                 </h2>
 
-                <p className="text-white/85 text-xs sm:text-[13.5px] leading-relaxed font-sans">
+                <p className="text-white/85 text-xs sm:text-[13px] leading-relaxed font-sans">
                   {whySection.desc}
                 </p>
 
-                <div className="pt-2 sm:pt-3">
+                <div className="pt-1.5 sm:pt-2">
                   <Link
                     href={`/${locale}/values`}
-                    className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs sm:text-[13px] tracking-wide shadow-md transition-all duration-200 hover:scale-[1.02]"
+                    className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs sm:text-[12.5px] tracking-wide shadow-md transition-all duration-200 hover:scale-[1.02]"
                   >
                     <span>{whySection.btn}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -725,17 +725,17 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
               </div>
             </div>
 
-            {/* Middle Column: 4 Vertical Points with LARGER Circular Gold Icons (Photo 2) */}
-            <div className="w-full lg:w-[28%] xl:w-[27%] px-6 sm:px-10 lg:px-6 py-6 sm:py-8 lg:py-0 flex flex-col justify-center space-y-5 sm:space-y-6 relative z-20">
+            {/* Middle Column: 4 Vertical Points with Circular Gold Icons */}
+            <div className="w-full lg:w-[28%] xl:w-[27%] px-6 sm:px-8 lg:px-4 py-4 sm:py-6 lg:py-0 flex flex-col justify-center space-y-3.5 sm:space-y-4 relative z-20">
               {whySection.stats.map((item, idx) => {
                 const ItemIcon = item.icon;
                 return (
-                  <div key={idx} className="flex items-center gap-4">
-                    {/* Enlarged Circular Gold Icon */}
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-[#D5B878]/80 bg-[#08170D] flex items-center justify-center text-[#ECCF96] shrink-0 shadow-[0_0_15px_rgba(213,184,120,0.12)]">
-                      <ItemIcon className="w-5 h-5 sm:w-6 sm:h-6 stroke-[1.6]" />
+                  <div key={idx} className="flex items-center gap-3.5">
+                    {/* Circular Gold Icon */}
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#D5B878]/80 bg-[#08170D] flex items-center justify-center text-[#ECCF96] shrink-0 shadow-[0_0_12px_rgba(213,184,120,0.12)]">
+                      <ItemIcon className="w-4 h-4 sm:w-5 sm:h-5 stroke-[1.6]" />
                     </div>
-                    <span className="text-[13.5px] sm:text-[14.5px] font-medium text-white/95 leading-snug">
+                    <span className="text-[12.5px] sm:text-[13.5px] font-medium text-white/95 leading-snug">
                       {item.label}
                     </span>
                   </div>
@@ -743,18 +743,18 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
               })}
             </div>
 
-            {/* Right Side: Hospital Atrium Lounge Photo with ULTRA-SMOOTH fade into background */}
-            <div className="w-full lg:w-[30%] xl:w-[33%] relative min-h-[260px] sm:min-h-[320px] lg:min-h-full shrink-0">
+            {/* Right Side: Botanical Leaves Background with smooth fade */}
+            <div className="w-full lg:w-[30%] xl:w-[33%] relative min-h-[200px] sm:min-h-[240px] lg:min-h-full shrink-0 overflow-hidden">
               <Image
-                src="/images/areas/atrium-lounge.webp"
-                alt="NabiOta Atrium Lounge"
+                src="/images/values/leaves-bg.webp"
+                alt="Botanical Leaves"
                 fill
                 className="object-cover object-center"
                 priority
               />
-              {/* Ultra-smooth multi-stop gradient fade from left dark forest green into sunny photo */}
-              <div className="hidden lg:block absolute inset-y-0 left-0 w-48 sm:w-60 lg:w-72 bg-gradient-to-r from-[#08170D] via-[#08170D]/80 via-[#08170D]/40 to-transparent pointer-events-none z-10" />
-              <div className="lg:hidden absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#08170D] via-[#08170D]/80 to-transparent pointer-events-none z-10" />
+              {/* Smooth multi-stop gradient fade from left dark forest green into leaves photo */}
+              <div className="hidden lg:block absolute inset-y-0 left-0 w-36 sm:w-48 lg:w-56 bg-gradient-to-r from-[#08170D] via-[#08170D]/80 via-[#08170D]/40 to-transparent pointer-events-none z-10" />
+              <div className="lg:hidden absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#08170D] via-[#08170D]/80 to-transparent pointer-events-none z-10" />
             </div>
           </div>
         </section>
