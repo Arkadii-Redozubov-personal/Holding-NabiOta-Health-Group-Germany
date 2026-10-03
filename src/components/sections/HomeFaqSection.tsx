@@ -107,92 +107,94 @@ export function HomeFaqSection({ currentLocale = "de" }: HomeFaqSectionProps) {
   return (
     <section className="bg-[#FAF8F5] py-16 sm:py-20 lg:py-24 border-t border-[#EAE3D5]/80">
       <div className="mx-auto w-full max-w-[1540px] 2xl:max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-          {/* ── Left Column: Section Header & Mini Contact Box ── */}
-          <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-28">
-            <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#9B7C38] uppercase block font-sans">
-              {t.eyebrow}
-            </span>
+        {/* ── Top Header: Centered above questions ── */}
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+          <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#9B7C38] uppercase block font-sans mb-3">
+            {t.eyebrow}
+          </span>
 
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] text-[#0F2A1D] font-normal leading-[1.16] tracking-tight">
-              {t.title}
-            </h2>
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-[#0F2A1D] font-normal leading-[1.18] tracking-tight">
+            {t.title}
+          </h2>
 
-            <p className="text-sm sm:text-[15px] text-[#4E6256] leading-relaxed font-sans max-w-lg">
-              {t.desc}
-            </p>
+          <p className="text-sm sm:text-[15px] text-[#4E6256] leading-relaxed font-sans max-w-2xl mx-auto mt-3.5">
+            {t.desc}
+          </p>
+        </div>
 
-            {/* Quick helper badge */}
-            <div className="p-5 sm:p-6 rounded-2xl bg-white border border-[#EBE4D8] shadow-xs space-y-3 max-w-md">
-              <div className="flex items-center gap-3 text-[#244E33]">
-                <div className="w-8 h-8 rounded-full bg-[#EBF0EA] flex items-center justify-center">
-                  <HelpCircle className="w-4 h-4" />
-                </div>
-                <h4 className="font-serif text-sm font-semibold text-[#0F2A1D]">
+        {/* ── Middle: Accordion Items Centered ── */}
+        <div className="max-w-3xl lg:max-w-4xl mx-auto space-y-3.5">
+          {t.items.map((item, idx) => {
+            const isOpen = openIdx === idx;
+            return (
+              <div
+                key={idx}
+                className={`rounded-2xl transition-all duration-300 border ${
+                  isOpen
+                    ? "bg-white border-[#C8B896] shadow-sm"
+                    : "bg-white/80 hover:bg-white border-[#EBE4D8] hover:border-[#D8CFBC]"
+                }`}
+              >
+                <button
+                  type="button"
+                  onClick={() => setOpenIdx(isOpen ? null : idx)}
+                  className="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 group cursor-pointer"
+                >
+                  <span className="font-serif text-sm sm:text-base text-[#0F2A1D] font-medium leading-snug group-hover:text-[#9B7C38] transition-colors">
+                    {item.q}
+                  </span>
+                  <span
+                    className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-200 mt-0.5 ${
+                      isOpen
+                        ? "bg-[#0D2619] text-white"
+                        : "bg-[#EBF0EA] text-[#244E33] group-hover:bg-[#0D2619] group-hover:text-white"
+                    }`}
+                  >
+                    {isOpen ? (
+                      <Minus className="w-3.5 h-3.5 stroke-[2.5]" />
+                    ) : (
+                      <Plus className="w-3.5 h-3.5 stroke-[2.5]" />
+                    )}
+                  </span>
+                </button>
+
+                {isOpen && (
+                  <div className="px-5 pb-6 sm:px-6 sm:pb-7 pt-1 text-xs sm:text-sm text-[#4E6256] leading-relaxed border-t border-[#F2ECE1] mt-1 font-sans">
+                    {item.a}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* ── Bottom: Quick Contact Box Centered ── */}
+        <div className="mt-10 sm:mt-12 max-w-3xl lg:max-w-4xl mx-auto">
+          <div className="p-5 sm:p-6 rounded-2xl bg-white border border-[#EBE4D8] shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3.5 text-left">
+              <div className="w-10 h-10 rounded-full bg-[#EBF0EA] flex items-center justify-center flex-shrink-0 text-[#244E33]">
+                <HelpCircle className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-serif text-sm sm:text-base font-semibold text-[#0F2A1D]">
                   {t.contactCtaText}
                 </h4>
+                <p className="text-xs sm:text-[13px] text-[#5A6E63] leading-relaxed mt-0.5">
+                  {isRu
+                    ? "Наши специалисты всегда готовы ответить на ваши вопросы и предоставить исчерпывающую информацию."
+                    : isEn
+                    ? "Our advisory team is pleased to address your questions and outline personalized care pathways."
+                    : "Unser Serviceteam beantwortet Ihre Anliegen gerne persönlich und unverbindlich."}
+                </p>
               </div>
-              <p className="text-xs text-[#5A6E63] leading-relaxed">
-                {isRu
-                  ? "Наши специалисты всегда готовы ответить на ваши вопросы и предоставить исчерпывающую информацию."
-                  : isEn
-                  ? "Our advisory team is pleased to address your questions and outline personalized care pathways."
-                  : "Unser Serviceteam beantwortet Ihre Anliegen gerne persönlich und unverbindlich."}
-              </p>
-              <Link
-                href={`/${currentLocale}/contact`}
-                className="inline-flex items-center gap-2 text-xs font-semibold text-[#0D2619] hover:text-[#9B7C38] transition-colors group pt-1"
-              >
-                <span>{isRu ? "Перейти к контактам" : isEn ? "Contact us directly" : "Direkt Kontakt aufnehmen"}</span>
-                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-              </Link>
             </div>
-          </div>
-
-          {/* ── Right Column: Accordion Items ── */}
-          <div className="lg:col-span-7 space-y-3.5">
-            {t.items.map((item, idx) => {
-              const isOpen = openIdx === idx;
-              return (
-                <div
-                  key={idx}
-                  className={`rounded-2xl transition-all duration-300 border ${
-                    isOpen
-                      ? "bg-white border-[#C8B896] shadow-sm"
-                      : "bg-white/80 hover:bg-white border-[#EBE4D8] hover:border-[#D8CFBC]"
-                  }`}
-                >
-                  <button
-                    type="button"
-                    onClick={() => setOpenIdx(isOpen ? null : idx)}
-                    className="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 group"
-                  >
-                    <span className="font-serif text-sm sm:text-base text-[#0F2A1D] font-medium leading-snug group-hover:text-[#9B7C38] transition-colors">
-                      {item.q}
-                    </span>
-                    <span
-                      className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-200 mt-0.5 ${
-                        isOpen
-                          ? "bg-[#0D2619] text-white"
-                          : "bg-[#EBF0EA] text-[#244E33] group-hover:bg-[#0D2619] group-hover:text-white"
-                      }`}
-                    >
-                      {isOpen ? (
-                        <Minus className="w-3.5 h-3.5 stroke-[2.5]" />
-                      ) : (
-                        <Plus className="w-3.5 h-3.5 stroke-[2.5]" />
-                      )}
-                    </span>
-                  </button>
-
-                  {isOpen && (
-                    <div className="px-5 pb-6 sm:px-6 sm:pb-7 pt-1 text-xs sm:text-sm text-[#4E6256] leading-relaxed border-t border-[#F2ECE1] mt-1 font-sans">
-                      {item.a}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+            <Link
+              href={`/${currentLocale}/contact`}
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#0D2619] hover:text-white bg-[#FAF8F5] hover:bg-[#0D2619] border border-[#E0D7C6] hover:border-[#0D2619] px-4 py-2.5 rounded-xl transition-all duration-200 group flex-shrink-0 whitespace-nowrap shadow-xs"
+            >
+              <span>{isRu ? "Связаться с нами" : isEn ? "Contact us directly" : "Direkt Kontakt aufnehmen"}</span>
+              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+            </Link>
           </div>
         </div>
       </div>
