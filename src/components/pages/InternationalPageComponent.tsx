@@ -358,17 +358,18 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
           eyebrow={heroData.eyebrow}
           description={heroData.desc}
           badges={heroBadges}
-          imageSrc="/images/areas/international.webp"
+          imageSrc="/images/international/international-hero-doctors.webp"
+          imagePosition="object-[right_center]"
         />
 
         {/* ========================================================================= */}
         {/* SECTION 2: VISION (GESUNDHEIT KENNT KEINE GRENZEN) - FULL WIDTH BLEED     */}
         {/* ========================================================================= */}
         <section className="relative w-full bg-[#FAF8F4] overflow-hidden border-t border-[#F0ECE1]">
-          {/* Right Visual: World Map & Joined Hands spanning right edge-to-edge */}
-          <div className="w-full lg:w-[58%] xl:w-[54%] h-[280px] sm:h-[360px] lg:h-full lg:absolute lg:top-0 lg:bottom-0 lg:right-0 relative pointer-events-none select-none overflow-hidden order-2 lg:order-none">
+          {/* Right Visual: World Map & Joined Hands (Photo 3) */}
+          <div className="w-full lg:w-[58%] xl:w-[54%] h-[260px] sm:h-[320px] lg:h-full lg:absolute lg:top-0 lg:bottom-0 lg:right-0 relative pointer-events-none select-none overflow-hidden order-2 lg:order-none">
             <Image
-              src="/images/international/world-hands.webp"
+              src="/images/international/world-map-hands.webp"
               alt="World Map and Joined Hands - NabiOta Vision"
               fill
               className="object-cover object-right"
@@ -376,31 +377,31 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             />
             {/* Soft left gradient fade into the cream background on desktop */}
             <div className="hidden lg:block absolute inset-y-0 left-0 w-32 xl:w-44 bg-gradient-to-r from-[#FAF8F4] via-[#FAF8F4]/80 to-transparent pointer-events-none" />
-            <div className="lg:hidden absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#FAF8F4] to-transparent pointer-events-none" />
+            <div className="lg:hidden absolute inset-x-0 top-0 h-14 bg-gradient-to-b from-[#FAF8F4] to-transparent pointer-events-none" />
           </div>
 
-          {/* Left Content: Standard Container alignment */}
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-6 sm:pt-16 sm:pb-8 lg:py-24">
-            <div className="max-w-xl space-y-6">
-              <div className="text-xs font-semibold tracking-[0.25em] text-[#A07D3E] uppercase">
+          {/* Left Content: Standard Container alignment - Height reduced as requested */}
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12 xl:py-14">
+            <div className="max-w-xl space-y-3.5 sm:space-y-4">
+              <div className="text-[11px] sm:text-xs font-semibold tracking-[0.25em] text-[#A07D3E] uppercase font-sans">
                 {t.s2.eyebrow}
               </div>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#0B2516] leading-[1.15]">
+              <h2 className="text-2xl sm:text-3xl lg:text-[34px] xl:text-[38px] font-serif font-bold text-[#0B2516] leading-[1.18] tracking-tight">
                 {t.s2.title}
               </h2>
 
-              <p className="text-sm sm:text-base text-[#4A5D52] leading-relaxed max-w-lg">
+              <p className="text-xs sm:text-[13.5px] text-[#4A5D52] leading-relaxed max-w-lg">
                 {t.s2.desc}
               </p>
 
-              <div className="pt-2">
+              <div className="pt-1.5 sm:pt-2">
                 <a
                   href="#partner"
-                  className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[#F3EAD8] hover:bg-[#ECCF96] text-[#0B2516] border border-[#D5C096] text-xs sm:text-sm font-semibold transition-all duration-300 shadow-sm group"
+                  className="inline-flex items-center gap-2.5 px-6 py-2.5 sm:py-3 rounded-full bg-[#F3EAD8] hover:bg-[#ECCF96] text-[#0B2516] border border-[#D5C096] text-xs sm:text-sm font-semibold transition-all duration-300 shadow-sm group"
                 >
                   <span>{t.s2.btn}</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                 </a>
               </div>
             </div>
@@ -410,22 +411,22 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         {/* ========================================================================= */}
         {/* SECTION 3: UNSERE KOOPERATIONSPARTNER                                      */}
         {/* ========================================================================= */}
-        <section id="partner" className="py-16 sm:py-20 bg-[#FAF7F2] border-t border-[#EBE6DC]">
+        <section id="partner" className="py-12 sm:py-14 lg:py-16 bg-[#FAF7F2] border-t border-[#EBE6DC]">
           <Container>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
               {/* Left Column (1/3): Description & Action */}
-              <div className="lg:col-span-4 space-y-5">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0B2516] leading-tight">
+              <div className="lg:col-span-4 space-y-4">
+                <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-serif font-bold text-[#0B2516] leading-tight">
                   {t.s3.title}
                 </h2>
 
-                <p className="text-xs sm:text-sm text-[#4A5D52] leading-relaxed">
+                <p className="text-xs sm:text-[13px] text-[#4A5D52] leading-relaxed">
                   {t.s3.desc}
                 </p>
 
-                <div className="pt-2">
+                <div className="pt-1 sm:pt-2">
                   <Link
-                    href={`/${locale}/partners`}
+                    href={`/${locale}/contact`}
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#0B2516] hover:bg-[#0B2516] text-[#0B2516] hover:text-white text-xs sm:text-sm font-semibold transition-all duration-300 group"
                   >
                     <span>{t.s3.btn}</span>
@@ -434,43 +435,43 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                 </div>
               </div>
 
-              {/* Right Column (2/3): 3x2 Partner Cards Grid */}
+              {/* Right Column (2/3): 3x2 Partner Cards Grid - Photo 4 Authentic Branding */}
               <div className="lg:col-span-8">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5 sm:gap-4">
                   {/* Card 1: WHO */}
-                  <div className="bg-white rounded-xl p-5 border border-[#E5DFD3] shadow-sm hover:shadow-md hover:border-[#0093D5]/50 transition-all flex items-center gap-4 group">
-                    <div className="w-12 h-12 rounded-lg bg-[#EBF6FC] flex items-center justify-center shrink-0 text-[#0093D5] font-black text-xs border border-[#0093D5]/20">
-                      <Globe2 className="w-6 h-6 text-[#0093D5]" />
+                  <div className="bg-white rounded-xl p-4 sm:p-5 border border-[#E5DFD3] shadow-xs hover:shadow-md hover:border-[#0093D5]/50 transition-all flex items-center gap-3.5 group min-h-[76px]">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-[#EBF6FC] flex items-center justify-center shrink-0 text-[#0093D5] border border-[#0093D5]/20">
+                      <Globe2 className="w-5 h-5 text-[#0093D5]" />
                     </div>
                     <div>
                       <div className="text-xs font-bold text-[#0093D5] tracking-wide">
                         WHO
                       </div>
-                      <div className="text-[11px] font-medium text-[#1B3A29] leading-tight">
+                      <div className="text-[10.5px] font-medium text-[#1B3A29] leading-tight">
                         World Health Organization
                       </div>
                     </div>
                   </div>
 
                   {/* Card 2: GIZ */}
-                  <div className="bg-white rounded-xl p-5 border border-[#E5DFD3] shadow-sm hover:shadow-md hover:border-[#CD1719]/50 transition-all flex items-center gap-4 group">
-                    <div className="w-12 h-12 rounded-lg bg-[#FDECEC] flex items-center justify-center shrink-0 text-[#CD1719] font-black text-sm border border-[#CD1719]/20 tracking-tighter">
+                  <div className="bg-white rounded-xl p-4 sm:p-5 border border-[#E5DFD3] shadow-xs hover:shadow-md hover:border-[#CD1719]/50 transition-all flex items-center gap-3.5 group min-h-[76px]">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-[#FDECEC] flex items-center justify-center shrink-0 text-[#CD1719] font-black text-sm border border-[#CD1719]/20 tracking-tighter">
                       giz
                     </div>
                     <div>
                       <div className="text-xs font-bold text-[#CD1719]">
                         giz
                       </div>
-                      <div className="text-[10px] text-[#4A5D52] leading-tight">
+                      <div className="text-[10px] text-[#4A5D52] leading-tight line-clamp-2">
                         Deutsche Gesellschaft für Internationale Zusammenarbeit
                       </div>
                     </div>
                   </div>
 
                   {/* Card 3: World Bank Group */}
-                  <div className="bg-white rounded-xl p-5 border border-[#E5DFD3] shadow-sm hover:shadow-md hover:border-[#002244]/50 transition-all flex items-center gap-4 group">
-                    <div className="w-12 h-12 rounded-lg bg-[#EBF0F6] flex items-center justify-center shrink-0 text-[#002244] border border-[#002244]/20">
-                      <Network className="w-6 h-6 text-[#002244]" />
+                  <div className="bg-white rounded-xl p-4 sm:p-5 border border-[#E5DFD3] shadow-xs hover:shadow-md hover:border-[#002244]/50 transition-all flex items-center gap-3.5 group min-h-[76px]">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-[#EBF0F6] flex items-center justify-center shrink-0 text-[#002244] border border-[#002244]/20">
+                      <Network className="w-5 h-5 text-[#002244]" />
                     </div>
                     <div>
                       <div className="text-xs font-bold text-[#002244]">
@@ -483,24 +484,24 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                   </div>
 
                   {/* Card 4: UNICEF */}
-                  <div className="bg-white rounded-xl p-5 border border-[#E5DFD3] shadow-sm hover:shadow-md hover:border-[#1CABE2]/50 transition-all flex items-center gap-4 group">
-                    <div className="w-12 h-12 rounded-lg bg-[#EAF7FC] flex items-center justify-center shrink-0 text-[#1CABE2] font-black text-xs border border-[#1CABE2]/20">
-                      <HeartHandshake className="w-6 h-6 text-[#1CABE2]" />
+                  <div className="bg-white rounded-xl p-4 sm:p-5 border border-[#E5DFD3] shadow-xs hover:shadow-md hover:border-[#1CABE2]/50 transition-all flex items-center gap-3.5 group min-h-[76px]">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-[#EAF7FC] flex items-center justify-center shrink-0 text-[#1CABE2] font-black text-xs border border-[#1CABE2]/20">
+                      <HeartHandshake className="w-5 h-5 text-[#1CABE2]" />
                     </div>
                     <div>
                       <div className="text-xs font-bold text-[#1CABE2] lowercase">
                         unicef
                       </div>
-                      <div className="text-[11px] font-medium text-[#1B3A29] leading-tight">
+                      <div className="text-[10.5px] font-medium text-[#1B3A29] leading-tight">
                         für jedes Kind
                       </div>
                     </div>
                   </div>
 
                   {/* Card 5: Universities */}
-                  <div className="bg-white rounded-xl p-5 border border-[#E5DFD3] shadow-sm hover:shadow-md hover:border-[#B8934A]/50 transition-all flex items-center gap-4 group">
-                    <div className="w-12 h-12 rounded-lg bg-[#FAF7F0] flex items-center justify-center shrink-0 text-[#B8934A] border border-[#B8934A]/30">
-                      <GraduationCap className="w-6 h-6 text-[#B8934A]" />
+                  <div className="bg-white rounded-xl p-4 sm:p-5 border border-[#E5DFD3] shadow-xs hover:shadow-md hover:border-[#B8934A]/50 transition-all flex items-center gap-3.5 group min-h-[76px]">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-[#FAF7F0] flex items-center justify-center shrink-0 text-[#B8934A] border border-[#B8934A]/30">
+                      <GraduationCap className="w-5 h-5 text-[#B8934A]" />
                     </div>
                     <div>
                       <div className="text-xs font-bold text-[#1B3A29]">
@@ -513,9 +514,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                   </div>
 
                   {/* Card 6: NGOs & Foundations */}
-                  <div className="bg-white rounded-xl p-5 border border-[#E5DFD3] shadow-sm hover:shadow-md hover:border-[#2D5A3E]/50 transition-all flex items-center gap-4 group">
-                    <div className="w-12 h-12 rounded-lg bg-[#EDF3EE] flex items-center justify-center shrink-0 text-[#2D5A3E] border border-[#2D5A3E]/30">
-                      <Leaf className="w-6 h-6 text-[#2D5A3E]" />
+                  <div className="bg-white rounded-xl p-4 sm:p-5 border border-[#E5DFD3] shadow-xs hover:shadow-md hover:border-[#2D5A3E]/50 transition-all flex items-center gap-3.5 group min-h-[76px]">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-[#EDF3EE] flex items-center justify-center shrink-0 text-[#2D5A3E] border border-[#2D5A3E]/30">
+                      <Leaf className="w-5 h-5 text-[#2D5A3E]" />
                     </div>
                     <div>
                       <div className="text-xs font-bold text-[#1B3A29]">
@@ -535,15 +536,15 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         {/* ========================================================================= */}
         {/* SECTION 4: UNSERE INTERNATIONALEN PROJEKTE (4 COLUMNS)                     */}
         {/* ========================================================================= */}
-        <section id="projekte" className="py-16 sm:py-20 bg-white border-t border-[#F0ECE1]">
+        <section id="projekte" className="py-14 sm:py-18 bg-white border-t border-[#F0ECE1]">
           <Container>
             {/* Header with Title and Link on the right */}
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-              <div className="space-y-3 max-w-2xl">
-                <div className="text-xs font-semibold tracking-[0.2em] text-[#B8934A] uppercase">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+              <div className="space-y-2.5 max-w-2xl">
+                <div className="text-xs font-semibold tracking-[0.2em] text-[#B8934A] uppercase font-sans">
                   {t.s4.eyebrow}
                 </div>
-                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#0B2516] leading-tight">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0B2516] leading-tight">
                   {t.s4.title}
                 </h2>
                 <p className="text-xs sm:text-sm text-[#4A5D52] leading-relaxed">
@@ -610,39 +611,40 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 5: IMPACT BANNER (DARK EMERALD SPLIT SECTION)                     */}
+        {/* SECTION 5: IMPACT BANNER (DARK EMERALD SPLIT SECTION WITH BOTANICAL BG)    */}
         {/* ========================================================================= */}
-        <section className="relative bg-[#0B2516] text-white overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[460px]">
-            {/* Left Column: Humanitarian aid worker overlooking mountain village */}
-            <div className="lg:col-span-6 relative min-h-[300px] lg:min-h-[460px]">
+        <section className="relative bg-[#07190F] text-white overflow-hidden border-y border-[#D5B878]/30">
+          <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[420px]">
+            {/* Left Column: Camper van on canyon road (Photo 1) */}
+            <div className="lg:col-span-6 relative min-h-[280px] lg:min-h-[420px]">
               <Image
-                src="/images/international/impact-humanitarian.webp"
-                alt="NabiOta Humanitarian Healthcare Worker"
+                src="/images/international/impact-camper-van.webp"
+                alt="Sustainable Solutions for Healthy Communities"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-black/60 via-transparent to-[#0B2516] pointer-events-none" />
-
-              {/* Floating Handwritten Stamp (Bottom-Left / Center-Left) */}
-              <div className="absolute bottom-6 left-6 max-w-xs pointer-events-none select-none">
-                <div
-                  className="text-white text-lg sm:text-xl font-serif italic tracking-wide leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]"
-                  style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
-                >
-                  <p>{t.s5.stampText1}</p>
-                  <p>{t.s5.stampText2}</p>
-                </div>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-black/40 via-transparent to-[#07190F] pointer-events-none" />
             </div>
 
-            {/* Right Column: Impact Metrics */}
-            <div className="lg:col-span-6 p-8 sm:p-12 lg:p-16 flex flex-col justify-center space-y-8 bg-[#0B2516]">
-              <div className="space-y-4">
-                <div className="inline-block text-xs font-semibold tracking-[0.2em] text-[#ECCF96] uppercase">
+            {/* Right Column: Impact Metrics with botanical-gold-bg.webp background */}
+            <div className="lg:col-span-6 relative overflow-hidden p-8 sm:p-10 lg:p-12 xl:p-14 flex flex-col justify-center space-y-6 sm:space-y-7 bg-[#07190F]">
+              {/* Botanical Gold Background Texture across right green part */}
+              <div className="absolute inset-0 pointer-events-none z-0">
+                <Image
+                  src="/images/botanical-gold-bg.webp"
+                  alt="Botanical Texture"
+                  fill
+                  className="object-cover object-center opacity-70 scale-x-[-1]"
+                  priority
+                />
+                <div className="absolute inset-0 bg-[#07190F]/70" />
+              </div>
+
+              <div className="relative z-10 space-y-3 sm:space-y-4">
+                <div className="inline-block text-xs font-semibold tracking-[0.2em] text-[#ECCF96] uppercase font-sans">
                   {t.s5.eyebrow}
                 </div>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white leading-tight">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[40px] font-serif font-bold text-white leading-tight">
                   {t.s5.title}
                 </h2>
                 <p className="text-xs sm:text-sm text-[#D1DDD5] leading-relaxed max-w-lg">
@@ -651,9 +653,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               </div>
 
               {/* 4 Stats Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-2 border-t border-white/10">
+              <div className="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-5 pt-3 border-t border-white/15">
                 {t.s5.stats.map((stat, idx) => (
-                  <div key={idx} className="space-y-1.5">
+                  <div key={idx} className="space-y-1">
                     <div className="text-[#ECCF96] mb-1">
                       {stat.icon}
                     </div>
@@ -671,17 +673,17 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 6: STIMMEN AUS DER ZUSAMMENARBEIT (3 TESTIMONIALS)                 */}
+        {/* SECTION 6: STIMMEN AUS DER ZUSAMMENARBEIT (3 TESTIMONIALS - LARGER CARDS) */}
         {/* ========================================================================= */}
-        <section className="py-16 sm:py-20 bg-[#FAF7F2] border-t border-[#EBE6DC]">
+        <section className="py-14 sm:py-16 lg:py-20 bg-[#FAF7F2] border-t border-[#EBE6DC]">
           <Container>
-            {/* Header */}
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-              <div className="space-y-3 max-w-2xl">
-                <div className="text-xs font-semibold tracking-[0.2em] text-[#B8934A] uppercase">
+            {/* Header matching Photo */}
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12">
+              <div className="space-y-2.5 max-w-2xl">
+                <div className="text-xs font-semibold tracking-[0.2em] text-[#B8934A] uppercase font-sans">
                   {t.s6.eyebrow}
                 </div>
-                <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#0B2516] leading-tight">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0B2516] leading-tight">
                   {t.s6.title}
                 </h2>
                 <p className="text-xs sm:text-sm text-[#4A5D52] leading-relaxed">
@@ -700,16 +702,16 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               </div>
             </div>
 
-            {/* 3 Testimonials Grid matching Screenshot 3 1:1 */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* 3 Testimonials Grid matching Photo 2: LARGER cards, prominent avatars, full quote */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7">
               {t.s6.items.map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-white rounded-2xl p-6 sm:p-7 border border-[#E5DFD3] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between space-y-5"
+                  className="bg-white rounded-2xl sm:rounded-3xl p-7 sm:p-8 border border-[#E5DFD3] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between space-y-6 min-h-[270px] sm:min-h-[290px]"
                 >
                   {/* Top: Avatar on left + Quote on right */}
-                  <div className="flex items-start gap-4">
-                    <div className="relative w-14 h-14 rounded-full overflow-hidden border border-[#D8C7A5] shrink-0">
+                  <div className="flex items-start gap-4 sm:gap-5">
+                    <div className="relative w-16 h-16 sm:w-18 sm:h-18 rounded-full overflow-hidden border-2 border-[#D8C7A5]/80 shrink-0 shadow-2xs">
                       <Image
                         src={item.avatar}
                         alt={item.name}
@@ -717,28 +719,28 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                         className="object-cover"
                       />
                     </div>
-                    <p className="text-xs sm:text-[13px] text-[#1B3A29] leading-relaxed italic flex-1">
+                    <p className="text-xs sm:text-[14px] text-[#1B3A29] leading-relaxed italic flex-1 pt-1 font-serif sm:font-sans">
                       {item.quote}
                     </p>
                   </div>
 
                   {/* Middle: Author Info */}
-                  <div className="space-y-0.5 pl-1">
-                    <h4 className="text-xs sm:text-sm font-bold text-[#0B2516] leading-tight">
+                  <div className="space-y-1 pl-1">
+                    <h4 className="text-sm sm:text-base font-bold text-[#0B2516] leading-tight">
                       {item.name}
                     </h4>
-                    <p className="text-[11px] text-[#556358] leading-tight">
+                    <p className="text-xs text-[#556358] leading-tight">
                       {item.role}
                     </p>
-                    <p className="text-[11px] text-[#556358] leading-tight">
+                    <p className="text-xs text-[#556358] leading-tight">
                       {item.location}
                     </p>
                   </div>
 
                   {/* Bottom: 5 Gold Stars */}
-                  <div className="pt-2 flex text-[#D4AF37] gap-1 pl-1">
+                  <div className="pt-1 flex text-[#D4AF37] gap-1 pl-1">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-[#D4AF37]" />
+                      <Star key={i} className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-[#D4AF37]" />
                     ))}
                   </div>
                 </div>
@@ -748,42 +750,42 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 7: BOTTOM CTA BANNER (FULL WIDTH PANORAMA - PHOTO 3)              */}
+        {/* SECTION 7: BOTTOM CTA BANNER (PHOTO 2 - INCREASED HEIGHT)                 */}
         {/* ========================================================================= */}
-        <section className="relative w-full overflow-hidden min-h-[300px] sm:min-h-[360px] lg:min-h-[400px] flex items-center bg-[#FAF7F2] border-t border-[#EBE6DC]">
-          {/* Panoramic Sunrise Mountain Photo spanning full width edge-to-edge */}
+        <section className="relative w-full overflow-hidden min-h-[340px] sm:min-h-[380px] lg:min-h-[420px] flex items-center bg-[#FAF7F2] border-t border-[#EBE6DC]">
+          {/* Panoramic Sunrise Mountain Photo (Photo 2) spanning full width edge-to-edge */}
           <Image
-            src="/images/international/cta-sunrise.webp"
-            alt="Sunrise Mountains NabiOta Health Group"
+            src="/images/international/cta-sunrise-mountains.webp"
+            alt="Globale Partnerschaften. Lokale Wirkung."
             fill
             className="object-cover object-center"
             priority
           />
-          {/* Subtle soft gradient on left for contrast across languages & screens */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#FAF7F2]/90 via-[#FAF7F2]/60 to-transparent pointer-events-none" />
+          {/* Subtle soft gradient on left for gentle contrast */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#FAF7F2]/65 via-[#FAF7F2]/25 to-transparent pointer-events-none" />
 
-          {/* Left Text & CTA Button aligned with site container */}
-          <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16 lg:py-20">
-            <div className="max-w-xl space-y-4">
-              <div className="text-[10.5px] sm:text-xs font-semibold tracking-[0.2em] text-[#8C6527] uppercase">
+          {/* Left Text & CTA Button aligned with site container - Increased height & padding */}
+          <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+            <div className="max-w-xl space-y-3.5 sm:space-y-4">
+              <div className="text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] text-[#8C6527] uppercase font-sans">
                 {t.s7.eyebrow}
               </div>
 
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0B2516] leading-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-serif font-bold text-[#0B2516] leading-tight">
                 {t.s7.title}
               </h2>
 
-              <p className="text-xs sm:text-sm text-[#4A5D52] leading-relaxed max-w-lg">
+              <p className="text-xs sm:text-[13.5px] text-[#4A5D52] leading-relaxed max-w-lg">
                 {t.s7.desc}
               </p>
 
-              <div className="pt-2">
+              <div className="pt-2 sm:pt-2.5">
                 <Link
                   href={`/${locale}/contact`}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#FAF7F2] hover:bg-[#ECCF96] text-[#0B2516] border border-[#D8C7A5] text-xs sm:text-sm font-semibold transition-all duration-300 shadow-sm group"
+                  className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#FAF7F2] hover:bg-[#ECCF96] text-[#0B2516] border border-[#D8C7A5] text-xs sm:text-sm font-semibold transition-all duration-300 shadow-sm group"
                 >
                   <span>{t.s7.btn}</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
             </div>

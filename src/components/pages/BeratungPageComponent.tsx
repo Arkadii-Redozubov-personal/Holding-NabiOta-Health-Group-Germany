@@ -338,30 +338,30 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         {/* SECTION 1 (from Photo): UNSERE BERATUNGSLEISTUNGEN                        */}
         {/* ========================================================================= */}
         {/* ========================================================================= */}
-        {/* SECTION 1 (from Photo 3): UNSERE BERATUNGSLEISTUNGEN                      */}
+        {/* SECTION 1 (from Photo 1): UNSERE BERATUNGSLEISTUNGEN                      */}
         {/* ========================================================================= */}
-        <section className="py-12 sm:py-16 bg-[#FAF9F5]">
+        <section className="py-8 sm:py-10 lg:py-11 bg-[#FAF9F5]">
           <Container size="wide">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
               {/* Left Column (Copy + Button) */}
-              <div className="lg:col-span-4 space-y-4 sm:space-y-5">
-                <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans">
+              <div className="lg:col-span-4 space-y-3.5 sm:space-y-4 flex flex-col justify-center">
+                <span className="text-[10.5px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans">
                   {t.s1.eyebrow}
                 </span>
 
-                <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] xl:text-[38px] text-[#0F2A1D] font-normal leading-[1.18] tracking-tight">
+                <h2 className="font-serif text-2xl sm:text-3xl lg:text-[32px] xl:text-[36px] text-[#0F2A1D] font-normal leading-[1.18] tracking-tight">
                   {t.s1.title}
                 </h2>
 
-                <p className="text-xs sm:text-sm text-[#4A5D52] font-normal leading-relaxed">
+                <p className="text-xs sm:text-[13px] text-[#4A5D52] font-normal leading-relaxed">
                   {t.s1.desc}
                 </p>
 
-                {/* Larger Pill Button (Matching Photo 3) */}
-                <div className="pt-2 sm:pt-3">
+                {/* Larger Pill Button (Matching Photo 1) */}
+                <div className="pt-1.5 sm:pt-2">
                   <Link
                     href={`/${locale}/contact`}
-                    className="inline-flex items-center gap-3 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#FAF9F5] hover:bg-white text-[#0D2619] border border-[#BFA87E] hover:border-[#9B7C38] text-sm sm:text-base font-medium transition-all duration-300 shadow-sm hover:shadow group hover:scale-[1.01]"
+                    className="inline-flex items-center gap-3 px-6 sm:px-7 py-3 rounded-full bg-[#FAF9F5] hover:bg-white text-[#0D2619] border border-[#BFA87E] hover:border-[#9B7C38] text-xs sm:text-sm font-medium transition-all duration-300 shadow-sm hover:shadow group hover:scale-[1.01]"
                   >
                     <span>{t.s1.btn}</span>
                     <ArrowRight className="w-4 h-4 text-[#0D2619] transition-transform group-hover:translate-x-1" />
@@ -370,7 +370,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
               </div>
 
               {/* Center Column: Meeting Photo */}
-              <div className="lg:col-span-5 relative aspect-[16/11] sm:aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border border-[#EAE5DC]">
+              <div className="lg:col-span-5 relative min-h-[290px] lg:min-h-0 h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-sm border border-[#EAE5DC]">
                 <Image
                   src="/images/beratung/consulting-meeting.webp"
                   alt={t.s1.title}
@@ -379,21 +379,21 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
                 />
               </div>
 
-              {/* Right Column: Consulting Approach Box (Matching Photo 3) */}
-              <div className="lg:col-span-3 bg-[#F4F2EC] rounded-2xl sm:rounded-3xl p-6 sm:p-7 border border-[#E5DFD1] shadow-xs space-y-4.5">
+              {/* Right Column: Consulting Approach Box - Greenish Tint & Same Height as Picture */}
+              <div className="lg:col-span-3 bg-[#EEF4EE] rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-[#DFE8DF] shadow-xs flex flex-col justify-between h-full">
                 <h3 className="font-serif text-base sm:text-lg font-medium text-[#0F2A1D]">
                   {t.s1.cardTitle}
                 </h3>
 
-                <div className="space-y-4 sm:space-y-4.5">
+                <div className="space-y-3 sm:space-y-3.5 my-auto py-2">
                   {t.s1.items.map((item, idx) => {
                     const IconComp = item.icon;
                     return (
-                      <div key={idx} className="flex items-start gap-3.5">
-                        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D5B878]/70 bg-white/80 text-[#1E3E2B] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-2xs">
-                          <IconComp className="w-4.5 h-4.5 sm:w-5 sm:h-5 stroke-[1.6]" />
+                      <div key={idx} className="flex items-start gap-3 sm:gap-3.5">
+                        <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#D5B878]/70 bg-white/90 text-[#1E3E2B] flex items-center justify-center shrink-0 mt-0.5 shadow-2xs">
+                          <IconComp className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.6]" />
                         </div>
-                        <span className="text-xs sm:text-[13px] text-[#2C4737] font-medium leading-snug pt-1">
+                        <span className="text-xs sm:text-[12.5px] text-[#2C4737] font-medium leading-snug pt-1">
                           {item.text}
                         </span>
                       </div>
