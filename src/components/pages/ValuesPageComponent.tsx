@@ -210,7 +210,7 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
           {/* Background: Modern Medical Consultation - focused on subjects on mobile, crisp on desktop */}
           <div className="absolute inset-0 lg:left-[18%] lg:w-[82%] z-0 pointer-events-none overflow-hidden">
             <Image
-              src="/images/heroes/hero-values.jpg"
+              src="/images/heroes/hero-values.webp"
               alt="NabiOta Health Group Germany Werte"
               fill
               priority
@@ -263,7 +263,7 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
 
             {/* Botanical Gold Background Image inside the Left Wing */}
             <image
-              href="/images/botanical-gold-bg.jpg"
+              href="/images/botanical-gold-bg.webp"
               width="1440"
               height="600"
               preserveAspectRatio="xMidYMid slice"
@@ -402,7 +402,7 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
               <div className="lg:col-span-6 relative">
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-[#EDE7D9] bg-[#F7F4EE]">
                   <Image
-                    src="/images/about/doctor-patient.jpg"
+                    src="/images/about/doctor-patient.webp"
                     alt="Ärztliche Betreuung bei NabiOta Health Group"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -431,7 +431,7 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
           {/* Background: Botanical leaves illuminated on the left matching Screenshot 2 */}
           <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
             <Image
-              src="/images/values/leaves-bg.jpg"
+              src="/images/values/leaves-bg.webp"
               alt="Botanical Background"
               fill
               sizes="100vw"
@@ -591,7 +591,7 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
           {/* Panoramic background photo with hands holding heart on the right */}
           <div className="absolute inset-0 z-0 pointer-events-none">
             <Image
-              src="/images/bacground.png"
+              src="/images/bacground.webp"
               alt="NabiOta Numbers & Values"
               fill
               sizes="100vw"
@@ -695,7 +695,7 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
               <div className="lg:col-span-6 relative">
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-[#EDE7D9] bg-[#F7F4EE]">
                   <Image
-                    src="/images/careers/team.jpg"
+                    src="/images/careers/team.webp"
                     alt="NabiOta Health Group Medical Team"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -726,7 +726,7 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
               {/* Background: Visible Misty Panoramic Green Mountains matching Screenshot 3 */}
               <div className="absolute inset-0 z-0 pointer-events-none">
                 <Image
-                  src="/images/values/mountains-bg.jpg"
+                  src="/images/values/mountains-bg.webp"
                   alt="Misty Mountains Landscape"
                   fill
                   sizes="100vw"
@@ -742,7 +742,7 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
                 <div className="flex items-center gap-4 sm:gap-5 flex-shrink-0">
                   <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-[#D5B878] shadow-[0_0_20px_rgba(213,184,120,0.3)] flex-shrink-0">
                     <Image
-                      src="/images/values/marike-nabiota.jpg"
+                      src="/images/values/marike-nabiota.webp"
                       alt={t.founderName}
                       fill
                       sizes="96px"

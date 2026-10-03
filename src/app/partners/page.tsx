@@ -49,7 +49,7 @@ export default function PartnersPage() {
           }
           title="Gemeinsam mehr erreichen."
           description="Nachhaltige Entwicklungen und moderne Versorgungskonzepte entstehen durch den Austausch von Wissen, Erfahrung und Kompetenzen."
-          imageSrc="/images/heroes/hero-partners.jpg"
+          imageSrc="/images/heroes/hero-partners.webp"
           imageAlt="NabiOta Health Group Germany Partner"
           badges={partnerBadges}
         />
@@ -59,7 +59,7 @@ export default function PartnersPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-6 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-forest-900/10">
                 <Image
-                  src="/images/partners/atrium.jpg"
+                  src="/images/partners/atrium.webp"
                   alt="Partner und Dialog bei NabiOta"
                   fill
                   className="object-cover"

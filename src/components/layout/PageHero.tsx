@@ -23,7 +23,7 @@ export function PageHero({
   description,
   badges,
   children,
-  imageSrc = "/images/about/hero-doctors.jpg",
+  imageSrc = "/images/about/hero-doctors.webp",
   imageAlt = "NabiOta Health Group Germany",
   imagePosition,
   className = "",
@@ -91,7 +91,7 @@ export function PageHero({
 
         {/* Botanical Gold Background Image inside the Left Wing */}
         <image
-          href="/images/botanical-gold-bg.jpg"
+          href="/images/botanical-gold-bg.webp"
           width="1440"
           height="600"
           preserveAspectRatio="xMidYMid slice"

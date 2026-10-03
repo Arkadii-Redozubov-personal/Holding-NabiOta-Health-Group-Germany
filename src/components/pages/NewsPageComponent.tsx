@@ -188,11 +188,11 @@ export function NewsPageComponent({ locale = "de" }: Props) {
           - Divider: Curved convex arc with champagne gold stroke
           - Right: High-resolution doctor portrait with blurred clinic
       ══════════════════════════════════════════════════════════ */}
-      <section className="relative w-full bg-[#08170D] text-white overflow-hidden min-h-[280px] sm:min-h-[320px] lg:min-h-[340px] flex items-center">
-        {/* Right side: Doctor Photo */}
+      <section className="relative w-full bg-[#08170D] text-white overflow-hidden min-h-[480px] sm:min-h-[520px] lg:h-[600px] lg:min-h-[600px] pt-32 sm:pt-36 lg:pt-40 pb-14 sm:pb-16 flex items-center border-b border-[#D5B878]/25">
+        {/* Right side: High-Res Clean Doctor Photo */}
         <div className="absolute top-0 right-0 w-full sm:w-[62%] lg:w-[58%] h-full z-0">
           <Image
-            src="/images/news/doctor-only.jpg"
+            src="/images/news/hero-doctor-clean.webp"
             alt="NabiOta Health Group Medical Team"
             fill
             className="object-cover object-[center_20%] sm:object-center"
@@ -205,21 +205,21 @@ export function NewsPageComponent({ locale = "de" }: Props) {
         {/* Desktop Elegant Sweeping Curved Mask with Champagne Gold Border */}
         <div className="hidden sm:block absolute inset-0 z-10 pointer-events-none">
           <svg
-            viewBox="0 0 1000 480"
+            viewBox="0 0 1440 600"
             preserveAspectRatio="none"
             className="w-full h-full"
           >
             {/* Dark green filled area covering left half */}
             <path
-              d="M 0 0 L 440 0 C 510 130, 560 310, 620 480 L 0 480 Z"
+              d="M 0 0 L 620 0 C 710 180, 680 420, 800 600 L 0 600 Z"
               fill="#08170D"
             />
             {/* Elegant Champagne Gold Border Line */}
             <path
-              d="M 440 0 C 510 130, 560 310, 620 480"
+              d="M 620 0 C 710 180, 680 420, 800 600"
               fill="none"
               stroke="#D5B878"
-              strokeWidth="2.2"
+              strokeWidth="2"
               opacity="0.85"
             />
           </svg>
@@ -228,7 +228,7 @@ export function NewsPageComponent({ locale = "de" }: Props) {
         {/* Botanical watermark in top-left */}
         <div className="absolute top-0 left-0 w-48 sm:w-64 h-48 sm:h-64 pointer-events-none opacity-40 z-10 select-none">
           <Image
-            src="/images/areas/botanical-branch-clean.png"
+            src="/images/areas/botanical-branch-clean.webp"
             alt="Botanical Accent"
             fill
             className="object-contain object-top-left -scale-x-100"
@@ -237,7 +237,7 @@ export function NewsPageComponent({ locale = "de" }: Props) {
         </div>
 
         {/* Content container on left */}
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl space-y-3">
             {/* Breadcrumb: Home › News */}
             <div className="flex items-center gap-1.5 text-xs text-white/70 font-sans tracking-wide">
@@ -465,7 +465,7 @@ export function NewsPageComponent({ locale = "de" }: Props) {
                 {/* Botanical leaf branch watermark on top-right */}
                 <div className="absolute -top-2 -right-2 w-28 h-28 pointer-events-none opacity-25 select-none">
                   <Image
-                    src="/images/areas/botanical-branch-clean.png"
+                    src="/images/areas/botanical-branch-clean.webp"
                     alt="Botanical Foliage"
                     fill
                     className="object-contain object-top-right"
@@ -539,7 +539,7 @@ export function NewsPageComponent({ locale = "de" }: Props) {
                 {/* Microscope Background Photo */}
                 <div className="absolute inset-0 pointer-events-none">
                   <Image
-                    src="/images/news/cancer-research.jpg"
+                    src="/images/news/cancer-research.webp"
                     alt="Medical Innovation Research"
                     fill
                     className="object-cover object-center"
@@ -551,7 +551,7 @@ export function NewsPageComponent({ locale = "de" }: Props) {
                 {/* Botanical leaf watermark accent */}
                 <div className="absolute -right-4 -bottom-4 w-28 h-28 pointer-events-none opacity-20 select-none">
                   <Image
-                    src="/images/areas/botanical-branch-clean.png"
+                    src="/images/areas/botanical-branch-clean.webp"
                     alt="Botanical Foliage"
                     fill
                     className="object-contain object-bottom-right"
@@ -608,7 +608,7 @@ export function NewsPageComponent({ locale = "de" }: Props) {
             {/* Botanical Foliage on Far Right */}
             <div className="absolute -right-4 -bottom-6 w-56 sm:w-72 h-56 sm:h-72 pointer-events-none opacity-30 select-none">
               <Image
-                src="/images/areas/botanical-branch-clean.png"
+                src="/images/areas/botanical-branch-clean.webp"
                 alt="Botanical Foliage"
                 fill
                 className="object-contain object-bottom-right"

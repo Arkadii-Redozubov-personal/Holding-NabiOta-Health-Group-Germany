@@ -92,7 +92,7 @@ export default async function LocalizedArticleDetailPage({ params }: LocalizedAr
           }
           title={article.title}
           description={article.summary}
-          imageSrc={article.image || "/images/heroes/hero-news.jpg"}
+          imageSrc={article.image || "/images/heroes/hero-news.webp"}
           badges={newsBadges}
         />
 

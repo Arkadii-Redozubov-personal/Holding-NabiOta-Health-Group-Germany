@@ -9,7 +9,7 @@ export const holdingServices: Service[] = [
     shortDescription: "Moderne ambulante Versorgung auf höchstem medizinischem Niveau.",
     description:
       "Unsere MVZ bieten Patientinnen und Patienten eine wohnortnahe, sektorenübergreifende Diagnostik und Behandlung mit modernster Medizintechnik und interdisziplinärem Ärzteaustausch.",
-    image: "/images/services/mvz.jpg",
+    image: "/images/services/mvz.webp",
     iconName: "Building2",
     category: "Versorgung",
     benefits: [
@@ -32,7 +32,7 @@ export const holdingServices: Service[] = [
     shortDescription: "Präzise Diagnostik für fundierte Entscheidungen.",
     description:
       "High-End Schnittbilddiagnostik mit schnellen Terminoptionen, Niedrigdosis-CT und hochauflösendem MRT zur Früherkennung und Behandlungsplanung.",
-    image: "/images/services/diagnostik.jpg",
+    image: "/images/services/diagnostik.webp",
     iconName: "ActivitySquare",
     category: "Diagnostik",
     benefits: [
@@ -55,7 +55,7 @@ export const holdingServices: Service[] = [
     shortDescription: "Individuelle Therapiekonzepte für mehr Lebensqualität.",
     description:
       "Gezielte physiotherapeutische und rehabilitative Maßnahmen zur schnellen und nachhaltigen Wiederherstellung Ihrer Beweglichkeit und Alltagsfitness.",
-    image: "/images/services/therapie.jpg",
+    image: "/images/services/therapie.webp",
     iconName: "UserCheck",
     category: "Therapie",
     benefits: [
@@ -78,7 +78,7 @@ export const holdingServices: Service[] = [
     shortDescription: "Professionelle Pflege und Betreuung in einem vertrauten Umfeld.",
     description:
       "Einfühlsame Pflegekräfte sichern eine würdevolle und fachgerechte Versorgung in den eigenen vier Wänden, abgestimmt auf persönliche Bedürfnisse.",
-    image: "/images/services/homecare.jpg",
+    image: "/images/services/homecare.webp",
     iconName: "Home",
     category: "Pflege",
     benefits: [
@@ -101,7 +101,7 @@ export const holdingServices: Service[] = [
     shortDescription: "Spezialisierte Versorgung für eine bessere Heilung.",
     description:
       "Zertifizierte Wundexperten behandeln chronische und schwer heilende Wunden mit modernsten Verbandsmaterialien und phasengerechten Therapiekonzepten.",
-    image: "/images/services/wundversorgung.jpg",
+    image: "/images/services/wundversorgung.webp",
     iconName: "PlusCircle",
     category: "Spezialversorgung",
     benefits: [
@@ -124,7 +124,7 @@ export const holdingServices: Service[] = [
     shortDescription: "Qualifizierte Fachkräfte für eine starke Gesundheitsversorgung.",
     description:
       "Passgenaue Vermittlung und nachhaltige Integration von ärztlichem Personal, Pflegefachkräften und medizinischen Assistenzberufen.",
-    image: "/images/services/staffing.jpg",
+    image: "/images/services/staffing.webp",
     iconName: "Users2",
     category: "Personal & Karriere",
     benefits: [
@@ -147,7 +147,7 @@ export const holdingServices: Service[] = [
     shortDescription: "Zukunftsorientierte Konzepte für ein modernes Gesundheitswesen.",
     description:
       "Entwicklung intelligenter Digitalisierungsstrategien, zukunftsfähiger Gesundheitscampus-Projekte und nachhaltiger Versorgungsmodelle.",
-    image: "/images/services/innovation.jpg",
+    image: "/images/services/innovation.webp",
     iconName: "Cog",
     category: "Innovation",
     benefits: [

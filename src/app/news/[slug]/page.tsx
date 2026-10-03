@@ -77,7 +77,7 @@ export default async function ArticleDetailPage({ params }: ArticleDetailPagePro
           }
           title={article.title}
           description={article.summary}
-          imageSrc={article.image || "/images/heroes/hero-news.jpg"}
+          imageSrc={article.image || "/images/heroes/hero-news.webp"}
           badges={newsBadges}
         />
 

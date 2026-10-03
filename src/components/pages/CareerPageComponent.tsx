@@ -165,21 +165,21 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
             "„Bei NabiOta® habe ich nicht nur einen Job gefunden, sondern eine Aufgabe, die mich jeden Tag erfüllt. Das Team ist unglaublich unterstützend, und ich kann mich stetig weiterentwickeln.“",
           author: "Anna Müller",
           role: "Pflegefachkraft, NabiOta® Klinik Berlin",
-          avatar: "/images/careers/anna-mueller.jpg",
+          avatar: "/images/careers/anna-mueller.webp",
         },
         {
           quote:
             "„Die interdisziplinäre Zusammenarbeit und der Fokus auf Spitzenmedizin bei gleichzeitiger Menschlichkeit machen NabiOta® zu einem einzigartigen Arbeitsplatz.“",
           author: "Dr. med. Thomas Weber",
           role: "Facharzt Allgemeinmedizin, NabiOta® München",
-          avatar: "/images/careers/anna-mueller.jpg",
+          avatar: "/images/careers/anna-mueller.webp",
         },
         {
           quote:
             "„Moderne Therapiekonzepte, beste technische Ausstattung und flexible Arbeitszeitmodelle – genau so stelle ich mir eine zukunftsorientierte Reha vor.“",
           author: "Sarah Lindemann",
           role: "Leitende Physiotherapeutin, NabiOta® Hamburg",
-          avatar: "/images/careers/anna-mueller.jpg",
+          avatar: "/images/careers/anna-mueller.webp",
         },
       ],
       cta: {
@@ -325,21 +325,21 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
             "“At NabiOta®, I found not just a job, but a purpose that fulfills me every single day. The team is genuinely supportive, and I have endless opportunities to grow.”",
           author: "Anna Müller",
           role: "Registered Nurse, NabiOta® Clinic Berlin",
-          avatar: "/images/careers/anna-mueller.jpg",
+          avatar: "/images/careers/anna-mueller.webp",
         },
         {
           quote:
             "“Interdisciplinary collaboration and clinical excellence combined with genuine human warmth make NabiOta® a truly exceptional workplace.”",
           author: "Dr. med. Thomas Weber",
           role: "Senior Physician, NabiOta® Munich",
-          avatar: "/images/careers/anna-mueller.jpg",
+          avatar: "/images/careers/anna-mueller.webp",
         },
         {
           quote:
             "“Modern therapeutic approaches, cutting-edge facilities, and flexible shift planning – exactly what forward-thinking healthcare should look like.”",
           author: "Sarah Lindemann",
           role: "Lead Physiotherapist, NabiOta® Hamburg",
-          avatar: "/images/careers/anna-mueller.jpg",
+          avatar: "/images/careers/anna-mueller.webp",
         },
       ],
       cta: {
@@ -485,21 +485,21 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
             "«В NabiOta® я нашла не просто работу, а призвание, приносящее радость каждый день. Команда невероятно поддерживает, а руководство открывает все возможности для роста.»",
           author: "Анна Мюллер",
           role: "Медицинская сестра, NabiOta® Клиника Берлин",
-          avatar: "/images/careers/anna-mueller.jpg",
+          avatar: "/images/careers/anna-mueller.webp",
         },
         {
           quote:
             "«Междисциплинарный подход, медицина мирового уровня и искреннее человеческое тепло делают работу в NabiOta® по-настоящему особенной.»",
           author: "Д-р мед. Томас Вебер",
           role: "Врач общей практики, NabiOta® Мюнхен",
-          avatar: "/images/careers/anna-mueller.jpg",
+          avatar: "/images/careers/anna-mueller.webp",
         },
         {
           quote:
             "«Инновационные методики восстановления, превосходное оснащение центров и уважение к личному времени специалистов — так и должно выглядеть здравоохранение будущего.»",
           author: "Сара Линдеманн",
           role: "Ведущий физиотерапевт, NabiOta® Гамбург",
-          avatar: "/images/careers/anna-mueller.jpg",
+          avatar: "/images/careers/anna-mueller.webp",
         },
       ],
       cta: {
@@ -547,11 +547,11 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
 
       <main className="flex-1">
         {/* ── SECTION 1: HERO (Unified Format: Compact Dark Forest Green + Doctors + Golden Arcs) ── */}
-        <section className="relative w-full min-h-[440px] sm:min-h-[480px] lg:h-[520px] lg:min-h-[520px] pt-26 sm:pt-30 lg:pt-34 pb-12 sm:pb-14 overflow-hidden flex items-center bg-[#07150C] text-[#FAF8F5] border-b border-[#D5B878]/25">
+        <section className="relative w-full min-h-[480px] sm:min-h-[520px] lg:h-[600px] lg:min-h-[600px] pt-32 sm:pt-36 lg:pt-40 pb-14 sm:pb-16 overflow-hidden flex items-center bg-[#07150C] text-[#FAF8F5] border-b border-[#D5B878]/25">
           {/* Background: Modern Healthcare Professional in scrubs holding tablet - focused on subjects on mobile */}
           <div className="absolute inset-0 lg:left-[18%] lg:w-[82%] z-0 pointer-events-none overflow-hidden">
             <Image
-              src="/images/careers/hero-career-nurse.jpg"
+              src="/images/careers/hero-career-nurse.webp"
               alt="NabiOta Health Group Germany Karriere"
               fill
               priority
@@ -565,13 +565,13 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
           {/* Desktop SVG with Deep Forest Green Shape & Dual Glowing Golden Arcs */}
           <svg
             className="hidden lg:block absolute inset-0 w-full h-full pointer-events-none z-10"
-            viewBox="0 0 1440 520"
+            viewBox="0 0 1440 600"
             preserveAspectRatio="none"
           >
             <defs>
               {/* Clip path for the narrower left wing (620 at top to 800 at bottom) */}
               <clipPath id="careerLeftWingClip">
-                <path d="M 0,0 L 620,0 C 710,160 680,360 800,520 L 0,520 Z" />
+                <path d="M 0,0 L 620,0 C 710,180 680,420 800,600 L 0,600 Z" />
               </clipPath>
 
               <linearGradient id="careerHeroGoldGrad" x1="0" y1="0" x2="0" y2="1">
@@ -604,9 +604,9 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
 
             {/* Botanical Gold Background Image inside the Left Wing */}
             <image
-              href="/images/botanical-gold-bg.jpg"
+              href="/images/botanical-gold-bg.webp"
               width="1440"
-              height="520"
+              height="600"
               preserveAspectRatio="xMidYMid slice"
               clipPath="url(#careerLeftWingClip)"
               opacity="0.75"
@@ -614,13 +614,13 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
 
             {/* Deep Dark Green shading overlay inside the Left Wing for crisp text contrast */}
             <path
-              d="M 0,0 L 620,0 C 710,160 680,360 800,520 L 0,520 Z"
+              d="M 0,0 L 620,0 C 710,180 680,420 800,600 L 0,600 Z"
               fill="url(#careerDarkGreenFill)"
             />
 
             {/* Primary Glowing Golden Separator Arc Line (Narrower position) */}
             <path
-              d="M 620,0 C 710,160 680,360 800,520"
+              d="M 620,0 C 710,180 680,420 800,600"
               stroke="url(#careerHeroGoldGrad)"
               strokeWidth="2"
               fill="none"
@@ -629,7 +629,7 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
 
             {/* Secondary Fine Golden Accent Curve */}
             <path
-              d="M 645,0 C 735,165 705,370 825,520"
+              d="M 645,0 C 735,185 705,430 825,600"
               stroke="url(#careerHeroGoldGradLight)"
               strokeWidth="1"
               fill="none"
@@ -645,7 +645,7 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
           {/* Top-left botanical foliage silhouette */}
           <div className="absolute top-0 left-0 w-52 sm:w-64 lg:w-80 h-52 sm:h-64 lg:h-80 pointer-events-none z-10 opacity-70">
             <Image
-              src="/images/values/leaves-bg.jpg"
+              src="/images/values/leaves-bg.webp"
               alt="Foliage"
               fill
               className="object-contain object-left-top opacity-30 mix-blend-screen"
@@ -756,7 +756,7 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
               <div className="lg:col-span-6 relative">
                 <div className="relative aspect-[16/10] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-[#EDE7D9]">
                   <Image
-                    src="/images/careers/mission-doctors-highres.jpg"
+                    src="/images/careers/mission-doctors-highres.webp"
                     alt="Ärzte und medizinisches Fachpersonal bei NabiOta"
                     fill
                     className="object-cover object-center"
@@ -908,7 +908,7 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
                 <div className="lg:col-span-6 relative">
                   <div className="relative aspect-[16/9] rounded-2xl overflow-hidden shadow-lg border border-white/10">
                     <Image
-                      src="/images/careers/kultur-team-highres.jpg"
+                      src="/images/careers/kultur-team-highres.webp"
                       alt="NabiOta Unternehmenskultur und Team"
                       fill
                       className="object-cover object-center"
@@ -1023,7 +1023,7 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
           {/* Botanical leaf silhouette watermark accents matching About Us Get in Touch */}
           <div className="absolute inset-0 pointer-events-none opacity-20 overflow-hidden mix-blend-screen">
             <Image
-              src="/images/bacground.png"
+              src="/images/bacground.webp"
               alt="Watermark"
               fill
               className="object-cover object-center"

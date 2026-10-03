@@ -114,7 +114,7 @@ export default async function LocalizedAreaDetailPage({ params }: LocalizedAreaD
             </>
           }
           description={area.description}
-          imageSrc={area.image || "/images/heroes/hero-areas.jpg"}
+          imageSrc={area.image || "/images/heroes/hero-areas.webp"}
           badges={areaBadges}
         />
 

@@ -77,7 +77,7 @@ export default async function LocalizedPartnersPage({ params }: LocalizedPartner
           }
           title={dict.split.partners.heading}
           description={dict.split.partners.description}
-          imageSrc="/images/heroes/hero-partners.jpg"
+          imageSrc="/images/heroes/hero-partners.webp"
           imageAlt="NabiOta Health Group Germany Partner"
           badges={partnerBadges}
         />
@@ -87,7 +87,7 @@ export default async function LocalizedPartnersPage({ params }: LocalizedPartner
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-6 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-forest-900/10">
                 <Image
-                  src="/images/partners/atrium.jpg"
+                  src="/images/partners/atrium.webp"
                   alt="Partner und Dialog bei NabiOta"
                   fill
                   className="object-cover"

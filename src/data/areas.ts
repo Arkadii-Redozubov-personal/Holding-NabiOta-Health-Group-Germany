@@ -10,7 +10,7 @@ export const businessAreas: BusinessArea[] = [
       "Umfassende ambulante Versorgung durch spezialisierte Facharztzentren, von Allgemeinmedizin bis hin zu chirurgischen Spitzenleistungen.",
     fullDescription:
       "Die medizinischen Fachbereiche der NabiOta® Gruppe verbinden hausärztliche Grundversorgung mit hochspezialisierten chirurgischen Zentren. In unseren Facharztzentren decken wir Orthopädie, Neurochirurgie, plastische Chirurgie sowie Allgemeinchirurgie nach höchsten deutschen Qualitätsstandards ab.",
-    image: "/images/areas/medical-departments.jpg",
+    image: "/images/areas/medical-departments.webp",
     iconName: "Stethoscope",
     stats: [
       { value: "4+", label: "Chirurgische Schwerpunkte" },
@@ -40,7 +40,7 @@ export const businessAreas: BusinessArea[] = [
       "Hochmoderne bildgebende Diagnostik mit CT, MRT und digitalem Röntgen für frühzeitige und exakte therapeutische Entscheidungen.",
     fullDescription:
       "Die NabiOta® Diagnostics GmbH bietet modernste Bildgebung auf Universitätsniveau. Mit Niedrigdosis-CT, High-Field-MRT und volldigitalem Röntgen liefern wir präzise Schnittbilder für fundierte medizinische Diagnosen und individuelle Therapieentscheidungen.",
-    image: "/images/areas/diagnostics.jpg",
+    image: "/images/areas/diagnostics.webp",
     iconName: "Microscope",
     stats: [
       { value: "3T", label: "MRT-Magnetfeldstärke" },
@@ -70,7 +70,7 @@ export const businessAreas: BusinessArea[] = [
       "Individuelle Therapiekonzepte zur Wiederherstellung von Mobilität, Leistungsfähigkeit und nachhaltiger Lebensqualität.",
     fullDescription:
       "Unser Rehabilitations- und Therapiezentrum begleitet Patienten nach operativen Eingriffen, Unfällen oder bei chronischen Leiden. Mit evidenzbasierten Methoden, modernster Gerätetechnik und persönlicher Betreuung stellen wir Ihre körperliche Unabhängigkeit wieder her.",
-    image: "/images/areas/rehabilitation.jpg",
+    image: "/images/areas/rehabilitation.webp",
     iconName: "HeartPulse",
     stats: [
       { value: "1:1", label: "Individuelle Therapiebetreuung" },
@@ -100,7 +100,7 @@ export const businessAreas: BusinessArea[] = [
       "Qualifizierte ambulante Pflege und HomeCare im vertrauten häuslichen Umfeld – mit Würde, Empathie und Zuverlässigkeit.",
     fullDescription:
       "Die NabiOta® HomeCare GmbH sichert eine verlässliche Pflegeversorgung zu Hause. Unser Pflegeansatz basiert auf Respekt vor der Würde des Menschen und entlastet Angehörige nachhaltig durch professionelle medizinische Behandlungspflege und Grundpflege.",
-    image: "/images/areas/pflege.jpg",
+    image: "/images/areas/pflege.webp",
     iconName: "Users",
     stats: [
       { value: "24/7", label: "Erreichbarkeit im Notfall" },
@@ -130,7 +130,7 @@ export const businessAreas: BusinessArea[] = [
       "Konzeption, Bau und Management moderner Gesundheitsimmobilien und Versorgungszentren mit wirtschaftlicher Nachhaltigkeit.",
     fullDescription:
       "Hervorgegangen aus der Medical A-Z Consulting GmbH bündelt dieser Bereich jahrzehntelange Erfahrung in der Gesundheitsberatung. Wir entwickeln tragfähige MVZ-Strukturen, konzipieren Ärztehäuser und begleiten Betreibergesellschaften von der Standortanalyse bis zur profitablen Betriebsführung.",
-    image: "/images/areas/consulting.jpg",
+    image: "/images/areas/consulting.webp",
     iconName: "Network",
     stats: [
       { value: "15+", label: "Jahre Marktexpertise" },
@@ -160,7 +160,7 @@ export const businessAreas: BusinessArea[] = [
       "Brückenbau im globalen Gesundheitswesen: Telemedizin, medizinischer Fachaustausch und internationale Fachkräfteprojekte.",
     fullDescription:
       "Gesundheit kennt keine Grenzen. NabiOta® fördert aktiv internationale Kooperationen zwischen führenden Kliniken, Universitäten und Gesundheitsdienstleistern weltweit. Wir erleichtern den weltweiten Wissenstransfer und organisieren grenzüberschreitende telemedizinische Zweitmeinungen.",
-    image: "/images/areas/international.jpg",
+    image: "/images/areas/international.webp",
     iconName: "Globe",
     stats: [
       { value: "12+", label: "Länder im Netzwerk" },

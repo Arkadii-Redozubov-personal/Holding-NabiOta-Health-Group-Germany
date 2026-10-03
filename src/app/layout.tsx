@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/hero/campus.jpg",
+        url: "/images/hero/campus.webp",
         width: 1200,
         height: 630,
         alt: companyInfo.name,
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: companyInfo.name,
     description: companyInfo.slogan,
-    images: ["/images/hero/campus.jpg"],
+    images: ["/images/hero/campus.webp"],
   },
   robots: {
     index: true,

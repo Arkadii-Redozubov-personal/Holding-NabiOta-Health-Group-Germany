@@ -84,7 +84,7 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
               ? "Information pursuant to § 5 Telemedia Act (TMG) and § 18 para. 2 Interstate Media Treaty (MStV)."
               : "Angaben gemäß § 5 Telemediengesetz (TMG) und § 18 Abs. 2 Medienstaatsvertrag (MStV)."
           }
-          imageSrc="/images/heroes/hero-campus.jpg"
+          imageSrc="/images/heroes/hero-campus.webp"
           imageAlt="NabiOta Health Group Germany Impressum"
           badges={imprintBadges}
         />

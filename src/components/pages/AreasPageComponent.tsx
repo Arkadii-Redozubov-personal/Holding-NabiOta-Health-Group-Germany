@@ -229,7 +229,7 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
     {
       id: "med-departments",
       icon: Stethoscope,
-      image: "/images/areas/medical-departments.jpg",
+      image: "/images/areas/medical-departments.webp",
       href: `/${locale}/areas/medizinische-fachbereiche`,
       title: isRu ? "Медицинские отделения" : isEn ? "Medical Departments" : "Medizinische Fachbereiche",
       desc: isRu
@@ -241,7 +241,7 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
     {
       id: "diagnostics",
       icon: Microscope,
-      image: "/images/areas/diagnostics.jpg",
+      image: "/images/areas/diagnostics.webp",
       href: `/${locale}/areas/diagnostik`,
       title: isRu ? "Диагностика" : isEn ? "Diagnostics" : "Diagnostik",
       desc: isRu
@@ -253,7 +253,7 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
     {
       id: "rehabilitation",
       icon: HeartPulse,
-      image: "/images/areas/rehabilitation.jpg",
+      image: "/images/areas/rehabilitation.webp",
       href: `/${locale}/areas/rehabilitation`,
       title: isRu ? "Реабилитация" : isEn ? "Rehabilitation" : "Rehabilitation",
       desc: isRu
@@ -265,7 +265,7 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
     {
       id: "pflege",
       icon: Users,
-      image: "/images/areas/pflege.jpg",
+      image: "/images/areas/pflege.webp",
       href: `/${locale}/areas/pflege`,
       title: isRu ? "Уход и патронаж" : isEn ? "Care for Seniors" : "Pflege",
       desc: isRu
@@ -277,7 +277,7 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
     {
       id: "consulting",
       icon: Briefcase,
-      image: "/images/areas/consulting.jpg",
+      image: "/images/areas/consulting.webp",
       href: `/${locale}/areas/beratung-projektentwicklung`,
       title: isRu ? "Консалтинг и девелопмент" : isEn ? "Consulting & Project Development" : "Beratung & Projektentwicklung",
       desc: isRu
@@ -289,7 +289,7 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
     {
       id: "international",
       icon: Globe,
-      image: "/images/areas/international.jpg",
+      image: "/images/areas/international.webp",
       href: `/${locale}/areas/internationale-kooperationen`,
       title: isRu ? "Международное сотрудничество" : isEn ? "International Cooperation" : "Internationale Kooperationen",
       desc: isRu
@@ -352,7 +352,7 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
         id: 1,
         name: "Anna Müller",
         role: isRu ? "Пациентка, Ортопедия" : isEn ? "Patient, Orthopedics" : "Patient, Orthopedics",
-        photo: "/images/testimonials/anna-mueller.jpg",
+        photo: "/images/testimonials/anna-mueller.webp",
         quote: isRu
           ? "Врачи и медицинский персонал были невероятно профессиональны и заботливы. Я чувствовала искреннюю поддержку на каждом этапе — от первой диагностики до полного выздоровления. Безмерно благодарна за их чуткость и экспертность."
           : isEn
@@ -363,7 +363,7 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
         id: 2,
         name: "Thomas Becker",
         role: isRu ? "Пациент, Кардиология" : isEn ? "Patient, Cardiology" : "Patient, Cardiology",
-        photo: "/images/testimonials/thomas-becker.jpg",
+        photo: "/images/testimonials/thomas-becker.webp",
         quote: isRu
           ? "Уровень медицинской помощи превзошел все ожидания. Особенно ценю четкий, структурированный и по-настоящему человечный подход команды к лечению."
           : isEn
@@ -374,7 +374,7 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
         id: 3,
         name: "Elena Fischer",
         role: isRu ? "Пациентка, Реабилитация" : isEn ? "Patient, Rehabilitation" : "Patient, Rehabilitation",
-        photo: "/images/testimonials/elena-fischer.jpg",
+        photo: "/images/testimonials/elena-fischer.webp",
         quote: isRu
           ? "После операции восстановительный процесс прошел быстро и без осложнений. Индивидуальный план тренировок и поддержка физиотерапевтов вернули мне радость активной жизни."
           : isEn
@@ -431,7 +431,7 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
         title={heroData.title}
         description={heroData.description}
         badges={heroData.badges}
-        imageSrc="/images/heroes/hero-areas.jpg"
+        imageSrc="/images/heroes/hero-areas.webp"
         imageAlt="NabiOta Health Group Germany Unternehmensbereiche"
       />
 
@@ -444,7 +444,7 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
           {/* Top-Right Botanical Foliage Accent matching Photo 1 */}
           <div className="absolute -top-3 -right-3 w-52 sm:w-64 md:w-80 lg:w-[420px] h-52 sm:h-64 md:h-80 lg:h-[420px] pointer-events-none z-0 opacity-85 select-none">
             <Image
-              src="/images/areas/botanical-branch-clean.png"
+              src="/images/areas/botanical-branch-clean.webp"
               alt="Botanical Foliage"
               fill
               className="object-contain object-top-right"
@@ -592,7 +592,7 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
               {/* 1. Left Hospital Campus Photo with soft blurred right edge (smooth transition into dark forest) */}
               <div className="relative lg:absolute lg:left-0 lg:top-0 lg:bottom-0 w-full lg:w-[46%] xl:w-[48%] h-56 sm:h-72 lg:h-full overflow-hidden shrink-0">
                 <Image
-                  src="/images/hero/campus.jpg"
+                  src="/images/hero/campus.webp"
                   alt="NabiOta Healthcare Campus"
                   fill
                   className="object-cover object-left"
@@ -886,7 +886,7 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
         {/* ══════════════════════════════════════════════════════════
             SECTION 4: PRE-FOOTER CTA BANNER WITH MOUNTAINS (PHOTO 2)
             - Full-width panoramic container
-            - Mountains landscape background (/images/values/mountains-bg.jpg)
+            - Mountains landscape background (/images/values/mountains-bg.webp)
             - Gold top & bottom accent borders (border-y border-[#D5B878]/60)
             - Left: GET IN TOUCH + Ihre Gesundheit ist unsere Mission.
             - Center: Haben Sie Fragen zu unseren Fachbereichen...
@@ -896,7 +896,7 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
           {/* Mountains Background Image */}
           <div className="absolute inset-0 pointer-events-none">
             <Image
-              src="/images/values/mountains-bg.jpg"
+              src="/images/values/mountains-bg.webp"
               alt="Mountain Forest Landscape"
               fill
               className="object-cover object-[center_60%]"

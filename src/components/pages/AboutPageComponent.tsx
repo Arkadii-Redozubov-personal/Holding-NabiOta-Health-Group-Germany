@@ -394,7 +394,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
           {/* Background: Modern Medical Doctors Team on the right - focused on doctors on mobile */}
           <div className="absolute inset-0 lg:left-[18%] lg:w-[82%] z-0 pointer-events-none overflow-hidden">
             <Image
-              src="/images/about/hero-doctors.jpg"
+              src="/images/about/hero-doctors.webp"
               alt="NabiOta Health Group Germany Team"
               fill
               priority
@@ -447,7 +447,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
 
             {/* Botanical Gold Background Image inside the Left Wing */}
             <image
-              href="/images/botanical-gold-bg.jpg"
+              href="/images/botanical-gold-bg.webp"
               width="1440"
               height="600"
               preserveAspectRatio="xMidYMid slice"
@@ -566,7 +566,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
           {/* Background: photo1.png from public/images/about/ */}
           <div className="absolute inset-0 z-0 pointer-events-none">
             <Image
-              src="/images/about/photo1.png"
+              src="/images/about/photo1.webp"
               alt="Organizational background"
               fill
               priority
@@ -659,7 +659,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
               {/* Left: Doctor-Patient Photo */}
               <div className="lg:col-span-6 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-[#EDE7D9] bg-white">
                 <Image
-                  src="/images/about/doctor-patient.jpg"
+                  src="/images/about/doctor-patient.webp"
                   alt="Ärztliche Betreuung bei NabiOta Health Group"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -816,7 +816,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
           {/* Background: photo2.png from public/images/about/ */}
           <div className="absolute inset-0 z-0 pointer-events-none">
             <Image
-              src="/images/about/photo2.png"
+              src="/images/about/photo2.webp"
               alt="Values background"
               fill
               priority
@@ -908,7 +908,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
           {/* Botanical leaf silhouette watermark accents */}
           <div className="absolute inset-0 pointer-events-none opacity-20 overflow-hidden mix-blend-screen">
             <Image
-              src="/images/bacground.png"
+              src="/images/bacground.webp"
               alt="Watermark"
               fill
               className="object-cover object-center"

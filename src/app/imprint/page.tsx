@@ -39,7 +39,7 @@ export default function ImprintPage() {
           eyebrow="RECHTLICHE PFLICHTANGABEN"
           title="Impressum"
           description="Angaben gemäß § 5 Telemediengesetz (TMG) und § 18 Abs. 2 Medienstaatsvertrag (MStV)."
-          imageSrc="/images/heroes/hero-campus.jpg"
+          imageSrc="/images/heroes/hero-campus.webp"
           imageAlt="NabiOta Health Group Germany Impressum"
           badges={imprintBadges}
         />

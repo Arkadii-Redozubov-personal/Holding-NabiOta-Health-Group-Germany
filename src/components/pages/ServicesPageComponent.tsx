@@ -128,7 +128,7 @@ export function ServicesPageComponent({ locale = "de" }: ServicesPageComponentPr
               sub: locale === "ru" ? "сеть экспертов" : locale === "en" ? "network" : "Kompetenz",
             },
           ]}
-          imageSrc="/images/heroes/hero-services.jpg"
+          imageSrc="/images/heroes/hero-services.webp"
           imageAlt="NabiOta Health Group Germany Leistungen"
         />
 

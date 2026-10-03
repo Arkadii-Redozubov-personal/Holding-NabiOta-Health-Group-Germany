@@ -43,7 +43,7 @@ export function PartnersCareerSection({ currentLocale = "de" }: PartnersCareerSe
             {/* Right image column with atrium photo & slogan overlay */}
             <div className="w-full sm:w-[45%] xl:w-[44%] relative min-h-[220px] sm:min-h-full overflow-hidden flex-shrink-0 bg-neutral-100">
               <Image
-                src="/images/partners/atrium.jpg"
+                src="/images/partners/atrium.webp"
                 alt="Kooperationspartner im medizinischen Atrium"
                 fill
                 sizes="(max-width: 1024px) 100vw, 35vw"
@@ -120,7 +120,7 @@ export function PartnersCareerSection({ currentLocale = "de" }: PartnersCareerSe
             {/* Right image column with medical team photo */}
             <div className="w-full sm:w-[45%] xl:w-[44%] relative min-h-[220px] sm:min-h-full overflow-hidden flex-shrink-0 bg-[#0C2417]">
               <Image
-                src="/images/careers/team.jpg"
+                src="/images/careers/team.webp"
                 alt="Medizinisches Team der NabiOta Health Group"
                 fill
                 sizes="(max-width: 1024px) 100vw, 35vw"

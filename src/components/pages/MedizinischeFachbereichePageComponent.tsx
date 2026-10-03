@@ -366,7 +366,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
           : isEn
           ? "Lead specialist in comprehensive internal medicine and non-invasive cardiovascular diagnostics with over 15 years of experience."
           : "Leitende Fachärztin für Innere Medizin und nicht-invasive Kardiologie mit über 15 Jahren fundierter klinischer Erfahrung.",
-        image: "/images/areas/doc-anna-keller.jpg",
+        image: "/images/areas/doc-anna-keller.webp",
       },
       {
         name: isRu ? "Проф. д-р Михаэль Вебер" : "Prof. Dr. Michael Weber",
@@ -376,7 +376,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
           : isEn
           ? "Renowned specialist in general and minimally invasive surgery, leading our interdisciplinary surgical center."
           : "Renommierter Experte für Allgemein- und minimalinvasive Chirurgie, Leitung unseres operativen Facharztzentrums.",
-        image: "/images/areas/doc-michael-weber.jpg",
+        image: "/images/areas/doc-michael-weber.webp",
       },
       {
         name: isRu ? "Д-р мед. Сара Хоффманн" : "Dr. med. Sarah Hoffmann",
@@ -386,7 +386,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
           : isEn
           ? "Specialist in clinical neurology, neurodiagnostics, and individual therapy concepts for neurological health."
           : "Fachärztin für Neurologie mit Schwerpunkt auf moderner Neurodiagnostik und ganzheitlichen Therapiekonzepten.",
-        image: "/images/areas/doc-sarah-hoffmann.jpg",
+        image: "/images/areas/doc-sarah-hoffmann.webp",
       },
     ],
   };
@@ -435,23 +435,19 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
           </>
         }
         description={heroData.description}
-        imageSrc={area.image || "/images/heroes/hero-areas.jpg"}
+        imageSrc={area.image || "/images/heroes/hero-areas.webp"}
         imageAlt="Medizinische Fachbereiche NabiOta Health Group"
         badges={heroData.badges}
       />
 
       <main className="flex-1 bg-[#FAF8F5]">
         {/* ══════════════════════════════════════════════════════════
-            SECTION 1 (PHOTO 4 MOVED TO TOP): OVERVIEW & CORE CAPABILITIES
-            - "фото 4 страница медицинского направления эту часть перенеси вверх"
-            - Header row: Eyebrow, Title, Description
-            - 2-Column Grid: Core Capabilities & Group Advantages
-            - Stats Badges
+            SECTION 1: OVERVIEW HEADER (EYEBROW + TITLE + DESCRIPTION)
+            - "вот эту часть отсаедеине от контейнера и оставь сверху"
         ══════════════════════════════════════════════════════════ */}
-        <section className="pt-10 sm:pt-14 pb-12 sm:pb-16 bg-[#FAF8F5]">
+        <section className="pt-10 sm:pt-14 pb-8 sm:pb-10 bg-[#FAF8F5]">
           <Container size="wide">
-            {/* Header row */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end mb-10 sm:mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end">
               <div className="lg:col-span-6 space-y-2">
                 <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
                   {overviewData.eyebrow}
@@ -466,8 +462,132 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                 </p>
               </div>
             </div>
+          </Container>
+        </section>
 
-            {/* 2-Column Cards: Capabilities on Left, Advantages & Stats on Right */}
+        {/* ══════════════════════════════════════════════════════════
+            SECTION 2: SPOTLIGHT KARDIOLOGIE
+            - "а под ней должна сразу быть часть Кардиология — точность для здорового сердца"
+            - Left: Ultrasound doctor photo with floating card
+            - Right: Heart contour background, Eyebrow, Title, Description, 3 feature icons, Link
+        ══════════════════════════════════════════════════════════ */}
+        <section className="py-10 sm:py-14 lg:py-16 bg-[#FAF8F5] relative overflow-hidden border-t border-[#EDE8DE]/60">
+          {/* Subtle Decorative Heart Contour & Wavy Gold Line in Top-Right */}
+          <div className="absolute top-4 sm:top-8 right-6 sm:right-16 w-60 sm:w-80 h-60 sm:h-80 pointer-events-none opacity-45 z-0">
+            <svg
+              viewBox="0 0 200 200"
+              fill="none"
+              className="w-full h-full text-[#D5B878]"
+            >
+              {/* Delicate Heart Silhouette */}
+              <path
+                d="M100 65 C85 30, 42 35, 42 75 C42 115, 100 155, 100 155 C100 155, 158 115, 158 75 C158 35, 115 30, 100 65 Z"
+                stroke="currentColor"
+                strokeWidth="1.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              {/* Smooth Elegant Flow Line */}
+              <path
+                d="M10 110 Q 60 70, 100 115 T 195 105"
+                stroke="#C5A56A"
+                strokeWidth="0.8"
+                opacity="0.6"
+              />
+            </svg>
+          </div>
+
+          <Container size="wide" className="relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              {/* Left Column: Ultrasound Photo + Floating Bottom Pill Badge */}
+              <div className="lg:col-span-6 relative">
+                <div className="relative aspect-[16/10] sm:aspect-[16/10.5] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-[#EDE8DE]">
+                  <Image
+                    src="/images/areas/cardiology-focus.webp"
+                    alt={spotlight.title}
+                    fill
+                    className="object-cover object-center"
+                    priority
+                  />
+                  {/* Subtle vignette on bottom for card contrast */}
+                  <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+
+                  {/* Floating Pill Overlay Card */}
+                  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-auto sm:max-w-md bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-full px-4 sm:px-5 py-2.5 sm:py-3 shadow-lg flex items-center justify-between gap-3 border border-white/60">
+                    <div className="flex items-center gap-3 min-w-0">
+                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#0C1C11] border border-[#D5B878]/60 flex items-center justify-center text-[#ECCF96] shadow-sm shrink-0">
+                        <CloverEmblemIcon className="w-4.5 h-4.5 stroke-[1.6]" />
+                      </div>
+                      <div className="min-w-0">
+                        <h4 className="text-[13.5px] sm:text-[14px] font-bold text-[#142318] truncate leading-tight">
+                          {spotlight.pillTitle}
+                        </h4>
+                        <p className="text-[11px] text-[#6E756D] truncate font-sans mt-0.5">
+                          {spotlight.pillSubtitle}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#142318]/15 bg-white flex items-center justify-center text-[#142318] hover:bg-[#D5B878] hover:border-[#D5B878] hover:text-[#0C1C11] transition-all shrink-0 ml-1">
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Title, Description, 3 Badges, Link */}
+              <div className="lg:col-span-6 space-y-4 sm:space-y-5 lg:pl-2">
+                <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
+                  {spotlight.eyebrow}
+                </span>
+
+                <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] text-[#132218] font-normal leading-[1.18] whitespace-pre-line">
+                  {spotlight.title}
+                </h2>
+
+                <p className="text-xs sm:text-[13.5px] text-[#556358] leading-relaxed font-sans max-w-lg">
+                  {spotlight.desc}
+                </p>
+
+                {/* 3 Horizontal Badges with Gold Outline Icons */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2 sm:pt-3">
+                  {spotlight.features.map((feat, idx) => {
+                    const FeatureIcon = feat.icon;
+                    return (
+                      <div key={idx} className="flex items-center gap-2.5">
+                        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D5B878] bg-[#FAF8F5] flex items-center justify-center text-[#B89650] shrink-0 shadow-sm">
+                          <FeatureIcon className="w-4 h-4 stroke-[1.6]" />
+                        </div>
+                        <span className="text-[11.5px] sm:text-xs font-medium text-[#425046] leading-snug">
+                          {feat.label}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Link with underline and arrow */}
+                <div className="pt-2 sm:pt-4">
+                  <Link
+                    href={`/${locale}/contact`}
+                    className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-semibold text-[#142318] hover:text-[#B89650] underline decoration-[#D5B878] underline-offset-4 transition-colors"
+                  >
+                    <span>{spotlight.linkText}</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* ══════════════════════════════════════════════════════════
+            SECTION 3: CORE CAPABILITIES & GROUP ADVANTAGES CARDS
+            - 2-Column Grid: Core Capabilities & Group Advantages
+            - Stats Badges
+        ══════════════════════════════════════════════════════════ */}
+        <section className="py-10 sm:py-14 lg:py-16 bg-[#FAF8F5] border-t border-[#EDE8DE]/60">
+          <Container size="wide">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
               {/* Card 1: Core Capabilities */}
               <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-[#EDE8DE] shadow-[0_4px_20px_rgba(0,0,0,0.02)] flex flex-col justify-between">
@@ -547,122 +667,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
         </section>
 
         {/* ══════════════════════════════════════════════════════════
-            SECTION 2: SPOTLIGHT KARDIOLOGIE
-            - Left: Ultrasound doctor photo with floating card
-            - Right: Heart contour background, Eyebrow, Title, Description, 3 feature icons, Link
-        ══════════════════════════════════════════════════════════ */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-[#FAF8F5] relative overflow-hidden border-t border-[#EDE8DE]/60">
-          {/* Subtle Decorative Heart Contour & Wavy Gold Line in Top-Right */}
-          <div className="absolute top-4 sm:top-8 right-6 sm:right-16 w-60 sm:w-80 h-60 sm:h-80 pointer-events-none opacity-45 z-0">
-            <svg
-              viewBox="0 0 200 200"
-              fill="none"
-              className="w-full h-full text-[#D5B878]"
-            >
-              {/* Delicate Heart Silhouette */}
-              <path
-                d="M100 65 C85 30, 42 35, 42 75 C42 115, 100 155, 100 155 C100 155, 158 115, 158 75 C158 35, 115 30, 100 65 Z"
-                stroke="currentColor"
-                strokeWidth="1.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              {/* Smooth Elegant Flow Line */}
-              <path
-                d="M10 110 Q 60 70, 100 115 T 195 105"
-                stroke="#C5A56A"
-                strokeWidth="0.8"
-                opacity="0.6"
-              />
-            </svg>
-          </div>
-
-          <Container size="wide" className="relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-              {/* Left Column: Ultrasound Photo + Floating Bottom Pill Badge */}
-              <div className="lg:col-span-6 relative">
-                <div className="relative aspect-[16/10] sm:aspect-[16/10.5] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-[#EDE8DE]">
-                  <Image
-                    src="/images/areas/cardiology-focus.jpg"
-                    alt={spotlight.title}
-                    fill
-                    className="object-cover object-center"
-                    priority
-                  />
-                  {/* Subtle vignette on bottom for card contrast */}
-                  <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
-
-                  {/* Floating Pill Overlay Card */}
-                  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-auto sm:max-w-md bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-full px-4 sm:px-5 py-2.5 sm:py-3 shadow-lg flex items-center justify-between gap-3 border border-white/60">
-                    <div className="flex items-center gap-3 min-w-0">
-                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#0C1C11] border border-[#D5B878]/60 flex items-center justify-center text-[#ECCF96] shadow-sm shrink-0">
-                        <CloverEmblemIcon className="w-4.5 h-4.5 stroke-[1.6]" />
-                      </div>
-                      <div className="min-w-0">
-                        <h4 className="text-[13.5px] sm:text-[14px] font-bold text-[#142318] truncate leading-tight">
-                          {spotlight.pillTitle}
-                        </h4>
-                        <p className="text-[11px] text-[#6E756D] truncate font-sans mt-0.5">
-                          {spotlight.pillSubtitle}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#142318]/15 bg-white flex items-center justify-center text-[#142318] hover:bg-[#D5B878] hover:border-[#D5B878] hover:text-[#0C1C11] transition-all shrink-0 ml-1">
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Column: Title, Description, 3 Badges, Link */}
-              <div className="lg:col-span-6 space-y-4 sm:space-y-5 lg:pl-2">
-                <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
-                  {spotlight.eyebrow}
-                </span>
-
-                <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] text-[#132218] font-normal leading-[1.18] whitespace-pre-line">
-                  {spotlight.title}
-                </h2>
-
-                <p className="text-xs sm:text-[13.5px] text-[#556358] leading-relaxed font-sans max-w-lg">
-                  {spotlight.desc}
-                </p>
-
-                {/* 3 Horizontal Badges with Gold Outline Icons */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2 sm:pt-3">
-                  {spotlight.features.map((feat, idx) => {
-                    const FeatureIcon = feat.icon;
-                    return (
-                      <div key={idx} className="flex items-center gap-2.5">
-                        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D5B878] bg-[#FAF8F5] flex items-center justify-center text-[#B89650] shrink-0 shadow-sm">
-                          <FeatureIcon className="w-4 h-4 stroke-[1.6]" />
-                        </div>
-                        <span className="text-[11.5px] sm:text-xs font-medium text-[#425046] leading-snug">
-                          {feat.label}
-                        </span>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {/* Link with underline and arrow */}
-                <div className="pt-2 sm:pt-4">
-                  <Link
-                    href={`/${locale}/contact`}
-                    className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-semibold text-[#142318] hover:text-[#B89650] underline decoration-[#D5B878] underline-offset-4 transition-colors"
-                  >
-                    <span>{spotlight.linkText}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
-
-        {/* ══════════════════════════════════════════════════════════
-            SECTION 3 (PHOTO 1): WARUM NABIOTA? MEHR ALS MEDIZIN.
+            SECTION 4 (PHOTO 1): WARUM NABIOTA? MEHR ALS MEDIZIN.
             - "страница мед направления сделай слева фон листочка возьми из фото сделай больше иконки и приведи этот блок в порядок"
             - Full-width edge-to-edge
             - Left: Delicate botanical branch watermark on left edge + Eyebrow + Title + Desc + Gold button
@@ -673,7 +678,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
           {/* Delicate Botanical Leaf Watermark on Left Edge (Photo 1) */}
           <div className="absolute -left-6 sm:-left-10 -top-8 sm:-top-12 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 pointer-events-none opacity-20 md:opacity-25 select-none z-10 mix-blend-screen">
             <Image
-              src="/images/areas/botanical-branch-clean.png"
+              src="/images/areas/botanical-branch-clean.webp"
               alt="Botanical Foliage"
               fill
               className="object-contain object-top-left -scale-x-100"
@@ -730,7 +735,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
             {/* Right Side: Hospital Atrium Lounge Photo extending to far right edge */}
             <div className="w-full lg:w-[30%] xl:w-[33%] relative min-h-[260px] sm:min-h-[320px] lg:min-h-full shrink-0">
               <Image
-                src="/images/areas/atrium-lounge.jpg"
+                src="/images/areas/atrium-lounge.webp"
                 alt="NabiOta Atrium Lounge"
                 fill
                 className="object-cover object-center"
@@ -744,7 +749,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
         </section>
 
         {/* ══════════════════════════════════════════════════════════
-            SECTION 4 (PHOTO 2): UNSER TEAM
+            SECTION 5 (PHOTO 2): UNSER TEAM
             - "фото 2 сделай карточки докторов больше и с небольшим описанием"
             - Light cream background with botanical watermark in top-left
             - Left: Header content
@@ -754,7 +759,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
           {/* Top-Left Botanical Watermark Accent (Photo 2) */}
           <div className="absolute -top-4 -left-4 w-52 sm:w-72 md:w-88 h-52 sm:h-72 md:h-88 pointer-events-none opacity-85 z-0 select-none">
             <Image
-              src="/images/areas/botanical-branch-clean.png"
+              src="/images/areas/botanical-branch-clean.webp"
               alt="Botanical Foliage"
               fill
               className="object-contain object-top-left -scale-x-100"
@@ -844,7 +849,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
         {/* ══════════════════════════════════════════════════════════
             SECTION 4 (PHOTO 4): PRE-FOOTER MOUNTAIN CTA BANNER
             - Full-width panoramic container with gold borders
-            - Mountains landscape background (/images/values/mountains-bg.jpg)
+            - Mountains landscape background (/images/values/mountains-bg.webp)
             - Right: delicate botanical leaf watermark in gold
             - Left: GESUNDHEIT BEGINNT MIT VERTRAUEN + Sie haben Fragen...
             - Right: Kontakt aufnehmen →
@@ -853,7 +858,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
           {/* Mountains Background Image */}
           <div className="absolute inset-0 pointer-events-none">
             <Image
-              src="/images/values/mountains-bg.jpg"
+              src="/images/values/mountains-bg.webp"
               alt="Mountain Forest Landscape"
               fill
               className="object-cover object-[center_60%]"
@@ -866,7 +871,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
           {/* Right Gold Botanical Leaf Silhouette Watermark (Photo 4) */}
           <div className="absolute right-0 top-0 bottom-0 w-64 sm:w-96 pointer-events-none opacity-20 overflow-hidden mix-blend-screen">
             <Image
-              src="/images/bacground.png"
+              src="/images/bacground.webp"
               alt="Watermark"
               fill
               className="object-cover object-right"

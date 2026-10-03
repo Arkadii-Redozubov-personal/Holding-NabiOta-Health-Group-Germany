@@ -94,7 +94,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
             </>
           }
           description={service.shortDescription}
-          imageSrc={service.image || "/images/heroes/hero-services.jpg"}
+          imageSrc={service.image || "/images/heroes/hero-services.webp"}
           badges={serviceBadges}
         />
 

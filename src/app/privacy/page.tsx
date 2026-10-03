@@ -39,7 +39,7 @@ export default function PrivacyPage() {
           eyebrow="DATENSCHUTZ & TRANSPARENZ"
           title="Datenschutzerklärung"
           description="Informationen über die Art, den Umfang und Zweck der Verarbeitung von personenbezogenen Daten."
-          imageSrc="/images/heroes/hero-campus.jpg"
+          imageSrc="/images/heroes/hero-campus.webp"
           imageAlt="NabiOta Health Group Germany Datenschutz"
           badges={privacyBadges}
         />

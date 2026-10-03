@@ -113,7 +113,7 @@ export default async function LocalizedServiceDetailPage({ params }: LocalizedSe
             </>
           }
           description={service.shortDescription}
-          imageSrc={service.image || "/images/heroes/hero-services.jpg"}
+          imageSrc={service.image || "/images/heroes/hero-services.webp"}
           badges={serviceBadges}
         />
 

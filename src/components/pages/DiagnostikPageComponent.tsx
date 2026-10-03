@@ -126,7 +126,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
     subtitle: "Präzisionstechnologie für fundierte Befunde",
     description:
       "Hochmoderne bildgebende Diagnostik mit CT, MRT und digitalem Röntgen für frühzeitige und exakte therapeutische Entscheidungen.",
-    image: "/images/services/diagnostik.jpg",
+    image: "/images/services/diagnostik.webp",
   };
 
   // ── Hero Content ──
@@ -171,7 +171,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : isEn
         ? "High-resolution imaging for detailed diagnosis."
         : "Hochauflösende Bilder für eine detaillierte Diagnose.",
-      image: "/images/diagnostik/modality-mrt.jpg",
+      image: "/images/diagnostik/modality-mrt.webp",
       icon: MriScannerIcon,
     },
     {
@@ -182,7 +182,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : isEn
         ? "Fast and precise cross-sectional imaging."
         : "Schnelle und präzise Querschnittsbilder.",
-      image: "/images/diagnostik/modality-ct.jpg",
+      image: "/images/diagnostik/modality-ct.webp",
       icon: CtScannerIcon,
     },
     {
@@ -193,7 +193,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : isEn
         ? "Gentle, reliable, and versatile application."
         : "Schonend, zuverlässig und vielseitig einsetzbar.",
-      image: "/images/diagnostik/modality-ultraschall.jpg",
+      image: "/images/diagnostik/modality-ultraschall.webp",
       icon: UltrasoundWaveIcon,
     },
     {
@@ -204,7 +204,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : isEn
         ? "Rapid examination with minimal radiation exposure."
         : "Schnelle Untersuchung mit geringer Strahlenbelastung.",
-      image: "/images/diagnostik/modality-roentgen.jpg",
+      image: "/images/diagnostik/modality-roentgen.webp",
       icon: XrayPulseIcon,
     },
     {
@@ -215,7 +215,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : isEn
         ? "Crucial biomarker values for exact diagnosis."
         : "Wichtige Werte für eine exakte Diagnose.",
-      image: "/images/diagnostik/modality-labor.jpg",
+      image: "/images/diagnostik/modality-labor.webp",
       icon: TestTubesIcon,
     },
     {
@@ -226,7 +226,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : isEn
         ? "For a healthy heart and strong circulation."
         : "Für ein gesundes Herz und einen starken Kreislauf.",
-      image: "/images/diagnostik/modality-kardio.jpg",
+      image: "/images/diagnostik/modality-kardio.webp",
       icon: HeartCardioIcon,
     },
   ];
@@ -334,8 +334,8 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : "Die professionelle und einfühlsame Betreuung hat mir sehr geholfen. Dank der schnellen und präzisen Diagnostik konnte die richtige Therapie rasch eingeleitet werden.",
       author: "Anna Müller",
       role: isRu ? "Пациентка" : isEn ? "Patient" : "Patientin",
-      patientImage: "/images/diagnostik/patient-anna.jpg",
-      scanImage: "/images/diagnostik/scan-review.jpg",
+      patientImage: "/images/diagnostik/patient-anna.webp",
+      scanImage: "/images/diagnostik/scan-review.webp",
     },
     {
       quote: isRu
@@ -345,8 +345,8 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : "Beeindruckende Bildauflösung des 3-Tesla-MRT und verständliche Erläuterung aller Befunde durch den Radiologen. Höchste Sicherheit.",
       author: "Thomas Becker",
       role: isRu ? "Пациент" : isEn ? "Patient" : "Patient",
-      patientImage: "/images/testimonials/thomas-becker.jpg",
-      scanImage: "/images/services/diagnostik.jpg",
+      patientImage: "/images/testimonials/thomas-becker.webp",
+      scanImage: "/images/services/diagnostik.webp",
     },
     {
       quote: isRu
@@ -356,8 +356,8 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : "Befundbereitstellung in unter 24 Stunden. Mein Orthopäde konnte dank digitalem Bildzugang direkt die gezielte Therapie planen.",
       author: "Elena Fischer",
       role: isRu ? "Пациентка" : isEn ? "Patient" : "Patientin",
-      patientImage: "/images/testimonials/elena-fischer.jpg",
-      scanImage: "/images/diagnostik/scan-review.jpg",
+      patientImage: "/images/testimonials/elena-fischer.webp",
+      scanImage: "/images/diagnostik/scan-review.webp",
     },
   ];
 
@@ -390,7 +390,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
           </>
         }
         description={heroData.description}
-        imageSrc={area.image || "/images/services/diagnostik.jpg"}
+        imageSrc={area.image || "/images/services/diagnostik.webp"}
         imageAlt="NabiOta Diagnostics High-End Medical Imaging"
         badges={heroData.badges}
       />
@@ -501,7 +501,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             {/* Subtle Gold Botanical Line Art on Far Right */}
             <div className="absolute right-0 top-0 w-80 h-full pointer-events-none opacity-25 z-0 select-none">
               <Image
-                src="/images/areas/botanical-branch-clean.png"
+                src="/images/areas/botanical-branch-clean.webp"
                 alt="Botanical Accent"
                 fill
                 className="object-contain object-right"
@@ -512,7 +512,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
               {/* Left Column: Scanner Image */}
               <div className="lg:col-span-4 relative aspect-[16/10] lg:aspect-auto lg:h-full min-h-[220px] sm:min-h-[260px] overflow-hidden">
                 <Image
-                  src="/images/diagnostik/scanner-suite.jpg"
+                  src="/images/diagnostik/scanner-suite.webp"
                   alt="NabiOta CT Scanner Suite"
                   fill
                   className="object-cover object-center"
@@ -681,7 +681,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
               {/* Background Image on Right side of the dark card */}
               <div className="absolute right-0 top-0 bottom-0 w-[55%] sm:w-[50%] overflow-hidden pointer-events-none">
                 <Image
-                  src="/images/diagnostik/consultation.jpg"
+                  src="/images/diagnostik/consultation.webp"
                   alt="Doctor consultation with patient"
                   fill
                   className="object-cover object-center"
@@ -867,7 +867,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         <section className="relative w-full py-16 sm:py-20 lg:py-24 overflow-hidden border-t border-[#D5B878]/30">
           <div className="absolute inset-0 z-0">
             <Image
-              src="/images/values/mountains-bg.jpg"
+              src="/images/values/mountains-bg.webp"
               alt="Alps panoramic background"
               fill
               className="object-cover object-center"

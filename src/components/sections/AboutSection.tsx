@@ -42,7 +42,7 @@ export function AboutSection({ currentLocale = "de" }: AboutSectionProps) {
             {/* Doctor and patient photo clipped to the exact arc with zero gap */}
             <g clipPath="url(#aboutDoctorArcMask)">
               <image
-                href="/images/about/doctor-patient.jpg"
+                href="/images/about/doctor-patient.webp"
                 x="0"
                 y="0"
                 width="540"

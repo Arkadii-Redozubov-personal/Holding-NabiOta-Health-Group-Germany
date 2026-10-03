@@ -10,7 +10,7 @@ export const newsArticles: NewsArticle[] = [
     date: "April 24, 2025",
     category: "Medical Innovation",
     readingTime: "4 Min. Read",
-    image: "/images/news/featured-or.jpg",
+    image: "/images/news/featured-or.webp",
     featured: true,
     content: [
       "We are proud to announce the official opening of our new state-of-the-art Center for Minimally Invasive Surgery. Located at our Munich hospital campus, the center sets new surgical benchmarks by combining university-grade hybrid operating theaters with ultra-high-definition 4K endoscopic towers and robotic guidance systems.",
@@ -28,7 +28,7 @@ export const newsArticles: NewsArticle[] = [
     date: "April 18, 2025",
     category: "Company Updates",
     readingTime: "3 Min. Read",
-    image: "/images/news/partnerships.jpg",
+    image: "/images/news/partnerships.webp",
     content: [
       "In a decisive step to strengthen cross-border clinical cooperation, NabiOta® Health Group Germany GmbH has ratified comprehensive partnership agreements with leading medical institutions across Austria, Switzerland, and the Benelux region.",
       "The strategic collaboration establishes mutual second-opinion boards, cross-institutional teleradiology pathways, and fast-track referral protocols for complex specialized interventions.",
@@ -44,7 +44,7 @@ export const newsArticles: NewsArticle[] = [
     date: "April 12, 2025",
     category: "Medical Innovation",
     readingTime: "5 Min. Read",
-    image: "/images/news/cancer-research.jpg",
+    image: "/images/news/cancer-research.webp",
     content: [
       "In collaboration with partner university institutes, the clinical diagnostics division of NabiOta® Health Group has published groundbreaking study findings on deep-learning neural networks applied to multi-parametric MRI and low-dose CT scans.",
       "The algorithmic models demonstrate a 98.4% sensitivity in identifying sub-millimeter pulmonary nodules and early-stage oncological lesions months before conventional diagnostic indicators appear.",
@@ -60,7 +60,7 @@ export const newsArticles: NewsArticle[] = [
     date: "April 5, 2025",
     category: "Events",
     readingTime: "3 Min. Read",
-    image: "/images/news/summit.jpg",
+    image: "/images/news/summit.webp",
     content: [
       "The annual Global Health Innovation Summit in Berlin gathered over 1,500 healthcare executives, chief medical officers, and digital health pioneers from 35 countries.",
       "Delegates from NabiOta® delivered keynotes on hybrid clinic-outpatient networks, digital patient journey orchestration, and sustainable healthcare group governance according to German medical quality frameworks.",
@@ -76,7 +76,7 @@ export const newsArticles: NewsArticle[] = [
     date: "March 28, 2025",
     category: "Careers",
     readingTime: "2 Min. Read",
-    image: "/images/news/campus-hiring.jpg",
+    image: "/images/news/campus-hiring.webp",
     content: [
       "As part of our nationwide network expansion, NabiOta® Health Group is recruiting talented physicians, nursing specialists, surgical technicians, and administrative professionals across our outpatient MVZs, surgical centers, and corporate headquarters.",
       "We provide modern, ergonomic working environments, structured continuing medical education (CME) pathways, competitive remuneration packages, and an empowering culture centered on patient well-being.",
@@ -92,7 +92,7 @@ export const newsArticles: NewsArticle[] = [
     date: "March 20, 2025",
     category: "Medical Innovation",
     readingTime: "4 Min. Read",
-    image: "/images/news/patient-safety.jpg",
+    image: "/images/news/patient-safety.webp",
     content: [
       "Patient safety is the bedrock of clinical trust. Following a six-month interdisciplinary review, the NabiOta® Quality & Safety Committee has deployed comprehensive updated safety standards across all outpatient and surgical operations.",
       "The guidelines incorporate digital barcode medication verification, mandatory dual-sign-off surgical checklists (WHO surgical safety standards), and enhanced environmental sterility monitoring.",
@@ -108,7 +108,7 @@ export const newsArticles: NewsArticle[] = [
     date: "March 15, 2025",
     category: "Events",
     readingTime: "3 Min. Read",
-    image: "/images/news/health-forum.jpg",
+    image: "/images/news/health-forum.webp",
     content: [
       "The NabiOta Annual Health Forum concluded with high acclaim, bringing together healthcare providers, insurance representatives, municipal authorities, and medical practitioners.",
       "Discussions centered on ambulatory surgical care, the integration of AI-assisted diagnostic reporting, and expanding outpatient rehabilitation access in regional population clusters.",
@@ -124,7 +124,7 @@ export const newsArticles: NewsArticle[] = [
     date: "14. September 2026",
     category: "Company Updates",
     readingTime: "3 Min. Read",
-    image: "/images/areas/medical-departments.jpg",
+    image: "/images/areas/medical-departments.webp",
     content: [
       "Die NabiOta® Health Group Germany GmbH setzt ihren strategischen Wachstumskurs konsequent fort. Mit dem Ausbau des Medizinischen Versorgungszentrums (MVZ) in Mönchengladbach reagiert die Gruppe auf den steigenden Bedarf an hochqualifizierter ambulanter Versorgung.",
       "Unter der Leitung erfahrener Fachärzte bündelt der Standort Allgemeinmedizin, Chirurgie und Orthopädie mit direkter Anbindung an modernste Diagnostikverfahren.",
@@ -140,7 +140,7 @@ export const newsArticles: NewsArticle[] = [
     date: "28. August 2026",
     category: "Medical Innovation",
     readingTime: "4 Min. Read",
-    image: "/images/services/diagnostik.jpg",
+    image: "/images/services/diagnostik.webp",
     content: [
       "Die NabiOta® Diagnostics GmbH investiert in Spitzenmedizintechnik der neuesten Generation. Das neue 3-Tesla-MRT-System setzt Maßstäbe in der neurologischen und muskuloskelettalen Diagnostik.",
       "Dank innovativer Sensortechnologie und verkürzter Scanzeiten wird die Belastung für Patientinnen und Patienten spürbar minimiert. Zugleich profitieren behandelnde Ärzte von bisher unerreichten Kontrasten und Auflösungen.",
@@ -156,7 +156,7 @@ export const newsArticles: NewsArticle[] = [
     date: "10. August 2026",
     category: "Company Updates",
     readingTime: "3 Min. Read",
-    image: "/images/areas/international.jpg",
+    image: "/images/areas/international.webp",
     content: [
       "Im Rahmen ihrer internationalen Initiative hat die NabiOta® Health Group Kooperationsverträge mit führenden europäischen und internationalen Kliniken unterzeichnet.",
       "Schwerpunkte der Partnerschaften bilden der strukturierte Austausch von Fachwissen, gemeinsame Telekonsile bei komplexen Krankheitsbildern sowie qualifizierte Qualifizierungsprogramme für medizinisches Fachpersonal in Deutschland.",

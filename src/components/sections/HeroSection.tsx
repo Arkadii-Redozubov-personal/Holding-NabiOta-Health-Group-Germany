@@ -118,7 +118,7 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
         {/* ── Background: Building photo ─────────────────── */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <Image
-            src="/images/hero/building_new.png"
+            src="/images/hero/building_new.webp"
             alt="NabiOta Health Group Germany Headquarters"
             fill
             priority

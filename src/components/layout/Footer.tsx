@@ -36,7 +36,7 @@ export function Footer({ currentLocale = "de" }: FooterProps) {
       {/* ── Botanical Gold Background matching user design ── */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <Image
-          src="/images/botanical-gold-bg.jpg"
+          src="/images/botanical-gold-bg.webp"
           alt="Botanical background"
           fill
           sizes="100vw"

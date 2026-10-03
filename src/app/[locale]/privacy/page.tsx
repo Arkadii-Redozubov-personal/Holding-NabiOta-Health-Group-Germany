@@ -84,7 +84,7 @@ export default async function LocalizedPrivacyPage({ params }: LocalizedPrivacyP
               ? "Information on the nature, scope, and purpose of personal data processing under the GDPR."
               : "Informationen über die Art, den Umfang und Zweck der Verarbeitung von personenbezogenen Daten gemäß DSGVO."
           }
-          imageSrc="/images/heroes/hero-campus.jpg"
+          imageSrc="/images/heroes/hero-campus.webp"
           imageAlt="NabiOta Health Group Germany Datenschutz"
           badges={privacyBadges}
         />

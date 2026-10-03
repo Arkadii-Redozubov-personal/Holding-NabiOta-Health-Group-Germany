@@ -304,7 +304,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
               sub: locale === "ru" ? "локация" : locale === "en" ? "location" : "Standort",
             },
           ]}
-          imageSrc="/images/heroes/hero-contact.jpg"
+          imageSrc="/images/heroes/hero-contact.webp"
           imageAlt="NabiOta Health Group Germany Kontakt"
         />
 
@@ -737,7 +737,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                   title="Google Maps QR Code"
                 >
                   <Image
-                    src="/images/contact/google-maps-qr.png"
+                    src="/images/contact/google-maps-qr.webp"
                     alt="QR Code für Google Maps"
                     fill
                     className="object-contain p-1"

@@ -98,7 +98,7 @@ export default async function AreaDetailPage({ params }: AreaDetailPageProps) {
             </>
           }
           description={area.description}
-          imageSrc={area.image || "/images/heroes/hero-areas.jpg"}
+          imageSrc={area.image || "/images/heroes/hero-areas.webp"}
           badges={areaBadges}
         />
 

@@ -222,10 +222,10 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
 
   return (
     <section className="relative py-14 sm:py-18 lg:py-20 border-b border-[#EAE5DA] overflow-hidden bg-[#FCFAF5]">
-      {/* ── Botanical Leaf Background Image (/images/bacground.png) ── */}
+      {/* ── Botanical Leaf Background Image (/images/bacground.webp) ── */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <Image
-          src="/images/bacground.png"
+          src="/images/bacground.webp"
           alt="Botanical background with leaves and dew drops"
           fill
           priority
