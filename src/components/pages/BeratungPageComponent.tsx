@@ -248,7 +248,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isEn
         ? "What healthcare leaders and executives say about partnering with us on consulting and development projects."
         : "Das sagen unsere Kundinnen und Kunden über die Zusammenarbeit in Beratungs- und Projektentwicklungsprojekten.",
-      btn: isRu ? "Связаться с нами" : isEn ? "Contact Our Team" : "Kontakt aufnehmen",
+      btn: isRu ? "Связаться с нами" : isEn ? "Contact Our Team" : "Kontakt ansehen",
       testimonials: [
         {
           name: "Dr. Thomas Berger",
@@ -626,7 +626,18 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         {/* ========================================================================= */}
         {/* SECTION 5 (Photo 2): STIMMEN UNSERER PARTNER (FULL-WIDTH EDGE-TO-EDGE)    */}
         {/* ========================================================================= */}
-        <section className="w-full bg-[#08170D] text-white relative overflow-hidden border-y border-[#D5B878]/30 py-10 sm:py-14 my-6 sm:my-10">
+        <section className="w-full bg-[#08170D] text-white relative overflow-hidden border-y border-[#D5B878]/30 py-8 sm:py-10 lg:py-10 my-6 sm:my-8">
+          {/* Botanical Gold Background with subtle overlay across the section */}
+          <div className="absolute inset-0 pointer-events-none z-0">
+            <Image
+              src="/images/botanical-gold-bg.webp"
+              alt="Botanical Gold Texture"
+              fill
+              className="object-cover object-center opacity-35 mix-blend-screen"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#08170D]/95 via-[#08170D]/85 to-[#08170D]/60" />
+          </div>
+
           {/* Botanical foliage watermark along left edge */}
           <div className="absolute left-0 top-0 bottom-0 w-48 sm:w-64 pointer-events-none opacity-40 select-none overflow-hidden z-0">
             <Image
@@ -638,26 +649,26 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
             />
           </div>
 
-          <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          <div className="w-full max-w-[1700px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
               {/* Left: Heading + Button */}
-              <div className="lg:col-span-4 space-y-4">
-                <span className="text-[10.5px] sm:text-[11px] font-bold uppercase tracking-[0.24em] text-[#C5A56A] block font-sans">
+              <div className="lg:col-span-4 xl:col-span-3 space-y-3.5">
+                <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-[0.24em] text-[#C5A56A] block font-sans">
                   {t.s5.eyebrow}
                 </span>
 
-                <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-white font-normal leading-tight">
+                <h2 className="font-serif text-2xl sm:text-3xl lg:text-[32px] text-white font-normal leading-tight">
                   {t.s5.title}
                 </h2>
 
-                <p className="text-xs sm:text-[13px] text-white/85 leading-relaxed max-w-sm font-sans">
+                <p className="text-xs sm:text-[12.5px] text-white/85 leading-relaxed max-w-sm font-sans">
                   {t.s5.desc}
                 </p>
 
-                <div className="pt-2">
+                <div className="pt-1.5">
                   <Link
                     href={`/${locale}/contact`}
-                    className="inline-flex items-center gap-2.5 px-6 py-2.5 sm:py-3 rounded-full bg-transparent hover:bg-white text-white hover:text-[#08170D] border border-[#C5A56A] hover:border-white text-xs sm:text-[13px] font-medium transition-all duration-300 shadow-sm group hover:scale-[1.02]"
+                    className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-transparent hover:bg-white text-white hover:text-[#08170D] border border-[#C5A56A] hover:border-white text-xs sm:text-[13px] font-medium transition-all duration-300 shadow-sm group hover:scale-[1.02]"
                   >
                     <span>{t.s5.btn}</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
@@ -665,16 +676,16 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
                 </div>
               </div>
 
-              {/* Right: 3 White Testimonial Cards matching photo */}
-              <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
+              {/* Right: 3 White Testimonial Cards - Shorter Height & Wider matching photo */}
+              <div className="lg:col-span-8 xl:col-span-9 grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4">
                 {t.s5.testimonials.map((item, idx) => (
                   <div
                     key={idx}
-                    className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 text-[#0F2A1D] shadow-lg flex flex-col justify-between border border-[#E8E2D6]"
+                    className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-4.5 lg:p-5 text-[#0F2A1D] shadow-md flex flex-col justify-between border border-[#E8E2D6]"
                   >
-                    <div className="flex items-start gap-3.5">
+                    <div className="flex items-start gap-3 sm:gap-3.5">
                       {/* Avatar on top left */}
-                      <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden shrink-0 border border-[#E2DBD0] shadow-2xs">
+                      <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden shrink-0 border border-[#E2DBD0] shadow-2xs">
                         <Image
                           src={item.avatar}
                           alt={item.name}
@@ -684,16 +695,16 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
                       </div>
 
                       {/* Quote & Author Info on right */}
-                      <div className="flex-1 space-y-2.5">
-                        <p className="text-[11px] sm:text-[12px] text-[#2C4436] leading-relaxed font-sans">
+                      <div className="flex-1 space-y-2">
+                        <p className="text-[10.5px] sm:text-[11px] lg:text-[11.5px] text-[#2C4436] leading-relaxed font-sans">
                           {item.quote}
                         </p>
 
                         <div className="pt-1.5 border-t border-[#F2ECE1]">
-                          <h4 className="font-serif text-xs sm:text-[12.5px] font-bold text-[#0F2A1D] leading-snug">
+                          <h4 className="font-serif text-[11.5px] sm:text-xs font-bold text-[#0F2A1D] leading-snug">
                             {item.name}
                           </h4>
-                          <p className="text-[10px] sm:text-[10.5px] text-[#6E8177]">
+                          <p className="text-[9.5px] sm:text-[10px] text-[#6E8177]">
                             {item.role}
                           </p>
                         </div>
@@ -745,7 +756,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
             />
           </div>
 
-          {/* Center Content Box + Right Contact Info */}
+          {/* Center Content Box + Right Frosted Glass Contact Box with distinct icons */}
           <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Spacer for the left notebook script */}
@@ -776,31 +787,34 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
                 </div>
               </div>
 
-              {/* Right: Contact details (Directly on background, NO white box) */}
-              <div className="lg:col-span-4 space-y-4 lg:pl-6">
+              {/* Right: Frosted Glass Contact Card with distinct icons matching photo */}
+              <div className="lg:col-span-4 bg-white/55 backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-7 border border-white/70 shadow-sm space-y-4">
+                {/* Phone: Light tan circle with gold handset */}
                 <a
                   href={`tel:${t.s6.phone.replace(/\s+/g, "")}`}
                   className="flex items-center gap-3.5 text-xs sm:text-[13.5px] text-[#1B3A29] hover:text-[#0D2619] transition-colors group"
                 >
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#E5DFC9]/80 flex items-center justify-center text-[#244E33] group-hover:bg-[#0D2619] group-hover:text-white transition-colors shrink-0 shadow-2xs">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#EFE9DF] border border-[#DDD5C5]/70 flex items-center justify-center text-[#8C6D37] shrink-0 shadow-2xs group-hover:bg-[#E5DFC9] transition-colors">
                     <Phone className="w-4 h-4" />
                   </div>
                   <span className="font-medium">{t.s6.phone}</span>
                 </a>
 
+                {/* Email: Solid dark green circle with white envelope */}
                 <a
                   href={`mailto:${t.s6.email}`}
                   className="flex items-center gap-3.5 text-xs sm:text-[13.5px] text-[#1B3A29] hover:text-[#0D2619] transition-colors group"
                 >
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#E5DFC9]/80 flex items-center justify-center text-[#244E33] group-hover:bg-[#0D2619] group-hover:text-white transition-colors shrink-0 shadow-2xs">
-                    <Mail className="w-4 h-4" />
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#0D2619] flex items-center justify-center text-white shrink-0 shadow-xs group-hover:bg-[#1A422D] transition-colors">
+                    <Mail className="w-4 h-4 text-white" />
                   </div>
                   <span className="font-medium">{t.s6.email}</span>
                 </a>
 
+                {/* Location: Light tan circle with green map pin */}
                 <div className="flex items-center gap-3.5 text-xs sm:text-[13.5px] text-[#1B3A29]">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#E5DFC9]/80 flex items-center justify-center text-[#244E33] shrink-0 shadow-2xs">
-                    <MapPin className="w-4 h-4" />
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#EFE9DF] border border-[#DDD5C5]/70 flex items-center justify-center text-[#0D2619] shrink-0 shadow-2xs">
+                    <MapPin className="w-4 h-4 text-[#0D2619]" />
                   </div>
                   <span className="font-medium">{t.s6.location}</span>
                 </div>
