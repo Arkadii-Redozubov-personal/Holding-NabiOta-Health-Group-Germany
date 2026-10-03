@@ -6,6 +6,8 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { ValuesSection } from "@/components/sections/ValuesSection";
 import { PartnersCareerSection } from "@/components/sections/PartnersCareerSection";
+import { HomeFaqSection } from "@/components/sections/HomeFaqSection";
+import { HomeCtaBannerSection } from "@/components/sections/HomeCtaBannerSection";
 import { SupportedLocale } from "@/lib/i18n";
 
 interface HomePageComponentProps {
@@ -22,6 +24,8 @@ export function HomePageComponent({ locale = "de" }: HomePageComponentProps) {
         <ServicesSection currentLocale={locale} />
         <ValuesSection currentLocale={locale} />
         <PartnersCareerSection currentLocale={locale} />
+        <HomeFaqSection currentLocale={locale} />
+        <HomeCtaBannerSection currentLocale={locale} />
       </main>
       <Footer currentLocale={locale} />
     </div>
