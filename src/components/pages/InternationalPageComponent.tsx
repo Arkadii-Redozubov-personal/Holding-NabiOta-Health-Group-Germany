@@ -366,18 +366,18 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         {/* SECTION 2: VISION (GESUNDHEIT KENNT KEINE GRENZEN) - FULL WIDTH BLEED     */}
         {/* ========================================================================= */}
         <section className="relative w-full bg-[#FAF8F4] overflow-hidden border-t border-[#F0ECE1]">
-          {/* Right Visual: World Map & Joined Hands (Photo 3) */}
-          <div className="w-full lg:w-[58%] xl:w-[54%] h-[260px] sm:h-[320px] lg:h-full lg:absolute lg:top-0 lg:bottom-0 lg:right-0 relative pointer-events-none select-none overflow-hidden order-2 lg:order-none">
+          {/* Right Visual: World Map & Joined Hands (Photo 3) - Shifted left as requested */}
+          <div className="w-full lg:w-[68%] xl:w-[65%] h-[280px] sm:h-[340px] lg:h-full lg:absolute lg:top-0 lg:bottom-0 lg:right-0 relative pointer-events-none select-none overflow-hidden order-2 lg:order-none">
             <Image
               src="/images/international/world-map-hands.webp"
               alt="World Map and Joined Hands - NabiOta Vision"
               fill
-              className="object-cover object-right"
+              className="object-cover object-[60%_center] sm:object-[64%_center] lg:object-[68%_center]"
               priority
             />
             {/* Soft left gradient fade into the cream background on desktop */}
-            <div className="hidden lg:block absolute inset-y-0 left-0 w-32 xl:w-44 bg-gradient-to-r from-[#FAF8F4] via-[#FAF8F4]/80 to-transparent pointer-events-none" />
-            <div className="lg:hidden absolute inset-x-0 top-0 h-14 bg-gradient-to-b from-[#FAF8F4] to-transparent pointer-events-none" />
+            <div className="hidden lg:block absolute inset-y-0 left-0 w-36 xl:w-48 bg-gradient-to-r from-[#FAF8F4] via-[#FAF8F4]/80 to-transparent pointer-events-none" />
+            <div className="lg:hidden absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#FAF8F4] to-transparent pointer-events-none" />
           </div>
 
           {/* Left Content: Standard Container alignment - Height reduced as requested */}
