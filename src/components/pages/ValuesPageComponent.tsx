@@ -302,7 +302,7 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
           <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#051208]/85 to-transparent pointer-events-none z-10" />
 
           <Container size="wide" className="relative z-20">
-            <div className="max-w-xl lg:max-w-[480px] xl:max-w-[560px]">
+            <div className="max-w-xl lg:max-w-[620px] xl:max-w-[700px]">
               {/* Breadcrumb: Startseite > Über uns */}
               <nav className="flex items-center gap-2 text-xs text-[#A2ADA4] mb-3.5 font-sans" aria-label="Breadcrumb">
                 <Link href={`/${locale}`} className="hover:text-[#D5B878] transition-colors">

@@ -653,7 +653,7 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
           </div>
 
           <Container size="wide" className="relative z-20">
-            <div className="max-w-xl lg:max-w-[480px] xl:max-w-[560px]">
+            <div className="max-w-xl lg:max-w-[600px] xl:max-w-[680px]">
               {/* Breadcrumb matching Photo 2 */}
               <nav className="flex items-center gap-2 text-xs sm:text-[12.5px] text-[#A2ADA4] mb-3.5 font-sans" aria-label="Breadcrumb">
                 <Link href={`/${locale}`} className="hover:text-[#D5B878] transition-colors">
