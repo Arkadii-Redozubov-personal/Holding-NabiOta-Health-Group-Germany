@@ -875,50 +875,46 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               </div>
             </div>
 
-            {/* 3 Testimonials Grid */}
+            {/* 3 Testimonials Grid matching Screenshot 3 1:1 */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {t.s6.items.map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-white rounded-2xl p-6 sm:p-7 border border-[#E5DFD3] shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between space-y-6"
+                  className="bg-white rounded-2xl p-6 sm:p-7 border border-[#E5DFD3] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between space-y-5"
                 >
-                  {/* Quote & Stars */}
-                  <div className="space-y-4">
-                    <p className="text-xs sm:text-sm text-[#1B3A29] leading-relaxed italic">
+                  {/* Top: Avatar on left + Quote on right */}
+                  <div className="flex items-start gap-4">
+                    <div className="relative w-14 h-14 rounded-full overflow-hidden border border-[#D8C7A5] shrink-0">
+                      <Image
+                        src={item.avatar}
+                        alt={item.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <p className="text-xs sm:text-[13px] text-[#1B3A29] leading-relaxed italic flex-1">
                       {item.quote}
                     </p>
                   </div>
 
-                  {/* Author Info with Avatar and Stars */}
-                  <div className="pt-4 border-t border-[#F0ECE1] flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="relative w-12 h-12 rounded-full overflow-hidden border border-[#D8C7A5] shrink-0">
-                        <Image
-                          src={item.avatar}
-                          alt={item.name}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div>
-                        <h4 className="text-xs sm:text-sm font-bold text-[#0B2516] leading-tight">
-                          {item.name}
-                        </h4>
-                        <p className="text-[11px] text-[#4A5D52] leading-tight">
-                          {item.role}
-                        </p>
-                        <p className="text-[10px] text-[#B8934A] font-semibold">
-                          {item.location}
-                        </p>
-                      </div>
-                    </div>
+                  {/* Middle: Author Info */}
+                  <div className="space-y-0.5 pl-1">
+                    <h4 className="text-xs sm:text-sm font-bold text-[#0B2516] leading-tight">
+                      {item.name}
+                    </h4>
+                    <p className="text-[11px] text-[#556358] leading-tight">
+                      {item.role}
+                    </p>
+                    <p className="text-[11px] text-[#556358] leading-tight">
+                      {item.location}
+                    </p>
+                  </div>
 
-                    {/* 5 Gold Stars */}
-                    <div className="flex text-[#D4AF37] gap-0.5">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-[#D4AF37]" />
-                      ))}
-                    </div>
+                  {/* Bottom: 5 Gold Stars */}
+                  <div className="pt-2 flex text-[#D4AF37] gap-1 pl-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-3.5 h-3.5 fill-[#D4AF37]" />
+                    ))}
                   </div>
                 </div>
               ))}
@@ -931,21 +927,21 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         {/* ========================================================================= */}
         <section className="py-16 sm:py-20 bg-white border-t border-[#F0ECE1]">
           <Container>
-            {/* Sunrise Mountain CTA Card */}
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl p-8 sm:p-12 lg:p-14 border border-[#EBE6DC]">
-              {/* Background Panoramic Sunrise Mountain Photo */}
+            {/* Sunrise Mountain CTA Card matching Screenshot 3 1:1 */}
+            <div className="relative rounded-3xl overflow-hidden shadow-xl p-8 sm:p-12 lg:p-14 border border-[#EBE6DC] min-h-[300px] flex items-center">
+              {/* Background Panoramic Sunrise Mountain Photo (High-Res 2048px) */}
               <Image
                 src="/images/international/cta-sunrise.webp"
                 alt="Sunrise Mountains NabiOta Health Group"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-[#FAF7F2]/95 via-[#FAF7F2]/80 to-transparent pointer-events-none" />
 
-              <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 {/* Left Text & CTA Button */}
-                <div className="lg:col-span-7 space-y-5">
-                  <div className="text-xs font-semibold tracking-[0.2em] text-[#8C6527] uppercase">
+                <div className="lg:col-span-7 space-y-4">
+                  <div className="text-[10.5px] sm:text-xs font-semibold tracking-[0.2em] text-[#8C6527] uppercase">
                     {t.s7.eyebrow}
                   </div>
 
@@ -960,7 +956,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                   <div className="pt-2">
                     <Link
                       href={`/${locale}/contact`}
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#ECCF96] to-[#D4AF37] hover:from-[#F2DCAE] hover:to-[#DFBB45] text-[#0B2516] text-xs sm:text-sm font-semibold transition-all duration-300 shadow-md group"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#FAF7F2] hover:bg-[#ECCF96] text-[#0B2516] border border-[#D8C7A5] text-xs sm:text-sm font-semibold transition-all duration-300 shadow-sm group"
                     >
                       <span>{t.s7.btn}</span>
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -971,7 +967,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                 {/* Right Stamp */}
                 <div className="lg:col-span-5 flex justify-end">
                   <div
-                    className="text-[#0B2516] text-xl sm:text-2xl font-serif italic tracking-wide text-right pointer-events-none select-none drop-shadow-sm"
+                    className="text-[#0B2516] text-xl sm:text-2xl font-serif italic tracking-wide text-right pointer-events-none select-none drop-shadow-sm pr-4"
                     style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
                   >
                     <p>{t.s7.stampText1}</p>
@@ -980,6 +976,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                 </div>
               </div>
             </div>
+
 
             {/* Bottom Contact Strip (Matching Mockup 1:1) */}
             <div className="mt-8 bg-white rounded-2xl p-5 sm:p-6 border border-[#E5DFD3] shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
