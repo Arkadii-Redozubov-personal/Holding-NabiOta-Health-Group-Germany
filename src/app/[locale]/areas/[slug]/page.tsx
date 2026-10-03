@@ -17,6 +17,7 @@ import { DiagnostikPageComponent } from "@/components/pages/DiagnostikPageCompon
 import { RehabilitationPageComponent } from "@/components/pages/RehabilitationPageComponent";
 import { PflegePageComponent } from "@/components/pages/PflegePageComponent";
 import { BeratungPageComponent } from "@/components/pages/BeratungPageComponent";
+import { InternationalPageComponent } from "@/components/pages/InternationalPageComponent";
 import { locales, SupportedLocale, getDictionary } from "@/lib/i18n";
 import { Metadata } from "next";
 
@@ -81,6 +82,10 @@ export default async function LocalizedAreaDetailPage({ params }: LocalizedAreaD
 
   if (slug === "beratung-projektentwicklung") {
     return <BeratungPageComponent locale={locale} />;
+  }
+
+  if (slug === "internationale-kooperationen") {
+    return <InternationalPageComponent locale={locale} />;
   }
 
   const relatedAreas = businessAreas.filter((a) => a.slug !== slug).slice(0, 3);
