@@ -623,7 +623,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                 fill
                 className="object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-black/40 via-transparent to-[#07190F] pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-black/30 via-transparent to-[#07190F] pointer-events-none" />
+              {/* Extra right-edge fade into solid #07190F on desktop */}
+              <div className="hidden lg:block absolute inset-y-0 right-0 w-32 xl:w-48 bg-gradient-to-r from-transparent to-[#07190F] pointer-events-none" />
             </div>
 
             {/* Right Column: Impact Metrics with botanical-gold-bg.webp background */}
@@ -637,6 +639,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                   className="object-fill opacity-100"
                   priority
                 />
+                {/* Ultra-smooth seamless blend from dark seam into botanical background */}
+                <div className="hidden lg:block absolute inset-y-0 left-0 w-44 xl:w-64 bg-gradient-to-r from-[#07190F] via-[#07190F]/70 to-transparent pointer-events-none" />
+                <div className="lg:hidden absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#07190F] via-[#07190F]/70 to-transparent pointer-events-none" />
               </div>
 
               <div className="relative z-10 space-y-3 sm:space-y-4">
