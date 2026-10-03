@@ -82,6 +82,8 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
         desc: "Wir bei NabiOta® glauben an eine ganzheitliche Gesundheitsversorgung, die den Menschen in den Mittelpunkt stellt. Unsere Mission ist es, hochwertige medizinische Leistungen, innovative Therapien und ein unterstützendes Netzwerk zur Verfügung zu stellen.",
         role: "Geschäftsführung",
         badge: "Wir fördern Talente, weil sie den Unterschied machen.",
+        badgeLine1: "Wir fördern Talente,",
+        badgeLine2: "weil sie den Unterschied machen.",
       },
       benefits: {
         eyebrow: "WARUM NABIOTA®",
@@ -242,6 +244,8 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
         desc: "At NabiOta®, we believe in holistic healthcare that puts people first. Our mission is to provide high-quality medical services, innovative therapies, and a supportive network.",
         role: "Executive Management",
         badge: "We nurture talents because they make the difference.",
+        badgeLine1: "We nurture talents,",
+        badgeLine2: "because they make the difference.",
       },
       benefits: {
         eyebrow: "WHY NABIOTA®",
@@ -402,6 +406,8 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
         desc: "В NabiOta® мы верим в комплексную медицину, где в центре внимания всегда находится человек. Наша миссия — предоставлять высококачественные медицинские услуги, передовые терапевтические решения и поддерживающую экспертную среду.",
         role: "Руководство холдинга",
         badge: "Мы развиваем таланты, ведь именно люди меняют мир к лучшему.",
+        badgeLine1: "Мы развиваем таланты,",
+        badgeLine2: "ведь именно люди меняют мир к лучшему.",
       },
       benefits: {
         eyebrow: "ПОЧЕМУ NABIOTA®",
@@ -764,76 +770,130 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
                 </div>
               </div>
 
-              {/* Right Column: Mission Image + Floating Badge in Bottom-Right Corner */}
+              {/* Right Column: Mission Image + Floating Badge Centered at Bottom matching Photo 1 */}
               <div className="lg:col-span-6 relative">
-                <div className="relative aspect-[16/10] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-[#EDE7D9]">
+                <div className="relative aspect-[16/11] sm:aspect-[16/10] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-[#EDE7D9]">
                   <Image
                     src="/images/careers/mission-doctors-highres.webp"
                     alt="Ärzte und medizinisches Fachpersonal bei NabiOta"
                     fill
                     className="object-cover object-center"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
 
-                {/* Floating pill badge overlaid on bottom right matching Photo 3 */}
-                <div className="relative -mt-6 sm:-mt-8 ml-auto mr-0 sm:mr-4 max-w-[92%] sm:max-w-md bg-[#FCFAF7] rounded-2xl p-4 sm:p-5 shadow-[0_12px_32px_rgba(0,0,0,0.08)] border border-[#EDE7D9] flex items-center gap-3.5 z-10">
-                  <div className="w-11 h-11 rounded-2xl bg-[#FAF6EE] border border-[#E5D7B7] flex items-center justify-center flex-shrink-0 text-[#C5A56A]">
-                    <Users className="w-5 h-5 stroke-[1.75]" />
+                {/* Floating card centered at bottom matching Photo 1 */}
+                <div className="relative -mt-10 sm:-mt-12 mx-auto max-w-[92%] sm:max-w-md bg-[#FAF7F0] rounded-2xl px-6 py-4 sm:px-7 sm:py-5 shadow-[0_12px_28px_rgba(0,0,0,0.08)] border border-[#EAE3D4] flex items-center gap-4 sm:gap-5 z-20">
+                  <div className="flex-shrink-0 text-[#C5A56A]">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-9 h-9 sm:w-10 sm:h-10">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                      <circle cx="9" cy="7" r="4" />
+                      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                    </svg>
                   </div>
-                  <p className="text-xs sm:text-[13.5px] font-medium text-forest-950 leading-snug">
-                    {t.mission.badge}
-                  </p>
+                  <div className="text-xs sm:text-[13.5px] text-[#1C241D] leading-snug">
+                    <span className="font-medium block">{t.mission.badgeLine1}</span>
+                    <span className="text-[#555C56] block mt-0.5">{t.mission.badgeLine2}</span>
+                  </div>
                 </div>
               </div>
             </div>
           </Container>
         </section>
 
-        {/* ── SECTION 3: WARUM NABIOTA® / VORTEILE (Warm Cream Background) ── */}
-        <section className="py-12 sm:py-14 lg:py-16 bg-[#FAF8F5] border-t border-[#EDE7D9]">
+        {/* ── SECTION 3: WARUM NABIOTA® / VORTEILE (Matching Photo 2 Reference) ── */}
+        <section className="py-14 sm:py-16 lg:py-20 bg-[#FAF9F6] border-t border-[#EDE8DE]">
           <Container size="wide">
-            {/* Header */}
-            <div className="max-w-2xl mb-12 sm:mb-16">
-              <span className="text-[11px] sm:text-xs font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-2">
+            {/* Header matching Photo 2 */}
+            <div className="max-w-3xl mb-12 sm:mb-16">
+              <span className="text-[11px] sm:text-xs font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-3">
                 {t.benefits.eyebrow}
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl text-forest-950 font-normal leading-tight mb-4">
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-forest-950 font-normal leading-tight mb-4">
                 {t.benefits.title}
               </h2>
-              <p className="text-sm sm:text-base text-[#4E5650] leading-relaxed">
+              <p className="text-sm sm:text-base text-[#4E5650] leading-relaxed max-w-2xl">
                 {t.benefits.desc}
               </p>
             </div>
 
-            {/* 6 Benefits Cards (2x3 Grid) */}
+            {/* 6 Benefits Cards (3x2 Grid matching Photo 2) */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
-              {t.benefits.items.map((b, idx) => {
-                const IconComponent = b.icon;
-                return (
-                  <div
-                    key={idx}
-                    className="p-6 sm:p-7 rounded-2xl bg-white border border-[#EAE4D5] shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.05)] transition-all duration-200 flex flex-col justify-between group"
-                  >
-                    <div>
-                      <div className="w-11 h-11 rounded-full bg-[#FAF6EE] border border-[#E5D7B7] flex items-center justify-center text-[#C5A56A] mb-5 group-hover:bg-[#C5A56A] group-hover:text-white transition-colors duration-200">
-                        <IconComponent className="w-5 h-5 stroke-[1.75]" />
-                      </div>
-                      <h3 className="font-serif font-bold text-base sm:text-lg text-forest-950 mb-2 leading-snug">
-                        {b.title}
-                      </h3>
-                      <p className="text-xs sm:text-sm text-[#4E5650] leading-relaxed">
-                        {b.text}
-                      </p>
+              {t.benefits.items.map((b, idx) => (
+                <div
+                  key={idx}
+                  className="p-7 sm:p-8 rounded-2xl bg-white border border-[#EAE4D7] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:border-[#DFC894] transition-all duration-300 flex flex-col justify-between group"
+                >
+                  <div>
+                    {/* Standalone golden line icon without container circle matching Photo 2 */}
+                    <div className="text-[#C5A56A] mb-5">
+                      {idx === 0 && (
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+                          <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                        </svg>
+                      )}
+                      {idx === 1 && (
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+                          <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                          <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                        </svg>
+                      )}
+                      {idx === 2 && (
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+                          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                          <circle cx="9" cy="7" r="4" />
+                          <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                      )}
+                      {idx === 3 && (
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+                          <circle cx="12" cy="12" r="10" />
+                          <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                      )}
+                      {idx === 4 && (
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+                          <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+                          <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+                        </svg>
+                      )}
+                      {idx === 5 && (
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
+                          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                          <path d="M12 8v8" />
+                          <path d="m8.5 12.5 3.5 3.5 3.5-3.5" />
+                        </svg>
+                      )}
                     </div>
+                    <h3 className="font-serif font-bold text-lg text-forest-950 mb-2 leading-snug">
+                      {b.title}
+                    </h3>
+                    <p className="text-xs sm:text-[13.5px] text-[#555C56] leading-relaxed">
+                      {b.text}
+                    </p>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </Container>
         </section>
 
-        {/* ── SECTION 4: AKTUELLE STELLENANGEBOTE (Matching Photo 4) ─────── */}
-        <section id="stellen" className="py-10 sm:py-12 lg:py-14 bg-[#FAF7F2] border-t border-[#EDE7D9] relative overflow-hidden">
+        {/* ── SECTION 4: AKTUELLE STELLENANGEBOTE (Matching Photo 3 Reference) ─────── */}
+        <section id="stellen" className="py-14 sm:py-16 lg:py-20 bg-[#FAF7F2] border-t border-[#EDE7D9] relative overflow-hidden">
+          {/* Botanical leaf background image matching Photo 3 */}
+          <div className="absolute inset-0 pointer-events-none z-0">
+            <Image
+              src="/images/about/photo2.webp"
+              alt=""
+              fill
+              className="object-cover object-left opacity-90"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-[#FAF7F2]/40" />
+          </div>
+
           <Container size="wide" className="relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
               {/* Left Column: Heading & Call to Action */}
@@ -853,7 +913,7 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
                 <div className="pt-2">
                   <a
                     href="#bewerbung"
-                    className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#142318] font-semibold text-xs sm:text-sm tracking-wide transition-all duration-200 hover:scale-[1.02] shadow-xs"
+                    className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#142318] font-semibold text-xs sm:text-sm tracking-wide transition-all duration-200 hover:scale-[1.02] shadow-sm"
                   >
                     <span>{t.jobs.allButton}</span>
                     <ArrowRight className="w-4 h-4" />
@@ -869,7 +929,7 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
                     <div
                       key={idx}
                       onClick={() => handleSelectJob(job.title)}
-                      className="p-4 sm:p-5 rounded-2xl bg-white border border-[#EDE7D9] hover:border-[#C5A56A] shadow-xs hover:shadow-md transition-all duration-200 flex items-center justify-between group cursor-pointer"
+                      className="p-4 sm:p-5 rounded-2xl bg-white/95 backdrop-blur-xs border border-[#EDE7D9] hover:border-[#C5A56A] shadow-xs hover:shadow-md transition-all duration-200 flex items-center justify-between group cursor-pointer"
                     >
                       <div className="flex items-center gap-4">
                         <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#FAF6EE] border border-[#E5D7B7] flex items-center justify-center text-[#C5A56A] flex-shrink-0 group-hover:bg-[#C5A56A] group-hover:text-white transition-colors duration-200">
@@ -896,47 +956,75 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
           </Container>
         </section>
 
-        {/* ── SECTION 5: UNSERE KULTUR (Dark Green Container Card) ───────── */}
-        <section className="py-6 sm:py-8 bg-[#FAF8F5]">
-          <Container size="wide">
-            <div className="rounded-3xl bg-[#091A10] text-white p-5 sm:p-7 lg:p-8 overflow-hidden relative shadow-xl border border-white/5">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        {/* ── SECTION 5: UNSERE KULTUR (Matching Photo 4 Reference) ───────── */}
+        <section className="py-12 sm:py-16 bg-[#FAF7F2] relative overflow-hidden">
+          {/* Continuing the outer light background with leaves from above */}
+          <div className="absolute inset-0 pointer-events-none z-0">
+            <Image
+              src="/images/about/photo2.webp"
+              alt=""
+              fill
+              className="object-cover object-left opacity-75"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-[#FAF7F2]/30" />
+          </div>
+
+          <Container size="wide" className="relative z-10">
+            <div className="rounded-3xl bg-[#07160C] text-white overflow-hidden relative shadow-2xl border border-white/10">
+              {/* Inner container background: darker background with leaves in upper-left corner */}
+              <div className="absolute inset-0 pointer-events-none z-0">
+                <Image
+                  src="/images/values/leaves-bg.webp"
+                  alt=""
+                  fill
+                  className="object-cover object-left opacity-40 mix-blend-screen"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#07160C]/95 via-[#07160C]/65 to-transparent" />
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[440px] relative z-10">
                 {/* Left Column: Culture text */}
-                <div className="lg:col-span-6 space-y-5">
+                <div className="lg:col-span-6 p-8 sm:p-10 lg:p-14 flex flex-col justify-center space-y-5">
                   <span className="text-[11px] sm:text-xs font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
                     {t.culture.eyebrow}
                   </span>
 
-                  <h2 className="font-serif text-3xl sm:text-4xl text-white font-normal leading-tight">
+                  <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-white font-normal leading-tight">
                     {t.culture.title}
                   </h2>
 
-                  <p className="text-sm sm:text-[15px] text-white/80 leading-relaxed font-light">
+                  <p className="text-sm sm:text-[15px] text-white/85 leading-relaxed font-light max-w-lg">
                     {t.culture.desc}
                   </p>
                 </div>
 
-                {/* Right Column: Culture Photo & Badge */}
-                <div className="lg:col-span-6 relative">
-                  <div className="relative aspect-[16/9] rounded-2xl overflow-hidden shadow-lg border border-white/10">
-                    <Image
-                      src="/images/careers/kultur-team-highres.webp"
-                      alt="NabiOta Unternehmenskultur und Team"
-                      fill
-                      className="object-cover object-center"
-                    />
-                  </div>
+                {/* Right Column: Culture Photo with smooth left blend and larger floating badge */}
+                <div className="lg:col-span-6 relative min-h-[340px] lg:min-h-[440px] overflow-hidden">
+                  <Image
+                    src="/images/about/hero-doctors.webp"
+                    alt="NabiOta Unternehmenskultur und Team"
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                  {/* Smooth horizontal blend from left dark background into right photo */}
+                  <div className="hidden lg:block absolute inset-y-0 left-0 w-36 bg-gradient-to-r from-[#07160C] to-transparent pointer-events-none z-10" />
+                  <div className="lg:hidden absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#07160C] to-transparent pointer-events-none z-10" />
 
-                  {/* Floating Pill Badge */}
-                  <div className="relative -mt-5 sm:-mt-6 mx-auto max-w-[85%] sm:max-w-xs bg-white rounded-xl p-3 sm:p-3.5 shadow-lg flex items-center gap-3 z-10">
-                    <div className="w-8 h-8 rounded-full bg-[#FAF6EE] border border-[#E5D7B7] flex items-center justify-center flex-shrink-0 text-[#C5A56A]">
-                      <Sprout className="w-4 h-4" />
+                  {/* Larger Floating Badge at bottom right: "плажка крупнее как видишь" */}
+                  <div className="absolute bottom-6 left-6 right-6 sm:left-auto sm:right-6 sm:bottom-6 max-w-md bg-[#FAF7F0] rounded-2xl px-6 py-4 sm:px-7 sm:py-5 shadow-[0_16px_36px_rgba(0,0,0,0.22)] border border-[#EAE3D4] flex items-center gap-4 sm:gap-5 z-20">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#FAF6EE] border border-[#E5D7B7] flex items-center justify-center flex-shrink-0 text-[#C5A56A] shadow-xs">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 sm:w-7 sm:h-7">
+                        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+                        <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+                      </svg>
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-forest-950 leading-tight">
+                      <p className="font-serif font-bold text-sm sm:text-base text-forest-950 leading-snug">
                         {t.culture.badgeTitle}
                       </p>
-                      <p className="text-[11px] text-[#717A73] leading-tight">
+                      <p className="text-xs sm:text-sm text-[#5B635C] leading-snug mt-1">
                         {t.culture.badgeSub}
                       </p>
                     </div>
