@@ -30,6 +30,8 @@ import {
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
+import { PageHero } from "@/components/layout/PageHero";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { SupportedLocale } from "@/lib/i18n";
 
 interface Props {
@@ -42,42 +44,37 @@ export function PflegePageComponent({ locale = "de" }: Props) {
 
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  const t = {
-    hero: {
-      eyebrow: isRu ? "СЕСТРИНСКИЙ УХОД" : isEn ? "NURSING CARE" : "PFLEGE & BETREUUNG",
-      title: isRu
-        ? "Чуткий уход ради здорового будущего"
-        : isEn
-        ? "Compassionate Care for a Healthier Tomorrow"
-        : "Einfühlsame Pflege für ein gesünderes Morgen",
-      desc: isRu
-        ? "Наши профессиональные услуги сестринского ухода обеспечивают индивидуальную поддержку, комфорт и достоинство — ведь ваше благополучие важно на каждом этапе жизни."
-        : isEn
-        ? "Our professional nursing care services provide personalized support, comfort and dignity — because your well-being matters, at every stage of life."
-        : "Unsere professionellen Pflegedienste bieten individuelle Unterstützung, Geborgenheit und Würde – weil Ihr Wohlbefinden in jeder Lebensphase zählt.",
-      btnConsult: isRu ? "Записаться на консультацию" : isEn ? "Book a Consultation" : "Beratung anfragen",
-      btnLearn: isRu ? "Подробнее" : isEn ? "Learn More" : "Mehr erfahren",
-      stampLine1: isRu ? "Лучшая забота" : isEn ? "Better Care," : "Beste Pflege,",
-      stampLine2: isRu ? "Светлые дни" : isEn ? "Brighter Days" : "Hellere Tage",
-      badges: [
-        {
-          label: isRu ? "Чуткая забота" : isEn ? "Compassionate Care" : "Einfühlsame Pflege",
-          icon: Heart,
-        },
-        {
-          label: isRu ? "Квалифицированные медсёстры" : isEn ? "Trained & Certified Nurses" : "Examinierte Fachkräfte",
-          icon: ShieldCheck,
-        },
-        {
-          label: isRu ? "На дому и в стационаре" : isEn ? "In-Home & Facility Care" : "Häuslich & Stationär",
-          icon: Home,
-        },
-        {
-          label: isRu ? "Круглосуточная поддержка 24/7" : isEn ? "24/7 Support Available" : "24/7 Rufbereitschaft",
-          icon: Clock,
-        },
-      ],
+  // Standard Header/Hero Data matching our site's PageHero design
+  const heroData = {
+    title: isRu ? "Сестринский уход & патронаж" : isEn ? "Nursing Care & HomeCare" : "Pflege & HomeCare",
+    subtitle: isRu ? "Чуткая забота и профессиональное ведение" : isEn ? "Compassionate Care & Professional Support" : "Würdevolle Fürsorge im vertrauten Umfeld",
+    eyebrow: isRu ? "УХОД И ПАТРОНАЖ" : isEn ? "NURSING & HOMECARE" : "AMBULANTE & STATIONÄRE PFLEGE",
+    desc: isRu
+      ? "NabiOta® HomeCare обеспечивает квалифицированный сестринский уход, медицинскую помощь и заботу в привычном домашнем окружении — с высочайшим уважением к достоинству человека и поддержкой его близких."
+      : isEn
+      ? "NabiOta® HomeCare delivers qualified outpatient nursing, clinical treatment care, and compassionate everyday support in the comfort of your home — prioritizing human dignity, safety, and peace of mind for families."
+      : "Die NabiOta® HomeCare sichert eine verlässliche Pflegeversorgung zu Hause und in kooperierenden Einrichtungen. Unser Pflegeansatz basiert auf Respekt vor der Würde des Menschen, examinierter Fachkompetenz und nachhaltiger Entlastung der Angehörigen.",
+  };
+
+  const heroBadges = [
+    {
+      icon: <Award className="w-5 h-5 text-[#ECCF96]" />,
+      title: isRu ? "100% Экзамен." : isEn ? "100% Certified" : "100% Examiniert",
+      sub: isRu ? "Специалисты" : isEn ? "Nursing Staff" : "Fachpflegekräfte",
     },
+    {
+      icon: <Stethoscope className="w-5 h-5 text-[#ECCF96]" />,
+      title: isRu ? "SGB V & XI" : isEn ? "All Insurances" : "SGB V & SGB XI",
+      sub: isRu ? "Все кассы" : isEn ? "Covered Care" : "Zugelassener Partner",
+    },
+    {
+      icon: <Clock className="w-5 h-5 text-[#ECCF96]" />,
+      title: isRu ? "24/7 Забота" : isEn ? "24/7 Care" : "24/7 Betreuung",
+      sub: isRu ? "На связи" : isEn ? "On-Call Support" : "Rufbereitschaft",
+    },
+  ];
+
+  const t = {
     services: {
       eyebrow: isRu ? "НАШИ УСЛУГИ" : isEn ? "OUR SERVICES" : "UNSERE LEISTUNGEN",
       title: isRu
@@ -379,97 +376,41 @@ export function PflegePageComponent({ locale = "de" }: Props) {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#FAF9F5] text-forest-950 font-sans selection:bg-gold-500/20">
-      {/* Existing global Header kept as required */}
+      {/* ── 1. GLOBAL SITE NAVIGATION HEADER (kept as-is) ── */}
       <Header currentLocale={locale} />
 
-      <main className="flex-1">
+      {/* ── 2. SITE STANDARD PAGE HERO (Unified Header with botanical gold background) ── */}
+      <PageHero
+        breadcrumb={
+          <Breadcrumb
+            items={[
+              { label: isRu ? "Главная" : isEn ? "Home" : "Startseite", href: `/${locale}` },
+              {
+                label: isRu ? "Направления холдинга" : isEn ? "Divisions" : "Unternehmensbereiche",
+                href: `/${locale}/areas`,
+              },
+              { label: heroData.title },
+            ]}
+          />
+        }
+        title={
+          <>
+            {heroData.title}
+            <span className="block text-xl sm:text-2xl text-[#ECCF93] font-light mt-1 font-serif break-words [overflow-wrap:anywhere] hyphens-auto">
+              {heroData.subtitle}
+            </span>
+          </>
+        }
+        eyebrow={heroData.eyebrow}
+        description={heroData.desc}
+        imageSrc="/images/areas/pflege.webp"
+        imageAlt="NabiOta Health Group Pflege & HomeCare"
+        badges={heroBadges}
+      />
+
+      <main className="flex-1 bg-[#FAF9F5]">
         {/* ========================================================================= */}
-        {/* 1. HERO SECTION                                                          */}
-        {/* ========================================================================= */}
-        <section className="relative pt-6 pb-12 sm:pt-10 sm:pb-16 overflow-hidden">
-          <Container size="wide">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-              {/* Left Column: Copy & Badges */}
-              <div className="lg:col-span-6 space-y-6">
-                <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans">
-                  {t.hero.eyebrow}
-                </span>
-
-                <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[46px] xl:text-[52px] font-normal text-[#0F2A1D] leading-[1.12] tracking-tight">
-                  {t.hero.title}
-                </h1>
-
-                <p className="text-sm sm:text-base text-[#4A5D52] font-normal leading-relaxed max-w-xl">
-                  {t.hero.desc}
-                </p>
-
-                {/* Buttons */}
-                <div className="flex flex-wrap items-center gap-3.5 pt-2">
-                  <Link
-                    href={`/${locale}/contact`}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0D2619] hover:bg-[#163D29] text-white text-xs sm:text-sm font-medium transition-all duration-300 shadow-sm hover:shadow group"
-                  >
-                    <span>{t.hero.btnConsult}</span>
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-
-                  <a
-                    href="#services"
-                    className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#FAF9F5] hover:bg-white text-[#0D2619] border border-[#C8B896] text-xs sm:text-sm font-medium transition-all duration-300 shadow-sm"
-                  >
-                    {t.hero.btnLearn}
-                  </a>
-                </div>
-
-                {/* 4 Trust Badges Horizontal Row */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-[#E8E2D5]">
-                  {t.hero.badges.map((badge, idx) => {
-                    const IconComp = badge.icon;
-                    return (
-                      <div key={idx} className="flex flex-col items-start gap-2">
-                        <div className="w-8 h-8 rounded-full bg-[#EBF0EA] flex items-center justify-center text-[#234A32]">
-                          <IconComp className="w-4 h-4" />
-                        </div>
-                        <span className="text-[11px] sm:text-xs font-medium text-[#234A32] leading-snug">
-                          {badge.label}
-                        </span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Right Column: Hero Photo with Handwritten Stamp Badge */}
-              <div className="lg:col-span-6 relative">
-                <div className="relative rounded-[28px] sm:rounded-[36px] overflow-hidden shadow-2xl border border-forest-900/10 aspect-[4/3] sm:aspect-[16/11]">
-                  <Image
-                    src="/images/areas/pflege.webp"
-                    alt={t.hero.title}
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-
-                  {/* Stamp Badge Top Right: "Better Care, Brighter Days ♡" */}
-                  <div className="absolute top-4 right-4 sm:top-6 sm:right-6 bg-white/85 backdrop-blur-md px-4 py-3 sm:px-5 sm:py-3.5 rounded-2xl shadow-lg border border-white/80 rotate-[-2deg] flex flex-col items-center justify-center">
-                    <p className="font-serif italic text-xs sm:text-sm font-semibold text-[#0E281C] text-center leading-tight">
-                      {t.hero.stampLine1}
-                      <br />
-                      {t.hero.stampLine2}
-                    </p>
-                    <div className="flex items-center gap-1.5 mt-1">
-                      <span className="w-4 h-[1px] bg-[#9B7C38]/60" />
-                      <Heart className="w-3.5 h-3.5 text-[#0E281C] fill-[#0E281C]/20" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
-
-        {/* ========================================================================= */}
-        {/* 2. OUR NURSING CARE SERVICES (8 Cards Grid)                                */}
+        {/* SECTION 1: OUR NURSING CARE SERVICES (8 Cards Grid matching Photo)        */}
         {/* ========================================================================= */}
         <section id="services" className="py-14 sm:py-20 bg-[#FAF9F5]">
           <Container size="wide">
@@ -512,9 +453,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* 3. WHY CHOOSE US (Personalized Care. Professional Support.)                */}
+        {/* SECTION 2: WHY CHOOSE US (Personalized Care. Professional Support.)       */}
         {/* ========================================================================= */}
-        <section className="py-14 sm:py-20 bg-[#FAF9F5] relative overflow-hidden">
+        <section className="py-14 sm:py-20 bg-[#FAF9F5] relative overflow-hidden border-t border-[#EAE3D5]/70">
           <Container size="wide">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
               {/* Left Column: Image */}
@@ -570,7 +511,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* 4. OUR APPROACH (Holistic Care for Every Stage of Life)                    */}
+        {/* SECTION 3: OUR APPROACH (Holistic Care for Every Stage of Life)           */}
         {/* ========================================================================= */}
         <section className="py-14 sm:py-20 bg-[#FAF9F5] border-t border-[#EAE3D5]">
           <Container size="wide">
@@ -625,7 +566,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* 5. OUR COMMITMENT (More Than Just Care — We're Family)                     */}
+        {/* SECTION 4: OUR COMMITMENT (More Than Just Care — We're Family)            */}
         {/* ========================================================================= */}
         <section className="py-10 sm:py-16">
           <Container size="wide">
@@ -688,7 +629,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* 6. TESTIMONIALS (Real Stories. Real Impact.)                               */}
+        {/* SECTION 5: TESTIMONIALS (Real Stories. Real Impact.)                      */}
         {/* ========================================================================= */}
         <section className="py-14 sm:py-20 bg-[#FAF9F5]">
           <Container size="wide">
@@ -759,7 +700,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* 7. FREQUENTLY ASKED QUESTIONS (FAQ)                                       */}
+        {/* SECTION 6: FREQUENTLY ASKED QUESTIONS (FAQ)                               */}
         {/* ========================================================================= */}
         <section className="py-14 sm:py-20 bg-[#FAF9F5] border-t border-[#EAE3D5]">
           <Container size="wide">
@@ -821,7 +762,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* 8. BOTTOM CTA BANNER (Your Health. Our Priority.)                         */}
+        {/* SECTION 7: BOTTOM CTA BANNER (Your Health. Our Priority.)                 */}
         {/* ========================================================================= */}
         <section className="py-10 sm:py-16">
           <Container size="wide">
