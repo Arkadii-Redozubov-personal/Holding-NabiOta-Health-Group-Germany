@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
+  ArrowLeft,
   ArrowUpRight,
   Calendar,
   Building2,
@@ -13,54 +14,15 @@ import {
   FileText,
   ChevronDown,
   Check,
-  Search,
   Bookmark,
   ShieldCheck,
+  LayoutGrid,
+  Newspaper,
 } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SupportedLocale } from "@/lib/i18n";
 import { newsArticles } from "@/data/news";
-
-// ── Custom SVG Icons Matching User Design ──
-function CloverEmblemIcon({ className = "w-4 h-4" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="M12 4.5C10.5 4.5 9 5.5 9 7.5c0 2.2 3 4.5 3 4.5s3-2.3 3-4.5c0-2-1.5-3-3-3Z" />
-      <path d="M12 19.5c1.5 0 3-1 3-3 0-2.2-3-4.5-3-4.5s-3 2.3-3 4.5c0 2 1.5 3 3 3Z" />
-      <path d="M4.5 12C4.5 10.5 5.5 9 7.5 9c2.2 0 4.5 3 4.5 3s-2.3 3-4.5 3c-2 0-3-1.5-3-3Z" />
-      <path d="M19.5 12c0 1.5-1 3-3 3-2.2 0-4.5-3-4.5-3s2.3-3 4.5-3c2 0 3 1.5 3 3Z" />
-      <circle cx="12" cy="12" r="1.5" />
-    </svg>
-  );
-}
-
-function EventsPresentationIcon({ className = "w-4 h-4" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <rect x="3" y="4" width="18" height="12" rx="2" />
-      <path d="M7 20h10M12 16v4" />
-      <circle cx="9" cy="9" r="1" />
-      <path d="M13 8h4M13 11h2" />
-    </svg>
-  );
-}
 
 interface Props {
   locale?: SupportedLocale;
@@ -72,11 +34,17 @@ export function NewsPageComponent({ locale = "de" }: Props) {
 
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [sortOrder, setSortOrder] = useState<"recent" | "oldest">("recent");
+  const [currentPage, setCurrentPage] = useState<number>(1);
   const [sidebarEmail, setSidebarEmail] = useState("");
   const [sidebarSubscribed, setSidebarSubscribed] = useState(false);
   const [bannerEmail, setBannerEmail] = useState("");
   const [bannerSubscribed, setBannerSubscribed] = useState(false);
   const [bookmarkedIds, setBookmarkedIds] = useState<string[]>([]);
+
+  // Reset page when category or sorting changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [activeCategory, sortOrder]);
 
   const toggleBookmark = (id: string, e: React.MouseEvent) => {
     e.preventDefault();
@@ -99,53 +67,49 @@ export function NewsPageComponent({ locale = "de" }: Props) {
       : "Bleiben Sie informiert über unsere neuesten Meilensteine, Innovationen, Veranstaltungen und Entwicklungen der NabiOta Health Group Germany.",
   };
 
-  // ── Categories List matching Mockup ──
+  // ── Categories List matching Mockup (Photo 2) ──
   const categories = [
     {
       id: "all",
-      label: isRu ? "Все новости" : isEn ? "All News" : "All News",
-      count: 12,
-      icon: CloverEmblemIcon,
+      label: isRu ? "Все новости" : isEn ? "All News" : "Alle Nachrichten",
+      count: newsArticles.length,
+      icon: LayoutGrid,
     },
     {
       id: "Company Updates",
-      label: isRu ? "Новости компании" : isEn ? "Company Updates" : "Company Updates",
-      count: 3,
+      label: isRu ? "Новости компании" : isEn ? "Company Updates" : "Unternehmensmeldungen",
+      count: newsArticles.filter((a) => a.category.toLowerCase() === "company updates").length,
       icon: Building2,
     },
     {
       id: "Medical Innovation",
-      label: isRu ? "Медицинские инновации" : isEn ? "Medical Innovation" : "Medical Innovation",
-      count: 4,
+      label: isRu ? "Медицинские инновации" : isEn ? "Medical Innovation" : "Medizinische Innovation",
+      count: newsArticles.filter((a) => a.category.toLowerCase() === "medical innovation").length,
       icon: Lightbulb,
     },
     {
       id: "Events",
-      label: isRu ? "Мероприятия" : isEn ? "Events" : "Events",
-      count: 2,
-      icon: EventsPresentationIcon,
+      label: isRu ? "Мероприятия" : isEn ? "Events" : "Veranstaltungen",
+      count: newsArticles.filter((a) => a.category.toLowerCase() === "events").length,
+      icon: Calendar,
     },
     {
       id: "Careers",
-      label: isRu ? "Карьера" : isEn ? "Careers" : "Careers",
-      count: 1,
+      label: isRu ? "Карьера" : isEn ? "Careers" : "Karriere",
+      count: newsArticles.filter((a) => a.category.toLowerCase() === "careers").length,
       icon: Briefcase,
     },
     {
       id: "Press Releases",
-      label: isRu ? "Пресс-релизы" : isEn ? "Press Releases" : "Press Releases",
-      count: 2,
+      label: isRu ? "Пресс-релизы" : isEn ? "Press Releases" : "Pressemitteilungen",
+      count: newsArticles.filter((a) => a.category.toLowerCase() === "press releases").length,
       icon: FileText,
     },
   ];
 
-  // ── Featured Story ──
-  const featuredArticle = newsArticles.find((a) => a.featured) || newsArticles[0];
-
   // ── Filter & Sort Articles ──
   const filteredArticles = useMemo(() => {
-    // Exclude the featured article from the 6 grid cards
-    let list = newsArticles.filter((a) => a.id !== featuredArticle.id);
+    let list = [...newsArticles];
 
     if (activeCategory !== "all") {
       list = list.filter(
@@ -157,7 +121,15 @@ export function NewsPageComponent({ locale = "de" }: Props) {
       return [...list].reverse();
     }
     return list;
-  }, [activeCategory, sortOrder, featuredArticle.id]);
+  }, [activeCategory, sortOrder]);
+
+  // ── Pagination Configuration (Exactly 3 Rows = 2 cols × 3 rows = 6 items, Photo 3) ──
+  const ITEMS_PER_PAGE = 6;
+  const totalPages = Math.max(1, Math.ceil(filteredArticles.length / ITEMS_PER_PAGE));
+  const paginatedArticles = useMemo(() => {
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    return filteredArticles.slice(start, start + ITEMS_PER_PAGE);
+  }, [filteredArticles, currentPage]);
 
   const handleSidebarSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -182,11 +154,10 @@ export function NewsPageComponent({ locale = "de" }: Props) {
       <Header currentLocale={locale} />
 
       {/* ══════════════════════════════════════════════════════════
-          HERO SECTION (1-IN-1 MATCHING USER DESIGN)
-          - Left: Dark forest green with botanical leaves watermark,
-            Breadcrumbs (Home › News), Eyebrow, Title, Description
-          - Divider: Curved convex arc with champagne gold stroke
-          - Right: High-resolution doctor portrait with blurred clinic
+          HERO SECTION (PHOTO 4: BOTANICAL GOLD BG + CRISP VISIBILITY)
+          - Left Wing: Botanical Gold Background + Reduced blur overlay
+          - Champagne Gold Arcs
+          - Right Side: Doctor Team Photo
       ══════════════════════════════════════════════════════════ */}
       <section className="relative w-full bg-[#08170D] text-white overflow-hidden min-h-[480px] sm:min-h-[520px] lg:h-[600px] lg:min-h-[600px] pt-32 sm:pt-36 lg:pt-40 pb-14 sm:pb-16 flex items-center border-b border-[#D5B878]/25">
         {/* Right side: High-Res Clean Doctor Photo */}
@@ -199,41 +170,96 @@ export function NewsPageComponent({ locale = "de" }: Props) {
             priority
           />
           {/* Subtle mobile overlay so text remains razor-sharp */}
-          <div className="sm:hidden absolute inset-0 bg-[#08170D]/85" />
+          <div className="sm:hidden absolute inset-0 bg-[#08170D]/80" />
         </div>
 
-        {/* Desktop Elegant Sweeping Curved Mask with Champagne Gold Border */}
+        {/* Mobile botanical texture */}
+        <div className="sm:hidden absolute inset-0 z-0 pointer-events-none opacity-40">
+          <Image
+            src="/images/botanical-gold-bg.webp"
+            alt=""
+            fill
+            className="object-cover"
+          />
+        </div>
+
+        {/* Desktop Elegant Sweeping Curved Mask with Botanical Gold Background (Photo 4) */}
         <div className="hidden sm:block absolute inset-0 z-10 pointer-events-none">
           <svg
             viewBox="0 0 1440 600"
             preserveAspectRatio="none"
             className="w-full h-full"
           >
-            {/* Dark green filled area covering left half */}
+            <defs>
+              <clipPath id="newsHeroLeftWingClip">
+                <path d="M 0 0 L 620 0 C 710 180, 680 420, 800 600 L 0 600 Z" />
+              </clipPath>
+
+              <linearGradient id="newsGoldGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#DFC894" stopOpacity="0.4" />
+                <stop offset="25%" stopColor="#ECCF93" stopOpacity="0.95" />
+                <stop offset="50%" stopColor="#D4B06A" stopOpacity="1" />
+                <stop offset="75%" stopColor="#ECCF93" stopOpacity="0.95" />
+                <stop offset="100%" stopColor="#DFC894" stopOpacity="0.4" />
+              </linearGradient>
+
+              <linearGradient id="newsGoldGradLight" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#ECCF93" stopOpacity="0.08" />
+                <stop offset="35%" stopColor="#ECCF93" stopOpacity="0.45" />
+                <stop offset="75%" stopColor="#DFC894" stopOpacity="0.35" />
+                <stop offset="100%" stopColor="#DFC894" stopOpacity="0.08" />
+              </linearGradient>
+
+              <filter id="newsGoldGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="2.5" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+
+              {/* Reduced dark opacity so botanical foliage is clearly visible (Photo 4) */}
+              <linearGradient id="newsHeroDarkFill" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stopColor="#040F07" stopOpacity="0.45" />
+                <stop offset="35%" stopColor="#051309" stopOpacity="0.55" />
+                <stop offset="70%" stopColor="#07180D" stopOpacity="0.52" />
+                <stop offset="100%" stopColor="#0A1E13" stopOpacity="0.38" />
+              </linearGradient>
+            </defs>
+
+            {/* Botanical Gold Background in the Left Wing */}
+            <image
+              href="/images/botanical-gold-bg.webp"
+              width="1440"
+              height="600"
+              preserveAspectRatio="xMidYMid slice"
+              clipPath="url(#newsHeroLeftWingClip)"
+              opacity="0.95"
+            />
+
+            {/* Shading overlay for high-contrast text readability */}
             <path
               d="M 0 0 L 620 0 C 710 180, 680 420, 800 600 L 0 600 Z"
-              fill="#08170D"
+              fill="url(#newsHeroDarkFill)"
             />
-            {/* Elegant Champagne Gold Border Line */}
+
+            {/* Primary Glowing Golden Separator Arc Line */}
             <path
               d="M 620 0 C 710 180, 680 420, 800 600"
-              fill="none"
-              stroke="#D5B878"
+              stroke="url(#newsGoldGrad)"
               strokeWidth="2"
-              opacity="0.85"
+              fill="none"
+              filter="url(#newsGoldGlow)"
+            />
+
+            {/* Secondary Fine Golden Accent Curve */}
+            <path
+              d="M 645 0 C 735 185, 705 430, 825 600"
+              stroke="url(#newsGoldGradLight)"
+              strokeWidth="1"
+              fill="none"
             />
           </svg>
-        </div>
-
-        {/* Botanical watermark in top-left */}
-        <div className="absolute top-0 left-0 w-48 sm:w-64 h-48 sm:h-64 pointer-events-none opacity-40 z-10 select-none">
-          <Image
-            src="/images/areas/botanical-branch-clean.webp"
-            alt="Botanical Accent"
-            fill
-            className="object-contain object-top-left -scale-x-100"
-            priority
-          />
         </div>
 
         {/* Content container on left */}
@@ -267,24 +293,25 @@ export function NewsPageComponent({ locale = "de" }: Props) {
       </section>
 
       {/* ══════════════════════════════════════════════════════════
-          MAIN CONTENT AREA (PHOTO 3: 1-IN-1 DESIGN)
-          - Header row: "— ALL NEWS / Latest Articles" + Sort by dropdown
-          - Grid: Left (2-column articles grid) + Right (3-card sidebar)
+          MAIN CONTENT AREA (PHOTO 1, 2, 3: 1-IN-1 DESIGN)
+          - Header row: "— ALL NEWS / Latest Articles" + Sort dropdown
+          - Grid: Left (2-col compact articles, 3 rows max) + Right (Sidebar with Photo 2 Categories)
+          - Bottom: Pagination (Photo 3)
       ══════════════════════════════════════════════════════════ */}
-      <main className="flex-1 py-10 sm:py-14 bg-[#FAF8F5]">
+      <main id="articles-grid-top" className="flex-1 py-10 sm:py-14 bg-[#FAF8F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header Row (Photo 3) */}
+          {/* Header Row (Photo 1) */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 mb-8 border-b border-[#EDE8DE]">
             <div>
               <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
-                {isRu ? "— ВСЕ СТАТЬИ" : isEn ? "— ALL NEWS" : "— ALL NEWS"}
+                {isRu ? "— ВСЕ СТАТЬИ" : isEn ? "— ALL ARTICLES" : "— ALLE ARTIKEL"}
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl text-[#132218] font-normal leading-tight mt-1">
-                {isRu ? "Последние публикации" : isEn ? "Latest Articles" : "Latest Articles"}
+                {isRu ? "Последние публикации" : isEn ? "Latest Articles" : "Neueste Publikationen"}
               </h2>
             </div>
 
-            {/* Sort by dropdown (Photo 3) */}
+            {/* Sort by dropdown (Photo 1) */}
             <div className="flex items-center gap-2 self-start sm:self-auto">
               <span className="text-xs text-[#6E756D] font-sans">
                 {isRu ? "Сортировка:" : isEn ? "Sort by:" : "Sortieren:"}
@@ -309,19 +336,19 @@ export function NewsPageComponent({ locale = "de" }: Props) {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
             
-            {/* ── LEFT COLUMN (~67% width): 2-COLUMN ARTICLES GRID (PHOTO 3) ── */}
-            <div className="lg:col-span-8">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-7">
-                {filteredArticles.map((art) => {
+            {/* ── LEFT COLUMN (~67% width): 2-COLUMN COMPACT ARTICLES GRID (3 ROWS MAX) ── */}
+            <div className="lg:col-span-8 flex flex-col">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                {paginatedArticles.map((art) => {
                   const isBookmarked = bookmarkedIds.includes(art.id);
                   return (
                     <article
                       key={art.id}
-                      className="bg-white rounded-2xl border border-[#EDE8DE] shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] transition-all duration-300 overflow-hidden flex flex-col justify-between group hover:-translate-y-0.5"
+                      className="bg-white rounded-2xl border border-[#EDE8DE] shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_22px_rgba(0,0,0,0.05)] transition-all duration-300 overflow-hidden flex flex-col justify-between group hover:-translate-y-0.5"
                     >
                       <div>
-                        {/* Article Image */}
-                        <Link href={`/${locale}/news/${art.slug}`} className="block relative aspect-[16/10] w-full overflow-hidden bg-neutral-100">
+                        {/* Article Image - Compact height for sleek card proportion */}
+                        <Link href={`/${locale}/news/${art.slug}`} className="block relative h-40 sm:h-44 w-full overflow-hidden bg-neutral-100">
                           <Image
                             src={art.image}
                             alt={art.title}
@@ -330,16 +357,16 @@ export function NewsPageComponent({ locale = "de" }: Props) {
                           />
                         </Link>
 
-                        {/* Article Body */}
-                        <div className="p-4 sm:p-5">
-                          {/* Row: Category Pill + Date + Bookmark Icon (Photo 3) */}
-                          <div className="flex items-center justify-between gap-2 mb-2.5">
-                            <span className="text-[9.5px] font-bold tracking-[0.12em] uppercase text-[#8C6D2B] bg-[#FAF5EC] border border-[#EADBBD] px-2.5 py-0.5 rounded">
+                        {/* Article Body - Compact padding & line clamping */}
+                        <div className="p-3.5 sm:p-4">
+                          {/* Row: Category Pill + Date + Bookmark Icon (Photo 1) */}
+                          <div className="flex items-center justify-between gap-2 mb-2">
+                            <span className="text-[9px] font-bold tracking-[0.12em] uppercase text-[#8C6D2B] bg-[#FAF5EC] border border-[#EADBBD] px-2 py-0.5 rounded">
                               {art.category}
                             </span>
                             
                             <div className="flex items-center gap-2">
-                              <span className="text-[11.5px] text-[#6E756D] font-sans">
+                              <span className="text-[11px] text-[#6E756D] font-sans">
                                 {art.date}
                               </span>
                               <button
@@ -358,22 +385,22 @@ export function NewsPageComponent({ locale = "de" }: Props) {
                             </div>
                           </div>
 
-                          {/* Title */}
+                          {/* Title - 2 lines max */}
                           <Link href={`/${locale}/news/${art.slug}`}>
-                            <h3 className="font-serif text-[17px] sm:text-[18.5px] text-[#132218] font-normal leading-[1.28] hover:text-[#B89650] transition-colors mb-2 line-clamp-2">
+                            <h3 className="font-serif text-[16px] sm:text-[17px] text-[#132218] font-normal leading-[1.26] hover:text-[#B89650] transition-colors mb-1.5 line-clamp-2">
                               {art.title}
                             </h3>
                           </Link>
 
-                          {/* Excerpt */}
-                          <p className="text-xs sm:text-[12.5px] text-[#556358] leading-relaxed font-sans line-clamp-3">
+                          {/* Excerpt - 2 lines max */}
+                          <p className="text-xs text-[#556358] leading-relaxed font-sans line-clamp-2">
                             {art.summary}
                           </p>
                         </div>
                       </div>
 
-                      {/* Read more → (Photo 3) */}
-                      <div className="px-4 sm:p-5 pt-0 pb-4 sm:pb-5">
+                      {/* Read more → (Photo 1) */}
+                      <div className="px-3.5 sm:px-4 pb-3.5 sm:pb-4 pt-0">
                         <Link
                           href={`/${locale}/news/${art.slug}`}
                           className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#142318] group-hover:text-[#B89650] transition-colors"
@@ -404,25 +431,92 @@ export function NewsPageComponent({ locale = "de" }: Props) {
                   </button>
                 </div>
               )}
+
+              {/* ── PAGINATION CONTROLS (PHOTO 3: 1-IN-1 DESIGN) ── */}
+              {totalPages > 1 && (
+                <div className="flex items-center justify-center gap-2 pt-8 sm:pt-10">
+                  {/* Previous Button (Photo 3) */}
+                  <button
+                    onClick={() => {
+                      setCurrentPage((p) => Math.max(1, p - 1));
+                      document.getElementById("articles-grid-top")?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    disabled={currentPage === 1}
+                    aria-label="Previous page"
+                    className="w-10 h-10 rounded-full border border-[#D5DDD6] bg-white flex items-center justify-center text-[#556358] hover:border-[#0D2214] hover:text-[#0D2214] transition-colors disabled:opacity-35 disabled:cursor-not-allowed shadow-xs"
+                  >
+                    <ArrowLeft className="w-4 h-4 stroke-[1.8]" />
+                  </button>
+
+                  {/* Page Numbers (Photo 3: Active filled dark circle, inactive clean numbers) */}
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => {
+                    const isActive = pageNum === currentPage;
+                    return (
+                      <button
+                        key={pageNum}
+                        onClick={() => {
+                          setCurrentPage(pageNum);
+                          document.getElementById("articles-grid-top")?.scrollIntoView({ behavior: "smooth" });
+                        }}
+                        aria-current={isActive ? "page" : undefined}
+                        className={`w-10 h-10 rounded-full text-xs sm:text-sm transition-all flex items-center justify-center ${
+                          isActive
+                            ? "bg-[#0D2214] text-white shadow-sm font-semibold scale-100"
+                            : "text-[#556358] hover:text-[#0D2214] hover:bg-[#EDE8DE]/40 font-medium"
+                        }`}
+                      >
+                        {pageNum}
+                      </button>
+                    );
+                  })}
+
+                  {/* Next Button (Photo 3) */}
+                  <button
+                    onClick={() => {
+                      setCurrentPage((p) => Math.min(totalPages, p + 1));
+                      document.getElementById("articles-grid-top")?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    disabled={currentPage === totalPages}
+                    aria-label="Next page"
+                    className="w-10 h-10 rounded-full border border-[#D5DDD6] bg-white flex items-center justify-center text-[#556358] hover:border-[#0D2214] hover:text-[#0D2214] transition-colors disabled:opacity-35 disabled:cursor-not-allowed shadow-xs"
+                  >
+                    <ArrowRight className="w-4 h-4 stroke-[1.8]" />
+                  </button>
+                </div>
+              )}
             </div>
 
-            {/* ── RIGHT COLUMN (~33% width): 3 SIDEBAR CARDS (PHOTO 3) ── */}
+            {/* ── RIGHT COLUMN (~33% width): SIDEBAR CARDS (PHOTO 2 CATEGORIES) ── */}
             <aside className="lg:col-span-4 space-y-6 sm:space-y-7">
               
-              {/* ── Card 1: News Categories with Dark Header (Photo 3) ── */}
+              {/* ── Card 1: News Categories (1-in-1 Match of Photo 2) ── */}
               <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#EDE8DE] shadow-[0_2px_16px_rgba(0,0,0,0.02)] overflow-hidden">
-                {/* Dark Forest Green Header Bar with Icon & Title */}
-                <div className="bg-[#0A180E] text-white px-5 py-4 border-b border-[#0A180E] flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full border border-[#D5B878]/60 bg-[#0A180E] flex items-center justify-center text-[#ECCF96] shadow-sm shrink-0">
-                    <FileText className="w-4 h-4 stroke-[1.6]" />
+                {/* Dark Forest Green Header Bar with Circular Gold Badge & Playfair Title (Photo 2) */}
+                <div className="relative bg-[#08170D] text-white px-5 py-4 border-b border-[#08170D] flex items-center gap-3.5 overflow-hidden">
+                  {/* Botanical leaf silhouette watermark in top-right */}
+                  <div className="absolute -top-1 -right-1 w-24 h-24 pointer-events-none opacity-20 select-none">
+                    <Image
+                      src="/images/areas/botanical-branch-clean.webp"
+                      alt=""
+                      fill
+                      className="object-contain object-top-right"
+                    />
                   </div>
-                  <h3 className="font-serif text-lg text-white font-normal">
-                    {isRu ? "Категории новостей" : isEn ? "News Categories" : "News Categories"}
+
+                  {/* Circular Gold Badge with Newspaper Icon (Photo 2) */}
+                  <div className="relative z-10 w-10 h-10 rounded-full border border-[#D5B878] p-0.5 flex items-center justify-center bg-[#08170D] shadow-sm shrink-0">
+                    <div className="w-full h-full rounded-full border border-[#D5B878]/60 flex items-center justify-center text-[#ECCF96]">
+                      <Newspaper className="w-4.5 h-4.5 stroke-[1.6]" />
+                    </div>
+                  </div>
+
+                  <h3 className="relative z-10 font-serif text-[17.5px] sm:text-[18.5px] text-white font-normal tracking-wide">
+                    {isRu ? "Категории новостей" : isEn ? "News Categories" : "Nachrichten-Kategorien"}
                   </h3>
                 </div>
 
-                {/* Categories List */}
-                <div className="p-3 sm:p-4 space-y-1">
+                {/* Categories List (Photo 2) */}
+                <div className="p-3 sm:p-3.5 space-y-1">
                   {categories.map((cat) => {
                     const CatIcon = cat.icon;
                     const isActive =
@@ -430,26 +524,29 @@ export function NewsPageComponent({ locale = "de" }: Props) {
                     return (
                       <button
                         key={cat.id}
-                        onClick={() => setActiveCategory(cat.id)}
+                        onClick={() => {
+                          setActiveCategory(cat.id);
+                          setCurrentPage(1);
+                        }}
                         className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs transition-all ${
                           isActive
-                            ? "bg-[#F5ECE0] text-[#142318] font-bold shadow-xs"
-                            : "text-[#425046] hover:bg-[#FAF8F5] hover:text-[#142318]"
+                            ? "bg-[#F3EAD8] text-[#132218] font-bold shadow-xs"
+                            : "text-[#425046] hover:bg-[#FAF8F5] hover:text-[#132218] font-medium"
                         }`}
                       >
                         <div className="flex items-center gap-3">
                           <CatIcon
-                            className={`w-4 h-4 stroke-[1.6] ${
-                              isActive ? "text-[#142318]" : "text-[#8C938D]"
+                            className={`w-4 h-4 stroke-[1.7] ${
+                              isActive ? "text-[#132218]" : "text-[#7C887E]"
                             }`}
                           />
                           <span>{cat.label}</span>
                         </div>
                         <span
-                          className={`text-[11px] font-sans ${
+                          className={`text-[11.5px] font-sans ${
                             isActive
-                              ? "text-[#142318] font-bold"
-                              : "text-[#8C938D]"
+                              ? "text-[#9E7A37] font-bold"
+                              : "text-[#7C887E]"
                           }`}
                         >
                           {cat.count}
@@ -460,7 +557,7 @@ export function NewsPageComponent({ locale = "de" }: Props) {
                 </div>
               </div>
 
-              {/* ── Card 2: Get the latest updates (Newsletter with Botanical Watermark, Photo 3) ── */}
+              {/* ── Card 2: Get the latest updates (Newsletter with Botanical Watermark, Photo 1) ── */}
               <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#EDE8DE] shadow-[0_2px_16px_rgba(0,0,0,0.02)] p-5 sm:p-6 relative overflow-hidden">
                 {/* Botanical leaf branch watermark on top-right */}
                 <div className="absolute -top-2 -right-2 w-28 h-28 pointer-events-none opacity-25 select-none">
@@ -534,7 +631,7 @@ export function NewsPageComponent({ locale = "de" }: Props) {
                 </div>
               </div>
 
-              {/* ── Card 3: Featured Innovation with Microscope Image (Photo 3) ── */}
+              {/* ── Card 3: Featured Innovation with Microscope Image (Photo 1) ── */}
               <div className="relative rounded-2xl sm:rounded-3xl bg-[#08170D] text-white p-5 sm:p-6 overflow-hidden border border-[#D5B878]/30 shadow-lg">
                 {/* Microscope Background Photo */}
                 <div className="absolute inset-0 pointer-events-none">
@@ -559,7 +656,7 @@ export function NewsPageComponent({ locale = "de" }: Props) {
                 </div>
 
                 <div className="relative z-10">
-                  {/* Top Round Button with Arrow pointing top-right ↗ (Photo 3) */}
+                  {/* Top Round Button with Arrow pointing top-right ↗ (Photo 1) */}
                   <div className="w-8 h-8 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-white mb-4">
                     <ArrowUpRight className="w-4 h-4" />
                   </div>
@@ -598,7 +695,7 @@ export function NewsPageComponent({ locale = "de" }: Props) {
           </div>
 
           {/* ══════════════════════════════════════════════════════════
-              NEWSLETTER FULL-WIDTH BANNER (ABOVE FOOTER, PHOTO 1-IN-1)
+              NEWSLETTER FULL-WIDTH BANNER (ABOVE FOOTER)
               - Dark forest green background
               - Left: STAY INFORMED, Subscribe to Our Newsletter, desc
               - Right: Pill input with gold round button

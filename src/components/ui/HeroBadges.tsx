@@ -30,7 +30,7 @@ export function HeroBadges({ items, className = "" }: HeroBadgesProps) {
 
         return (
           <div key={idx} className="flex items-center gap-3 sm:gap-3.5">
-            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#D5B878]/65 bg-[#0C1C11]/70 backdrop-blur-md shadow-[0_0_12px_rgba(213,184,120,0.18)] flex items-center justify-center text-[#ECCF96] shrink-0">
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#D5B878]/60 bg-[#07170E]/40 backdrop-blur-xs shadow-[0_0_10px_rgba(213,184,120,0.15)] flex items-center justify-center text-[#ECCF96] shrink-0">
               {renderIcon()}
             </div>
             <div className="flex flex-col justify-center">

@@ -595,24 +595,24 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
                 </feMerge>
               </filter>
               <linearGradient id="careerDarkGreenFill" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stopColor="#051208" stopOpacity="0.80" />
-                <stop offset="65%" stopColor="#07170E" stopOpacity="0.75" />
-                <stop offset="85%" stopColor="#081A10" stopOpacity="0.68" />
-                <stop offset="100%" stopColor="#0A1E13" stopOpacity="0.58" />
+                <stop offset="0%" stopColor="#040F07" stopOpacity="0.45" />
+                <stop offset="35%" stopColor="#051309" stopOpacity="0.55" />
+                <stop offset="70%" stopColor="#07180D" stopOpacity="0.52" />
+                <stop offset="100%" stopColor="#0A1E13" stopOpacity="0.38" />
               </linearGradient>
             </defs>
 
-            {/* Botanical Gold Background Image inside the Left Wing */}
+            {/* Botanical Gold Background Image inside the Left Wing (Photo 4) */}
             <image
               href="/images/botanical-gold-bg.webp"
               width="1440"
               height="600"
               preserveAspectRatio="xMidYMid slice"
               clipPath="url(#careerLeftWingClip)"
-              opacity="0.75"
+              opacity="0.95"
             />
 
-            {/* Deep Dark Green shading overlay inside the Left Wing for crisp text contrast */}
+            {/* Deep Dark Green shading overlay inside the Left Wing with reduced blur for crisp botanical visibility */}
             <path
               d="M 0,0 L 620,0 C 710,180 680,420 800,600 L 0,600 Z"
               fill="url(#careerDarkGreenFill)"
@@ -636,8 +636,16 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
             />
           </svg>
 
-          {/* Mobile/Tablet: Light transparent gradient that keeps the photo vividly visible with crisp text readability */}
-          <div className="lg:hidden absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-[#051208]/95 via-[#051208]/60 to-[#051208]/25" />
+          {/* Mobile/Tablet: Botanical background texture + light transparent gradient */}
+          <div className="lg:hidden absolute inset-0 z-0 pointer-events-none opacity-40">
+            <Image
+              src="/images/botanical-gold-bg.webp"
+              alt=""
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="lg:hidden absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-[#051208]/90 via-[#051208]/55 to-[#051208]/20" />
 
           {/* Top subtle vignette for seamless fixed header blend */}
           <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#051208]/80 to-transparent pointer-events-none z-10" />

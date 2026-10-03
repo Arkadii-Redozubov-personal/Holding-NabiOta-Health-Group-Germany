@@ -121,7 +121,7 @@ export const newsArticles: NewsArticle[] = [
     title: "Ausbau der ambulanten Versorgung: NabiOta® erweitert MVZ-Kapazitäten",
     summary:
       "Mit der Eröffnung weiterer Facharztbereiche in Mönchengladbach stärkt die Holding das wohnortnahe medizinische Versorgungsangebot in Nordrhein-Westfalen.",
-    date: "14. September 2026",
+    date: "March 10, 2025",
     category: "Company Updates",
     readingTime: "3 Min. Read",
     image: "/images/areas/medical-departments.webp",
@@ -137,7 +137,7 @@ export const newsArticles: NewsArticle[] = [
     title: "Präzisionsmedizin: Inbetriebnahme modernster 3-Tesla-MRT-Systeme",
     summary:
       "Modernste Schnittbilddiagnostik für maximale Detailauflösung bei schonendsten Untersuchungsbedingungen für Patienten.",
-    date: "28. August 2026",
+    date: "March 2, 2025",
     category: "Medical Innovation",
     readingTime: "4 Min. Read",
     image: "/images/services/diagnostik.webp",
@@ -153,13 +153,215 @@ export const newsArticles: NewsArticle[] = [
     title: "Internationaler Fachaustausch: NabiOta® schließt Partnerschaften",
     summary:
       "Grenzüberschreitende Zusammenarbeit zur Weiterbildung medizinischer Fachkräfte und Förderung telemedizinischer Konsile.",
-    date: "10. August 2026",
+    date: "February 24, 2025",
     category: "Company Updates",
     readingTime: "3 Min. Read",
     image: "/images/areas/international.webp",
     content: [
       "Im Rahmen ihrer internationalen Initiative hat die NabiOta® Health Group Kooperationsverträge mit führenden europäischen und internationalen Kliniken unterzeichnet.",
       "Schwerpunkte der Partnerschaften bilden der strukturierte Austausch von Fachwissen, gemeinsame Telekonsile bei komplexen Krankheitsbildern sowie qualifizierte Qualifizierungsprogramme für medizinisches Fachpersonal in Deutschland.",
+    ],
+  },
+  {
+    id: "press-release-q1-strategic-growth",
+    slug: "press-release-q1-strategic-growth",
+    title: "Pressemitteilung: Solides Wachstum und strategische Meilensteine in Q1 2025",
+    summary:
+      "Die NabiOta Health Group berichtet über positive Quartalsergebnisse und die erfolgreiche Integration neuer medizinischer Fachzentren.",
+    date: "February 18, 2025",
+    category: "Press Releases",
+    readingTime: "3 Min. Read",
+    image: "/images/partners/atrium.webp",
+    content: [
+      "Die NabiOta® Health Group Germany GmbH blickt auf ein außerordentlich erfolgreiches erstes Quartal 2025 zurück. Durch die gezielte Vernetzung von ambulanten Zentren und Fachkliniken konnte die Patientenzufriedenheit weiter gesteigert werden.",
+      "Die holdingweite Behandlungsqualität sowie die Implementierung einheitlicher digitaler Standards haben maßgeblich zur Stärkung der Marktposition im bundesdeutschen Gesundheitswesen beigetragen.",
+    ],
+  },
+  {
+    id: "press-release-accreditation-holding",
+    slug: "press-release-accreditation-holding",
+    title: "Pressemitteilung: Höchste Qualitätsauszeichnung für ambulante Versorgungsnetzwerke",
+    summary:
+      "Unabhängige Prüforganisationen zertifizieren alle Standorte der Gruppe mit herausragenden Ergebnissen in puncto Patientensicherheit.",
+    date: "February 10, 2025",
+    category: "Press Releases",
+    readingTime: "3 Min. Read",
+    image: "/images/areas/surgical-center.webp",
+    content: [
+      "Sämtliche Einrichtungen der NabiOta® Health Group wurden im Rahmen des jüngsten Audits mit dem renommierten Gütesiegel für ambulante Exzellenz ausgezeichnet.",
+      "Geprüft wurden unter anderem Notfallmanagement, Hygienestandards, transparente Patientenaufklärung und die interdisziplinäre Koordination komplexer Behandlungsfälle.",
+    ],
+  },
+  {
+    id: "robotics-assisted-orthopedics",
+    slug: "robotics-assisted-orthopedics",
+    title: "Roboterassistierte Präzisionsorthopädie: Neue Behandlungsoptionen",
+    summary:
+      "Minimalinvasive Gelenkersatz-Verfahren mit submillimetergenauer 3D-Navigation für schnellere Mobilisation der Patienten.",
+    date: "February 3, 2025",
+    category: "Medical Innovation",
+    readingTime: "4 Min. Read",
+    image: "/images/areas/cardiology-focus.webp",
+    content: [
+      "Mit der Einführung modernster Navigationsrobotik setzt die chirurgische Abteilung neue Standards in der Endoprothetik. Durch computergestützte Schnittführung wird gesunde Knochensubstanz optimal geschont.",
+      "Erste klinische Daten zeigen eine signifikant schnellere Rekonvaleszenz und eine Reduktion postoperativer Schmerzen um über 40 Prozent.",
+    ],
+  },
+  {
+    id: "nursing-excellence-residency-program",
+    slug: "nursing-excellence-residency-program",
+    title: "Start des Nursing Excellence Fellowship-Programms 2025",
+    summary:
+      "Förderung von Pflegefachkräften durch spezialisierte Weiterbildungsmodule in Intensivmedizin und OP-Management.",
+    date: "January 26, 2025",
+    category: "Careers",
+    readingTime: "3 Min. Read",
+    image: "/images/careers/kultur-team.webp",
+    content: [
+      "Um hochqualifizierte Fachkräfte in der Pflege gezielt zu fördern, hat die NabiOta® Akademie das Fellowship-Programm für Pflegeexzellenz ins Leben gerufen.",
+      "Teilnehmende erhalten umfassende Freistellungen für theoretische Vertiefungen, Mentoring durch erfahrene Stationsleitungen und attraktive Karriereperspektiven im gesamten Holding-Netzwerk.",
+    ],
+  },
+  {
+    id: "symposium-modern-diagnostics-2025",
+    slug: "symposium-modern-diagnostics-2025",
+    title: "Fachsymposium: Digitale Bildgebung und KI-gestützte Schnittbildanalyse",
+    summary:
+      "Über 250 Radiologen und Kliniker diskutierten aktuelle Fallstudien und zukünftige Leitlinien im Diagnostikzentrum der Gruppe.",
+    date: "January 19, 2025",
+    category: "Events",
+    readingTime: "4 Min. Read",
+    image: "/images/areas/research-innovation.webp",
+    content: [
+      "Das jährliche Fachsymposium bot eine Plattform für den intensiven wissenschaftlichen Austausch zwischen universitären Spitzenforschern und niedergelassenen Fachärzten.",
+      "Besonderes Interesse weckten Vorträge zur kombinierten Nutzung von Multiparameter-MRT und automatisierten Algorithmen in der kardialen Frühwarnung.",
+    ],
+  },
+  {
+    id: "press-release-partnership-university-klinikum",
+    slug: "press-release-partnership-university-klinikum",
+    title: "Pressemitteilung: Forschungskooperation mit universitären Spitzenzentren besiegelt",
+    summary:
+      "Gemeinsame klinische Studien zu interventionellen Therapien und regenerativer Medizin starten im ersten Halbjahr 2025.",
+    date: "January 12, 2025",
+    category: "Press Releases",
+    readingTime: "3 Min. Read",
+    image: "/images/contact/clinic-reception.webp",
+    content: [
+      "Zur Beschleunigung des Transfers wissenschaftlicher Erkenntnisse in den Versorgungsalltag kooperiert NabiOta® mit mehreren renommierten Universitätskliniken in Deutschland.",
+      "Die Zusammenarbeit fokussiert sich auf telemedizinische Konsile und multizentrische Therapiestudien bei chronischen muskuloskelettalen Erkrankungen.",
+    ],
+  },
+  {
+    id: "ai-cardiac-risk-stratification",
+    slug: "ai-cardiac-risk-stratification",
+    title: "Kardiologische Früherkennung: Neue Algorithmen zur Risikoanalyse",
+    summary:
+      "Kombination aus hochauflösendem Herz-MRT und prädiktiver Analytik ermöglicht zielgerichtete Prävention kardiovaskulärer Ereignisse.",
+    date: "January 5, 2025",
+    category: "Medical Innovation",
+    readingTime: "4 Min. Read",
+    image: "/images/services/innovation.webp",
+    content: [
+      "Kardiovaskuläre Erkrankungen bleiben eine der häufigsten Todesursachen. Die kardiologische Sektion der NabiOta® Diagnostics setzt ab sofort eine neuartige Früherkennungssoftware ein, die subtile Myokardveränderungen frühzeitig sichtbar macht.",
+    ],
+  },
+  {
+    id: "european-healthcare-congress-berlin",
+    slug: "european-healthcare-congress-berlin",
+    title: "NabiOta auf dem Europäischen Gesundheitskongress in Berlin",
+    summary:
+      "Vertreter der Geschäftsführung präsentierten zukunftsweisende Modelle integrierter Gesundheitsversorger vor internationalem Fachpublikum.",
+    date: "December 20, 2024",
+    category: "Events",
+    readingTime: "3 Min. Read",
+    image: "/images/areas/rehabilitation.webp",
+    content: [
+      "Auf dem diesjährigen Kongress unterstrich der Vortrag von NabiOta® die Notwendigkeit, ambulante und stationäre Pfade eng miteinander zu verknüpfen, um sektorenübergreifende Schnittstellenverluste für Patienten nachhaltig zu eliminieren.",
+    ],
+  },
+  {
+    id: "medical-fellowship-announcement-2025",
+    slug: "medical-fellowship-announcement-2025",
+    title: "Ausschreibung: Facharzt-Fellowships für interventionelle Radiologie",
+    summary:
+      "Attraktive Weiterbildungschancen für ambitionierte Mediziner an modernsten High-Tech-Standorten der NabiOta Health Group.",
+    date: "December 14, 2024",
+    category: "Careers",
+    readingTime: "3 Min. Read",
+    image: "/images/careers/mission-doctors.webp",
+    content: [
+      "Die Gruppe vergibt für das kommende Ausbildungsjahr drei voll finanzierte Fellowships für Fachärztinnen und Fachärzte, die sich auf minimalinvasive Bildgebungsverfahren und gezielte Schmerztherapien spezialisieren möchten.",
+    ],
+  },
+  {
+    id: "digital-health-expansion",
+    slug: "digital-health-expansion",
+    title: "Digital Health Initiative: Vollintegriertes Patientenportal im Rollout",
+    summary:
+      "Befunde, Terminbuchungen und telemedizinische Nachsorge in einer sicheren, DSGVO-konformen Applikation vereint.",
+    date: "December 8, 2024",
+    category: "Company Updates",
+    readingTime: "3 Min. Read",
+    image: "/images/services/mvz.webp",
+    content: [
+      "Das neue Patientenportal ermöglicht Patientinnen und Patienten den direkten Zugriff auf Laborergebnisse, MRT-Befunde und personalisierte Nachsorgepläne direkt auf dem Smartphone – mit Ende-zu-Ende-Verschlüsselung nach höchsten Sicherheitskriterien.",
+    ],
+  },
+  {
+    id: "precision-oncology-pathway",
+    slug: "precision-oncology-pathway",
+    title: "Präzisionsonkologie: Molekulare Diagnostik für individuelle Therapien",
+    summary:
+      "Erweiterung des molekularpathologischen Diagnostikspektrums zur Bestimmung zielgerichteter Tumortherapien.",
+    date: "November 29, 2024",
+    category: "Medical Innovation",
+    readingTime: "5 Min. Read",
+    image: "/images/services/diagnostik.webp",
+    content: [
+      "Durch molekulare Analysen können therapeutische Resistenzen frühzeitig identifiziert und Behandlungspläne maßgeschneidert auf das genetische Profil des Patienten abgestimmt werden.",
+    ],
+  },
+  {
+    id: "sustainable-clinic-operations",
+    slug: "sustainable-clinic-operations",
+    title: "Grüne Medizin: Auszeichnung für nachhaltigen Klinik- und Praxisbetrieb",
+    summary:
+      "Konsequente Umstellung auf energieeffiziente Medizintechnik und CO2-neutrale Facility-Konzepte an allen Standorten.",
+    date: "November 21, 2024",
+    category: "Company Updates",
+    readingTime: "3 Min. Read",
+    image: "/images/services/staffing.webp",
+    content: [
+      "Nachhaltigkeit und modernste Hochleistungsmedizin gehen bei NabiOta® Hand in Hand. Die Holding setzt Maßstäbe durch den Einsatz von Wärmerückgewinnung in Diagnostikzentren und abfallreduzierenden OP-Protokollen.",
+    ],
+  },
+  {
+    id: "press-release-esg-sustainability-milestone",
+    slug: "press-release-esg-sustainability-milestone",
+    title: "Pressemitteilung: Veröffentlichung des ersten integrierten ESG-Nachhaltigkeitsberichts",
+    summary:
+      "Transparente Berichterstattung über soziale Verantwortung, Mitarbeiterförderung und ökologische Exzellenz in der Gesundheitswirtschaft.",
+    date: "November 14, 2024",
+    category: "Press Releases",
+    readingTime: "3 Min. Read",
+    image: "/images/areas/atrium-lounge.webp",
+    content: [
+      "Die Veröffentlichung des ersten umfassenden ESG-Reports dokumentiert das kontinuierliche Engagement von NabiOta® für faire Arbeitsbedingungen, Chancengleichheit und ressourcenschonende Gesundheitsinfrastrukturen in Deutschland.",
+    ],
+  },
+  {
+    id: "hybrid-telemedicine-ecosystem",
+    slug: "hybrid-telemedicine-ecosystem",
+    title: "Hybrides Versorgungsmodell: Digitale Visite ergänzt Vor-Ort-Betreuung",
+    summary:
+      "Schonende Nachsorge nach operativen Eingriffen bequem von zu Hause aus bei voller ärztlicher Betreuungssicherheit.",
+    date: "November 5, 2024",
+    category: "Medical Innovation",
+    readingTime: "4 Min. Read",
+    image: "/images/news/partnerships.webp",
+    content: [
+      "Für viele Patientinnen und Patienten bedeutet die Anreise zur postoperativen Wundkontrolle unnötigen Stress. Unser telemedizinisches Begleitprogramm erlaubt eine sichere Fernbegutachtung durch den Operateur in Echtzeit.",
     ],
   },
 ];
