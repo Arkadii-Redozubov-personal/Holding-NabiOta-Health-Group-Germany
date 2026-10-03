@@ -489,91 +489,91 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ══════════════════════════════════════════════════════════
-            SECTION 2 (PHOTO 2 MIDDLE BANNER):
+        {/* ══════════════════════════════════════════════════════════
+            SECTION 2 (PHOTO 3): FULL-WIDTH BANNER
             "MODERNE TECHNOLOGIE - Mehr als nur Bilder – klare Antworten."
-            - Dark forest green banner with botanical line art
+            - Full-width edge-to-edge
             - Left: Scanner room image
             - Center: Heading & Description
-            - Right: 3 Stats (3T, <24h, 99%)
+            - Right: 3 Stats (3T, <24h, 99%) + Crisp Botanical Leaves Background
         ══════════════════════════════════════════════════════════ */}
-        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-          <div className="relative rounded-2xl sm:rounded-3xl bg-[#08170D] text-white overflow-hidden border border-[#D5B878]/30 shadow-xl">
-            {/* Subtle Gold Botanical Line Art on Far Right */}
-            <div className="absolute right-0 top-0 w-80 h-full pointer-events-none opacity-25 z-0 select-none">
+        <section className="w-full bg-[#08170D] text-white relative overflow-hidden border-y border-[#D5B878]/30 my-8 sm:my-12">
+          {/* Crisp Botanical Foliage on Far Right (Matching Photo 3) */}
+          <div className="absolute right-0 top-0 bottom-0 w-72 sm:w-96 pointer-events-none opacity-80 z-0 select-none overflow-hidden">
+            <Image
+              src="/images/areas/botanical-branch-clean.webp"
+              alt="Botanical Accent"
+              fill
+              className="object-contain object-right"
+              priority
+            />
+          </div>
+
+          <div className="relative z-10 w-full flex flex-col lg:flex-row items-center">
+            {/* Left Column: Scanner Image */}
+            <div className="w-full lg:w-[35%] xl:w-[38%] relative aspect-[16/10] lg:aspect-auto lg:h-full min-h-[260px] sm:min-h-[300px] lg:min-h-[360px] overflow-hidden shrink-0">
               <Image
-                src="/images/areas/botanical-branch-clean.webp"
-                alt="Botanical Accent"
+                src="/images/diagnostik/scanner-suite.webp"
+                alt="NabiOta CT Scanner Suite"
                 fill
-                className="object-contain object-right"
+                className="object-cover object-center"
+                priority
               />
+              {/* Seamless gradient fade into dark forest green */}
+              <div className="hidden lg:block absolute inset-y-0 right-0 w-28 bg-gradient-to-l from-[#08170D] to-transparent pointer-events-none z-10" />
+              <div className="lg:hidden absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#08170D] to-transparent pointer-events-none z-10" />
             </div>
 
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 items-center">
-              {/* Left Column: Scanner Image */}
-              <div className="lg:col-span-4 relative aspect-[16/10] lg:aspect-auto lg:h-full min-h-[220px] sm:min-h-[260px] overflow-hidden">
-                <Image
-                  src="/images/diagnostik/scanner-suite.webp"
-                  alt="NabiOta CT Scanner Suite"
-                  fill
-                  className="object-cover object-center"
-                  priority
-                />
-                {/* Seamless gradient fade into dark forest green */}
-                <div className="hidden lg:block absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#08170D] to-transparent pointer-events-none z-10" />
-                <div className="lg:hidden absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#08170D] to-transparent pointer-events-none z-10" />
-              </div>
+            {/* Middle Column: Heading & Description */}
+            <div className="w-full lg:w-[42%] xl:w-[40%] p-6 sm:p-10 lg:p-12 space-y-3 relative z-10">
+              <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
+                {isRu ? "ПЕРЕДОВЫЕ ТЕХНОЛОГИИ" : isEn ? "MODERN TECHNOLOGY" : "MODERNE TECHNOLOGIE"}
+              </span>
 
-              {/* Middle Column: Heading & Description */}
-              <div className="lg:col-span-5 p-6 sm:p-8 lg:p-10 space-y-2.5">
-                <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
-                  {isRu ? "ПЕРЕДОВЫЕ ТЕХНОЛОГИИ" : isEn ? "MODERN TECHNOLOGY" : "MODERNE TECHNOLOGIE"}
+              <h3 className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-white font-normal leading-tight">
+                {isRu
+                  ? "Больше чем снимки — ясные ответы."
+                  : isEn
+                  ? "More than Images – Clear Answers."
+                  : "Mehr als nur Bilder – klare Antworten."}
+              </h3>
+
+              <p className="text-white/85 text-xs sm:text-[13.5px] leading-relaxed font-sans max-w-lg">
+                {isRu
+                  ? "Наше высокотехнологичное оборудование обеспечивает исключительно точную и щадящую диагностику — для максимальной уверенности, правильных решений и эффективного лечения."
+                  : isEn
+                  ? "Our cutting-edge equipment enables exceptionally precise and gentle diagnostics—for greater security, informed clinical decisions, and targeted therapy."
+                  : "Unsere hochmodernen Geräte ermöglichen eine besonders präzise und schonende Diagnostik – für mehr Sicherheit, bessere Entscheidungen und eine gezielte Behandlung."}
+              </p>
+            </div>
+
+            {/* Right Column: 3 Stats separated by dividers (Photo 3) */}
+            <div className="w-full lg:w-[23%] xl:w-[22%] p-6 sm:p-10 lg:p-8 lg:border-l lg:border-white/15 grid grid-cols-3 lg:grid-cols-1 gap-5 relative z-10">
+              <div className="space-y-1">
+                <span className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#ECCF96] font-normal leading-none block">
+                  3T
                 </span>
-
-                <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal leading-tight">
-                  {isRu
-                    ? "Больше чем снимки — ясные ответы."
-                    : isEn
-                    ? "More than Images – Clear Answers."
-                    : "Mehr als nur Bilder – klare Antworten."}
-                </h3>
-
-                <p className="text-white/80 text-xs sm:text-[13px] leading-relaxed font-sans max-w-md">
-                  {isRu
-                    ? "Наше высокотехнологичное оборудование обеспечивает исключительно точную и щадящую диагностику — для максимальной уверенности, правильных решений и эффективного лечения."
-                    : isEn
-                    ? "Our cutting-edge equipment enables exceptionally precise and gentle diagnostics—for greater security, informed clinical decisions, and targeted therapy."
-                    : "Unsere hochmodernen Geräte ermöglichen eine besonders präzise und schonende Diagnostik – für mehr Sicherheit, bessere Entscheidungen und eine gezielte Behandlung."}
-                </p>
+                <span className="text-[11px] sm:text-xs text-white/80 font-sans leading-tight block">
+                  {isRu ? "Мощность поля МРТ" : isEn ? "MRI Magnet Strength" : "MRT-Magnetfeldstärke"}
+                </span>
               </div>
 
-              {/* Right Column: 3 Stats separated by dividers */}
-              <div className="lg:col-span-3 p-6 sm:p-8 lg:p-6 lg:border-l lg:border-white/15 grid grid-cols-3 lg:grid-cols-1 gap-4 lg:gap-5">
-                <div className="space-y-0.5">
-                  <span className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-[#ECCF96] font-normal leading-none block">
-                    3T
-                  </span>
-                  <span className="text-[10.5px] sm:text-[11.5px] text-white/70 font-sans leading-tight block">
-                    {isRu ? "Мощность поля МРТ" : isEn ? "MRI Magnet Strength" : "MRT-Magnetfeldstärke"}
-                  </span>
-                </div>
+              <div className="space-y-1 pt-0 lg:pt-4 lg:border-t lg:border-white/10">
+                <span className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#ECCF96] font-normal leading-none block">
+                  &lt;24h
+                </span>
+                <span className="text-[11px] sm:text-xs text-white/80 font-sans leading-tight block">
+                  {isRu ? "Готовность заключения" : isEn ? "Report Turnaround" : "Befunderstellung"}
+                </span>
+              </div>
 
-                <div className="space-y-0.5 pt-0 lg:pt-3 lg:border-t lg:border-white/10">
-                  <span className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-[#ECCF96] font-normal leading-none block">
-                    &lt;24h
-                  </span>
-                  <span className="text-[10.5px] sm:text-[11.5px] text-white/70 font-sans leading-tight block">
-                    {isRu ? "Готовность заключения" : isEn ? "Report Turnaround" : "Befunderstellung"}
-                  </span>
-                </div>
-
-                <div className="space-y-0.5 pt-0 lg:pt-3 lg:border-t lg:border-white/10">
-                  <span className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-[#ECCF96] font-normal leading-none block">
-                    99%
-                  </span>
-                  <span className="text-[10.5px] sm:text-[11.5px] text-white/70 font-sans leading-tight block">
-                    {isRu ? "Удовлетворенность пациентов" : isEn ? "Patient Satisfaction" : "Patientenzufriedenheit"}
-                  </span>
-                </div>
+              <div className="space-y-1 pt-0 lg:pt-4 lg:border-t lg:border-white/10">
+                <span className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#ECCF96] font-normal leading-none block">
+                  99%
+                </span>
+                <span className="text-[11px] sm:text-xs text-white/80 font-sans leading-tight block">
+                  {isRu ? "Удовлетворенность пациентов" : isEn ? "Patient Satisfaction" : "Patientenzufriedenheit"}
+                </span>
               </div>
             </div>
           </div>

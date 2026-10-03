@@ -704,8 +704,19 @@ export function NewsPageComponent({ locale = "de" }: Props) {
               - Botanical foliage branch on the far right
           ══════════════════════════════════════════════════════════ */}
           <div className="mt-14 sm:mt-18 relative rounded-2xl sm:rounded-3xl bg-[#08170D] text-white overflow-hidden p-6 sm:p-10 lg:p-12 border border-[#D5B878]/30 shadow-lg">
+            {/* Rich Botanical Leaf Background across the card */}
+            <div className="absolute inset-0 pointer-events-none z-0">
+              <Image
+                src="/images/values/leaves-bg.webp"
+                alt="Botanical Leaves Texture"
+                fill
+                className="object-cover object-left opacity-35 mix-blend-screen"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#08170D]/95 via-[#08170D]/75 to-[#08170D]/50" />
+            </div>
+
             {/* Botanical Foliage on Far Right */}
-            <div className="absolute -right-4 -bottom-6 w-56 sm:w-72 h-56 sm:h-72 pointer-events-none opacity-30 select-none">
+            <div className="absolute -right-4 -bottom-6 w-56 sm:w-72 h-56 sm:h-72 pointer-events-none opacity-45 select-none z-10">
               <Image
                 src="/images/areas/botanical-branch-clean.webp"
                 alt="Botanical Foliage"

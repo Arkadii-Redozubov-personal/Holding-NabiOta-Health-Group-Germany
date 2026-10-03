@@ -956,51 +956,39 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
           </Container>
         </section>
 
-        {/* ── SECTION 5: UNSERE KULTUR (Matching Photo 4 Reference) ───────── */}
-        <section className="py-12 sm:py-16 bg-[#FAF7F2] relative overflow-hidden">
-          {/* Continuing the outer light background with leaves from above */}
-          <div className="absolute inset-0 pointer-events-none z-0">
-            <Image
-              src="/images/about/photo2.webp"
-              alt=""
-              fill
-              className="object-cover object-left opacity-75"
-              sizes="100vw"
-            />
-            <div className="absolute inset-0 bg-[#FAF7F2]/30" />
-          </div>
-
+        {/* ── SECTION 5: UNSERE KULTUR (Compact Banner matching Photo 1) ───────── */}
+        <section className="py-6 sm:py-8 bg-[#FAF8F5] relative overflow-hidden">
           <Container size="wide" className="relative z-10">
-            <div className="rounded-3xl bg-[#07160C] text-white overflow-hidden relative shadow-2xl border border-white/10">
-              {/* Inner container background: darker background with leaves in upper-left corner */}
+            <div className="rounded-3xl bg-[#07160C] text-white overflow-hidden relative shadow-xl border border-white/10">
+              {/* Inner subtle leaf watermark in upper-left corner */}
               <div className="absolute inset-0 pointer-events-none z-0">
                 <Image
                   src="/images/values/leaves-bg.webp"
                   alt=""
                   fill
-                  className="object-cover object-left opacity-40 mix-blend-screen"
+                  className="object-cover object-left opacity-35 mix-blend-screen"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#07160C]/95 via-[#07160C]/65 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#07160C]/95 via-[#07160C]/70 to-transparent" />
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[440px] relative z-10">
+              <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[280px] sm:min-h-[320px] relative z-10">
                 {/* Left Column: Culture text */}
-                <div className="lg:col-span-6 p-8 sm:p-10 lg:p-14 flex flex-col justify-center space-y-5">
-                  <span className="text-[11px] sm:text-xs font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
+                <div className="lg:col-span-6 p-6 sm:p-8 lg:p-10 flex flex-col justify-center space-y-3.5">
+                  <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
                     {t.culture.eyebrow}
                   </span>
 
-                  <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-white font-normal leading-tight">
+                  <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-white font-normal leading-tight">
                     {t.culture.title}
                   </h2>
 
-                  <p className="text-sm sm:text-[15px] text-white/85 leading-relaxed font-light max-w-lg">
+                  <p className="text-xs sm:text-sm text-white/85 leading-relaxed font-light max-w-lg">
                     {t.culture.desc}
                   </p>
                 </div>
 
-                {/* Right Column: Culture Photo with smooth left blend and larger floating badge */}
-                <div className="lg:col-span-6 relative min-h-[340px] lg:min-h-[440px] overflow-hidden">
+                {/* Right Column: Culture Photo with smooth left blend and floating badge */}
+                <div className="lg:col-span-6 relative min-h-[220px] sm:min-h-[260px] lg:min-h-[320px] overflow-hidden">
                   <Image
                     src="/images/about/hero-doctors.webp"
                     alt="NabiOta Unternehmenskultur und Team"
@@ -1009,22 +997,22 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                   {/* Smooth horizontal blend from left dark background into right photo */}
-                  <div className="hidden lg:block absolute inset-y-0 left-0 w-36 bg-gradient-to-r from-[#07160C] to-transparent pointer-events-none z-10" />
-                  <div className="lg:hidden absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#07160C] to-transparent pointer-events-none z-10" />
+                  <div className="hidden lg:block absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#07160C] to-transparent pointer-events-none z-10" />
+                  <div className="lg:hidden absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#07160C] to-transparent pointer-events-none z-10" />
 
-                  {/* Larger Floating Badge at bottom right: "плажка крупнее как видишь" */}
-                  <div className="absolute bottom-6 left-6 right-6 sm:left-auto sm:right-6 sm:bottom-6 max-w-md bg-[#FAF7F0] rounded-2xl px-6 py-4 sm:px-7 sm:py-5 shadow-[0_16px_36px_rgba(0,0,0,0.22)] border border-[#EAE3D4] flex items-center gap-4 sm:gap-5 z-20">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#FAF6EE] border border-[#E5D7B7] flex items-center justify-center flex-shrink-0 text-[#C5A56A] shadow-xs">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 sm:w-7 sm:h-7">
+                  {/* Compact Floating Badge at bottom right matching Photo 1 */}
+                  <div className="absolute bottom-4 right-4 sm:bottom-5 sm:right-5 bg-[#FAF7F0] rounded-2xl px-5 py-3 shadow-[0_12px_28px_rgba(0,0,0,0.22)] border border-[#EAE3D4] flex items-center gap-3.5 z-20">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#FAF6EE] border border-[#E5D7B7] flex items-center justify-center flex-shrink-0 text-[#C5A56A] shadow-xs">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 sm:w-6 sm:h-6">
                         <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
                         <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
                       </svg>
                     </div>
                     <div>
-                      <p className="font-serif font-bold text-sm sm:text-base text-forest-950 leading-snug">
+                      <p className="font-serif font-bold text-xs sm:text-sm text-forest-950 leading-tight">
                         {t.culture.badgeTitle}
                       </p>
-                      <p className="text-xs sm:text-sm text-[#5B635C] leading-snug mt-1">
+                      <p className="text-[11px] sm:text-xs text-[#5B635C] leading-tight mt-0.5">
                         {t.culture.badgeSub}
                       </p>
                     </div>

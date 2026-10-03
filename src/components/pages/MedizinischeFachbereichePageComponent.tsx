@@ -675,8 +675,19 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
             - Right: Sunny Atrium Lounge photo flush to screen right edge with smooth fade
         ══════════════════════════════════════════════════════════ */}
         <section className="w-full bg-[#08170D] text-white relative overflow-hidden border-y border-[#D5B878]/30">
-          {/* Delicate Botanical Leaf Watermark on Left Edge (Photo 1) */}
-          <div className="absolute -left-6 sm:-left-10 -top-8 sm:-top-12 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 pointer-events-none opacity-20 md:opacity-25 select-none z-10 mix-blend-screen">
+          {/* Background: Botanical leaves texture across the dark section */}
+          <div className="absolute inset-0 pointer-events-none z-0">
+            <Image
+              src="/images/values/leaves-bg.webp"
+              alt="Leaves Texture"
+              fill
+              className="object-cover object-left opacity-35 mix-blend-screen"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#08170D]/95 via-[#08170D]/80 to-[#08170D]/50" />
+          </div>
+
+          {/* Delicate Botanical Leaf Branch on Left Edge (Matching Photo 2) */}
+          <div className="absolute -left-4 sm:-left-6 -top-6 sm:-top-8 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 pointer-events-none opacity-60 sm:opacity-70 select-none z-10">
             <Image
               src="/images/areas/botanical-branch-clean.webp"
               alt="Botanical Foliage"
@@ -686,7 +697,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
             />
           </div>
 
-          <div className="w-full flex flex-col lg:flex-row items-stretch min-h-[400px] lg:min-h-[460px]">
+          <div className="w-full flex flex-col lg:flex-row items-stretch min-h-[400px] lg:min-h-[460px] relative z-20">
             {/* Left Content Area: Eyebrow, Title, Description & Values Button */}
             <div className="w-full lg:w-[42%] xl:w-[40%] p-6 sm:p-10 lg:p-14 lg:pl-16 xl:pl-24 flex flex-col justify-center relative z-20">
               <div className="max-w-md space-y-3 sm:space-y-3.5">
@@ -714,7 +725,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
               </div>
             </div>
 
-            {/* Middle Column: 4 Vertical Points with LARGER Circular Gold Icons (Photo 1) */}
+            {/* Middle Column: 4 Vertical Points with LARGER Circular Gold Icons (Photo 2) */}
             <div className="w-full lg:w-[28%] xl:w-[27%] px-6 sm:px-10 lg:px-6 py-6 sm:py-8 lg:py-0 flex flex-col justify-center space-y-5 sm:space-y-6 relative z-20">
               {whySection.stats.map((item, idx) => {
                 const ItemIcon = item.icon;
@@ -732,7 +743,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
               })}
             </div>
 
-            {/* Right Side: Hospital Atrium Lounge Photo extending to far right edge */}
+            {/* Right Side: Hospital Atrium Lounge Photo with ULTRA-SMOOTH fade into background */}
             <div className="w-full lg:w-[30%] xl:w-[33%] relative min-h-[260px] sm:min-h-[320px] lg:min-h-full shrink-0">
               <Image
                 src="/images/areas/atrium-lounge.webp"
@@ -741,9 +752,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                 className="object-cover object-center"
                 priority
               />
-              {/* Seamless gradient fade from left dark forest green into sunny photo */}
-              <div className="hidden lg:block absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-[#08170D] to-transparent pointer-events-none z-10" />
-              <div className="lg:hidden absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#08170D] to-transparent pointer-events-none z-10" />
+              {/* Ultra-smooth multi-stop gradient fade from left dark forest green into sunny photo */}
+              <div className="hidden lg:block absolute inset-y-0 left-0 w-48 sm:w-60 lg:w-72 bg-gradient-to-r from-[#08170D] via-[#08170D]/80 via-[#08170D]/40 to-transparent pointer-events-none z-10" />
+              <div className="lg:hidden absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#08170D] via-[#08170D]/80 to-transparent pointer-events-none z-10" />
             </div>
           </div>
         </section>
@@ -869,12 +880,12 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
           </div>
 
           {/* Right Gold Botanical Leaf Silhouette Watermark (Photo 4) */}
-          <div className="absolute right-0 top-0 bottom-0 w-64 sm:w-96 pointer-events-none opacity-20 overflow-hidden mix-blend-screen">
+          <div className="absolute right-0 top-0 bottom-0 w-64 sm:w-80 pointer-events-none opacity-30 overflow-hidden select-none">
             <Image
-              src="/images/bacground.webp"
-              alt="Watermark"
+              src="/images/areas/botanical-branch-clean.webp"
+              alt="Botanical Foliage"
               fill
-              className="object-cover object-right"
+              className="object-contain object-right"
             />
           </div>
 

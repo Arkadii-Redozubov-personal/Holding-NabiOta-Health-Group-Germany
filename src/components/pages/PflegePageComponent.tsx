@@ -410,7 +410,142 @@ export function PflegePageComponent({ locale = "de" }: Props) {
 
       <main className="flex-1 bg-[#FAF9F5]">
         {/* ========================================================================= */}
-        {/* SECTION 1: OUR NURSING CARE SERVICES (8 Cards Grid matching Photo)        */}
+        {/* SECTION 1: WHY CHOOSE US - Personalized Care (FIRST SECTION, Photo 4)    */}
+        {/* ========================================================================= */}
+        <section className="py-14 sm:py-20 bg-[#FAF9F5] relative overflow-hidden border-b border-[#EAE3D5]">
+          {/* Botanical green foliage on far right (Matching Photo 4) */}
+          <div className="absolute right-0 top-0 bottom-0 w-64 sm:w-80 md:w-96 pointer-events-none opacity-85 z-0 select-none overflow-hidden">
+            <Image
+              src="/images/areas/botanical-branch-clean.webp"
+              alt="Botanical Foliage"
+              fill
+              className="object-contain object-right"
+              priority
+            />
+          </div>
+
+          <Container size="wide" className="relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+              {/* Left Column: Image of Nurse caring for senior */}
+              <div className="lg:col-span-6 relative aspect-[16/11] sm:aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-forest-900/10">
+                <Image
+                  src="/images/nursing/why-choose-nurse.webp"
+                  alt={t.whyChoose.title}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+
+              {/* Right Column: Copy & Checklist */}
+              <div className="lg:col-span-6 space-y-6">
+                <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans">
+                  {t.whyChoose.eyebrow}
+                </span>
+
+                <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-[#0F2A1D] font-normal leading-tight">
+                  {t.whyChoose.title}
+                </h2>
+
+                <p className="text-sm sm:text-base text-[#4A5D52] leading-relaxed max-w-xl">
+                  {t.whyChoose.desc}
+                </p>
+
+                {/* 4 Checklist Items with Dark Green Badges */}
+                <div className="space-y-3.5 pt-2">
+                  {t.whyChoose.checks.map((checkText, idx) => (
+                    <div key={idx} className="flex items-center gap-3">
+                      <div className="w-5 h-5 rounded-full bg-[#133924] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                        <Check className="w-3 h-3 stroke-[3]" />
+                      </div>
+                      <span className="text-xs sm:text-sm font-medium text-[#1E382A]">
+                        {checkText}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* ========================================================================= */}
+        {/* SECTION 2: OUR COMMITMENT (FULL-WIDTH EDGE-TO-EDGE, Matching Photo 5)    */}
+        {/* ========================================================================= */}
+        <section className="w-full bg-[#0B2516] text-white relative overflow-hidden border-y border-[#D5B878]/30">
+          {/* Subtle leaves texture across dark section */}
+          <div className="absolute inset-0 pointer-events-none z-0">
+            <Image
+              src="/images/values/leaves-bg.webp"
+              alt="Leaves Texture"
+              fill
+              className="object-cover object-left opacity-35 mix-blend-screen"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0B2516]/95 via-[#0B2516]/85 to-[#0B2516]/50" />
+          </div>
+
+          {/* Crisp Botanical Foliage on Far Right */}
+          <div className="absolute right-0 top-0 bottom-0 w-64 sm:w-80 md:w-96 pointer-events-none opacity-60 z-0 select-none overflow-hidden">
+            <Image
+              src="/images/areas/botanical-branch-clean.webp"
+              alt="Botanical Foliage"
+              fill
+              className="object-contain object-right"
+              priority
+            />
+          </div>
+
+          <div className="relative z-10 w-full flex flex-col lg:flex-row items-center">
+            {/* Left: Nurse in green scrub with senior woman */}
+            <div className="w-full lg:w-[38%] xl:w-[40%] relative aspect-[4/3] lg:aspect-auto lg:h-full min-h-[300px] sm:min-h-[380px] lg:min-h-[460px] overflow-hidden shrink-0">
+              <Image
+                src="/images/nursing/commitment-nurse.webp"
+                alt={t.commitment.title}
+                fill
+                className="object-cover object-center"
+                priority
+              />
+              {/* Smooth multi-stop gradient into dark forest green */}
+              <div className="hidden lg:block absolute inset-y-0 right-0 w-36 bg-gradient-to-l from-[#0B2516] via-[#0B2516]/80 to-transparent pointer-events-none z-10" />
+              <div className="lg:hidden absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#0B2516] to-transparent pointer-events-none z-10" />
+            </div>
+
+            {/* Right: Copy & 4 Circular Gold Icons matching Photo 5 */}
+            <div className="w-full lg:w-[62%] xl:w-[60%] p-8 sm:p-12 lg:p-14 lg:pl-10 space-y-6 relative z-10">
+              <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#ECCF96] block font-sans">
+                {t.commitment.eyebrow}
+              </span>
+
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-[44px] text-white font-normal leading-tight">
+                {t.commitment.title}
+              </h2>
+
+              <p className="text-xs sm:text-sm md:text-base text-[#D4E2D8] leading-relaxed max-w-2xl font-light">
+                {t.commitment.desc}
+              </p>
+
+              {/* 4 Gold Circular Badges matching Photo 5 */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6 border-t border-white/10 max-w-2xl">
+                {t.commitment.badges.map((b, idx) => {
+                  const IconComp = b.icon;
+                  return (
+                    <div key={idx} className="flex flex-col items-center text-center space-y-2.5 group">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-[#D5B878]/70 bg-white/5 flex items-center justify-center text-[#ECCF96] transition-transform duration-300 group-hover:scale-105 shadow-[0_0_15px_rgba(213,184,120,0.12)]">
+                        <IconComp className="w-5 h-5 sm:w-6 sm:h-6 stroke-[1.6]" />
+                      </div>
+                      <span className="text-xs sm:text-[13px] font-medium text-[#F4EFE6] leading-snug">
+                        {b.title}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ========================================================================= */}
+        {/* SECTION 3: OUR NURSING CARE SERVICES (8 Cards Grid)                       */}
         {/* ========================================================================= */}
         <section id="services" className="py-14 sm:py-20 bg-[#FAF9F5]">
           <Container size="wide">
@@ -453,65 +588,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 2: WHY CHOOSE US (Personalized Care. Professional Support.)       */}
-        {/* ========================================================================= */}
-        <section className="py-14 sm:py-20 bg-[#FAF9F5] relative overflow-hidden border-t border-[#EAE3D5]/70">
-          <Container size="wide">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-              {/* Left Column: Image */}
-              <div className="lg:col-span-6 relative aspect-[16/11] sm:aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-forest-900/10">
-                <Image
-                  src="/images/nursing/why-choose-nurse.webp"
-                  alt={t.whyChoose.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              {/* Right Column: Copy & Checklist */}
-              <div className="lg:col-span-6 relative space-y-6">
-                {/* Botanical leaf watermark background */}
-                <div className="absolute -top-10 -right-8 w-44 h-44 opacity-25 pointer-events-none hidden sm:block">
-                  <Image
-                    src="/images/areas/botanical-branch-clean.webp"
-                    alt="Botanical ornament"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-
-                <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans">
-                  {t.whyChoose.eyebrow}
-                </span>
-
-                <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-[#0F2A1D] font-normal leading-tight">
-                  {t.whyChoose.title}
-                </h2>
-
-                <p className="text-xs sm:text-sm md:text-base text-[#4A5D52] leading-relaxed">
-                  {t.whyChoose.desc}
-                </p>
-
-                {/* 4 Checklist Items */}
-                <div className="space-y-3.5 pt-2">
-                  {t.whyChoose.checks.map((checkText, idx) => (
-                    <div key={idx} className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#133924] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
-                        <Check className="w-3 h-3 stroke-[3]" />
-                      </div>
-                      <span className="text-xs sm:text-sm font-medium text-[#1E382A]">
-                        {checkText}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
-
-        {/* ========================================================================= */}
-        {/* SECTION 3: OUR APPROACH (Holistic Care for Every Stage of Life)           */}
+        {/* SECTION 4: OUR APPROACH (Holistic Care for Every Stage of Life)           */}
         {/* ========================================================================= */}
         <section className="py-14 sm:py-20 bg-[#FAF9F5] border-t border-[#EAE3D5]">
           <Container size="wide">
@@ -566,105 +643,54 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 4: OUR COMMITMENT (More Than Just Care — We're Family)            */}
+        {/* SECTION 5: TESTIMONIALS (ENLARGED REVIEWS)                                */}
         {/* ========================================================================= */}
-        <section className="py-10 sm:py-16">
-          <Container size="wide">
-            <div className="bg-[#0B2516] rounded-3xl overflow-hidden shadow-2xl relative">
-              {/* Botanical leaves overlay */}
-              <div className="absolute inset-0 opacity-10 pointer-events-none mix-blend-overlay">
-                <Image
-                  src="/images/values/leaves-bg.webp"
-                  alt="Leaves texture"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              <div className="grid grid-cols-1 lg:grid-cols-12 items-center relative z-10">
-                {/* Left: Nurse with senior image */}
-                <div className="lg:col-span-5 relative aspect-[4/3] lg:aspect-auto lg:h-full min-h-[300px] sm:min-h-[360px]">
-                  <Image
-                    src="/images/nursing/commitment-nurse.webp"
-                    alt={t.commitment.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-
-                {/* Right: Copy & 4 Badges */}
-                <div className="lg:col-span-7 p-8 sm:p-12 lg:p-14 space-y-6">
-                  <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#ECCF96] block font-sans">
-                    {t.commitment.eyebrow}
-                  </span>
-
-                  <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-white font-normal leading-tight">
-                    {t.commitment.title}
-                  </h2>
-
-                  <p className="text-xs sm:text-sm md:text-base text-[#D4E2D8] leading-relaxed max-w-xl">
-                    {t.commitment.desc}
-                  </p>
-
-                  {/* 4 Gold Badges in a Row */}
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-white/10">
-                    {t.commitment.badges.map((b, idx) => {
-                      const IconComp = b.icon;
-                      return (
-                        <div key={idx} className="flex flex-col items-center text-center space-y-2">
-                          <div className="w-11 h-11 rounded-full border border-[#D4AF37]/50 bg-white/5 flex items-center justify-center text-[#ECCF96]">
-                            <IconComp className="w-5 h-5 stroke-[1.5]" />
-                          </div>
-                          <span className="text-[11px] sm:text-xs font-medium text-[#F4EFE6] leading-snug">
-                            {b.title}
-                          </span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
-
-        {/* ========================================================================= */}
-        {/* SECTION 5: TESTIMONIALS (Real Stories. Real Impact.)                      */}
-        {/* ========================================================================= */}
-        <section className="py-14 sm:py-20 bg-[#FAF9F5]">
+        <section className="py-16 sm:py-24 bg-[#FAF9F5] border-t border-[#EAE3D5]">
           <Container size="wide">
             {/* Header with Read More button on right */}
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10 sm:mb-12">
-              <div className="max-w-2xl">
-                <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans mb-2">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 sm:mb-14">
+              <div className="max-w-2xl space-y-2">
+                <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans">
                   {t.testimonials.eyebrow}
                 </span>
-                <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-[#0F2A1D] font-normal leading-tight mb-2">
+                <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-[#0F2A1D] font-normal leading-tight">
                   {t.testimonials.title}
                 </h2>
-                <p className="text-xs sm:text-sm text-[#4A5D52]">
+                <p className="text-sm sm:text-base text-[#4A5D52]">
                   {t.testimonials.desc}
                 </p>
               </div>
 
               <Link
                 href={`/${locale}/contact`}
-                className="self-start sm:self-auto inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#FAF9F5] hover:bg-white text-[#0D2619] border border-[#C8B896] text-xs font-medium transition-all duration-300 shadow-sm"
+                className="self-start sm:self-auto inline-flex items-center gap-1.5 px-6 py-3 rounded-full bg-white hover:bg-[#FAF9F5] text-[#0D2619] border border-[#C8B896] text-xs sm:text-sm font-medium transition-all duration-300 shadow-sm"
               >
                 {t.testimonials.btnMore}
               </Link>
             </div>
 
-            {/* 3 Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* 3 ENLARGED Testimonial Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {t.testimonials.cards.map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-white rounded-2xl p-6 sm:p-7 border border-[#EBE4D8] shadow-sm flex flex-col justify-between"
+                  className="bg-white rounded-3xl p-8 sm:p-10 border border-[#EBE4D8] shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-6"
                 >
-                  {/* Top: Avatar & Quote */}
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="relative w-11 h-11 rounded-full overflow-hidden flex-shrink-0 border border-[#E2DBD0]">
+                  {/* Top: 5 Gold Stars & Quote */}
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-1 text-amber-500">
+                      {[...Array(5)].map((_, starIdx) => (
+                        <Star key={starIdx} className="w-4 h-4 fill-amber-500" />
+                      ))}
+                    </div>
+                    <p className="text-sm sm:text-base md:text-[17px] text-[#1E382A] font-serif italic leading-relaxed">
+                      {item.quote}
+                    </p>
+                  </div>
+
+                  {/* Bottom: Avatar & Name */}
+                  <div className="pt-5 border-t border-[#F2ECE1] flex items-center gap-4">
+                    <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-[#D5B878]">
                       <Image
                         src={item.avatar}
                         alt={item.name}
@@ -672,25 +698,13 @@ export function PflegePageComponent({ locale = "de" }: Props) {
                         className="object-cover"
                       />
                     </div>
-                    <p className="text-xs sm:text-[13px] text-[#2C4436] italic leading-relaxed">
-                      {item.quote}
-                    </p>
-                  </div>
-
-                  {/* Bottom: Name & 5 Stars */}
-                  <div className="pt-3 border-t border-[#F2ECE1] flex items-center justify-between">
                     <div>
-                      <h4 className="font-serif text-xs sm:text-sm font-semibold text-[#0F2A1D]">
+                      <h4 className="font-serif text-base sm:text-lg font-bold text-[#0F2A1D] leading-tight">
                         {item.name}
                       </h4>
-                      <p className="text-[11px] text-[#6E8177]">
+                      <p className="text-xs sm:text-sm text-[#5B6E63] mt-0.5">
                         {item.role}
                       </p>
-                    </div>
-                    <div className="flex items-center gap-0.5 text-amber-500">
-                      {[...Array(5)].map((_, starIdx) => (
-                        <Star key={starIdx} className="w-3.5 h-3.5 fill-amber-500" />
-                      ))}
                     </div>
                   </div>
                 </div>
@@ -700,10 +714,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 6: FREQUENTLY ASKED QUESTIONS (FAQ)                               */}
+        {/* SECTION 6: FAQ (FULL-WIDTH SECTION, Matching Request)                     */}
         {/* ========================================================================= */}
-        <section className="py-14 sm:py-20 bg-[#FAF9F5] border-t border-[#EAE3D5]">
-          <Container size="wide">
+        <section className="w-full py-16 sm:py-24 bg-[#FAF9F5] border-t border-[#EAE3D5]">
+          <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
               {/* Left Photo: Nurse & Senior */}
               <div className="lg:col-span-5 relative aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-forest-900/10">
@@ -758,89 +772,87 @@ export function PflegePageComponent({ locale = "de" }: Props) {
                 </div>
               </div>
             </div>
-          </Container>
+          </div>
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 7: BOTTOM CTA BANNER (Your Health. Our Priority.)                 */}
+        {/* SECTION 7: BOTTOM CTA BANNER (FULL-WIDTH EDGE-TO-EDGE, Matching Request)   */}
         {/* ========================================================================= */}
-        <section className="py-10 sm:py-16">
-          <Container size="wide">
-            <div className="relative rounded-3xl overflow-hidden shadow-xl border border-[#DECDB5]/50 bg-gradient-to-r from-[#F6F4ED] via-[#F2EDE2] to-[#EAE3D3]">
-              {/* Background Hands Image with gentle gradient fade */}
-              <div className="absolute inset-y-0 right-0 w-full lg:w-3/5 opacity-80 lg:opacity-100 pointer-events-none">
-                <Image
-                  src="/images/nursing/cta-hands-bg.webp"
-                  alt="Holding hands"
-                  fill
-                  className="object-cover object-right"
-                />
-                {/* Soft gradient mask on the left */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#F6F4ED] via-[#F6F4ED]/80 to-transparent lg:w-1/2" />
-              </div>
+        <section className="w-full relative overflow-hidden bg-gradient-to-r from-[#F6F4ED] via-[#F2EDE2] to-[#EAE3D3] border-t border-[#DECDB5]/60">
+          {/* Background Hands Image with gentle gradient fade */}
+          <div className="absolute inset-y-0 right-0 w-full lg:w-3/5 opacity-80 lg:opacity-100 pointer-events-none">
+            <Image
+              src="/images/nursing/cta-hands-bg.webp"
+              alt="Holding hands"
+              fill
+              className="object-cover object-right"
+            />
+            {/* Soft gradient mask on the left */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#F6F4ED] via-[#F6F4ED]/80 to-transparent lg:w-1/2" />
+          </div>
 
-              {/* Floating stamp badge top right: "Caring Today for a Healthier Tomorrow ~ ♡" */}
-              <div className="absolute top-5 right-5 sm:top-8 sm:right-10 z-20 bg-white/85 backdrop-blur-md px-4 py-3 sm:px-6 sm:py-4 rounded-3xl shadow-lg border border-white/80 rotate-[-2deg] flex flex-col items-center justify-center">
-                <p className="font-serif italic text-xs sm:text-sm font-semibold text-[#0E281C] text-center leading-tight">
-                  {t.cta.stamp1}
-                  <br />
-                  {t.cta.stamp2}
-                  <br />
-                  {t.cta.stamp3}
-                </p>
-                <Heart className="w-3.5 h-3.5 text-[#0E281C] fill-[#0E281C]/20 mt-1" />
-              </div>
+          {/* Floating stamp badge top right: "Caring Today for a Healthier Tomorrow ~ ♡" */}
+          <div className="absolute top-5 right-5 sm:top-8 sm:right-10 z-20 bg-white/85 backdrop-blur-md px-4 py-3 sm:px-6 sm:py-4 rounded-3xl shadow-lg border border-white/80 rotate-[-2deg] flex flex-col items-center justify-center">
+            <p className="font-serif italic text-xs sm:text-sm font-semibold text-[#0E281C] text-center leading-tight">
+              {t.cta.stamp1}
+              <br />
+              {t.cta.stamp2}
+              <br />
+              {t.cta.stamp3}
+            </p>
+            <Heart className="w-3.5 h-3.5 text-[#0E281C] fill-[#0E281C]/20 mt-1" />
+          </div>
 
-              {/* Content Box */}
-              <div className="relative z-10 p-8 sm:p-12 lg:p-14 max-w-xl space-y-5">
-                <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans">
-                  {t.cta.eyebrow}
-                </span>
+          <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 py-12 sm:py-16 relative z-10">
+            {/* Content Box */}
+            <div className="max-w-xl space-y-5">
+              <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans">
+                {t.cta.eyebrow}
+              </span>
 
-                <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-[#0F2A1D] font-normal leading-tight">
-                  {t.cta.title}
-                </h2>
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-[#0F2A1D] font-normal leading-tight">
+                {t.cta.title}
+              </h2>
 
-                <p className="text-xs sm:text-sm md:text-base text-[#4A5D52] leading-relaxed">
-                  {t.cta.desc}
-                </p>
+              <p className="text-xs sm:text-sm md:text-base text-[#4A5D52] leading-relaxed">
+                {t.cta.desc}
+              </p>
 
-                <div>
-                  <Link
-                    href={`/${locale}/contact`}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0D2619] hover:bg-[#163D29] text-white text-xs sm:text-sm font-medium transition-all duration-300 shadow-md group"
-                  >
-                    <span>{t.cta.btn}</span>
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </div>
-              </div>
-
-              {/* Bottom Contact Details Bar */}
-              <div className="relative z-10 px-8 py-5 sm:px-12 sm:py-6 border-t border-[#DECDB5]/60 bg-white/40 backdrop-blur-sm flex flex-wrap items-center gap-6 sm:gap-10 text-xs sm:text-sm text-[#1B3A29] font-medium">
-                <a
-                  href={`tel:${t.cta.phone.replace(/\s+/g, "")}`}
-                  className="flex items-center gap-2.5 hover:text-[#0D2619] transition-colors"
+              <div>
+                <Link
+                  href={`/${locale}/contact`}
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#0D2619] hover:bg-[#163D29] text-white text-xs sm:text-sm font-medium transition-all duration-300 shadow-md group"
                 >
-                  <Phone className="w-4 h-4 text-[#2D5A3E]" />
-                  <span>{t.cta.phone}</span>
-                </a>
-
-                <a
-                  href={`mailto:${t.cta.email}`}
-                  className="flex items-center gap-2.5 hover:text-[#0D2619] transition-colors"
-                >
-                  <Mail className="w-4 h-4 text-[#2D5A3E]" />
-                  <span>{t.cta.email}</span>
-                </a>
-
-                <div className="flex items-center gap-2.5 text-[#2C4C39]">
-                  <MapPin className="w-4 h-4 text-[#2D5A3E]" />
-                  <span>{t.cta.location}</span>
-                </div>
+                  <span>{t.cta.btn}</span>
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
               </div>
             </div>
-          </Container>
+
+            {/* Bottom Contact Details Bar */}
+            <div className="mt-10 pt-5 border-t border-[#DECDB5]/60 flex flex-wrap items-center gap-6 sm:gap-10 text-xs sm:text-sm text-[#1B3A29] font-medium">
+              <a
+                href={`tel:${t.cta.phone.replace(/\s+/g, "")}`}
+                className="flex items-center gap-2.5 hover:text-[#0D2619] transition-colors"
+              >
+                <Phone className="w-4 h-4 text-[#2D5A3E]" />
+                <span>{t.cta.phone}</span>
+              </a>
+
+              <a
+                href={`mailto:${t.cta.email}`}
+                className="flex items-center gap-2.5 hover:text-[#0D2619] transition-colors"
+              >
+                <Mail className="w-4 h-4 text-[#2D5A3E]" />
+                <span>{t.cta.email}</span>
+              </a>
+
+              <div className="flex items-center gap-2.5 text-[#2C4C39]">
+                <MapPin className="w-4 h-4 text-[#2D5A3E]" />
+                <span>{t.cta.location}</span>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
 
