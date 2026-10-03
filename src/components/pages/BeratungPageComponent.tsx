@@ -223,19 +223,19 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         {
           tag: isRu ? "Амбулаторное звено" : isEn ? "Outpatient Care" : "Ambulante Versorgung",
           title: isRu ? "Новое строительство амбулаторного медцентра" : isEn ? "Construction of a New Medical Center (MVZ)" : "Neubau eines Medizinischen Versorgungszentrums",
-          sub: isRu ? "Концепция · Проектирование · Реализация" : isEn ? "Concept · Planning · Implementation" : "Konzept · Planung · Umsetzung",
+          sub: isRu ? "Концепция • Проектирование • Реализация" : isEn ? "Concept • Planning • Implementation" : "Konzept • Planung • Umsetzung",
           image: "/images/beratung/project-mvz.webp",
         },
         {
           tag: isRu ? "Уход и стационар" : isEn ? "Nursing & Elderly Care" : "Pflege & Betreuung",
           title: isRu ? "Расширение и модернизация дома ухода" : isEn ? "Expansion of a Modern Senior Living Facility" : "Erweiterung einer Pflegeeinrichtung",
-          sub: isRu ? "Консалтинг · Проект-менеджмент · Авторский надзор" : isEn ? "Consulting · Project Management · Site Oversight" : "Beratung · Projektmanagement · Bauleitung",
+          sub: isRu ? "Консалтинг • Проект-менеджмент • Авторский надзор" : isEn ? "Consulting • Project Management • Site Oversight" : "Beratung • Projektmanagement • Bauleitung",
           image: "/images/beratung/project-pflege.webp",
         },
         {
           tag: isRu ? "Реабилитация" : isEn ? "Rehabilitation" : "Rehabilitation",
           title: isRu ? "Реновация и технологическое обновление реабилитационной клиники" : isEn ? "Modernization & Technical Refit of a Rehab Clinic" : "Sanierung und Modernisierung einer Rehabilitationsklinik",
-          sub: isRu ? "Анализ · Планирование · Ввод" : isEn ? "Analysis · Planning · Delivery" : "Analyse · Planung · Umsetzung",
+          sub: isRu ? "Анализ • Планирование • Ввод" : isEn ? "Analysis • Planning • Delivery" : "Analyse • Planung • Umsetzung",
           image: "/images/beratung/project-reha.webp",
         },
       ],
@@ -548,13 +548,13 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 4 (from Photo): REFERENZEN & PROJEKTE                             */}
+        {/* SECTION 4 (Photo 1): REFERENZEN & PROJEKTE                                */}
         {/* ========================================================================= */}
-        <section className="py-14 sm:py-20 bg-[#FAF9F5] border-t border-[#EAE3D5]">
+        <section className="py-12 sm:py-16 bg-[#FAF9F5] border-t border-[#EAE3D5]">
           <Container size="wide">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start mb-8 sm:mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start mb-4 sm:mb-6">
               {/* Left Column: Heading + Button */}
-              <div className="lg:col-span-4 space-y-4">
+              <div className="lg:col-span-4 space-y-4 sm:space-y-5">
                 <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans">
                   {t.s4.eyebrow}
                 </span>
@@ -567,10 +567,10 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
                   {t.s4.desc}
                 </p>
 
-                <div className="pt-2">
+                <div className="pt-2 sm:pt-3">
                   <Link
                     href={`/${locale}/contact`}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#FAF9F5] hover:bg-white text-[#0D2619] border border-[#C8B896] text-xs sm:text-sm font-medium transition-all duration-300 shadow-sm group"
+                    className="inline-flex items-center gap-3 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-[#FAF9F5] hover:bg-white text-[#0D2619] border border-[#BFA87E] hover:border-[#9B7C38] text-xs sm:text-sm font-medium transition-all duration-300 shadow-xs hover:shadow group hover:scale-[1.01]"
                   >
                     <span>{t.s4.btn}</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
@@ -583,7 +583,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
                 {t.s4.projects.map((proj, idx) => (
                   <div
                     key={idx}
-                    className="bg-white rounded-2xl overflow-hidden border border-[#EBE4D8] shadow-xs hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between group"
+                    className="bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-[#EBE4D8] shadow-xs hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between group"
                   >
                     <div>
                       {/* Photo */}
@@ -598,7 +598,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
 
                       {/* Content */}
                       <div className="p-4 sm:p-5">
-                        <span className="text-[10px] sm:text-[11px] font-semibold text-[#9B7C38] block uppercase tracking-wider mb-1 font-sans">
+                        <span className="text-[10.5px] sm:text-[11px] font-semibold text-[#BFA87E] block uppercase tracking-wider mb-1 font-sans">
                           {proj.tag}
                         </span>
                         <h4 className="font-serif text-xs sm:text-sm font-semibold text-[#0F2A1D] leading-snug mb-2">
@@ -609,11 +609,11 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
 
                     {/* Bottom Subtitle + Circle Arrow */}
                     <div className="px-4 pb-4 sm:px-5 sm:pb-5 pt-2 border-t border-[#F2ECE1] flex items-center justify-between">
-                      <span className="text-[10.5px] sm:text-[11px] text-[#6E8177]">
+                      <span className="text-[10px] sm:text-[10.5px] text-[#6E8177]">
                         {proj.sub}
                       </span>
-                      <div className="w-6 h-6 rounded-full border border-[#D5C9B4] flex items-center justify-center text-[#244E33] group-hover:bg-[#0D2619] group-hover:text-white transition-colors duration-300 flex-shrink-0">
-                        <ArrowRight className="w-3 h-3" />
+                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border border-[#D5C9B4] flex items-center justify-center text-[#244E33] group-hover:bg-[#0D2619] group-hover:text-white transition-colors duration-300 shrink-0">
+                        <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                       </div>
                     </div>
                   </div>
@@ -624,173 +624,189 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 5 (from Photo): STIMMEN UNSERER PARTNER                           */}
+        {/* SECTION 5 (Photo 2): STIMMEN UNSERER PARTNER (FULL-WIDTH EDGE-TO-EDGE)    */}
         {/* ========================================================================= */}
-        <section className="py-8 sm:py-14">
-          <Container size="wide">
-            <div className="bg-[#0B2516] rounded-3xl overflow-hidden shadow-2xl relative p-8 sm:p-12 lg:p-14">
-              {/* Botanical leaves on left */}
-              <div className="absolute top-0 left-0 w-64 h-64 opacity-15 pointer-events-none hidden lg:block">
-                <Image
-                  src="/images/areas/botanical-branch-clean.webp"
-                  alt="Leaves ornament"
-                  fill
-                  className="object-contain"
-                />
+        <section className="w-full bg-[#08170D] text-white relative overflow-hidden border-y border-[#D5B878]/30 py-10 sm:py-14 my-6 sm:my-10">
+          {/* Botanical foliage watermark along left edge */}
+          <div className="absolute left-0 top-0 bottom-0 w-48 sm:w-64 pointer-events-none opacity-40 select-none overflow-hidden z-0">
+            <Image
+              src="/images/areas/botanical-branch-clean.webp"
+              alt="Botanical Accent"
+              fill
+              className="object-contain object-left -scale-x-100"
+              priority
+            />
+          </div>
+
+          <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+              {/* Left: Heading + Button */}
+              <div className="lg:col-span-4 space-y-4">
+                <span className="text-[10.5px] sm:text-[11px] font-bold uppercase tracking-[0.24em] text-[#C5A56A] block font-sans">
+                  {t.s5.eyebrow}
+                </span>
+
+                <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-white font-normal leading-tight">
+                  {t.s5.title}
+                </h2>
+
+                <p className="text-xs sm:text-[13px] text-white/85 leading-relaxed max-w-sm font-sans">
+                  {t.s5.desc}
+                </p>
+
+                <div className="pt-2">
+                  <Link
+                    href={`/${locale}/contact`}
+                    className="inline-flex items-center gap-2.5 px-6 py-2.5 sm:py-3 rounded-full bg-transparent hover:bg-white text-white hover:text-[#08170D] border border-[#C5A56A] hover:border-white text-xs sm:text-[13px] font-medium transition-all duration-300 shadow-sm group hover:scale-[1.02]"
+                  >
+                    <span>{t.s5.btn}</span>
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
-                {/* Left: Heading + Button */}
-                <div className="lg:col-span-4 space-y-4">
-                  <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#ECCF96] block font-sans">
-                    {t.s5.eyebrow}
-                  </span>
+              {/* Right: 3 White Testimonial Cards matching photo */}
+              <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
+                {t.s5.testimonials.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 text-[#0F2A1D] shadow-lg flex flex-col justify-between border border-[#E8E2D6]"
+                  >
+                    <div className="flex items-start gap-3.5">
+                      {/* Avatar on top left */}
+                      <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden shrink-0 border border-[#E2DBD0] shadow-2xs">
+                        <Image
+                          src={item.avatar}
+                          alt={item.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
 
-                  <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-white font-normal leading-tight">
-                    {t.s5.title}
-                  </h2>
-
-                  <p className="text-xs sm:text-sm text-[#D4E2D8] leading-relaxed">
-                    {t.s5.desc}
-                  </p>
-
-                  <div className="pt-2">
-                    <Link
-                      href={`/${locale}/contact`}
-                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white text-white hover:text-[#0B2516] border border-white/30 text-xs sm:text-sm font-medium transition-all duration-300 shadow-sm group"
-                    >
-                      <span>{t.s5.btn}</span>
-                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Right: 3 White Testimonial Cards */}
-                <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
-                  {t.s5.testimonials.map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="bg-white rounded-2xl p-5 sm:p-6 text-forest-950 flex flex-col justify-between shadow-md"
-                    >
-                      {/* Top: Avatar & Quote */}
-                      <div>
-                        <div className="relative w-10 h-10 rounded-full overflow-hidden mb-3 border border-[#E2DBD0]">
-                          <Image
-                            src={item.avatar}
-                            alt={item.name}
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
-                        <p className="text-[11.5px] sm:text-xs text-[#2C4436] italic leading-relaxed mb-4">
+                      {/* Quote & Author Info on right */}
+                      <div className="flex-1 space-y-2.5">
+                        <p className="text-[11px] sm:text-[12px] text-[#2C4436] leading-relaxed font-sans">
                           {item.quote}
                         </p>
-                      </div>
 
-                      {/* Bottom: Name & Role */}
-                      <div className="pt-3 border-t border-[#F2ECE1]">
-                        <h4 className="font-serif text-xs font-semibold text-[#0F2A1D]">
-                          {item.name}
-                        </h4>
-                        <p className="text-[10px] text-[#6E8177]">
-                          {item.role}
-                        </p>
+                        <div className="pt-1.5 border-t border-[#F2ECE1]">
+                          <h4 className="font-serif text-xs sm:text-[12.5px] font-bold text-[#0F2A1D] leading-snug">
+                            {item.name}
+                          </h4>
+                          <p className="text-[10px] sm:text-[10.5px] text-[#6E8177]">
+                            {item.role}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </div>
-          </Container>
+          </div>
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 6 (from Photo): KONTAKT (Wir freuen uns auf Ihre Anfrage)          */}
+        {/* SECTION 6 (Photo 3): KONTAKT (FULL-WIDTH EDGE-TO-EDGE)                    */}
         {/* ========================================================================= */}
-        <section className="py-10 sm:py-16">
-          <Container size="wide">
-            <div className="relative rounded-3xl overflow-hidden shadow-xl border border-[#DECDB5]/50 bg-gradient-to-r from-[#F6F4ED] via-[#F2EDE2] to-[#EAE3D3]">
-              {/* Background Desk with notebook on left */}
-              <div className="absolute inset-y-0 left-0 w-full sm:w-2/5 opacity-80 sm:opacity-100 pointer-events-none">
-                <Image
-                  src="/images/beratung/cta-desk.webp"
-                  alt="Desk notebook"
-                  fill
-                  className="object-cover object-left"
-                />
-                {/* Gradient blend to center */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#F6F4ED]/60 to-[#F6F4ED] sm:w-full" />
-              </div>
+        <section className="w-full relative overflow-hidden bg-gradient-to-r from-[#F6F4ED] via-[#F2EDE2] to-[#EAE3D3] border-t border-[#DECDB5]/60 py-10 sm:py-16">
+          {/* Background Desk with notebook on left edge */}
+          <div className="absolute inset-y-0 left-0 w-full sm:w-2/5 opacity-80 sm:opacity-100 pointer-events-none">
+            <Image
+              src="/images/beratung/cta-desk.webp"
+              alt="Desk notebook"
+              fill
+              className="object-cover object-left"
+              priority
+            />
+            {/* Smooth gradient blend to center */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#F6F4ED]/60 to-[#F6F4ED]" />
+          </div>
 
-              {/* Floating stamp top left: "Lassen Sie uns über Ihr Projekt sprechen. ♡" */}
-              <div className="absolute top-5 left-5 sm:top-8 sm:left-10 z-20 bg-white/85 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg border border-white/80 rotate-[-2deg] flex flex-col items-center">
-                <p className="font-serif italic text-xs sm:text-sm font-semibold text-[#0E281C] text-center leading-tight">
-                  {t.s6.stamp1}
-                  <br />
-                  {t.s6.stamp2}
+          {/* Handwritten cursive script directly on desk photo (NO white box, matching photo) */}
+          <div className="absolute top-6 left-6 sm:top-10 sm:left-14 z-20 pointer-events-none select-none">
+            <p className="font-serif italic text-2xl sm:text-3xl text-[#244E33]/90 leading-tight">
+              {t.s6.stamp1}
+              <br />
+              {t.s6.stamp2}
+            </p>
+            <div className="pt-2 pl-4">
+              <Heart className="w-5 h-5 text-[#244E33]/90 fill-transparent stroke-[1.6]" />
+            </div>
+          </div>
+
+          {/* Foreground botanical foliage on the right edge */}
+          <div className="hidden lg:block absolute right-0 bottom-0 top-0 w-72 pointer-events-none select-none z-10 overflow-hidden">
+            <Image
+              src="/images/areas/botanical-branch-clean.webp"
+              alt="Botanical Foliage"
+              fill
+              className="object-contain object-right-bottom opacity-60"
+            />
+          </div>
+
+          {/* Center Content Box + Right Contact Info */}
+          <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              {/* Spacer for the left notebook script */}
+              <div className="hidden lg:block lg:col-span-4" />
+
+              {/* Center: Eyebrow + Title + Desc + Gold Button */}
+              <div className="lg:col-span-4 space-y-4 pt-20 sm:pt-24 lg:pt-0">
+                <span className="text-[10.5px] sm:text-[11px] font-bold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans">
+                  {t.s6.eyebrow}
+                </span>
+
+                <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-[#0F2A1D] font-normal leading-tight">
+                  {t.s6.title}
+                </h2>
+
+                <p className="text-xs sm:text-[13.5px] text-[#4A5D52] leading-relaxed max-w-md">
+                  {t.s6.desc}
                 </p>
-                <Heart className="w-3.5 h-3.5 text-[#0E281C] fill-[#0E281C]/20 mt-1" />
+
+                <div className="pt-1">
+                  <Link
+                    href={`/${locale}/contact`}
+                    className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#ECCF96] via-[#DFBF76] to-[#C8A050] hover:from-[#F4DCAC] hover:to-[#D4AC5B] text-[#08170D] text-xs sm:text-sm font-semibold transition-all duration-300 shadow-md group hover:scale-[1.02]"
+                  >
+                    <span>{t.s6.btn}</span>
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
               </div>
 
-              {/* Center Content Box + Right Glass Contact Box */}
-              <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 sm:p-12 lg:p-14">
-                {/* Center / Middle Text (Left on Desktop after the stamp area) */}
-                <div className="lg:col-start-5 lg:col-span-4 space-y-4 pt-12 sm:pt-0">
-                  <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans">
-                    {t.s6.eyebrow}
-                  </span>
-
-                  <h2 className="font-serif text-2xl sm:text-3xl text-[#0F2A1D] font-normal leading-tight">
-                    {t.s6.title}
-                  </h2>
-
-                  <p className="text-xs sm:text-sm text-[#4A5D52] leading-relaxed">
-                    {t.s6.desc}
-                  </p>
-
-                  <div>
-                    <Link
-                      href={`/${locale}/contact`}
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#ECCF96] to-[#D4AF37] hover:from-[#F2DCAE] hover:to-[#DFBB45] text-[#0B2516] text-xs sm:text-sm font-semibold transition-all duration-300 shadow-md group"
-                    >
-                      <span>{t.s6.btn}</span>
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </Link>
+              {/* Right: Contact details (Directly on background, NO white box) */}
+              <div className="lg:col-span-4 space-y-4 lg:pl-6">
+                <a
+                  href={`tel:${t.s6.phone.replace(/\s+/g, "")}`}
+                  className="flex items-center gap-3.5 text-xs sm:text-[13.5px] text-[#1B3A29] hover:text-[#0D2619] transition-colors group"
+                >
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#E5DFC9]/80 flex items-center justify-center text-[#244E33] group-hover:bg-[#0D2619] group-hover:text-white transition-colors shrink-0 shadow-2xs">
+                    <Phone className="w-4 h-4" />
                   </div>
-                </div>
+                  <span className="font-medium">{t.s6.phone}</span>
+                </a>
 
-                {/* Right: Glassmorphism Contact Card */}
-                <div className="lg:col-span-4 bg-white/70 backdrop-blur-md rounded-2xl p-6 border border-white/80 shadow-md space-y-4">
-                  <a
-                    href={`tel:${t.s6.phone.replace(/\s+/g, "")}`}
-                    className="flex items-center gap-3 text-xs sm:text-sm text-[#1B3A29] hover:text-[#0D2619] transition-colors group"
-                  >
-                    <div className="w-8 h-8 rounded-full bg-[#EBF0EA] flex items-center justify-center text-[#2D5A3E] group-hover:bg-[#0D2619] group-hover:text-white transition-colors">
-                      <Phone className="w-4 h-4" />
-                    </div>
-                    <span className="font-medium">{t.s6.phone}</span>
-                  </a>
-
-                  <a
-                    href={`mailto:${t.s6.email}`}
-                    className="flex items-center gap-3 text-xs sm:text-sm text-[#1B3A29] hover:text-[#0D2619] transition-colors group"
-                  >
-                    <div className="w-8 h-8 rounded-full bg-[#EBF0EA] flex items-center justify-center text-[#2D5A3E] group-hover:bg-[#0D2619] group-hover:text-white transition-colors">
-                      <Mail className="w-4 h-4" />
-                    </div>
-                    <span className="font-medium">{t.s6.email}</span>
-                  </a>
-
-                  <div className="flex items-center gap-3 text-xs sm:text-sm text-[#1B3A29]">
-                    <div className="w-8 h-8 rounded-full bg-[#EBF0EA] flex items-center justify-center text-[#2D5A3E]">
-                      <MapPin className="w-4 h-4" />
-                    </div>
-                    <span className="font-medium">{t.s6.location}</span>
+                <a
+                  href={`mailto:${t.s6.email}`}
+                  className="flex items-center gap-3.5 text-xs sm:text-[13.5px] text-[#1B3A29] hover:text-[#0D2619] transition-colors group"
+                >
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#E5DFC9]/80 flex items-center justify-center text-[#244E33] group-hover:bg-[#0D2619] group-hover:text-white transition-colors shrink-0 shadow-2xs">
+                    <Mail className="w-4 h-4" />
                   </div>
+                  <span className="font-medium">{t.s6.email}</span>
+                </a>
+
+                <div className="flex items-center gap-3.5 text-xs sm:text-[13.5px] text-[#1B3A29]">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#E5DFC9]/80 flex items-center justify-center text-[#244E33] shrink-0 shadow-2xs">
+                    <MapPin className="w-4 h-4" />
+                  </div>
+                  <span className="font-medium">{t.s6.location}</span>
                 </div>
               </div>
             </div>
-          </Container>
+          </div>
         </section>
       </main>
 
