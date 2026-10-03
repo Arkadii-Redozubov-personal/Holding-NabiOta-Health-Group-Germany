@@ -14,6 +14,7 @@ import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { PageHero } from "@/components/layout/PageHero";
 import { holdingServices } from "@/data/services";
 import { DiagnostikPageComponent } from "@/components/pages/DiagnostikPageComponent";
+import { RehabilitationPageComponent } from "@/components/pages/RehabilitationPageComponent";
 import { locales, SupportedLocale, getDictionary } from "@/lib/i18n";
 import { Metadata } from "next";
 
@@ -62,6 +63,10 @@ export default async function LocalizedServiceDetailPage({ params }: LocalizedSe
 
   if (slug === "diagnostikzentren") {
     return <DiagnostikPageComponent locale={locale} />;
+  }
+
+  if (slug === "therapie-rehabilitation") {
+    return <RehabilitationPageComponent locale={locale} />;
   }
 
   const relatedServices = holdingServices.filter((s) => s.slug !== slug).slice(0, 3);

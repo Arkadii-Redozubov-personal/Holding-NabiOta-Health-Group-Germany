@@ -14,6 +14,7 @@ import { PageHero } from "@/components/layout/PageHero";
 import { businessAreas } from "@/data/areas";
 import { MedizinischeFachbereichePageComponent } from "@/components/pages/MedizinischeFachbereichePageComponent";
 import { DiagnostikPageComponent } from "@/components/pages/DiagnostikPageComponent";
+import { RehabilitationPageComponent } from "@/components/pages/RehabilitationPageComponent";
 
 interface AreaDetailPageProps {
   params: Promise<{ slug: string }>;
@@ -68,6 +69,10 @@ export default async function AreaDetailPage({ params }: AreaDetailPageProps) {
 
   if (slug === "diagnostik") {
     return <DiagnostikPageComponent locale="de" />;
+  }
+
+  if (slug === "rehabilitation") {
+    return <RehabilitationPageComponent locale="de" />;
   }
 
   const relatedAreas = businessAreas.filter((a) => a.slug !== slug).slice(0, 3);
