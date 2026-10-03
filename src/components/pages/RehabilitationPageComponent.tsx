@@ -6,8 +6,6 @@ import Link from "next/link";
 import {
   ArrowRight,
   ArrowLeft,
-  Calendar,
-  Clock,
   CheckCircle2,
   ChevronRight,
   Heart,
@@ -32,9 +30,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { PageHero } from "@/components/layout/PageHero";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
-import { Container } from "@/components/layout/Container";
 import { SupportedLocale } from "@/lib/i18n";
-import { businessAreas } from "@/data/areas";
 
 // ── Custom SVG Icons for Rehabilitation Modalities ──
 function WalkingExoskeletonIcon({ className = "w-5 h-5" }: { className?: string }) {
@@ -63,20 +59,54 @@ function SpineMobilityIcon({ className = "w-5 h-5" }: { className?: string }) {
   );
 }
 
-function HeartRateRehabIcon({ className = "w-5 h-5" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={className}>
-      <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
-      <path d="M9 12h2l1 -2l1.5 4l1 -2h2" />
-    </svg>
-  );
-}
-
 function GoldCircleCheckIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="none">
       <circle cx="10" cy="10" r="8.5" stroke="#B89650" strokeWidth="1.2" />
       <path d="M6.5 10.2L8.8 12.5L13.5 7.8" stroke="#B89650" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+// ── Icons for Skrin 2 stats ──
+function RehabCloverIcon({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <circle cx="9" cy="9" r="3.5" />
+      <circle cx="15" cy="9" r="3.5" />
+      <circle cx="9" cy="15" r="3.5" />
+      <circle cx="15" cy="15" r="3.5" />
+      <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+    </svg>
+  );
+}
+
+function SatisfactionBadgeIcon({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M8.5 14.5c1 1 2.2 1.5 3.5 1.5s2.5-.5 3.5-1.5" />
+      <circle cx="9" cy="9.5" r="1" fill="currentColor" />
+      <circle cx="15" cy="9.5" r="1" fill="currentColor" />
+    </svg>
+  );
+}
+
+function SupportShieldIcon({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      <path d="M9 12l2 2 4-4" />
+    </svg>
+  );
+}
+
+function ExperienceAwardIcon({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <circle cx="12" cy="8.5" r="5.5" />
+      <path d="M8.5 13.5L7 21l5-3 5 3-1.5-7.5" />
+      <path d="M12 6.5v4" />
     </svg>
   );
 }
@@ -89,8 +119,6 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
   const isRu = locale === "ru";
   const isEn = locale === "en";
 
-  const [activeTab, setActiveTab] = useState<number>(0);
-  const [activeTestimonial, setActiveTestimonial] = useState<number>(0);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const heroData = {
@@ -118,30 +146,6 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
       icon: <ShieldCheck className="w-5 h-5 text-[#ECCF96]" />,
       title: isRu ? "Все кассы" : isEn ? "Insurance Covered" : "Alle Kassen",
       sub: isRu ? "GKV, PKV, BG & DRV" : isEn ? "GKV, PKV, BG & DRV" : "GKV, PKV, BG & DRV",
-    },
-  ];
-
-  // ── Key Metrics Strip ──
-  const metrics = [
-    {
-      value: "1.400 m²",
-      label: isRu ? "Современное пространство терапии" : isEn ? "Advanced Therapy Facility" : "Moderne Therapiefläche",
-      sub: isRu ? "Залы ЛФК, гидротерапия, тренажеры" : isEn ? "Gym, hydrotherapy, robotics" : "Trainingshallen & Bewegungsbad",
-    },
-    {
-      value: "15+",
-      label: isRu ? "Специализированных терапевтов" : isEn ? "Specialized Therapists" : "Spezialisierte Fachkräfte",
-      sub: isRu ? "Врачи, физио-, эрго- и спорт-эксперты" : isEn ? "Physicians, PTs, sports scientists" : "Physio-, Ergo- & Sportwissenschaftler",
-    },
-    {
-      value: "98.4%",
-      label: isRu ? "Пациентов восстановили мобильность" : isEn ? "Patient Mobility Recovery Rate" : "Erfolgreiche Mobilisation",
-      sub: isRu ? "По объективным функциональным тестам" : isEn ? "Measured via functional assessments" : "Gemäß funktionellen Abschlussbefunden",
-    },
-    {
-      value: "< 48h",
-      label: isRu ? "Быстрый старт программы" : isEn ? "Rapid Therapy Start" : "Schneller Therapiebeginn",
-      sub: isRu ? "После выписки из стационара" : isEn ? "Post-hospital admission" : "Nach Klinikentlassung oder OP",
     },
   ];
 
@@ -245,158 +249,130 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
     },
   ];
 
-  // ── Section 2: High-Tech Rehabilitation Equipment ──
-  const techEquipment = [
-    {
-      name: "AlterG® Anti-Gravity Treadmill",
-      category: isRu ? "Антигравитационная дорожка" : isEn ? "Anti-Gravity Treadmill" : "Anti-Schwerkraft-Laufband",
-      tech: isRu ? "Технология дифференциального давления воздуха NASA" : isEn ? "NASA Differential Air Pressure Technology" : "NASA-Differenzdruck-Technologie",
-      desc: isRu
-        ? "Позволяет плавно снижать нагрузку собственного веса пациента с шагом в 1% (вплоть до 20% от реального веса). Пациент может начать ходить и бегать уже через несколько дней после операции без боли и риска травмирования имплантата."
-        : isEn
-        ? "Enables precise body-weight unloading in 1% increments (down to 20% of body weight). Patients resume walking and running days after surgery with zero impact pain and full joint protection."
-        : "Ermöglicht eine stufenlose Entlastung des Körpergewichts in 1-%-Schritten auf bis zu 20 % des Eigengewichts. Patienten können bereits kurz nach Operationen schmerzfrei gehen und das physiologische Gangbild trainieren.",
-      features: isRu
-        ? ["Снижение веса до 80%", "Защита суставов и связок", "Видеоконтроль постановки стопы в реальном времени"]
-        : isEn
-        ? ["Weight reduction up to 80%", "Full implant & joint protection", "Live video gait feedback system"]
-        : ["Entlastung um bis zu 80 %", "Schutz frisch operierter Strukturen", "Echtzeit-Videofeedback zur Schrittanalyse"],
-      image: "/images/rehabilitation/equipment-gait.webp",
-    },
-    {
-      name: "Diers 4D Motion® Wirbelsäulenanalyse",
-      category: isRu ? "Биомеханический 4D-анализ" : isEn ? "Dynamic 4D Spine & Posture Analysis" : "Dynamische 4D-Wirbelsäulenanalyse",
-      tech: isRu ? "Оптическая видеорастрография без рентгеновского облучения" : isEn ? "Radiation-free optical video rasterstereography" : "Strahlungsfreie Lichtrasterstereographie",
-      desc: isRu
-        ? "Компьютерная система фиксирует трехмерное движение позвоночника и таза в динамике шага с частотой 50 кадров в секунду. Выявляет малейшие мышечные дисбалансы, перекосы таза и функциональные блоки."
-        : isEn
-        ? "Captures three-dimensional spine and pelvic kinematics in motion at 50 frames per second with zero radiation. Detects subtle muscular imbalances, pelvic tilts, and rotational asymmetries."
-        : "Erfasst die dreidimensionale Bewegung von Wirbelsäule, Becken und Beinen während des Gehens. Vollkommen strahlungsfrei liefert das System objektive Daten zu funktionellen Fehlstellungen.",
-      features: isRu
-        ? ["100% без лучевой нагрузки", "Точность измерений до миллиметра", "Объективный контроль прогресса"]
-        : isEn
-        ? ["100% radiation-free scanning", "Millimeter-precise motion capture", "Objective before-and-after progress tracking"]
-        : ["100 % strahlungsfrei", "Millimetergenaue Funktionsmessung", "Objektive Vorher-Nachher-Vergleiche"],
-      image: "/images/diagnostik/scanner-suite.webp",
-    },
-    {
-      name: "Biodex Multi-Joint Isokinetik",
-      category: isRu ? "Изокинетический динамометр" : isEn ? "Isokinetic Multi-Joint Dynamometer" : "Isokinetisches Dynamometersystem",
-      tech: isRu ? "Компьютеризированное измерение силы и мышечного баланса" : isEn ? "Computer-controlled torque and neuromuscular testing" : "Computergesteuerte Drehmomentmessung",
-      desc: isRu
-        ? "Золотой стандарт спортивной ортопедии. Обеспечивает безопасное измерение пикового крутящего момента мышц-антагонистов (сгибателей/разгибателей) с адаптивным сопротивлением, исключающим перегрузку связок."
-        : isEn
-        ? "The clinical gold standard in orthopedic testing. Delivers objective data on quadriceps-to-hamstring ratios and agonist-antagonist balance with adaptive resistance preventing overload."
-        : "Der Goldstandard in der muskuloskelettalen Leistungsdiagnostik. Erfasst exakte Kraftverhältnisse zwischen Muskelgruppen und schützt überlastete Sehnen durch computeradaptiven Widerstand.",
-      features: isRu
-        ? ["Адаптивное сопротивление", "Исключение травмы при тесте", "Официальный допуск к спорту (Return-to-Play)"]
-        : isEn
-        ? ["Accommodating biofeedback resistance", "Safe testing without overload", "Clear Return-to-Play criteria validation"]
-        : ["Adaptiver Widerstand nach Belastung", "Maximale Sicherheit für Gelenke", "Präzise Return-to-Competition-Profile"],
-      image: "/images/areas/research-innovation.webp",
-    },
-  ];
+  // ── Skrin 2 Data: Unser Ansatz ──
+  const approachData = {
+    eyebrow: isRu ? "НАШ ПОДХОД" : isEn ? "OUR APPROACH" : "UNSER ANSATZ",
+    title: isRu ? "Комплексная забота. По высшим стандартам." : isEn ? "Holistic Care. To the Highest Standards." : "Ganzheitliche Betreuung. Nach höchsten Standards.",
+    desc: isRu
+      ? "Мы объединяем передовую медицинскую экспертизу, современную терапию и индивидуальный уход для вашего долгосрочного успеха."
+      : isEn
+      ? "We combine medical expertise with state-of-the-art therapy and personal care – for your long-term recovery."
+      : "Wir kombinieren medizinische Expertise mit modernster Therapie und persönlicher Betreuung – für Ihren langfristigen Erfolg.",
+    stats: [
+      {
+        val: "100+",
+        label: isRu ? "Пациентов в месяц" : isEn ? "Patients per month" : "Rehabilitationspatienten pro Monat",
+        icon: <RehabCloverIcon className="w-5 h-5 text-[#ECCF96]" />,
+      },
+      {
+        val: "95%",
+        label: isRu ? "Удовлетворенность пациентов" : isEn ? "Patient satisfaction" : "Zufriedenheit unserer Patienten",
+        icon: <SatisfactionBadgeIcon className="w-5 h-5 text-[#ECCF96]" />,
+      },
+      {
+        val: "24/7",
+        label: isRu ? "Забота и поддержка" : isEn ? "Care & support" : "Betreuung und Support",
+        icon: <SupportShieldIcon className="w-5 h-5 text-[#ECCF96]" />,
+      },
+      {
+        val: ">10",
+        label: isRu ? "Лет опыта в реабилитации" : isEn ? "Years of experience" : "Jahre Erfahrung in der Rehabilitation",
+        icon: <ExperienceAwardIcon className="w-5 h-5 text-[#ECCF96]" />,
+      },
+    ],
+  };
 
-  // ── Section 3: The 4-Phase Recovery Pathway ──
-  const pathwaySteps = [
-    {
-      step: "01",
-      title: isRu ? "Диагностика и план" : isEn ? "Initial Assessment & Goal Setting" : "Eingangsdiagnostik & Zielsetzung",
-      duration: isRu ? "День 1" : isEn ? "Day 1" : "Tag 1",
-      desc: isRu
-        ? "Врачебный осмотр, функциональные двигательные тесты, анализ выписок и формулирование конкретных целей реабилитации (SMART-цели)."
-        : isEn
-        ? "Comprehensive medical intake, joint range-of-motion metrics, pain assessment, and formulation of personalized clinical SMART targets."
-        : "Ausführliche fachärztliche Untersuchung, biomechanische Funktionsanalyse und Definition Ihrer persönlichen Mobilitätsziele.",
-    },
-    {
-      step: "02",
-      title: isRu ? "Интенсивная терапия" : isEn ? "Intensive Multimodal Therapy" : "Intensive Multimodale Phase",
-      duration: isRu ? "Недели 1–3" : isEn ? "Weeks 1–3" : "Wochen 1–3",
-      desc: isRu
-        ? "Ежедневные индивидуальные занятия с физиотерапевтом, мануальная терапия, лимфодренаж, гидротерапия в бассейне и антигравитационная ходьба."
-        : isEn
-        ? "Daily one-on-one physiotherapy, joint mobilization, lymphatic drainage, warm-water pool therapy, and unweighted treadmill training."
-        : "Tägliche 1-zu-1-Physiotherapie, manuelle Gelenkmobilisation, medizinisches Bewegungsbad und AlterG®-Entlastungstraining.",
-    },
-    {
-      step: "03",
-      title: isRu ? "Сила и выносливость" : isEn ? "Functional Reconditioning" : "Kraft- & Belastungsaufbau",
-      duration: isRu ? "Недели 3–6" : isEn ? "Weeks 3–6" : "Wochen 3–6",
-      desc: isRu
-        ? "Медицинский тренинг на современных силовых тренажерах (MTT/KGG), функциональные упражнения на равновесие и адаптация к повседневным нагрузкам."
-        : isEn
-        ? "Medical training therapy (MTT), progressive resistance conditioning, neuromuscular balance coordination, and occupational ergonomics."
-        : "Gerätegestützte Krankengymnastik (KGG), medizinisches Aufbautraining, Propriozeptionstraining und Alltagssimulationen.",
-    },
-    {
-      step: "04",
-      title: isRu ? "Устойчивый результат" : isEn ? "Long-Term Prevention & Follow-Up" : "Nachhaltige Prävention (T-RENA)",
-      duration: isRu ? "После 6 недель" : isEn ? "Week 6+" : "Ab Woche 6",
-      desc: isRu
-        ? "Заключительное тестирование с выдачей паспорта подвижности, рекомендации для домашних тренировок и программы поддерживающей терапии (IRENA / T-RENA)."
-        : isEn
-        ? "Objective completion assessment, personalized home exercise digital plan, and subsidized aftercare programs (T-RENA / IRENA)."
-        : "Abschlussdiagnostik mit Mobilitätspass, individualisiertes Heimübungsprogramm und berufsbegleitende Nachsorgeprogramme (T-RENA / IRENA).",
-    },
-  ];
+  // ── Skrin 3 Data: 2-Card Grid (Facilities + Innovation) ──
+  const facilitiesCard = {
+    badge: isRu ? "СОВРЕМЕННЫЕ УСЛОВИЯ" : isEn ? "MODERN FACILITIES" : "MODERNE EINRICHTUNGEN",
+    title: isRu ? "Терапия в особой атмосфере" : isEn ? "Therapy in an Exceptional Setting" : "Therapie in einer besonderen Umgebung",
+    desc: isRu
+      ? "Наши современные реабилитационные пространства создают идеальные условия для успешного восстановления."
+      : isEn
+      ? "Our state-of-the-art facilities provide the ideal environment for successful rehabilitation."
+      : "Unsere modernen Einrichtungen bieten Ihnen den idealen Rahmen für eine erfolgreiche Rehabilitation.",
+    btn: isRu ? "Наше оснащение" : isEn ? "Our Facilities" : "Unsere Ausstattung",
+  };
 
-  // ── Section 4: Indications List ──
-  const indicationsCol1 = isRu
-    ? [
-        "Эндопротезы тазобедренного и коленного суставов",
-        "Состояния после операций на межпозвонковых дисках",
-        "Пластика крестообразных связок и менисков",
-        "Переломы костей и сложные травмы суставов",
-        "Хронические боли в спине и шее (дорсопатии)",
-        "Артрозы крупных и мелких суставов",
-      ]
-    : isEn
-    ? [
-        "Total hip, knee and shoulder joint replacements",
-        "Post-operative spinal disc & fusion surgeries",
-        "Cruciate ligament (ACL/PCL) and meniscus repairs",
-        "Bone fractures, polytrauma and joint luxations",
-        "Chronic spinal pain syndromes & disc degeneration",
-        "Advanced osteoarthritis and cartilage damage",
-      ]
-    : [
-        "Zustand nach Hüft-, Knie- oder Schulter-TEP",
-        "Postoperative Wirbelsäuleneingriffe & Bandscheiben-OPs",
-        "Kreuzband-, Meniskus- und Sehnenrekonstruktionen",
-        "Komplexe Frakturen und Sportverletzungen",
-        "Chronische Wirbelsäulen- und Rückenschmerzen",
-        "Fortgeschrittene Arthrose und Gelenkdegeneration",
-      ];
+  const innovationCard = {
+    eyebrow: isRu ? "ИННОВАЦИИ И ЭКСПЕРТИЗА" : isEn ? "INNOVATION & EXPERTISE" : "INNOVATION & EXPERTISE",
+    title: isRu ? "Передовая терапия для вашего здоровья." : isEn ? "Cutting-Edge Therapy for Your Health." : "Modernste Therapie für Ihre Gesundheit.",
+    desc: isRu
+      ? "С помощью инновационных методик и высокотехнологичного оборудования мы помогаем вам вернуться к активной и независимой жизни."
+      : isEn
+      ? "With innovative procedures and advanced equipment, we empower you on your journey back to an active and self-determined life."
+      : "Mit innovativen Verfahren und modernster Ausstattung unterstützen wir Sie auf Ihrem Weg zurück in ein aktives und selbstbestimmtes Leben.",
+    items: isRu
+      ? [
+          "Высокотехнологичные тренажеры",
+          "Цифровой биомеханический анализ",
+          "Междисциплинарная команда терапевтов",
+          "Индивидуальный контроль прогресса",
+        ]
+      : isEn
+      ? [
+          "State-of-the-art exercise equipment",
+          "Digital motion & gait analysis",
+          "Interdisciplinary therapy team",
+          "Individualized progress monitoring",
+        ]
+      : [
+          "Hochmoderne Trainingsgeräte",
+          "Digitale Bewegungsanalyse",
+          "Interdisziplinäres Therapeutenteam",
+          "Individuelle Fortschrittskontrolle",
+        ],
+  };
 
-  const indicationsCol2 = isRu
-    ? [
-        "Реабилитация после перенесенного инсульта",
-        "Болезнь Паркинсона и рассеянный склероз",
-        "Восстановление после инфаркта миокарда и стентирования",
-        "Парезы периферических нервов и невриты",
-        "Посттравматические лимфостазы и отеки",
-        "Постковидный синдром и синдром хронической усталости",
-      ]
-    : isEn
-    ? [
-        "Stroke recovery and hemiparesis rehabilitation",
-        "Parkinson's disease and multiple sclerosis mobility",
-        "Post-myocardial infarction & cardiac surgery conditioning",
-        "Peripheral nerve lesions and neuromuscular deficits",
-        "Post-traumatic and post-surgical lymphedema",
-        "Post-viral fatigue and cardiopulmonary reconditioning",
-      ]
-    : [
-        "Rehabilitation nach ischämischem Schlaganfall",
-        "Morbus Parkinson und Multiple Sklerose",
-        "Nachsorge nach Herzinfarkt und Bypass-Eingriffen",
-        "Periphere Nervenläsionen und Paresen",
-        "Posttraumatische und postoperative Lymphödeme",
-        "Konditionierung bei Long-Covid und Erschöpfungssyndromen",
-      ];
+  // ── Skrin 4 Data: Process ──
+  const processData = {
+    eyebrow: isRu ? "НАШ ПРОЦЕСС" : isEn ? "OUR PROCESS" : "UNSER PROZESS",
+    title: isRu ? "Ваш путь к возвращению качества жизни." : isEn ? "Your Pathway Back to Greater Quality of Life." : "Ihr Weg zurück zu mehr Lebensqualität.",
+    steps: [
+      {
+        step: "01",
+        title: isRu ? "Первичная консультация и диагностика" : isEn ? "Initial Consultation & Diagnostics" : "Erstgespräch & Diagnostik",
+        desc: isRu
+          ? "Мы анализируем вашу клиническую ситуацию и вместе определяем цели."
+          : isEn
+          ? "We analyze your condition and jointly establish your personal recovery milestones."
+          : "Wir analysieren Ihre Situation und definieren gemeinsam Ihre Ziele.",
+        icon: <Stethoscope className="w-5 h-5 text-[#ECCF96]" />,
+      },
+      {
+        step: "02",
+        title: isRu ? "Индивидуальный план терапии" : isEn ? "Personalized Therapy Plan" : "Individuelle Therapieplanung",
+        desc: isRu
+          ? "Индивидуальный план с учетом ваших физиологических возможностей."
+          : isEn
+          ? "A tailored roadmap calibrated to your physiological capabilities and targets."
+          : "Ein maßgeschneiderter Plan auf Basis Ihrer Bedürfnisse und Möglichkeiten.",
+        icon: <FileText className="w-5 h-5 text-[#ECCF96]" />,
+      },
+      {
+        step: "03",
+        title: isRu ? "Проведение и сопровождение" : isEn ? "Execution & Guidance" : "Durchführung & Begleitung",
+        desc: isRu
+          ? "Наши эксперты непрерывно сопровождают вас на всем пути реабилитации."
+          : isEn
+          ? "Our specialists closely guide and assist you across every phase of rehabilitation."
+          : "Unsere Experten begleiten Sie engmaschig durch den gesamten Rehabilitationsprozess.",
+        icon: <Activity className="w-5 h-5 text-[#ECCF96]" />,
+      },
+      {
+        step: "04",
+        title: isRu ? "Долгосрочная забота" : isEn ? "Long-Term Care" : "Langfristige Betreuung",
+        desc: isRu
+          ? "Мы остаемся рядом и после завершения курса – для вашего устойчивого здоровья."
+          : isEn
+          ? "We continue by your side even after graduation for enduring mobility and health."
+          : "Auch nach der Reha bleiben wir an Ihrer Seite – für Ihre nachhaltige Gesundheit.",
+        icon: <Heart className="w-5 h-5 text-[#ECCF96]" />,
+      },
+    ],
+  };
 
-  // ── Section 5: Interdisciplinary Medical Team ──
+  // ── Team Doctors ──
   const teamDoctors = [
     {
       name: "Dr. med. Michael Weber",
@@ -433,41 +409,51 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
     },
   ];
 
-  // ── Section 6: Patient Testimonials ──
-  const testimonials = [
-    {
-      quote: isRu
-        ? "После сложной операции по замене тазобедренного сустава я очень боялся нагружать ногу. Благодаря антигравитационной дорожке AlterG я уже на третьей неделе ходил без костылей! Огромная благодарность доктору Веберу и команде физиотерапевтов."
-        : isEn
-        ? "Following complex hip replacement surgery, I was hesitant to bear weight. The AlterG anti-gravity treadmill allowed me to walk effortlessly without crutches by week three! Exceptional care from Dr. Weber and the therapy team."
-        : "Nach meiner Hüft-OP hatte ich große Angst vor Schmerzen beim Auftreten. Auf dem AlterG-Laufband konnte ich federleicht gehen und nach nur 3 Wochen die Gehhilfen ablegen. Ein riesiger Gewinn an Lebensqualität!",
-      name: "Thomas Becker, 56",
-      case: isRu ? "Замена тазобедренного сустава (Hüft-TEP)" : isEn ? "Total Hip Arthroplasty" : "Hüft-Endoprothese",
-      image: "/images/testimonials/thomas-becker.webp",
-    },
-    {
-      quote: isRu
-        ? "Как профессиональная теннисистка после разрыва передней крестообразной связки, я нуждалась в бескомпромиссном подходе. Биомеханические тесты Biodex и гидротерапия вернули меня на корт быстрее прогнозов врачей."
-        : isEn
-        ? "As a competitive athlete recovering from an ACL tear, I required sports-science precision. Biodex isokinetics and hydrotherapy accelerated my return to the court months ahead of schedule."
-        : "Nach meinem Kreuzbandriss war die sportphysiotherapeutische Betreuung absolute Spitzenklasse. Die Kraftmessungen auf dem Biodex gaben mir die Sicherheit, wieder schmerzfrei Vollgas zu geben.",
-      name: "Anna Müller, 28",
-      case: isRu ? "Разрыв передней крестообразной связки (П blow)" : isEn ? "ACL Reconstruction Recovery" : "Vordere Kreuzbandplastik",
-      image: "/images/testimonials/anna-mueller.webp",
-    },
-    {
-      quote: isRu
-        ? "После ишемического инсульта рука практически не двигалась. За 8 недель эрготерапии и роботизированных занятий в NabiOta я снова могу самостоятельно держать столовые приборы и печатать на компьютере."
-        : isEn
-        ? "Following an ischemic stroke, my fine motor control was severely limited. Through 8 weeks of intensive occupational therapy and gait training at NabiOta, I have regained my daily independence."
-        : "Nach meinem leichten Schlaganfall war meine rechte Hand fast gelähmt. Die gezielte Ergotherapie und robotische Bewegungsübungen haben mir meine Selbstständigkeit im Alltag zurückgegeben.",
-      name: "Elena Fischer, 63",
-      case: isRu ? "Неврологическая реабилитация после инсульта" : isEn ? "Post-Stroke Neurological Recovery" : "Neuro-Reha nach Schlaganfall",
-      image: "/images/testimonials/elena-fischer.webp",
-    },
-  ];
+  // ── Skrin 5 Data: Testimonials (Patientenstimmen) ──
+  const testimonialsData = {
+    eyebrow: isRu ? "ОТЗЫВЫ ПАЦИЕНТОВ" : isEn ? "PATIENT VOICES" : "PATIENTENSTIMMEN",
+    title: isRu ? "Реальные люди. Реальные успехи." : isEn ? "Real People. Real Successes." : "Echte Menschen. Echte Erfolge.",
+    desc: isRu
+      ? "Наши пациенты рассказывают о своем опыте, прогрессе и новых перспективах жизни."
+      : isEn
+      ? "Our patients share their experiences, measurable progress, and restored independence."
+      : "Unsere Patienten berichten von ihren Erfahrungen, Fortschritten und neuen Lebensperspektiven.",
+    btn: isRu ? "Все отзывы смотреть" : isEn ? "View all reviews" : "Alle Bewertungen ansehen",
+    cards: [
+      {
+        name: "Sabine M.",
+        role: isRu ? "Ортопедическая реабилитация" : isEn ? "Orthopedic Rehabilitation" : "Orthopädische Rehabilitation",
+        quote: isRu
+          ? "„Благодаря профессиональной заботе после операции на колене я смогла ходить быстрее, чем ожидалось. Очень благодарна всей команде.“"
+          : isEn
+          ? "“Thanks to the professional support, I was able to walk again faster than expected after knee surgery. Deeply grateful to the team.”"
+          : "„Dank der professionellen Betreuung konnte ich nach meiner Knie-OP schneller als erwartet wieder laufen. Ich bin dem ganzen Team sehr dankbar.“",
+        image: "/images/testimonials/anna-mueller.webp",
+      },
+      {
+        name: "Thomas K.",
+        role: isRu ? "Неврологическая реабилитация" : isEn ? "Neurological Rehabilitation" : "Neurologische Rehabilitation",
+        quote: isRu
+          ? "„Индивидуальная терапия и современные тренажеры очень помогли мне вернуть подвижность и координацию.“"
+          : isEn
+          ? "“The personalized therapy and modern robotic devices were instrumental in regaining my mobility.”"
+          : "„Die individuelle Therapie und die modernen Geräte haben mir sehr geholfen, meine Beweglichkeit zurückzugewinnen.“",
+        image: "/images/testimonials/thomas-becker.webp",
+      },
+      {
+        name: "Julia R.",
+        role: isRu ? "Кардиологическая реабилитация" : isEn ? "Cardiological Rehabilitation" : "Kardiologische Rehabilitation",
+        quote: isRu
+          ? "„С самого начала чувствовала себя в надежных руках. Сочетание экспертных знаний и человечности здесь действительно чувствуется.“"
+          : isEn
+          ? "“I felt warmly supported from day one. The synergy of clinical precision and genuine humanity is truly palpable here.”"
+          : "„Ich habe mich von Anfang an gut aufgehoben gefühlt. Die Kombination aus Fachwissen und Menschlichkeit ist hier wirklich spürbar.“",
+        image: "/images/testimonials/elena-fischer.webp",
+      },
+    ],
+  };
 
-  // ── Section 7: Insurance & Referral FAQ ──
+  // ── FAQs ──
   const faqs = [
     {
       q: isRu ? "Кто оплачивает амбулаторную реабилитацию?" : isEn ? "Who covers the cost of outpatient rehabilitation?" : "Wer übernimmt die Kosten für eine ambulante Rehabilitation?",
@@ -527,30 +513,6 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
         imageSrc="/images/areas/rehabilitation.webp"
         imageAlt="NabiOta Health Group Rehabilitation"
       />
-
-      {/* ══════════════════════════════════════════════════════════
-          METRICS STRIP (4 HIGHLIGHT CARDS)
-      ══════════════════════════════════════════════════════════ */}
-      <section className="relative z-20 -mt-8 sm:-mt-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5">
-          {metrics.map((m, idx) => (
-            <div
-              key={idx}
-              className="bg-white rounded-2xl p-4 sm:p-5 border border-[#EDE8DE] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_26px_rgba(0,0,0,0.06)] transition-all duration-300 group"
-            >
-              <span className="font-serif text-2xl sm:text-3xl text-[#142318] group-hover:text-[#B89650] transition-colors font-medium">
-                {m.value}
-              </span>
-              <h4 className="font-sans text-xs sm:text-[13px] font-bold text-[#142318] mt-1 leading-snug">
-                {m.label}
-              </h4>
-              <p className="font-sans text-[11px] text-[#6E756D] mt-0.5 leading-relaxed">
-                {m.sub}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* ══════════════════════════════════════════════════════════
           SECTION 1: SPECIALIZED REHABILITATION SPECIALIZATIONS
@@ -637,291 +599,240 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
       </section>
 
       {/* ══════════════════════════════════════════════════════════
-          SECTION 2: HIGH-TECH REHABILITATION & ROBOTICS (DARK LUXURY)
+          SECTION 2: UNSER ANSATZ (MATCHING SKRIN 2 WITH LEAVES-BG)
       ══════════════════════════════════════════════════════════ */}
-      <section className="py-18 sm:py-24 bg-[#07150C] text-white relative overflow-hidden border-y border-[#D5B878]/25">
-        {/* Botanical leaf watermark */}
-        <div className="absolute top-0 right-0 w-80 h-80 pointer-events-none opacity-20 select-none">
+      <section className="py-10 sm:py-16 bg-[#FAF8F5]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative rounded-3xl overflow-hidden bg-[#0B2516] text-white shadow-xl border border-[#D5B878]/30 min-h-[460px] flex flex-col lg:flex-row">
+            {/* Left side: Parallel bars image with subtle fade */}
+            <div className="relative w-full lg:w-[46%] min-h-[340px] lg:min-h-full shrink-0">
+              <Image
+                src="/images/rehabilitation/parallel-bars.webp"
+                alt="Unser Ansatz Rehabilitation"
+                fill
+                className="object-cover object-center"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#0B2516]/40 hidden lg:block" />
+            </div>
+
+            {/* Middle botanical leaves transition overlay (matching Skrin 2 leaves-bg) */}
+            <div className="hidden lg:block absolute left-[38%] xl:left-[41%] top-0 bottom-0 w-44 pointer-events-none z-10 overflow-hidden">
+              <Image
+                src="/images/values/leaves-bg.webp"
+                alt=""
+                fill
+                className="object-cover object-left opacity-90 mix-blend-screen"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#0B2516]/50 to-[#0B2516]" />
+            </div>
+
+            {/* Right side: Dark green card with leaves texture and 4 stats */}
+            <div className="relative w-full lg:w-[54%] p-7 sm:p-10 lg:p-12 flex flex-col justify-between z-10">
+              {/* Subtle background foliage texture */}
+              <div className="absolute inset-0 pointer-events-none opacity-20 select-none">
+                <Image
+                  src="/images/values/leaves-bg.webp"
+                  alt=""
+                  fill
+                  className="object-cover object-right"
+                />
+              </div>
+
+              <div className="relative z-10 space-y-3.5 max-w-xl">
+                <span className="text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
+                  {approachData.eyebrow}
+                </span>
+
+                <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-white font-normal leading-[1.18]">
+                  {approachData.title}
+                </h2>
+
+                <p className="font-sans text-xs sm:text-sm text-white/80 leading-relaxed pt-1">
+                  {approachData.desc}
+                </p>
+              </div>
+
+              {/* 4 Stats in a row with gold outlined icons & dividers */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 pt-8 mt-6 border-t border-white/15 relative z-10">
+                {approachData.stats.map((s, idx) => (
+                  <div
+                    key={idx}
+                    className={`space-y-2 ${
+                      idx < 3 ? "sm:border-r sm:border-white/15 sm:pr-4" : ""
+                    }`}
+                  >
+                    <div className="w-10 h-10 rounded-full border border-[#D5B878] bg-[#0B2516] flex items-center justify-center text-[#ECCF96] shadow-sm">
+                      {s.icon}
+                    </div>
+
+                    <span className="font-serif text-2xl sm:text-3xl text-white font-normal block leading-tight pt-1">
+                      {s.val}
+                    </span>
+
+                    <span className="font-sans text-[11px] sm:text-xs text-white/75 block leading-snug">
+                      {s.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════
+          SECTION 3: 2-CARD GRID (MATCHING SKRIN 3)
+      ══════════════════════════════════════════════════════════ */}
+      <section className="py-10 sm:py-16 bg-[#FAF8F5]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-stretch">
+            {/* Left Card: Pool Photo with Tag & Button */}
+            <div className="relative rounded-3xl overflow-hidden shadow-xl border border-[#EDE8DE] min-h-[380px] sm:min-h-[420px] flex flex-col justify-between p-7 sm:p-9 group">
+              <Image
+                src="/images/rehabilitation/facility-pool.webp"
+                alt="Moderne Einrichtungen"
+                fill
+                className="object-cover object-center group-hover:scale-103 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
+
+              {/* Top Badge */}
+              <div className="relative z-10">
+                <span className="inline-block px-3.5 py-1.5 rounded-full bg-[#E5D2A4] text-[#132218] text-[10.5px] font-bold uppercase tracking-wider shadow-sm">
+                  {facilitiesCard.badge}
+                </span>
+              </div>
+
+              {/* Bottom Info */}
+              <div className="relative z-10 space-y-3">
+                <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal leading-snug">
+                  {facilitiesCard.title}
+                </h3>
+                <p className="font-sans text-xs sm:text-sm text-white/85 leading-relaxed max-w-md">
+                  {facilitiesCard.desc}
+                </p>
+                <div className="pt-2">
+                  <Link
+                    href={`/${locale}/services/therapie-rehabilitation`}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#132218] font-semibold text-xs tracking-wide shadow-md transition-all duration-200 hover:scale-[1.02]"
+                  >
+                    <span>{facilitiesCard.btn}</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Card: Innovation & Checklist */}
+            <div className="relative rounded-3xl bg-[#EEF4EE] border border-[#DEE7DE] shadow-xs p-7 sm:p-9 lg:p-10 flex flex-col justify-between overflow-hidden min-h-[380px] sm:min-h-[420px]">
+              {/* Botanical foliage watermark on right edge */}
+              <div className="absolute -right-12 top-1/2 -translate-y-1/2 w-64 sm:w-80 h-72 sm:h-96 pointer-events-none opacity-40 select-none">
+                <Image
+                  src="/images/areas/botanical-branch-clean.webp"
+                  alt=""
+                  fill
+                  className="object-contain object-right"
+                />
+              </div>
+
+              <div className="relative z-10 space-y-3 max-w-xl">
+                <span className="text-[10.5px] font-bold tracking-[0.2em] text-[#2C5238] uppercase block">
+                  {innovationCard.eyebrow}
+                </span>
+                <h3 className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-[#0B2516] font-normal leading-snug">
+                  {innovationCard.title}
+                </h3>
+                <p className="font-sans text-xs sm:text-sm text-[#4B5E50] leading-relaxed pt-1">
+                  {innovationCard.desc}
+                </p>
+              </div>
+
+              {/* Checklist with gold circular checkmarks */}
+              <div className="relative z-10 space-y-3 pt-6">
+                {innovationCard.items.map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-3">
+                    <div className="w-5 h-5 rounded-full bg-[#FAF5EC] border border-[#C5A56A] flex items-center justify-center text-[#8C6D2B] shrink-0 shadow-xs">
+                      <Check className="w-3 h-3 stroke-[2.4]" />
+                    </div>
+                    <span className="font-sans text-xs sm:text-[13px] text-[#1A2E20] font-medium">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════
+          SECTION 4: REHABILITATION PROCESS (MATCHING SKRIN 4)
+      ══════════════════════════════════════════════════════════ */}
+      <section className="py-14 sm:py-20 bg-[#FAF8F5] relative overflow-hidden border-t border-[#EDE8DE]">
+        {/* Botanical leaves watermark on the left edge */}
+        <div className="absolute -left-12 top-0 bottom-0 w-64 sm:w-80 pointer-events-none opacity-40 select-none">
           <Image
             src="/images/areas/botanical-branch-clean.webp"
             alt=""
             fill
-            className="object-contain object-top-right"
+            className="object-contain object-left -scale-x-100"
           />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14">
-            <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-2">
-              {isRu ? "ИННОВАЦИИ В РЕАБИЛИТАЦИИ" : isEn ? "ROBOTICS & ADVANCED TECHNOLOGY" : "SPITZENTECHNOLOGIE & ROBOTIK"}
-            </span>
-            <h2 className="page-hero-title font-serif text-3xl sm:text-4xl text-white font-normal leading-tight">
-              {isRu
-                ? "Высокие технологии для бережного и быстрого восстановления"
-                : isEn
-                ? "Next-Generation Rehabilitation Equipment"
-                : "Innovative Gerätetechnik für maximalen Therapieerfolg"}
-            </h2>
-            <p className="hero-text-wrap text-xs sm:text-sm text-white/75 mt-3 max-w-2xl mx-auto leading-relaxed">
-              {isRu
-                ? "Мы инвестируем в передовые медицинские тренажеры с биологической обратной связью, используемые в ведущих университетских центрах Европы."
-                : isEn
-                ? "We integrate world-renowned robotic rehabilitation devices and NASA-engineered anti-gravity treadmills for pain-free early weight-bearing."
-                : "Durch den Einsatz robotikgestützter Gangsysteme und computerisierter Biofeedback-Technologie beschleunigen wir den Heilungsverlauf spürbar."}
-            </p>
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+            {/* Left title */}
+            <div className="lg:col-span-4 space-y-3">
+              <span className="text-[10.5px] font-bold tracking-[0.24em] text-[#8C733E] uppercase block">
+                {processData.eyebrow}
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#0B2516] font-normal leading-tight">
+                {processData.title}
+              </h2>
+            </div>
 
-          {/* Interactive Equipment Showcase */}
-          <div className="bg-[#0C1F13] border border-[#D5B878]/30 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl">
-            {/* Tabs Selector */}
-            <div className="flex flex-wrap gap-2.5 pb-6 border-b border-white/10 mb-8">
-              {techEquipment.map((eq, idx) => (
-                <button
+            {/* Right 4-step cards */}
+            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-4 pt-4 sm:pt-0 relative">
+              {processData.steps.map((st, idx) => (
+                <div
                   key={idx}
-                  onClick={() => setActiveTab(idx)}
-                  className={`px-4 sm:px-5 py-2.5 rounded-full text-xs font-medium transition-all ${
-                    activeTab === idx
-                      ? "bg-[#E5D2A4] text-[#07150C] font-semibold shadow-md"
-                      : "bg-white/5 text-white/75 hover:bg-white/10 hover:text-white"
-                  }`}
+                  className="bg-white rounded-2xl p-5 sm:p-6 pt-8 sm:pt-9 border border-[#E5ECE3] shadow-xs relative flex flex-col justify-between hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 group mt-4 sm:mt-0"
                 >
-                  {eq.name}
-                </button>
+                  {/* Top round green badge overlapping top edge */}
+                  <div className="absolute -top-5 left-5 w-11 h-11 rounded-full bg-[#0B2516] border-2 border-white flex items-center justify-center text-[#ECCF96] shadow-md group-hover:scale-105 transition-transform z-10">
+                    {st.icon}
+                  </div>
+
+                  <div>
+                    <span className="font-sans text-xs font-bold text-[#B89650] block mb-1.5 tracking-wider">
+                      {st.step}
+                    </span>
+
+                    <h4 className="font-serif text-base text-[#0B2516] font-medium leading-snug mb-2">
+                      {st.title}
+                    </h4>
+
+                    <p className="font-sans text-[11.5px] text-[#526356] leading-relaxed">
+                      {st.desc}
+                    </p>
+                  </div>
+
+                  {/* Connecting subtle arrow on desktop */}
+                  {idx < 3 && (
+                    <span className="hidden lg:block absolute -right-3 top-8 text-[#C5A56A] text-sm z-20 pointer-events-none">
+                      →
+                    </span>
+                  )}
+                </div>
               ))}
             </div>
-
-            {/* Active Tab Content */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              {/* Left Column: Descriptions */}
-              <div className="lg:col-span-6 space-y-4">
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#D5B878]">
-                  {techEquipment[activeTab].category}
-                </span>
-                <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal leading-snug">
-                  {techEquipment[activeTab].name}
-                </h3>
-                <p className="text-xs text-[#ECCF96] font-medium tracking-wide">
-                  {techEquipment[activeTab].tech}
-                </p>
-                <p className="text-xs sm:text-[13.5px] text-white/80 leading-relaxed font-sans pt-1">
-                  {techEquipment[activeTab].desc}
-                </p>
-
-                <div className="space-y-2.5 pt-3">
-                  {techEquipment[activeTab].features.map((f, fIdx) => (
-                    <div key={fIdx} className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#E5D2A4]/20 border border-[#E5D2A4]/60 flex items-center justify-center text-[#E5D2A4] shrink-0">
-                        <Check className="w-3 h-3 stroke-[2.2]" />
-                      </div>
-                      <span className="text-xs text-white/90 font-sans">{f}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Right Column: High-Res Image */}
-              <div className="lg:col-span-6 relative aspect-[16/10] w-full rounded-2xl overflow-hidden border border-white/15 shadow-2xl">
-                <Image
-                  src={techEquipment[activeTab].image}
-                  alt={techEquipment[activeTab].name}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#07150C]/60 via-transparent to-transparent" />
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════════════
-          SECTION 3: HYDROTHERAPY & MEDICAL POOL (WARM WATER RECOVERY)
-      ══════════════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-22 bg-[#FAF8F5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            {/* Left: Pool Image with Botanical Badge */}
-            <div className="lg:col-span-6 relative aspect-[16/10] w-full rounded-3xl overflow-hidden border border-[#EDE8DE] shadow-xl group">
-              <Image
-                src="/images/rehabilitation/hydrotherapy-pool.webp"
-                alt="NabiOta Hydrotherapy Pool"
-                fill
-                className="object-cover group-hover:scale-103 transition-transform duration-500"
-              />
-              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-sm bg-white/95 backdrop-blur-md rounded-2xl p-4 border border-white/60 shadow-lg">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#FAF5EC] border border-[#EADBBD] flex items-center justify-center text-[#B89650] shrink-0">
-                    <Waves className="w-5 h-5 stroke-[1.7]" />
-                  </div>
-                  <div>
-                    <h5 className="font-serif text-sm text-[#142318] font-medium leading-tight">
-                      {isRu ? "Терапевтический бассейн 32°C" : isEn ? "32°C Therapeutic Pool" : "Therapie-Bewegungsbad 32°C"}
-                    </h5>
-                    <p className="font-sans text-[11px] text-[#6E756D] mt-0.5">
-                      {isRu ? "Безбарьерный вход, противоток и подводный массаж" : isEn ? "Accessible ramp & counter-current jets" : "Barrierefreier Einstieg & Gegenstromdüsen"}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right: Hydrotherapy Information */}
-            <div className="lg:col-span-6 space-y-4">
-              <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
-                {isRu ? "ГИДРОТЕРАПИЯ И БАЛЬНЕОЛОГИЯ" : isEn ? "AQUATIC THERAPY & REHAB" : "MEDIZINISCHE HYDROTHERAPIE"}
-              </span>
-              <h2 className="font-serif text-3xl sm:text-4xl text-[#132218] font-normal leading-tight">
-                {isRu
-                  ? "Сила воды для безболезненного восстановления суставов"
-                  : isEn
-                  ? "Gentle Weightless Recovery in Thermal Water"
-                  : "Schwerelose Mobilisation im temperierten Bewegungsbad"}
-              </h2>
-              <p className="font-sans text-xs sm:text-sm text-[#556358] leading-relaxed">
-                {isRu
-                  ? "Вода снимает гравитационную нагрузку с опорно-двигательного аппарата, позволяя безопасно разрабатывать суставы уже на самых ранних этапах после хирургических операций."
-                  : isEn
-                  ? "Buoyancy relieves mechanical pressure from newly operated joints, enabling patients to re-learn natural gait patterns weeks ahead of land-based therapy."
-                  : "Durch den natürlichen Auftrieb des Wassers wird das Körpergewicht um bis zu 90 % reduziert. Dies ermöglicht eine schmerzfreie Frühmobilisation frisch operierter Gelenke unter idealen physiologischen Bedingungen."}
-              </p>
-
-              <div className="space-y-3 pt-2">
-                <div className="flex items-start gap-3">
-                  <GoldCircleCheckIcon className="w-4 h-4 mt-0.5 shrink-0" />
-                  <div>
-                    <h5 className="font-sans text-xs sm:text-[13px] font-bold text-[#142318]">
-                      {isRu ? "Термический эффект и мышечная релаксация" : isEn ? "Thermal relaxation & pain modulation" : "Wärmeinduzierte Muskelrelaxation"}
-                    </h5>
-                    <p className="font-sans text-[11.5px] text-[#6E756D]">
-                      {isRu ? "Постоянная температура 32°C снимает рефлекторные спазмы и улучшает микроциркуляцию." : isEn ? "Constant 32°C warmth diminishes chronic spasticity and stimulates blood flow." : "Konstant 32 °C Wassertemperatur lindert Schmerzen und senkt reflektorische Muskelspannung."}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <GoldCircleCheckIcon className="w-4 h-4 mt-0.5 shrink-0" />
-                  <div>
-                    <h5 className="font-sans text-xs sm:text-[13px] font-bold text-[#142318]">
-                      {isRu ? "Гидростатическое давление против отеков" : isEn ? "Hydrostatic pressure for edema reduction" : "Hydrostatischer Druck gegen Schwellungen"}
-                    </h5>
-                    <p className="font-sans text-[11.5px] text-[#6E756D]">
-                      {isRu ? "Ускоряет лимфодренаж и рассасывание послеоперационных гематом." : isEn ? "Promotes natural venous and lymphatic drainage of post-surgical swelling." : "Fördert den venösen und lymphatischen Rückfluss bei postoperativen Schwellungen."}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════════
-          SECTION 4: 4-PHASE REHABILITATION PATHWAY
-      ══════════════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-22 bg-white border-y border-[#EDE8DE]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase block mb-2">
-              {isRu ? "СТРУКТУРА ЛЕЧЕНИЯ" : isEn ? "THE REHABILITATION PATHWAY" : "DER NABITA-REHABILITATIONSPFAD"}
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl text-[#132218] font-normal leading-tight">
-              {isRu
-                ? "Четыре этапа на пути к полной независимости"
-                : isEn
-                ? "Four Structured Phases to Sustained Mobility"
-                : "Ihr Weg zu nachhaltiger Mobilität in 4 Phasen"}
-            </h2>
-            <p className="font-sans text-xs sm:text-sm text-[#556358] mt-3 leading-relaxed">
-              {isRu
-                ? "Прозрачный процесс лечения с объективным контролем промежуточных результатов на каждом шаге."
-                : isEn
-                ? "A clinically standardized pathway engineered to ensure measurable progress from intake to long-term prevention."
-                : "Ein strukturierter, evidenzbasierter Behandlungsablauf mit kontinuierlicher Qualitäts- und Erfolgskontrolle."}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {pathwaySteps.map((step, idx) => (
-              <div
-                key={idx}
-                className="bg-[#FAF8F5] rounded-2xl p-6 border border-[#EDE8DE] hover:border-[#D5B878] transition-all duration-300 relative group flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="font-serif text-3xl font-medium text-[#B89650] group-hover:scale-105 transition-transform">
-                      {step.step}
-                    </span>
-                    <span className="text-[10px] font-bold tracking-wider uppercase text-[#8C6D2B] bg-white border border-[#EADBBD] px-2.5 py-0.5 rounded-full">
-                      {step.duration}
-                    </span>
-                  </div>
-                  <h4 className="font-serif text-lg text-[#132218] font-normal leading-snug mb-2">
-                    {step.title}
-                  </h4>
-                  <p className="font-sans text-xs text-[#556358] leading-relaxed">
-                    {step.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════════
-          SECTION 5: COMPREHENSIVE INDICATIONS CHECKLIST
-      ══════════════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-22 bg-[#FAF8F5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-3xl border border-[#EDE8DE] p-7 sm:p-10 lg:p-12 shadow-sm">
-            <div className="max-w-3xl mb-8">
-              <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase block mb-1.5">
-                {isRu ? "ПОКАЗАНИЯ К ЛЕЧЕНИЮ" : isEn ? "CLINICAL INDICATIONS" : "BEHANDLUNGSSPEKTRUM"}
-              </span>
-              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#132218] font-normal leading-tight">
-                {isRu
-                  ? "Для кого подходит наша программа реабилитации"
-                  : isEn
-                  ? "Who Benefits from Our Specialized Care"
-                  : "Welche Beschwerdebilder wir behandeln"}
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-3.5">
-              <div className="space-y-3.5">
-                <h4 className="font-serif text-base text-[#142318] font-medium pb-2 border-b border-[#EDE8DE]">
-                  {isRu ? "Ортопедия, травматология и спорт" : isEn ? "Orthopedics & Sports Medicine" : "Orthopädie, Unfallchirurgie & Sport"}
-                </h4>
-                {indicationsCol1.map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <GoldCircleCheckIcon className="w-4 h-4 mt-0.5 shrink-0" />
-                    <span className="font-sans text-xs sm:text-[13px] text-[#3D4B40] leading-snug">
-                      {item}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="space-y-3.5 mt-6 md:mt-0">
-                <h4 className="font-serif text-base text-[#142318] font-medium pb-2 border-b border-[#EDE8DE]">
-                  {isRu ? "Неврология, кардиология и общая медицина" : isEn ? "Neurology & Internal Medicine" : "Neurologie, Kardiologie & Innere Medizin"}
-                </h4>
-                {indicationsCol2.map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-3">
-                    <GoldCircleCheckIcon className="w-4 h-4 mt-0.5 shrink-0" />
-                    <span className="font-sans text-xs sm:text-[13px] text-[#3D4B40] leading-snug">
-                      {item}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════════
-          SECTION 6: INTERDISCIPLINARY MEDICAL LEADERSHIP
+          SECTION 5: INTERDISCIPLINARY MEDICAL LEADERSHIP
       ══════════════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-22 bg-white border-t border-[#EDE8DE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -994,65 +905,128 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
       </section>
 
       {/* ══════════════════════════════════════════════════════════
-          SECTION 7: PATIENT SUCCESS STORIES & RECOVERY OUTCOMES
+          SECTION 6: PATIENT TESTIMONIALS (MATCHING SKRIN 5)
       ══════════════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-22 bg-[#FAF8F5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase block mb-2">
-              {isRu ? "ИСТОРИИ ВЫЗДОРОВЛЕНИЯ" : isEn ? "PATIENT TESTIMONIALS" : "PATIENTENBERICHTE & ERFOLGE"}
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl text-[#132218] font-normal leading-tight">
-              {isRu
-                ? "Реальные результаты наших пациентов"
-                : isEn
-                ? "Real Patient Recovery Journeys"
-                : "Erfolgreiche Schritte zurück ins aktive Leben"}
-            </h2>
-          </div>
+      <section className="py-16 sm:py-22 bg-[#0B2516] text-white relative overflow-hidden border-t border-[#D5B878]/25">
+        {/* Botanical Gold Background Texture */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+          <Image
+            src="/images/botanical-gold-bg.webp"
+            alt="Botanical Texture"
+            fill
+            className="object-cover object-center opacity-30 mix-blend-screen"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B2516]/95 via-[#0B2516]/85 to-[#0B2516]/90" />
+        </div>
 
-          <div className="max-w-4xl mx-auto bg-white rounded-3xl border border-[#EDE8DE] p-6 sm:p-10 shadow-sm relative overflow-hidden">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-center">
-              <div className="md:col-span-4 relative aspect-square w-full rounded-2xl overflow-hidden border border-[#EDE8DE]">
-                <Image
-                  src={testimonials[activeTestimonial].image}
-                  alt={testimonials[activeTestimonial].name}
-                  fill
-                  className="object-cover"
-                />
+        {/* Decorative corner leaves */}
+        <div className="absolute -left-10 -bottom-10 w-72 h-72 pointer-events-none opacity-30 select-none z-0">
+          <Image
+            src="/images/areas/botanical-branch-clean.webp"
+            alt=""
+            fill
+            className="object-contain object-bottom-left"
+          />
+        </div>
+        <div className="absolute -right-10 -bottom-10 w-72 h-72 pointer-events-none opacity-30 select-none z-0">
+          <Image
+            src="/images/areas/botanical-branch-clean.webp"
+            alt=""
+            fill
+            className="object-contain object-bottom-right"
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left Column: Eyebrow, Title, Description, Button */}
+            <div className="lg:col-span-4 space-y-4">
+              <span className="text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
+                {testimonialsData.eyebrow}
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl text-white font-normal leading-tight">
+                {testimonialsData.title}
+              </h2>
+              <p className="font-sans text-xs sm:text-sm text-white/75 leading-relaxed max-w-sm">
+                {testimonialsData.desc}
+              </p>
+              <div className="pt-2">
+                <Link
+                  href={`/${locale}/contact`}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs tracking-wide shadow-md transition-all duration-200 hover:scale-[1.02]"
+                >
+                  <span>{testimonialsData.btn}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Column: 3 White Cards */}
+            <div className="lg:col-span-8 flex flex-col items-center">
+              <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-5">
+                {testimonialsData.cards.map((c, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-white rounded-2xl p-6 sm:p-7 shadow-lg flex flex-col justify-between text-[#132218] border border-[#EDE8DE] hover:-translate-y-1 transition-all duration-300"
+                  >
+                    <div>
+                      {/* Avatar */}
+                      <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-white shadow-xs mb-3 bg-neutral-100">
+                        <Image
+                          src={c.image}
+                          alt={c.name}
+                          fill
+                          className="object-cover object-top"
+                        />
+                      </div>
+
+                      {/* Gold Quotes */}
+                      <span className="text-[#C5A56A] text-2xl font-serif leading-none block mb-1">
+                        “
+                      </span>
+
+                      {/* Quote Text */}
+                      <p className="font-sans italic text-xs sm:text-[12.5px] text-[#3D4B40] leading-relaxed">
+                        {c.quote}
+                      </p>
+                    </div>
+
+                    <div className="pt-4 border-t border-[#F0ECE1] mt-4">
+                      <h4 className="font-sans text-xs sm:text-[13px] font-bold text-[#0B2516]">
+                        {c.name}
+                      </h4>
+                      <p className="font-sans text-[11px] text-[#6E7B71]">
+                        {c.role}
+                      </p>
+                      {/* 5 Gold Stars */}
+                      <div className="flex items-center gap-1 mt-1 text-[#D4AF67] text-xs">
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
 
-              <div className="md:col-span-8 space-y-4">
-                <span className="text-[10px] font-bold tracking-wider uppercase text-[#8C6D2B] bg-[#FAF5EC] border border-[#EADBBD] px-2.5 py-0.5 rounded">
-                  {testimonials[activeTestimonial].case}
-                </span>
-                <p className="font-serif italic text-base sm:text-lg text-[#132218] leading-relaxed">
-                  “{testimonials[activeTestimonial].quote}”
-                </p>
-                <div>
-                  <h4 className="font-sans text-sm font-bold text-[#142318]">
-                    {testimonials[activeTestimonial].name}
-                  </h4>
-                  <p className="font-sans text-xs text-[#6E756D]">
-                    {isRu ? "Пациент реабилитационного центра" : isEn ? "Rehabilitation Patient" : "Rehabilitationspatient"}
-                  </p>
-                </div>
-
-                {/* Switcher Dots */}
-                <div className="flex items-center gap-2 pt-2">
-                  {testimonials.map((_, tIdx) => (
-                    <button
-                      key={tIdx}
-                      onClick={() => setActiveTestimonial(tIdx)}
-                      aria-label={`Testimonial ${tIdx + 1}`}
-                      className={`h-2.5 rounded-full transition-all ${
-                        activeTestimonial === tIdx
-                          ? "w-8 bg-[#0D2214]"
-                          : "w-2.5 bg-[#D5DDD6] hover:bg-[#A2ADA4]"
-                      }`}
-                    />
-                  ))}
-                </div>
+              {/* Carousel Navigation Buttons Below (Matching Skrin 5) */}
+              <div className="flex items-center justify-center gap-2 pt-6">
+                <button
+                  type="button"
+                  aria-label="Previous"
+                  className="w-8 h-8 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] flex items-center justify-center transition-colors shadow-xs"
+                >
+                  <ArrowLeft className="w-3.5 h-3.5" />
+                </button>
+                <button
+                  type="button"
+                  aria-label="Next"
+                  className="w-8 h-8 rounded-full border border-white/30 hover:border-white text-white flex items-center justify-center transition-colors"
+                >
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
               </div>
             </div>
           </div>
@@ -1060,7 +1034,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
       </section>
 
       {/* ══════════════════════════════════════════════════════════
-          SECTION 8: INSURANCE & REFERRAL ACCORDION
+          SECTION 7: INSURANCE & REFERRAL ACCORDION
       ══════════════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-white border-y border-[#EDE8DE]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1110,69 +1084,78 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
       </section>
 
       {/* ══════════════════════════════════════════════════════════
-          SECTION 9: CONTACT & BOOKING BANNER (BOTANICAL GOLD CTA)
+          SECTION 8: CONTACT & BOOKING BANNER (FULL-WIDTH BOTANICAL GOLD CTA)
       ══════════════════════════════════════════════════════════ */}
-      <section className="py-14 sm:py-18 bg-[#FAF8F5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl bg-[#08170D] text-white overflow-hidden p-7 sm:p-12 lg:p-14 border border-[#D5B878]/30 shadow-2xl">
-            {/* Botanical foliage watermark */}
-            <div className="absolute -right-6 -bottom-6 w-64 sm:w-80 h-64 sm:h-80 pointer-events-none opacity-25 select-none">
-              <Image
-                src="/images/areas/botanical-branch-clean.webp"
-                alt=""
-                fill
-                className="object-contain object-bottom-right"
-              />
-            </div>
+      <section className="w-full relative overflow-hidden bg-[#07150C] text-white py-16 sm:py-20 border-t border-[#D5B878]/30">
+        {/* Full bleed leaf background */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+          <Image
+            src="/images/values/leaves-bg.webp"
+            alt="Leaves Background"
+            fill
+            className="object-cover object-center opacity-30 mix-blend-screen"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#07150C]/95 via-[#07150C]/85 to-[#07150C]/75" />
+        </div>
 
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-8 space-y-3">
-                <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
-                  {isRu ? "СВЯЖИТЕСЬ С НАМИ" : isEn ? "START YOUR RECOVERY" : "STARTEN SIE IHRE GENESUNG"}
-                </span>
-                <h3 className="page-hero-title font-serif text-2xl sm:text-3xl lg:text-4xl text-white font-normal leading-tight">
-                  {isRu
-                    ? "Готовы вернуться к активной и полноценной жизни?"
-                    : isEn
-                    ? "Ready to Regain Your Mobility and Independence?"
-                    : "Bereit für den nächsten Schritt zurück in Ihre Mobilität?"}
-                </h3>
-                <p className="hero-text-wrap text-white/75 text-xs sm:text-sm font-sans max-w-2xl leading-relaxed">
-                  {isRu
-                    ? "Свяжитесь с нами для первичной консультации или быстрой записи на амбулаторную реабилитацию в NabiOta Health Group Germany."
-                    : isEn
-                    ? "Contact our admissions team directly to discuss your referral, insurance authorization, and therapy scheduling."
-                    : "Vereinbaren Sie jetzt einen Termin für Ihre Eingangsuntersuchung oder lassen Sie sich unverbindlich zu Verordnung und Kostenübernahme beraten."}
-                </p>
+        {/* Botanical leaf watermark */}
+        <div className="absolute -right-6 -bottom-6 w-64 sm:w-80 h-64 sm:h-80 pointer-events-none opacity-25 select-none z-0">
+          <Image
+            src="/images/areas/botanical-branch-clean.webp"
+            alt=""
+            fill
+            className="object-contain object-bottom-right"
+          />
+        </div>
 
-                <div className="flex flex-wrap items-center gap-4 pt-3 text-xs text-[#ECCF96]">
-                  <div className="flex items-center gap-2">
-                    <Phone className="w-4 h-4 text-[#D5B878]" />
-                    <span>+49 (0) 2161 / 9988-77</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-[#D5B878]" />
-                    <span>Mönchengladbach & Partner-Kliniken NRW</span>
-                  </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-8 space-y-3">
+              <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
+                {isRu ? "СВЯЖИТЕСЬ С НАМИ" : isEn ? "START YOUR RECOVERY" : "STARTEN SIE IHRE GENESUNG"}
+              </span>
+              <h3 className="page-hero-title font-serif text-2xl sm:text-3xl lg:text-4xl text-white font-normal leading-tight">
+                {isRu
+                  ? "Готовы вернуться к активной и полноценной жизни?"
+                  : isEn
+                  ? "Ready to Regain Your Mobility and Independence?"
+                  : "Bereit für den nächsten Schritt zurück in Ihre Mobilität?"}
+              </h3>
+              <p className="hero-text-wrap text-white/75 text-xs sm:text-sm font-sans max-w-2xl leading-relaxed">
+                {isRu
+                  ? "Свяжитесь с нами для первичной консультации или быстрой записи на амбулаторную реабилитацию в NabiOta Health Group Germany."
+                  : isEn
+                  ? "Contact our admissions team directly to discuss your referral, insurance authorization, and therapy scheduling."
+                  : "Vereinbaren Sie jetzt einen Termin für Ihre Eingangsuntersuchung oder lassen Sie sich unverbindlich zu Verordnung und Kostenübernahme beraten."}
+              </p>
+
+              <div className="flex flex-wrap items-center gap-4 pt-3 text-xs text-[#ECCF96]">
+                <div className="flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-[#D5B878]" />
+                  <span>+49 (0) 2161 / 9988-77</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-[#D5B878]" />
+                  <span>Mönchengladbach & Partner-Kliniken NRW</span>
                 </div>
               </div>
+            </div>
 
-              <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
-                <Link
-                  href={`/${locale}/contact`}
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs sm:text-sm tracking-wide shadow-lg transition-all duration-200 hover:scale-[1.02] text-center"
-                >
-                  <span>{isRu ? "Записаться на прием" : isEn ? "Request appointment" : "Termin online anfragen"}</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+            <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
+              <Link
+                href={`/${locale}/contact`}
+                className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs sm:text-sm tracking-wide shadow-lg transition-all duration-200 hover:scale-[1.02] text-center"
+              >
+                <span>{isRu ? "Записаться на прием" : isEn ? "Request appointment" : "Termin online anfragen"}</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
 
-                <Link
-                  href={`/${locale}/services/therapie-rehabilitation`}
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-white/30 hover:border-[#D5B878] text-white hover:text-[#ECCF96] font-medium text-xs sm:text-sm transition-all bg-white/5 text-center"
-                >
-                  <span>{isRu ? "Все терапевтические услуги" : isEn ? "View all therapy services" : "Therapieleistungen Übersicht"}</span>
-                </Link>
-              </div>
+              <Link
+                href={`/${locale}/services/therapie-rehabilitation`}
+                className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-white/30 hover:border-[#D5B878] text-white hover:text-[#ECCF96] font-medium text-xs sm:text-sm transition-all bg-white/5 text-center"
+              >
+                <span>{isRu ? "Все терапевтические услуги" : isEn ? "View all therapy services" : "Therapieleistungen Übersicht"}</span>
+              </Link>
             </div>
           </div>
         </div>
