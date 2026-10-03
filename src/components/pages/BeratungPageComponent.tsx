@@ -640,8 +640,8 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
 
           <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-6 xl:gap-8">
-              {/* Left: Heading + Button */}
-              <div className="w-full lg:w-[28%] xl:w-[26%] shrink-0 space-y-2">
+              {/* Left: Heading + Button (positioned to the right of the botanical leaves) */}
+              <div className="w-full lg:w-[35%] xl:w-[36%] shrink-0 space-y-2 lg:pl-6 xl:pl-10">
                 <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-[0.2em] text-[#C5A56A] block font-sans">
                   {t.s5.eyebrow}
                 </span>
@@ -665,8 +665,8 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
                 </div>
               </div>
 
-              {/* Right: 3 White Testimonial Cards - Wide & Compact Height matching photo */}
-              <div className="w-full lg:w-[72%] xl:w-[74%] grid grid-cols-1 md:grid-cols-3 gap-3.5 lg:gap-4 xl:gap-4.5 items-stretch">
+              {/* Right: 3 White Testimonial Cards - Narrower width and shifted to the right */}
+              <div className="w-full lg:w-[61%] xl:w-[59%] lg:ml-auto grid grid-cols-1 md:grid-cols-3 gap-3.5 lg:gap-4 xl:gap-4.5 items-stretch">
                 {t.s5.testimonials.map((item, idx) => (
                   <div
                     key={idx}
@@ -723,7 +723,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
             <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-white/50 to-white/20 backdrop-blur-[0.5px]" />
           </div>
 
-          {/* Center Content Box + Right Frosted Glass Contact Box with distinct filled icons */}
+          {/* Center Content Box + Contacts without box shifted to the left */}
           <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
               {/* Left: Handwritten cursive script with decorative heart line */}
@@ -765,35 +765,35 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
                 </div>
               </div>
 
-              {/* Right: Frosted Glass Contact Card with EXACT filled icons matching photo */}
-              <div className="lg:col-span-4 flex justify-start lg:justify-end">
-                <div className="w-full max-w-[380px] bg-white/85 backdrop-blur-md rounded-2xl p-5 sm:p-6 border border-white/90 shadow-sm space-y-3.5">
-                  {/* Phone: Light tan circle with gold filled handset */}
+              {/* Right: Contact Items without box, positioned distinctly to the left */}
+              <div className="lg:col-span-4 flex justify-start lg:justify-start lg:pl-4 xl:pl-6">
+                <div className="w-full max-w-[340px] space-y-3.5 sm:space-y-4">
+                  {/* Phone: Light circle with delicate gold outline and gold handset */}
                   <a
                     href={`tel:${t.s6.phone.replace(/\s+/g, "")}`}
-                    className="flex items-center gap-3.5 text-xs sm:text-[13px] text-[#1B3A29] hover:text-[#0D2619] transition-colors group"
+                    className="flex items-center gap-3.5 text-xs sm:text-[13.5px] text-[#1B3A29] hover:text-[#0D2619] transition-colors group"
                   >
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#F3EDE2] border border-[#DFCDBA] flex items-center justify-center text-[#8C6D37] shrink-0 shadow-2xs group-hover:bg-[#E5DFC9] transition-colors">
-                      <Phone className="w-3.5 h-3.5 fill-[#8C6D37]" />
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/80 border border-[#DFCDBA] flex items-center justify-center text-[#8C6D37] shrink-0 shadow-2xs group-hover:bg-[#E5DFC9] transition-colors">
+                      <Phone className="w-4 h-4 fill-[#8C6D37] text-[#8C6D37]" />
                     </div>
                     <span className="font-medium font-sans">{t.s6.phone}</span>
                   </a>
 
-                  {/* Email: Solid dark green circle with white filled envelope */}
+                  {/* Email: Light circle with delicate gold outline and dark green envelope */}
                   <a
                     href={`mailto:${t.s6.email}`}
-                    className="flex items-center gap-3.5 text-xs sm:text-[13px] text-[#1B3A29] hover:text-[#0D2619] transition-colors group"
+                    className="flex items-center gap-3.5 text-xs sm:text-[13.5px] text-[#1B3A29] hover:text-[#0D2619] transition-colors group"
                   >
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#0F2A1D] flex items-center justify-center text-white shrink-0 shadow-xs group-hover:bg-[#1A422D] transition-colors">
-                      <Mail className="w-3.5 h-3.5 fill-white text-[#0F2A1D]" />
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/80 border border-[#DFCDBA] flex items-center justify-center text-[#0F2A1D] shrink-0 shadow-2xs group-hover:bg-[#E5DFC9] transition-colors">
+                      <Mail className="w-4 h-4 fill-[#0F2A1D] text-[#0F2A1D]" />
                     </div>
                     <span className="font-medium font-sans">{t.s6.email}</span>
                   </a>
 
-                  {/* Location: Light tan circle with green filled map pin */}
-                  <div className="flex items-center gap-3.5 text-xs sm:text-[13px] text-[#1B3A29]">
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#F3EDE2] border border-[#DFCDBA] flex items-center justify-center text-[#0F2A1D] shrink-0 shadow-2xs">
-                      <MapPin className="w-3.5 h-3.5 fill-[#0F2A1D]" />
+                  {/* Location: Light circle with delicate gold outline and dark green map pin */}
+                  <div className="flex items-center gap-3.5 text-xs sm:text-[13.5px] text-[#1B3A29]">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/80 border border-[#DFCDBA] flex items-center justify-center text-[#0F2A1D] shrink-0 shadow-2xs">
+                      <MapPin className="w-4 h-4 fill-[#0F2A1D] text-[#0F2A1D]" />
                     </div>
                     <span className="font-medium font-sans">{t.s6.location}</span>
                   </div>
