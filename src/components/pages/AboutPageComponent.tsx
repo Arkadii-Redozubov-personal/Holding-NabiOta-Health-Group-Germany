@@ -660,9 +660,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         {/* ══════════════════════════════════════════════════════════
             SECTION 2: ORGANIZATIONAL STRUCTURE (NabiOta® Health Group Germany GmbH)
             - Background: photo1.webp
-            - Compact, premium corporate organizational hierarchy
+            - Compact, premium corporate organizational hierarchy matching Photo 2
         ══════════════════════════════════════════════════════════ */}
-        <section className="relative py-10 sm:py-14 lg:py-16 border-b border-[#ECE7DC] overflow-hidden bg-[#FAF8F4]">
+        <section className="relative py-8 sm:py-10 lg:py-12 border-b border-[#ECE7DC] overflow-hidden bg-[#FAF8F4]">
           {/* Background: photo1.webp with subtle edge framing */}
           <div className="absolute inset-0 z-0 pointer-events-none">
             <Image
@@ -677,7 +677,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
 
           <Container size="wide" className="relative z-10">
             {/* Header */}
-            <div className="text-center max-w-xl mx-auto mb-6 sm:mb-7">
+            <div className="text-center max-w-xl mx-auto mb-5 sm:mb-6">
               <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-1.5 font-sans">
                 {t.orgEyebrow}
               </span>
@@ -686,20 +686,20 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
               </h2>
             </div>
 
-            {/* Holding Top Card: Noticeably wider, visually dominant focal point */}
+            {/* Holding Top Card: Noticeably larger, lighter vivid forest green, larger icon (matching Photo 2) */}
             <div className="flex justify-center mb-0">
-              <div className="w-full max-w-[560px] sm:max-w-[620px] bg-[#0B1E13] text-white px-5 sm:px-7 py-3 sm:py-3.5 rounded-2xl border border-[#D5B878]/70 shadow-xl flex items-center gap-3.5 sm:gap-4 text-left">
-                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-[#D5B878] bg-[#142A1D]/80 flex items-center justify-center text-[#ECCF96] flex-shrink-0 shadow-[0_0_12px_rgba(213,184,120,0.25)]">
-                  <BuildingStatsIcon className="w-5.5 h-5.5 sm:w-6 sm:h-6 stroke-[1.6]" />
+              <div className="w-full max-w-[680px] sm:max-w-[760px] lg:max-w-[800px] bg-gradient-to-r from-[#0C3322] to-[#0A2A1C] text-white px-6 sm:px-8 py-4 sm:py-5 rounded-2xl border border-[#D5B878]/80 shadow-xl flex items-center gap-4 sm:gap-5 text-left">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full border border-[#D5B878] bg-[#123E2A] flex items-center justify-center text-[#DEC085] flex-shrink-0 shadow-[0_0_14px_rgba(213,184,120,0.3)]">
+                  <BuildingStatsIcon className="w-7 h-7 sm:w-8 sm:h-8 stroke-[1.6]" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <span className="text-[9px] sm:text-[9.5px] font-bold tracking-[0.24em] text-[#DEC085] uppercase block mb-0.5 font-sans">
+                  <span className="text-[9.5px] sm:text-[10px] font-bold tracking-[0.24em] text-[#DEC085] uppercase block mb-1 font-sans">
                     {t.holdingBadge}
                   </span>
-                  <h3 className="font-serif text-[17px] sm:text-[19px] font-medium text-white tracking-wide truncate">
+                  <h3 className="font-serif text-[19px] sm:text-[22px] lg:text-[24px] font-normal text-white tracking-wide truncate leading-tight">
                     “NabiOta” Health Group Germany GmbH
                   </h3>
-                  <p className="text-[11px] sm:text-[11.5px] text-[#A7B8AD] mt-0.5 font-sans">
+                  <p className="text-[12px] sm:text-[12.5px] text-[#A8C2B1] mt-1 font-sans">
                     {isRu ? "Холдинг / Концерн • Мёнхенгладбах" : isEn ? "Holding / Group • Mönchengladbach" : "Holding / Konzern • Mönchengladbach"}
                   </p>
                 </div>
@@ -720,7 +720,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
               </svg>
             </div>
 
-            {/* 3 Pillars Grid with compact, identical-height cards */}
+            {/* 3 Pillars Grid with compact, identical-height cards (matching Photo 2) */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5 max-w-6xl mx-auto mt-4 lg:mt-0">
               {organigramColumns.map((col, cIdx) => (
                 <div key={cIdx} className="flex flex-col space-y-3 relative h-full">
@@ -739,33 +739,35 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       <Link
                         key={rIdx}
                         href={item.href}
-                        className="group flex-1 bg-white/95 backdrop-blur-xs rounded-xl sm:rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878] p-3.5 sm:p-4 flex flex-col justify-between shadow-[0_1px_4px_rgba(0,0,0,0.02)] hover:shadow-md transition-all hover:-translate-y-0.5"
+                        className="group flex-1 bg-white/95 backdrop-blur-xs rounded-xl sm:rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878] p-4 sm:p-5 flex flex-col justify-between shadow-[0_1px_4px_rgba(0,0,0,0.02)] hover:shadow-md transition-all hover:-translate-y-0.5"
                       >
                         <div>
-                          {/* Top row: Small circular icon on upper-left, Category badge on upper-right */}
-                          <div className="flex items-center justify-between gap-2 mb-2">
-                            <div className="w-8 h-8 sm:w-8.5 sm:h-8.5 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0 group-hover:bg-[#D5B878]/15 group-hover:border-[#D5B878] group-hover:text-[#8C6D2B] transition-colors">
-                              <IconComp className="w-4 h-4 stroke-[1.6]" />
+                          {/* Top row: Large circular icon on left, rectangular badge on right */}
+                          <div className="flex items-center justify-between gap-3 mb-2.5">
+                            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#E5EEE8] border border-[#D4E2D8] flex items-center justify-center text-[#173824] shrink-0 group-hover:bg-[#D5B878]/15 group-hover:border-[#D5B878] group-hover:text-[#8C6D2B] transition-colors shadow-xs">
+                              <IconComp className="w-5.5 h-5.5 sm:w-6 sm:h-6 stroke-[1.6]" />
                             </div>
-                            <span className="inline-block text-[8.5px] sm:text-[9px] font-bold uppercase tracking-wider text-[#8C6D2B] bg-[#FAF5EB] px-2 py-0.5 rounded-full border border-[#EADBBD]">
-                              {item.badge}
-                            </span>
+                            {item.badge && (
+                              <span className="inline-block text-[9px] sm:text-[9.5px] font-bold uppercase tracking-wider text-[#8A6726] bg-[#FAF5EB] px-2.5 py-1 rounded-[4px] border border-[#EADBBD]">
+                                {item.badge}
+                              </span>
+                            )}
                           </div>
 
-                          {/* Company name directly below */}
-                          <h4 className="font-serif font-bold text-[14px] sm:text-[15px] text-[#142318] leading-snug group-hover:text-[#B89650] transition-colors mb-1">
+                          {/* Company title above additional text */}
+                          <h4 className="font-serif font-bold text-[15px] sm:text-[16px] text-[#142318] leading-snug group-hover:text-[#B89650] transition-colors mb-1.5">
                             {item.name}
                           </h4>
 
-                          {/* Description text underneath */}
-                          <p className="text-[11px] sm:text-[11.5px] text-[#556057] leading-relaxed font-sans line-clamp-3">
+                          {/* Additional description text ("доп текст") underneath */}
+                          <p className="text-[11px] sm:text-[11.5px] text-[#556057] leading-relaxed font-sans">
                             {item.sub}
                           </p>
                         </div>
 
                         {/* Small circular arrow button anchored at bottom-right */}
-                        <div className="pt-2 flex justify-end">
-                          <div className="w-6 h-6 rounded-full border border-[#DCD5C6] bg-[#FAF8F5] group-hover:border-[#C5A56A] group-hover:bg-[#C5A56A] group-hover:text-white text-[#B89650] flex items-center justify-center transition-all shadow-xs">
+                        <div className="pt-3 flex justify-end">
+                          <div className="w-6.5 h-6.5 rounded-full border border-[#DCD5C6] bg-[#FAF8F5] group-hover:border-[#C5A56A] group-hover:bg-[#C5A56A] group-hover:text-white text-[#B89650] flex items-center justify-center transition-all shadow-xs shrink-0">
                             <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
                           </div>
                         </div>
@@ -781,9 +783,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         {/* ══════════════════════════════════════════════════════════
             SECTION 3: STRATEGIC DEVELOPMENT (Two-Phase Structure)
             - Background: photo2.webp
-            - Compact, refined, editorial two-column module
+            - Wider blocks, tighter section height, larger serif numerals, larger right icons (matching Photo 1)
         ══════════════════════════════════════════════════════════ */}
-        <section className="relative py-10 sm:py-14 lg:py-16 border-b border-[#ECE7DC] overflow-hidden bg-[#FAF6EE]">
+        <section className="relative py-8 sm:py-10 lg:py-12 border-b border-[#ECE7DC] overflow-hidden bg-[#FAF6EE]">
           {/* Background: photo2.webp with subtle edge framing */}
           <div className="absolute inset-0 z-0 pointer-events-none">
             <Image
@@ -798,52 +800,54 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
 
           <Container size="wide" className="relative z-10">
             {/* Header: Kept exactly unchanged in wording and style */}
-            <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
+            <div className="text-center max-w-2xl mx-auto mb-5 sm:mb-6">
               <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-1.5 font-sans">
                 {t.twoPhaseEyebrow}
               </span>
               <h3 className="font-serif text-[26px] sm:text-[32px] lg:text-[36px] font-normal text-[#142318] leading-[1.2]">
                 {t.twoPhaseTitle}
               </h3>
-              <p className="text-[11.5px] sm:text-[12.5px] text-[#556057] mt-2 leading-relaxed font-sans max-w-lg mx-auto">
+              <p className="text-[12px] sm:text-[13px] text-[#556057] mt-1.5 leading-relaxed font-sans max-w-xl mx-auto">
                 {t.twoPhaseDesc}
               </p>
             </div>
 
-            {/* Two compact phase cards centered in a focused, narrow content container */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-[920px] mx-auto items-stretch">
+            {/* Two wide phase cards side by side (matching Photo 1: wider width max-w-6xl) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 max-w-6xl mx-auto items-stretch">
               {/* Card 1: Phase 1 */}
-              <div className="h-full bg-white/95 backdrop-blur-xs rounded-2xl p-5 sm:p-6 border border-[#EAE4D7] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all flex flex-col justify-between">
+              <div className="h-full bg-white/95 backdrop-blur-xs rounded-2xl sm:rounded-3xl p-6 sm:p-7 border border-[#EAE4D7] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all flex flex-col justify-between">
                 <div>
-                  {/* Card Header: Number badge (left) + Title + Circular Icon (right) */}
-                  <div className="flex items-center gap-3 mb-3.5">
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#0E2718] text-white font-serif text-base sm:text-lg font-normal flex items-center justify-center shrink-0 shadow-xs">
+                  {/* Card Header: Large serif numeral 1 (left) + Title + Large Circular Icon (right) */}
+                  <div className="flex items-center gap-3.5 sm:gap-4 mb-4">
+                    <div className="w-13 h-13 sm:w-15 sm:h-15 rounded-full bg-[#0B2317] border border-[#163B27] text-white font-serif text-2xl sm:text-3xl font-normal flex items-center justify-center shrink-0 shadow-md">
                       1
                     </div>
-                    <h4 className="font-serif text-[15px] sm:text-[16.5px] font-bold text-[#142318] leading-tight">
-                      {t.phase1Title}
-                    </h4>
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0 ml-auto">
-                      <Users className="w-4 h-4 stroke-[1.6]" />
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-serif text-[17px] sm:text-[19px] lg:text-[20px] font-bold text-[#142318] leading-tight">
+                        {t.phase1Title}
+                      </h4>
+                    </div>
+                    <div className="w-13 h-13 sm:w-15 sm:h-15 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0 ml-auto shadow-xs">
+                      <Users className="w-6.5 h-6.5 sm:w-7 sm:h-7 stroke-[1.6]" />
                     </div>
                   </div>
 
-                  {/* Body Text: Compact, readable block */}
-                  <p className="text-[11.5px] sm:text-[12px] text-[#4E5650] leading-relaxed font-sans mb-4">
+                  {/* Body Text */}
+                  <p className="text-[12px] sm:text-[12.5px] text-[#4E5650] leading-relaxed font-sans mb-4">
                     {t.phase1Desc}
                   </p>
                 </div>
 
                 {/* Highlight / Information Box: Compact secondary layer */}
-                <div className="p-3.5 sm:p-4 rounded-xl bg-[#F5F2EA]/90 border border-[#EAE4D7] flex flex-col justify-between mt-auto">
+                <div className="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-[#F4EFE6]/90 border border-[#EAE4D7] flex flex-col justify-between mt-auto">
                   <div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#B89650] shrink-0" />
-                      <span className="text-[11.5px] sm:text-[12px] font-bold text-[#142318]">
+                    <div className="flex items-center gap-2 mb-2.5">
+                      <CheckCircle2 className="w-4.5 h-4.5 text-[#B89650] shrink-0" />
+                      <span className="text-[12px] sm:text-[12.5px] font-bold text-[#142318]">
                         {isRu ? "Ключевые активности в Фазе 1" : isEn ? "Key Activities in Phase 1" : "Zentrale Aktivitäten in Phase 1"}
                       </span>
                     </div>
-                    <ul className="space-y-1.5 text-[11px] sm:text-[11.5px] text-[#4E5650] font-sans pl-0.5">
+                    <ul className="space-y-1.5 text-[11.5px] sm:text-[12px] text-[#4E5650] font-sans pl-0.5">
                       <li className="flex items-start gap-1.5">
                         <span className="text-[#142318] font-bold">•</span>
                         <span>{isRu ? "Формирование и запуск структуры MVZ" : isEn ? "Establishment of the MVZ structure" : "Aufbau der MVZ-Struktur"}</span>
@@ -858,50 +862,52 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       </li>
                     </ul>
                   </div>
-                  <div className="flex justify-end pt-2">
+                  <div className="flex justify-end pt-3">
                     <Link
                       href={`/${locale}/contact`}
                       aria-label="Phase 1 details"
-                      className="w-6 h-6 rounded-full border border-[#D1C9B8] bg-white text-[#7A6843] hover:border-[#D5B878] hover:bg-[#D5B878] hover:text-[#0C1C11] flex items-center justify-center transition-all shadow-xs"
+                      className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#D1C9B8] bg-white text-[#7A6843] hover:border-[#D5B878] hover:bg-[#D5B878] hover:text-[#0C1C11] flex items-center justify-center transition-all shadow-xs"
                     >
-                      <ArrowRight className="w-3 h-3" />
+                      <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
                 </div>
               </div>
 
               {/* Card 2: Phase 2 */}
-              <div className="h-full bg-white/95 backdrop-blur-xs rounded-2xl p-5 sm:p-6 border border-[#EAE4D7] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all flex flex-col justify-between">
+              <div className="h-full bg-white/95 backdrop-blur-xs rounded-2xl sm:rounded-3xl p-6 sm:p-7 border border-[#EAE4D7] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all flex flex-col justify-between">
                 <div>
-                  {/* Card Header: Number badge (left) + Title + Circular Icon (right) */}
-                  <div className="flex items-center gap-3 mb-3.5">
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#0E2718] text-white font-serif text-base sm:text-lg font-normal flex items-center justify-center shrink-0 shadow-xs">
+                  {/* Card Header: Large serif numeral 2 (left) + Title + Large Circular Icon (right) */}
+                  <div className="flex items-center gap-3.5 sm:gap-4 mb-4">
+                    <div className="w-13 h-13 sm:w-15 sm:h-15 rounded-full bg-[#0B2317] border border-[#163B27] text-white font-serif text-2xl sm:text-3xl font-normal flex items-center justify-center shrink-0 shadow-md">
                       2
                     </div>
-                    <h4 className="font-serif text-[15px] sm:text-[16.5px] font-bold text-[#142318] leading-tight">
-                      {t.phase2Title}
-                    </h4>
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0 ml-auto">
-                      <Building2 className="w-4 h-4 stroke-[1.6]" />
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-serif text-[17px] sm:text-[19px] lg:text-[20px] font-bold text-[#142318] leading-tight">
+                        {t.phase2Title}
+                      </h4>
+                    </div>
+                    <div className="w-13 h-13 sm:w-15 sm:h-15 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0 ml-auto shadow-xs">
+                      <Building2 className="w-6.5 h-6.5 sm:w-7 sm:h-7 stroke-[1.6]" />
                     </div>
                   </div>
 
-                  {/* Body Text: Compact, readable block */}
-                  <p className="text-[11.5px] sm:text-[12px] text-[#4E5650] leading-relaxed font-sans mb-4">
+                  {/* Body Text */}
+                  <p className="text-[12px] sm:text-[12.5px] text-[#4E5650] leading-relaxed font-sans mb-4">
                     {t.phase2Desc}
                   </p>
                 </div>
 
                 {/* Highlight / Information Box: Compact secondary layer */}
-                <div className="p-3.5 sm:p-4 rounded-xl bg-[#F5F2EA]/90 border border-[#EAE4D7] flex flex-col justify-between mt-auto">
+                <div className="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-[#F4EFE6]/90 border border-[#EAE4D7] flex flex-col justify-between mt-auto">
                   <div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#B89650] shrink-0" />
-                      <span className="text-[11.5px] sm:text-[12px] font-bold text-[#142318]">
+                    <div className="flex items-center gap-2 mb-2.5">
+                      <CheckCircle2 className="w-4.5 h-4.5 text-[#B89650] shrink-0" />
+                      <span className="text-[12px] sm:text-[12.5px] font-bold text-[#142318]">
                         {isRu ? "Ключевые принципы управления" : isEn ? "Central Governance Principles" : "Zentrale Governance-Prinzipien"}
                       </span>
                     </div>
-                    <ul className="space-y-1.5 text-[11px] sm:text-[11.5px] text-[#4E5650] font-sans pl-0.5">
+                    <ul className="space-y-1.5 text-[11.5px] sm:text-[12px] text-[#4E5650] font-sans pl-0.5">
                       <li className="flex items-start gap-1.5">
                         <span className="text-[#142318] font-bold">•</span>
                         <span>{isRu ? "Врачебная тайна и строгая защита данных (DSGVO)" : isEn ? "Medical confidentiality & strict data protection" : "Ärztliche Schweigepflicht & strenger Datenschutz (DSGVO)"}</span>
@@ -916,13 +922,13 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       </li>
                     </ul>
                   </div>
-                  <div className="flex justify-end pt-2">
+                  <div className="flex justify-end pt-3">
                     <Link
                       href={`/${locale}/contact`}
                       aria-label="Phase 2 details"
-                      className="w-6 h-6 rounded-full border border-[#D1C9B8] bg-white text-[#7A6843] hover:border-[#D5B878] hover:bg-[#D5B878] hover:text-[#0C1C11] flex items-center justify-center transition-all shadow-xs"
+                      className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#D1C9B8] bg-white text-[#7A6843] hover:border-[#D5B878] hover:bg-[#D5B878] hover:text-[#0C1C11] flex items-center justify-center transition-all shadow-xs"
                     >
-                      <ArrowRight className="w-3 h-3" />
+                      <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
                 </div>
