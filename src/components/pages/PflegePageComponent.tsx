@@ -50,7 +50,7 @@ export interface CareServiceModalData {
   id: string;
   badge: string;
   image: string;
-  iconType: "stethoscope" | "award" | "heart" | "shield" | "pill" | "users";
+  iconType: "stethoscope" | "award" | "heart" | "shield" | "pill" | "users" | "accessibility" | "home";
   title: string;
   shortDesc: string;
   modal: {
@@ -75,16 +75,18 @@ export function PflegePageComponent({ locale = "de" }: Props) {
 
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [selectedService, setSelectedService] = useState<CareServiceModalData | null>(null);
+  const [selectedSupplyModal, setSelectedSupplyModal] = useState<CareServiceModalData | null>(null);
 
   // Lock body scroll and listen for Escape key on modal open
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setSelectedService(null);
+        setSelectedSupplyModal(null);
       }
     };
 
-    if (selectedService) {
+    if (selectedService || selectedSupplyModal) {
       document.body.style.overflow = "hidden";
       window.addEventListener("keydown", handleKeyDown);
     } else {
@@ -95,7 +97,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
       document.body.style.overflow = "unset";
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [selectedService]);
+  }, [selectedService, selectedSupplyModal]);
 
   // Standard Header/Hero Data
   const heroData = {
@@ -767,6 +769,378 @@ export function PflegePageComponent({ locale = "de" }: Props) {
     },
   ];
 
+  // 4 Core Divisions of NabiOta Sanitätshaus GmbH (Pages 17-18 PDF)
+  const sanitaetshausData: CareServiceModalData[] = [
+    {
+      id: "orthopaedie-bandagen",
+      badge: isRu
+        ? "§§ 126, 127 SGB V • РЕМЕСЛЕННАЯ ПАЛАТА"
+        : isEn
+        ? "§§ 126, 127 SGB V • CRAFTS GUILD"
+        : "§§ 126, 127 SGB V • HANDWERKSROLLE",
+      image: "/images/nursing/stage-postsurgical.webp",
+      iconType: "accessibility",
+      title: isRu
+        ? "Ортопедическое обеспечение и бандажи"
+        : isEn
+        ? "Orthopedic Braces & Custom Bandages"
+        : "Orthopädische Hilfsmittel & Bandagen",
+      shortDesc: isRu
+        ? "Индивидуальный подбор и изготовление ортезов, суставных бандажей, поддерживающих корсетов и компрессионного трикотажа (I–IV класс)."
+        : isEn
+        ? "Custom-fitted orthoses, dynamic joint braces, spinal support corsets, and medical compression garments (classes I–IV)."
+        : "Maßgefertigte Orthesen, funktionelle Gelenkbandagen, Stützkorsetts und medizinische Kompressionsversorgung (Klassen I–IV).",
+      modal: {
+        title: isRu
+          ? "NabiOta Sanitätshaus: Ортопедическое обеспечение"
+          : isEn
+          ? "NabiOta Medical Supplies: Orthopedic Appliances"
+          : "NabiOta Sanitätshaus: Orthopädische Versorgung",
+        subtitle: isRu
+          ? "Точная биомеханическая стабилизация и восстановление функций"
+          : isEn
+          ? "Precision Biomechanical Stabilization & Functional Recovery"
+          : "Präzise biomechanische Stabilisierung und Funktionssicherung",
+        description: isRu
+          ? "Ортопедическая мастерская NabiOta Sanitätshaus GmbH сочетает передовое ремесленное мастерство с медицинскими стандартами. Мы производим и индивидуально подгоняем ортопедические изделия для разгрузки суставов, коррекции осанки и постоперационной защиты."
+          : isEn
+          ? "The certified orthopedic workshop of NabiOta Sanitätshaus GmbH unites traditional master craftsmanship with clinical precision. We configure and customize orthopedic appliances to relieve joint stress, correct alignment, and ensure safe postoperative recovery."
+          : "Die zertifizierte orthopädietechnische Werkstatt der NabiOta Sanitätshaus GmbH verbindet handwerkliche Präzision mit modernster medizinischer Versorgung. Gemäß Handwerksordnung und §§ 126, 127 SGB V fertigen und adaptieren wir orthopädische Hilfsmittel zur gezielten Entlastung, Führung und Stabilisierung des Bewegungsapparats.",
+        indicationsTitle: isRu ? "Медицинские показания" : isEn ? "Clinical Indications" : "Medizinische Indikationen",
+        indications: isRu
+          ? [
+              "Состояния после операций на крестообразных связках, менисках и суставах",
+              "Выраженный гонартроз, коксартроз и нестабильность голеностопа",
+              "Деформации и дегенеративные заболевания позвоночника (грыжи, сколиоз)",
+              "Хроническая венозная недостаточность, лимфедема и профилактика тромбоза",
+            ]
+          : isEn
+          ? [
+              "Postoperative immobilization following ACL, meniscus, or joint surgeries",
+              "Severe gonarthrosis, coxarthrosis, and chronic ligament instability",
+              "Spinal degenerative disorders, disc herniations, and scoliosis",
+              "Chronic venous insufficiency, lymphedema, and deep vein thrombosis prophylaxis",
+            ]
+          : [
+              "Postoperative Stabilisierung nach Kreuzband-, Meniskus- oder Gelenkoperationen",
+              "Fortgeschrittene Gonarthrose, Koxarthrose und chronische Bandinstabilitäten",
+              "Degenerative Wirbelsäulenerkrankungen, Bandscheibenvorfälle und Skoliosen",
+              "Chronisch-venöse Insuffizienz, Lymphödeme und postoperative Thromboseprophylaxe",
+            ],
+        scopeTitle: isRu ? "Спектр изделий и услуг" : isEn ? "Product & Service Scope" : "Leistungsumfang & Versorgung",
+        scopeItems: isRu
+          ? [
+              "Анатомические бандажи для коленного, плечевого, локтевого и лучезапястного суставов",
+              "Шарнирные жесткие и полужесткие ортезы с регулируемым углом сгибания",
+              "Специализированные корсеты для поясничного и грудного отделов позвоночника",
+              "Индивидуальный замер и подбор медицинского компрессионного трикотажа (RAL-стандарт)",
+            ]
+          : isEn
+          ? [
+              "Anatomical braces for knee, shoulder, elbow, and wrist joints",
+              "Hinged functional orthoses with adjustable flexion/extension limits",
+              "Custom-fitted spinal corsets and supportive lumbar orthoses",
+              "Certified measure-taking for medical circular/flat-knit compression stockings",
+            ]
+          : [
+              "Anatomisch gestrickte Gelenkbandagen für Knie, Sprunggelenk, Schulter und Hand",
+              "Hartrahmen- und Funktionsorthesen mit definierter Flexions-/Extensionsbegrenzung",
+              "Stabilisierende Wirbelsäulenorthesen, Rumpfkorsetts und Entlastungsbandagen",
+              "Zertifizierte Maßabnahme für medizinische Rund- und Flachstrickkompression",
+            ],
+        billingTitle: isRu ? "Финансирование и рецепты" : isEn ? "Statutory Reimbursement" : "Verordnungs- und Abrechnungswege",
+        billingText: isRu
+          ? "Все изделия поставляются по врачебному рецепту (Muster 16) с прямым расчетом со всеми государственными (GKV) и частными (PKV) страховыми кассами Германии в соответствии с §§ 126, 127 SGB V."
+          : isEn
+          ? "Reimbursed under statutory physician prescription (Muster 16) with direct settlement across all German public (GKV) and private (PKV) health insurers pursuant to §§ 126, 127 SGB V."
+          : "Die Versorgung erfolgt auf Grundlage einer vertragsärztlichen Hilfsmittelverordnung (Muster 16). Als präqualifizierter Leistungserbringer nach §§ 126, 127 SGB V rechnen wir direkt mit allen gesetzlichen und privaten Krankenkassen ab.",
+        qualityTitle: isRu ? "Стандарты качества" : isEn ? "Quality Standards" : "Qualitätsstandards",
+        qualityText: isRu
+          ? "Запись в ремесленной палате (Handwerksrolle), сертификация EU-MDR и персональная примерка опытными мастерами-ортопедами."
+          : isEn
+          ? "Registered with the German Crafts Guild (Handwerksrolle), EU-MDR compliant, and fitted by master orthopedic technicians."
+          : "Eintragung in die Handwerksrolle für Orthopädietechnik, Einhaltung der EU-Medizinprodukteverordnung (MDR) und individuelle Fachberatung durch Meister.",
+        ctaButtonText: isRu ? "Запросить ортопедическую помощь" : isEn ? "Request Orthopedic Consultation" : "Hilfsmittel anfragen",
+      },
+    },
+    {
+      id: "mobilitaet-rehatechnik",
+      badge: isRu
+        ? "МОБИЛЬНОСТЬ • СВОБОДА ДВИЖЕНИЯ"
+        : isEn
+        ? "MOBILITY • INDEPENDENCE"
+        : "MOBILITÄT • SELBSTSTÄNDIGKEIT",
+      image: "/images/nursing/stage-senior.webp",
+      iconType: "accessibility",
+      title: isRu
+        ? "Мобильность и реабилитационная техника"
+        : isEn
+        ? "Mobility & Rehabilitation Technology"
+        : "Mobilitäts- & Rehabilitationstechnik",
+      shortDesc: isRu
+        ? "Активные и паллиативные инвалидные коляски, легкие роллаторы, костыли и электрические подъемники для безопасного передвижения."
+        : isEn
+        ? "Active and multi-position wheelchairs, lightweight rollators, crutches, and patient transfer lifters for safe mobility."
+        : "Aktiv- und Pflegerollstühle, ergonomische Leichtgewicht-Rollatoren, Gehhilfen und elektrische Patientenlifter.",
+      modal: {
+        title: isRu
+          ? "NabiOta Sanitätshaus: Мобильность и реабилитационная техника"
+          : isEn
+          ? "NabiOta Medical Supplies: Mobility & Rehabilitation"
+          : "NabiOta Sanitätshaus: Mobilitäts- & Rehatechnik",
+        subtitle: isRu
+          ? "Сохранение активности, предотвращение падений и облегчение ухода"
+          : isEn
+          ? "Preserving Independence, Fall Prevention & Transfer Assistance"
+          : "Erhalt der Mobilität, Sturzprävention und Unterstützung im Alltag",
+        description: isRu
+          ? "Потеря подвижности не должна ограничивать жизнь. NabiOta Sanitätshaus GmbH подбирает, доставляет и настраивает средства передвижения под индивидуальные анатомические и физические особенности каждого пациента."
+          : isEn
+          ? "Mobility restrictions should never diminish quality of life. NabiOta Sanitätshaus GmbH configures, delivers, and ergonomically adapts mobility equipment to each patient's individual biomechanical requirements."
+          : "Eingeschränkte Mobilität bedeutet Verlust an Lebensqualität. Die NabiOta Sanitätshaus GmbH versorgt Patienten mit modernsten Mobilitätshilfen, die exakt auf die körperliche Verfassung, die häusliche Umgebung und den individuellen Aktivitätsgrad abgestimmt werden.",
+        indicationsTitle: isRu ? "Медицинские показания" : isEn ? "Clinical Indications" : "Medizinische Indikationen",
+        indications: isRu
+          ? [
+              "Восстановление после эндопротезирования тазобедренного и коленного суставов (TEP)",
+              "Парезы и нарушения походки после инсульта или черепно-мозговой травмы",
+              "Возрастная слабость, атаксия и повышенный риск падений дома и на улице",
+              "Тяжелые формы мышечной дистрофии, рассеянного склероза и болезни Паркинсона",
+            ]
+          : isEn
+          ? [
+              "Rehabilitation following total hip or knee replacement (THR/TKR)",
+              "Paresis and gait ataxia following stroke or traumatic neurotrauma",
+              "Frailty, vestibular balance deficits, and heightened domestic fall risks",
+              "Progressive neurological conditions (Multiple Sclerosis, Parkinson's disease)",
+            ]
+          : [
+              "Rehabilitation nach Hüft- oder Knie-Totalendoprothesen (TEP)",
+              "Paresen und Gangunsicherheiten nach Apoplex oder Schädel-Hirn-Trauma",
+              "Alterstraumatologie, Gangataxie und signifikant erhöhtes Sturzrisiko",
+              "Fortgeschrittene neurologische Erkrankungen (Morbus Parkinson, Multiple Sklerose)",
+            ],
+        scopeTitle: isRu ? "Спектр реабилитационной техники" : isEn ? "Equipment Continuum" : "Hilfsmittelspektrum",
+        scopeItems: isRu
+          ? [
+              "Комнатные и уличные облегченные коляски с индивидуальной регулировкой",
+              "Многофункциональные кресла-коляски с функцией наклона спинки и подголовником",
+              "Алюминиевые и карбоновые роллаторы с тормозами, сумкой и мягким сиденьем",
+              "Подлокотные костыли, ходунки, поворотные подушки и электрические подъемники",
+            ]
+          : isEn
+          ? [
+              "Indoor and outdoor lightweight manual wheelchairs with ergonomic adjustments",
+              "Multifunctional tilt-in-space comfort wheelchairs for high dependency",
+              "Carbon-fiber and aluminum rollators with dual braking and resting seats",
+              "Forearm crutches, reciprocal walking frames, and electric patient hoists",
+            ]
+          : [
+              "Leichtgewicht- und Adaptivrollstühle für Innen- und Außenbereich",
+              "Multifunktionale Pflegerollstühle mit Kantelung und Liegefunktion",
+              "Ergonomische Leichtgewicht-Rollatoren mit Sitznetz, Tasche und Doppelfeststellbremse",
+              "Unterarmgehstützen, Vierfuß-Gehhilfen, Drehscheiben und elektrische Patientenlifter",
+            ],
+        billingTitle: isRu ? "Оплата кассами и доставка" : isEn ? "Insurance Settlement" : "Kostenübernahme & Lieferung",
+        billingText: isRu
+          ? "Финансируется медицинскими кассами (SGB V). Мы берем на себя оформление согласований (Kostenvoranschlag), бесплатную доставку на дом и практический инструктаж по безопасности."
+          : isEn
+          ? "Covered under German statutory health insurance (SGB V). We handle all pre-authorizations (Kostenvoranschlag), home delivery, and safe usage training."
+          : "Die Kosten werden nach Bewilligung des Kostenvoranschlags durch die gesetzliche oder private Krankenversicherung getragen. Wir übernehmen die gesamte Einreichung, die kostenfreie Anlieferung nach Hause und die ergonomische Einweisung.",
+        qualityTitle: isRu ? "Сервис и безопасность" : isEn ? "Safety & Maintenance" : "Sicherheit & Wartung",
+        qualityText: isRu
+          ? "Регулярный технический осмотр (STK), ремонт, замена быстроизнашивающихся деталей и санитарная обработка оборудования."
+          : isEn
+          ? "Safety inspections (STK), technical servicing, spare parts warranty, and certified hygienic preparation."
+          : "Regelmäßige sicherheitstechnische Kontrollen (STK), mobiler Reparaturservice und zertifizierte hygienische Wiederaufbereitung.",
+        ctaButtonText: isRu ? "Подобрать коляску или роллатор" : isEn ? "Inquire Mobility Aid" : "Mobilitätshilfe anfragen",
+      },
+    },
+    {
+      id: "haeusliche-betten",
+      badge: isRu
+        ? "SGB XI & SGB V • УХОД НА ДОМУ"
+        : isEn
+        ? "SGB XI & SGB V • HOME CARE BEDS"
+        : "SGB XI & SGB V • PFLEGEBETTEN",
+      image: "/images/nursing/stage-rehab.webp",
+      iconType: "home",
+      title: isRu
+        ? "Функциональные кровати и оснащение для ухода"
+        : isEn
+        ? "Medical Care Beds & Home Ergonomics"
+        : "Häusliche Pflege- & Bettenausstattung",
+      shortDesc: isRu
+        ? "Медицинские функциональные кровати с электроприводом, противопролежневые матрасы, подъемники и оснащение санузлов."
+        : isEn
+        ? "Electric profiling medical care beds, dynamic pressure-relieving mattresses, bathroom lifters, and safety rails."
+        : "Elektrisch verstellbare Pflegebetten, Antidekubitus-Matratzen, Patientenaufrichter und barrierefreie Hygienehilfen.",
+      modal: {
+        title: isRu
+          ? "NabiOta Sanitätshaus: Функциональные кровати и уход на дому"
+          : isEn
+          ? "NabiOta Medical Supplies: Specialized Care Beds"
+          : "NabiOta Sanitätshaus: Pflegebetten & Wohnraumanpassung",
+        subtitle: isRu
+          ? "Эргономика, безопасность и защита от пролежней в домашних условиях"
+          : isEn
+          ? "Clinical Ergonomics, Safety, and Advanced Pressure Injury Prevention"
+          : "Ergonomische Arbeitsbedingungen und maximaler Liegekomfort",
+        description: isRu
+          ? "Качественный уход невозможен без правильного оборудования. NabiOta Sanitätshaus оперативно устанавливает электрические многофункциональные кровати, подбирает матрасы под степень риска пролежней и оснащает санузлы для максимальной безопасности."
+          : isEn
+          ? "Dignified home care requires ergonomic medical infrastructure. NabiOta Sanitätshaus swiftly installs electric care beds, determines pressure mattress requirements to prevent ulcers, and adapts bathroom facilities for patient safety."
+          : "Ein bedarfsgerechtes Pflegebett entlastet pflegende Angehörige und ambulante Pflegekräfte gleichermaßen. Wir liefern und montieren elektrisch verstellbare Pflegebetten, innovative Antidekubitus-Systeme sowie barrierefreie Sanitärhilfen direkt vor Ort.",
+        indicationsTitle: isRu ? "Медицинские показания" : isEn ? "Clinical Indications" : "Medizinische Indikationen",
+        indications: isRu
+          ? [
+              "Длительный или постоянный постельный режим при тяжелых заболеваниях",
+              "Высокий риск образования пролежней или терапия пролежней I–IV степени",
+              "Затрудненный самостоятельный подъем с кровати и необходимость в боковых ограждениях",
+              "Присвоение степени ухода (Pflegegrad 1–5) для облегчения ежедневных манипуляций",
+            ]
+          : isEn
+          ? [
+              "Prolonged or permanent bedridden status due to chronic severe illnesses",
+              "High risk of decubitus pressure injuries or existing stage I–IV ulcers",
+              "Inability to reposition independently and need for safety side rails",
+              "Accredited care level (Pflegegrad 1–5) requiring home nursing equipment",
+            ]
+          : [
+              "Dauerhafte oder vorübergehende Bettlägerigkeit bei schwerer Pflegebedürftigkeit",
+              "Hohes Dekubitusrisiko oder bestehende Druckulzera der Grade I bis IV",
+              "Erschwerter selbstständiger Positionswechsel und Notwendigkeit stürzverhindernder Seitengitter",
+              "Vorliegen eines Pflegegrads (PG 1–5) zur Sicherstellung der häuslichen Pflege",
+            ],
+        scopeTitle: isRu ? "Комплектация оборудования" : isEn ? "Equipment Continuum" : "Ausstattungsspektrum",
+        scopeItems: isRu
+          ? [
+              "4-секционные кровати с электроприводом регулировки высоты, спинки и изножья",
+              "Штанги-подъемники (трапеции/гусаки) и складные защитные боковые решетки",
+              "Динамические компрессорные матрасы переменного давления и ортопедическая пена",
+              "Подъемники для ванны, кресла-туалеты, душевые табуреты и настенные поручни",
+            ]
+          : isEn
+          ? [
+              "4-section electric profiling beds with variable height, head, and knee break adjustments",
+              "Patient lifting poles (monkey poles) and integrated split safety rails",
+              "Alternating pressure air mattress systems and specialized foam anti-decubitus overlays",
+              "Powered bath lifters, commode chairs, shower stools, and ergonomic grab bars",
+            ]
+          : [
+              "4-motorig verstellbare Pflegebetten mit Niedrigst-Einstieg und geteilten Holzseitengittern",
+              "Patientenaufrichter mit Triangelgriff, Bettleuchten und Infusionshaltern",
+              "Dynamische Wechseldrucksysteme mit digitaler Druckanpassung sowie Weichlagerungsmatratzen",
+              "Badewannenlifter, Dusch- und Toilettenstühle, Sitzerhöhungen und modulare Haltegriffe",
+            ],
+        billingTitle: isRu ? "Оплата страховой кассой" : isEn ? "Insurance Coverage" : "Kostenübernahme nach SGB XI / SGB V",
+        billingText: isRu
+          ? "При наличии степени ухода (Pflegegrad) функциональная кровать предоставляется бесплатно кассой ухода (Pflegekasse) с символической доплатой до 10 € (от которой можно освободиться)."
+          : isEn
+          ? "Funded by statutory long-term care insurance (Pflegekasse) upon approved care grade with minimal statutory co-pay (capped at 10 € unless exempt)."
+          : "Bei Vorliegen eines Pflegegrads übernimmt die Pflegekasse (SGB XI) die Kosten für ein Pflegebett als technisches Pflegehilfsmittel. Der gesetzliche Eigenanteil beträgt maximal 10 EUR, sofern keine Zuzahlungsbefreiung vorliegt.",
+        qualityTitle: isRu ? "Монтаж и гарантия" : isEn ? "Installation & Warranty" : "Montage & Express-Service",
+        qualityText: isRu
+          ? "Экспресс-доставка, профессиональная сборка на месте квалифицированными техниками и вывоз старой мебели при необходимости."
+          : isEn
+          ? "Express delivery, full on-site mechanical assembly by certified technicians, and removal service."
+          : "Fachgerechte Montage vor Ort, elektrische Prüfung nach DGUV Vorschrift 3 und prompte Störungsbeseitigung im Rahmen unseres Notdienstes.",
+        ctaButtonText: isRu ? "Заказать установку кровати" : isEn ? "Request Care Bed Setup" : "Pflegebett anfragen",
+      },
+    },
+    {
+      id: "wund-verbrauchsmaterial",
+      badge: isRu
+        ? "СТЕРИЛЬНО • 40 € В МЕСЯЦ БЕСПЛАТНО"
+        : isEn
+        ? "STERILE LOGISTICS • €40 MONTHLY ALLOWANCE"
+        : "STERILE LOGISTIK • 40 € PFLEGEPAUSCHALE",
+      image: "/images/services/wundversorgung.webp",
+      iconType: "pill",
+      title: isRu
+        ? "Расходные материалы, раны и стомы"
+        : isEn
+        ? "Wound Consumables & Ostomy Supplies"
+        : "Wund- & Verbrauchsmaterialversorgung",
+      shortDesc: isRu
+        ? "Современные раневые повязки, урологические и стомические катетеры, дезинфекция и ежемесячный набор для ухода на 40 €."
+        : isEn
+        ? "Advanced wound dressings, ostomy and urological supplies, disinfectants, and the free €40 monthly caregiver consumable box."
+        : "Phasengerechte Wundauflagen, Stoma-, Katheter- und Inkontinenzartikel sowie die monatliche 40-EUR-Pflegehilfsmittelbox.",
+      modal: {
+        title: isRu
+          ? "NabiOta Sanitätshaus: Раневые и расходные материалы"
+          : isEn
+          ? "NabiOta Medical Supplies: Wound & Medical Consumables"
+          : "NabiOta Sanitätshaus: Wund- & Verbrauchsmaterialien",
+        subtitle: isRu
+          ? "Бесперебойное снабжение стерильными материалами без очередей и рецептурных задержек"
+          : isEn
+          ? "Uninterrupted Supply of Sterile Consumables and Specialized Dressing Protocols"
+          : "Kontinuierliche, rezeptgestützte Belieferung mit modernen Verbandstoffen",
+        description: isRu
+          ? "Хронические раны и потребности в уходе требуют постоянного наличия качественных стерильных средств. Мы берем на себя регулярное согласование рецептов с врачами и доставляем необходимые раневые покрытия, перчатки и средства гигиены прямо на дом."
+          : isEn
+          ? "Chronic wounds and daily nursing demand dependable sterile supplies. We coordinate recurring prescriptions directly with treating physicians and deliver specialized dressings, protective gloves, and disinfectants straight to your door."
+          : "Eine phasengerechte Wundversorgung und hygienische Krankenpflege erfordern spezialisierte Produkte. Die NabiOta Sanitätshaus GmbH übernimmt die lückenlose Rezeptanforderung, Abstimmung mit behandelnden Ärzten und monatliche Direktbelieferung frei Haus.",
+        indicationsTitle: isRu ? "Медицинские показания" : isEn ? "Clinical Indications" : "Medizinische Indikationen",
+        indications: isRu
+          ? [
+              "Хронические раны: венозные язвы голени, диабетическая стопа, пролежни",
+              "Пациенты со стомой (колостома, илеостома, уростома)",
+              "Необходимость в постоянных или периодических мочевых катетерах",
+              "Постоянная потребность в дезинфекции и защите при уходе (Pflegegrad 1–5)",
+            ]
+          : isEn
+          ? [
+              "Chronic hard-to-heal wounds: venous leg ulcers, diabetic foot syndrome, pressure sores",
+              "Ostomy care management (colostomy, ileostomy, urostomy)",
+              "Indwelling, suprapubic, or intermittent urological catheterization",
+              "Daily infection control and hygienic care (care level Pflegegrad 1–5)",
+            ]
+          : [
+              "Chronische und schwer heilende Wunden (Ulcus cruris, Dekubitus, Diabetisches Fußsyndrom)",
+              "Enterostomale und urostomale Versorgung (Kolo-, Ileo-, Urostomie)",
+              "Transurethrale und suprapubische Katheterableitung sowie intermittierender Selbstkatheterismus",
+              "Häusliche Pflegebedürftigkeit mit täglichem Desinfektions- und Schutzbedarf",
+            ],
+        scopeTitle: isRu ? "Номенклатура поставок" : isEn ? "Supply Continuum" : "Versorgungssortiment",
+        scopeItems: isRu
+          ? [
+              "Губчатые повязки с полиуретаном, альгинаты, гидроколлоиды и серебросодержащие покрытия",
+              "Стерильные наборы для перевязок, растворы для промывания ран (полигексанид/октенидин)",
+              "Одно- и двухкомпонентные стомические мешки, пасты, защитные кольца и ремни",
+              "Ежемесячный набор (§ 40 SGB XI): нитриловые перчатки, маски, простыни, антисептики",
+            ]
+          : isEn
+          ? [
+              "Polyurethane foam dressings, calcium alginates, hydrogels, and antibacterial silver meshes",
+              "Sterile dressing sets, wound irrigation solutions (polyhexanide/octenidine)",
+              "1- and 2-piece ostomy appliances, skin barrier pastes, hydrocolloid wafer plates",
+              "Caregiver consumable box (§ 40 SGB XI): disposable gloves, surface disinfectants, bed pads",
+            ]
+          : [
+              "Hydroaktive Wundauflagen (Schaumstoffe, Alginate, Hydrogele, Silberwundauflagen)",
+              "Sterile Verbandwechselsets, Wundspüllösungen und hypoallergene Fixiervliese",
+              "Moderne ein- und zweiteilige Stomasysteme, Hautschutzplatten und Stomapflegeartikel",
+              "Monatliche Pflegebox (§ 40 SGB XI) mit Einweghandschuhen, Bettschutzeinlagen und Desinfektionsmitteln",
+            ],
+        billingTitle: isRu ? "Оплата кассой и льготы" : isEn ? "Billing & Care Box Allowance" : "Abrechnung & 40-EUR-Pflegekassenpauschale",
+        billingText: isRu
+          ? "Раневые материалы оплачиваются больничными кассами по рецепту (SGB V). Набор гигиенических расходников до 40 € в месяц оплачивается кассой ухода (SGB XI) на 100% бесплатно."
+          : isEn
+          ? "Specialized dressings are covered via health insurance prescription (SGB V). The €40 monthly caregiver hygiene box is 100% reimbursed by the nursing care fund (SGB XI)."
+          : "Verbandmittel und Stomaartikel werden als ärztlich verordnete Leistungen nach SGB V von den Krankenkassen getragen. Pflegebedürftige mit Pflegegrad haben zudem gesetzlichen Anspruch auf Pflegehilfsmittel zum Verbrauch im Wert von bis zu 40 EUR monatlich (§ 40 Abs. 2 SGB XI), die wir direkt abrechnen.",
+        qualityTitle: isRu ? "Контроль качества" : isEn ? "Clinical Quality" : "Qualitäts- & Fotodokumentation",
+        qualityText: isRu
+          ? "Тесная координация с врачами и экспертами ICW® по ранам NabiOta HomeCare с цифровой фотофиксацией процесса заживления."
+          : isEn
+          ? "Tight alignment with NabiOta HomeCare ICW® wound nurses including digital photographic healing tracking."
+          : "Enge Abstimmung mit den zertifizierten ICW®-Wundexperten von NabiOta HomeCare und lückenlose Verlaufsdokumentation.",
+        ctaButtonText: isRu ? "Заказать материалы / Pflegebox" : isEn ? "Order Consumables / Care Box" : "Pflegebox / Wundartikel anfordern",
+      },
+    },
+  ];
+
   const t = {
     servicesSection: {
       eyebrow: isRu ? "NABIOTA HOMECARE GMBH" : isEn ? "NABIOTA HOMECARE GMBH" : "NABIOTA HOMECARE GMBH",
@@ -781,6 +1155,66 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         ? "We provide an exhaustive continuum of accredited home care services under SGB V and SGB XI: from complex clinical procedures and wound healing to personal hygiene and caregiver respite."
         : "Entdecken Sie die sechs tragenden Säulen unserer ambulanten Versorgung: Von ärztlich verordneter Behandlungspflege (SGB V) über zertifiziertes Wundmanagement (ICW®) bis hin zu körperbezogener Pflege (SGB XI) und spürbarer Entlastung der Angehörigen.",
       openModalBtn: isRu ? "Подробнее о процедурах" : isEn ? "View Details" : "Details & Indikationen",
+    },
+    sanitaetshausSection: {
+      eyebrow: isRu ? "NABIOTA SANITÄTSHAUS GMBH" : isEn ? "NABIOTA SANITÄTSHAUS GMBH" : "NABIOTA SANITÄTSHAUS GMBH",
+      title: isRu
+        ? "Ортопедия, реабилитация и медицинские изделия"
+        : isEn
+        ? "Medical Supplies, Orthopedics & Rehabilitation Technology"
+        : "Sanitätshaus & Medizinische Hilfsmittelversorgung",
+      desc: isRu
+        ? "NabiOta Sanitätshaus GmbH обеспечивает пациентов современными ортопедическими изделиями, инвалидными колясками, функциональными кроватями и стерильными перевязочными материалами по §§ 126, 127 SGB V с прямым расчетом со всеми страховыми кассами Германии."
+        : isEn
+        ? "NabiOta Sanitätshaus GmbH provides high-grade orthopedic appliances, rehabilitation wheelchairs, specialized care beds, and sterile wound supplies pursuant to §§ 126, 127 SGB V, settling directly with all statutory and private health funds."
+        : "Die NabiOta Sanitätshaus GmbH garantiert eine verlässliche und schnelle Versorgung mit medizinischen Hilfsmitteln, Pflegehilfsmitteln und Verbrauchsartikeln gemäß §§ 126, 127 SGB V. Wir verbinden meisterhafte Orthopädietechnik mit patientenfreundlicher Logistik und direkter Kassenabrechnung.",
+      openModalBtn: isRu ? "Характеристики и рецепт" : isEn ? "Specs & Prescription" : "Details & Verordnung",
+    },
+    pharmacySection: {
+      eyebrow: isRu ? "NABIOTA PHARMACY & КЛИНИКИ" : isEn ? "NABIOTA PHARMACY & CLINIC SUPPLY" : "NABIOTA PHARMACY & KLINIKVERSORGUNG",
+      title: isRu
+        ? "Концепция лекарственного обеспечения по закону об аптеках (§ 14 ApoG)"
+        : isEn
+        ? "Dedicated Hospital Medication Logistics pursuant to § 14 Apothekengesetz"
+        : "Arzneimittelversorgung der Kliniken & NabiOta Pharmacy (§ 14 ApoG)",
+      desc: isRu
+        ? "В соответствии с законодательством Германии снабжение стационаров медикаментами осуществляется через уполномоченную аптеку на основании официальных договоров снабжения с государственным разрешением (§ 14 ApoG). Общественная аптека NabiOta Pharmacy функционирует под независимым руководством провизора в полном соответствии с фармацевтическим правом."
+        : isEn
+        ? "Pursuant to German pharmaceutical legislation, inpatient medication supply is delivered via an accredited pharmacy holding statutory supply agreements approved by regional health authorities (§ 14 ApoG). NabiOta Pharmacy operates under independent licensed pharmacist directorship, ensuring strictly segregated pharmaceutical oversight."
+        : "Die Arzneimittelversorgung der verbundenen Kliniken und OP-Zentren wird durch ein gesondertes, auf den jeweiligen Klinikbetrieb abgestimmtes Versorgungskonzept sichergestellt. Sie erfolgt über eine berechtigte Apotheke auf Grundlage schriftlicher Versorgungsverträge nach § 14 Apothekengesetz (ApoG) mit behördlicher Genehmigung. Die NabiOta Pharmacy agiert mit eigenverantwortlicher fachlicher Leitung.",
+      points: [
+        {
+          title: isRu ? "Независимое руководство" : isEn ? "Independent Pharmacy Leadership" : "Eigenverantwortliche Apothekenleitung",
+          desc: isRu
+            ? "Аптека не подчинена коммерческой GmbH-структуре: руководство осуществляется аккредитованным провизором согласно Apothekengesetz."
+            : isEn
+            ? "Legally independent operations under a licensed supervising pharmacist, safeguarding strict clinical autonomy."
+            : "Betrieb ausschließlich durch einen nach dem Apothekengesetz berechtigten Erlaubnisinhaber in gesetzlich vorgeschriebener Unabhängigkeit.",
+        },
+        {
+          title: isRu ? "Снабжение клиник (§ 14 ApoG)" : isEn ? "Statutory Hospital Supply (§ 14 ApoG)" : "Genehmigte Klinikbelieferung (§ 14 ApoG)",
+          desc: isRu
+            ? "Прямые утвержденные регулятором договоры снабжения стационаров, операционных блоков и MVZ необходимыми медикаментами."
+            : isEn
+            ? "Officially approved supply covenants covering inpatient hospital wards, surgical suites, and ambulatory surgery centers."
+            : "Schriftliche Versorgungsverträge mit behördlicher Genehmigung zur lückenlosen Versorgung stationärer Fachabteilungen und OP-Säle.",
+        },
+        {
+          title: isRu ? "Безопасность терапии (AMTS)" : isEn ? "Medication Safety (AMTS)" : "Patientenindividuelle AMTS",
+          desc: isRu
+            ? "Индивидуальный контроль взаимодействий лекарств, персональная фасовка (блистеризация) и круглосуточный резервный склад."
+            : isEn
+            ? "Pharmacological interaction screening, unit-dose pouch packaging, and 24/7 emergency clinical drug depots."
+            : "Arzneimitteltherapiesicherheit, unit-dose Verblisterung, Notfalldepot-Vorhaltung und direkte Abstimmung mit den behandelnden Ärzten.",
+        },
+      ],
+      complianceBadges: [
+        isRu ? "§ 14 Apothekengesetz (ApoG)" : isEn ? "§ 14 Apothekengesetz (ApoG)" : "§ 14 Apothekengesetz (ApoG)",
+        isRu ? "§§ 126, 127 SGB V Преквалификация" : isEn ? "§§ 126, 127 SGB V Pre-qualification" : "§§ 126, 127 SGB V Präqualifizierung",
+        isRu ? "Ремесленная палата (Handwerksrolle)" : isEn ? "Crafts Guild Registration" : "Handwerksrolle Orthopädietechnik",
+        isRu ? "Регламент EU-MDR & MPDG" : isEn ? "EU-MDR & MPDG Compliant" : "EU-MDR & MPDG Konformität",
+        isRu ? "Защищенный обмен данными DSGVO" : isEn ? "GDPR Medical Data Segregation" : "DSGVO-konforme Schnittstellen",
+      ],
     },
     verbund: {
       eyebrow: isRu ? "ИНТЕГРИРОВАННАЯ ЭКОСИСТЕМА" : isEn ? "INTEGRATED HEALTHCARE NETWORK" : "INTEGRIERTER VERSORGUNGSVERBUND",
@@ -1376,6 +1810,134 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
+        {/* SECTION 4B: NABIOTA SANITÄTSHAUS GMBH & NABIOTA PHARMACY (Pages 17-19 PDF)*/}
+        {/* ========================================================================= */}
+        <section className="py-16 sm:py-24 bg-[#FCFAF6] border-t border-[#EAE3D5] relative overflow-hidden">
+          <Container size="wide">
+            {/* Sanitätshaus Header */}
+            <div className="max-w-3xl mb-12 sm:mb-16">
+              <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans mb-2">
+                {t.sanitaetshausSection.eyebrow}
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-[#0F2A1D] font-normal leading-tight mb-4">
+                {t.sanitaetshausSection.title}
+              </h2>
+              <p className="text-sm sm:text-base text-[#4A5D52] leading-relaxed">
+                {t.sanitaetshausSection.desc}
+              </p>
+            </div>
+
+            {/* 4 Sanitätshaus Divisions Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+              {sanitaetshausData.map((supply) => (
+                <div
+                  key={supply.id}
+                  className="bg-white rounded-3xl overflow-hidden border border-[#E6DFD1] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
+                >
+                  <div>
+                    {/* Image Header with Badge */}
+                    <div className="relative aspect-[16/10] w-full overflow-hidden">
+                      <Image
+                        src={supply.image}
+                        alt={supply.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                      <div className="absolute top-3 left-3 bg-[#0F2A1D]/85 backdrop-blur-md px-3 py-1 rounded-full border border-[#D5B878]/40">
+                        <span className="text-[9.5px] font-bold tracking-wider text-[#ECCF96] uppercase font-sans">
+                          {supply.badge}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Card Content */}
+                    <div className="p-6">
+                      <div className="w-10 h-10 rounded-2xl bg-[#FAF6EE] border border-[#EADBBE] flex items-center justify-center text-[#93712C] mb-4 group-hover:bg-[#C5A56A] group-hover:text-white transition-colors">
+                        {supply.iconType === "accessibility" && <Accessibility className="w-5 h-5 stroke-[1.8]" />}
+                        {supply.iconType === "home" && <Home className="w-5 h-5 stroke-[1.8]" />}
+                        {supply.iconType === "pill" && <Pill className="w-5 h-5 stroke-[1.8]" />}
+                      </div>
+
+                      <h3 className="font-serif text-lg font-bold text-[#0F2A1D] mb-2 leading-snug">
+                        {supply.title}
+                      </h3>
+                      <p className="text-xs sm:text-[13px] text-[#556358] leading-relaxed mb-4">
+                        {supply.shortDesc}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Card Button */}
+                  <div className="px-6 pb-6 pt-2">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedSupplyModal(supply)}
+                      className="w-full py-2.5 px-4 rounded-xl border border-[#D5B878] bg-[#FAF8F3] hover:bg-[#C5A56A] hover:text-white text-forest-950 font-semibold text-xs tracking-wide transition-all flex items-center justify-center gap-2 group/btn cursor-pointer shadow-xs"
+                    >
+                      <span>{t.sanitaetshausSection.openModalBtn}</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Specialized Section: NabiOta Pharmacy & Klinik-Arzneimittelversorgung (§ 14 ApoG) */}
+            <div className="rounded-3xl bg-[#091F14] text-white border border-[#D5B878]/35 p-8 sm:p-12 relative overflow-hidden shadow-xl">
+              <div className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-[#D5B878]/10 blur-3xl pointer-events-none" />
+
+              <div className="relative z-10 max-w-4xl">
+                <span className="text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-3 font-sans">
+                  {t.pharmacySection.eyebrow}
+                </span>
+                <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-white font-normal leading-tight mb-4">
+                  {t.pharmacySection.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-[#C2D1C7] leading-relaxed mb-8 max-w-3xl">
+                  {t.pharmacySection.desc}
+                </p>
+
+                {/* 3 Pillars Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                  {t.pharmacySection.points.map((pt, idx) => (
+                    <div
+                      key={idx}
+                      className="p-5 rounded-2xl bg-[#0D281A]/80 border border-[#D5B878]/25 backdrop-blur-md"
+                    >
+                      <div className="w-8 h-8 rounded-full bg-[#D5B878]/20 border border-[#D5B878]/40 flex items-center justify-center text-[#ECCF96] mb-3">
+                        <Check className="w-4 h-4" />
+                      </div>
+                      <h4 className="font-serif text-base font-bold text-white mb-2 leading-snug">
+                        {pt.title}
+                      </h4>
+                      <p className="text-xs text-[#A6BAAD] leading-relaxed">
+                        {pt.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Compliance Badges Ribbon */}
+                <div className="pt-6 border-t border-[#D5B878]/20 flex flex-wrap items-center gap-2.5">
+                  <span className="text-[11px] text-[#ECCF96] font-semibold uppercase tracking-wider mr-2 font-sans">
+                    {isRu ? "Нормативная база:" : isEn ? "Compliance Framework:" : "Rechtliche Grundlagen:"}
+                  </span>
+                  {t.pharmacySection.complianceBadges.map((badge, idx) => (
+                    <span
+                      key={idx}
+                      className="px-3 py-1 rounded-full text-[11px] font-medium bg-[#123120] text-[#D4E0D7] border border-[#2D5A3D]"
+                    >
+                      {badge}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* ========================================================================= */}
         {/* SECTION 5: OUR APPROACH (Holistic Care for Every Stage of Life)           */}
         {/* ========================================================================= */}
         <section className="py-14 sm:py-20 bg-[#FAF9F5] border-t border-[#EAE3D5]">
@@ -1643,133 +2205,152 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* INTERACTIVE MODAL DIALOG FOR CARE SERVICES                                */}
+        {/* INTERACTIVE MODAL DIALOG FOR CARE & SANITÄTSHAUS SPECIFICATIONS          */}
         {/* ========================================================================= */}
-        {selectedService && (
+        {(selectedService || selectedSupplyModal) && (
           <div
             className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200"
-            onClick={() => setSelectedService(null)}
+            onClick={() => {
+              setSelectedService(null);
+              setSelectedSupplyModal(null);
+            }}
           >
-            <div
-              className="relative w-full max-w-3xl max-h-[92vh] overflow-y-auto rounded-3xl bg-[#FAF9F6] border border-[#E8DEC8] shadow-2xl p-6 sm:p-8 md:p-10 animate-in zoom-in-95 duration-200"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Close Button */}
-              <button
-                onClick={() => setSelectedService(null)}
-                aria-label="Modal schließen"
-                className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/80 border border-[#DECDB5] flex items-center justify-center text-[#1C261E] hover:bg-[#ECCF93]/30 transition-colors z-20 shadow-xs"
-              >
-                <X className="w-4 h-4" />
-              </button>
+            {(() => {
+              const activeModal = selectedService || selectedSupplyModal;
+              if (!activeModal) return null;
 
-              {/* Modal Header */}
-              <div className="mb-6 pr-8">
-                <div className="inline-block px-3 py-1 rounded-full bg-[#C5A56A]/15 border border-[#C5A56A]/30 text-[10px] sm:text-[11px] font-bold tracking-wider text-[#8D6B27] uppercase mb-2">
-                  {selectedService.badge}
-                </div>
-                <h2 className="font-serif text-2xl sm:text-3xl font-bold text-forest-950 leading-tight">
-                  {selectedService.modal.title}
-                </h2>
-                <p className="text-xs sm:text-sm text-[#8D6B27] font-medium mt-1">
-                  {selectedService.modal.subtitle}
-                </p>
-              </div>
-
-              {/* Hero Image in Modal */}
-              <div className="relative h-44 sm:h-52 w-full rounded-2xl overflow-hidden mb-6 shadow-inner border border-[#E8DEC8]">
-                <Image
-                  src={selectedService.image}
-                  alt={selectedService.modal.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              {/* Main Description */}
-              <div className="mb-6 p-4 sm:p-5 rounded-2xl bg-white border border-[#EAE4D7] text-xs sm:text-[13.5px] text-[#334237] leading-relaxed shadow-2xs">
-                {selectedService.modal.description}
-              </div>
-
-              {/* 2-Column Grid: Indications and Scope */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
-                <div className="p-5 rounded-2xl bg-white border border-[#EAE4D7] shadow-2xs space-y-3">
-                  <div className="flex items-center gap-2 text-[#8D6B27]">
-                    <Activity className="w-4 h-4 stroke-[2]" />
-                    <h3 className="font-serif font-bold text-sm sm:text-base text-forest-950">
-                      {selectedService.modal.indicationsTitle}
-                    </h3>
-                  </div>
-                  <ul className="space-y-2">
-                    {selectedService.modal.indications.map((ind, idx) => (
-                      <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-[13px] text-[#334237]">
-                        <Check className="w-3.5 h-3.5 text-[#C5A56A] shrink-0 mt-0.5" />
-                        <span>{ind}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="p-5 rounded-2xl bg-white border border-[#EAE4D7] shadow-2xs space-y-3">
-                  <div className="flex items-center gap-2 text-[#8D6B27]">
-                    <ShieldCheck className="w-4 h-4 stroke-[2]" />
-                    <h3 className="font-serif font-bold text-sm sm:text-base text-forest-950">
-                      {selectedService.modal.scopeTitle}
-                    </h3>
-                  </div>
-                  <ul className="space-y-2">
-                    {selectedService.modal.scopeItems.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-[13px] text-[#334237]">
-                        <Check className="w-3.5 h-3.5 text-[#C5A56A] shrink-0 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              {/* Billing & Regulatory Info */}
-              <div className="p-5 rounded-2xl bg-[#F8F5EE] border border-[#E5D7B7] space-y-2 mb-4">
-                <div className="flex items-center gap-2 text-[#8D6B27]">
-                  <FileText className="w-4 h-4 stroke-[2]" />
-                  <h3 className="font-serif font-bold text-sm sm:text-base text-forest-950">
-                    {selectedService.modal.billingTitle}
-                  </h3>
-                </div>
-                <p className="text-xs sm:text-[13px] text-[#3A4A3E] leading-relaxed">
-                  {selectedService.modal.billingText}
-                </p>
-              </div>
-
-              {/* Quality Standards */}
-              <div className="p-4 rounded-xl bg-white border border-[#EAE4D7] text-xs text-[#556358] leading-relaxed flex items-start gap-3 mb-6">
-                <Info className="w-4 h-4 text-[#C5A56A] shrink-0 mt-0.5" />
-                <div>
-                  <span className="font-semibold text-[#142318] block mb-0.5">
-                    {selectedService.modal.qualityTitle}:
-                  </span>
-                  {selectedService.modal.qualityText}
-                </div>
-              </div>
-
-              {/* Modal Footer CTA */}
-              <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-[#EAE4D7]">
-                <button
-                  onClick={() => setSelectedService(null)}
-                  className="px-5 py-2.5 rounded-full border border-[#D5B878] text-xs font-semibold text-[#142318] hover:bg-[#FAF5EE] transition-colors"
+              return (
+                <div
+                  className="relative w-full max-w-3xl max-h-[92vh] overflow-y-auto rounded-3xl bg-[#FAF9F6] border border-[#E8DEC8] shadow-2xl p-6 sm:p-8 md:p-10 animate-in zoom-in-95 duration-200"
+                  onClick={(e) => e.stopPropagation()}
                 >
-                  {isRu ? "Закрыть" : isEn ? "Close" : "Schließen"}
-                </button>
-                <Link
-                  href={`/${locale}/contact`}
-                  onClick={() => setSelectedService(null)}
-                  className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-gradient-to-r from-[#ECCF93] to-[#D4AF67] hover:from-[#F2DAB0] hover:to-[#DEBD7A] text-[#142217] font-semibold text-xs sm:text-sm tracking-wide shadow-md transition-all hover:scale-[1.01]"
-                >
-                  <span>{selectedService.modal.ctaButtonText}</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
+                  {/* Close Button */}
+                  <button
+                    onClick={() => {
+                      setSelectedService(null);
+                      setSelectedSupplyModal(null);
+                    }}
+                    aria-label="Modal schließen"
+                    className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/80 border border-[#DECDB5] flex items-center justify-center text-[#1C261E] hover:bg-[#ECCF93]/30 transition-colors z-20 shadow-xs cursor-pointer"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+
+                  {/* Modal Header */}
+                  <div className="mb-6 pr-8">
+                    <div className="inline-block px-3 py-1 rounded-full bg-[#C5A56A]/15 border border-[#C5A56A]/30 text-[10px] sm:text-[11px] font-bold tracking-wider text-[#8D6B27] uppercase mb-2">
+                      {activeModal.badge}
+                    </div>
+                    <h2 className="font-serif text-2xl sm:text-3xl font-bold text-forest-950 leading-tight">
+                      {activeModal.modal.title}
+                    </h2>
+                    <p className="text-xs sm:text-sm text-[#8D6B27] font-medium mt-1">
+                      {activeModal.modal.subtitle}
+                    </p>
+                  </div>
+
+                  {/* Hero Image in Modal */}
+                  <div className="relative h-44 sm:h-52 w-full rounded-2xl overflow-hidden mb-6 shadow-inner border border-[#E8DEC8]">
+                    <Image
+                      src={activeModal.image}
+                      alt={activeModal.modal.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+
+                  {/* Main Description */}
+                  <div className="mb-6 p-4 sm:p-5 rounded-2xl bg-white border border-[#EAE4D7] text-xs sm:text-[13.5px] text-[#334237] leading-relaxed shadow-2xs">
+                    {activeModal.modal.description}
+                  </div>
+
+                  {/* 2-Column Grid: Indications and Scope */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+                    <div className="p-5 rounded-2xl bg-white border border-[#EAE4D7] shadow-2xs space-y-3">
+                      <div className="flex items-center gap-2 text-[#8D6B27]">
+                        <Activity className="w-4 h-4 stroke-[2]" />
+                        <h3 className="font-serif font-bold text-sm sm:text-base text-forest-950">
+                          {activeModal.modal.indicationsTitle}
+                        </h3>
+                      </div>
+                      <ul className="space-y-2">
+                        {activeModal.modal.indications.map((ind, idx) => (
+                          <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-[13px] text-[#334237]">
+                            <Check className="w-3.5 h-3.5 text-[#C5A56A] shrink-0 mt-0.5" />
+                            <span>{ind}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="p-5 rounded-2xl bg-white border border-[#EAE4D7] shadow-2xs space-y-3">
+                      <div className="flex items-center gap-2 text-[#8D6B27]">
+                        <ShieldCheck className="w-4 h-4 stroke-[2]" />
+                        <h3 className="font-serif font-bold text-sm sm:text-base text-forest-950">
+                          {activeModal.modal.scopeTitle}
+                        </h3>
+                      </div>
+                      <ul className="space-y-2">
+                        {activeModal.modal.scopeItems.map((item, idx) => (
+                          <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-[13px] text-[#334237]">
+                            <Check className="w-3.5 h-3.5 text-[#C5A56A] shrink-0 mt-0.5" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Billing & Regulatory Info */}
+                  <div className="p-5 rounded-2xl bg-[#F8F5EE] border border-[#E5D7B7] space-y-2 mb-4">
+                    <div className="flex items-center gap-2 text-[#8D6B27]">
+                      <FileText className="w-4 h-4 stroke-[2]" />
+                      <h3 className="font-serif font-bold text-sm sm:text-base text-forest-950">
+                        {activeModal.modal.billingTitle}
+                      </h3>
+                    </div>
+                    <p className="text-xs sm:text-[13px] text-[#3A4A3E] leading-relaxed">
+                      {activeModal.modal.billingText}
+                    </p>
+                  </div>
+
+                  {/* Quality Standards */}
+                  <div className="p-4 rounded-xl bg-white border border-[#EAE4D7] text-xs text-[#556358] leading-relaxed flex items-start gap-3 mb-6">
+                    <Info className="w-4 h-4 text-[#C5A56A] shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-semibold text-[#142318] block mb-0.5">
+                        {activeModal.modal.qualityTitle}:
+                      </span>
+                      {activeModal.modal.qualityText}
+                    </div>
+                  </div>
+
+                  {/* Modal Footer CTA */}
+                  <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-[#EAE4D7]">
+                    <button
+                      onClick={() => {
+                        setSelectedService(null);
+                        setSelectedSupplyModal(null);
+                      }}
+                      className="px-5 py-2.5 rounded-full border border-[#D5B878] text-xs font-semibold text-[#142318] hover:bg-[#FAF5EE] transition-colors cursor-pointer"
+                    >
+                      {isRu ? "Закрыть" : isEn ? "Close" : "Schließen"}
+                    </button>
+                    <Link
+                      href={`/${locale}/contact`}
+                      onClick={() => {
+                        setSelectedService(null);
+                        setSelectedSupplyModal(null);
+                      }}
+                      className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-gradient-to-r from-[#ECCF93] to-[#D4AF67] hover:from-[#F2DAB0] hover:to-[#DEBD7A] text-[#142217] font-semibold text-xs sm:text-sm tracking-wide shadow-md transition-all hover:scale-[1.01]"
+                    >
+                      <span>{activeModal.modal.ctaButtonText}</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </div>
+              );
+            })()}
           </div>
         )}
       </main>

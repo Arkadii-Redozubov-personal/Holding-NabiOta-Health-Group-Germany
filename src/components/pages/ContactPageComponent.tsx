@@ -21,6 +21,13 @@ import {
   CheckCircle2,
   AlertCircle,
   ExternalLink,
+  ShieldCheck,
+  Building2,
+  Stethoscope,
+  HeartPulse,
+  Sparkles,
+  Layers,
+  Activity,
 } from "lucide-react";
 
 interface ContactPageComponentProps {
@@ -59,6 +66,10 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
         careerEmail: "Karriere:",
         hoursTitle: "Servicezeiten",
         hours: "Montag – Freitag: 08:00 – 18:00 Uhr",
+        registryTitle: "Holding & Handelsregister",
+        registryCourt: "Amtsgericht Mönchengladbach",
+        registryHrb: "Registernummer: HRB 16787",
+        registryCapital: "Stammkapital: 50.000 EUR",
       },
       form: {
         eyebrow: "NACHRICHT SENDEN",
@@ -75,10 +86,15 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
         companyPlaceholder: "Klinik / Gemeinschaftspraxis",
         subjectLabel: "BETREFF",
         subjects: [
-          "Allgemeine Anfrage",
-          "Bewerbung / Karriere",
-          "Kooperationsanfrage",
-          "Medizinische Leistungen",
+          "Allgemeine Anfrage (Holding Zentrale)",
+          "NabiOta MVZ (Hausärztliche & Chirurgische Versorgung)",
+          "NabiOta Diagnostics (3T MRT, CT, Röntgen, Labor)",
+          "NabiOta Rehabilitation & Therapy (Ambulante Reha)",
+          "NabiOta HomeCare (Ambulante Pflege & Wundzentrum)",
+          "NabiOta Sanitätshaus & Apotheke (§ 14 ApoG)",
+          "NabiOta Real Estate (Praxisflächen & Immobilien)",
+          "NabiOta Medical Recruitment (Fachkräfte & Karriere)",
+          "Partner- & Investorendialog (2-Phasen-Architektur)",
           "Sonstiges",
         ],
         messageLabel: "IHRE NACHRICHT *",
@@ -89,6 +105,27 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
         successMsg: "Vielen Dank! Ihre Nachricht wurde erfolgreich übermittelt.",
         errorRequired: "Bitte füllen Sie alle erforderlichen Pflichtfelder aus.",
         errorPrivacy: "Bitte stimmen Sie der Datenschutzerklärung zu.",
+      },
+      directory: {
+        eyebrow: "DIREKTKONTAKTE IM VERBUND",
+        title: "Fachabteilungen & Tochtergesellschaften",
+        desc: "Direkte Durchwahlen und spezialisierte Ansprechpartner für Patienten, Fachärzte, Kooperationspartner und Zuweiser.",
+        div1Title: "Zentren für ambulante & chirurgische Versorgung",
+        div1Desc: "NabiOta MVZ Hausärztlich-Internistisch & NabiOta MVZ Chirurgie und Anästhesiologie GmbH (§ 95 SGB V)",
+        div1Email: "mvz@nabiota-health-group.de",
+        div1Phone: "+49 2161 9170017",
+        div2Title: "High-Tech Diagnostik & Rehabilitation",
+        div2Desc: "NabiOta Diagnostics GmbH (3T MRT, CT, Röntgen, Labor) & NabiOta Rehabilitation & Therapy GmbH",
+        div2Email: "diagnostik@nabiota-health-group.de",
+        div2Phone: "+49 2161 9170016",
+        div3Title: "Häusliche Pflege, Sanitätshaus & Pharmazie",
+        div3Desc: "NabiOta HomeCare GmbH, NabiOta Sanitätshaus GmbH (§§ 126, 127 SGB V) & NabiOta Pharmacy (§ 14 ApoG)",
+        div3Email: "pflege@nabiota-health-group.de",
+        div3Phone: "+49 2161 9170019",
+        div4Title: "Holding-Management, Real Estate & Recruiting",
+        div4Desc: "NabiOta Health Group Zentrale, NabiOta Real Estate GmbH & Medical Recruitment Services GmbH",
+        div4Email: "holding@nabiota-health-group.de",
+        div4Phone: "+49 2161 9170018",
       },
       cards: {
         mapTitle: "NabiOta Health Group Germany GmbH",
@@ -119,6 +156,10 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
         careerEmail: "Careers:",
         hoursTitle: "Service Hours",
         hours: "Monday – Friday: 08:00 – 18:00 CET",
+        registryTitle: "Holding & Commercial Register",
+        registryCourt: "District Court Mönchengladbach",
+        registryHrb: "Registration Number: HRB 16787",
+        registryCapital: "Share Capital: 50,000 EUR",
       },
       form: {
         eyebrow: "SEND MESSAGE",
@@ -134,11 +175,16 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
         companyPlaceholder: "Clinic / Medical Practice",
         subjectLabel: "SUBJECT",
         subjects: [
-          "General Inquiry",
-          "Application / Career",
-          "Partnership Proposal",
-          "Medical Services",
-          "Other",
+          "General Inquiry (Holding Headquarters)",
+          "NabiOta MVZ (Primary & Surgical Outpatient Centers)",
+          "NabiOta Diagnostics (3T MRI, Low-Dose CT, Lab)",
+          "NabiOta Rehabilitation & Therapy (Outpatient Reha)",
+          "NabiOta HomeCare (Nursing Care & Wound Center)",
+          "NabiOta Medical Supplies & Pharmacy (§ 14 ApoG)",
+          "NabiOta Real Estate (Healthcare Properties)",
+          "NabiOta Medical Recruitment (Careers & Approbation)",
+          "Strategic Partnerships & Investors (2-Phase Model)",
+          "Other Inquiry",
         ],
         messageLabel: "YOUR MESSAGE *",
         messagePlaceholder: "How can we assist you?",
@@ -148,6 +194,27 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
         successMsg: "Thank you! Your inquiry has been submitted successfully.",
         errorRequired: "Please fill in all required fields.",
         errorPrivacy: "Please accept the privacy policy to proceed.",
+      },
+      directory: {
+        eyebrow: "DIRECT CONTACT DIRECTORY",
+        title: "Clinical Divisions & Group Subsidiaries",
+        desc: "Direct telephone numbers and specialist contact persons for patients, medical professionals, institutional partners, and referrers.",
+        div1Title: "Primary & Surgical Centers (MVZ)",
+        div1Desc: "NabiOta MVZ Primary Care & NabiOta MVZ Surgery and Anesthesiology GmbH (§ 95 SGB V)",
+        div1Email: "mvz@nabiota-health-group.de",
+        div1Phone: "+49 2161 9170017",
+        div2Title: "High-Tech Diagnostics & Rehabilitation",
+        div2Desc: "NabiOta Diagnostics GmbH (3T MRI, CT, X-Ray, Lab) & NabiOta Rehabilitation & Therapy GmbH",
+        div2Email: "diagnostik@nabiota-health-group.de",
+        div2Phone: "+49 2161 9170016",
+        div3Title: "HomeCare, Medical Supplies & Pharmacy",
+        div3Desc: "NabiOta HomeCare GmbH, NabiOta Sanitätshaus GmbH (§§ 126, 127 SGB V) & NabiOta Pharmacy (§ 14 ApoG)",
+        div3Email: "pflege@nabiota-health-group.de",
+        div3Phone: "+49 2161 9170019",
+        div4Title: "Holding Management, Real Estate & Staffing",
+        div4Desc: "NabiOta Health Group HQ, NabiOta Real Estate GmbH & Medical Recruitment Services GmbH",
+        div4Email: "holding@nabiota-health-group.de",
+        div4Phone: "+49 2161 9170018",
       },
       cards: {
         mapTitle: "NabiOta Health Group Germany GmbH",
@@ -178,6 +245,10 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
         careerEmail: "Отдел кадров / карьера:",
         hoursTitle: "Часы работы",
         hours: "Понедельник – Пятница: 08:00 – 18:00",
+        registryTitle: "Холдинг и торговый реестр",
+        registryCourt: "Участковый суд Менхенгладбаха",
+        registryHrb: "Регистрационный номер: HRB 16787",
+        registryCapital: "Уставный капитал: 50 000 EUR",
       },
       form: {
         eyebrow: "ОТПРАВИТЬ СООБЩЕНИЕ",
@@ -194,11 +265,16 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
         companyPlaceholder: "Клиника / Медцентр",
         subjectLabel: "ТЕМА ОБРАЩЕНИЯ",
         subjects: [
-          "Общий запрос",
-          "Карьера и вакансии",
-          "Сотрудничество и партнерство",
-          "Медицинские услуги",
-          "Другое",
+          "Общий запрос (Штаб-квартира холдинга)",
+          "NabiOta MVZ (Терапевтические и хирургические центры)",
+          "NabiOta Diagnostics (3T МРТ, КТ, лаборатория)",
+          "NabiOta Rehabilitation & Therapy (Амбулаторная реабилитация)",
+          "NabiOta HomeCare (Сестринский уход и центр ран)",
+          "NabiOta Sanitätshaus & Apotheke (Изделия и аптека)",
+          "NabiOta Real Estate (Медицинская недвижимость)",
+          "NabiOta Medical Recruitment (Карьера и апробация)",
+          "Партнерам и инвесторам (2-фазная модель)",
+          "Другой вопрос",
         ],
         messageLabel: "ВАШЕ СООБЩЕНИЕ *",
         messagePlaceholder: "Чем мы можем вам помочь?",
@@ -208,6 +284,27 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
         successMsg: "Спасибо! Ваше обращение успешно отправлено.",
         errorRequired: "Пожалуйста, заполните все обязательные поля.",
         errorPrivacy: "Необходимо согласиться с политикой конфиденциальности.",
+      },
+      directory: {
+        eyebrow: "ПРЯМЫЕ КОНТАКТЫ ПОДРАЗДЕЛЕНИЙ",
+        title: "Отделения и дочерние компании холдинга",
+        desc: "Прямые телефоны и специализированные контактные лица для пациентов, врачей, партнеров и направляющих клиник.",
+        div1Title: "Амбулаторные и хирургические центры (MVZ)",
+        div1Desc: "NabiOta MVZ терапевтическое и NabiOta MVZ хирургии и анестезиологии GmbH (§ 95 SGB V)",
+        div1Email: "mvz@nabiota-health-group.de",
+        div1Phone: "+49 2161 9170017",
+        div2Title: "Высокотехнологичная диагностика и реабилитация",
+        div2Desc: "NabiOta Diagnostics GmbH (3T МРТ, КТ, рентген, лаборатория) и NabiOta Rehabilitation & Therapy GmbH",
+        div2Email: "diagnostik@nabiota-health-group.de",
+        div2Phone: "+49 2161 9170016",
+        div3Title: "Патронаж, санитарный дом и аптека",
+        div3Desc: "NabiOta HomeCare GmbH, NabiOta Sanitätshaus GmbH (§§ 126, 127 SGB V) и NabiOta Pharmacy (§ 14 ApoG)",
+        div3Email: "pflege@nabiota-health-group.de",
+        div3Phone: "+49 2161 9170019",
+        div4Title: "Управление холдингом, недвижимость и рекрутинг",
+        div4Desc: "Штаб-квартира NabiOta Health Group, NabiOta Real Estate GmbH и Medical Recruitment Services GmbH",
+        div4Email: "holding@nabiota-health-group.de",
+        div4Phone: "+49 2161 9170018",
       },
       cards: {
         mapTitle: "NabiOta Health Group Germany GmbH",
@@ -474,6 +571,25 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
 
                   <div className="w-7 h-7 rounded-full border border-[#EDE7D9] group-hover:border-[#C5A56A] flex items-center justify-center text-[#C5A56A] flex-shrink-0">
                     <ChevronRight className="w-4 h-4" />
+                  </div>
+                </div>
+
+                {/* 5. Handelsregister & Holdingdaten (Page 1 PDF) */}
+                <div className="p-4 sm:p-4.5 rounded-2xl bg-[#FAF8F5] border border-[#E8DEC8] shadow-[0_2px_8px_rgba(0,0,0,0.02)] transition-all duration-200">
+                  <div className="flex items-start gap-3.5">
+                    <div className="w-10 h-10 rounded-full bg-white border border-[#E5D7B7] flex items-center justify-center text-[#C5A56A] flex-shrink-0 mt-0.5 shadow-2xs">
+                      <ShieldCheck className="w-5 h-5 stroke-[1.75]" />
+                    </div>
+                    <div>
+                      <h3 className="font-serif font-bold text-sm text-forest-950 leading-snug mb-1">
+                        {t.left.registryTitle}
+                      </h3>
+                      <div className="text-xs text-[#556057] space-y-0.5 font-sans">
+                        <p>{t.left.registryCourt}</p>
+                        <p>{t.left.registryHrb}</p>
+                        <p className="font-medium text-[#8D6B27]">{t.left.registryCapital}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -771,6 +887,124 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                   <span>{t.cards.qrBtn}</span>
                   <ExternalLink className="w-3.5 h-3.5 text-[#717A73]" />
                 </a>
+              </div>
+            </div>
+          </div>
+          {/* ══════════════════════════════════════════════════════════
+              SUBSIDIARY DIRECTORY (Holding Direktkontakte nach PDF)
+          ══════════════════════════════════════════════════════════ */}
+          <div className="mt-14 sm:mt-16 pt-12 border-t border-[#EAE3D5]">
+            <div className="max-w-2xl mb-8">
+              <span className="text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-1.5 font-sans">
+                {t.directory.eyebrow}
+              </span>
+              <h2 className="font-serif text-2xl sm:text-3xl text-forest-950 font-normal leading-tight mb-2">
+                {t.directory.title}
+              </h2>
+              <p className="text-xs sm:text-sm text-[#556057] leading-relaxed">
+                {t.directory.desc}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+              {/* Division 1: MVZ */}
+              <div className="p-5 rounded-2xl bg-white border border-[#EDE7D9] shadow-xs flex flex-col justify-between hover:border-[#C5A56A] hover:shadow-md transition-all">
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-[#FAF6EE] border border-[#E5D7B7] flex items-center justify-center text-[#C5A56A] mb-3.5">
+                    <Stethoscope className="w-5 h-5 stroke-[1.75]" />
+                  </div>
+                  <h3 className="font-serif font-bold text-sm text-forest-950 leading-snug mb-1.5">
+                    {t.directory.div1Title}
+                  </h3>
+                  <p className="text-[11.5px] text-[#556057] leading-relaxed mb-4">
+                    {t.directory.div1Desc}
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-[#F2ECE1] space-y-1 text-xs">
+                  <a href={`tel:${t.directory.div1Phone.replace(/\s+/g, "")}`} className="flex items-center gap-2 text-forest-950 font-medium hover:text-[#C5A56A] transition-colors">
+                    <Phone className="w-3.5 h-3.5 text-[#C5A56A]" />
+                    <span>{t.directory.div1Phone}</span>
+                  </a>
+                  <a href={`mailto:${t.directory.div1Email}`} className="flex items-center gap-2 text-[#7B867D] hover:text-forest-950 transition-colors">
+                    <Mail className="w-3.5 h-3.5 text-[#C5A56A]" />
+                    <span>{t.directory.div1Email}</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Division 2: Diagnostik & Reha */}
+              <div className="p-5 rounded-2xl bg-white border border-[#EDE7D9] shadow-xs flex flex-col justify-between hover:border-[#C5A56A] hover:shadow-md transition-all">
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-[#FAF6EE] border border-[#E5D7B7] flex items-center justify-center text-[#C5A56A] mb-3.5">
+                    <Activity className="w-5 h-5 stroke-[1.75]" />
+                  </div>
+                  <h3 className="font-serif font-bold text-sm text-forest-950 leading-snug mb-1.5">
+                    {t.directory.div2Title}
+                  </h3>
+                  <p className="text-[11.5px] text-[#556057] leading-relaxed mb-4">
+                    {t.directory.div2Desc}
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-[#F2ECE1] space-y-1 text-xs">
+                  <a href={`tel:${t.directory.div2Phone.replace(/\s+/g, "")}`} className="flex items-center gap-2 text-forest-950 font-medium hover:text-[#C5A56A] transition-colors">
+                    <Phone className="w-3.5 h-3.5 text-[#C5A56A]" />
+                    <span>{t.directory.div2Phone}</span>
+                  </a>
+                  <a href={`mailto:${t.directory.div2Email}`} className="flex items-center gap-2 text-[#7B867D] hover:text-forest-950 transition-colors">
+                    <Mail className="w-3.5 h-3.5 text-[#C5A56A]" />
+                    <span>{t.directory.div2Email}</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Division 3: HomeCare & Sanitätshaus */}
+              <div className="p-5 rounded-2xl bg-white border border-[#EDE7D9] shadow-xs flex flex-col justify-between hover:border-[#C5A56A] hover:shadow-md transition-all">
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-[#FAF6EE] border border-[#E5D7B7] flex items-center justify-center text-[#C5A56A] mb-3.5">
+                    <HeartPulse className="w-5 h-5 stroke-[1.75]" />
+                  </div>
+                  <h3 className="font-serif font-bold text-sm text-forest-950 leading-snug mb-1.5">
+                    {t.directory.div3Title}
+                  </h3>
+                  <p className="text-[11.5px] text-[#556057] leading-relaxed mb-4">
+                    {t.directory.div3Desc}
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-[#F2ECE1] space-y-1 text-xs">
+                  <a href={`tel:${t.directory.div3Phone.replace(/\s+/g, "")}`} className="flex items-center gap-2 text-forest-950 font-medium hover:text-[#C5A56A] transition-colors">
+                    <Phone className="w-3.5 h-3.5 text-[#C5A56A]" />
+                    <span>{t.directory.div3Phone}</span>
+                  </a>
+                  <a href={`mailto:${t.directory.div3Email}`} className="flex items-center gap-2 text-[#7B867D] hover:text-forest-950 transition-colors">
+                    <Mail className="w-3.5 h-3.5 text-[#C5A56A]" />
+                    <span>{t.directory.div3Email}</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Division 4: Holding Management */}
+              <div className="p-5 rounded-2xl bg-white border border-[#EDE7D9] shadow-xs flex flex-col justify-between hover:border-[#C5A56A] hover:shadow-md transition-all">
+                <div>
+                  <div className="w-10 h-10 rounded-xl bg-[#FAF6EE] border border-[#E5D7B7] flex items-center justify-center text-[#C5A56A] mb-3.5">
+                    <Building2 className="w-5 h-5 stroke-[1.75]" />
+                  </div>
+                  <h3 className="font-serif font-bold text-sm text-forest-950 leading-snug mb-1.5">
+                    {t.directory.div4Title}
+                  </h3>
+                  <p className="text-[11.5px] text-[#556057] leading-relaxed mb-4">
+                    {t.directory.div4Desc}
+                  </p>
+                </div>
+                <div className="pt-3 border-t border-[#F2ECE1] space-y-1 text-xs">
+                  <a href={`tel:${t.directory.div4Phone.replace(/\s+/g, "")}`} className="flex items-center gap-2 text-forest-950 font-medium hover:text-[#C5A56A] transition-colors">
+                    <Phone className="w-3.5 h-3.5 text-[#C5A56A]" />
+                    <span>{t.directory.div4Phone}</span>
+                  </a>
+                  <a href={`mailto:${t.directory.div4Email}`} className="flex items-center gap-2 text-[#7B867D] hover:text-forest-950 transition-colors">
+                    <Mail className="w-3.5 h-3.5 text-[#C5A56A]" />
+                    <span>{t.directory.div4Email}</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

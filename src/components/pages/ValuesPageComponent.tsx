@@ -18,6 +18,10 @@ import {
   Home,
   ArrowRight,
   Shield,
+  ShieldCheck,
+  Scale,
+  Lock,
+  CheckCircle2,
   Users,
   HeartHandshake,
   Sparkles,
@@ -130,6 +134,75 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
     val3Desc: isRu ? "Ответственность перед людьми, обществом и природой." : isEn ? "Accountability towards people, society, and the environment." : "Verantwortung für Mensch, Umwelt und Gesellschaft.",
     val4Title: isRu ? "Развитие команды" : isEn ? "People Development" : "People Development",
     val4Desc: isRu ? "Укрепление и поддержка наших специалистов." : isEn ? "Empowerment and advancement of our teams." : "Stärkung und Förderung unserer Teams.",
+
+    // Section 3B: Governance & Medical Ethics (PDF Section II & IV)
+    govEyebrow: isRu ? "КОМПЛАЕНС, КАЧЕСТВО И ВРАЧЕБНАЯ ЭТИКА" : isEn ? "COMPLIANCE, QUALITY & MEDICAL ETHICS" : "COMPLIANCE, QUALITÄT & MEDIZINISCHE ETHIK",
+    govHeading1: isRu ? "Врачебная независимость" : isEn ? "Physician Independence" : "Ärztliche Unabhängigkeit",
+    govHeading2: isRu ? "и ответственное управление." : isEn ? "& Responsible Governance." : "& verantwortungsvolle Governance.",
+    govSubtitle: isRu
+      ? "Как частный немецкий медицинский холдинг мы гарантируем безусловную врачебную свободу в соответствии с § 95 SGB V и объединяем её с высочайшими стандартами клинического качества, гигиены и защиты данных."
+      : isEn
+      ? "As an owner-managed German healthcare holding, we guarantee total clinical independence under § 95 SGB V and combine it with the highest standards of medical quality, hygiene, and data protection."
+      : "Als inhabergeführte Gesundheitsholding garantieren wir gemäß § 95 SGB V die uneingeschränkte ärztliche Therapiefreiheit unserer Mediziner und verbinden dies mit höchsten Standards für klinische Qualität, Hygiene und Patientensicherheit.",
+
+    govPillar1Tag: "§ 95 Abs. 1 SGB V",
+    govPillar1Title: isRu ? "Врачебная независимость и свобода терапии" : isEn ? "Physician Independence & Clinical Autonomy" : "Ärztliche Weisungsfreiheit & Therapiefreiheit",
+    govPillar1Desc: isRu
+      ? "Медицинское руководство и врачи принимают решения о диагностике, показаниях и лечении исключительно на основе врачебного искусства и блага пациента — без каких-либо коммерческих указаний руководства холдинга."
+      : isEn
+      ? "Clinical directors and attending physicians determine diagnostics, indications, and therapy solely according to medical expertise and patient welfare – free from economic directives of holding management."
+      : "Die medizinische Leitung und alle behandelnden Ärzte entscheiden über Diagnostik, Indikation und Therapie ausschließlich nach den Regeln der ärztlichen Kunst und dem Patientenwohl – frei von wirtschaftlichen Weisungen der Holding-Gesellschafter.",
+    govPillar1Points: [
+      isRu ? "Свободный выбор методов лечения" : isEn ? "Free choice of medical treatment" : "Freie Methodenwahl nach Berufsordnung",
+      isRu ? "Запрет коммерческих квот на процедуры" : isEn ? "No revenue quotas for medical decisions" : "Keine ökonomischen Fallzahl- oder Therapievorgaben",
+      isRu ? "Главный приоритет — благополучие пациента" : isEn ? "Absolute focus on patient welfare" : "Bedingungsloses Primat des Patientenwohls",
+    ],
+
+    govPillar2Tag: "DIN EN ISO 9001 & G-BA",
+    govPillar2Title: isRu ? "Клиническое качество и безопасность пациентов" : isEn ? "Clinical Quality & Patient Safety" : "Klinisches Qualitäts- & Risikomanagement",
+    govPillar2Desc: isRu
+      ? "Строгое следование директивам G-BA по контролю качества, непрерывная система сообщений об инцидентах CIRS, валидированные протоколы гигиены по институту Роберта Коха (RKI) и постоянный мониторинг оборудования."
+      : isEn
+      ? "Strict adherence to G-BA quality directives, active CIRS (Critical Incident Reporting), certified RKI-compliant hygiene protocols, and comprehensive radiation safety monitoring across all diagnostic facilities."
+      : "Strikte Einhaltung der G-BA-Qualitätsmanagement-Richtlinien, aktives CIRS-Fehlermeldesystem, validierte RKI-Hygienepläne und kontinuierliche Überwachung aller diagnostischen Großgeräte.",
+    govPillar2Points: [
+      isRu ? "Сертифицированная система менеджмента качества" : isEn ? "Certified clinical QM system" : "Zertifiziertes QM-System nach Bundesvorgaben",
+      isRu ? "Многоступенчатый гигиенический контроль RKI" : isEn ? "RKI-compliant multi-stage hygiene management" : "RKI-konformes Hygienemanagement & Begehungen",
+      isRu ? "Регулярный аудит и контроль безопасности" : isEn ? "Regular medical device safety inspections" : "Regelmäßige MPG- und Strahlenschutz-Audits",
+    ],
+
+    govPillar3Tag: "§ 203 StGB & DSGVO Art. 9",
+    govPillar3Title: isRu ? "Врачебная тайна и защита персональных данных" : isEn ? "Medical Confidentiality & Data Privacy" : "Ärztliche Schweigepflicht & Datenschutz",
+    govPillar3Desc: isRu
+      ? "Бескомпромиссная защита медицинских данных через шифрованную немецкую телематическую инфраструктуру (TI), строгое разделение административной части холдинга и медицинских карт пациентов."
+      : isEn
+      ? "Uncompromising protection of health data through end-to-end encrypted Telematics Infrastructure (TI), strict physical and digital segregation of holding administration and patient charts."
+      : "Strengster Schutz hochsensibler Patientendaten über die zertifizierte Telematikinfrastruktur (TI), strikte Trennung von Holding-Administration und medizinischen Patientenakten sowie bedingungslose Wahrung der Schweigepflicht.",
+    govPillar3Points: [
+      isRu ? "Полная изоляция клинических карт от холдинга" : isEn ? "Total clinical data isolation from corporate ops" : "Strikte Trennung von Verwaltungs- und Patientendaten",
+      isRu ? "Защищенное подключение к Telematikinfrastruktur" : isEn ? "Certified Telematics Infrastructure connection" : "Zertifizierter Konnektor- und TI-Datenschutz",
+      isRu ? "100% соответствие европейскому регламенту GDPR" : isEn ? "Full compliance with GDPR Art. 9" : "DSGVO-konforme Patientenportale und Archive",
+    ],
+
+    govPillar4Tag: "KV Nordrhein & Kassen",
+    govPillar4Title: isRu ? "Партнерство с государственными и частными кассами" : isEn ? "Statutory & Private Healthcare Integration" : "Partnerschaftliche Versorgung im Rheinland",
+    govPillar4Desc: isRu
+      ? "Надежная интеграция в государственную систему здравоохранения Германии, тесное сотрудничество с Kassenärztliche Vereinigung Nordrhein (KVNO), всеми больничными кассами (GKV/PKV) и региональными клиниками."
+      : isEn
+      ? "Reliable integration into Germany's public healthcare framework, close coordination with the Association of Statutory Health Insurance Physicians (KVNO), health insurers, and regional hospitals."
+      : "Feste Verwurzelung im öffentlichen Gesundheitssystem über die Kassenärztliche Vereinigung Nordrhein (KVNO), kooperative Verträge mit allen gesetzlichen und privaten Kassen sowie regionale Klinikverbünde.",
+    govPillar4Points: [
+      isRu ? "Прием пациентов всех страховых касс (GKV & PKV)" : isEn ? "Full coverage for all statutory & private patients" : "Volle Kassenzulassung für gesetzlich & privat Versicherte",
+      isRu ? "Договоры интегрированной помощи по § 140a SGB V" : isEn ? "Integrated care contracts under § 140a SGB V" : "Integrierte Versorgungskonzepte (§ 140a SGB V)",
+      isRu ? "Координация с ведущими клиниками региона" : isEn ? "Close coordination with regional university hospitals" : "Enge Kooperation mit regionalen Schwerpunktkliniken",
+    ],
+
+    govBannerTitle: isRu ? "Ответственность перед будущими поколениями" : isEn ? "Responsibility for Future Generations" : "Verantwortung für die Zukunft der Medizin",
+    govBannerDesc: isRu
+      ? "Мы объединяем медицинские традиции немецкого врачебного сообщества с технологическими инновациями и устойчивым инвестированием в здоровье общества."
+      : isEn
+      ? "We unite the medical traditions of the German healthcare profession with state-of-the-art clinical innovation and sustainable community investment."
+      : "Wir verbinden die bewährten Traditionen des deutschen Berufsbeamtentums und der ärztlichen Standesethik mit modernsten Technologien und nachhaltiger regionaler Wertschöpfung.",
 
     // Section 4: Areas / Divisions Section
     areasEyebrow: isRu ? "НАШИ НАПРАВЛЕНИЯ" : isEn ? "OUR DIVISIONS" : "UNSERE BEREICHE",
@@ -531,6 +604,171 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
                     </p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* ══════════════════════════════════════════════════════════
+            SECTION 3B: GOVERNANCE & ÄRZTLICHE ETHIK (PDF Section II & IV)
+        ══════════════════════════════════════════════════════════ */}
+        <section className="py-16 sm:py-20 lg:py-24 bg-[#FAF7F2] border-b border-[#E8DFD0] relative overflow-hidden">
+          {/* Subtle ambient blur */}
+          <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#EBDDC0]/25 blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-[#D5B878]/15 blur-3xl pointer-events-none" />
+
+          <Container size="wide" className="relative z-10">
+            {/* Section Header */}
+            <div className="max-w-3xl mb-12 sm:mb-14">
+              <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase mb-2 block">
+                {t.govEyebrow}
+              </span>
+              <h2 className="font-serif text-[30px] sm:text-[36px] lg:text-[42px] font-normal leading-[1.15] text-[#142318] mb-4">
+                {t.govHeading1}{" "}
+                <span className="italic text-[#8B7347]">{t.govHeading2}</span>
+              </h2>
+              <p className="text-[13.5px] sm:text-[14.5px] text-[#555E56] leading-relaxed font-sans">
+                {t.govSubtitle}
+              </p>
+            </div>
+
+            {/* 4 Pillars Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-7 mb-12">
+              {/* Pillar 1: Weisungsfreiheit § 95 SGB V */}
+              <div className="bg-white/95 rounded-2xl sm:rounded-3xl p-6 sm:p-7 border border-[#E7DFD2] shadow-sm hover:shadow-md transition-all duration-300 hover:border-[#D5B878]/70 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between gap-3 mb-4">
+                    <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10.5px] font-bold tracking-wider uppercase bg-[#F3EDE2] text-[#8B7347] border border-[#D5B878]/40">
+                      {t.govPillar1Tag}
+                    </span>
+                    <div className="w-10 h-10 rounded-full border border-[#D5B878]/50 bg-[#FAF7F2] flex items-center justify-center text-[#B89650]">
+                      <Scale className="w-5 h-5 stroke-[1.8]" />
+                    </div>
+                  </div>
+                  <h3 className="font-serif text-lg sm:text-xl font-bold text-[#142318] mb-2 leading-snug">
+                    {t.govPillar1Title}
+                  </h3>
+                  <p className="text-[13px] sm:text-[13.5px] text-[#555E56] leading-relaxed mb-4">
+                    {t.govPillar1Desc}
+                  </p>
+                </div>
+                <div className="pt-3.5 border-t border-[#F0EBE1] space-y-2">
+                  {t.govPillar1Points.map((point: string, idx: number) => (
+                    <div key={idx} className="flex items-start gap-2 text-[12px] sm:text-[12.5px] text-[#2C3E31] font-medium">
+                      <CheckCircle2 className="w-4 h-4 text-[#8B7347] flex-shrink-0 mt-0.5" />
+                      <span>{point}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Pillar 2: QM & Patientensicherheit */}
+              <div className="bg-white/95 rounded-2xl sm:rounded-3xl p-6 sm:p-7 border border-[#E7DFD2] shadow-sm hover:shadow-md transition-all duration-300 hover:border-[#D5B878]/70 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between gap-3 mb-4">
+                    <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10.5px] font-bold tracking-wider uppercase bg-[#F3EDE2] text-[#8B7347] border border-[#D5B878]/40">
+                      {t.govPillar2Tag}
+                    </span>
+                    <div className="w-10 h-10 rounded-full border border-[#D5B878]/50 bg-[#FAF7F2] flex items-center justify-center text-[#B89650]">
+                      <ShieldCheck className="w-5 h-5 stroke-[1.8]" />
+                    </div>
+                  </div>
+                  <h3 className="font-serif text-lg sm:text-xl font-bold text-[#142318] mb-2 leading-snug">
+                    {t.govPillar2Title}
+                  </h3>
+                  <p className="text-[13px] sm:text-[13.5px] text-[#555E56] leading-relaxed mb-4">
+                    {t.govPillar2Desc}
+                  </p>
+                </div>
+                <div className="pt-3.5 border-t border-[#F0EBE1] space-y-2">
+                  {t.govPillar2Points.map((point: string, idx: number) => (
+                    <div key={idx} className="flex items-start gap-2 text-[12px] sm:text-[12.5px] text-[#2C3E31] font-medium">
+                      <CheckCircle2 className="w-4 h-4 text-[#8B7347] flex-shrink-0 mt-0.5" />
+                      <span>{point}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Pillar 3: Schweigepflicht & Datenschutz */}
+              <div className="bg-white/95 rounded-2xl sm:rounded-3xl p-6 sm:p-7 border border-[#E7DFD2] shadow-sm hover:shadow-md transition-all duration-300 hover:border-[#D5B878]/70 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between gap-3 mb-4">
+                    <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10.5px] font-bold tracking-wider uppercase bg-[#F3EDE2] text-[#8B7347] border border-[#D5B878]/40">
+                      {t.govPillar3Tag}
+                    </span>
+                    <div className="w-10 h-10 rounded-full border border-[#D5B878]/50 bg-[#FAF7F2] flex items-center justify-center text-[#B89650]">
+                      <Lock className="w-5 h-5 stroke-[1.8]" />
+                    </div>
+                  </div>
+                  <h3 className="font-serif text-lg sm:text-xl font-bold text-[#142318] mb-2 leading-snug">
+                    {t.govPillar3Title}
+                  </h3>
+                  <p className="text-[13px] sm:text-[13.5px] text-[#555E56] leading-relaxed mb-4">
+                    {t.govPillar3Desc}
+                  </p>
+                </div>
+                <div className="pt-3.5 border-t border-[#F0EBE1] space-y-2">
+                  {t.govPillar3Points.map((point: string, idx: number) => (
+                    <div key={idx} className="flex items-start gap-2 text-[12px] sm:text-[12.5px] text-[#2C3E31] font-medium">
+                      <CheckCircle2 className="w-4 h-4 text-[#8B7347] flex-shrink-0 mt-0.5" />
+                      <span>{point}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Pillar 4: Kassen & KVNO Partnerschaft */}
+              <div className="bg-white/95 rounded-2xl sm:rounded-3xl p-6 sm:p-7 border border-[#E7DFD2] shadow-sm hover:shadow-md transition-all duration-300 hover:border-[#D5B878]/70 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between gap-3 mb-4">
+                    <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10.5px] font-bold tracking-wider uppercase bg-[#F3EDE2] text-[#8B7347] border border-[#D5B878]/40">
+                      {t.govPillar4Tag}
+                    </span>
+                    <div className="w-10 h-10 rounded-full border border-[#D5B878]/50 bg-[#FAF7F2] flex items-center justify-center text-[#B89650]">
+                      <HeartHandshake className="w-5 h-5 stroke-[1.8]" />
+                    </div>
+                  </div>
+                  <h3 className="font-serif text-lg sm:text-xl font-bold text-[#142318] mb-2 leading-snug">
+                    {t.govPillar4Title}
+                  </h3>
+                  <p className="text-[13px] sm:text-[13.5px] text-[#555E56] leading-relaxed mb-4">
+                    {t.govPillar4Desc}
+                  </p>
+                </div>
+                <div className="pt-3.5 border-t border-[#F0EBE1] space-y-2">
+                  {t.govPillar4Points.map((point: string, idx: number) => (
+                    <div key={idx} className="flex items-start gap-2 text-[12px] sm:text-[12.5px] text-[#2C3E31] font-medium">
+                      <CheckCircle2 className="w-4 h-4 text-[#8B7347] flex-shrink-0 mt-0.5" />
+                      <span>{point}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Governance Callout Banner */}
+            <div className="bg-gradient-to-r from-[#07160D] via-[#0D2618] to-[#07160D] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 border border-[#D5B878]/30 shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+              <div className="max-w-2xl">
+                <div className="flex items-center gap-2 text-[#ECCF96] text-xs font-bold uppercase tracking-wider mb-2">
+                  <ShieldCheck className="w-4 h-4 stroke-[2]" />
+                  <span>NabiOta® Holding Governance Standard</span>
+                </div>
+                <h3 className="font-serif text-xl sm:text-2xl text-white font-normal mb-2 leading-snug">
+                  {t.govBannerTitle}
+                </h3>
+                <p className="text-xs sm:text-sm text-[#C2D2C5] leading-relaxed">
+                  {t.govBannerDesc}
+                </p>
+              </div>
+              <div className="flex-shrink-0 flex items-center">
+                <Link
+                  href={`/${locale}/contact`}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#ECCF96] text-[#07160D] font-medium text-xs uppercase tracking-wider hover:bg-white transition-colors duration-200 shadow-md"
+                >
+                  <span>{isRu ? "Связаться с руководством" : isEn ? "Contact Management" : "Kontakt zur Geschäftsführung"}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             </div>
           </Container>
