@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
-import { ChevronRight, ArrowRight } from "lucide-react";
+import { ChevronRight, ArrowRight, Users, Building2, CheckCircle2 } from "lucide-react";
 import { SupportedLocale } from "@/lib/i18n";
 
 interface AboutPageComponentProps {
@@ -659,9 +659,11 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
 
         {/* ══════════════════════════════════════════════════════════
             SECTION 2: ORGANIZATIONAL STRUCTURE (NabiOta® Health Group Germany GmbH)
+            - Background: photo1.webp
+            - Design strictly matching Photo 3
         ══════════════════════════════════════════════════════════ */}
-        <section className="relative py-14 sm:py-18 lg:py-20 border-b border-[#ECE7DC] overflow-hidden bg-[#FAF8F4]">
-          {/* Background: photo1.png from public/images/about/ */}
+        <section className="relative py-14 sm:py-18 lg:py-22 border-b border-[#ECE7DC] overflow-hidden bg-[#FAF8F4]">
+          {/* Background: photo1.webp with full framing */}
           <div className="absolute inset-0 z-0 pointer-events-none">
             <Image
               src="/images/about/photo1.webp"
@@ -669,14 +671,14 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
               fill
               priority
               sizes="100vw"
-              className="object-cover object-center"
+              className="w-full h-full object-fill object-center"
             />
           </div>
 
           <Container size="wide" className="relative z-10">
             {/* Header */}
             <div className="text-center max-w-xl mx-auto mb-7">
-              <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-1.5">
+              <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-1.5 font-sans">
                 {t.orgEyebrow}
               </span>
               <h2 className="font-serif text-[32px] sm:text-[38px] lg:text-[42px] font-normal text-[#142318] leading-[1.15]">
@@ -684,20 +686,20 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
               </h2>
             </div>
 
-            {/* Holding Top Badge matching Page 1 PDF */}
+            {/* Holding Top Badge matching Photo 3 */}
             <div className="flex justify-center mb-0">
-              <div className="inline-flex items-center gap-4 bg-[#0B1E13] text-white px-6 sm:px-8 py-4 rounded-2xl border border-[#D5B878]/70 shadow-xl text-left">
-                <div className="w-13 h-13 rounded-full border border-[#D5B878] bg-[#142A1D]/60 flex items-center justify-center text-[#ECCF96] flex-shrink-0 shadow-[0_0_12px_rgba(213,184,120,0.25)]">
+              <div className="inline-flex items-center gap-4 bg-[#0B1E13] text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl border border-[#D5B878]/70 shadow-xl text-left">
+                <div className="w-12 h-12 rounded-full border border-[#D5B878] bg-[#142A1D]/60 flex items-center justify-center text-[#ECCF96] flex-shrink-0 shadow-[0_0_12px_rgba(213,184,120,0.25)]">
                   <BuildingStatsIcon className="w-6 h-6 stroke-[1.6]" />
                 </div>
                 <div>
-                  <span className="text-[10px] font-bold tracking-[0.24em] text-[#DEC085] uppercase block mb-0.5">
+                  <span className="text-[9.5px] sm:text-[10px] font-bold tracking-[0.24em] text-[#DEC085] uppercase block mb-0.5 font-sans">
                     {t.holdingBadge}
                   </span>
-                  <h3 className="font-serif text-[18px] sm:text-[20px] font-medium text-white tracking-wide">
+                  <h3 className="font-serif text-[17px] sm:text-[19px] font-medium text-white tracking-wide">
                     “NabiOta” Health Group Germany GmbH
                   </h3>
-                  <p className="text-[11.5px] text-[#A7B8AD] mt-0.5">
+                  <p className="text-[11px] sm:text-[11.5px] text-[#A7B8AD] mt-0.5 font-sans">
                     {isRu ? "Холдинг / Концерн • Мёнхенгладбах" : isEn ? "Holding / Group • Mönchengladbach" : "Holding / Konzern • Mönchengladbach"}
                   </p>
                 </div>
@@ -719,140 +721,222 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             </div>
 
             {/* 3 Pillars Grid with 3 vertically stacked connected cards each */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto mt-6 lg:mt-0">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-7 max-w-6xl mx-auto mt-6 lg:mt-0">
               {organigramColumns.map((col, cIdx) => (
                 <div key={cIdx} className="flex flex-col space-y-4 relative">
-                  {/* Pillar Column Header */}
+                  {/* Pillar Column Header matching Photo 3 */}
                   <div className="text-center pb-1">
-                    <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#A07D3E] font-sans">
-                      {col.colTitle}
+                    <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.14em] uppercase text-[#A07D3E] font-sans whitespace-nowrap inline-flex items-center justify-center gap-1.5">
+                      <span>—</span>
+                      <span>{col.colTitle}</span>
+                      <span>—</span>
                     </span>
                   </div>
 
                   {col.items.map((item, rIdx) => {
                     const IconComp = item.icon;
                     return (
-                      <React.Fragment key={rIdx}>
-                        {rIdx > 0 && (
-                          <div className="hidden lg:flex justify-center -my-2 py-1">
-                            <div className="w-[1.5px] h-4 bg-[#D5B878]/70" />
-                          </div>
-                        )}
-                        <Link
-                          href={item.href}
-                          className="group bg-white rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878] p-5 flex flex-col justify-between shadow-[0_2px_6px_rgba(0,0,0,0.02)] hover:shadow-lg transition-all hover:-translate-y-0.5"
-                        >
-                          <div className="flex items-start gap-3.5 mb-2.5">
-                            <div className="w-11 h-11 rounded-full border border-[#D5B878] bg-[#FCFAF6] flex items-center justify-center text-[#B89650] flex-shrink-0 shadow-[0_0_8px_rgba(213,184,120,0.12)] group-hover:scale-105 group-hover:border-[#B89650] group-hover:bg-[#B89650]/10 transition-all">
-                              <IconComp className="w-5.5 h-5.5 stroke-[1.6]" />
+                      <Link
+                        key={rIdx}
+                        href={item.href}
+                        className="group bg-white/95 backdrop-blur-xs rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878] p-4 sm:p-5 flex flex-col justify-between shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-lg transition-all hover:-translate-y-0.5"
+                      >
+                        <div>
+                          {/* Top row: Icon on left, Badge on right */}
+                          <div className="flex items-center justify-between gap-2 mb-3">
+                            <div className="w-10 h-10 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0 group-hover:bg-[#D5B878]/15 group-hover:border-[#D5B878] group-hover:text-[#8C6D2B] transition-colors">
+                              <IconComp className="w-5 h-5 stroke-[1.6]" />
                             </div>
-                            <div className="flex-1 min-w-0">
-                              <div className="flex items-center justify-between gap-2">
-                                <span className="inline-block text-[10px] font-bold uppercase tracking-wider text-[#A07D3E] bg-[#FAF5EB] px-2 py-0.5 rounded border border-[#EADBBD]">
-                                  {item.badge}
-                                </span>
-                              </div>
-                              <h4 className="font-serif font-bold text-[15px] sm:text-[16px] text-[#142318] leading-snug group-hover:text-[#BFA267] transition-colors mt-1">
-                                {item.name}
-                              </h4>
-                            </div>
+                            <span className="inline-block text-[9.5px] font-bold uppercase tracking-wider text-[#8C6D2B] bg-[#FAF5EB] px-2.5 py-0.5 rounded-full border border-[#EADBBD]">
+                              {item.badge}
+                            </span>
                           </div>
-                          <p className="text-[12px] sm:text-[12.5px] text-[#556057] leading-relaxed">
+
+                          {/* Title */}
+                          <h4 className="font-serif font-bold text-[15px] sm:text-[16px] text-[#142318] leading-snug group-hover:text-[#B89650] transition-colors mb-2">
+                            {item.name}
+                          </h4>
+
+                          {/* Description */}
+                          <p className="text-[11.5px] sm:text-[12px] text-[#556057] leading-relaxed font-sans">
                             {item.sub}
                           </p>
-                        </Link>
-                      </React.Fragment>
+                        </div>
+
+                        {/* Bottom-right corner arrow button matching Photo 3 */}
+                        <div className="pt-2 mt-2 flex justify-end">
+                          <div className="w-7 h-7 rounded-full border border-[#DCD5C6] bg-[#FAF8F5] group-hover:border-[#C5A56A] group-hover:bg-[#C5A56A] group-hover:text-white text-[#B89650] flex items-center justify-center transition-all shadow-xs">
+                            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                          </div>
+                        </div>
+                      </Link>
                     );
                   })}
                 </div>
               ))}
             </div>
+          </Container>
+        </section>
 
-            {/* ── Two-Phase Strategy & Governance Cards from PDF (Pages 2-4) ── */}
-            <div className="mt-12 sm:mt-16 pt-10 sm:pt-12 border-t border-[#EDE7DC] max-w-6xl mx-auto">
-              <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
-                <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-1.5">
-                  {t.twoPhaseEyebrow}
-                </span>
-                <h3 className="font-serif text-[26px] sm:text-[32px] font-normal text-[#142318] leading-[1.2]">
-                  {t.twoPhaseTitle}
-                </h3>
-                <p className="text-[13px] sm:text-[14px] text-[#556057] mt-2 leading-relaxed">
-                  {t.twoPhaseDesc}
-                </p>
-              </div>
+        {/* ══════════════════════════════════════════════════════════
+            SECTION 3: STRATEGIC DEVELOPMENT (Two-Phase Structure)
+            - Background: photo2.webp
+            - Design strictly matching Photo 4
+        ══════════════════════════════════════════════════════════ */}
+        <section className="relative py-14 sm:py-18 lg:py-22 border-b border-[#ECE7DC] overflow-hidden bg-[#FAF6EE]">
+          {/* Background: photo2.webp with full framing */}
+          <div className="absolute inset-0 z-0 pointer-events-none">
+            <Image
+              src="/images/about/photo2.webp"
+              alt="Two-Phase Strategy Background"
+              fill
+              priority
+              sizes="100vw"
+              className="w-full h-full object-fill object-center"
+            />
+          </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-                {/* Phase 1 & Phase 2 Card */}
-                <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#EDE8DE] shadow-[0_2px_8px_rgba(0,0,0,0.02)] space-y-5">
-                  <div className="flex items-center gap-3 text-[#142318]">
-                    <div className="w-10 h-10 rounded-full bg-[#FAF5EB] text-[#B89650] flex items-center justify-center flex-shrink-0">
-                      <TargetIcon className="w-5 h-5 stroke-[1.6]" />
+          <Container size="wide" className="relative z-10">
+            {/* Header matching Photo 4 */}
+            <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+              <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-1.5 font-sans">
+                {t.twoPhaseEyebrow}
+              </span>
+              <h3 className="font-serif text-[28px] sm:text-[34px] lg:text-[40px] font-normal text-[#142318] leading-[1.18]">
+                {t.twoPhaseTitle}
+              </h3>
+              <p className="text-xs sm:text-[13.5px] text-[#556057] mt-2.5 leading-relaxed font-sans max-w-xl mx-auto">
+                {t.twoPhaseDesc}
+              </p>
+            </div>
+
+            {/* 2 Big Cards side by side matching Photo 4 */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
+              {/* Card 1: Phase 1 */}
+              <div className="bg-white/95 backdrop-blur-xs rounded-3xl p-6 sm:p-8 border border-[#EAE4D7] shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                <div>
+                  {/* Top row: Number circle + Title + Icon circle */}
+                  <div className="flex items-center gap-3.5 sm:gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-[#0E2718] text-white font-serif text-2xl font-normal flex items-center justify-center shrink-0 shadow-sm">
+                      1
                     </div>
-                    <h4 className="font-serif text-lg font-bold text-[#142318]">
-                      {isRu ? "Двухфазная модель участия" : isEn ? "Two-Phase Participation Model" : "Zwei-Phasen-Beteiligungsstruktur"}
+                    <h4 className="font-serif text-[17px] sm:text-[19px] font-bold text-[#142318] leading-snug">
+                      {t.phase1Title}
                     </h4>
-                  </div>
-
-                  <div className="space-y-4 pt-1">
-                    <div className="p-4 rounded-xl bg-[#FAF8F5] border border-[#EBE4D8] space-y-1.5">
-                      <div className="text-xs font-bold text-[#A07D3E] uppercase tracking-wider">
-                        {t.phase1Title}
-                      </div>
-                      <p className="text-xs sm:text-[12.5px] text-[#4E5650] leading-relaxed">
-                        {t.phase1Desc}
-                      </p>
-                    </div>
-
-                    <div className="p-4 rounded-xl bg-[#FAF8F5] border border-[#EBE4D8] space-y-1.5">
-                      <div className="text-xs font-bold text-[#A07D3E] uppercase tracking-wider">
-                        {t.phase2Title}
-                      </div>
-                      <p className="text-xs sm:text-[12.5px] text-[#4E5650] leading-relaxed">
-                        {t.phase2Desc}
-                      </p>
+                    <div className="w-12 h-12 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0 ml-auto">
+                      <Users className="w-6 h-6 stroke-[1.6]" />
                     </div>
                   </div>
+
+                  {/* Paragraph */}
+                  <p className="text-xs sm:text-[13px] text-[#4E5650] leading-relaxed font-sans mb-5">
+                    {t.phase1Desc}
+                  </p>
                 </div>
 
-                {/* Medical Autonomy & Governance Card */}
-                <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#EDE8DE] shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex flex-col justify-between space-y-5">
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3 text-[#142318]">
-                      <div className="w-10 h-10 rounded-full bg-[#FAF5EB] text-[#B89650] flex items-center justify-center flex-shrink-0">
-                        <ShieldIcon className="w-5 h-5 stroke-[1.6]" />
-                      </div>
-                      <h4 className="font-serif text-lg font-bold text-[#142318]">
-                        {t.independenceTitle}
-                      </h4>
+                {/* Inner Panel */}
+                <div className="p-4 sm:p-5 rounded-2xl bg-[#F5F2EA]/90 border border-[#EAE4D7] flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <CheckCircle2 className="w-4.5 h-4.5 text-[#B89650] shrink-0" />
+                      <span className="text-xs sm:text-[13px] font-bold text-[#142318]">
+                        {isRu ? "Ключевые активности в Фазе 1" : isEn ? "Key Activities in Phase 1" : "Zentrale Aktivitäten in Phase 1"}
+                      </span>
                     </div>
+                    <ul className="space-y-2 text-xs sm:text-[12.5px] text-[#4E5650] font-sans pl-1">
+                      <li className="flex items-start gap-2">
+                        <span className="text-[#142318] font-bold">•</span>
+                        <span>{isRu ? "Формирование и запуск структуры MVZ" : isEn ? "Establishment of the MVZ structure" : "Aufbau der MVZ-Struktur"}</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[#142318] font-bold">•</span>
+                        <span>{isRu ? "Участие д-ра Фишер-Рахимова как врача-учредителя" : isEn ? "Founding equity of Dr. Fischer-Rahimov" : "Beteiligung von Dr. Fischer-Rahimov"}</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[#142318] font-bold">•</span>
+                        <span>{isRu ? "Подготовка дальнейших дочерних обществ" : isEn ? "Preparation of additional subsidiaries" : "Vorbereitung weiterer Beteiligungen"}</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="flex justify-end pt-3">
+                    <Link
+                      href={`/${locale}/contact`}
+                      aria-label="Phase 1 details"
+                      className="w-7 h-7 rounded-full border border-[#D1C9B8] bg-white text-[#7A6843] hover:border-[#D5B878] hover:bg-[#D5B878] hover:text-[#0C1C11] flex items-center justify-center transition-all shadow-xs"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
 
-                    <p className="text-xs sm:text-[13px] text-[#4E5650] leading-relaxed pt-1">
-                      {t.independenceDesc}
-                    </p>
-
-                    <div className="p-4 rounded-xl bg-[#FAF8F5] border border-[#EBE4D8] space-y-2">
-                      <div className="text-xs font-bold text-[#142318]">
-                        {isRu ? "Ключевые принципы взаимодействия:" : isEn ? "Core Governance Principles:" : "Zentrale Governance-Prinzipien:"}
-                      </div>
-                      <ul className="text-xs text-[#556057] space-y-1.5 list-disc list-inside">
-                        <li>{isRu ? "Строгая врачебная тайна и защита данных пациентов (DSGVO)" : isEn ? "Strict medical confidentiality & GDPR compliance" : "Ärztliche Schweigepflicht & strenger Datenschutz (DSGVO)"}</li>
-                        <li>{isRu ? "Централизованное IT-, финансовое и маркетинговое управление" : isEn ? "Centralized management: IT, Finance, Purchasing, Marketing" : "Zentrales Management: IT, Finanzen, Einkauf & Marketing"}</li>
-                        <li>{isRu ? "Сертификация по стандартам ISO и регулярный внутренний аудит" : isEn ? "ISO-certified quality assurance & continuous clinical audit" : "Qualitätsmanagement nach DIN EN ISO & Patientensicherheit"}</li>
-                      </ul>
+              {/* Card 2: Phase 2 */}
+              <div className="bg-white/95 backdrop-blur-xs rounded-3xl p-6 sm:p-8 border border-[#EAE4D7] shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                <div>
+                  {/* Top row: Number circle + Title + Icon circle */}
+                  <div className="flex items-center gap-3.5 sm:gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-[#0E2718] text-white font-serif text-2xl font-normal flex items-center justify-center shrink-0 shadow-sm">
+                      2
+                    </div>
+                    <h4 className="font-serif text-[17px] sm:text-[19px] font-bold text-[#142318] leading-snug">
+                      {t.phase2Title}
+                    </h4>
+                    <div className="w-12 h-12 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0 ml-auto">
+                      <Building2 className="w-6 h-6 stroke-[1.6]" />
                     </div>
                   </div>
 
-                  <div className="text-[11px] text-[#78857C] pt-2 border-t border-[#EBE4D8]">
-                    {isRu
-                      ? "Сведения в соответствии с нотариальным проектом устава и положениями § 95 SGB V."
-                      : isEn
-                      ? "In accordance with notarized corporate filings and statutory § 95 SGB V regulations."
-                      : "Gemäß notarieller Gründungsdokumentation und den Vorgaben des § 95 SGB V."}
+                  {/* Paragraph */}
+                  <p className="text-xs sm:text-[13px] text-[#4E5650] leading-relaxed font-sans mb-5">
+                    {t.phase2Desc}
+                  </p>
+                </div>
+
+                {/* Inner Panel */}
+                <div className="p-4 sm:p-5 rounded-2xl bg-[#F5F2EA]/90 border border-[#EAE4D7] flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <CheckCircle2 className="w-4.5 h-4.5 text-[#B89650] shrink-0" />
+                      <span className="text-xs sm:text-[13px] font-bold text-[#142318]">
+                        {isRu ? "Ключевые принципы управления" : isEn ? "Central Governance Principles" : "Zentrale Governance-Prinzipien"}
+                      </span>
+                    </div>
+                    <ul className="space-y-2 text-xs sm:text-[12.5px] text-[#4E5650] font-sans pl-1">
+                      <li className="flex items-start gap-2">
+                        <span className="text-[#142318] font-bold">•</span>
+                        <span>{isRu ? "Врачебная тайна и строгая защита данных (DSGVO)" : isEn ? "Medical confidentiality & strict data protection" : "Ärztliche Schweigepflicht & strenger Datenschutz (DSGVO)"}</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[#142318] font-bold">•</span>
+                        <span>{isRu ? "Центральное управление: IT, финансы, закупки и маркетинг" : isEn ? "Central management: IT, Finance, Purchasing & Marketing" : "Zentrales Management: IT, Finanzen, Einkauf & Marketing"}</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[#142318] font-bold">•</span>
+                        <span>{isRu ? "Менеджмент качества DIN EN ISO и безопасность пациентов" : isEn ? "DIN EN ISO quality management & patient safety" : "Qualitätsmanagement nach DIN EN ISO & Patientensicherheit"}</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="flex justify-end pt-3">
+                    <Link
+                      href={`/${locale}/contact`}
+                      aria-label="Phase 2 details"
+                      className="w-7 h-7 rounded-full border border-[#D1C9B8] bg-white text-[#7A6843] hover:border-[#D5B878] hover:bg-[#D5B878] hover:text-[#0C1C11] flex items-center justify-center transition-all shadow-xs"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
                   </div>
                 </div>
               </div>
             </div>
+
+            {/* Legal Footnote */}
+            <p className="text-center text-[11px] text-[#78857C] mt-8 font-sans">
+              {isRu
+                ? "Сведения в соответствии с нотариальным проектом устава и положениями § 95 SGB V."
+                : isEn
+                ? "In accordance with notarized corporate filings and statutory § 95 SGB V regulations."
+                : "Gemäß notarieller Gründungsdokumentation und den Vorgaben des § 95 SGB V."}
+            </p>
           </Container>
         </section>
 
