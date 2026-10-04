@@ -162,4 +162,51 @@ export const holdingServices: Service[] = [
       { step: 3, title: "Rollout & Controlling", text: "Strukturierte Umsetzung mit messbaren Qualitätsmeilensteinen." },
     ],
   },
+  {
+    id: "sanitaetshaus",
+    slug: "sanitaetshaus-medical-supplies",
+    title: "NabiOta Sanitätshaus & Medical Supplies",
+    subtitle: "NabiOta Sanitätshaus GmbH (§§ 126, 127 SGB V)",
+    shortDescription: "Fachgerechte Bereitstellung von Orthopädietechnik, Mobilitätshilfen und Pflegehilfsmitteln.",
+    description:
+      "Die NabiOta Sanitätshaus GmbH versorgt Patienten und medizinische Einrichtungen mit maßgefertigten Bandagen, Orthesen, Rollstühlen, Pflegebetten, Wund- und Verbrauchsmaterialien. Wir verbinden handwerkliche Präzision mit schnellen Versorgungswegen.",
+    image: "/images/nursing/stage-rehab.webp",
+    iconName: "Accessibility",
+    category: "Hilfsmittel & Versorgung",
+    benefits: [
+      "Präqualifizierter Partner aller gesetzlichen (GKV) und privaten (PKV) Kassen",
+      "Orthopädische Maßanfertigungen und individuelle Anpassung von Orthesen/Bandagen",
+      "Komplette häusliche Pflegeausstattung: Pflegebetten, Lifter & Dekubitussysteme",
+      "Vor-Ort-Lieferung, Montage und verständliche Einweisung für Angehörige",
+    ],
+    processSteps: [
+      { step: 1, title: "Rezeptprüfung & Bedarfsanalyse", text: "Fachliche Prüfung der ärztlichen Verordnung und Beratung vor Ort." },
+      { step: 2, title: "Kostenklärung & Genehmigung", text: "Einholen der Kostenzusage bei der zuständigen Kranken- oder Pflegekasse." },
+      { step: 3, title: "Lieferung, Anpassung & Service", text: "Pünktliche Bereitstellung, fachgerechte Anpassung und technische Wartung." },
+    ],
+  },
+  {
+    id: "apotheke",
+    slug: "apotheke-pharmacy",
+    title: "NabiOta Apotheke Mönchengladbach",
+    subtitle: "Klinische & Öffentliche Arzneimittelversorgung",
+    shortDescription: "Ganzheitliche pharmazeutische Betreuung, Klinikversorgung und patientenindividuelle Medikation.",
+    description:
+      "Unter der Marke NabiOta Pharmacy sichern wir die zuverlässige Versorgung ambulanter und stationärer Einrichtungen mit Arzneimitteln, sterilen Infusionslösungen und Verbandstoffen – kombiniert mit qualifizierter pharmazeutischer Medikationsanalyse.",
+    image: "/images/services/wundversorgung.webp",
+    iconName: "Pill",
+    category: "Pharmazie",
+    benefits: [
+      "Krankenhaus- und Einrichtungsversorgung nach § 14 Apothekengesetz (ApoG)",
+      "Qualifizierte Medikationsanalyse (AMTS) zur Vermeidung von Wechselwirkungen",
+      "Spezialisierte Zytostatika- und Sterilzubereitung für onkologische Therapien",
+      "Patientenindividuelle Verblisterung für Pflegeheime und ambulante Pflegedienste",
+    ],
+    processSteps: [
+      { step: 1, title: "Rezeptübermittlung & Prüfung", text: "Sichere digitale Übermittlung und pharmazeutische Interaktionskontrolle." },
+      { step: 2, title: "Zubereitung & Kommissionierung", text: "Aseptische Herstellung und qualitätsgesicherte Zusammenstellung." },
+      { step: 3, title: "Verlässliche Belieferung & Beratung", text: "Express-Lieferdienst und persönliche pharmazeutische Fachberatung." },
+    ],
+  },
 ];
+
