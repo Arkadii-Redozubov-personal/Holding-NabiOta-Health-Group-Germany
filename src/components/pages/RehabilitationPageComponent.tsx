@@ -1119,7 +1119,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                 </p>
                 <div className="pt-2">
                   <Link
-                    href={`/${locale}/services/therapie-rehabilitation`}
+                    href={`/${locale}/contact`}
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#132218] font-semibold text-xs tracking-wide shadow-md transition-all duration-200 hover:scale-[1.02]"
                   >
                     <span>{facilitiesCard.btn}</span>
@@ -1480,10 +1480,10 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
               </Link>
 
               <Link
-                href={`/${locale}/services/therapie-rehabilitation`}
+                href={`/${locale}/areas`}
                 className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-white/30 hover:border-[#D5B878] text-white hover:text-[#ECCF96] font-medium text-xs sm:text-sm transition-all bg-white/5 text-center"
               >
-                <span>{isRu ? "Все терапевтические услуги" : isEn ? "View all therapy services" : "Therapieleistungen Übersicht"}</span>
+                <span>{isRu ? "Все направления холдинга" : isEn ? "All corporate divisions" : "Unternehmensbereiche Übersicht"}</span>
               </Link>
             </div>
           </div>

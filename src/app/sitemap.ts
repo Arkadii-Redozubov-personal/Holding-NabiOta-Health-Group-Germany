@@ -1,6 +1,5 @@
 import { MetadataRoute } from "next";
 import { businessAreas } from "@/data/areas";
-import { holdingServices } from "@/data/services";
 import { newsArticles } from "@/data/news";
 import { locales } from "@/lib/i18n";
 
@@ -11,7 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/about",
     "/areas",
-    "/services",
     "/values",
     "/partners",
     "/career",
@@ -62,26 +60,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  const localizedServices: MetadataRoute.Sitemap = [];
-  for (const locale of locales) {
-    for (const service of holdingServices) {
-      localizedServices.push({
-        url: `${baseUrl}/${locale}/services/${service.slug}`,
-        lastModified: new Date(),
-        changeFrequency: "monthly" as const,
-        priority: 0.7,
-        alternates: {
-          languages: {
-            de: `${baseUrl}/de/services/${service.slug}`,
-            en: `${baseUrl}/en/services/${service.slug}`,
-            ru: `${baseUrl}/ru/services/${service.slug}`,
-            "x-default": `${baseUrl}/de/services/${service.slug}`,
-          },
-        },
-      });
-    }
-  }
-
   const localizedNews: MetadataRoute.Sitemap = [];
   for (const locale of locales) {
     for (const article of newsArticles) {
@@ -102,5 +80,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  return [...localizedStatic, ...localizedAreas, ...localizedServices, ...localizedNews];
+  return [...localizedStatic, ...localizedAreas, ...localizedNews];
 }

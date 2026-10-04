@@ -684,7 +684,7 @@ export function NewsPageComponent({ locale = "de" }: Props) {
                   </p>
 
                   <Link
-                    href={`/${locale}/services/forschung-und-innovation`}
+                    href={`/${locale}/areas/beratung-projektentwicklung`}
                     className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs tracking-wide shadow-md transition-all duration-200 hover:scale-[1.02]"
                   >
                     <span>{isRu ? "Узнать больше" : isEn ? "Learn more" : "Mehr erfahren"}</span>

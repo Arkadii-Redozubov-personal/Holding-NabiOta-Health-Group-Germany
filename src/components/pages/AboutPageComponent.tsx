@@ -462,7 +462,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             ? "Medical Supplies & NabiOta Pharmacy — Orthopedic aids, rehab products & clinical pharmacy"
             : "Arzneimittelversorgung & Sanitätshaus GmbH (Med. Hilfsmittel & NabiOta Pharmacy)",
           badge: "Supplies & Pharmacy",
-          href: `/${locale}/services/sanitaetshaus-medical-supplies`,
+          href: `/${locale}/areas/pflege`,
           icon: CrossPharmacyIcon,
         },
       ],
