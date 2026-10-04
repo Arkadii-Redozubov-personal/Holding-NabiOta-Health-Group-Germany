@@ -13,6 +13,8 @@ import {
   Heart,
   Lightbulb,
   Sparkles,
+  Clock,
+  Users,
 } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -21,6 +23,16 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { SupportedLocale } from "@/lib/i18n";
 import { businessAreas } from "@/data/areas";
+
+// ── Custom SVG Icons Matching User Design ──
+function ScalpelIcon({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="m18 2-4 4-9.5 9.5a1 1 0 0 0 0 1.4l2.1 2.1a1 1 0 0 0 1.4 0L17.5 9.5 22 5Z" />
+      <path d="m14 6 4 4" />
+    </svg>
+  );
+}
 
 // ── Custom SVG Icons Matching User Design ──
 function CloverEmblemIcon({ className = "w-5 h-5" }: { className?: string }) {
@@ -636,134 +648,216 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
 
         {/* ══════════════════════════════════════════════════════════
             SECTION 3: CORE CAPABILITIES & GROUP ADVANTAGES CARDS
-            - 2-Column Grid: Core Capabilities & Group Advantages
-            - Stats Badges
+            - Redesigned into premium editorial corporate layout matching reference
+            - Left: Struktur der Fachbereiche & Zentren with integrated stethoscope photo
+            - Right: Ihre Vorteile im Verbund with botanical branch & statistics row
+            - Divider & centered heading
+            - Bottom: 3 compact company cards in a single row
         ══════════════════════════════════════════════════════════ */}
         <section className="py-10 sm:py-14 lg:py-16 bg-[#FAF8F5] border-t border-[#EDE8DE]/60">
           <Container size="wide">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-              {/* Card 1: Core Capabilities */}
-              <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-[#EDE8DE] shadow-[0_4px_20px_rgba(0,0,0,0.02)] flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="w-10 h-10 rounded-full border border-[#D5B878] bg-[#FAF8F5] flex items-center justify-center text-[#B89650]">
-                      <Stethoscope className="w-5 h-5 stroke-[1.6]" />
-                    </div>
-                    <h3 className="font-serif text-xl sm:text-2xl text-[#142318] font-normal">
-                      {overviewData.capabilitiesTitle}
-                    </h3>
+            {/* Top Two Feature Cards Side by Side */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-7 items-stretch">
+              {/* Card 1: Core Capabilities ("Struktur der Fachbereiche & Zentren") */}
+              <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#EDE8DE] shadow-[0_4px_24px_rgba(0,0,0,0.03)] relative overflow-hidden flex flex-col justify-between p-6 sm:p-8 min-h-[460px]">
+                {/* Right Side: Organic Stethoscope Photo & Dark Emblem */}
+                <div className="absolute top-0 right-0 bottom-0 w-[36%] sm:w-[40%] pointer-events-none overflow-hidden select-none">
+                  <div className="relative w-full h-full">
+                    <Image
+                      src="/images/areas/stethoscope-clinic.webp"
+                      alt="Klinische Umgebung und Stethoskop"
+                      fill
+                      className="object-cover object-center"
+                    />
+                    {/* Soft gradient fade into white card background */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-white via-white/30 to-transparent" />
+                    <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent" />
+                    {/* Organic curved shape boundary */}
+                    <div className="absolute inset-0 rounded-l-[100px] border-l border-white/50 pointer-events-none" />
                   </div>
 
-                  <div className="space-y-3.5">
-                    {overviewData.capabilities.map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-4.5 h-4.5 text-[#B89650] shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-[13.5px] text-[#2C3B30] font-medium leading-snug">
-                          {item}
-                        </span>
-                      </div>
-                    ))}
+                  {/* Dark Green Holding Emblem anchored near top-left of photo */}
+                  <div className="absolute top-6 left-2 sm:left-4 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#0E2718] border border-[#D5B878]/70 flex items-center justify-center text-[#ECCF96] shadow-lg z-10">
+                    <Building2 className="w-5 h-5 stroke-[1.6]" />
                   </div>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-[#EDE8DE]">
-                  <Link
-                    href={`/${locale}/contact`}
-                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#142318] hover:text-[#B89650] transition-colors"
-                  >
-                    <span>{isRu ? "Записаться на прием" : isEn ? "Book an Appointment" : "Termin vereinbaren"}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
+                {/* Content Layer (Left ~64%) */}
+                <div className="relative z-10 max-w-[65%] sm:max-w-[64%] flex flex-col justify-between h-full">
+                  <div>
+                    {/* Top small category label */}
+                    <span className="inline-block text-[9px] sm:text-[9.5px] font-bold uppercase tracking-wider text-[#DEC085] bg-[#0E2718] px-3.5 py-1 rounded-full mb-3.5 font-sans">
+                      {isRu ? "МЕДИЦИНСКАЯ ПОМОЩЬ" : isEn ? "MEDICAL CARE" : "MEDIZINISCHE VERSORGUNG"}
+                    </span>
+
+                    {/* Main Heading */}
+                    <h3 className="font-serif text-2xl sm:text-[27px] lg:text-[30px] text-[#142318] font-normal leading-[1.18] mb-4">
+                      {overviewData.capabilitiesTitle}
+                    </h3>
+
+                    {/* 5 Bullet Points */}
+                    <div className="space-y-2.5 mb-5">
+                      {overviewData.capabilities.map((item, idx) => (
+                        <div key={idx} className="flex items-start gap-2.5">
+                          <CheckCircle2 className="w-4 h-4 text-[#B89650] shrink-0 mt-0.5" />
+                          <span className="text-[11.5px] sm:text-[12px] text-[#2C3B30] font-normal leading-snug font-sans">
+                            {item}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Bottom-left CTA Button */}
+                  <div className="pt-2">
+                    <Link
+                      href={`/${locale}/contact`}
+                      className="inline-flex items-center gap-2 px-4.5 py-2.5 rounded-full bg-gradient-to-r from-[#EED4A2] via-[#E4C58B] to-[#D5B878] text-[#142318] hover:brightness-105 font-medium text-xs shadow-sm transition-all"
+                    >
+                      <span>{isRu ? "Записаться на прием" : isEn ? "Book an Appointment" : "Termin vereinbaren"}</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
                 </div>
               </div>
 
-              {/* Card 2: Group Advantages & Stats */}
-              <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-[#EDE8DE] shadow-[0_4px_20px_rgba(0,0,0,0.02)] flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="w-10 h-10 rounded-full border border-[#D5B878] bg-[#FAF8F5] flex items-center justify-center text-[#B89650]">
-                      <ShieldCheck className="w-5 h-5 stroke-[1.6]" />
-                    </div>
-                    <h3 className="font-serif text-xl sm:text-2xl text-[#142318] font-normal">
+              {/* Card 2: Group Advantages ("Ihre Vorteile im Verbund") */}
+              <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#EDE8DE] shadow-[0_4px_24px_rgba(0,0,0,0.03)] relative overflow-hidden flex flex-col justify-between p-6 sm:p-8 min-h-[460px]">
+                {/* Subtle botanical branch on right edge */}
+                <div className="absolute top-0 right-0 w-32 sm:w-40 pointer-events-none opacity-85 z-0">
+                  <Image
+                    src="/images/areas/botanical-branch-clean.webp"
+                    alt="Botanical detail"
+                    width={160}
+                    height={240}
+                    className="object-contain object-top-right ml-auto"
+                  />
+                </div>
+
+                <div className="relative z-10 flex flex-col justify-between h-full">
+                  <div>
+                    {/* Top small category label */}
+                    <span className="inline-block text-[9px] sm:text-[9.5px] font-bold uppercase tracking-wider text-[#DEC085] bg-[#0E2718] px-3.5 py-1 rounded-full mb-3.5 font-sans">
+                      {isRu ? "ВАШИ ПРЕИМУЩЕСТВА" : isEn ? "YOUR ADVANTAGES" : "IHRE VORTEILE"}
+                    </span>
+
+                    {/* Heading */}
+                    <h3 className="font-serif text-2xl sm:text-[27px] lg:text-[30px] text-[#142318] font-normal leading-[1.18] mb-5">
                       {overviewData.advantagesTitle}
                     </h3>
+
+                    {/* 4 Advantages with elegant circular icons */}
+                    <div className="space-y-3">
+                      {overviewData.advantages.map((item, idx) => {
+                        const AdvantageIcon = [Users, Heart, Clock, ShieldCheck][idx] || ShieldCheck;
+                        return (
+                          <div key={idx} className="flex items-center gap-3">
+                            <div className="w-8 h-8 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0">
+                              <AdvantageIcon className="w-4 h-4 stroke-[1.6]" />
+                            </div>
+                            <span className="text-[11.5px] sm:text-[12px] text-[#425046] font-normal leading-snug font-sans">
+                              {item}
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
 
-                  <div className="space-y-3.5">
-                    {overviewData.advantages.map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-4.5 h-4.5 text-[#3E5643] shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-[13.5px] text-[#556358] leading-snug">
-                          {item}
+                  {/* Editorial Statistics Row */}
+                  <div className="grid grid-cols-3 gap-2 pt-4.5 mt-5 border-t border-[#EDE8DE]">
+                    {overviewData.stats.map((stat, idx) => (
+                      <div
+                        key={idx}
+                        className={`flex flex-col ${idx < 2 ? "border-r border-[#EDE8DE] pr-3" : "pl-1"}`}
+                      >
+                        <span className="font-serif text-2xl sm:text-[26px] text-[#B89650] font-normal leading-none mb-1">
+                          {stat.value}
+                        </span>
+                        <span className="text-[10px] sm:text-[10.5px] text-[#6E756D] font-sans leading-snug">
+                          {stat.label}
                         </span>
                       </div>
                     ))}
                   </div>
-                </div>
-
-                {/* 3 Stats Counters */}
-                <div className="grid grid-cols-3 gap-3 pt-6 mt-6 border-t border-[#EDE8DE]">
-                  {overviewData.stats.map((stat, idx) => (
-                    <div key={idx} className="flex flex-col">
-                      <span className="font-serif text-2xl sm:text-3xl text-[#B89650] font-normal">
-                        {stat.value}
-                      </span>
-                      <span className="text-[11px] text-[#6E756D] font-sans mt-0.5 leading-snug">
-                        {stat.label}
-                      </span>
-                    </div>
-                  ))}
                 </div>
               </div>
             </div>
 
-            {/* 3 Medical Entities Grid matching corporate structure */}
-            <div className="mt-8 pt-8 border-t border-[#EDE8DE]">
-              <div className="text-center max-w-xl mx-auto mb-6">
-                <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase block mb-1">
-                  {overviewData.entitiesTitle}
-                </span>
-                <p className="text-xs sm:text-[13px] text-[#556358] font-sans">
-                  {isRu
-                    ? "Структурированные подразделения холдинга для амбулаторной и стационарной помощи"
-                    : isEn
-                    ? "Structured holding entities covering outpatient and inpatient clinical pathways"
-                    : "Spezialisierte Gesellschaften der Gruppe für ambulante und stationäre Spitzenmedizin"}
-                </p>
+            {/* Section Divider & Centered Company Entities Header */}
+            <div className="my-10 sm:my-12">
+              <div className="relative flex items-center justify-center mb-5">
+                <div className="absolute inset-0 flex items-center">
+                  <div className="w-full border-t border-[#EDE8DE]"></div>
+                </div>
+                <div className="relative bg-[#FAF8F5] px-6 text-center">
+                  <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase font-sans">
+                    {overviewData.entitiesTitle}
+                  </span>
+                </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                {overviewData.entities.map((entity, eIdx) => (
+              <h3 className="font-serif text-2xl sm:text-[28px] text-[#142318] font-normal text-center leading-[1.25] max-w-2xl mx-auto">
+                {isRu
+                  ? "Специализированные подразделения группы для амбулаторной и стационарной медицины высшего уровня"
+                  : isEn
+                  ? "Specialized group entities for outpatient and inpatient medicine of excellence"
+                  : "Spezialisierte Gesellschaften der Gruppe für ambulante und stationäre Spitzenmedizin"}
+              </h3>
+            </div>
+
+            {/* 3 Medical Entities Grid matching corporate structure */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 items-stretch">
+              {overviewData.entities.map((entity, eIdx) => {
+                const EntityIcon = [Stethoscope, ScalpelIcon, Building2][eIdx] || Building2;
+                return (
                   <div
                     key={eIdx}
-                    className="bg-white rounded-2xl p-5 sm:p-6 border border-[#EDE8DE] hover:border-[#D5B878] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
+                    className="bg-white rounded-2xl p-4.5 sm:p-5 border border-[#EDE8DE] hover:border-[#D5B878] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all flex flex-col justify-between group"
                   >
                     <div>
+                      {/* Top row: Dark green badge left, secondary descriptor right */}
                       <div className="flex items-center justify-between gap-2 mb-3">
-                        <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-[#08170D] text-[#ECCF96] tracking-wider uppercase">
+                        <span className="text-[9.5px] font-bold px-3 py-1 rounded-full bg-[#0E2718] text-[#ECCF96] tracking-wider uppercase shrink-0">
                           {entity.tag}
                         </span>
-                        <span className="text-[11px] text-[#8C948D] font-sans truncate">
+                        <span className="text-[10.5px] text-[#7A857D] font-sans truncate ml-2 text-right">
                           {entity.sub}
                         </span>
                       </div>
-                      <h4 className="font-serif text-base sm:text-lg text-[#142318] font-medium leading-snug group-hover:text-[#B89650] transition-colors mb-3">
-                        {entity.title}
-                      </h4>
-                      <div className="space-y-2">
+
+                      {/* Icon & Title Row */}
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-8.5 h-8.5 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0 group-hover:bg-[#D5B878]/15 group-hover:border-[#D5B878] group-hover:text-[#8C6D2B] transition-colors">
+                          <EntityIcon className="w-4.5 h-4.5 stroke-[1.6]" />
+                        </div>
+                        <h4 className="font-serif text-[15px] sm:text-[16px] text-[#142318] font-bold leading-snug group-hover:text-[#B89650] transition-colors">
+                          {entity.title}
+                        </h4>
+                      </div>
+
+                      {/* Bullet points */}
+                      <div className="space-y-1.5 mt-2">
                         {entity.items.map((item, iIdx) => (
                           <div key={iIdx} className="flex items-start gap-2">
                             <CheckCircle2 className="w-3.5 h-3.5 text-[#B89650] shrink-0 mt-0.5" />
-                            <span className="text-xs text-[#556358] leading-relaxed font-sans">
+                            <span className="text-[11px] sm:text-[11.5px] text-[#556358] leading-relaxed font-sans">
                               {item}
                             </span>
                           </div>
                         ))}
                       </div>
                     </div>
+
+                    {/* Bottom-right corner arrow button */}
+                    <div className="pt-3 flex justify-end">
+                      <div className="w-6 h-6 rounded-full border border-[#DCD5C6] bg-[#FAF8F5] group-hover:border-[#C5A56A] group-hover:bg-[#C5A56A] group-hover:text-white text-[#B89650] flex items-center justify-center transition-all shadow-xs">
+                        <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
+                      </div>
+                    </div>
                   </div>
-                ))}
-              </div>
+                );
+              })}
             </div>
           </Container>
         </section>
