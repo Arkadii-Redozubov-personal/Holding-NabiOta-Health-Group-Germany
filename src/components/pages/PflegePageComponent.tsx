@@ -89,75 +89,75 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : "Wir bieten ein breites Spektrum professioneller Pflegeleistungen, passgenau abgestimmt auf Ihre individuellen Bedürfnisse – zu Hause oder in der Einrichtung.",
       items: [
         {
-          title: isRu ? "Квалифицированный уход" : isEn ? "Skilled Nursing Care" : "Behandlungspflege",
+          title: isRu ? "Медицинский уход & раны" : isEn ? "Clinical Care & Wound Management" : "Behandlungspflege & Wundversorgung",
           desc: isRu
-            ? "Перевязки, контроль медикаментов и процедуры."
+            ? "Сертифицированное ведение ран (ICW), инъекции, медикаменты и инфузии (SGB V)."
             : isEn
-            ? "Wound care, medication management, and more."
-            : "Wundversorgung, Medikamentengabe und mehr.",
+            ? "Certified wound care (ICW), injections, infusions, and medication administration (SGB V)."
+            : "Zertifiziertes Wundmanagement (ICW), Injektionen, Infusionen und Medikamentengabe (SGB V).",
           icon: Stethoscope,
         },
         {
-          title: isRu ? "Помощь в повседневных делах" : isEn ? "Personal Care Assistance" : "Grundpflege & Hilfe",
+          title: isRu ? "Базовый уход (SGB XI)" : isEn ? "Basic Care & Daily Living" : "Grundpflege & Alltagshilfe (SGB XI)",
           desc: isRu
-            ? "Помощь в гигиене, питании и ежедневных делах."
+            ? "Помощь в гигиене, питании, мобилизации и ведении домашнего хозяйства."
             : isEn
-            ? "Help with daily activities and hygiene."
-            : "Unterstützung bei täglichen Aktivitäten und Hygiene.",
+            ? "Assistance with personal hygiene, nutrition, mobilization, and household support."
+            : "Körperpflege, Ernährung, Mobilisation und hauswirtschaftliche Unterstützung.",
           icon: Heart,
         },
         {
-          title: isRu ? "Хронические заболевания" : isEn ? "Chronic Disease Management" : "Chroniker-Management",
+          title: isRu ? "Послебольничный патронаж" : isEn ? "Hospital Discharge Management" : "Entlassmanagement & Überleitung",
           desc: isRu
-            ? "Постоянный контроль при длительных диагнозах."
+            ? "Бесшовный переход из стационара домой с непрерывным медицинским контролем."
             : isEn
-            ? "Ongoing support for long-term conditions."
-            : "Kontinuierliche Betreuung chronischer Erkrankungen.",
-          icon: Pill,
-        },
-        {
-          title: isRu ? "Послебольничный уход" : isEn ? "Post-Hospital Care" : "Nachstationäre Pflege",
-          desc: isRu
-            ? "Комфортное восстановление дома или в центре."
-            : isEn
-            ? "Smooth recovery at home or in a facility."
-            : "Reibungslose Genesung zu Hause oder im Zentrum.",
+            ? "Seamless continuity of clinical care during the critical transition from hospital to home."
+            : "Lückenlose Überleitung vom Krankenhaus nach Hause mit lückenloser Versorgungskette.",
           icon: Home,
         },
         {
-          title: isRu ? "Уход за пожилыми" : isEn ? "Elderly Care" : "Seniorenpflege",
+          title: isRu ? "Консультации (§ 37.3 SGB XI)" : isEn ? "Care Counseling (§ 37.3 SGB XI)" : "Pflegeberatung (§ 37 Abs. 3 SGB XI)",
           desc: isRu
-            ? "Комфорт, безопасность и теплое общение."
+            ? "Официальные обязательные консультации для больничных касс и оформление пособий."
             : isEn
-            ? "Comfort, safety and companionship."
-            : "Komfort, Sicherheit und herzliche Begleitung.",
-          icon: Accessibility,
-        },
-        {
-          title: isRu ? "Паллиативная помощь" : isEn ? "Palliative & End-of-Life Care" : "Palliativpflege",
-          desc: isRu
-            ? "Достоинство и покой в самые важные моменты."
-            : isEn
-            ? "Dignity and comfort when it matters most."
-            : "Würde und Geborgenheit, wenn es am meisten zählt.",
-          icon: HeartHandshake,
-        },
-        {
-          title: isRu ? "Специализированный уход" : isEn ? "Specialized Care" : "Spezialisierte Pflege",
-          desc: isRu
-            ? "Для сложных клинических и реабилитационных задач."
-            : isEn
-            ? "For complex medical and rehabilitation needs."
-            : "Für komplexe medizinische & Reha-Bedarfe.",
+            ? "Mandatory statutory counseling visits and guidance on care grades and insurance benefits."
+            : "Gesetzliche Beratungseinsätze für die Pflegekasse und Hilfe bei Einstufungsanträgen.",
           icon: Brain,
         },
         {
-          title: isRu ? "Круглосуточная помощь 24/7" : isEn ? "24/7 Nursing Support" : "24/7 Pflege-Support",
+          title: isRu ? "Замещающий уход" : isEn ? "Respite & Substitute Care" : "Verhinderungs- & Entlastungspflege",
           desc: isRu
-            ? "Всегда рядом, когда вам необходима помощь."
+            ? "Временная помощь и разгрузка ухаживающих родственников (§ 39/45b SGB XI)."
             : isEn
-            ? "Always there when you need us."
-            : "Immer für Sie da, wann immer Sie uns brauchen.",
+            ? "Temporary caregiver relief, holiday replacement, and support services (§ 39/45b SGB XI)."
+            : "Entlastung pflegender Angehöriger bei Urlaub oder Krankheit (§ 39/45b SGB XI).",
+          icon: Accessibility,
+        },
+        {
+          title: isRu ? "Паллиативная помощь" : isEn ? "Palliative Care" : "Palliativpflege & Begleitung",
+          desc: isRu
+            ? "Обезболивание, чуткое сопровождение и сохранение достоинства на финальном этапе."
+            : isEn
+            ? "Specialized symptom control, pain management, and dignity in the home setting."
+            : "Symptomlinderung, Schmerztherapiebegleitung und würdevolle Zuwendung.",
+          icon: HeartHandshake,
+        },
+        {
+          title: isRu ? "Хронические диагнозы & деменция" : isEn ? "Chronic Care & Dementia" : "Chroniker- & Demenzbetreuung",
+          desc: isRu
+            ? "Структурированные протоколы при диабете, ХОБЛ, деменции и болезни Альцгеймера."
+            : isEn
+            ? "Specialized routines for dementia, diabetes, cardiovascular conditions, and Alzheimer's."
+            : "Spezifische Betreuungskonzepte bei Demenz, Diabetes und chronischen Krankheiten.",
+          icon: Pill,
+        },
+        {
+          title: isRu ? "Круглосуточная связь 24/7" : isEn ? "24/7 On-Call Support" : "24/7 Rufbereitschaft & Notruf",
+          desc: isRu
+            ? "Постоянная готовность дежурной сестринской службы для экстренных ситуаций."
+            : isEn
+            ? "Continuous 24/7 emergency response and nurse on-call availability."
+            : "Rund-um-die-Uhr-Erreichbarkeit für Notfälle und kontinuierliche Sicherheit zu Hause.",
           icon: Headset,
         },
       ],

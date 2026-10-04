@@ -22,6 +22,9 @@ export const companyInfo: HoldingCompanyInfo = {
   email: "konkat@nabiota-health-group.de",
   website: "www.NabiOta-Health-Group.de",
   managingDirector: "Frau Nigora Usmanova, Geschäftsführerin",
+  medicalFounder: "Dr. Fischer-Rahimov, zugelassener Vertragsarzt (Gründungsberechtigter)",
+  shareCapital: "50.000 EUR",
+  registrationDate: "9. Januar 2026",
   commercialRegister: {
     court: "Amtsgericht Mönchengladbach",
     number: "HRB 16787",
@@ -37,9 +40,9 @@ export const corporateStats: StatItemData[] = [
     sublabel: "NabiOta® Health Group",
   },
   {
-    value: "6+",
+    value: "10",
     label: "Unternehmensbereiche",
-    sublabel: "Ganzheitliche Versorgung",
+    sublabel: "Spezialisierte Gesellschaften",
   },
   {
     value: "100+",

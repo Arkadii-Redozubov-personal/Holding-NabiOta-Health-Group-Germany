@@ -125,7 +125,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
     {
       icon: <SpineMobilityIcon className="w-5 h-5 text-[#ECCF96]" />,
       title: isRu ? "Мультидисциплинарно" : isEn ? "Multidisciplinary" : "Interdisziplinär",
-      sub: isRu ? "Врачи, ЛФК, эрготерапия" : isEn ? "Physio, Sports, Ergo" : "Ärzte, Physio, Ergo",
+      sub: isRu ? "ЛФК, Эрго & Логопедия" : isEn ? "Physio, Ergo & Speech" : "Physio, Ergo & Logopädie",
     },
     {
       icon: <WalkingExoskeletonIcon className="w-5 h-5 text-[#ECCF96]" />,
@@ -223,19 +223,19 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
     },
     {
       id: "ergo",
-      title: isRu ? "Эрготерапия и терапия кисти" : isEn ? "Ergotherapy & Hand Therapy" : "Ergotherapie & Handtherapie",
-      badge: isRu ? "Моторика & Быт" : isEn ? "Fine Motor Skills" : "Feinmotorik & Alltag",
+      title: isRu ? "Эрготерапия и логопедия" : isEn ? "Ergotherapy & Speech Therapy" : "Ergotherapie & Logopädie",
+      badge: isRu ? "Моторика, речь & быт" : isEn ? "Motor Skills, Speech & ADL" : "Feinmotorik, Sprache & Alltag",
       desc: isRu
-        ? "Восстановление мелкой моторики, чувствительности кисти и пальцев, адаптация к бытовой и профессиональной деятельности после травм и инсультов."
+        ? "Восстановление мелкой моторики, речи, глотания и когнитивных функций после неврологических и ортопедических нарушений."
         : isEn
-        ? "Rebuilding fine motor dexterity, hand sensitivity, and ergonomic workplace adaptations following trauma, nerve injuries, and surgery."
-        : "Wiederherstellung von Feinmotorik, Greiffunktion und Alltagsfähigkeiten nach Sehnen- und Nervenverletzungen oder neurologischen Einschränkungen.",
+        ? "Rebuilding fine motor dexterity, speech, swallowing, and cognitive independence after stroke or surgical interventions."
+        : "Wiedererlangung von Feinmotorik, Sprach-, Sprech- und Schluckfunktionen sowie Alltagsfähigkeiten nach neurologischen oder operativen Einschränkungen.",
       image: "/images/contact/clinic-reception.webp",
       features: isRu
-        ? ["Индивидуальное ортезирование", "Тренировка бытовых навыков", "Сенсорная интеграция"]
+        ? ["Эрготерапия и тренировка быта (ADL)", "Логопедия: речь, голос и глотание", "Когнитивный тренинг и ортезирование"]
         : isEn
-        ? ["Customized splint adaptation", "Daily life activity training (ADL)", "Sensory and cognitive stimulation"]
-        : ["Individuelle Schienenanpassung", "Alltagstraining (ADL-Schulung)", "Sensibilitäts- und Krafttraining"],
+        ? ["Ergotherapy & daily life skills (ADL)", "Speech, voice & swallowing therapy", "Cognitive training & custom splints"]
+        : ["Ergotherapie & Alltagsfähigkeiten (ADL)", "Logopädie: Sprach-, Sprech- & Schlucktherapie", "Kognitives Hirnleistungstraining & Schienen"],
     },
   ];
 

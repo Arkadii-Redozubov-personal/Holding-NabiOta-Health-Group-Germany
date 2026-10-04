@@ -90,6 +90,15 @@ function HeartCardioIcon({ className = "w-4 h-4" }: { className?: string }) {
   );
 }
 
+function NeuroPulseIcon({ className = "w-4 h-4" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M3 12h4l2-5 3 10 2-7 2 4h4l2-2" />
+      <circle cx="21" cy="12" r="1.5" fill="currentColor" />
+    </svg>
+  );
+}
+
 function ScannerArchIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -138,10 +147,10 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
       ? "High-Precision Diagnostic Imaging"
       : "Präzisionstechnologie für fundierte Befunde",
     description: isRu
-      ? "NabiOta® Diagnostics GmbH предоставляет полный спектр высокоточной лучевой и функциональной диагностики: 3-Тесла МРТ с широким туннелем, низкодозовая КТ, цифровой рентген и экспертное УЗИ по немецким стандартам."
+      ? "NabiOta® Diagnostics GmbH предоставляет полный спектр высокоточной лучевой, нейрофизиологической и лабораторной диагностики: 3-Тесла МРТ, низкодозовая КТ, цифровой рентген, ЭМГ/ЭНГ/ЭЭГ и экспресс-тестирование POCT по немецким стандартам."
       : isEn
-      ? "NabiOta® Diagnostics GmbH delivers university-grade medical imaging: 3-Tesla wide-bore MRI, low-dose CT, direct digital radiography, and high-end ultrasound according to rigorous German clinical standards."
-      : "Die NabiOta® Diagnostics GmbH bietet modernste Bildgebung auf universitärem Niveau. Mit Niedrigdosis-CT, High-Field 3-Tesla-MRT und volldigitalem Röntgen liefern wir präzise Schnittbilder für fundierte Diagnosen und gezielte Therapien.",
+      ? "NabiOta® Diagnostics GmbH delivers university-grade medical imaging, neurophysiology, and clinical laboratory testing: 3-Tesla wide-bore MRI, low-dose CT, digital radiography, EMG/ENG/EEG, and rapid POCT analysis according to rigorous German clinical standards."
+      : "Die NabiOta® Diagnostics GmbH bietet modernste Bildgebung, Neurophysiologie und Labordiagnostik auf universitärem Niveau: Niedrigdosis-CT, 3-Tesla-MRT, volldigitales Röntgen, EMG/ENG/EEG sowie zuverlässige POCT- und Laborlogistik für schnelle, fundierte Befunde.",
     badges: [
       {
         icon: <MriScannerIcon className="w-5 h-5 text-[#ECCF96]" />,
@@ -165,36 +174,25 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
   const procedures = [
     {
       id: "mrt",
-      title: "MRT",
+      title: "3-Tesla MRT",
       desc: isRu
-        ? "Снимки высокого разрешения для точной диагностики."
+        ? "МРТ высокого разрешения для детальной визуализации мягких тканей и ЦНС."
         : isEn
-        ? "High-resolution imaging for detailed diagnosis."
-        : "Hochauflösende Bilder für eine detaillierte Diagnose.",
+        ? "High-resolution 3T imaging for CNS, spine, and joints."
+        : "Hochauflösende 3T-Bilder für Weichteile, ZNS und Gelenke.",
       image: "/images/diagnostik/modality-mrt.webp",
       icon: MriScannerIcon,
     },
     {
       id: "ct",
-      title: "CT",
+      title: "Low-Dose CT",
       desc: isRu
-        ? "Быстрые и точные послойные 3D-сканы."
+        ? "Низкодозовая послойная 3D-томография скелета и внутренних органов."
         : isEn
-        ? "Fast and precise cross-sectional imaging."
-        : "Schnelle und präzise Querschnittsbilder.",
+        ? "Fast, low-radiation cross-sectional 3D imaging."
+        : "Schnelle und schonende Querschnittsbilder mit reduzierter Dosis.",
       image: "/images/diagnostik/modality-ct.webp",
       icon: CtScannerIcon,
-    },
-    {
-      id: "ultraschall",
-      title: isRu ? "УЗИ" : isEn ? "Ultrasound" : "Ultraschall",
-      desc: isRu
-        ? "Бережно, надежно и универсально в применении."
-        : isEn
-        ? "Gentle, reliable, and versatile application."
-        : "Schonend, zuverlässig und vielseitig einsetzbar.",
-      image: "/images/diagnostik/modality-ultraschall.webp",
-      icon: UltrasoundWaveIcon,
     },
     {
       id: "roentgen",
@@ -208,26 +206,37 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
       icon: XrayPulseIcon,
     },
     {
-      id: "labor",
-      title: isRu ? "Лабораторные исследования" : isEn ? "Laboratory Diagnostics" : "Laboruntersuchungen",
+      id: "ultraschall",
+      title: isRu ? "УЗИ & Допплер" : isEn ? "Ultrasound & Doppler" : "Ultraschall & Doppler",
       desc: isRu
-        ? "Точные лабораторные показатели для верного диагноза."
+        ? "Бережно, надежно и универсально для органов и сосудов."
         : isEn
-        ? "Crucial biomarker values for exact diagnosis."
-        : "Wichtige Werte für eine exakte Diagnose.",
-      image: "/images/diagnostik/modality-labor.webp",
-      icon: TestTubesIcon,
+        ? "Gentle, reliable, and versatile application for vessels & organs."
+        : "Schonend, zuverlässig und vielseitig für Organe und Gefäße.",
+      image: "/images/diagnostik/modality-ultraschall.webp",
+      icon: UltrasoundWaveIcon,
     },
     {
-      id: "kardio",
-      title: isRu ? "Кардиологическая диагностика" : isEn ? "Cardiological Diagnostics" : "Kardiologische Diagnostik",
+      id: "neurophys",
+      title: isRu ? "Нейрофизиология" : isEn ? "Neurophysiology" : "Neurophysiologie",
       desc: isRu
-        ? "Для здорового сердца и крепкой сосудистой системы."
+        ? "ЭМГ, ЭНГ, ЭЭГ и вызванные потенциалы (VEP, AEP, SEP)."
         : isEn
-        ? "For a healthy heart and strong circulation."
-        : "Für ein gesundes Herz und einen starken Kreislauf.",
+        ? "EMG, ENG, EEG, and evoked potentials (VEP, AEP, SEP)."
+        : "EMG, ENG, EEG und evozierte Potenziale (VEP, AEP, SEP).",
       image: "/images/diagnostik/modality-kardio.webp",
-      icon: HeartCardioIcon,
+      icon: NeuroPulseIcon,
+    },
+    {
+      id: "labor",
+      title: isRu ? "Лаборатория & POCT" : isEn ? "Laboratory & POCT" : "Labordiagnostik & POCT",
+      desc: isRu
+        ? "Клиническая химия, гематология и экспресс-анализы."
+        : isEn
+        ? "Clinical biochemistry, hematology, and rapid POCT markers."
+        : "Klinische Chemie, Hämatologie und Point-of-Care-Diagnostik.",
+      image: "/images/diagnostik/modality-labor.webp",
+      icon: TestTubesIcon,
     },
   ];
 

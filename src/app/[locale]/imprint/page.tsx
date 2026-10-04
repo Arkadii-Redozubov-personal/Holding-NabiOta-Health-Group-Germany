@@ -113,6 +113,15 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
                   <br />
                   {companyInfo.managingDirector}
                 </p>
+                {companyInfo.medicalFounder && (
+                  <p className="mt-2">
+                    <strong className="text-forest-950 font-medium">
+                      {locale === "ru" ? "Учредитель / Врач-основатель:" : locale === "en" ? "Founding Licensed Physician:" : "Gründungsberechtigter Vertragsarzt:"}
+                    </strong>
+                    <br />
+                    {companyInfo.medicalFounder}
+                  </p>
+                )}
               </div>
 
               <div className="pt-6 border-t border-forest-900/10">
@@ -146,11 +155,23 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
                   {locale === "ru" ? "Реестровая запись" : locale === "en" ? "Register Entry" : "Registereintrag"}
                 </h2>
                 <p>
-                  Eintragung im Handelsregister.
+                  {locale === "ru" ? "Внесение в торговый реестр:" : locale === "en" ? "Commercial Register Entry:" : "Eintragung im Handelsregister."}
                   <br />
                   Registergericht: {companyInfo.commercialRegister.court}
                   <br />
                   Handelsregisternummer: {companyInfo.commercialRegister.number}
+                  {companyInfo.registrationDate && (
+                    <>
+                      <br />
+                      {locale === "ru" ? "Дата регистрации:" : locale === "en" ? "Registration Date:" : "Datum der Eintragung:"} {companyInfo.registrationDate}
+                    </>
+                  )}
+                  {companyInfo.shareCapital && (
+                    <>
+                      <br />
+                      {locale === "ru" ? "Уставный капитал:" : locale === "en" ? "Share Capital:" : "Stammkapital:"} {companyInfo.shareCapital}
+                    </>
+                  )}
                 </p>
               </div>
 

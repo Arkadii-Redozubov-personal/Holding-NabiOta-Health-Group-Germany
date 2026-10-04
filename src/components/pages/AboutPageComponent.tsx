@@ -255,25 +255,25 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
     rootsTitle2: isRu ? "Направленность в будущее." : isEn ? "Built for the Future." : "Für die Zukunft aufgestellt.",
     rootsP1: isRu ? (
       <>
-        NabiOta® Health Group Germany GmbH возникла из стратегического развития существующей корпоративной структуры в здравоохранении. Корни сегодняшней группы компаний восходят к{" "}
-        <strong className="font-bold text-[#142318]">Medical A-Z Consulting GmbH</strong>. Благодаря организационному развитию, расширению профиля деятельности и укреплению корпоративной структуры был заложен фундамент долгосрочной медицинской группы с национальной и международной перспективой.
+        NabiOta® Health Group Germany GmbH (HRB 16787, Amtsgericht Mönchengladbach) зарегистрирована с уставным капиталом 50.000 EUR по адресу: Aachener Straße 114, 41061 Mönchengladbach. Корни группы восходят к стратегическому развитию медицинской экспертизы и{" "}
+        <strong className="font-bold text-[#142318]">Medical A-Z Consulting GmbH</strong>. Благодаря расширению корпоративной структуры и привлечению лицензированных специалистов был заложен фундамент долгосрочной медицинской группы.
       </>
     ) : isEn ? (
       <>
-        NabiOta® Health Group Germany GmbH arose from the strategic advancement of an existing corporate structure in healthcare. The roots of today&apos;s corporate group trace back to{" "}
-        <strong className="font-bold text-[#142318]">Medical A-Z Consulting GmbH</strong>. Through organizational evolution, expansion of corporate scope, and expansion of legal structures, the foundation was established for a long-term healthcare group with national and international reach.
+        NabiOta® Health Group Germany GmbH (HRB 16787, Amtsgericht Mönchengladbach) was incorporated with a share capital of EUR 50,000 at Aachener Straße 114, 41061 Mönchengladbach. Tracing its origins back to{" "}
+        <strong className="font-bold text-[#142318]">Medical A-Z Consulting GmbH</strong>, the group has evolved through structured corporate development and specialist medical participation into a future-ready healthcare group.
       </>
     ) : (
       <>
-        Die NabiOta® Health Group Germany GmbH entstand aus der strategischen Weiterentwicklung einer bestehenden Unternehmensstruktur im Gesundheitswesen. Die Wurzeln der heutigen Unternehmensgruppe reichen auf die{" "}
-        <strong className="font-bold text-[#142318]">Medical A-Z Consulting GmbH</strong> zurück. Durch organisatorische Weiterentwicklung, Erweiterung des Unternehmensgegenstandes und den Ausbau der gesellschaftsrechtlichen Strukturen wurde die Grundlage für eine langfristig ausgerichtete Gesundheitsgruppe mit nationaler und internationaler Perspektive geschaffen.
+        Die NabiOta® Health Group Germany GmbH ist unter HRB 16787 beim Amtsgericht Mönchengladbach eingetragen (Stammkapital: 50.000 EUR, Geschäftsanschrift: Aachener Straße 114, 41061 Mönchengladbach). Ausgehend von den Wurzeln der{" "}
+        <strong className="font-bold text-[#142318]">Medical A-Z Consulting GmbH</strong> wurde durch organisatorische Weiterentwicklung und den Ausbau gesellschaftsrechtlicher Strukturen die Grundlage für einen integrierten Verbund ambulanter und stationärer medizinischer Einrichtungen geschaffen.
       </>
     ),
     rootsP2: isRu
-      ? "Цель этого развития — объединить различные направления здравоохранения под единым брендом и создать устойчивые структуры на будущее. Сегодня это служит основой для дальнейшего расширения NabiOta® Health Group Germany GmbH. NabiOta® является защищенной торговой маркой, олицетворяющей надежность, ответственное ведение дел и непрерывное развитие медицинских услуг и проектов."
+      ? "Цель развития — объединить терапевтическую, хирургическую, диагностическую помощь, реабилитацию и уход под единым брендом. Структура холдинга обеспечивает централизованное экономическое и административное управление, гарантируя при этом 100% независимость врачебных решений."
       : isEn
-      ? "The goal of this development is to bring together different areas of healthcare under a unified brand and build sustainable structures for the future. Today, this forms the foundation for the continued expansion of NabiOta® Health Group Germany GmbH and its activities. NabiOta® is a protected trademark standing for reliability, conscientious conduct, and continuous advancement of health-related services and projects."
-      : "Ziel dieser Entwicklung ist es, unterschiedliche Bereiche des Gesundheitswesens unter einer gemeinsamen Marke zusammenzuführen und nachhaltige Strukturen für die Zukunft aufzubauen. Heute bildet diese Entwicklung die Grundlage für den weiteren Ausbau der NabiOta® Health Group Germany GmbH und ihrer Aktivitäten. NabiOta® ist eine geschützte Marke der NabiOta® Health Group Germany GmbH, die für Verlässlichkeit, verantwortungsbewusstes Handeln und die kontinuierliche Weiterentwicklung gesundheitsbezogener Dienstleistungen und Projekte steht.",
+      ? "The goal is an integrated network uniting primary care, surgical specialties, diagnostics, rehabilitation, and home care under one brand. The holding provides centralized administrative and economic management while strictly upholding clinical independence."
+      : "Ziel ist ein Verbund aus hausärztlicher und internistischer Versorgung, neurologischer und chirurgischer Versorgung sowie einer zunächst nach § 30 GewO betriebenen Privatklinik. Die Holding übernimmt zentrale Managementleistungen, während ärztliche Verantwortung und Leistungserbringung bei den berechtigten Betreibern verbleiben.",
 
     missionEyebrow: isRu ? "МИССИЯ И ВИДЕНИЕ" : isEn ? "OUR MISSION & GOALS" : "UNSER AUFTRAG & ZIELE",
     missionHeading: isRu ? "Что нами движет" : isEn ? "What Drives Us" : "Was uns antreibt",
@@ -297,7 +297,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
 
     stat1Num: "3,000+",
     stat1Label: isRu ? "Преданных специалистов" : isEn ? "Dedicated professionals" : "Engagierte Fachkräfte",
-    stat2Num: "9",
+    stat2Num: "10",
     stat2Label: isRu ? "Подразделений и предприятий" : isEn ? "Divisions & operating entities" : "Unternehmensbereiche & Einheiten",
     stat3Num: "100+",
     stat3Label: isRu ? "Партнерская сеть" : isEn ? "Partner network" : "Partner im Netzwerk",
@@ -305,8 +305,35 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
     stat4Label: isRu ? "Общая миссия во имя здорового будущего" : isEn ? "Shared mission for a healthier tomorrow" : "Gemeinsame Mission für eine gesündere Zukunft",
 
     orgEyebrow: isRu ? "ОРГАНИЗАЦИОННАЯ СТРУКТУРА" : isEn ? "ORGANIZATIONAL STRUCTURE" : "ORGANISATION & STRUKTUR",
-    orgHeading: isRu ? "Подразделения и структуры группы" : isEn ? "Divisions & Operating Entities" : "Bereiche & Gesellschaften im Verbund",
+    orgHeading: isRu ? "Структура холдинга и дочерние общества" : isEn ? "Holding & Subsidiary Entities" : "Unternehmensstruktur – Holding & Tochtergesellschaften",
     holdingBadge: isRu ? "ХОЛДИНГ / КОНЦЕРН" : isEn ? "HOLDING / KONZERN" : "HOLDING / KONZERN",
+
+    twoPhaseEyebrow: isRu ? "СТРАТЕГИЯ РАЗВИТИЯ" : isEn ? "DEVELOPMENT STRATEGY" : "STRATEGISCHE ENTWICKLUNG",
+    twoPhaseTitle: isRu ? "Структура участия в две фазы" : isEn ? "Two-Phase Corporate Evolution" : "Beteiligungsstruktur in zwei Phasen",
+    twoPhaseDesc: isRu
+      ? "Развитие холдинга строится последовательно для обеспечения юридической безупречности и устойчивого масштабирования."
+      : isEn
+      ? "The group's corporate expansion is engineered systematically to ensure full regulatory compliance and sustainable scaling."
+      : "Der Aufbau der NabiOta-Gruppe erfolgt in zwei klar definierten Phasen zur Sicherstellung voller berufs- und zulassungsrechtlicher Konformität.",
+    phase1Title: isRu ? "Фаза 1: Этап становления с участием врача" : isEn ? "Phase 1: Foundation Phase with Physician" : "Phase 1: Aufbauphase mit ärztlicher Beteiligung",
+    phase1Desc: isRu
+      ? "Dr. Fischer-Rahimov как лицензированный врач-контрактник владеет долями MVZ на основе права учредителя. Холдинг берет на себя центральные сервисные и управляющие функции через индивидуальные договоры услуг."
+      : isEn
+      ? "Dr. Fischer-Rahimov holds MVZ shares directly on the basis of his statutory physician entitlement. The holding company provides centralized management services via individually defined service agreements."
+      : "Dr. Fischer-Rahimov hält MVZ-Anteile unmittelbar auf Grundlage seiner Gründungsberechtigung. Die Holding verbindet sich mit den MVZ durch einzeln vereinbarte Dienstleistungen. Weitere zulässige Beteiligungen werden separat aufgebaut.",
+    phase2Title: isRu ? "Фаза 2: Стационарная больничная структура" : isEn ? "Phase 2: Hospital Corporation Structure" : "Phase 2: Spätere Krankenhausstruktur",
+    phase2Desc: isRu
+      ? "Холдинг учреждает компанию управления клиникой (NabiOta Clinics Germany GmbH nach § 30 GewO). После получения лицензии больницы (§ 108/109 SGB V) компания сможет напрямую участвовать в долях MVZ."
+      : isEn
+      ? "The holding operates the hospital operating entity (under § 30 GewO). Upon obtaining official hospital accreditation (§ 108/109 SGB V), it can hold MVZ shares directly."
+      : "Die Holding hält die Krankenhaus-Betriebsgesellschaft. Erst bei deren erforderlicher Krankenhauszulassung (§ 108/109 SGB V) und nach Prüfung der Anteilsübertragung kann diese unmittelbar MVZ-Anteile halten.",
+
+    independenceTitle: isRu ? "Полная независимость врачебных решений" : isEn ? "Guaranteed Medical Independence" : "Garantierte ärztliche Weisungsfreiheit",
+    independenceDesc: isRu
+      ? "Холдинг обеспечивает экономическое, IT- и инфраструктурное сопровождение, но не имеет полномочий влиять на индивидуальные медицинские решения. Врачебное руководство каждого центра действует абсолютно автономно в соответствии с § 95 SGB V."
+      : isEn
+      ? "The holding handles administrative, IT, and facility management without interfering in clinical care. The medical directorship of each facility remains completely autonomous in all healthcare matters."
+      : "Die medizinischen Einrichtungen bleiben für Behandlungsentscheidungen, Diagnostik und ärztliche Organisation eigenverantwortlich. Die medizinische Weisungsfreiheit der ärztlichen Leitung eines MVZ bleibt uneingeschränkt gewahrt (§ 95 SGB V).",
 
     valuesEyebrow: isRu ? "НАШИ ЦЕННОСТИ" : isEn ? "UNSERE WERTE" : "UNSERE WERTE",
     valuesHeading: isRu ? "Что делает нас особенными." : isEn ? "Das macht uns besonders." : "Das macht uns besonders.",
@@ -325,60 +352,120 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
     ctaBtn: isRu ? "Связаться с нами →" : isEn ? "Get in Touch →" : "Kontakt aufnehmen →",
   };
 
-  const entities = [
+  const organigramColumns = [
     {
-      icon: StethoscopeIcon,
-      name: "NabiOta® MVZ",
-      sub: "Hausärztliches Facharztzentrum",
-      href: `/${locale}/areas/medizinische-fachbereiche`,
+      colTitle: isRu ? "Амбулаторная и стационарная медицина" : isEn ? "Primary & Inpatient Medicine" : "Ambulante & Stationäre Medizin",
+      items: [
+        {
+          name: "“NabiOta” MVZ",
+          sub: isRu
+            ? "Центр терапевтической и специализированной помощи (терапия, кардиология, гастроэнтерология, пульмонология, неврология, эндокринология)"
+            : isEn
+            ? "Center for Primary & Specialist Care (General Practice, Cardiology, Gastroenterology, Pulmonology, Neurology, Endocrinology)"
+            : "Zentrum für hausärztliche und fachärztliche Versorgung (Hausarzt, Kardiologie, Gastroenterologe, Pulmonologie, Neurologie, Endokrinologie)",
+          badge: "§ 95 SGB V",
+          href: `/${locale}/areas/medizinische-fachbereiche`,
+          icon: StethoscopeIcon,
+        },
+        {
+          name: "“NabiOta” Klinik Germany GmbH",
+          sub: isRu
+            ? "Медицинская клиника (по § 30 GewO) — стационарные, дневные и операционные центры"
+            : isEn
+            ? "Inpatient & Specialty Clinic (acc. to § 30 GewO) — Inpatient surgery & recovery"
+            : "Klinik Germany GmbH (n. § 30 KH / GewO) — Stationäre, teilstationäre & operative Versorgung",
+          badge: "§ 30 GewO",
+          href: `/${locale}/areas/medizinische-fachbereiche`,
+          icon: BuildingStatsIcon,
+        },
+        {
+          name: "“NabiOta” Rehabilitation Center",
+          sub: isRu
+            ? "Центр реабилитации и терапии (Rehabilitation & Therapy GmbH) — физиотерапия, эрготерапия, логопедия"
+            : isEn
+            ? "Rehabilitation & Therapy Center — Physiotherapy, Occupational & Speech therapy"
+            : "Rehabilitation & Therapy Center (GmbH) — Physiotherapie, Ergotherapie, Logopädie & MTT",
+          badge: "Ambulante Reha",
+          href: `/${locale}/areas/rehabilitation`,
+          icon: ActivityRehabIcon,
+        },
+      ],
     },
     {
-      icon: ScalpelIcon,
-      name: "NabiOta® MVZ",
-      sub: "Chirurgisches Facharztzentrum (Orthopädie, Neurochirurgie, Plastische & Allgemeinchirurgie)",
-      href: `/${locale}/areas/medizinische-fachbereiche`,
+      colTitle: isRu ? "Хирургия, диагностика и уход" : isEn ? "Surgery, Diagnostics & Care" : "Chirurgie, Diagnostik & Pflege",
+      items: [
+        {
+          name: "“NabiOta” MVZ",
+          sub: isRu
+            ? "Хирургия и анестезиология (ортопедия/травматология, нейрохирургия, абдоминальная и пластическая хирургия, противоболевая терапия)"
+            : isEn
+            ? "Surgery & Anesthesiology (Orthopedics, Neurosurgery, Visceral & Plastic Surgery, Pain therapy)"
+            : "Chirurgie und Anästhesiologie (Orthopädie, Unfallchirurgie, Neurochirurgie, Allgemein-/Viszeral-, Plastische Chirurgie, Anästhesie)",
+          badge: "Ambulante OP",
+          href: `/${locale}/areas/medizinische-fachbereiche`,
+          icon: ScalpelIcon,
+        },
+        {
+          name: "“NabiOta” Diagnostics GmbH",
+          sub: isRu
+            ? "Высокотехнологичная диагностика: МРТ 3T, КТ Low-Dose, цифровой рентген, нейрофизиология (ЭМГ/ЭЭГ) и лабораторная логистика"
+            : isEn
+            ? "Advanced Diagnostics: 3T MRI, Low-Dose CT, X-ray, Neurophysiology (EMG/EEG) & Lab logistics"
+            : "Diagnostics GmbH (CT + MRT 3T + Rö + Neurophysiologie & Labor-Probenmanagement)",
+          badge: "3T MRT / CT",
+          href: `/${locale}/areas/diagnostik`,
+          icon: ScannerMriIcon,
+        },
+        {
+          name: "“NabiOta” HomeCare GmbH",
+          sub: isRu
+            ? "Патронаж и уход на дому: квалифицированная сестринская помощь и специализированное лечение ран (Wundversorgung)"
+            : isEn
+            ? "In-Home Nursing Care: Qualified outpatient nursing & specialized wound care"
+            : "HomeCare GmbH (Qualifizierte Pflege / spezialisierte Wundversorgung nach SGB V & XI)",
+          badge: "HomeCare",
+          href: `/${locale}/areas/pflege`,
+          icon: HomeCareIcon,
+        },
+      ],
     },
     {
-      icon: TeamStatsIcon,
-      name: "NabiOta® Personalvermittlung",
-      sub: "Fachkräfteakquise & International Recruiting",
-      href: `/${locale}/areas/beratung-projektentwicklung`,
-    },
-    {
-      icon: BuildingStatsIcon,
-      name: "NabiOta® Klinik Germany GmbH",
-      sub: "z. B. 30 KV / Diagnostics GmbH",
-      href: `/${locale}/areas/medizinische-fachbereiche`,
-    },
-    {
-      icon: ScannerMriIcon,
-      name: "NabiOta® Diagnostics GmbH",
-      sub: "High-End CT- MRT- Digitales Röntgen",
-      href: `/${locale}/areas/diagnostik`,
-    },
-    {
-      icon: RealEstateIcon,
-      name: "NabiOta® Real Estate GmbH",
-      sub: "Gesundheitsimmobilien & Praxisentwicklung",
-      href: `/${locale}/areas/beratung-projektentwicklung`,
-    },
-    {
-      icon: ActivityRehabIcon,
-      name: "NabiOta® Rehabilitation Center",
-      sub: "Therapie & Präventionszentrum",
-      href: `/${locale}/areas/rehabilitation`,
-    },
-    {
-      icon: HomeCareIcon,
-      name: "NabiOta® HomeCare GmbH",
-      sub: "Ambulante Pflege & Wundversorgung",
-      href: `/${locale}/areas/pflege`,
-    },
-    {
-      icon: CrossPharmacyIcon,
-      name: "NabiOta® Apotheke",
-      sub: "Pharmazeutische Vollversorgung",
-      href: `/${locale}/areas/medizinische-fachbereiche`,
+      colTitle: isRu ? "Кадры, недвижимость и снабжение" : isEn ? "Recruitment, Real Estate & Supplies" : "Personal, Immobilien & Versorgung",
+      items: [
+        {
+          name: "“NabiOta” Medical Recruitment",
+          sub: isRu
+            ? "Служба медицинского рекрутинга (GmbH) — привлечение врачей и медперсонала, нострификация и Approbation"
+            : isEn
+            ? "Medical Recruitment Services GmbH — Healthcare staffing & degree recognition (Approbation)"
+            : "Medical Recruitment Services GmbH (Med. Vermittlungsservice & Approbationsbegleitung)",
+          badge: "Recruitment",
+          href: `/${locale}/areas/internationale-kooperationen`,
+          icon: TeamStatsIcon,
+        },
+        {
+          name: "“NabiOta” Real Estate GmbH",
+          sub: isRu
+            ? "Медицинская недвижимость — девелопмент, перепланировка и управление специализированными зданиями клиник и MVZ"
+            : isEn
+            ? "Medical Real Estate GmbH — Acquisition, clinic construction & medical facility management"
+            : "Real Estate GmbH (Med. Immobilien, Praxisentwicklung & Betreiberkonzepte)",
+          badge: "Real Estate",
+          href: `/${locale}/areas/beratung-projektentwicklung`,
+          icon: RealEstateIcon,
+        },
+        {
+          name: "“NabiOta” Sanitätshaus & Apotheke",
+          sub: isRu
+            ? "Ортопедические салоны (Sanitätshaus GmbH), обеспечение медикаментами клиник и NabiOta Pharmacy"
+            : isEn
+            ? "Medical Supplies & NabiOta Pharmacy — Orthopedic aids, rehab products & clinical pharmacy"
+            : "Arzneimittelversorgung & Sanitätshaus GmbH (Med. Hilfsmittel & NabiOta Pharmacy)",
+          badge: "Supplies & Pharmacy",
+          href: `/${locale}/areas/medizinische-fachbereiche`,
+          icon: CrossPharmacyIcon,
+        },
+      ],
     },
   ];
 
@@ -597,66 +684,174 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
               </h2>
             </div>
 
-            {/* Holding Top Badge matching screenshot with gold circular icon */}
+            {/* Holding Top Badge matching Page 1 PDF */}
             <div className="flex justify-center mb-0">
-              <div className="inline-flex items-center gap-4 bg-[#0B1E13] text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl border border-[#D5B878]/70 shadow-lg text-left">
-                <div className="w-12 h-12 rounded-full border border-[#D5B878] bg-[#142A1D]/60 flex items-center justify-center text-[#ECCF96] flex-shrink-0 shadow-[0_0_8px_rgba(213,184,120,0.2)]">
+              <div className="inline-flex items-center gap-4 bg-[#0B1E13] text-white px-6 sm:px-8 py-4 rounded-2xl border border-[#D5B878]/70 shadow-xl text-left">
+                <div className="w-13 h-13 rounded-full border border-[#D5B878] bg-[#142A1D]/60 flex items-center justify-center text-[#ECCF96] flex-shrink-0 shadow-[0_0_12px_rgba(213,184,120,0.25)]">
                   <BuildingStatsIcon className="w-6 h-6 stroke-[1.6]" />
                 </div>
                 <div>
-                  <span className="text-[9.5px] font-bold tracking-[0.24em] text-[#DEC085] uppercase block mb-0.5">
+                  <span className="text-[10px] font-bold tracking-[0.24em] text-[#DEC085] uppercase block mb-0.5">
                     {t.holdingBadge}
                   </span>
-                  <h3 className="font-serif text-[17px] sm:text-[19px] font-medium text-white tracking-wide">
-                    NabiOta® Health Group Germany GmbH
+                  <h3 className="font-serif text-[18px] sm:text-[20px] font-medium text-white tracking-wide">
+                    “NabiOta” Health Group Germany GmbH
                   </h3>
+                  <p className="text-[11.5px] text-[#A7B8AD] mt-0.5">
+                    {isRu ? "Холдинг / Концерн • Мёнхенгладбах" : isEn ? "Holding / Group • Mönchengladbach" : "Holding / Konzern • Mönchengladbach"}
+                  </p>
                 </div>
               </div>
             </div>
 
-            {/* ── Connecting Hierarchical Tree Lines matching reference photo ── */}
+            {/* Connecting Tree SVG from Holding into 3 Pillars */}
             <div className="hidden lg:block w-full max-w-6xl mx-auto pointer-events-none">
-              <svg className="w-full h-11" viewBox="0 0 1000 44" fill="none" preserveAspectRatio="none">
-                {/* Vertical stem line dropping from Holding badge */}
-                <line x1="500" y1="0" x2="500" y2="22" stroke="#C5A56A" strokeWidth="1.5" />
-                {/* Horizontal branch line spanning across the 3 columns */}
-                <line x1="167" y1="22" x2="833" y2="22" stroke="#C5A56A" strokeWidth="1.5" />
-                {/* Drop line into Column 1 */}
-                <line x1="167" y1="22" x2="167" y2="44" stroke="#C5A56A" strokeWidth="1.5" />
-                {/* Drop line into Column 2 */}
-                <line x1="500" y1="22" x2="500" y2="44" stroke="#C5A56A" strokeWidth="1.5" />
-                {/* Drop line into Column 3 */}
-                <line x1="833" y1="22" x2="833" y2="44" stroke="#C5A56A" strokeWidth="1.5" />
+              <svg className="w-full h-12" viewBox="0 0 1000 48" fill="none" preserveAspectRatio="none">
+                {/* Central drop stem */}
+                <line x1="500" y1="0" x2="500" y2="24" stroke="#C5A56A" strokeWidth="1.8" />
+                {/* Horizontal distribution bar */}
+                <line x1="167" y1="24" x2="833" y2="24" stroke="#C5A56A" strokeWidth="1.8" />
+                {/* Drop lines into 3 columns */}
+                <line x1="167" y1="24" x2="167" y2="48" stroke="#C5A56A" strokeWidth="1.8" />
+                <line x1="500" y1="24" x2="500" y2="48" stroke="#C5A56A" strokeWidth="1.8" />
+                <line x1="833" y1="24" x2="833" y2="48" stroke="#C5A56A" strokeWidth="1.8" />
               </svg>
             </div>
 
-            {/* 9 Operating Entities (3x3 Grid) with full descriptions & round icon badges */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4 max-w-6xl mx-auto mt-4 lg:mt-0">
-              {entities.map((item, idx) => {
-                const IconComp = item.icon;
-                return (
-                  <Link
-                    key={idx}
-                    href={item.href}
-                    className="group bg-white rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878] p-4 sm:p-5 flex items-center shadow-[0_1px_4px_rgba(0,0,0,0.02)] hover:shadow-md transition-all hover:-translate-y-0.5"
-                  >
-                    {/* Gold round circle icon badge matching screenshot */}
-                    <div className="w-12 h-12 sm:w-13 sm:h-13 rounded-full border border-[#D5B878] bg-[#FCFAF6] flex items-center justify-center text-[#B89650] flex-shrink-0 mr-4 shadow-[0_0_8px_rgba(213,184,120,0.12)] group-hover:scale-105 group-hover:border-[#B89650] group-hover:bg-[#B89650]/10 transition-all">
-                      <IconComp className="w-6 h-6 stroke-[1.6]" />
-                    </div>
+            {/* 3 Pillars Grid with 3 vertically stacked connected cards each */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto mt-6 lg:mt-0">
+              {organigramColumns.map((col, cIdx) => (
+                <div key={cIdx} className="flex flex-col space-y-4 relative">
+                  {/* Pillar Column Header */}
+                  <div className="text-center pb-1">
+                    <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#A07D3E] font-sans">
+                      {col.colTitle}
+                    </span>
+                  </div>
 
-                    {/* Text content with full descriptions fitting naturally without truncation */}
-                    <div className="flex-1 min-w-0">
-                      <h4 className="font-serif font-bold text-[14px] sm:text-[14.5px] text-[#142318] leading-tight group-hover:text-[#BFA267] transition-colors mb-1">
-                        {item.name}
-                      </h4>
-                      <p className="text-[11.5px] sm:text-[12px] text-[#6E756D] leading-snug">
-                        {item.sub}
+                  {col.items.map((item, rIdx) => {
+                    const IconComp = item.icon;
+                    return (
+                      <React.Fragment key={rIdx}>
+                        {rIdx > 0 && (
+                          <div className="hidden lg:flex justify-center -my-2 py-1">
+                            <div className="w-[1.5px] h-4 bg-[#D5B878]/70" />
+                          </div>
+                        )}
+                        <Link
+                          href={item.href}
+                          className="group bg-white rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878] p-5 flex flex-col justify-between shadow-[0_2px_6px_rgba(0,0,0,0.02)] hover:shadow-lg transition-all hover:-translate-y-0.5"
+                        >
+                          <div className="flex items-start gap-3.5 mb-2.5">
+                            <div className="w-11 h-11 rounded-full border border-[#D5B878] bg-[#FCFAF6] flex items-center justify-center text-[#B89650] flex-shrink-0 shadow-[0_0_8px_rgba(213,184,120,0.12)] group-hover:scale-105 group-hover:border-[#B89650] group-hover:bg-[#B89650]/10 transition-all">
+                              <IconComp className="w-5.5 h-5.5 stroke-[1.6]" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center justify-between gap-2">
+                                <span className="inline-block text-[10px] font-bold uppercase tracking-wider text-[#A07D3E] bg-[#FAF5EB] px-2 py-0.5 rounded border border-[#EADBBD]">
+                                  {item.badge}
+                                </span>
+                              </div>
+                              <h4 className="font-serif font-bold text-[15px] sm:text-[16px] text-[#142318] leading-snug group-hover:text-[#BFA267] transition-colors mt-1">
+                                {item.name}
+                              </h4>
+                            </div>
+                          </div>
+                          <p className="text-[12px] sm:text-[12.5px] text-[#556057] leading-relaxed">
+                            {item.sub}
+                          </p>
+                        </Link>
+                      </React.Fragment>
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
+
+            {/* ── Two-Phase Strategy & Governance Cards from PDF (Pages 2-4) ── */}
+            <div className="mt-12 sm:mt-16 pt-10 sm:pt-12 border-t border-[#EDE7DC] max-w-6xl mx-auto">
+              <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+                <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-1.5">
+                  {t.twoPhaseEyebrow}
+                </span>
+                <h3 className="font-serif text-[26px] sm:text-[32px] font-normal text-[#142318] leading-[1.2]">
+                  {t.twoPhaseTitle}
+                </h3>
+                <p className="text-[13px] sm:text-[14px] text-[#556057] mt-2 leading-relaxed">
+                  {t.twoPhaseDesc}
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                {/* Phase 1 & Phase 2 Card */}
+                <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#EDE8DE] shadow-[0_2px_8px_rgba(0,0,0,0.02)] space-y-5">
+                  <div className="flex items-center gap-3 text-[#142318]">
+                    <div className="w-10 h-10 rounded-full bg-[#FAF5EB] text-[#B89650] flex items-center justify-center flex-shrink-0">
+                      <TargetIcon className="w-5 h-5 stroke-[1.6]" />
+                    </div>
+                    <h4 className="font-serif text-lg font-bold text-[#142318]">
+                      {isRu ? "Двухфазная модель участия" : isEn ? "Two-Phase Participation Model" : "Zwei-Phasen-Beteiligungsstruktur"}
+                    </h4>
+                  </div>
+
+                  <div className="space-y-4 pt-1">
+                    <div className="p-4 rounded-xl bg-[#FAF8F5] border border-[#EBE4D8] space-y-1.5">
+                      <div className="text-xs font-bold text-[#A07D3E] uppercase tracking-wider">
+                        {t.phase1Title}
+                      </div>
+                      <p className="text-xs sm:text-[12.5px] text-[#4E5650] leading-relaxed">
+                        {t.phase1Desc}
                       </p>
                     </div>
-                  </Link>
-                );
-              })}
+
+                    <div className="p-4 rounded-xl bg-[#FAF8F5] border border-[#EBE4D8] space-y-1.5">
+                      <div className="text-xs font-bold text-[#A07D3E] uppercase tracking-wider">
+                        {t.phase2Title}
+                      </div>
+                      <p className="text-xs sm:text-[12.5px] text-[#4E5650] leading-relaxed">
+                        {t.phase2Desc}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Medical Autonomy & Governance Card */}
+                <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#EDE8DE] shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex flex-col justify-between space-y-5">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3 text-[#142318]">
+                      <div className="w-10 h-10 rounded-full bg-[#FAF5EB] text-[#B89650] flex items-center justify-center flex-shrink-0">
+                        <ShieldIcon className="w-5 h-5 stroke-[1.6]" />
+                      </div>
+                      <h4 className="font-serif text-lg font-bold text-[#142318]">
+                        {t.independenceTitle}
+                      </h4>
+                    </div>
+
+                    <p className="text-xs sm:text-[13px] text-[#4E5650] leading-relaxed pt-1">
+                      {t.independenceDesc}
+                    </p>
+
+                    <div className="p-4 rounded-xl bg-[#FAF8F5] border border-[#EBE4D8] space-y-2">
+                      <div className="text-xs font-bold text-[#142318]">
+                        {isRu ? "Ключевые принципы взаимодействия:" : isEn ? "Core Governance Principles:" : "Zentrale Governance-Prinzipien:"}
+                      </div>
+                      <ul className="text-xs text-[#556057] space-y-1.5 list-disc list-inside">
+                        <li>{isRu ? "Строгая врачебная тайна и защита данных пациентов (DSGVO)" : isEn ? "Strict medical confidentiality & GDPR compliance" : "Ärztliche Schweigepflicht & strenger Datenschutz (DSGVO)"}</li>
+                        <li>{isRu ? "Централизованное IT-, финансовое и маркетинговое управление" : isEn ? "Centralized management: IT, Finance, Purchasing, Marketing" : "Zentrales Management: IT, Finanzen, Einkauf & Marketing"}</li>
+                        <li>{isRu ? "Сертификация по стандартам ISO и регулярный внутренний аудит" : isEn ? "ISO-certified quality assurance & continuous clinical audit" : "Qualitätsmanagement nach DIN EN ISO & Patientensicherheit"}</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="text-[11px] text-[#78857C] pt-2 border-t border-[#EBE4D8]">
+                    {isRu
+                      ? "Сведения в соответствии с нотариальным проектом устава и положениями § 95 SGB V."
+                      : isEn
+                      ? "In accordance with notarized corporate filings and statutory § 95 SGB V regulations."
+                      : "Gemäß notarieller Gründungsdokumentation und den Vorgaben des § 95 SGB V."}
+                  </div>
+                </div>
+              </div>
             </div>
           </Container>
         </section>

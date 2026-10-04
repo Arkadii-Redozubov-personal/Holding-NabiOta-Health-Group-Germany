@@ -206,17 +206,37 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
       ? "Structured Healthcare Excellence according to German Standards"
       : "Strukturierte Spitzenversorgung nach deutschen Standards",
     desc: isRu
-      ? "Медицинские направления группы NabiOta® объединяют базовую терапевтическую помощь с высокоспециализированными хирургическими центрами. В наших специализированных центрах (MVZ) представлены ортопедия, нейрохирургия, пластическая хирургия и общая хирургия по высшим немецким стандартам качества."
+      ? "Медицинские направления группы NabiOta® объединяют первичную терапевтическую помощь с высокоспециализированными хирургическими центрами и стационарной клиникой. В наших специализированных центрах (MVZ) и планируемой клинике представлены терапия, кардиология, ортопедия, нейрохирургия, пластическая хирургия и анестезиология по высшим немецким стандартам качества."
       : isEn
-      ? "The medical divisions of the NabiOta® Group combine primary general medical care with highly specialized surgical centers. In our outpatient medical centers (MVZ), we cover orthopedics, neurosurgery, plastic surgery, and general surgery according to the highest German quality standards."
-      : "Die medizinischen Fachbereiche der NabiOta® Gruppe verbinden hausärztliche Grundversorgung mit hochspezialisierten chirurgischen Zentren. In unseren Facharztzentren decken wir Orthopädie, Neurochirurgie, plastische Chirurgie sowie Allgemeinchirurgie nach höchsten deutschen Qualitätsstandards ab.",
-    capabilitiesTitle: isRu ? "Ключевые направления" : isEn ? "Core Capabilities" : "Leistungsschwerpunkte",
+      ? "The medical divisions of the NabiOta® Group combine primary general medical care with highly specialized surgical centers and inpatient facilities. Across our outpatient medical centers (MVZ) and upcoming clinic, we cover general medicine, cardiology, orthopedics, neurosurgery, plastic surgery, and anesthesiology according to highest German standards."
+      : "Die medizinischen Fachbereiche der NabiOta® Gruppe verbinden hausärztliche Grundversorgung mit hochspezialisierten operativen Zentren und stationärer Klinikversorgung. In unseren Facharztzentren (MVZ) und der geplanten Fachklinik decken wir Allgemeinmedizin, Kardiologie, Orthopädie, Neurochirurgie, plastische Chirurgie sowie Anästhesiologie nach höchsten deutschen Qualitätsstandards ab.",
+    capabilitiesTitle: isRu ? "Структура медицинских подразделений" : isEn ? "Clinical Divisions & Entities" : "Struktur der Fachbereiche & Zentren",
     capabilities: [
-      isRu ? "Терапевтическая помощь и профилактика" : isEn ? "Primary Care & Preventive Medicine" : "Hausärztliche Versorgung & Prävention",
-      isRu ? "Ортопедия и травматология" : isEn ? "Orthopedics & Traumatology" : "Orthopädie und Traumatologie",
-      isRu ? "Нейрохирургические консультации и операции" : isEn ? "Neurosurgical Consultations & Surgery" : "Neurochirurgische Sprechstunden & Eingriffe",
-      isRu ? "Пластическая и реконструктивная хирургия" : isEn ? "Plastic & Reconstructive Surgery" : "Plastische & Rekonstruktive Chirurgie",
-      isRu ? "Общая хирургия и амбулаторные операции" : isEn ? "General Surgery & Outpatient Operations" : "Allgemeinchirurgie & ambulantes Operieren",
+      isRu
+        ? "MVZ Терапии: семейная медицина, общая терапия, кардиология и диабетология"
+        : isEn
+        ? "Primary Care MVZ: General practice, internal medicine, cardiology & diabetology"
+        : "MVZ Hausärztlich / Internistisch: Allgemeinmedizin, Innere Medizin, Kardiologie & Diabetologie",
+      isRu
+        ? "MVZ Хирургии: ортопедия, травматология, нейрохирургия позвоночника и пластическая хирургия"
+        : isEn
+        ? "Surgical MVZ: Orthopedics, traumatology, spinal neurosurgery & plastic surgery"
+        : "MVZ Chirurgie & Anästhesiologie: Orthopädie, Unfallchirurgie, Neurochirurgie & Plastische Chirurgie",
+      isRu
+        ? "Амбулаторный операционный центр (AOP) и специализированное отделение анестезиологии"
+        : isEn
+        ? "Outpatient Surgical Center (AOP) & specialized department for anesthesiology"
+        : "Ambulantes Operieren (AOP) & modernes Anästhesiezentrum",
+      isRu
+        ? "NabiOta® Clinics Germany GmbH: стационарная клиника по § 30 GewO с коечным фондом"
+        : isEn
+        ? "NabiOta® Clinics Germany GmbH: Inpatient surgical clinic under § 30 GewO with ward beds"
+        : "NabiOta® Clinics Germany GmbH: Stationäre Fachklinik nach § 30 GewO mit Bettenstationen",
+      isRu
+        ? "Полная врачебная независимость клинических решений (§ 95 SGB V)"
+        : isEn
+        ? "Guaranteed clinical autonomy and freedom of medical decisions (§ 95 SGB V)"
+        : "Volle ärztliche Weisungsfreiheit nach § 95 SGB V für alle Behandelnden",
     ],
     advantagesTitle: isRu ? "Преимущества в составе холдинга" : isEn ? "Group Advantages" : "Ihre Vorteile im Verbund",
     advantages: [
@@ -226,33 +246,66 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
         ? "Interdisciplinary collaboration of all specialists under one roof"
         : "Interdisziplinäre Zusammenarbeit aller Fachärzte unter einem Dach",
       isRu
-        ? "Современные кабинеты с безбарьерной доступной средой"
+        ? "Прямой переход от амбулаторного приема к хирургии и реабилитации"
         : isEn
-        ? "Modern medical practice facilities with barrier-free accessibility"
-        : "Moderne Praxisräume mit barrierefreiem Zugang",
+        ? "Seamless transition from outpatient diagnosis to surgery and rehabilitation"
+        : "Nahtloser Übergang von Diagnostik zu OP, Reha und ambulanter Pflege",
       isRu
         ? "Быстрая запись на прием и цифровая передача медицинских заключений"
         : isEn
         ? "Rapid appointment scheduling and digital report transfer"
         : "Schnelle Terminvergabe und digitale Befundübermittlung",
       isRu
-        ? "Тесная интеграция с центрами диагностики и реабилитации"
+        ? "Строгое соблюдение немецких клинических рекомендаций и стандартов безопасности"
         : isEn
-        ? "Seamless networking with diagnostics and rehabilitation centers"
-        : "Enge Verzahnung mit Diagnostik- und Rehazentren",
+        ? "Strict compliance with German clinical guidelines and patient safety standards"
+        : "Strenge Einhaltung deutscher Leitlinien und höchste Patientensicherheit",
     ],
     stats: [
       {
-        value: "4+",
-        label: isRu ? "Хирургических профиля" : isEn ? "Surgical Specialties" : "Chirurgische Schwerpunkte",
+        value: "2 MVZ",
+        label: isRu ? "Специализированных центра" : isEn ? "Specialist MVZs" : "MVZ Facharztzentren",
       },
       {
-        value: "100%",
-        label: isRu ? "Ориентация на пациента" : isEn ? "Patient-Centered" : "Patientenfokussiert",
+        value: "§ 30",
+        label: isRu ? "Клиника (GewO)" : isEn ? "Inpatient Clinic (GewO)" : "Klinikzulassung (GewO)",
       },
       {
-        value: "MVZ",
-        label: isRu ? "Лицензия по стандартам ФРГ" : isEn ? "German Medical Center" : "Zulassung nach dt. Recht",
+        value: "§ 95",
+        label: isRu ? "Врачебная автономия (SGB V)" : isEn ? "Clinical Autonomy (SGB V)" : "Ärztl. Unabhängigkeit (SGB V)",
+      },
+    ],
+    entitiesTitle: isRu ? "Медицинские структуры холдинга" : isEn ? "Medical Group Entities" : "Medizinische Gesellschaften des Holdings",
+    entities: [
+      {
+        tag: "MVZ 1",
+        title: isRu ? "MVZ Терапии и семейной медицины" : isEn ? "MVZ Primary Care & Internal Medicine" : "MVZ Hausärztlich / Internistisch",
+        sub: isRu ? "Амбулаторная помощь" : isEn ? "Outpatient Primary Care" : "Ambulante Grund- & Schwerpunktversorgung",
+        items: [
+          isRu ? "Семейная медицина и первичная помощь" : isEn ? "General Practice & Family Medicine" : "Allgemeinmedizin & Hausärztliche Versorgung",
+          isRu ? "Внутренние болезни, кардиология и диабет" : isEn ? "Internal Medicine, Cardiology & Diabetes" : "Innere Medizin, Kardiologie & Diabetologie",
+          isRu ? "Профилактические чекапы и программы DMP" : isEn ? "Check-ups & Chronic Disease Programs (DMP)" : "Präventionsmedizin, Check-ups & DMP-Programme",
+        ],
+      },
+      {
+        tag: "MVZ 2",
+        title: isRu ? "MVZ Хирургии и анестезиологии" : isEn ? "MVZ Surgery & Anesthesiology" : "MVZ Chirurgie & Anästhesiologie",
+        sub: isRu ? "Специализированная хирургия" : isEn ? "Specialized Surgical Care" : "Operative Spezialdisziplinen",
+        items: [
+          isRu ? "Ортопедия и травматологическая хирургия" : isEn ? "Orthopedics & Trauma Surgery" : "Orthopädie & Unfallchirurgie",
+          isRu ? "Нейрохирургия (позвоночник и боль)" : isEn ? "Neurosurgery (Spine & Pain Therapy)" : "Neurochirurgie (Wirbelsäule & Schmerztherapie)",
+          isRu ? "Пластическая и амбулаторные операции (AOP)" : isEn ? "Plastic Surgery & Outpatient ORs (AOP)" : "Plastische Chirurgie & Ambulantes Operieren (AOP)",
+        ],
+      },
+      {
+        tag: "Klinik",
+        title: "NabiOta® Clinics Germany GmbH",
+        sub: isRu ? "Стационарная клиника (§ 30 GewO)" : isEn ? "Inpatient Clinic (§ 30 GewO)" : "Stationäre Versorgung (§ 30 GewO)",
+        items: [
+          isRu ? "Операционные блоки и коечные палаты" : isEn ? "Inpatient Operating Suites & Ward Beds" : "Stationäre OP-Säle & bettenführende Stationen",
+          isRu ? "Круглосуточный послеоперационный мониторинг" : isEn ? "24/7 Post-Surgical Clinical Monitoring" : "Postoperative Überwachung & Schmerztherapie",
+          isRu ? "Интеграция с больничным планом (§ 108/109 SGB V)" : isEn ? "Hospital Plan Integration (§ 108/109 SGB V)" : "Kooperationen & Versorgungsverträge (§ 108/109 SGB V)",
+        ],
       },
     ],
   };
@@ -661,6 +714,55 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                     </div>
                   ))}
                 </div>
+              </div>
+            </div>
+
+            {/* 3 Medical Entities Grid matching corporate structure */}
+            <div className="mt-8 pt-8 border-t border-[#EDE8DE]">
+              <div className="text-center max-w-xl mx-auto mb-6">
+                <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase block mb-1">
+                  {overviewData.entitiesTitle}
+                </span>
+                <p className="text-xs sm:text-[13px] text-[#556358] font-sans">
+                  {isRu
+                    ? "Структурированные подразделения холдинга для амбулаторной и стационарной помощи"
+                    : isEn
+                    ? "Structured holding entities covering outpatient and inpatient clinical pathways"
+                    : "Spezialisierte Gesellschaften der Gruppe für ambulante und stationäre Spitzenmedizin"}
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                {overviewData.entities.map((entity, eIdx) => (
+                  <div
+                    key={eIdx}
+                    className="bg-white rounded-2xl p-5 sm:p-6 border border-[#EDE8DE] hover:border-[#D5B878] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between gap-2 mb-3">
+                        <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-[#08170D] text-[#ECCF96] tracking-wider uppercase">
+                          {entity.tag}
+                        </span>
+                        <span className="text-[11px] text-[#8C948D] font-sans truncate">
+                          {entity.sub}
+                        </span>
+                      </div>
+                      <h4 className="font-serif text-base sm:text-lg text-[#142318] font-medium leading-snug group-hover:text-[#B89650] transition-colors mb-3">
+                        {entity.title}
+                      </h4>
+                      <div className="space-y-2">
+                        {entity.items.map((item, iIdx) => (
+                          <div key={iIdx} className="flex items-start gap-2">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-[#B89650] shrink-0 mt-0.5" />
+                            <span className="text-xs text-[#556358] leading-relaxed font-sans">
+                              {item}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </Container>

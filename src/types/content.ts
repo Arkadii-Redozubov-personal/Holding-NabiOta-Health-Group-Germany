@@ -92,6 +92,9 @@ export type HoldingCompanyInfo = {
   email: string;
   website: string;
   managingDirector: string;
+  medicalFounder?: string;
+  shareCapital?: string;
+  registrationDate?: string;
   commercialRegister: {
     court: string;
     number: string;
