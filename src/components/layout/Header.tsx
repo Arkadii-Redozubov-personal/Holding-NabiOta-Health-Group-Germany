@@ -34,11 +34,15 @@ const areaNavItems = [
       de: "Medizinische Fachbereiche",
       en: "Medical Departments",
       ru: "Медицинские направления",
+      tr: "Tıbbi Bölümler",
+      ar: "الأقسام الطبية التخصصية",
     },
     subtitles: {
       de: "Ambulante & Fachärztliche Spitzenmedizin",
       en: "Outpatient & Specialist Medicine",
       ru: "Амбулаторная и специализированная медицина",
+      tr: "Ayakta Tedavi & Uzman Hekimlik",
+      ar: "الرعاية المتنقلة والطب التخصصي",
     },
   },
   {
@@ -48,11 +52,15 @@ const areaNavItems = [
       de: "Diagnostik",
       en: "Diagnostics",
       ru: "Диагностика",
+      tr: "Tanı & Görüntüleme",
+      ar: "التشخيص والتصوير الطبي",
     },
     subtitles: {
       de: "MRT, CT & Präzisionstechnologie",
       en: "MRI, CT & High-Precision Imaging",
       ru: "МРТ, КТ и высокоточная диагностика",
+      tr: "3T MRT, CT & Yüksek Teknoloji",
+      ar: "الرنين المغناطيسي والأشعة المقطعية",
     },
   },
   {
@@ -62,11 +70,15 @@ const areaNavItems = [
       de: "Rehabilitation",
       en: "Rehabilitation",
       ru: "Реабилитация",
+      tr: "Rehabilitasyon",
+      ar: "التأهيل والعلاج الطبيعي",
     },
     subtitles: {
       de: "Ganzheitliche Genesung & Therapie",
       en: "Holistic Recovery & Therapy",
       ru: "Комплексное восстановление и терапия",
+      tr: "Bütüncül İyileşme & Fizik Tedavi",
+      ar: "التعافي الشامل والبرامج العلاجية",
     },
   },
   {
@@ -76,11 +88,15 @@ const areaNavItems = [
       de: "Pflege",
       en: "Nursing Care",
       ru: "Патронаж и уход",
+      tr: "Hasta Bakımı & HomeCare",
+      ar: "التمريض والرعاية المنزلية",
     },
     subtitles: {
       de: "Ambulante Pflege & HomeCare",
       en: "Outpatient Care & HomeCare",
       ru: "Амбулаторная помощь и HomeCare",
+      tr: "Evde Bakım & Medikal Malzeme",
+      ar: "الرعاية المتنقلة والمستلزمات الطبية",
     },
   },
   {
@@ -90,11 +106,15 @@ const areaNavItems = [
       de: "Beratung & Projektentwicklung",
       en: "Consulting & Development",
       ru: "Консалтинг и девелопмент",
+      tr: "Danışmanlık & Proje Geliştirme",
+      ar: "الاستشارات والتطوير الطبي",
     },
     subtitles: {
       de: "Gesundheitsimmobilien & MVZ-Strukturen",
       en: "Healthcare Facilities & Centers",
       ru: "Медицинские центры и девелопмент",
+      tr: "Sağlık Tesisleri & Klinik Projeleri",
+      ar: "تطوير المرافق والمجمعات الطبية",
     },
   },
   {
@@ -104,25 +124,33 @@ const areaNavItems = [
       de: "Internationale Kooperationen",
       en: "International Cooperations",
       ru: "Международное сотрудничество",
+      tr: "Uluslararası İş Birlikleri",
+      ar: "التعاون الطبي الدولي",
     },
     subtitles: {
       de: "Partnerschaften & Wissenstransfer",
       en: "Partnerships & Knowledge Transfer",
       ru: "Партнёрство и трансфер знаний",
+      tr: "Stratejik Ortaklıklar & Bilgi Transferi",
+      ar: "الشراكات ونقل المعرفة والخبرات",
     },
   },
 ];
 
-const overviewLabels = {
+const overviewLabels: Record<string, string> = {
   de: "Alle Bereiche im Überblick",
   en: "All Divisions Overview",
   ru: "Все направления холдинга",
+  tr: "Tüm Faaliyet Alanlarına Genel Bakış",
+  ar: "نظرة شاملة على جميع القطاعات",
 };
 
-const dropdownEyebrow = {
+const dropdownEyebrow: Record<string, string> = {
   de: "UNTERNEHMENSBEREICHE",
   en: "BUSINESS DIVISIONS",
   ru: "НАПРАВЛЕНИЯ ХОЛДИНГА",
+  tr: "KURUMSAL ALANLAR",
+  ar: "قطاعات المجموعة",
 };
 
 export function Header({ currentLocale = "de" }: HeaderProps) {
@@ -191,6 +219,12 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
+
+  // Sync document lang and dir with activeLocale
+  useEffect(() => {
+    document.documentElement.lang = activeLocale;
+    document.documentElement.dir = activeLocale === "ar" ? "rtl" : "ltr";
+  }, [activeLocale]);
 
   // Close dropdowns on route navigation
   useEffect(() => {

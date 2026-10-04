@@ -29,7 +29,6 @@ import {
   Layers,
   Activity,
 } from "lucide-react";
-import { RegionalPresenceMap } from "@/components/sections/RegionalPresenceMap";
 
 interface ContactPageComponentProps {
   locale?: SupportedLocale;
@@ -49,7 +48,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const t = {
+  const contactTranslations = {
     de: {
       left: {
         eyebrow: "UNSERE KONTAKTDATEN",
@@ -319,7 +318,187 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
         clinicSlogan2: "в надежных руках.",
       },
     },
-  }[locale];
+    tr: {
+      left: {
+        eyebrow: "İLETİŞİM BİLGİLERİMİZ",
+        title: "Bize Ulaşın",
+        desc: "Mesajınızdan memnuniyet duyarız. Ekibimiz telefon, e-posta veya doğrudan yerleşkemizde size yardımcı olmaktan mutluluk duyar.",
+        addressTitle: "Posta Adresi",
+        street: "Aachener Straße 114",
+        city: "41061 Mönchengladbach, Almanya",
+        phoneTitle: "Telefonla Ulaşılabilirlik",
+        reception: "Sekreterlik:",
+        admission: "Hasta Kabul:",
+        executive: "Yönetim:",
+        emailTitle: "E-Posta",
+        hqEmail: "Merkez:",
+        careerEmail: "Kariyer:",
+        hoursTitle: "Hizmet Saatleri",
+        hours: "Pazartesi – Cuma: 08:00 – 18:00 OAS",
+        registryTitle: "Holding & Ticaret Sicili",
+        registryCourt: "Mönchengladbach Sulh Mahkemesi",
+        registryHrb: "Kayıt No: HRB 16787",
+        registryCapital: "Şirket Sermayesi: 50.000 EUR",
+      },
+      form: {
+        eyebrow: "MESAJ GÖNDERİN",
+        title: "Mesajınızı Bekliyoruz",
+        subtitle: "Formu doldurun – en kısa sürede sizinle iletişime geçeceğiz.",
+        nameLabel: "AD SOYAD *",
+        namePlaceholder: "Dr. Maria Muster",
+        emailLabel: "E-POSTA *",
+        emailPlaceholder: "muster@example.com",
+        phoneLabel: "TELEFON (İSTEĞE BAĞLI)",
+        phonePlaceholder: "+49 170 1234567",
+        companyLabel: "KURUM / KLİNİK",
+        companyPlaceholder: "Klinik / Muayenehane",
+        subjectLabel: "KONU",
+        subjects: [
+          "Genel Başvuru (Holding Merkezi)",
+          "NabiOta MVZ (Temel ve Cerrahi Tıp Merkezleri)",
+          "NabiOta Tanı & Görüntüleme (3T MRT, CT, Laboratuvar)",
+          "NabiOta Rehabilitasyon & Terapi (Ayakta Reha)",
+          "NabiOta HomeCare (Hasta Bakımı & Yara Merkezi)",
+          "NabiOta Medikal Malzeme & Eczane (§ 14 ApoG)",
+          "NabiOta Sağlık Gayrimenkulleri",
+          "NabiOta Sağlık Personeli İşe Alım (Kariyer & Denklik)",
+          "Stratejik Ortaklıklar & Yatırımcılar (2 Aşamalı Model)",
+          "Diğer Konular",
+        ],
+        messageLabel: "MESAJINIZ *",
+        messagePlaceholder: "Size nasıl yardımcı olabiliriz?",
+        privacyText:
+          "Gizlilik politikasını okudum ve verilerimin işlenmesini kabul ediyorum. *",
+        submitBtn: "Mesajı Gönder",
+        successMsg: "Teşekkürler! Başvurunuz başarıyla iletildi.",
+        errorRequired: "Lütfen tüm zorunlu alanları doldurun.",
+        errorPrivacy: "Lütfen devam etmek için gizlilik politikasını onaylayın.",
+      },
+      directory: {
+        eyebrow: "BÖLÜM DOĞRUDAN İLETİŞİM",
+        title: "Tıbbi Bölümler ve Bağlı İştirakler",
+        desc: "Hastalar, hekimler, kurumsal ortaklar ve yönlendiriciler için doğrudan telefon numaraları ve uzman irtibat kişileri.",
+        div1Title: "Temel & Cerrahi Merkezler (MVZ)",
+        div1Desc: "NabiOta MVZ Dahiliye & NabiOta MVZ Cerrahi ve Anesteziyoloji GmbH (§ 95 SGB V)",
+        div1Email: "mvz@nabiota-health-group.de",
+        div1Phone: "+49 2161 9170017",
+        div2Title: "Yüksek Teknoloji Tanı & Rehabilitasyon",
+        div2Desc: "NabiOta Diagnostics GmbH (3T MRT, CT, Röntgen, Lab) & NabiOta Rehabilitation & Therapy GmbH",
+        div2Email: "diagnostik@nabiota-health-group.de",
+        div2Phone: "+49 2161 9170016",
+        div3Title: "HomeCare, Medikal Malzeme & Eczane",
+        div3Desc: "NabiOta HomeCare GmbH, NabiOta Sanitätshaus GmbH (§§ 126, 127 SGB V) & NabiOta Pharmacy (§ 14 ApoG)",
+        div3Email: "pflege@nabiota-health-group.de",
+        div3Phone: "+49 2161 9170019",
+        div4Title: "Holding Yönetimi, Gayrimenkul & İşe Alım",
+        div4Desc: "NabiOta Health Group HQ, NabiOta Real Estate GmbH & Medical Recruitment Services GmbH",
+        div4Email: "holding@nabiota-health-group.de",
+        div4Phone: "+49 2161 9170018",
+      },
+      cards: {
+        mapTitle: "NabiOta Health Group Germany GmbH",
+        mapAddress: "Aachener Straße 114, 41061 Mönchengladbach",
+        openMaps: "Google Haritalar'da Aç",
+        qrTitle: "Google Haritalar için QR Kodu",
+        qrDesc:
+          "Akıllı telefon kameranızla QR kodunu tarayarak adresimize yol tarifini Google Haritalar uygulamasında açın.",
+        qrBtn: "QR Kodunu Tara",
+        clinicSlogan1: "Sağlığınız",
+        clinicSlogan2: "güvenli ellerde.",
+      },
+    },
+    ar: {
+      left: {
+        eyebrow: "بيانات الاتصال بنا",
+        title: "كيفية الوصول إلينا",
+        desc: "يسعدنا تلقي رسالتكم. فريقنا جاهز دائماً لمساعدتكم وتقديم الدعم – هاتفياً، عبر البريد الإلكتروني أو مباشرة في مقرنا.",
+        addressTitle: "العنوان البريدي",
+        street: "Aachener Straße 114",
+        city: "41061 Mönchengladbach, Germany",
+        phoneTitle: "ساعات الاتصال الهاتفي",
+        reception: "السكرتارية والاستقبال:",
+        admission: "قبول المرضى:",
+        executive: "الإدارة العامة:",
+        emailTitle: "البريد الإلكتروني",
+        hqEmail: "المقر الرئيسي:",
+        careerEmail: "التوظيف والمهن:",
+        hoursTitle: "أوقات الدوام",
+        hours: "الاثنين – الجمعة: 08:00 – 18:00 بتوقيت وسط أوروبا",
+        registryTitle: "الشركة والسجل التجاري",
+        registryCourt: "محكمة مونشنغلادباخ الابتدائية",
+        registryHrb: "رقم السجل التجاري: HRB 16787",
+        registryCapital: "رأس المال المصرح به: 50,000 يورو",
+      },
+      form: {
+        eyebrow: "إرسال رسالة",
+        title: "نتطلع إلى استلام رسالتكم",
+        subtitle: "يرجى ملء النموذج أدناه – وسنتواصل معكم في أقرب وقت ممكن.",
+        nameLabel: "الاسم الكامل *",
+        namePlaceholder: "د. ماريا موستر",
+        emailLabel: "البريد الإلكتروني *",
+        emailPlaceholder: "muster@example.com",
+        phoneLabel: "رقم الهاتف (اختياري)",
+        phonePlaceholder: "+49 170 1234567",
+        companyLabel: "المؤسسة / العيادة",
+        companyPlaceholder: "مستشفى / عيادة طبية",
+        subjectLabel: "الموضوع",
+        subjects: [
+          "استفسار عام (المقر الرئيسي للمجموعة)",
+          "مراكز الرعاية الأولية والجراحية (MVZ)",
+          "التشخيص الطبي المتطور (الرنين 3T، الأشعة، المختبر)",
+          "التأهيل والعلاج الطبيعي التخصصي",
+          "التمريض والرعاية المنزلية وعلاج الجروح (HomeCare)",
+          "المستلزمات الطبية والصيدلية السريرية (§ 14 ApoG)",
+          "العقارات والمرافق الصحية والمجمعات الطبية",
+          "توظيف الكوادر الطبية ومعادلة الشهادات (Approbation)",
+          "الشراكات الاستراتيجية والمستثمرون (نموذج المرحلتين)",
+          "استفسار آخر",
+        ],
+        messageLabel: "نص الرسالة *",
+        messagePlaceholder: "كيف يمكننا مساعدتكم؟",
+        privacyText:
+          "لقد قرأت سياسة الخصوصية وأوافق على معالجة بياناتي وفقاً لها. *",
+        submitBtn: "إرسال الرسالة",
+        successMsg: "شكراً لكم! تم إرسال رسالتكم بنجاح.",
+        errorRequired: "يرجى ملء جميع الحقول المطلوبة.",
+        errorPrivacy: "يرجى الموافقة على سياسة الخصوصية للمتابعة.",
+      },
+      directory: {
+        eyebrow: "دليل الاتصال المباشر بالأقسام",
+        title: "الأقسام السريرية والشركات التابعة للمجموعة",
+        desc: "أرقام هواتف مباشرة ومسؤولو اتصال متخصصون للمرضى، الأطباء، الشركاء والجهات المحيلة.",
+        div1Title: "مراكز الرعاية الأولية والجراحية (MVZ)",
+        div1Desc: "NabiOta MVZ للرعاية الأولية و NabiOta MVZ للجراحة والتخدير (§ 95 SGB V)",
+        div1Email: "mvz@nabiota-health-group.de",
+        div1Phone: "+49 2161 9170017",
+        div2Title: "التشخيص عالي الدقة والتأهيل الطبي",
+        div2Desc: "NabiOta Diagnostics (رنين 3T، أشعة مقطعية، مختبر) و NabiOta للتأهيل والعلاج الطبيعي",
+        div2Email: "diagnostik@nabiota-health-group.de",
+        div2Phone: "+49 2161 9170016",
+        div3Title: "الرعاية المنزلية، المستلزمات الطبية والصيدلية",
+        div3Desc: "NabiOta HomeCare، متجر المستلزمات الطبية (§§ 126, 127 SGB V) والصيدلية (§ 14 ApoG)",
+        div3Email: "pflege@nabiota-health-group.de",
+        div3Phone: "+49 2161 9170019",
+        div4Title: "إدارة المجموعة، العقارات والتوظيف الطبي",
+        div4Desc: "المقر الرئيسي لمجموعة نابي أوتا، شركة العقارات الصحية وخدمات استقطاب الكوادر الطبية",
+        div4Email: "holding@nabiota-health-group.de",
+        div4Phone: "+49 2161 9170018",
+      },
+      cards: {
+        mapTitle: "NabiOta Health Group Germany GmbH",
+        mapAddress: "Aachener Straße 114, 41061 Mönchengladbach",
+        openMaps: "فتح في خرائط Google",
+        qrTitle: "رمز QR لخرائط Google",
+        qrDesc:
+          "امسح رمز QR بكاميرا هاتفك الذكي لفتح الاتجاهات إلى عنواننا في تطبيق خرائط Google مباشرة.",
+        qrBtn: "مسح رمز QR",
+        clinicSlogan1: "صحتكم",
+        clinicSlogan2: "في أيدٍ أمينة.",
+      },
+    },
+  };
+
+  const t = contactTranslations[locale as keyof typeof contactTranslations] || contactTranslations.de;
 
   const mapsUrl =
     "https://maps.google.com/?q=Aachener+Stra%C3%9Fe+114,+41061+M%C3%B6nchengladbach";
@@ -1011,11 +1190,6 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
           </div>
         </Container>
         </div>
-
-        {/* ══════════════════════════════════════════════════════════
-            REGIONAL HEALTHCARE NETWORK & PRESENCE MAP (NRW / RHEIN-RUHR)
-        ══════════════════════════════════════════════════════════ */}
-        <RegionalPresenceMap currentLocale={locale} />
       </main>
 
       <Footer currentLocale={locale} />

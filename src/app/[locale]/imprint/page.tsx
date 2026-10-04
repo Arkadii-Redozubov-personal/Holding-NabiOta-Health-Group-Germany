@@ -18,10 +18,12 @@ interface LocalizedImprintProps {
 
 export async function generateMetadata({ params }: LocalizedImprintProps): Promise<Metadata> {
   const { locale } = await params;
-  const titles = {
+  const titles: Record<string, string> = {
     de: "Impressum | Rechtliche Angaben nach § 5 TMG",
     en: "Imprint | Legal Notice according to § 5 TMG",
     ru: "Выходные данные (Impressum) | Юридическая информация",
+    tr: "Künye | § 5 TMG Uyarınca Yasal Bilgiler",
+    ar: "بيانات النشر القانونية (Impressum) | NabiOta®",
   };
   return {
     title: titles[locale] || titles.de,
@@ -31,6 +33,8 @@ export async function generateMetadata({ params }: LocalizedImprintProps): Promi
         de: "https://www.nabiota-health-group.de/de/imprint",
         en: "https://www.nabiota-health-group.de/en/imprint",
         ru: "https://www.nabiota-health-group.de/ru/imprint",
+        tr: "https://www.nabiota-health-group.de/tr/imprint",
+        ar: "https://www.nabiota-health-group.de/ar/imprint",
         "x-default": "https://www.nabiota-health-group.de/de/imprint",
       },
     },

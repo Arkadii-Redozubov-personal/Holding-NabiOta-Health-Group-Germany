@@ -13,10 +13,12 @@ interface LocalizedCareerProps {
 
 export async function generateMetadata({ params }: LocalizedCareerProps): Promise<Metadata> {
   const { locale } = await params;
-  const titles = {
+  const titles: Record<string, string> = {
     de: "Karriere | Gestalten Sie mit uns die Zukunft der Gesundheit",
     en: "Career | Shape the Future of Healthcare with Us",
     ru: "Карьера | Создавайте будущее медицины вместе с нами",
+    tr: "Kariyer | Sağlığın Geleceğini Bizimle Şekillendirin",
+    ar: "الوظائف | شاركنا في تشكيل مستقبل الرعاية الصحية",
   };
   return {
     title: titles[locale] || titles.de,
@@ -26,6 +28,8 @@ export async function generateMetadata({ params }: LocalizedCareerProps): Promis
         de: "https://www.nabiota-health-group.de/de/career",
         en: "https://www.nabiota-health-group.de/en/career",
         ru: "https://www.nabiota-health-group.de/ru/career",
+        tr: "https://www.nabiota-health-group.de/tr/career",
+        ar: "https://www.nabiota-health-group.de/ar/career",
         "x-default": "https://www.nabiota-health-group.de/de/career",
       },
     },

@@ -49,6 +49,8 @@ export async function generateMetadata({ params }: LocalizedAreaDetailProps): Pr
         de: `https://www.nabiota-health-group.de/de/areas/${slug}`,
         en: `https://www.nabiota-health-group.de/en/areas/${slug}`,
         ru: `https://www.nabiota-health-group.de/ru/areas/${slug}`,
+        tr: `https://www.nabiota-health-group.de/tr/areas/${slug}`,
+        ar: `https://www.nabiota-health-group.de/ar/areas/${slug}`,
         "x-default": `https://www.nabiota-health-group.de/de/areas/${slug}`,
       },
     },

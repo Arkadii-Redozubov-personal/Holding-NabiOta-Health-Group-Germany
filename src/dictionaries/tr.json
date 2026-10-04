@@ -1,0 +1,110 @@
+{
+  "locale": "tr",
+  "meta": {
+    "title": "NabiOta® Health Group Germany | Uzmanlığı Birleştirmek. Sağlığı Şekillendirmek.",
+    "description": "NabiOta® Health Group Germany GmbH – Sağlık sektöründe öncü bir kurumsal grup. Ayakta tedavi, tanı, rehabilitasyon, bakım ve medikal inovasyon."
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "areas": "Faaliyet Alanlarımız",
+    "values": "Değerlerimiz",
+    "career": "Kariyer",
+    "news": "Haberler",
+    "contact": "İletişim",
+    "contactCta": "Bize Ulaşın"
+  },
+  "hero": {
+    "eyebrow": "UZMANLIĞI BİRLEŞTİRMEK.",
+    "headingLine1": "Sağlığı",
+    "headingLine2": "şekillendiriyoruz.",
+    "description": "NabiOta® Health Group Germany GmbH, sağlık sektöründe faaliyet gösteren öncü bir şirkettir. Tıbbi uzmanlığı, modern kurumsal yapıları ve yenilikçi çözümleri sürdürülebilir bir sağlık hizmeti için bir araya getiriyoruz.",
+    "ctaMore": "Daha Fazla Bilgi",
+    "ctaTermin": "Randevu Alın",
+    "ctaAreas": "Faaliyet Alanlarımız",
+    "values": [
+      {
+        "id": "menschen",
+        "title": "İNSAN ODAKLI YAKLAŞIM",
+        "description": "Hastalar, yakınları, uzmanlar ve ortaklarımız için."
+      },
+      {
+        "id": "qualitaet",
+        "title": "KALİTE VE GÜVEN",
+        "description": "Güvenilir. Şeffaf. Sorumluluk sahibi."
+      },
+      {
+        "id": "nachhaltigkeit",
+        "title": "SÜRDÜRÜLEBİLİR SAĞLIK HİZMETİ",
+        "description": "Gelecek için bugünden adım atıyoruz."
+      }
+    ]
+  },
+  "strip": {
+    "stats": [
+      { "value": "1", "label": "Güçlü Marka", "sublabel": "Daha sağlıklı bir toplum için." },
+      { "value": "10", "label": "Grup Şirketi", "sublabel": "Tek çatı altında uzmanlık." },
+      { "value": "100+", "label": "Ağ İçi Uzman", "sublabel": "Deneyim. Özveri. Etki." },
+      { "value": "∞", "label": "Ortak Misyon", "sublabel": "Gelecek nesiller için sürdürülebilir sağlık." }
+    ]
+  },
+  "about": {
+    "eyebrow": "HAKKIMIZDA",
+    "heading": "Daha sağlıklı bir gelecek için güçlü bir kurumsal grup.",
+    "description": "Mönchengladbach merkezli NabiOta® Health Group Germany GmbH, sağlık sektöründe faaliyet gösteren bir holdingdir. Tıbbi bakım, ileri tanı, rehabilitasyon, hasta bakımı ve medikal projeleri tek bir marka altında birleştiriyoruz.",
+    "cta": "Tarihçemiz",
+    "benefits": [
+      {
+        "title": "Güvenilir Ortak",
+        "description": "Eşit düzeyde uzun vadeli stratejik iş birliği."
+      },
+      {
+        "title": "Yenilikçi Çözümler",
+        "description": "Modern ve yüksek performanslı sağlık hizmetleri."
+      },
+      {
+        "title": "Yaşayan Sorumluluk",
+        "description": "Her adımımızda kalite, şeffaflık ve insani değerler."
+      }
+    ]
+  },
+  "areas": {
+    "eyebrow": "FAALİYET ALANLARIMIZ",
+    "heading": "Sağlığınız için\nçok yönlü uzmanlık.",
+    "description": "Grup şirketlerimiz, tıbbi bakım ve tanıdan rehabilitasyon, evde bakım, medikal malzeme ve uluslararası iş birliklerine kadar sağlık sektörünün tüm kilit alanlarını kapsamaktadır.",
+    "cta": "Tüm Alanları Keşfedin"
+  },
+  "services": {
+    "eyebrow": "HİZMETLERİMİZ",
+    "heading": "Tek çatı altında bütüncül sağlık çözümleri.",
+    "cta": "Tüm Hizmetleri Görün"
+  },
+  "values": {
+    "eyebrow": "DEĞERLERİMİZ",
+    "heading": "Bize yol gösteren ilkeler.",
+    "description": "Değerlerimiz, eylemlerimizin temelini oluşturur ve grup genelindeki iş birliğimize yön verir."
+  },
+  "split": {
+    "partners": {
+      "eyebrow": "ORTAKLIKLAR & YATIRIM",
+      "heading": "Birlikte daha fazlasını başarmak.",
+      "description": "Tıp merkezleri, klinikler, hekimler ve kurumsal yatırımcılarla yakın iş birliği içinde çalışıyoruz. Güçlü bir sağlık sistemi için sürdürülebilir ortaklıklar.",
+      "cta": "Ortaklık Modellerimiz",
+      "quote": "DAHA SAĞLIKLI BİR GELECEK İÇİN GÜÇLÜ İŞ BİRLİKLERİ."
+    },
+    "career": {
+      "eyebrow": "KARİYER",
+      "heading": "Sağlığın geleceğini bizimle şekillendirin.",
+      "description": "Vizyonumuzu paylaşan ve sağlık hizmetlerinde yeni yollar açmak isteyen hekimler ve sağlık personeli arıyoruz.",
+      "cta": "Şimdi Başvurun"
+    }
+  },
+  "footer": {
+    "slogan": "Uzmanlığı birleştirmek. Sağlığı şekillendirmek.",
+    "addressTitle": "Merkez & İletişim",
+    "phonesTitle": "Telefon Hatları",
+    "networkTitle": "Ağ & Medya",
+    "allRights": "Tüm hakları saklıdır.",
+    "brandNotice": "NabiOta® tescilli ve koruma altındaki bir markadır."
+  }
+}

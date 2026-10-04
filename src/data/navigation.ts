@@ -27,4 +27,6 @@ export const languages = [
   { code: "de", label: "DE", name: "Deutsch" },
   { code: "en", label: "EN", name: "English" },
   { code: "ru", label: "RU", name: "Русский" },
+  { code: "tr", label: "TR", name: "Türkçe" },
+  { code: "ar", label: "AR", name: "العربية" },
 ];

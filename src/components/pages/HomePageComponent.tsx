@@ -7,7 +7,6 @@ import { ServicesSection } from "@/components/sections/ServicesSection";
 import { ValuesSection } from "@/components/sections/ValuesSection";
 import { PartnersCareerSection } from "@/components/sections/PartnersCareerSection";
 import { HomeFaqSection } from "@/components/sections/HomeFaqSection";
-import { RegionalPresenceMap } from "@/components/sections/RegionalPresenceMap";
 import { HomeCtaBannerSection } from "@/components/sections/HomeCtaBannerSection";
 import { SupportedLocale } from "@/lib/i18n";
 
@@ -26,7 +25,6 @@ export function HomePageComponent({ locale = "de" }: HomePageComponentProps) {
         <ValuesSection currentLocale={locale} />
         <PartnersCareerSection currentLocale={locale} />
         <HomeFaqSection currentLocale={locale} />
-        <RegionalPresenceMap currentLocale={locale} />
         <HomeCtaBannerSection currentLocale={locale} />
       </main>
       <Footer currentLocale={locale} />

@@ -1317,7 +1317,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                   onClick={() => setSelectedProcedure(null)}
                   className="w-full sm:w-auto px-5 py-2.5 rounded-full border border-[#D0C8B8] hover:bg-white text-[#556358] text-xs font-medium transition-colors cursor-pointer"
                 >
-                  {isRu ? "Закрыть окно" : isEn ? "Close window" : "Fenster schließen"}
+                  {locale === "ru" ? "Закрыть окно" : locale === "tr" ? "Pencereyi Kapat" : locale === "ar" ? "إغلاق النافذة" : isEn ? "Close window" : "Fenster schließen"}
                 </button>
 
                 <Link
@@ -1325,7 +1325,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                   onClick={() => setSelectedProcedure(null)}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#08170D] hover:bg-[#0C2B1B] text-[#ECCF96] border border-[#D5B878] text-xs font-semibold tracking-wide transition-all shadow-sm"
                 >
-                  <span>{isRu ? "Записаться на процедуру" : isEn ? "Book Examination" : "Termin für Untersuchung anfragen"}</span>
+                  <span>{locale === "ru" ? "Записаться на процедуру" : locale === "tr" ? "Muayene Randevusu Al" : locale === "ar" ? "طلب موعد فحص طبي" : isEn ? "Book Examination" : "Termin für Untersuchung anfragen"}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>

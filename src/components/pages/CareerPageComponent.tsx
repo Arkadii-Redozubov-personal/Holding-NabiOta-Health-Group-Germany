@@ -119,7 +119,7 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
     }, 800);
   };
 
-  const t = {
+  const careerTranslations = {
     de: {
       hero: {
         eyebrow: "NABIOTA MEDICAL RECRUITMENT SERVICES GMBH",
@@ -1326,7 +1326,12 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
         closeBtn: "Закрыть",
       },
     },
-  }[locale];
+  };
+
+  const t =
+    (careerTranslations as Record<string, typeof careerTranslations.de>)[locale] ||
+    careerTranslations.en ||
+    careerTranslations.de;
 
   return (
     <div className="flex flex-col min-h-screen bg-white text-forest-950 font-sans selection:bg-[#C5A56A]/20 selection:text-forest-950">

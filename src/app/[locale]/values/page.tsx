@@ -28,6 +28,8 @@ export async function generateMetadata({ params }: LocalizedValuesProps): Promis
         de: "https://www.nabiota-health-group.de/de/values",
         en: "https://www.nabiota-health-group.de/en/values",
         ru: "https://www.nabiota-health-group.de/ru/values",
+        tr: "https://www.nabiota-health-group.de/tr/values",
+        ar: "https://www.nabiota-health-group.de/ar/values",
         "x-default": "https://www.nabiota-health-group.de/de/values",
       },
     },

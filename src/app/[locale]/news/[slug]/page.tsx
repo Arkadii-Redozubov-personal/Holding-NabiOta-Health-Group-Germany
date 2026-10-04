@@ -41,6 +41,8 @@ export async function generateMetadata({ params }: LocalizedArticleDetailProps):
         de: `https://www.nabiota-health-group.de/de/news/${slug}`,
         en: `https://www.nabiota-health-group.de/en/news/${slug}`,
         ru: `https://www.nabiota-health-group.de/ru/news/${slug}`,
+        tr: `https://www.nabiota-health-group.de/tr/news/${slug}`,
+        ar: `https://www.nabiota-health-group.de/ar/news/${slug}`,
         "x-default": `https://www.nabiota-health-group.de/de/news/${slug}`,
       },
     },

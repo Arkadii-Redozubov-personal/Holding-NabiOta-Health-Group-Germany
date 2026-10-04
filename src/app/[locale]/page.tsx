@@ -24,6 +24,8 @@ export async function generateMetadata({ params }: LocalizedPageProps): Promise<
         de: "https://www.nabiota-health-group.de/de",
         en: "https://www.nabiota-health-group.de/en",
         ru: "https://www.nabiota-health-group.de/ru",
+        tr: "https://www.nabiota-health-group.de/tr",
+        ar: "https://www.nabiota-health-group.de/ar",
         "x-default": "https://www.nabiota-health-group.de/de",
       },
     },

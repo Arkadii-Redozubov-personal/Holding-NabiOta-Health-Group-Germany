@@ -18,10 +18,12 @@ interface LocalizedPrivacyProps {
 
 export async function generateMetadata({ params }: LocalizedPrivacyProps): Promise<Metadata> {
   const { locale } = await params;
-  const titles = {
+  const titles: Record<string, string> = {
     de: "Datenschutzerklärung | DSGVO Konformität",
     en: "Privacy Policy | GDPR Compliance",
     ru: "Политика конфиденциальности | GDPR",
+    tr: "Gizlilik Politikası | KVKK ve GDPR Uyumluluğu",
+    ar: "سياسة الخصوصية | الامتثال للائحة حماية البيانات العامة (GDPR)",
   };
   return {
     title: titles[locale] || titles.de,
@@ -31,6 +33,8 @@ export async function generateMetadata({ params }: LocalizedPrivacyProps): Promi
         de: "https://www.nabiota-health-group.de/de/privacy",
         en: "https://www.nabiota-health-group.de/en/privacy",
         ru: "https://www.nabiota-health-group.de/ru/privacy",
+        tr: "https://www.nabiota-health-group.de/tr/privacy",
+        ar: "https://www.nabiota-health-group.de/ar/privacy",
         "x-default": "https://www.nabiota-health-group.de/de/privacy",
       },
     },
