@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -26,6 +26,14 @@ import {
   ChevronDown,
   Plus,
   Minus,
+  X,
+  Activity,
+  FileText,
+  Sparkles,
+  Info,
+  Calendar,
+  Layers,
+  CheckCircle2,
 } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -38,213 +46,824 @@ interface Props {
   locale?: SupportedLocale;
 }
 
+export interface CareServiceModalData {
+  id: string;
+  badge: string;
+  image: string;
+  iconType: "stethoscope" | "award" | "heart" | "shield" | "pill" | "users";
+  title: string;
+  shortDesc: string;
+  modal: {
+    title: string;
+    subtitle: string;
+    description: string;
+    indicationsTitle: string;
+    indications: string[];
+    scopeTitle: string;
+    scopeItems: string[];
+    billingTitle: string;
+    billingText: string;
+    qualityTitle: string;
+    qualityText: string;
+    ctaButtonText: string;
+  };
+}
+
 export function PflegePageComponent({ locale = "de" }: Props) {
   const isRu = locale === "ru";
   const isEn = locale === "en";
 
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [selectedService, setSelectedService] = useState<CareServiceModalData | null>(null);
 
-  // Standard Header/Hero Data matching our site's PageHero design
+  // Lock body scroll and listen for Escape key on modal open
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSelectedService(null);
+      }
+    };
+
+    if (selectedService) {
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedService]);
+
+  // Standard Header/Hero Data
   const heroData = {
-    title: isRu ? "Сестринский уход & патронаж" : isEn ? "Nursing Care & HomeCare" : "Pflege & HomeCare",
-    subtitle: isRu ? "Чуткая забота и профессиональное ведение" : isEn ? "Compassionate Care & Professional Support" : "Würdevolle Fürsorge im vertrauten Umfeld",
-    eyebrow: isRu ? "УХОД И ПАТРОНАЖ" : isEn ? "NURSING & HOMECARE" : "AMBULANTE & STATIONÄRE PFLEGE",
-    desc: isRu
-      ? "NabiOta® HomeCare обеспечивает квалифицированный сестринский уход, медицинскую помощь и заботу в привычном домашнем окружении — с высочайшим уважением к достоинству человека и поддержкой его близких."
+    title: isRu
+      ? "Сестринский уход & патронаж"
       : isEn
-      ? "NabiOta® HomeCare delivers qualified outpatient nursing, clinical treatment care, and compassionate everyday support in the comfort of your home — prioritizing human dignity, safety, and peace of mind for families."
-      : "Die NabiOta® HomeCare sichert eine verlässliche Pflegeversorgung zu Hause und in kooperierenden Einrichtungen. Unser Pflegeansatz basiert auf Respekt vor der Würde des Menschen, examinierter Fachkompetenz und nachhaltiger Entlastung der Angehörigen.",
+      ? "Nursing Care & HomeCare"
+      : "Pflege & HomeCare",
+    subtitle: isRu
+      ? "NabiOta HomeCare GmbH – Забота и лечение на дому"
+      : isEn
+      ? "NabiOta HomeCare GmbH – Compassionate Care at Home"
+      : "NabiOta HomeCare GmbH – Würdevolle Fürsorge im vertrauten Umfeld",
+    eyebrow: isRu
+      ? "NABIOTA HOMECARE GMBH • SGB V & SGB XI"
+      : isEn
+      ? "NABIOTA HOMECARE GMBH • SGB V & SGB XI"
+      : "NABIOTA HOMECARE GMBH • SGB V & SGB XI",
+    desc: isRu
+      ? "NabiOta HomeCare GmbH обеспечивает квалифицированный амбулаторный сестринский уход, медицинскую помощь по назначению врачей (SGB V), сертифицированное ведение ран (ICW®) и базовый уход (SGB XI) в привычном домашнем окружении — с высочайшим уважением к достоинству человека и поддержкой его близких."
+      : isEn
+      ? "NabiOta HomeCare GmbH provides accredited outpatient nursing care, prescribed medical treatment nursing (SGB V), certified wound care (ICW®), and personal care support (SGB XI) at home — preserving personal independence, dignity, and active relief for family caregivers."
+      : "Die NabiOta HomeCare GmbH gewährleistet eine verlässliche, bedarfsgerechte Pflege im häuslichen Umfeld. Unser Spektrum umfasst die ärztlich verordnete Behandlungspflege (SGB V), zertifiziertes Wundmanagement (ICW®), körperbezogene Grundpflege (SGB XI) sowie eine nahtlose Überleitung nach Klinikaufenthalten – getragen von Respekt, Zuwendung und Fachkompetenz.",
   };
 
   const heroBadges = [
     {
       icon: <Award className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu ? "100% Экзамен." : isEn ? "100% Certified" : "100% Examiniert",
-      sub: isRu ? "Специалисты" : isEn ? "Nursing Staff" : "Fachpflegekräfte",
+      title: isRu ? "Wundexperten ICW®" : isEn ? "ICW® Wound Care" : "Wundexperten ICW®",
+      sub: isRu ? "Сертификация" : isEn ? "Certified Care" : "Zertifiziertes Management",
     },
     {
       icon: <Stethoscope className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu ? "SGB V & XI" : isEn ? "All Insurances" : "SGB V & SGB XI",
-      sub: isRu ? "Все кассы" : isEn ? "Covered Care" : "Zugelassener Partner",
+      title: isRu ? "SGB V & SGB XI" : isEn ? "SGB V & SGB XI" : "SGB V & SGB XI",
+      sub: isRu ? "Все кассы Германии" : isEn ? "Statutory & Private" : "Zugelassener Partner",
     },
     {
       icon: <Clock className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu ? "24/7 Забота" : isEn ? "24/7 Care" : "24/7 Betreuung",
-      sub: isRu ? "На связи" : isEn ? "On-Call Support" : "Rufbereitschaft",
+      title: isRu ? "24/7 Забота" : isEn ? "24/7 Care" : "24/7 Rufbereitschaft",
+      sub: isRu ? "Экстренная связь" : isEn ? "Emergency On-Call" : "Rund-um-die-Uhr",
+    },
+  ];
+
+  // 6 Primary Service Pillars matching PDF Section 8 and User-Approved Card Design
+  const servicesData: CareServiceModalData[] = [
+    {
+      id: "behandlungspflege",
+      badge: isRu
+        ? "SGB V • НАЗНАЧЕНИЕ ВРАЧА"
+        : isEn
+        ? "SGB V • MEDICAL PRESCRIPTION"
+        : "SGB V • ÄRZTLICHE VERORDNUNG",
+      image: "/images/services/homecare.webp",
+      iconType: "stethoscope",
+      title: isRu
+        ? "Медицинский уход & процедуры (SGB V)"
+        : isEn
+        ? "Clinical Treatment Nursing (SGB V)"
+        : "Behandlungspflege & Med. Versorgung (SGB V)",
+      shortDesc: isRu
+        ? "Квалифицированное выполнение медицинских назначений врача: инъекции, инфузии, выдача лекарств, компрессионная терапия и контроль показателей."
+        : isEn
+        ? "Professional clinical nursing according to physician orders: injections, infusions, medication administration, compression therapy, and vital monitoring."
+        : "Fachgerechte Durchführung verordneter medizinischer Maßnahmen wie Injektionen, Infusionen, Medikamentengabe, Kompressionstherapie und Vitalzeichenkontrollen.",
+      modal: {
+        title: isRu
+          ? "Медицинская помощь и лечение на дому (SGB V)"
+          : isEn
+          ? "Home Treatment Nursing & Clinical Procedures (SGB V)"
+          : "Häusliche Krankenpflege & Behandlungspflege (SGB V)",
+        subtitle: isRu
+          ? "Врачебные назначения под контролем дипломированных медсестер"
+          : isEn
+          ? "Physician-prescribed home nursing under certified clinical oversight"
+          : "Fachpflegerische Durchführung ärztlicher Anordnungen im vertrauten Zuhause",
+        description: isRu
+          ? "Лечебный уход по § 37 SGB V включает все медицинские процедуры, назначенные лечащим врачом или специалистом MVZ для ускорения выздоровления, предотвращения осложнений или сокращения пребывания в стационаре. Наши специалисты строго соблюдают протоколы безопасности и поддерживают постоянный контакт с лечащим доктором."
+          : isEn
+          ? "Treatment nursing under § 37 SGB V encompasses all clinical interventions prescribed by attending general practitioners or hospital specialists to support recovery, prevent complications, or shorten inpatient hospital stays. Our certified nurses maintain strict aseptic protocols and direct communication with physicians."
+          : "Die Behandlungspflege nach § 37 SGB V umfasst alle vom Haus- oder Facharzt verordneten medizinischen Maßnahmen, die der Sicherung der ambulanten ärztlichen Behandlung dienen oder einen Krankenhausaufenthalt verkürzen bzw. vermeiden. Unsere examinierten Pflegefachkräfte führen alle Verordnungen nach strengsten Qualitäts- und Hygienestandards durch und stehen im direkten Austausch mit den behandelnden Ärzten.",
+        indicationsTitle: isRu ? "Медицинские показания" : isEn ? "Clinical Indications" : "Typische Indikationen",
+        indications: isRu
+          ? [
+              "Инсулинотерапия и сахарный диабет I и II типа",
+              "Артериальная гипертензия и кардиоваскулярные заболевания",
+              "Антикоагулянтная терапия и инъекции гепарина",
+              "Хронические боли и необходимость регулярного приема препаратов",
+              "Хроническая венозная недостаточность и отеки конечностей",
+              "Послеоперационный период после выписки из стационара",
+            ]
+          : isEn
+          ? [
+              "Insulin-dependent diabetes mellitus type I & II",
+              "Arterial hypertension and cardiovascular conditions",
+              "Anticoagulation therapy and regular heparin injections",
+              "Chronic pain syndromes requiring structured analgesics",
+              "Chronic venous insufficiency, lymphoedema, and compression therapy",
+              "Post-surgical recovery requiring professional clinical surveillance",
+            ]
+          : [
+              "Insulinpflichtiger Diabetes mellitus Typ 1 und 2 mit Blutzuckermessung",
+              "Kardiovaskuläre Erkrankungen mit engmaschiger Blutdruck- und Pulskontrolle",
+              "Antikoagulationstherapie und subkutane Heparininjektionen (s.c. / i.m.)",
+              "Komplexe medikamentöse Therapien und kontrolliertes Richten / Verabreichen",
+              "Chronische venöse Insuffizienz mit Kompressionstherapie (Klasse I–IV)",
+              "Postoperative Überwachung nach ambulanten und stationären Eingriffen",
+            ],
+        scopeTitle: isRu ? "Спектр медицинских услуг" : isEn ? "Scope of Interventions" : "Leistungsspektrum",
+        scopeItems: isRu
+          ? [
+              "Инъекции (подкожные, внутримышечные) и капельные инфузии",
+              "Раскладка, контроль и выдача медикаментов по рецепту",
+              "Контроль уровня сахара в крови и адаптация дозировок инсулина",
+              "Наложение компрессионных бинтов и надевание компрессионного трикотажа",
+              "Регулярное измерение артериального давления, пульса и насыщения кислородом",
+              "Контроль дренажей, катетеров и ведение карты состояния здоровья",
+            ]
+          : isEn
+          ? [
+              "Subcutaneous and intramuscular injections; peripheral infusions",
+              "Structured medication preparation, dispensing, and compliance tracking",
+              "Capillary blood glucose testing and targeted insulin administration",
+              "Application of medical compression wraps and compression stockings",
+              "Routine monitoring of vital parameters (BP, heart rate, oxygen saturation)",
+              "Drainage surveillance, catheter care, and electronic nursing records",
+            ]
+          : [
+              "Injektionen (s.c. und i.m.) sowie Überwachung ärztlich angeordneter Infusionen",
+              "Richten, Dosieren und Verabreichen von verordneten Arzneimitteln",
+              "Blutzuckerkontrollen und bedarfsgerechte Insulininjektion",
+              "Anlegen und Wechseln von Kompressionsverbänden sowie An-/Ausziehen von Kompressionsstrümpfen",
+              "Kontinuierliche Vitalzeichenkontrolle (Blutdruck, Puls, Sauerstoffsättigung)",
+              "Überwachung von Drainagen und lückenlose Verlaufsdokumentation im Pflegebericht",
+            ],
+        billingTitle: isRu ? "Финансирование и кассы" : isEn ? "Insurance & Coverage" : "Kostenübernahme & Verordnung",
+        billingText: isRu
+          ? "Все услуги медицинской помощи (SGB V) на 100% покрываются государственными (GKV) и частными (PKV) страховыми кассами Германии при наличии рецепта врача (Muster 12). Мы берем на себя полное согласование с вашей страховой компанией."
+          : isEn
+          ? "All prescribed clinical services under SGB V are covered by statutory (GKV) and private (PKV) health insurance funds with a valid physician prescription (Muster 12). We handle all administrative clearance with your insurance provider."
+          : "Die Kosten der Behandlungspflege werden bei Vorliegen einer ärztlichen Verordnung häuslicher Krankenpflege (Muster 12) nach Genehmigung vollständig von den gesetzlichen (GKV) und privaten (PKV) Krankenkassen übernommen. NabiOta HomeCare übernimmt für Sie die gesamte Einreichung und Genehmigungsabstimmung.",
+        qualityTitle: isRu ? "Стандарты безопасности" : isEn ? "Quality & Safety" : "Qualitäts- & Sicherheitsstandards",
+        qualityText: isRu
+          ? "Процедуры проводятся исключительно государственно экзаменованными медицинскими сестрами в строгом соответствии с санитарно-эпидемиологическими стандартами Института Роберта Коха (RKI)."
+          : isEn
+          ? "Procedures are delivered exclusively by licensed, state-certified registered nurses strictly adhering to the infection control guidelines of the Robert Koch Institute (RKI)."
+          : "Die Leistungen werden ausnahmslos durch staatlich examinierte Pflegefachkräfte erbracht. Strenge Einhaltung der Hygiene-Richtlinien des Robert Koch-Instituts (RKI) und regelmäßige Fortbildungen garantieren maximale Behandlungssicherheit.",
+        ctaButtonText: isRu ? "Запросить организацию ухода" : isEn ? "Request Nursing Consultation" : "Behandlungspflege anfragen",
+      },
+    },
+    {
+      id: "wundversorgung",
+      badge: isRu
+        ? "ICW® • ВЕДЕНИЕ РАН"
+        : isEn
+        ? "ICW® • WOUND MANAGEMENT"
+        : "ICW® • ZERTIFIZIERTES MANAGEMENT",
+      image: "/images/services/wundversorgung.webp",
+      iconType: "award",
+      title: isRu
+        ? "Сертифицированное лечение ран (ICW®)"
+        : isEn
+        ? "Certified Wound Management (ICW®)"
+        : "Zertifiziertes Wundmanagement (ICW®)",
+      shortDesc: isRu
+        ? "Профессиональный уход за хроническими, послеоперационными и труднозаживающими ранами с применением влажного заживления и фотодокументации."
+        : isEn
+        ? "Specialized management of chronic, postoperative, and non-healing wounds utilizing modern moist wound therapy and digital photo documentation."
+        : "Spezialisierte Versorgung chronischer, postoperativer und sekundär heilender Wunden mit moderner Feuchtwundbehandlung und Fotodokumentation.",
+      modal: {
+        title: isRu
+          ? "Zertifiziertes Wundmanagement nach ICW®"
+          : isEn
+          ? "Certified Wound Management according to ICW®"
+          : "Zertifiziertes Wundmanagement (ICW®-Standard)",
+        subtitle: isRu
+          ? "Современное влажное заживление ран и экспертная фотодокументация"
+          : isEn
+          ? "Modern moist wound therapy and digital clinical progress documentation"
+          : "Moderne phasengerechte Wundtherapie und lückenlose Verlaufsdokumentation",
+        description: isRu
+          ? "Хронические и вторично заживающие раны требуют глубоких специализированных знаний и терпеливого подхода. Сертифицированные эксперты по ранам ICW® (Initiative Chronische Wunden) компании NabiOta HomeCare применяют доказательные методики влажного заживления, снижая болевой синдром и стимулируя естественную регенерацию тканей."
+          : isEn
+          ? "Chronic and non-healing wounds demand specialized clinical expertise and structured care protocols. NabiOta HomeCare's certified ICW® wound care specialists employ modern evidence-based moist healing principles that alleviate pain, accelerate tissue granulation, and prevent infections."
+          : "Chronische, postoperative und schwer heilende Wunden erfordern fundierte Fachkompetenz und strukturierte Betreuung. Unsere nach den Standards der Initiative Chronische Wunden e.V. (ICW®) zertifizierten Wundexperten setzen moderne, phasengerechte Wundtherapeutika ein. Durch das Prinzip der feuchten Wundbehandlung werden Wundschmerzen gelindert, Granulation gefördert und Infektionen wirksam verhindert.",
+        indicationsTitle: isRu ? "Виды ран и диагнозы" : isEn ? "Treated Wound Types" : "Behandlungsspektrum",
+        indications: isRu
+          ? [
+              "Трофические язвы голени (Ulcus cruris venosum / arteriosum / mixtum)",
+              "Пролежни всех степеней тяжести (Dekubitus Grad I–IV)",
+              "Синдром диабетической стопы (DFS) с нейропатическими/ишемическими язвами",
+              "Вторично заживающие и инфицированные послеоперационные раны",
+              "Раны после онкологических операций или лучевой терапии",
+              "Ожоги и длительно незаживающие травматические дефекты кожи",
+            ]
+          : isEn
+          ? [
+              "Venous, arterial, and mixed leg ulcers (Ulcus cruris)",
+              "Pressure injuries and decubitus ulcers (Stages I through IV)",
+              "Diabetic foot syndrome (DFS) neuropathic and ischemic lesions",
+              "Secondary healing and infected surgical incisions",
+              "Post-surgical wound dehiscence and radiation skin injuries",
+              "Thermal burns and traumatic tissue defects with healing delay",
+            ]
+          : [
+              "Ulcus cruris venosum, arteriosum oder mixtum (Offenes Bein)",
+              "Dekubitalulzera aller Schweregrade (Druckgeschwüre Grad 1 bis 4)",
+              "Diabetisches Fußsyndrom (DFS) mit neuropathischen oder ischämischen Läsionen",
+              "Sekundär heilende oder infizierte Operationswunden und Nahtdehiszenzen",
+              "Wundheilungsstörungen nach orthopädischen und viszeralchirurgischen Eingriffen",
+              "Thermische Wunden, Verbrennungen und traumatische Hautdefekte",
+            ],
+        scopeTitle: isRu ? "План лечения и процедуры" : isEn ? "Clinical Protocol" : "Therapeutische Maßnahmen",
+        scopeItems: isRu
+          ? [
+              "Атравматическая смена повязок с обезболиванием",
+              "Фазовое применение современных повязок (гидроколлоиды, альгинаты, пены, серебро)",
+              "Антисептическая санация и промывание раневого ложа",
+              "Цифровая калиброванная фотодокументация динамики заживления",
+              "Компрессионная терапия при венозной этиологии язв",
+              "Тесное взаимодействие с оперирующим хирургом и дерматологом",
+            ]
+          : isEn
+          ? [
+              "Atraumatic, pain-reduced dressing changes with sterile technique",
+              "Phase-adapted dressing selection (hydrocolloids, alginates, foams, silver dressings)",
+              "Antiseptic wound cleansing, irrigation, and bacterial burden reduction",
+              "Standardized digital photography and computer-assisted wound dimension tracking",
+              "Targeted medical compression therapy for venous insufficiency",
+              "Direct multidisciplinary dialogue with surgeons, dermatologists, and MVZ clinics",
+            ]
+          : [
+              "Schonender, schmerzarmer Verbandwechsel unter sterilen Kautelen",
+              "Phasengerechte Auswahl moderner Wundauflagen (Alginate, Hydrokolloide, Schaumverbände, Silber)",
+              "Antiseptische Wundspülung und Reduktion der Keimbelastung",
+              "Hochauflösende digitale Fotodokumentation und exakte Vermessung des Wundverlaufs",
+              "Entstauende Kompressionstherapie bei venöser Wundgenese",
+              "Direkte Fallabstimmung mit behandelnden Chirurgen, Gefäßmedizinern und MVZ-Ärzten",
+            ],
+        billingTitle: isRu ? "Оплата и рецепты" : isEn ? "Insurance & Reimbursement" : "Verordnung & Kostenträger",
+        billingText: isRu
+          ? "Уход за ранами и перевязочные материалы оплачиваются медицинскими страховками по SGB V на основании врачебного назначения. NabiOta HomeCare координирует доставку стерильных материалов через партнерские аптеки и Sanitätshaus."
+          : isEn
+          ? "Wound management and advanced dressing supplies are covered under SGB V statutory and private health insurance. NabiOta HomeCare coordinates the swift delivery of sterile dressings via our affiliated pharmacy and medical supply store."
+          : "Die Wundversorgung ist eine anerkannte Leistung der häuslichen Krankenpflege nach SGB V. Die Kosten für Verbandwechsel und moderne Wundauflagen werden von den gesetzlichen und privaten Krankenkassen übernommen. Wir koordinieren die reibungslose Belieferung über die NabiOta Apotheke und das Sanitätshaus.",
+        qualityTitle: isRu ? "Квалификация ICW®" : isEn ? "ICW® Quality Certification" : "ICW®-Zertifizierung",
+        qualityText: isRu
+          ? "Наши специалисты имеют действующие сертификаты Wundexperte ICW® и ежегодно проходят курсы повышения квалификации в соответствии с национальными экспертными стандартами DNQP."
+          : isEn
+          ? "Our wound coordinators hold accredited ICW® certifications and complete annual clinical training adhering to German National Expert Standards (DNQP)."
+          : "Unsere Wundmanager verfügen über anerkannte ICW®-Zertifikate (Initiative Chronische Wunden e.V.) und bilden sich fortlaufend nach den nationalen Expertenstandards des DNQP weiter.",
+        ctaButtonText: isRu ? "Записаться на осмотр раны" : isEn ? "Request Wound Assessment" : "Wundvisite vereinbaren",
+      },
+    },
+    {
+      id: "grundpflege",
+      badge: isRu
+        ? "SGB XI • СТЕПЕНИ УХОДА 1–5"
+        : isEn
+        ? "SGB XI • CARE LEVELS 1–5"
+        : "SGB XI • PFLEGEGRADE 1–5",
+      image: "/images/nursing/stage-senior.webp",
+      iconType: "heart",
+      title: isRu
+        ? "Базовый уход & помощь в быту (SGB XI)"
+        : isEn
+        ? "Personal Care & Daily Living (SGB XI)"
+        : "Körperbezogene Pflege & Grundpflege (SGB XI)",
+      shortDesc: isRu
+        ? "Бережная помощь в гигиене, одевании, приеме пищи и мобилизации для сохранения личной автономии и комфорта."
+        : isEn
+        ? "Dignified assistance with personal hygiene, dressing, nutrition, and mobilization to foster autonomy and comfort at home."
+        : "Respektvolle Unterstützung bei der Körperpflege, Ernährung und Mobilität zur Erhaltung und Förderung der persönlichen Selbstständigkeit.",
+      modal: {
+        title: isRu
+          ? "Базовый сестринский уход и помощь в быту (SGB XI)"
+          : isEn
+          ? "Personal Care & Activities of Daily Living (SGB XI)"
+          : "Körperbezogene Grundpflege & Alltagshilfe (SGB XI)",
+        subtitle: isRu
+          ? "Уважительная поддержка для сохранения самостоятельности в родных стенах"
+          : isEn
+          ? "Respectful, empowering assistance preserving independence at home"
+          : "Würdevolle, aktivierende Unterstützung für ein selbstbestimmtes Leben zu Hause",
+        description: isRu
+          ? "Каждый человек заслуживает уважительного и бережного отношения. Базовый уход по SGB XI строится на принципе активирующего ухода: мы помогаем в том, что вызывает затруднения, но бережно сохраняем и стимулируем те навыки, которые пациент может выполнять сам."
+          : isEn
+          ? "Every person deserves dignified and compassionate care. Personal care under SGB XI is centered around restorative, activating nursing: we assist where help is needed while encouraging and maintaining existing capabilities so clients remain self-determined in their own home."
+          : "Die körperbezogene Pflege nach SGB XI basiert auf dem Leitgedanken der aktivierenden Pflege: Wir unterstützen dort, wo Hilfe benötigt wird, fördern aber gleichzeitig gezielt vorhandene Ressourcen und Fähigkeiten, damit unsere Klienten ihre Eigenständigkeit und Lebensfreude im vertrauten Zuhause bewahren.",
+        indicationsTitle: isRu ? "Для кого предназначен уход" : isEn ? "Target Audience" : "Zielgruppe & Voraussetzungen",
+        indications: isRu
+          ? [
+              "Люди пожилого возраста с присвоенной степенью ухода (Pflegegrad 1–5)",
+              "Пациенты после тяжелых операций, инсультов или травм",
+              "Люди с дегенеративными заболеваниями суставов и позвоночника",
+              "Пациенты с болезнью Паркинсона или рассеянным склерозом",
+              "Люди с умеренными или выраженными когнитивными нарушениями / деменцией",
+              "Лица, временно утратившие способность к самостоятельному самообслуживанию",
+            ]
+          : isEn
+          ? [
+              "Elderly individuals with recognized care levels (Pflegegrade 1 to 5)",
+              "Post-acute patients recovering from stroke, major surgeries, or joint replacements",
+              "Individuals with advanced osteoarthritis or severe mobility impairments",
+              "Patients living with Parkinson's, Multiple Sclerosis, or neurological deficits",
+              "People experiencing memory impairment, cognitive decline, or dementia",
+              "Anyone experiencing temporary loss of independent self-care abilities",
+            ]
+          : [
+              "Pflegebedürftige Menschen mit anerkanntem Pflegegrad (Pflegegrad 1 bis 5)",
+              "Senioren mit altersbedingten Einschränkungen der Mobilität und Motorik",
+              "Patienten nach schweren Erkrankungen, Schlaganfall oder Gelenkersatz",
+              "Menschen mit chronischen neurologischen Erkrankungen (z.B. Morbus Parkinson)",
+              "Klienten mit dementiellen Veränderungen oder kognitiven Einschränkungen",
+              "Personen in vorübergehenden Rekonvaleszenz- und Erholungsphasen",
+            ],
+        scopeTitle: isRu ? "Что входит в базовый уход" : isEn ? "Scope of Services" : "Modulare Pflegeleistungen",
+        scopeItems: isRu
+          ? [
+              "Полное или частичное умывание, душ, купание, гигиена полости рта и волос",
+              "Помощь при одевании, раздевании и подборе комфортной одежды",
+              "Помощь при приеме пищи, сервировка и контроль питьевого режима",
+              "Помощь при посещении туалета и деликатный уход при недержании",
+              "Активирующая мобилизация: пересаживание в кресло, помощь при ходьбе",
+              "Правильное позиционирование в постели для предотвращения пролежней",
+            ]
+          : isEn
+          ? [
+              "Assistance with morning and evening hygiene, shower, bath, and oral care",
+              "Support with dressing, undressing, and orthopedic footwear",
+              "Nutritional support, meal preparation assistance, and hydration monitoring",
+              "Dignified assistance with toileting and discreet continence management",
+              "Activating mobilization, bed-to-chair transfers, and supervised walking",
+              "Micro-positioning in bed for comfort, contracture, and pressure relief",
+            ]
+          : [
+              "Ganz- und Teilkörperwäsche, Baden, Duschen sowie Mund-, Haar- und Zahnpflege",
+              "Hilfe beim An- und Auskleiden inklusive Anlegen von Prothesen/Orthesen",
+              "Mundgerechte Zubereitung und Unterstützung bei der Nahrungs- und Flüssigkeitsaufnahme",
+              "Hilfe bei der Ausscheidung und diskrete, würdevolle Inkontinenzversorgung",
+              "Aktivierende Mobilisation: Transfer vom Bett in den Rollstuhl, Geh- und Stehübungen",
+              "Fachgerechte Lagerung im Pflegebett zur Dekubitus- und Kontrakturvermeidung",
+            ],
+        billingTitle: isRu ? "Оплата через кассу ухода" : isEn ? "Care Fund Billing" : "Finanzierung & Sachleistungen",
+        billingText: isRu
+          ? "Услуги оплачиваются кассой по уходу (Pflegekasse) в виде натуральных пособий (Pflegesachleistungen) в соответствии с присвоенным Pflegegrad (1–5) либо в комбинации с Pflegegeld. Мы рассчитываем оптимальный индивидуальный тариф без скрытых затрат."
+          : isEn
+          ? "Services are billed directly to statutory and private long-term care insurance funds (Pflegekassen) via care in-kind benefits (Pflegesachleistungen) based on Pflegegrad 1–5, or as a combination with monetary care allowances."
+          : "Die Kosten werden bis zum gesetzlichen Höchstbetrag des jeweiligen Pflegegrads (1 bis 5) direkt als Pflegesachleistung mit der Pflegekasse abgerechnet. Auch Kombinationsleistungen (Pflegegeld + Pflegedienst) sind möglich. Wir erstellen transparente, verständliche Kostenvoranschläge.",
+        qualityTitle: isRu ? "Система закрепленной медсестры" : isEn ? "Primary Nursing Model" : "Bezugspflegesystem",
+        qualityText: isRu
+          ? "Мы внедряем систему постоянных кураторов (Bezugspflege): за вами закрепляется небольшая команда медсестер, знающая ваши индивидуальные привычки и пожелания."
+          : isEn
+          ? "We implement a dedicated primary nursing system ensuring consistent, familiar caregivers who know your daily routines and preferences intimately."
+          : "Unser Bezugspflegesystem stellt sicher, dass feste und vertraute Pflegekräfte zu Ihnen kommen. Das schafft eine vertrauensvolle Bindung und gibt den Klienten sowie ihren Angehörigen ein beruhigendes Gefühl von Sicherheit.",
+        ctaButtonText: isRu ? "Рассчитать план ухода" : isEn ? "Calculate Care Plan" : "Pflegeberatung anfordern",
+      },
+    },
+    {
+      id: "postoperativ",
+      badge: isRu
+        ? "ПЕРЕВОД ИЗ КЛИНИКИ"
+        : isEn
+        ? "DISCHARGE TRANSITION"
+        : "KLINIK- & MVZ-ÜBERLEITUNG",
+      image: "/images/nursing/stage-postsurgical.webp",
+      iconType: "shield",
+      title: isRu
+        ? "Послеоперационный патронаж & переливание"
+        : isEn
+        ? "Postoperative Care & Discharge Management"
+        : "Postoperative Nachsorge & Entlassmanagement",
+      shortDesc: isRu
+        ? "Бесшовный перевод из стационара домой после хирургических операций для безопасного и спокойного восстановления в домашнем уюте."
+        : isEn
+        ? "Seamless hospital discharge transition following surgical procedures ensuring guided and complication-free recovery at home."
+        : "Nahtlose medizinisch-pflegerische Überleitung nach Klinikaufenthalten oder ambulanten Operationen für eine sichere Genesung zu Hause.",
+      modal: {
+        title: isRu
+          ? "Послеоперационный патронаж и ведение после выписки"
+          : isEn
+          ? "Postoperative Transitional Care & Discharge Management"
+          : "Postoperative Nachsorge & Entlassmanagement",
+        subtitle: isRu
+          ? "Безопасный мост между больницей и домашним уютом"
+          : isEn
+          ? "Safe continuity of clinical care from hospital bedside to home"
+          : "Die sichere Brücke zwischen Klinikaufenthalt und Genesung zu Hause",
+        description: isRu
+          ? "Первые дни после выписки из больницы критически важны для успешного выздоровления. NabiOta HomeCare координирует переход из клиники (NabiOta Clinics Germany GmbH или других стационаров) прямо в домашнюю обстановку. Мы следим за заживлением швов, дренажами, снимаем болевой синдром и предотвращаем опасные осложнения."
+          : isEn
+          ? "The initial days following surgical discharge are critical for complication-free recovery. NabiOta HomeCare establishes an uninterrupted care continuum from the hospital ward (NabiOta Clinics or regional partner hospitals) to the client's home. We monitor healing, drainage, manage medications, and prevent unplanned rehospitalizations."
+          : "Die ersten Tage nach einem operativen Eingriff sind entscheidend für den Heilungserfolg. NabiOta HomeCare übernimmt das koordinierte Entlassmanagement direkt aus dem Krankenhaus (z.B. NabiOta Clinics Germany GmbH oder anderen Akutkliniken) in die häusliche Umgebung. Wir überwachen Wundheilung, Drainagen und Vitalwerte, organisieren Hilfsmittel und verhindern Komplikationen.",
+        indicationsTitle: isRu ? "Кому необходима помощь" : isEn ? "Common Surgeries" : "Häufige Einsatzbereiche",
+        indications: isRu
+          ? [
+              "Состояние после эндопротезирования суставов (тазобедренный, коленный)",
+              "После операций на брюшной полости и внутренних органах (висцеральная хирургия)",
+              "После нейрохирургических операций на позвоночнике и межпозвоночных дисках",
+              "Состояние после сосудистых и кардиохирургических вмешательств",
+              "Пациенты после обширных онкологических резекций",
+              "Пациенты, выписанные с дренажами, катетерами или швами",
+            ]
+          : isEn
+          ? [
+              "Total joint replacement recovery (hip, knee arthroplasty)",
+              "Abdominal and visceral surgical interventions",
+              "Spinal surgery and neurosurgical disc procedures",
+              "Vascular revascularization and cardiovascular surgeries",
+              "Complex oncological surgical resections",
+              "Patients discharged with surgical drains, catheters, or staple lines",
+            ]
+          : [
+              "Zustand nach endoprothetischem Gelenkersatz (Hüft- und Knie-TEP)",
+              "Eingriffe der Viszeral- und Abdominalchirurgie",
+              "Neurochirurgische Operationen an Wirbelsäule und Bandscheiben",
+              "Gefäßchirurgische und kardiologische Eingriffe",
+              "Komplexe onkologische Operationen mit erhöhtem Pflegebedarf",
+              "Entlassung mit chirurgischen Drainagen, Portkathetern oder Wundnähten",
+            ],
+        scopeTitle: isRu ? "Послеоперационные мероприятия" : isEn ? "Clinical Care Protocol" : "Pflegerische Leistungen",
+        scopeItems: isRu
+          ? [
+              "Контроль хирургических швов, снятие скоб и швов по назначению врача",
+              "Мониторинг объема и характера отделяемого по дренажам",
+              "Контроль боли и безопасная подача обезболивающих препаратов",
+              "Профилактика тромбозов (уколы антикоагулянтов, компрессионные чулки)",
+              "Ранняя мобилизация и координация с амбулаторной физиотерапией NabiOta Reha",
+              "Круглосуточный контакт с дежурным врачом при признаках воспаления",
+            ]
+          : isEn
+          ? [
+              "Surgical incision monitoring, suture/staple removal per physician instruction",
+              "Drainage output measurement, sterile care, and scheduled removal support",
+              "Postoperative pain assessment and analgesic administration",
+              "Thrombosis prophylaxis (anticoagulant injections, graduated stockings)",
+              "Early in-home mobilization in coordination with NabiOta Rehabilitation",
+              "24/7 escalation protocol and direct reporting back to operating surgeons",
+            ]
+          : [
+              "Tägliche Wund- und Nahtkontrolle sowie Fadenzug/Klammerentfernung nach ärztlicher Anordnung",
+              "Sorgfältiges Monitoring von Wunddrainagen und Sekretabfluss",
+              "Postoperatives Schmerzmonitoring und verordnungskonforme Analgetikagabe",
+              "Konsequente Thrombose- und Pneumonieprophylaxe",
+              "Frühmobilisation im häuslichen Umfeld in Kooperation mit der NabiOta Rehabilitation",
+              "24/7 Rufbereitschaft und sofortige Rücksprache mit den Operateuren bei Auffälligkeiten",
+            ],
+        billingTitle: isRu ? "Покрытие расходов" : isEn ? "Billing & Coverage" : "Kostenträger & Anspruch",
+        billingText: isRu
+          ? "Финансируется кассой медицинского страхования по § 37 Abs. 1 или 2 SGB V (послебольничный уход) либо по § 38 SGB V (помощь по хозяйству при временной нетрудоспособности). Направление оформляет клиника перед выпиской."
+          : isEn
+          ? "Covered by statutory and private health insurance under § 37 SGB V (transitional hospital care) or § 38 SGB V (household assistance during acute recovery). Hospital social services initiate the prescription prior to discharge."
+          : "Die Kosten werden über die Krankenhausnachsorge gemäß § 37 Abs. 1 oder Abs. 2 SGB V sowie bei Bedarf über Haushaltshilfe nach § 38 SGB V abgedeckt. Die Verordnung wird bereits im Rahmen des Entlassmanagements im Krankenhaus ausgestellt.",
+        qualityTitle: isRu ? "Координация с хирургами" : isEn ? "Surgical Coordination" : "Nahtlose Verbundkette",
+        qualityText: isRu
+          ? "Благодаря единой экосистеме NabiOta информация о ходе операции и рекомендациях хирурга передается патронажной сестре мгновенно и безопасно."
+          : isEn
+          ? "Within the NabiOta Health Group ecosystem, surgical discharge summaries and surgeon instructions are transferred directly and securely to the visiting nurse."
+          : "Die enge Verzahnung mit den operativen Einheiten der NabiOta-Gruppe stellt sicher, dass postoperative Besonderheiten und OP-Berichte ohne Informationsverlust in den häuslichen Pflegeplan einfließen.",
+        ctaButtonText: isRu ? "Заказать послеоперационный уход" : isEn ? "Arrange Post-Op Care" : "Nachsorge organisieren",
+      },
+    },
+    {
+      id: "spezialpflege",
+      badge: isRu
+        ? "СПЕЦИАЛЬНЫЙ УХОД"
+        : isEn
+        ? "SPECIALIZED NURSING"
+        : "SPEZIALISIERTE BEHANDLUNG",
+      image: "/images/nursing/why-choose-nurse.webp",
+      iconType: "pill",
+      title: isRu
+        ? "Стомы, катетеры & порт-системы"
+        : isEn
+        ? "Stoma, Catheter & Port Management"
+        : "Stoma-, Katheter- & Portversorgung",
+      shortDesc: isRu
+        ? "Квалифицированный уход за стомами, катетерами, порт-системами, а также энтеральным и парентеральным питанием в стерильных условиях."
+        : isEn
+        ? "Expert management of artificial access routes, enteral and parenteral nutrition, and sterile port flushing routines."
+        : "Qualifizierte Versorgung ableitender und künstlicher Zugänge, enterale/parenterale Ernährung und Portspülungen unter sterilen Bedingungen.",
+      modal: {
+        title: isRu
+          ? "Уход за стомами, катетерами и порт-системами"
+          : isEn
+          ? "Specialized Stoma, Catheter & Port System Care"
+          : "Stoma-, Katheter- & Portversorgung",
+        subtitle: isRu
+          ? "Максимальная стерильность, надежность и предотвращение инфекций"
+          : isEn
+          ? "Maximum asepsis, skin protection, and catheter infection prevention"
+          : "Höchste Asepsis, Hautschutz und zuverlässige Infektionsprävention",
+        description: isRu
+          ? "Специальные инвазивные системы (катетеры, кало- и уростомы, инфузионные порты, зонды PEG) требуют строжайшего соблюдения правил асептики. Наши медсестры прошли углубленную подготовку по специализированному уходу, что позволяет предотвратить инфекции кровотока, раздражения кожи и поломку оборудования."
+          : isEn
+          ? "Invasive clinical access devices such as urinary catheters, enterostomies, urostomies, subcutaneous infusion ports, and PEG feeding tubes require rigorous aseptic protocols. Our specialized nurses possess advanced training to protect delicate peristomal skin, prevent bloodstream infections, and ensure smooth therapy delivery."
+          : "Invasive Zugangs- und Ableitungssysteme – wie suprapubische Katheter, Enterostomata, Portkatheter oder PEG-Ernährungssonden – verlangen äußerste Sorgfalt und strikte Asepsis. Unsere speziell geschulten Pflegefachkräfte beherrschen die sterile Non-Touch-Technik, um lebensbedrohliche Infektionen zu vermeiden und die Lebensqualität der Betroffenen zu sichern.",
+        indicationsTitle: isRu ? "Области применения" : isEn ? "Clinical Devices & Systems" : "Versorgungsschwerpunkte",
+        indications: isRu
+          ? [
+              "Колостомы, илеостомы и уростомы (временные и постоянные)",
+              "Трансуретральные и надлобковые (супрапубические) мочевые катетеры",
+              "Подкожные венозные порт-системы (химиотерапия, длительные инфузии)",
+              "Энтеральное питание через назогастральные зонды и гастростомы (PEG / PEJ)",
+              "Парентеральное внутривенное питание на дому",
+              "Пациенты с трахеостомами и потребностью в санации",
+            ]
+          : isEn
+          ? [
+              "Colostomies, ileostomies, and urostomies (temporary or permanent)",
+              "Transurethral and suprapubic urinary bladder catheters",
+              "Subcutaneous central venous port systems (oncology, parenteral therapy)",
+              "Enteral tube feeding via PEG, PEJ, or nasogastric tubes",
+              "Home total parenteral nutrition (TPN) infusion protocols",
+              "Tracheostomy care, cannula changes, and endotracheal suctioning",
+            ]
+          : [
+              "Colostomie, Ileostomie und Urostomie (einteilige und zweiteilige Systeme)",
+              "Suprapubische (Bauchdecken-) und transurethrale Blasenverweilkatheter",
+              "Vollständig implantierte Port-Systeme für Chemotherapie oder Schmerztherapie",
+              "Enterale Ernährung über perkutane endoskopische Gastrostomie (PEG / PEJ)",
+              "Parenterale Ernährung und intravenöse Flüssigkeitssubstitution",
+              "Tracheostoma-Versorgung und fachgerechte endotracheale Absaugung",
+            ],
+        scopeTitle: isRu ? "План ухода и процедуры" : isEn ? "Care Interventions" : "Pflegerische Leistungen",
+        scopeItems: isRu
+          ? [
+              "Асептическая смена стомических пластин и калоприемников с защитой кожи",
+              "Промывание и смена мочевых катетеров в соответствии с предписанием врача",
+              "Пункция и промывание порт-систем специальными иглами Губера в стерильных условиях",
+              "Настройка и контроль работы помп для энтерального и парентерального питания",
+              "Профилактика катетер-ассоциированных инфекций мочевыводящих путей (CAUTI)",
+              "Обучение пациента и его родственников самостоятельным манипуляциям",
+            ]
+          : isEn
+          ? [
+              "Aseptic stoma plate & pouch changes with specialized skin barrier care",
+              "Urinary catheter flushes, catheter changes, and sterile collection bag management",
+              "Sterile port puncture with non-coring Huber needles and scheduled heparin flushes",
+              "Programming and maintenance of automated enteral and parenteral feeding pumps",
+              "Systematic prevention of catheter-associated infections per RKI recommendations",
+              "Sensitive guidance and coaching for patients and family caregivers",
+            ]
+          : [
+              "Fachgerechter, atraumatischer Wechsel von Stomaplatten und Beutelsystemen inklusive Hautschutz",
+              "Steriler Wechsel und Spülung von Blasenkathetern nach ärztlichem Intervall",
+              "Aseptische Punktion von Portsystemen mit Huber-Sicherheitsnadeln und steriler Verbandwechsel",
+              "Anschluss, Spülung und sachgemäße Bedienung von Ernährungspumpen (PEG / TPN)",
+              "Strikte Einhaltung der RKI-Präventionsempfehlungen gegen Katheter-assoziierte Infektionen",
+              "Einfühlsame Anleitung und Schulung von Angehörigen für mehr Sicherheit im Alltag",
+            ],
+        billingTitle: isRu ? "Страховое финансирование" : isEn ? "Reimbursement" : "Kostenträger & Hilfsmittel",
+        billingText: isRu
+          ? "Все манипуляции покрываются больничной кассой (SGB V) по рецепту врача. Необходимые расходные материалы и аппараты поставляются через санитарный дом NabiOta Sanitätshaus GmbH с прямым расчетом с кассой."
+          : isEn
+          ? "Nursing interventions are covered by health insurance under SGB V. Associated consumables and equipment are supplied directly via our NabiOta Sanitätshaus GmbH medical supply unit."
+          : "Die pflegerischen Maßnahmen werden vollumfänglich nach SGB V von den Krankenkassen vergütet. Die erforderlichen Hilfsmittel, Kathetersets, Stomaartikel und Ernährungsprodukte werden direkt über das NabiOta Sanitätshaus bezogen.",
+        qualityTitle: isRu ? "Инфекционный контроль" : isEn ? "Infection Control" : "Höchste Hygienesicherheit",
+        qualityText: isRu
+          ? "Мы используем исключительно одноразовые стерильные наборы и сертифицированные антисептики, соблюдая протоколы госпитальной гигиены."
+          : isEn
+          ? "We utilize strictly sterile disposable procedural packs and hospital-grade antiseptics, adhering to high-standard clinical hygiene guidelines."
+          : "Die Durchführung erfolgt ausnahmslos mit zertifizierten sterilen Einmal-Sets unter strikter Beachtung unserer klinikkonformen Hygienepläne.",
+        ctaButtonText: isRu ? "Консультация по катетерам и стомам" : isEn ? "Request Specialist Nursing" : "Spezialpflege anfordern",
+      },
+    },
+    {
+      id: "beratung-entlastung",
+      badge: isRu
+        ? "§ 37.3 SGB XI • РАЗГРУЗКА"
+        : isEn
+        ? "§ 37.3 SGB XI • COUNSELING"
+        : "§ 37.3 SGB XI & ENTLASTUNG",
+      image: "/images/nursing/hero-nurse.webp",
+      iconType: "users",
+      title: isRu
+        ? "Консультации, профилактика & разгрузка близких"
+        : isEn
+        ? "Care Counseling, Prophylaxis & Respite"
+        : "Pflegeberatung, Prophylaxen & Angehörigenentlastung",
+      shortDesc: isRu
+        ? "Обязательные консультации по § 37.3 SGB XI, профилактика пролежней и падений, обучение родственников и временный замещающий уход."
+        : isEn
+        ? "Mandatory § 37.3 SGB XI counseling visits, fall and pressure injury prevention, caregiver coaching, and hourly respite care."
+        : "Gesetzliche Beratungseinsätze (§ 37 Abs. 3 SGB XI), Sturz- und Dekubitusprophylaxe, Anleitung Angehöriger sowie stundenweise Entlastung.",
+      modal: {
+        title: isRu
+          ? "Консультации, профилактика и поддержка родственников"
+          : isEn
+          ? "Care Counseling (§ 37.3 SGB XI), Prevention & Respite Care"
+          : "Pflegeberatung (§ 37 Abs. 3 SGB XI), Prophylaxen & Entlastung",
+        subtitle: isRu
+          ? "Защита близких от выгорания и официальные отчеты для больничных касс"
+          : isEn
+          ? "Preventing caregiver burnout and official statutory counseling for insurance funds"
+          : "Spürbare Entlastung für Angehörige und verlässliche Begleitung im Sozialrecht",
+        description: isRu
+          ? "Уход за близким человеком требует колоссальных душевных и физических сил. NabiOta HomeCare не только оформляет обязательные для кассы подтверждения по § 37.3 SGB XI, но и практически обучает родственников правильным приемам ухода, помогает получить более высокий Pflegegrad и организует временную замену (Verhinderungspflege), когда вам нужен отдых."
+          : isEn
+          ? "Caring for a loved one is emotionally and physically demanding. NabiOta HomeCare not only conducts mandatory statutory counseling visits under § 37.3 SGB XI to preserve cash benefits, but also trains family members in ergonomic techniques, helps adjust Pflegegrad ratings, and provides respite care (§ 39/45b SGB XI) when caregivers need a well-deserved break."
+          : "Die Pflege eines Angehörigen erfordert enorme körperliche und seelische Kraft. Die NabiOta HomeCare führt die gesetzlich vorgeschriebenen Beratungseinsätze nach § 37 Abs. 3 SGB XI durch, sichert Ihren Anspruch auf Pflegegeld und unterstützt bei Höherstufungsanträgen. Zudem entlasten wir pflegende Angehörige durch stundenweise Verhinderungspflege (§ 39 SGB XI) und gezielte Entlastungsangebote (§ 45b SGB XI).",
+        indicationsTitle: isRu ? "Кому адресована программа" : isEn ? "Who Needs This" : "Wann diese Unterstützung greift",
+        indications: isRu
+          ? [
+              "Получатели пособия по уходу (Pflegegeld) для обязательного отчета в кассу",
+              "Родственники, испытывающие эмоциональное или физическое истощение",
+              "Семьи, готовящиеся к медико-социальной экспертизе (MD / Pflegegrad)",
+              "Пациенты с высоким риском падений или появления пролежней",
+              "Периоды отпуска, болезни или срочных дел ухаживающего родственника",
+              "Необходимость переоборудования квартиры для инвалидной коляски",
+            ]
+          : isEn
+          ? [
+              "Recipients of statutory cash care allowances needing mandatory verification",
+              "Family caregivers experiencing exhaustion, stress, or requiring holiday coverage",
+              "Families preparing for medical assessment (MD) for initial or increased Pflegegrad",
+              "Seniors facing high risks of accidental falls or immobility-related skin breakdown",
+              "Periods when primary family caregivers fall ill or need personal time off",
+              "Homes requiring barrier-free adaptations and technical care aids",
+            ]
+          : [
+              "Bezieher von Pflegegeld zur Sicherung des Anspruchs (§ 37 Abs. 3 SGB XI)",
+              "Pflegende Angehörige bei Urlaub, eigener Erkrankung oder Terminen (§ 39 SGB XI)",
+              "Familien vor der MDK/MD-Begutachtung zur Erlangung eines gerechten Pflegegrads",
+              "Gefährdete Klienten mit erhöhtem Sturzrisiko oder drohenden Druckgeschwüren",
+              "Bedarf an praktischer Anleitung ergonomischer Hebetechniken im Alltag",
+              "Beratung zu wohnumfeldverbessernden Maßnahmen und Pflegehilfsmitteln",
+            ],
+        scopeTitle: isRu ? "Наши услуги и помощь" : isEn ? "Services Included" : "Leistungsumfang & Entlastung",
+        scopeItems: isRu
+          ? [
+              "Проведение официальных визитов по § 37.3 SGB XI с отправкой отчета в кассу",
+              "Сопровождение при визите эксперта Медицинской службы (MD/MDK)",
+              "Практические уроки для близких: безопасные перемещения, мытье, профилактика травм",
+              "Замещающий уход на время вашего отпуска или болезни (§ 39 SGB XI)",
+              "Услуги помощи в быту и сопровождения по § 45b SGB XI (131 €/мес от кассы)",
+              "Оценка риска падений и подбор противопролежневых систем с NabiOta Sanitätshaus",
+            ]
+          : isEn
+          ? [
+              "Conduct of mandatory § 37.3 SGB XI visits with direct electronic notification to insurer",
+              "Personal advocacy and representation during statutory medical review (MD)",
+              "Hands-on caregiver coaching: ergonomic transfers, gentle skin care, fall prevention",
+              "Flexible substitute and respite care during caregiver holidays or illness (§ 39 SGB XI)",
+              "Activation and everyday household assistance covered under § 45b SGB XI",
+              "Systematic fall-risk screening and anti-decubitus mattress provision with Sanitätshaus",
+            ]
+          : [
+              "Durchführung der gesetzlichen Beratungseinsätze nach § 37 Abs. 3 SGB XI mit Nachweis an die Kasse",
+              "Professionelle Vorbereitung und persönliche Begleitung bei der MD-Pflegegradbegutachtung",
+              "Praktische Pflegeschulungen vor Ort: rückenschonende Transfertechniken und Prophylaxen",
+              "Stunden- oder tageweise Verhinderungspflege (§ 39 SGB XI) bei Abwesenheit der Pflegeperson",
+              "Zusätzliche Betreuungs- und Entlastungsleistungen nach § 45b SGB XI (z.B. Begleitung, Haushalt)",
+              "Sturz- und Dekubitus-Screening sowie Bereitstellung von Spezialhilfsmitteln via Sanitätshaus",
+            ],
+        billingTitle: isRu ? "100% оплата кассой" : isEn ? "No Out-of-Pocket Cost" : "Kostenübernahme & Budgets",
+        billingText: isRu
+          ? "Визиты по § 37.3 SGB XI на 100% оплачиваются кассой по уходу без каких-либо доплат со стороны пациента. Бюджеты на замещающий уход (§ 39: до 1.612 €) и разгрузку (§ 45b: 131 €/мес) финансируются государством."
+          : isEn
+          ? "Statutory § 37.3 SGB XI counseling visits are 100% covered by long-term care insurance with zero out-of-pocket costs. Annual respite budgets (§ 39) and monthly relief allowances (§ 45b) can be fully utilized."
+          : "Die gesetzlichen Beratungseinsätze nach § 37 Abs. 3 SGB XI sind für Sie kostenfrei und werden direkt mit der Pflegekasse abgerechnet. Auch die Budgets für Verhinderungspflege (bis zu 1.612 €/Jahr) und der Entlastungsbetrag (131 €/Monat) stehen Ihnen gesetzlich zu.",
+        qualityTitle: isRu ? "Сертифицированные консультанты" : isEn ? "Licensed Care Advisors" : "Zertifizierte Pflegeberater",
+        qualityText: isRu
+          ? "Консультации проводят дипломированные эксперты по уходу с глубоким знанием немецкого социального права и богатым практическим опытом."
+          : isEn
+          ? "Counseling is conducted by accredited eldercare specialists with comprehensive mastery of German social insurance regulations."
+          : "Unsere Pflegeberater verfügen über anerkannte Zusatzqualifikationen nach § 7a SGB XI und beraten Sie empathisch, kompetent und lösungsorientiert.",
+        ctaButtonText: isRu ? "Записаться на консультацию (§ 37.3)" : isEn ? "Schedule § 37.3 Visit" : "Beratungseinsatz anfordern",
+      },
     },
   ];
 
   const t = {
-    services: {
-      eyebrow: isRu ? "НАШИ УСЛУГИ" : isEn ? "OUR SERVICES" : "UNSERE LEISTUNGEN",
+    servicesSection: {
+      eyebrow: isRu ? "NABIOTA HOMECARE GMBH" : isEn ? "NABIOTA HOMECARE GMBH" : "NABIOTA HOMECARE GMBH",
       title: isRu
-        ? "Наши услуги по уходу"
+        ? "Комплексные амбулаторные и патронажные услуги"
         : isEn
-        ? "Our Nursing Care Services"
-        : "Unsere Pflegedienstleistungen",
+        ? "Comprehensive Home Nursing & Care Services"
+        : "Leistungsspektrum der NabiOta HomeCare GmbH",
       desc: isRu
-        ? "Мы предлагаем широкий спектр профессиональных услуг сестринского ухода, адаптированных к вашим потребностям — дома или в специализированном учреждении."
+        ? "Мы предлагаем полный спектр лицензированных сестринских услуг по SGB V и SGB XI: от медицинских процедур и лечения ран до заботливого ухода и юридической поддержки близких."
         : isEn
-        ? "We offer a wide range of professional nursing services tailored to meet your unique needs, whether at home or in a care facility."
-        : "Wir bieten ein breites Spektrum professioneller Pflegeleistungen, passgenau abgestimmt auf Ihre individuellen Bedürfnisse – zu Hause oder in der Einrichtung.",
-      items: [
+        ? "We provide an exhaustive continuum of accredited home care services under SGB V and SGB XI: from complex clinical procedures and wound healing to personal hygiene and caregiver respite."
+        : "Entdecken Sie die sechs tragenden Säulen unserer ambulanten Versorgung: Von ärztlich verordneter Behandlungspflege (SGB V) über zertifiziertes Wundmanagement (ICW®) bis hin zu körperbezogener Pflege (SGB XI) und spürbarer Entlastung der Angehörigen.",
+      openModalBtn: isRu ? "Подробнее о процедурах" : isEn ? "View Details" : "Details & Indikationen",
+    },
+    verbund: {
+      eyebrow: isRu ? "ИНТЕГРИРОВАННАЯ ЭКОСИСТЕМА" : isEn ? "INTEGRATED HEALTHCARE NETWORK" : "INTEGRIERTER VERSORGUNGSVERBUND",
+      title: isRu
+        ? "Бесшовная забота: Холдинг NabiOta®"
+        : isEn
+        ? "Seamless Continuity: The NabiOta® Healthcare Network"
+        : "Nahtlose Betreuung im Verbund der NabiOta® Gruppe",
+      desc: isRu
+        ? "NabiOta HomeCare GmbH тесно связана со всеми звеньями нашего медицинского холдинга — обеспечивая непрерывную цепочку от поликлиники и стационара до домашней постели."
+        : isEn
+        ? "NabiOta HomeCare GmbH collaborates seamlessly with all specialized entities across the NabiOta Group — delivering uninterrupted continuity from clinic to bedside."
+        : "Als Teil der NabiOta-Unternehmensgruppe kooperiert die NabiOta HomeCare GmbH eng mit den weiteren medizinischen Einrichtungen des Verbunds. Für Patienten und Angehörige bedeutet dies: keine Versorgungslücken, rasche Hilfsmittelversorgung und verlässliche Kommunikation zwischen Arzt und Pflege.",
+      pillars: [
         {
-          title: isRu ? "Медицинский уход & раны" : isEn ? "Clinical Care & Wound Management" : "Behandlungspflege & Wundversorgung",
+          title: isRu ? "NabiOta MVZ & Kliniken" : isEn ? "NabiOta MVZ & Clinics" : "NabiOta MVZ & Clinics",
           desc: isRu
-            ? "Сертифицированное ведение ран (ICW), инъекции, медикаменты и инфузии (SGB V)."
+            ? "Прямой контакт с оперирующими и лечащими врачами, быстрое оформление рецептов и корректировка назначений."
             : isEn
-            ? "Certified wound care (ICW), injections, infusions, and medication administration (SGB V)."
-            : "Zertifiziertes Wundmanagement (ICW), Injektionen, Infusionen und Medikamentengabe (SGB V).",
-          icon: Stethoscope,
+            ? "Direct coordination with attending physicians and surgeons, swift prescription processing, and clinical oversight."
+            : "Direkte Abstimmung mit behandelnden Fachärzten, schnelle Verordnungswege und abgestimmte Entlassplanung.",
+          icon: Building2,
         },
         {
-          title: isRu ? "Базовый уход (SGB XI)" : isEn ? "Basic Care & Daily Living" : "Grundpflege & Alltagshilfe (SGB XI)",
+          title: isRu ? "NabiOta Sanitätshaus GmbH" : isEn ? "NabiOta Medical Supplies" : "NabiOta Sanitätshaus GmbH",
           desc: isRu
-            ? "Помощь в гигиене, питании, мобилизации и ведении домашнего хозяйства."
+            ? "Экспресс-доставка кроватей с электроприводом, противопролежневых матрасов, ходунков, катетеров и повязок."
             : isEn
-            ? "Assistance with personal hygiene, nutrition, mobilization, and household support."
-            : "Körperpflege, Ernährung, Mobilisation und hauswirtschaftliche Unterstützung.",
-          icon: Heart,
-        },
-        {
-          title: isRu ? "Послебольничный патронаж" : isEn ? "Hospital Discharge Management" : "Entlassmanagement & Überleitung",
-          desc: isRu
-            ? "Бесшовный переход из стационара домой с непрерывным медицинским контролем."
-            : isEn
-            ? "Seamless continuity of clinical care during the critical transition from hospital to home."
-            : "Lückenlose Überleitung vom Krankenhaus nach Hause mit lückenloser Versorgungskette.",
-          icon: Home,
-        },
-        {
-          title: isRu ? "Консультации (§ 37.3 SGB XI)" : isEn ? "Care Counseling (§ 37.3 SGB XI)" : "Pflegeberatung (§ 37 Abs. 3 SGB XI)",
-          desc: isRu
-            ? "Официальные обязательные консультации для больничных касс и оформление пособий."
-            : isEn
-            ? "Mandatory statutory counseling visits and guidance on care grades and insurance benefits."
-            : "Gesetzliche Beratungseinsätze für die Pflegekasse und Hilfe bei Einstufungsanträgen.",
-          icon: Brain,
-        },
-        {
-          title: isRu ? "Замещающий уход" : isEn ? "Respite & Substitute Care" : "Verhinderungs- & Entlastungspflege",
-          desc: isRu
-            ? "Временная помощь и разгрузка ухаживающих родственников (§ 39/45b SGB XI)."
-            : isEn
-            ? "Temporary caregiver relief, holiday replacement, and support services (§ 39/45b SGB XI)."
-            : "Entlastung pflegender Angehöriger bei Urlaub oder Krankheit (§ 39/45b SGB XI).",
+            ? "Rapid home delivery of electric care beds, anti-decubitus mattresses, walkers, wheelchairs, and dressings."
+            : "Verlässliche, kurzfristige Bereitstellung von Pflegebetten, Antidekubitus-Systemen, Rollatoren und Hilfsmitteln.",
           icon: Accessibility,
         },
         {
-          title: isRu ? "Паллиативная помощь" : isEn ? "Palliative Care" : "Palliativpflege & Begleitung",
+          title: isRu ? "NabiOta Apotheke" : isEn ? "NabiOta Pharmacy" : "NabiOta Apotheke",
           desc: isRu
-            ? "Обезболивание, чуткое сопровождение и сохранение достоинства на финальном этапе."
+            ? "Бесперебойное снабжение жизненно важными лекарствами, инсулином, энтеральным питанием и стерильными материалами."
             : isEn
-            ? "Specialized symptom control, pain management, and dignity in the home setting."
-            : "Symptomlinderung, Schmerztherapiebegleitung und würdevolle Zuwendung.",
-          icon: HeartHandshake,
-        },
-        {
-          title: isRu ? "Хронические диагнозы & деменция" : isEn ? "Chronic Care & Dementia" : "Chroniker- & Demenzbetreuung",
-          desc: isRu
-            ? "Структурированные протоколы при диабете, ХОБЛ, деменции и болезни Альцгеймера."
-            : isEn
-            ? "Specialized routines for dementia, diabetes, cardiovascular conditions, and Alzheimer's."
-            : "Spezifische Betreuungskonzepte bei Demenz, Diabetes und chronischen Krankheiten.",
+            ? "Uninterrupted logistics for prescription medications, insulin, enteral nutrition, and sterile medical disposables."
+            : "Zuverlässige Belieferung mit verordneten Arzneimitteln, moderner Wundauflagen-Logistik und Sondennahrung.",
           icon: Pill,
         },
         {
-          title: isRu ? "Круглосуточная связь 24/7" : isEn ? "24/7 On-Call Support" : "24/7 Rufbereitschaft & Notruf",
+          title: isRu ? "NabiOta Rehabilitation" : isEn ? "NabiOta Rehabilitation" : "NabiOta Rehabilitation & Therapy",
           desc: isRu
-            ? "Постоянная готовность дежурной сестринской службы для экстренных ситуаций."
+            ? "Продолжение восстановления дома: согласованные программы ЛФК, эрготерапии и возвращения к активной жизни."
             : isEn
-            ? "Continuous 24/7 emergency response and nurse on-call availability."
-            : "Rund-um-die-Uhr-Erreichbarkeit für Notfälle und kontinuierliche Sicherheit zu Hause.",
-          icon: Headset,
+            ? "Restorative continuation at home: coordinated physiotherapy, occupational therapy, and regaining mobility."
+            : "Verzahnung von Pflege und ambulanter Therapie: Physiotherapie, Ergotherapie und Mobilisation im Einklang.",
+          icon: HeartHandshake,
         },
       ],
     },
     whyChoose: {
-      eyebrow: isRu ? "ПОЧЕМУ МЫ" : isEn ? "WHY CHOOSE US" : "WARUM WIR",
+      eyebrow: isRu ? "ПОЧЕМУ NABIOTA HOMECARE" : isEn ? "WHY CHOOSE US" : "WARUM NABIOTA HOMECARE",
       title: isRu
         ? "Индивидуальная забота. Профессиональная поддержка."
         : isEn
         ? "Personalized Care. Professional Support."
         : "Persönliche Fürsorge. Professionelle Expertise.",
       desc: isRu
-        ? "Мы убеждены, что каждый человек заслуживает уважительного, чуткого ухода, разработанного с учетом его личных потребностей. Наша опытная команда медсестер стремится повысить качество вашей жизни и помочь вам чувствовать себя комфортно и независимо."
+        ? "Мы убеждены, что каждый человек заслуживает уважительного, чуткого ухода, разработанного с учетом его личных потребностей. Наша опытная команда дипломированных медсестер стремится повысить качество вашей жизни и помочь вам чувствовать себя комфортно, безопасно и независимо."
         : isEn
-        ? "We believe that every person deserves care that is respectful, compassionate and tailored to their individual needs. Our experienced nursing team is dedicated to improving your quality of life and helping you live with greater comfort and independence."
+        ? "We believe that every person deserves care that is respectful, compassionate and tailored to their individual needs. Our experienced nursing team is dedicated to improving your quality of life and helping you live with greater comfort, safety, and independence."
         : "Wir sind überzeugt, dass jeder Mensch eine respektvolle, einfühlsame und maßgeschneiderte Pflege verdient. Unser erfahrenes Pflegeteam setzt sich dafür ein, Ihre Lebensqualität spürbar zu verbessern und Ihnen mehr Komfort sowie Unabhängigkeit zu ermöglichen.",
       checks: [
-        isRu ? "Высококвалифицированные сертифицированные медсёстры" : isEn ? "Highly trained and licensed nurses" : "Hochqualifizierte, examinierte Pflegefachkräfte",
-        isRu ? "Индивидуальные планы ухода" : isEn ? "Individualized care plans" : "Individuell abgestimmte Pflegepläne",
-        isRu ? "Фокус на безопасности, комфорте и достоинстве" : isEn ? "Focus on safety, comfort and dignity" : "Fokus auf Sicherheit, Geborgenheit und Würde",
-        isRu ? "Открытый доверительный диалог с близкими" : isEn ? "Open communication with families" : "Transparente und enge Kommunikation mit Angehörigen",
-      ],
-    },
-    approach: {
-      eyebrow: isRu ? "НАШ ПОДХОД" : isEn ? "OUR APPROACH" : "UNSER PFLEGEANSATZ",
-      title: isRu
-        ? "Комплексный уход на каждом этапе жизни"
-        : isEn
-        ? "Holistic Care for Every Stage of Life"
-        : "Ganzheitliche Pflege für jede Lebensphase",
-      desc: isRu
-        ? "От выздоровления и реабилитации до долгосрочной поддержки — наш сестринский уход гибко подстраивается под ваши потребности, неизменно с теплом и профессионализмом."
-        : isEn
-        ? "From recovery and rehabilitation to long-term support, our nursing care adapts to your needs — always with compassion and professionalism."
-        : "Von der Genesung und Rehabilitation bis zur Langzeitbetreuung passt sich unsere Pflege flexibel Ihren Bedürfnissen an – stets mit Mitgefühl und höchster Fachkompetenz.",
-      btn: isRu ? "Узнать больше об услугах" : isEn ? "Explore Our Services" : "Leistungen entdecken",
-      stages: [
-        {
-          title: isRu ? "Уход за новорожденными" : isEn ? "Newborn Care" : "Neugeborenenpflege",
-          desc: isRu
-            ? "Бережная специализированная забота о малышах."
-            : isEn
-            ? "Specialized care for your little one."
-            : "Spezialisierte Fürsorge für die Kleinsten.",
-          image: "/images/nursing/stage-newborn.webp",
-        },
-        {
-          title: isRu ? "Уход за пожилыми" : isEn ? "Senior Care" : "Seniorenpflege",
-          desc: isRu
-            ? "Поддержание независимости и благополучия."
-            : isEn
-            ? "Promoting independence and well-being."
-            : "Förderung von Selbstständigkeit & Wohlbefinden.",
-          image: "/images/diagnostik/patient-anna.webp",
-        },
-        {
-          title: isRu ? "Реабилитационный уход" : isEn ? "Rehabilitation Care" : "Rehabilitationspflege",
-          desc: isRu
-            ? "Помощь в восстановлении и подвижности."
-            : isEn
-            ? "Support for recovery and mobility."
-            : "Unterstützung für Genesung und Mobilität.",
-          image: "/images/nursing/stage-rehab.webp",
-        },
-        {
-          title: isRu ? "Послеоперационный уход" : isEn ? "Post-Surgical Care" : "Postoperative Pflege",
-          desc: isRu
-            ? "Безопасное и надежное восстановление дома."
-            : isEn
-            ? "Safe and effective recovery at home."
-            : "Sichere und wirksame Erholung zu Hause.",
-          image: "/images/nursing/stage-postsurgical.webp",
-        },
+        isRu ? "100% дипломированные медицинские сестры и эксперты ICW®" : isEn ? "100% licensed nurses and certified ICW® wound experts" : "100% staatlich examinierte Pflegefachkräfte & ICW®-Wundexperten",
+        isRu ? "Индивидуальные планы ухода и закрепленная медсестра" : isEn ? "Individualized care plans and dedicated primary nursing model" : "Individuell abgestimmte Pflegepläne mit festen Bezugspflegekräften",
+        isRu ? "Прямой расчет со всеми страховыми кассами Германии (SGB V & XI)" : isEn ? "Direct billing with all German statutory and private health insurances" : "Direkte Abrechnung mit allen gesetzlichen und privaten Kassen (SGB V & XI)",
+        isRu ? "Круглосуточная дежурная связь 24/7 для экстренных ситуаций" : isEn ? "24/7 emergency telephone response for acute medical concerns" : "Verlässliche 24/7 Rufbereitschaft bei akuten gesundheitlichen Veränderungen",
       ],
     },
     commitment: {
       eyebrow: isRu ? "НАШЕ ОБЯЗАТЕЛЬСТВО" : isEn ? "OUR COMMITMENT" : "UNSER VERSPRECHEN",
       title: isRu
-        ? "Больше чем уход — мы как семья"
+        ? "Больше чем уход — искренняя человечность"
         : isEn
-        ? "More Than Just Care — We're Family"
-        : "Mehr als nur Pflege – Wir sind Familie",
+        ? "More Than Just Care — Human Dignity & Warmth"
+        : "Mehr als nur Pflege – Respekt, Würde und Menschlichkeit",
       desc: isRu
-        ? "Мы строим долгосрочные доверительные отношения с клиентами и их семьями, обеспечивая не только профессиональную медицинскую помощь, но и искреннее эмоциональное спокойствие. Ваше благополучие — наш главный приоритет."
+        ? "Мы строим долгосрочные доверительные отношения с клиентами и их семьями, обеспечивая не только квалифицированную медицинскую помощь, но и искреннее эмоциональное спокойствие. Ваше благополучие — наш главный приоритет."
         : isEn
-        ? "We build lasting relationships with our clients and their families, providing not just medical care, but emotional support and peace of mind. Your well-being is our top priority."
-        : "Wir bauen dauerhafte, vertrauensvolle Beziehungen zu unseren Klienten und ihren Familien auf. Dabei bieten wir nicht nur fachärztliche Pflege, sondern auch emotionalen Halt und Sicherheit. Ihr Wohlbefinden steht an erster Stelle.",
+        ? "We build lasting relationships with our clients and their families, providing not just medical excellence, but emotional support and peace of mind. Your well-being is our top priority."
+        : "Wir bauen dauerhafte, vertrauensvolle Beziehungen zu unseren Klienten und ihren Familien auf. Dabei bieten wir nicht nur fachärztlich verordnete Spitzenpflege, sondern auch emotionalen Halt und Sicherheit. Ihr Wohlbefinden steht an erster Stelle.",
       badges: [
         {
           title: isRu ? "Чуткая команда" : isEn ? "Compassionate Team" : "Einfühlsames Team",
@@ -259,20 +878,72 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           icon: Users,
         },
         {
-          title: isRu ? "Высокое качество" : isEn ? "Excellence in Care" : "Exzellente Pflege",
+          title: isRu ? "Высокое качество" : isEn ? "Excellence in Care" : "Exzellente Qualität",
           icon: Star,
         },
       ],
     },
+    approach: {
+      eyebrow: isRu ? "НАШ ПОДХОД" : isEn ? "OUR APPROACH" : "UNSER PFLEGEANSATZ",
+      title: isRu
+        ? "Комплексный уход на каждом этапе жизни"
+        : isEn
+        ? "Holistic Care for Every Stage of Life"
+        : "Ganzheitliche Pflege für jede Lebensphase",
+      desc: isRu
+        ? "От выздоровления после операции до долгосрочной поддержки в пожилом возрасте — наш сестринский уход гибко подстраивается под ваши потребности, неизменно с теплом и профессионализмом."
+        : isEn
+        ? "From recovery and rehabilitation to long-term elderly support, our nursing care adapts to your needs — always with compassion and professionalism."
+        : "Von der Genesung nach Operationen bis zur verlässlichen Langzeitbetreuung passt sich unsere Pflege flexibel Ihren Bedürfnissen an – stets mit Mitgefühl und höchster Fachkompetenz.",
+      btn: isRu ? "Узнать больше об услугах" : isEn ? "Explore Our Services" : "Leistungen entdecken",
+      stages: [
+        {
+          title: isRu ? "Пожилой возраст" : isEn ? "Senior Care" : "Seniorenpflege",
+          desc: isRu
+            ? "Поддержание независимости и благополучия."
+            : isEn
+            ? "Promoting independence and well-being."
+            : "Förderung von Selbstständigkeit & Wohlbefinden.",
+          image: "/images/nursing/stage-senior.webp",
+        },
+        {
+          title: isRu ? "После операций" : isEn ? "Post-Surgical Care" : "Postoperative Pflege",
+          desc: isRu
+            ? "Безопасное и надежное восстановление дома."
+            : isEn
+            ? "Safe and effective recovery at home."
+            : "Sichere und wirksame Erholung zu Hause.",
+          image: "/images/nursing/stage-postsurgical.webp",
+        },
+        {
+          title: isRu ? "Реабилитация" : isEn ? "Rehabilitation Care" : "Rehabilitationspflege",
+          desc: isRu
+            ? "Помощь в восстановлении и подвижности."
+            : isEn
+            ? "Support for recovery and mobility."
+            : "Unterstützung für Genesung und Mobilität.",
+          image: "/images/nursing/stage-rehab.webp",
+        },
+        {
+          title: isRu ? "Хронические раны" : isEn ? "Wound Recovery" : "Wundversorgung",
+          desc: isRu
+            ? "Бережное заживление и перевязки."
+            : isEn
+            ? "Accelerated tissue repair and healing."
+            : "Moderne phasengerechte Wundheilung.",
+          image: "/images/services/wundversorgung.webp",
+        },
+      ],
+    },
     testimonials: {
-      eyebrow: isRu ? "ОТЗЫВЫ" : isEn ? "TESTIMONIALS" : "ERFAHRUNGSBERICHTE",
+      eyebrow: isRu ? "ОТЗЫВЫ ПАЦИЕНТОВ" : isEn ? "PATIENT TESTIMONIALS" : "ERFAHRUNGSBERICHTE",
       title: isRu
         ? "Реальные истории. Реальная помощь."
         : isEn
         ? "Real Stories. Real Impact."
         : "Echte Geschichten. Echte Hilfe.",
       desc: isRu
-        ? "Узнайте от близких пациентов, как забота нашей команды изменила их жизнь к лучшему."
+        ? "Узнайте от пациентов и их близких, как забота нашей команды изменила их жизнь к лучшему."
         : isEn
         ? "Hear from families who have experienced the difference our nursing care makes."
         : "Erfahren Sie von Familien, welchen spürbaren Unterschied unsere Pflege im Alltag macht.",
@@ -280,32 +951,32 @@ export function PflegePageComponent({ locale = "de" }: Props) {
       cards: [
         {
           quote: isRu
-            ? "«Медсёстры невероятно чуткие, профессиональные и заботливые. Они сделали сложный период намного легче для всей нашей семьи.»"
+            ? "«Медсёстры NabiOta HomeCare невероятно чуткие, пунктуальные и профессиональные. Они взяли на себя обработку сложной раны после операции на стопе, и за месяц всё идеально зажило!»"
             : isEn
-            ? "“The nurses are kind, professional and truly care. They made a difficult time so much easier for our family.”"
-            : "„Die Pflegekräfte sind herzlich, professionell und aufrichtig engagiert. Sie haben unserer Familie eine schwere Zeit enorm erleichtert.“",
+            ? "“The nurses from NabiOta HomeCare are kind, punctual, and remarkably skilled. They treated a complicated postoperative wound, and it healed completely within four weeks!”"
+            : "„Die Pflegekräfte von NabiOta HomeCare sind herzlich, pünktlich und hochkompetent. Dank des zertifizierten Wundmanagements ist meine postoperative Wunde nach wochenlangem Stillstand endlich vollkommen verheilt!“",
           name: "Sarah L.",
-          role: isRu ? "Дочь пациентки" : isEn ? "Daughter of Patient" : "Tochter einer Patientin",
+          role: isRu ? "Пациентка, Мёнхенгладбах" : isEn ? "Patient, Mönchengladbach" : "Patientin, Mönchengladbach",
           avatar: "/images/nursing/avatar-sarah.webp",
         },
         {
           quote: isRu
-            ? "«Превосходное обслуживание и забота. Благодаря этой замечательной команде моя мама чувствует себя дома в полной безопасности и уюте.»"
+            ? "«Благодаря закрепленной медсестре моя мама чувствует себя в полной безопасности. Они помогли оформить повышение степени ухода и взяли на себя выдачу лекарств.»"
             : isEn
-            ? "“Excellent service and support. My mother feels safer and happier at home thanks to their amazing team.”"
-            : "„Hervorragender Service und Betreuung. Meine Mutter fühlt sich zu Hause dank dieses großartigen Teams wieder rundum sicher und wohl.“",
+            ? "“Thanks to the primary nurse system, my mother feels completely secure at home. They guided us through the Pflegegrad upgrade and handle all medications flawlessly.”"
+            : "„Dank der festen Bezugspflegekraft fühlt sich meine Mutter zu Hause rundum geborgen. Das Team hat uns auch beim Antrag auf Höherstufung des Pflegegrads optimal zur Seite gestanden.“",
           name: "James T.",
-          role: isRu ? "Сын пациента" : isEn ? "Son of Patient" : "Sohn eines Patienten",
+          role: isRu ? "Сын пациентки (Pflegegrad 3)" : isEn ? "Son of Patient (Care Level 3)" : "Sohn einer Klientin (Pflegegrad 3)",
           avatar: "/images/nursing/avatar-james.webp",
         },
         {
           quote: isRu
-            ? "«Они относятся к тебе как к члену семьи. Забота, внимание и чуткость к деталям поистине исключительны.»"
+            ? "«Отношение как к члену семьи. Когда после больницы папе требовался зонд и инъекции, специалисты NabiOta приезжали дважды в день точно по графику. Огромное спасибо!»"
             : isEn
-            ? "“They treat you like family. The care and attention to detail are truly exceptional.”"
-            : "„Hier wird man wie ein Familienmitglied behandelt. Die Zuwendung und Liebe zum Detail sind schlicht außergewöhnlich.“",
+            ? "“They treat you like family. When my father required tube feeding and injections after hospital discharge, NabiOta nurses were there reliably twice a day. True lifesavers.”"
+            : "„Hier wird man mit echter Herzenswärme betreut. Als mein Vater nach der Klinik Sondenernährung und Injektionen brauchte, war NabiOta HomeCare sofort zur Stelle. Höchste Verlässlichkeit!“",
           name: "Linda M.",
-          role: isRu ? "Пациентка" : isEn ? "Patient" : "Patientin",
+          role: isRu ? "Дочь пациента" : isEn ? "Daughter of Patient" : "Angehörige eines Patienten",
           avatar: "/images/nursing/avatar-linda.webp",
         },
       ],
@@ -315,56 +986,80 @@ export function PflegePageComponent({ locale = "de" }: Props) {
       title: isRu ? "Часто задаваемые вопросы" : isEn ? "Frequently Asked Questions" : "Häufig gestellte Fragen",
       items: [
         {
-          q: isRu ? "Какие виды страховок вы принимаете?" : isEn ? "What types of insurance do you accept?" : "Welche Versicherungen werden akzeptiert?",
-          a: isRu
-            ? "Мы работаем со всеми государственными и частными больничными и страховыми кассами Германии (по SGB V и SGB XI), а также предоставляем услуги на условиях прямого расчета."
+          q: isRu
+            ? "В чем разница между Behandlungspflege (SGB V) и Grundpflege (SGB XI)?"
             : isEn
-            ? "We accept all statutory health and nursing insurance funds (gesetzliche Kranken- und Pflegekassen) in Germany under SGB V and SGB XI, private insurance carriers, and self-pay arrangements."
-            : "Wir rechnen mit allen gesetzlichen Kranken- und Pflegekassen in Deutschland nach SGB V und SGB XI ab, sowie mit privaten Krankenversicherungen und Selbstzahlern.",
+            ? "What is the difference between Clinical Care (SGB V) and Basic Care (SGB XI)?"
+            : "Was ist der Unterschied zwischen Behandlungspflege (SGB V) und Grundpflege (SGB XI)?",
+          a: isRu
+            ? "Behandlungspflege (SGB V) — это медицинские процедуры, назначенные врачом (уколы, перевязки, капельницы, таблетки). Они на 100% оплачиваются медицинской страховкой. Grundpflege (SGB XI) — это помощь в гигиене, питании и одевании, которая финансируется кассой по уходу в соответствии с присвоенным Pflegegrad."
+            : isEn
+            ? "Treatment care (SGB V) consists of clinical interventions prescribed by a doctor (injections, wound dressings, IVs, medications) and is 100% paid by health insurance. Basic care (SGB XI) covers personal hygiene, mobilization, and nutrition, funded by the long-term care insurance according to your Pflegegrad (1–5)."
+            : "Die Behandlungspflege nach SGB V umfasst ärztlich verordnete medizinische Maßnahmen (z.B. Injektionen, Wundverbände, Medikamentengabe) und wird vollständig von der Krankenkasse bezahlt. Die Grundpflege nach SGB XI umfasst körperbezogene Hilfen (Waschen, Kleiden, Ernährung) und wird über das Sachleistungsbudget des jeweiligen Pflegegrads finanziert.",
         },
         {
-          q: isRu ? "Как оформить услугу сестринского ухода?" : isEn ? "How do I schedule a nursing care service?" : "Wie vereinbare ich einen Pflegedienst?",
-          a: isRu
-            ? "Вы можете связаться с нами по телефону, электронной почте или через форму на сайте. Мы согласуем удобное время для бесплатной первичной консультации и оценки потребностей дома."
+          q: isRu
+            ? "Как быстро NabiOta HomeCare может приступить к уходу?"
             : isEn
-            ? "You can easily schedule a consultation by phone, email, or through our website. We arrange a timely, free in-home assessment to evaluate your care needs."
-            : "Kontaktieren Sie uns telefonisch, per E-Mail oder über unser Kontaktformular. Wir vereinbaren innerhalb von 24–48 Stunden ein kostenfreies Erstgespräch bei Ihnen zu Hause.",
+            ? "How quickly can NabiOta HomeCare initiate services?"
+            : "Wie schnell kann die NabiOta HomeCare die Versorgung aufnehmen?",
+          a: isRu
+            ? "В срочных случаях (например, при выписке из стационара или острой ране) мы начинаем уход в течение 24–48 часов после первого звонка или передачи рецепта."
+            : isEn
+            ? "In urgent cases, such as immediate hospital discharge or acute wound treatment, we can initiate care within 24 to 48 hours following an initial phone consultation or recipe transfer."
+            : "In dringlichen Fällen – insbesondere bei kurzfristiger Krankenhausentlassung oder frischen Operationswunden – können wir die Versorgung in der Regel innerhalb von 24 bis 48 Stunden nach Kontaktaufnahme starten.",
         },
         {
-          q: isRu ? "Могу ли я выбрать определенную медсестру?" : isEn ? "Can I choose a specific nurse?" : "Kann ich eine bestimmte Pflegekraft auswählen?",
-          a: isRu
-            ? "Да, наша модель первичного ухода (Bezugspflege) направлена на то, чтобы за вами была закреплена постоянная команда специалистов для доверительных отношений."
+          q: isRu
+            ? "Проводите ли вы обязательные консультации по § 37 Abs. 3 SGB XI?"
             : isEn
-            ? "Yes, our primary nursing model (Bezugspflege) prioritizes assigning familiar, dedicated caregivers to ensure continuity, comfort, and trusting relationships."
-            : "Ja, unser Bezugspflegesystem sorgt dafür, dass feste, vertraute Pflegekräfte für Sie zuständig sind, um ein enges Vertrauensverhältnis aufzubauen.",
+            ? "Do you conduct mandatory counseling visits under § 37.3 SGB XI?"
+            : "Führen Sie gesetzliche Beratungseinsätze nach § 37 Abs. 3 SGB XI durch?",
+          a: isRu
+            ? "Да, наши сертифицированные консультанты проводят обязательные визиты на дому для получателей Pflegegeld (раз в полгода для Pflegegrad 2–3, раз в квартал для Pflegegrad 4–5) и сразу направляют отчет в вашу страховую кассу."
+            : isEn
+            ? "Yes, our certified care advisors conduct official home visits for recipients of statutory care allowances (semi-annually for Pflegegrad 2–3, quarterly for Pflegegrad 4–5) and submit documentation directly to your insurer."
+            : "Ja, unsere examinierten Pflegeberater führen die gesetzlich vorgeschriebenen Beratungseinsätze bei Ihnen zu Hause durch und leiten den Nachweis direkt an Ihre Pflegekasse weiter, damit Ihr Pflegegeldanspruch gesichert bleibt.",
         },
         {
-          q: isRu ? "Предоставляете ли вы круглосуточный уход?" : isEn ? "Do you provide 24/7 care?" : "Bieten Sie eine 24/7-Betreuung an?",
-          a: isRu
-            ? "Да, мы предоставляем круглосуточную экстренную телефонную поддержку, а также 24-часовой индивидуальный уход на дому в зависимости от медицинских показаний."
+          q: isRu
+            ? "Как организована дежурная служба и вызов в нерабочее время?"
             : isEn
-            ? "Yes, we offer 24/7 emergency on-call support as well as round-the-clock intensive home nursing and palliative support depending on individual medical needs."
-            : "Ja, wir bieten eine 24-Stunden-Rufbereitschaft sowie kontinuierliche Tag- und Nachtpflege für intensiv- oder palliativmedizinische Bedarfe an.",
+            ? "How is out-of-hours on-call availability handled?"
+            : "Wie ist die Erreichbarkeit außerhalb der regulären Zeiten geregelt?",
+          a: isRu
+            ? "Для всех наших постоянных пациентов действует круглосуточная телефонная линия 24/7. В случае внезапного ухудшения состояния дежурная медсестра проконсультирует или оперативно приедет на дом."
+            : isEn
+            ? "For registered clients, we provide a dedicated 24/7 emergency telephone hotline. In case of acute health changes or complications, our on-call nursing supervisor responds immediately."
+            : "Für unsere betreuten Klienten besteht eine 24-stündige Rufbereitschaft an 365 Tagen im Jahr. Bei unvorhergesehenen gesundheitlichen Verschlechterungen oder Notfällen ist jederzeit eine examinierte Fachkraft erreichbar.",
         },
         {
-          q: isRu ? "Имеет ли персонал лицензии и страховку?" : isEn ? "Is your staff licensed and insured?" : "Ist das Personal examiniert und versichert?",
-          a: isRu
-            ? "Все наши медсёстры — это дипломированные специалисты государственного образца с непрерывным повышением квалификации и полным профессиональным страхованием."
+          q: isRu
+            ? "Имеют ли медсёстры государственную квалификацию?"
             : isEn
-            ? "Every nurse in our team is a fully licensed, state-certified specialist with ongoing training and comprehensive professional liability coverage."
-            : "Unser gesamtes Pflegepersonal besteht aus staatlich examinierten Pflegefachkräften mit kontinuierlicher Weiterbildung und vollständigem Versicherungsschutz.",
+            ? "Is all nursing staff fully certified and insured?"
+            : "Sind alle Pflegekräfte examiniert und geschult?",
+          a: isRu
+            ? "Все наши сотрудники — это дипломированные медицинские сестры государственного образца (Pflegefachkräfte / Krankenschwester) с сертификатами Wundexperte ICW® и регулярными курсами повышения квалификации."
+            : isEn
+            ? "All our caregivers are state-certified registered nurses with specialized training in ICW® wound care and continuous professional development adhering to German medical standards."
+            : "Unser Team besteht ausnahmslos aus staatlich examinierten Pflegefachkräften. Viele verfügen über anerkannte Zusatzqualifikationen wie Wundexperte ICW®, Palliativpflege oder Hygienebeauftragte.",
         },
       ],
     },
     cta: {
-      eyebrow: isRu ? "ДАВАЙТЕ НАЧНЕМ" : isEn ? "LET'S GET STARTED" : "JETZT STARTEN",
-      title: isRu ? "Ваше здоровье. Наш приоритет." : isEn ? "Your Health. Our Priority." : "Ihre Gesundheit. Unsere Priorität.",
-      desc: isRu
-        ? "Свяжитесь с нами сегодня, чтобы узнать больше об услугах сестринского ухода или назначить первичную консультацию."
+      eyebrow: isRu ? "СВЯЖИТЕСЬ С НАМИ" : isEn ? "GET IN TOUCH" : "JETZT KONTAKT AUFNEHMEN",
+      title: isRu
+        ? "Ваше здоровье и покой — в надежных руках"
         : isEn
-        ? "Contact us today to learn more about our nursing care services or to schedule a consultation."
-        : "Kontaktieren Sie uns noch heute, um mehr über unsere Pflegedienste zu erfahren oder eine Beratung zu vereinbaren.",
-      btn: isRu ? "Связаться с нами" : isEn ? "Contact Us" : "Kontakt aufnehmen",
+        ? "Your Well-Being. Our Dedicated Mission."
+        : "Ihre Gesundheit. In besten pflegerischen Händen.",
+      desc: isRu
+        ? "Позвоните нам или оставьте заявку, чтобы согласовать первичный бесплатный визит и составить индивидуальный план ухода."
+        : isEn
+        ? "Call us or submit an inquiry to schedule a complimentary initial assessment and tailored home nursing plan."
+        : "Kontaktieren Sie uns noch heute für ein kostenfreies, unverbindliches Erstgespräch bei Ihnen zu Hause oder in der Klinik vor der Entlassung.",
+      btn: isRu ? "Записаться на консультацию" : isEn ? "Contact HomeCare Team" : "Kostenlose Erstberatung vereinbaren",
       phone: "+49 2161 4794560",
       email: "info@nabiota-health-group.de",
       location: isRu ? "Мёнхенгладбах, Германия" : isEn ? "Mönchengladbach, Germany" : "Mönchengladbach, Deutschland",
@@ -376,7 +1071,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#FAF9F5] text-forest-950 font-sans selection:bg-gold-500/20">
-      {/* ── 1. GLOBAL SITE NAVIGATION HEADER (kept as-is) ── */}
+      {/* ── 1. GLOBAL SITE NAVIGATION HEADER ── */}
       <Header currentLocale={locale} />
 
       {/* ── 2. SITE STANDARD PAGE HERO (Unified Header with botanical gold background) ── */}
@@ -410,10 +1105,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
 
       <main className="flex-1 bg-[#FAF9F5]">
         {/* ========================================================================= */}
-        {/* SECTION 1: WHY CHOOSE US - Personalized Care (FIRST SECTION, Photo 4)    */}
+        {/* SECTION 1: WHY CHOOSE US - Personalized Care                              */}
         {/* ========================================================================= */}
         <section className="py-14 sm:py-20 bg-[#FAF9F5] relative overflow-hidden border-b border-[#EAE3D5]">
-          {/* Botanical green foliage on far right (Matching Photo 4) */}
+          {/* Botanical green foliage on far right */}
           <div className="absolute right-0 top-0 bottom-0 w-64 sm:w-80 md:w-96 pointer-events-none opacity-85 z-0 select-none overflow-hidden">
             <Image
               src="/images/areas/botanical-branch-clean.webp"
@@ -470,10 +1165,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 2: OUR COMMITMENT (FULL-WIDTH EDGE-TO-EDGE, Matching Photo 5)    */}
+        {/* SECTION 2: OUR COMMITMENT (FULL-WIDTH EDGE-TO-EDGE)                       */}
         {/* ========================================================================= */}
         <section className="w-full bg-[#0B2516] text-white relative overflow-hidden border-y border-[#D5B878]/30">
-          {/* Rich Botanical Background across the dark section */}
           <div className="absolute inset-0 pointer-events-none z-0">
             <Image
               src="/images/bacground.webp"
@@ -485,13 +1179,13 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           </div>
 
           <div className="relative z-10 w-full flex flex-col lg:flex-row items-stretch">
-            {/* Left: Nurse in green scrub with senior woman - completely seamless transition */}
+            {/* Left: Nurse with senior */}
             <div className="w-full lg:w-[36%] xl:w-[38%] relative min-h-[240px] sm:min-h-[280px] lg:min-h-[320px] xl:min-h-[340px] overflow-hidden shrink-0">
-              <div 
+              <div
                 className="absolute inset-0 w-full h-full"
                 style={{
-                  WebkitMaskImage: 'linear-gradient(to right, black 65%, transparent 100%)',
-                  maskImage: 'linear-gradient(to right, black 65%, transparent 100%)'
+                  WebkitMaskImage: "linear-gradient(to right, black 65%, transparent 100%)",
+                  maskImage: "linear-gradient(to right, black 65%, transparent 100%)",
                 }}
               >
                 <Image
@@ -502,12 +1196,11 @@ export function PflegePageComponent({ locale = "de" }: Props) {
                   priority
                 />
               </div>
-              {/* Multi-stop smooth gradient blend into dark forest green */}
               <div className="hidden lg:block absolute inset-y-0 right-0 w-44 xl:w-56 bg-gradient-to-r from-transparent via-[#0B2516]/70 to-[#0B2516] pointer-events-none z-10" />
               <div className="lg:hidden absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#0B2516] to-transparent pointer-events-none z-10" />
             </div>
 
-            {/* Right: Copy & 4 Circular Gold Icons matching Photo 5 */}
+            {/* Right: Copy & 4 Circular Gold Badges */}
             <div className="w-full lg:w-[64%] xl:w-[62%] p-6 sm:p-8 lg:p-8 lg:pl-10 space-y-4 relative z-10">
               <span className="text-[10.5px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-[#ECCF96] block font-sans">
                 {t.commitment.eyebrow}
@@ -521,7 +1214,6 @@ export function PflegePageComponent({ locale = "de" }: Props) {
                 {t.commitment.desc}
               </p>
 
-              {/* 4 Gold Circular Badges matching Photo 5 */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4 border-t border-white/10 max-w-2xl">
                 {t.commitment.badges.map((b, idx) => {
                   const IconComp = b.icon;
@@ -542,41 +1234,140 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 3: OUR NURSING CARE SERVICES (8 Cards Grid)                       */}
+        {/* SECTION 3: THE 6 CORE PILLARS OF NABIOTA HOMECARE GMBH (User-Approved Cards) */}
         {/* ========================================================================= */}
         <section id="services" className="py-14 sm:py-20 bg-[#FAF9F5]">
           <Container size="wide">
             {/* Header */}
-            <div className="max-w-2xl mb-12 sm:mb-14">
-              <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans mb-2">
-                {t.services.eyebrow}
+            <div className="max-w-3xl mb-12 sm:mb-16">
+              <span className="text-[11px] sm:text-xs font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-3">
+                {t.servicesSection.eyebrow}
               </span>
-              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-[#0F2A1D] font-normal leading-tight mb-3">
-                {t.services.title}
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-forest-950 font-normal leading-tight mb-4">
+                {t.servicesSection.title}
               </h2>
-              <p className="text-xs sm:text-sm md:text-base text-[#4A5D52] leading-relaxed">
-                {t.services.desc}
+              <p className="text-sm sm:text-base text-[#4E5650] leading-relaxed max-w-2xl">
+                {t.servicesSection.desc}
               </p>
             </div>
 
-            {/* 8 Cards: 4 columns x 2 rows */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-              {t.services.items.map((svc, idx) => {
-                const IconComp = svc.icon;
+            {/* 6 Cards Grid: 3 cols x 2 rows */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+              {servicesData.map((svc) => (
+                <div
+                  key={svc.id}
+                  onClick={() => setSelectedService(svc)}
+                  className="rounded-3xl bg-white border border-[#EAE4D7] shadow-sm hover:shadow-xl hover:border-[#C5A56A] transition-all duration-300 flex flex-col justify-between overflow-hidden group cursor-pointer"
+                >
+                  {/* Photo with pill badge at top left */}
+                  <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-[#07150C]">
+                    <Image
+                      src={svc.image}
+                      alt={svc.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-3.5 left-3.5 bg-[#0C2917] text-white px-3.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase shadow-xs border border-white/10 z-10">
+                      {svc.badge}
+                    </div>
+                  </div>
+
+                  {/* Card Content with circular icon overlapping the image & gentle wave */}
+                  <div className="relative bg-white pt-2 pb-6 px-6 sm:px-7 flex-1 flex flex-col justify-between">
+                    {/* Curved wave transition at top */}
+                    <div className="absolute -top-6 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none">
+                      <svg
+                        viewBox="0 0 400 32"
+                        preserveAspectRatio="none"
+                        className="w-full h-7 fill-white"
+                      >
+                        <path d="M 0,16 C 18,5 34,0 64,0 C 98,0 118,13 145,17 C 225,27 325,16 400,13 L 400,32 L 0,32 Z" />
+                      </svg>
+                    </div>
+
+                    {/* Circular Icon with light green background overlapping photo */}
+                    <div className="relative -mt-9 mb-3.5 z-10">
+                      <div className="w-12 h-12 rounded-full bg-[#E5F0E8] border border-[#CCE0D2] flex items-center justify-center text-[#1C3E2A] shadow-xs group-hover:scale-105 transition-transform">
+                        {svc.iconType === "stethoscope" && <Stethoscope className="w-6 h-6 stroke-[1.8]" />}
+                        {svc.iconType === "award" && <Award className="w-6 h-6 stroke-[1.8]" />}
+                        {svc.iconType === "heart" && <Heart className="w-6 h-6 stroke-[1.8]" />}
+                        {svc.iconType === "shield" && <ShieldCheck className="w-6 h-6 stroke-[1.8]" />}
+                        {svc.iconType === "pill" && <Pill className="w-6 h-6 stroke-[1.8]" />}
+                        {svc.iconType === "users" && <Users className="w-6 h-6 stroke-[1.8]" />}
+                      </div>
+                    </div>
+
+                    {/* Title & Description on white background */}
+                    <div className="space-y-2 mb-4">
+                      <h3 className="font-serif text-xl sm:text-[21px] font-bold text-[#142318] leading-tight group-hover:text-[#8D6B27] transition-colors">
+                        {svc.title}
+                      </h3>
+                      <p className="text-xs sm:text-[13px] text-[#55695C] leading-relaxed">
+                        {svc.shortDesc}
+                      </p>
+                    </div>
+
+                    {/* Bottom Action Area: Pill Button + Circle Arrow Button */}
+                    <div className="pt-4 mt-auto border-t border-[#F2ECE1] flex items-center justify-between">
+                      <span className="px-4 py-2 rounded-full bg-[#FAF3E7] text-[#93712C] text-xs font-semibold group-hover:bg-[#F5EAD4] transition-colors">
+                        {t.servicesSection.openModalBtn}
+                      </span>
+                      <div className="w-9 h-9 rounded-full bg-[#FAF3E7] border border-[#EADBBE] flex items-center justify-center text-[#93712C] group-hover:bg-[#C5A56A] group-hover:text-white group-hover:border-[#C5A56A] transition-all">
+                        <ArrowRight className="w-4 h-4" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+
+        {/* ========================================================================= */}
+        {/* SECTION 4: INTEGRATED NETWORK COORDINATION (Holding Verbund)              */}
+        {/* ========================================================================= */}
+        <section className="py-14 sm:py-20 bg-[#07160D] text-white relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none opacity-20 overflow-hidden mix-blend-screen">
+            <Image
+              src="/images/bacground.webp"
+              alt="Watermark"
+              fill
+              className="object-cover object-center"
+            />
+          </div>
+
+          <Container size="wide" className="relative z-10">
+            <div className="max-w-3xl mb-12 sm:mb-16">
+              <span className="text-[11px] sm:text-xs font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-3 font-sans">
+                {t.verbund.eyebrow}
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-white font-normal leading-tight mb-4">
+                {t.verbund.title}
+              </h2>
+              <p className="text-sm sm:text-base text-[#C2D1C7] leading-relaxed">
+                {t.verbund.desc}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {t.verbund.pillars.map((item, idx) => {
+                const IconComp = item.icon;
                 return (
                   <div
                     key={idx}
-                    className="bg-white rounded-2xl p-6 sm:p-7 border border-[#EBE4D8] shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 group"
+                    className="p-6 sm:p-7 rounded-3xl bg-[#0D2418]/70 border border-[#D5B878]/30 backdrop-blur-md flex flex-col justify-between hover:border-[#D5B878] transition-all duration-300 group"
                   >
-                    <div className="w-12 h-12 rounded-full bg-[#EBF0EA] text-[#244E33] flex items-center justify-center mb-5 group-hover:bg-[#0D2619] group-hover:text-white transition-colors duration-300">
-                      <IconComp className="w-5 h-5" />
+                    <div>
+                      <div className="w-12 h-12 rounded-2xl bg-[#D5B878]/15 border border-[#D5B878]/40 flex items-center justify-center text-[#ECCF96] mb-5 group-hover:scale-105 transition-transform">
+                        <IconComp className="w-6 h-6 stroke-[1.8]" />
+                      </div>
+                      <h3 className="font-serif text-lg sm:text-xl font-bold text-white mb-2 leading-snug">
+                        {item.title}
+                      </h3>
+                      <p className="text-xs sm:text-[13px] text-[#A6BAAD] leading-relaxed">
+                        {item.desc}
+                      </p>
                     </div>
-                    <h3 className="font-serif text-base sm:text-lg font-medium text-[#0F2A1D] mb-2 leading-snug">
-                      {svc.title}
-                    </h3>
-                    <p className="text-xs sm:text-[13px] text-[#5A6E63] leading-relaxed">
-                      {svc.desc}
-                    </p>
                   </div>
                 );
               })}
@@ -585,7 +1376,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 4: OUR APPROACH (Holistic Care for Every Stage of Life)           */}
+        {/* SECTION 5: OUR APPROACH (Holistic Care for Every Stage of Life)           */}
         {/* ========================================================================= */}
         <section className="py-14 sm:py-20 bg-[#FAF9F5] border-t border-[#EAE3D5]">
           <Container size="wide">
@@ -640,7 +1431,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 5: TESTIMONIALS (ENLARGED REVIEWS)                                */}
+        {/* SECTION 6: TESTIMONIALS (ENLARGED REVIEWS)                                */}
         {/* ========================================================================= */}
         <section className="py-16 sm:py-24 bg-[#FAF9F5] border-t border-[#EAE3D5]">
           <Container size="wide">
@@ -711,11 +1502,11 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 6: FAQ (EDGE-TO-EDGE, Matching Photo 2)                           */}
+        {/* SECTION 7: FAQ (EDGE-TO-EDGE)                                             */}
         {/* ========================================================================= */}
         <section className="w-full bg-[#FAF9F5] border-t border-[#EAE3D5] relative overflow-hidden">
           <div className="w-full flex flex-col lg:flex-row items-stretch">
-            {/* Left Photo: Flush to the left screen edge with smooth fade & blur on the right */}
+            {/* Left Photo */}
             <div className="w-full lg:w-[40%] xl:w-[38%] relative min-h-[260px] sm:min-h-[300px] lg:min-h-[380px] shrink-0 overflow-hidden">
               <Image
                 src="/images/nursing/faq-nurse.webp"
@@ -723,7 +1514,6 @@ export function PflegePageComponent({ locale = "de" }: Props) {
                 fill
                 className="object-cover object-center"
               />
-              {/* Right edge blur and smooth fade into #FAF9F5 */}
               <div className="hidden lg:block absolute inset-y-0 right-0 w-32 xl:w-48 bg-gradient-to-r from-transparent via-[#FAF9F5]/70 to-[#FAF9F5] backdrop-blur-[3px] pointer-events-none z-10" />
               <div className="lg:hidden absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#FAF9F5] via-[#FAF9F5]/80 to-transparent backdrop-blur-[2px] pointer-events-none z-10" />
             </div>
@@ -776,10 +1566,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 7: BOTTOM CTA BANNER (FULL-WIDTH EDGE-TO-EDGE, Matching Request)   */}
+        {/* SECTION 8: BOTTOM CTA BANNER (FULL-WIDTH EDGE-TO-EDGE)                     */}
         {/* ========================================================================= */}
         <section className="w-full relative overflow-hidden bg-gradient-to-r from-[#F6F4ED] via-[#F2EDE2] to-[#EAE3D3] border-t border-[#DECDB5]/60">
-          {/* Background Hands Image with gentle gradient fade */}
           <div className="absolute inset-y-0 right-0 w-full lg:w-3/5 opacity-80 lg:opacity-100 pointer-events-none">
             <Image
               src="/images/nursing/cta-hands-bg.webp"
@@ -787,11 +1576,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
               fill
               className="object-cover object-right"
             />
-            {/* Soft gradient mask on the left */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#F6F4ED] via-[#F6F4ED]/80 to-transparent lg:w-1/2" />
           </div>
 
-          {/* Floating stamp badge top right: "Caring Today for a Healthier Tomorrow ~ ♡" */}
+          {/* Floating stamp badge top right */}
           <div className="absolute top-5 right-5 sm:top-8 sm:right-10 z-20 bg-white/85 backdrop-blur-md px-4 py-3 sm:px-6 sm:py-4 rounded-3xl shadow-lg border border-white/80 rotate-[-2deg] flex flex-col items-center justify-center">
             <p className="font-serif italic text-xs sm:text-sm font-semibold text-[#0E281C] text-center leading-tight">
               {t.cta.stamp1}
@@ -804,7 +1592,6 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           </div>
 
           <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 py-12 sm:py-16 relative z-10">
-            {/* Content Box */}
             <div className="max-w-xl space-y-5">
               <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans">
                 {t.cta.eyebrow}
@@ -854,6 +1641,137 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             </div>
           </div>
         </section>
+
+        {/* ========================================================================= */}
+        {/* INTERACTIVE MODAL DIALOG FOR CARE SERVICES                                */}
+        {/* ========================================================================= */}
+        {selectedService && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200"
+            onClick={() => setSelectedService(null)}
+          >
+            <div
+              className="relative w-full max-w-3xl max-h-[92vh] overflow-y-auto rounded-3xl bg-[#FAF9F6] border border-[#E8DEC8] shadow-2xl p-6 sm:p-8 md:p-10 animate-in zoom-in-95 duration-200"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedService(null)}
+                aria-label="Modal schließen"
+                className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/80 border border-[#DECDB5] flex items-center justify-center text-[#1C261E] hover:bg-[#ECCF93]/30 transition-colors z-20 shadow-xs"
+              >
+                <X className="w-4 h-4" />
+              </button>
+
+              {/* Modal Header */}
+              <div className="mb-6 pr-8">
+                <div className="inline-block px-3 py-1 rounded-full bg-[#C5A56A]/15 border border-[#C5A56A]/30 text-[10px] sm:text-[11px] font-bold tracking-wider text-[#8D6B27] uppercase mb-2">
+                  {selectedService.badge}
+                </div>
+                <h2 className="font-serif text-2xl sm:text-3xl font-bold text-forest-950 leading-tight">
+                  {selectedService.modal.title}
+                </h2>
+                <p className="text-xs sm:text-sm text-[#8D6B27] font-medium mt-1">
+                  {selectedService.modal.subtitle}
+                </p>
+              </div>
+
+              {/* Hero Image in Modal */}
+              <div className="relative h-44 sm:h-52 w-full rounded-2xl overflow-hidden mb-6 shadow-inner border border-[#E8DEC8]">
+                <Image
+                  src={selectedService.image}
+                  alt={selectedService.modal.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Main Description */}
+              <div className="mb-6 p-4 sm:p-5 rounded-2xl bg-white border border-[#EAE4D7] text-xs sm:text-[13.5px] text-[#334237] leading-relaxed shadow-2xs">
+                {selectedService.modal.description}
+              </div>
+
+              {/* 2-Column Grid: Indications and Scope */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+                <div className="p-5 rounded-2xl bg-white border border-[#EAE4D7] shadow-2xs space-y-3">
+                  <div className="flex items-center gap-2 text-[#8D6B27]">
+                    <Activity className="w-4 h-4 stroke-[2]" />
+                    <h3 className="font-serif font-bold text-sm sm:text-base text-forest-950">
+                      {selectedService.modal.indicationsTitle}
+                    </h3>
+                  </div>
+                  <ul className="space-y-2">
+                    {selectedService.modal.indications.map((ind, idx) => (
+                      <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-[13px] text-[#334237]">
+                        <Check className="w-3.5 h-3.5 text-[#C5A56A] shrink-0 mt-0.5" />
+                        <span>{ind}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="p-5 rounded-2xl bg-white border border-[#EAE4D7] shadow-2xs space-y-3">
+                  <div className="flex items-center gap-2 text-[#8D6B27]">
+                    <ShieldCheck className="w-4 h-4 stroke-[2]" />
+                    <h3 className="font-serif font-bold text-sm sm:text-base text-forest-950">
+                      {selectedService.modal.scopeTitle}
+                    </h3>
+                  </div>
+                  <ul className="space-y-2">
+                    {selectedService.modal.scopeItems.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-[13px] text-[#334237]">
+                        <Check className="w-3.5 h-3.5 text-[#C5A56A] shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Billing & Regulatory Info */}
+              <div className="p-5 rounded-2xl bg-[#F8F5EE] border border-[#E5D7B7] space-y-2 mb-4">
+                <div className="flex items-center gap-2 text-[#8D6B27]">
+                  <FileText className="w-4 h-4 stroke-[2]" />
+                  <h3 className="font-serif font-bold text-sm sm:text-base text-forest-950">
+                    {selectedService.modal.billingTitle}
+                  </h3>
+                </div>
+                <p className="text-xs sm:text-[13px] text-[#3A4A3E] leading-relaxed">
+                  {selectedService.modal.billingText}
+                </p>
+              </div>
+
+              {/* Quality Standards */}
+              <div className="p-4 rounded-xl bg-white border border-[#EAE4D7] text-xs text-[#556358] leading-relaxed flex items-start gap-3 mb-6">
+                <Info className="w-4 h-4 text-[#C5A56A] shrink-0 mt-0.5" />
+                <div>
+                  <span className="font-semibold text-[#142318] block mb-0.5">
+                    {selectedService.modal.qualityTitle}:
+                  </span>
+                  {selectedService.modal.qualityText}
+                </div>
+              </div>
+
+              {/* Modal Footer CTA */}
+              <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-[#EAE4D7]">
+                <button
+                  onClick={() => setSelectedService(null)}
+                  className="px-5 py-2.5 rounded-full border border-[#D5B878] text-xs font-semibold text-[#142318] hover:bg-[#FAF5EE] transition-colors"
+                >
+                  {isRu ? "Закрыть" : isEn ? "Close" : "Schließen"}
+                </button>
+                <Link
+                  href={`/${locale}/contact`}
+                  onClick={() => setSelectedService(null)}
+                  className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-gradient-to-r from-[#ECCF93] to-[#D4AF67] hover:from-[#F2DAB0] hover:to-[#DEBD7A] text-[#142217] font-semibold text-xs sm:text-sm tracking-wide shadow-md transition-all hover:scale-[1.01]"
+                >
+                  <span>{selectedService.modal.ctaButtonText}</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
 
       <Footer currentLocale={locale} />
