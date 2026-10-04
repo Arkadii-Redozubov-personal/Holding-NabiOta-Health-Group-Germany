@@ -1284,34 +1284,36 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
                 </div>
               </div>
 
-              {/* 3 Compact Testimonial Cards */}
-              <div className="w-full lg:w-[65%] xl:w-[64%] grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-4">
-                {t.s5.testimonials.map((testi, idx) => (
+              {/* 3 Compact Testimonial Cards on White rounded cards matching reference photo */}
+              <div className="w-full lg:w-[61%] xl:w-[59%] lg:ml-auto grid grid-cols-1 md:grid-cols-3 gap-3.5 lg:gap-4 xl:gap-4.5 items-stretch">
+                {t.s5.testimonials.map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-4 sm:p-4.5 rounded-2xl bg-[#0F2618]/90 border border-[#D5B878]/35 backdrop-blur-md flex flex-col justify-between hover:border-[#D5B878] transition-all duration-300 shadow-md group"
+                    className="bg-white rounded-2xl p-[18px] sm:p-5 xl:p-[20px_22px] text-[#0F2A1D] shadow-sm flex flex-col justify-between border border-[#E8E2D6] min-h-[195px] max-h-[225px]"
                   >
-                    <p className="font-serif italic text-white/95 text-xs sm:text-[12.5px] leading-relaxed mb-3 group-hover:text-white transition-colors">
-                      {testi.quote}
-                    </p>
-
-                    <div className="flex items-center gap-2.5 pt-2 border-t border-white/10">
-                      <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden border border-[#D5B878]/70 shrink-0">
+                    <div className="flex items-start gap-3 sm:gap-3.5">
+                      <div className="relative w-[50px] h-[50px] sm:w-[52px] sm:h-[52px] rounded-full overflow-hidden shrink-0 border border-[#E2DBD0] shadow-2xs">
                         <Image
-                          src={testi.avatar}
-                          alt={testi.name}
+                          src={item.avatar}
+                          alt={item.name}
                           fill
                           className="object-cover"
                         />
                       </div>
-                      <div className="min-w-0">
-                        <h4 className="font-serif text-xs font-bold text-white leading-tight truncate">
-                          {testi.name}
-                        </h4>
-                        <p className="text-[10px] text-[#A6BAAD] truncate mt-0.5">
-                          {testi.role}
+                      <div className="flex-1 min-w-0">
+                        <p className="text-[11.5px] sm:text-[12px] xl:text-[12.5px] text-[#2C4436] leading-[1.38] font-sans">
+                          {item.quote}
                         </p>
                       </div>
+                    </div>
+
+                    <div className="pt-2 sm:pt-2.5">
+                      <h4 className="font-sans text-[12.5px] sm:text-[13px] font-bold text-[#0F2A1D] leading-tight">
+                        {item.name}
+                      </h4>
+                      <p className="text-[10px] sm:text-[10.5px] text-[#6E8177] leading-tight mt-0.5 font-sans">
+                        {item.role}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -1321,76 +1323,89 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 6: BOTTOM CONTACT BANNER                                          */}
+        {/* SECTION 6: BOTTOM CONTACT BANNER (3-COLUMN DESK LAYOUT)                    */}
         {/* ========================================================================= */}
-        <section className="w-full bg-[#FAF9F5] border-t border-[#EAE3D5] relative overflow-hidden">
-          <div className="w-full flex flex-col lg:flex-row items-stretch">
-            {/* Left Photo */}
-            <div className="w-full lg:w-[48%] xl:w-[46%] relative min-h-[300px] sm:min-h-[360px] lg:min-h-[440px] shrink-0 overflow-hidden">
-              <Image
-                src="/images/beratung/cta-desk-clean.webp"
-                alt="Consulting Desk"
-                fill
-                className="object-cover object-left"
-              />
-              <div className="hidden lg:block absolute inset-y-0 right-0 w-36 xl:w-52 bg-gradient-to-r from-transparent via-[#FAF9F5]/70 to-[#FAF9F5] pointer-events-none z-10" />
-              <div className="lg:hidden absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#FAF9F5] via-[#FAF9F5]/80 to-transparent pointer-events-none z-10" />
+        <section className="w-full relative overflow-hidden bg-[#FAF7F2] border-t border-[#DECDB5]/60 py-8 sm:py-9 lg:py-10 mt-0">
+          <div className="absolute inset-0 pointer-events-none z-0">
+            <Image
+              src="/images/beratung/cta-desk-clean.webp"
+              alt="Desk notebook background"
+              fill
+              className="object-cover object-center opacity-85"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-white/50 to-white/20 backdrop-blur-[0.5px]" />
+          </div>
 
-              <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-20 bg-white/85 backdrop-blur-md px-4 py-2.5 sm:px-5 sm:py-3 rounded-2xl shadow-md border border-white/80 rotate-[-2deg] flex flex-col items-center">
-                <p className="font-serif italic text-xs sm:text-sm font-semibold text-[#0E281C] text-center leading-tight">
+          <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+              {/* Left Column: Italic statement stamp with subtle heart */}
+              <div className="lg:col-span-4 flex flex-col justify-center py-2 lg:py-4">
+                <p className="font-serif italic text-2xl sm:text-[28px] lg:text-[32px] text-[#2F4F3E] leading-[1.18] select-none">
                   {t.s6.stamp1}
                   <br />
                   {t.s6.stamp2}
                 </p>
-                <Heart className="w-3.5 h-3.5 text-[#0E281C] fill-[#0E281C]/20 mt-1" />
+                <div className="flex items-center gap-2 pt-2.5">
+                  <div className="w-8 h-[1px] bg-[#2F4F3E]/60" />
+                  <Heart className="w-3.5 h-3.5 text-[#2F4F3E] fill-transparent stroke-[1.8]" />
+                  <div className="w-8 h-[1px] bg-[#2F4F3E]/60" />
+                </div>
               </div>
-            </div>
 
-            {/* Right: Content & Contact Details */}
-            <div className="w-full lg:w-[52%] xl:w-[54%] py-10 sm:py-12 lg:py-14 px-6 sm:px-10 lg:px-12 xl:px-16 flex flex-col justify-center">
-              <div className="max-w-xl space-y-4 sm:space-y-5">
-                <span className="text-[10.5px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans">
+              {/* Center Column: Eyebrow, Heading, Desc, Gold Button */}
+              <div className="lg:col-span-4 space-y-3 sm:space-y-3.5">
+                <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans">
                   {t.s6.eyebrow}
                 </span>
 
-                <h2 className="font-serif text-2xl sm:text-3xl lg:text-[36px] text-[#0F2A1D] font-normal leading-[1.18]">
+                <h2 className="font-serif text-2xl sm:text-[28px] lg:text-[30px] xl:text-[32px] text-[#0F2A1D] font-normal leading-[1.2]">
                   {t.s6.title}
                 </h2>
 
-                <p className="text-xs sm:text-[13px] md:text-sm text-[#4A5D52] leading-relaxed">
+                <p className="text-xs sm:text-[13px] text-[#4A5D52] leading-relaxed max-w-sm font-sans">
                   {t.s6.desc}
                 </p>
 
-                <div className="pt-2">
+                <div className="pt-1.5">
                   <Link
                     href={`/${locale}/contact`}
-                    className="inline-flex items-center gap-2.5 px-7 py-3 rounded-full bg-[#0D2619] hover:bg-[#163D29] text-white text-xs sm:text-sm font-medium transition-all duration-300 shadow-md group"
+                    className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 h-[48px] sm:h-[50px] rounded-full bg-gradient-to-r from-[#ECCF96] via-[#DFBF76] to-[#C8A050] hover:from-[#F4DCAC] hover:to-[#D4AC5B] text-[#08170D] text-xs sm:text-[13.5px] font-semibold transition-all duration-300 shadow-sm group hover:scale-[1.02]"
                   >
                     <span>{t.s6.btn}</span>
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </div>
+              </div>
 
-                <div className="pt-6 border-t border-[#DECDB5]/60 flex flex-wrap items-center gap-6 sm:gap-8 text-xs sm:text-sm text-[#1B3A29] font-medium">
+              {/* Right Column: 3 Contact entries with round icons */}
+              <div className="lg:col-span-4 flex justify-start lg:justify-start lg:pl-4 xl:pl-6">
+                <div className="w-full max-w-[340px] space-y-3.5 sm:space-y-4">
                   <a
                     href={`tel:${t.s6.phone.replace(/\s+/g, "")}`}
-                    className="flex items-center gap-2 hover:text-[#0D2619] transition-colors"
+                    className="flex items-center gap-3.5 text-xs sm:text-[13.5px] text-[#1B3A29] hover:text-[#0D2619] transition-colors group"
                   >
-                    <Phone className="w-4 h-4 text-[#2D5A3E]" />
-                    <span>{t.s6.phone}</span>
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/80 border border-[#DFCDBA] flex items-center justify-center text-[#8C6D37] shrink-0 shadow-2xs group-hover:bg-[#E5DFC9] transition-colors">
+                      <Phone className="w-4 h-4 fill-[#8C6D37] text-[#8C6D37]" />
+                    </div>
+                    <span className="font-medium font-sans">{t.s6.phone}</span>
                   </a>
 
                   <a
                     href={`mailto:${t.s6.email}`}
-                    className="flex items-center gap-2 hover:text-[#0D2619] transition-colors"
+                    className="flex items-center gap-3.5 text-xs sm:text-[13.5px] text-[#1B3A29] hover:text-[#0D2619] transition-colors group"
                   >
-                    <Mail className="w-4 h-4 text-[#2D5A3E]" />
-                    <span>{t.s6.email}</span>
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/80 border border-[#DFCDBA] flex items-center justify-center text-[#0F2A1D] shrink-0 shadow-2xs group-hover:bg-[#E5DFC9] transition-colors">
+                      <Mail className="w-4 h-4 fill-[#0F2A1D] text-[#0F2A1D]" />
+                    </div>
+                    <span className="font-medium font-sans">{t.s6.email}</span>
                   </a>
 
-                  <div className="flex items-center gap-2 text-[#2C4C39]">
-                    <MapPin className="w-4 h-4 text-[#2D5A3E]" />
-                    <span>{t.s6.location}</span>
+                  <div className="flex items-center gap-3.5 text-xs sm:text-[13.5px] text-[#1B3A29]">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/80 border border-[#DFCDBA] flex items-center justify-center text-[#0F2A1D] shrink-0 shadow-2xs">
+                      <MapPin className="w-4 h-4 fill-[#0F2A1D] text-[#0F2A1D]" />
+                    </div>
+                    <span className="font-medium font-sans">{t.s6.location}</span>
                   </div>
                 </div>
               </div>
