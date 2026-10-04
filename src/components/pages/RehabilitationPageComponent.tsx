@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -15,12 +15,28 @@ import {
   Check,
   MapPin,
   ChevronDown,
+  X,
+  Info,
 } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { PageHero } from "@/components/layout/PageHero";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { SupportedLocale } from "@/lib/i18n";
+
+export interface SpecializationModalData {
+  id: string;
+  badge: string;
+  title: string;
+  subtitle: string;
+  desc: string;
+  fullDesc: string;
+  indicationsTitle: string;
+  indications: string[];
+  standards: string;
+  image: string;
+  features: string[];
+}
 
 // ── Custom SVG Icons for Rehabilitation Modalities ──
 function WalkingExoskeletonIcon({ className = "w-5 h-5" }: { className?: string }) {
@@ -110,6 +126,26 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
   const isEn = locale === "en";
 
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [selectedSpecialization, setSelectedSpecialization] = useState<SpecializationModalData | null>(null);
+
+  // Keyboard escape listener and body scroll lock for modal
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setSelectedSpecialization(null);
+      }
+    }
+    if (selectedSpecialization) {
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedSpecialization]);
 
   const heroData = {
     title: isRu ? "Реабилитация" : isEn ? "Rehabilitation" : "Rehabilitation",
@@ -139,17 +175,56 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
     },
   ];
 
-  // ── Section 1: 6 Specialized Rehabilitation Areas ──
-  const specializations = [
+  // ── Section 1: 6 Specialized Rehabilitation Areas (PDF Section 5) ──
+  const specializations: SpecializationModalData[] = [
     {
       id: "ortho",
       title: isRu ? "Ортопедическая реабилитация" : isEn ? "Orthopedic Rehabilitation" : "Orthopädische Rehabilitation",
-      badge: isRu ? "Суставы & Позвоночник" : isEn ? "Joints & Spine" : "Gelenke & Wirbelsäule",
-      desc: isRu
-        ? "Комплексное восстановление после эндопротезирования тазобедренного и коленного суставов, операций на позвоночнике, артроскопии связок и переломов."
+      badge: isRu ? "Эндопротезирование & Позвоночник" : isEn ? "Joint Replacement & Spine" : "Gelenkersatz & Wirbelsäule",
+      subtitle: isRu
+        ? "Амбулаторная восстановительная терапия (AHB) и посттравматическое сопровождение"
         : isEn
-        ? "Specialized rehabilitation following total hip/knee replacement, spine stabilization, ligament reconstructions, and traumatic fractures."
+        ? "Outpatient Post-Acute Rehabilitation (AHB) & Musculoskeletal Aftercare"
+        : "Ambulante Anschlussheilbehandlung (AHB) & orthopädisch-traumatologische Nachsorge",
+      desc: isRu
+        ? "Комплексное восстановление после эндопротезирования суставов (TEP), операций на позвоночнике и сложных переломов."
+        : isEn
+        ? "Specialized rehabilitation following total hip/knee arthroplasty, spine surgery, and complex fractures."
         : "Gezielte Rehabilitation nach Gelenkersatz (Hüft-/Knie-TEP), Wirbelsäulenoperationen, Kreuzbandplastiken und komplexen Frakturen.",
+      fullDesc: isRu
+        ? "Согласно пункту 5 NabiOta Rehabilitation & Therapy GmbH, отделение специализируется на постоперационном ведении пациентов после тотального эндопротезирования тазобедренных и коленных суставов, спондилодеза, реконструкций крестообразных связок и травм опорно-двигательного аппарата. Применяются раннее безболезненное восстановление биомеханики, лечебная гимнастика (KG), аппаратная ЛФК (KGG) и прогрессивное укрепление мышечного корсета."
+        : isEn
+        ? "Under Section 5 of NabiOta Rehabilitation & Therapy GmbH, this department provides comprehensive post-surgical recovery following total joint arthroplasty (hip, knee, shoulder), spinal fusion, ligament reconstructions, and traumatic fractures. We emphasize early pain-free joint mobilization, physical therapy (KG), device-assisted physiotherapy (KGG), and individualized muscle strengthening."
+        : "Gemäß Punkt 5 der NabiOta Rehabilitation & Therapy GmbH richtet sich das Leistungsspektrum an postoperative Patienten nach Gelenkersatz (Hüft-, Knie- und Schulter-TEP), Wirbelsäulenoperationen sowie komplexen Unfall- und Bandverletzungen. Im Zentrum stehen frühfunktionelle Mobilisation, Schmerzreduktion, Krankengymnastik (KG), gerätegestützte Krankengymnastik (KGG) und gezielter Muskelaufbau.",
+      indicationsTitle: isRu ? "Клинические показания & методы (по PDF)" : isEn ? "Clinical Indications & Protocols (PDF)" : "Klinische Schwerpunkte & Indikationen",
+      indications: isRu
+        ? [
+            "Эндопротезирование тазобедренного, коленного и плечевого суставов (TEP)",
+            "Постоперационные вмешательства на позвоночнике и межпозвонковых дисках",
+            "Реконструкции крестообразных связок, менисков и капсульно-связочного аппарата",
+            "Остеосинтез и комплексные посттравматические переломы костей",
+            "Хронические дегенеративные заболевания (тяжелый остеоартроз, остеопороз)",
+          ]
+        : isEn
+        ? [
+            "Total hip, knee, and shoulder joint replacement (TEP / Arthroplasty)",
+            "Post-operative spinal fusion, disc decompression & corrective procedures",
+            "Anterior cruciate ligament (ACL), meniscal & tendon reconstructions",
+            "Complex traumatic fractures and multi-fragment osteosynthesis aftercare",
+            "Chronic degenerative conditions (advanced osteoarthritis, osteoporosis)",
+          ]
+        : [
+            "Endoprothetische Versorgung (Hüft-, Knie- und Schulter-TEP)",
+            "Postoperative Wirbelsäuleneingriffe & Bandscheibenoperationen",
+            "Kreuzband-, Meniskus- und Sehnenrekonstruktionen",
+            "Komplexe Fraktur- und Gelenkverletzungen nach Osteosynthese",
+            "Chronisch-degenerative Erkrankungen (schwere Arthrose, Osteoporose)",
+          ],
+      standards: isRu
+        ? "Все больничные кассы: GKV, PKV, Berufsgenossenschaften (BG) & Deutsche Rentenversicherung (DRV)"
+        : isEn
+        ? "Covered by all payers: Statutory (GKV), Private (PKV), Workers' Comp (BG) & German Pension Fund (DRV)"
+        : "Zulassung für alle Kostenträger: GKV, PKV, Berufsgenossenschaften (BG) & Deutsche Rentenversicherung (DRV)",
       image: "/images/areas/rehabilitation.webp",
       features: isRu
         ? ["Ранняя безболезненная мобилизация", "Восстановление биомеханики сустава", "Укрепление мышечного корсета"]
@@ -161,12 +236,51 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
       id: "neuro",
       title: isRu ? "Неврологическая реабилитация" : isEn ? "Neurological Rehabilitation" : "Neurologische Rehabilitation",
       badge: isRu ? "ЦНС & Нейропластичность" : isEn ? "Neuroplasticity" : "Neuroplastizität",
+      subtitle: isRu
+        ? "Восстановление моторики, походки и независимости после поражений нервной системы"
+        : isEn
+        ? "Re-education of motor control, balance, and independence in neurological conditions"
+        : "Wiedererlangung von Bewegung, Gleichgewicht und Selbstständigkeit nach ZNS-Läsionen",
       desc: isRu
-        ? "Восстановление двигательных и координационных функций после инсульта, черепно-мозговых травм, при болезни Паркинсона и полинейропатии."
+        ? "Восстановление двигательных и координационных функций после инсульта, травм, при болезни Паркинсона и полинейропатии."
         : isEn
         ? "Re-education of motor skills, coordination, and independence after stroke, brain injury, Parkinson's disease, and neuropathies."
         : "Wiedererlangung von Bewegung, Gleichgewicht und Selbstständigkeit nach Schlaganfall, Schädel-Hirn-Trauma oder bei Parkinson.",
-      image: "/images/services/therapie.webp",
+      fullDesc: isRu
+        ? "Неврологическое направление холдинга реализует современные концепции нейропластичности для пациентов, перенесших инсульт (ишемический или геморрагический), черепно-мозговую травму или страдающих болезнью Паркинсона, рассеянным склерозом и полинейропатией. Сертифицированные терапевты проводят занятия по методам Бобат и PNF, тренировку ходьбы и профилактику падений."
+        : isEn
+        ? "Our neurological rehabilitation utilizes evidence-based neuroplasticity concepts for individuals recovering from ischemic stroke, cerebral hemorrhage, traumatic brain injuries, or managing Parkinson's disease, MS, and neuropathies. Certified therapists apply Bobath, PNF protocols, robotic locomotor assistance, and balance re-training to promote lasting functional neural reorganization."
+        : "Die neurologische Rehabilitation der NabiOta Rehabilitation & Therapy GmbH konzentriert sich auf die gezielte Reaktivierung des zentralen und peripheren Nervensystems. Nach Schlaganfall, Schädel-Hirn-Trauma oder bei neurodegenerativen Erkrankungen (Morbus Parkinson, Multiple Sklerose, Polyneuropathie) nutzen unsere Therapeuten evidenzbasierte neurophysiologische Verfahren wie Bobath, PNF und robotisch unterstütztes Gangtraining.",
+      indicationsTitle: isRu ? "Клинические показания & методы (по PDF)" : isEn ? "Clinical Indications & Protocols (PDF)" : "Klinische Schwerpunkte & Indikationen",
+      indications: isRu
+        ? [
+            "Постинсультные состояния (ишемия, кровоизлияния) и гемипарезы",
+            "Последствия черепно-мозговых травм и нейрохирургических операций",
+            "Болезнь Паркинсона и экстрапирамидные расстройства движения",
+            "Полинейропатии различного генеза и периферические парезы",
+            "Тренировка равновесия, координации и устойчивости походки",
+          ]
+        : isEn
+        ? [
+            "Post-stroke recovery (ischemic infarct, cerebral hemorrhage) & hemiparesis",
+            "Traumatic brain injuries & post-neurosurgical operative rehabilitation",
+            "Parkinson's disease & extrapyramidal movement disorders",
+            "Polyneuropathies (diabetic, toxic, autoimmune) & peripheral nerve paresis",
+            "Postural balance retraining, ataxia management & fall prevention",
+          ]
+        : [
+            "Schlaganfallnachsorge (Ischämie, Hirnblutung) & Hemiparesen",
+            "Schädel-Hirn-Traumata & postoperative ZNS-Eingriffe",
+            "Morbus Parkinson & extrapyramidale Bewegungsstörungen",
+            "Polyneuropathien & periphere Nervenläsionen",
+            "Gleichgewichts-, Ataxie- und Sturzpräventionstraining",
+          ],
+      standards: isRu
+        ? "Сертификация Bobath & PNF • Роботизированная поддержка локомоции • Неврологический консилиум"
+        : isEn
+        ? "Certified Bobath & PNF clinicians • Robotic gait rehabilitation • Interdisciplinary neurology lead"
+        : "Fachtherapeutische Zertifizierungen (Bobath, PNF) • Robotik-unterstützte Lokomotion • Interdisziplinäre ärztliche Leitung",
+      image: "/images/rehabilitation/parallel-bars.webp",
       features: isRu
         ? ["Методики Бобат и PNF", "Роботизированный тренажер ходьбы", "Тренировка координации и равновесия"]
         : isEn
@@ -176,12 +290,51 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
     {
       id: "sport",
       title: isRu ? "Спортивная физиотерапия" : isEn ? "Sports Physiotherapy & Return-to-Play" : "Sportphysiotherapie & Return-to-Play",
-      badge: isRu ? "Спорт высших достижений" : isEn ? "Athletic Excellence" : "Leistungssport",
-      desc: isRu
-        ? "Индивидуальные программы для профессиональных спортсменов и любителей: изокинетическое тестирование, функциональный тренинг и безопасный возврат в спорт."
+      badge: isRu ? "KGG, MTT & Спорт" : isEn ? "KGG, MTT & Athletic Return" : "KGG, MTT & Leistungssport",
+      subtitle: isRu
+        ? "Аппаратная ЛФК (KGG), медицинская тренировочная терапия (MTT) и Return-to-Activity"
         : isEn
-        ? "Evidence-based rehabilitation for competitive and recreational athletes: isokinetic testing, agility drills, and return-to-competition clearance."
+        ? "Device-assisted physiotherapy (KGG), Medical Training Therapy (MTT) & Return-to-Play"
+        : "Gerätegestützte Krankengymnastik (KGG) & Medizinische Trainingstherapie (MTT)",
+      desc: isRu
+        ? "Индивидуальные программы для спортсменов и активных людей: биомеханический анализ, функциональный тренинг и безопасный возврат в спорт."
+        : isEn
+        ? "Evidence-based rehabilitation for athletes: isokinetic testing, agility drills, and return-to-competition clearance."
         : "Wissenschaftlich fundiertes Aufbautraining für Leistungs- und Freizeitsportler mit Isokinetik, Schnelligkeit und sportspezifischen Belastungstests.",
+      fullDesc: isRu
+        ? "В полном соответствии с предметом деятельности NabiOta Rehabilitation & Therapy GmbH, данное направление включает аппаратную лечебную гимнастику (KGG), медицинскую тренировочную терапию (MTT), изокинетическую динамометрию и функциональный биомеханический скрининг. Спортсмены и активные пациенты после пластики связок или мышечных травм проходят структурированные фазы восстановления вплоть до полного допуска к спортивным нагрузкам."
+        : isEn
+        ? "In direct alignment with Section 5 of NabiOta Rehabilitation & Therapy GmbH, this department unites device-based physiotherapy (KGG), Medical Exercise Therapy (MTT), isokinetic dynamometry, and functional movement screening. Athletes recovering from ligament tears, tendinopathies, or muscle ruptures are guided through objective Return-to-Activity criteria to safely achieve pre-injury performance."
+        : "In Übereinstimmung mit dem Unternehmensgegenstand der NabiOta Rehabilitation & Therapy GmbH umfasst dieser Bereich gerätegestützte Krankengymnastik (KGG), medizinische Trainingstherapie (MTT) sowie biomechanische Funktionsanalysen. Leistungs- und Freizeitsportler werden nach Rupturen, Muskelverletzungen oder Sehnenoperationen anhand objektivierter Return-to-Activity-Kriterien sicher zurück auf ihr Leistungsniveau geführt.",
+      indicationsTitle: isRu ? "Клинические показания & методы (по PDF)" : isEn ? "Clinical Indications & Protocols (PDF)" : "Klinische Schwerpunkte & Indikationen",
+      indications: isRu
+        ? [
+            "Разрывы передней/задней крестообразных связок и повреждения менисков",
+            "Травмы и воспаления сухожилий (ахиллово сухожилие, ротаторная манжета)",
+            "Мышечные повреждения (надрывы волокон, миофасциальные синдромы)",
+            "Изокинетическое измерение мышечного баланса и дефицита силы",
+            "Плиометрический тренинг, ловкость и функциональный возврат в спорт",
+          ]
+        : isEn
+        ? [
+            "Anterior/posterior cruciate ligament ruptures & meniscal pathology",
+            "Tendon lesions (Achilles tendon, rotator cuff tears, patellar tendinopathy)",
+            "Muscle strains, myofascial tears & post-traumatic scar remodeling",
+            "Isokinetic dynamometry testing for bilateral symmetry & strength deficits",
+            "Plyometric power, speed agility drills & structured Return-to-Sport clearance",
+          ]
+        : [
+            "Vordere und hintere Kreuzbandrupturen, Meniskusschäden",
+            "Sehnenläsionen (Achillessehne, Rotatorenmanschette, Patellarsehne)",
+            "Muskel- und Bänderverletzungen aller Schweregrade",
+            "Isokinetische Kraftdiagnostik und Kraftdefizitanalyse",
+            "Spezifisches Agility-, Koordinations- und Sprungkrafttraining",
+          ],
+      standards: isRu
+        ? "Признание VBG / Berufsgenossenschaften • Медицинские силовые тренажеры по MPG • Сертифицированные спорт-физиотерапевты"
+        : isEn
+        ? "Accredited for professional athletic injury care • MPG-certified medical training floor • Certified sports physios"
+        : "VBG- / BG-Anerkennung • Zertifizierte Sportphysiotherapeuten • Medizinische Trainingsfläche nach MPG",
       image: "/images/rehabilitation/equipment-gait.webp",
       features: isRu
         ? ["Изокинетика Biodex", "Плиометрический тренинг", "Критерии Return-to-Activity"]
@@ -191,13 +344,52 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
     },
     {
       id: "cardio",
-      title: isRu ? "Кардиологическая реабилитация" : isEn ? "Cardiological Rehabilitation" : "Kardiologische Rehabilitation",
-      badge: isRu ? "Сердце & Выносливость" : isEn ? "Cardiovascular" : "Herz-Kreislauf",
+      title: isRu ? "Кардиологическая & пульмонологическая реха" : isEn ? "Cardiopulmonary Rehabilitation" : "Kardiologische Rehabilitation",
+      badge: isRu ? "Сердце, дыхание & выносливость" : isEn ? "Cardiovascular & Pulmonary" : "Herz-Kreislauf & Lunge",
+      subtitle: isRu
+        ? "Дозированные аэробные кардиотренировки под непрерывным телеметрическим ЭКГ-мониторингом"
+        : isEn
+        ? "Monitored aerobic endurance reconditioning under continuous ECG telemetry supervision"
+        : "Kontrolliertes aerobes Konditionstraining unter kontinuierlicher Telemetrie-Überwachung",
       desc: isRu
-        ? "Дозированные аэробные тренировки под непрерывным ЭКГ-мониторингом после инфаркта миокарда, стентирования и кардиохирургических вмешательств."
+        ? "Дозированные аэробные тренировки под непрерывным ЭКГ-мониторингом после инфаркта миокарда, стентирования и кардиохирургии."
         : isEn
         ? "Monitored aerobic reconditioning under continuous telemetry following myocardial infarction, stent placement, and bypass surgery."
         : "Kontrolliertes Ausdauertraining unter kontinuierlicher EKG-Telemetrie nach Herzinfarkt, Stent-Implantation oder Bypass-Operationen.",
+      fullDesc: isRu
+        ? "Для пациентов с сердечно-сосудистыми и бронхолегочными заболеваниями холдинг реализует контролируемые программы восстановления выносливости и функционального объема легких. После инфаркта миокарда, АКШ, стентирования коронарных артерий или при ХОБЛ и постковидном синдроме кардиологические тренировки и дыхательная гимнастика проходят под контролем врача-кардиолога и непрерывной телеметрии."
+        : isEn
+        ? "For patients recovering from cardiac or pulmonary events, our centers deliver medically safe aerobic reconditioning. Following myocardial infarction, bypass surgery, coronary stenting, or for chronic pulmonary disorders (COPD, pulmonary emphysema, post-COVID dyspnea), heart-rate-guided exercise and respiratory therapy are administered under continuous multi-lead telemetry."
+        : "Für Patienten mit kardiovaskulären oder pneumologischen Erkrankungen bietet die Gesellschaft strukturierte Ausdauer- und Kraftprogramme. Nach Myokardinfarkt, Bypass-Operation, Stent-Implantation oder bei chronisch obstruktiven Lungenerkrankungen (COPD, Asthma, Post-COVID) werden Belastbarkeit und Lungenvolumen unter fachärztlicher Supervision schrittweise und sicher gesteigert.",
+      indicationsTitle: isRu ? "Клинические показания & методы (по PDF)" : isEn ? "Clinical Indications & Protocols (PDF)" : "Klinische Schwerpunkte & Indikationen",
+      indications: isRu
+        ? [
+            "Состояние после острого инфаркта миокарда и стентирования коронарных сосудов",
+            "Постоперационный период после аортокоронарного шунтирования (АКШ) и клапанной коррекции",
+            "Хроническая сердечная недостаточность в компенсированной стадии",
+            "ХОБЛ (хроническая обструктивная болезнь легких) и эмфизема",
+            "Специализированная дыхательная терапия, дренаж секрета и мобилизация грудной клетки",
+          ]
+        : isEn
+        ? [
+            "Post-acute myocardial infarction recovery & coronary stent intervention",
+            "Post-surgical bypass grafting (CABG) & structural heart valve repair/replacement",
+            "Compensated chronic heart failure with functional capacity optimization",
+            "Chronic obstructive pulmonary disease (COPD) & pulmonary emphysema",
+            "Targeted respiratory muscle therapy, airway secretion clearance & chest expansion",
+          ]
+        : [
+            "Zustand nach akutem Myokardinfarkt & Koronarstenting",
+            "Postoperativ nach Bypass- oder Herzklappenoperationen",
+            "Chronische Herzinsuffizienz im stabilen Stadium",
+            "Chronisch obstruktive Lungenerkrankung (COPD) & Lungenemphysem",
+            "Gezielte Atemtherapie, Sekretlösung & Thoraxmobilisation",
+          ],
+      standards: isRu
+        ? "Непрерывный 12-канальный телеметрический мониторинг • Кардиологический консилиум • Реанимационное оснащение"
+        : isEn
+        ? "Continuous 12-channel telemetry monitoring • Supervising cardiologist oversight • Immediate resuscitation backup"
+        : "Kontinuierliches 12-Kanal-Telemetrie-Monitoring • Notfall-Equipment vor Ort • Kardiologische ärztliche Betreuung",
       image: "/images/areas/cardiology-focus.webp",
       features: isRu
         ? ["Непрерывная телеметрия пульса и ЭКГ", "Обучение безопасному пульсовому режиму", "Контроль кардиолога"]
@@ -207,13 +399,52 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
     },
     {
       id: "hydro",
-      title: isRu ? "Гидрокинезотерапия в бассейне" : isEn ? "Medical Hydrotherapy & Aquatic Rehab" : "Medizinische Hydrotherapie",
-      badge: isRu ? "Теплая вода 32°C" : isEn ? "Warm Water 32°C" : "Bewegungsbad 32°C",
+      title: isRu ? "Гидрокинезотерапия & лимфология" : isEn ? "Medical Hydrotherapy & Aquatic Rehab" : "Medizinische Hydrotherapie",
+      badge: isRu ? "Бассейн 32°C & Лимфодренаж" : isEn ? "Warm Water 32°C & MLD" : "Bewegungsbad 32°C & MLD",
+      subtitle: isRu
+        ? "Щадящая разгрузка суставов в теплой воде и мануальный лимфодренаж (MLD)"
+        : isEn
+        ? "Buoyancy joint decompression in warm thermal pool & Manual Lymphatic Drainage (MLD)"
+        : "Gelenkschonende Schwerelosigkeit im Thermalwasser und gezielte Entstauungstherapie",
       desc: isRu
         ? "Щадящая разгрузка веса тела до 90% в специализированном терапевтическом бассейне с теплой водой для пациентов с выраженным болевым синдромом."
         : isEn
         ? "Buoyancy unloading of up to 90% body weight in a therapeutic warm-water pool, ideal for severe arthritis, early post-op, and chronic back pain."
         : "Schonende Entlastung von Gelenken und Wirbelsäule im warmen Bewegungsbad. Bis zu 90 % Gewichtsreduktion für schmerzfreie Frühmobilisation.",
+      fullDesc: isRu
+        ? "В качестве физикальных методов терапии (согласно пункту 5 PDF) в холдинге оборудован специализированный лечебный бассейн с постоянной температурой 32°C. Гидростатическая подъемная сила снижает осевую нагрузку на суставы и позвоночник на 90%, снимая болевые спазмы. Комплекс дополняется мануальным лимфодренажем (MLD), выполняемым сертифицированными лимфологами для снятия постоперационных и лимфатических отеков."
+        : isEn
+        ? "As part of physical modalities stipulated in Section 5 of the PDF, our facility features a specialized 32°C therapeutic motion pool. Buoyant water unloading reduces axial joint load by up to 90%, enabling immediate, pain-free mobility retraining. In addition, certified lymphedema therapists perform Manual Lymph Drainage (MLD) for rapid post-operative hematoma and swelling resolution."
+        : "Als integraler Bestandteil der physikalischen Anwendungen gemäß Punkt 5 des PDF bietet die NabiOta-Gruppe ein 32°C warmes medizinisches Bewegungsbad. Die hydrostatische Entlastung reduziert das wirksame Körpergewicht um bis zu 90%, was schmerzfreie frühe Bewegungsmuster ermöglicht. Ergänzend führen zertifizierte Lymphtherapeuten die Manuelle Lymphdrainage (MLD) zur postoperativen und chronischen Ödemreduktion durch.",
+      indicationsTitle: isRu ? "Клинические показания & методы (по PDF)" : isEn ? "Clinical Indications & Protocols (PDF)" : "Klinische Schwerpunkte & Indikationen",
+      indications: isRu
+        ? [
+            "Ранняя послеоперационная мобилизация суставов при разгрузке веса тела",
+            "Выраженный гонартроз и коксартроз со стартовыми болями",
+            "Постоперационные отеки, гематомы и застойные явления мягких тканей",
+            "Первичные и вторичные лимфедемы (включая онкологический профиль)",
+            "Хронический вертеброгенный болевой синдром и фибромиалгия",
+          ]
+        : isEn
+        ? [
+            "Early post-surgical aquatic gait mobilization with bodyweight buoyancy unloading",
+            "Severe knee and hip osteoarthritis with weight-bearing pain",
+            "Post-operative lymphatic stasis, extensive hematomas & tissue edema",
+            "Primary and secondary lymphedema (including post-oncological surgery care)",
+            "Chronic axial back pain syndromes, fibromyalgia & complex regional pain",
+          ]
+        : [
+            "Postoperative Frühmobilisation bei voller Gewichtsentlastung",
+            "Schwere Gon- und Koxarthrose mit Belastungsschmerz",
+            "Postoperative und posttraumatische Schwellungen und Hämatome",
+            "Primäre und sekundäre Lymphödeme (nach onkologischen Eingriffen)",
+            "Chronische Schmerzsyndrome und Fibromyalgie",
+          ],
+      standards: isRu
+        ? "Сертифицированные лимфотерапевты • Водоподготовка по DIN 19643 • Безбарьерный подъемник в бассейн"
+        : isEn
+        ? "Certified manual lymphology therapists • Water hygiene per DIN 19643 • Barrier-free pool hoists"
+        : "Zertifizierte Lymphtherapeuten • Medizinische Wasserhygiene nach DIN 19643 • Barrierefreier Hebelift",
       image: "/images/rehabilitation/hydrotherapy-pool.webp",
       features: isRu
         ? ["Снижение нагрузки на суставы", "Улучшение лимфооттока", "Релаксация спазмированных мышц"]
@@ -223,14 +454,53 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
     },
     {
       id: "ergo",
-      title: isRu ? "Эрготерапия и логопедия" : isEn ? "Ergotherapy & Speech Therapy" : "Ergotherapie & Logopädie",
-      badge: isRu ? "Моторика, речь & быт" : isEn ? "Motor Skills, Speech & ADL" : "Feinmotorik, Sprache & Alltag",
+      title: isRu ? "Эрготерапия, логопедия & боли" : isEn ? "Ergotherapy, Speech & Pain Care" : "Ergotherapie & Logopädie",
+      badge: isRu ? "Быт, речь, глотание & боль" : isEn ? "ADL, Speech & Pain Therapy" : "Feinmotorik, Sprache & Schmerz",
+      subtitle: isRu
+        ? "Тренировка бытовой независимости (ADL), логопедическая помощь и мультимодальная терапия боли"
+        : isEn
+        ? "Activities of daily living (ADL), speech-swallowing rehabilitation & multimodal pain relief"
+        : "Wiedererlangung von Alltagsautonomie (ADL), Sprach-/Schlucktherapie & Schmerztherapie",
       desc: isRu
         ? "Восстановление мелкой моторики, речи, глотания и когнитивных функций после неврологических и ортопедических нарушений."
         : isEn
         ? "Rebuilding fine motor dexterity, speech, swallowing, and cognitive independence after stroke or surgical interventions."
         : "Wiedererlangung von Feinmotorik, Sprach-, Sprech- und Schluckfunktionen sowie Alltagsfähigkeiten nach neurologischen oder operativen Einschränkungen.",
-      image: "/images/contact/clinic-reception.webp",
+      fullDesc: isRu
+        ? "Согласно прямому положению пункта 5 устава NabiOta Rehabilitation & Therapy GmbH, медицинская помощь холдинга включает эрготерапевтические меры для развития моторики и познавательных способностей, тренировку навыков повседневной жизни (ADL), логопедическую терапию нарушений речи, голоса и глотания (дисфагии), а также междисциплинарную терапию хронической боли."
+        : isEn
+        ? "In rigorous accordance with Section 5 of NabiOta Rehabilitation & Therapy GmbH, our clinical mandate encompasses occupational therapy to restore fine motor and cognitive faculties, activities of daily living (ADL) independence training, specialized speech and swallowing therapy (dysphagia management), and interdisciplinary multimodal chronic pain management."
+        : "Gemäß den ausdrücklichen Vorgaben von Punkt 5 der NabiOta Rehabilitation & Therapy GmbH umfasst der Versorgungsauftrag ergotherapeutische Maßnahmen zur Förderung motorischer und kognitiver Fähigkeiten, Selbstständigkeitstraining im Alltag (ADL), logopädische Behandlungen bei Sprach-, Sprech-, Stimm- und Schluckstörungen (Dysphagie) sowie interdisziplinäre multimodale Schmerztherapie.",
+      indicationsTitle: isRu ? "Клинические показания & методы (по PDF)" : isEn ? "Clinical Indications & Protocols (PDF)" : "Klinische Schwerpunkte & Indikationen",
+      indications: isRu
+        ? [
+            "Тренировка мелкой моторики кисти, захвата предметов и координации пальцев",
+            "Обучение повседневным навыкам (одевание, гигиена, кулинария - ADL)",
+            "Логопедическое восстановление речи и голоса (афазия, дизартрия после инсульта)",
+            "Терапия нарушений глотания (дисфагия с подбором безопасного питания)",
+            "Интердисциплинарная мультимодальная терапия при упорных болевых синдромах",
+          ]
+        : isEn
+        ? [
+            "Fine motor dexterity, finger opposition, sensory re-education & splinting",
+            "Activities of daily living training (ADL - dressing, self-care, domestic skills)",
+            "Speech and language rehabilitation (aphasia, dysarthria post-stroke)",
+            "Swallowing therapy & aspiration-preventative dysphagia management",
+            "Interdisciplinary multimodal chronic pain treatment programs",
+          ]
+        : [
+            "Feinmotorik-, Sensibilitäts- und Greiffunktionstraining der Hand",
+            "Selbstständigkeitstraining im Alltag (ADL - Activities of Daily Living)",
+            "Sprach- und Sprechstörungen (Aphasie, Dysarthrie nach Schlaganfall)",
+            "Schlucktherapie (Dysphagie-Management mit aspirationsgeschützter Kost)",
+            "Multimodale Schmerztherapie bei chronischen Schmerzsyndromen",
+          ],
+      standards: isRu
+        ? "Направление по каталогу Heilmittelkatalog (GKV/PKV) • Возможность выезда на дом • Междисциплинарные консилиумы"
+        : isEn
+        ? "Reimbursed under German Heilmittel catalog • Outpatient home visits available • Pain conferences"
+        : "Abrechnung nach Heilmittelkatalog (GKV/PKV) • Zulassung für Hausbesuche • Interdisziplinäre Schmerzkonferenzen",
+      image: "/images/services/therapie.webp",
       features: isRu
         ? ["Эрготерапия и тренировка быта (ADL)", "Логопедия: речь, голос и глотание", "Когнитивный тренинг и ортезирование"]
         : isEn
@@ -239,34 +509,34 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
     },
   ];
 
-  // ── Skrin 2 Data: Unser Ansatz ──
+  // ── Skrin 2 Data: Unser Ansatz (PDF Section 5) ──
   const approachData = {
     eyebrow: isRu ? "НАШ ПОДХОД" : isEn ? "OUR APPROACH" : "UNSER ANSATZ",
-    title: isRu ? "Ganzheitliche Betreuung. Nach höchsten Standards." : isEn ? "Holistic Care. To the Highest Standards." : "Ganzheitliche Betreuung. Nach höchsten Standards.",
+    title: isRu ? "Комплексная забота. По высшим стандартам." : isEn ? "Holistic Care. To the Highest Standards." : "Ganzheitliche Betreuung. Nach höchsten Standards.",
     desc: isRu
-      ? "Wir kombinieren medizinische Expertise mit modernster Therapie und persönlicher Betreuung – für Ihren langfristigen Erfolg."
+      ? "Мы объединяем медицинскую экспертизу с передовыми технологиями терапии и персонализированным вниманием — для вашего долгосрочного выздоровления."
       : isEn
-      ? "We combine medical expertise with state-of-the-art therapy and personal care – for your long-term recovery."
+      ? "We combine clinical excellence with state-of-the-art physical therapy and compassionate support for lasting mobility."
       : "Wir kombinieren medizinische Expertise mit modernster Therapie und persönlicher Betreuung – für Ihren langfristigen Erfolg.",
     stats: [
       {
         val: "100+",
-        label: isRu ? "Rehabilitationspatienten pro Monat" : isEn ? "Rehabilitation patients per month" : "Rehabilitationspatienten pro Monat",
+        label: isRu ? "Пациентов реабилитации в месяц" : isEn ? "Rehabilitation patients per month" : "Rehabilitationspatienten pro Monat",
         icon: <RehabCloverIcon className="w-5 h-5 text-[#ECCF96]" />,
       },
       {
         val: "95%",
-        label: isRu ? "Zufriedenheit unserer Patienten" : isEn ? "Patient satisfaction rate" : "Zufriedenheit unserer Patienten",
+        label: isRu ? "Удовлетворенность наших пациентов" : isEn ? "Patient satisfaction rate" : "Zufriedenheit unserer Patienten",
         icon: <SatisfactionBadgeIcon className="w-5 h-5 text-[#ECCF96]" />,
       },
       {
         val: "24/7",
-        label: isRu ? "Betreuung und Support" : isEn ? "Care & support" : "Betreuung und Support",
+        label: isRu ? "Непрерывное сопровождение" : isEn ? "Dedicated clinical support" : "Betreuung und Support",
         icon: <SupportShieldIcon className="w-5 h-5 text-[#ECCF96]" />,
       },
       {
         val: ">10",
-        label: isRu ? "Jahre Erfahrung in der Rehabilitation" : isEn ? "Years of experience" : "Jahre Erfahrung in der Rehabilitation",
+        label: isRu ? "Лет клинического опыта в реабилитации" : isEn ? "Years of rehabilitation experience" : "Jahre Erfahrung in der Rehabilitation",
         icon: <ExperienceAwardIcon className="w-5 h-5 text-[#ECCF96]" />,
       },
     ],
@@ -401,27 +671,43 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
 
   // ── Skrin 5 Data: Testimonials (Patientenstimmen with exact cropped avatars) ──
   const testimonialsData = {
-    eyebrow: "PATIENTENSTIMMEN",
-    title: "Echte Menschen.\nEchte Erfolge.",
-    desc: "Unsere Patienten berichten von ihren Erfahrungen, Fortschritten und neuen Lebensperspektiven.",
-    btn: "Alle Bewertungen ansehen",
+    eyebrow: isRu ? "ОТЗЫВЫ ПАЦИЕНТОВ" : isEn ? "PATIENT STORIES" : "PATIENTENSTIMMEN",
+    title: isRu ? "Реальные истории.\nНастоящие успехи." : isEn ? "Real People.\nReal Success." : "Echte Menschen.\nEchte Erfolge.",
+    desc: isRu
+      ? "Наши пациенты делятся своим опытом восстановления, достигнутыми результатами и новым качеством активной жизни."
+      : isEn
+      ? "Our patients share their rehabilitation milestones, recovery journeys, and renewed quality of life."
+      : "Unsere Patienten berichten von ihren Erfahrungen, Fortschritten und neuen Lebensperspektiven.",
+    btn: isRu ? "Все отзывы пациентов" : isEn ? "View all reviews" : "Alle Bewertungen ansehen",
     cards: [
       {
         name: "Sabine M.",
-        role: "Orthopädische Rehabilitation",
-        quote: "„Dank der professionellen Betreuung konnte ich nach meiner Knie-OP schneller als erwartet wieder laufen. Ich bin dem ganzen Team sehr dankbar.“",
+        role: isRu ? "Ортопедическая реабилитация" : isEn ? "Orthopedic Rehabilitation" : "Orthopädische Rehabilitation",
+        quote: isRu
+          ? "„Благодаря профессиональной заботе и тренировкам я смогла уверенно ходить после операции на колене гораздо быстрее, чем ожидала. Огромное спасибо всей команде!“"
+          : isEn
+          ? "“Thanks to professional care and progressive rehabilitation, I was able to walk smoothly after my knee replacement much faster than expected. Heartfelt thanks to the team!”"
+          : "„Dank der professionellen Betreuung konnte ich nach meiner Knie-OP schneller als erwartet wieder laufen. Ich bin dem ganzen Team sehr dankbar.“",
         image: "/images/testimonials/sabine-m.webp",
       },
       {
         name: "Thomas K.",
-        role: "Neurologische Rehabilitation",
-        quote: "„Die individuelle Therapie und die modernen Geräte haben mir sehr geholfen, meine Beweglichkeit zurückzugewinnen.“",
+        role: isRu ? "Неврологическая реабилитация" : isEn ? "Neurological Rehabilitation" : "Neurologische Rehabilitation",
+        quote: isRu
+          ? "„Индивидуальная терапия и современные реабилитационные аппараты очень помогли мне вернуть подвижность и уверенность в каждом движении.“"
+          : isEn
+          ? "“The tailored therapy regimen and state-of-the-art assistive devices greatly helped me regain movement and functional independence.”"
+          : "„Die individuelle Therapie und die modernen Geräte haben mir sehr geholfen, meine Beweglichkeit zurückzugewinnen.“",
         image: "/images/testimonials/thomas-k.webp",
       },
       {
         name: "Julia R.",
-        role: "Kardiologische Rehabilitation",
-        quote: "„Ich habe mich von Anfang an gut aufgehoben gefühlt. Die Kombination aus Fachwissen und Menschlichkeit ist hier wirklich spürbar.“",
+        role: isRu ? "Кардиологическая реабилитация" : isEn ? "Cardiological Rehabilitation" : "Kardiologische Rehabilitation",
+        quote: isRu
+          ? "„С самого первого дня я чувствовала чуткую поддержку. Сочетание высокой врачебной компетентности и теплого человеческого отношения здесь чувствуется в каждой детали.“"
+          : isEn
+          ? "“From day one, I felt in the best possible hands. The combination of medical expertise and genuine empathy is truly felt here.”"
+          : "„Ich habe mich von Anfang an gut aufgehoben gefühlt. Die Kombination aus Fachwissen und Menschlichkeit ist hier wirklich spürbar.“",
         image: "/images/testimonials/julia-r.webp",
       },
     ],
@@ -467,6 +753,8 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
     <div className="flex flex-col min-h-screen bg-[#FAF8F5]">
       <Header currentLocale={locale} />
 
+      <main className="flex-1">
+
       {/* ══════════════════════════════════════════════════════════
           HERO SECTION (UNIFIED PHOTO 4 FORMAT WITH BOTANICAL GOLD)
       ══════════════════════════════════════════════════════════ */}
@@ -492,7 +780,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
           SECTION 1: SPECIALIZED REHABILITATION SPECIALIZATIONS
       ══════════════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 bg-[#FAF8F5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <span className="text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase block mb-2">
               {isRu ? "СПЕЦИАЛИЗИРОВАННЫЕ НАПРАВЛЕНИЯ" : isEn ? "SPECIALIZED DISCIPLINES" : "FACHBEREICHE DER REHABILITATION"}
@@ -517,7 +805,16 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
             {specializations.map((spec) => (
               <div
                 key={spec.id}
-                className="bg-white rounded-2xl border border-[#EDE8DE] overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_10px_28px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
+                onClick={() => setSelectedSpecialization(spec)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setSelectedSpecialization(spec);
+                  }
+                }}
+                className="bg-white rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878]/80 overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_32px_rgba(12,43,27,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group cursor-pointer text-left focus:outline-none focus:ring-2 focus:ring-[#D5B878]"
               >
                 <div>
                   {/* Photo with Tag */}
@@ -558,13 +855,16 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                 </div>
 
                 <div className="px-5 sm:px-6 pb-5 pt-0">
-                  <Link
-                    href={`/${locale}/contact`}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#142318] group-hover:text-[#B89650] transition-colors"
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedSpecialization(spec);
+                    }}
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#142318] group-hover:text-[#B89650] transition-colors cursor-pointer"
                   >
-                    <span>{isRu ? "Записаться на курс" : isEn ? "Consult with specialist" : "Therapie anfragen"}</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                    <span>{isRu ? "Подробнее о программе →" : isEn ? "View Program Details →" : "Details zum Programm →"}</span>
+                  </button>
                 </div>
               </div>
             ))}
@@ -735,7 +1035,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
           />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left title */}
             <div className="lg:col-span-4 space-y-3">
@@ -790,7 +1090,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
           SECTION 4: 2-CARD GRID (MATCHING SKRIN 3)
       ══════════════════════════════════════════════════════════ */}
       <section className="py-12 sm:py-18 bg-[#FAF8F5]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-stretch">
             {/* Left Card: Pool Photo with Tag & Button */}
             <div className="relative rounded-3xl overflow-hidden shadow-xl border border-[#EDE8DE] min-h-[380px] sm:min-h-[420px] flex flex-col justify-between p-7 sm:p-9 group">
@@ -875,7 +1175,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
           SECTION 5: INTERDISCIPLINARY MEDICAL LEADERSHIP
       ══════════════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-22 bg-white border-t border-[#EDE8DE]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase block mb-2">
               {isRu ? "НАША КОМАНДА ЭКСПЕРТОВ" : isEn ? "EXPERT MEDICAL LEADERSHIP" : "UNSERE ÄRZTE & THERAPEUTEN"}
@@ -946,14 +1246,6 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
 
       {/* ══════════════════════════════════════════════════════════
           SECTION 6: PATIENT TESTIMONIALS (EXACTLY MATCHING TARGET LAYOUT)
-          - Compact vertical height (py-12 sm:py-16)
-          - Left block vertically centered and aligned with cards
-          - 3 wider, shorter cards with avatars at top-left
-          - Carousel navigation buttons close under cards
-          - Full vibrant botanical-gold-bg.webp background
-      ══════════════════════════════════════════════════════════ */}
-      {/* ══════════════════════════════════════════════════════════
-          SECTION 6: PATIENT TESTIMONIALS (EXACTLY MATCHING TARGET LAYOUT)
           - Compact vertical height (py-8 sm:py-10 lg:py-12)
           - Left block aligned and vertically centered with cards
           - 3 wider, shorter cards with avatars at top-left
@@ -972,7 +1264,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
           />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8">
             {/* Left Column: Eyebrow, Title, Description, Button */}
             <div className="w-full lg:w-[28%] xl:w-[27%] shrink-0 space-y-3">
@@ -1145,7 +1437,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
           />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-3">
               <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
@@ -1197,6 +1489,122 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
           </div>
         </div>
       </section>
+
+      {/* ══════════════════════════════════════════════════════════
+          MODAL DIALOG: SPECIALIZED REHABILITATION PROGRAM (PDF SECTION 5)
+      ══════════════════════════════════════════════════════════ */}
+      {selectedSpecialization && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 md:p-6 bg-[#08170D]/80 backdrop-blur-md animate-in fade-in duration-200"
+          onClick={() => setSelectedSpecialization(null)}
+        >
+          <div
+            className="relative w-full max-w-2xl bg-white rounded-2xl sm:rounded-3xl border border-[#D5B878]/40 shadow-2xl overflow-hidden max-h-[92vh] flex flex-col animate-in zoom-in-95 duration-200"
+            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="rehab-modal-title"
+          >
+            {/* Modal Top Header Image & Badges */}
+            <div className="relative h-44 sm:h-52 w-full overflow-hidden shrink-0 bg-[#08170D]">
+              <Image
+                src={selectedSpecialization.image}
+                alt={selectedSpecialization.title}
+                fill
+                className="object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#08170D] via-[#08170D]/40 to-black/30" />
+
+              {/* Close Button */}
+              <button
+                type="button"
+                onClick={() => setSelectedSpecialization(null)}
+                aria-label={isRu ? "Закрыть" : isEn ? "Close" : "Schließen"}
+                className="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-[#08170D]/80 hover:bg-[#D5B878] text-white hover:text-[#08170D] border border-white/20 hover:border-[#D5B878] flex items-center justify-center transition-all duration-200 shadow-md z-10 cursor-pointer"
+              >
+                <X className="w-4 h-4" />
+              </button>
+
+              {/* Badge & Title */}
+              <div className="absolute bottom-3 left-4 sm:left-6 right-4 sm:right-6">
+                <span className="inline-block px-2.5 py-0.5 rounded-full bg-[#D5B878]/90 text-[#08170D] text-[10px] sm:text-[10.5px] font-bold uppercase tracking-wider mb-1">
+                  {selectedSpecialization.badge}
+                </span>
+                <h2 id="rehab-modal-title" className="font-serif text-xl sm:text-2xl text-white font-normal leading-tight drop-shadow-sm">
+                  {selectedSpecialization.title}
+                </h2>
+              </div>
+            </div>
+
+            {/* Modal Scrollable Content Body */}
+            <div className="p-5 sm:p-6 overflow-y-auto space-y-4 sm:space-y-5 text-left font-sans">
+              {/* Subtitle / Focus Callout */}
+              <div className="bg-[#FAF8F5] border-l-3 border-[#D5B878] px-3.5 py-2.5 rounded-r-lg">
+                <p className="text-[12px] sm:text-[13px] font-medium text-[#142318] leading-snug">
+                  {selectedSpecialization.subtitle}
+                </p>
+              </div>
+
+              {/* Full Description from PDF Section 5 */}
+              <div className="space-y-2">
+                <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#8C948D]">
+                  {isRu ? "ТЕРАПЕВТИЧЕСКИЙ ПРОФИЛЬ & МЕТОДЫ" : isEn ? "CLINICAL PROFILE & THERAPY METHODS" : "THERAPEUTISCHES PROFIL & METHODEN"}
+                </h4>
+                <p className="text-xs sm:text-[13px] text-[#425246] leading-relaxed">
+                  {selectedSpecialization.fullDesc}
+                </p>
+              </div>
+
+              {/* Key Indications Checklist */}
+              <div className="space-y-2.5 pt-1">
+                <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#8C948D]">
+                  {selectedSpecialization.indicationsTitle}
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {selectedSpecialization.indications.map((ind, i) => (
+                    <div key={i} className="flex items-start gap-2 bg-[#FAF8F5] p-2.5 rounded-xl border border-[#EDE8DE]">
+                      <GoldCircleCheckIcon className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+                      <span className="text-[11.5px] sm:text-xs text-[#1F2E24] leading-snug font-normal">
+                        {ind}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Regulatory & Safety Standards Bar (PDF Section 5 Requirements) */}
+              <div className="flex items-center gap-3 p-3 rounded-xl bg-[#08170D]/5 border border-[#D5B878]/30 text-[#142318]">
+                <ShieldCheck className="w-5 h-5 text-[#B89650] shrink-0" />
+                <p className="text-[11px] sm:text-[11.5px] leading-tight text-[#3A4A3E]">
+                  <strong className="font-semibold text-[#142318]">{isRu ? "Покрытие расходов: " : isEn ? "Insurance & Coverage: " : "Kostenträger & Richtlinien: "}</strong>
+                  {selectedSpecialization.standards}
+                </p>
+              </div>
+            </div>
+
+            {/* Modal Footer Actions */}
+            <div className="p-4 sm:p-5 bg-[#FAF8F5] border-t border-[#EDE8DE] flex flex-col sm:flex-row items-center justify-between gap-3 shrink-0">
+              <button
+                type="button"
+                onClick={() => setSelectedSpecialization(null)}
+                className="w-full sm:w-auto px-5 py-2.5 rounded-full border border-[#D0C8B8] hover:bg-white text-[#556358] text-xs font-medium transition-colors cursor-pointer"
+              >
+                {isRu ? "Закрыть окно" : isEn ? "Close window" : "Fenster schließen"}
+              </button>
+
+              <Link
+                href={`/${locale}/contact`}
+                onClick={() => setSelectedSpecialization(null)}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#08170D] hover:bg-[#0C2B1B] text-[#ECCF96] border border-[#D5B878] text-xs font-semibold tracking-wide transition-all shadow-sm"
+              >
+                <span>{isRu ? "Записаться на курс" : isEn ? "Request Therapy Consultation" : "Therapie / Beratung anfragen"}</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
+      </main>
 
       <Footer currentLocale={locale} />
     </div>
