@@ -33,6 +33,10 @@ import {
   Briefcase,
   HelpCircle,
   MapPin,
+  Search,
+  Settings,
+  HeartHandshake,
+  Plane,
 } from "lucide-react";
 
 export interface RecruitmentPillar {
@@ -1575,7 +1579,7 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
           </div>
         </section>
 
-        {/* ── SECTION 3: DIE 4 FACHKRÄFTE-SÄULEN (Interactive Modal Cards) ────── */}
+        {/* ── SECTION 3: DIE 4 FACHKRÄFTE-SÄULEN (Interactive Modal Cards matching Photo 1) ────── */}
         <section id="saeulen" className="py-14 sm:py-18 lg:py-20 bg-[#FAF9F6] border-t border-[#EDE8DE]">
           <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-12 sm:mb-16">
@@ -1595,38 +1599,62 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
                 <div
                   key={pillar.id}
                   onClick={() => setSelectedPillar(pillar)}
-                  className="rounded-2xl sm:rounded-3xl bg-white border border-[#EAE4D7] shadow-sm hover:shadow-xl hover:border-[#C5A56A] transition-all duration-300 flex flex-col justify-between overflow-hidden group cursor-pointer"
+                  className="rounded-3xl bg-white border border-[#EAE4D7] shadow-sm hover:shadow-xl hover:border-[#C5A56A] transition-all duration-300 flex flex-col justify-between overflow-hidden group cursor-pointer"
                 >
-                  <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-[#07150C]">
+                  {/* Photo with pill badge at top left */}
+                  <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-[#07150C]">
                     <Image
                       src={pillar.image}
                       alt={pillar.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-                    <div className="absolute top-3 left-3 bg-[#07160D]/85 backdrop-blur-xs border border-[#C5A56A]/60 px-3 py-1 rounded-full text-[10px] font-semibold text-[#ECCF96] tracking-wider uppercase">
+                    {/* Dark green badge matching Photo 1 */}
+                    <div className="absolute top-3.5 left-3.5 bg-[#0C2917] text-white px-3.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase shadow-xs border border-white/10 z-10">
                       {pillar.badge}
-                    </div>
-                    <div className="absolute bottom-3 left-3 right-3 text-white">
-                      <span className="text-[10px] uppercase tracking-wider text-[#ECCF96] font-medium block">
-                        {pillar.category}
-                      </span>
-                      <h3 className="font-serif text-lg sm:text-xl font-bold leading-tight">
-                        {pillar.title}
-                      </h3>
                     </div>
                   </div>
 
-                  <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
-                    <p className="text-xs sm:text-[13px] text-[#4E5650] leading-relaxed">
-                      {pillar.shortDesc}
-                    </p>
+                  {/* Card Content with circular icon overlapping the image & gentle wave */}
+                  <div className="relative bg-white pt-2 pb-6 px-6 sm:px-7 flex-1 flex flex-col justify-between">
+                    {/* Curved wave transition at top */}
+                    <div className="absolute -top-6 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none">
+                      <svg
+                        viewBox="0 0 400 32"
+                        preserveAspectRatio="none"
+                        className="w-full h-7 fill-white"
+                      >
+                        <path d="M 0,16 C 18,5 34,0 64,0 C 98,0 118,13 145,17 C 225,27 325,16 400,13 L 400,32 L 0,32 Z" />
+                      </svg>
+                    </div>
 
-                    <div className="pt-2 border-t border-[#F0EAE0] flex items-center justify-between text-xs font-semibold text-[#8D6B27] group-hover:text-[#142318] transition-colors">
-                      <span>{t.pillarSection.openModalBtn}</span>
-                      <div className="w-7 h-7 rounded-full bg-[#FAF5EB] border border-[#E5D7B7] flex items-center justify-center group-hover:bg-[#C5A56A] group-hover:text-white transition-all">
-                        <ArrowRight className="w-3.5 h-3.5" />
+                    {/* Circular Icon with light green background overlapping the photo on the left */}
+                    <div className="relative -mt-9 mb-3.5 z-10">
+                      <div className="w-12 h-12 rounded-full bg-[#E5F0E8] border border-[#CCE0D2] flex items-center justify-center text-[#1C3E2A] shadow-xs group-hover:scale-105 transition-transform">
+                        {pillar.id === "aerzte" && <Stethoscope className="w-6 h-6 stroke-[1.8]" />}
+                        {pillar.id === "pflege" && <FileCheck className="w-6 h-6 stroke-[1.8]" />}
+                        {pillar.id === "diagnostik" && <Settings className="w-6 h-6 stroke-[1.8]" />}
+                        {pillar.id === "therapie" && <HeartHandshake className="w-6 h-6 stroke-[1.8]" />}
+                      </div>
+                    </div>
+
+                    {/* Title & Description on white background */}
+                    <div className="space-y-2 mb-4">
+                      <h3 className="font-serif text-xl sm:text-[21px] font-bold text-[#142318] leading-tight group-hover:text-[#8D6B27] transition-colors">
+                        {pillar.title}
+                      </h3>
+                      <p className="text-xs sm:text-[13px] text-[#55695C] leading-relaxed">
+                        {pillar.shortDesc}
+                      </p>
+                    </div>
+
+                    {/* Bottom Action Area: Pill Button + Circle Arrow Button matching Photo 1 */}
+                    <div className="pt-4 mt-auto border-t border-[#F2ECE1] flex items-center justify-between">
+                      <span className="px-4 py-2 rounded-full bg-[#FAF3E7] text-[#93712C] text-xs font-semibold group-hover:bg-[#F5EAD4] transition-colors">
+                        {t.pillarSection.openModalBtn}
+                      </span>
+                      <div className="w-9 h-9 rounded-full bg-[#FAF3E7] border border-[#EADBBE] flex items-center justify-center text-[#93712C] group-hover:bg-[#C5A56A] group-hover:text-white group-hover:border-[#C5A56A] transition-all">
+                        <ArrowRight className="w-4 h-4" />
                       </div>
                     </div>
                   </div>
@@ -1636,7 +1664,7 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
           </div>
         </section>
 
-        {/* ── SECTION 4: DER 360°-INTEGRATIONSPFAD (5-Step Visual Process) ────── */}
+        {/* ── SECTION 4: DER 360°-INTEGRATIONSPFAD (Matching Photo 2 with Right Icon Badges) ────── */}
         <section className="py-14 sm:py-18 lg:py-20 bg-[#07160D] text-white relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none opacity-20 overflow-hidden mix-blend-screen">
             <Image
@@ -1664,17 +1692,29 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
               {t.pathway.map((item, idx) => (
                 <div
                   key={idx}
-                  className="rounded-2xl p-6 bg-white/5 border border-white/10 hover:border-[#C5A56A]/60 transition-all duration-300 flex flex-col justify-between space-y-4 backdrop-blur-xs group"
+                  className="rounded-2xl sm:rounded-3xl p-6 sm:p-7 bg-[#0A2214]/60 border border-[#1E432A] backdrop-blur-xs flex flex-col justify-between space-y-4 hover:border-[#D5B878]/60 transition-all duration-300 group shadow-xs"
                 >
-                  <div className="space-y-3">
-                    <span className="font-serif text-3xl font-bold text-[#C5A56A]/70 group-hover:text-[#ECCF96] transition-colors">
-                      {item.step}
-                    </span>
-                    <h3 className="font-serif text-base sm:text-lg font-bold text-white leading-snug">
+                  <div className="space-y-4">
+                    {/* Top Row: Left number circle + Right icon circle matching Photo 2 */}
+                    <div className="flex items-center justify-between">
+                      <div className="w-8 h-8 rounded-full border border-[#D5B878]/70 text-[#ECCF96] font-serif font-bold text-xs sm:text-sm flex items-center justify-center">
+                        {item.step}
+                      </div>
+                      <div className="w-10 h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-white/80 shadow-xs group-hover:scale-105 transition-transform">
+                        {idx === 0 && <FileText className="w-5 h-5 stroke-[1.8]" />}
+                        {idx === 1 && <Search className="w-5 h-5 stroke-[1.8]" />}
+                        {idx === 2 && <Users className="w-5 h-5 stroke-[1.8]" />}
+                        {idx === 3 && <Building2 className="w-5 h-5 stroke-[1.8]" />}
+                        {idx === 4 && <Plane className="w-5 h-5 stroke-[1.8]" />}
+                      </div>
+                    </div>
+
+                    <h3 className="font-serif text-lg font-bold text-white leading-snug">
                       {item.title}
                     </h3>
                   </div>
-                  <p className="text-xs text-white/75 leading-relaxed font-light">
+
+                  <p className="text-xs text-white/70 leading-relaxed font-sans mt-2">
                     {item.desc}
                   </p>
                 </div>
