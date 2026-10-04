@@ -29,6 +29,7 @@ import {
   Layers,
   Activity,
 } from "lucide-react";
+import { RegionalPresenceMap } from "@/components/sections/RegionalPresenceMap";
 
 interface ContactPageComponentProps {
   locale?: SupportedLocale;
@@ -1010,6 +1011,11 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
           </div>
         </Container>
         </div>
+
+        {/* ══════════════════════════════════════════════════════════
+            REGIONAL HEALTHCARE NETWORK & PRESENCE MAP (NRW / RHEIN-RUHR)
+        ══════════════════════════════════════════════════════════ */}
+        <RegionalPresenceMap currentLocale={locale} />
       </main>
 
       <Footer currentLocale={locale} />
