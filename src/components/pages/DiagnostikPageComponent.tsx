@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -19,6 +19,8 @@ import {
   ShieldCheck,
   Stethoscope,
   Microscope,
+  X,
+  Info,
 } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -118,6 +120,20 @@ function GoldCircleCheckIcon({ className = "w-4 h-4" }: { className?: string }) 
   );
 }
 
+export interface ProcedureModalData {
+  id: string;
+  badge: string;
+  title: string;
+  subtitle: string;
+  desc: string;
+  fullDesc: string;
+  indicationsTitle: string;
+  indications: string[];
+  standards: string;
+  image: string;
+  icon: React.ComponentType<{ className?: string }>;
+}
+
 interface Props {
   locale?: SupportedLocale;
 }
@@ -127,6 +143,26 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
   const isEn = locale === "en";
 
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const [selectedProcedure, setSelectedProcedure] = useState<ProcedureModalData | null>(null);
+
+  // Keyboard escape listener and body scroll lock for modal
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setSelectedProcedure(null);
+      }
+    }
+    if (selectedProcedure) {
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedProcedure]);
 
   const area = businessAreas.find((a) => a.slug === "diagnostik") || {
     id: "diagnostik",
@@ -170,77 +206,311 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
     ],
   };
 
-  // ── Section 1: 6 Modality Cards matching Photo 2 ──
-  const procedures = [
+  // ── Section 1: 6 Modality Cards matching Photo 1 & Client PDF ──
+  const procedures: ProcedureModalData[] = [
     {
       id: "mrt",
+      badge: "High-Field 3T",
       title: "3-Tesla MRT",
+      subtitle: isRu
+        ? "Высокоразрешающая томография мягких тканей, ЦНС и суставов"
+        : isEn
+        ? "High-Resolution Cross-Sectional MRI for Soft Tissue, CNS & Joints"
+        : "Hochauflösende 3T-Schnittbilddiagnostik für Weichteile, ZNS und Gelenke",
       desc: isRu
         ? "МРТ высокого разрешения для детальной визуализации мягких тканей и ЦНС."
         : isEn
         ? "High-resolution 3T imaging for CNS, spine, and joints."
         : "Hochauflösende 3T-Bilder für Weichteile, ZNS und Gelenke.",
+      fullDesc: isRu
+        ? "Высокопольная 3-Тесла МРТ обеспечивает максимальную пространственную детализацию без использования ионизирующего излучения. Современные многоканальные катушки и широкий туннель (70 см) гарантируют комфорт и превосходную визуализацию нервной системы, суставов, хрящей и органов брюшной полости."
+        : isEn
+        ? "University-grade 3-Tesla high-field MRI delivers outstanding spatial resolution with zero ionizing radiation. Featuring advanced multi-channel coils and a patient-friendly 70 cm wide-bore tunnel, it cleanly differentiates delicate neurovascular, cartilage, and abdominal structures."
+        : "Die 3-Tesla-Hochfeld-Magnetresonanztomographie bietet eine herausragende Bildauflösung ohne jegliche Belastung durch ionisierende Strahlung. Dank modernster Mehrkanal-Spulentechnologie und einem patientenfreundlichen Wide-Bore-Tunnel (70 cm) werden selbst feinste Strukturen des Nervensystems, des Knorpels und der Weichteile exakt differenziert.",
+      indicationsTitle: isRu ? "Ключевые показания (по PDF)" : isEn ? "Key Clinical Indications (PDF)" : "Klinische Schwerpunkte & Indikationen",
+      indications: isRu
+        ? [
+            "Головной и спинной мозг, черепно-мозговые нервы",
+            "Позвоночник, межпозвонковые диски и корешки",
+            "Крупные и мелкие суставы (коленный, плечевой, тазобедренный)",
+            "МР-ангиография сосудов головы и шеи без радиации",
+            "Онкологический поиск и стадирование мягких тканей",
+          ]
+        : isEn
+        ? [
+            "Brain, cranial nerves & spinal cord neuro-imaging",
+            "Spine, intervertebral discs & nerve roots",
+            "Major & peripheral joints (knee, shoulder, hip, ankle)",
+            "MR-Angiography of cerebral & neck vessels",
+            "Oncological staging & soft tissue lesion assessment",
+          ]
+        : [
+            "Gehirn, Hirnnerven & Rückenmark (Neuro-Imaging)",
+            "Wirbelsäule, Bandscheiben & Nervenwurzeln",
+            "Gelenkdiagnostik (Knie, Schulter, Hüfte, Sprunggelenk)",
+            "Strahlungsfreie MR-Angiographie der Hirn- & Halsgefäße",
+            "Onkologische Schnittbilddiagnostik & Weichteiltumore",
+          ],
+      standards: isRu
+        ? "100% без радиации • Телерадиологический архив PACS • Независимость врачебных решений (§ 95 SGB V)"
+        : isEn
+        ? "100% Radiation-free • Instant PACS digital transfer • Full physician autonomy (§ 95 SGB V)"
+        : "100% Strahlungsfrei • Teleradiologischer PACS-Transfer • Ärztliche Weisungsfreiheit nach § 95 SGB V",
       image: "/images/diagnostik/modality-mrt.webp",
       icon: MriScannerIcon,
     },
     {
       id: "ct",
+      badge: "Low-Dose CT",
       title: "Low-Dose CT",
+      subtitle: isRu
+        ? "Быстрая послойная 3D-томография с ультранизкой лучевой нагрузкой"
+        : isEn
+        ? "Ultra-Fast 3D Volumetric CT with Iterative Dose Reduction"
+        : "Schnelle und schonende Querschnittsbilder mit reduzierter Dosis",
       desc: isRu
         ? "Низкодозовая послойная 3D-томография скелета и внутренних органов."
         : isEn
         ? "Fast, low-radiation cross-sectional 3D imaging."
         : "Schnelle und schonende Querschnittsbilder mit reduzierter Dosis.",
+      fullDesc: isRu
+        ? "Многосрезовая компьютерная томография с алгоритмами итеративной реконструкции позволяет сократить дозу облучения до физического минимума при максимальной чёткости. За считанные секунды формируются трехмерные модели скелета, органов грудной клетки и брюшной полости."
+        : isEn
+        ? "Multi-detector computed tomography utilizing modern iterative dose-reduction algorithms minimizes radiation exposure while delivering pristine 3D cross-sectional volume data of the skeletal frame, thoracic cavity, and abdominal organs in seconds."
+        : "Unsere Computertomographie nutzt modernste iterative Rekonstruktionsalgorithmen, um die Strahlendosis auf ein absolutes Minimum zu senken. Innerhalb weniger Sekunden entstehen lückenlose dreidimensionale Bilddaten von Knochenstrukturen, Thorax und Abdomen für eine verlässliche Akut- und Verlaufsbeurteilung.",
+      indicationsTitle: isRu ? "Ключевые показания (по PDF)" : isEn ? "Key Clinical Indications (PDF)" : "Klinische Schwerpunkte & Indikationen",
+      indications: isRu
+        ? [
+            "Экстренная диагностика травм и сложных переломов",
+            "Органы грудной клетки и легкие (High-Resolution Low-Dose HRCT)",
+            "Брюшная полость, забрюшинное пространство и малый таз",
+            "КТ-ангиография артерий и сосудистых мальформаций",
+            "КТ-контроль при малоинвазивных блокадах (PRT)",
+          ]
+        : isEn
+        ? [
+            "Acute trauma & complex fracture diagnostics",
+            "Thorax & lung parenchyma (High-Resolution Low-Dose HRCT)",
+            "Abdominal, retroperitoneal & pelvic organ imaging",
+            "CT angiography of cerebral and peripheral arteries",
+            "CT-guided precision periradicular pain therapy (PRT)",
+          ]
+        : [
+            "Akute Notfalldiagnostik & komplexe Frakturabklärung",
+            "Thorax & Lungenparenchym (Low-Dose HR-CT)",
+            "Abdomen, Becken & retroperitoneale Organe",
+            "CT-Angiographie der cerebralen & peripheren Gefäße",
+            "Präzise CT-gestützte Schmerztherapie (PRT)",
+          ],
+      standards: isRu
+        ? "Нормы радиационной защиты StrlSchG • Экспресс-заключение при критических находках"
+        : isEn
+        ? "StrlSchG radiation protection • Rapid emergency turnaround protocol"
+        : "StrlSchG-konform • Dosisspar-Protokolle • Schnellbefundung bei Akutfällen",
       image: "/images/diagnostik/modality-ct.webp",
       icon: CtScannerIcon,
     },
     {
       id: "roentgen",
+      badge: "Digital Rö",
       title: isRu ? "Цифровой рентген" : isEn ? "Digital X-Ray" : "Digitales Röntgen",
+      subtitle: isRu
+        ? "Мгновенная цифровая рентгенография скелета и органов грудной клетки"
+        : isEn
+        ? "Direct Digital Radiography with Flat-Panel Detectors"
+        : "Volldigitale Röntgendiagnostik (Rö) des gesamten Bewegungsapparats",
       desc: isRu
         ? "Быстрое обследование с минимальной лучевой нагрузкой."
         : isEn
         ? "Rapid examination with minimal radiation exposure."
         : "Schnelle Untersuchung mit geringer Strahlenbelastung.",
+      fullDesc: isRu
+        ? "Плоскопанельные цифровые детекторы обеспечивают снимки скелета и грудной клетки в высоком разрешении за доли секунды. Цифровые снимки мгновенно передаются в единый защищенный архив PACS и доступны оперирующим хирургам и профильным врачам холдинга."
+        : isEn
+        ? "Direct digital flat-panel detectors yield ultra-sharp radiographs in fractions of a second with minimized radiation exposure. Radiographs are immediately transferred into the group's secure PACS for instant access by attending surgeons and physicians."
+        : "Volldigitale Festkörper-Detektoren ermöglichen strahlungsarme Aufnahmen in Sekundenbruchteilen. Die Röntgenbilder stehen sofort im digitalen PACS-Archiv zur Verfügung und können direkt von den behandelnden Fachärzten und Chirurgen der Gruppe eingesehen werden.",
+      indicationsTitle: isRu ? "Ключевые показания (по PDF)" : isEn ? "Key Clinical Indications (PDF)" : "Klinische Schwerpunkte & Indikationen",
+      indications: isRu
+        ? [
+            "Скелет, кости и суставы в физиологических проекциях",
+            "Рентгенография органов грудной клетки (сердце и легкие)",
+            "Послеоперационный контроль стояния имплантов",
+            "Ранняя диагностика артрозов, деформаций и переломов",
+          ]
+        : isEn
+        ? [
+            "Skeletal frame, bones & joints under functional load",
+            "Chest radiography (cardiopulmonary assessment)",
+            "Post-operative implant and osteosynthesis alignment",
+            "Evaluation of arthrosis, axial deformities & micro-fractures",
+          ]
+        : [
+            "Knochen, Skelett & Gelenke unter Belastung",
+            "Thoraxaufnahmen (Herz & Lunge)",
+            "Postoperative Verlaufskontrolle & Implantatsitz",
+            "Ausschluss von Frakturen, Fehlstellungen & Arthrosen",
+          ],
+      standards: isRu
+        ? "Закон о защите от излучения StrlSchG • Моментальный доступ в PACS"
+        : isEn
+        ? "German Radiation Protection Act • Instant PACS digital transmission"
+        : "Strahlenschutzverordnung • Digitale Direktauswertung • Sofortige Verfügbarkeit",
       image: "/images/diagnostik/modality-roentgen.webp",
       icon: XrayPulseIcon,
     },
     {
       id: "ultraschall",
+      badge: "3D/4D Duplex",
       title: isRu ? "УЗИ & Допплер" : isEn ? "Ultrasound & Doppler" : "Ultraschall & Doppler",
+      subtitle: isRu
+        ? "3D/4D сонография, цветовое дуплексное и допплеровское сканирование"
+        : isEn
+        ? "3D/4D Ultrasound & Color-Coded Duplex Vascular Sonography"
+        : "Medizinisch indizierte Sonographie, 3D/4D-Verfahren & Gefäßdoppler",
       desc: isRu
         ? "Бережно, надежно и универсально для органов и сосудов."
         : isEn
         ? "Gentle, reliable, and versatile application for vessels & organs."
         : "Schonend, zuverlässig und vielseitig für Organe und Gefäße.",
+      fullDesc: isRu
+        ? "Ультразвуковые аппараты экспертного класса с многочастотными датчиками обеспечивают детальную оценку органов брюшной полости, мягких тканей, щитовидной железы и сосудов. Цветовое дуплексное сканирование позволяет безошибочно оценить скорость и характер кровотока."
+        : isEn
+        ? "High-end ultrasound platforms equipped with multi-frequency probes allow pain-free, radiation-free real-time examination. Color duplex sonography accurately assesses vascular flow dynamics, vessel walls, and organ parenchymal perfusion."
+        : "Modernste Ultraschallgeräte mit hochauflösenden multifrequenten Sonden ermöglichen eine schmerz- und strahlungsfreie Untersuchung in Echtzeit. Farbcodierte Duplex- und Dopplersonographie analysieren Durchblutung, Gefäßwände und Strömungsverhältnisse präzise.",
+      indicationsTitle: isRu ? "Ключевые показания (по PDF)" : isEn ? "Key Clinical Indications (PDF)" : "Klinische Schwerpunkte & Indikationen",
+      indications: isRu
+        ? [
+            "Дуплексное сканирование сонных и позвоночных артерий",
+            "Вены нижних конечностей (исключение тромбоза и варикоза)",
+            "Органы брюшной полости (печень, желчный пузырь, почки, поджелудочная)",
+            "Щитовидная железа, лимфатические узлы и мягкие ткани",
+          ]
+        : isEn
+        ? [
+            "Duplex sonography of carotid & vertebral arteries",
+            "Lower extremity venous evaluation (DVT exclusion & varices)",
+            "Abdominal sonography (liver, gallbladder, kidneys, pancreas)",
+            "Thyroid gland, cervical soft tissue & lymph node mapping",
+          ]
+        : [
+            "Farbduplex der hirnzuführenden Gefäße (Karotis)",
+            "Beinvenen (Thromboseausschluss & Krampfadern)",
+            "Bauchorgane (Leber, Gallenwege, Nieren, Pankreas, Milz)",
+            "Schilddrüse, Halsweichteile & Lymphknotenstatus",
+          ],
+      standards: isRu
+        ? "100% без облучения • Безопасно для всех возрастов • Повторение без ограничений"
+        : isEn
+        ? "100% Radiation-free • Fully non-invasive • Unlimited repeatability"
+        : "100% strahlungsfrei • Schmerzfrei • Unbegrenzt wiederholbar",
       image: "/images/diagnostik/modality-ultraschall.webp",
       icon: UltrasoundWaveIcon,
     },
     {
       id: "neurophys",
+      badge: "EMG • ENG • EEG",
       title: isRu ? "Нейрофизиология" : isEn ? "Neurophysiology" : "Neurophysiologie",
+      subtitle: isRu
+        ? "Функциональная диагностика нервов, мышц и центральной нервной системы"
+        : isEn
+        ? "Electrophysiological Diagnostics of Nerves, Musculature & CNS"
+        : "Funktionsdiagnostik des peripheren Nervensystems, der Muskulatur und des ZNS",
       desc: isRu
         ? "ЭМГ, ЭНГ, ЭЭГ и вызванные потенциалы (VEP, AEP, SEP)."
         : isEn
         ? "EMG, ENG, EEG, and evoked potentials (VEP, AEP, SEP)."
         : "EMG, ENG, EEG und evozierte Potenziale (VEP, AEP, SEP).",
-      image: "/images/diagnostik/modality-kardio.webp",
+      fullDesc: isRu
+        ? "В соответствии с пунктом 4 PDF холдинга, отделение нейрофизиологии оснащено для объективной оценки биоэлектрической активности нервов и мышц. Электромиография (ЭМГ), электронейрография (ЭНГ), ЭЭГ и вызванные потенциалы обеспечивают выверенные неврологические диагнозы."
+        : isEn
+        ? "According to Section 4 of the holding guidelines, our neurophysiology unit provides dedicated examination suites for evaluating nerve, muscle, and CNS functions. EMG, nerve conduction velocity (ENG), EEG, and evoked potentials (AEP, VEP, SEP) support definitive clinical management."
+        : "Gemäß Punkt 4 des Holdings umfasst die Neurophysiologie spezifische Untersuchungsplätze zur objektiven Beurteilung von Nerven-, Muskel- und zentralnervösen Funktionen. Elektromyographie (EMG), Elektroneurographie (ENG), Elektroenzephalographie (EEG) und evozierte Potenziale (AEP, VEP, SEP) sichern fundierte therapeutische Entscheidungen.",
+      indicationsTitle: isRu ? "Ключевые показания (по PDF)" : isEn ? "Key Clinical Indications (PDF)" : "Klinische Schwerpunkte & Indikationen",
+      indications: isRu
+        ? [
+            "Туннельные синдромы (карпальный, кубитальный, тарзальный каналы)",
+            "Корешковые синдромы и радикулопатии при грыжах дисков",
+            "Полинейропатии (диабетические, токсические, воспалительные)",
+            "Миопатии, миастения и нервно-мышечные нарушения",
+            "ЭЭГ-диагностика эпилепсии, синкопальных состояний и головных болей",
+          ]
+        : isEn
+        ? [
+            "Nerve compression syndromes (carpal, cubital, tarsal tunnel)",
+            "Radicular root syndromes associated with disc herniations",
+            "Polyneuropathies (diabetic, metabolic, inflammatory)",
+            "Myopathies, muscular dystrophies & myasthenia gravis",
+            "EEG evaluation of seizures, syncope & chronic cephalalgia",
+          ]
+        : [
+            "Karpaltunnel- & Nervenkompressionssyndrome",
+            "Polyneuropathien & Nervenwurzelreizungen (Bandscheibenvorfälle)",
+            "Muskeldystrophien, Myopathien & Myasthenie",
+            "Epilepsieabklärung, Schwindel & ungeklärte Kopfschmerzen",
+            "Evozierte Potenziale zur Prüfung zentraler Bahnen (AEP, VEP, SEP)",
+          ],
+      standards: isRu
+        ? "Врачебная специализированная экспертиза • Прецизионная электродиагностика"
+        : isEn
+        ? "Fellowship-trained neurophysiologists • High-precision electromyography"
+        : "Fachärztliche Durchführung • Neurographische Präzisionsmessung • Leitlinienkonform",
+      image: "/images/diagnostik/modality-neurophys.webp",
       icon: NeuroPulseIcon,
     },
     {
       id: "labor",
-      title: isRu ? "Лаборатория & POCT" : isEn ? "Laboratory & POCT" : "Labordiagnostik & POCT",
+      badge: "POCT & Probenlogistik",
+      title: isRu ? "Лаборатория & Пробы" : isEn ? "Laboratory & POCT" : "Labordiagnostik & Probenmanagement",
+      subtitle: isRu
+        ? "Организация забора проб, температурная логистика и экспресс-анализы POCT"
+        : isEn
+        ? "Sample Lifecycle Management, Cold-Chain Transport & Rapid POCT"
+        : "Strukturierte Probengewinnung, lückenlose Probenlogistik & Notfall-POCT",
       desc: isRu
         ? "Клиническая химия, гематология и экспресс-анализы."
         : isEn
         ? "Clinical biochemistry, hematology, and rapid POCT markers."
         : "Klinische Chemie, Hämatologie und Point-of-Care-Diagnostik.",
+      fullDesc: isRu
+        ? "Согласно требованиям пункта 4 NabiOta Diagnostics GmbH, холдинг организует стандартизированный цикл: однозначная штрихкод-идентификация проб, забор, центрифугирование и температурная логистика. Встроенная экспресс-лаборатория POCT обеспечивает ключевые анализы за считанные минуты."
+        : isEn
+        ? "Under Section 4 of NabiOta Diagnostics GmbH, the group manages the complete sample lifecycle: barcoded sample tracking, standardized collection, pre-analytical preparation, and temperature-controlled logistics. On-site POCT testing delivers critical biomarkers within minutes."
+        : "Gemäß den Vorgaben von Punkt 4 der NabiOta Diagnostics GmbH organisiert die Gesellschaft den gesamten Probenprozess: eindeutige Probenidentifikation, qualitätsgesicherte Entnahme, sachgerechte Aufbereitung und temperaturgeführten Transport. Ein vor Ort integriertes POCT-Sofortlabor liefert vitale Laborparameter innerhalb von Minuten.",
+      indicationsTitle: isRu ? "Ключевые показания (по PDF)" : isEn ? "Key Clinical Indications (PDF)" : "Klinische Schwerpunkte & Indikationen",
+      indications: isRu
+        ? [
+            "Клиническая биохимия, развернутый анализ крови и коагулограмма",
+            "Кардиомаркеры экстренной помощи (тропонин, Д-димер, proBNP)",
+            "Маркеры системного воспаления (СРБ, прокальцитонин)",
+            "Гормональные профили, диабетические маркеры (HbA1c) и обмен веществ",
+            "Координация со специализированными аккредитованными лабораториями",
+          ]
+        : isEn
+        ? [
+            "Clinical biochemistry, comprehensive CBC & coagulation cascade",
+            "Emergency cardiac biomarkers (Troponin, D-Dimer, NT-proBNP)",
+            "Systemic inflammatory markers (CRP, procalcitonin, ESR)",
+            "Endocrine & metabolic panels (HbA1c, thyroid hormones)",
+            "Seamless transfer to accredited reference laboratory centers",
+          ]
+        : [
+            "Klinische Chemie, Großes Blutbild & Gerinnungsstatus",
+            "Kardiale Akut-Marker (Troponin, D-Dimer, NT-proBNP vor Ort)",
+            "Entzündungs- & Infektionsparameter (CRP, Procalcitonin)",
+            "Stoffwechsel-, Schilddrüsen- & Hormonprofile",
+            "Qualitätsgesicherte Probenweiterleitung an Partnerlabore",
+          ],
+      standards: isRu
+        ? "Контроль качества RiliBÄK • Штрихкодирование и верификация биоматериалов"
+        : isEn
+        ? "RiliBÄK quality assurance • End-to-end barcode chain of custody"
+        : "RiliBÄK-Qualitätssicherung • Lückenlose Barcode-Rückverfolgbarkeit • Sofortanalytik",
       image: "/images/diagnostik/modality-labor.webp",
       icon: TestTubesIcon,
     },
   ];
 
-  // ── Section 3: 4 Process Steps matching Photo 2 ──
+  // ── Section 3: 4 Process Steps matching Photo 2 & PDF ──
   const processSteps = [
     {
       num: "01",
@@ -411,7 +681,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             - Left: Eyebrow, Title, Description, Button
             - Right: 6 Modality Cards (MRT, CT, Ultraschall, Röntgen, Labor, Kardio)
         ══════════════════════════════════════════════════════════ */}
-        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-8 sm:pb-12">
+        <section className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-8 sm:pb-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
             
             {/* Left Header Column */}
@@ -453,7 +723,16 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                 return (
                   <div
                     key={proc.id}
-                    className="bg-white rounded-2xl border border-[#EDE8DE] shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.06)] transition-all duration-300 p-2 sm:p-2.5 flex flex-col justify-between group hover:-translate-y-0.5"
+                    onClick={() => setSelectedProcedure(proc)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        setSelectedProcedure(proc);
+                      }
+                    }}
+                    className="bg-white rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878]/80 shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_24px_rgba(12,43,27,0.1)] transition-all duration-300 p-2 sm:p-2.5 flex flex-col justify-between group hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none focus:ring-2 focus:ring-[#D5B878]"
                   >
                     <div>
                       {/* Compact Inset Image */}
@@ -481,13 +760,17 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                           </p>
                         </div>
 
-                        <Link
-                          href={`/${locale}/contact`}
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedProcedure(proc);
+                          }}
                           aria-label={proc.title}
-                          className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border border-[#EDE8DE] bg-[#FAF8F5] group-hover:bg-[#D5B878] group-hover:border-[#D5B878] flex items-center justify-center text-[#6E756D] group-hover:text-[#0C1C11] shrink-0 transition-all"
+                          className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border border-[#EDE8DE] bg-[#FAF8F5] group-hover:bg-[#D5B878] group-hover:border-[#D5B878] flex items-center justify-center text-[#6E756D] group-hover:text-[#0C1C11] shrink-0 transition-all cursor-pointer"
                         >
                           <ArrowRight className="w-3 h-3" />
-                        </Link>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -497,7 +780,6 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
           </div>
         </section>
 
-        {/* ══════════════════════════════════════════════════════════
         {/* ══════════════════════════════════════════════════════════
             SECTION 2 (PHOTO 3): FULL-WIDTH BANNER
             "MODERNE TECHNOLOGIE - Mehr als nur Bilder – klare Antworten."
@@ -595,7 +877,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             - Left: Eyebrow, Title, Description, Button
             - Right: 4 Connected steps directly on background with connecting line
         ══════════════════════════════════════════════════════════ */}
-        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <section className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
             {/* Left Header Area */}
@@ -684,7 +966,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             - Left (Deep Forest Green): "Fragen zur Diagnostik?" + consultation photo on right + button
             - Right (Pure White): "Was wir für Sie untersuchen können" + 2-col checklist with gold checkmarks
         ══════════════════════════════════════════════════════════ */}
-        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 pb-14 sm:pb-20">
+        <section className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 pb-14 sm:pb-20">
           <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#EDE8DE] shadow-[0_4px_24px_rgba(0,0,0,0.03)] overflow-hidden grid grid-cols-1 lg:grid-cols-12 items-stretch">
             
             {/* Left Part: Deep Forest Green with consultation photo on right */}
@@ -928,6 +1210,128 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             </div>
           </div>
         </section>
+
+        {/* ══════════════════════════════════════════════════════════
+            MODAL DIALOG: DETAILED DIAGNOSTIC MODALITY (PDF SECTION 4)
+        ══════════════════════════════════════════════════════════ */}
+        {selectedProcedure && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 md:p-6 bg-[#08170D]/80 backdrop-blur-md animate-in fade-in duration-200"
+            onClick={() => setSelectedProcedure(null)}
+          >
+            <div
+              className="relative w-full max-w-2xl bg-white rounded-2xl sm:rounded-3xl border border-[#D5B878]/40 shadow-2xl overflow-hidden max-h-[92vh] flex flex-col animate-in zoom-in-95 duration-200"
+              onClick={(e) => e.stopPropagation()}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="modal-title"
+            >
+              {/* Modal Top Header Image & Badges */}
+              <div className="relative h-44 sm:h-52 w-full overflow-hidden shrink-0 bg-[#08170D]">
+                <Image
+                  src={selectedProcedure.image}
+                  alt={selectedProcedure.title}
+                  fill
+                  className="object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#08170D] via-[#08170D]/40 to-black/30" />
+
+                {/* Close Button */}
+                <button
+                  type="button"
+                  onClick={() => setSelectedProcedure(null)}
+                  aria-label={isRu ? "Закрыть" : isEn ? "Close" : "Schließen"}
+                  className="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-[#08170D]/80 hover:bg-[#D5B878] text-white hover:text-[#08170D] border border-white/20 hover:border-[#D5B878] flex items-center justify-center transition-all duration-200 shadow-md z-10 cursor-pointer"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+
+                {/* Badge & Floating Modality Icon */}
+                <div className="absolute bottom-3 left-4 sm:left-6 right-4 sm:right-6 flex items-end justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#08170D] border border-[#D5B878] flex items-center justify-center text-[#ECCF96] shadow-lg shrink-0">
+                      {React.createElement(selectedProcedure.icon, { className: "w-5 h-5 stroke-[1.6]" })}
+                    </div>
+                    <div>
+                      <span className="inline-block px-2.5 py-0.5 rounded-full bg-[#D5B878]/90 text-[#08170D] text-[10px] sm:text-[10.5px] font-bold uppercase tracking-wider mb-1">
+                        {selectedProcedure.badge}
+                      </span>
+                      <h2 id="modal-title" className="font-serif text-xl sm:text-2xl text-white font-normal leading-tight drop-shadow-sm">
+                        {selectedProcedure.title}
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Modal Scrollable Content Body */}
+              <div className="p-5 sm:p-6 overflow-y-auto space-y-4 sm:space-y-5 text-left font-sans">
+                {/* Subtitle / Clinical Scope */}
+                <div className="bg-[#FAF8F5] border-l-3 border-[#D5B878] px-3.5 py-2.5 rounded-r-lg">
+                  <p className="text-[12px] sm:text-[13px] font-medium text-[#142318] leading-snug">
+                    {selectedProcedure.subtitle}
+                  </p>
+                </div>
+
+                {/* Full Description from PDF Section 4 */}
+                <div className="space-y-2">
+                  <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#8C948D]">
+                    {isRu ? "КЛИНИЧЕСКИЙ ПРОФИЛЬ & ИНФРАСТРУКТУРА" : isEn ? "CLINICAL PROFILE & INFRASTRUCTURE" : "KLINISCHES PROFIL & INFRASTRUKTUR"}
+                  </h4>
+                  <p className="text-xs sm:text-[13px] text-[#425246] leading-relaxed">
+                    {selectedProcedure.fullDesc}
+                  </p>
+                </div>
+
+                {/* Key Indications Checklist */}
+                <div className="space-y-2.5 pt-1">
+                  <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#8C948D]">
+                    {selectedProcedure.indicationsTitle}
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {selectedProcedure.indications.map((ind, i) => (
+                      <div key={i} className="flex items-start gap-2 bg-[#FAF8F5] p-2.5 rounded-xl border border-[#EDE8DE]">
+                        <GoldCircleCheckIcon className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+                        <span className="text-[11.5px] sm:text-xs text-[#1F2E24] leading-snug font-normal">
+                          {ind}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Regulatory & Safety Standards Bar (PDF Section 4 Requirements) */}
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-[#08170D]/5 border border-[#D5B878]/30 text-[#142318]">
+                  <ShieldCheck className="w-5 h-5 text-[#B89650] shrink-0" />
+                  <p className="text-[11px] sm:text-[11.5px] leading-tight text-[#3A4A3E]">
+                    <strong className="font-semibold text-[#142318]">{isRu ? "Стандарты безопасности: " : isEn ? "Standards & Quality: " : "Qualitäts- & Sicherheitsstandard: "}</strong>
+                    {selectedProcedure.standards}
+                  </p>
+                </div>
+              </div>
+
+              {/* Modal Footer Actions */}
+              <div className="p-4 sm:p-5 bg-[#FAF8F5] border-t border-[#EDE8DE] flex flex-col sm:flex-row items-center justify-between gap-3 shrink-0">
+                <button
+                  type="button"
+                  onClick={() => setSelectedProcedure(null)}
+                  className="w-full sm:w-auto px-5 py-2.5 rounded-full border border-[#D0C8B8] hover:bg-white text-[#556358] text-xs font-medium transition-colors cursor-pointer"
+                >
+                  {isRu ? "Закрыть окно" : isEn ? "Close window" : "Fenster schließen"}
+                </button>
+
+                <Link
+                  href={`/${locale}/contact`}
+                  onClick={() => setSelectedProcedure(null)}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#08170D] hover:bg-[#0C2B1B] text-[#ECCF96] border border-[#D5B878] text-xs font-semibold tracking-wide transition-all shadow-sm"
+                >
+                  <span>{isRu ? "Записаться на процедуру" : isEn ? "Book Examination" : "Termin für Untersuchung anfragen"}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
 
       <Footer currentLocale={locale} />
