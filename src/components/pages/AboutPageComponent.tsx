@@ -4,8 +4,20 @@ import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
-import { ChevronRight, ArrowRight, Users, Building2, CheckCircle2 } from "lucide-react";
 import { SupportedLocale } from "@/lib/i18n";
+import {
+  ChevronRight,
+  ArrowRight,
+  Users,
+  Building2,
+  CheckCircle2,
+  Stethoscope,
+  Award,
+  ShieldCheck,
+  HeartHandshake,
+  GraduationCap,
+  Scale,
+} from "lucide-react";
 
 interface AboutPageComponentProps {
   locale?: SupportedLocale;
@@ -334,6 +346,42 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isEn
       ? "The holding handles administrative, IT, and facility management without interfering in clinical care. The medical directorship of each facility remains completely autonomous in all healthcare matters."
       : "Die medizinischen Einrichtungen bleiben für Behandlungsentscheidungen, Diagnostik und ärztliche Organisation eigenverantwortlich. Die medizinische Weisungsfreiheit der ärztlichen Leitung eines MVZ bleibt uneingeschränkt gewahrt (§ 95 SGB V).",
+
+    // Section 3B: Medical Leadership & Founder (PDF Pages 2-4)
+    leadershipEyebrow: isRu ? "ВРАЧЕБНОЕ РУКОВОДСТВО И ОСНОВАТЕЛЬ" : isEn ? "MEDICAL LEADERSHIP & FOUNDER" : "ÄRZTLICHE FÜHRUNG & GRÜNDER",
+    leadershipHeading1: isRu ? "Ответственная медицина" : isEn ? "Responsible Healthcare" : "Verantwortungsvolle Medizin",
+    leadershipHeading2: isRu ? "под руководством врачей." : isEn ? "Led by Physicians." : "durch ärztliche Führung.",
+    leadershipSubtitle: isRu
+      ? "Фундамент NabiOta® Health Group Germany основан на клиническом авторитете и статусе врача-учредителя (Gründungsberechtigter Vertragsarzt). Медицинский совет гарантирует превосходство в лечении, свободное от коммерческого давления."
+      : isEn
+      ? "The bedrock of NabiOta® Health Group Germany rests upon clinical integrity and the statutory founder status of licensed physicians. Our clinical board guarantees superior standards of care independent of purely commercial return pressures."
+      : "Das Fundament der NabiOta® Health Group Germany basiert auf der klinischen Exzellenz und der gesetzlichen Gründungsberechtigung niedergelassener Vertragsärzte. Die medizinische Leitung sichert höchste Behandlungsqualität frei von rein ökonomischem Renditedruck.",
+
+    founderName: "Dr. Fischer-Rahimov",
+    founderRole: isRu ? "Врач-учредитель & Медицинский куратор Фазы 1" : isEn ? "Founding Statutory Physician & Phase 1 Medical Sponsor" : "Gründungsberechtigter Vertragsarzt & Medizinischer Schirmherr",
+    founderBadge: "§ 95 Abs. 1a SGB V",
+    founderBio1: isRu
+      ? "Как лицензированный врач с многолетним опытом практики в Рейнланде, Dr. Fischer-Rahimov представляет собой ключевой профессиональный и правовой ориентир в первой фазе создания группы. Его авторитет и врачебная лицензия послужили юридическим фундаментом для развертывания сети амбулаторных центров MVZ."
+      : isEn
+      ? "As a licensed statutory health insurance physician with decades of regional medical practice in the Rhineland, Dr. Fischer-Rahimov anchors the clinical and regulatory foundation of the holding's initial growth phase, providing the legal prerequisite for the MVZ network."
+      : "Als niedergelassener Vertragsarzt und langjährig praktizierender Mediziner im Rheinland bildet Dr. Fischer-Rahimov den berufs- und kassenarztrechtlichen Ankerpunkt der ersten Wachstumsphase. Seine Praxis und sein Renommee schufen die gesetzliche Basis für die Initiierung des MVZ-Verbundes.",
+    founderBio2: isRu
+      ? "Его цель — объединить традиционные ценности немецкой врачебной этики, персональное внимание к пациенту и современные технологии многопрофильного амбулаторного лечения."
+      : isEn
+      ? "His vision unites traditional physician ethics, personalized patient trust, and cutting-edge multidisciplinary outpatient infrastructure."
+      : "Sein Leitmotiv verbindet die bewährten Tugenden des ärztlichen Standesethos mit innovativen fachübergreifenden Versorgungskonzepten zum Wohle jedes einzelnen Patienten.",
+    founderPoints: [
+      isRu ? "Прямое участие врача в капитале MVZ по закону SGB V" : isEn ? "Direct physician equity in MVZ under § 95 SGB V" : "Unmittelbare vertragsärztliche Beteiligung an den MVZ",
+      isRu ? "Гарантия полной терапевтической свободы персонала" : isEn ? "Guaranteed clinical autonomy for all medical staff" : "Volle Wahrung der ärztlichen Weisungsfreiheit",
+      isRu ? "Тесное партнерство с KV Nordrhein и больничными кассами" : isEn ? "Close integration with KV Nordrhein and insurers" : "Enge Abstimmung mit der Kassenärztlichen Vereinigung Nordrhein",
+    ],
+
+    boardTitle: isRu ? "Врачебный совет и клинические стандарты" : isEn ? "Medical Advisory Board & Clinical Standards" : "Der Ärztliche Beirat & Klinische Governance",
+    boardDesc: isRu
+      ? "Коллегиальный орган из ведущих практикующих врачей холдинга, определяющий клинические протоколы, контролирующий безопасность пациентов и развивающий образовательные программы."
+      : isEn
+      ? "A collegial board of leading senior clinicians that defines evidence-based pathways, oversees patient safety, and guides residency programs."
+      : "Das interdisziplinäre Kollegium aus leitenden Fachärzten sichert die einheitliche Behandlungsqualität nach aktuellen Leitlinien und steuert die Weiterbildung.",
 
     valuesEyebrow: isRu ? "НАШИ ЦЕННОСТИ" : isEn ? "UNSERE WERTE" : "UNSERE WERTE",
     valuesHeading: isRu ? "Что делает нас особенными." : isEn ? "Das macht uns besonders." : "Das macht uns besonders.",
@@ -978,6 +1026,194 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                 <div className="space-y-4 text-[13.5px] sm:text-[14.5px] text-[#4E5650] leading-[1.72] font-sans">
                   <p>{t.rootsP1}</p>
                   <p>{t.rootsP2}</p>
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* ══════════════════════════════════════════════════════════
+            SECTION 3B: ÄRZTLICHE FÜHRUNG & GRÜNDERTEAM (PDF Pages 2-4)
+        ══════════════════════════════════════════════════════════ */}
+        <section className="py-16 sm:py-20 lg:py-24 bg-[#FAF7F2] border-b border-[#ECE7DC] relative overflow-hidden">
+          {/* Subtle ambient lighting */}
+          <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-[#EBDDC0]/20 blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-[#D5B878]/15 blur-3xl pointer-events-none" />
+
+          <Container size="wide" className="relative z-10">
+            {/* Section Header */}
+            <div className="max-w-3xl mb-12 sm:mb-16">
+              <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase mb-2 block">
+                {t.leadershipEyebrow}
+              </span>
+              <h2 className="font-serif text-[32px] sm:text-[38px] lg:text-[44px] font-normal leading-[1.14] text-[#142318] mb-4">
+                {t.leadershipHeading1}{" "}
+                <span className="italic text-[#8B7347]">{t.leadershipHeading2}</span>
+              </h2>
+              <p className="text-[13.5px] sm:text-[14.5px] text-[#555E56] leading-relaxed font-sans">
+                {t.leadershipSubtitle}
+              </p>
+            </div>
+
+            {/* Main Founder Spotlight Card */}
+            <div className="bg-white rounded-3xl p-6 sm:p-9 lg:p-11 border border-[#E7DFD2] shadow-sm mb-10 sm:mb-12 relative overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                {/* Left Column: Doctor Profile & Credentials */}
+                <div className="lg:col-span-7 space-y-4">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-[#F3EDE2] text-[#8B7347] border border-[#D5B878]/40">
+                      {t.founderBadge}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 text-xs text-[#2C3E31] font-medium">
+                      <Scale className="w-3.5 h-3.5 text-[#B89650]" />
+                      <span>{isRu ? "Право учредителя по закону SGB V" : isEn ? "Statutory Physician Status" : "Kassenarztrechtlicher Status"}</span>
+                    </span>
+                  </div>
+
+                  <div>
+                    <h3 className="font-serif text-2xl sm:text-3xl lg:text-[32px] font-bold text-[#142318] leading-tight">
+                      {t.founderName}
+                    </h3>
+                    <p className="text-sm sm:text-[15px] font-medium text-[#8B7347] mt-1 font-sans">
+                      {t.founderRole}
+                    </p>
+                  </div>
+
+                  <div className="space-y-3 text-[13px] sm:text-[14px] text-[#4E5650] leading-relaxed font-sans pt-1">
+                    <p>{t.founderBio1}</p>
+                    <p>{t.founderBio2}</p>
+                  </div>
+
+                  <div className="pt-3 border-t border-[#F0EBE1] space-y-2">
+                    {t.founderPoints.map((point: string, idx: number) => (
+                      <div key={idx} className="flex items-start gap-2.5 text-[12.5px] sm:text-[13px] text-[#2C3E31] font-medium">
+                        <CheckCircle2 className="w-4 h-4 text-[#8B7347] shrink-0 mt-0.5" />
+                        <span>{point}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right Column: Founder Stat Highlight Box */}
+                <div className="lg:col-span-5 bg-[#FAF7F2] rounded-2xl p-6 sm:p-7 border border-[#E7DFD2] space-y-5">
+                  <div className="w-12 h-12 rounded-full border border-[#D5B878] bg-white flex items-center justify-center text-[#B89650] shadow-xs">
+                    <Stethoscope className="w-6 h-6 stroke-[1.8]" />
+                  </div>
+                  <div>
+                    <h4 className="font-serif text-lg font-bold text-[#142318] mb-1.5">
+                      {isRu ? "Медицинский якорь Фазы 1" : isEn ? "Phase 1 Medical Anchor" : "Vertragsärztlicher Anker"}
+                    </h4>
+                    <p className="text-xs sm:text-[13px] text-[#555E56] leading-relaxed">
+                      {isRu
+                        ? "Прямое владение долями MVZ врачом-учредителем гарантирует безупречную юридическую легитимность перед Kassenärztliche Vereinigung Nordrhein."
+                        : isEn
+                        ? "Direct MVZ equity held by the licensed founding physician establishes unequivocal regulatory legitimacy with KV Nordrhein."
+                        : "Die unmittelbare MVZ-Beteiligung des Gründungsarztes sichert die vollständige berufsrechtliche Legitimation gegenüber der KV Nordrhein."}
+                    </p>
+                  </div>
+                  <div className="p-4 rounded-xl bg-white border border-[#E7DFD2] text-xs text-[#2C3E31] space-y-1">
+                    <div className="font-bold text-[#142318]">
+                      {isRu ? "Институциональная защита" : isEn ? "Institutional Protection" : "Standesrechtlicher Schutz"}
+                    </div>
+                    <p className="text-[#555E56] text-[11.5px] leading-snug">
+                      {isRu
+                        ? "Холдинг не вправе давать медицинские указания врачебному руководству."
+                        : isEn
+                        ? "Corporate holding entities are legally barred from clinical directives."
+                        : "Keine kaufmännischen Weisungsrechte gegenüber der ärztlichen Leitung."}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Medical Advisory Board (Der Ärztliche Beirat) */}
+            <div className="bg-gradient-to-br from-[#07160D] via-[#0C2417] to-[#07160D] text-white rounded-3xl p-6 sm:p-9 lg:p-11 border border-[#D5B878]/30 shadow-xl relative overflow-hidden">
+              <div className="max-w-3xl mb-8 sm:mb-10">
+                <div className="flex items-center gap-2 text-[#ECCF96] text-xs font-bold uppercase tracking-wider mb-2">
+                  <Award className="w-4 h-4 stroke-[2]" />
+                  <span>{isRu ? "Клиническая коллегия холдинга" : isEn ? "Holding Clinical Governance" : "Klinisches Qualitätskollegium"}</span>
+                </div>
+                <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal mb-2 leading-snug">
+                  {t.boardTitle}
+                </h3>
+                <p className="text-xs sm:text-sm text-[#C2D2C5] leading-relaxed">
+                  {t.boardDesc}
+                </p>
+              </div>
+
+              {/* 4 Pillars of Medical Advisory Board */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+                <div className="bg-[#0A1F13]/90 rounded-2xl p-5 border border-[#D5B878]/25 flex flex-col justify-between">
+                  <div>
+                    <div className="w-8 h-8 rounded-full border border-[#D5B878]/50 bg-[#122B1B] text-[#ECCF96] flex items-center justify-center mb-3">
+                      <Stethoscope className="w-4 h-4" />
+                    </div>
+                    <h5 className="font-serif text-sm font-bold text-white mb-1.5">
+                      {isRu ? "Терапевтическая свобода" : isEn ? "Clinical Autonomy" : "Freie Therapiewahl"}
+                    </h5>
+                    <p className="text-[11.5px] text-[#A6B8AA] leading-relaxed">
+                      {isRu
+                        ? "Строгое следование врачебному долгу без навязанных планов по процедурам."
+                        : isEn
+                        ? "Strict adherence to medical duty without commercial treatment quotas."
+                        : "Keine ökonomischen Fallzahl- oder Therapievorgaben für behandelnde Ärzte."}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-[#0A1F13]/90 rounded-2xl p-5 border border-[#D5B878]/25 flex flex-col justify-between">
+                  <div>
+                    <div className="w-8 h-8 rounded-full border border-[#D5B878]/50 bg-[#122B1B] text-[#ECCF96] flex items-center justify-center mb-3">
+                      <ShieldCheck className="w-4 h-4" />
+                    </div>
+                    <h5 className="font-serif text-sm font-bold text-white mb-1.5">
+                      {isRu ? "Качество AWMF & CIRS" : isEn ? "AWMF & CIRS Guidelines" : "AWMF-Leitlinien & CIRS"}
+                    </h5>
+                    <p className="text-[11.5px] text-[#A6B8AA] leading-relaxed">
+                      {isRu
+                        ? "Междисциплинарные консилиумы и система контроля инцидентов CIRS."
+                        : isEn
+                        ? "Regular case conferences and active clinical incident reporting."
+                        : "Interdisziplinäre Qualitätszirkel und systematisches CIRS-Fehlermeldesystem."}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-[#0A1F13]/90 rounded-2xl p-5 border border-[#D5B878]/25 flex flex-col justify-between">
+                  <div>
+                    <div className="w-8 h-8 rounded-full border border-[#D5B878]/50 bg-[#122B1B] text-[#ECCF96] flex items-center justify-center mb-3">
+                      <GraduationCap className="w-4 h-4" />
+                    </div>
+                    <h5 className="font-serif text-sm font-bold text-white mb-1.5">
+                      {isRu ? "Обучение ординаторов" : isEn ? "Residency Training" : "Facharzt-Weiterbildung"}
+                    </h5>
+                    <p className="text-[11.5px] text-[#A6B8AA] leading-relaxed">
+                      {isRu
+                        ? "Официальные полномочия на подготовку молодых специалистов в MVZ."
+                        : isEn
+                        ? "Accredited residency authorizations for junior doctors across our MVZ network."
+                        : "Akkreditierte Weiterbildungsbefugnisse zur Ausbildung junger Mediziner."}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-[#0A1F13]/90 rounded-2xl p-5 border border-[#D5B878]/25 flex flex-col justify-between">
+                  <div>
+                    <div className="w-8 h-8 rounded-full border border-[#D5B878]/50 bg-[#122B1B] text-[#ECCF96] flex items-center justify-center mb-3">
+                      <HeartHandshake className="w-4 h-4" />
+                    </div>
+                    <h5 className="font-serif text-sm font-bold text-white mb-1.5">
+                      {isRu ? "Сквозные консилиумы" : isEn ? "Interdisciplinary Care" : "Sektorübergreifend"}
+                    </h5>
+                    <p className="text-[11.5px] text-[#A6B8AA] leading-relaxed">
+                      {isRu
+                        ? "Прямой диалог терапевтов, хирургов, диагностов и службы реабилитации."
+                        : isEn
+                        ? "Direct communication between primary care, surgeons, imaging, and rehab."
+                        : "Direkte Abstimmung zwischen Hausärzten, Operateuren, Diagnostik und Reha."}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

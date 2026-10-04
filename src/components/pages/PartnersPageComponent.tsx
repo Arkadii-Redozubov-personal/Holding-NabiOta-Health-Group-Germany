@@ -24,6 +24,8 @@ import {
   Sparkles,
   ChevronRight,
   Award,
+  Printer,
+  Briefcase,
 } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -792,13 +794,13 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
 
               <div className="space-y-1 sm:space-y-2">
                 <div className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#ECCF96]">
-                  6
+                  10
                 </div>
                 <div className="text-xs sm:text-sm font-semibold text-white">
-                  {isRu ? "Бизнес-направлений" : isEn ? "Core Business Divisions" : "Unternehmensbereiche"}
+                  {isRu ? "Дочерних обществ" : isEn ? "Group Subsidiaries" : "Tochtergesellschaften"}
                 </div>
                 <div className="text-[11px] text-white/70">
-                  {isRu ? "От MVZ до девелопмента" : isEn ? "From primary care to real estate" : "Integrierte Wertschöpfung"}
+                  {isRu ? "3 стратегические ветви" : isEn ? "3 strategic branches" : "3 strategische Säulen"}
                 </div>
               </div>
 
@@ -878,6 +880,251 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                   </div>
                 </div>
               ))}
+            </div>
+          </Container>
+        </section>
+
+        {/* ========================================================================= */}
+        {/* SECTION 5B: OFFICIAL HOLDING FACTSHEET (INTERACTIVE INVESTOR MEMORANDUM)  */}
+        {/* ========================================================================= */}
+        <section id="factsheet" className="py-16 sm:py-20 bg-white border-t border-[#EAE4D7] relative overflow-hidden">
+          <Container>
+            {/* Header with Print / PDF Action */}
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12">
+              <div className="space-y-2.5 max-w-2xl">
+                <span className="text-xs font-semibold tracking-[0.2em] text-[#B8934A] uppercase font-sans block">
+                  {isRu ? "ОФИЦИАЛЬНЫЙ ФАКТШИТ ХОЛДИНГА" : isEn ? "OFFICIAL HOLDING FACTSHEET" : "OFFIZIELLES HOLDING-FACTSHEET"}
+                </span>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0B2516] leading-tight">
+                  {isRu
+                    ? "NabiOta® Health Group Germany на одном листе"
+                    : isEn
+                    ? "NabiOta® Health Group Germany at a Glance"
+                    : "NabiOta® Health Group Germany auf einen Blick"}
+                </h2>
+                <p className="text-xs sm:text-sm text-[#4A5D52] leading-relaxed">
+                  {isRu
+                    ? "Институциональный меморандум для врачей, клиник-партнеров, банков и финансовых инвесторов. Полная юридическая прозрачность."
+                    : isEn
+                    ? "Institutional memorandum for physicians, clinical partners, banks, and healthcare investors. 100% corporate transparency."
+                    : "Kompaktes institutionelles Memorandum für Ärzte, Kliniken, Banken und Investoren. Vollständige unternehmerische Transparenz."}
+                </p>
+              </div>
+
+              <div className="flex items-center gap-3 shrink-0">
+                <button
+                  type="button"
+                  onClick={() => typeof window !== "undefined" && window.print()}
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-[#D5B878] text-[#8C6D37] hover:bg-[#FAF7F2] text-xs font-semibold uppercase tracking-wider transition-colors shadow-2xs cursor-pointer"
+                >
+                  <Printer className="w-4 h-4 text-[#8C6D37]" />
+                  <span>{isRu ? "Печать / Экспорт в PDF" : isEn ? "Print / Save as PDF" : "Factsheet drucken / PDF"}</span>
+                </button>
+                <Link
+                  href={`/${locale}/contact`}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0B2516] text-[#ECCF96] hover:bg-[#123620] text-xs font-semibold uppercase tracking-wider transition-colors shadow-xs"
+                >
+                  <span>{isRu ? "Запросить меморандум" : isEn ? "Request Dossier" : "Dossier anfordern"}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Factsheet Document Layout */}
+            <div className="bg-[#FAF8F4] rounded-3xl p-6 sm:p-9 lg:p-11 border border-[#DECDB5] shadow-md relative">
+              {/* Document Header Band */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-8 border-b border-[#E3D9C9] gap-4">
+                <div>
+                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#B8934A] mb-1">
+                    <Briefcase className="w-4 h-4" />
+                    <span>Unternehmensprofil & Investoren-Factsheet</span>
+                  </div>
+                  <h3 className="font-serif text-2xl sm:text-3xl text-[#0B2516] font-bold">
+                    NabiOta® Health Group Germany GmbH
+                  </h3>
+                  <p className="text-xs text-[#55665C] mt-1">
+                    Amtsgericht Mönchengladbach HRB 16787 • Aachener Str. 114, 41061 Mönchengladbach
+                  </p>
+                </div>
+                <div className="sm:text-right shrink-0">
+                  <span className="inline-block px-3 py-1 rounded-md bg-[#0B2516] text-[#ECCF96] text-[11px] font-bold uppercase tracking-wider">
+                    Status: 2026/2027
+                  </span>
+                  <p className="text-[11px] text-[#717E76] mt-1">
+                    {isRu ? "Уставный капитал: 50.000 € (внесен)" : isEn ? "Capital: 50,000 € fully paid" : "Stammkapital: 50.000 € voll erbracht"}
+                  </p>
+                </div>
+              </div>
+
+              {/* 4 Overview Mini-Cards */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div className="bg-white p-4 rounded-xl border border-[#E8E2D6] shadow-xs">
+                  <span className="text-[10.5px] uppercase tracking-wider text-[#8A764A] block mb-1 font-semibold">
+                    {isRu ? "Правовая форма" : isEn ? "Legal Entity" : "Rechtsform"}
+                  </span>
+                  <span className="font-serif text-lg font-bold text-[#0B2516]">
+                    GmbH (Holding)
+                  </span>
+                  <p className="text-[11px] text-[#69786F] mt-0.5">
+                    {isRu ? "Частный холдинг" : isEn ? "Owner-managed" : "Inhabergeführt"}
+                  </p>
+                </div>
+
+                <div className="bg-white p-4 rounded-xl border border-[#E8E2D6] shadow-xs">
+                  <span className="text-[10.5px] uppercase tracking-wider text-[#8A764A] block mb-1 font-semibold">
+                    {isRu ? "Дочерние общества" : isEn ? "Subsidiaries" : "Tochtergesellschaften"}
+                  </span>
+                  <span className="font-serif text-lg font-bold text-[#0B2516]">
+                    10 Unternehmen
+                  </span>
+                  <p className="text-[11px] text-[#69786F] mt-0.5">
+                    {isRu ? "3 кластера" : isEn ? "3 core clusters" : "3 Säulen"}
+                  </p>
+                </div>
+
+                <div className="bg-white p-4 rounded-xl border border-[#E8E2D6] shadow-xs">
+                  <span className="text-[10.5px] uppercase tracking-wider text-[#8A764A] block mb-1 font-semibold">
+                    {isRu ? "Врач-основатель" : isEn ? "Medical Founder" : "Gründer / Vertragsarzt"}
+                  </span>
+                  <span className="font-serif text-lg font-bold text-[#0B2516]">
+                    Dr. Fischer-Rahimov
+                  </span>
+                  <p className="text-[11px] text-[#69786F] mt-0.5">
+                    {isRu ? "Врач-учредитель MVZ" : isEn ? "Statutory Physician" : "Vertragsärztlicher Anker"}
+                  </p>
+                </div>
+
+                <div className="bg-white p-4 rounded-xl border border-[#E8E2D6] shadow-xs">
+                  <span className="text-[10.5px] uppercase tracking-wider text-[#8A764A] block mb-1 font-semibold">
+                    {isRu ? "Ключевой стандарт" : isEn ? "Core Standard" : "Governance-Standard"}
+                  </span>
+                  <span className="font-serif text-lg font-bold text-[#0B2516]">
+                    § 95 SGB V / CIRS
+                  </span>
+                  <p className="text-[11px] text-[#69786F] mt-0.5">
+                    {isRu ? "Врачебная свобода" : isEn ? "Clinical Autonomy" : "Freie Therapiewahl"}
+                  </p>
+                </div>
+              </div>
+
+              {/* Multi-Section Details Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                {/* Branch 1 */}
+                <div className="bg-white p-5 sm:p-6 rounded-2xl border border-[#E8E2D6] flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="w-6 h-6 rounded-full bg-[#0B2516] text-[#ECCF96] text-xs font-bold flex items-center justify-center">1</span>
+                      <h4 className="font-serif text-base font-bold text-[#0B2516]">
+                        {isRu ? "Амбулаторная и стационарная медицина" : isEn ? "Outpatient & Inpatient Clinical Care" : "Ambulante & Stationäre Versorgung"}
+                      </h4>
+                    </div>
+                    <ul className="space-y-2 text-xs text-[#44554A]">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B8934A] shrink-0 mt-0.5" />
+                        <span><strong>NabiOta MVZ Hausarzt & Internist:</strong> Allgemeinmedizin, Kardiologie, Neurologie</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B8934A] shrink-0 mt-0.5" />
+                        <span><strong>NabiOta MVZ Chirurgie:</strong> Orthopädie, Unfall-, Neuro-, Allgemeinchirurgie & OP-Zentrum</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B8934A] shrink-0 mt-0.5" />
+                        <span><strong>NabiOta Klinik Germany GmbH:</strong> Fachkrankenhaus nach § 30 GewO</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B8934A] shrink-0 mt-0.5" />
+                        <span><strong>NabiOta Rehabilitation & Therapy:</strong> Physio, Ergo, Logopädie & 32°C Bewegungsbad</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="pt-3 mt-4 border-t border-[#F0ECE1] text-[11px] text-[#717E76]">
+                    Rechtsgrundlage: § 95 SGB V / § 30 GewO
+                  </div>
+                </div>
+
+                {/* Branch 2 */}
+                <div className="bg-white p-5 sm:p-6 rounded-2xl border border-[#E8E2D6] flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="w-6 h-6 rounded-full bg-[#0B2516] text-[#ECCF96] text-xs font-bold flex items-center justify-center">2</span>
+                      <h4 className="font-serif text-base font-bold text-[#0B2516]">
+                        {isRu ? "Диагностика и сестринский уход" : isEn ? "Diagnostics & Nursing Infrastructure" : "Diagnostik & Pflegerische Infrastruktur"}
+                      </h4>
+                    </div>
+                    <ul className="space-y-2 text-xs text-[#44554A]">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B8934A] shrink-0 mt-0.5" />
+                        <span><strong>NabiOta Diagnostics GmbH:</strong> 3T-MRT, Low-Dose-CT, Röntgen, 3D/4D-Sono</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B8934A] shrink-0 mt-0.5" />
+                        <span><strong>Neurophysiologie & Labor:</strong> EMG, ENG, EEG, EP & teleradiologische Befundung</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B8934A] shrink-0 mt-0.5" />
+                        <span><strong>NabiOta HomeCare GmbH:</strong> Häusliche Krankenpflege nach SGB V & Grundpflege SGB XI</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B8934A] shrink-0 mt-0.5" />
+                        <span><strong>Wundzentrum:</strong> Zertifizierte Behandlung chronischer & postoperativer Wunden</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="pt-3 mt-4 border-t border-[#F0ECE1] text-[11px] text-[#717E76]">
+                    Rechtsgrundlage: G-BA / RKI / SGB V & XI
+                  </div>
+                </div>
+
+                {/* Branch 3 */}
+                <div className="bg-white p-5 sm:p-6 rounded-2xl border border-[#E8E2D6] flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="w-6 h-6 rounded-full bg-[#0B2516] text-[#ECCF96] text-xs font-bold flex items-center justify-center">3</span>
+                      <h4 className="font-serif text-base font-bold text-[#0B2516]">
+                        {isRu ? "Снабжение, персонал и недвижимость" : isEn ? "Supply Chain, Talent & Real Estate" : "Versorgung, Fachkräfte & Immobilien"}
+                      </h4>
+                    </div>
+                    <ul className="space-y-2 text-xs text-[#44554A]">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B8934A] shrink-0 mt-0.5" />
+                        <span><strong>NabiOta Sanitätshaus GmbH:</strong> Orthopädie, Bandagen, Pflegebetten, PG 54</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B8934A] shrink-0 mt-0.5" />
+                        <span><strong>NabiOta Pharmacy:</strong> Klinik-Arzneimittelversorgung nach § 14 ApoG</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B8934A] shrink-0 mt-0.5" />
+                        <span><strong>Medical Recruitment Services:</strong> Approbationsbegleitung & Fachkräftesicherung</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B8934A] shrink-0 mt-0.5" />
+                        <span><strong>NabiOta Real Estate GmbH:</strong> Projektentwicklung von Praxen & OP-Zentren</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="pt-3 mt-4 border-t border-[#F0ECE1] text-[11px] text-[#717E76]">
+                    Rechtsgrundlage: § 14 ApoG / §§ 126, 127 SGB V
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Regulatory Disclaimer & Direct Contact */}
+              <div className="pt-5 border-t border-[#E3D9C9] flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-[#526359]">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-[#8C6D37]" />
+                  <span>
+                    {isRu
+                      ? "Все данные верифицированы корпоративными юристами и аудиторскими заключениями холдинга."
+                      : isEn
+                      ? "All corporate metrics verified by legal counsel and statutory holding auditor filings."
+                      : "Geprüfte Angaben gemäß Handelsregisterauszug, Gesellschaftervertrag und regulatorischem Rahmen."}
+                  </span>
+                </div>
+                <div className="text-[11px] text-[#717E76]">
+                  Holding-Zentrale: Aachener Str. 114, 41061 Mönchengladbach • holding@nabiota.de
+                </div>
+              </div>
             </div>
           </Container>
         </section>
