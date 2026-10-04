@@ -648,59 +648,74 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
 
         {/* ══════════════════════════════════════════════════════════
             SECTION 3: CORE CAPABILITIES & GROUP ADVANTAGES CARDS
-            - Redesigned into premium editorial corporate layout matching reference
-            - Left: Struktur der Fachbereiche & Zentren with integrated stethoscope photo
-            - Right: Ihre Vorteile im Verbund with botanical branch & statistics row
-            - Divider & centered heading
-            - Bottom: 3 compact company cards in a single row
+            - Redesigned into premium editorial corporate layout matching reference photos
+            - Left: Struktur der Fachbereiche & Zentren with enlarged emblem, thin green curved arc, soft blur & stethoscope photo
+            - Right: Ihre Vorteile im Verbund with enlarged advantage icons/text & prominent stats
+            - Middle: Centered group heading
+            - Bottom: 3 company cards with enlarged icons and compact height
         ══════════════════════════════════════════════════════════ */}
-        <section className="py-10 sm:py-14 lg:py-16 bg-[#FAF8F5] border-t border-[#EDE8DE]/60">
-          <Container size="wide">
+        <section className="py-12 sm:py-16 lg:py-20 bg-[#FAF8F5] border-t border-[#EDE8DE]/60">
+          <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
             {/* Top Two Feature Cards Side by Side */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-7 items-stretch">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-stretch">
               {/* Card 1: Core Capabilities ("Struktur der Fachbereiche & Zentren") */}
-              <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#EDE8DE] shadow-[0_4px_24px_rgba(0,0,0,0.03)] relative overflow-hidden flex flex-col justify-between p-6 sm:p-8 min-h-[460px]">
-                {/* Right Side: Organic Stethoscope Photo & Dark Emblem */}
-                <div className="absolute top-0 right-0 bottom-0 w-[36%] sm:w-[40%] pointer-events-none overflow-hidden select-none">
+              <div className="bg-white rounded-[26px] sm:rounded-[28px] border border-[#EDE8DE] shadow-[0_4px_24px_rgba(0,0,0,0.03)] relative overflow-hidden flex flex-col justify-between p-7 sm:p-9 lg:p-10 min-h-[500px] sm:min-h-[520px]">
+                {/* Right Side: Organic Stethoscope Photo with soft blur and thin green arc */}
+                <div className="absolute top-0 right-0 bottom-0 w-[40%] sm:w-[44%] lg:w-[46%] pointer-events-none overflow-hidden select-none">
                   <div className="relative w-full h-full">
                     <Image
                       src="/images/areas/stethoscope-clinic.webp"
                       alt="Klinische Umgebung und Stethoskop"
                       fill
                       className="object-cover object-center"
+                      priority
                     />
                     {/* Soft gradient fade into white card background */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-white via-white/30 to-transparent" />
-                    <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent" />
-                    {/* Organic curved shape boundary */}
-                    <div className="absolute inset-0 rounded-l-[100px] border-l border-white/50 pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-white via-white/45 to-transparent" />
+                    {/* Delicate blur transition on the left edge of photo */}
+                    <div className="absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-white via-white/80 to-transparent backdrop-blur-[2px]" />
+
+                    {/* Thin delicate green curved outline/arc seamlessly framing the photo */}
+                    <svg
+                      className="absolute inset-0 w-full h-full pointer-events-none z-10"
+                      viewBox="0 0 300 600"
+                      preserveAspectRatio="none"
+                      fill="none"
+                    >
+                      <path
+                        d="M 68 85 C 10 180, 25 380, 160 600"
+                        stroke="#1C452F"
+                        strokeWidth="1.2"
+                        strokeOpacity="0.45"
+                      />
+                    </svg>
                   </div>
 
-                  {/* Dark Green Holding Emblem anchored near top-left of photo */}
-                  <div className="absolute top-6 left-2 sm:left-4 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#0E2718] border border-[#D5B878]/70 flex items-center justify-center text-[#ECCF96] shadow-lg z-10">
-                    <Building2 className="w-5 h-5 stroke-[1.6]" />
+                  {/* Large Dark Green Holding Emblem anchored near top-left of the curved boundary */}
+                  <div className="absolute top-6 left-3 sm:left-5 w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 rounded-full bg-[#0D2D1C] border border-[#D5B878]/80 flex items-center justify-center text-[#ECCF96] shadow-xl z-20">
+                    <Building2 className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 stroke-[1.5]" />
                   </div>
                 </div>
 
-                {/* Content Layer (Left ~64%) */}
-                <div className="relative z-10 max-w-[65%] sm:max-w-[64%] flex flex-col justify-between h-full">
+                {/* Content Layer (Left ~60%) */}
+                <div className="relative z-10 max-w-[62%] sm:max-w-[60%] flex flex-col justify-between h-full">
                   <div>
                     {/* Top small category label */}
-                    <span className="inline-block text-[9px] sm:text-[9.5px] font-bold uppercase tracking-wider text-[#DEC085] bg-[#0E2718] px-3.5 py-1 rounded-full mb-3.5 font-sans">
+                    <span className="inline-block text-[9.5px] sm:text-[10px] font-bold uppercase tracking-wider text-[#DEC085] bg-[#0E2718] px-4 py-1.5 rounded-full mb-3.5 font-sans">
                       {isRu ? "МЕДИЦИНСКАЯ ПОМОЩЬ" : isEn ? "MEDICAL CARE" : "MEDIZINISCHE VERSORGUNG"}
                     </span>
 
                     {/* Main Heading */}
-                    <h3 className="font-serif text-2xl sm:text-[27px] lg:text-[30px] text-[#142318] font-normal leading-[1.18] mb-4">
+                    <h3 className="font-serif text-[26px] sm:text-[30px] lg:text-[34px] text-[#142318] font-normal leading-[1.18] mb-4.5">
                       {overviewData.capabilitiesTitle}
                     </h3>
 
                     {/* 5 Bullet Points */}
-                    <div className="space-y-2.5 mb-5">
+                    <div className="space-y-3 sm:space-y-3.5 mb-6">
                       {overviewData.capabilities.map((item, idx) => (
                         <div key={idx} className="flex items-start gap-2.5">
-                          <CheckCircle2 className="w-4 h-4 text-[#B89650] shrink-0 mt-0.5" />
-                          <span className="text-[11.5px] sm:text-[12px] text-[#2C3B30] font-normal leading-snug font-sans">
+                          <CheckCircle2 className="w-4.5 h-4.5 text-[#B89650] shrink-0 mt-0.5" />
+                          <span className="text-[12px] sm:text-[12.5px] text-[#2C3B30] font-normal leading-snug font-sans">
                             {item}
                           </span>
                         </div>
@@ -712,24 +727,24 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                   <div className="pt-2">
                     <Link
                       href={`/${locale}/contact`}
-                      className="inline-flex items-center gap-2 px-4.5 py-2.5 rounded-full bg-gradient-to-r from-[#EED4A2] via-[#E4C58B] to-[#D5B878] text-[#142318] hover:brightness-105 font-medium text-xs shadow-sm transition-all"
+                      className="inline-flex items-center gap-2.5 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-gradient-to-r from-[#EED4A2] via-[#E4C58B] to-[#D5B878] text-[#142318] hover:brightness-105 font-semibold text-[13px] sm:text-[13.5px] shadow-sm transition-all"
                     >
                       <span>{isRu ? "Записаться на прием" : isEn ? "Book an Appointment" : "Termin vereinbaren"}</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
+                      <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
                 </div>
               </div>
 
               {/* Card 2: Group Advantages ("Ihre Vorteile im Verbund") */}
-              <div className="bg-white rounded-2xl sm:rounded-3xl border border-[#EDE8DE] shadow-[0_4px_24px_rgba(0,0,0,0.03)] relative overflow-hidden flex flex-col justify-between p-6 sm:p-8 min-h-[460px]">
+              <div className="bg-white rounded-[26px] sm:rounded-[28px] border border-[#EDE8DE] shadow-[0_4px_24px_rgba(0,0,0,0.03)] relative overflow-hidden flex flex-col justify-between p-7 sm:p-9 lg:p-10 min-h-[500px] sm:min-h-[520px]">
                 {/* Subtle botanical branch on right edge */}
-                <div className="absolute top-0 right-0 w-32 sm:w-40 pointer-events-none opacity-85 z-0">
+                <div className="absolute top-0 right-0 w-44 sm:w-56 lg:w-64 pointer-events-none opacity-85 z-0 select-none">
                   <Image
                     src="/images/areas/botanical-branch-clean.webp"
                     alt="Botanical detail"
-                    width={160}
-                    height={240}
+                    width={220}
+                    height={300}
                     className="object-contain object-top-right ml-auto"
                   />
                 </div>
@@ -737,25 +752,25 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                 <div className="relative z-10 flex flex-col justify-between h-full">
                   <div>
                     {/* Top small category label */}
-                    <span className="inline-block text-[9px] sm:text-[9.5px] font-bold uppercase tracking-wider text-[#DEC085] bg-[#0E2718] px-3.5 py-1 rounded-full mb-3.5 font-sans">
+                    <span className="inline-block text-[9.5px] sm:text-[10px] font-bold uppercase tracking-wider text-[#DEC085] bg-[#0E2718] px-4 py-1.5 rounded-full mb-3.5 font-sans">
                       {isRu ? "ВАШИ ПРЕИМУЩЕСТВА" : isEn ? "YOUR ADVANTAGES" : "IHRE VORTEILE"}
                     </span>
 
                     {/* Heading */}
-                    <h3 className="font-serif text-2xl sm:text-[27px] lg:text-[30px] text-[#142318] font-normal leading-[1.18] mb-5">
+                    <h3 className="font-serif text-[26px] sm:text-[30px] lg:text-[34px] text-[#142318] font-normal leading-[1.18] mb-5">
                       {overviewData.advantagesTitle}
                     </h3>
 
-                    {/* 4 Advantages with elegant circular icons */}
-                    <div className="space-y-3">
+                    {/* 4 Advantages with larger elegant circular icons & text */}
+                    <div className="space-y-4 sm:space-y-4.5">
                       {overviewData.advantages.map((item, idx) => {
                         const AdvantageIcon = [Users, Heart, Clock, ShieldCheck][idx] || ShieldCheck;
                         return (
-                          <div key={idx} className="flex items-center gap-3">
-                            <div className="w-8 h-8 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0">
-                              <AdvantageIcon className="w-4 h-4 stroke-[1.6]" />
+                          <div key={idx} className="flex items-center gap-3.5">
+                            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0 shadow-xs">
+                              <AdvantageIcon className="w-5.5 h-5.5 sm:w-6 sm:h-6 stroke-[1.6]" />
                             </div>
-                            <span className="text-[11.5px] sm:text-[12px] text-[#425046] font-normal leading-snug font-sans">
+                            <span className="text-[12.5px] sm:text-[13px] lg:text-[13.5px] text-[#334237] font-normal leading-snug font-sans">
                               {item}
                             </span>
                           </div>
@@ -765,16 +780,16 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                   </div>
 
                   {/* Editorial Statistics Row */}
-                  <div className="grid grid-cols-3 gap-2 pt-4.5 mt-5 border-t border-[#EDE8DE]">
+                  <div className="grid grid-cols-3 gap-3 pt-5 sm:pt-6 mt-6 border-t border-[#EAE3D5]">
                     {overviewData.stats.map((stat, idx) => (
                       <div
                         key={idx}
-                        className={`flex flex-col ${idx < 2 ? "border-r border-[#EDE8DE] pr-3" : "pl-1"}`}
+                        className={`flex flex-col ${idx < 2 ? "border-r border-[#EAE3D5] pr-3" : "pl-1"}`}
                       >
-                        <span className="font-serif text-2xl sm:text-[26px] text-[#B89650] font-normal leading-none mb-1">
+                        <span className="font-serif text-[28px] sm:text-[32px] text-[#B89650] font-normal leading-none mb-1.5">
                           {stat.value}
                         </span>
-                        <span className="text-[10px] sm:text-[10.5px] text-[#6E756D] font-sans leading-snug">
+                        <span className="text-[10.5px] sm:text-[11.5px] text-[#6E756D] font-sans leading-tight">
                           {stat.label}
                         </span>
                       </div>
@@ -785,19 +800,19 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
             </div>
 
             {/* Section Divider & Centered Company Entities Header */}
-            <div className="my-10 sm:my-12">
+            <div className="my-12 sm:my-16">
               <div className="relative flex items-center justify-center mb-5">
                 <div className="absolute inset-0 flex items-center">
                   <div className="w-full border-t border-[#EDE8DE]"></div>
                 </div>
                 <div className="relative bg-[#FAF8F5] px-6 text-center">
-                  <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase font-sans">
+                  <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#B89650] uppercase font-sans">
                     {overviewData.entitiesTitle}
                   </span>
                 </div>
               </div>
 
-              <h3 className="font-serif text-2xl sm:text-[28px] text-[#142318] font-normal text-center leading-[1.25] max-w-2xl mx-auto">
+              <h3 className="font-serif text-2xl sm:text-[30px] lg:text-[32px] text-[#142318] font-normal text-center leading-[1.25] max-w-3xl mx-auto mt-4">
                 {isRu
                   ? "Специализированные подразделения группы для амбулаторной и стационарной медицины высшего уровня"
                   : isEn
@@ -806,37 +821,37 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
               </h3>
             </div>
 
-            {/* 3 Medical Entities Grid matching corporate structure */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 items-stretch">
+            {/* 3 Medical Entities Grid matching corporate structure (compact height, larger icons) */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
               {overviewData.entities.map((entity, eIdx) => {
                 const EntityIcon = [Stethoscope, ScalpelIcon, Building2][eIdx] || Building2;
                 return (
                   <div
                     key={eIdx}
-                    className="bg-white rounded-2xl p-4.5 sm:p-5 border border-[#EDE8DE] hover:border-[#D5B878] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all flex flex-col justify-between group"
+                    className="bg-white rounded-[20px] sm:rounded-[22px] p-5 sm:p-5.5 border border-[#EDE8DE] hover:border-[#D5B878] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all flex flex-col justify-between group"
                   >
                     <div>
                       {/* Top row: Dark green badge left, secondary descriptor right */}
-                      <div className="flex items-center justify-between gap-2 mb-3">
-                        <span className="text-[9.5px] font-bold px-3 py-1 rounded-full bg-[#0E2718] text-[#ECCF96] tracking-wider uppercase shrink-0">
+                      <div className="flex items-center justify-between gap-2 mb-2.5">
+                        <span className="text-[9.5px] sm:text-[10px] font-bold px-3 py-1 rounded-[6px] bg-[#0E2718] text-[#ECCF96] tracking-wider uppercase shrink-0">
                           {entity.tag}
                         </span>
-                        <span className="text-[10.5px] text-[#7A857D] font-sans truncate ml-2 text-right">
+                        <span className="text-[11px] sm:text-[11.5px] text-[#7A857D] font-sans truncate ml-2 text-right">
                           {entity.sub}
                         </span>
                       </div>
 
-                      {/* Icon & Title Row */}
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="w-8.5 h-8.5 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0 group-hover:bg-[#D5B878]/15 group-hover:border-[#D5B878] group-hover:text-[#8C6D2B] transition-colors">
-                          <EntityIcon className="w-4.5 h-4.5 stroke-[1.6]" />
+                      {/* Icon & Title Row (Larger Circular Icon) */}
+                      <div className="flex items-center gap-3.5 mb-2.5">
+                        <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#E8F1EC] border border-[#D4E3D8] flex items-center justify-center text-[#183B26] shrink-0 group-hover:bg-[#D5B878]/15 group-hover:border-[#D5B878] group-hover:text-[#8C6D2B] transition-colors shadow-xs">
+                          <EntityIcon className="w-5.5 h-5.5 sm:w-6 sm:h-6 stroke-[1.6]" />
                         </div>
-                        <h4 className="font-serif text-[15px] sm:text-[16px] text-[#142318] font-bold leading-snug group-hover:text-[#B89650] transition-colors">
+                        <h4 className="font-serif text-[15.5px] sm:text-[16.5px] text-[#142318] font-bold leading-snug group-hover:text-[#B89650] transition-colors">
                           {entity.title}
                         </h4>
                       </div>
 
-                      {/* Bullet points */}
+                      {/* Bullet points (Compact & Readable) */}
                       <div className="space-y-1.5 mt-2">
                         {entity.items.map((item, iIdx) => (
                           <div key={iIdx} className="flex items-start gap-2">
@@ -850,16 +865,16 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                     </div>
 
                     {/* Bottom-right corner arrow button */}
-                    <div className="pt-3 flex justify-end">
-                      <div className="w-6 h-6 rounded-full border border-[#DCD5C6] bg-[#FAF8F5] group-hover:border-[#C5A56A] group-hover:bg-[#C5A56A] group-hover:text-white text-[#B89650] flex items-center justify-center transition-all shadow-xs">
-                        <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
+                    <div className="pt-2.5 flex justify-end">
+                      <div className="w-6.5 h-6.5 sm:w-7 sm:h-7 rounded-full border border-[#DCD5C6] bg-[#FAF8F5] group-hover:border-[#C5A56A] group-hover:bg-[#C5A56A] group-hover:text-white text-[#B89650] flex items-center justify-center transition-all shadow-xs">
+                        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
                       </div>
                     </div>
                   </div>
                 );
               })}
             </div>
-          </Container>
+          </div>
         </section>
 
         {/* ══════════════════════════════════════════════════════════
