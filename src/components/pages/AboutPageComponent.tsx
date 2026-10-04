@@ -660,10 +660,10 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         {/* ══════════════════════════════════════════════════════════
             SECTION 2: ORGANIZATIONAL STRUCTURE (NabiOta® Health Group Germany GmbH)
             - Background: photo1.webp
-            - Design strictly matching Photo 3
+            - Compact, premium corporate organizational hierarchy
         ══════════════════════════════════════════════════════════ */}
-        <section className="relative py-14 sm:py-18 lg:py-22 border-b border-[#ECE7DC] overflow-hidden bg-[#FAF8F4]">
-          {/* Background: photo1.webp with full framing */}
+        <section className="relative py-10 sm:py-14 lg:py-16 border-b border-[#ECE7DC] overflow-hidden bg-[#FAF8F4]">
+          {/* Background: photo1.webp with subtle edge framing */}
           <div className="absolute inset-0 z-0 pointer-events-none">
             <Image
               src="/images/about/photo1.webp"
@@ -677,26 +677,26 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
 
           <Container size="wide" className="relative z-10">
             {/* Header */}
-            <div className="text-center max-w-xl mx-auto mb-7">
+            <div className="text-center max-w-xl mx-auto mb-6 sm:mb-7">
               <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-1.5 font-sans">
                 {t.orgEyebrow}
               </span>
-              <h2 className="font-serif text-[32px] sm:text-[38px] lg:text-[42px] font-normal text-[#142318] leading-[1.15]">
+              <h2 className="font-serif text-[30px] sm:text-[36px] lg:text-[40px] font-normal text-[#142318] leading-[1.16]">
                 {t.orgHeading}
               </h2>
             </div>
 
-            {/* Holding Top Badge matching Photo 3 */}
+            {/* Holding Top Card: Noticeably wider, visually dominant focal point */}
             <div className="flex justify-center mb-0">
-              <div className="inline-flex items-center gap-4 bg-[#0B1E13] text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl border border-[#D5B878]/70 shadow-xl text-left">
-                <div className="w-12 h-12 rounded-full border border-[#D5B878] bg-[#142A1D]/60 flex items-center justify-center text-[#ECCF96] flex-shrink-0 shadow-[0_0_12px_rgba(213,184,120,0.25)]">
-                  <BuildingStatsIcon className="w-6 h-6 stroke-[1.6]" />
+              <div className="w-full max-w-[560px] sm:max-w-[620px] bg-[#0B1E13] text-white px-5 sm:px-7 py-3 sm:py-3.5 rounded-2xl border border-[#D5B878]/70 shadow-xl flex items-center gap-3.5 sm:gap-4 text-left">
+                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-[#D5B878] bg-[#142A1D]/80 flex items-center justify-center text-[#ECCF96] flex-shrink-0 shadow-[0_0_12px_rgba(213,184,120,0.25)]">
+                  <BuildingStatsIcon className="w-5.5 h-5.5 sm:w-6 sm:h-6 stroke-[1.6]" />
                 </div>
-                <div>
-                  <span className="text-[9.5px] sm:text-[10px] font-bold tracking-[0.24em] text-[#DEC085] uppercase block mb-0.5 font-sans">
+                <div className="flex-1 min-w-0">
+                  <span className="text-[9px] sm:text-[9.5px] font-bold tracking-[0.24em] text-[#DEC085] uppercase block mb-0.5 font-sans">
                     {t.holdingBadge}
                   </span>
-                  <h3 className="font-serif text-[17px] sm:text-[19px] font-medium text-white tracking-wide">
+                  <h3 className="font-serif text-[17px] sm:text-[19px] font-medium text-white tracking-wide truncate">
                     “NabiOta” Health Group Germany GmbH
                   </h3>
                   <p className="text-[11px] sm:text-[11.5px] text-[#A7B8AD] mt-0.5 font-sans">
@@ -706,31 +706,31 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
               </div>
             </div>
 
-            {/* Connecting Tree SVG from Holding into 3 Pillars */}
+            {/* Connecting Tree SVG from Holding into 3 Pillars (Compact vertical height) */}
             <div className="hidden lg:block w-full max-w-6xl mx-auto pointer-events-none">
-              <svg className="w-full h-12" viewBox="0 0 1000 48" fill="none" preserveAspectRatio="none">
+              <svg className="w-full h-8" viewBox="0 0 1000 32" fill="none" preserveAspectRatio="none">
                 {/* Central drop stem */}
-                <line x1="500" y1="0" x2="500" y2="24" stroke="#C5A56A" strokeWidth="1.8" />
+                <line x1="500" y1="0" x2="500" y2="16" stroke="#C5A56A" strokeWidth="1.5" />
                 {/* Horizontal distribution bar */}
-                <line x1="167" y1="24" x2="833" y2="24" stroke="#C5A56A" strokeWidth="1.8" />
+                <line x1="167" y1="16" x2="833" y2="16" stroke="#C5A56A" strokeWidth="1.5" />
                 {/* Drop lines into 3 columns */}
-                <line x1="167" y1="24" x2="167" y2="48" stroke="#C5A56A" strokeWidth="1.8" />
-                <line x1="500" y1="24" x2="500" y2="48" stroke="#C5A56A" strokeWidth="1.8" />
-                <line x1="833" y1="24" x2="833" y2="48" stroke="#C5A56A" strokeWidth="1.8" />
+                <line x1="167" y1="16" x2="167" y2="32" stroke="#C5A56A" strokeWidth="1.5" />
+                <line x1="500" y1="16" x2="500" y2="32" stroke="#C5A56A" strokeWidth="1.5" />
+                <line x1="833" y1="16" x2="833" y2="32" stroke="#C5A56A" strokeWidth="1.5" />
               </svg>
             </div>
 
-            {/* 3 Pillars Grid with 3 vertically stacked connected cards each */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-7 max-w-6xl mx-auto mt-6 lg:mt-0">
+            {/* 3 Pillars Grid with compact, identical-height cards */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5 max-w-6xl mx-auto mt-4 lg:mt-0">
               {organigramColumns.map((col, cIdx) => (
-                <div key={cIdx} className="flex flex-col space-y-4 relative">
-                  {/* Pillar Column Header matching Photo 3 */}
-                  <div className="text-center pb-1">
-                    <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.14em] uppercase text-[#A07D3E] font-sans whitespace-nowrap inline-flex items-center justify-center gap-1.5">
-                      <span>—</span>
-                      <span>{col.colTitle}</span>
-                      <span>—</span>
+                <div key={cIdx} className="flex flex-col space-y-3 relative h-full">
+                  {/* Category Heading with subtle thin horizontal decorative lines */}
+                  <div className="flex items-center justify-center gap-2 pb-0.5">
+                    <span className="h-[1px] w-5 sm:w-6 bg-[#C5A56A]/50 shrink-0"></span>
+                    <span className="text-[9.5px] sm:text-[10px] font-bold tracking-[0.16em] uppercase text-[#A07D3E] font-sans whitespace-nowrap">
+                      {col.colTitle}
                     </span>
+                    <span className="h-[1px] w-5 sm:w-6 bg-[#C5A56A]/50 shrink-0"></span>
                   </div>
 
                   {col.items.map((item, rIdx) => {
@@ -739,34 +739,34 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       <Link
                         key={rIdx}
                         href={item.href}
-                        className="group bg-white/95 backdrop-blur-xs rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878] p-4 sm:p-5 flex flex-col justify-between shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-lg transition-all hover:-translate-y-0.5"
+                        className="group flex-1 bg-white/95 backdrop-blur-xs rounded-xl sm:rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878] p-3.5 sm:p-4 flex flex-col justify-between shadow-[0_1px_4px_rgba(0,0,0,0.02)] hover:shadow-md transition-all hover:-translate-y-0.5"
                       >
                         <div>
-                          {/* Top row: Icon on left, Badge on right */}
-                          <div className="flex items-center justify-between gap-2 mb-3">
-                            <div className="w-10 h-10 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0 group-hover:bg-[#D5B878]/15 group-hover:border-[#D5B878] group-hover:text-[#8C6D2B] transition-colors">
-                              <IconComp className="w-5 h-5 stroke-[1.6]" />
+                          {/* Top row: Small circular icon on upper-left, Category badge on upper-right */}
+                          <div className="flex items-center justify-between gap-2 mb-2">
+                            <div className="w-8 h-8 sm:w-8.5 sm:h-8.5 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0 group-hover:bg-[#D5B878]/15 group-hover:border-[#D5B878] group-hover:text-[#8C6D2B] transition-colors">
+                              <IconComp className="w-4 h-4 stroke-[1.6]" />
                             </div>
-                            <span className="inline-block text-[9.5px] font-bold uppercase tracking-wider text-[#8C6D2B] bg-[#FAF5EB] px-2.5 py-0.5 rounded-full border border-[#EADBBD]">
+                            <span className="inline-block text-[8.5px] sm:text-[9px] font-bold uppercase tracking-wider text-[#8C6D2B] bg-[#FAF5EB] px-2 py-0.5 rounded-full border border-[#EADBBD]">
                               {item.badge}
                             </span>
                           </div>
 
-                          {/* Title */}
-                          <h4 className="font-serif font-bold text-[15px] sm:text-[16px] text-[#142318] leading-snug group-hover:text-[#B89650] transition-colors mb-2">
+                          {/* Company name directly below */}
+                          <h4 className="font-serif font-bold text-[14px] sm:text-[15px] text-[#142318] leading-snug group-hover:text-[#B89650] transition-colors mb-1">
                             {item.name}
                           </h4>
 
-                          {/* Description */}
-                          <p className="text-[11.5px] sm:text-[12px] text-[#556057] leading-relaxed font-sans">
+                          {/* Description text underneath */}
+                          <p className="text-[11px] sm:text-[11.5px] text-[#556057] leading-relaxed font-sans line-clamp-3">
                             {item.sub}
                           </p>
                         </div>
 
-                        {/* Bottom-right corner arrow button matching Photo 3 */}
-                        <div className="pt-2 mt-2 flex justify-end">
-                          <div className="w-7 h-7 rounded-full border border-[#DCD5C6] bg-[#FAF8F5] group-hover:border-[#C5A56A] group-hover:bg-[#C5A56A] group-hover:text-white text-[#B89650] flex items-center justify-center transition-all shadow-xs">
-                            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                        {/* Small circular arrow button anchored at bottom-right */}
+                        <div className="pt-2 flex justify-end">
+                          <div className="w-6 h-6 rounded-full border border-[#DCD5C6] bg-[#FAF8F5] group-hover:border-[#C5A56A] group-hover:bg-[#C5A56A] group-hover:text-white text-[#B89650] flex items-center justify-center transition-all shadow-xs">
+                            <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
                           </div>
                         </div>
                       </Link>
@@ -781,10 +781,10 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         {/* ══════════════════════════════════════════════════════════
             SECTION 3: STRATEGIC DEVELOPMENT (Two-Phase Structure)
             - Background: photo2.webp
-            - Design strictly matching Photo 4
+            - Compact, refined, editorial two-column module
         ══════════════════════════════════════════════════════════ */}
-        <section className="relative py-14 sm:py-18 lg:py-22 border-b border-[#ECE7DC] overflow-hidden bg-[#FAF6EE]">
-          {/* Background: photo2.webp with full framing */}
+        <section className="relative py-10 sm:py-14 lg:py-16 border-b border-[#ECE7DC] overflow-hidden bg-[#FAF6EE]">
+          {/* Background: photo2.webp with subtle edge framing */}
           <div className="absolute inset-0 z-0 pointer-events-none">
             <Image
               src="/images/about/photo2.webp"
@@ -797,140 +797,140 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
           </div>
 
           <Container size="wide" className="relative z-10">
-            {/* Header matching Photo 4 */}
-            <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+            {/* Header: Kept exactly unchanged in wording and style */}
+            <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
               <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-1.5 font-sans">
                 {t.twoPhaseEyebrow}
               </span>
-              <h3 className="font-serif text-[28px] sm:text-[34px] lg:text-[40px] font-normal text-[#142318] leading-[1.18]">
+              <h3 className="font-serif text-[26px] sm:text-[32px] lg:text-[36px] font-normal text-[#142318] leading-[1.2]">
                 {t.twoPhaseTitle}
               </h3>
-              <p className="text-xs sm:text-[13.5px] text-[#556057] mt-2.5 leading-relaxed font-sans max-w-xl mx-auto">
+              <p className="text-[11.5px] sm:text-[12.5px] text-[#556057] mt-2 leading-relaxed font-sans max-w-lg mx-auto">
                 {t.twoPhaseDesc}
               </p>
             </div>
 
-            {/* 2 Big Cards side by side matching Photo 4 */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
+            {/* Two compact phase cards centered in a focused, narrow content container */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-[920px] mx-auto items-stretch">
               {/* Card 1: Phase 1 */}
-              <div className="bg-white/95 backdrop-blur-xs rounded-3xl p-6 sm:p-8 border border-[#EAE4D7] shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+              <div className="h-full bg-white/95 backdrop-blur-xs rounded-2xl p-5 sm:p-6 border border-[#EAE4D7] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all flex flex-col justify-between">
                 <div>
-                  {/* Top row: Number circle + Title + Icon circle */}
-                  <div className="flex items-center gap-3.5 sm:gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-[#0E2718] text-white font-serif text-2xl font-normal flex items-center justify-center shrink-0 shadow-sm">
+                  {/* Card Header: Number badge (left) + Title + Circular Icon (right) */}
+                  <div className="flex items-center gap-3 mb-3.5">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#0E2718] text-white font-serif text-base sm:text-lg font-normal flex items-center justify-center shrink-0 shadow-xs">
                       1
                     </div>
-                    <h4 className="font-serif text-[17px] sm:text-[19px] font-bold text-[#142318] leading-snug">
+                    <h4 className="font-serif text-[15px] sm:text-[16.5px] font-bold text-[#142318] leading-tight">
                       {t.phase1Title}
                     </h4>
-                    <div className="w-12 h-12 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0 ml-auto">
-                      <Users className="w-6 h-6 stroke-[1.6]" />
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0 ml-auto">
+                      <Users className="w-4 h-4 stroke-[1.6]" />
                     </div>
                   </div>
 
-                  {/* Paragraph */}
-                  <p className="text-xs sm:text-[13px] text-[#4E5650] leading-relaxed font-sans mb-5">
+                  {/* Body Text: Compact, readable block */}
+                  <p className="text-[11.5px] sm:text-[12px] text-[#4E5650] leading-relaxed font-sans mb-4">
                     {t.phase1Desc}
                   </p>
                 </div>
 
-                {/* Inner Panel */}
-                <div className="p-4 sm:p-5 rounded-2xl bg-[#F5F2EA]/90 border border-[#EAE4D7] flex flex-col justify-between">
+                {/* Highlight / Information Box: Compact secondary layer */}
+                <div className="p-3.5 sm:p-4 rounded-xl bg-[#F5F2EA]/90 border border-[#EAE4D7] flex flex-col justify-between mt-auto">
                   <div>
-                    <div className="flex items-center gap-2 mb-3">
-                      <CheckCircle2 className="w-4.5 h-4.5 text-[#B89650] shrink-0" />
-                      <span className="text-xs sm:text-[13px] font-bold text-[#142318]">
+                    <div className="flex items-center gap-2 mb-2">
+                      <CheckCircle2 className="w-4 h-4 text-[#B89650] shrink-0" />
+                      <span className="text-[11.5px] sm:text-[12px] font-bold text-[#142318]">
                         {isRu ? "Ключевые активности в Фазе 1" : isEn ? "Key Activities in Phase 1" : "Zentrale Aktivitäten in Phase 1"}
                       </span>
                     </div>
-                    <ul className="space-y-2 text-xs sm:text-[12.5px] text-[#4E5650] font-sans pl-1">
-                      <li className="flex items-start gap-2">
+                    <ul className="space-y-1.5 text-[11px] sm:text-[11.5px] text-[#4E5650] font-sans pl-0.5">
+                      <li className="flex items-start gap-1.5">
                         <span className="text-[#142318] font-bold">•</span>
                         <span>{isRu ? "Формирование и запуск структуры MVZ" : isEn ? "Establishment of the MVZ structure" : "Aufbau der MVZ-Struktur"}</span>
                       </li>
-                      <li className="flex items-start gap-2">
+                      <li className="flex items-start gap-1.5">
                         <span className="text-[#142318] font-bold">•</span>
                         <span>{isRu ? "Участие д-ра Фишер-Рахимова как врача-учредителя" : isEn ? "Founding equity of Dr. Fischer-Rahimov" : "Beteiligung von Dr. Fischer-Rahimov"}</span>
                       </li>
-                      <li className="flex items-start gap-2">
+                      <li className="flex items-start gap-1.5">
                         <span className="text-[#142318] font-bold">•</span>
                         <span>{isRu ? "Подготовка дальнейших дочерних обществ" : isEn ? "Preparation of additional subsidiaries" : "Vorbereitung weiterer Beteiligungen"}</span>
                       </li>
                     </ul>
                   </div>
-                  <div className="flex justify-end pt-3">
+                  <div className="flex justify-end pt-2">
                     <Link
                       href={`/${locale}/contact`}
                       aria-label="Phase 1 details"
-                      className="w-7 h-7 rounded-full border border-[#D1C9B8] bg-white text-[#7A6843] hover:border-[#D5B878] hover:bg-[#D5B878] hover:text-[#0C1C11] flex items-center justify-center transition-all shadow-xs"
+                      className="w-6 h-6 rounded-full border border-[#D1C9B8] bg-white text-[#7A6843] hover:border-[#D5B878] hover:bg-[#D5B878] hover:text-[#0C1C11] flex items-center justify-center transition-all shadow-xs"
                     >
-                      <ArrowRight className="w-3.5 h-3.5" />
+                      <ArrowRight className="w-3 h-3" />
                     </Link>
                   </div>
                 </div>
               </div>
 
               {/* Card 2: Phase 2 */}
-              <div className="bg-white/95 backdrop-blur-xs rounded-3xl p-6 sm:p-8 border border-[#EAE4D7] shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+              <div className="h-full bg-white/95 backdrop-blur-xs rounded-2xl p-5 sm:p-6 border border-[#EAE4D7] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all flex flex-col justify-between">
                 <div>
-                  {/* Top row: Number circle + Title + Icon circle */}
-                  <div className="flex items-center gap-3.5 sm:gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-[#0E2718] text-white font-serif text-2xl font-normal flex items-center justify-center shrink-0 shadow-sm">
+                  {/* Card Header: Number badge (left) + Title + Circular Icon (right) */}
+                  <div className="flex items-center gap-3 mb-3.5">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#0E2718] text-white font-serif text-base sm:text-lg font-normal flex items-center justify-center shrink-0 shadow-xs">
                       2
                     </div>
-                    <h4 className="font-serif text-[17px] sm:text-[19px] font-bold text-[#142318] leading-snug">
+                    <h4 className="font-serif text-[15px] sm:text-[16.5px] font-bold text-[#142318] leading-tight">
                       {t.phase2Title}
                     </h4>
-                    <div className="w-12 h-12 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0 ml-auto">
-                      <Building2 className="w-6 h-6 stroke-[1.6]" />
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0 ml-auto">
+                      <Building2 className="w-4 h-4 stroke-[1.6]" />
                     </div>
                   </div>
 
-                  {/* Paragraph */}
-                  <p className="text-xs sm:text-[13px] text-[#4E5650] leading-relaxed font-sans mb-5">
+                  {/* Body Text: Compact, readable block */}
+                  <p className="text-[11.5px] sm:text-[12px] text-[#4E5650] leading-relaxed font-sans mb-4">
                     {t.phase2Desc}
                   </p>
                 </div>
 
-                {/* Inner Panel */}
-                <div className="p-4 sm:p-5 rounded-2xl bg-[#F5F2EA]/90 border border-[#EAE4D7] flex flex-col justify-between">
+                {/* Highlight / Information Box: Compact secondary layer */}
+                <div className="p-3.5 sm:p-4 rounded-xl bg-[#F5F2EA]/90 border border-[#EAE4D7] flex flex-col justify-between mt-auto">
                   <div>
-                    <div className="flex items-center gap-2 mb-3">
-                      <CheckCircle2 className="w-4.5 h-4.5 text-[#B89650] shrink-0" />
-                      <span className="text-xs sm:text-[13px] font-bold text-[#142318]">
+                    <div className="flex items-center gap-2 mb-2">
+                      <CheckCircle2 className="w-4 h-4 text-[#B89650] shrink-0" />
+                      <span className="text-[11.5px] sm:text-[12px] font-bold text-[#142318]">
                         {isRu ? "Ключевые принципы управления" : isEn ? "Central Governance Principles" : "Zentrale Governance-Prinzipien"}
                       </span>
                     </div>
-                    <ul className="space-y-2 text-xs sm:text-[12.5px] text-[#4E5650] font-sans pl-1">
-                      <li className="flex items-start gap-2">
+                    <ul className="space-y-1.5 text-[11px] sm:text-[11.5px] text-[#4E5650] font-sans pl-0.5">
+                      <li className="flex items-start gap-1.5">
                         <span className="text-[#142318] font-bold">•</span>
                         <span>{isRu ? "Врачебная тайна и строгая защита данных (DSGVO)" : isEn ? "Medical confidentiality & strict data protection" : "Ärztliche Schweigepflicht & strenger Datenschutz (DSGVO)"}</span>
                       </li>
-                      <li className="flex items-start gap-2">
+                      <li className="flex items-start gap-1.5">
                         <span className="text-[#142318] font-bold">•</span>
                         <span>{isRu ? "Центральное управление: IT, финансы, закупки и маркетинг" : isEn ? "Central management: IT, Finance, Purchasing & Marketing" : "Zentrales Management: IT, Finanzen, Einkauf & Marketing"}</span>
                       </li>
-                      <li className="flex items-start gap-2">
+                      <li className="flex items-start gap-1.5">
                         <span className="text-[#142318] font-bold">•</span>
                         <span>{isRu ? "Менеджмент качества DIN EN ISO и безопасность пациентов" : isEn ? "DIN EN ISO quality management & patient safety" : "Qualitätsmanagement nach DIN EN ISO & Patientensicherheit"}</span>
                       </li>
                     </ul>
                   </div>
-                  <div className="flex justify-end pt-3">
+                  <div className="flex justify-end pt-2">
                     <Link
                       href={`/${locale}/contact`}
                       aria-label="Phase 2 details"
-                      className="w-7 h-7 rounded-full border border-[#D1C9B8] bg-white text-[#7A6843] hover:border-[#D5B878] hover:bg-[#D5B878] hover:text-[#0C1C11] flex items-center justify-center transition-all shadow-xs"
+                      className="w-6 h-6 rounded-full border border-[#D1C9B8] bg-white text-[#7A6843] hover:border-[#D5B878] hover:bg-[#D5B878] hover:text-[#0C1C11] flex items-center justify-center transition-all shadow-xs"
                     >
-                      <ArrowRight className="w-3.5 h-3.5" />
+                      <ArrowRight className="w-3 h-3" />
                     </Link>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Legal Footnote */}
-            <p className="text-center text-[11px] text-[#78857C] mt-8 font-sans">
+            {/* Legal Footnote: small font size and subtle weight */}
+            <p className="text-center text-[10.5px] sm:text-[11px] text-[#78857C] mt-5 sm:mt-6 font-sans">
               {isRu
                 ? "Сведения в соответствии с нотариальным проектом устава и положениями § 95 SGB V."
                 : isEn
