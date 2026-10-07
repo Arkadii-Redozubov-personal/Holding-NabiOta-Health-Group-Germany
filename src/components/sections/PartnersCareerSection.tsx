@@ -50,45 +50,6 @@ export function PartnersCareerSection({ currentLocale = "de" }: PartnersCareerSe
                 className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-white to-transparent hidden sm:block pointer-events-none" />
-
-              {/* Slogan overlay on photo */}
-              <div className="absolute right-4 xl:right-6 top-1/2 -translate-y-1/2 max-w-[130px] xl:max-w-[145px] text-left pointer-events-none">
-                <span className="text-[9.5px] xl:text-[10px] font-bold uppercase tracking-[0.14em] text-[#142318] leading-[1.35] block drop-shadow-sm font-sans">
-                  {currentLocale === "ru" ? (
-                    <>
-                      НАДЕЖНЫЕ
-                      <br />
-                      ПАРТНЕРСТВА
-                      <br />
-                      ДЛЯ ЗДОРОВОГО
-                      <br />
-                      БУДУЩЕГО.
-                    </>
-                  ) : currentLocale === "en" ? (
-                    <>
-                      STRONG
-                      <br />
-                      PARTNERSHIPS
-                      <br />
-                      FOR A HEALTHIER
-                      <br />
-                      FUTURE.
-                    </>
-                  ) : (
-                    <>
-                      STARKE
-                      <br />
-                      PARTNERSCHAFTEN
-                      <br />
-                      FÜR EINE
-                      <br />
-                      GESÜNDERE
-                      <br />
-                      ZUKUNFT.
-                    </>
-                  )}
-                </span>
-              </div>
             </div>
           </div>
 
