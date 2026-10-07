@@ -420,6 +420,7 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
 
       {/* ── Page Hero with Badges ── */}
       <PageHero
+          locale={locale}
         breadcrumb={
           <Breadcrumb
             items={[
@@ -437,89 +438,85 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
 
       <main className="flex-1 bg-[#FAF8F5]">
         {/* ══════════════════════════════════════════════════════════
-            SECTION 1: 3-COLUMN INTRO SECTION (1-TO-1 AS IN PHOTO 1)
-            + 6 DIVISION CARDS GRID DIRECTLY BELOW
+            SECTION 1: SPECIALIZED CARE FOR EVERY NEED + 6 CARDS GRID
+            (Top Intro in Full-Width Facilities & Cooperations Style)
         ══════════════════════════════════════════════════════════ */}
-        <section className="pt-10 sm:pt-12 lg:pt-14 pb-12 sm:pb-16 lg:pb-20 bg-[#FAF8F5] relative overflow-hidden">
-          {/* Top-Right Botanical Foliage Accent matching Photo 1 */}
-          <div className="absolute -top-3 -right-3 w-52 sm:w-64 md:w-80 lg:w-[420px] h-52 sm:h-64 md:h-80 lg:h-[420px] pointer-events-none z-0 opacity-85 select-none">
-            <Image
-              src="/images/areas/botanical-branch-clean.webp"
-              alt="Botanical Foliage"
-              fill
-              className="object-contain object-top-right"
-              priority
-            />
-          </div>
-
-          <Container size="wide" className="relative z-10">
-            {/* ── Photo 1: 3-Column Intro Block ── */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center mb-10 sm:mb-12 lg:mb-14">
-              {/* Column 1 (Left): Eyebrow, Serif Title, Paragraph, Gold Pill Button */}
-              <div className="lg:col-span-5 space-y-4">
-                <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
-                  {introData.eyebrow}
-                </span>
-
-                <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] text-[#132218] font-normal leading-[1.15] whitespace-pre-line">
-                  {introData.title}
-                </h2>
-
-                <p className="text-xs sm:text-[13.5px] text-[#556358] leading-relaxed font-sans max-w-md">
-                  {introData.description}
-                </p>
-
-                <div className="pt-2">
-                  <a
-                    href="#divisions-grid"
-                    className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#132218] font-semibold text-xs sm:text-[13px] tracking-wide shadow-sm hover:shadow transition-all duration-200 hover:scale-[1.02]"
-                  >
-                    <span>{introData.btn}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
-                </div>
-              </div>
-
-              {/* Column 2 (Center): Rounded Floating Card */}
-              <div className="lg:col-span-4">
-                <div className="bg-[#FAF7F2] rounded-[28px] p-6 sm:p-7 border border-[#EDE8DE] shadow-[0_4px_24px_rgba(0,0,0,0.02)] flex flex-col justify-center min-h-[250px]">
-                  {/* Circular Gold Icon Badge */}
-                  <div className="w-12 h-12 rounded-full border border-[#D5B878] bg-[#FAF8F5] flex items-center justify-center text-[#B89650] mb-4 shadow-sm">
-                    <CloverIcon className="w-5 h-5 stroke-[1.6]" />
-                  </div>
-
-                  <h3 className="font-sans text-[15px] sm:text-[16px] font-bold text-[#142318] mb-2 leading-snug">
-                    {introData.cardTitle}
-                  </h3>
-
-                  <p className="text-xs sm:text-[12.5px] text-[#556358] leading-relaxed font-sans">
-                    {introData.cardDescription}
-                  </p>
-                </div>
-              </div>
-
-              {/* Column 3 (Right): 4 Points with Circular Gold Icons */}
-              <div className="lg:col-span-3 flex flex-col justify-center space-y-4 sm:space-y-4.5 lg:pl-2">
-                {introData.features.map((item, idx) => {
-                  const FeatureIcon = item.icon;
-                  return (
-                    <div key={idx} className="flex items-center gap-3.5">
-                      <div className="w-10 h-10 rounded-full border border-[#D5B878] bg-white flex items-center justify-center text-[#B89650] shrink-0 shadow-sm">
-                        <FeatureIcon className="w-4.5 h-4.5 stroke-[1.6]" />
-                      </div>
-                      <span className="text-xs sm:text-[12.5px] font-medium text-[#425046] leading-snug">
-                        {item.label}
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
+        <section className="relative w-full overflow-hidden bg-[#FAF8F5]">
+          {/* ── Top Part: Facilities & Cooperations Panoramic Full-Width Banner ── */}
+          <div className="w-full relative overflow-hidden py-12 sm:py-16 lg:py-20 border-b border-[#EDE8DE]/70">
+            {/* Full-bleed background image across 100% of the screen */}
+            <div className="absolute inset-0 pointer-events-none select-none z-0">
+              <Image
+                src="/images/areas/facilities-cooperation-bg.webp"
+                alt="Our Specialties"
+                fill
+                className="object-cover object-bottom sm:object-center"
+                priority
+                unoptimized
+              />
             </div>
 
-            {/* Anchor for smooth scroll */}
-            <div id="divisions-grid" className="scroll-mt-24" />
+            {/* Inner Content Area: aligns with page container, completely open without borders or frames */}
+            <div className="relative z-10 w-full max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                {/* Left Column: Eyebrow, Serif Title, Description, Pill Button */}
+                <div className="lg:col-span-5 space-y-4">
+                  <div className="flex items-center gap-2">
+                    <span className="w-6 h-[1.5px] bg-[#C5A56A]" />
+                    <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
+                      {introData.eyebrow}
+                    </span>
+                  </div>
 
-            {/* 6 Cards Grid (3 cols x 2 rows, matching exact layout & restored original cards 4, 5, 6) */}
+                  <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] text-[#142318] font-normal leading-[1.16] whitespace-pre-line">
+                    {introData.title}
+                  </h2>
+
+                  <p className="text-xs sm:text-[13.5px] text-[#4E5650] leading-relaxed font-sans max-w-md">
+                    {introData.description}
+                  </p>
+
+                  <div className="pt-2">
+                    <a
+                      href="#divisions-grid"
+                      className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full border border-[#8C9886] bg-white/75 hover:bg-[#142318] hover:text-white hover:border-[#142318] text-[#2C3B2E] font-medium text-xs sm:text-[13px] tracking-wide shadow-xs transition-all duration-200"
+                    >
+                      <span>{introData.btn}</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                </div>
+
+                {/* Right Column: 4 Circular Medal Features */}
+                <div className="lg:col-span-7">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+                    {introData.features.map((item, idx) => {
+                      const FeatureIcon = item.icon;
+                      return (
+                        <div
+                          key={idx}
+                          className="flex items-center gap-3.5 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white/75 backdrop-blur-xs border border-[#EDE8DE] hover:border-[#D5B878]/60 hover:bg-white/95 transition-all shadow-xs"
+                        >
+                          <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-[#D5B878]/60 bg-white/95 flex items-center justify-center text-[#9E7D3B] shrink-0 shadow-2xs">
+                            <FeatureIcon className="w-5 h-5 stroke-[1.6]" />
+                          </div>
+                          <span className="text-[12px] sm:text-[13px] font-medium text-[#2C3B2E] leading-snug">
+                            {item.label}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* ── 6 Cards Grid (with Larger Light-Colored Icons) ── */}
+          <Container size="wide" className="py-12 sm:py-16">
+            {/* Anchor for smooth scroll */}
+            <div id="divisions-grid" className="scroll-mt-24 mb-6 sm:mb-8" />
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
               {divisions.map((item) => {
                 const IconComponent = item.icon;
@@ -542,10 +539,10 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
 
                     {/* Card Content Row */}
                     <div className="pt-3.5 pb-1.5 px-1 flex items-center justify-between gap-3">
-                      <div className="flex items-center gap-3 min-w-0">
-                        {/* Circular Dark Disc Icon Badge */}
-                        <div className="w-10 h-10 rounded-full bg-[#0C1C11] border border-[#D5B878]/60 flex items-center justify-center text-[#ECCF96] shadow-sm shrink-0 group-hover:scale-105 transition-transform">
-                          <IconComponent className="w-4.5 h-4.5 stroke-[1.6]" />
+                      <div className="flex items-center gap-3.5 min-w-0">
+                        {/* Circular Light Emblem Icon Badge (larger & light-colored) */}
+                        <div className="w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-[#FAF3E8] border border-[#E8DFC8] flex items-center justify-center text-[#9E7D3B] shadow-2xs shrink-0 group-hover:bg-[#F0E5CD] group-hover:border-[#D5B878] group-hover:scale-105 transition-all">
+                          <IconComponent className="w-5.5 h-5.5 sm:w-6 sm:h-6 stroke-[1.6]" />
                         </div>
 
                         <div className="min-w-0">
@@ -571,167 +568,78 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
         </section>
 
         {/* ══════════════════════════════════════════════════════════
-            SECTION 2: WHY NABIOTA (PANORAMIC FULL-WIDTH AS IN PHOTO 3)
-            - Completely flush to the edges (container прилегает к краям)
-            - Left: Clear building photo
-            - Middle: Dark green block with smooth convex curve & gold rim
-            - Right: 4 pillars on ivory + lush botanical leaves on far right
-            - Reduced vertical height
-        {/* ══════════════════════════════════════════════════════════
-            SECTION 2: WHY NABIOTA (PANORAMIC FULL-WIDTH AS IN PHOTO 3)
-            - Completely flush to the edges (container прилегает к краям)
-            - Left: Clear building photo with soft blurred right edge transition
-            - Middle: Dark green block with asymmetrical downward sweeping curve & gold rim
-            - Right: 4 pillars on ivory + lush botanical leaves on far right
-            - Reduced vertical height
+            SECTION 2: WHY NABIOTA (MORE THAN DEPARTMENTS. A STRONGER TEAM.)
+            (Full-Width Facilities & Cooperations Panoramic Style)
         ══════════════════════════════════════════════════════════ */}
-        <section className="w-full bg-[#FAF8F5] py-4 sm:py-6 overflow-hidden">
-          <div className="w-full relative flex flex-col lg:flex-row items-stretch min-h-[360px] lg:min-h-[400px] bg-[#FAF8F5]">
-            {/* Left & Middle Block: Building Photo with Blurred Right Edge + Dark Forest Content + Asymmetrical Curve */}
-            <div className="relative flex-1 flex flex-col lg:flex-row items-stretch bg-[#08170D] text-white overflow-hidden">
-              {/* 1. Left Hospital Campus Photo with soft blurred right edge (smooth transition into dark forest) */}
-              <div className="relative lg:absolute lg:left-0 lg:top-0 lg:bottom-0 w-full lg:w-[46%] xl:w-[48%] h-56 sm:h-72 lg:h-full overflow-hidden shrink-0">
-                <Image
-                  src="/images/hero/campus.webp"
-                  alt="NabiOta Healthcare Campus"
-                  fill
-                  className="object-cover object-left"
-                  priority
-                />
-                {/* Soft right edge blur & gradient fade into dark forest green */}
-                <div className="hidden lg:block absolute inset-y-0 right-0 w-28 sm:w-36 bg-gradient-to-r from-transparent via-[#08170D]/75 to-[#08170D] backdrop-blur-[3px] pointer-events-none" />
-                <div className="lg:hidden absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#08170D] to-transparent pointer-events-none" />
-              </div>
+        <section className="w-full relative overflow-hidden py-14 sm:py-18 lg:py-22 my-4 sm:my-6 border-t border-b border-[#EDE8DE]/70">
+          {/* Full-bleed background image across 100% of the screen */}
+          <div className="absolute inset-0 pointer-events-none select-none z-0">
+            <Image
+              src="/images/areas/facilities-cooperation-bg.webp"
+              alt="Facilities & Cooperations"
+              fill
+              className="object-cover object-bottom sm:object-center"
+              priority
+              unoptimized
+            />
+          </div>
 
-              {/* 2. Text Content inside Dark Forest Block */}
-              <div className="relative z-10 p-6 sm:p-8 lg:p-10 lg:pl-10 lg:ml-auto w-full lg:w-[56%] xl:w-[54%] flex flex-col justify-center">
-                <div className="max-w-md space-y-2.5">
-                  <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
+          {/* Inner Content Area: aligns with page container, completely open without borders or frames */}
+          <div className="relative z-10 w-full max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 lg:gap-14 w-full">
+              {/* Left Column: Eyebrow, Title, Description, Button */}
+              <div className="w-full lg:w-[48%] xl:w-[44%]">
+                <div className="flex items-center gap-2 mb-2 sm:mb-2.5">
+                  <span className="w-6 h-[1.5px] bg-[#C5A56A]" />
+                  <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
                     {whyNabiota.eyebrow}
                   </span>
+                </div>
 
-                  <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-white font-normal leading-[1.15] whitespace-pre-line">
-                    {whyNabiota.title}
-                  </h2>
+                <h2 className="font-serif text-[28px] sm:text-[34px] lg:text-[40px] font-normal text-[#142318] leading-[1.18] mb-3.5 sm:mb-4 whitespace-pre-line">
+                  {whyNabiota.title}
+                </h2>
 
-                  <p className="text-white/80 text-xs sm:text-[13px] leading-relaxed font-sans">
-                    {whyNabiota.description}
-                  </p>
+                <p className="text-[13px] sm:text-[13.5px] text-[#4E5650] leading-relaxed max-w-xl mb-6 font-sans">
+                  {whyNabiota.description}
+                </p>
 
-                  <div className="pt-2 sm:pt-3">
-                    <Link
-                      href={`/${locale}/values`}
-                      className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs tracking-wide shadow-md transition-all duration-200 hover:scale-[1.02]"
-                    >
-                      <span>{whyNabiota.btn}</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
-                  </div>
+                <div>
+                  <Link
+                    href={`/${locale}/values`}
+                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-[#8C9886] bg-white/75 hover:bg-[#142318] hover:text-white hover:border-[#142318] text-[#2C3B2E] text-[12.5px] font-medium tracking-wide transition-all shadow-xs"
+                  >
+                    <span>{whyNabiota.btn}</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                  </Link>
                 </div>
               </div>
 
-              {/* 3. Asymmetrical downward sweeping curve with gold rim (matching Photo 3: starts wide at top, curves down-inwards) */}
-              <div className="hidden lg:block absolute top-0 bottom-0 right-0 w-24 xl:w-32 pointer-events-none z-20">
-                <svg
-                  viewBox="0 0 100 400"
-                  preserveAspectRatio="none"
-                  className="w-full h-full"
-                >
-                  <defs>
-                    <linearGradient id="whyNabiotaGoldRim" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#C5A56A" />
-                      <stop offset="35%" stopColor="#ECCF96" />
-                      <stop offset="70%" stopColor="#D5B878" />
-                      <stop offset="100%" stopColor="#B38F44" />
-                    </linearGradient>
-                  </defs>
-                  {/* Ivory background outside the downward sweep */}
-                  <path
-                    d="M 100 0 L 100 400 L 0 400 C 50 350, 85 240, 96 110 L 96 24 Q 96 0, 72 0 Z"
-                    fill="#FAF8F5"
-                  />
-                  {/* Gold accent rim along the downward sweep */}
-                  <path
-                    d="M 72 0 Q 96 0, 96 24 L 96 110 C 85 240, 50 350, 0 400"
-                    stroke="url(#whyNabiotaGoldRim)"
-                    strokeWidth="2.5"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-
-            {/* 4. Right Ivory Block with 4 Core Pillars & Botanical Leaves Background */}
-            <div className="relative w-full lg:w-[38%] xl:w-[40%] bg-[#FAF8F5] p-6 sm:p-8 lg:p-9 flex items-center shrink-0 overflow-hidden">
-              {/* Botanical leaves coming in from the right edge (as in Photo 3) */}
-              <div className="absolute right-0 top-0 bottom-0 w-44 sm:w-56 pointer-events-none opacity-85 overflow-hidden flex items-center justify-end">
-                <svg
-                  viewBox="0 0 200 360"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-full w-auto text-[#7D9981]"
-                >
-                  <path
-                    d="M190 20C170 80 150 140 160 220C170 300 190 350 200 360"
-                    stroke="#5A775E"
-                    strokeWidth="3.5"
-                    strokeLinecap="round"
-                  />
-                  {/* Leaf 1 */}
-                  <path
-                    d="M175 60C140 50 110 65 95 90C115 105 145 105 170 80Z"
-                    fill="#8BA88F"
-                    fillOpacity="0.75"
-                  />
-                  <path d="M172 75C145 78 120 83 105 88" stroke="#5A775E" strokeWidth="1.5" />
-                  {/* Leaf 2 */}
-                  <path
-                    d="M165 110C130 115 105 140 95 170C120 175 150 165 165 130Z"
-                    fill="#759379"
-                    fillOpacity="0.8"
-                  />
-                  <path d="M162 125C138 138 120 150 102 165" stroke="#48634C" strokeWidth="1.5" />
-                  {/* Leaf 3 */}
-                  <path
-                    d="M160 180C125 175 95 195 80 230C105 240 140 235 158 200Z"
-                    fill="#92AF96"
-                    fillOpacity="0.75"
-                  />
-                  {/* Leaf 4 */}
-                  <path
-                    d="M162 250C130 260 110 290 105 325C130 330 155 315 168 275Z"
-                    fill="#7A987E"
-                    fillOpacity="0.85"
-                  />
-                  {/* Leaf 5 */}
-                  <path
-                    d="M170 290C145 305 130 335 130 360C155 365 175 345 180 315Z"
-                    fill="#85A289"
-                    fillOpacity="0.7"
-                  />
-                </svg>
-              </div>
-
-              {/* 2x2 Grid Pillars */}
-              <div className="relative z-10 grid grid-cols-2 gap-x-5 gap-y-4 sm:gap-x-7 sm:gap-y-5 w-full max-w-sm">
-                {whyNabiota.pillars.map((pillar, idx) => {
-                  const PillarIcon = pillar.icon;
-                  return (
-                    <div key={idx} className="space-y-1.5">
-                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#142318]/15 bg-white shadow-sm flex items-center justify-center text-[#142318]">
-                        <PillarIcon className="w-4 h-4 stroke-[1.6]" />
+              {/* Right Column: 4 Pillars with gold emblem icons (Facilities & Cooperations style) */}
+              <div className="w-full lg:w-[52%] xl:w-[56%] flex justify-center lg:justify-end">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 w-full max-w-xl lg:max-w-none pt-2 lg:pt-0">
+                  {whyNabiota.pillars.map((pillar, pIdx) => {
+                    const PillarIcon = pillar.icon;
+                    return (
+                      <div
+                        key={pIdx}
+                        className="flex items-start gap-4 p-4 sm:p-5 rounded-2xl bg-white/75 backdrop-blur-xs border border-[#EAE4D7] hover:border-[#D5B878]/70 hover:bg-white transition-all shadow-2xs"
+                      >
+                        <div className="w-12 h-12 sm:w-13 sm:h-13 rounded-full border border-[#D5B878]/60 bg-[#FAF3E8] flex items-center justify-center text-[#9E7D3B] shrink-0 shadow-2xs hover:bg-[#F0E5CD] transition-colors">
+                          <PillarIcon className="w-5 h-5 sm:w-5.5 sm:h-5.5 stroke-[1.6]" />
+                        </div>
+                        <div className="min-w-0">
+                          <h3 className="font-serif text-[15px] sm:text-[16px] font-medium text-[#142318] leading-tight mb-1">
+                            {pillar.title}
+                          </h3>
+                          <p className="text-[12px] sm:text-[12.5px] text-[#4E5650] leading-snug font-sans">
+                            {pillar.desc}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <h4 className="font-bold text-[#142318] text-sm sm:text-[14px]">
-                          {pillar.title}
-                        </h4>
-                        <p className="text-[11px] sm:text-xs text-[#6E756D] leading-snug font-sans mt-0.5">
-                          {pillar.desc}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>

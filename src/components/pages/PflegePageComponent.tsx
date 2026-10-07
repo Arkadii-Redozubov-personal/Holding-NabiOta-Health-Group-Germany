@@ -8,6 +8,7 @@ import {
   Heart,
   ShieldCheck,
   Home,
+  Hospital,
   Clock,
   Stethoscope,
   Pill,
@@ -41,6 +42,9 @@ import { Container } from "@/components/layout/Container";
 import { PageHero } from "@/components/layout/PageHero";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { SupportedLocale } from "@/lib/i18n";
+import { HomeCareCompanySection } from "@/components/sections/HomeCareCompanySection";
+import { SanitaetshausCompanySection } from "@/components/sections/SanitaetshausCompanySection";
+import { PharmacyCompanySection } from "@/components/sections/PharmacyCompanySection";
 
 interface Props {
   locale?: SupportedLocale;
@@ -1510,6 +1514,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
 
       {/* ── 2. SITE STANDARD PAGE HERO (Unified Header with botanical gold background) ── */}
       <PageHero
+          locale={locale}
         breadcrumb={
           <Breadcrumb
             items={[
@@ -1693,7 +1698,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
                   onClick={() => setSelectedService(svc)}
                   className="rounded-3xl bg-white border border-[#EAE4D7] shadow-sm hover:shadow-xl hover:border-[#C5A56A] transition-all duration-300 flex flex-col justify-between overflow-hidden group cursor-pointer"
                 >
-                  {/* Photo with pill badge at top left */}
+                  {/* Photo without badge */}
                   <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-[#07150C]">
                     <Image
                       src={svc.image}
@@ -1701,9 +1706,6 @@ export function PflegePageComponent({ locale = "de" }: Props) {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute top-3.5 left-3.5 bg-[#0C2917] text-white px-3.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase shadow-xs border border-white/10 z-10">
-                      {svc.badge}
-                    </div>
                   </div>
 
                   {/* Card Content with circular icon overlapping the image & gentle wave */}
@@ -1756,6 +1758,21 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             </div>
           </Container>
         </section>
+
+        {/* ========================================================================= */}
+        {/* SECTION 3B: NABIOTA HOMECARE GMBH – PDF SECTION IV.8                      */}
+        {/* ========================================================================= */}
+        <HomeCareCompanySection locale={locale} />
+
+        {/* ========================================================================= */}
+        {/* SECTION 3C: NABIOTA SANITÄTSHAUS GMBH – PDF SECTION IV.9                  */}
+        {/* ========================================================================= */}
+        <SanitaetshausCompanySection locale={locale} />
+
+        {/* ========================================================================= */}
+        {/* SECTION 3D: NABIOTA APOTHEKE MÖNCHENGLADBACH – PDF SECTION IV.10          */}
+        {/* ========================================================================= */}
+        <PharmacyCompanySection locale={locale} />
 
         {/* ========================================================================= */}
         {/* SECTION 4: INTEGRATED NETWORK COORDINATION (Holding Verbund)              */}
@@ -1828,14 +1845,14 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             </div>
 
             {/* 4 Sanitätshaus Divisions Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {sanitaetshausData.map((supply) => (
                 <div
                   key={supply.id}
                   className="bg-white rounded-3xl overflow-hidden border border-[#E6DFD1] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
                 >
                   <div>
-                    {/* Image Header with Badge */}
+                    {/* Image Header without Badge */}
                     <div className="relative aspect-[16/10] w-full overflow-hidden">
                       <Image
                         src={supply.image}
@@ -1844,11 +1861,6 @@ export function PflegePageComponent({ locale = "de" }: Props) {
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                      <div className="absolute top-3 left-3 bg-[#0F2A1D]/85 backdrop-blur-md px-3 py-1 rounded-full border border-[#D5B878]/40">
-                        <span className="text-[9.5px] font-bold tracking-wider text-[#ECCF96] uppercase font-sans">
-                          {supply.badge}
-                        </span>
-                      </div>
                     </div>
 
                     {/* Card Content */}
@@ -1882,56 +1894,109 @@ export function PflegePageComponent({ locale = "de" }: Props) {
                 </div>
               ))}
             </div>
+          </Container>
+        </section>
 
-            {/* Specialized Section: NabiOta Pharmacy & Klinik-Arzneimittelversorgung (§ 14 ApoG) */}
-            <div className="rounded-3xl bg-[#091F14] text-white border border-[#D5B878]/35 p-8 sm:p-12 relative overflow-hidden shadow-xl">
-              <div className="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-[#D5B878]/10 blur-3xl pointer-events-none" />
+        {/* ========================================================================= */}
+        {/* FULL-WIDTH SECTION: NABIOTA PHARMACY & KLINIKVERSORGUNG (§ 14 ApoG)      */}
+        {/* ========================================================================= */}
+        <section className="relative w-full py-10 sm:py-12 lg:py-14 bg-[#FAF7F2] overflow-hidden border-t border-b border-[#EDE8DE]">
+          {/* Right-side pharmacy still life photo with crisp visibility and subtle edge fade */}
+          <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[62%] xl:w-[56%] pointer-events-none overflow-hidden select-none">
+            <Image
+              src="/images/areas/pharmacy-clinic-supply.jpg"
+              alt="NabiOta Pharmacy & Clinic Supply"
+              fill
+              className="object-cover object-center lg:object-right"
+              priority
+              sizes="(max-width: 1024px) 100vw, 60vw"
+            />
+            {/* Subtle left edge gradient fade so photo is clearly visible without heavy blur */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#FAF7F2] from-0% via-[#FAF7F2]/50 via-18% via-[#FAF7F2]/10 via-35% to-transparent to-60%" />
+            {/* Soft vertical gradient on small screens only */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#FAF7F2] via-[#FAF7F2]/40 to-transparent lg:hidden" />
+          </div>
 
-              <div className="relative z-10 max-w-4xl">
-                <span className="text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-3 font-sans">
-                  {t.pharmacySection.eyebrow}
-                </span>
-                <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-white font-normal leading-tight mb-4">
+          {/* Botanical foliage watermark in bottom-right corner */}
+          <div className="absolute -bottom-10 -right-6 w-72 sm:w-88 h-72 sm:h-88 pointer-events-none opacity-35 select-none">
+            <Image
+              src="/images/areas/botanical-branch-clean.webp"
+              alt=""
+              fill
+              className="object-contain object-bottom-right rotate-[18deg]"
+              unoptimized
+            />
+          </div>
+
+          <Container size="wide" className="relative z-10">
+            <div className="max-w-6xl mx-auto space-y-7 sm:space-y-8">
+              {/* Header */}
+              <div className="max-w-2xl">
+                {/* Gold line + Eyebrow */}
+                <div className="flex items-center gap-2.5 mb-2 sm:mb-2.5">
+                  <span className="w-6 h-[1.5px] bg-[#C5A56A]" />
+                  <span className="text-[10px] sm:text-[10.5px] font-semibold tracking-[0.24em] text-[#C5A56A] uppercase font-sans">
+                    {t.pharmacySection.eyebrow}
+                  </span>
+                </div>
+
+                {/* Title */}
+                <h2 className="font-serif text-[24px] sm:text-[30px] lg:text-[35px] text-[#142318] font-normal leading-[1.2] mb-2.5 sm:mb-3">
                   {t.pharmacySection.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-[#C2D1C7] leading-relaxed mb-8 max-w-3xl">
+                </h2>
+
+                {/* Lead Description */}
+                <p className="text-[12px] sm:text-[12.5px] text-[#556057] leading-relaxed font-sans max-w-xl">
                   {t.pharmacySection.desc}
                 </p>
+              </div>
 
-                {/* 3 Pillars Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                  {t.pharmacySection.points.map((pt, idx) => (
-                    <div
-                      key={idx}
-                      className="p-5 rounded-2xl bg-[#0D281A]/80 border border-[#D5B878]/25 backdrop-blur-md"
-                    >
-                      <div className="w-8 h-8 rounded-full bg-[#D5B878]/20 border border-[#D5B878]/40 flex items-center justify-center text-[#ECCF96] mb-3">
-                        <Check className="w-4 h-4" />
+              {/* 3 Pillars Cards Grid (Compact height, no arrow buttons) */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+                {t.pharmacySection.points.map((pt, idx) => (
+                  <div
+                    key={idx}
+                    className="group relative rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-xs border border-[#EAE4D7] p-5 sm:p-5.5 shadow-[0_3px_14px_rgba(0,0,0,0.02)] hover:shadow-md hover:border-[#D5B878]/60 transition-all duration-300 overflow-hidden"
+                  >
+                    {/* Leaf watermark in bottom-right corner */}
+                    <div className="absolute -bottom-3 -right-3 w-20 h-20 pointer-events-none opacity-15 select-none sepia">
+                      <Image
+                        src="/images/areas/botanical-branch-clean.webp"
+                        alt=""
+                        fill
+                        className="object-contain object-bottom-right rotate-[25deg]"
+                        unoptimized
+                      />
+                    </div>
+
+                    <div className="relative z-10">
+                      {/* Icon badge */}
+                      <div className="mb-3 sm:mb-3.5">
+                        <div
+                          className={`w-10 h-10 sm:w-10.5 sm:h-10.5 rounded-full border flex items-center justify-center shrink-0 transition-colors ${
+                            idx === 0
+                              ? "bg-[#F3F7F4] border-[#DCE8DF] text-[#1E3B29] group-hover:bg-[#E5EFE8]"
+                              : "bg-[#FAF5EB] border-[#EFE5D5] text-[#9E7D3B] group-hover:bg-[#F3EAD9]"
+                          }`}
+                        >
+                          {idx === 0 && <ShieldCheck className="w-4.5 h-4.5 stroke-[1.8]" />}
+                          {idx === 1 && <Hospital className="w-4.5 h-4.5 stroke-[1.8]" />}
+                          {idx === 2 && <Pill className="w-4.5 h-4.5 stroke-[1.8]" />}
+                        </div>
                       </div>
-                      <h4 className="font-serif text-base font-bold text-white mb-2 leading-snug">
+
+                      {/* Title */}
+                      <h3 className="font-serif text-[16px] sm:text-[17px] text-[#142318] font-medium leading-snug mb-1.5 sm:mb-2">
                         {pt.title}
-                      </h4>
-                      <p className="text-xs text-[#A6BAAD] leading-relaxed">
+                      </h3>
+
+                      {/* Description */}
+                      <p className="text-[11.5px] sm:text-[12px] text-[#556057] leading-relaxed font-sans">
                         {pt.desc}
                       </p>
                     </div>
-                  ))}
-                </div>
-
-                {/* Compliance Badges Ribbon */}
-                <div className="pt-6 border-t border-[#D5B878]/20 flex flex-wrap items-center gap-2.5">
-                  <span className="text-[11px] text-[#ECCF96] font-semibold uppercase tracking-wider mr-2 font-sans">
-                    {isRu ? "Нормативная база:" : isEn ? "Compliance Framework:" : "Rechtliche Grundlagen:"}
-                  </span>
-                  {t.pharmacySection.complianceBadges.map((badge, idx) => (
-                    <span
-                      key={idx}
-                      className="px-3 py-1 rounded-full text-[11px] font-medium bg-[#123120] text-[#D4E0D7] border border-[#2D5A3D]"
-                    >
-                      {badge}
-                    </span>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </div>
           </Container>
@@ -2221,7 +2286,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
 
               return (
                 <div
-                  className="relative w-full max-w-3xl max-h-[92vh] overflow-y-auto rounded-3xl bg-[#FAF9F6] border border-[#E8DEC8] shadow-2xl p-6 sm:p-8 md:p-10 animate-in zoom-in-95 duration-200"
+                  className="relative w-full max-w-5xl xl:max-w-[1100px] max-h-[92vh] overflow-y-auto rounded-3xl bg-[#FAF9F6] border border-[#E8DEC8] shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 animate-in zoom-in-95 duration-200"
                   onClick={(e) => e.stopPropagation()}
                 >
                   {/* Close Button */}

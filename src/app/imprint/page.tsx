@@ -14,17 +14,17 @@ export const metadata = {
 
 const imprintBadges = [
   {
-    icon: <Scale className="w-5 h-5 text-[#ECCF96]" />,
+    icon: Scale,
     title: "Rechtssicherheit",
     sub: "nach § 5 TMG",
   },
   {
-    icon: <Building2 className="w-5 h-5 text-[#ECCF96]" />,
+    icon: Building2,
     title: "NabiOta GmbH",
     sub: "Holding",
   },
   {
-    icon: <FileCheck className="w-5 h-5 text-[#ECCF96]" />,
+    icon: FileCheck,
     title: "Transparenz",
     sub: "& Register",
   },

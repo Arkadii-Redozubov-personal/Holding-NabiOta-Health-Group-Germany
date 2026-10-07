@@ -42,17 +42,17 @@ export async function generateMetadata({ params }: AreaDetailPageProps) {
 
 const areaBadges = [
   {
-    icon: <Award className="w-5 h-5 text-[#ECCF96]" />,
+    icon: Award,
     title: "Höchste",
     sub: "Standards",
   },
   {
-    icon: <Stethoscope className="w-5 h-5 text-[#ECCF96]" />,
+    icon: Stethoscope,
     title: "Fachärztliche",
     sub: "Expertise",
   },
   {
-    icon: <Building2 className="w-5 h-5 text-[#ECCF96]" />,
+    icon: Building2,
     title: "Holding",
     sub: "Verbund",
   },

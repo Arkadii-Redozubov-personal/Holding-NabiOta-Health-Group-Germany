@@ -1339,7 +1339,7 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
 
       <main className="flex-1">
         {/* ── SECTION 1: HERO (Unified Format: Compact Dark Forest Green + Doctors + Golden Arcs) ── */}
-        <section className="relative w-full min-h-[480px] sm:min-h-[520px] lg:h-[600px] lg:min-h-[600px] pt-32 sm:pt-36 lg:pt-40 pb-14 sm:pb-16 overflow-hidden flex items-center bg-[#07150C] text-[#FAF8F5] border-b border-[#D5B878]/25">
+        <section dir="ltr" className="relative w-full min-h-[480px] sm:min-h-[520px] lg:h-[600px] lg:min-h-[600px] pt-32 sm:pt-36 lg:pt-40 pb-14 sm:pb-16 overflow-hidden flex items-center bg-[#07150C] text-[#FAF8F5] border-b border-[#D5B878]/25">
           {/* Background: Modern Healthcare Professional in scrubs holding tablet */}
           <div className="absolute inset-0 sm:left-[18%] sm:w-[82%] z-0 pointer-events-none overflow-hidden">
             <Image
@@ -1460,11 +1460,7 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
                 </span>
               </nav>
 
-              <div className="inline-block px-3 py-1 rounded-full bg-[#D5B878]/15 border border-[#D5B878]/30 text-[11px] font-semibold tracking-wider text-[#ECCF93] uppercase mb-3 font-sans">
-                {t.hero.eyebrow}
-              </div>
-
-              <h1 className="page-hero-title font-serif text-[32px] sm:text-[40px] lg:text-[44px] xl:text-[50px] text-white font-normal leading-[1.12] tracking-tight mb-4 break-words [overflow-wrap:anywhere] hyphens-auto">
+              <h1 dir="auto" className="page-hero-title text-left font-serif text-[32px] sm:text-[40px] lg:text-[44px] xl:text-[50px] text-white font-normal leading-[1.12] tracking-tight mb-4 break-words [overflow-wrap:anywhere] hyphens-auto">
                 {t.hero.titlePrefix}
                 <br />
                 {t.hero.titleMid}{" "}
@@ -1473,11 +1469,11 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
                 </span>
               </h1>
 
-              <p className="hero-text-wrap text-[13.5px] sm:text-[14.5px] text-[#D2DED5] leading-[1.72] font-sans max-w-xl mb-6 font-normal break-words [overflow-wrap:anywhere] hyphens-auto">
+              <p dir="auto" className="hero-text-wrap text-left text-[13.5px] sm:text-[14.5px] text-[#D2DED5] leading-[1.72] font-sans max-w-xl mb-6 font-normal break-words [overflow-wrap:anywhere] hyphens-auto">
                 {t.hero.description}
               </p>
 
-              <div className="mb-8">
+              <div>
                 <HeroBadges
                   items={[
                     {
@@ -1497,22 +1493,6 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
                     },
                   ]}
                 />
-              </div>
-
-              <div className="flex flex-wrap items-center gap-4">
-                <Link
-                  href="#stellen"
-                  className="inline-flex items-center gap-2.5 px-6 sm:px-7 py-3 rounded-full bg-[#C5A56A] hover:bg-[#D5B878] text-[#07150C] font-semibold text-xs sm:text-sm tracking-wide shadow-md transition-all duration-200 hover:scale-[1.02]"
-                >
-                  <span>{t.hero.cta}</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="#saeulen"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-white/20 hover:border-[#C5A56A] text-white hover:text-[#C5A56A] text-xs sm:text-sm font-medium transition-all duration-200"
-                >
-                  <span>{t.pillarSection.title}</span>
-                </Link>
               </div>
             </div>
           </div>
@@ -1606,7 +1586,7 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
                   onClick={() => setSelectedPillar(pillar)}
                   className="rounded-3xl bg-white border border-[#EAE4D7] shadow-sm hover:shadow-xl hover:border-[#C5A56A] transition-all duration-300 flex flex-col justify-between overflow-hidden group cursor-pointer"
                 >
-                  {/* Photo with pill badge at top left */}
+                  {/* Photo */}
                   <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-[#07150C]">
                     <Image
                       src={pillar.image}
@@ -1614,10 +1594,6 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    {/* Dark green badge matching Photo 1 */}
-                    <div className="absolute top-3.5 left-3.5 bg-[#0C2917] text-white px-3.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase shadow-xs border border-white/10 z-10">
-                      {pillar.badge}
-                    </div>
                   </div>
 
                   {/* Card Content with circular icon overlapping the image & gentle wave */}
@@ -2273,7 +2249,7 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
             onClick={() => setSelectedPillar(null)}
           >
             <div
-              className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto bg-[#FCFAF7] border border-[#D5B878]/50 rounded-3xl shadow-2xl p-6 sm:p-8 md:p-10 text-[#07150C] focus:outline-none"
+              className="relative w-full max-w-5xl xl:max-w-[1100px] max-h-[92vh] overflow-y-auto bg-[#FCFAF7] border border-[#D5B878]/50 rounded-3xl shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 text-[#07150C] focus:outline-none"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}

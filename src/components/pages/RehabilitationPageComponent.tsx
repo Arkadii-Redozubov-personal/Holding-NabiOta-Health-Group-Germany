@@ -23,6 +23,7 @@ import { Footer } from "@/components/layout/Footer";
 import { PageHero } from "@/components/layout/PageHero";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { SupportedLocale } from "@/lib/i18n";
+import { RehabilitationCompanySection } from "@/components/sections/RehabilitationCompanySection";
 
 export interface SpecializationModalData {
   id: string;
@@ -759,6 +760,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
           HERO SECTION (UNIFIED PHOTO 4 FORMAT WITH BOTANICAL GOLD)
       ══════════════════════════════════════════════════════════ */}
       <PageHero
+          locale={locale}
         breadcrumb={
           <Breadcrumb
             items={[
@@ -817,7 +819,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                 className="bg-white rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878]/80 overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_32px_rgba(12,43,27,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group cursor-pointer text-left focus:outline-none focus:ring-2 focus:ring-[#D5B878]"
               >
                 <div>
-                  {/* Photo with Tag */}
+                  {/* Photo without Tag */}
                   <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-neutral-100">
                     <Image
                       src={spec.image}
@@ -826,9 +828,6 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                       className="object-cover group-hover:scale-104 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
-                    <span className="absolute top-3 left-3 text-[9.5px] font-bold tracking-wider uppercase text-[#8C6D2B] bg-[#FAF5EC]/95 backdrop-blur-xs border border-[#EADBBD] px-2.5 py-1 rounded-md shadow-xs">
-                      {spec.badge}
-                    </span>
                   </div>
 
                   {/* Body */}
@@ -1092,8 +1091,8 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
       <section className="py-12 sm:py-18 bg-[#FAF8F5]">
         <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-stretch">
-            {/* Left Card: Pool Photo with Tag & Button */}
-            <div className="relative rounded-3xl overflow-hidden shadow-xl border border-[#EDE8DE] min-h-[380px] sm:min-h-[420px] flex flex-col justify-between p-7 sm:p-9 group">
+            {/* Left Card: Pool Photo with Button */}
+            <div className="relative rounded-3xl overflow-hidden shadow-xl border border-[#EDE8DE] min-h-[380px] sm:min-h-[420px] flex flex-col justify-end p-7 sm:p-9 group">
               <Image
                 src="/images/rehabilitation/facility-pool.webp"
                 alt="Moderne Einrichtungen"
@@ -1101,13 +1100,6 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                 className="object-cover object-center group-hover:scale-103 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
-
-              {/* Top Badge */}
-              <div className="relative z-10">
-                <span className="inline-block px-3.5 py-1.5 rounded-full bg-[#E5D2A4] text-[#132218] text-[10.5px] font-bold uppercase tracking-wider shadow-sm">
-                  {facilitiesCard.badge}
-                </span>
-              </div>
 
               {/* Bottom Info */}
               <div className="relative z-10 space-y-3">
@@ -1245,21 +1237,27 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
       </section>
 
       {/* ══════════════════════════════════════════════════════════
+          SECTION 5B: NABIOTA REHABILITATION & THERAPY GMBH – PDF IV.5
+          - Corporate purpose, 4 pillars, goals & payer framework
+      ══════════════════════════════════════════════════════════ */}
+      <RehabilitationCompanySection locale={locale} />
+
+      {/* ══════════════════════════════════════════════════════════
           SECTION 6: PATIENT TESTIMONIALS (EXACTLY MATCHING TARGET LAYOUT)
           - Compact vertical height (py-8 sm:py-10 lg:py-12)
           - Left block aligned and vertically centered with cards
           - 3 wider, shorter cards with avatars at top-left
           - Carousel navigation buttons centered closely under cards
-          - Full vibrant botanical-gold-bg.webp background
+          - Full-bleed photo2.webp background
       ══════════════════════════════════════════════════════════ */}
       <section className="w-full py-8 sm:py-10 lg:py-12 bg-[#091E13] text-white relative overflow-hidden border-t border-[#D5B878]/30">
-        {/* Full-bleed Botanical Gold Texture */}
+        {/* Full-bleed background: photo2.webp */}
         <div className="absolute inset-0 pointer-events-none z-0">
           <Image
-            src="/images/botanical-gold-bg.webp"
-            alt="Botanical Gold"
+            src="/images/about/photo2.webp"
+            alt="Patient Testimonials Background"
             fill
-            className="object-fill opacity-100"
+            className="object-cover object-center opacity-95"
             priority
           />
         </div>
@@ -1499,14 +1497,14 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
           onClick={() => setSelectedSpecialization(null)}
         >
           <div
-            className="relative w-full max-w-2xl bg-white rounded-2xl sm:rounded-3xl border border-[#D5B878]/40 shadow-2xl overflow-hidden max-h-[92vh] flex flex-col animate-in zoom-in-95 duration-200"
+            className="relative w-full max-w-4xl xl:max-w-5xl bg-white rounded-2xl sm:rounded-3xl border border-[#D5B878]/40 shadow-2xl overflow-hidden max-h-[92vh] flex flex-col animate-in zoom-in-95 duration-200"
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
             aria-labelledby="rehab-modal-title"
           >
             {/* Modal Top Header Image & Badges */}
-            <div className="relative h-44 sm:h-52 w-full overflow-hidden shrink-0 bg-[#08170D]">
+            <div className="relative h-48 sm:h-56 md:h-64 w-full overflow-hidden shrink-0 bg-[#08170D]">
               <Image
                 src={selectedSpecialization.image}
                 alt={selectedSpecialization.title}

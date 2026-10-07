@@ -30,6 +30,7 @@ import { Container } from "@/components/layout/Container";
 import { PageHero } from "@/components/layout/PageHero";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { SupportedLocale } from "@/lib/i18n";
+import { RecruitmentCompanySection } from "@/components/sections/RecruitmentCompanySection";
 
 interface InternationalProgram {
   id: string;
@@ -859,6 +860,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
       <main className="flex-1">
         {/* 2. Site Page Hero with Botanical Background and Breadcrumbs */}
         <PageHero
+          locale={locale}
           breadcrumb={
             <Breadcrumb
               items={[
@@ -921,7 +923,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
 
               <div className="pt-1.5 sm:pt-2">
                 <a
-                  href="#partner"
+                  href="#projekte"
                   className="inline-flex items-center gap-2.5 px-6 py-2.5 sm:py-3 rounded-full bg-[#F3EAD8] hover:bg-[#ECCF96] text-[#0B2516] border border-[#D5C096] text-xs sm:text-sm font-semibold transition-all duration-300 shadow-sm group"
                 >
                   <span>{t.s2.btn}</span>
@@ -930,131 +932,6 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               </div>
             </div>
           </div>
-        </section>
-
-        {/* ========================================================================= */}
-        {/* SECTION 3: UNSERE KOOPERATIONSPARTNER                                      */}
-        {/* ========================================================================= */}
-        <section id="partner" className="py-12 sm:py-14 lg:py-16 bg-[#FAF7F2] border-t border-[#EBE6DC]">
-          <Container>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-              {/* Left Column (1/3): Description & Action */}
-              <div className="lg:col-span-4 space-y-4">
-                <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-serif font-bold text-[#0B2516] leading-tight">
-                  {t.s3.title}
-                </h2>
-
-                <p className="text-xs sm:text-[13px] text-[#4A5D52] leading-relaxed">
-                  {t.s3.desc}
-                </p>
-
-                <div className="pt-1 sm:pt-2">
-                  <Link
-                    href={`/${locale}/contact`}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#0B2516] hover:bg-[#0B2516] text-[#0B2516] hover:text-white text-xs sm:text-sm font-semibold transition-all duration-300 group"
-                  >
-                    <span>{t.s3.btn}</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </div>
-              </div>
-
-              {/* Right Column (2/3): 3x2 Partner Cards Grid - Photo 4 Authentic Branding */}
-              <div className="lg:col-span-8">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5 sm:gap-4">
-                  {/* Card 1: WHO */}
-                  <div className="bg-white rounded-xl p-4 sm:p-5 border border-[#E5DFD3] shadow-xs hover:shadow-md hover:border-[#0093D5]/50 transition-all flex items-center gap-3.5 group min-h-[76px]">
-                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-[#EBF6FC] flex items-center justify-center shrink-0 text-[#0093D5] border border-[#0093D5]/20">
-                      <Globe2 className="w-5 h-5 text-[#0093D5]" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-[#0093D5] tracking-wide">
-                        WHO
-                      </div>
-                      <div className="text-[10.5px] font-medium text-[#1B3A29] leading-tight">
-                        World Health Organization
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Card 2: GIZ */}
-                  <div className="bg-white rounded-xl p-4 sm:p-5 border border-[#E5DFD3] shadow-xs hover:shadow-md hover:border-[#CD1719]/50 transition-all flex items-center gap-3.5 group min-h-[76px]">
-                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-[#FDECEC] flex items-center justify-center shrink-0 text-[#CD1719] font-black text-sm border border-[#CD1719]/20 tracking-tighter">
-                      giz
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-[#CD1719]">
-                        giz
-                      </div>
-                      <div className="text-[10px] text-[#4A5D52] leading-tight line-clamp-2">
-                        Deutsche Gesellschaft für Internationale Zusammenarbeit
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Card 3: World Bank Group */}
-                  <div className="bg-white rounded-xl p-4 sm:p-5 border border-[#E5DFD3] shadow-xs hover:shadow-md hover:border-[#002244]/50 transition-all flex items-center gap-3.5 group min-h-[76px]">
-                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-[#EBF0F6] flex items-center justify-center shrink-0 text-[#002244] border border-[#002244]/20">
-                      <Network className="w-5 h-5 text-[#002244]" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-[#002244]">
-                        World Bank Group
-                      </div>
-                      <div className="text-[10px] text-[#4A5D52] leading-tight">
-                        Global Health & Development
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Card 4: UNICEF */}
-                  <div className="bg-white rounded-xl p-4 sm:p-5 border border-[#E5DFD3] shadow-xs hover:shadow-md hover:border-[#1CABE2]/50 transition-all flex items-center gap-3.5 group min-h-[76px]">
-                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-[#EAF7FC] flex items-center justify-center shrink-0 text-[#1CABE2] font-black text-xs border border-[#1CABE2]/20">
-                      <HeartHandshake className="w-5 h-5 text-[#1CABE2]" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-[#1CABE2] lowercase">
-                        unicef
-                      </div>
-                      <div className="text-[10.5px] font-medium text-[#1B3A29] leading-tight">
-                        für jedes Kind
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Card 5: Universities */}
-                  <div className="bg-white rounded-xl p-4 sm:p-5 border border-[#E5DFD3] shadow-xs hover:shadow-md hover:border-[#B8934A]/50 transition-all flex items-center gap-3.5 group min-h-[76px]">
-                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-[#FAF7F0] flex items-center justify-center shrink-0 text-[#B8934A] border border-[#B8934A]/30">
-                      <GraduationCap className="w-5 h-5 text-[#B8934A]" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-[#1B3A29]">
-                        Universitäten
-                      </div>
-                      <div className="text-[10px] text-[#4A5D52] leading-tight">
-                        & Forschungsinstitute
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Card 6: NGOs & Foundations */}
-                  <div className="bg-white rounded-xl p-4 sm:p-5 border border-[#E5DFD3] shadow-xs hover:shadow-md hover:border-[#2D5A3E]/50 transition-all flex items-center gap-3.5 group min-h-[76px]">
-                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-[#EDF3EE] flex items-center justify-center shrink-0 text-[#2D5A3E] border border-[#2D5A3E]/30">
-                      <Leaf className="w-5 h-5 text-[#2D5A3E]" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-[#1B3A29]">
-                        NGOs & Stiftungen
-                      </div>
-                      <div className="text-[10px] text-[#4A5D52] leading-tight">
-                        Gemeinnützige Netzwerke
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Container>
         </section>
 
         {/* ========================================================================= */}
@@ -1095,7 +972,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                   onClick={() => setSelectedProgram(prog)}
                   className="group bg-[#FAF8F5] rounded-2xl overflow-hidden border border-[#EBE6DC] shadow-xs hover:shadow-xl hover:border-[#ECCF96] transition-all duration-300 flex flex-col cursor-pointer"
                 >
-                  {/* Program Image with Region Tag */}
+                  {/* Program Image without Region Tag */}
                   <div className="relative aspect-[16/11] overflow-hidden">
                     <Image
                       src={prog.image}
@@ -1104,11 +981,6 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-
-                    {/* Region Pill Badge (Top-Left) */}
-                    <div className="absolute top-3 left-3 bg-[#0B2516]/85 backdrop-blur-sm text-[#ECCF96] text-[10px] font-bold tracking-wider px-2.5 py-1 rounded shadow-sm">
-                      {prog.tag}
-                    </div>
                   </div>
 
                   {/* Program Details */}
@@ -1137,6 +1009,11 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             </div>
           </Container>
         </section>
+
+        {/* ========================================================================= */}
+        {/* SECTION 4B: NABIOTA MEDICAL RECRUITMENT SERVICES GMBH – PDF IV.6         */}
+        {/* ========================================================================= */}
+        <RecruitmentCompanySection locale={locale} />
 
         {/* ========================================================================= */}
         {/* SECTION 5: IMPACT BANNER (DARK EMERALD SPLIT SECTION WITH BOTANICAL BG)    */}
@@ -1333,7 +1210,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             onClick={() => setSelectedProgram(null)}
           >
             <div
-              className="relative w-full max-w-3xl max-h-[92vh] overflow-y-auto rounded-3xl bg-[#FAF9F6] border border-[#E8DEC8] shadow-2xl p-6 sm:p-8 md:p-10 animate-in zoom-in-95 duration-200"
+              className="relative w-full max-w-5xl xl:max-w-[1100px] max-h-[92vh] overflow-y-auto rounded-3xl bg-[#FAF9F6] border border-[#E8DEC8] shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 animate-in zoom-in-95 duration-200"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}

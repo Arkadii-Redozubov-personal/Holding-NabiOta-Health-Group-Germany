@@ -28,6 +28,7 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { SupportedLocale } from "@/lib/i18n";
 import { businessAreas } from "@/data/areas";
+import { DiagnosticsCompanySection } from "@/components/sections/DiagnosticsCompanySection";
 
 // ── Custom SVG Modality Icons ──
 function MriScannerIcon({ className = "w-4 h-4" }: { className?: string }) {
@@ -648,6 +649,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
 
       {/* ── Page Hero with integrated breadcrumb ── */}
       <PageHero
+          locale={locale}
         breadcrumb={
           <Breadcrumb
             items={[
@@ -1054,6 +1056,12 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ══════════════════════════════════════════════════════════
+            SECTION 4B: NABIOTA DIAGNOSTICS GMBH – PDF SECTION IV.4
+            - Corporate purpose, legal separation, 8 core tasks
+        ══════════════════════════════════════════════════════════ */}
+        <DiagnosticsCompanySection locale={locale} />
+
+        {/* ══════════════════════════════════════════════════════════
             SECTION 5 (PHOTO 4): PATIENTENSTIMMEN (FULL-WIDTH EDGE-TO-EDGE)
             - Seamlessly connected to Section 6 with NO white gap!
         ══════════════════════════════════════════════════════════ */}
@@ -1220,14 +1228,14 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             onClick={() => setSelectedProcedure(null)}
           >
             <div
-              className="relative w-full max-w-2xl bg-white rounded-2xl sm:rounded-3xl border border-[#D5B878]/40 shadow-2xl overflow-hidden max-h-[92vh] flex flex-col animate-in zoom-in-95 duration-200"
+              className="relative w-full max-w-4xl xl:max-w-5xl bg-white rounded-2xl sm:rounded-3xl border border-[#D5B878]/40 shadow-2xl overflow-hidden max-h-[92vh] flex flex-col animate-in zoom-in-95 duration-200"
               onClick={(e) => e.stopPropagation()}
               role="dialog"
               aria-modal="true"
               aria-labelledby="modal-title"
             >
               {/* Modal Top Header Image & Badges */}
-              <div className="relative h-44 sm:h-52 w-full overflow-hidden shrink-0 bg-[#08170D]">
+              <div className="relative h-48 sm:h-56 md:h-64 w-full overflow-hidden shrink-0 bg-[#08170D]">
                 <Image
                   src={selectedProcedure.image}
                   alt={selectedProcedure.title}

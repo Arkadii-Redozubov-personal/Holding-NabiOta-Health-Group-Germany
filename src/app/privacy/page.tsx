@@ -14,17 +14,17 @@ export const metadata = {
 
 const privacyBadges = [
   {
-    icon: <ShieldCheck className="w-5 h-5 text-[#ECCF96]" />,
+    icon: ShieldCheck,
     title: "100% DSGVO",
     sub: "Konformität",
   },
   {
-    icon: <Lock className="w-5 h-5 text-[#ECCF96]" />,
+    icon: Lock,
     title: "Sichere",
     sub: "Daten",
   },
   {
-    icon: <FileText className="w-5 h-5 text-[#ECCF96]" />,
+    icon: FileText,
     title: "Volle",
     sub: "Transparenz",
   },

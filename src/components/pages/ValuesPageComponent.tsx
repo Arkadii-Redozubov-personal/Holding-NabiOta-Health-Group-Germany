@@ -279,7 +279,7 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
         {/* ══════════════════════════════════════════════════════════
             SECTION 1: HERO (Dark Forest Green + Sunlit Building)
         ══════════════════════════════════════════════════════════ */}
-        <section className="relative w-full min-h-[480px] sm:min-h-[520px] lg:h-[600px] lg:min-h-[600px] pt-32 sm:pt-36 lg:pt-40 pb-14 sm:pb-16 overflow-hidden flex items-center bg-[#07150C] text-[#FAF8F5] border-b border-[#D5B878]/25">
+        <section dir="ltr" className="relative w-full min-h-[480px] sm:min-h-[520px] lg:h-[600px] lg:min-h-[600px] pt-32 sm:pt-36 lg:pt-40 pb-14 sm:pb-16 overflow-hidden flex items-center bg-[#07150C] text-[#FAF8F5] border-b border-[#D5B878]/25">
           {/* Background: Modern Medical Consultation - focused on subjects on mobile, crisp on desktop */}
           <div className="absolute inset-0 sm:left-[18%] sm:w-[82%] z-0 pointer-events-none overflow-hidden">
             <Image
@@ -397,14 +397,14 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
               </nav>
 
               {/* Main Heading */}
-              <h1 className="page-hero-title font-serif text-[32px] sm:text-[40px] lg:text-[44px] xl:text-[50px] font-normal leading-[1.12] tracking-[-0.01em] text-white mb-5 sm:mb-6 break-words [overflow-wrap:anywhere] hyphens-auto">
+              <h1 dir="auto" className="page-hero-title text-left font-serif text-[32px] sm:text-[40px] lg:text-[44px] xl:text-[50px] font-normal leading-[1.12] tracking-[-0.01em] text-white mb-5 sm:mb-6 break-words [overflow-wrap:anywhere] hyphens-auto">
                 {t.heroTitle1}
                 <br />
                 {t.heroTitle2}
               </h1>
 
               {/* Description */}
-              <p className="hero-text-wrap text-[13.5px] sm:text-[14.5px] text-[#D2DED5] leading-[1.72] font-sans max-w-xl mb-6 sm:mb-7 font-normal break-words [overflow-wrap:anywhere] hyphens-auto">
+              <p dir="auto" className="hero-text-wrap text-left text-[13.5px] sm:text-[14.5px] text-[#D2DED5] leading-[1.72] font-sans max-w-xl mb-6 sm:mb-7 font-normal break-words [overflow-wrap:anywhere] hyphens-auto">
                 {t.heroDesc}
               </p>
 
@@ -431,14 +431,6 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
                 />
               </div>
 
-              {/* CTA Button: Unsere Geschichte -> */}
-              <Link
-                href={`/${locale}/about`}
-                className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 rounded-full bg-gradient-to-r from-[#ECCF93] to-[#D4AF67] text-[#142217] font-sans font-semibold text-[13px] tracking-wide hover:from-[#F2DAB0] hover:to-[#DEBD7A] transition-all shadow-md group"
-              >
-                <span>{t.heroBtn}</span>
-                <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-              </Link>
             </div>
           </Container>
         </section>
@@ -632,143 +624,222 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
               </p>
             </div>
 
-            {/* 4 Pillars Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-7 mb-12">
-              {/* Pillar 1: Weisungsfreiheit § 95 SGB V */}
-              <div className="bg-white/95 rounded-2xl sm:rounded-3xl p-6 sm:p-7 border border-[#E7DFD2] shadow-sm hover:shadow-md transition-all duration-300 hover:border-[#D5B878]/70 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between gap-3 mb-4">
-                    <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10.5px] font-bold tracking-wider uppercase bg-[#F3EDE2] text-[#8B7347] border border-[#D5B878]/40">
-                      {t.govPillar1Tag}
-                    </span>
-                    <div className="w-10 h-10 rounded-full border border-[#D5B878]/50 bg-[#FAF7F2] flex items-center justify-center text-[#B89650]">
-                      <Scale className="w-5 h-5 stroke-[1.8]" />
+            {/* 4 Pillars Grid Matching Reference Photo */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-7 mb-10 sm:mb-12">
+              {/* Pillar 1: Weisungsfreiheit § 95 SGB V (Image LEFT, Content RIGHT) */}
+              <div className="bg-white/95 rounded-2xl sm:rounded-3xl border border-[#EAE4D7] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-[#D5B878]/70 transition-all duration-300 flex flex-col sm:flex-row items-stretch overflow-hidden group">
+                <div className="w-full sm:w-[36%] lg:w-[35%] shrink-0 relative min-h-[170px] sm:min-h-[190px] p-3 sm:p-3.5">
+                  <div className="relative w-full h-full min-h-[160px] sm:min-h-[180px] rounded-xl sm:rounded-2xl overflow-hidden shadow-xs">
+                    <Image
+                      src="/images/values/gov-stethoscope.webp"
+                      alt={t.govPillar1Title}
+                      fill
+                      sizes="(min-width: 1024px) 20vw, 40vw"
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                </div>
+                <div className="p-4 sm:p-5 lg:p-5.5 flex-1 flex flex-col justify-center">
+                  <div>
+                    <div className="flex items-center gap-2.5 mb-2 sm:mb-2.5">
+                      <div className="w-8 h-8 sm:w-8.5 sm:h-8.5 rounded-full bg-[#FAF3E8] border border-[#E8DFC8] flex items-center justify-center text-[#9E7D3B] shrink-0 shadow-2xs">
+                        <Scale className="w-4 h-4 stroke-[1.75]" />
+                      </div>
+                      <span className="w-4 h-[1.5px] bg-[#C5A56A]" />
+                      <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.2em] text-[#C5A56A] uppercase font-sans">
+                        {t.govPillar1Tag}
+                      </span>
+                    </div>
+                    <h3 className="font-serif text-[17px] sm:text-[18.5px] font-bold text-[#142318] mb-1.5 leading-snug">
+                      {t.govPillar1Title}
+                    </h3>
+                    <p className="text-[11.5px] sm:text-[12px] text-[#556057] leading-[1.6] font-sans mb-2.5">
+                      {t.govPillar1Desc}
+                    </p>
+                    <div className="space-y-1.5">
+                      {t.govPillar1Points.map((point: string, idx: number) => (
+                        <div key={idx} className="flex items-start gap-2 text-[11px] sm:text-[11.5px] text-[#2C3E31] font-medium leading-snug">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#B89650] shrink-0 mt-0.5" />
+                          <span>{point}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                  <h3 className="font-serif text-lg sm:text-xl font-bold text-[#142318] mb-2 leading-snug">
-                    {t.govPillar1Title}
-                  </h3>
-                  <p className="text-[13px] sm:text-[13.5px] text-[#555E56] leading-relaxed mb-4">
-                    {t.govPillar1Desc}
-                  </p>
-                </div>
-                <div className="pt-3.5 border-t border-[#F0EBE1] space-y-2">
-                  {t.govPillar1Points.map((point: string, idx: number) => (
-                    <div key={idx} className="flex items-start gap-2 text-[12px] sm:text-[12.5px] text-[#2C3E31] font-medium">
-                      <CheckCircle2 className="w-4 h-4 text-[#8B7347] flex-shrink-0 mt-0.5" />
-                      <span>{point}</span>
-                    </div>
-                  ))}
                 </div>
               </div>
 
-              {/* Pillar 2: QM & Patientensicherheit */}
-              <div className="bg-white/95 rounded-2xl sm:rounded-3xl p-6 sm:p-7 border border-[#E7DFD2] shadow-sm hover:shadow-md transition-all duration-300 hover:border-[#D5B878]/70 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between gap-3 mb-4">
-                    <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10.5px] font-bold tracking-wider uppercase bg-[#F3EDE2] text-[#8B7347] border border-[#D5B878]/40">
-                      {t.govPillar2Tag}
-                    </span>
-                    <div className="w-10 h-10 rounded-full border border-[#D5B878]/50 bg-[#FAF7F2] flex items-center justify-center text-[#B89650]">
-                      <ShieldCheck className="w-5 h-5 stroke-[1.8]" />
+              {/* Pillar 2: QM & Patientensicherheit (Content LEFT, Image RIGHT) */}
+              <div className="bg-white/95 rounded-2xl sm:rounded-3xl border border-[#EAE4D7] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-[#D5B878]/70 transition-all duration-300 flex flex-col-reverse sm:flex-row items-stretch overflow-hidden group">
+                <div className="p-4 sm:p-5 lg:p-5.5 flex-1 flex flex-col justify-center">
+                  <div>
+                    <div className="flex items-center gap-2.5 mb-2 sm:mb-2.5">
+                      <div className="w-8 h-8 sm:w-8.5 sm:h-8.5 rounded-full bg-[#FAF3E8] border border-[#E8DFC8] flex items-center justify-center text-[#9E7D3B] shrink-0 shadow-2xs">
+                        <ShieldCheck className="w-4 h-4 stroke-[1.75]" />
+                      </div>
+                      <span className="w-4 h-[1.5px] bg-[#C5A56A]" />
+                      <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.2em] text-[#C5A56A] uppercase font-sans">
+                        {t.govPillar2Tag}
+                      </span>
+                    </div>
+                    <h3 className="font-serif text-[17px] sm:text-[18.5px] font-bold text-[#142318] mb-1.5 leading-snug">
+                      {t.govPillar2Title}
+                    </h3>
+                    <p className="text-[11.5px] sm:text-[12px] text-[#556057] leading-[1.6] font-sans mb-2.5">
+                      {t.govPillar2Desc}
+                    </p>
+                    <div className="space-y-1.5">
+                      {t.govPillar2Points.map((point: string, idx: number) => (
+                        <div key={idx} className="flex items-start gap-2 text-[11px] sm:text-[11.5px] text-[#2C3E31] font-medium leading-snug">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#B89650] shrink-0 mt-0.5" />
+                          <span>{point}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                  <h3 className="font-serif text-lg sm:text-xl font-bold text-[#142318] mb-2 leading-snug">
-                    {t.govPillar2Title}
-                  </h3>
-                  <p className="text-[13px] sm:text-[13.5px] text-[#555E56] leading-relaxed mb-4">
-                    {t.govPillar2Desc}
-                  </p>
                 </div>
-                <div className="pt-3.5 border-t border-[#F0EBE1] space-y-2">
-                  {t.govPillar2Points.map((point: string, idx: number) => (
-                    <div key={idx} className="flex items-start gap-2 text-[12px] sm:text-[12.5px] text-[#2C3E31] font-medium">
-                      <CheckCircle2 className="w-4 h-4 text-[#8B7347] flex-shrink-0 mt-0.5" />
-                      <span>{point}</span>
-                    </div>
-                  ))}
+                <div className="w-full sm:w-[36%] lg:w-[35%] shrink-0 relative min-h-[170px] sm:min-h-[190px] p-3 sm:p-3.5">
+                  <div className="relative w-full h-full min-h-[160px] sm:min-h-[180px] rounded-xl sm:rounded-2xl overflow-hidden shadow-xs">
+                    <Image
+                      src="/images/values/gov-room.webp"
+                      alt={t.govPillar2Title}
+                      fill
+                      sizes="(min-width: 1024px) 20vw, 40vw"
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
                 </div>
               </div>
 
-              {/* Pillar 3: Schweigepflicht & Datenschutz */}
-              <div className="bg-white/95 rounded-2xl sm:rounded-3xl p-6 sm:p-7 border border-[#E7DFD2] shadow-sm hover:shadow-md transition-all duration-300 hover:border-[#D5B878]/70 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between gap-3 mb-4">
-                    <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10.5px] font-bold tracking-wider uppercase bg-[#F3EDE2] text-[#8B7347] border border-[#D5B878]/40">
-                      {t.govPillar3Tag}
-                    </span>
-                    <div className="w-10 h-10 rounded-full border border-[#D5B878]/50 bg-[#FAF7F2] flex items-center justify-center text-[#B89650]">
-                      <Lock className="w-5 h-5 stroke-[1.8]" />
+              {/* Pillar 3: Schweigepflicht & Datenschutz (Image LEFT, Content RIGHT) */}
+              <div className="bg-white/95 rounded-2xl sm:rounded-3xl border border-[#EAE4D7] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-[#D5B878]/70 transition-all duration-300 flex flex-col sm:flex-row items-stretch overflow-hidden group">
+                <div className="w-full sm:w-[36%] lg:w-[35%] shrink-0 relative min-h-[170px] sm:min-h-[190px] p-3 sm:p-3.5">
+                  <div className="relative w-full h-full min-h-[160px] sm:min-h-[180px] rounded-xl sm:rounded-2xl overflow-hidden shadow-xs">
+                    <Image
+                      src="/images/values/gov-datenschutz.webp"
+                      alt={t.govPillar3Title}
+                      fill
+                      sizes="(min-width: 1024px) 20vw, 40vw"
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                </div>
+                <div className="p-4 sm:p-5 lg:p-5.5 flex-1 flex flex-col justify-center">
+                  <div>
+                    <div className="flex items-center gap-2.5 mb-2 sm:mb-2.5">
+                      <div className="w-8 h-8 sm:w-8.5 sm:h-8.5 rounded-full bg-[#FAF3E8] border border-[#E8DFC8] flex items-center justify-center text-[#9E7D3B] shrink-0 shadow-2xs">
+                        <Lock className="w-4 h-4 stroke-[1.75]" />
+                      </div>
+                      <span className="w-4 h-[1.5px] bg-[#C5A56A]" />
+                      <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.2em] text-[#C5A56A] uppercase font-sans">
+                        {t.govPillar3Tag}
+                      </span>
+                    </div>
+                    <h3 className="font-serif text-[17px] sm:text-[18.5px] font-bold text-[#142318] mb-1.5 leading-snug">
+                      {t.govPillar3Title}
+                    </h3>
+                    <p className="text-[11.5px] sm:text-[12px] text-[#556057] leading-[1.6] font-sans mb-2.5">
+                      {t.govPillar3Desc}
+                    </p>
+                    <div className="space-y-1.5">
+                      {t.govPillar3Points.map((point: string, idx: number) => (
+                        <div key={idx} className="flex items-start gap-2 text-[11px] sm:text-[11.5px] text-[#2C3E31] font-medium leading-snug">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#B89650] shrink-0 mt-0.5" />
+                          <span>{point}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                  <h3 className="font-serif text-lg sm:text-xl font-bold text-[#142318] mb-2 leading-snug">
-                    {t.govPillar3Title}
-                  </h3>
-                  <p className="text-[13px] sm:text-[13.5px] text-[#555E56] leading-relaxed mb-4">
-                    {t.govPillar3Desc}
-                  </p>
-                </div>
-                <div className="pt-3.5 border-t border-[#F0EBE1] space-y-2">
-                  {t.govPillar3Points.map((point: string, idx: number) => (
-                    <div key={idx} className="flex items-start gap-2 text-[12px] sm:text-[12.5px] text-[#2C3E31] font-medium">
-                      <CheckCircle2 className="w-4 h-4 text-[#8B7347] flex-shrink-0 mt-0.5" />
-                      <span>{point}</span>
-                    </div>
-                  ))}
                 </div>
               </div>
 
-              {/* Pillar 4: Kassen & KVNO Partnerschaft */}
-              <div className="bg-white/95 rounded-2xl sm:rounded-3xl p-6 sm:p-7 border border-[#E7DFD2] shadow-sm hover:shadow-md transition-all duration-300 hover:border-[#D5B878]/70 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between gap-3 mb-4">
-                    <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10.5px] font-bold tracking-wider uppercase bg-[#F3EDE2] text-[#8B7347] border border-[#D5B878]/40">
-                      {t.govPillar4Tag}
-                    </span>
-                    <div className="w-10 h-10 rounded-full border border-[#D5B878]/50 bg-[#FAF7F2] flex items-center justify-center text-[#B89650]">
-                      <HeartHandshake className="w-5 h-5 stroke-[1.8]" />
+              {/* Pillar 4: Kassen & KVNO Partnerschaft (Content LEFT, Image RIGHT) */}
+              <div className="bg-white/95 rounded-2xl sm:rounded-3xl border border-[#EAE4D7] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-[#D5B878]/70 transition-all duration-300 flex flex-col-reverse sm:flex-row items-stretch overflow-hidden group">
+                <div className="p-4 sm:p-5 lg:p-5.5 flex-1 flex flex-col justify-center">
+                  <div>
+                    <div className="flex items-center gap-2.5 mb-2 sm:mb-2.5">
+                      <div className="w-8 h-8 sm:w-8.5 sm:h-8.5 rounded-full bg-[#FAF3E8] border border-[#E8DFC8] flex items-center justify-center text-[#9E7D3B] shrink-0 shadow-2xs">
+                        <Users className="w-4 h-4 stroke-[1.75]" />
+                      </div>
+                      <span className="w-4 h-[1.5px] bg-[#C5A56A]" />
+                      <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.2em] text-[#C5A56A] uppercase font-sans">
+                        {t.govPillar4Tag}
+                      </span>
+                    </div>
+                    <h3 className="font-serif text-[17px] sm:text-[18.5px] font-bold text-[#142318] mb-1.5 leading-snug">
+                      {t.govPillar4Title}
+                    </h3>
+                    <p className="text-[11.5px] sm:text-[12px] text-[#556057] leading-[1.6] font-sans mb-2.5">
+                      {t.govPillar4Desc}
+                    </p>
+                    <div className="space-y-1.5">
+                      {t.govPillar4Points.map((point: string, idx: number) => (
+                        <div key={idx} className="flex items-start gap-2 text-[11px] sm:text-[11.5px] text-[#2C3E31] font-medium leading-snug">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#B89650] shrink-0 mt-0.5" />
+                          <span>{point}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                  <h3 className="font-serif text-lg sm:text-xl font-bold text-[#142318] mb-2 leading-snug">
-                    {t.govPillar4Title}
-                  </h3>
-                  <p className="text-[13px] sm:text-[13.5px] text-[#555E56] leading-relaxed mb-4">
-                    {t.govPillar4Desc}
-                  </p>
                 </div>
-                <div className="pt-3.5 border-t border-[#F0EBE1] space-y-2">
-                  {t.govPillar4Points.map((point: string, idx: number) => (
-                    <div key={idx} className="flex items-start gap-2 text-[12px] sm:text-[12.5px] text-[#2C3E31] font-medium">
-                      <CheckCircle2 className="w-4 h-4 text-[#8B7347] flex-shrink-0 mt-0.5" />
-                      <span>{point}</span>
-                    </div>
-                  ))}
+                <div className="w-full sm:w-[36%] lg:w-[35%] shrink-0 relative min-h-[170px] sm:min-h-[190px] p-3 sm:p-3.5">
+                  <div className="relative w-full h-full min-h-[160px] sm:min-h-[180px] rounded-xl sm:rounded-2xl overflow-hidden shadow-xs">
+                    <Image
+                      src="/images/values/gov-handshake.webp"
+                      alt={t.govPillar4Title}
+                      fill
+                      sizes="(min-width: 1024px) 20vw, 40vw"
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Governance Callout Banner */}
-            <div className="bg-gradient-to-r from-[#07160D] via-[#0D2618] to-[#07160D] text-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 border border-[#D5B878]/30 shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-              <div className="max-w-2xl">
-                <div className="flex items-center gap-2 text-[#ECCF96] text-xs font-bold uppercase tracking-wider mb-2">
-                  <ShieldCheck className="w-4 h-4 stroke-[2]" />
-                  <span>NabiOta® Holding Governance Standard</span>
-                </div>
-                <h3 className="font-serif text-xl sm:text-2xl text-white font-normal mb-2 leading-snug">
-                  {t.govBannerTitle}
-                </h3>
-                <p className="text-xs sm:text-sm text-[#C2D2C5] leading-relaxed">
-                  {t.govBannerDesc}
-                </p>
+            {/* Governance Callout Banner with Botanical Gold BG */}
+            <div className="relative rounded-2xl sm:rounded-3xl border border-[#D5B878]/35 shadow-xl overflow-hidden p-6 sm:p-8 lg:p-9 bg-[#07160D] text-white">
+              {/* Background image: botanical-gold-bg.webp */}
+              <div className="absolute inset-0 z-0 pointer-events-none">
+                <Image
+                  src="/images/botanical-gold-bg.webp"
+                  alt="Botanical Governance Background"
+                  fill
+                  sizes="100vw"
+                  className="object-cover object-center opacity-90"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#07160D]/95 via-[#07160D]/85 to-[#07160D]/55" />
               </div>
-              <div className="flex-shrink-0 flex items-center">
-                <Link
-                  href={`/${locale}/contact`}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#ECCF96] text-[#07160D] font-medium text-xs uppercase tracking-wider hover:bg-white transition-colors duration-200 shadow-md"
-                >
-                  <span>{isRu ? "Связаться с руководством" : isEn ? "Contact Management" : "Kontakt zur Geschäftsführung"}</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
+
+              <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                <div className="flex items-start sm:items-center gap-4 sm:gap-5 max-w-3xl">
+                  {/* Gold monogram / emblem */}
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-[#D5B878] bg-[#122B1B]/90 flex items-center justify-center text-[#ECCF96] shadow-[0_0_12px_rgba(213,184,120,0.25)] shrink-0">
+                    <svg className="w-6 h-6 sm:w-7 sm:h-7 text-[#ECCF96]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <path d="M12 2C12 7 7 12 2 12C7 12 12 17 12 22C12 17 17 12 22 12C17 12 12 7 12 2Z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="text-[9.5px] sm:text-[10px] font-bold tracking-[0.2em] text-[#ECCF96] uppercase mb-1.5 block font-sans">
+                      NABIOTA® HOLDING GOVERNANCE STANDARD
+                    </span>
+                    <h3 className="font-serif text-[20px] sm:text-[24px] lg:text-[26px] text-white font-normal leading-tight mb-2">
+                      {t.govBannerTitle}
+                    </h3>
+                    <p className="text-[12px] sm:text-[12.5px] text-[#C2D2C5] leading-relaxed font-sans max-w-2xl">
+                      {t.govBannerDesc}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex-shrink-0 flex items-center pt-2 lg:pt-0">
+                  <Link
+                    href={`/${locale}/contact`}
+                    className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 rounded-full bg-[#E5CF98] hover:bg-[#F0DDB3] text-[#142318] font-sans font-semibold text-[11px] sm:text-[11.5px] tracking-wider uppercase transition-all shadow-md shrink-0 whitespace-nowrap"
+                  >
+                    <span>{isRu ? "Связаться с руководством" : isEn ? "Contact Management" : "Kontakt zur Geschäftsführung"}</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
               </div>
             </div>
           </Container>

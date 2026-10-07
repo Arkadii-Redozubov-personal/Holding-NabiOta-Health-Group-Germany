@@ -59,19 +59,6 @@ export type BenefitItem = {
   iconName: string;
 };
 
-export type NewsArticle = {
-  id: string;
-  slug: string;
-  title: string;
-  summary: string;
-  date: string;
-  category: string;
-  readingTime: string;
-  image: string;
-  content: string[];
-  featured?: boolean;
-};
-
 export type HoldingCompanyInfo = {
   name: string;
   brand: string;

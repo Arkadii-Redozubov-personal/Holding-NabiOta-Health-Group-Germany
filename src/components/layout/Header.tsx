@@ -180,7 +180,7 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
     { label: dict.nav.areas, href: `/${activeLocale}/areas` },
     { label: dict.nav.values, href: `/${activeLocale}/values` },
     { label: dict.nav.career, href: `/${activeLocale}/career` },
-    { label: dict.nav.news, href: `/${activeLocale}/news` },
+    { label: dict.nav.partners, href: `/${activeLocale}/partners` },
     { label: dict.nav.contact, href: `/${activeLocale}/contact` },
   ];
 
@@ -278,6 +278,7 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
   return (
     <>
       <header
+        dir="ltr"
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-400",
           isScrolled
@@ -497,7 +498,7 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
                 className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#ECCF96] to-[#D8B772] text-[#142217] font-sans font-semibold text-xs tracking-wide shadow-md hover:from-[#F2DAB0] hover:to-[#DEBD7A] transition-all duration-300 group"
               >
                 <span>{dict.nav.contactCta}</span>
-                <span className="transition-transform duration-200 group-hover:translate-x-0.5 font-bold">→</span>
+                <span className="transition-transform duration-200 font-bold group-hover:translate-x-0.5">→</span>
               </Link>
 
               {/* Mobile Burger Menu Button */}
@@ -521,7 +522,7 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-forest-950/98 backdrop-blur-2xl lg:hidden flex flex-col pt-24 pb-8 px-6 overflow-y-auto">
+        <div dir="ltr" className="fixed inset-0 z-40 bg-forest-950/98 backdrop-blur-2xl lg:hidden flex flex-col pt-24 pb-8 px-6 overflow-y-auto">
           <nav className="flex flex-col gap-2 my-auto" aria-label="Mobile Navigation">
             {localizedNav.map((item) => {
               const isActive =
@@ -583,7 +584,7 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
                             </Link>
                           );
                         })}
-                        <Link
+                          <Link
                           href={`/${activeLocale}/areas`}
                           onClick={() => {
                             setMobileMenuOpen(false);

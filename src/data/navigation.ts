@@ -6,7 +6,7 @@ export const mainNavigation: NavigationItem[] = [
   { label: "Unsere Bereiche", href: "/areas" },
   { label: "Unsere Werte", href: "/values" },
   { label: "Karriere", href: "/career" },
-  { label: "News", href: "/news" },
+  { label: "Partner", href: "/partners" },
   { label: "Kontakt", href: "/contact" },
 ];
 

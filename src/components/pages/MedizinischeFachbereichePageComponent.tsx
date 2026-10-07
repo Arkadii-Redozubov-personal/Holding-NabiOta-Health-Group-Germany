@@ -19,6 +19,9 @@ import {
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
+import { MvzPrimaryCareSection } from "@/components/sections/MvzPrimaryCareSection";
+import { MvzSurgeryCareSection } from "@/components/sections/MvzSurgeryCareSection";
+import { ClinicsGermanySection } from "@/components/sections/ClinicsGermanySection";
 import { PageHero } from "@/components/layout/PageHero";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { SupportedLocale } from "@/lib/i18n";
@@ -482,6 +485,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
 
       {/* ── Page Hero ── */}
       <PageHero
+          locale={locale}
         breadcrumb={
           <Breadcrumb
             items={[
@@ -654,15 +658,15 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
             - Middle: Centered group heading
             - Bottom: 3 company cards with enlarged icons and compact height
         ══════════════════════════════════════════════════════════ */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-[#FAF8F5] border-t border-[#EDE8DE]/60">
+        <section className="pt-12 sm:pt-16 lg:pt-20 pb-8 sm:pb-10 lg:pb-12 bg-[#FAF8F5] border-t border-[#EDE8DE]/60">
           <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Top Two Feature Cards Side by Side */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-stretch">
-              {/* Card 1: Core Capabilities ("Struktur der Fachbereiche & Zentren") */}
-              <div className="bg-white rounded-[26px] sm:rounded-[28px] border border-[#EDE8DE] shadow-[0_4px_24px_rgba(0,0,0,0.03)] relative overflow-hidden flex flex-col justify-between p-7 sm:p-9 lg:p-10 min-h-[500px] sm:min-h-[520px]">
+            {/* Top Two Feature Cards (Left wider, Right narrower with lower height) */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-stretch">
+              {/* Card 1: Core Capabilities (Wider ~58% width: lg:col-span-7) */}
+              <div className="lg:col-span-7 bg-white rounded-[22px] sm:rounded-[24px] border border-[#EDE8DE] shadow-[0_2px_14px_rgba(0,0,0,0.03)] relative overflow-hidden flex flex-col justify-between p-5 sm:p-6 lg:p-6.5 h-full">
                 {/* Right Side: Organic Stethoscope Photo with soft blur and thin green arc */}
-                <div className="absolute top-0 right-0 bottom-0 w-[40%] sm:w-[44%] lg:w-[46%] pointer-events-none overflow-hidden select-none">
-                  <div className="relative w-full h-full">
+                <div className="absolute -top-3 right-0 -bottom-3 w-[42%] sm:w-[44%] lg:w-[44%] pointer-events-none select-none">
+                  <div className="relative w-full h-full overflow-hidden">
                     <Image
                       src="/images/areas/stethoscope-clinic.webp"
                       alt="Klinische Umgebung und Stethoskop"
@@ -671,51 +675,55 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                       priority
                     />
                     {/* Soft gradient fade into white card background */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-white via-white/45 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-white via-white/50 to-transparent" />
                     {/* Delicate blur transition on the left edge of photo */}
-                    <div className="absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-white via-white/80 to-transparent backdrop-blur-[2px]" />
+                    <div className="absolute inset-y-0 left-0 w-20 sm:w-24 bg-gradient-to-r from-white via-white/80 to-transparent backdrop-blur-[2px]" />
 
-                    {/* Thin delicate green curved outline/arc seamlessly framing the photo */}
+                    {/* Thin delicate green curved outline/arc seamlessly framing the photo from top to bottom edge */}
                     <svg
-                      className="absolute inset-0 w-full h-full pointer-events-none z-10"
+                      className="absolute inset-0 w-full h-full pointer-events-none z-10 overflow-visible"
                       viewBox="0 0 300 600"
                       preserveAspectRatio="none"
                       fill="none"
                     >
                       <path
-                        d="M 68 85 C 10 180, 25 380, 160 600"
+                        d="M 45 -20 C -5 170, 25 380, 195 650"
                         stroke="#1C452F"
-                        strokeWidth="1.2"
-                        strokeOpacity="0.45"
+                        strokeWidth="1.3"
+                        strokeOpacity="0.5"
+                        strokeLinecap="round"
                       />
                     </svg>
                   </div>
 
-                  {/* Large Dark Green Holding Emblem anchored near top-left of the curved boundary */}
-                  <div className="absolute top-6 left-3 sm:left-5 w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 rounded-full bg-[#0D2D1C] border border-[#D5B878]/80 flex items-center justify-center text-[#ECCF96] shadow-xl z-20">
-                    <Building2 className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 stroke-[1.5]" />
+                  {/* Light Holding Emblem */}
+                  <div className="absolute top-8 left-2 sm:left-3 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#FAF3E8] border border-[#D5B878] flex items-center justify-center text-[#9E7D3B] shadow-md z-20">
+                    <Building2 className="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.6]" />
                   </div>
                 </div>
 
                 {/* Content Layer (Left ~60%) */}
                 <div className="relative z-10 max-w-[62%] sm:max-w-[60%] flex flex-col justify-between h-full">
                   <div>
-                    {/* Top small category label */}
-                    <span className="inline-block text-[9.5px] sm:text-[10px] font-bold uppercase tracking-wider text-[#DEC085] bg-[#0E2718] px-4 py-1.5 rounded-full mb-3.5 font-sans">
-                      {isRu ? "МЕДИЦИНСКАЯ ПОМОЩЬ" : isEn ? "MEDICAL CARE" : "MEDIZINISCHE VERSORGUNG"}
-                    </span>
+                    {/* Eyebrow with gold line */}
+                    <div className="flex items-center gap-2 mb-2 sm:mb-2.5">
+                      <span className="w-5 h-[1.5px] bg-[#C5A56A]" />
+                      <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-[0.22em] text-[#C5A56A] font-sans">
+                        {isRu ? "МЕДИЦИНСКАЯ ПОМОЩЬ" : isEn ? "MEDICAL CARE" : "MEDIZINISCHE VERSORGUNG"}
+                      </span>
+                    </div>
 
                     {/* Main Heading */}
-                    <h3 className="font-serif text-[26px] sm:text-[30px] lg:text-[34px] text-[#142318] font-normal leading-[1.18] mb-4.5">
+                    <h3 className="font-serif text-[22px] sm:text-[25px] lg:text-[27px] text-[#142318] font-normal leading-[1.18] mb-3">
                       {overviewData.capabilitiesTitle}
                     </h3>
 
-                    {/* 5 Bullet Points */}
-                    <div className="space-y-3 sm:space-y-3.5 mb-6">
+                    {/* 5 Bullet Points (Compact & readable) */}
+                    <div className="space-y-2 sm:space-y-2.5 mb-4">
                       {overviewData.capabilities.map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-2.5">
-                          <CheckCircle2 className="w-4.5 h-4.5 text-[#B89650] shrink-0 mt-0.5" />
-                          <span className="text-[12px] sm:text-[12.5px] text-[#2C3B30] font-normal leading-snug font-sans">
+                        <div key={idx} className="flex items-start gap-2">
+                          <CheckCircle2 className="w-4 h-4 text-[#B89650] shrink-0 mt-0.5" />
+                          <span className="text-[11px] sm:text-[11.5px] text-[#2C3B30] font-normal leading-snug font-sans">
                             {item}
                           </span>
                         </div>
@@ -727,50 +735,53 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                   <div className="pt-2">
                     <Link
                       href={`/${locale}/contact`}
-                      className="inline-flex items-center gap-2.5 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-gradient-to-r from-[#EED4A2] via-[#E4C58B] to-[#D5B878] text-[#142318] hover:brightness-105 font-semibold text-[13px] sm:text-[13.5px] shadow-sm transition-all"
+                      className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-full bg-gradient-to-r from-[#EED4A2] via-[#E4C58B] to-[#D5B878] text-[#142318] hover:brightness-105 font-semibold text-[12px] sm:text-[12.5px] shadow-sm transition-all"
                     >
                       <span>{isRu ? "Записаться на прием" : isEn ? "Book an Appointment" : "Termin vereinbaren"}</span>
-                      <ArrowRight className="w-4 h-4" />
+                      <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
                 </div>
               </div>
 
-              {/* Card 2: Group Advantages ("Ihre Vorteile im Verbund") */}
-              <div className="bg-white rounded-[26px] sm:rounded-[28px] border border-[#EDE8DE] shadow-[0_4px_24px_rgba(0,0,0,0.03)] relative overflow-hidden flex flex-col justify-between p-7 sm:p-9 lg:p-10 min-h-[500px] sm:min-h-[520px]">
+              {/* Card 2: Group Advantages (Narrower ~42% width: lg:col-span-5) */}
+              <div className="lg:col-span-5 bg-white rounded-[22px] sm:rounded-[24px] border border-[#EDE8DE] shadow-[0_2px_14px_rgba(0,0,0,0.03)] relative overflow-hidden flex flex-col justify-between p-5 sm:p-6 lg:p-6 h-full">
                 {/* Subtle botanical branch on right edge */}
-                <div className="absolute top-0 right-0 w-44 sm:w-56 lg:w-64 pointer-events-none opacity-85 z-0 select-none">
+                <div className="absolute top-0 right-0 w-32 sm:w-36 lg:w-40 pointer-events-none opacity-80 z-0 select-none">
                   <Image
                     src="/images/areas/botanical-branch-clean.webp"
                     alt="Botanical detail"
-                    width={220}
-                    height={300}
+                    width={160}
+                    height={220}
                     className="object-contain object-top-right ml-auto"
                   />
                 </div>
 
                 <div className="relative z-10 flex flex-col justify-between h-full">
                   <div>
-                    {/* Top small category label */}
-                    <span className="inline-block text-[9.5px] sm:text-[10px] font-bold uppercase tracking-wider text-[#DEC085] bg-[#0E2718] px-4 py-1.5 rounded-full mb-3.5 font-sans">
-                      {isRu ? "ВАШИ ПРЕИМУЩЕСТВА" : isEn ? "YOUR ADVANTAGES" : "IHRE VORTEILE"}
-                    </span>
+                    {/* Eyebrow with gold line */}
+                    <div className="flex items-center gap-2 mb-2 sm:mb-2.5">
+                      <span className="w-5 h-[1.5px] bg-[#C5A56A]" />
+                      <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-[0.22em] text-[#C5A56A] font-sans">
+                        {isRu ? "ВАШИ ПРЕИМУЩЕСТВА" : isEn ? "YOUR ADVANTAGES" : "IHRE VORTEILE"}
+                      </span>
+                    </div>
 
                     {/* Heading */}
-                    <h3 className="font-serif text-[26px] sm:text-[30px] lg:text-[34px] text-[#142318] font-normal leading-[1.18] mb-5">
+                    <h3 className="font-serif text-[21px] sm:text-[24px] lg:text-[26px] text-[#142318] font-normal leading-[1.18] mb-3">
                       {overviewData.advantagesTitle}
                     </h3>
 
-                    {/* 4 Advantages with larger elegant circular icons & text */}
-                    <div className="space-y-4 sm:space-y-4.5">
+                    {/* 4 Advantages with elegant circular icons & compact text */}
+                    <div className="space-y-2 sm:space-y-2.5">
                       {overviewData.advantages.map((item, idx) => {
                         const AdvantageIcon = [Users, Heart, Clock, ShieldCheck][idx] || ShieldCheck;
                         return (
-                          <div key={idx} className="flex items-center gap-3.5">
-                            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0 shadow-xs">
-                              <AdvantageIcon className="w-5.5 h-5.5 sm:w-6 sm:h-6 stroke-[1.6]" />
+                          <div key={idx} className="flex items-center gap-2.5">
+                            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0 shadow-xs">
+                              <AdvantageIcon className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.6]" />
                             </div>
-                            <span className="text-[12.5px] sm:text-[13px] lg:text-[13.5px] text-[#334237] font-normal leading-snug font-sans">
+                            <span className="text-[11.5px] sm:text-[12px] text-[#334237] font-normal leading-snug font-sans">
                               {item}
                             </span>
                           </div>
@@ -780,16 +791,16 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                   </div>
 
                   {/* Editorial Statistics Row */}
-                  <div className="grid grid-cols-3 gap-3 pt-5 sm:pt-6 mt-6 border-t border-[#EAE3D5]">
+                  <div className="grid grid-cols-3 gap-2 pt-3 sm:pt-3.5 mt-3.5 border-t border-[#EAE3D5]">
                     {overviewData.stats.map((stat, idx) => (
                       <div
                         key={idx}
-                        className={`flex flex-col ${idx < 2 ? "border-r border-[#EAE3D5] pr-3" : "pl-1"}`}
+                        className={`flex flex-col ${idx < 2 ? "border-r border-[#EAE3D5] pr-2" : "pl-1"}`}
                       >
-                        <span className="font-serif text-[28px] sm:text-[32px] text-[#B89650] font-normal leading-none mb-1.5">
+                        <span className="font-serif text-[22px] sm:text-[25px] text-[#B89650] font-normal leading-none mb-1">
                           {stat.value}
                         </span>
-                        <span className="text-[10.5px] sm:text-[11.5px] text-[#6E756D] font-sans leading-tight">
+                        <span className="text-[9.5px] sm:text-[10px] text-[#6E756D] font-sans leading-tight">
                           {stat.label}
                         </span>
                       </div>
@@ -831,11 +842,14 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                     className="bg-white rounded-[20px] sm:rounded-[22px] p-5 sm:p-5.5 border border-[#EDE8DE] hover:border-[#D5B878] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all flex flex-col justify-between group"
                   >
                     <div>
-                      {/* Top row: Dark green badge left, secondary descriptor right */}
-                      <div className="flex items-center justify-between gap-2 mb-2.5">
-                        <span className="text-[9.5px] sm:text-[10px] font-bold px-3 py-1 rounded-[6px] bg-[#0E2718] text-[#ECCF96] tracking-wider uppercase shrink-0">
-                          {entity.tag}
-                        </span>
+                      {/* Top row: Eyebrow with gold line left, secondary descriptor right */}
+                      <div className="flex items-center justify-between gap-2 mb-3">
+                        <div className="flex items-center gap-2">
+                          <span className="w-4 h-[1.5px] bg-[#C5A56A]" />
+                          <span className="text-[11px] sm:text-[11.5px] font-bold tracking-[0.2em] text-[#C5A56A] uppercase">
+                            {entity.tag}
+                          </span>
+                        </div>
                         <span className="text-[11px] sm:text-[11.5px] text-[#7A857D] font-sans truncate ml-2 text-right">
                           {entity.sub}
                         </span>
@@ -877,98 +891,16 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
           </div>
         </section>
 
-        {/* ══════════════════════════════════════════════════════════
-            SECTION 4 (PHOTO 1): WARUM NABIOTA? MEHR ALS MEDIZIN.
-            - "страница мед направления сделай слева фон листочка возьми из фото сделай больше иконки и приведи этот блок в порядок"
-            - Full-width edge-to-edge
-            - Left: Delicate botanical branch watermark on left edge + Eyebrow + Title + Desc + Gold button
-            - Middle: 4 points with larger circular gold icons (w-13 h-13 / w-14 h-14)
-            - Right: Sunny Atrium Lounge photo flush to screen right edge with smooth fade
-        ══════════════════════════════════════════════════════════ */}
-        <section className="w-full bg-[#08170D] text-white relative overflow-hidden border-y border-[#D5B878]/30">
-          {/* Background: Botanical leaves texture across the dark section */}
-          <div className="absolute inset-0 pointer-events-none z-0">
-            <Image
-              src="/images/values/leaves-bg.webp"
-              alt="Leaves Texture"
-              fill
-              className="object-cover object-left opacity-35 mix-blend-screen"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#08170D]/95 via-[#08170D]/80 to-[#08170D]/50" />
-          </div>
+        {/* SECTION 3B: MVZ HAUSÄRZTLICH / FACHÄRZTLICH – PDF IV.1 */}
+        <MvzPrimaryCareSection locale={locale} />
 
-          {/* Delicate Botanical Leaf Branch on Left Edge (Matching Photo 2) */}
-          <div className="absolute -left-4 sm:-left-6 -top-6 sm:-top-8 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 pointer-events-none opacity-60 sm:opacity-70 select-none z-10">
-            <Image
-              src="/images/areas/botanical-branch-clean.webp"
-              alt="Botanical Foliage"
-              fill
-              className="object-contain object-top-left -scale-x-100"
-              priority
-            />
-          </div>
+        {/* SECTION 3C: MVZ CHIRURGIE & ANÄSTHESIOLOGIE – PDF IV.2 */}
+        <MvzSurgeryCareSection locale={locale} />
 
-          <div className="w-full flex flex-col lg:flex-row items-stretch min-h-[300px] lg:min-h-[340px] relative z-20">
-            {/* Left Content Area: Eyebrow, Title, Description & Values Button */}
-            <div className="w-full lg:w-[42%] xl:w-[40%] p-6 sm:p-8 lg:p-8 lg:pl-12 xl:pl-16 flex flex-col justify-center relative z-20">
-              <div className="max-w-md space-y-2.5 sm:space-y-3">
-                <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
-                  {whySection.eyebrow}
-                </span>
+        {/* SECTION 3D: NABIOTA CLINICS GERMANY – PDF IV.3 */}
+        <ClinicsGermanySection locale={locale} />
 
-                <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-white font-normal leading-[1.15]">
-                  {whySection.title}
-                </h2>
 
-                <p className="text-white/85 text-xs sm:text-[13px] leading-relaxed font-sans">
-                  {whySection.desc}
-                </p>
-
-                <div className="pt-1.5 sm:pt-2">
-                  <Link
-                    href={`/${locale}/values`}
-                    className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs sm:text-[12.5px] tracking-wide shadow-md transition-all duration-200 hover:scale-[1.02]"
-                  >
-                    <span>{whySection.btn}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Middle Column: 4 Vertical Points with Circular Gold Icons */}
-            <div className="w-full lg:w-[28%] xl:w-[27%] px-6 sm:px-8 lg:px-4 py-4 sm:py-6 lg:py-0 flex flex-col justify-center space-y-3.5 sm:space-y-4 relative z-20">
-              {whySection.stats.map((item, idx) => {
-                const ItemIcon = item.icon;
-                return (
-                  <div key={idx} className="flex items-center gap-3.5">
-                    {/* Circular Gold Icon */}
-                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#D5B878]/80 bg-[#08170D] flex items-center justify-center text-[#ECCF96] shrink-0 shadow-[0_0_12px_rgba(213,184,120,0.12)]">
-                      <ItemIcon className="w-4 h-4 sm:w-5 sm:h-5 stroke-[1.6]" />
-                    </div>
-                    <span className="text-[12.5px] sm:text-[13.5px] font-medium text-white/95 leading-snug">
-                      {item.label}
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
-
-            {/* Right Side: Botanical Leaves Background with smooth fade */}
-            <div className="w-full lg:w-[30%] xl:w-[33%] relative min-h-[200px] sm:min-h-[240px] lg:min-h-full shrink-0 overflow-hidden">
-              <Image
-                src="/images/values/leaves-bg.webp"
-                alt="Botanical Leaves"
-                fill
-                className="object-cover object-center"
-                priority
-              />
-              {/* Smooth multi-stop gradient fade from left dark forest green into leaves photo */}
-              <div className="hidden lg:block absolute inset-y-0 left-0 w-36 sm:w-48 lg:w-56 bg-gradient-to-r from-[#08170D] via-[#08170D]/80 via-[#08170D]/40 to-transparent pointer-events-none z-10" />
-              <div className="lg:hidden absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#08170D] via-[#08170D]/80 to-transparent pointer-events-none z-10" />
-            </div>
-          </div>
-        </section>
 
         {/* ══════════════════════════════════════════════════════════
             SECTION 5 (PHOTO 2): UNSER TEAM

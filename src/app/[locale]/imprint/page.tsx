@@ -67,6 +67,7 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
       <Header currentLocale={locale} />
       <main className="flex-1 pb-20">
         <PageHero
+          locale={locale}
           eyebrow={
             locale === "ru"
               ? "ЮРИДИЧЕСКАЯ ИНФОРМАЦИЯ"

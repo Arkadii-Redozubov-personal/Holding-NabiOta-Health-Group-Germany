@@ -67,6 +67,7 @@ export default async function LocalizedPrivacyPage({ params }: LocalizedPrivacyP
       <Header currentLocale={locale} />
       <main className="flex-1 pb-20">
         <PageHero
+          locale={locale}
           eyebrow={
             locale === "ru"
               ? "КОНФИДЕНЦИАЛЬНОСТЬ И ПРОЗРАЧНОСТЬ"

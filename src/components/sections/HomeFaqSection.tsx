@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
-import { Plus, Minus, HelpCircle, ArrowRight } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 import { SupportedLocale } from "@/lib/i18n";
 
 interface HomeFaqSectionProps {
@@ -168,35 +167,6 @@ export function HomeFaqSection({ currentLocale = "de" }: HomeFaqSectionProps) {
           })}
         </div>
 
-        {/* ── Bottom: Quick Contact Box Centered ── */}
-        <div className="mt-10 sm:mt-12 max-w-3xl lg:max-w-4xl mx-auto">
-          <div className="p-5 sm:p-6 rounded-2xl bg-white border border-[#EBE4D8] shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3.5 text-left">
-              <div className="w-10 h-10 rounded-full bg-[#EBF0EA] flex items-center justify-center flex-shrink-0 text-[#244E33]">
-                <HelpCircle className="w-5 h-5" />
-              </div>
-              <div>
-                <h4 className="font-serif text-sm sm:text-base font-semibold text-[#0F2A1D]">
-                  {t.contactCtaText}
-                </h4>
-                <p className="text-xs sm:text-[13px] text-[#5A6E63] leading-relaxed mt-0.5">
-                  {isRu
-                    ? "Наши специалисты всегда готовы ответить на ваши вопросы и предоставить исчерпывающую информацию."
-                    : isEn
-                    ? "Our advisory team is pleased to address your questions and outline personalized care pathways."
-                    : "Unser Serviceteam beantwortet Ihre Anliegen gerne persönlich und unverbindlich."}
-                </p>
-              </div>
-            </div>
-            <Link
-              href={`/${currentLocale}/contact`}
-              className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#0D2619] hover:text-white bg-[#FAF8F5] hover:bg-[#0D2619] border border-[#E0D7C6] hover:border-[#0D2619] px-4 py-2.5 rounded-xl transition-all duration-200 group flex-shrink-0 whitespace-nowrap shadow-xs"
-            >
-              <span>{isRu ? "Связаться с нами" : isEn ? "Contact us directly" : "Direkt Kontakt aufnehmen"}</span>
-              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
-        </div>
       </div>
     </section>
   );

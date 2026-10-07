@@ -24,8 +24,11 @@ import {
   Sparkles,
   ChevronRight,
   Award,
-  Printer,
   Briefcase,
+  Users,
+  GitFork,
+  Link2,
+  FileSearch,
 } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -33,6 +36,7 @@ import { Container } from "@/components/layout/Container";
 import { PageHero } from "@/components/layout/PageHero";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { SupportedLocale } from "@/lib/i18n";
+import { MvzContractSection } from "@/components/sections/MvzContractSection";
 
 interface PartnershipPillar {
   id: string;
@@ -197,7 +201,7 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
     {
       id: "kliniken-krankenhaeuser",
       tag: isRu ? "ДЛЯ КЛИНИК & СТАЦИОНАРОВ" : isEn ? "HOSPITALS & CLINICS" : "FÜR KLINIKEN & HOSPITAL-NETZWERKE",
-      image: "/images/partners/atrium.webp",
+      image: "/images/partners/artium.webp",
       iconType: "hospital",
       title: isRu
         ? "Межсекторальное партнерство с клиниками (§ 115b SGB V / AOP)"
@@ -472,15 +476,19 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
   const processSteps = [
     {
       num: "01",
+      icon: Users,
+      image: "/images/partners/milestone-1-nda-clean.webp",
       title: isRu ? "Конфиденциальный диалог & NDA" : isEn ? "Confidential Dialogue & NDA" : "Erstkontakt & Geheimhaltung",
       desc: isRu
-        ? "Первая встреча и подписание взаимного соглашения о неразглашении. Мы уважаем тайну вашего бизнеса и врачебную практику."
+        ? "Первая встреча и подписание взаимного соглашения о неразглашении. Мы строго защищаем ваши конфиденциальные данные."
         : isEn
         ? "Initial consultation and execution of a bilateral Non-Disclosure Agreement (NDA). We strictly protect your confidential data."
         : "Unverbindliches Vorgespräch und Abschluss einer beidseitigen Geheimhaltungsvereinbarung (NDA) zum Schutz Ihrer Daten.",
     },
     {
       num: "02",
+      icon: FileSearch,
+      image: "/images/partners/milestone-2-audit-clean.webp",
       title: isRu ? "Структурный аудит & Оценка" : isEn ? "Structural Audit & Valuation" : "Analyse & Wertermittlung",
       desc: isRu
         ? "Глубокий анализ материальных активов, показателей практики, кадрового потенциала и градостроительных параметров объекта."
@@ -490,6 +498,8 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
     },
     {
       num: "03",
+      icon: ShieldCheck,
+      image: "/images/partners/milestone-3-stethoscope-clean.webp",
       title: isRu ? "Договорная архитектура" : isEn ? "Contractual Structuring" : "Maßgeschneiderte Verträge",
       desc: isRu
         ? "Разработка прозрачной модели сделки: согласование договоров аренды, трудовых контрактов и подача документов в комитеты KV."
@@ -499,7 +509,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
     },
     {
       num: "04",
-      title: isRu ? "Интеграция & Синергия" : isEn ? "Integration & Growth" : "Integration & Skalierung",
+      icon: TrendingUp,
+      image: "/images/partners/milestone-4-integration-clean.webp",
+      title: isRu ? "Интеграция & Развитие" : isEn ? "Integration & Growth" : "Integration & Skalierung",
       desc: isRu
         ? "Плавный переход под крыло холдинга: подключение IT, поддержка HR, маркетинговое сопровождение и стабильное развитие."
         : isEn
@@ -512,9 +524,10 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
     <div className="flex flex-col min-h-screen bg-[#FCFAF6] text-[#142318] selection:bg-[#EBDDC0] selection:text-[#142318]">
       <Header currentLocale={locale} />
 
-      <main className="flex-1 pb-16 sm:pb-20">
+      <main className="flex-1 pb-0">
         {/* 1. PageHero */}
         <PageHero
+          locale={locale}
           breadcrumb={
             <Breadcrumb
               items={[
@@ -575,58 +588,56 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
               </div>
             </div>
 
-            {/* 4 Pillars Grid in authentic clean card style */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-7">
+            {/* 4 Pillars Grid in all divisions card style (Photo 2) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
               {pillars.map((pillar) => {
+                const IconComponent =
+                  pillar.iconType === "doctor"
+                    ? Stethoscope
+                    : pillar.iconType === "hospital"
+                    ? Building2
+                    : pillar.iconType === "investor"
+                    ? TrendingUp
+                    : Landmark;
+
                 return (
                   <div
                     key={pillar.id}
                     onClick={() => setSelectedPillar(pillar)}
-                    className="group bg-white rounded-2xl overflow-hidden border border-[#E8E2D6] shadow-xs hover:shadow-xl hover:border-[#D5B878] transition-all duration-300 flex flex-col cursor-pointer"
+                    className="group bg-white rounded-2xl p-3 sm:p-3.5 border border-[#EDE8DE] hover:border-[#D5B878] shadow-[0_3px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_24px_rgba(213,184,120,0.14)] transition-all duration-300 flex flex-col cursor-pointer"
                   >
-                    {/* Top Photo with Pill Tag */}
-                    <div className="relative aspect-[16/9] overflow-hidden">
+                    {/* Top Photo */}
+                    <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-[#0C1C11]/5">
                       <Image
                         src={pillar.image}
                         alt={pillar.title}
                         fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none" />
-
-                      {/* Tag Pill in top left */}
-                      <div className="absolute top-3 left-3 bg-[#0B2516]/85 backdrop-blur-sm text-[#ECCF96] text-[10px] font-bold tracking-wider px-2.5 py-1 rounded shadow-sm">
-                        {pillar.tag}
-                      </div>
-
-                      {/* Icon Circle in bottom right of image */}
-                      <div className="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm border border-white/80 flex items-center justify-center text-[#8C6D37] shadow-sm">
-                        {pillar.iconType === "doctor" && <Stethoscope className="w-5 h-5 stroke-[1.8]" />}
-                        {pillar.iconType === "hospital" && <Building2 className="w-5 h-5 stroke-[1.8]" />}
-                        {pillar.iconType === "investor" && <TrendingUp className="w-5 h-5 stroke-[1.8]" />}
-                        {pillar.iconType === "municipality" && <Landmark className="w-5 h-5 stroke-[1.8]" />}
-                      </div>
                     </div>
 
-                    {/* Content Details */}
-                    <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
-                      <div className="space-y-2">
-                        <h3 className="text-lg sm:text-xl font-serif font-bold text-[#0B2516] leading-snug group-hover:text-[#8D6B27] transition-colors">
-                          {pillar.title}
-                        </h3>
-                        <p className="text-xs sm:text-[13px] text-[#4A5D52] leading-relaxed">
-                          {pillar.shortDesc}
-                        </p>
+                    {/* Card Content Row */}
+                    <div className="pt-3.5 pb-1.5 px-1 flex items-center justify-between gap-3">
+                      <div className="flex items-center gap-3.5 min-w-0 flex-1">
+                        {/* Circular Light Emblem Icon Badge */}
+                        <div className="w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-[#FAF3E8] border border-[#E8DFC8] flex items-center justify-center text-[#9E7D3B] shadow-2xs shrink-0 group-hover:bg-[#F0E5CD] group-hover:border-[#D5B878] group-hover:scale-105 transition-all">
+                          <IconComponent className="w-5.5 h-5.5 sm:w-6 sm:h-6 stroke-[1.6]" />
+                        </div>
+
+                        <div className="min-w-0 flex-1">
+                          <h3 className="text-[14.5px] sm:text-[15.5px] font-bold text-[#142318] group-hover:text-[#B89650] transition-colors leading-snug line-clamp-2">
+                            {pillar.title}
+                          </h3>
+                          <p className="text-[11.5px] sm:text-[12px] text-[#6E756D] leading-snug line-clamp-2 mt-0.5 font-sans">
+                            {pillar.shortDesc}
+                          </p>
+                        </div>
                       </div>
 
-                      {/* Bottom Action Area */}
-                      <div className="pt-3 flex items-center justify-between border-t border-[#F2ECE1]">
-                        <span className="text-xs font-semibold text-[#8C6D37] group-hover:text-[#0B2516] transition-colors">
-                          {isRu ? "Подробнее о модели" : isEn ? "Explore cooperation model" : "Details & Modell ansehen"}
-                        </span>
-                        <div className="w-8 h-8 rounded-full border border-[#D8C7A5] flex items-center justify-center text-[#B8934A] group-hover:bg-[#0B2516] group-hover:text-[#ECCF96] group-hover:border-[#0B2516] transition-all">
-                          <ArrowRight className="w-3.5 h-3.5" />
-                        </div>
+                      {/* Right Round Arrow Button */}
+                      <div className="w-8 h-8 rounded-full border border-[#142318]/15 group-hover:border-[#D5B878] group-hover:bg-[#D5B878] group-hover:text-[#0C1C11] flex items-center justify-center text-[#142318] transition-all shrink-0 ml-1">
+                        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
                       </div>
                     </div>
                   </div>
@@ -639,130 +650,413 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
         {/* ========================================================================= */}
         {/* SECTION 3: RECHTSSICHERHEIT & 2-PHASEN-ARCHITEKTUR (FROM PDF)             */}
         {/* ========================================================================= */}
-        <section className="py-14 sm:py-18 bg-white border-t border-[#EBE6DC]">
-          <Container>
-            <div className="max-w-3xl mx-auto text-center space-y-3 mb-12 sm:mb-14">
-              <span className="text-xs font-semibold tracking-[0.25em] text-[#B8934A] uppercase font-sans block">
-                {isRu ? "СТРУКТУРА ХОЛДИНГА" : isEn ? "LEGAL ARCHITECTURE" : "RECHTLICHE ARCHITEKTUR"}
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0B2516] leading-tight">
-                {isRu
-                  ? "Двухфазная модель владения и управления холдингом"
-                  : isEn
-                  ? "Two-Phase Corporate Governance & Ownership Architecture"
-                  : "Das Zwei-Phasen-Beteiligungsmodell der NabiOta-Gruppe"}
-              </h2>
-              <p className="text-xs sm:text-sm text-[#4A5D52] leading-relaxed">
-                {isRu
-                  ? "Соблюдение жестких регуляторных требований Федерального кодекса (§ 95 SGB V) и закона о промысле (§ 30 GewO) обеспечивает абсолютную юридическую безопасность для инвесторов и партнеров."
-                  : isEn
-                  ? "Full compliance with statutory healthcare legislation (§ 95 SGB V) and clinic regulation (§ 30 GewO) ensures watertight legal protection for partners and investors."
-                  : "Strikte Trennung von ärztlicher Weisungsfreiheit, Managementdienstleistungen und Immobilienwerten zur Gewährleistung maximaler Rechts- und Zulassungssicherheit."}
-              </p>
+        <section id="two-phase-governance" className="relative pt-0 pb-16 sm:pb-20 lg:pb-24 bg-[#FAF7F2] border-t border-[#EDE8DE]/70 overflow-hidden">
+          <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-[#D5B878]/10 blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-[#0B2516]/5 blur-3xl pointer-events-none" />
+
+          {/* ── Full-Width Hero Banner (In True MVZ Style - Full-bleed, no card borders - Photo 1) ── */}
+          <div className="relative z-10 w-full overflow-hidden pb-8 sm:pb-12 lg:pb-14 border-b border-[#EDE8DE]/70">
+            {/* Soft Background Photo with smooth horizontal fade (full bleed to right screen edge) */}
+            <div className="absolute right-0 top-0 bottom-0 w-full md:w-[54%] lg:w-[50%] pointer-events-none overflow-hidden select-none">
+              <Image
+                src="/images/areas/atrium-lounge.webp"
+                alt="Two-Phase Corporate Governance & Ownership Architecture"
+                fill
+                className="object-cover object-center lg:object-right"
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              {/* Horizontal gradient fade into page background #FAF7F2 */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FAF7F2] from-0% via-[#FAF7F2]/85 via-20% via-[#FAF7F2]/30 via-45% to-transparent to-75%" />
+              {/* Mobile vertical gradient fade */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#FAF7F2] via-[#FAF7F2]/60 via-20% to-transparent md:hidden" />
             </div>
 
-            {/* 2 Phases Cards Comparison */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-7 lg:gap-8 items-stretch max-w-5xl mx-auto">
-              {/* Phase 1 Box */}
-              <div className="bg-[#FAF8F5] rounded-3xl p-7 sm:p-9 border border-[#E2DBD0] shadow-xs flex flex-col justify-between space-y-6">
-                <div className="space-y-4">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8DEC8] text-[#0B2516] text-xs font-bold uppercase tracking-wider">
-                    <span>{isRu ? "ФАЗА 1" : isEn ? "PHASE 1" : "PHASE 1"}</span>
-                    <span className="text-[#8D6B27]">•</span>
-                    <span>{isRu ? "Текущий этап" : isEn ? "Active Establishment" : "Status Quo"}</span>
+            {/* Botanical foliage branch overlay (matching Photo 1 MVZ reference) */}
+            <div className="absolute top-0 right-[35%] lg:right-[42%] xl:right-[44%] w-40 sm:w-52 h-72 pointer-events-none opacity-65 select-none z-10 hidden md:block">
+              <Image
+                src="/images/areas/botanical-branch-clean.webp"
+                alt=""
+                fill
+                className="object-contain object-top"
+                unoptimized
+              />
+            </div>
+
+            {/* Hero Content Container */}
+            <Container size="wide" className="relative z-10 pt-8 sm:pt-12 lg:pt-16">
+              <div className="max-w-6xl mx-auto">
+                <div className="max-w-xl lg:max-w-2xl">
+                  {/* Eyebrow with gold lines on both sides (Photo 1) */}
+                  <div className="flex items-center gap-2.5 mb-2.5 sm:mb-3">
+                    <span className="w-6 sm:w-8 h-[1.5px] bg-[#C5A56A]" />
+                    <span className="text-[10.5px] sm:text-[11.5px] font-semibold tracking-[0.24em] text-[#C5A56A] uppercase font-sans">
+                      {isRu
+                        ? "РЕГУЛЯТОРНАЯ АРХИТЕКТУРА И ПРАВОВОЙ КОНТРОЛЬ"
+                        : isEn
+                        ? "STATUTORY ARCHITECTURE & LEGAL GOVERNANCE"
+                        : "RECHTLICHE ARCHITEKTUR & BETEILIGUNGSSTRUKTUR"}
+                    </span>
+                    <span className="w-6 sm:w-8 h-[1.5px] bg-[#C5A56A]" />
                   </div>
 
-                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#0B2516] leading-tight">
-                    {isRu
-                      ? "Врачебное участие (§ 95 SGB V) & Сервисы холдинга"
-                      : isEn
-                      ? "Physician Equity (§ 95 SGB V) & Central Management Services"
-                      : "Ärztliche MVZ-Gründung & Managementverträge"}
-                  </h3>
+                  {/* Title with styled italic phrase */}
+                  <h2 className="font-serif text-[28px] sm:text-[38px] lg:text-[44px] text-[#142318] font-normal leading-[1.18] mb-3 sm:mb-3.5">
+                    {isRu ? (
+                      <>
+                        Двухфазная модель владения и{" "}
+                        <span className="font-serif italic text-[#C5A56A]">корпоративного управления</span>
+                      </>
+                    ) : isEn ? (
+                      <>
+                        Two-Phase Corporate Governance &{" "}
+                        <span className="font-serif italic text-[#C5A56A]">Ownership Architecture</span>
+                      </>
+                    ) : (
+                      <>
+                        Zwei-Phasen-Modell der Corporate Governance &{" "}
+                        <span className="font-serif italic text-[#C5A56A]">Beteiligungsarchitektur</span>
+                      </>
+                    )}
+                  </h2>
 
-                  <p className="text-xs sm:text-[13px] text-[#4A5D52] leading-relaxed">
+                  {/* Supplementary gold text underneath the title (matching MVZ Photo 1 style) */}
+                  <div className="mb-3.5 sm:mb-4">
+                    <span className="text-[10.5px] sm:text-[11.5px] font-bold tracking-[0.22em] text-[#C5A56A] uppercase font-sans">
+                      {isRu
+                        ? "ФАЗА 1 (УЧРЕЖДЕНИЕ) · ФАЗА 2 (СТАЦИОНАРНАЯ ЛИЦЕНЗИЯ § 30 GEWO)"
+                        : isEn
+                        ? "PHASE 1 (ESTABLISHMENT) · PHASE 2 (HOSPITAL LICENSING § 30 GEWO)"
+                        : "PHASE 1 (GRÜNDUNG) · PHASE 2 (KLINIKTRÄGERSCHAFT § 30 GEWO)"}
+                    </span>
+                  </div>
+
+                  <p className="text-[13px] sm:text-[14px] text-[#556057] leading-relaxed max-w-xl">
                     {isRu
-                      ? "Доктор Рахимов-Фишер как лицензированный врач владеет долями в компаниях MVZ на основании установленного законом врачебного права. Холдинг NabiOta® Health Group Germany GmbH оказывает централизованные услуги управления (биллинг, IT, закупки, кадры) на основе договоров о сервисном обслуживании."
+                      ? "Соблюдение жестких регуляторных требований Федерального кодекса (§ 95 SGB V) и закона о промысле (§ 30 GewO) обеспечивает абсолютную юридическую безопасность для партнеров и инвесторов."
                       : isEn
-                      ? "Dr. Fischer-Rahimov holds MVZ equity based on statutory physician entitlement. NabiOta® Health Group Germany GmbH delivers centralized administrative, billing, purchasing, HR, and marketing management via customized commercial service agreements."
-                      : "Dr. Fischer-Rahimov hält die MVZ-Anteile direkt auf Basis seiner berufsrechtlichen Vertragsarzt-Eigenschaft (§ 95 SGB V). Die Holding NabiOta® Health Group Germany GmbH erbringt zentrale Management-, Abrechnungs-, IT- und Einkaufsdienstleistungen über individuelle Servicevereinbarungen."}
+                      ? "Full compliance with statutory healthcare legislation (§ 95 SGB V) and clinic regulation (§ 30 GewO) ensures watertight legal protection for partners and investors."
+                      : "Strikte Trennung von ärztlicher Weisungsfreiheit, Managementdienstleistungen und Krankenhausträgerschaft gewährleistet maximale Rechts- und Zulassungssicherheit für Partner und Investoren."}
                   </p>
+                </div>
+              </div>
+            </Container>
+          </div>
 
-                  <ul className="space-y-2.5 pt-2 text-xs sm:text-[13px] text-[#2C4436]">
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-[#2E6845] shrink-0 mt-0.5" />
-                      <span>{isRu ? "Полная защита врачебного суверенитета и независимости решений" : isEn ? "Full protection of clinical independence and diagnostic autonomy" : "Volle Unabhängigkeit und ärztliche Weisungsfreiheit"}</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-[#2E6845] shrink-0 mt-0.5" />
-                      <span>{isRu ? "Централизованный IT-контур и биллинг с гарантией защиты данных" : isEn ? "Centralized GDPR-compliant IT, billing, and accounting systems" : "Zentralisiertes Controlling, KV-Abrechnung und QM-System"}</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-[#2E6845] shrink-0 mt-0.5" />
-                      <span>{isRu ? "Правовая чистота согласований с Kassenärztliche Vereinigung" : isEn ? "Clean regulatory approval process with the KV licensing board" : "Lückenlose Konformität mit Vorgaben der KV Nordrhein"}</span>
-                    </li>
-                  </ul>
+          {/* ── 2 Phases Comparison Cards Container ── */}
+          <Container size="wide" className="relative z-10 pt-8 sm:pt-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-7 lg:gap-8 items-stretch max-w-7xl mx-auto">
+              {/* ============================================================= */}
+              {/* CARD 1: PHASE 1 (Light Luxury Medical Interior)              */}
+              {/* ============================================================= */}
+              <div className="group relative overflow-hidden rounded-[26px] sm:rounded-[30px] bg-white border border-[#E2DBD0] shadow-[0_8px_30px_rgba(20,35,24,0.04)] flex flex-col justify-between transition-all duration-300 hover:shadow-[0_12px_36px_rgba(20,35,24,0.08)]">
+                {/* Right Photo Column with organic curve and golden ribbons */}
+                <div className="absolute right-0 top-0 bottom-0 w-[42%] lg:w-[44%] overflow-hidden pointer-events-none select-none hidden md:block">
+                  <Image
+                    src="/images/partners/phase1-office.jpg"
+                    alt="Phase 1 - Active Establishment"
+                    fill
+                    className="object-cover object-[center_right] scale-105 group-hover:scale-100 transition-transform duration-700 ease-out"
+                    sizes="(max-width: 1024px) 50vw, 40vw"
+                  />
+                  {/* Organic wave mask transition with gold rim */}
+                  <svg
+                    viewBox="0 0 100 600"
+                    preserveAspectRatio="none"
+                    className="absolute left-0 top-0 bottom-0 h-full w-20 sm:w-24 text-white fill-current pointer-events-none z-10"
+                  >
+                    <path d="M0,0 L60,0 C20,160 15,280 50,420 C70,500 85,550 95,600 L0,600 Z" />
+                    <path
+                      d="M60,0 C20,160 15,280 50,420 C70,500 85,550 95,600"
+                      fill="none"
+                      stroke="#D5B878"
+                      strokeWidth="2.5"
+                    />
+                    <path
+                      d="M63,0 C23,160 18,280 53,420 C73,500 88,550 98,600"
+                      fill="none"
+                      stroke="#ECCF96"
+                      strokeWidth="1.2"
+                      strokeOpacity="0.8"
+                    />
+                  </svg>
+                  {/* Top golden ribbon flourish */}
+                  <svg
+                    viewBox="0 0 200 120"
+                    className="absolute -top-1 -right-1 w-44 h-28 pointer-events-none z-10 opacity-75"
+                  >
+                    <path d="M200,0 Q120,20 40,0" fill="none" stroke="#D5B878" strokeWidth="2.5" />
+                    <path d="M200,10 Q130,35 60,10" fill="none" stroke="#ECCF96" strokeWidth="1.5" opacity="0.6" />
+                  </svg>
+                  {/* Bottom golden ribbon flourish */}
+                  <svg
+                    viewBox="0 0 200 140"
+                    className="absolute -bottom-1 -right-1 w-52 h-36 pointer-events-none z-10"
+                  >
+                    <path d="M0,140 Q100,70 200,90" fill="none" stroke="#C5A56A" strokeWidth="3" opacity="0.9" />
+                    <path d="M15,140 Q115,85 200,105" fill="none" stroke="#ECCF96" strokeWidth="1.5" opacity="0.7" />
+                    <path d="M35,140 Q130,100 200,120" fill="none" stroke="#D5B878" strokeWidth="1" opacity="0.5" />
+                  </svg>
                 </div>
 
-                <div className="pt-4 border-t border-[#E8DEC8]">
-                  <span className="text-[11px] text-[#7A694A] font-semibold block">
-                    {isRu ? "Юридическая основа: § 95 Abs. 1a SGB V" : isEn ? "Legal Basis: § 95(1a) SGB V" : "Rechtsgrundlage: § 95 Abs. 1a SGB V"}
-                  </span>
+                {/* Mobile top photo banner */}
+                <div className="relative w-full h-44 sm:h-52 md:hidden overflow-hidden">
+                  <Image
+                    src="/images/partners/phase1-office.jpg"
+                    alt="Phase 1 - Active Establishment"
+                    fill
+                    className="object-cover object-center"
+                    sizes="100vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent" />
+                </div>
+
+                {/* Left Content Area */}
+                <div className="relative z-10 w-full md:w-[60%] lg:w-[58%] p-6 sm:p-8 lg:p-9 flex flex-col justify-between h-full space-y-6">
+                  <div className="space-y-4 sm:space-y-4.5">
+                    {/* Integrated Card Title: Numeral + Phase in Title */}
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <span className="font-serif text-[40px] sm:text-[46px] lg:text-[52px] text-[#C5A56A] font-light leading-none shrink-0 tracking-tight select-none pt-0.5">
+                        01
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <h3 className="font-serif text-[18px] sm:text-[21px] lg:text-[23px] font-medium text-[#142318] leading-[1.28]">
+                          <span className="text-[#C5A56A] font-sans font-bold text-xs sm:text-[13px] uppercase tracking-wider block mb-1">
+                            {isRu ? "Фаза 1 · Активное учреждение" : isEn ? "Phase 1 · Active Establishment" : "Phase 1 · Status Quo & Gründung"}
+                          </span>
+                          {isRu
+                            ? "Врачебное участие в MVZ (§ 95 SGB V) & Централизованное управление"
+                            : isEn
+                            ? "Physician MVZ Equity (§ 95 SGB V) & Central Management Services"
+                            : "Ärztliche MVZ-Gründung (§ 95 SGB V) & Managementverträge"}
+                        </h3>
+                      </div>
+                    </div>
+
+                    {/* Description Paragraph */}
+                    <p className="text-[12.5px] sm:text-[13px] text-[#556057] leading-relaxed">
+                      {isRu
+                        ? "Доктор Рахимов-Фишер как лицензированный врач владеет долями в компаниях MVZ на основании установленного законом врачебного права. Холдинг NabiOta® Health Group Germany GmbH оказывает централизованные услуги управления (биллинг, IT, закупки, кадры) на основе договоров о сервисном обслуживании."
+                        : isEn
+                        ? "Dr. Fischer-Rahimov holds MVZ equity based on statutory physician entitlement. NabiOta® Health Group Germany GmbH delivers centralized administrative, billing, purchasing, HR, and marketing management via customized commercial service agreements."
+                        : "Dr. Fischer-Rahimov hält die MVZ-Anteile direkt auf Basis seiner berufsrechtlichen Vertragsarzt-Eigenschaft (§ 95 SGB V). Die Holding NabiOta® Health Group Germany GmbH erbringt zentrale Management-, Abrechnungs-, IT- und Einkaufsdienstleistungen über individuelle Servicevereinbarungen."}
+                    </p>
+
+                    {/* 3 Circular Medal Items */}
+                    <div className="space-y-3 pt-2">
+                      <div className="flex items-center gap-3.5">
+                        <div className="w-9 h-9 rounded-full bg-[#FAF6EE] border border-[#E8DEC8] text-[#8C6D37] flex items-center justify-center shrink-0 shadow-2xs">
+                          <ShieldCheck className="w-4 h-4 stroke-[1.8]" />
+                        </div>
+                        <span className="text-[12.5px] sm:text-[13px] text-[#2C3E32] font-normal leading-snug">
+                          {isRu
+                            ? "Полная защита врачебного суверенитета и независимости решений"
+                            : isEn
+                            ? "Full protection of clinical independence and diagnostic autonomy"
+                            : "Volle Unabhängigkeit und ärztliche Weisungsfreiheit"}
+                        </span>
+                      </div>
+
+                      <div className="flex items-center gap-3.5">
+                        <div className="w-9 h-9 rounded-full bg-[#FAF6EE] border border-[#E8DEC8] text-[#8C6D37] flex items-center justify-center shrink-0 shadow-2xs">
+                          <FileText className="w-4 h-4 stroke-[1.8]" />
+                        </div>
+                        <span className="text-[12.5px] sm:text-[13px] text-[#2C3E32] font-normal leading-snug">
+                          {isRu
+                            ? "Централизованный IT-контур и биллинг с гарантией защиты данных (GDPR)"
+                            : isEn
+                            ? "Centralized GDPR-compliant IT, billing, and accounting systems"
+                            : "Zentralisiertes, DSGVO-konformes IT-Controlling & Abrechnungssystem"}
+                        </span>
+                      </div>
+
+                      <div className="flex items-center gap-3.5">
+                        <div className="w-9 h-9 rounded-full bg-[#FAF6EE] border border-[#E8DEC8] text-[#8C6D37] flex items-center justify-center shrink-0 shadow-2xs">
+                          <Users className="w-4 h-4 stroke-[1.8]" />
+                        </div>
+                        <span className="text-[12.5px] sm:text-[13px] text-[#2C3E32] font-normal leading-snug">
+                          {isRu
+                            ? "Правовая чистота согласований с комитетом лицензирования KV"
+                            : isEn
+                            ? "Clean regulatory approval process with the KV licensing board"
+                            : "Lückenlose Genehmigungskonformität mit dem KV-Zulassungsausschuss"}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Footer with Gold Rule */}
+                  <div className="flex items-center gap-2.5 pt-4 border-t border-[#EAE3D5]">
+                    <span className="w-6 h-[1.5px] bg-[#C5A56A] shrink-0" />
+                    <span className="text-[11px] sm:text-[11.5px] text-[#7A694A] font-medium tracking-wide">
+                      {isRu
+                        ? "Юридическая основа: § 95(1a) SGB V"
+                        : isEn
+                        ? "Legal Basis: § 95(1a) SGB V"
+                        : "Rechtsgrundlage: § 95 Abs. 1a SGB V"}
+                    </span>
+                  </div>
                 </div>
               </div>
 
-              {/* Phase 2 Box */}
-              <div className="bg-[#0B2516] text-white rounded-3xl p-7 sm:p-9 border border-[#D5B878]/40 shadow-lg flex flex-col justify-between space-y-6 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-44 h-44 bg-[#D5B878]/10 rounded-full blur-3xl pointer-events-none" />
-
-                <div className="space-y-4 relative z-10">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#163D29] text-[#ECCF96] text-xs font-bold uppercase tracking-wider border border-[#D5B878]/30">
-                    <span>{isRu ? "ФАЗА 2" : isEn ? "PHASE 2" : "PHASE 2"}</span>
-                    <span className="text-[#ECCF96]">•</span>
-                    <span>{isRu ? "Больничная лицензия" : isEn ? "Hospital Licensing" : "Krankenhausträgergesellschaft"}</span>
-                  </div>
-
-                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-white leading-tight">
-                    {isRu
-                      ? "NabiOta Clinics Germany GmbH (§ 30 GewO) & Прямое владение"
-                      : isEn
-                      ? "NabiOta Clinics Germany GmbH (§ 30 GewO) & Direct Equity"
-                      : "Klinikzulassung (§ 30 GewO) & Direktes Halten"}
-                  </h3>
-
-                  <p className="text-xs sm:text-[13px] text-white/80 leading-relaxed">
-                    {isRu
-                      ? "Холдинг учреждает компанию управления клиникой (NabiOta Clinics Germany GmbH nach § 30 GewO). После получения лицензии стационарной больницы (§ 108/109 SGB V) компания становится полноправным учредителем MVZ без необходимости личного врачебного участия, открывая путь для прямого институционального инвестирования."
-                      : isEn
-                      ? "The holding establishes the hospital operating company (NabiOta Clinics Germany GmbH § 30 GewO). Upon hospital licensing (§ 108/109 SGB V), the company acquires statutory entitlement to directly own and operate MVZ centers, enabling streamlined institutional equity expansion."
-                      : "Die Holding baut die stationäre Betreibergesellschaft (NabiOta Clinics Germany GmbH nach § 30 GewO) auf. Mit Erhalt der Zulassung als Plankrankenhaus (§ 108/109 SGB V) erwirbt die Gesellschaft die unmittelbare gesetzliche Gründungsberechtigung für MVZ. Anteile können sodann direkt und ohne persönliche Arztbindung gehalten werden."}
-                  </p>
-
-                  <ul className="space-y-2.5 pt-2 text-xs sm:text-[13px] text-[#D1DDD5]">
-                    <li className="flex items-start gap-2.5">
-                      <Sparkles className="w-4 h-4 text-[#ECCF96] shrink-0 mt-0.5" />
-                      <span>{isRu ? "Прямое владение долями центров MVZ компанией стационарной клиники" : isEn ? "Direct corporate ownership of MVZ subsidiaries by hospital operating company" : "Direkte Beteiligung der Krankenhausträgergesellschaft an MVZ"}</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <Sparkles className="w-4 h-4 text-[#ECCF96] shrink-0 mt-0.5" />
-                      <span>{isRu ? "Институциональная масштабируемость и высокая инвестиционная емкость" : isEn ? "Institutional scalability and readiness for major equity syndication" : "Uneingeschränkte Skalierbarkeit für institutionelle Eigenkapitalpartner"}</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <Sparkles className="w-4 h-4 text-[#ECCF96] shrink-0 mt-0.5" />
-                      <span>{isRu ? "Создание замкнутого континуума стационарной и амбулаторной помощи" : isEn ? "Unbroken continuum between acute hospital wards and outpatient centers" : "Vollständige sektorübergreifende Versorgungskette unter einem Dach"}</span>
-                    </li>
-                  </ul>
+              {/* ============================================================= */}
+              {/* CARD 2: PHASE 2 (Deep Emerald Luxury Hospital Exterior)      */}
+              {/* ============================================================= */}
+              <div className="group relative overflow-hidden rounded-[26px] sm:rounded-[30px] bg-[#0B2116] border border-[#D5B878]/35 shadow-[0_8px_30px_rgba(20,35,24,0.12)] flex flex-col justify-between transition-all duration-300 hover:shadow-[0_12px_36px_rgba(20,35,24,0.18)]">
+                {/* Right Photo Column with organic curve and golden ribbons */}
+                <div className="absolute right-0 top-0 bottom-0 w-[42%] lg:w-[44%] overflow-hidden pointer-events-none select-none hidden md:block">
+                  <Image
+                    src="/images/partners/phase2-clinic.jpg"
+                    alt="Phase 2 - Hospital Licensing"
+                    fill
+                    className="object-cover object-[center_right] scale-105 group-hover:scale-100 transition-transform duration-700 ease-out"
+                    sizes="(max-width: 1024px) 50vw, 40vw"
+                  />
+                  {/* Organic wave mask transition with gold rim */}
+                  <svg
+                    viewBox="0 0 100 600"
+                    preserveAspectRatio="none"
+                    className="absolute left-0 top-0 bottom-0 h-full w-20 sm:w-24 text-[#0B2116] fill-current pointer-events-none z-10"
+                  >
+                    <path d="M0,0 L35,0 C65,140 10,290 40,430 C60,510 75,560 90,600 L0,600 Z" />
+                    <path
+                      d="M35,0 C65,140 10,290 40,430 C60,510 75,560 90,600"
+                      fill="none"
+                      stroke="#ECCF96"
+                      strokeWidth="2.5"
+                    />
+                    <path
+                      d="M38,0 C68,140 13,290 43,430 C63,510 78,560 93,600"
+                      fill="none"
+                      stroke="#D5B878"
+                      strokeWidth="1.2"
+                      strokeOpacity="0.8"
+                    />
+                  </svg>
+                  {/* Top golden ribbon flourish */}
+                  <svg
+                    viewBox="0 0 200 120"
+                    className="absolute -top-1 -right-1 w-44 h-28 pointer-events-none z-10 opacity-75"
+                  >
+                    <path d="M200,0 Q120,20 40,0" fill="none" stroke="#D5B878" strokeWidth="2.5" />
+                    <path d="M200,10 Q130,35 60,10" fill="none" stroke="#ECCF96" strokeWidth="1.5" opacity="0.6" />
+                  </svg>
+                  {/* Bottom golden ribbon flourish */}
+                  <svg
+                    viewBox="0 0 200 140"
+                    className="absolute -bottom-1 -right-1 w-52 h-36 pointer-events-none z-10"
+                  >
+                    <path d="M0,140 Q100,70 200,90" fill="none" stroke="#C5A56A" strokeWidth="3" opacity="0.9" />
+                    <path d="M15,140 Q115,85 200,105" fill="none" stroke="#ECCF96" strokeWidth="1.5" opacity="0.7" />
+                    <path d="M35,140 Q130,100 200,120" fill="none" stroke="#D5B878" strokeWidth="1" opacity="0.5" />
+                  </svg>
                 </div>
 
-                <div className="pt-4 border-t border-white/15 relative z-10">
-                  <span className="text-[11px] text-[#ECCF96] font-semibold block">
-                    {isRu ? "Юридическая основа: § 30 GewO / § 108 SGB V / § 95 Abs. 1a SGB V" : isEn ? "Legal Basis: § 30 GewO / § 108 SGB V / § 95(1a) SGB V" : "Rechtsgrundlage: § 30 GewO / § 108 SGB V / § 95 Abs. 1a SGB V"}
-                  </span>
+                {/* Mobile top photo banner */}
+                <div className="relative w-full h-44 sm:h-52 md:hidden overflow-hidden">
+                  <Image
+                    src="/images/partners/phase2-clinic.jpg"
+                    alt="Phase 2 - Hospital Licensing"
+                    fill
+                    className="object-cover object-center"
+                    sizes="100vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B2116] via-[#0B2116]/40 to-transparent" />
+                </div>
+
+                {/* Left Content Area */}
+                <div className="relative z-10 w-full md:w-[60%] lg:w-[58%] p-6 sm:p-8 lg:p-9 flex flex-col justify-between h-full space-y-6">
+                  <div className="space-y-4 sm:space-y-4.5">
+                    {/* Integrated Card Title: Numeral + Phase in Title */}
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <span className="font-serif text-[40px] sm:text-[46px] lg:text-[52px] text-[#C5A56A] font-light leading-none shrink-0 tracking-tight select-none pt-0.5">
+                        02
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <h3 className="font-serif text-[18px] sm:text-[21px] lg:text-[23px] font-medium text-white leading-[1.28]">
+                          <span className="text-[#ECCF96] font-sans font-bold text-xs sm:text-[13px] uppercase tracking-wider block mb-1">
+                            {isRu ? "Фаза 2 · Больничная лицензия" : isEn ? "Phase 2 · Hospital Licensing" : "Phase 2 · Krankenhauszulassung"}
+                          </span>
+                          {isRu
+                            ? "NabiOta Clinics Germany GmbH (§ 30 GewO) & Прямое владение"
+                            : isEn
+                            ? "NabiOta Clinics Germany GmbH (§ 30 GewO) & Direct Equity"
+                            : "NabiOta Clinics Germany GmbH (§ 30 GewO) & Direktes Halten"}
+                        </h3>
+                      </div>
+                    </div>
+
+                    {/* Description Paragraph */}
+                    <p className="text-[12.5px] sm:text-[13px] text-white/80 leading-relaxed">
+                      {isRu
+                        ? "Холдинг учреждает компанию управления клиникой (NabiOta Clinics Germany GmbH nach § 30 GewO). После получения лицензии стационарной больницы (§ 108/109 SGB V) компания становится полноправным учредителем MVZ без необходимости личного врачебного участия, открывая путь для прямого институционального инвестирования."
+                        : isEn
+                        ? "The holding establishes the hospital operating company (NabiOta Clinics Germany GmbH § 30 GewO). Upon hospital licensing (§ 108/109 SGB V), the company acquires statutory entitlement to directly own and operate MVZ centers, enabling streamlined institutional equity expansion."
+                        : "Die Holding baut die stationäre Betreibergesellschaft (NabiOta Clinics Germany GmbH nach § 30 GewO) auf. Mit Erhalt der Zulassung als Plankrankenhaus (§ 108/109 SGB V) erwirbt die Gesellschaft die unmittelbare gesetzliche Gründungsberechtigung für MVZ. Anteile können sodann direkt und ohne persönliche Arztbindung gehalten werden."}
+                    </p>
+
+                    {/* 3 Circular Medal Items */}
+                    <div className="space-y-3 pt-2">
+                      <div className="flex items-center gap-3.5">
+                        <div className="w-9 h-9 rounded-full bg-[#132E1E] border border-[#D5B878]/40 text-[#ECCF96] flex items-center justify-center shrink-0 shadow-2xs">
+                          <GitFork className="w-4 h-4 stroke-[1.8]" />
+                        </div>
+                        <span className="text-[12.5px] sm:text-[13px] text-white/90 font-normal leading-snug">
+                          {isRu
+                            ? "Прямое корпоративное владение долями MVZ клинической компанией"
+                            : isEn
+                            ? "Direct corporate ownership of MVZ subsidiaries by hospital operating company"
+                            : "Direkte Trägerschaft der MVZ-Töchter durch die Krankenhausträgergesellschaft"}
+                        </span>
+                      </div>
+
+                      <div className="flex items-center gap-3.5">
+                        <div className="w-9 h-9 rounded-full bg-[#132E1E] border border-[#D5B878]/40 text-[#ECCF96] flex items-center justify-center shrink-0 shadow-2xs">
+                          <TrendingUp className="w-4 h-4 stroke-[1.8]" />
+                        </div>
+                        <span className="text-[12.5px] sm:text-[13px] text-white/90 font-normal leading-snug">
+                          {isRu
+                            ? "Институциональная масштабируемость и готовность к синдикации капитала"
+                            : isEn
+                            ? "Institutional scalability and readiness for major equity syndication"
+                            : "Institutionelle Skalierbarkeit für größere Eigenkapitalsyndizierungen"}
+                        </span>
+                      </div>
+
+                      <div className="flex items-center gap-3.5">
+                        <div className="w-9 h-9 rounded-full bg-[#132E1E] border border-[#D5B878]/40 text-[#ECCF96] flex items-center justify-center shrink-0 shadow-2xs">
+                          <Link2 className="w-4 h-4 stroke-[1.8]" />
+                        </div>
+                        <span className="text-[12.5px] sm:text-[13px] text-white/90 font-normal leading-snug">
+                          {isRu
+                            ? "Непрерывный континуум между стационаром и амбулаторными центрами"
+                            : isEn
+                            ? "Unbroken continuum between acute hospital wards and outpatient centers"
+                            : "Lückenloser Versorgungskontinuum zwischen Akutklinik und MVZ-Zentren"}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Footer with Gold Rule */}
+                  <div className="flex items-center gap-2.5 pt-4 border-t border-white/10">
+                    <span className="w-6 h-[1.5px] bg-[#C5A56A] shrink-0" />
+                    <span className="text-[11px] sm:text-[11.5px] text-[#ECCF96] font-medium tracking-wide">
+                      {isRu
+                        ? "Юридическая основа: § 30 GewO / § 108 SGB V / § 95(1a) SGB V"
+                        : isEn
+                        ? "Legal Basis: § 30 GewO / § 108 SGB V / § 95(1a) SGB V"
+                        : "Rechtsgrundlage: § 30 GewO / § 108 SGB V / § 95 Abs. 1a SGB V"}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
           </Container>
         </section>
+
+        {/* SECTION 3B: VERTRAGLICHE VERBINDUNG ZWISCHEN HOLDING UND MVZ (PDF III) */}
+        <MvzContractSection locale={locale} />
 
         {/* ========================================================================= */}
         {/* SECTION 4: KENNZAHLEN & HOLDING-STÄRKE (METRICS RIBBON)                   */}
@@ -834,20 +1128,36 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
         {/* ========================================================================= */}
         {/* SECTION 5: DER STRUKTURIERTE PARTNERSCHAFTSPROZESS (4 SCHRITTE)           */}
         {/* ========================================================================= */}
-        <section className="py-14 sm:py-18 bg-[#FAF8F5] border-t border-[#EBE6DC]">
-          <Container>
-            <div className="max-w-2xl mx-auto text-center space-y-3 mb-12">
-              <span className="text-xs font-semibold tracking-[0.2em] text-[#B8934A] uppercase font-sans block">
-                {isRu ? "ПОШАГОВЫЙ ПУТЬ" : isEn ? "STRUCTURED ROADMAP" : "DER PARTNERSCHAFTSPROZESS"}
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0B2516] leading-tight">
-                {isRu
-                  ? "Четыре шага к успешному совместному будущему"
-                  : isEn
-                  ? "Four Milestones to a Successful Partnership"
-                  : "In 4 strukturierten Schritten zur Partnerschaft"}
+        <section className="py-14 sm:py-18 lg:py-20 bg-[#FAF8F4] border-t border-[#EBE6DC]">
+          <Container size="wide">
+            {/* Section Header */}
+            <div className="max-w-2xl mx-auto text-center space-y-3 mb-10 sm:mb-14">
+              <div className="flex items-center justify-center gap-2 mb-1.5 sm:mb-2">
+                <span className="w-6 sm:w-8 h-[1.5px] bg-[#C5A56A]" />
+                <span className="text-[10px] sm:text-[11px] font-semibold tracking-[0.24em] text-[#C5A56A] uppercase font-sans">
+                  {isRu ? "СТРУКТУРИРОВАННЫЙ ПРОЦЕСС" : isEn ? "STRUCTURED ROADMAP" : "DER PARTNERSCHAFTSPROZESS"}
+                </span>
+                <span className="w-6 sm:w-8 h-[1.5px] bg-[#C5A56A]" />
+              </div>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif text-[#0B2516] font-normal leading-tight">
+                {isRu ? (
+                  <>
+                    Четыре шага к{" "}
+                    <span className="font-serif italic text-[#C5A56A]">успешному партнерству</span>
+                  </>
+                ) : isEn ? (
+                  <>
+                    Four Milestones to a{" "}
+                    <span className="font-serif italic text-[#C5A56A]">Successful Partnership</span>
+                  </>
+                ) : (
+                  <>
+                    In 4 strukturierten Schritten zur{" "}
+                    <span className="font-serif italic text-[#C5A56A]">Partnerschaft</span>
+                  </>
+                )}
               </h2>
-              <p className="text-xs sm:text-sm text-[#4A5D52] leading-relaxed">
+              <p className="text-xs sm:text-[13.5px] text-[#4A5D52] leading-relaxed max-w-xl mx-auto">
                 {isRu
                   ? "Прозрачный, конфиденциальный и юридически выверенный процесс: от первого контакта до интеграции."
                   : isEn
@@ -856,27 +1166,53 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* 4 Photo-Backed Cards Grid Matching Photo */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 items-stretch max-w-7xl mx-auto">
               {processSteps.map((step, idx) => (
                 <div
                   key={idx}
-                  className="bg-white rounded-2xl p-6 border border-[#E8E2D6] shadow-xs flex flex-col justify-between space-y-4 hover:border-[#D5B878] transition-colors"
+                  className={`group relative overflow-hidden rounded-[22px] sm:rounded-[24px] bg-[#FCFAF7] p-5 sm:p-6 lg:p-6.5 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_12px_36px_rgba(20,35,24,0.08)] ${
+                    idx === 0
+                      ? "border-[1.5px] border-[#55755E] shadow-[0_4px_24px_rgba(85,117,94,0.08)]"
+                      : "border border-[#E7E1D4] shadow-[0_4px_20px_rgba(20,35,24,0.03)] hover:border-[#8C6D37]/50"
+                  }`}
                 >
-                  <div className="space-y-3">
-                    <span className="text-3xl sm:text-4xl font-serif font-bold text-[#ECCF96] block leading-none">
-                      {step.num}
-                    </span>
-                    <h3 className="font-serif text-base sm:text-lg font-bold text-[#0B2516] leading-snug">
-                      {step.title}
-                    </h3>
-                    <p className="text-xs text-[#526359] leading-relaxed">
-                      {step.desc}
-                    </p>
+                  {/* Top-right soft photo container with delicate fade */}
+                  <div className="absolute right-0 top-0 w-[54%] sm:w-[50%] h-28 sm:h-32 pointer-events-none overflow-hidden select-none z-0">
+                    <Image
+                      src={step.image}
+                      alt={step.title}
+                      fill
+                      className="object-cover object-right-top transition-transform duration-700 ease-out group-hover:scale-105"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
+                    />
+                    {/* Horizontal fade into card background #FCFAF7 */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#FCFAF7] via-[#FCFAF7]/40 to-transparent" />
+                    {/* Bottom fade into card background #FCFAF7 */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#FCFAF7] via-[#FCFAF7]/30 to-transparent" />
                   </div>
 
-                  <div className="pt-2 border-t border-[#F2ECE1] flex items-center justify-between text-[#8C6D37] text-xs font-medium">
-                    <span>{isRu ? `Этап ${idx + 1}` : isEn ? `Phase ${idx + 1}` : `Schritt ${idx + 1}`}</span>
-                    <ChevronRight className="w-4 h-4 text-[#C5A56A]" />
+                  {/* Top Content: Medallion and Numeral, Title, Description */}
+                  <div className="relative z-10 space-y-3.5 sm:space-y-4">
+                    {/* Medallion + Serif Italic Number */}
+                    <div className="flex items-center gap-3">
+                      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#FAF5EB] border border-[#E5DAC6] flex items-center justify-center text-[#4A6353] shadow-2xs shrink-0 group-hover:border-[#C5A56A] group-hover:text-[#274632] transition-colors">
+                        <step.icon className="w-5 h-5 stroke-[1.8]" />
+                      </div>
+                      <span className="font-serif italic text-2xl sm:text-[27px] text-[#C5A56A] font-light leading-none select-none pl-0.5">
+                        {step.num}
+                      </span>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="font-serif text-[18px] sm:text-[19px] lg:text-[20px] font-medium text-[#142318] leading-[1.25]">
+                      {step.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-[12.5px] sm:text-[13px] text-[#556057] leading-relaxed">
+                      {step.desc}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -885,249 +1221,6 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 5B: OFFICIAL HOLDING FACTSHEET (INTERACTIVE INVESTOR MEMORANDUM)  */}
-        {/* ========================================================================= */}
-        <section id="factsheet" className="py-16 sm:py-20 bg-white border-t border-[#EAE4D7] relative overflow-hidden">
-          <Container>
-            {/* Header with Print / PDF Action */}
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12">
-              <div className="space-y-2.5 max-w-2xl">
-                <span className="text-xs font-semibold tracking-[0.2em] text-[#B8934A] uppercase font-sans block">
-                  {isRu ? "ОФИЦИАЛЬНЫЙ ФАКТШИТ ХОЛДИНГА" : isEn ? "OFFICIAL HOLDING FACTSHEET" : "OFFIZIELLES HOLDING-FACTSHEET"}
-                </span>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0B2516] leading-tight">
-                  {isRu
-                    ? "NabiOta® Health Group Germany на одном листе"
-                    : isEn
-                    ? "NabiOta® Health Group Germany at a Glance"
-                    : "NabiOta® Health Group Germany auf einen Blick"}
-                </h2>
-                <p className="text-xs sm:text-sm text-[#4A5D52] leading-relaxed">
-                  {isRu
-                    ? "Институциональный меморандум для врачей, клиник-партнеров, банков и финансовых инвесторов. Полная юридическая прозрачность."
-                    : isEn
-                    ? "Institutional memorandum for physicians, clinical partners, banks, and healthcare investors. 100% corporate transparency."
-                    : "Kompaktes institutionelles Memorandum für Ärzte, Kliniken, Banken und Investoren. Vollständige unternehmerische Transparenz."}
-                </p>
-              </div>
-
-              <div className="flex items-center gap-3 shrink-0">
-                <button
-                  type="button"
-                  onClick={() => typeof window !== "undefined" && window.print()}
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-[#D5B878] text-[#8C6D37] hover:bg-[#FAF7F2] text-xs font-semibold uppercase tracking-wider transition-colors shadow-2xs cursor-pointer"
-                >
-                  <Printer className="w-4 h-4 text-[#8C6D37]" />
-                  <span>{isRu ? "Печать / Экспорт в PDF" : isEn ? "Print / Save as PDF" : "Factsheet drucken / PDF"}</span>
-                </button>
-                <Link
-                  href={`/${locale}/contact`}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#0B2516] text-[#ECCF96] hover:bg-[#123620] text-xs font-semibold uppercase tracking-wider transition-colors shadow-xs"
-                >
-                  <span>{isRu ? "Запросить меморандум" : isEn ? "Request Dossier" : "Dossier anfordern"}</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Factsheet Document Layout */}
-            <div className="bg-[#FAF8F4] rounded-3xl p-6 sm:p-9 lg:p-11 border border-[#DECDB5] shadow-md relative">
-              {/* Document Header Band */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-8 border-b border-[#E3D9C9] gap-4">
-                <div>
-                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#B8934A] mb-1">
-                    <Briefcase className="w-4 h-4" />
-                    <span>Unternehmensprofil & Investoren-Factsheet</span>
-                  </div>
-                  <h3 className="font-serif text-2xl sm:text-3xl text-[#0B2516] font-bold">
-                    NabiOta® Health Group Germany GmbH
-                  </h3>
-                  <p className="text-xs text-[#55665C] mt-1">
-                    Amtsgericht Mönchengladbach HRB 16787 • Aachener Str. 114, 41061 Mönchengladbach
-                  </p>
-                </div>
-                <div className="sm:text-right shrink-0">
-                  <span className="inline-block px-3 py-1 rounded-md bg-[#0B2516] text-[#ECCF96] text-[11px] font-bold uppercase tracking-wider">
-                    Status: 2026/2027
-                  </span>
-                  <p className="text-[11px] text-[#717E76] mt-1">
-                    {isRu ? "Уставный капитал: 50.000 € (внесен)" : isEn ? "Capital: 50,000 € fully paid" : "Stammkapital: 50.000 € voll erbracht"}
-                  </p>
-                </div>
-              </div>
-
-              {/* 4 Overview Mini-Cards */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                <div className="bg-white p-4 rounded-xl border border-[#E8E2D6] shadow-xs">
-                  <span className="text-[10.5px] uppercase tracking-wider text-[#8A764A] block mb-1 font-semibold">
-                    {isRu ? "Правовая форма" : isEn ? "Legal Entity" : "Rechtsform"}
-                  </span>
-                  <span className="font-serif text-lg font-bold text-[#0B2516]">
-                    GmbH (Holding)
-                  </span>
-                  <p className="text-[11px] text-[#69786F] mt-0.5">
-                    {isRu ? "Частный холдинг" : isEn ? "Owner-managed" : "Inhabergeführt"}
-                  </p>
-                </div>
-
-                <div className="bg-white p-4 rounded-xl border border-[#E8E2D6] shadow-xs">
-                  <span className="text-[10.5px] uppercase tracking-wider text-[#8A764A] block mb-1 font-semibold">
-                    {isRu ? "Дочерние общества" : isEn ? "Subsidiaries" : "Tochtergesellschaften"}
-                  </span>
-                  <span className="font-serif text-lg font-bold text-[#0B2516]">
-                    10 Unternehmen
-                  </span>
-                  <p className="text-[11px] text-[#69786F] mt-0.5">
-                    {isRu ? "3 кластера" : isEn ? "3 core clusters" : "3 Säulen"}
-                  </p>
-                </div>
-
-                <div className="bg-white p-4 rounded-xl border border-[#E8E2D6] shadow-xs">
-                  <span className="text-[10.5px] uppercase tracking-wider text-[#8A764A] block mb-1 font-semibold">
-                    {isRu ? "Врач-основатель" : isEn ? "Medical Founder" : "Gründer / Vertragsarzt"}
-                  </span>
-                  <span className="font-serif text-lg font-bold text-[#0B2516]">
-                    Dr. Fischer-Rahimov
-                  </span>
-                  <p className="text-[11px] text-[#69786F] mt-0.5">
-                    {isRu ? "Врач-учредитель MVZ" : isEn ? "Statutory Physician" : "Vertragsärztlicher Anker"}
-                  </p>
-                </div>
-
-                <div className="bg-white p-4 rounded-xl border border-[#E8E2D6] shadow-xs">
-                  <span className="text-[10.5px] uppercase tracking-wider text-[#8A764A] block mb-1 font-semibold">
-                    {isRu ? "Ключевой стандарт" : isEn ? "Core Standard" : "Governance-Standard"}
-                  </span>
-                  <span className="font-serif text-lg font-bold text-[#0B2516]">
-                    § 95 SGB V / CIRS
-                  </span>
-                  <p className="text-[11px] text-[#69786F] mt-0.5">
-                    {isRu ? "Врачебная свобода" : isEn ? "Clinical Autonomy" : "Freie Therapiewahl"}
-                  </p>
-                </div>
-              </div>
-
-              {/* Multi-Section Details Grid */}
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-                {/* Branch 1 */}
-                <div className="bg-white p-5 sm:p-6 rounded-2xl border border-[#E8E2D6] flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="w-6 h-6 rounded-full bg-[#0B2516] text-[#ECCF96] text-xs font-bold flex items-center justify-center">1</span>
-                      <h4 className="font-serif text-base font-bold text-[#0B2516]">
-                        {isRu ? "Амбулаторная и стационарная медицина" : isEn ? "Outpatient & Inpatient Clinical Care" : "Ambulante & Stationäre Versorgung"}
-                      </h4>
-                    </div>
-                    <ul className="space-y-2 text-xs text-[#44554A]">
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B8934A] shrink-0 mt-0.5" />
-                        <span><strong>NabiOta MVZ Hausarzt & Internist:</strong> Allgemeinmedizin, Kardiologie, Neurologie</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B8934A] shrink-0 mt-0.5" />
-                        <span><strong>NabiOta MVZ Chirurgie:</strong> Orthopädie, Unfall-, Neuro-, Allgemeinchirurgie & OP-Zentrum</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B8934A] shrink-0 mt-0.5" />
-                        <span><strong>NabiOta Klinik Germany GmbH:</strong> Fachkrankenhaus nach § 30 GewO</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B8934A] shrink-0 mt-0.5" />
-                        <span><strong>NabiOta Rehabilitation & Therapy:</strong> Physio, Ergo, Logopädie & 32°C Bewegungsbad</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="pt-3 mt-4 border-t border-[#F0ECE1] text-[11px] text-[#717E76]">
-                    Rechtsgrundlage: § 95 SGB V / § 30 GewO
-                  </div>
-                </div>
-
-                {/* Branch 2 */}
-                <div className="bg-white p-5 sm:p-6 rounded-2xl border border-[#E8E2D6] flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="w-6 h-6 rounded-full bg-[#0B2516] text-[#ECCF96] text-xs font-bold flex items-center justify-center">2</span>
-                      <h4 className="font-serif text-base font-bold text-[#0B2516]">
-                        {isRu ? "Диагностика и сестринский уход" : isEn ? "Diagnostics & Nursing Infrastructure" : "Diagnostik & Pflegerische Infrastruktur"}
-                      </h4>
-                    </div>
-                    <ul className="space-y-2 text-xs text-[#44554A]">
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B8934A] shrink-0 mt-0.5" />
-                        <span><strong>NabiOta Diagnostics GmbH:</strong> 3T-MRT, Low-Dose-CT, Röntgen, 3D/4D-Sono</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B8934A] shrink-0 mt-0.5" />
-                        <span><strong>Neurophysiologie & Labor:</strong> EMG, ENG, EEG, EP & teleradiologische Befundung</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B8934A] shrink-0 mt-0.5" />
-                        <span><strong>NabiOta HomeCare GmbH:</strong> Häusliche Krankenpflege nach SGB V & Grundpflege SGB XI</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B8934A] shrink-0 mt-0.5" />
-                        <span><strong>Wundzentrum:</strong> Zertifizierte Behandlung chronischer & postoperativer Wunden</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="pt-3 mt-4 border-t border-[#F0ECE1] text-[11px] text-[#717E76]">
-                    Rechtsgrundlage: G-BA / RKI / SGB V & XI
-                  </div>
-                </div>
-
-                {/* Branch 3 */}
-                <div className="bg-white p-5 sm:p-6 rounded-2xl border border-[#E8E2D6] flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="w-6 h-6 rounded-full bg-[#0B2516] text-[#ECCF96] text-xs font-bold flex items-center justify-center">3</span>
-                      <h4 className="font-serif text-base font-bold text-[#0B2516]">
-                        {isRu ? "Снабжение, персонал и недвижимость" : isEn ? "Supply Chain, Talent & Real Estate" : "Versorgung, Fachkräfte & Immobilien"}
-                      </h4>
-                    </div>
-                    <ul className="space-y-2 text-xs text-[#44554A]">
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B8934A] shrink-0 mt-0.5" />
-                        <span><strong>NabiOta Sanitätshaus GmbH:</strong> Orthopädie, Bandagen, Pflegebetten, PG 54</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B8934A] shrink-0 mt-0.5" />
-                        <span><strong>NabiOta Pharmacy:</strong> Klinik-Arzneimittelversorgung nach § 14 ApoG</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B8934A] shrink-0 mt-0.5" />
-                        <span><strong>Medical Recruitment Services:</strong> Approbationsbegleitung & Fachkräftesicherung</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#B8934A] shrink-0 mt-0.5" />
-                        <span><strong>NabiOta Real Estate GmbH:</strong> Projektentwicklung von Praxen & OP-Zentren</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="pt-3 mt-4 border-t border-[#F0ECE1] text-[11px] text-[#717E76]">
-                    Rechtsgrundlage: § 14 ApoG / §§ 126, 127 SGB V
-                  </div>
-                </div>
-              </div>
-
-              {/* Bottom Regulatory Disclaimer & Direct Contact */}
-              <div className="pt-5 border-t border-[#E3D9C9] flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs text-[#526359]">
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-[#8C6D37]" />
-                  <span>
-                    {isRu
-                      ? "Все данные верифицированы корпоративными юристами и аудиторскими заключениями холдинга."
-                      : isEn
-                      ? "All corporate metrics verified by legal counsel and statutory holding auditor filings."
-                      : "Geprüfte Angaben gemäß Handelsregisterauszug, Gesellschaftervertrag und regulatorischem Rahmen."}
-                  </span>
-                </div>
-                <div className="text-[11px] text-[#717E76]">
-                  Holding-Zentrale: Aachener Str. 114, 41061 Mönchengladbach • holding@nabiota.de
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
 
         {/* ========================================================================= */}
         {/* SECTION 6: VERTRAULICHER KONTAKT (DESK AESTHETIC MATCHING BERATUNG)       */}
@@ -1233,7 +1326,7 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
             onClick={() => setSelectedPillar(null)}
           >
             <div
-              className="relative w-full max-w-3xl max-h-[92vh] overflow-y-auto rounded-3xl bg-[#FAF9F6] border border-[#E8DEC8] shadow-2xl p-6 sm:p-8 md:p-10 animate-in zoom-in-95 duration-200"
+              className="relative w-full max-w-5xl xl:max-w-[1100px] max-h-[92vh] overflow-y-auto rounded-3xl bg-[#FAF9F6] border border-[#E8DEC8] shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 animate-in zoom-in-95 duration-200"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
@@ -1248,9 +1341,11 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
 
               {/* Modal Header */}
               <div className="space-y-3 mb-6 pr-12">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B2516] text-[#ECCF96] text-[10px] sm:text-xs font-semibold uppercase tracking-wider">
-                  <Handshake className="w-3.5 h-3.5" />
-                  <span>{selectedPillar.tag}</span>
+                <div className="flex items-center gap-2">
+                  <span className="w-3.5 h-[1.5px] bg-[#C5A56A]" />
+                  <span className="text-[11px] sm:text-xs font-bold tracking-[0.2em] text-[#C5A56A] uppercase font-sans">
+                    {selectedPillar.tag}
+                  </span>
                 </div>
 
                 <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0E281C] leading-tight">

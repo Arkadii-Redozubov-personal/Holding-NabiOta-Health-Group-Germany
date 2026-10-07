@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
+import { HoldingPurposeSection } from "@/components/sections/HoldingPurposeSection";
 import { SupportedLocale } from "@/lib/i18n";
 import {
   ChevronRight,
@@ -267,25 +268,25 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
     rootsTitle2: isRu ? "Направленность в будущее." : isEn ? "Built for the Future." : "Für die Zukunft aufgestellt.",
     rootsP1: isRu ? (
       <>
-        NabiOta® Health Group Germany GmbH (HRB 16787, Amtsgericht Mönchengladbach) зарегистрирована с уставным капиталом 50.000 EUR по адресу: Aachener Straße 114, 41061 Mönchengladbach. Корни группы восходят к стратегическому развитию медицинской экспертизы и{" "}
+        NabiOta® Health Group Germany GmbH зарегистрирована в Amtsgericht Mönchengladbach под номером HRB 16787. Уведомление о регистрации от 9 января 2026 года указывает уставный капитал 50.000 EUR и юридический адрес: Aachener Straße 114, 41061 Mönchengladbach. Предмет деятельности — управление участиями и централизованные управленческие услуги в сфере здравоохранения. Корни группы восходят к стратегическому развитию медицинской экспертизы и{" "}
         <strong className="font-bold text-[#142318]">Medical A-Z Consulting GmbH</strong>. Благодаря расширению корпоративной структуры и привлечению лицензированных специалистов был заложен фундамент долгосрочной медицинской группы.
       </>
     ) : isEn ? (
       <>
-        NabiOta® Health Group Germany GmbH (HRB 16787, Amtsgericht Mönchengladbach) was incorporated with a share capital of EUR 50,000 at Aachener Straße 114, 41061 Mönchengladbach. Tracing its origins back to{" "}
+        NabiOta® Health Group Germany GmbH is registered under HRB 16787 at the Amtsgericht Mönchengladbach. The registration notice dated 9 January 2026 states a share capital of EUR 50,000 and the business address Aachener Straße 114, 41061 Mönchengladbach. Its corporate purpose comprises investment management and central management services in the healthcare sector. Tracing its origins back to{" "}
         <strong className="font-bold text-[#142318]">Medical A-Z Consulting GmbH</strong>, the group has evolved through structured corporate development and specialist medical participation into a future-ready healthcare group.
       </>
     ) : (
       <>
-        Die NabiOta® Health Group Germany GmbH ist unter HRB 16787 beim Amtsgericht Mönchengladbach eingetragen (Stammkapital: 50.000 EUR, Geschäftsanschrift: Aachener Straße 114, 41061 Mönchengladbach). Ausgehend von den Wurzeln der{" "}
+        Die NabiOta® Health Group Germany GmbH ist unter HRB 16787 beim Amtsgericht Mönchengladbach eingetragen. Die Eintragungsnachricht vom 9. Januar 2026 nennt ein Stammkapital von 50.000 EUR und die Geschäftsanschrift Aachener Straße 114, 41061 Mönchengladbach. Der Unternehmensgegenstand umfasst Beteiligungsverwaltung und zentrale Managementleistungen im Gesundheitswesen. Ausgehend von den Wurzeln der{" "}
         <strong className="font-bold text-[#142318]">Medical A-Z Consulting GmbH</strong> wurde durch organisatorische Weiterentwicklung und den Ausbau gesellschaftsrechtlicher Strukturen die Grundlage für einen integrierten Verbund ambulanter und stationärer medizinischer Einrichtungen geschaffen.
       </>
     ),
     rootsP2: isRu
-      ? "Цель развития — объединить терапевтическую, хирургическую, диагностическую помощь, реабилитацию и уход под единым брендом. Структура холдинга обеспечивает централизованное экономическое и административное управление, гарантируя при этом 100% независимость врачебных решений."
+      ? "Цель — объединение семейной и терапевтической, неврологической и хирургической помощи, а также частной клиники, которая на первом этапе работает по § 30 GewO. Холдинг берет на себя центральные экономические и организационные задачи. Допуски (Zulassungen), медицинская ответственность и оказание услуг остаются у соответствующих уполномоченных операторов. Последующее стационарное обслуживание пациентов обязательного медицинского страхования и больничное общество как учредитель MVZ готовятся как отдельные этапы развития."
       : isEn
-      ? "The goal is an integrated network uniting primary care, surgical specialties, diagnostics, rehabilitation, and home care under one brand. The holding provides centralized administrative and economic management while strictly upholding clinical independence."
-      : "Ziel ist ein Verbund aus hausärztlicher und internistischer Versorgung, neurologischer und chirurgischer Versorgung sowie einer zunächst nach § 30 GewO betriebenen Privatklinik. Die Holding übernimmt zentrale Managementleistungen, während ärztliche Verantwortung und Leistungserbringung bei den berechtigten Betreibern verbleiben.",
+      ? "The goal is a network of general practice and internal medicine, neurological and surgical care, as well as a private clinic initially operated under § 30 GewO. The holding assumes central economic and organizational tasks. Approvals, medical responsibility and service provision remain with the respective authorized operators. Later inpatient care for statutorily insured patients and a hospital company acting as MVZ sponsor are being prepared as separate development steps."
+      : "Ziel ist ein Verbund aus hausärztlicher und internistischer Versorgung, neurologischer und chirurgischer Versorgung sowie einer zunächst nach § 30 GewO betriebenen Privatklinik. Die Holding übernimmt zentrale wirtschaftliche und organisatorische Aufgaben. Zulassungen, medizinische Verantwortung und Leistungserbringung verbleiben bei den jeweils berechtigten Betreibern. Die spätere stationäre Versorgung gesetzlich Versicherter und eine Krankenhausgesellschaft als MVZ-Trägerin werden als gesonderte Entwicklungsschritte vorbereitet.",
 
     missionEyebrow: isRu ? "МИССИЯ И ВИДЕНИЕ" : isEn ? "OUR MISSION & GOALS" : "UNSER AUFTRAG & ZIELE",
     missionHeading: isRu ? "Что нами движет" : isEn ? "What Drives Us" : "Was uns antreibt",
@@ -332,7 +333,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       ? "Dr. Fischer-Rahimov как лицензированный врач-контрактник владеет долями MVZ на основе права учредителя. Холдинг берет на себя центральные сервисные и управляющие функции через индивидуальные договоры услуг."
       : isEn
       ? "Dr. Fischer-Rahimov holds MVZ shares directly on the basis of his statutory physician entitlement. The holding company provides centralized management services via individually defined service agreements."
-      : "Dr. Fischer-Rahimov hält MVZ-Anteile unmittelbar auf Grundlage seiner Gründungsberechtigung. Die Holding verbindet sich mit den MVZ durch einzeln vereinbarte Dienstleistungen. Weitere zulässige Beteiligungen werden separat aufgebaut.",
+      : "Dr. Fischer-Rahimov hält MVZ-Anteile unmittelbar auf Grundlage seiner Gründungsberechtigung. Die Holding verbindet sich mit den MVZ durch einzeln vereinbarte Dienstleistungen. Andere zulässige Beteiligungen werden separat aufgebaut.",
     phase2Title: isRu ? "Фаза 2: Стационарная больничная структура" : isEn ? "Phase 2: Hospital Corporation Structure" : "Phase 2: Spätere Krankenhausstruktur",
     phase2Desc: isRu
       ? "Холдинг учреждает компанию управления клиникой (NabiOta Clinics Germany GmbH nach § 30 GewO). После получения лицензии больницы (§ 108/109 SGB V) компания сможет напрямую участвовать в долях MVZ."
@@ -525,7 +526,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         {/* ══════════════════════════════════════════════════════════
             SECTION 1: HERO HEADER (Matching Reference 1:1)
         ══════════════════════════════════════════════════════════ */}
-        <section className="relative w-full min-h-[480px] sm:min-h-[520px] lg:h-[600px] lg:min-h-[600px] pt-32 sm:pt-36 lg:pt-40 pb-14 sm:pb-16 overflow-hidden flex items-center bg-[#07150C] text-[#FAF8F5] border-b border-[#D5B878]/25">
+        <section dir="ltr" className="relative w-full min-h-[480px] sm:min-h-[520px] lg:h-[600px] lg:min-h-[600px] pt-32 sm:pt-36 lg:pt-40 pb-14 sm:pb-16 overflow-hidden flex items-center bg-[#07150C] text-[#FAF8F5] border-b border-[#D5B878]/25">
           {/* Background: Modern Medical Doctors Team on the right - focused on doctors on mobile */}
           <div className="absolute inset-0 sm:left-[18%] sm:w-[82%] z-0 pointer-events-none overflow-hidden">
             <Image
@@ -643,14 +644,14 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
               </nav>
 
               {/* Main Heading */}
-              <h1 className="page-hero-title font-serif text-[32px] sm:text-[40px] lg:text-[44px] xl:text-[50px] font-normal leading-[1.12] tracking-[-0.01em] text-white mb-5 sm:mb-6 break-words [overflow-wrap:anywhere] hyphens-auto">
+              <h1 dir="auto" className="page-hero-title text-left font-serif text-[32px] sm:text-[40px] lg:text-[44px] xl:text-[50px] font-normal leading-[1.12] tracking-[-0.01em] text-white mb-5 sm:mb-6 break-words [overflow-wrap:anywhere] hyphens-auto">
                 {t.heroTitlePart1}
                 <br />
                 {t.heroTitlePart2}
               </h1>
 
               {/* Description */}
-              <p className="hero-text-wrap text-[13.5px] sm:text-[14.5px] text-[#D2DED5] leading-[1.72] font-sans max-w-xl mb-9 sm:mb-11 font-normal break-words [overflow-wrap:anywhere] hyphens-auto">
+              <p dir="auto" className="hero-text-wrap text-left text-[13.5px] sm:text-[14.5px] text-[#D2DED5] leading-[1.72] font-sans max-w-xl mb-9 sm:mb-11 font-normal break-words [overflow-wrap:anywhere] hyphens-auto">
                 {t.heroDesc}
               </p>
 
@@ -787,36 +788,35 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       <Link
                         key={rIdx}
                         href={item.href}
-                        className="group flex-1 bg-white/95 backdrop-blur-xs rounded-xl sm:rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878] p-4 sm:p-5 flex flex-col justify-between shadow-[0_1px_4px_rgba(0,0,0,0.02)] hover:shadow-md transition-all hover:-translate-y-0.5"
+                        className="group flex-1 bg-white/95 backdrop-blur-xs rounded-xl sm:rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878] p-3.5 sm:p-4 flex flex-col justify-between shadow-[0_1px_4px_rgba(0,0,0,0.02)] hover:shadow-md transition-all hover:-translate-y-0.5"
                       >
                         <div>
-                          {/* Top row: Large circular icon on left, rectangular badge on right */}
-                          <div className="flex items-center justify-between gap-3 mb-2.5">
-                            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#E5EEE8] border border-[#D4E2D8] flex items-center justify-center text-[#173824] shrink-0 group-hover:bg-[#D5B878]/15 group-hover:border-[#D5B878] group-hover:text-[#8C6D2B] transition-colors shadow-xs">
-                              <IconComp className="w-5.5 h-5.5 sm:w-6 sm:h-6 stroke-[1.6]" />
+                          {/* Header: icon left, badge + title stacked on the right */}
+                          <div className="flex items-center gap-3.5 mb-2">
+                            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#E5EEE8] border border-[#D4E2D8] flex items-center justify-center text-[#173824] shrink-0 group-hover:bg-[#D5B878]/15 group-hover:border-[#D5B878] group-hover:text-[#8C6D2B] transition-colors shadow-xs">
+                              <IconComp className="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.6]" />
                             </div>
-                            {item.badge && (
-                              <span className="inline-block text-[9px] sm:text-[9.5px] font-bold uppercase tracking-wider text-[#8A6726] bg-[#FAF5EB] px-2.5 py-1 rounded-[4px] border border-[#EADBBD]">
-                                {item.badge}
-                              </span>
-                            )}
+                            <div className="flex-1 min-w-0 flex flex-col items-start gap-1.5">
+                              {item.badge && (
+                                <span className="inline-block text-[9px] sm:text-[9.5px] font-bold uppercase tracking-wider text-[#8A6726] bg-[#FAF5EB] px-2.5 py-1 rounded-[4px] border border-[#EADBBD]">
+                                  {item.badge}
+                                </span>
+                              )}
+                              <h4 className="font-serif font-bold text-[15px] sm:text-[16px] text-[#142318] leading-snug group-hover:text-[#B89650] transition-colors">
+                                {item.name}
+                              </h4>
+                            </div>
                           </div>
 
-                          {/* Company title above additional text */}
-                          <h4 className="font-serif font-bold text-[15px] sm:text-[16px] text-[#142318] leading-snug group-hover:text-[#B89650] transition-colors mb-1.5">
-                            {item.name}
-                          </h4>
-
-                          {/* Additional description text ("доп текст") underneath */}
-                          <p className="text-[11px] sm:text-[11.5px] text-[#556057] leading-relaxed font-sans">
+                          <p className="text-[11.5px] sm:text-[12px] text-[#556057] leading-[1.55] font-sans">
                             {item.sub}
                           </p>
                         </div>
 
                         {/* Small circular arrow button anchored at bottom-right */}
-                        <div className="pt-3 flex justify-end">
-                          <div className="w-6.5 h-6.5 rounded-full border border-[#DCD5C6] bg-[#FAF8F5] group-hover:border-[#C5A56A] group-hover:bg-[#C5A56A] group-hover:text-white text-[#B89650] flex items-center justify-center transition-all shadow-xs shrink-0">
-                            <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
+                        <div className="pt-1 flex justify-end">
+                          <div className="w-7 h-7 rounded-full border border-[#DCD5C6] bg-[#FAF8F5] group-hover:border-[#C5A56A] group-hover:bg-[#C5A56A] group-hover:text-white text-[#B89650] flex items-center justify-center transition-all shadow-xs shrink-0">
+                            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
                           </div>
                         </div>
                       </Link>
@@ -827,6 +827,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             </div>
           </Container>
         </section>
+
+        {/* SECTION 2C: AUFGABEN UND UNTERNEHMENSGEGENSTAND DER HOLDING (PDF II) */}
+        <HoldingPurposeSection locale={locale} />
 
         {/* ══════════════════════════════════════════════════════════
             SECTION 3: STRATEGIC DEVELOPMENT (Two-Phase Structure)
@@ -863,39 +866,39 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             {/* Two wide phase cards side by side (matching Photo 1: wider width max-w-6xl) */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 max-w-6xl mx-auto items-stretch">
               {/* Card 1: Phase 1 */}
-              <div className="h-full bg-white/95 backdrop-blur-xs rounded-2xl sm:rounded-3xl p-6 sm:p-7 border border-[#EAE4D7] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all flex flex-col justify-between">
+              <div className="h-full bg-white/95 backdrop-blur-xs rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-[#EAE4D7] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all flex flex-col justify-between">
                 <div>
                   {/* Card Header: Large serif numeral 1 (left) + Title + Large Circular Icon (right) */}
-                  <div className="flex items-center gap-3.5 sm:gap-4 mb-4">
-                    <div className="w-13 h-13 sm:w-15 sm:h-15 rounded-full bg-[#0B2317] border border-[#163B27] text-white font-serif text-2xl sm:text-3xl font-normal flex items-center justify-center shrink-0 shadow-md">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#0B2317] border border-[#163B27] text-white font-serif text-2xl sm:text-3xl font-normal flex items-center justify-center shrink-0 shadow-md">
                       1
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h4 className="font-serif text-[17px] sm:text-[19px] lg:text-[20px] font-bold text-[#142318] leading-tight">
+                      <h4 className="font-serif text-[17px] sm:text-[19px] lg:text-[20px] font-bold text-[#142318] leading-snug">
                         {t.phase1Title}
                       </h4>
                     </div>
-                    <div className="w-13 h-13 sm:w-15 sm:h-15 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0 ml-auto shadow-xs">
-                      <Users className="w-6.5 h-6.5 sm:w-7 sm:h-7 stroke-[1.6]" />
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0 ml-auto shadow-xs">
+                      <Users className="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.6]" />
                     </div>
                   </div>
 
                   {/* Body Text */}
-                  <p className="text-[12px] sm:text-[12.5px] text-[#4E5650] leading-relaxed font-sans mb-4">
+                  <p className="text-[12.5px] sm:text-[13px] text-[#4E5650] leading-[1.65] font-sans mb-4">
                     {t.phase1Desc}
                   </p>
                 </div>
 
                 {/* Highlight / Information Box: Compact secondary layer */}
-                <div className="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-[#F4EFE6]/90 border border-[#EAE4D7] flex flex-col justify-between mt-auto">
+                <div className="p-4 rounded-2xl bg-[#F4EFE6]/90 border border-[#EAE4D7] flex flex-col justify-between mt-auto">
                   <div>
-                    <div className="flex items-center gap-2 mb-2.5">
+                    <div className="flex items-center gap-2 mb-2">
                       <CheckCircle2 className="w-4.5 h-4.5 text-[#B89650] shrink-0" />
                       <span className="text-[12px] sm:text-[12.5px] font-bold text-[#142318]">
                         {isRu ? "Ключевые активности в Фазе 1" : isEn ? "Key Activities in Phase 1" : "Zentrale Aktivitäten in Phase 1"}
                       </span>
                     </div>
-                    <ul className="space-y-1.5 text-[11.5px] sm:text-[12px] text-[#4E5650] font-sans pl-0.5">
+                    <ul className="space-y-1.5 text-[11.5px] sm:text-[12px] leading-snug text-[#4E5650] font-sans pl-0.5">
                       <li className="flex items-start gap-1.5">
                         <span className="text-[#142318] font-bold">•</span>
                         <span>{isRu ? "Формирование и запуск структуры MVZ" : isEn ? "Establishment of the MVZ structure" : "Aufbau der MVZ-Struktur"}</span>
@@ -910,11 +913,11 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       </li>
                     </ul>
                   </div>
-                  <div className="flex justify-end pt-3">
+                  <div className="flex justify-end -mt-7">
                     <Link
                       href={`/${locale}/contact`}
                       aria-label="Phase 1 details"
-                      className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#D1C9B8] bg-white text-[#7A6843] hover:border-[#D5B878] hover:bg-[#D5B878] hover:text-[#0C1C11] flex items-center justify-center transition-all shadow-xs"
+                      className="w-8 h-8 rounded-full border border-[#D1C9B8] bg-white text-[#7A6843] hover:border-[#D5B878] hover:bg-[#D5B878] hover:text-[#0C1C11] flex items-center justify-center transition-all shadow-xs"
                     >
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
@@ -923,39 +926,39 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
               </div>
 
               {/* Card 2: Phase 2 */}
-              <div className="h-full bg-white/95 backdrop-blur-xs rounded-2xl sm:rounded-3xl p-6 sm:p-7 border border-[#EAE4D7] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all flex flex-col justify-between">
+              <div className="h-full bg-white/95 backdrop-blur-xs rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-[#EAE4D7] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all flex flex-col justify-between">
                 <div>
                   {/* Card Header: Large serif numeral 2 (left) + Title + Large Circular Icon (right) */}
-                  <div className="flex items-center gap-3.5 sm:gap-4 mb-4">
-                    <div className="w-13 h-13 sm:w-15 sm:h-15 rounded-full bg-[#0B2317] border border-[#163B27] text-white font-serif text-2xl sm:text-3xl font-normal flex items-center justify-center shrink-0 shadow-md">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#0B2317] border border-[#163B27] text-white font-serif text-2xl sm:text-3xl font-normal flex items-center justify-center shrink-0 shadow-md">
                       2
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h4 className="font-serif text-[17px] sm:text-[19px] lg:text-[20px] font-bold text-[#142318] leading-tight">
+                      <h4 className="font-serif text-[17px] sm:text-[19px] lg:text-[20px] font-bold text-[#142318] leading-snug">
                         {t.phase2Title}
                       </h4>
                     </div>
-                    <div className="w-13 h-13 sm:w-15 sm:h-15 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0 ml-auto shadow-xs">
-                      <Building2 className="w-6.5 h-6.5 sm:w-7 sm:h-7 stroke-[1.6]" />
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0 ml-auto shadow-xs">
+                      <Building2 className="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.6]" />
                     </div>
                   </div>
 
                   {/* Body Text */}
-                  <p className="text-[12px] sm:text-[12.5px] text-[#4E5650] leading-relaxed font-sans mb-4">
+                  <p className="text-[12.5px] sm:text-[13px] text-[#4E5650] leading-[1.65] font-sans mb-4">
                     {t.phase2Desc}
                   </p>
                 </div>
 
                 {/* Highlight / Information Box: Compact secondary layer */}
-                <div className="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-[#F4EFE6]/90 border border-[#EAE4D7] flex flex-col justify-between mt-auto">
+                <div className="p-4 rounded-2xl bg-[#F4EFE6]/90 border border-[#EAE4D7] flex flex-col justify-between mt-auto">
                   <div>
-                    <div className="flex items-center gap-2 mb-2.5">
+                    <div className="flex items-center gap-2 mb-2">
                       <CheckCircle2 className="w-4.5 h-4.5 text-[#B89650] shrink-0" />
                       <span className="text-[12px] sm:text-[12.5px] font-bold text-[#142318]">
                         {isRu ? "Ключевые принципы управления" : isEn ? "Central Governance Principles" : "Zentrale Governance-Prinzipien"}
                       </span>
                     </div>
-                    <ul className="space-y-1.5 text-[11.5px] sm:text-[12px] text-[#4E5650] font-sans pl-0.5">
+                    <ul className="space-y-1.5 text-[11.5px] sm:text-[12px] leading-snug text-[#4E5650] font-sans pl-0.5">
                       <li className="flex items-start gap-1.5">
                         <span className="text-[#142318] font-bold">•</span>
                         <span>{isRu ? "Врачебная тайна и строгая защита данных (DSGVO)" : isEn ? "Medical confidentiality & strict data protection" : "Ärztliche Schweigepflicht & strenger Datenschutz (DSGVO)"}</span>
@@ -970,11 +973,11 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       </li>
                     </ul>
                   </div>
-                  <div className="flex justify-end pt-3">
+                  <div className="flex justify-end -mt-7">
                     <Link
                       href={`/${locale}/contact`}
                       aria-label="Phase 2 details"
-                      className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#D1C9B8] bg-white text-[#7A6843] hover:border-[#D5B878] hover:bg-[#D5B878] hover:text-[#0C1C11] flex items-center justify-center transition-all shadow-xs"
+                      className="w-8 h-8 rounded-full border border-[#D1C9B8] bg-white text-[#7A6843] hover:border-[#D5B878] hover:bg-[#D5B878] hover:text-[#0C1C11] flex items-center justify-center transition-all shadow-xs"
                     >
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
@@ -983,13 +986,28 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
               </div>
             </div>
 
+            {/* Target-model disclaimer (PDF Section I) */}
+            <div className="mt-6 sm:mt-8 max-w-4xl mx-auto flex items-start gap-3 p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-white/80 border border-[#E3DAC6] shadow-xs">
+              <ShieldCheck className="w-5 h-5 text-[#B89650] shrink-0 mt-0.5" />
+              <p className="text-[12px] sm:text-[12.5px] text-[#4E5650] leading-relaxed font-sans">
+                <strong className="font-semibold text-[#142318]">
+                  {isRu ? "Целевая модель. " : isEn ? "Target model. " : "Zielmodell. "}
+                </strong>
+                {isRu
+                  ? "Представленные органиграммы описывают целевую модель. Текущая структура собственников и допуск каждого существующего MVZ устанавливаются отдельно на основании его списка участников (Gesellschafterliste) и решений о допуске (Zulassungsbescheide). Регистрация холдинга в торговом реестре не заменяет допуск MVZ."
+                  : isEn
+                  ? "The organizational charts shown describe a target model. The current ownership structure and approval of each existing MVZ must be determined separately on the basis of its shareholder list and approval notices. The commercial register entry of the holding does not replace an MVZ approval."
+                  : "Die vorliegenden Organigramme beschreiben ein Zielmodell. Die aktuelle Eigentümerstruktur und Zulassung jedes bestehenden MVZ sind anhand seiner Gesellschafterliste und Zulassungsbescheide gesondert festzustellen. Die Handelsregistereintragung der Holding ersetzt keine MVZ-Zulassung."}
+              </p>
+            </div>
+
             {/* Legal Footnote: small font size and subtle weight */}
             <p className="text-center text-[10.5px] sm:text-[11px] text-[#78857C] mt-5 sm:mt-6 font-sans">
               {isRu
-                ? "Сведения в соответствии с нотариальным проектом устава и положениями § 95 SGB V."
+                ? "Сведения в соответствии с нотариальным проектом устава и положениями § 95 SGB V. По состоянию на 4 октября 2026 г."
                 : isEn
-                ? "In accordance with notarized corporate filings and statutory § 95 SGB V regulations."
-                : "Gemäß notarieller Gründungsdokumentation und den Vorgaben des § 95 SGB V."}
+                ? "In accordance with notarized corporate filings and statutory § 95 SGB V regulations. As of 4 October 2026."
+                : "Gemäß notarieller Gründungsdokumentation und den Vorgaben des § 95 SGB V. Stand: 4. Oktober 2026."}
             </p>
           </Container>
         </section>
@@ -1034,187 +1052,250 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
 
         {/* ══════════════════════════════════════════════════════════
             SECTION 3B: ÄRZTLICHE FÜHRUNG & GRÜNDERTEAM (PDF Pages 2-4)
+            - MVZ Design with full-bleed right-photo fade & botanical watermark
         ══════════════════════════════════════════════════════════ */}
-        <section className="py-16 sm:py-20 lg:py-24 bg-[#FAF7F2] border-b border-[#ECE7DC] relative overflow-hidden">
+        <section className="relative pt-0 pb-16 sm:pb-20 lg:pb-24 bg-[#FAF7F2] border-b border-[#ECE7DC] overflow-hidden">
           {/* Subtle ambient lighting */}
           <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-[#EBDDC0]/20 blur-3xl pointer-events-none" />
           <div className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-[#D5B878]/15 blur-3xl pointer-events-none" />
 
-          <Container size="wide" className="relative z-10">
-            {/* Section Header */}
-            <div className="max-w-3xl mb-12 sm:mb-16">
-              <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase mb-2 block">
-                {t.leadershipEyebrow}
-              </span>
-              <h2 className="font-serif text-[32px] sm:text-[38px] lg:text-[44px] font-normal leading-[1.14] text-[#142318] mb-4">
-                {t.leadershipHeading1}{" "}
-                <span className="italic text-[#8B7347]">{t.leadershipHeading2}</span>
-              </h2>
-              <p className="text-[13.5px] sm:text-[14.5px] text-[#555E56] leading-relaxed font-sans">
-                {t.leadershipSubtitle}
-              </p>
+          {/* ── Hero Banner: Full-width banner with soft right-photo fade (MVZ Style) ── */}
+          <div className="relative z-10 w-full overflow-hidden pb-8 sm:pb-10 lg:pb-12">
+            {/* Soft Background Photo with smooth horizontal fade */}
+            <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[62%] xl:w-[58%] pointer-events-none overflow-hidden select-none">
+              <Image
+                src="/images/areas/consulting.webp"
+                alt="Medical Leadership & Founder"
+                fill
+                className="object-cover object-center lg:object-right"
+                priority
+                sizes="(max-width: 1024px) 100vw, 58vw"
+              />
+              {/* Horizontal gradient fade into page background #FAF7F2 */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FAF7F2] from-0% via-[#FAF7F2]/80 via-20% via-[#FAF7F2]/25 via-42% to-transparent to-75%" />
+              {/* Vertical gradient fade for mobile */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#FAF7F2] via-[#FAF7F2]/50 via-15% to-transparent lg:hidden" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#FAF7F2] from-0% via-[#FAF7F2]/20 via-10% to-transparent hidden lg:block" />
             </div>
 
-            {/* Main Founder Spotlight Card */}
-            <div className="bg-white rounded-3xl p-6 sm:p-9 lg:p-11 border border-[#E7DFD2] shadow-sm mb-10 sm:mb-12 relative overflow-hidden">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                {/* Left Column: Doctor Profile & Credentials */}
-                <div className="lg:col-span-7 space-y-4">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-[#F3EDE2] text-[#8B7347] border border-[#D5B878]/40">
-                      {t.founderBadge}
+            {/* Botanical foliage watermark on far left (matching MVZ reference) */}
+            <div className="absolute top-2 left-0 w-44 sm:w-56 h-72 pointer-events-none opacity-35 select-none sepia hue-rotate-[15deg]">
+              <Image
+                src="/images/areas/botanical-branch-clean.webp"
+                alt=""
+                fill
+                className="object-contain object-left"
+                unoptimized
+              />
+            </div>
+
+            {/* Hero Content Container */}
+            <Container size="wide" className="relative z-10 pt-8 sm:pt-12 lg:pt-14">
+              <div className="max-w-6xl mx-auto">
+                <div className="max-w-xl lg:max-w-2xl">
+                  {/* Eyebrow with gold line: integrating Medical Leadership & Statutory Founder status */}
+                  <div className="flex items-center gap-2.5 mb-2.5 sm:mb-3 flex-wrap">
+                    <span className="w-6 h-[1.5px] bg-[#C5A56A]" />
+                    <span className="text-[11px] sm:text-[11.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase font-sans">
+                      {isRu
+                        ? "ВРАЧЕБНОЕ РУКОВОДСТВО И СТАТУС УЧРЕДИТЕЛЯ"
+                        : isEn
+                        ? "MEDICAL LEADERSHIP & STATUTORY FOUNDER"
+                        : "ÄRZTLICHE FÜHRUNG & GRÜNDERSTATUS"}
                     </span>
-                    <span className="inline-flex items-center gap-1.5 text-xs text-[#2C3E31] font-medium">
-                      <Scale className="w-3.5 h-3.5 text-[#B89650]" />
-                      <span>{isRu ? "Право учредителя по закону SGB V" : isEn ? "Statutory Physician Status" : "Kassenarztrechtlicher Status"}</span>
+                    <span className="w-1 h-1 rounded-full bg-[#C5A56A]/60" />
+                    <span className="text-[10px] sm:text-[10.5px] font-medium tracking-[0.2em] text-[#6E7870] uppercase font-sans">
+                      § 95 SGB V
                     </span>
                   </div>
 
-                  <div>
-                    <h3 className="font-serif text-2xl sm:text-3xl lg:text-[32px] font-bold text-[#142318] leading-tight">
+                  {/* Title with styled italic word in serif */}
+                  <h2 className="font-serif text-[28px] sm:text-[38px] lg:text-[44px] text-[#142318] font-normal leading-[1.18] mb-3 sm:mb-3.5">
+                    {t.leadershipHeading1}{" "}
+                    <span className="font-serif italic text-[#C5A56A]">{t.leadershipHeading2}</span>
+                  </h2>
+
+                  {/* Lead text */}
+                  <p className="text-[13px] sm:text-[14px] text-[#556057] leading-relaxed max-w-xl">
+                    {t.leadershipSubtitle}
+                  </p>
+                </div>
+              </div>
+            </Container>
+          </div>
+
+          <Container size="wide" className="relative z-10 mt-6 sm:mt-8">
+            <div className="max-w-6xl mx-auto">
+              {/* Main Founder Spotlight Card */}
+              <div className="bg-white rounded-[28px] lg:rounded-[32px] border border-[#EDE6D8] shadow-[0_10px_40px_-24px_rgba(20,35,24,0.14)] mb-10 sm:mb-12 relative overflow-hidden">
+                <div className="grid grid-cols-1 lg:grid-cols-[30%_minmax(0,1fr)]">
+                  {/* Left: portrait */}
+                  <div className="relative min-h-[240px] sm:min-h-[280px] lg:min-h-full">
+                    <Image
+                      src="/images/about/dr-fischer-rahimov.webp"
+                      alt={t.founderName}
+                      fill
+                      sizes="(min-width: 1024px) 36vw, 100vw"
+                      className="object-cover object-[50%_15%]"
+                    />
+                  </div>
+
+                  {/* Right: doctor information */}
+                  <div className="p-5 sm:p-6 lg:py-6 lg:pr-8 lg:pl-12 flex flex-col justify-center">
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-3">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-[10.5px] font-bold tracking-[0.14em] uppercase bg-[#F3EDE2] text-[#8B7347] border border-[#D5B878]/40">
+                        {t.founderBadge}
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 text-[10.5px] tracking-[0.14em] uppercase text-[#2C3E31] font-semibold">
+                        <Scale className="w-3.5 h-3.5 text-[#B89650] stroke-[1.8]" />
+                        <span>{isRu ? "Право учредителя по закону SGB V" : isEn ? "Statutory Physician Status" : "Kassenarztrechtlicher Status"}</span>
+                      </span>
+                    </div>
+
+                    <h3 className="font-serif text-[30px] sm:text-[36px] lg:text-[40px] font-bold text-[#142318] leading-[1.05]">
                       {t.founderName}
                     </h3>
-                    <p className="text-sm sm:text-[15px] font-medium text-[#8B7347] mt-1 font-sans">
+                    <p className="text-[13px] sm:text-[14px] font-semibold tracking-wide text-[#8B7347] mt-1.5 font-sans">
                       {t.founderRole}
                     </p>
-                  </div>
 
-                  <div className="space-y-3 text-[13px] sm:text-[14px] text-[#4E5650] leading-relaxed font-sans pt-1">
-                    <p>{t.founderBio1}</p>
-                    <p>{t.founderBio2}</p>
-                  </div>
-
-                  <div className="pt-3 border-t border-[#F0EBE1] space-y-2">
-                    {t.founderPoints.map((point: string, idx: number) => (
-                      <div key={idx} className="flex items-start gap-2.5 text-[12.5px] sm:text-[13px] text-[#2C3E31] font-medium">
-                        <CheckCircle2 className="w-4 h-4 text-[#8B7347] shrink-0 mt-0.5" />
-                        <span>{point}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Right Column: Founder Stat Highlight Box */}
-                <div className="lg:col-span-5 bg-[#FAF7F2] rounded-2xl p-6 sm:p-7 border border-[#E7DFD2] space-y-5">
-                  <div className="w-12 h-12 rounded-full border border-[#D5B878] bg-white flex items-center justify-center text-[#B89650] shadow-xs">
-                    <Stethoscope className="w-6 h-6 stroke-[1.8]" />
-                  </div>
-                  <div>
-                    <h4 className="font-serif text-lg font-bold text-[#142318] mb-1.5">
-                      {isRu ? "Медицинский якорь Фазы 1" : isEn ? "Phase 1 Medical Anchor" : "Vertragsärztlicher Anker"}
-                    </h4>
-                    <p className="text-xs sm:text-[13px] text-[#555E56] leading-relaxed">
-                      {isRu
-                        ? "Прямое владение долями MVZ врачом-учредителем гарантирует безупречную юридическую легитимность перед Kassenärztliche Vereinigung Nordrhein."
-                        : isEn
-                        ? "Direct MVZ equity held by the licensed founding physician establishes unequivocal regulatory legitimacy with KV Nordrhein."
-                        : "Die unmittelbare MVZ-Beteiligung des Gründungsarztes sichert die vollständige berufsrechtliche Legitimation gegenüber der KV Nordrhein."}
-                    </p>
-                  </div>
-                  <div className="p-4 rounded-xl bg-white border border-[#E7DFD2] text-xs text-[#2C3E31] space-y-1">
-                    <div className="font-bold text-[#142318]">
-                      {isRu ? "Институциональная защита" : isEn ? "Institutional Protection" : "Standesrechtlicher Schutz"}
+                    <div className="space-y-2 max-w-[620px] text-[13px] sm:text-[13.5px] text-[#4E5650] leading-[1.6] font-sans mt-3">
+                      <p>{t.founderBio1}</p>
+                      <p>{t.founderBio2}</p>
                     </div>
-                    <p className="text-[#555E56] text-[11.5px] leading-snug">
-                      {isRu
-                        ? "Холдинг не вправе давать медицинские указания врачебному руководству."
-                        : isEn
-                        ? "Corporate holding entities are legally barred from clinical directives."
-                        : "Keine kaufmännischen Weisungsrechte gegenüber der ärztlichen Leitung."}
-                    </p>
+
+                    <div className="mt-3 space-y-1">
+                      {t.founderPoints.map((point: string, idx: number) => (
+                        <div key={idx} className="flex items-start gap-3 text-[13px] sm:text-[13.5px] text-[#2C3E31] font-medium leading-snug">
+                          <CheckCircle2 className="w-5 h-5 text-[#8B7347] shrink-0 stroke-[1.8]" />
+                          <span>{point}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Integrated information panel */}
+                    <div className="mt-4 max-w-[620px] rounded-2xl bg-[#FAF7F2] p-3.5 flex items-start gap-4">
+                      <div className="w-14 h-14 rounded-full bg-white border border-[#D5B878]/60 flex items-center justify-center text-[#B89650] shrink-0">
+                        <Stethoscope className="w-7 h-7 stroke-[1.8]" />
+                      </div>
+                      <div className="space-y-3">
+                        <div>
+                          <h4 className="font-serif text-[18px] sm:text-[19px] font-bold text-[#142318] mb-1.5">
+                            {isRu ? "Медицинский якорь Фазы 1" : isEn ? "Phase 1 Medical Anchor" : "Vertragsärztlicher Anker"}
+                          </h4>
+                          <p className="text-[12.5px] sm:text-[13px] text-[#555E56] leading-[1.7] font-sans">
+                            {isRu
+                              ? "Прямое владение долями MVZ врачом-учредителем гарантирует безупречную юридическую легитимность перед Kassenärztliche Vereinigung Nordrhein."
+                              : isEn
+                              ? "Direct MVZ equity held by the licensed founding physician establishes unequivocal regulatory legitimacy with KV Nordrhein."
+                              : "Die unmittelbare MVZ-Beteiligung des Gründungsarztes sichert die vollständige berufsrechtliche Legitimation gegenüber der KV Nordrhein."}
+                          </p>
+                        </div>
+                        <div className="pt-3 border-t border-[#E7DFD2]">
+                          <div className="text-[10.5px] font-bold tracking-[0.14em] uppercase text-[#142318]">
+                            {isRu ? "Институциональная защита" : isEn ? "Institutional Protection" : "Standesrechtlicher Schutz"}
+                          </div>
+                          <p className="text-[#555E56] text-[12px] leading-[1.6] mt-1 font-sans">
+                            {isRu
+                              ? "Холдинг не вправе давать медицинские указания врачебному руководству."
+                              : isEn
+                              ? "Corporate holding entities are legally barred from clinical directives."
+                              : "Keine kaufmännischen Weisungsrechte gegenüber der ärztlichen Leitung."}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+          </Container>
+        </section>
 
-            {/* Medical Advisory Board (Der Ärztliche Beirat) */}
-            <div className="bg-gradient-to-br from-[#07160D] via-[#0C2417] to-[#07160D] text-white rounded-3xl p-6 sm:p-9 lg:p-11 border border-[#D5B878]/30 shadow-xl relative overflow-hidden">
-              <div className="max-w-3xl mb-8 sm:mb-10">
-                <div className="flex items-center gap-2 text-[#ECCF96] text-xs font-bold uppercase tracking-wider mb-2">
-                  <Award className="w-4 h-4 stroke-[2]" />
-                  <span>{isRu ? "Клиническая коллегия холдинга" : isEn ? "Holding Clinical Governance" : "Klinisches Qualitätskollegium"}</span>
-                </div>
-                <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal mb-2 leading-snug">
+        {/* ══════════════════════════════════════════════════════════
+            SECTION 3C: MEDICAL ADVISORY BOARD (Values-page background design)
+        ══════════════════════════════════════════════════════════ */}
+        <section className="relative py-10 sm:py-12 lg:py-14 bg-[#07160D] text-white overflow-hidden border-b border-[#D5B878]/20">
+          <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+            <Image
+              src="/images/values/leaves-bg.webp"
+              alt="Botanical Background"
+              fill
+              sizes="100vw"
+              className="object-cover object-[left_center]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#07160D]/80 to-[#07160D] hidden lg:block" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#07160D]/65 via-[#07160D]/90 to-[#07160D] lg:hidden" />
+          </div>
+
+          <Container size="wide" className="relative z-10">
+            <div className="lg:ml-auto lg:w-[78%] xl:w-[75%]">
+              <div className="max-w-xl mb-5 sm:mb-6">
+                <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#D5B878] uppercase mb-1.5 block">
+                  {isRu ? "Клиническая коллегия холдинга" : isEn ? "Holding Clinical Governance" : "Klinisches Qualitätskollegium"}
+                </span>
+                <h2 className="font-serif text-[28px] sm:text-[34px] lg:text-[38px] font-normal leading-[1.15] text-white mb-2 sm:mb-2.5">
                   {t.boardTitle}
-                </h3>
-                <p className="text-xs sm:text-sm text-[#C2D2C5] leading-relaxed">
+                </h2>
+                <p className="text-[12.5px] sm:text-[13.5px] text-[#C2D2C5] leading-relaxed font-sans max-w-lg">
                   {t.boardDesc}
                 </p>
               </div>
 
-              {/* 4 Pillars of Medical Advisory Board */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-                <div className="bg-[#0A1F13]/90 rounded-2xl p-5 border border-[#D5B878]/25 flex flex-col justify-between">
-                  <div>
-                    <div className="w-8 h-8 rounded-full border border-[#D5B878]/50 bg-[#122B1B] text-[#ECCF96] flex items-center justify-center mb-3">
-                      <Stethoscope className="w-4 h-4" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-3.5">
+                {[
+                  {
+                    Icon: Stethoscope,
+                    title: isRu ? "Терапевтическая свобода" : isEn ? "Clinical Autonomy" : "Freie Therapiewahl",
+                    desc: isRu
+                      ? "Строгое следование врачебному долгу без навязанных планов по процедурам."
+                      : isEn
+                      ? "Strict adherence to medical duty without commercial treatment quotas."
+                      : "Keine ökonomischen Fallzahl- oder Therapievorgaben für behandelnde Ärzte.",
+                  },
+                  {
+                    Icon: ShieldCheck,
+                    title: isRu ? "Качество AWMF & CIRS" : isEn ? "AWMF & CIRS Guidelines" : "AWMF-Leitlinien & CIRS",
+                    desc: isRu
+                      ? "Междисциплинарные консилиумы и система контроля инцидентов CIRS."
+                      : isEn
+                      ? "Regular case conferences and active clinical incident reporting."
+                      : "Interdisziplinäre Qualitätszirkel und systematisches CIRS-Fehlermeldesystem.",
+                  },
+                  {
+                    Icon: GraduationCap,
+                    title: isRu ? "Обучение ординаторов" : isEn ? "Residency Training" : "Facharzt-Weiterbildung",
+                    desc: isRu
+                      ? "Официальные полномочия на подготовку молодых специалистов в MVZ."
+                      : isEn
+                      ? "Accredited residency authorizations for junior doctors across our MVZ network."
+                      : "Akkreditierte Weiterbildungsbefugnisse zur Ausbildung junger Mediziner.",
+                  },
+                  {
+                    Icon: HeartHandshake,
+                    title: isRu ? "Сквозные консилиумы" : isEn ? "Interdisciplinary Care" : "Sektorübergreifend",
+                    desc: isRu
+                      ? "Прямой диалог терапевтов, хирургов, диагностов и службы реабилитации."
+                      : isEn
+                      ? "Direct communication between primary care, surgeons, imaging, and rehab."
+                      : "Direkte Abstimmung zwischen Hausärzten, Operateuren, Diagnostik und Reha.",
+                  },
+                ].map(({ Icon, title, desc }, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-[#0A1F13]/85 hover:bg-[#0D2618]/95 border border-[#D5B878]/30 hover:border-[#D5B878]/70 backdrop-blur-md rounded-xl sm:rounded-2xl p-3.5 sm:p-4 transition-all duration-300 hover:-translate-y-1 shadow-[0_6px_20px_rgba(0,0,0,0.3)] group flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#D5B878] bg-[#122B1B]/80 flex items-center justify-center text-[#ECCF96] mb-2.5 shadow-[0_0_8px_rgba(213,184,120,0.2)] group-hover:scale-105 transition-transform">
+                        <Icon className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.6]" />
+                      </div>
+                      <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-white mb-1 group-hover:text-[#ECCF96] transition-colors leading-snug">
+                        {title}
+                      </h3>
+                      <p className="text-[11px] sm:text-[11.5px] text-[#A6B8AA] leading-snug font-sans">{desc}</p>
                     </div>
-                    <h5 className="font-serif text-sm font-bold text-white mb-1.5">
-                      {isRu ? "Терапевтическая свобода" : isEn ? "Clinical Autonomy" : "Freie Therapiewahl"}
-                    </h5>
-                    <p className="text-[11.5px] text-[#A6B8AA] leading-relaxed">
-                      {isRu
-                        ? "Строгое следование врачебному долгу без навязанных планов по процедурам."
-                        : isEn
-                        ? "Strict adherence to medical duty without commercial treatment quotas."
-                        : "Keine ökonomischen Fallzahl- oder Therapievorgaben für behandelnde Ärzte."}
-                    </p>
                   </div>
-                </div>
-
-                <div className="bg-[#0A1F13]/90 rounded-2xl p-5 border border-[#D5B878]/25 flex flex-col justify-between">
-                  <div>
-                    <div className="w-8 h-8 rounded-full border border-[#D5B878]/50 bg-[#122B1B] text-[#ECCF96] flex items-center justify-center mb-3">
-                      <ShieldCheck className="w-4 h-4" />
-                    </div>
-                    <h5 className="font-serif text-sm font-bold text-white mb-1.5">
-                      {isRu ? "Качество AWMF & CIRS" : isEn ? "AWMF & CIRS Guidelines" : "AWMF-Leitlinien & CIRS"}
-                    </h5>
-                    <p className="text-[11.5px] text-[#A6B8AA] leading-relaxed">
-                      {isRu
-                        ? "Междисциплинарные консилиумы и система контроля инцидентов CIRS."
-                        : isEn
-                        ? "Regular case conferences and active clinical incident reporting."
-                        : "Interdisziplinäre Qualitätszirkel und systematisches CIRS-Fehlermeldesystem."}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-[#0A1F13]/90 rounded-2xl p-5 border border-[#D5B878]/25 flex flex-col justify-between">
-                  <div>
-                    <div className="w-8 h-8 rounded-full border border-[#D5B878]/50 bg-[#122B1B] text-[#ECCF96] flex items-center justify-center mb-3">
-                      <GraduationCap className="w-4 h-4" />
-                    </div>
-                    <h5 className="font-serif text-sm font-bold text-white mb-1.5">
-                      {isRu ? "Обучение ординаторов" : isEn ? "Residency Training" : "Facharzt-Weiterbildung"}
-                    </h5>
-                    <p className="text-[11.5px] text-[#A6B8AA] leading-relaxed">
-                      {isRu
-                        ? "Официальные полномочия на подготовку молодых специалистов в MVZ."
-                        : isEn
-                        ? "Accredited residency authorizations for junior doctors across our MVZ network."
-                        : "Akkreditierte Weiterbildungsbefugnisse zur Ausbildung junger Mediziner."}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-[#0A1F13]/90 rounded-2xl p-5 border border-[#D5B878]/25 flex flex-col justify-between">
-                  <div>
-                    <div className="w-8 h-8 rounded-full border border-[#D5B878]/50 bg-[#122B1B] text-[#ECCF96] flex items-center justify-center mb-3">
-                      <HeartHandshake className="w-4 h-4" />
-                    </div>
-                    <h5 className="font-serif text-sm font-bold text-white mb-1.5">
-                      {isRu ? "Сквозные консилиумы" : isEn ? "Interdisciplinary Care" : "Sektorübergreifend"}
-                    </h5>
-                    <p className="text-[11.5px] text-[#A6B8AA] leading-relaxed">
-                      {isRu
-                        ? "Прямой диалог терапевтов, хирургов, диагностов и службы реабилитации."
-                        : isEn
-                        ? "Direct communication between primary care, surgeons, imaging, and rehab."
-                        : "Direkte Abstimmung zwischen Hausärzten, Operateuren, Diagnostik und Reha."}
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </Container>

@@ -76,43 +76,67 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
       line1:
         currentLocale === "ru"
           ? "ЧЕЛОВЕК В ЦЕНТРЕ"
+          : currentLocale === "ar"
+          ? "الإنسان أولاً"
+          : currentLocale === "tr"
+          ? "ÖNCE İNSAN"
           : currentLocale === "en"
           ? "PEOPLE AT THE CENTER"
           : "MENSCHEN",
       line2: currentLocale === "de" ? "IM MITTELPUNKT" : "",
       description:
-        dict.hero.values[0]?.description ||
-        "Für Patienten, Angehörige, Fachkräfte und Partner.",
+        currentLocale === "ar"
+          ? "للمرضى، عائلاتهم، الكوادر الطبية والشركاء."
+          : currentLocale === "tr"
+          ? "Hastalar, aileleri, uzmanlar ve ortaklar için."
+          : dict.hero.values[0]?.description ||
+            "Für Patienten, Angehörige, Fachkräfte und Partner.",
     },
     {
       icon: DiamondIcon,
       line1:
         currentLocale === "ru"
           ? "КАЧЕСТВО И ДОВЕРИЕ"
+          : currentLocale === "ar"
+          ? "الجودة والثقة"
+          : currentLocale === "tr"
+          ? "KALİTE VE GÜVEN"
           : currentLocale === "en"
           ? "QUALITY & TRUST"
           : "QUALITÄT",
       line2: currentLocale === "de" ? "UND VERTRAUEN" : "",
       description:
-        dict.hero.values[1]?.description ||
-        "Verlässlich. Transparent. Verantwortungsvoll.",
+        currentLocale === "ar"
+          ? "موثوقية. شفافية. مسؤولية طبية كاملة."
+          : currentLocale === "tr"
+          ? "Güvenilir. Şeffaf. Sorumluluk sahibi."
+          : dict.hero.values[1]?.description ||
+            "Verlässlich. Transparent. Verantwortungsvoll.",
     },
     {
       icon: LeafIcon,
       line1:
         currentLocale === "ru"
           ? "УСТОЙЧИВОЕ РАЗВИТИЕ"
+          : currentLocale === "ar"
+          ? "الرعاية المستدامة"
+          : currentLocale === "tr"
+          ? "SÜRDÜRÜLEBİLİR SAĞLIK"
           : currentLocale === "en"
           ? "SUSTAINABLE HEALTHCARE"
           : "NACHHALTIGE",
       line2: currentLocale === "de" ? "GESUNDHEITSVERSORGUNG" : "",
       description:
-        dict.hero.values[2]?.description || "Heute handeln. Für morgen.",
+        currentLocale === "ar"
+          ? "نعمل اليوم من أجل مستقبل صحي مستدام."
+          : currentLocale === "tr"
+          ? "Bugünden hareket ediyoruz. Yarınlar için."
+          : dict.hero.values[2]?.description || "Heute handeln. Für morgen.",
     },
   ];
 
   return (
-    <section className="relative w-full min-h-screen lg:h-screen lg:min-h-[700px] lg:max-h-[1080px] flex flex-col justify-between bg-[#07130B] text-[#FAF8F5] overflow-x-hidden">
+    <section dir="ltr" className="relative w-full min-h-screen lg:h-screen lg:min-h-[700px] lg:max-h-[1080px] flex flex-col justify-between bg-[#07130B] text-[#FAF8F5] overflow-x-hidden">
       {/* ── Main Hero Area (Fills height from Header down to Strip) ─ */}
       <div className="relative flex-1 flex items-center overflow-hidden w-full py-10 lg:py-0">
         {/* ── Background: Building photo ─────────────────── */}
@@ -126,25 +150,22 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
             className="object-cover object-center"
           />
 
-          {/* ── Left side: Ultra-smooth feathered blur layer ────────── */}
+          {/* ── Left side: feathered blur layer ────────── */}
           <div
-            className="absolute inset-y-0 left-0 w-full sm:w-[70%] lg:w-[58%] pointer-events-none"
+            className="absolute inset-y-0 w-full sm:w-[70%] lg:w-[58%] pointer-events-none left-0"
             style={{
               backdropFilter: "blur(20px)",
               WebkitBackdropFilter: "blur(20px)",
-              maskImage:
-                "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 25%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.15) 75%, transparent 100%)",
-              WebkitMaskImage:
-                "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 25%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.15) 75%, transparent 100%)",
+              maskImage: "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 25%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.15) 75%, transparent 100%)",
+              WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 25%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.15) 75%, transparent 100%)",
             }}
           />
 
-          {/* ── Left side: Smooth dark gradient overlay for text readability ── */}
+          {/* ── Left side: dark gradient overlay for text readability ── */}
           <div
-            className="absolute inset-y-0 left-0 w-full sm:w-[75%] lg:w-[60%] pointer-events-none"
+            className="absolute inset-y-0 w-full sm:w-[75%] lg:w-[60%] pointer-events-none left-0"
             style={{
-              background:
-                "linear-gradient(to right, rgba(7,19,11,0.92) 0%, rgba(7,19,11,0.86) 32%, rgba(7,19,11,0.48) 58%, rgba(7,19,11,0.12) 78%, transparent 100%)",
+              background: "linear-gradient(to right, rgba(7,19,11,0.92) 0%, rgba(7,19,11,0.86) 32%, rgba(7,19,11,0.48) 58%, rgba(7,19,11,0.12) 78%, transparent 100%)",
             }}
           />
 
@@ -152,8 +173,8 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
           <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#07130B]/75 to-transparent pointer-events-none" />
         </div>
 
-        {/* ── Desktop Right Panel: Graceful Glassmorphism Arc from Top to Bottom ── */}
-        <div className="hidden lg:block absolute top-0 right-0 bottom-0 w-[380px] xl:w-[440px] 2xl:w-[480px] z-10 pointer-events-auto overflow-hidden">
+        {/* ── Desktop Right Panel: Glassmorphism Arc ── */}
+        <div className="hidden lg:block absolute top-0 bottom-0 w-[380px] xl:w-[440px] 2xl:w-[480px] z-10 pointer-events-auto overflow-hidden right-0">
           {/* SVG Definitions with normalized objectBoundingBox for 100% bug-free lock */}
           <svg
             className="absolute inset-0 w-full h-full pointer-events-none z-20"
@@ -207,7 +228,7 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
           />
 
           {/* Content inside the curved glass panel */}
-          <div className="relative z-30 h-full flex flex-col justify-center pl-36 xl:pl-44 pr-6 sm:pr-8 xl:pr-10 pt-16 pb-4">
+          <div className="relative z-30 h-full flex flex-col justify-center pt-16 pb-4 pl-36 xl:pl-44 pr-6 sm:pr-8 xl:pr-10">
             <div className="space-y-6 xl:space-y-7">
               {heroValues.map((val, idx) => {
                 const IconComp = val.icon;
@@ -247,7 +268,7 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
           </div>
         </div>
 
-        {/* ── Left Content: Typography 1:1 Matching Reference ─────── */}
+        {/* ── Left Content: Typography (same layout for all locales) ─────── */}
         <div className="relative z-10 w-full max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12 xl:px-14">
           <div className="max-w-xl lg:max-w-[560px] xl:max-w-[660px] 2xl:max-w-[720px] pt-16 sm:pt-20 lg:pt-0">
             {/* Eyebrow */}

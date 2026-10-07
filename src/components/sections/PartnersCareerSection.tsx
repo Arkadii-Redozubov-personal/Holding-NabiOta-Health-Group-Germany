@@ -43,7 +43,7 @@ export function PartnersCareerSection({ currentLocale = "de" }: PartnersCareerSe
             {/* Right image column with atrium photo & slogan overlay */}
             <div className="w-full sm:w-[45%] xl:w-[44%] relative min-h-[220px] sm:min-h-full overflow-hidden flex-shrink-0 bg-neutral-100">
               <Image
-                src="/images/partners/atrium.webp"
+                src="/images/partners/artium.webp"
                 alt="Kooperationspartner im medizinischen Atrium"
                 fill
                 sizes="(max-width: 1024px) 100vw, 35vw"

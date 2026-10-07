@@ -39,6 +39,7 @@ import { Container } from "@/components/layout/Container";
 import { PageHero } from "@/components/layout/PageHero";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { SupportedLocale } from "@/lib/i18n";
+import { RealEstateCompanySection } from "@/components/sections/RealEstateCompanySection";
 
 interface Props {
   locale?: SupportedLocale;
@@ -926,6 +927,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
 
       {/* ── 2. SITE STANDARD PAGE HERO ── */}
       <PageHero
+          locale={locale}
         breadcrumb={
           <Breadcrumb
             items={[
@@ -1180,7 +1182,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
                   onClick={() => setSelectedDomain(domain)}
                   className="rounded-3xl bg-white border border-[#EAE4D7] shadow-sm hover:shadow-xl hover:border-[#C5A56A] transition-all duration-300 flex flex-col justify-between overflow-hidden group cursor-pointer"
                 >
-                  {/* Photo with pill badge at top left */}
+                  {/* Photo without pill badge */}
                   <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-[#07150C]">
                     <Image
                       src={domain.image}
@@ -1188,9 +1190,6 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute top-3.5 left-3.5 bg-[#0C2917] text-white px-3.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase shadow-xs border border-white/10 z-10">
-                      {domain.badge}
-                    </div>
                   </div>
 
                   {/* Card Content with circular icon overlapping the image & gentle wave */}
@@ -1243,6 +1242,11 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
             </div>
           </Container>
         </section>
+
+        {/* ========================================================================= */}
+        {/* SECTION 4B: NABIOTA REAL ESTATE GMBH – PDF SECTION IV.7                   */}
+        {/* ========================================================================= */}
+        <RealEstateCompanySection locale={locale} />
 
         {/* ========================================================================= */}
         {/* SECTION 5: STIMMEN UNSERER PARTNER (COMPACT RIBBON)                       */}
@@ -1422,7 +1426,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
             onClick={() => setSelectedDomain(null)}
           >
             <div
-              className="relative w-full max-w-3xl max-h-[92vh] overflow-y-auto rounded-3xl bg-[#FAF9F6] border border-[#E8DEC8] shadow-2xl p-6 sm:p-8 md:p-10 animate-in zoom-in-95 duration-200"
+              className="relative w-full max-w-5xl xl:max-w-[1100px] max-h-[92vh] overflow-y-auto rounded-3xl bg-[#FAF9F6] border border-[#E8DEC8] shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 animate-in zoom-in-95 duration-200"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
@@ -1448,7 +1452,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
               </div>
 
               {/* Hero Image in Modal */}
-              <div className="relative h-44 sm:h-52 w-full rounded-2xl overflow-hidden mb-6 shadow-inner border border-[#E8DEC8]">
+              <div className="relative h-48 sm:h-60 md:h-72 w-full rounded-2xl overflow-hidden mb-6 shadow-inner border border-[#E8DEC8]">
                 <Image
                   src={selectedDomain.image}
                   alt={selectedDomain.modal.title}
