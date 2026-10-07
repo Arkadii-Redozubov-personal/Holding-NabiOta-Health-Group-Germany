@@ -45,8 +45,8 @@ export default function PrivacyPage() {
         />
 
         <section className="py-16 sm:py-20 bg-[#FAF8F5]">
-          <Container size="narrow" className="max-w-[800px]">
-            <div className="bg-white p-8 sm:p-12 rounded-2xl border border-forest-900/10 shadow-sm space-y-8 text-sm sm:text-base text-text-secondary leading-relaxed font-sans">
+          <Container size="default" className="max-w-[1160px]">
+            <div className="bg-white p-8 sm:p-12 lg:p-14 rounded-3xl border border-forest-900/10 shadow-sm space-y-8 text-sm sm:text-base text-text-secondary leading-relaxed font-sans">
               <div>
                 <h2 className="font-display text-2xl text-forest-950 mb-3">
                   1. Verantwortliche Stelle
