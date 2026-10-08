@@ -174,46 +174,53 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
           <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#07130B]/75 to-transparent pointer-events-none" />
         </div>
 
-        {/* ── Desktop Right Panel: Floating Values Cards with Individual Rounded Blurs (No diagonal line) ── */}
-        <div className="hidden lg:flex absolute inset-y-0 right-0 z-20 items-center justify-end pr-8 xl:pr-14 2xl:pr-20 pointer-events-auto">
-          <div className="w-[430px] xl:w-[480px] 2xl:w-[520px] flex flex-col gap-3.5 xl:gap-4.5">
+        {/* ── Desktop Right Panel: Floating Values Cards with Individual Rounded Blurs (Compact & Borderless matching photo 1:1) ── */}
+        <div className="hidden lg:flex absolute inset-y-0 right-0 z-20 items-center justify-end pr-10 xl:pr-16 2xl:pr-24 pointer-events-auto">
+          <div className="w-[325px] xl:w-[355px] 2xl:w-[370px] flex flex-col">
             {heroValues.map((val, idx) => {
               const IconComp = val.icon;
               return (
-                <div
-                  key={idx}
-                  className="group rounded-2xl xl:rounded-[22px] p-4.5 xl:p-5 transition-all duration-300 hover:border-white/20 hover:bg-[#0A180E]/40"
-                  style={{
-                    background: "rgba(10, 24, 15, 0.28)",
-                    backdropFilter: "blur(8px) saturate(115%)",
-                    WebkitBackdropFilter: "blur(8px) saturate(115%)",
-                    border: "1px solid rgba(255, 255, 255, 0.08)",
-                    boxShadow: "0 8px 24px rgba(0, 0, 0, 0.18)",
-                  }}
-                >
-                  <div className="flex items-center gap-4 xl:gap-4.5">
-                    {/* Thin Champagne-Gold outlined circle icon matching reference */}
-                    <div className="w-13.5 h-13.5 xl:w-15 xl:h-15 rounded-full border border-[#DFCA98]/85 bg-[#12281B]/40 backdrop-blur-sm flex items-center justify-center flex-shrink-0 text-[#FAF8F5] group-hover:border-[#FFF6E3] transition-all duration-300 shadow-[0_0_14px_rgba(223,202,152,0.18)]">
-                      <IconComp className="w-6.5 h-6.5 xl:w-7 xl:h-7 stroke-[1.7]" />
-                    </div>
+                <React.Fragment key={idx}>
+                  <div
+                    className="group rounded-[24px] xl:rounded-[26px] py-2.5 px-3 xl:py-3 xl:px-3.5 transition-all duration-300 hover:bg-[#0A180E]/35"
+                    style={{
+                      background: "rgba(9, 22, 13, 0.22)",
+                      backdropFilter: "blur(5px)",
+                      WebkitBackdropFilter: "blur(5px)",
+                    }}
+                  >
+                    <div className="flex items-center gap-3.5 xl:gap-4">
+                      {/* Thin Champagne-Gold outlined circle icon matching photo */}
+                      <div className="w-13.5 h-13.5 xl:w-14 xl:h-14 rounded-full border border-[#DFCA98]/80 bg-[#0C1C11]/45 backdrop-blur-sm flex items-center justify-center flex-shrink-0 text-[#FAF8F5] shadow-[0_0_12px_rgba(223,202,152,0.15)]">
+                        <IconComp className="w-6 h-6 xl:w-6.5 xl:h-6.5 stroke-[1.6]" />
+                      </div>
 
-                    <div className="flex-1">
-                      <h3 className="font-sans text-[13px] xl:text-[14px] font-bold uppercase tracking-[0.07em] text-white leading-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]">
-                        {val.line1}
-                        {val.line2 && (
-                          <>
-                            <br />
-                            {val.line2}
-                          </>
-                        )}
-                      </h3>
-                      {/* Light, clearly readable description text */}
-                      <p className="text-[12px] xl:text-[12.5px] text-[#FAF8F5]/90 leading-[1.5] font-normal mt-1 max-w-[340px] drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
-                        {val.description}
-                      </p>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-sans text-[12px] xl:text-[13px] font-bold uppercase tracking-[0.06em] text-white leading-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]">
+                          {val.line1}
+                          {val.line2 && (
+                            <>
+                              <br />
+                              {val.line2}
+                            </>
+                          )}
+                        </h3>
+                        {/* Compact description text matching photo layout */}
+                        <p className="text-[11px] xl:text-[11.5px] text-[#FAF8F5]/90 leading-[1.45] font-normal mt-0.5 max-w-[195px] drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+                          {val.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
+
+                  {/* Split horizontal dividers under circle and text matching photo exactly */}
+                  {idx < heroValues.length - 1 && (
+                    <div className="flex items-center gap-3.5 xl:gap-4 px-3 my-1.5 xl:my-2">
+                      <div className="w-13.5 xl:w-14 h-[1px] bg-white/20 shrink-0" />
+                      <div className="w-[160px] xl:w-[185px] h-[1px] bg-white/20" />
+                    </div>
+                  )}
+                </React.Fragment>
               );
             })}
           </div>
@@ -271,12 +278,11 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
               return (
                 <div
                   key={idx}
-                  className="rounded-2xl p-4 flex items-start gap-3 shadow-md"
+                  className="rounded-2xl p-3.5 flex items-start gap-3"
                   style={{
-                    background: "rgba(10, 24, 15, 0.28)",
-                    backdropFilter: "blur(8px) saturate(115%)",
-                    WebkitBackdropFilter: "blur(8px) saturate(115%)",
-                    border: "1px solid rgba(255, 255, 255, 0.08)",
+                    background: "rgba(9, 22, 13, 0.22)",
+                    backdropFilter: "blur(5px)",
+                    WebkitBackdropFilter: "blur(5px)",
                   }}
                 >
                   <div className="w-11 h-11 rounded-full border border-[#DFCA98]/85 bg-[#12281B]/40 backdrop-blur-sm flex items-center justify-center flex-shrink-0 text-[#FAF8F5]">
