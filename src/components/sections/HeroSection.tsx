@@ -174,15 +174,15 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
           <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#07130B]/75 to-transparent pointer-events-none" />
         </div>
 
-        {/* ── Desktop Right Panel: Floating Values Cards with Individual Rounded Blurs (Compact & Borderless matching photo 1:1) ── */}
-        <div className="hidden lg:flex absolute inset-y-0 right-0 z-20 items-center justify-end pr-10 xl:pr-16 2xl:pr-24 pointer-events-auto">
-          <div className="w-[325px] xl:w-[355px] 2xl:w-[370px] flex flex-col">
+        {/* ── Desktop Right Panel: Floating Values Cards Docked to the Right Screen Edge (No right offset) ── */}
+        <div className="hidden lg:flex absolute inset-y-0 right-0 z-20 items-center justify-end pointer-events-auto">
+          <div className="w-[335px] xl:w-[370px] 2xl:w-[390px] flex flex-col">
             {heroValues.map((val, idx) => {
               const IconComp = val.icon;
               return (
                 <React.Fragment key={idx}>
                   <div
-                    className="group rounded-[24px] xl:rounded-[26px] py-2.5 px-3 xl:py-3 xl:px-3.5 transition-all duration-300 hover:bg-[#0A180E]/35"
+                    className="group rounded-l-[28px] xl:rounded-l-[32px] rounded-r-none py-2.5 pl-3.5 pr-4 xl:py-3.5 xl:pl-4.5 xl:pr-6 transition-all duration-300 hover:bg-[#0A180E]/35"
                     style={{
                       background: "rgba(9, 22, 13, 0.22)",
                       backdropFilter: "blur(5px)",
@@ -206,18 +206,18 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
                           )}
                         </h3>
                         {/* Compact description text matching photo layout */}
-                        <p className="text-[11px] xl:text-[11.5px] text-[#FAF8F5]/90 leading-[1.45] font-normal mt-0.5 max-w-[195px] drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+                        <p className="text-[11px] xl:text-[11.5px] text-[#FAF8F5]/90 leading-[1.45] font-normal mt-0.5 max-w-[210px] drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
                           {val.description}
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  {/* Split horizontal dividers under circle and text matching photo exactly */}
+                  {/* Split horizontal dividers under circle and text running to the right edge */}
                   {idx < heroValues.length - 1 && (
-                    <div className="flex items-center gap-3.5 xl:gap-4 px-3 my-1.5 xl:my-2">
+                    <div className="flex items-center gap-3.5 xl:gap-4 pl-3.5 pr-0 my-1.5 xl:my-2">
                       <div className="w-13.5 xl:w-14 h-[1px] bg-white/20 shrink-0" />
-                      <div className="w-[160px] xl:w-[185px] h-[1px] bg-white/20" />
+                      <div className="flex-1 h-[1px] bg-white/20" />
                     </div>
                   )}
                 </React.Fragment>
