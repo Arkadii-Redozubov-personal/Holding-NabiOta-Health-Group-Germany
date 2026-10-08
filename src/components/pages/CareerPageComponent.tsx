@@ -1326,6 +1326,840 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
         closeBtn: "Закрыть",
       },
     },
+    tr: {
+      hero: {
+        eyebrow: "NABIOTA MEDICAL RECRUITMENT SERVICES GMBH",
+        titlePrefix: "Daha Sağlıklı Bir",
+        titleMid: "Gelecek İçin",
+        titleHighlight: "Birlikte.",
+        description:
+          "Tıbbi personelin ulusal ve uluslararası düzeyde temini, kapsamlı denklik ve ruhsat (Approbation) danışmanlığı ile NabiOta Grubu tesislerinde ve Almanya genelindeki saygın ortak kurumlarda geleceğe güvenle bakan kariyerler.",
+        cta: "Açık Pozisyonları İnceleyin",
+        floatingQuote: "„Bir işten çok daha fazlası – anlam dolu bir misyon.“",
+        badge1Title: "Tam Destek",
+        badge1Sub: "Ruhsat ve Vize",
+        badge2Title: "DSÖ Standardı",
+        badge2Sub: "Adil İşe Alım",
+        badge3Title: "Kadro Güvencesi",
+        badge3Sub: "Klinik ve MVZ",
+      },
+      mission: {
+        eyebrow: "KURUMSAL FAALİYET VE VİZYON",
+        title: "Nitelikli Sağlık İş Gücü ve Sürdürülebilir Entegrasyon.",
+        desc: "NabiOta Medical Recruitment Services GmbH, nitelikli hekimleri, hemşireleri, radyoloji teknisyenlerini ve terapistleri Almanya'nın önde gelen sağlık kurumlarıyla buluşturur. Sağlık profesyonellerine ilk diploma analizinden resmi ruhsat (Approbation) ve vize süreçlerine, mesleki dil eğitiminden yerleşim ve uzun vadeli kariyer gelişimine kadar uçtan uca rehberlik ediyoruz.",
+        role: "Yönetim Kurulu ve İK Direktörlüğü",
+        badgeLine1: "Tıbbi yetenekleri destekliyoruz,",
+        badgeLine2: "çünkü onlar sağlık hizmetlerinin geleceğini şekillendiriyor.",
+      },
+      pillarSection: {
+        eyebrow: "İSTİHDAM ALANLARI",
+        title: "Sağlık Personeli Yerleştirmede 4 Temel Sütun",
+        desc: "Yataklı hastaneler, tıp merkezleri (MVZ), görüntüleme laboratuvarları ve uzmanlaşmış rehabilitasyon klinikleri için yapılandırılmış işe alım süreçleri.",
+        openModalBtn: "Profili ve Ruhsat Sürecini İnceleyin",
+      },
+      pillars: [
+        {
+          id: "aerzte",
+          title: "Hekimler ve Uzman Doktorlar",
+          category: "Klinik Tıp ve Poliklinik Hizmetleri",
+          badge: "Ruhsat ve Uzmanlık",
+          targetGroup: "Asistan Hekimler, Uzman Doktorlar, Başhekim Yardımcıları ve Klinik Direktörleri",
+          shortDesc:
+            "Alman Tıp Meslek Kanunu (§ 3 BÄO ruhsatı ve § 10 BÄO geçici çalışma izni) kapsamında tam denklik desteğiyle hekimlerin klinik ve MVZ'lere yerleştirilmesi.",
+          description:
+            "NabiOta Medical Recruitment Services GmbH, Almanya içi ve yurt dışından hekimlerin yapılandırılmış istihdamını ve uzun vadeli entegrasyonunu üstlenir. İster İç Hastalıkları, Kardiyoloji, Gastroenteroloji, Cerrahi, Anesteziyoloji, Nöroloji ister Radyoloji olsun; nitelikli doktorları son teknolojiye sahip sağlık kurumlarıyla buluşturuyoruz. Yabancı meslektaşlarımıza tam Alman tıp ruhsatı (Approbation nach § 3 BÄO) ve süresiz kadrolu sözleşme süreçlerinde adım adım rehberlik ediyoruz.",
+          image: "/images/careers/mission-doctors-highres.webp",
+          rolesList: [
+            "Uzman Hekimler ve Kıdemli Doktorlar (Kardiyoloji, Cerrahi, Genel Tıp, Anestezi)",
+            "Akut klinikler ve MVZ merkezleri için uzmanlık eğitimi alan asistan doktorlar",
+            "Tıp fakültesi hastaneleri için acil tıp ve yoğun bakım uzmanları",
+            "MVZ yapıları bünyesinde sözleşmeli hekimlik (§ 95 SGB V)",
+          ],
+          requirements: [
+            "Tanınmış bir tıp fakültesinden başarıyla mezuniyet (AB veya AB dışı)",
+            "Almanca dil yeterliliği: B2 Genel Dil + C1 Tıbbi Mesleki Terminoloji",
+            "Denklik incelemesi için eksiksiz tıp eğitimi müfredatı ve belgeleri",
+            "İlgili Eyalet Tabipler Odası önünde Tıbbi Mesleki Dil Sınavına (FSP) girme taahhüdü",
+          ],
+          approbationService: [
+            "Geçici çalışma izni (§ 10 BÄO) ve tam ruhsat (Approbation) başvurusunun hazırlanması",
+            "Yeminli tercümeler ve resmi apostil süreçlerinin yönetimi",
+            "Denklik bilirkişi süreci (GfG / eksiklik bildirimi) ve Bilgi Sınavına (KP) hazırlık desteği",
+            "Federal İş Ajansı nezdinde hızlandırılmış nitelikli çalışan vizesi (§ 16d / § 18a AufenthG)",
+          ],
+          benefitsPackage: [
+            "Doğrudan süresiz hastane kadrosu (taşeron veya kiralık iş gücü değil)",
+            "TV-Ärzte / Marburger Bund toplu sözleşmelerine uygun veya üzeri maaş",
+            "Kapsamlı eğitim bütçesi ve tam uzmanlık eğitimi yetkisine erişim",
+            "Yılda 30 gün ücretli izin ve yapılandırılmış oryantasyon süreci",
+            "Taşınma yardımı (relocation bonusu), konut bulma desteği ve aile birleşimi rehberliği",
+          ],
+          legalFramework:
+            "Yasal Dayanak: Federal Hekimler Yönetmeliği (BÄO), BQFG. Çalışma izni ve ruhsat verilmesine ilişkin nihai yetki yalnızca ilgili Alman eyalet sınav dairelerine ve bölge valiliklerine aittir.",
+        },
+        {
+          id: "pflege",
+          title: "Hemşirelik ve Ameliyathane Personeli",
+          category: "Yataklı Servis ve Evde Sağlık Bakımı",
+          badge: "Resmi Belge ve Mesleki Denklik",
+          targetGroup: "Diplomalı Hemşireler, Yoğun Bakım ve Ameliyathane Hemşireleri",
+          shortDesc:
+            "Normal servisler, yoğun bakım üniteleri ve uzmanlaşmış HomeCare hizmetleri için diplomalı hemşirelerin etik yöntemlerle istihdamı ve entegrasyonu.",
+          description:
+            "Hemşireler mükemmel hasta bakımının kalbini oluşturur. Diplomalı hemşireleri kliniklere, yoğun bakım merkezlerine, cerrahi birimlere ve evde bakım kuruluşlarına yerleştiriyoruz. Yabancı hemşirelere Hemşirelik Meslekleri Yasası (PflBG) uyarınca resmi unvan kullanma ruhsatı alınana kadar tüm denklik sürecinde destek oluyoruz.",
+          image: "/images/careers/hero-career-nurse.webp",
+          rolesList: [
+            "Yataklı servisler ve uzmanlık klinikleri için tescilli hemşireler",
+            "Anestezi ve yoğun bakım uzman hemşireleri",
+            "Ameliyathane Teknikerleri (OTA) ve cerrahi hemşirelik ekibi",
+            "Ayakta tedavi ve yara bakımı uzmanı mobil hemşireler (HomeCare)",
+          ],
+          requirements: [
+            "Hemşirelik lisans veya ön lisans diploması (Bachelor of Science in Nursing vb.)",
+            "Almanca B2 Hemşirelik Dil Sertifikası (Goethe Enstitüsü veya telc)",
+            "Klinik çalışma deneyimi ve tam ders transkriptleri",
+            "Yüksek empati, mesleki güvenilirlik ve hasta odaklı çalışma anlayışı",
+          ],
+          approbationService: [
+            "Eyalet sağlık daireleri nezdinde mesleki denklik başvurusunun yapılması",
+            "Sertifikalı intibak eğitimlerinin ve bilgi sınavı hazırlık kurslarının organizasyonu",
+            "Merkezi Mesleki Denklik Servisi (ZSBA) ile resmi koordinasyon",
+            "BeschV kapsamında hızlandırılmış vize ve çalışma izni işlemleri",
+          ],
+          benefitsPackage: [
+            "TVöD-P / AVR toplu sözleşmelerine göre nöbet ve bakım primli cazip maaş",
+            "Kurumsal şirket emeklilik fonu ve yıllık ek ikramiye",
+            "Dinlenme günlerini güvenceye alan dengeli ve şeffaf vardiya planları",
+            "Ücretsiz ileri mesleki dil kursları ve klinik uzmanlaşma fırsatları",
+            "Aile birleşimi ve çocuk kreş yeri temininde tam kurumsal destek",
+          ],
+          legalFramework:
+            "Yasal Dayanak: Hemşirelik Meslekleri Yasası (PflBG), PflAPrV. İşe alımlar DSÖ Sağlık Personelinin Uluslararası İşe Alımına İlişkin Küresel Uygulama İlkeleri rehberliğinde yürütülür.",
+        },
+        {
+          id: "diagnostik",
+          title: "Radyoloji ve Laboratuvar Teknisyenleri (MTRA/MTLA)",
+          category: "Tıbbi Teknik Uzmanlıklar",
+          badge: "İleri Tıbbi Teknoloji",
+          targetGroup: "Radyoloji ve Laboratuvar Teknisyenleri, Tıbbi Sekreterler (MFA)",
+          shortDesc:
+            "Yüksek teknoloji görüntüleme sistemleri (BT, MR, Dijital Röntgen) ve tam otomasyonlu laboratuvarlar için nitelikli uzmanlar.",
+          description:
+            "Hassas teşhis, ileri teknolojinin yanı sıra mükemmel yetişmiş teknik uzmanlar gerektirir. MTRA ve MTLA uzmanlarını modern tanı merkezlerine, radyoloji kliniklerine ve laboratuvarlara yerleştiriyoruz. Yabancı uzmanlara Tıbbi Teknoloji Meslekleri Yasası (MTBG) çerçevesinde tam denklik sürecinde refakat ediyoruz.",
+          image: "/images/diagnostik/modality-mrt.webp",
+          rolesList: [
+            "Büyük görüntüleme cihazları için MTRA (3T MR, Çok Kesitli BT, Dijital Röntgen)",
+            "Klinik kimya, hematoloji ve mikrobiyoloji laboratuvar teknisyenleri (MTLA)",
+            "Klinik koordinasyonu ve acil kabul için tıbbi asistanlar (MFA)",
+            "Radyoloji kalite yönetimi ve radyasyondan korunma sorumluları",
+          ],
+          requirements: [
+            "Radyoloji veya Biyomedikal Laboratuvar alanında resmi diploma / lisans derecesi",
+            "B2 seviyesinde onaylı Almanca dil yeterliliği",
+            "Radyasyondan korunma uzmanlık belgesi (Almanya'da da tamamlanabilir)",
+            "Teknik kavrayış, titizlik ve yüksek sorumluluk bilinci",
+          ],
+          approbationService: [
+            "MTBG uyarınca resmi meslek icra izni başvurusu",
+            "Eğitim modüllerinin ve klinik staj saatlerinin ayrıntılı denklik incelemesi",
+            "Radyasyondan Korunma Yönetmeliği (StrlSchV) sertifika kurslarının organizasyonu",
+            "Resmi vize ve çalışma izni süreçlerinin takibi",
+          ],
+          benefitsPackage: [
+            "Fonksiyonel ek ödemeler içeren avantajlı ücret tarifesi",
+            "En güncel Siemens Healthineers ve Philips cihazlarıyla çalışma imkanı",
+            "Azaltılmış hafta sonu ve icap yükü ile düzenli çalışma saatleri",
+            "Hedefe yönelik sertifika programları (Kardiyo-MR, Nöroradyoloji)",
+            "Yapılandırılmış oryantasyon ve kişisel mentorluk desteği",
+          ],
+          legalFramework:
+            "Yasal Dayanak: Tıbbi Teknoloji Meslekleri Yasası (MTBG). İlgili görevler resmi meslek icra izni alındıktan sonra başlatılır.",
+        },
+        {
+          id: "therapie",
+          title: "Fizyo-, Ergo- ve Dil Terapistleri",
+          category: "Rehabilitasyon ve Önleyici Sağlık",
+          badge: "Terapötik Mükemmellik",
+          targetGroup: "Diplomalı Fizyoterapistler, Ergoterapistler ve Logopedistler",
+          shortDesc:
+            "Ayakta ve yatarak rehabilitasyon için uzman terapistler: Tam tedavi ruhsatıyla ortopedi, nöroloji ve pediatri.",
+          description:
+            "Sürdürülebilir iyileşme ve hareket kabiliyetinin geri kazanılması için nitelikli fizyoterapistler, ergoterapistler ve konuşma terapistleri istihdam ediyoruz. Ayakta tedavi merkezleri, özel klinikler ve akut hastanelerle iş birliği yapıyor; uluslararası terapistlere Masör ve Fizyoterapist Yasası (MPhG) kapsamında resmi denklik sağlıyoruz.",
+          image: "/images/services/therapie.webp",
+          rolesList: [
+            "Fizyoterapistler (Manuel Terapi, KGG, Bobath / PNF, MLD)",
+            "Ergoterapistler (Motorik-fonksiyonel, nörolojik eğitim, duyu bütünleme)",
+            "Konuşma Terapistleri ve Logopedistler (Disfaji, afazi, konuşma gelişimi)",
+            "Tıbbi Egzersiz Tedavisi (MTT) için spor ve hareket terapistleri",
+          ],
+          requirements: [
+            "Fizyoterapi, ergoterapi veya dil terapisi alanında tanınmış mesleki diploma",
+            "Güçlü B2 seviyesinde Almanca bilgisi",
+            "Ek sertifikalar (MT, Bobath, MLD) avantajdır veya çalışırken tamamlanabilir",
+            "Hasta odaklı ve disiplinler arası ekip çalışmasına yatkınlık",
+          ],
+          approbationService: [
+            "Eyalet sağlık daireleri nezdinde mesleki denklik sürecinin yürütülmesi",
+            "Müfredat farklarının giderilmesi ve pratik uyum stajlarının koordinasyonu",
+            "Akredite eğitim enstitülerine kayıt ve rehberlik desteği",
+            "Vize ve oturum hakkı süreçlerinde yasal refakat (§ 16d / § 18a AufenthG)",
+          ],
+          benefitsPackage: [
+            "Sektör standartlarının üzerinde maaş ve ücretli eğitim izinleri",
+            "Sertifika kursları için kurumsal finansman desteği (MT, KGG, Bobath)",
+            "Dijital dokümantasyon altyapılı modern terapi ve egzersiz salonları",
+            "Esnek çalışma modelleri (tam zamanlı, yarı zamanlı, 4 günlük çalışma haftası)",
+            "Hekim koordinasyonunda huzurlu ve çok disiplinli çalışma ortamı",
+          ],
+          legalFramework:
+            "Yasal Dayanak: Masör ve Fizyoterapist Yasası (MPhG), ErgThG, LogopG. Tedavi giderlerinin SGK'ya faturalandırılması (§ 124 SGB V) resmi meslek belgesine bağlıdır.",
+        },
+      ],
+      pathwaySection: {
+        eyebrow: "360° ENTEGRASYON HİZMETİ",
+        title: "Almanya'da Kadrolu İstihdama Giden 5 Adım",
+        desc: "İlk diploma tasdikinden klinikteki başarılı göreve başlama anına kadar: Yapılandırılmış sürecimiz azami şeffaflık ve kesin sonuç güvencesi sunar.",
+      },
+      pathway: [
+        {
+          step: "01",
+          title: "Profil Analizi ve Ön İnceleme",
+          desc: "Diplomalarınızın, transkriptlerinizin ve mesleki deneyiminizin ayrıntılı analizi. En uygun denklik yolunu belirler ve kişiselleştirilmiş yol haritanızı çizeriz.",
+        },
+        {
+          step: "02",
+          title: "Mesleki Dil Eğitimi ve Sınav Hazırlığı (B2/C1)",
+          desc: "Ana dili Almanca olan uzman eğitmenlerle hedefe yönelik dil eğitimi: Tabipler Odası Tıbbi Dil Sınavı (FSP) veya telc B2/C1 Hemşirelik sınavına hazırlık.",
+        },
+        {
+          step: "03",
+          title: "Resmi Başvurular ve Ruhsat Dosyası",
+          desc: "Yeminli tercümeler, noter tasdikleri ve ilgili Eyalet Sınav Dairesine ruhsat başvurusunun yapılması. Hızlandırılmış vize sürecinin başlatılması (§ 16d / § 18a AufenthG).",
+        },
+        {
+          step: "04",
+          title: "Klinik Eşleştirmesi ve Tanışma Ziyareti",
+          desc: "Ağımızdaki saygın hastane veya MVZ'lerle mülakatların organize edilmesi, klinik oryantasyon anlaşması ve süresiz Alman iş sözleşmesinin imzalanması.",
+        },
+        {
+          step: "05",
+          title: "Yerleşim, Bürokrasi ve 360° Entegrasyon",
+          desc: "Konut bulma, ikamet kaydı, banka hesabı, sağlık sigortası, aile birleşimi ve sahada kesintisiz kişisel mentorluk desteği.",
+        },
+      ],
+      compliance: {
+        eyebrow: "YASAL STANDARTLAR VE UYUM",
+        title: "Hukuken Güvenli, Adil ve Şeffaf Sağlık Personeli Temini",
+        desc: "NabiOta Medical Recruitment Services GmbH, Almanya Federal Cumhuriyeti'nin katı mevzuatına ve uluslararası etik standartlara tam uyum içinde faaliyet gösterir.",
+        points: [
+          {
+            title: "Doğrudan İstihdam ve AÜG Ayrımı",
+            text: "Kalıcı personel yerleştirme ile geçici iş gücü kiralama organizasyonel ve sözleşmesel olarak kesin bir şekilde ayrılmıştır. İş sözleşmesi doğrudan çalışan ile klinik veya MVZ arasında kurulur.",
+          },
+          {
+            title: "Etik İşe Alım (DSÖ Küresel İlkeleri)",
+            text: "DSÖ Sağlık Personelinin Uluslararası İşe Alımına İlişkin Küresel Uygulama İlkeleri'ne tam bağlılıkla çalışırız. DSÖ uyarı listesinde yer alan ülkelerden aktif personel transferi yapmayız.",
+          },
+          {
+            title: "Şeffaf İdari Yetki İlkesi",
+            text: "Çalışma izni, ruhsat (Approbation) ve vize kararları münhasıran yetkili Alman resmi makamlarına aittir. Süreç boyunca hukuki rehberlik ve eksiksiz dosya hazırlığı sağlarız.",
+          },
+          {
+            title: "Tıbbi Bağımsızlık ve Veri Koruma Güvencesi",
+            text: "Tüm başvuru ve diploma verileri GDPR (DSGVO) mevzuatına tam uyumlu işlenir. Yerleştirilen sağlık çalışanları Alman kalite standartlarına göre güvenle entegre edilir.",
+          },
+        ],
+      },
+      benefits: {
+        eyebrow: "NEDEN NABIOTA®",
+        title: "Bizimle Çalışmanın Avantajları.",
+        desc: "Hem kişisel hem de mesleki olarak gelişebileceğiniz modern, destekleyici ve dinamik bir çalışma ortamı sunuyoruz.",
+        items: [
+          {
+            icon: Heart,
+            title: "Anlamlı Bir Misyon",
+            text: "İnsan sağlığına ve yaşam kalitesine doğrudan ve somut katkıda bulunursunuz.",
+          },
+          {
+            icon: GraduationCap,
+            title: "Gelişim ve İleri Eğitim",
+            text: "Bireysel eğitim destekleriyle mesleki uzmanlaşmanızı ve kariyerinizi güçlendiriyoruz.",
+          },
+          {
+            icon: Users,
+            title: "Güçlü ve Dayanışmacı Ekip",
+            text: "Karşılıklı saygı, açık iletişim ve ekip dayanışması kurum kültürümüzün temelidir.",
+          },
+          {
+            icon: Clock,
+            title: "Esnek Çalışma Modelleri",
+            text: "İş ve özel hayat dengesini destekleyen esnek çalışma saatleri sunuyoruz.",
+          },
+          {
+            icon: Sparkles,
+            title: "İleri Teknoloji Altyapısı",
+            text: "En modern tıbbi cihazlar ve dijital klinik altyapısıyla çalışmanın konforunu yaşayın.",
+          },
+          {
+            icon: ShieldCheck,
+            title: "Cazip ve Adil Gelir",
+            text: "Performansı ve emeği ödüllendiren şeffaf, adil ve güvenceli gelir koşulları.",
+          },
+        ],
+      },
+      jobs: {
+        eyebrow: "GÜNCEL İŞ İLANLARI",
+        title: "Ağımızdaki İdeal Pozisyonunuzu Keşfedin.",
+        desc: "Kliniklerimizde, MVZ polikliniklerimizde ve tanı merkezlerimizde prestijli kariyer fırsatlarını inceleyin.",
+        allButton: "Tüm Açık Pozisyonları Görüntüleyin",
+        positions: [
+          {
+            icon: Stethoscope,
+            title: "İç Hastalıkları ve Kardiyoloji Uzmanı (m/w/d)",
+            facility: "NabiOta® MVZ Aile Hekimliği ve Uzmanlık Merkezi",
+            type: "Tam Zamanlı / Yarı Zamanlı",
+            location: "Mönchengladbach",
+          },
+          {
+            icon: Stethoscope,
+            title: "Ortopedi ve Travmatoloji Uzmanı (m/w/d)",
+            facility: "NabiOta® MVZ Cerrahi ve Anesteziyoloji",
+            type: "Tam Zamanlı",
+            location: "Mönchengladbach / NRW",
+          },
+          {
+            icon: Heart,
+            title: "Anestezi ve Ameliyathane Uzman Hemşiresi (m/w/d)",
+            facility: "NabiOta® Clinics Germany (Yataklı Klinik § 30 GewO)",
+            type: "Tam Zamanlı / Yarı Zamanlı",
+            location: "Kuzey Ren-Vestfalya",
+          },
+          {
+            icon: Activity,
+            title: "Diplomalı Fizyoterapist / Reha Terapisti (m/w/d)",
+            facility: "NabiOta® Rehabilitasyon ve Terapi Merkezi",
+            type: "Tam Zamanlı / 4 Günlük Hafta",
+            location: "Düsseldorf / Çevresi",
+          },
+          {
+            icon: Sparkles,
+            title: "Radyoloji Teknikeri MTRA (m/w/d)",
+            facility: "NabiOta® Teşhis Merkezi (BT/MR/Röntgen)",
+            type: "Tam Zamanlı",
+            location: "Mönchengladbach",
+          },
+          {
+            icon: ShieldCheck,
+            title: "Yara Bakım Uzmanı Hemşire ICW (m/w/d)",
+            facility: "NabiOta® HomeCare (Evde Bakım ve Yara Tedavisi)",
+            type: "Tam Zamanlı / Yarı Zamanlı",
+            location: "NRW Bölgesi",
+          },
+        ],
+      },
+      culture: {
+        eyebrow: "KURUMSAL KÜLTÜRÜMÜZ",
+        title: "İnsan. Değerler. Birliktelik.",
+        desc: "Karşılıklı saygı, güven ve takım ruhunun canlı tutulduğu bir çalışma atmosferi sunuyoruz. NabiOta® için yalnızca diplomalar değil, fark yaratmak isteyen tutkulu insanlar önemlidir.",
+        badgeTitle: "Birlikte büyüyoruz.",
+        badgeSub: "Hayatları güzelleştiriyoruz.",
+      },
+      testimonials: [
+        {
+          quote:
+            "„NabiOta'nın profesyonel ruhsat danışmanlığı sayesinde tüm enerjimi tıbbi dil sınavıma odaklayabildim. Bugün MVZ bünyesinde Kardiyoloji Uzmanı olarak hasta kabul ediyorum.“",
+          author: "Dr. med. Tariq Al-Mansoor",
+          role: "İç Hastalıkları ve Kardiyoloji Uzmanı, NabiOta® MVZ",
+          avatar: "/images/careers/anna-mueller.webp",
+        },
+        {
+          quote:
+            "„Yurt dışı hemşirelik diplomamın denklik süreci NabiOta ile kusursuz ilerledi. Ev temini, dil eğitimi ve sıcacık karşılama Almanya'daki başlangıcımı son derece kolaylaştırdı.“",
+          author: "Elena Rostova",
+          role: "Yoğun Bakım Hemşiresi, NabiOta® Clinics",
+          avatar: "/images/careers/anna-mueller.webp",
+        },
+        {
+          quote:
+            "„Modern MR sistemleri, gece nöbeti baskısı olmayan düzenli çalışma saatleri ve destekleyici bir ekip ortamı NabiOta'yı her gün hevesle gelinen bir iş yeri yapıyor.“",
+          author: "Marco Di Bernardo",
+          role: "Sorumlu MTRA, NabiOta® Teşhis Merkezi",
+          avatar: "/images/careers/anna-mueller.webp",
+        },
+      ],
+      cta: {
+        eyebrow: "GELECEĞİNİZE ADIM ATMAYA HAZIR MISINIZ?",
+        title: "NabiOta® Ailesine Katılın.",
+        desc: "Açık pozisyonlarımızı inceleyin veya uluslararası işe alım programımız için genel başvurunuzu hemen iletin.",
+        button: "Hemen Başvurun",
+      },
+      applyForm: {
+        eyebrow: "HIZLI BAŞVURU",
+        title: "Kariyerinize Bizimle Başlayın.",
+        desc: "Belgelerinizi yükleyin veya başvurunuzu kolayca iletin. İK ekibimiz niteliklerinizi inceleyecek ve 48 saat içinde sizinle irtibata geçecektir.",
+        nameLabel: "Ad Soyad",
+        namePlaceholder: "Örn. Ahmet Yılmaz",
+        emailLabel: "E-Posta Adresi",
+        emailPlaceholder: "adiniz@ornek.com",
+        phoneLabel: "Telefon Numarası",
+        phonePlaceholder: "+90 532 123 4567 veya +49 ...",
+        positionLabel: "Başvurulan Pozisyon / Uzmanlık Alanı",
+        positionPlaceholder: "Pozisyon seçiniz...",
+        positions: [
+          "İç Hastalıkları ve Kardiyoloji Uzmanı (m/w/d)",
+          "Ortopedi ve Travmatoloji Uzmanı (m/w/d)",
+          "Anestezi ve Ameliyathane Uzman Hemşiresi (m/w/d)",
+          "Diplomalı Fizyoterapist / Reha Terapisti (m/w/d)",
+          "Radyoloji Teknikeri MTRA (m/w/d)",
+          "Yara Bakım Uzmanı Hemşire ICW (m/w/d)",
+          "Hekimlik Genel Başvurusu (Ruhsat / Asistan Hekim)",
+          "Hemşirelik ve Klinik Hizmetler Genel Başvurusu",
+          "Tanı ve Laboratuvar / MTA Genel Başvurusu",
+          "Terapi ve Rehabilitasyon Genel Başvurusu",
+        ],
+        messageLabel: "Mesajınız (İsteğe bağlı)",
+        messagePlaceholder:
+          "Tıbbi eğitiminiz, mevcut Almanca seviyeniz ve planlanan başlangıç tarihiniz hakkında kısa bilgi verin...",
+        uploadLabel: "Özgeçmiş / Belgeleri Yükleyin (PDF, DOCX - Maks. 10MB)",
+        uploadHint: "Dosya seçin veya buraya sürükleyin",
+        privacy:
+          "Kişisel verilerimin işe alım süreci ve mesleki denklik ön incelemesi kapsamında işlenmesine açık rıza veriyorum.",
+        submitBtn: "Başvuruyu Gönder",
+        submitting: "Gönderiliyor...",
+        successTitle: "Başvurunuz İçin Teşekkür Ederiz!",
+        successDesc:
+          "Belgeleriniz İK ekibimize başarıyla ulaştı. Profilinizi titizlikle değerlendirip en kısa sürede sizinle iletişime geçeceğiz.",
+        resetBtn: "Yeni Bir Başvuru Yap",
+      },
+      modal: {
+        badgePrefix: "SÜTUN",
+        categoryLabel: "Uzmanlık Alanı",
+        targetLabel: "Hedef Kitle",
+        scopeTitle: "Görev Profili ve Odak Noktaları",
+        approbationTitle: "360° Ruhsat ve Vize Hizmeti",
+        benefitsTitle: "Maaş ve Çalışan Avantajları",
+        legalTitle: "Yasal Dayanaklar ve Standartlar",
+        applyBtn: "Bu Profil İçin Başvurun",
+        closeBtn: "Pencereyi Kapat",
+      },
+    },
+    ar: {
+      hero: {
+        eyebrow: "NABIOTA MEDICAL RECRUITMENT SERVICES GMBH",
+        titlePrefix: "معاً من أجل",
+        titleMid: "مستقبل صحي",
+        titleHighlight: "أكثر ازدهاراً.",
+        description:
+          "استقطاب الكفاءات الطبية محلياً ودولياً، مرافقة متكاملة لإجراءات ترخيص مزاولة المهنة (Approbation) والتأشيرات، ومسارات مهنية واعدة ومستدامة داخل شبكة مراكز NabiOta والمستشفيات الشريكة في ألمانيا.",
+        cta: "استكشاف الوظائف المتاحة",
+        floatingQuote: "«أكثر من مجرد وظيفة – رسالة إنسانية نبيلة.»",
+        badge1Title: "رعاية شاملة",
+        badge1Sub: "الترخيص والتأشيرة",
+        badge2Title: "معايير منظمة الصحة",
+        badge2Sub: "توظيف أخلاقي عادل",
+        badge3Title: "عقود دائمة",
+        badge3Sub: "المستشفيات ومراكز MVZ",
+      },
+      mission: {
+        eyebrow: "الغرض المؤسسي والرؤية",
+        title: "استقطاب الكفاءات الصحية والتكامل المهني المستدام.",
+        desc: "تربط شركة NabiOta Medical Recruitment Services GmbH الكوادر الطبية المؤهلة والتمريض التخصصي وفنيي التشخيص والمعالجين بأرقى المؤسسات الصحية في ألمانيا. نرافق الكفاءات الطبية خطوة بخطوة: بدءاً من التدقيق الأولي للمؤهلات إلى معادلة الشهادات واستخراج ترخيص مزاولة المهنة (Approbation)، والتأشيرات، والتدريب اللغوي التخصصي، وحتى الاستقرار المهني والأسري طويل الأمد.",
+        role: "مجلس الإدارة وإدارة الموارد البشرية والتوظيف",
+        badgeLine1: "نحن نرعى المواهب والكوادر الطبية،",
+        badgeLine2: "لأنهم يصنعون مستقبل الرعاية الصحية المتقدمة.",
+      },
+      pillarSection: {
+        eyebrow: "مجالات التوظيف والوساطة",
+        title: "الركائز الأربع لتوظيف الكوادر الطبية",
+        desc: "برامج توظيف منظمة للمستشفيات الحادة، ومراكز الرعاية الطبية المتعددة (MVZ)، ومراكز التشخيص، ومؤسسات إعادة التأهيل.",
+        openModalBtn: "عرض الملف ومتطلبات الترخيص",
+      },
+      pillars: [
+        {
+          id: "aerzte",
+          title: "الأطباء والأطباء الاستشاريون",
+          category: "الطب السريري ومراكز الرعاية الخارجية",
+          badge: "ترخيص Approbation واختصاص",
+          targetGroup: "الأطباء المقيمون، الأخصائيون، كبار الأطباء (Oberärzte) والمدراء الطبيون",
+          shortDesc:
+            "استقطاب وتوظيف منظم للأطباء في المستشفيات ومراكز MVZ مع إشراف كامل على ترخيص مزاولة المهنة الدائم (§ 3 BÄO) وتصريح العمل المؤقت (§ 10 BÄO).",
+          description:
+            "تتولى شركة NabiOta Medical Recruitment Services GmbH استقطاب ودمج الأطباء من داخل ألمانيا وخارجها بأسلوب منهجي ومدروس. سواء في الطب الباطني، أو أمراض القلب، أو الجهاز الهضمي، أو الجراحة، أو التخدير، أو طب الأعصاب، أو الأشعة التشخيصية – نوفر للأطباء المؤهلين فرص العمل في أحدث المراكز الطبية. نرافق الزملاء الوافدين من الخارج خطوة بخطوة حتى نيل الترخيص الطبي الألماني الكامل (§ 3 BÄO) وعقد العمل الدائم غير محدد المدة.",
+          image: "/images/careers/mission-doctors-highres.webp",
+          rolesList: [
+            "أطباء اختصاصيون وكبار الأطباء (القلب، الجراحة، الطب العام، التخدير)",
+            "أطباء مقيمون في التدريب السريري التخصصي للمستشفيات ومراكز MVZ",
+            "أطباء طب الطوارئ والعناية المركزة لمستشفيات الرعاية الفائقة",
+            "أطباء متعاقدون لمراكز الرعاية المتعددة التخصصات (§ 95 SGB V)",
+          ],
+          requirements: [
+            "تخرج من كلية طب معترف بها رسمياً (سواء داخل الاتحاد الأوروبي أو خارجه)",
+            "إتقان اللغة الألمانية: B2 عام + C1 المصطلحات الطبية التخصصية",
+            "تقديم كامل وثائق المنهج الدراسي وساعات التدريب السريري لمعادلة الشهادة",
+            "الاستعداد لاجتياز اختبار اللغة الطبية التخصصية (FSP) أمام نقابة الأطباء",
+          ],
+          approbationService: [
+            "إعداد وتقديم طلبات تصريح العمل المؤقت (§ 10 BÄO) وترخيص مزاولة المهنة (Approbation)",
+            "إدارة الترجمة المحلفة المعتمدة والتصديقات القنصلية والأبوستيل",
+            "المرافقة في تقييم المعادلة (GfG / تقرير الفروقات) والتحضير لاختبار الكفاءة (KP)",
+            "إجراءات التأشيرة السريعة للكفاءات التخصصية (§ 16d / § 18a AufenthG) عبر وكالة العمل الفيدرالية",
+          ],
+          benefitsPackage: [
+            "عقد عمل دائم ومباشر مع المستشفى (بدون شركات وساطة أو عمالة مؤقتة)",
+            "أجور وفق اتفاقية TV-Ärzte / Marburger Bund الجماعية أو أعلى منها",
+            "ميزانية سخية للتعليم الطبي المستمر وحقوق تدريب تخصصي معتمدة",
+            "30 يوم إجازة سنوية مدفوعة مع فترة تدريب وتأهيل سريري منظمة",
+            "منحة انتقال (Relocation)، وتأمين السكن، ومرافقة المعاملات المحلية ولم الشمل",
+          ],
+          legalFramework:
+            "الأساس القانوني: قانون الأطباء الاتحادي (BÄO)، وقانون الاعتراف المهني (BQFG). تبقى القرارات السيادية بشأن منح التراخيص حقاً حصرياً لهيئات الفحص ومكاتب شؤون الولايات الألمانية المختصة.",
+        },
+        {
+          id: "pflege",
+          title: "الكوادر التمريضية وطواقم غرف العمليات",
+          category: "التمريض السريري والرعاية المنزلية",
+          badge: "الشهادة والاعتراف الحكومي",
+          targetGroup: "ممرضون وممرضات مجازون، كوادر العناية المركزة والعمليات",
+          shortDesc:
+            "توظيف أخلاقي ودمج مهني مستدام للكوادر التمريضية المجازة في الأقسام العامة والعناية المركزة والرعاية المنزلية HomeCare.",
+          description:
+            "يشكل التمريض الركيزة الأساسية لكل رعاية طبية متفوقة وإنسانية. نستقطب الكوادر التمريضية المجازة للمستشفيات، ومراكز العناية الفائقة، وأقسام العمليات، وخدمات التمريض المنزلي التخصصي. ندعم الممرضين والممرضات القادمين من الخارج دعماً مكثفاً في إجراءات الاعتراف المهني بموجب قانون مهن التمريض (PflBG) حتى نيل الإذن الرسمي بحمل المسمى المهني.",
+          image: "/images/careers/hero-career-nurse.webp",
+          rolesList: [
+            "كوادر تمريضية مجازة للأقسام العامة والتخصصية",
+            "تمريض تخصصي في التخدير والعناية المركزة",
+            "مساعدو العمليات الجراحية (OTA) وتمريض غرف العمليات",
+            "تمريض رعاية الجروح المعقدة والخدمات المتنقلة (HomeCare)",
+          ],
+          requirements: [
+            "شهادة بكالوريوس أو دبلوم تمريض رسمي معتمد",
+            "شهادة اللغة الألمانية B2 تمريض (معهد غوته أو telc)",
+            "خبرة سريرية عملية وسجلات المناهج والتدريب الكاملة",
+            "تحلي عالٍ بروح التعاطف الإنساني والمسؤولية والانضباط المهني",
+          ],
+          approbationService: [
+            "تقديم طلبات المعادلة المهنية لدى المكاتب الحكومية الإقليمية للصحة",
+            "تنظيم دورات المواءمة التأهيلية والتحضير لاختبار تقييم المعرفة",
+            "التعاون الوثيق مع مركز خدمة الاعتراف المهني الاتحادي (ZSBA)",
+            "تسريع إجراءات التأشيرة وتصاريح العمل بموجب لوائح BeschV",
+          ],
+          benefitsPackage: [
+            "أجور وفق جدول TVöD-P / AVR مع علاوات نوبات العمل وبدلات التمريض",
+            "تأمين تقاعدي مؤسسي تكميلي ومكافأة سنوية إضافية",
+            "جداول مناوبات عمل واضحة تضمن الاستقرار وأوقات الراحة العائلية",
+            "دورات تطوير لغوي وتخصصات مهنية مجانية وممولة بالكامل",
+            "دعم شامل في معاملات لم شمل الأسرة وتأمين مقاعد الحضانة للأطفال",
+          ],
+          legalFramework:
+            "الأساس القانوني: قانون مهن التمريض (PflBG)، PflAPrV. تتم عمليات التوظيف بالتوافق الصارم مع المبادئ التوجيهية الأخلاقية لمدونة منظمة الصحة العالمية لممارسات التوظيف الدولي للكوادر الصحية.",
+        },
+        {
+          id: "diagnostik",
+          title: "فنيو الأشعة والمختبرات الطبية (MTRA/MTLA)",
+          category: "المهن الطبية التقنية",
+          badge: "تقنيات طبية متقدمة",
+          targetGroup: "فنيو وفنيات الأشعة والمختبرات الطبية، المساعدون الطبيون (MFA)",
+          shortDesc:
+            "كوادر فنية متخصصة لأنظمة التصوير المتقدمة (CT، MRI، الأشعة الرقمية) ومختبرات التحاليل المؤتمتة بالكامل.",
+          description:
+            "يتطلب التشخيص الدقيق أحدث التجهيزات إلى جانب كوادر فنية مدربة بأعلى المعايير. نستقطب فنيي الأشعة (MTRA) وفنيي المختبرات (MTLA) لمراكز التشخيص المتقدمة، وعيادات الأشعة، والمختبرات السريرية. ونقود الكفاءات الدولية خلال مسار الاعتراف المعادل وفق قانون مهن التكنولوجيا الطبية (MTBG).",
+          image: "/images/diagnostik/modality-mrt.webp",
+          rolesList: [
+            "فنيو أشعة لأجهزة التصوير الكبرى (3T-MRT، التصوير المقطعي متعدد المقاطع، الأشعة الرقمية)",
+            "فنيو مختبرات للكيمياء السريرية، وأمراض الدم، وعلم الأحياء الدقيقة (MTLA)",
+            "مساعدون طبيون (MFA) لإدارة تنسيق العيادات واستقبال الحالات الطارئة",
+            "مسؤولو إدارة الجودة في الأشعة والوقاية من الإشعاع",
+          ],
+          requirements: [
+            "دبلوم حكومي أو بكالوريوس في تكنولوجيا الأشعة أو التحاليل الطبية الحيوية",
+            "إتقان اللغة الألمانية بمستوى B2 معتمد",
+            "شهادة التخصص في الوقاية من الإشعاع (يمكن اكتسابها في ألمانيا)",
+            "فهم تقني دقيق وحس عالٍ بالمسؤولية وسلامة المرضى",
+          ],
+          approbationService: [
+            "تقديم طلب ترخيص مزاولة المهنة بموجب قانون MTBG",
+            "مراجعة واعتماد الساعات النظرية والتدريب السريري العملي",
+            "تنسيق دورات الحماية من الإشعاع وفق لائحة الوقاية (StrlSchV)",
+            "المتابعة الرسمية لمعاملات التأشيرة وتصاريح العمل الحكومية",
+          ],
+          benefitsPackage: [
+            "فئات رواتب مجزية مع علاوات تشغيلية تخصصية",
+            "العمل على أحدث أجهزة التشخيص العالمية (Siemens Healthineers، Philips)",
+            "أوقات عمل منتظمة مع انخفاض نوبات الطوارئ والمناوبات الليلية",
+            "برامج تدريبية تخصصية (رنين القلب المغناطيسي، الأشعة العصبية والتداخلية)",
+            "برنامج اندماج سريري ممنهج وإشراف إرشادي شخصي",
+          ],
+          legalFramework:
+            "الأساس القانوني: قانون المهن في التكنولوجيا الطبية (MTBG). يبدأ العمل الفعلي بعد صدور الترخيص الرسمي لمزاولة المهنة.",
+        },
+        {
+          id: "therapie",
+          title: "العلاج الطبيعي، الوظيفي، وعلاج النطق",
+          category: "إعادة التأهيل والطب الوقائي",
+          badge: "التميز العلاجي والتأهيلي",
+          targetGroup: "أخصائيو وأخصائيات العلاج الطبيعي، العلاج الوظيفي، وعلاج اضطرابات النطق",
+          shortDesc:
+            "معالجون مؤهلون لإعادة التأهيل في العيادات الخارجية والمستشفيات: جراحة العظام، الأعصاب، وطب الأطفال مع اعتماد كامل.",
+          description:
+            "لضمان استعادة الحركة والتأهيل المستدام، نستقطب أخصائيي العلاج الطبيعي، والعلاج الوظيفي، وعلاج النطق ذوي الكفاءة العالية. نتعاون مع مراكز التأهيل المتخصصة والمستشفيات، وندعم المعالجين الدوليين لنيل المعادلة والترخيص الحكومي وفق قانون العلاج الطبيعي (MPhG).",
+          image: "/images/services/therapie.webp",
+          rolesList: [
+            "أخصائيو علاج طبيعي (العلاج اليدوي، KGG، Bobath / PNF، تصريف اللمف MLD)",
+            "أخصائيو علاج وظيفي (حركي-وظيفي، تدريب عصبي، التكامل الحسي)",
+            "أخصائيو علاج النطق والتخاطب (عسر البلع، الحبسة الكلامية، اضطرابات النطق)",
+            "معالجو الرياضة والحركة للعلاج التدريبي الطبي (MTT)",
+          ],
+          requirements: [
+            "مؤهل دراسي رسمي ومعترف به في العلاج الطبيعي أو الوظيفي أو التخاطب",
+            "إتقان اللغة الألمانية بمستوى B2 معتمد",
+            "المؤهلات الإضافية (MT، Bobath، MLD) ميزة مرحب بها، أو يمكن نيلها أثناء العمل",
+            "شغف بالعمل الجماعي متعدد التخصصات المتمحور حول المريض",
+          ],
+          approbationService: [
+            "إدارة إجراءات الاعتراف المهني لدى المكاتب الحكومية الصحية المختصة",
+            "تنسيق مواءمة المناهج وفترات التدريب العملي التعويضي",
+            "التنسيق مع معاهد التدريب المعتمدة لاستكمال المتطلبات",
+            "مرافقة قانونية كاملة لإجراءات التأشيرة والإقامة (§ 16d / § 18a AufenthG)",
+          ],
+          benefitsPackage: [
+            "رواتب تفوق المتوسط مع أيام إجازة تعليمية مدفوعة الأجر",
+            "تحمل تكاليف الدورات التخصصية المعتمدة (MT، KGG، Bobath)",
+            "قاعات علاج وتدريب حديثة مجهزة بأنظمة توثيق رقمية متكاملة",
+            "نماذج عمل مرنة (دوام كامل، دوام جزئي، أسبوع عمل 4 أيام)",
+            "بيئة عمل متناغمة متعددة التخصصات تحت إشراف طبي متخصص",
+          ],
+          legalFramework:
+            "الأساس القانوني: قانون المدلكين والمعالجين الفيزيائيين (MPhG)، ErgThG، LogopG. تتطلب المطالبة بمستحقات العلاج من التأمين الصحي (§ 124 SGB V) حيازة الترخيص الحكومي الرسمي.",
+        },
+      ],
+      pathwaySection: {
+        eyebrow: "خدمة اندماج شاملة 360°",
+        title: "خمس خطوات نحو التوظيف الدائم في ألمانيا",
+        desc: "من التصديق الأولي للشهادات وحتى الانطلاق المهني الناجح في المستشفى: مسارنا المنظم يضمن أقصى درجات الشفافية والأمان.",
+      },
+      pathway: [
+        {
+          step: "01",
+          title: "فحص الملف وتحليل المؤهلات",
+          desc: "تحليل دقيق للشهادات الجامعية، وتفاصيل المناهج، والخبرات السريرية. نحدد المسار الأمثل للاعتراف المهني ونضع خطة عملك الفردية.",
+        },
+        {
+          step: "02",
+          title: "اللغة الطبية والتحضير لاختبار FSP (B2/C1)",
+          desc: "تأهيل لغوي تخصصي مع أساتذة معتمدين ناطقين بالألمانية كلغة أم: التحضير لاختبار اللغة الطبية (FSP) أمام نقابة الأطباء أو شهادة telc B2/C1 للتمريض.",
+        },
+        {
+          step: "03",
+          title: "المعاملات الرسمية وملف الترخيص",
+          desc: "تنظيم الترجمة المحلفة، والتصديقات، وتقديم الملف إلى هيئة الفحص الحكومية المختصة. إطلاق مسار التأشيرة السريع (§ 16d / § 18a AufenthG).",
+        },
+        {
+          step: "04",
+          title: "المواءمة مع المستشفيات والزيارة الاستكشافية",
+          desc: "ربط مباشر مع مستشفيات ومراكز MVZ مرموقة ضمن شبكتنا، وترتيب المقابلات، واتفاقية الزيارة السريرية، وتوقيع عقد العمل الألماني الدائم.",
+        },
+        {
+          step: "05",
+          title: "الانتقال والمعاملات والاندماج الشامل 360°",
+          desc: "المساعدة في البحث عن سكن، وتسجيل الإقامة (Bürgeramt)، والحساب البنكي، والتأمين الصحي، ولم شمل الأسرة، مع مرافقة وإرشاد ميداني مستمر.",
+        },
+      ],
+      compliance: {
+        eyebrow: "المعايير القانونية والامتثال المؤسسي",
+        title: "وساطة وتوظيف قانوني، عادل، وشفاف للكوادر الصحية",
+        desc: "تعمل شركة NabiOta Medical Recruitment Services GmbH وفقاً للوائح القانونية الصارمة لجمهورية ألمانيا الاتحادية والمعايير الأخلاقية الدولية.",
+        points: [
+          {
+            title: "الفصل بين التوظيف الدائم وتأجير العمالة (AÜG)",
+            text: "يتم الفصل التنظيمي والتعاقدي التام بين التوظيف الدائم وتأجير العمالة. في التوظيف، ينشأ عقد العمل دائماً وبشكل مباشر بين الكادر الطبي والمستشفى أو مركز MVZ.",
+          },
+          {
+            title: "التوظيف الأخلاقي العادل (مدونة منظمة الصحة العالمية)",
+            text: "نلتزم بمبادئ التوظيف العادل وفقاً لمدونة منظمة الصحة العالمية لممارسات التوظيف الدولي للعاملين الصحيين. لا نقوم بأي استقطاب من الدول المدرجة في قائمة التحذير الأممية.",
+          },
+          {
+            title: "احترام الصلاحيات السيادية الحكومية",
+            text: "تبقى قرارات منح تصاريح العمل والترخيص والتأشيرات من الصلاحيات الحصرية للجهات الحكومية الألمانية المختصة. نحن نضمن المرافقة القانونية وإعداد الملفات بأعلى معايير الدقة.",
+          },
+          {
+            title: "ضمان الاستقلالية الطبية وحماية البيانات",
+            text: "تتم معالجة بيانات المتقدمين والمؤهلات بالامتثال الصارم للائحة العامة لحماية البيانات (GDPR). ويتم دمج الكفاءات الطبية وفق أعلى معايير الجودة والمهنية الألمانية.",
+          },
+        ],
+      },
+      benefits: {
+        eyebrow: "لماذا تختار NABIOTA®",
+        title: "المزايا التي نقدمها لك.",
+        desc: "نوفر لك بيئة عمل حديثة ومحفزة تتيح لك التطور الشخصي والارتقاء المهني المستمر.",
+        items: [
+          {
+            icon: Heart,
+            title: "عمل ذو رسالة هادفة",
+            text: "تقدم مساهمة مباشرة وملموسة في صحة الإنسان والارتقاء بجودة الحياة.",
+          },
+          {
+            icon: GraduationCap,
+            title: "التعليم المستمر والتطوير",
+            text: "ندعم نموك المهني والشخصي عبر برامج تأهيل وتدريب فردية ممولة.",
+          },
+          {
+            icon: Users,
+            title: "فريق متماسك وداعم",
+            text: "التقدير المتبادل، والتواصل المفتوح، وروح العمل الجماعي مبادئ أساسية لدينا.",
+          },
+          {
+            icon: Clock,
+            title: "نماذج عمل مرنة",
+            text: "نحرص على تحقيق توازن مثالي بين العمل والحياة الشخصية والعائلية.",
+          },
+          {
+            icon: Sparkles,
+            title: "بنية تحتية وتقنيات حديثة",
+            text: "استفد من بيئة عمل متطورة وتجهيزات رقمية وطبية ذات مواصفات عالمية.",
+          },
+          {
+            icon: ShieldCheck,
+            title: "حزم أجور ومكافآت مجزية",
+            text: "نقدم شروط تعاقد عادلة ومكافآت ترتكز على التقدير الحقيقي للأداء والكفاءة.",
+          },
+        ],
+      },
+      jobs: {
+        eyebrow: "الوظائف المتاحة حالياً",
+        title: "ابحث عن موقعك المثالي في شبكتنا الطبية.",
+        desc: "اكتشف فرصاً مهنية استثنائية في مواقع مستشفياتنا، ومراكز MVZ، ومجمعات التشخيص المتطورة.",
+        allButton: "عرض جميع الوظائف الشاغرة",
+        positions: [
+          {
+            icon: Stethoscope,
+            title: "طبيب أخصائي (m/w/d) طب باطني وأمراض القلب",
+            facility: "NabiOta® MVZ للرعاية الطبية العامة والتخصصية",
+            type: "دوام كامل / دوام جزئي",
+            location: "مونشنغلادباخ",
+          },
+          {
+            icon: Stethoscope,
+            title: "طبيب أخصائي (m/w/d) جراحة العظام والحوادث",
+            facility: "NabiOta® MVZ للجراحة والتخدير",
+            type: "دوام كامل",
+            location: "مونشنغلادباخ / NRW",
+          },
+          {
+            icon: Heart,
+            title: "ممرض / ممرضة تخصصية (m/w/d) تخدير وعمليات",
+            facility: "NabiOta® Clinics Germany (مستشفى معتمد بموجب § 30 GewO)",
+            type: "دوام كامل / دوام جزئي",
+            location: "شمال الراين-وستفاليا",
+          },
+          {
+            icon: Activity,
+            title: "أخصائي / أخصائية علاج طبيعي معتمد (m/w/d)",
+            facility: "NabiOta® لمركز التأهيل والعلاج الطبيعي",
+            type: "دوام كامل / أسبوع عمل 4 أيام",
+            location: "دوسلدورف / المنطقة",
+          },
+          {
+            icon: Sparkles,
+            title: "فني / فنية أشعة تشخيصية MTRA (m/w/d)",
+            facility: "NabiOta® Diagnostics Center (رنين مغناطيسي/أشعة مقطعية)",
+            type: "دوام كامل",
+            location: "مونشنغلادباخ",
+          },
+          {
+            icon: ShieldCheck,
+            title: "تمريض تخصصي / خبير علاج الجروح ICW (m/w/d)",
+            facility: "NabiOta® HomeCare (التمريض المنزلي المتقدم)",
+            type: "دوام كامل / دوام جزئي",
+            location: "منطقة NRW",
+          },
+        ],
+      },
+      culture: {
+        eyebrow: "ثقافتنا المؤسسية",
+        title: "الإنسان. القيم. التكاتف.",
+        desc: "نصنع بيئة عمل تسودها مبادئ الاحترام المتبادل، والثقة، والتعاون المثمر. في NabiOta®، لا نكترث فقط بالمؤهلات والشهادات، بل بالإنسان الراغب في إحداث أثر إيجابي حقيقي.",
+        badgeTitle: "ننمو معاً.",
+        badgeSub: "ونرتقي بالحياة.",
+      },
+      testimonials: [
+        {
+          quote:
+            "«بفضل الدعم الاحترافي من NabiOta في ملف الترخيص الطبي، تمكنت من التركيز الكامل على امتحان اللغة التخصصية. اليوم أدير عيادتي كأخصائي أمراض قلب في مركز MVZ.»",
+          author: "Dr. med. Tariq Al-Mansoor",
+          role: "أخصائي الأمراض الباطنية والقلب، NabiOta® MVZ",
+          avatar: "/images/careers/anna-mueller.webp",
+        },
+        {
+          quote:
+            "«سارت معادلة شهادة التمريض القادمة من الخارج مع NabiOta بسلاسة مذهلة. تأمين السكن، والتدريب اللغوي، والترحيب الداعم سهلوا انطلاقتي في ألمانيا كثيراً.»",
+          author: "Elena Rostova",
+          role: "ممرضة عناية مركزة مجازة، NabiOta® Clinics",
+          avatar: "/images/careers/anna-mueller.webp",
+        },
+        {
+          quote:
+            "«أجهزة الرنين المغناطيسي الحديثة، وجداول العمل المنظمة دون مناوبات ليلية مرهقة، والتعامل الأخوي تجعل NabiOta مكاناً يحب المرء القدوم إليه كل يوم.»",
+          author: "Marco Di Bernardo",
+          role: "رئيس فنيي الأشعة، NabiOta® Diagnostics Center",
+          avatar: "/images/careers/anna-mueller.webp",
+        },
+      ],
+      cta: {
+        eyebrow: "مستعد لبدء مستقبلك المهني؟",
+        title: "انضم إلى أسرة NabiOta® الطبية.",
+        desc: "اكتشف وظائفنا الشاغرة أو قدم طلب ترشحك المباشر لبرنامج الاستقطاب الطبي المخصص لدينا.",
+        button: "التقديم الآن",
+      },
+      applyForm: {
+        eyebrow: "التقديم المباشر",
+        title: "ابدأ مستقبلك المهني معنا.",
+        desc: "أرسل سيرتك الذاتية أو قدم طلبك بسهولة. سيقوم فريق الموارد البشرية والتوظيف الطبي بفحص مؤهلاتك والتواصل معك خلال 48 ساعة.",
+        nameLabel: "الاسم الكامل",
+        namePlaceholder: "مثال: د. محمد علي",
+        emailLabel: "البريد الإلكتروني",
+        emailPlaceholder: "name@example.com",
+        phoneLabel: "رقم الهاتف",
+        phonePlaceholder: "+49 ... أو +966 ... أو +20 ...",
+        positionLabel: "الوظيفة المرغوبة / التخصص الطبي",
+        positionPlaceholder: "اختر الوظيفة...",
+        positions: [
+          "طبيب أخصائي (m/w/d) طب باطني وأمراض القلب",
+          "طبيب أخصائي (m/w/d) جراحة العظام والحوادث",
+          "ممرض / ممرضة تخصصية (m/w/d) تخدير وعمليات",
+          "أخصائي / أخصائية علاج طبيعي معتمد (m/w/d)",
+          "فني / فنية أشعة تشخيصية MTRA (m/w/d)",
+          "تمريض تخصصي / خبير علاج الجروح ICW (m/w/d)",
+          "طلب ترشح عام للأطباء (ترخيص / طبيب مقيم)",
+          "طلب ترشح عام لكوادر التمريض والخدمات السريرية",
+          "طلب ترشح عام لمراكز التشخيص والمختبرات MTA",
+          "طلب ترشح عام لخدمات التأهيل والعلاج الطبيعي",
+        ],
+        messageLabel: "رسالتك (اختياري)",
+        messagePlaceholder:
+          "أخبرنا بإيجاز عن مؤهلاتك ومستواك الحالي في اللغة الألمانية وتاريخ البدء المفضل...",
+        uploadLabel: "إرفاق السيرة الذاتية / الوثائق (PDF، DOCX حتى 10 ميغابايت)",
+        uploadHint: "اختر ملفاً أو اسحبه إلى هنا",
+        privacy:
+          "أوافق على معالجة بياناتي الشخصية لغرض التوظيف والتدقيق الأولي في معادلة المؤهلات المهنية.",
+        submitBtn: "إرسال طلب التوظيف",
+        submitting: "جارٍ الإرسال...",
+        successTitle: "شكراً جزيلاً لتقديمك!",
+        successDesc:
+          "تم استلام وثائقك بنجاح من قبل فريق التوظيف. سنقوم بمراجعة ملفك بعناية والتواصل معك في أقرب وقت.",
+        resetBtn: "تقديم طلب آخر",
+      },
+      modal: {
+        badgePrefix: "المسار",
+        categoryLabel: "التخصص الطبي",
+        targetLabel: "الفئة المستهدفة",
+        scopeTitle: "الملف الوظيفي والمهام السريرية",
+        approbationTitle: "360° خدمة الترخيص والتأشيرة",
+        benefitsTitle: "المزايا وحزمة الأجور",
+        legalTitle: "الأسس والمعايير القانونية",
+        applyBtn: "التقديم لهذا المسار المهني",
+        closeBtn: "إغلاق النافذة",
+      },
+    },
   };
 
   const t =
@@ -1452,11 +2286,27 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
             <div className="max-w-xl lg:max-w-[540px] xl:max-w-[620px]">
               <nav className="flex items-center gap-2 text-xs sm:text-[12.5px] text-[#A2ADA4] mb-3.5 font-sans" aria-label="Breadcrumb">
                 <Link href={`/${locale}`} className="hover:text-[#D5B878] transition-colors">
-                  {locale === "ru" ? "Главная" : locale === "en" ? "Home" : "Startseite"}
+                  {locale === "ru"
+                    ? "Главная"
+                    : locale === "en"
+                    ? "Home"
+                    : locale === "tr"
+                    ? "Ana Sayfa"
+                    : locale === "ar"
+                    ? "الرئيسية"
+                    : "Startseite"}
                 </Link>
                 <span className="text-[#A2ADA4]/70 text-[10px] font-bold">›</span>
                 <span className="text-white/95 font-medium">
-                  {locale === "ru" ? "Карьера & Рекрутмент" : locale === "en" ? "Career & Recruitment" : "Karriere & Recruitment"}
+                  {locale === "ru"
+                    ? "Карьера & Рекрутмент"
+                    : locale === "en"
+                    ? "Career & Recruitment"
+                    : locale === "tr"
+                    ? "Kariyer ve İşe Alım"
+                    : locale === "ar"
+                    ? "الوظائف والتوظيف الطبي"
+                    : "Karriere & Recruitment"}
                 </span>
               </nav>
 

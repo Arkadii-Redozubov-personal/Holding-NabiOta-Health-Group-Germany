@@ -46,7 +46,7 @@ const portfolioIcons = [
  * langfristiger Werterhalt & rechtliche Abgrenzung (Keine Behandlungsaufgaben / § 34c GewO).
  */
 
-type Lang = "de" | "en" | "ru";
+type Lang = "de" | "en" | "ru" | "tr" | "ar";
 type T = Record<Lang, string>;
 type Icon = React.ComponentType<{ className?: string }>;
 
@@ -55,139 +55,277 @@ const c = {
     de: "GmbH · Medizinische Spezialimmobilien · § 34c GewO",
     en: "GmbH · Healthcare Real Estate · § 34c GewO",
     ru: "GmbH · Медицинская недвижимость · Нормы § 34c GewO",
+    tr: "GmbH · Özel Sağlık Gayrimenkulleri · § 34c GewO",
+    ar: "شركة ذات مسؤولية محدودة · العقارات الطبية المتخصصة · § 34c GewO",
   } as T,
   title: "NabiOta Real Estate GmbH",
   subtitle: {
     de: "Medizinische Spezialimmobilien & Infrastrukturentwicklung",
     en: "Specialized Healthcare Real Estate & Development",
     ru: "Специализированная медицинская недвижимость и девелопмент",
+    tr: "Özel Tıbbi Gayrimenkuller ve Altyapı Geliştirme",
+    ar: "العقارات الطبية المتخصصة وتطوير البنية التحتية",
   } as T,
   lead: {
     de: "Gegenstand des Unternehmens ist der Erwerb, das Halten, die Verwaltung, Entwicklung, Vermietung, Verpachtung und Veräußerung eigener Grundstücke, Gebäude und grundstücksgleicher Rechte, insbesondere von Immobilien für Einrichtungen des Gesundheitswesens. Ergänzend können Verwaltungs-, Lager- und Wohnflächen, insbesondere für Mitarbeiter, erworben, entwickelt und vermietet werden.",
     en: "The company's purpose is the acquisition, holding, management, development, leasing, renting, and disposition of own land, buildings, and property rights, specifically properties dedicated to healthcare facilities. In addition, administrative, storage, and residential spaces, in particular for employees, may be acquired, developed, and leased.",
     ru: "Предметом деятельности компании является приобретение, владение, управление, развитие, сдача в аренду, лизинг и продажа собственных земельных участков, зданий и вещных прав, в особенности недвижимости для учреждений здравоохранения. Дополнительно могут приобретаться, развиваться и сдаваться в аренду административные, складские и жилые помещения для сотрудников.",
+    tr: "Şirketin faaliyet konusu; sağlık tesislerine tahsis edilmiş gayrimenkuller başta olmak üzere mülkiyeti kendisine ait arsa, bina ve ayni hakların iktisabı, elde tutulması, yönetimi, geliştirilmesi, kiralanması, işletmeye verilmesi ve satışıdır. Buna ek olarak çalışanlar başta olmak üzere idari, lojistik ve konut amaçlı alanlar da iktisap edilebilir, geliştirilebilir ve kiralanabilir.",
+    ar: "يتمثل الغرض من الشركة في تملك وحيازة وإدارة وتطوير وتأجير والتصرف في الأراضي والمباني والحقوق العقارية الخاصة بها، لا سيما العقارات المخصصة لمؤسسات الرعاية الصحية. وبالإضافة إلى ذلك، يجوز تملك وتطوير وتأجير المساحات الإدارية ومستودعات التخزين والوحدات السكنية المخصصة للموظفين.",
   } as T,
 
   portfolioTitle: {
     de: "Immobilienportfolio im Gesundheitswesen",
     en: "Healthcare Property Asset Classes",
     ru: "Портфель объектов здравоохранения",
+    tr: "Sağlık Alanında Gayrimenkul Portföyü",
+    ar: "محفظة الأصول العقارية في قطاع الرعاية الصحية",
   } as T,
   portfolioItems: [
-    { de: "Klinikgebäude & Fachkrankenhäuser", en: "Clinic Buildings & Hospitals", ru: "Клинические корпуса и профильные больницы" },
-    { de: "Medizinische Versorgungszentren (MVZ)", en: "Medical Care Centers (MVZ)", ru: "Медицинские центры (MVZ)" },
-    { de: "Facharzt- & Hausarztpraxen", en: "Specialist & Physician Practices", ru: "Кабинеты и частные врачебные практики" },
-    { de: "Ambulante Operationszentren (OP)", en: "Outpatient Surgical Centers", ru: "Амбулаторные операционные комплексы" },
-    { de: "Diagnostik- & Radiologiezentren", en: "Diagnostic & Radiology Suites", ru: "Диагностические и радиологические центры" },
-    { de: "Therapie- & Rehabilitationseinrichtungen", en: "Therapy & Rehabilitation Facilities", ru: "Терапевтические и реабилитационные центры" },
-    { de: "Stationäre & ambulante Pflegeeinrichtungen", en: "Inpatient & Outpatient Nursing Homes", ru: "Стационарные и дневные учреждения ухода" },
-    { de: "Mitarbeiterwohnen, Verwaltung & Logistik", en: "Staff Housing, Administration & Storage", ru: "Жильё для сотрудников, офисы и склады" },
+    {
+      de: "Klinikgebäude & Fachkrankenhäuser",
+      en: "Clinic Buildings & Hospitals",
+      ru: "Клинические корпуса и профильные больницы",
+      tr: "Klinik Binaları ve İhtisas Hastaneleri",
+      ar: "مباني العيادات والمستشفيات التخصصية",
+    },
+    {
+      de: "Medizinische Versorgungszentren (MVZ)",
+      en: "Medical Care Centers (MVZ)",
+      ru: "Медицинские центры (MVZ)",
+      tr: "Tıp Merkezleri (MVZ)",
+      ar: "مراكز الرعاية الطبية (MVZ)",
+    },
+    {
+      de: "Facharzt- & Hausarztpraxen",
+      en: "Specialist & Physician Practices",
+      ru: "Кабинеты и частные врачебные практики",
+      tr: "Uzman ve Aile Hekimi Muayenehaneleri",
+      ar: "عيادات الأطباء الأخصائيين والعموميين",
+    },
+    {
+      de: "Ambulante Operationszentren (OP)",
+      en: "Outpatient Surgical Centers",
+      ru: "Амбулаторные операционные комплексы",
+      tr: "Günübirlik Cerrahi ve Ameliyathane Merkezleri",
+      ar: "مراكز الجراحة المتنقلة وعيادات العمليات",
+    },
+    {
+      de: "Diagnostik- & Radiologiezentren",
+      en: "Diagnostic & Radiology Suites",
+      ru: "Диагностические и радиологические центры",
+      tr: "Tanı ve Radyoloji Merkezleri",
+      ar: "مراكز التشخيص والأشعة التخصصية",
+    },
+    {
+      de: "Therapie- & Rehabilitationseinrichtungen",
+      en: "Therapy & Rehabilitation Facilities",
+      ru: "Терапевтические и реабилитационные центры",
+      tr: "Terapi ve Rehabilitasyon Tesisleri",
+      ar: "مرافق العلاج وإعادة التأهيل",
+    },
+    {
+      de: "Stationäre & ambulante Pflegeeinrichtungen",
+      en: "Inpatient & Outpatient Nursing Homes",
+      ru: "Стационарные и дневные учреждения ухода",
+      tr: "Yatılı ve Ayakta Bakım Merkezleri",
+      ar: "مرافق التمريض والإقامة النهارية والسريرية",
+    },
+    {
+      de: "Mitarbeiterwohnen, Verwaltung & Logistik",
+      en: "Staff Housing, Administration & Storage",
+      ru: "Жильё для сотрудников, офисы и склады",
+      tr: "Personel Konutları, Yönetim ve Lojistik Alanları",
+      ar: "سكن الموظفين والإدارة والمستودعات اللوجستية",
+    },
   ] as T[],
 
   tasksTitle: {
     de: "Die 10 Kernaufgaben der Gesellschaft",
     en: "The 10 Core Tasks of the Company",
     ru: "10 ключевых задач компании",
+    tr: "Şirketin 10 Temel Görevi",
+    ar: "المهام الأساسية العشر للشركة",
   } as T,
   tasks: [
     {
       num: "01",
       icon: Search as Icon,
-      title: { de: "Standortsuche & Bewertung", en: "Site Search & Valuation", ru: "Поиск и оценка локаций" } as T,
+      title: {
+        de: "Standortsuche & Bewertung",
+        en: "Site Search & Valuation",
+        ru: "Поиск и оценка локаций",
+        tr: "Konum Araştırması ve Değerleme",
+        ar: "البحث عن المواقع والتقييم الاستراتيجي",
+      } as T,
       desc: {
         de: "Suche und Bewertung geeigneter Standorte unter Berücksichtigung von Erreichbarkeit, Flächenbedarf, Erweiterungsmöglichkeiten und wirtschaftlicher Tragfähigkeit.",
         en: "Strategic site identification and assessment evaluating accessibility, spatial expansion potential, demographic demand, and long-term economic viability.",
         ru: "Поиск и оценка локаций с учётом транспортной доступности, потребности в площадях, потенциала расширения и экономической окупаемости.",
+        tr: "Erişilebilirlik, alan ihtiyacı, genişleme kapasitesi ve ekonomik sürdürülebilirlik gözetilerek en uygun sağlık lokasyonlarının araştırılması ve değerlemesi.",
+        ar: "البحث عن مواقع استراتيجية ملائمة وتقييمها مع مراعاة سهولة الوصول، والاحتياجات المساحية، وفرص التوسع المستقبلية، والجدوى الاقتصادية طويلة الأجل.",
       } as T,
     },
     {
       num: "02",
       icon: Scale as Icon,
-      title: { de: "Rechtliche & Technische Due Diligence", en: "Legal & Technical Due Diligence", ru: "Правовая и техническая экспертиза" } as T,
+      title: {
+        de: "Rechtliche & Technische Due Diligence",
+        en: "Legal & Technical Due Diligence",
+        ru: "Правовая и техническая экспертиза",
+        tr: "Hukuki ve Teknik İnceleme (Due Diligence)",
+        ar: "الفحص القانوني والفني النافي للجهالة",
+      } as T,
       desc: {
         de: "Organisation der rechtlichen, technischen und wirtschaftlichen Prüfung vor einem Immobilienerwerb unter Einbindung qualifizierter Fachberater.",
         en: "Structuring comprehensive legal, technical, structural, and financial audits prior to property acquisition, engaging accredited experts.",
         ru: "Организация юридического, строительно-технического и финансового аудита перед покупкой объектов с привлечением сертифицированных экспертов.",
+        tr: "Gayrimenkul alımı öncesinde bağımsız uzman danışmanlar eşliğinde hukuki, teknik, yapısal ve mali denetim süreçlerinin yürütülmesi.",
+        ar: "تنظيم وإجراء الفحص القانوني والفني والإنشائي والمالي الشامل قبل تملك العقارات بمشاركة خبراء واستشاريين معتمدين.",
       } as T,
     },
     {
       num: "03",
       icon: Layers as Icon,
-      title: { de: "Raum- & Nutzungskonzepte", en: "Clinical Space Planning", ru: "Планировочные концепции" } as T,
+      title: {
+        de: "Raum- & Nutzungskonzepte",
+        en: "Clinical Space Planning",
+        ru: "Планировочные концепции",
+        tr: "Klinik Mekân ve Kullanım Planlaması",
+        ar: "تخطيط المساحات والمفاهيم السريرية",
+      } as T,
       desc: {
         de: "Entwicklung von Raum- und Nutzungskonzepten in enger Abstimmung mit den vorgesehenen medizinischen und therapeutischen Betreibern.",
         en: "Developing functional layout and clinical utilization concepts strictly synchronized with designated medical and therapy operators.",
         ru: "Разработка функциональных планировок и концепций использования помещений в тесном согласовании с оперирующими врачами и клиниками.",
+        tr: "Hizmet verecek tıbbi ve terapötik işletmeciler ile birebir koordinasyon içinde işlevsel mekân, yerleşim ve kullanım planlarının hazırlanması.",
+        ar: "تطوير مفاهيم التوزيع المكاني والاستخدام الوظيفي بالتنسيق الوثيق والمباشر مع المشغلين الطبيين والعلاجيين المعتمدين.",
       } as T,
     },
     {
       num: "04",
       icon: Building2 as Icon,
-      title: { de: "Neubau, Umbau & Sanierung", en: "New Construction & Modernization", ru: "Строительство, реконструкция и санация" } as T,
+      title: {
+        de: "Neubau, Umbau & Sanierung",
+        en: "New Construction & Modernization",
+        ru: "Строительство, реконструкция и санация",
+        tr: "Yeni Yapım, Yenileme ve Dönüşüm",
+        ar: "البناء الجديد والتحديث والترميم",
+      } as T,
       desc: {
         de: "Vorbereitung und Koordination von Neubauten, Umbauten, Sanierungen, Modernisierungen und Nutzungsänderungen eigener Immobilien.",
         en: "Orchestrating new turnkey builds, spatial remodeling, structural rehabilitations, and official zoning/usage conversions for group assets.",
         ru: "Подготовка и координация нового строительства, перепланировок, санации, модернизации и перевода помещений в статус медицинских объектов.",
+        tr: "Holding bünyesindeki mülklerin anahtar teslim yeni inşası, tadilatı, modernizasyonu ve tıbbi kullanım amaçlı imar/tahsis dönüşümlerinin yönetimi.",
+        ar: "إعداد وتنسيق مشاريع البناء الجديد، وإعادة التهيئة، والتحديث الشامل، وتعديل استخدام المباني لتتوافق مع المعايير الطبية المعتمدة.",
       } as T,
     },
     {
       num: "05",
       icon: HardHat as Icon,
-      title: { de: "Planer- & Bausteuerung", en: "Architect & Contractor Management", ru: "Управление проектировщиками и генподрядчиками" } as T,
+      title: {
+        de: "Planer- & Bausteuerung",
+        en: "Architect & Contractor Management",
+        ru: "Управление проектировщиками и генподрядчиками",
+        tr: "Mimar ve Yüklenici Süreç Yönetimi",
+        ar: "إدارة المصممين والمقاولين الإنشائيين",
+      } as T,
       desc: {
         de: "Beauftragung und Koordination von Architekten, Fachplanern, Bauunternehmen und weiteren qualifizierten Dienstleistern.",
         en: "Commissioning and supervising healthcare architects, MEP engineers, general contractors, and specialized clinical construction trades.",
         ru: "Тендерный отбор и управление профильными архитекторами, инженерами спецсетей, генподрядчиками и строительными компаниями.",
+        tr: "Sağlık mimarları, uzman mühendisler, ana yükleniciler ve uzman medikal inşaat firmalarının ihale, görevlendirme ve saha denetimi.",
+        ar: "التعاقد مع مهندسي العمارة الطبية المتخصصة، والمخططين المعتمدين، وشركات المقاولات العامة والإشراف المباشر على تنفيذ أعمالهم.",
       } as T,
     },
     {
       num: "06",
       icon: Clock as Icon,
-      title: { de: "Budget-, Bauzeit- & Terminkontrolle", en: "Budget & Milestone Monitoring", ru: "Контроль бюджетов, сроков и графиков" } as T,
+      title: {
+        de: "Budget-, Bauzeit- & Terminkontrolle",
+        en: "Budget & Milestone Monitoring",
+        ru: "Контроль бюджетов, сроков и графиков",
+        tr: "Bütçe, Süre ve Takvim Kontrolü",
+        ar: "مراقبة الميزانيات والجداول الزمنية",
+      } as T,
       desc: {
         de: "Planung und Überwachung von Investitionsbudgets, Bauzeiten, Meilensteinen und kontinuierlichen Projektfortschritten.",
         en: "Precise allocation, oversight, and auditing of capital expenditure (CapEx) budgets, construction schedules, and milestone delivery.",
         ru: "Планирование и строгий мониторинг инвестиционных бюджетов, сроков выполнения работ и проектных контрольных точек.",
+        tr: "Yatırım bütçelerinin, inşaat sürelerinin, kritik kilometre taşlarının ve proje ilerleme aşamalarının hassas planlanması ve sürekli denetimi.",
+        ar: "تخطيط ومراقبة ميزانيات الاستثمار الرأسمالي، وجداول البناء، والمراحل المفصلية لضمان التقدم المستمر وفق الخطة المعتمدة.",
       } as T,
     },
     {
       num: "07",
       icon: Wrench as Icon,
-      title: { de: "Technisches Facility Management", en: "Technical Facility Management", ru: "Техническая эксплуатация зданий" } as T,
+      title: {
+        de: "Technisches Facility Management",
+        en: "Technical Facility Management",
+        ru: "Техническая эксплуатация зданий",
+        tr: "Teknik Tesis ve Bina Yönetimi",
+        ar: "إدارة المرافق والتشغيل الفني",
+      } as T,
       desc: {
         de: "Organisation der Instandhaltung, Wartung, Gebäudesicherheit und kontinuierlichen technischen Gebäudeverwaltung.",
         en: "Operational governance of preventive maintenance, building service engineering, medical gas supply, and 24/7 technical facility safety.",
         ru: "Организация регулярного техобслуживания, ремонта, инженерных сетей и комплексного управления зданиями.",
+        tr: "Koruyucu bakım, onarım, bina güvenliği, medikal gaz ve bina teknolojilerinin 7/24 kesintisiz teknik yönetimi ve işletimi.",
+        ar: "تنظيم أعمال الصيانة الدورية، والإصلاح، والسلامة الإنشائية، وإدارة النظم الهندسية والغازات الطبية في المنشآت على مدار الساعة.",
       } as T,
     },
     {
       num: "08",
       icon: Flame as Icon,
-      title: { de: "Barrierefreiheit, Brandschutz & Energie", en: "Accessibility, Fire Safety & ESG", ru: "Безбарьерность, пожарная безопасность и ESG" } as T,
+      title: {
+        de: "Barrierefreiheit, Brandschutz & Energie",
+        en: "Accessibility, Fire Safety & ESG",
+        ru: "Безбарьерность, пожарная безопасность и ESG",
+        tr: "Erişilebilirlik, Yangın Güvenliği ve Enerji",
+        ar: "سهولة الوصول، السلامة من الحرائق ومعايير ESG",
+      } as T,
       desc: {
         de: "Koordination von Maßnahmen zur Barrierefreiheit (DIN 18040), zum baulichen Brandschutz, zur Energieeffizienz und zur Spezialtechnik.",
         en: "Implementing DIN 18040 accessibility standards, specialized healthcare fire compartments, clean energy concepts, and HVAC ventilation.",
         ru: "Реализация норм безбарьерной среды (DIN 18040), противопожарной защиты клиник, энергоэффективности и вентиляционных систем.",
+        tr: "DIN 18040 engelsiz erişim standartları, sağlık binalarına özel yangın kompartımanları, enerji verimliliği ve iklimlendirme sistemlerinin uygulanması.",
+        ar: "تطبيق معايير DIN 18040 للوصول الشامل، واشتراطات الوقاية من الحرائق في المنشآت الطبية، وحلول كفاءة الطاقة والتهوية المتقدمة.",
       } as T,
     },
     {
       num: "09",
       icon: Receipt as Icon,
-      title: { de: "Miet- & Betriebskostenmanagement", en: "Lease & Operating Cost Governance", ru: "Управление арендой и коммунальными расходами" } as T,
+      title: {
+        de: "Miet- & Betriebskostenmanagement",
+        en: "Lease & Operating Cost Governance",
+        ru: "Управление арендой и коммунальными расходами",
+        tr: "Kira ve İşletme Giderleri Yönetimi",
+        ar: "إدارة عقود الإيجار والتكاليف التشغيلية",
+      } as T,
       desc: {
         de: "Abschluss und Verwaltung von Miet-, Pacht- und Nutzungsverträgen sowie Organisation transparenter Betriebskostenabrechnungen.",
         en: "Drafting and administering commercial healthcare leases, occupancy agreements, and auditable operating/utility cost accounting.",
         ru: "Заключение и администрирование договоров аренды, лизинга помещений и ведение прозрачных расчётов эксплуатационных расходов.",
+        tr: "Kira, intifa ve tahsis sözleşmelerinin akdedilmesi ve idaresi ile şeffaf işletme ve genel gider faturalandırma organizasyonu.",
+        ar: "إبرام وإدارة عقود الإيجار والانتفاع التجاري الطبي وتنظيم الحسابات الشفافة والموثقة لتكاليف التشغيل والمرافق.",
       } as T,
     },
     {
       num: "10",
       icon: Landmark as Icon,
-      title: { de: "Finanzierung & Fördermittel", en: "Capital Financing & Public Subsidies", ru: "Финансирование и государственные субсидии" } as T,
+      title: {
+        de: "Finanzierung & Fördermittel",
+        en: "Capital Financing & Public Subsidies",
+        ru: "Финансирование и государственные субсидии",
+        tr: "Finansman ve Kamu Teşvikleri",
+        ar: "تمويل الأصول والمنح الحكومية",
+      } as T,
       desc: {
         de: "Vorbereitung der Finanzierung eigener Immobilienvorhaben und Prüfung geeigneter Förderprogramme (KfW, Landesbanken).",
         en: "Structuring capital financing models and securing public development grants and low-interest green loans (KfW, state development banks).",
         ru: "Структурирование проектного финансирования и привлечение государственных программ субсидирования (KfW, земельные банки развития).",
+        tr: "Gayrimenkul projelerinin sermaye finansmanının yapılandırılması ve kamu kalkınma fonları ile yeşil kredi teşviklerinin (KfW vb.) incelenmesi.",
+        ar: "هيكلة النماذج التمويلية الرأسمالية للمشاريع الخاصة والاستفادة القصوى من برامج الدعم والمنح والقروض الميسرة (KfW والبنوك التنموية).",
       } as T,
     },
   ],
@@ -196,33 +334,45 @@ const c = {
     de: "Miet- und Investitionsvereinbarungen mit Betreibern",
     en: "Lease & Investment Governance with Clinical Operators",
     ru: "Договорные соглашения об аренде и инвестициях с операторами",
+    tr: "İşletmecilerle Kira ve Yatırım Anlaşmaları",
+    ar: "اتفاقيات الإيجار والاستثمار مع المشغلين الطبيين",
   } as T,
   agreementsText: {
     de: "Miet- und Investitionsvereinbarungen werden individuell mit den jeweiligen medizinischen Betreibern abgestimmt. Dabei werden Nutzungszweck, Flächenumfang, Ausstattungsstandard, Investitionsbeiträge, Instandhaltungspflichten, technische Verantwortlichkeiten und Vertragslaufzeiten eindeutig und transparent geregelt.",
     en: "Lease and capital expenditure agreements are negotiated on a custom basis with clinical operators. Purpose of use, floor space, equipment standards, CapEx contributions, maintenance duties, technical liabilities, and lease terms are explicitly and unambiguously formalized.",
     ru: "Договоры аренды и инвестиционные соглашения детально согласуются с медицинскими операторами. Целевое назначение, площади, стандарты отделки, доли инвестиций, обязанности по ТО, техническая ответственность и сроки договоров фиксируются прозрачно и однозначно.",
+    tr: "Kira ve sermaye yatırımı anlaşmaları ilgili tıbbi işletmecilerle özel olarak kararlaştırılır. Kullanım amacı, alan büyüklüğü, donanım standartları, yatırım katkıları, bakım yükümlülükleri, teknik sorumluluklar ve sözleşme süreleri açık, şeffaf ve bağlayıcı biçimde düzenlenir.",
+    ar: "يتم التفاوض على اتفاقيات الإيجار والمساهمات الاستثمارية بصورة فردية ومخصصة مع المشغلين الطبيين المعنيين. ويتم تحديد الغرض من الاستخدام، والمساحات، ومعايير التجهيز، وحصص الاستثمار، والتزامات الصيانة، والمسؤوليات الفنية، ومدد العقود بكل شفافية ودقة.",
   } as T,
 
   goalTitle: {
     de: "Ziel der Gesellschaft: Nachhaltiger Werterhalt",
     en: "Corporate Mandate: Sustainable Value Preservation",
     ru: "Цель компании: долгосрочное сохранение стоимости",
+    tr: "Şirketin Amacı: Sürdürülebilir Değer Korunması",
+    ar: "هدف الشركة: الاستدامة والحفاظ طويل الأجل على قيمة الأصول",
   } as T,
   goalText: {
     de: "Ziel der Gesellschaft ist die langfristige Bereitstellung geeigneter und wirtschaftlich tragfähiger Immobilien für die NabiOta-Unternehmensgruppe und weitere Mieter. Sie unterstützt den Aufbau zusätzlicher Standorte, die bedarfsgerechte Erweiterung bestehender Einrichtungen und den nachhaltigen Werterhalt des Immobilienbestands.",
     en: "The company's mission is the sustainable provision of high-grade, economically resilient real estate assets for the NabiOta Group and external tenants, accelerating new hub development, tailored capacity expansion, and enduring value preservation.",
     ru: "Цель компании — долгосрочное обеспечение пригодной и экономически окупаемой недвижимости для группы NabiOta и сторонних арендаторов. Компания поддерживает запуск новых локаций, планомерное расширение действующих центров и сохранение капитализации активов.",
+    tr: "Şirketin hedefi; NabiOta Şirketler Grubu ve harici kiracılar için uygun, nitelikli ve ekonomik açıdan sürdürülebilir gayrimenkullerin uzun vadeli teminidir. Yeni lokasyonların kurulmasını, mevcut merkezlerin genişletilmesini ve gayrimenkul portföyünün kalıcı değer artışını destekler.",
+    ar: "يتمثل هدف الشركة في التوفير المستدام لعقارات عالية الجودة وذات جدوى اقتصادية متينة لمجموعة شركات NabiOta والمستأجرين الآخرين. تدعم الشركة إنشاء مواقع إضافية، والتوسع المدروس للمرافق الحالية، وصون القيمة الرأسمالية طويلة الأجل للأصول.",
   } as T,
 
   governanceEyebrow: {
     de: "RECHTLICHE RAHMENBEDINGUNGEN & COMPLIANCE",
     en: "STATUTORY FRAMEWORK & COMPLIANCE",
     ru: "ПРАВОВЫЕ ОСНОВЫ И КОМПЛАЕНС",
+    tr: "YASAL ÇERÇEVE VE UYUMLULUK (COMPLIANCE)",
+    ar: "الأطر القانونية والامتثال التنظيمي",
   } as T,
   governanceTitle: {
     de: "Rechtliche Abgrenzung & Gesetzliche Pflichten (§ 34c GewO)",
     en: "Regulatory Separation & Statutory Licensing (§ 34c GewO)",
     ru: "Правовое разграничение и требования к лицензированию (§ 34c GewO)",
+    tr: "Yasal Ayrım ve Ruhsatlandırma Yükümlülükleri (§ 34c GewO)",
+    ar: "الفصل التنظيمي والالتزامات القانونية للتراخيص (§ 34c GewO)",
   } as T,
   governanceItems: [
     {
@@ -231,11 +381,15 @@ const c = {
         de: "Keine medizinischen Behandlungsaufgaben",
         en: "No Clinical Treatment Mandate",
         ru: "Компания не ведёт медицинскую деятельность",
+        tr: "Tıbbi Tedavi Görevi Üstlenilmez",
+        ar: "عدم تولي مهام العلاج الطبي المباشر",
       } as T,
       desc: {
         de: "Die Immobiliengesellschaft übernimmt keine medizinischen Behandlungsaufgaben. Die Verantwortlichkeiten für Gebäude, technische Anlagen und den medizinischen Betrieb werden unter Beachtung zwingender gesetzlicher Pflichten vertraglich strikt voneinander abgegrenzt.",
         en: "The real estate company does not provide medical services. Liabilities for building structures, physical plant engineering, and healthcare operations are contractually decoupled under strict observance of statutory duties.",
         ru: "Девелоперская компания не осуществляет лечебных процедур. Ответственность за строительные конструкции, инженерные сети здания и непосредственную медицинскую практику операторов разграничена договорами.",
+        tr: "Gayrimenkul şirketi tıbbi tedavi hizmeti sunmaz. Bina, teknik altyapı ve tıbbi işletme sorumlulukları emredici yasal kurallar gözetilerek sözleşmelerle kesin hatlarla ayrılmıştır.",
+        ar: "لا تتولى شركة العقارات أية مهام علاجية أو طبية. يتم الفصل التعاقدي الصارم بين المسؤوليات المتعلقة بالمباني والمرافق الهندسية من جهة، والتشغيل الطبي للمنشآت من جهة أخرى وفق القوانين الإلزامية.",
       } as T,
     },
     {
@@ -244,11 +398,15 @@ const c = {
         de: "Behördliche Bau- & Betriebsgenehmigungen",
         en: "Statutory Building & Operating Permits",
         ru: "Официальные строительные и эксплуатационные допуски",
+        tr: "Resmi İnşaat ve İşletme Ruhsatları",
+        ar: "تصاريح البناء والتشغيل الرسمية",
       } as T,
       desc: {
         de: "Die erforderlichen bau-, nutzungs- und betriebsbezogenen Genehmigungen werden an jedem Standort vor Aufnahme der jeweiligen medizinischen Nutzung vollständig eingeholt.",
         en: "All mandated zoning, structural building codes, occupancy permissions, and clinical operational licenses are fully obtained before healthcare practice commences at any site.",
         ru: "Все необходимые разрешения на строительство, санитарно-гигиенические допуски и перевод помещений в статус медицинских получаются до начала приёма пациентов.",
+        tr: "Gerekli imar, kullanım ve işletme ruhsatları her lokasyonda tıbbi faaliyete başlanmadan önce eksiksiz olarak temin edilir.",
+        ar: "يتم استيفاء واستخراج كافة التراخيص والتصاريح المعمارية والتشغيلية والتنظيمية في كل موقع بشكل كامل قبل البدء الفعلي في الممارسة الطبية.",
       } as T,
     },
     {
@@ -257,18 +415,22 @@ const c = {
         de: "Erlaubnispflicht nach § 34c Gewerbeordnung (GewO)",
         en: "Licensing Requirements under § 34c GewO",
         ru: "Лицензирование по § 34c промыслового устава (GewO)",
+        tr: "§ 34c GewO Kapsamında İzin Yükümlülüğü",
+        ar: "التراخيص الإلزامية بموجب المادة § 34c من قانون التجارة (GewO)",
       } as T,
       desc: {
         de: "Erlaubnispflichtige Tätigkeiten, insbesondere Immobilienvermittlung, Bauträger- und Baubetreuertätigkeiten sowie Wohnimmobilienverwaltung für Dritte, werden ausschließlich nach Vorliegen der jeweils erforderlichen behördlichen Erlaubnis nach § 34c GewO ausgeübt.",
         en: "Regulated activities, specifically property brokerage, real estate development (Bauträger), construction supervision (Baubetreuer), and third-party residential property management, are carried out strictly following receipt of statutory permits under § 34c GewO.",
         ru: "Виды деятельности, требующие разрешения (риелторское посредничество, функции застройщика/девелопера и управление чужой жилой недвижимостью), осуществляются исключительно при наличии специальной лицензии по § 34c GewO.",
+        tr: "İzne tabi faaliyetler, özellikle gayrimenkul aracılığı, müteahhitlik/geliştiricilik ve üçüncü şahıslara ait konut yönetimi, yalnızca § 34c GewO uyarınca resmi makam izinleri alındıktan sonra icra edilir.",
+        ar: "الأنشطة الخاضعة للتراخيص القانونية، ولا سيما الوساطة العقارية وأعمال التطوير العقاري وإدارة العقارات السكنية للغير، تُمارس حصرياً بعد الحصول المسبق على التصريح الرسمي الإلزامي بموجب المادة § 34c GewO.",
       } as T,
     },
   ],
 };
 
 export function RealEstateCompanySection({ locale = "de" }: { locale?: string }) {
-  const l: Lang = locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
+  const l: Lang = locale === "tr" ? "tr" : locale === "ar" ? "ar" : locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
 
   return (
     <section

@@ -43,22 +43,26 @@ export async function generateMetadata({ params }: LocalizedImprintProps): Promi
 
 export default async function LocalizedImprintPage({ params }: LocalizedImprintProps) {
   const { locale } = await params;
+  const isRu = locale === "ru";
+  const isEn = locale === "en";
+  const isTr = locale === "tr";
+  const isAr = locale === "ar";
 
   const imprintBadges = [
     {
       icon: <Scale className="w-5 h-5 text-[#ECCF96]" />,
-      title: locale === "ru" ? "Правовые" : locale === "en" ? "Legal" : "Rechtssicherheit",
-      sub: locale === "ru" ? "Нормы (§5 TMG)" : locale === "en" ? "Compliance" : "nach § 5 TMG",
+      title: isRu ? "Правовые" : isEn ? "Legal" : isTr ? "Yasal" : isAr ? "الامتثال" : "Rechtssicherheit",
+      sub: isRu ? "Нормы (§5 TMG)" : isEn ? "Compliance" : isTr ? "Uyum (§ 5 TMG)" : isAr ? "القانوني (§ 5 TMG)" : "nach § 5 TMG",
     },
     {
       icon: <Building2 className="w-5 h-5 text-[#ECCF96]" />,
-      title: locale === "ru" ? "Структура" : locale === "en" ? "Corporate" : "NabiOta GmbH",
-      sub: locale === "ru" ? "Холдинга" : locale === "en" ? "Structure" : "Holding",
+      title: isRu ? "Структура" : isEn ? "Corporate" : isTr ? "Kurumsal" : isAr ? "الهيكل" : "NabiOta GmbH",
+      sub: isRu ? "Холдинга" : isEn ? "Structure" : isTr ? "Holding Yapısı" : isAr ? "المؤسسي" : "Holding",
     },
     {
       icon: <FileCheck className="w-5 h-5 text-[#ECCF96]" />,
-      title: locale === "ru" ? "Прозрачность" : locale === "en" ? "Registry" : "Transparenz",
-      sub: locale === "ru" ? "И Реестр" : locale === "en" ? "Transparency" : "& Register",
+      title: isRu ? "Прозрачность" : isEn ? "Registry" : isTr ? "Şeffaflık" : isAr ? "الشفافية" : "Transparenz",
+      sub: isRu ? "И Реестр" : isEn ? "Transparency" : isTr ? "ve Sicil Kaydı" : isAr ? "والسجل التجاري" : "& Register",
     },
   ];
 
@@ -69,24 +73,36 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
         <PageHero
           locale={locale}
           eyebrow={
-            locale === "ru"
+            isRu
               ? "ЮРИДИЧЕСКАЯ ИНФОРМАЦИЯ"
-              : locale === "en"
+              : isEn
               ? "LEGAL NOTICE"
+              : isTr
+              ? "YASAL BİLGİLER"
+              : isAr
+              ? "بيانات النشر القانونية"
               : "RECHTLICHE PFLICHTANGABEN"
           }
           title={
-            locale === "ru"
+            isRu
               ? "Выходные данные (Impressum)"
-              : locale === "en"
+              : isEn
               ? "Imprint & Legal Notice"
+              : isTr
+              ? "Künye ve Yasal Bilgiler"
+              : isAr
+              ? "بيانات النشر القانونية (Impressum)"
               : "Impressum"
           }
           description={
-            locale === "ru"
+            isRu
               ? "Сведения в соответствии с § 5 Закона о средствах телекоммуникации Германии (TMG) и § 18 разд. 2 MStV."
-              : locale === "en"
+              : isEn
               ? "Information pursuant to § 5 Telemedia Act (TMG) and § 18 para. 2 Interstate Media Treaty (MStV)."
+              : isTr
+              ? "Alman Telemedya Yasası (§ 5 TMG) ve Devlet Medya Anlaşması (§ 18 Fıkra 2 MStV) uyarınca yasal bildirimler."
+              : isAr
+              ? "معلومات وبيانات النشر الإلزامية بموجب المادة § 5 من قانون خدمات الوسائط الإلكترونية الألماني (TMG) والمادة § 18 الفقرة 2 من اتفاقية وسائل الإعلام (MStV)."
               : "Angaben gemäß § 5 Telemediengesetz (TMG) und § 18 Abs. 2 Medienstaatsvertrag (MStV)."
           }
           imageSrc="/images/heroes/hero-campus.webp"
@@ -99,21 +115,29 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
             <div className="bg-white p-8 sm:p-12 lg:p-14 rounded-3xl border border-forest-900/10 shadow-sm space-y-8 text-sm sm:text-base text-text-secondary leading-relaxed font-sans">
               <div>
                 <h2 className="font-display text-2xl text-forest-950 mb-3">
-                  {locale === "ru" ? "Поставщик услуг" : locale === "en" ? "Service Provider" : "Diensteanbieter"}
+                  {isRu ? "Поставщик услуг" : isEn ? "Service Provider" : isTr ? "Hizmet Sağlayıcı" : isAr ? "الجهة المقدمة للخدمة" : "Diensteanbieter"}
                 </h2>
                 <p className="font-semibold text-forest-950">{companyInfo.legalName}</p>
                 <p>{companyInfo.street}</p>
                 <p>{companyInfo.postalCode} {companyInfo.city}</p>
-                <p>{companyInfo.country}</p>
+                <p>{isTr ? "Almanya" : isAr ? "ألمانيا" : companyInfo.country}</p>
               </div>
 
               <div className="pt-6 border-t border-forest-900/10">
                 <h2 className="font-display text-2xl text-forest-950 mb-3">
-                  {locale === "ru" ? "Уполномоченные представители" : locale === "en" ? "Authorized Representatives" : "Vertretungsberechtigte"}
+                  {isRu ? "Уполномоченные представители" : isEn ? "Authorized Representatives" : isTr ? "Temsile Yetkili Kişiler" : isAr ? "الممثلون القانونيون والمفوضون بالتوقيع" : "Vertretungsberechtigte"}
                 </h2>
                 <p>
                   <strong className="text-forest-950 font-medium">
-                    {locale === "ru" ? "В лице руководства:" : locale === "en" ? "Represented by the Management Board:" : "Vertreten durch die Geschäftsführung:"}
+                    {isRu
+                      ? "В лице руководства:"
+                      : isEn
+                      ? "Represented by the Management Board:"
+                      : isTr
+                      ? "Yönetim kurulu adına:"
+                      : isAr
+                      ? "تمثيل الإدارة التنفيذية:"
+                      : "Vertreten durch die Geschäftsführung:"}
                   </strong>
                   <br />
                   {companyInfo.managingDirector}
@@ -121,7 +145,15 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
                 {companyInfo.medicalFounder && (
                   <p className="mt-2">
                     <strong className="text-forest-950 font-medium">
-                      {locale === "ru" ? "Учредитель / Врач-основатель:" : locale === "en" ? "Founding Licensed Physician:" : "Gründungsberechtigter Vertragsarzt:"}
+                      {isRu
+                        ? "Учредитель / Врач-основатель:"
+                        : isEn
+                        ? "Founding Licensed Physician:"
+                        : isTr
+                        ? "Kurucu Sözleşmeli Hekim:"
+                        : isAr
+                        ? "الطبيب المؤسس المتعاقد:"
+                        : "Gründungsberechtigter Vertragsarzt:"}
                     </strong>
                     <br />
                     {companyInfo.medicalFounder}
@@ -131,16 +163,16 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
 
               <div className="pt-6 border-t border-forest-900/10">
                 <h2 className="font-display text-2xl text-forest-950 mb-3">
-                  {locale === "ru" ? "Контакты" : locale === "en" ? "Contact" : "Kontakt"}
+                  {isRu ? "Контакты" : isEn ? "Contact" : isTr ? "İletişim" : isAr ? "الاتصال" : "Kontakt"}
                 </h2>
                 <p>
-                  Telefon (Sekretariat): {companyInfo.phones.sekretariat}
+                  {isTr ? "Telefon (Sekreterlik): " : isAr ? "الهاتف (السكرتارية): " : "Telefon (Sekretariat): "}{companyInfo.phones.sekretariat}
                   <br />
-                  Telefon (Aufnahme): {companyInfo.phones.aufnahme}
+                  {isTr ? "Telefon (Hasta Kabul): " : isAr ? "الهاتف (استقبال المرضى): " : "Telefon (Aufnahme): "}{companyInfo.phones.aufnahme}
                   <br />
-                  Telefon (Geschäftsführung): {companyInfo.phones.geschaeftsfuehrung}
+                  {isTr ? "Telefon (Yönetim): " : isAr ? "الهاتف (الإدارة): " : "Telefon (Geschäftsführung): "}{companyInfo.phones.geschaeftsfuehrung}
                   <br />
-                  Telefax: {companyInfo.phones.fax}
+                  {isTr ? "Faks: " : isAr ? "الفاكس: " : "Telefax: "}{companyInfo.phones.fax}
                 </p>
                 <p className="mt-2">
                   E-Mail:{" "}
@@ -157,24 +189,50 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
 
               <div className="pt-6 border-t border-forest-900/10">
                 <h2 className="font-display text-2xl text-forest-950 mb-3">
-                  {locale === "ru" ? "Реестровая запись" : locale === "en" ? "Register Entry" : "Registereintrag"}
+                  {isRu ? "Реестровая запись" : isEn ? "Register Entry" : isTr ? "Ticaret Sicil Kaydı" : isAr ? "بيانات السجل التجاري" : "Registereintrag"}
                 </h2>
                 <p>
-                  {locale === "ru" ? "Внесение в торговый реестр:" : locale === "en" ? "Commercial Register Entry:" : "Eintragung im Handelsregister."}
+                  {isRu
+                    ? "Внесение в торговый реестр:"
+                    : isEn
+                    ? "Commercial Register Entry:"
+                    : isTr
+                    ? "Ticaret Siciline Kayıt:"
+                    : isAr
+                    ? "القيد في السجل التجاري:"
+                    : "Eintragung im Handelsregister."}
                   <br />
-                  Registergericht: {companyInfo.commercialRegister.court}
+                  {isTr ? "Sicil Mahkemesi: " : isAr ? "محكمة السجل: " : "Registergericht: "}{companyInfo.commercialRegister.court}
                   <br />
-                  Handelsregisternummer: {companyInfo.commercialRegister.number}
+                  {isTr ? "Ticaret Sicil Numarası: " : isAr ? "رقم السجل التجاري: " : "Handelsregisternummer: "}{companyInfo.commercialRegister.number}
                   {companyInfo.registrationDate && (
                     <>
                       <br />
-                      {locale === "ru" ? "Дата регистрации:" : locale === "en" ? "Registration Date:" : "Datum der Eintragung:"} {companyInfo.registrationDate}
+                      {isRu
+                        ? "Дата регистрации:"
+                        : isEn
+                        ? "Registration Date:"
+                        : isTr
+                        ? "Tescil Tarihi:"
+                        : isAr
+                        ? "تاريخ القيد:"
+                        : "Datum der Eintragung:"}{" "}
+                      {companyInfo.registrationDate}
                     </>
                   )}
                   {companyInfo.shareCapital && (
                     <>
                       <br />
-                      {locale === "ru" ? "Уставный капитал:" : locale === "en" ? "Share Capital:" : "Stammkapital:"} {companyInfo.shareCapital}
+                      {isRu
+                        ? "Уставный капитал:"
+                        : isEn
+                        ? "Share Capital:"
+                        : isTr
+                        ? "Esas Sermaye:"
+                        : isAr
+                        ? "رأس المال المسجل:"
+                        : "Stammkapital:"}{" "}
+                      {companyInfo.shareCapital}
                     </>
                   )}
                 </p>
@@ -182,10 +240,18 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
 
               <div className="pt-6 border-t border-forest-900/10">
                 <h2 className="font-display text-2xl text-forest-950 mb-3">
-                  {locale === "ru" ? "Идентификационный номер налогоплательщика" : locale === "en" ? "VAT Identification Number" : "Umsatzsteuer-Identifikationsnummer"}
+                  {isRu ? "Идентификационный номер налогоплательщика" : isEn ? "VAT Identification Number" : isTr ? "KDV Kimlik Numarası" : isAr ? "الرقم التعريفي لضريبة القيمة المضافة" : "Umsatzsteuer-Identifikationsnummer"}
                 </h2>
                 <p>
-                  Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:
+                  {isRu
+                    ? "Идентификационный номер плательщика НДС согласно § 27a Закона о налоге на добавленную стоимость Германии:"
+                    : isEn
+                    ? "VAT identification number pursuant to § 27a Value Added Tax Act:"
+                    : isTr
+                    ? "Alman Katma Değer Vergisi Kanunu § 27a uyarınca KDV Kimlik Numarası:"
+                    : isAr
+                    ? "الرقم التعريفي لضريبة القيمة المضافة بموجب المادة § 27a من قانون ضريبة القيمة المضافة الألماني:"
+                    : "Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:"}
                   <br />
                   <strong className="text-forest-950 font-semibold">
                     {companyInfo.commercialRegister.vatId}
@@ -195,7 +261,7 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
 
               <div className="pt-6 border-t border-forest-900/10">
                 <h2 className="font-display text-2xl text-forest-950 mb-3">
-                  {locale === "ru" ? "Ответственный за содержание" : locale === "en" ? "Responsible for Editorial Content" : "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV"}
+                  {isRu ? "Ответственный за содержание" : isEn ? "Responsible for Editorial Content" : isTr ? "İçerikten Sorumlu Kişi (§ 18 Fıkra 2 MStV)" : isAr ? "المسؤول عن المحتوى التحريري بموجب المادة § 18 الفقرة 2 MStV" : "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV"}
                 </h2>
                 <p>
                   {companyInfo.commercialRegister.responsiblePerson}
@@ -206,27 +272,67 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
 
               <div className="pt-6 border-t border-forest-900/10">
                 <h2 className="font-display text-2xl text-forest-950 mb-3">
-                  {locale === "ru" ? "Защита товарного знака и авторское право" : locale === "en" ? "Trademark & Copyright Protection" : "Markenschutz"}
+                  {isRu ? "Защита товарного знака и авторское право" : isEn ? "Trademark & Copyright Protection" : isTr ? "Marka ve Telif Hakkı Koruması" : isAr ? "حماية العلامة التجارية وحقوق النشر" : "Markenschutz"}
                 </h2>
                 <p>
-                  NabiOta® ist eine eingetragene und geschützte Marke der NabiOta® Health Group Germany GmbH. Die Nutzung der Marke, der Logos, Unternehmenskennzeichen sowie sonstiger geschützter Bestandteile bedarf der vorherigen schriftlichen Zustimmung der Rechteinhaberin.
+                  {isRu
+                    ? "NabiOta® является зарегистрированным и охраняемым законом товарным знаком NabiOta® Health Group Germany GmbH. Использование товарного знака, логотипов, фирменных наименований и иных охраняемых элементов допускается только с предварительного письменного согласия правообладателя."
+                    : isEn
+                    ? "NabiOta® is a registered and protected trademark of NabiOta® Health Group Germany GmbH. Any use of the trademark, logos, corporate identifiers, or other protected assets requires the prior written consent of the rights holder."
+                    : isTr
+                    ? "NabiOta®, NabiOta® Health Group Germany GmbH'nin tescilli ve koruma altındaki markasıdır. Markanın, logoların, kurumsal unvanların ve diğer korunan unsurların kullanımı hak sahibinin önceden yazılı iznine tabidir."
+                    : isAr
+                    ? "NabiOta® هي علامة تجارية مسجلة ومحمية قانونياً لشركة NabiOta® Health Group Germany GmbH. يخضع أي استخدام للعلامة التجارية، أو الشعارات، أو الأسماء المؤسسية، أو العناصر المحمية الأخرى للموافقة الخطية المسبقة لمالك الحقوق."
+                    : "NabiOta® ist eine eingetragene und geschützte Marke der NabiOta® Health Group Germany GmbH. Die Nutzung der Marke, der Logos, Unternehmenskennzeichen sowie sonstiger geschützter Bestandteile bedarf der vorherigen schriftlichen Zustimmung der Rechteinhaberin."}
                 </p>
               </div>
 
               <div className="pt-6 border-t border-forest-900/10">
                 <h2 className="font-display text-2xl text-forest-950 mb-3">
-                  {locale === "ru" ? "Правовое указание" : locale === "en" ? "Legal Notice" : "Hinweis"}
+                  {isRu ? "Правовое указание" : isEn ? "Legal Notice" : isTr ? "Yasal Bildirim" : isAr ? "إشعار قانوني" : "Hinweis"}
                 </h2>
                 <p>
-                  Die NabiOta® Health Group Germany GmbH ist eine im Handelsregister eingetragene Gesellschaft mit beschränkter Haftung nach deutschem Recht.
+                  {isRu
+                    ? "NabiOta® Health Group Germany GmbH — общество с ограниченной ответственностью, зарегистрированное в торговом реестре в соответствии с законодательством Германии."
+                    : isEn
+                    ? "NabiOta® Health Group Germany GmbH is a limited liability company incorporated under German law and registered in the commercial register."
+                    : isTr
+                    ? "NabiOta® Health Group Germany GmbH, Alman hukukuna göre kurulmuş ve ticaret siciline tescil edilmiş bir limited şirkettir (GmbH)."
+                    : isAr
+                    ? "إن شركة NabiOta® Health Group Germany GmbH هي شركة ذات مسؤولية محدودة تأسست بموجب القانون الألماني ومقيدة في السجل التجاري."
+                    : "Die NabiOta® Health Group Germany GmbH ist eine im Handelsregister eingetragene Gesellschaft mit beschränkter Haftung nach deutschem Recht."}
                 </p>
                 <p className="mt-2">
-                  NabiOta® ist eine geschützte Marke der NabiOta® Health Group Germany GmbH. Die Nutzung der Marke, der Logos, Unternehmenskennzeichen oder sonstiger geschützter Bestandteile bedarf der vorherigen schriftlichen Zustimmung der Rechteinhaberin.
+                  {isRu
+                    ? "NabiOta® — охраняемый товарный знак NabiOta® Health Group Germany GmbH. Использование товарного знака, логотипов, фирменных обозначений или иных охраняемых элементов требует предварительного письменного согласия правообладателя."
+                    : isEn
+                    ? "NabiOta® is a protected trademark of NabiOta® Health Group Germany GmbH. The use of the trademark, logos, company identifiers or other protected components requires the prior written consent of the rights holder."
+                    : isTr
+                    ? "NabiOta®, NabiOta® Health Group Germany GmbH'nin tescilli markasıdır. Markanın, logoların, şirket simgelerinin veya diğer korunan bileşenlerin kullanımı önceden yazılı izin gerektirir."
+                    : isAr
+                    ? "NabiOta® هي علامة تجارية مسجلة لشركة NabiOta® Health Group Germany GmbH. يخضع استخدام العلامة أو الشعارات أو المعرفات المؤسسية للموافقة الخطية المسبقة."
+                    : "NabiOta® ist eine geschützte Marke der NabiOta® Health Group Germany GmbH. Die Nutzung der Marke, der Logos, Unternehmenskennzeichen oder sonstiger geschützter Bestandteile bedarf der vorherigen schriftlichen Zustimmung der Rechteinhaberin."}
                 </p>
                 <p className="mt-4 text-xs text-text-secondary/80 font-medium">
-                  © 2026 NabiOta® Health Group Germany GmbH. Alle Rechte vorbehalten.
+                  {isRu
+                    ? "© 2026 NabiOta® Health Group Germany GmbH. Все права защищены."
+                    : isEn
+                    ? "© 2026 NabiOta® Health Group Germany GmbH. All rights reserved."
+                    : isTr
+                    ? "© 2026 NabiOta® Health Group Germany GmbH. Tüm hakları saklıdır."
+                    : isAr
+                    ? "© 2026 NabiOta® Health Group Germany GmbH. كافة الحقوق محفوظة."
+                    : "© 2026 NabiOta® Health Group Germany GmbH. Alle Rechte vorbehalten."}
                   <br />
-                  NabiOta® ist eine eingetragene Marke der NabiOta® Health Group Germany GmbH.
+                  {isRu
+                    ? "NabiOta® является зарегистрированным товарным знаком NabiOta® Health Group Germany GmbH."
+                    : isEn
+                    ? "NabiOta® is a registered trademark of NabiOta® Health Group Germany GmbH."
+                    : isTr
+                    ? "NabiOta®, NabiOta® Health Group Germany GmbH'nin tescilli markasıdır."
+                    : isAr
+                    ? "NabiOta® هي علامة تجارية مسجلة لشركة NabiOta® Health Group Germany GmbH."
+                    : "NabiOta® ist eine eingetragene Marke der NabiOta® Health Group Germany GmbH."}
                 </p>
               </div>
             </div>

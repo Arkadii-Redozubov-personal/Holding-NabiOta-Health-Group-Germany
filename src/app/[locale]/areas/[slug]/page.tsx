@@ -35,13 +35,61 @@ interface LocalizedAreaDetailProps {
   params: Promise<{ locale: SupportedLocale; slug: string }>;
 }
 
+const areaTitles: Record<string, Record<SupportedLocale, string>> = {
+  "medizinische-fachbereiche": {
+    de: "Medizinische Fachbereiche",
+    en: "Medical Departments",
+    ru: "Медицинские направления",
+    tr: "Tıbbi Uzmanlık Alanları",
+    ar: "الأقسام الطبية التخصصية",
+  },
+  "diagnostik": {
+    de: "Diagnostik",
+    en: "Diagnostics",
+    ru: "Диагностика",
+    tr: "Tanı & Teşhis",
+    ar: "التشخيص والتحاليل",
+  },
+  "rehabilitation": {
+    de: "Rehabilitation",
+    en: "Rehabilitation",
+    ru: "Реабилитация",
+    tr: "Rehabilitasyon",
+    ar: "إعادة التأهيل",
+  },
+  "pflege": {
+    de: "Pflege & Betreuung",
+    en: "Care & Support",
+    ru: "Уход и забота",
+    tr: "Hasta Bakımı & Destek",
+    ar: "التمريض والرعاية المنزلية",
+  },
+  "beratung-projektentwicklung": {
+    de: "Beratung & Services",
+    en: "Consulting & Services",
+    ru: "Консалтинг и сервис",
+    tr: "Danışmanlık & Hizmetler",
+    ar: "الاستشارات والخدمات",
+  },
+  "internationale-kooperationen": {
+    de: "Internationale Kooperationen",
+    en: "International Partnerships",
+    ru: "Международная деятельность",
+    tr: "Uluslararası İş Birlikleri",
+    ar: "التعاون الدولي والكوادر",
+  },
+};
+
 export async function generateMetadata({ params }: LocalizedAreaDetailProps): Promise<Metadata> {
   const { locale, slug } = await params;
   const area = businessAreas.find((a) => a.slug === slug);
-  if (!area) return { title: "Bereich nicht gefunden" };
+  const notFoundText = locale === "tr" ? "Faaliyet alanı bulunamadı" : locale === "ar" ? "القسم غير موجود" : locale === "ru" ? "Направление не найдено" : locale === "en" ? "Area not found" : "Bereich nicht gefunden";
+  if (!area) return { title: notFoundText };
+
+  const displayTitle = areaTitles[slug]?.[locale] || area.title;
 
   return {
-    title: `${area.title} | NabiOta® Health Group`,
+    title: `${displayTitle} | NabiOta® Health Group`,
     description: area.description,
     alternates: {
       canonical: `https://www.nabiota-health-group.de/${locale}/areas/${slug}`,
@@ -92,21 +140,28 @@ export default async function LocalizedAreaDetailPage({ params }: LocalizedAreaD
 
   const relatedAreas = businessAreas.filter((a) => a.slug !== slug).slice(0, 3);
 
+  const isRu = locale === "ru";
+  const isEn = locale === "en";
+  const isTr = locale === "tr";
+  const isAr = locale === "ar";
+
+  const displayTitle = areaTitles[slug]?.[locale] || area.title;
+
   const areaBadges = [
     {
       icon: <Award className="w-5 h-5 text-[#ECCF96]" />,
-      title: locale === "ru" ? "Высокие" : locale === "en" ? "Highest" : "Höchste",
-      sub: locale === "ru" ? "Стандарты" : locale === "en" ? "Standards" : "Standards",
+      title: isRu ? "Высокие" : isEn ? "Highest" : isTr ? "En Yüksek" : isAr ? "أعلى" : "Höchste",
+      sub: isRu ? "Стандарты" : isEn ? "Standards" : isTr ? "Standartlar" : isAr ? "المعايير" : "Standards",
     },
     {
       icon: <Stethoscope className="w-5 h-5 text-[#ECCF96]" />,
-      title: locale === "ru" ? "Врачебная" : locale === "en" ? "Medical" : "Fachärztliche",
-      sub: locale === "ru" ? "Экспертиза" : locale === "en" ? "Expertise" : "Expertise",
+      title: isRu ? "Врачебная" : isEn ? "Medical" : isTr ? "Uzman Tıbbi" : isAr ? "خبرة طبية" : "Fachärztliche",
+      sub: isRu ? "Экспертиза" : isEn ? "Expertise" : isTr ? "Uzmanlık" : isAr ? "تخصصية" : "Expertise",
     },
     {
       icon: <Building2 className="w-5 h-5 text-[#ECCF96]" />,
-      title: locale === "ru" ? "В составе" : locale === "en" ? "Group" : "Holding",
-      sub: locale === "ru" ? "Холдинга" : locale === "en" ? "Network" : "Verbund",
+      title: isRu ? "В составе" : isEn ? "Group" : isTr ? "Holding" : isAr ? "ضمن شبكة" : "Holding",
+      sub: isRu ? "Холдинга" : isEn ? "Network" : isTr ? "Ağı" : isAr ? "المجموعة" : "Verbund",
     },
   ];
 
@@ -121,13 +176,13 @@ export default async function LocalizedAreaDetailPage({ params }: LocalizedAreaD
               items={[
                 { label: dict.nav.home, href: `/${locale}` },
                 { label: dict.nav.areas, href: `/${locale}/areas` },
-                { label: area.title },
+                { label: displayTitle },
               ]}
             />
           }
           title={
             <>
-              {area.title}
+              {displayTitle}
               {area.subtitle && (
                 <span className="block text-xl sm:text-2xl text-[#ECCF93] font-light mt-1 font-serif">
                   {area.subtitle}
@@ -156,13 +211,25 @@ export default async function LocalizedAreaDetailPage({ params }: LocalizedAreaD
 
               <div className="lg:col-span-6 space-y-6">
                 <Eyebrow variant="forest">
-                  {locale === "ru" ? "КОМПЕТЕНЦИИ И СТАНДАРТЫ" : locale === "en" ? "COMPETENCE & QUALITY" : "KOMPETENZ & ANSPRUCH"}
+                  {isRu
+                    ? "КОМПЕТЕНЦИИ И СТАНДАРТЫ"
+                    : isEn
+                    ? "COMPETENCE & QUALITY"
+                    : isTr
+                    ? "YETKİNLİK VE KALİTE"
+                    : isAr
+                    ? "الكفاءة وأعلى المعايير"
+                    : "KOMPETENZ & ANSPRUCH"}
                 </Eyebrow>
                 <h2 className="font-display text-3xl sm:text-4xl text-forest-950 leading-tight">
-                  {locale === "ru"
+                  {isRu
                     ? "Высокотехнологичная медицинская помощь немецкого качества"
-                    : locale === "en"
+                    : isEn
                     ? "Structured Healthcare Excellence according to German Standards"
+                    : isTr
+                    ? "Alman Standartlarında Yapılandırılmış Üst Düzey Sağlık Hizmeti"
+                    : isAr
+                    ? "رعاية صحية متقدمة ومنظمة وفق أعلى المعايير الألمانية"
                     : "Strukturierte Spitzenversorgung nach deutschen Standards"}
                 </h2>
                 <p className="text-sm sm:text-base text-text-secondary leading-relaxed font-sans">
@@ -195,7 +262,15 @@ export default async function LocalizedAreaDetailPage({ params }: LocalizedAreaD
               {area.keyServices && (
                 <div>
                   <h3 className="font-display text-2xl text-forest-950 mb-6">
-                    {locale === "ru" ? "Ключевые направления" : locale === "en" ? "Core Capabilities" : "Leistungsschwerpunkte"}
+                    {isRu
+                      ? "Ключевые направления"
+                      : isEn
+                      ? "Core Capabilities"
+                      : isTr
+                      ? "Temel Hizmet Alanları"
+                      : isAr
+                      ? "مجالات الخدمات الرئيسية"
+                      : "Leistungsschwerpunkte"}
                   </h3>
                   <div className="space-y-3.5">
                     {area.keyServices.map((svc, idx) => (
@@ -213,7 +288,15 @@ export default async function LocalizedAreaDetailPage({ params }: LocalizedAreaD
               {area.advantages && (
                 <div>
                   <h3 className="font-display text-2xl text-forest-950 mb-6">
-                    {locale === "ru" ? "Преимущества в составе холдинга" : locale === "en" ? "Group Advantages" : "Ihre Vorteile im Verbund"}
+                    {isRu
+                      ? "Преимущества в составе холдинга"
+                      : isEn
+                      ? "Group Advantages"
+                      : isTr
+                      ? "Holding Bünyesindeki Avantajlarınız"
+                      : isAr
+                      ? "مزايا الانضمام إلى شبكة المجموعة"
+                      : "Ihre Vorteile im Verbund"}
                   </h3>
                   <div className="space-y-3.5">
                     {area.advantages.map((adv, idx) => (
@@ -233,17 +316,25 @@ export default async function LocalizedAreaDetailPage({ params }: LocalizedAreaD
             <div className="mt-16 p-8 rounded-xl bg-forest-900 text-ivory-50 flex flex-col sm:flex-row items-center justify-between gap-6">
               <div>
                 <h4 className="font-display text-2xl mb-1">
-                  {locale === "ru"
-                    ? `Хотите узнать больше о направлении «${area.title}»?`
-                    : locale === "en"
-                    ? `Would you like to learn more about ${area.title}?`
-                    : `Möchten Sie mehr über ${area.title} erfahren?`}
+                  {isRu
+                    ? `Хотите узнать больше о направлении «${displayTitle}»?`
+                    : isEn
+                    ? `Would you like to learn more about ${displayTitle}?`
+                    : isTr
+                    ? `${displayTitle} hakkında daha fazla bilgi almak ister misiniz?`
+                    : isAr
+                    ? `هل ترغبون في معرفة المزيد عن ${displayTitle}؟`
+                    : `Möchten Sie mehr über ${displayTitle} erfahren?`}
                 </h4>
                 <p className="text-xs sm:text-sm text-ivory-200/80">
-                  {locale === "ru"
+                  {isRu
                     ? "Наша команда с радостью ответит на ваши индивидуальные вопросы и обсудит возможности сотрудничества."
-                    : locale === "en"
+                    : isEn
                     ? "Our team is at your disposal to answer questions and discuss partnership options."
+                    : isTr
+                    ? "Ekibimiz özel sorularınızı yanıtlamaktan ve iş birliği olanaklarını görüşmekten memnuniyet duyacaktır."
+                    : isAr
+                    ? "يسعد فريقنا الإجابة عن كافة استفساراتكم وبحث فرص التعاون المشترك معكم."
                     : "Unser Team beantwortet gerne Ihre individuellen Fragen und Kooperationsanfragen."}
                 </p>
               </div>
@@ -258,7 +349,15 @@ export default async function LocalizedAreaDetailPage({ params }: LocalizedAreaD
         <section className="py-16 sm:py-20 bg-[#FAF8F5]">
           <Container size="wide">
             <h3 className="font-display text-2xl sm:text-3xl text-forest-950 mb-8">
-              {locale === "ru" ? "Другие направления холдинга" : locale === "en" ? "Related Divisions" : "Weitere Unternehmensbereiche"}
+              {isRu
+                ? "Другие направления холдинга"
+                : isEn
+                ? "Related Divisions"
+                : isTr
+                ? "Holdingin Diğer Faaliyet Alanları"
+                : isAr
+                ? "قطاعات المجموعة الأخرى"
+                : "Weitere Unternehmensbereiche"}
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {relatedAreas.map((rel) => (

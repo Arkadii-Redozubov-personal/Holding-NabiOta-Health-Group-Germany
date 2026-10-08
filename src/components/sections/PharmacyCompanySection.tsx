@@ -23,7 +23,7 @@ import { Container } from "@/components/layout/Container";
  * §14 ApoG hospital supply, Filialapotheken, independence safeguards.
  */
 
-type Lang = "de" | "en" | "ru";
+type Lang = "de" | "en" | "ru" | "tr" | "ar";
 type T = Record<Lang, string>;
 type Icon = React.ComponentType<{ className?: string }>;
 
@@ -32,6 +32,8 @@ const c = {
     de: "Öffentliche Apotheke · § 14 ApoG · Mönchengladbach",
     en: "Public Pharmacy · § 14 ApoG · Mönchengladbach",
     ru: "Общественная аптека · § 14 ApoG · Мёнхенгладбах",
+    tr: "Halka Açık Eczane · § 14 ApoG · Mönchengladbach",
+    ar: "صيدلية عامة · § 14 من قانون الصيدلة ApoG · مونشنغلادباخ",
   } as T,
   title: "NabiOta Apotheke Mönchengladbach",
   titleAlt: "NabiOta Pharmacy",
@@ -39,17 +41,23 @@ const c = {
     de: "Arzneimittelversorgung, pharmazeutische Beratung & Klinikbelieferung",
     en: "Medication Supply, Pharmaceutical Consultation & Hospital Logistics",
     ru: "Лекарственное обеспечение, фармацевтическое консультирование и снабжение клиник",
+    tr: "İlaç Tedariği, Farmasötik Danışmanlık ve Klinik Lojistiği",
+    ar: "الإمداد الدوائي، الاستشارات الصيدلانية واللوجستيات السريرية للمستشفيات",
   } as T,
   lead: {
     de: "Die Gesellschaft kann im rechtlich zulässigen Umfang Räume und organisatorische Dienstleistungen für rechtlich eigenständige Apothekenbetriebe bereitstellen sowie eigene Marken zur Nutzung überlassen. Sämtliche Vereinbarungen stehen unter dem Vorbehalt ihrer apothekenrechtlichen Zulässigkeit; eine eigene Berechtigung zum Betrieb einer öffentlichen Apotheke wird hierdurch nicht begründet. Vorgesehen ist die Einrichtung einer öffentlichen Apotheke unter der Geschäftsbezeichnung „NabiOta Pharmacy“, vorbehaltlich der firmen-, namens- und markenrechtlichen Zulässigkeit.",
     en: "The company may, to the extent permitted by law, provide premises and organisational services for legally independent pharmacy operators, as well as licence its own brands for use. All agreements are subject to their compliance with pharmacy law; no independent pharmacy operating licence is thereby established. A public pharmacy is planned under the business name \"NabiOta Pharmacy\", subject to company name, trade name, and trademark law requirements.",
     ru: "Компания может в разрешённых законом пределах предоставлять помещения и организационные услуги для юридически самостоятельных аптечных операторов, а также предоставлять в пользование собственные торговые марки. Все соглашения подчинены их соответствию аптечному законодательству; собственного права на эксплуатацию аптеки данным документом не возникает. Планируется открытие общественной аптеки под наименованием «NabiOta Pharmacy» при соблюдении фирменного, именного и торгового права.",
+    tr: "Şirket, yasal olarak izin verilen çerçevede bağımsız eczane işletmecilerine tesis ve organizasyonel hizmetler sağlayabilir ve kendi tescilli markalarının kullanım hakkını devredebilir. Tüm anlaşmalar eczane mevzuatına uygunluk şartına bağlıdır; bu durum bağımsız bir eczane işletme yetkisi doğurmaz. Şirket, unvan ve marka hukuku gerekliliklerine tabi olarak «NabiOta Pharmacy» işletme adı altında halka açık bir eczane açılmasını planlamaktadır.",
+    ar: "يجوز للشركة، في الحدود المسموح بها قانوناً، توفير مبانٍ وخدمات تنظيمية لجهات تشغيل صيدليات مستقلة قانونياً، بالإضافة إلى منح تراخيص استخدام علاماتها التجارية الخاصة. تخضع جميع الاتفاقيات لشرط مطابقتها لقانون الصيدلة؛ ولا ينشأ عن ذلك ترخيص تشغيلي لصيدلية مستقلة. من المقرر إنشاء صيدلية عامة تحت الاسم التجاري «NabiOta Pharmacy»، مع مراعاة متطلبات قانون الأسماء التجارية وقانون العلامات التجارية.",
   } as T,
 
   pillarsTitle: {
     de: "Rechtliche Struktur & Leistungskonzept",
     en: "Legal Structure & Service Concept",
     ru: "Правовая структура и концепция услуг",
+    tr: "Yasal Yapı ve Hizmet Konsepti",
+    ar: "الهيكل القانوني ومفهوم الخدمات",
   } as T,
   pillars: [
     {
@@ -58,11 +66,15 @@ const c = {
         de: "Eigenverantwortliche Apothekenleitung",
         en: "Independent Licensed Pharmacist Leadership",
         ru: "Независимое руководство аккредитованного провизора",
+        tr: "Bağımsız Ruhsatlı Baş Eczacı Yönetimi",
+        ar: "إدارة صيدلانية مستقلة ومرخصة",
       } as T,
       desc: {
         de: "Der Betrieb erfolgt ausschließlich durch einen nach dem Apothekengesetz berechtigten Erlaubnisinhaber in einer gesetzlich zulässigen Rechtsform. Die Apotheke wird nicht als gewöhnliche Tochtergesellschaft der NabiOta-Holding in der Rechtsform einer GmbH betrieben.",
         en: "Operations are conducted exclusively by a holder of a licence pursuant to the Apothekengesetz in a legally permissible legal form. The pharmacy is not operated as an ordinary subsidiary of the NabiOta Holding in the form of a GmbH.",
         ru: "Деятельность осуществляется исключительно лицензированным владельцем разрешения по Закону об аптеках в законно допустимой организационно-правовой форме. Аптека не управляется как обычная дочерняя структура холдинга NabiOta в форме GmbH.",
+        tr: "İşletme, yalnızca Alman Eczacılık Kanunu (Apothekengesetz) uyarınca yetkilendirilmiş bir ruhsat sahibi tarafından yasal olarak kabul edilen bir hukuki formda yürütülür. Eczane, NabiOta Holding'in olağan bir GmbH iştiraki olarak işletilmez.",
+        ar: "تتم الإدارة حصرياً بواسطة صيدلي مرخص يحمل تصريحاً بموجب قانون الصيدلة الألماني وفي شكل قانوني مسموح به نظاماً. ولا تُدار الصيدلية كشركة تابعة عادية لمجموعة NabiOta في شكل شركة ذات مسؤولية محدودة (GmbH).",
       } as T,
     },
     {
@@ -71,11 +83,15 @@ const c = {
         de: "Leistungsangebot der öffentlichen Apotheke",
         en: "Public Pharmacy Service Portfolio",
         ru: "Услуги общественной аптеки",
+        tr: "Halka Açık Eczane Hizmet Yelpazesi",
+        ar: "حزمة خدمات الصيدلية العامة",
       } as T,
       desc: {
         de: "Zum vorgesehenen Leistungsangebot gehören die ordnungsgemäße Arzneimittelversorgung, die pharmazeutische Beratung sowie die Abgabe apothekenüblicher Produkte im gesetzlich zulässigen Umfang.",
         en: "The planned service portfolio encompasses proper medication dispensing, pharmaceutical consultation, and the sale of pharmacy-typical products to the extent permitted by law.",
         ru: "Планируемый перечень услуг включает надлежащее лекарственное обеспечение, фармацевтическое консультирование, а также отпуск аптечных товаров в объёме, разрешённом законом.",
+        tr: "Planlanan hizmet yelpazesi; reçeteli ve reçetesiz ilaçların düzenli tedarik ve teminini, uzman farmasötik danışmanlığı ve yasal olarak izin verilen eczane ürünlerinin satışını kapsar.",
+        ar: "تشمل الخدمات المخططة توفير الأدوية بانتظام، وتقديم المشورة الصيدلانية المتخصصة، وصرف وبيع المنتجات الصيدلانية التقليدية في الحدود المسموح بها قانوناً.",
       } as T,
     },
     {
@@ -84,11 +100,15 @@ const c = {
         de: "Klinikbelieferung nach § 14 ApoG",
         en: "Hospital Supply pursuant to § 14 ApoG",
         ru: "Снабжение клиник согласно § 14 ApoG",
+        tr: "§ 14 ApoG Uyarınca Klinik İlaç Tedariği",
+        ar: "الإمداد السريري للمستشفيات بموجب المادة § 14 ApoG",
       } as T,
       desc: {
         de: "Eine Versorgung verbundener Krankenhäuser erfolgt ausschließlich auf Grundlage der hierfür erforderlichen schriftlichen Versorgungsverträge und behördlichen Genehmigungen.",
         en: "Supply to affiliated hospitals is conducted exclusively on the basis of the requisite written supply agreements and regulatory approvals.",
         ru: "Снабжение аффилированных больниц осуществляется исключительно на основании необходимых письменных договоров снабжения и государственных разрешений.",
+        tr: "Bağlı hastanelerin ilaç temini, yalnızca yasal olarak zorunlu yazılı tedarik sözleşmeleri ve resmi makam onayları doğrultusunda gerçekleştirilir.",
+        ar: "يتم إمداد المستشفيات التابعة بالأدوية حصرياً على أساس عقود التوريد الخطية الإلزامية والموافقات الرسمية الصادرة عن الهيئات المختصة.",
       } as T,
     },
     {
@@ -97,11 +117,15 @@ const c = {
         de: "Filialapotheken (innerhalb gesetzlicher Grenzen)",
         en: "Branch Pharmacies (within statutory limits)",
         ru: "Аптечные филиалы (в пределах закона)",
+        tr: "Şube Eczaneleri (Yasal Sınırlar Dahilinde)",
+        ar: "الفروع الصيدلانية (ضمن الحدود القانونية)",
       } as T,
       desc: {
         de: "Die Errichtung von Filialapotheken kann innerhalb der gesetzlichen Grenzen erfolgen. Jeder zusätzliche Standort setzt die erforderliche Erweiterung der Betriebserlaubnis sowie die Erfüllung der jeweiligen personellen, räumlichen und organisatorischen Anforderungen voraus.",
         en: "Branch pharmacies may be established within statutory limits. Each additional location requires the necessary extension of the operating licence and compliance with the respective staffing, spatial, and organisational requirements.",
         ru: "Открытие аптечных филиалов возможно в пределах законных ограничений. Каждый дополнительный объект требует соответствующего расширения лицензии на эксплуатацию и соответствия кадровым, пространственным и организационным требованиям.",
+        tr: "Şube eczanelerinin açılması yasal sınırlar dahilinde mümkündür. Her ek şube; işletme ruhsatının genişletilmesini ve ilgili personel, mekânsal ve organizasyonel koşulların sağlanmasını gerektirir.",
+        ar: "يجوز إنشاء فروع صيدلانية ضمن الحدود التي يسمح بها القانون. يتطلب كل موقع إضافي تمديداً رسمياً لتصريح التشغيل واستيفاء المتطلبات الفردية والتنظيمية والمكانية المقررة.",
       } as T,
     },
     {
@@ -110,11 +134,15 @@ const c = {
         de: "Holding-Beiträge: Räume, Marke & Organisation",
         en: "Holding Contributions: Premises, Brand & Organisation",
         ru: "Вклад холдинга: помещения, бренд и организация",
+        tr: "Holding Katkısı: Tesis, Marka ve Organizasyon",
+        ar: "مساهمات المجموعة القابضة: المباني، العلامة التجارية والتنظيم",
       } as T,
       desc: {
         de: "Die NabiOta-Gesellschaft stellt Räumlichkeiten und organisatorische Dienstleistungen bereit und überlässt die Marke «NabiOta Pharmacy» zur Nutzung – stets innerhalb der apothekenrechtlichen Grenzen und ohne Begründung eigener Betriebsrechte.",
         en: "The NabiOta entity provides premises and organisational services and licences the brand «NabiOta Pharmacy» for use – always within pharmacy law boundaries and without establishing independent operating rights.",
         ru: "Структура NabiOta предоставляет помещения и организационные услуги и передаёт в пользование бренд «NabiOta Pharmacy» — в пределах аптечного законодательства и без возникновения собственных прав на ведение деятельности.",
+        tr: "NabiOta şirketi, eczacılık hukuku sınırları içinde kalarak ve bağımsız işletme hakları doğurmaksızın mekânsal alanlar ve organizasyonel hizmetler temin eder ve «NabiOta Pharmacy» markasını kullanıma sunar.",
+        ar: "توفر شركة NabiOta المباني والخدمات التنظيمية وتمنح ترخيص استخدام العلامة التجارية «NabiOta Pharmacy» — دائماً ضمن الحدود الصارمة لقانون الصيدلة ودون إنشاء حقوق تشغيلية ذاتية.",
       } as T,
     },
     {
@@ -123,11 +151,15 @@ const c = {
         de: "Wahrung pharmazeutischer Unabhängigkeit",
         en: "Safeguarding Pharmaceutical Independence",
         ru: "Обеспечение фармацевтической независимости",
+        tr: "Farmasötik Bağımsızlığın Korunması",
+        ar: "صون الاستقلالية المهنية الصيدلانية",
       } as T,
       desc: {
         de: "Vereinbarungen mit Unternehmen der NabiOta-Gruppe über Mieträume, Markenverwendung und organisatorische Dienstleistungen dürfen die eigenverantwortliche pharmazeutische Leitung nicht beeinträchtigen und müssen die apothekenrechtlichen Beteiligungs-, Vergütungs- und Unabhängigkeitsvorschriften beachten.",
         en: "Agreements with NabiOta Group entities regarding premises, brand use, and organisational services must not impair the independent pharmaceutical management and must comply with pharmacy law regulations on participation, remuneration, and independence.",
         ru: "Соглашения с организациями группы NabiOta о помещениях, использовании бренда и организационных услугах не должны нарушать самостоятельное фармацевтическое руководство и должны соответствовать нормам аптечного права об участии, вознаграждении и независимости.",
+        tr: "NabiOta grubu şirketleriyle yapılacak kiralama, marka kullanımı ve operasyonel hizmet anlaşmaları bağımsız farmasötik yönetimi etkileyemez; ortaklık, ücretlendirme ve bağımsızlık hükümlerine tam uyulur.",
+        ar: "يجب ألا تؤثر الاتفاقيات المبرمة مع شركات مجموعة NabiOta بشأن استئجار الأماكن أو استخدام العلامة التجارية أو الخدمات التنظيمية على الإدارة الصيدلانية المستقلة، مع مراعاة كافة لوائح المشاركة والمكافآت والاستقلالية.",
       } as T,
     },
   ],
@@ -136,24 +168,58 @@ const c = {
     de: "Rechtlicher Hinweis",
     en: "Legal Notice",
     ru: "Правовая оговорка",
+    tr: "Yasal Bilgilendirme",
+    ar: "إشعار قانوني تنظيمي",
   } as T,
   disclaimerText: {
     de: "Der vorliegende Planungstext begründet weder eine Apothekenbetriebserlaubnis noch eine Anzeigepflicht oder sonstige rechtlich verbindliche Zusage. Erlaubnis- und zulassungspflichtige Tätigkeiten werden erst nach Erfüllung aller gesetzlichen Voraussetzungen aufgenommen.",
     en: "This planning document establishes neither a pharmacy operating licence nor any obligation to notify or any other legally binding commitment. Activities requiring a licence or approval will only commence once all statutory prerequisites have been fulfilled.",
     ru: "Настоящий плановый текст не является ни лицензией на эксплуатацию аптеки, ни обязательством об уведомлении, ни каким-либо иным юридически обязывающим обещанием. Виды деятельности, требующие лицензии или разрешения, начнутся только после выполнения всех установленных законом предварительных условий.",
+    tr: "İşbu planlama metni, bir eczane işletme ruhsatı, yasal bildirim yükümlülüğü veya bağlayıcı bir taahhüt teşkil etmez. İzne ve ruhsata tabi faaliyetler ancak tüm yasal ön koşullar yerine getirildikten sonra başlatılacaktır.",
+    ar: "لا ينشئ هذا المخطط تصريحاً بتشغيل صيدلية أو التزاماً بالإخطار أو أي تعهد قانوني ملزم. ولن يتم الشروع في الأنشطة الخاضعة للترخيص والموافقة إلا بعد استيفاء جميع المتطلبات والشروط القانونية.",
   } as T,
 
-  legalBadges: [
-    "§ 14 Apothekengesetz (ApoG)",
-    "§ 2 ApoG – Betriebserlaubnis",
-    "§ 7 ApoG – Erlaubnisinhaber",
-    "Markenrecht & Firmenrecht",
-    "DSGVO · Gesundheitsdaten",
-  ],
+  legalBadges: {
+    de: [
+      "§ 14 Apothekengesetz (ApoG)",
+      "§ 2 ApoG – Betriebserlaubnis",
+      "§ 7 ApoG – Erlaubnisinhaber",
+      "Markenrecht & Firmenrecht",
+      "DSGVO · Gesundheitsdaten",
+    ],
+    en: [
+      "§ 14 Apothekengesetz (ApoG)",
+      "§ 2 ApoG – Operating Licence",
+      "§ 7 ApoG – Licence Holder",
+      "Trademark & Corporate Law",
+      "GDPR · Health Data",
+    ],
+    ru: [
+      "§ 14 Apothekengesetz (ApoG)",
+      "§ 2 ApoG – Лицензия на эксплуатацию",
+      "§ 7 ApoG – Владелец лицензии",
+      "Товарные знаки и корпоративное право",
+      "DSGVO · Медицинские данные",
+    ],
+    tr: [
+      "§ 14 Apothekengesetz (ApoG)",
+      "§ 2 ApoG – İşletme Ruhsatı",
+      "§ 7 ApoG – Ruhsat Sahibi",
+      "Marka ve Şirketler Hukuku",
+      "GDPR · Sağlık Verileri",
+    ],
+    ar: [
+      "§ 14 قانون الصيدلة (ApoG)",
+      "§ 2 تصريح التشغيل",
+      "§ 7 صاحب التصريح",
+      "قانون العلامات والشركات",
+      "حماية البيانات الصحية (GDPR)",
+    ],
+  } as Record<Lang, string[]>,
 };
 
 export function PharmacyCompanySection({ locale = "de" }: { locale?: string }) {
-  const l: Lang = locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
+  const l: Lang = locale === "tr" ? "tr" : locale === "ar" ? "ar" : locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
 
   return (
     <section
@@ -286,7 +352,7 @@ export function PharmacyCompanySection({ locale = "de" }: { locale?: string }) {
 
           {/* Legal badges */}
           <div className="flex flex-wrap gap-2 justify-center">
-            {c.legalBadges.map((badge, idx) => (
+            {c.legalBadges[l].map((badge, idx) => (
               <span
                 key={idx}
                 className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1E3B29]/8 border border-[#1E3B29]/20 text-[#1E3B29] text-[10.5px] font-bold tracking-[0.15em] uppercase"

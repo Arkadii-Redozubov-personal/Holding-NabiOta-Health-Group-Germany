@@ -546,8 +546,31 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
           breadcrumb={
             <Breadcrumb
               items={[
-                { label: locale === "ru" ? "Главная" : locale === "en" ? "Home" : "Startseite", href: `/${locale}` },
-                { label: locale === "ru" ? "Контакты" : locale === "en" ? "Contact" : "Kontakt" },
+                {
+                  label:
+                    locale === "ru"
+                      ? "Главная"
+                      : locale === "en"
+                      ? "Home"
+                      : locale === "tr"
+                      ? "Ana Sayfa"
+                      : locale === "ar"
+                      ? "الرئيسية"
+                      : "Startseite",
+                  href: `/${locale}`,
+                },
+                {
+                  label:
+                    locale === "ru"
+                      ? "Контакты"
+                      : locale === "en"
+                      ? "Contact"
+                      : locale === "tr"
+                      ? "İletişim"
+                      : locale === "ar"
+                      ? "اتصل بنا"
+                      : "Kontakt",
+                },
               ]}
             />
           }
@@ -556,6 +579,10 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
               ? "Свяжитесь с нами"
               : locale === "en"
               ? "Get in Touch"
+              : locale === "tr"
+              ? "Bizimle İletişime Geçin"
+              : locale === "ar"
+              ? "تواصلوا معنا"
               : "Treten Sie mit uns in Kontakt"
           }
           description={
@@ -563,23 +590,81 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
               ? "Мы рады ответить на ваши вопросы, предоставить информацию о медицинских направлениях холдинга и обсудить сотрудничество."
               : locale === "en"
               ? "We look forward to hearing from you. Our team is available by phone, email, or in person at our Mönchengladbach headquarters."
+              : locale === "tr"
+              ? "Sorularınızı yanıtlamaktan, holdingin tıbbi uzmanlık alanları hakkında bilgi vermekten ve ortaklıkları görüşmekten memnuniyet duyarız."
+              : locale === "ar"
+              ? "يسعدنا الرد على استفساراتكم، وتقديم معلومات وافية حول قطاعات الرعاية التابعة للمجموعة، وبحث سبل التعاون المشترك."
               : "Wir freuen uns über Ihre Nachricht. Unser Team hilft Ihnen gerne weiter und ist für Sie da – telefonisch, per E-Mail oder vor Ort in Mönchengladbach."
           }
           badges={[
             {
               icon: Clock,
-              title: locale === "ru" ? "Быстрая" : locale === "en" ? "Fast" : "Schnelle",
-              sub: locale === "ru" ? "доступность" : locale === "en" ? "availability" : "Erreichbarkeit",
+              title:
+                locale === "ru"
+                  ? "Быстрая"
+                  : locale === "en"
+                  ? "Fast"
+                  : locale === "tr"
+                  ? "Hızlı"
+                  : locale === "ar"
+                  ? "وصول"
+                  : "Schnelle",
+              sub:
+                locale === "ru"
+                  ? "доступность"
+                  : locale === "en"
+                  ? "availability"
+                  : locale === "tr"
+                  ? "erişilebilirlik"
+                  : locale === "ar"
+                  ? "سريع"
+                  : "Erreichbarkeit",
             },
             {
               icon: UserCheck,
-              title: locale === "ru" ? "Личная" : locale === "en" ? "Personal" : "Persönliche",
-              sub: locale === "ru" ? "консультация" : locale === "en" ? "consultation" : "Beratung",
+              title:
+                locale === "ru"
+                  ? "Личная"
+                  : locale === "en"
+                  ? "Personal"
+                  : locale === "tr"
+                  ? "Bireysel"
+                  : locale === "ar"
+                  ? "استشارة"
+                  : "Persönliche",
+              sub:
+                locale === "ru"
+                  ? "консультация"
+                  : locale === "en"
+                  ? "consultation"
+                  : locale === "tr"
+                  ? "danışmanlık"
+                  : locale === "ar"
+                  ? "مباشرة"
+                  : "Beratung",
             },
             {
               icon: MapPin,
-              title: locale === "ru" ? "Удобная" : locale === "en" ? "Central" : "Zentraler",
-              sub: locale === "ru" ? "локация" : locale === "en" ? "location" : "Standort",
+              title:
+                locale === "ru"
+                  ? "Удобная"
+                  : locale === "en"
+                  ? "Central"
+                  : locale === "tr"
+                  ? "Merkezi"
+                  : locale === "ar"
+                  ? "موقع"
+                  : "Zentraler",
+              sub:
+                locale === "ru"
+                  ? "локация"
+                  : locale === "en"
+                  ? "location"
+                  : locale === "tr"
+                  ? "konum"
+                  : locale === "ar"
+                  ? "مركزي"
+                  : "Standort",
             },
           ]}
           imageSrc="/images/heroes/hero-contact.webp"
@@ -1100,6 +1185,27 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                               privacy policy
                             </Link>{" "}
                             and consent to data processing. *
+                          </>
+                        ) : locale === "tr" ? (
+                          <>
+                            <Link
+                              href={`/${locale}/privacy`}
+                              className="text-[#96742E] underline hover:text-forest-950"
+                            >
+                              Gizlilik politikasını
+                            </Link>{" "}
+                            okudum ve kişisel verilerimin işlenmesini kabul ediyorum. *
+                          </>
+                        ) : locale === "ar" ? (
+                          <>
+                            لقد قرأت{" "}
+                            <Link
+                              href={`/${locale}/privacy`}
+                              className="text-[#96742E] underline hover:text-forest-950"
+                            >
+                              سياسة الخصوصية
+                            </Link>{" "}
+                            وأوافق على معالجة بياناتي وفقاً لها. *
                           </>
                         ) : (
                           <>

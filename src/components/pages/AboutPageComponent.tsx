@@ -244,28 +244,122 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
   // Multilingual content dictionary
   const isEn = locale === "en";
   const isRu = locale === "ru";
+  const isTr = locale === "tr";
+  const isAr = locale === "ar";
 
   const t = {
-    breadcrumbHome: isRu ? "Главная" : isEn ? "Home" : "Startseite",
-    breadcrumbAbout: isRu ? "О холдинге" : isEn ? "About Us" : "Über uns",
-    heroEyebrow: isRu ? "О ХОЛДИНГЕ" : isEn ? "ABOUT THE HOLDING" : "ÜBER DIE UNTERNEHMENSGRUPPE",
-    heroTitlePart1: isRu ? "Сильная группа" : isEn ? "A strong group" : "Eine starke Gruppe",
-    heroTitlePart2: isRu ? "для здорового будущего." : isEn ? "for a healthier future." : "für eine gesündere Zukunft.",
+    breadcrumbHome: isRu
+      ? "Главная"
+      : isEn
+      ? "Home"
+      : isTr
+      ? "Ana Sayfa"
+      : isAr
+      ? "الرئيسية"
+      : "Startseite",
+    breadcrumbAbout: isRu
+      ? "О холдинге"
+      : isEn
+      ? "About Us"
+      : isTr
+      ? "Hakkımızda"
+      : isAr
+      ? "عن المجموعة"
+      : "Über uns",
+    heroEyebrow: isRu
+      ? "О ХОЛДИНГЕ"
+      : isEn
+      ? "ABOUT THE HOLDING"
+      : isTr
+      ? "ŞİRKET GRUBU HAKKINDA"
+      : isAr
+      ? "عن مجموعة الشركات"
+      : "ÜBER DIE UNTERNEHMENSGRUPPE",
+    heroTitlePart1: isRu
+      ? "Сильная группа"
+      : isEn
+      ? "A strong group"
+      : isTr
+      ? "Güçlü bir grup"
+      : isAr
+      ? "مجموعة رائدة متكاملة"
+      : "Eine starke Gruppe",
+    heroTitlePart2: isRu
+      ? "для здорового будущего."
+      : isEn
+      ? "for a healthier future."
+      : isTr
+      ? "daha sağlıklı bir gelecek için."
+      : isAr
+      ? "من أجل مستقبل صحي مستدام."
+      : "für eine gesündere Zukunft.",
     heroDesc: isRu
       ? "NabiOta® Health Group Germany GmbH с головным офисом в Мёнхенгладбахе объединяет первичную медицинскую помощь, диагностику, реабилитацию, уход и сопутствующие медицинские услуги под единым брендом, создавая долгосрочную ценность для пациентов, сотрудников и партнеров."
       : isEn
       ? "NabiOta® Health Group Germany GmbH based in Mönchengladbach unites primary medical care, diagnostics, rehabilitation, home care, and related healthcare services under one cohesive brand, creating long-term value for patients, staff, and partners."
+      : isTr
+      ? "Merkezi Mönchengladbach'ta bulunan NabiOta® Health Group Germany GmbH; birinci basamak sağlık hizmetlerini, ileri tanı merkezlerini, rehabilitasyonu, evde bakım ve entegre klinik servislerini tek bir çatı altında birleştirerek hastalar, çalışanlar ve paydaşlar için kalıcı değerler üretir."
+      : isAr
+      ? "تجمع شركة NabiOta® Health Group Germany GmbH، ومقرها مونشنغلادباخ، بين الرعاية الطبية الأولية، التشخيص المتقدم، إعادة التأهيل، الرعاية التمريضية المنزلية والخدمات الصحية الشاملة تحت مظلة موحدة — لصناعة قيمة مستدامة للمرضى والكوادر والشركاء."
       : "Die NabiOta® Health Group Germany GmbH mit Sitz in Mönchengladbach vereint medizinische Grundversorgung, Diagnostik, Rehabilitation, Pflege und angrenzende Gesundheitsleistungen unter einer gemeinsamen Marke – für nachhaltige Werte für Patienten, Mitarbeitende und Partner.",
-    badge1Title: isRu ? "Человек" : isEn ? "People" : "Mensch",
-    badge1Sub: isRu ? "в центре внимания" : isEn ? "at the center" : "im Mittelpunkt",
-    badge2Title: isRu ? "Устойчивый" : isEn ? "Sustainable" : "Nachhaltiges",
-    badge2Sub: isRu ? "рост" : isEn ? "growth" : "Wachstum",
-    badge3Title: isRu ? "Здоровое" : isEn ? "A healthier" : "Gesünderes",
-    badge3Sub: isRu ? "завтра" : isEn ? "tomorrow" : "Morgen",
+    badge1Title: isRu ? "Человек" : isEn ? "People" : isTr ? "İnsan" : isAr ? "الإنسان" : "Mensch",
+    badge1Sub: isRu
+      ? "в центре внимания"
+      : isEn
+      ? "at the center"
+      : isTr
+      ? "odağımızda"
+      : isAr
+      ? "في قلب اهتمامنا"
+      : "im Mittelpunkt",
+    badge2Title: isRu
+      ? "Устойчивый"
+      : isEn
+      ? "Sustainable"
+      : isTr
+      ? "Sürdürülebilir"
+      : isAr
+      ? "نمو"
+      : "Nachhaltiges",
+    badge2Sub: isRu ? "рост" : isEn ? "growth" : isTr ? "büyüme" : isAr ? "مستدام" : "Wachstum",
+    badge3Title: isRu
+      ? "Здоровое"
+      : isEn
+      ? "A healthier"
+      : isTr
+      ? "Daha sağlıklı"
+      : isAr
+      ? "غدٌ أكثر"
+      : "Gesünderes",
+    badge3Sub: isRu ? "завтра" : isEn ? "tomorrow" : isTr ? "bir yarın" : isAr ? "صحة وعافية" : "Morgen",
 
-    rootsEyebrow: isRu ? "ИСТОРИЯ И КОРНИ" : isEn ? "OUR ROOTS & HISTORY" : "UNSERE WURZELN & GESCHICHTE",
-    rootsTitle1: isRu ? "Опыт десятилетий." : isEn ? "Rooted in Experience." : "Aus Erfahrung gewachsen.",
-    rootsTitle2: isRu ? "Направленность в будущее." : isEn ? "Built for the Future." : "Für die Zukunft aufgestellt.",
+    rootsEyebrow: isRu
+      ? "ИСТОРИЯ И КОРНИ"
+      : isEn
+      ? "OUR ROOTS & HISTORY"
+      : isTr
+      ? "KÖKLERİMİZ VE TARİHÇEMİZ"
+      : isAr
+      ? "جذورنا ومسيرتنا"
+      : "UNSERE WURZELN & GESCHICHTE",
+    rootsTitle1: isRu
+      ? "Опыт десятилетий."
+      : isEn
+      ? "Rooted in Experience."
+      : isTr
+      ? "Deneyimle büyüyen güç."
+      : isAr
+      ? "خبرة متجذرة في التميز."
+      : "Aus Erfahrung gewachsen.",
+    rootsTitle2: isRu
+      ? "Направленность в будущее."
+      : isEn
+      ? "Built for the Future."
+      : isTr
+      ? "Geleceğe hazır adımlar."
+      : isAr
+      ? "رؤية راسخة نحو المستقبل."
+      : "Für die Zukunft aufgestellt.",
     rootsP1: isRu ? (
       <>
         NabiOta® Health Group Germany GmbH зарегистрирована в Amtsgericht Mönchengladbach под номером HRB 16787. Уведомление о регистрации от 9 января 2026 года указывает уставный капитал 50.000 EUR и юридический адрес: Aachener Straße 114, 41061 Mönchengladbach. Предмет деятельности — управление участиями и централизованные управленческие услуги в сфере здравоохранения. Корни группы восходят к стратегическому развитию медицинской экспертизы и{" "}
@@ -275,6 +369,16 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       <>
         NabiOta® Health Group Germany GmbH is registered under HRB 16787 at the Amtsgericht Mönchengladbach. The registration notice dated 9 January 2026 states a share capital of EUR 50,000 and the business address Aachener Straße 114, 41061 Mönchengladbach. Its corporate purpose comprises investment management and central management services in the healthcare sector. Tracing its origins back to{" "}
         <strong className="font-bold text-[#142318]">Medical A-Z Consulting GmbH</strong>, the group has evolved through structured corporate development and specialist medical participation into a future-ready healthcare group.
+      </>
+    ) : isTr ? (
+      <>
+        NabiOta® Health Group Germany GmbH, Mönchengladbach Asliye Hukuk Mahkemesi (Amtsgericht) nezdinde HRB 16787 tescil numarasıyla kayıtlıdır. 9 Ocak 2026 tarihli sicil tescil bildiriminde 50.000 EUR sermaye ve Aachener Straße 114, 41061 Mönchengladbach şirket adresi yer almaktadır. Faaliyet konusu, sağlık sektöründe iştirak yönetimi ve merkezi yönetim hizmetlerini kapsar. Grubun kökleri, stratejik medikal uzmanlık ve{" "}
+        <strong className="font-bold text-[#142318]">Medical A-Z Consulting GmbH</strong> mirasına dayanır; yapılandırılmış kurumsal gelişim ve uzman tıbbi ortaklıklar sayesinde ayakta ve yatarak tedavi sağlayan entegre bir sağlık grubunun temelleri atılmıştır.
+      </>
+    ) : isAr ? (
+      <>
+        تم قيد شركة NabiOta® Health Group Germany GmbH بالسجل التجاري لدى محكمة مونشنغلادباخ الابتدائية برقم HRB 16787. يفيد إخطار القيد الصادر في 9 يناير 2026 برأس مال قدره 50,000 يورو ومقر العمل في Aachener Straße 114, 41061 Mönchengladbach. يشمل غرض الشركة إدارة الحصص الاستثمارية وتقديم الخدمات الإدارية المركزية في قطاع الرعاية الصحية. واستناداً إلى الخبرات الطبية التأسيسية الراسخة لشركة{" "}
+        <strong className="font-bold text-[#142318]">Medical A-Z Consulting GmbH</strong>، تم من خلال التطوير المؤسسي المنظم ومشاركة كبار الأطباء الاستشاريين إرساء القاعدة الصلبة لشبكة متكاملة تجمع بين مرافق الرعاية المتنقلة والسريرية.
       </>
     ) : (
       <>
@@ -286,124 +390,476 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       ? "Цель — объединение семейной и терапевтической, неврологической и хирургической помощи, а также частной клиники, которая на первом этапе работает по § 30 GewO. Холдинг берет на себя центральные экономические и организационные задачи. Допуски (Zulassungen), медицинская ответственность и оказание услуг остаются у соответствующих уполномоченных операторов. Последующее стационарное обслуживание пациентов обязательного медицинского страхования и больничное общество как учредитель MVZ готовятся как отдельные этапы развития."
       : isEn
       ? "The goal is a network of general practice and internal medicine, neurological and surgical care, as well as a private clinic initially operated under § 30 GewO. The holding assumes central economic and organizational tasks. Approvals, medical responsibility and service provision remain with the respective authorized operators. Later inpatient care for statutorily insured patients and a hospital company acting as MVZ sponsor are being prepared as separate development steps."
+      : isTr
+      ? "Hedefimiz; aile hekimliği ve dahiliye, nöroloji ve cerrahi branşlarının yanı sıra başlangıçta § 30 GewO uyarınca işletilen özel bir kliniği kapsayan entegre bir sağlık ağıdır. Holding merkezi ekonomik ve operasyonel görevleri üstlenir. Ruhsatlar, tıbbi sorumluluk ve hasta tedavisi yetkili işleticilerin bünyesinde kalır. Yasal sağlık sigortalı hastaların yatan hasta tedavisi ve MVZ kurucu tüzel kişisi olarak hastane şirketinin yapılandırılması ayrı aşamalar halinde planlanmaktadır."
+      : isAr
+      ? "الهدف هو تأسيس شبكة رعاية طبية متكاملة تضم طب الأسرة والأمراض الباطنية، طب الأعصاب، الجراحة، بالإضافة إلى مستشفى خاص يعمل مبدئياً وفق § 30 GewO. تتولى القابضة المهام الاقتصادية والتنظيمية المركزية، بينما تظل التراخيص والمسؤولية الطبية وتقديم الرعاية السريرية تحت الإشراف الكامل والمستقل للأطباء المرخصين. ويجري التحضير لتقديم الرعاية السريرية لمرضى التأمين الصحي العام وتأسيس شركة مستشفيات كجهة مشغلة لمراكز MVZ كخطوات تطويرية منفصلة."
       : "Ziel ist ein Verbund aus hausärztlicher und internistischer Versorgung, neurologischer und chirurgischer Versorgung sowie einer zunächst nach § 30 GewO betriebenen Privatklinik. Die Holding übernimmt zentrale wirtschaftliche und organisatorische Aufgaben. Zulassungen, medizinische Verantwortung und Leistungserbringung verbleiben bei den jeweils berechtigten Betreibern. Die spätere stationäre Versorgung gesetzlich Versicherter und eine Krankenhausgesellschaft als MVZ-Trägerin werden als gesonderte Entwicklungsschritte vorbereitet.",
 
-    missionEyebrow: isRu ? "МИССИЯ И ВИДЕНИЕ" : isEn ? "OUR MISSION & GOALS" : "UNSER AUFTRAG & ZIELE",
-    missionHeading: isRu ? "Что нами движет" : isEn ? "What Drives Us" : "Was uns antreibt",
+    missionEyebrow: isRu
+      ? "МИССИЯ И ВИДЕНИЕ"
+      : isEn
+      ? "OUR MISSION & GOALS"
+      : isTr
+      ? "MİSYONUMUZ VE HEDEFLERİMİZ"
+      : isAr
+      ? "رسالتنا وأهدافنا"
+      : "UNSER AUFTRAG & ZIELE",
+    missionHeading: isRu
+      ? "Что нами движет"
+      : isEn
+      ? "What Drives Us"
+      : isTr
+      ? "Bizi harekete geçiren güç"
+      : isAr
+      ? "ما يلهم مسيرتنا"
+      : "Was uns antreibt",
     missionLead: isRu
       ? "Мы понимаем здоровье не только как лечение заболеваний, но и как целостную задачу: всесторонняя поддержка человека в различных жизненных ситуациях и долгосрочное повышение качества жизни."
       : isEn
       ? "We understand health not merely as the treatment of illnesses, but as a holistic mission: supporting people in diverse life situations and sustainably enhancing their quality of life."
+      : isTr
+      ? "Sağlığı yalnızca hastalıkların tedavisi olarak değil, bütüncül bir görev olarak değerlendiriyoruz. Bu nedenle farklı yaşam evrelerindeki insanları en iyi şekilde desteklemeye ve yaşam kalitelerini uzun vadeli artırmaya odaklanıyoruz."
+      : isAr
+      ? "نحن ننظر إلى الصحة ليس فقط باعتبارها علاجاً للأمراض، بل كرسالة إنسانية شاملة؛ لذا نكرس جهودنا لدعم المرضى في مختلف مراحل حياتهم بأعلى مستويات الرعاية وتعزيز جودة حياتهم بصورة مستدامة."
       : "Wir verstehen Gesundheit nicht nur als Behandlung von Krankheiten, sondern als ganzheitliche Aufgabe. Deshalb setzen wir uns dafür ein, Menschen in unterschiedlichen Lebenssituationen bestmöglich zu unterstützen und ihre Lebensqualität langfristig zu fördern.",
-    cardMissionTitle: isRu ? "Наш заказ (Миссия)" : isEn ? "Our Mission" : "Unser Auftrag",
+    cardMissionTitle: isRu
+      ? "Наш заказ (Миссия)"
+      : isEn
+      ? "Our Mission"
+      : isTr
+      ? "Misyonumuz"
+      : isAr
+      ? "رسالتنا"
+      : "Unser Auftrag",
     cardMissionText: isRu
       ? "Оказывать людям наилучшую поддержку посредством высококачественной медицинской помощи, современной диагностики, индивидуального ухода и инновационных услуг — надежно сопровождая пациентов на всем пути лечения."
       : isEn
       ? "To provide people with the best possible support through high-quality medical care, modern diagnostics, personalized attention, and innovative healthcare services throughout their entire treatment journey."
+      : isTr
+      ? "Yüksek kaliteli tıbbi bakım, modern tanı yöntemleri, kişiye özel ilgi ve yenilikçi sağlık hizmetleriyle insanları en iyi şekilde desteklemek ve tedavi süreçlerinin her adımında güvenilir bir rehber olmaktır."
+      : isAr
+      ? "رسالتنا هي تقديم أفضل دعم ممكن للمرضى من خلال رعاية طبية فائقة الجودة، تقنيات تشخيص حديثة، رعاية شخصية دقيقة، وخدمات صحية مبتكرة ترافق المريض بكل موثوقية عبر مسار علاجه بأكمله."
       : "Unser Auftrag ist es, Menschen durch hochwertige medizinische Versorgung, moderne Diagnostik, individuelle Betreuung und innovative Gesundheitsdienstleistungen bestmöglich zu unterstützen und Patienten auf ihrem gesamten Behandlungsweg verlässlich zu begleiten.",
-    cardVisionTitle: isRu ? "Наши цели" : isEn ? "Our Goals" : "Unsere Ziele",
+    cardVisionTitle: isRu
+      ? "Наши цели"
+      : isEn
+      ? "Our Goals"
+      : isTr
+      ? "Hedeflerimiz"
+      : isAr
+      ? "أهدافنا"
+      : "Unsere Ziele",
     cardVisionText: isRu
       ? "Здравоохранение, в котором медицинская компетентность, передовые технологии и человеческая забота идут рука об руку: объединение медицинских услуг, облегчение доступа к лечению и создание устойчивых структур."
       : isEn
       ? "Healthcare in which medical competence, modern technologies, and human compassion go hand in hand: connecting care services, easing access to treatments, and creating sustainable structures for the future."
+      : isTr
+      ? "Tıbbi uzmanlığın, ileri teknolojinin ve insani ilginin el ele verdiği bir sağlık ekosistemi hedefliyoruz. Sağlık hizmetlerini ağlar halinde birleştiriyor, erişimi kolaylaştırıyor ve geleceğe hazır yapılar inşa ediyoruz."
+      : isAr
+      ? "هدفنا هو منظومة رعاية صحية تتكامل فيها الكفاءة الطبية العالية والتقنيات الحديثة مع العناية الإنسانية المخلصة. نربط خدمات الرعاية ببعضها، نسهل وصول المرضى إليها، ونبني هياكل علاجية مستدامة للأجيال القادمة."
       : "Unser Ziel ist eine Gesundheitsversorgung, in der medizinische Kompetenz, moderne Technologien und menschliche Zuwendung Hand in Hand gehen. Wir vernetzen Versorgungsangebote, erleichtern den Zugang und schaffen nachhaltige Versorgungsstrukturen.",
 
-    stat1Num: "3,000+",
-    stat1Label: isRu ? "Преданных специалистов" : isEn ? "Dedicated professionals" : "Engagierte Fachkräfte",
+    stat1Num: "3.000+",
+    stat1Label: isRu
+      ? "Преданных специалистов"
+      : isEn
+      ? "Dedicated professionals"
+      : isTr
+      ? "Özverili Uzman Personel"
+      : isAr
+      ? "كادراً متخصصاً متفانياً"
+      : "Engagierte Fachkräfte",
     stat2Num: "10",
-    stat2Label: isRu ? "Подразделений и предприятий" : isEn ? "Divisions & operating entities" : "Unternehmensbereiche & Einheiten",
+    stat2Label: isRu
+      ? "Подразделений и предприятий"
+      : isEn
+      ? "Divisions & operating entities"
+      : isTr
+      ? "Faaliyet Alanı ve Şirket"
+      : isAr
+      ? "قطاعات ووحدات تشغيلية"
+      : "Unternehmensbereiche & Einheiten",
     stat3Num: "100+",
-    stat3Label: isRu ? "Партнерская сеть" : isEn ? "Partner network" : "Partner im Netzwerk",
-    stat4Num: isRu ? "Одна" : isEn ? "One" : "Eine",
-    stat4Label: isRu ? "Общая миссия во имя здорового будущего" : isEn ? "Shared mission for a healthier tomorrow" : "Gemeinsame Mission für eine gesündere Zukunft",
+    stat3Label: isRu
+      ? "Партнерская сеть"
+      : isEn
+      ? "Partner network"
+      : isTr
+      ? "Ağ Ortakları"
+      : isAr
+      ? "شريكاً في الشبكة الطبية"
+      : "Partner im Netzwerk",
+    stat4Num: isRu ? "Одна" : isEn ? "One" : isTr ? "Tek" : isAr ? "رسالة" : "Eine",
+    stat4Label: isRu
+      ? "Общая миссия во имя здорового будущего"
+      : isEn
+      ? "Shared mission for a healthier tomorrow"
+      : isTr
+      ? "Daha sağlıklı bir gelecek için ortak misyon"
+      : isAr
+      ? "واحدة مشتركة لمستقبل صحي واعد"
+      : "Gemeinsame Mission für eine gesündere Zukunft",
 
-    orgEyebrow: isRu ? "ОРГАНИЗАЦИОННАЯ СТРУКТУРА" : isEn ? "ORGANIZATIONAL STRUCTURE" : "ORGANISATION & STRUKTUR",
-    orgHeading: isRu ? "Структура холдинга и дочерние общества" : isEn ? "Holding & Subsidiary Entities" : "Unternehmensstruktur – Holding & Tochtergesellschaften",
-    holdingBadge: isRu ? "ХОЛДИНГ / КОНЦЕРН" : isEn ? "HOLDING / KONZERN" : "HOLDING / KONZERN",
+    orgEyebrow: isRu
+      ? "ОРГАНИЗАЦИОННАЯ СТРУКТУРА"
+      : isEn
+      ? "ORGANIZATIONAL STRUCTURE"
+      : isTr
+      ? "ORGANİZASYON VE YAPI"
+      : isAr
+      ? "الهيكل التنظيمي والمؤسسي"
+      : "ORGANISATION & STRUKTUR",
+    orgHeading: isRu
+      ? "Структура холдинга и дочерние общества"
+      : isEn
+      ? "Holding & Subsidiary Entities"
+      : isTr
+      ? "Şirket Yapısı – Holding ve İştirakler"
+      : isAr
+      ? "الهيكل المؤسسي – القابضة والشركات التابعة"
+      : "Unternehmensstruktur – Holding & Tochtergesellschaften",
+    holdingBadge: isRu
+      ? "ХОЛДИНГ / КОНЦЕРН"
+      : isEn
+      ? "HOLDING / KONZERN"
+      : isTr
+      ? "HOLDİNG / GRUP"
+      : isAr
+      ? "الشركة القابضة / المجموعة"
+      : "HOLDING / KONZERN",
 
-    twoPhaseEyebrow: isRu ? "СТРАТЕГИЯ РАЗВИТИЯ" : isEn ? "DEVELOPMENT STRATEGY" : "STRATEGISCHE ENTWICKLUNG",
-    twoPhaseTitle: isRu ? "Структура участия в две фазы" : isEn ? "Two-Phase Corporate Evolution" : "Beteiligungsstruktur in zwei Phasen",
+    twoPhaseEyebrow: isRu
+      ? "СТРАТЕГИЯ РАЗВИТИЯ"
+      : isEn
+      ? "DEVELOPMENT STRATEGY"
+      : isTr
+      ? "STRATEJİK GELİŞİM"
+      : isAr
+      ? "التطوير الاستراتيجي"
+      : "STRATEGISCHE ENTWICKLUNG",
+    twoPhaseTitle: isRu
+      ? "Структура участия в две фазы"
+      : isEn
+      ? "Two-Phase Corporate Evolution"
+      : isTr
+      ? "İki Aşamalı İştirak Yapısı"
+      : isAr
+      ? "هيكل المساهمة والاستثمار عبر مرحلتين"
+      : "Beteiligungsstruktur in zwei Phasen",
     twoPhaseDesc: isRu
       ? "Развитие холдинга строится последовательно для обеспечения юридической безупречности и устойчивого масштабирования."
       : isEn
       ? "The group's corporate expansion is engineered systematically to ensure full regulatory compliance and sustainable scaling."
+      : isTr
+      ? "NabiOta Grubu'nun inşası, mesleki ve idari mevzuata tam uyumu sağlamak amacıyla açıkça tanımlanmış iki aşamada gerçekleştirilmektedir."
+      : isAr
+      ? "يتم بناء وتوسيع مجموعة NabiOta عبر مرحلتين محددتين بدقة لضمان الامتثال التام للأنظمة المهنية وقوانين تراخيص الرعاية الطبية."
       : "Der Aufbau der NabiOta-Gruppe erfolgt in zwei klar definierten Phasen zur Sicherstellung voller berufs- und zulassungsrechtlicher Konformität.",
-    phase1Title: isRu ? "Фаза 1: Этап становления с участием врача" : isEn ? "Phase 1: Foundation Phase with Physician" : "Phase 1: Aufbauphase mit ärztlicher Beteiligung",
+    phase1Title: isRu
+      ? "Фаза 1: Этап становления с участием врача"
+      : isEn
+      ? "Phase 1: Foundation Phase with Physician"
+      : isTr
+      ? "Aşama 1: Hekim Katılımlı Kuruluş Evresi"
+      : isAr
+      ? "المرحلة الأولى: مرحلة التأسيس بمشاركة الأطباء المرخصين"
+      : "Phase 1: Aufbauphase mit ärztlicher Beteiligung",
     phase1Desc: isRu
       ? "Dr. Fischer-Rahimov как лицензированный врач-контрактник владеет долями MVZ на основе права учредителя. Холдинг берет на себя центральные сервисные и управляющие функции через индивидуальные договоры услуг."
       : isEn
       ? "Dr. Fischer-Rahimov holds MVZ shares directly on the basis of his statutory physician entitlement. The holding company provides centralized management services via individually defined service agreements."
+      : isTr
+      ? "Dr. Fischer-Rahimov, yasal kurucu hekim hakkı temelinde doğrudan MVZ hisselerini elinde bulundurur. Holding, bireysel olarak kararlaştırılan hizmet sözleşmeleri aracılığıyla MVZ merkezlerine kurumsal destek sunar."
+      : isAr
+      ? "يمتلك د. فيشر-رحيموف حصص مراكز MVZ مباشرةً استناداً إلى أهليته التأسيسية كطبيب معتمد. وترتبط الشركة القابضة بمراكز MVZ عبر اتفاقيات خدمات إدارية محددة."
       : "Dr. Fischer-Rahimov hält MVZ-Anteile unmittelbar auf Grundlage seiner Gründungsberechtigung. Die Holding verbindet sich mit den MVZ durch einzeln vereinbarte Dienstleistungen. Andere zulässige Beteiligungen werden separat aufgebaut.",
-    phase2Title: isRu ? "Фаза 2: Стационарная больничная структура" : isEn ? "Phase 2: Hospital Corporation Structure" : "Phase 2: Spätere Krankenhausstruktur",
+    phase2Title: isRu
+      ? "Фаза 2: Стационарная больничная структура"
+      : isEn
+      ? "Phase 2: Hospital Corporation Structure"
+      : isTr
+      ? "Aşama 2: Gelecekteki Hastane Yapılanması"
+      : isAr
+      ? "المرحلة الثانية: هيكل المستشفى المؤسسي اللاحق"
+      : "Phase 2: Spätere Krankenhausstruktur",
     phase2Desc: isRu
       ? "Холдинг учреждает компанию управления клиникой (NabiOta Clinics Germany GmbH nach § 30 GewO). После получения лицензии больницы (§ 108/109 SGB V) компания сможет напрямую участвовать в долях MVZ."
       : isEn
       ? "The holding operates the hospital operating entity (under § 30 GewO). Upon obtaining official hospital accreditation (§ 108/109 SGB V), it can hold MVZ shares directly."
+      : isTr
+      ? "Holding, hastane işletme şirketini (§ 30 GewO) bünyesinde tutar. Yasal hastane ruhsatı (§ 108/109 SGB V) alındıktan sonra ve pay devri incelemesinin ardından bu şirket doğrudan MVZ hisselerini devralabilir."
+      : isAr
+      ? "تمتلك الشركة القابضة شركة إدارة وتشغيل المستشفى (§ 30 GewO). وفور الحصول على اعتماد المستشفيات المطلوب (§ 108/109 SGB V) وبعد فحص تحويل الحصص، يمكن لهذه الشركة امتلاك حصص MVZ مباشرةً."
       : "Die Holding hält die Krankenhaus-Betriebsgesellschaft. Erst bei deren erforderlicher Krankenhauszulassung (§ 108/109 SGB V) und nach Prüfung der Anteilsübertragung kann diese unmittelbar MVZ-Anteile halten.",
 
-    independenceTitle: isRu ? "Полная независимость врачебных решений" : isEn ? "Guaranteed Medical Independence" : "Garantierte ärztliche Weisungsfreiheit",
+    independenceTitle: isRu
+      ? "Полная независимость врачебных решений"
+      : isEn
+      ? "Guaranteed Medical Independence"
+      : isTr
+      ? "Garantili Tıbbi Bağımsızlık"
+      : isAr
+      ? "استقلالية كاملة ومضمونة للقرارات الطبية"
+      : "Garantierte ärztliche Weisungsfreiheit",
     independenceDesc: isRu
       ? "Холдинг обеспечивает экономическое, IT- и инфраструктурное сопровождение, но не имеет полномочий влиять на индивидуальные медицинские решения. Врачебное руководство каждого центра действует абсолютно автономно в соответствии с § 95 SGB V."
       : isEn
       ? "The holding handles administrative, IT, and facility management without interfering in clinical care. The medical directorship of each facility remains completely autonomous in all healthcare matters."
+      : isTr
+      ? "Tıbbi kurumlar; tedavi kararları, tanı ve klinik işleyiş konusunda tamamen bağımsız kalır. Bir MVZ'nin tıbbi direktörlüğünün serbest karar alma hakkı (§ 95 SGB V) hiçbir kısıtlama olmaksızın korunur."
+      : isAr
+      ? "تتمتع المرافق الطبية بالاستقلالية التامة في القرارات العلاجية والتشخيصية والتنظيم السريري. وتظل الاستقلالية المهنية غير المقيدة للإدارة الطبية في مراكز MVZ مصونة بالكامل (§ 95 SGB V)."
       : "Die medizinischen Einrichtungen bleiben für Behandlungsentscheidungen, Diagnostik und ärztliche Organisation eigenverantwortlich. Die medizinische Weisungsfreiheit der ärztlichen Leitung eines MVZ bleibt uneingeschränkt gewahrt (§ 95 SGB V).",
 
     // Section 3B: Medical Leadership & Founder (PDF Pages 2-4)
-    leadershipEyebrow: isRu ? "ВРАЧЕБНОЕ РУКОВОДСТВО И ОСНОВАТЕЛЬ" : isEn ? "MEDICAL LEADERSHIP & FOUNDER" : "ÄRZTLICHE FÜHRUNG & GRÜNDER",
-    leadershipHeading1: isRu ? "Ответственная медицина" : isEn ? "Responsible Healthcare" : "Verantwortungsvolle Medizin",
-    leadershipHeading2: isRu ? "под руководством врачей." : isEn ? "Led by Physicians." : "durch ärztliche Führung.",
+    leadershipEyebrow: isRu
+      ? "ВРАЧЕБНОЕ РУКОВОДСТВО И ОСНОВАТЕЛЬ"
+      : isEn
+      ? "MEDICAL LEADERSHIP & FOUNDER"
+      : isTr
+      ? "TIBBİ LİDERLİK VE KURUCU"
+      : isAr
+      ? "القيادة الطبية ومؤسس المجموعة"
+      : "ÄRZTLICHE FÜHRUNG & GRÜNDER",
+    leadershipHeading1: isRu
+      ? "Ответственная медицина"
+      : isEn
+      ? "Responsible Healthcare"
+      : isTr
+      ? "Sorumlu tıp,"
+      : isAr
+      ? "طب مسؤول"
+      : "Verantwortungsvolle Medizin",
+    leadershipHeading2: isRu
+      ? "под руководством врачей."
+      : isEn
+      ? "Led by Physicians."
+      : isTr
+      ? "hekim liderliğinde."
+      : isAr
+      ? "بقيادة استشارية طبية رائدة."
+      : "durch ärztliche Führung.",
     leadershipSubtitle: isRu
       ? "Фундамент NabiOta® Health Group Germany основан на клиническом авторитете и статусе врача-учредителя (Gründungsberechtigter Vertragsarzt). Медицинский совет гарантирует превосходство в лечении, свободное от коммерческого давления."
       : isEn
       ? "The bedrock of NabiOta® Health Group Germany rests upon clinical integrity and the statutory founder status of licensed physicians. Our clinical board guarantees superior standards of care independent of purely commercial return pressures."
+      : isTr
+      ? "NabiOta® Health Group Germany'nin temeli, köklü klinik mükemmellik ve yerleşik sözleşmeli hekimlerin yasal kuruculuk yetkisine dayanır. Tıbbi yönetim, ticari getiri baskısından uzak, en yüksek tedavi kalitesini garanti eder."
+      : isAr
+      ? "يرتكز أساس NabiOta® Health Group Germany على التميز السريري الرفيع والحق التأسيسي القانوني للأطباء المعتمدين. تضمن الإدارة الطبية أعلى معايير جودة الرعاية دون أي ضغوط ربحية تجارية بحتة."
       : "Das Fundament der NabiOta® Health Group Germany basiert auf der klinischen Exzellenz und der gesetzlichen Gründungsberechtigung niedergelassener Vertragsärzte. Die medizinische Leitung sichert höchste Behandlungsqualität frei von rein ökonomischem Renditedruck.",
 
     founderName: "Dr. Fischer-Rahimov",
-    founderRole: isRu ? "Врач-учредитель & Медицинский куратор Фазы 1" : isEn ? "Founding Statutory Physician & Phase 1 Medical Sponsor" : "Gründungsberechtigter Vertragsarzt & Medizinischer Schirmherr",
+    founderRole: isRu
+      ? "Врач-учредитель & Медицинский куратор Фазы 1"
+      : isEn
+      ? "Founding Statutory Physician & Phase 1 Medical Sponsor"
+      : isTr
+      ? "Yasal Kurucu Sözleşmeli Hekim & Tıbbi Hami"
+      : isAr
+      ? "طبيب معتمد مؤسس وراعٍ طبي معتمد"
+      : "Gründungsberechtigter Vertragsarzt & Medizinischer Schirmherr",
     founderBadge: "§ 95 Abs. 1a SGB V",
     founderBio1: isRu
       ? "Как лицензированный врач с многолетним опытом практики в Рейнланде, Dr. Fischer-Rahimov представляет собой ключевой профессиональный и правовой ориентир в первой фазе создания группы. Его авторитет и врачебная лицензия послужили юридическим фундаментом для развертывания сети амбулаторных центров MVZ."
       : isEn
       ? "As a licensed statutory health insurance physician with decades of regional medical practice in the Rhineland, Dr. Fischer-Rahimov anchors the clinical and regulatory foundation of the holding's initial growth phase, providing the legal prerequisite for the MVZ network."
+      : isTr
+      ? "Rheinland bölgesinde uzun yıllardır hekimlik yapan deneyimli bir sözleşmeli hekim olarak Dr. Fischer-Rahimov, ilk büyüme aşamasının mesleki ve kaza sigortası mevzuatındaki temel dayanağını oluşturur. Kliniği ve saygınlığı, MVZ ağının kurulması için yasal zemini hazırlamıştır."
+      : isAr
+      ? "بصفته طبيباً معتمداً ممارساً لسنوات طويلة في منطقة راينلاند، يمثل د. فيشر-رحيموف الركيزة المهنية والقانونية الأساسية للمرحلة الأولى من التوسع، حيث شكلت عيادته وخبرته السريرية القاعدة القانونية لإطلاق شبكة مراكز MVZ."
       : "Als niedergelassener Vertragsarzt und langjährig praktizierender Mediziner im Rheinland bildet Dr. Fischer-Rahimov den berufs- und kassenarztrechtlichen Ankerpunkt der ersten Wachstumsphase. Seine Praxis und sein Renommee schufen die gesetzliche Basis für die Initiierung des MVZ-Verbundes.",
     founderBio2: isRu
       ? "Его цель — объединить традиционные ценности немецкой врачебной этики, персональное внимание к пациенту и современные технологии многопрофильного амбулаторного лечения."
       : isEn
       ? "His vision unites traditional physician ethics, personalized patient trust, and cutting-edge multidisciplinary outpatient infrastructure."
+      : isTr
+      ? "Temel ilkesi, hekimlik meslek ahlakının köklü erdemlerini, her hastanın iyiliği için disiplinler arası yenilikçi bakım konseptleriyle birleştirmektir."
+      : isAr
+      ? "يجمع نهجه ورؤيته بين التقاليد الراسخة لأخلاقيات مهنة الطب الألمانية ومفاهيم الرعاية المبتكرة متعددة التخصصات لما فيه مصلحة كل مريض."
       : "Sein Leitmotiv verbindet die bewährten Tugenden des ärztlichen Standesethos mit innovativen fachübergreifenden Versorgungskonzepten zum Wohle jedes einzelnen Patienten.",
     founderPoints: [
-      isRu ? "Прямое участие врача в капитале MVZ по закону SGB V" : isEn ? "Direct physician equity in MVZ under § 95 SGB V" : "Unmittelbare vertragsärztliche Beteiligung an den MVZ",
-      isRu ? "Гарантия полной терапевтической свободы персонала" : isEn ? "Guaranteed clinical autonomy for all medical staff" : "Volle Wahrung der ärztlichen Weisungsfreiheit",
-      isRu ? "Тесное партнерство с KV Nordrhein и больничными кассами" : isEn ? "Close integration with KV Nordrhein and insurers" : "Enge Abstimmung mit der Kassenärztlichen Vereinigung Nordrhein",
+      isRu
+        ? "Прямое участие врача в капитале MVZ по закону SGB V"
+        : isEn
+        ? "Direct physician equity in MVZ under § 95 SGB V"
+        : isTr
+        ? "§ 95 SGB V uyarınca MVZ'lerde doğrudan hekim ortaklığı"
+        : isAr
+        ? "مساهمة ومشاركة طبية مباشرة في مراكز MVZ وفق § 95 SGB V"
+        : "Unmittelbare vertragsärztliche Beteiligung an den MVZ",
+      isRu
+        ? "Гарантия полной терапевтической свободы персонала"
+        : isEn
+        ? "Guaranteed clinical autonomy for all medical staff"
+        : isTr
+        ? "Tıbbi bağımsızlığın ve serbest kararın tam olarak korunması"
+        : isAr
+        ? "حماية وضمان كامل لحرية القرار الطبي واستقلالية العلاج"
+        : "Volle Wahrung der ärztlichen Weisungsfreiheit",
+      isRu
+        ? "Тесное партнерство с KV Nordrhein и больничными кассами"
+        : isEn
+        ? "Close integration with KV Nordrhein and insurers"
+        : isTr
+        ? "KV Nordrhein ve sigorta sandıklarıyla yakın koordinasyon"
+        : isAr
+        ? "تنسيق وثيق ومستمر مع نقابة أطباء التأمين KV Nordrhein وصناديق التأمين"
+        : "Enge Abstimmung mit der Kassenärztlichen Vereinigung Nordrhein",
     ],
 
-    boardTitle: isRu ? "Врачебный совет и клинические стандарты" : isEn ? "Medical Advisory Board & Clinical Standards" : "Der Ärztliche Beirat & Klinische Governance",
+    boardTitle: isRu
+      ? "Врачебный совет и клинические стандарты"
+      : isEn
+      ? "Medical Advisory Board & Clinical Standards"
+      : isTr
+      ? "Tıbbi Danışma Kurulu ve Klinik Yönetişim"
+      : isAr
+      ? "المجلس الاستشاري الطبي والحوكمة السريرية"
+      : "Der Ärztliche Beirat & Klinische Governance",
     boardDesc: isRu
       ? "Коллегиальный орган из ведущих практикующих врачей холдинга, определяющий клинические протоколы, контролирующий безопасность пациентов и развивающий образовательные программы."
       : isEn
       ? "A collegial board of leading senior clinicians that defines evidence-based pathways, oversees patient safety, and guides residency programs."
+      : isTr
+      ? "Kıdemli uzman hekimlerden oluşan disiplinler arası kurul; güncel kılavuzlara uygun tek tip tedavi kalitesini denetler ve uzmanlık eğitimlerini yönetir."
+      : isAr
+      ? "تضمن الهيئة الاستشارية متعددة التخصصات من كبار الأطباء الاستشاريين جودة رعاية موحدة ومبنية على أحدث الأدلة الطبية وتوجه برامج تدريب الأطباء."
       : "Das interdisziplinäre Kollegium aus leitenden Fachärzten sichert die einheitliche Behandlungsqualität nach aktuellen Leitlinien und steuert die Weiterbildung.",
 
-    valuesEyebrow: isRu ? "НАШИ ЦЕННОСТИ" : isEn ? "UNSERE WERTE" : "UNSERE WERTE",
-    valuesHeading: isRu ? "Что делает нас особенными." : isEn ? "Das macht uns besonders." : "Das macht uns besonders.",
+    valuesEyebrow: isRu
+      ? "НАШИ ЦЕННОСТИ"
+      : isEn
+      ? "OUR VALUES"
+      : isTr
+      ? "DEĞERLERİMİZ"
+      : isAr
+      ? "قيمنا الجوهرية"
+      : "UNSERE WERTE",
+    valuesHeading: isRu
+      ? "Что делает нас особенными."
+      : isEn
+      ? "What sets us apart."
+      : isTr
+      ? "Bizi özel kılan nedir?"
+      : isAr
+      ? "ما يميزنا ويصنع تفردنا"
+      : "Das macht uns besonders.",
 
-    val1Title: isRu ? "Надежный партнер" : isEn ? "Reliable Partner" : "Verlässlicher Partner",
-    val1Desc: isRu ? "Долгосрочное партнерство, основанное на взаимном доверии и уважении." : isEn ? "Long-term partnership built on mutual trust and respect." : "Langfristige Partnerschaft auf Augenhöhe und gegenseitigem Vertrauen.",
-    val2Title: isRu ? "Инновационные решения" : isEn ? "Innovative Solutions" : "Innovative Lösungen",
-    val2Desc: isRu ? "Продвижение современного, устойчивого и дальновидного здравоохранения." : isEn ? "Advancing modern, resilient, and forward-looking healthcare." : "Moderne, zukunftsfähige und vorausschauende Gesundheitsversorgung.",
-    val3Title: isRu ? "Живая ответственность" : isEn ? "Living Responsibility" : "Gelebte Verantwortung",
-    val3Desc: isRu ? "Качество, прозрачность и человечность во всем, что мы делаем." : isEn ? "Quality, transparency, and humanity in everything we do." : "Qualität, Transparenz und Menschlichkeit in unserem gesamten Handeln.",
-    val4Title: isRu ? "Развитие людей" : isEn ? "People Development" : "Mitarbeiterförderung",
-    val4Desc: isRu ? "Поддержка наших сотрудников и взращивание талантов для сильного будущего." : isEn ? "Empowering our staff and fostering talent for a strong tomorrow." : "Gezielte Förderung von Fachkräften und Potenzialen für eine starke Zukunft.",
+    val1Title: isRu
+      ? "Надежный партнер"
+      : isEn
+      ? "Reliable Partner"
+      : isTr
+      ? "Güvenilir Ortak"
+      : isAr
+      ? "شريك موثوق"
+      : "Verlässlicher Partner",
+    val1Desc: isRu
+      ? "Долгосрочное партнерство, основанное на взаимном доверии и уважении."
+      : isEn
+      ? "Long-term partnership built on mutual trust and respect."
+      : isTr
+      ? "Eşitler arası ve karşılıklı güvene dayalı uzun vadeli ortaklık."
+      : isAr
+      ? "شراكة استراتيجية طويلة الأمد تقوم على التقدير والثقة المتبادلة."
+      : "Langfristige Partnerschaft auf Augenhöhe und gegenseitigem Vertrauen.",
+    val2Title: isRu
+      ? "Инновационные решения"
+      : isEn
+      ? "Innovative Solutions"
+      : isTr
+      ? "Yenilikçi Çözümler"
+      : isAr
+      ? "حلول مبتكرة"
+      : "Innovative Lösungen",
+    val2Desc: isRu
+      ? "Продвижение современного, устойчивого и дальновидного здравоохранения."
+      : isEn
+      ? "Advancing modern, resilient, and forward-looking healthcare."
+      : isTr
+      ? "Modern, sürdürülebilir ve ileriye dönük sağlık hizmetleri."
+      : isAr
+      ? "منظومة رعاية صحية حديثة ومستدامة واستشرافية للمستقبل."
+      : "Moderne, zukunftsfähige und vorausschauende Gesundheitsversorgung.",
+    val3Title: isRu
+      ? "Живая ответственность"
+      : isEn
+      ? "Living Responsibility"
+      : isTr
+      ? "Yaşayan Sorumluluk"
+      : isAr
+      ? "مسؤولية حية"
+      : "Gelebte Verantwortung",
+    val3Desc: isRu
+      ? "Качество, прозрачность и человечность во всем, что мы делаем."
+      : isEn
+      ? "Quality, transparency, and humanity in everything we do."
+      : isTr
+      ? "Tüm eylemlerimizde kalite, şeffaflık ve insani duyarlılık."
+      : isAr
+      ? "جودة، شفافية، وإنسانية متأصلة في كل إجراء نقوم به."
+      : "Qualität, Transparenz und Menschlichkeit in unserem gesamten Handeln.",
+    val4Title: isRu
+      ? "Развитие людей"
+      : isEn
+      ? "People Development"
+      : isTr
+      ? "Çalışan Gelişimi"
+      : isAr
+      ? "تطوير الكفاءات"
+      : "Mitarbeiterförderung",
+    val4Desc: isRu
+      ? "Поддержка наших сотрудников и взращивание талантов для сильного будущего."
+      : isEn
+      ? "Empowering our staff and fostering talent for a strong tomorrow."
+      : isTr
+      ? "Güçlü bir gelecek için uzmanların ve potansiyellerin hedefe yönelik desteklenmesi."
+      : isAr
+      ? "تمكين مستمر للكوادر المتخصصة وصقل المواهب لغدٍ واعد."
+      : "Gezielte Förderung von Fachkräften und Potenzialen für eine starke Zukunft.",
 
-    ctaEyebrow: isRu ? "СОЗИДАЕМ ЗДОРОВОЕ БУДУЩЕЕ" : isEn ? "LET'S BUILD A HEALTHIER TOMORROW" : "GEMEINSAM GESUNDHEIT GESTALTEN",
-    ctaHeading: isRu ? "Станьте нашим партнером во имя здорового будущего." : isEn ? "Partner with us for a healthier future." : "Gestalten Sie mit uns eine gesündere Zukunft.",
-    ctaBtn: isRu ? "Связаться с нами →" : isEn ? "Get in Touch →" : "Kontakt aufnehmen →",
+    ctaEyebrow: isRu
+      ? "СОЗИДАЕМ ЗДОРОВОЕ БУДУЩЕЕ"
+      : isEn
+      ? "LET'S BUILD A HEALTHIER TOMORROW"
+      : isTr
+      ? "BİRLİKTE SAĞLIĞI ŞEKİLLENDİRELİM"
+      : isAr
+      ? "معاً نصنع مستقبل الصحة"
+      : "GEMEINSAM GESUNDHEIT GESTALTEN",
+    ctaHeading: isRu
+      ? "Станьте нашим партнером во имя здорового будущего."
+      : isEn
+      ? "Partner with us for a healthier future."
+      : isTr
+      ? "Daha sağlıklı bir geleceği bizimle birlikte inşa edin."
+      : isAr
+      ? "شاركنا في صياغة مستقبل صحي أكثر أماناً وإشراقاً."
+      : "Gestalten Sie mit uns eine gesündere Zukunft.",
+    ctaBtn: isRu
+      ? "Связаться с нами →"
+      : isEn
+      ? "Get in Touch →"
+      : isTr
+      ? "İletişime Geçin →"
+      : isAr
+      ? "تواصل معنا ←"
+      : "Kontakt aufnehmen →",
   };
 
   const organigramColumns = [
     {
-      colTitle: isRu ? "Амбулаторная и стационарная медицина" : isEn ? "Primary & Inpatient Medicine" : "Ambulante & Stationäre Medizin",
+      colTitle: isRu
+        ? "Амбулаторная и стационарная медицина"
+        : isEn
+        ? "Primary & Inpatient Medicine"
+        : isTr
+        ? "Ayakta ve Yatan Hasta Tıbbı"
+        : isAr
+        ? "الطب المتنقل والسريري"
+        : "Ambulante & Stationäre Medizin",
       items: [
         {
           name: "“NabiOta” MVZ",
@@ -411,6 +867,10 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             ? "Центр терапевтической и специализированной помощи (терапия, кардиология, гастроэнтерология, пульмонология, неврология, эндокринология)"
             : isEn
             ? "Center for Primary & Specialist Care (General Practice, Cardiology, Gastroenterology, Pulmonology, Neurology, Endocrinology)"
+            : isTr
+            ? "Birinci basamak ve uzman hekimlik bakım merkezi (Aile Hekimi, Kardiyoloji, Gastroenteroloji, Göğüs Hastalıkları, Nöroloji, Endokrinoloji)"
+            : isAr
+            ? "مركز الرعاية الأولية والتخصصية (طب الأسرة، القلب، الجهاز الهضمي، الرئة، الأعصاب، الغدد الصماء)"
             : "Zentrum für hausärztliche und fachärztliche Versorgung (Hausarzt, Kardiologie, Gastroenterologe, Pulmonologie, Neurologie, Endokrinologie)",
           badge: "§ 95 SGB V",
           href: `/${locale}/areas/medizinische-fachbereiche`,
@@ -422,6 +882,10 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             ? "Медицинская клиника (по § 30 GewO) — стационарные, дневные и операционные центры"
             : isEn
             ? "Inpatient & Specialty Clinic (acc. to § 30 GewO) — Inpatient surgery & recovery"
+            : isTr
+            ? "Klinik Germany GmbH (§ 30 KH / GewO uyarınca) — Yataklı, günübirlik ve cerrahi tedavi merkezleri"
+            : isAr
+            ? "Klinik Germany GmbH (وفق § 30 GewO) — رعاية استشفائية سريرية وجراحية متكاملة"
             : "Klinik Germany GmbH (n. § 30 KH / GewO) — Stationäre, teilstationäre & operative Versorgung",
           badge: "§ 30 GewO",
           href: `/${locale}/areas/medizinische-fachbereiche`,
@@ -433,15 +897,27 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             ? "Центр реабилитации и терапии (Rehabilitation & Therapy GmbH) — физиотерапия, эрготерапия, логопедия"
             : isEn
             ? "Rehabilitation & Therapy Center — Physiotherapy, Occupational & Speech therapy"
+            : isTr
+            ? "Rehabilitasyon ve Terapi Merkezi (GmbH) — Fizyoterapi, Ergoterapi, Logopedi ve Medikal Egzersiz Terapisi"
+            : isAr
+            ? "مركز إعادة التأهيل والعلاج (GmbH) — علاج طبيعي، علاج وظيفي، علاج النطق، وتمارين تأهيلية"
             : "Rehabilitation & Therapy Center (GmbH) — Physiotherapie, Ergotherapie, Logopädie & MTT",
-          badge: "Ambulante Reha",
+          badge: isTr ? "Ayakta Reha" : isAr ? "تأهيل متنقل" : "Ambulante Reha",
           href: `/${locale}/areas/rehabilitation`,
           icon: ActivityRehabIcon,
         },
       ],
     },
     {
-      colTitle: isRu ? "Хирургия, диагностика и уход" : isEn ? "Surgery, Diagnostics & Care" : "Chirurgie, Diagnostik & Pflege",
+      colTitle: isRu
+        ? "Хирургия, диагностика и уход"
+        : isEn
+        ? "Surgery, Diagnostics & Care"
+        : isTr
+        ? "Cerrahi, Tanı ve Bakım"
+        : isAr
+        ? "الجراحة، التشخيص، والرعاية"
+        : "Chirurgie, Diagnostik & Pflege",
       items: [
         {
           name: "“NabiOta” MVZ",
@@ -449,8 +925,12 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             ? "Хирургия и анестезиология (ортопедия/травматология, нейрохирургия, абдоминальная и пластическая хирургия, противоболевая терапия)"
             : isEn
             ? "Surgery & Anesthesiology (Orthopedics, Neurosurgery, Visceral & Plastic Surgery, Pain therapy)"
+            : isTr
+            ? "Cerrahi ve Anesteziyoloji (Ortopedi, Travmatoloji, Nöroşirürji, Genel/Viseral Cerrahi, Plastik Cerrahi, Anestezi)"
+            : isAr
+            ? "الجراحة والتخدير (جراحة العظام، الحوادث، جراحة الأعصاب، الجراحة العامة والباطنية، الجراحة التجميلية، التخدير)"
             : "Chirurgie und Anästhesiologie (Orthopädie, Unfallchirurgie, Neurochirurgie, Allgemein-/Viszeral-, Plastische Chirurgie, Anästhesie)",
-          badge: "Ambulante OP",
+          badge: isTr ? "Ayakta Cerrahi" : isAr ? "جراحة اليوم الواحد" : "Ambulante OP",
           href: `/${locale}/areas/medizinische-fachbereiche`,
           icon: ScalpelIcon,
         },
@@ -460,6 +940,10 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             ? "Высокотехнологичная диагностика: МРТ 3T, КТ Low-Dose, цифровой рентген, нейрофизиология (ЭМГ/ЭЭГ) и лабораторная логистика"
             : isEn
             ? "Advanced Diagnostics: 3T MRI, Low-Dose CT, X-ray, Neurophysiology (EMG/EEG) & Lab logistics"
+            : isTr
+            ? "Diagnostics GmbH (3T BT + MRG + Röntgen + Nörofizyoloji & Laboratuvar numune lojistiği)"
+            : isAr
+            ? "Diagnostics GmbH (أشعة مقطعية + 3T MRI + أشعة سينية + فسيولوجيا عصبية وإدارة العينات المخبرية)"
             : "Diagnostics GmbH (CT + MRT 3T + Rö + Neurophysiologie & Labor-Probenmanagement)",
           badge: "3T MRT / CT",
           href: `/${locale}/areas/diagnostik`,
@@ -471,6 +955,10 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             ? "Патронаж и уход на дому: квалифицированная сестринская помощь и специализированное лечение ран (Wundversorgung)"
             : isEn
             ? "In-Home Nursing Care: Qualified outpatient nursing & specialized wound care"
+            : isTr
+            ? "HomeCare GmbH (SGB V & XI uyarınca nitelikli hasta bakımı / uzmanlaşmış yara tedavisi)"
+            : isAr
+            ? "HomeCare GmbH (تمريض تخصصي معتمد / علاج متقدم للجروح وفق SGB V & XI)"
             : "HomeCare GmbH (Qualifizierte Pflege / spezialisierte Wundversorgung nach SGB V & XI)",
           badge: "HomeCare",
           href: `/${locale}/areas/pflege`,
@@ -479,7 +967,15 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       ],
     },
     {
-      colTitle: isRu ? "Кадры, недвижимость и снабжение" : isEn ? "Recruitment, Real Estate & Supplies" : "Personal, Immobilien & Versorgung",
+      colTitle: isRu
+        ? "Кадры, недвижимость и снабжение"
+        : isEn
+        ? "Recruitment, Real Estate & Supplies"
+        : isTr
+        ? "İstihdam, Gayrimenkul ve Tedarik"
+        : isAr
+        ? "الكوادر، العقارات، والإمداد"
+        : "Personal, Immobilien & Versorgung",
       items: [
         {
           name: "“NabiOta” Medical Recruitment",
@@ -487,8 +983,12 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             ? "Служба медицинского рекрутинга (GmbH) — привлечение врачей и медперсонала, нострификация и Approbation"
             : isEn
             ? "Medical Recruitment Services GmbH — Healthcare staffing & degree recognition (Approbation)"
+            : isTr
+            ? "Medical Recruitment Services GmbH (Tıbbi aracılık hizmeti & Approbation ruhsat refakati)"
+            : isAr
+            ? "Medical Recruitment Services GmbH (استقطاب الكوادر الطبية ومعادلة ترخيص Approbation)"
             : "Medical Recruitment Services GmbH (Med. Vermittlungsservice & Approbationsbegleitung)",
-          badge: "Recruitment",
+          badge: isTr ? "Uzman İstihdamı" : isAr ? "استقطاب الكوادر" : "Recruitment",
           href: `/${locale}/areas/internationale-kooperationen`,
           icon: TeamStatsIcon,
         },
@@ -498,8 +998,12 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             ? "Медицинская недвижимость — девелопмент, перепланировка и управление специализированными зданиями клиник и MVZ"
             : isEn
             ? "Medical Real Estate GmbH — Acquisition, clinic construction & medical facility management"
+            : isTr
+            ? "Real Estate GmbH (Medikal gayrimenkul, klinik planlama ve işletme konseptleri)"
+            : isAr
+            ? "Real Estate GmbH (العقارات الطبية، تطوير العيادات، ومفاهيم التشغيل)"
             : "Real Estate GmbH (Med. Immobilien, Praxisentwicklung & Betreiberkonzepte)",
-          badge: "Real Estate",
+          badge: isTr ? "Medikal Gayrimenkul" : isAr ? "العقارات الطبية" : "Real Estate",
           href: `/${locale}/areas/beratung-projektentwicklung`,
           icon: RealEstateIcon,
         },
@@ -509,8 +1013,12 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             ? "Ортопедические салоны (Sanitätshaus GmbH), обеспечение медикаментами клиник и NabiOta Pharmacy"
             : isEn
             ? "Medical Supplies & NabiOta Pharmacy — Orthopedic aids, rehab products & clinical pharmacy"
+            : isTr
+            ? "İlaç Tedariki & Sanitätshaus GmbH (Medikal ortopedi araçları & NabiOta Eczanesi)"
+            : isAr
+            ? "الإمداد الدوائي وSanitätshaus GmbH (المعينات الطبية التعويضية وصيدلية NabiOta)"
             : "Arzneimittelversorgung & Sanitätshaus GmbH (Med. Hilfsmittel & NabiOta Pharmacy)",
-          badge: "Supplies & Pharmacy",
+          badge: isTr ? "Medikal Malzeme & Eczane" : isAr ? "معينات وصيدلية" : "Supplies & Pharmacy",
           href: `/${locale}/areas/pflege`,
           icon: CrossPharmacyIcon,
         },
@@ -749,7 +1257,15 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                     “NabiOta” Health Group Germany GmbH
                   </h3>
                   <p className="text-[12px] sm:text-[12.5px] text-[#A8C2B1] mt-1 font-sans">
-                    {isRu ? "Холдинг / Концерн • Мёнхенгладбах" : isEn ? "Holding / Group • Mönchengladbach" : "Holding / Konzern • Mönchengladbach"}
+                    {isRu
+                      ? "Холдинг / Концерн • Мёнхенгладбах"
+                      : isEn
+                      ? "Holding / Group • Mönchengladbach"
+                      : isTr
+                      ? "Holding / Grup • Mönchengladbach"
+                      : isAr
+                      ? "المجموعة القابضة • مونشنغلادباخ"
+                      : "Holding / Konzern • Mönchengladbach"}
                   </p>
                 </div>
               </div>
@@ -895,21 +1411,59 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                     <div className="flex items-center gap-2 mb-2">
                       <CheckCircle2 className="w-4.5 h-4.5 text-[#B89650] shrink-0" />
                       <span className="text-[12px] sm:text-[12.5px] font-bold text-[#142318]">
-                        {isRu ? "Ключевые активности в Фазе 1" : isEn ? "Key Activities in Phase 1" : "Zentrale Aktivitäten in Phase 1"}
+                        {isRu
+                          ? "Ключевые активности в Фазе 1"
+                          : isEn
+                          ? "Key Activities in Phase 1"
+                          : isTr
+                          ? "Aşama 1 Temel Faaliyetleri"
+                          : isAr
+                          ? "الأنشطة المركزية في المرحلة الأولى"
+                          : "Zentrale Aktivitäten in Phase 1"}
                       </span>
                     </div>
                     <ul className="space-y-1.5 text-[11.5px] sm:text-[12px] leading-snug text-[#4E5650] font-sans pl-0.5">
                       <li className="flex items-start gap-1.5">
                         <span className="text-[#142318] font-bold">•</span>
-                        <span>{isRu ? "Формирование и запуск структуры MVZ" : isEn ? "Establishment of the MVZ structure" : "Aufbau der MVZ-Struktur"}</span>
+                        <span>
+                          {isRu
+                            ? "Формирование и запуск структуры MVZ"
+                            : isEn
+                            ? "Establishment of the MVZ structure"
+                            : isTr
+                            ? "MVZ yapısının kurulması ve faaliyete geçirilmesi"
+                            : isAr
+                            ? "بناء وإطلاق شبكة مراكز MVZ"
+                            : "Aufbau der MVZ-Struktur"}
+                        </span>
                       </li>
                       <li className="flex items-start gap-1.5">
                         <span className="text-[#142318] font-bold">•</span>
-                        <span>{isRu ? "Участие д-ра Фишер-Рахимова как врача-учредителя" : isEn ? "Founding equity of Dr. Fischer-Rahimov" : "Beteiligung von Dr. Fischer-Rahimov"}</span>
+                        <span>
+                          {isRu
+                            ? "Участие д-ра Фишер-Рахимова как врача-учредителя"
+                            : isEn
+                            ? "Founding equity of Dr. Fischer-Rahimov"
+                            : isTr
+                            ? "Dr. Fischer-Rahimov'un kurucu hekim olarak ortaklığı"
+                            : isAr
+                            ? "مساهمة د. فيشر-رحيموف كطبيب معتمد مؤسس"
+                            : "Beteiligung von Dr. Fischer-Rahimov"}
+                        </span>
                       </li>
                       <li className="flex items-start gap-1.5">
                         <span className="text-[#142318] font-bold">•</span>
-                        <span>{isRu ? "Подготовка дальнейших дочерних обществ" : isEn ? "Preparation of additional subsidiaries" : "Vorbereitung weiterer Beteiligungen"}</span>
+                        <span>
+                          {isRu
+                            ? "Подготовка дальнейших дочерних обществ"
+                            : isEn
+                            ? "Preparation of additional subsidiaries"
+                            : isTr
+                            ? "Diğer iştiraklerin ve şirketlerin hazırlanması"
+                            : isAr
+                            ? "التحضير للشركات والكيانات التابعة الإضافية"
+                            : "Vorbereitung weiterer Beteiligungen"}
+                        </span>
                       </li>
                     </ul>
                   </div>
@@ -955,21 +1509,59 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                     <div className="flex items-center gap-2 mb-2">
                       <CheckCircle2 className="w-4.5 h-4.5 text-[#B89650] shrink-0" />
                       <span className="text-[12px] sm:text-[12.5px] font-bold text-[#142318]">
-                        {isRu ? "Ключевые принципы управления" : isEn ? "Central Governance Principles" : "Zentrale Governance-Prinzipien"}
+                        {isRu
+                          ? "Ключевые принципы управления"
+                          : isEn
+                          ? "Central Governance Principles"
+                          : isTr
+                          ? "Merkezi Yönetişim İlkeleri"
+                          : isAr
+                          ? "مبادئ الحوكمة المركزية"
+                          : "Zentrale Governance-Prinzipien"}
                       </span>
                     </div>
                     <ul className="space-y-1.5 text-[11.5px] sm:text-[12px] leading-snug text-[#4E5650] font-sans pl-0.5">
                       <li className="flex items-start gap-1.5">
                         <span className="text-[#142318] font-bold">•</span>
-                        <span>{isRu ? "Врачебная тайна и строгая защита данных (DSGVO)" : isEn ? "Medical confidentiality & strict data protection" : "Ärztliche Schweigepflicht & strenger Datenschutz (DSGVO)"}</span>
+                        <span>
+                          {isRu
+                            ? "Врачебная тайна и строгая защита данных (DSGVO)"
+                            : isEn
+                            ? "Medical confidentiality & strict data protection"
+                            : isTr
+                            ? "Tıbbi sır saklama yükümlülüğü ve sıkı veri koruması (GDPR/DSGVO)"
+                            : isAr
+                            ? "السرية الطبية وحماية البيانات الصارمة (DSGVO)"
+                            : "Ärztliche Schweigepflicht & strenger Datenschutz (DSGVO)"}
+                        </span>
                       </li>
                       <li className="flex items-start gap-1.5">
                         <span className="text-[#142318] font-bold">•</span>
-                        <span>{isRu ? "Центральное управление: IT, финансы, закупки и маркетинг" : isEn ? "Central management: IT, Finance, Purchasing & Marketing" : "Zentrales Management: IT, Finanzen, Einkauf & Marketing"}</span>
+                        <span>
+                          {isRu
+                            ? "Центральное управление: IT, финансы, закупки и маркетинг"
+                            : isEn
+                            ? "Central management: IT, Finance, Purchasing & Marketing"
+                            : isTr
+                            ? "Merkezi yönetim: IT, Finans, Satın Alma & Pazarlama"
+                            : isAr
+                            ? "الإدارة المركزية: تكنولوجيا المعلومات، المالية، المشتريات، والتسويق"
+                            : "Zentrales Management: IT, Finanzen, Einkauf & Marketing"}
+                        </span>
                       </li>
                       <li className="flex items-start gap-1.5">
                         <span className="text-[#142318] font-bold">•</span>
-                        <span>{isRu ? "Менеджмент качества DIN EN ISO и безопасность пациентов" : isEn ? "DIN EN ISO quality management & patient safety" : "Qualitätsmanagement nach DIN EN ISO & Patientensicherheit"}</span>
+                        <span>
+                          {isRu
+                            ? "Менеджмент качества DIN EN ISO и безопасность пациентов"
+                            : isEn
+                            ? "DIN EN ISO quality management & patient safety"
+                            : isTr
+                            ? "DIN EN ISO kalite yönetimi & hasta güvenliği"
+                            : isAr
+                            ? "إدارة الجودة وفق DIN EN ISO وسلامة المرضى"
+                            : "Qualitätsmanagement nach DIN EN ISO & Patientensicherheit"}
+                        </span>
                       </li>
                     </ul>
                   </div>
@@ -991,12 +1583,24 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
               <ShieldCheck className="w-5 h-5 text-[#B89650] shrink-0 mt-0.5" />
               <p className="text-[12px] sm:text-[12.5px] text-[#4E5650] leading-relaxed font-sans">
                 <strong className="font-semibold text-[#142318]">
-                  {isRu ? "Целевая модель. " : isEn ? "Target model. " : "Zielmodell. "}
+                  {isRu
+                    ? "Целевая модель. "
+                    : isEn
+                    ? "Target model. "
+                    : isTr
+                    ? "Hedef model. "
+                    : isAr
+                    ? "النموذج المستهدف. "
+                    : "Zielmodell. "}
                 </strong>
                 {isRu
                   ? "Представленные органиграммы описывают целевую модель. Текущая структура собственников и допуск каждого существующего MVZ устанавливаются отдельно на основании его списка участников (Gesellschafterliste) и решений о допуске (Zulassungsbescheide). Регистрация холдинга в торговом реестре не заменяет допуск MVZ."
                   : isEn
                   ? "The organizational charts shown describe a target model. The current ownership structure and approval of each existing MVZ must be determined separately on the basis of its shareholder list and approval notices. The commercial register entry of the holding does not replace an MVZ approval."
+                  : isTr
+                  ? "Sunulan organizasyon şemaları bir hedef modeli tanımlamaktadır. Mevcut her bir MVZ'nin güncel mülkiyet yapısı ve faaliyet izni, ortaklar listesi ve izin kararlarına dayalı olarak ayrıca tespit edilir. Holdingin ticaret siciline tescili, MVZ faaliyet izninin yerine geçmez."
+                  : isAr
+                  ? "تصف المخططات التنظيمية المعروضة نموذجاً مستهدفاً. ويتم تحديد هيكل الملكية الحالي والتراخيص لكل مركز MVZ قائم بشكل منفصل بناءً على قائمة الشركاء وإخطارات الاعتماد الرسمية. ولا يغني قيد الشركة القابضة في السجل التجاري عن ترخيص تشغيل MVZ."
                   : "Die vorliegenden Organigramme beschreiben ein Zielmodell. Die aktuelle Eigentümerstruktur und Zulassung jedes bestehenden MVZ sind anhand seiner Gesellschafterliste und Zulassungsbescheide gesondert festzustellen. Die Handelsregistereintragung der Holding ersetzt keine MVZ-Zulassung."}
               </p>
             </div>
@@ -1007,6 +1611,10 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                 ? "Сведения в соответствии с нотариальным проектом устава и положениями § 95 SGB V. По состоянию на 4 октября 2026 г."
                 : isEn
                 ? "In accordance with notarized corporate filings and statutory § 95 SGB V regulations. As of 4 October 2026."
+                : isTr
+                ? "Noter onaylı kuruluş belgelerine ve § 95 SGB V hükümlerine göre hazırlanmıştır. Durum: 4 Ekim 2026."
+                : isAr
+                ? "وفقاً لوثائق التأسيس الموثقة وأحكام المادة 95 من القانون الاجتماعي الخامس (SGB V). التحديث: 4 أكتوبر 2026."
                 : "Gemäß notarieller Gründungsdokumentation und den Vorgaben des § 95 SGB V. Stand: 4. Oktober 2026."}
             </p>
           </Container>
@@ -1101,6 +1709,10 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                         ? "ВРАЧЕБНОЕ РУКОВОДСТВО И СТАТУС УЧРЕДИТЕЛЯ"
                         : isEn
                         ? "MEDICAL LEADERSHIP & STATUTORY FOUNDER"
+                        : isTr
+                        ? "TIBBİ LİDERLİK VE KURUCU STATÜSÜ"
+                        : isAr
+                        ? "القيادة الطبية وصفة الطبيب المؤسس"
                         : "ÄRZTLICHE FÜHRUNG & GRÜNDERSTATUS"}
                     </span>
                     <span className="w-1 h-1 rounded-full bg-[#C5A56A]/60" />
@@ -1148,7 +1760,17 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       </span>
                       <span className="inline-flex items-center gap-1.5 text-[10.5px] tracking-[0.14em] uppercase text-[#2C3E31] font-semibold">
                         <Scale className="w-3.5 h-3.5 text-[#B89650] stroke-[1.8]" />
-                        <span>{isRu ? "Право учредителя по закону SGB V" : isEn ? "Statutory Physician Status" : "Kassenarztrechtlicher Status"}</span>
+                        <span>
+                          {isRu
+                            ? "Право учредителя по закону SGB V"
+                            : isEn
+                            ? "Statutory Physician Status"
+                            : isTr
+                            ? "Sözleşmeli Hekimlik Statüsü"
+                            : isAr
+                            ? "الصفة القانونية للأطباء المعتمدين"
+                            : "Kassenarztrechtlicher Status"}
+                        </span>
                       </span>
                     </div>
 
@@ -1181,25 +1803,49 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       <div className="space-y-3">
                         <div>
                           <h4 className="font-serif text-[18px] sm:text-[19px] font-bold text-[#142318] mb-1.5">
-                            {isRu ? "Медицинский якорь Фазы 1" : isEn ? "Phase 1 Medical Anchor" : "Vertragsärztlicher Anker"}
+                            {isRu
+                              ? "Медицинский якорь Фазы 1"
+                              : isEn
+                              ? "Phase 1 Medical Anchor"
+                              : isTr
+                              ? "Aşama 1 Sözleşmeli Hekim Dayanağı"
+                              : isAr
+                              ? "الركيزة الطبية المعتمدة للمرحلة الأولى"
+                              : "Vertragsärztlicher Anker"}
                           </h4>
                           <p className="text-[12.5px] sm:text-[13px] text-[#555E56] leading-[1.7] font-sans">
                             {isRu
                               ? "Прямое владение долями MVZ врачом-учредителем гарантирует безупречную юридическую легитимность перед Kassenärztliche Vereinigung Nordrhein."
                               : isEn
                               ? "Direct MVZ equity held by the licensed founding physician establishes unequivocal regulatory legitimacy with KV Nordrhein."
+                              : isTr
+                              ? "Kurucu hekimin doğrudan MVZ ortaklığı, KV Nordrhein nezdinde eksiksiz mesleki ve yasal meşruiyeti güvence altına alır."
+                              : isAr
+                              ? "تضمن المشاركة المباشرة للطبيب المؤسس في مراكز MVZ الشرعية المهنية والقانونية الكاملة أمام نقابة أطباء التأمين KV Nordrhein."
                               : "Die unmittelbare MVZ-Beteiligung des Gründungsarztes sichert die vollständige berufsrechtliche Legitimation gegenüber der KV Nordrhein."}
                           </p>
                         </div>
                         <div className="pt-3 border-t border-[#E7DFD2]">
                           <div className="text-[10.5px] font-bold tracking-[0.14em] uppercase text-[#142318]">
-                            {isRu ? "Институциональная защита" : isEn ? "Institutional Protection" : "Standesrechtlicher Schutz"}
+                            {isRu
+                              ? "Институциональная защита"
+                              : isEn
+                              ? "Institutional Protection"
+                              : isTr
+                              ? "Meslek Hukuku Koruması"
+                              : isAr
+                              ? "الحماية المهنية النقابية"
+                              : "Standesrechtlicher Schutz"}
                           </div>
                           <p className="text-[#555E56] text-[12px] leading-[1.6] mt-1 font-sans">
                             {isRu
                               ? "Холдинг не вправе давать медицинские указания врачебному руководству."
                               : isEn
                               ? "Corporate holding entities are legally barred from clinical directives."
+                              : isTr
+                              ? "Tıbbi direktörlüğe karşı hiçbir ticari talimat yetkisi bulunmamaktadır."
+                              : isAr
+                              ? "لا توجد أي صلاحيات لإصدار توجيهات تجارية للإدارة الطبية."
                               : "Keine kaufmännischen Weisungsrechte gegenüber der ärztlichen Leitung."}
                           </p>
                         </div>
@@ -1232,7 +1878,15 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             <div className="lg:ml-auto lg:w-[78%] xl:w-[75%]">
               <div className="max-w-xl mb-5 sm:mb-6">
                 <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#D5B878] uppercase mb-1.5 block">
-                  {isRu ? "Клиническая коллегия холдинга" : isEn ? "Holding Clinical Governance" : "Klinisches Qualitätskollegium"}
+                  {isRu
+                    ? "Клиническая коллегия холдинга"
+                    : isEn
+                    ? "Holding Clinical Governance"
+                    : isTr
+                    ? "Klinik Kalite Kurulu"
+                    : isAr
+                    ? "مجلس الجودة السريرية للمجموعة"
+                    : "Klinisches Qualitätskollegium"}
                 </span>
                 <h2 className="font-serif text-[28px] sm:text-[34px] lg:text-[38px] font-normal leading-[1.15] text-white mb-2 sm:mb-2.5">
                   {t.boardTitle}
@@ -1246,38 +1900,86 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                 {[
                   {
                     Icon: Stethoscope,
-                    title: isRu ? "Терапевтическая свобода" : isEn ? "Clinical Autonomy" : "Freie Therapiewahl",
+                    title: isRu
+                      ? "Терапевтическая свобода"
+                      : isEn
+                      ? "Clinical Autonomy"
+                      : isTr
+                      ? "Serbest Tedavi Seçimi"
+                      : isAr
+                      ? "حرية اختيار العلاج"
+                      : "Freie Therapiewahl",
                     desc: isRu
                       ? "Строгое следование врачебному долгу без навязанных планов по процедурам."
                       : isEn
                       ? "Strict adherence to medical duty without commercial treatment quotas."
+                      : isTr
+                      ? "Tedavi eden hekimler için hiçbir ekonomik vaka sayısı veya tedavi kotası dayatılmaz."
+                      : isAr
+                      ? "لا توجد أي حصص أو أهداف عددية أو علاجية اقتصادية مفروضة على الأطباء المعالجين."
                       : "Keine ökonomischen Fallzahl- oder Therapievorgaben für behandelnde Ärzte.",
                   },
                   {
                     Icon: ShieldCheck,
-                    title: isRu ? "Качество AWMF & CIRS" : isEn ? "AWMF & CIRS Guidelines" : "AWMF-Leitlinien & CIRS",
+                    title: isRu
+                      ? "Качество AWMF & CIRS"
+                      : isEn
+                      ? "AWMF & CIRS Guidelines"
+                      : isTr
+                      ? "AWMF Kılavuzları & CIRS"
+                      : isAr
+                      ? "إرشادات AWMF ونظام CIRS"
+                      : "AWMF-Leitlinien & CIRS",
                     desc: isRu
                       ? "Междисциплинарные консилиумы и система контроля инцидентов CIRS."
                       : isEn
                       ? "Regular case conferences and active clinical incident reporting."
+                      : isTr
+                      ? "Disiplinler arası kalite çemberleri ve sistematik CIRS hata bildirim sistemi."
+                      : isAr
+                      ? "حلقات جودة متعددة التخصصات ونظام إبلاغ وتحليل للأخطاء الطبية (CIRS)."
                       : "Interdisziplinäre Qualitätszirkel und systematisches CIRS-Fehlermeldesystem.",
                   },
                   {
                     Icon: GraduationCap,
-                    title: isRu ? "Обучение ординаторов" : isEn ? "Residency Training" : "Facharzt-Weiterbildung",
+                    title: isRu
+                      ? "Обучение ординаторов"
+                      : isEn
+                      ? "Residency Training"
+                      : isTr
+                      ? "Uzman Hekimlik Eğitimi"
+                      : isAr
+                      ? "التدريب التخصصي للأطباء"
+                      : "Facharzt-Weiterbildung",
                     desc: isRu
                       ? "Официальные полномочия на подготовку молодых специалистов в MVZ."
                       : isEn
                       ? "Accredited residency authorizations for junior doctors across our MVZ network."
+                      : isTr
+                      ? "Genç hekimlerin uzmanlık eğitimi için akredite resmi eğitim yetkileri."
+                      : isAr
+                      ? "صلاحيات وتراخيص أكاديمية معتمدة لتدريب وتأهيل الأطباء المقيمين والشباب."
                       : "Akkreditierte Weiterbildungsbefugnisse zur Ausbildung junger Mediziner.",
                   },
                   {
                     Icon: HeartHandshake,
-                    title: isRu ? "Сквозные консилиумы" : isEn ? "Interdisciplinary Care" : "Sektorübergreifend",
+                    title: isRu
+                      ? "Сквозные консилиумы"
+                      : isEn
+                      ? "Interdisciplinary Care"
+                      : isTr
+                      ? "Sektörler Arası Eşgüdüm"
+                      : isAr
+                      ? "تنسيق متكامل عابر للقطاعات"
+                      : "Sektorübergreifend",
                     desc: isRu
                       ? "Прямой диалог терапевтов, хирургов, диагностов и службы реабилитации."
                       : isEn
                       ? "Direct communication between primary care, surgeons, imaging, and rehab."
+                      : isTr
+                      ? "Aile hekimleri, cerrahlar, tanı ve rehabilitasyon arasında doğrudan koordinasyon."
+                      : isAr
+                      ? "تنسيق مباشر ومستمر بين أطباء الأسرة، الجراحين، مراكز التشخيص، والتأهيل."
                       : "Direkte Abstimmung zwischen Hausärzten, Operateuren, Diagnostik und Reha.",
                   },
                 ].map(({ Icon, title, desc }, idx) => (

@@ -16,7 +16,7 @@ import { Container } from "@/components/layout/Container";
  * (NabiOta Health Group Germany GmbH). Wording follows the PDF.
  */
 
-type Lang = "de" | "en" | "ru";
+type Lang = "de" | "en" | "ru" | "tr" | "ar";
 
 interface Block {
   icon: React.ComponentType<{ className?: string }>;
@@ -26,25 +26,43 @@ interface Block {
 }
 
 const content = {
-  eyebrow: { de: "UNTERNEHMENSGEGENSTAND", en: "CORPORATE PURPOSE", ru: "ПРЕДМЕТ ДЕЯТЕЛЬНОСТИ" },
+  eyebrow: {
+    de: "UNTERNEHMENSGEGENSTAND",
+    en: "CORPORATE PURPOSE",
+    ru: "ПРЕДМЕТ ДЕЯТЕЛЬНОСТИ",
+    tr: "FAALİYET KONUSU",
+    ar: "موضوع نشاط الشركة",
+  },
   title: {
     de: "Aufgaben und Unternehmensgegenstand der Holding",
     en: "Tasks and Corporate Purpose of the Holding",
     ru: "Задачи и предмет деятельности холдинга",
+    tr: "Holdingin Görevleri ve Şirket Faaliyet Konusu",
+    ar: "مهام وأهداف نشاط الشركة القابضة",
   },
   lead: {
     de: "Gegenstand des Unternehmens ist der Erwerb, das Halten und die Verwaltung eigener Beteiligungen sowie die wirtschaftliche, organisatorische und strategische Führung von Unternehmen im Gesundheitswesen.",
     en: "The purpose of the company is the acquisition, holding and management of its own shareholdings as well as the economic, organizational and strategic management of companies in the healthcare sector.",
     ru: "Предметом деятельности общества является приобретение, владение и управление собственными долями участия, а также экономическое, организационное и стратегическое руководство предприятиями в сфере здравоохранения.",
+    tr: "Şirketin faaliyet konusu, kendi iştiraklerini edinmek, elde tutmak ve yönetmek ile sağlık sektöründeki şirketlerin ekonomik, organizasyonel ve stratejik yönetimini üstlenmektir.",
+    ar: "يتمثل غرض الشركة في حيازة وإدارة حصصها ومساهماتها الخاصة، بالإضافة إلى الإدارة الاقتصادية والتنظيمية والاستراتيجية للشركات العاملة في قطاع الرعاية الصحية.",
   },
   blocks: [
     {
       icon: Users,
-      title: { de: "Beteiligungen", en: "Shareholdings", ru: "Участия" },
+      title: {
+        de: "Beteiligungen",
+        en: "Shareholdings",
+        ru: "Участия",
+        tr: "İştirakler",
+        ar: "المساهمات والشركات التابعة",
+      },
       text: {
         de: "Hierzu gehören insbesondere Beteiligungen an Kliniken, medizinischen Versorgungszentren (MVZ), Diagnostikzentren, Therapie- und Rehabilitationseinrichtungen, Pflegeunternehmen sowie weiteren Gesundheitsdienstleistern. Beteiligungen werden ausschließlich unter Beachtung der jeweils geltenden gesetzlichen Anforderungen an Träger, Gesellschafter und Zulassungen eingegangen und gehalten.",
         en: "This includes in particular shareholdings in clinics, medical care centres (MVZ), diagnostic centres, therapy and rehabilitation facilities, nursing companies and other healthcare providers. Shareholdings are acquired and held exclusively in compliance with the applicable legal requirements for sponsors, shareholders and approvals.",
         ru: "Сюда относятся, в частности, участия в клиниках, медицинских центрах (MVZ), диагностических центрах, терапевтических и реабилитационных учреждениях, предприятиях по уходу и других поставщиках медицинских услуг. Участия приобретаются и удерживаются исключительно с соблюдением действующих законодательных требований к учредителям, участникам и допускам.",
+        tr: "Buna özellikle klinikler, tıbbi bakım merkezleri (MVZ), tanı merkezleri, terapi ve rehabilitasyon tesisleri, bakım şirketleri ve diğer sağlık hizmeti sağlayıcılarındaki iştirakler dahildir. İştirakler, yalnızca kurucular, ortaklar ve ruhsatlar için geçerli yasal gerekliliklere titizlikle uyularak kurulur ve sürdürülür.",
+        ar: "يشمل ذلك تحديداً المساهمات في المستشفيات ومراكز الرعاية الطبية (MVZ) ومراكز التشخيص ومرافق التأهيل والعلاج وشركات التمريض ومقدمي الرعاية الصحية الآخرين. يتم الدخول في المساهمات وإدارتها حصرياً وفقاً للمتطلبات القانونية المعمول بها.",
       },
     },
     {
@@ -53,20 +71,32 @@ const content = {
         de: "Zentrale Management- und Verwaltungsleistungen",
         en: "Central Management and Administrative Services",
         ru: "Централизованные управленческие и административные услуги",
+        tr: "Merkezi Yönetim ve İdari Hizmetler",
+        ar: "خدمات الإدارة والمساندة المركزية",
       },
       text: {
         de: "Die Gesellschaft übernimmt auf vertraglicher Grundlage zentrale Management- und Verwaltungsleistungen für Beteiligungsunternehmen und kooperierende Einrichtungen. Die steuerliche Gestaltung der Unternehmensgruppe erfolgt in Zusammenarbeit mit entsprechend befugten Beratern.",
         en: "On a contractual basis, the company provides central management and administrative services for affiliated companies and cooperating facilities. The tax structuring of the group is carried out in cooperation with duly authorized advisors.",
         ru: "На договорной основе общество оказывает централизованные управленческие и административные услуги для дочерних компаний и сотрудничающих учреждений. Налоговое структурирование группы осуществляется совместно с уполномоченными консультантами.",
+        tr: "Şirket, sözleşmeye dayalı olarak bağlı şirketler ve iş birliği yapan tesisler için merkezi yönetim ve idari hizmetler sunar. Şirketler grubunun vergi yapılandırması yetkili danışmanlarla iş birliği içinde gerçekleştirilir.",
+        ar: "تتولى الشركة، بناءً على أسس تعاقدية، تقديم خدمات الإدارة المركزية والمساندة الإدارية للشركات التابعة والمرافق الشريكة. ويتم الهيكلة الضريبية للمجموعة بالتعاون مع مستشارين معتمدين قانونياً.",
       },
     },
     {
       icon: Award,
-      title: { de: "Marken, Lizenzen & Beratung", en: "Brands, Licences & Advisory", ru: "Бренды, лицензии и консалтинг" },
+      title: {
+        de: "Marken, Lizenzen & Beratung",
+        en: "Brands, Licences & Advisory",
+        ru: "Бренды, лицензии и консалтинг",
+        tr: "Markalar, Lisanslar & Danışmanlık",
+        ar: "العلامات التجارية والتراخيص والاستشارات",
+      },
       text: {
         de: "Zum Unternehmensgegenstand gehören ferner die Entwicklung, der Erwerb, die Verwaltung und der Schutz von Marken, Lizenzen und gewerblichen Schutzrechten sowie deren Überlassung zur Nutzung. Die Gesellschaft kann Unternehmen und Projekte im Gesundheitswesen wirtschaftlich und organisatorisch beraten und begleiten.",
         en: "The corporate purpose further includes the development, acquisition, management and protection of trademarks, licences and industrial property rights as well as granting their use. The company may advise and support healthcare companies and projects economically and organizationally.",
         ru: "К предмету деятельности также относятся разработка, приобретение, управление и защита товарных знаков, лицензий и прав промышленной собственности, а также предоставление их в пользование. Общество может консультировать и сопровождать предприятия и проекты в здравоохранении в экономических и организационных вопросах.",
+        tr: "Faaliyet konusu ayrıca ticari markaların, lisansların ve sınai mülkiyet haklarının geliştirilmesini, edinilmesini, yönetilmesini ve korunmasını ile bunların kullanıma sunulmasını kapsar. Şirket, sağlık sektöründeki işletmelere ve projelere ekonomik ve organizasyonel danışmanlık sağlayabilir.",
+        ar: "يشمل نشاط الشركة أيضاً تطوير واقتناء وإدارة وحماية العلامات التجارية والتراخيص وحقوق الملكية الصناعية ومنح حق استخدامها. كما يحق للشركة تقديم المشورة الاقتصادية والتنظيمية للمشاريع الصحية.",
       },
     },
     {
@@ -75,11 +105,15 @@ const content = {
         de: "Qualität, Hygiene, Patientensicherheit & Datenschutz",
         en: "Quality, Hygiene, Patient Safety & Data Protection",
         ru: "Качество, гигиена, безопасность пациентов и защита данных",
+        tr: "Kalite, Hijyen, Hasta Güvenliği & Veri Koruma",
+        ar: "الجودة والنظافة وسلامة المرضى وحماية البيانات",
       },
       text: {
         de: "Die Holding unterstützt und koordiniert die organisatorischen Voraussetzungen für Qualitätsmanagement, Hygiene, Patientensicherheit und Datenschutz innerhalb des Unternehmensverbunds. Sie fördert gemeinsame Standards und unterstützt deren Umsetzung, ohne die gesetzliche und fachliche Verantwortung der jeweiligen Betreiber und zuständigen Personen zu ersetzen.",
         en: "The holding supports and coordinates the organizational prerequisites for quality management, hygiene, patient safety and data protection within the group. It promotes common standards and supports their implementation without replacing the legal and professional responsibility of the respective operators and responsible persons.",
         ru: "Холдинг поддерживает и координирует организационные условия для менеджмента качества, гигиены, безопасности пациентов и защиты данных внутри группы. Он продвигает общие стандарты и поддерживает их внедрение, не заменяя законную и профессиональную ответственность соответствующих операторов и ответственных лиц.",
+        tr: "Holding, grup bünyesinde kalite yönetimi, hijyen, hasta güvenliği ve veri koruma için organizasyonel ön koşulları destekler ve koordine eder. İlgili işletmecilerin yasal ve mesleki sorumluluğunu devralmaksızın ortak standartları teşvik eder.",
+        ar: "تدعم الشركة القابضة وتنسق المتطلبات التنظيمية لإدارة الجودة والنظافة وسلامة المرضى وحماية البيانات داخل المجموعة، وتعزز المعايير المشتركة دون الإخلال بالمسؤولية المهنية والقانونية لكل منشأة.",
       },
     },
     {
@@ -88,33 +122,53 @@ const content = {
         de: "Verantwortung der medizinischen Einrichtungen",
         en: "Responsibility of the Medical Facilities",
         ru: "Ответственность медицинских учреждений",
+        tr: "Tıbbi Kuruluşların Bağımsızlığı ve Sorumluluğu",
+        ar: "استقلالية ومسؤولية المرافق الطبية",
       },
       text: {
         de: "Die medizinischen Einrichtungen bleiben für Behandlungsentscheidungen, medizinische Organisation, qualifiziertes Personal, vorgeschriebene Personalverfügbarkeit, fachliche Qualität, Patientensicherheit, Hygiene sowie die ordnungsgemäße Leistungsdokumentation und Abrechnung verantwortlich. Die medizinische Weisungsfreiheit der ärztlichen Leitung eines MVZ bleibt uneingeschränkt gewahrt. Die Holding erhält durch ihre Management- und Verwaltungsaufgaben keine Befugnis zur Einflussnahme auf individuelle medizinische Entscheidungen.",
         en: "The medical facilities remain responsible for treatment decisions, medical organization, qualified staff, mandatory staff availability, professional quality, patient safety, hygiene and proper service documentation and billing. The medical independence of an MVZ's medical director remains fully preserved. Its management and administrative tasks give the holding no authority to influence individual medical decisions.",
         ru: "Медицинские учреждения остаются ответственными за решения о лечении, медицинскую организацию, квалифицированный персонал, обязательное наличие персонала, профессиональное качество, безопасность пациентов, гигиену, а также надлежащую документацию услуг и расчёты. Медицинская независимость врачебного руководства MVZ полностью сохраняется. Управленческие и административные задачи не дают холдингу полномочий влиять на индивидуальные медицинские решения.",
+        tr: "Tıbbi tesisler; tedavi kararları, tıbbi organizasyon, nitelikli personel, zorunlu personel mevcudiyeti, uzmanlık kalitesi, hasta güvenliği, hijyen ve usulüne uygun hizmet belgelemesi ile faturalandırmadan sorumlu olmaya devam eder. Bir MVZ'nin tıbbi yönetiminin bağımsızlığı tam olarak korunur. Holding, yönetim görevleri vasıtasıyla bireysel tıbbi kararlara müdahale etme yetkisine sahip değildir.",
+        ar: "تظل المرافق الطبية مسؤولة عن قرارات العلاج والتنظيم الطبي وتوفير الكوادر المؤهلة وجودة الخدمات وسلامة المرضى والتوثيق والفوترة السليمة. وتتمتع الإدارة الطبية لكل مركز MVZ باستقلالية سريرية كاملة دون أي تدخل إداري من القابضة في القرارات الطبية الفردية.",
       },
     },
     {
       icon: Network,
-      title: { de: "Verbindung der Einrichtungen", en: "Connecting the Facilities", ru: "Связующее звено учреждений" },
+      title: {
+        de: "Verbindung der Einrichtungen",
+        en: "Connecting the Facilities",
+        ru: "Связующее звено учреждений",
+        tr: "Kuruluşların Entegrasyonu ve Birliği",
+        ar: "الربط المؤسسي وتكامل المرافق",
+      },
       text: {
         de: "Die Gesellschaft bildet die wirtschaftliche und organisatorische Verbindung der rechtlich selbstständigen Einrichtungen. Ziel ist es, gemeinsame Ressourcen effizient einzusetzen, Verwaltungsabläufe zu vereinheitlichen und die Weiterentwicklung der Unternehmensgruppe zu unterstützen.",
         en: "The company forms the economic and organizational link between the legally independent facilities. The aim is to use shared resources efficiently, standardize administrative processes and support the further development of the group.",
         ru: "Общество является экономическим и организационным связующим звеном юридически самостоятельных учреждений. Цель — эффективно использовать общие ресурсы, унифицировать административные процессы и поддерживать дальнейшее развитие группы.",
+        tr: "Şirket, hukuken bağımsız kuruluşlar arasındaki ekonomik ve organizasyonel bağı oluşturur. Amaç, ortak kaynakları verimli kullanmak, idari süreçleri standartlaştırmak ve şirketler grubunun gelişimini desteklemektir.",
+        ar: "تشكل الشركة الرابط الاقتصادي والتنظيمي بين المرافق المستقلة قانونياً، بهدف الاستخدام الفعال للموارد المشتركة وتوحيد الإجراءات الإدارية ودعم التطور المستمر للمجموعة الصحية.",
       },
     },
   ] as Block[],
-  legalTitle: { de: "Rechtlicher Rahmen", en: "Legal Framework", ru: "Правовые рамки" },
+  legalTitle: {
+    de: "Rechtlicher Rahmen",
+    en: "Legal Framework",
+    ru: "Правовые рамки",
+    tr: "Yasal Çerçeve",
+    ar: "الإطار القانوني والتنظيمي",
+  },
   legal: {
     de: "Die Gesellschaft ist berechtigt, alle rechtlich zulässigen Geschäfte vorzunehmen, die dem Unternehmensgegenstand unmittelbar oder mittelbar dienen, Unternehmen zu gründen, zu erwerben oder sich an ihnen zu beteiligen sowie Zweigniederlassungen im In- und Ausland zu errichten. Erlaubnis- oder zulassungspflichtige Tätigkeiten werden erst nach Vorliegen der erforderlichen Voraussetzungen aufgenommen. Die Gründung oder Beteiligung an vertragsärztlichen MVZ setzt insbesondere die Erfüllung der Anforderungen des § 95 SGB V voraus.",
     en: "The company is entitled to carry out all legally permissible transactions that directly or indirectly serve the corporate purpose, to establish or acquire companies or participate in them, and to set up branches in Germany and abroad. Activities requiring a permit or approval are only commenced once the necessary prerequisites are met. Founding or participating in contract-physician MVZ requires in particular fulfilment of the requirements of § 95 SGB V.",
     ru: "Общество вправе совершать все законно допустимые сделки, прямо или косвенно служащие предмету деятельности, учреждать или приобретать предприятия либо участвовать в них, а также открывать филиалы в Германии и за рубежом. Деятельность, требующая разрешения или допуска, начинается только при наличии необходимых условий. Учреждение MVZ в системе обязательного страхования или участие в нём предполагает, в частности, выполнение требований § 95 SGB V.",
+    tr: "Şirket, doğrudan veya dolaylı olarak faaliyet konusuna hizmet eden tüm yasal işlemleri yapmaya, şirketler kurmaya, satın almaya veya bunlara iştirak etmeye ve yurt içinde veya yurt dışında şubeler açmaya yetkilidir. İzne veya ruhsata tabi faaliyetler ancak gerekli şartlar sağlandıktan sonra başlatılır. Sözleşmeli hekim MVZ'lerinin kurulması veya bunlara iştirak edilmesi, özellikle Alman Sosyal Güvenlik Kanunu § 95 SGB V şartlarının yerine getirilmesini gerektirir.",
+    ar: "يحق للشركة إبرام كافة المعاملات القانونية التي تخدم أغراضها مباشرة أو غير مباشرة، وتأسيس الشركات أو الاستحواذ عليها أو المساهمة فيها وإنشاء الفروع داخل ألمانيا وخارجها. وتبدأ الأنشطة الخاضعة للتراخيص بعد استيفاء الشروط القانونية، وتتطلب مراكز MVZ استيفاء متطلبات المادة 95 من القانون الاجتماعي الألماني (SGB V).",
   },
 };
 
 export function HoldingPurposeSection({ locale = "de" }: { locale?: string }) {
-  const l: Lang = locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
+  const l: Lang = locale === "tr" ? "tr" : locale === "ar" ? "ar" : locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
 
   return (
     <section

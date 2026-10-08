@@ -130,64 +130,90 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
 
   const isRu = locale === "ru";
   const isEn = locale === "en";
+  const isTr = locale === "tr";
+  const isAr = locale === "ar";
 
   // ── Hero Translations ──
   const heroData = {
-    breadcrumbHome: isRu ? "Главная" : isEn ? "Home" : "Startseite",
-    breadcrumbAreas: isRu ? "Направления" : isEn ? "Our Divisions" : "Unternehmensbereiche",
-    eyebrow: isRu ? "НАПРАВЛЕНИЯ ХОЛДИНГА" : isEn ? "OUR DIVISIONS" : "UNTERNEHMENSBEREICHE",
+    breadcrumbHome: isRu ? "Главная" : isEn ? "Home" : isTr ? "Ana Sayfa" : isAr ? "الرئيسية" : "Startseite",
+    breadcrumbAreas: isRu ? "Направления" : isEn ? "Our Divisions" : isTr ? "Faaliyet Alanları" : isAr ? "قطاعات الأعمال" : "Unternehmensbereiche",
+    eyebrow: isRu ? "НАПРАВЛЕНИЯ ХОЛДИНГА" : isEn ? "OUR DIVISIONS" : isTr ? "HOLDİNG FAALİYET ALANLARI" : isAr ? "قطاعات أعمال المجموعة" : "UNTERNEHMENSBEREICHE",
     title: isRu
       ? "Разносторонние компетенции. Единое видение."
       : isEn
       ? "Diverse Competencies. One Shared Vision."
+      : isTr
+      ? "Çok Yönlü Yetkinlikler. Ortak Bir Vizyon."
+      : isAr
+      ? "كفاءات متنوعة ورؤية موحدة."
       : "Vielfältige Kompetenzen. Eine gemeinsame Vision.",
     description: isRu
       ? "От передовой диагностики до специализированного лечения — наши направления работают в синергии, обеспечивая пациентоориентированную помощь высшего качества."
       : isEn
       ? "From advanced diagnostics to specialized treatment, our divisions work together to provide comprehensive, patient-centered care. Each area brings unique expertise — united by a common goal: better health, brighter futures."
+      : isTr
+      ? "İleri tanı yöntemlerinden uzmanlaşmış tedaviye kadar, faaliyet alanlarımız en üst düzeyde hasta odaklı bakım sunmak için uyum içinde çalışmaktadır."
+      : isAr
+      ? "من التشخيص المتقدم إلى العلاج التخصصي، تعمل قطاعاتنا في تكامل تام لتقديم رعاية صحية شاملة محورها المريض بأعلى معايير الجودة."
       : "Von hochmoderner Diagnostik bis hin zu spezialisierten Therapien arbeiten unsere Unternehmensbereiche vernetzt zusammen, um eine ganzheitliche Versorgung auf höchstem Niveau zu garantieren.",
     badges: [
       {
         icon: <Users className="w-5 h-5 text-[#ECCF96]" />,
-        title: isRu ? "6 Ключевых" : isEn ? "6 Core" : "6 Starke",
-        sub: isRu ? "направлений" : isEn ? "Divisions" : "Bereiche",
+        title: isRu ? "6 Ключевых" : isEn ? "6 Core" : isTr ? "6 Temel" : isAr ? "6 مجالات" : "6 Starke",
+        sub: isRu ? "направлений" : isEn ? "Divisions" : isTr ? "Faaliyet Alanı" : isAr ? "رئيسية" : "Bereiche",
       },
       {
         icon: <ShieldCheck className="w-5 h-5 text-[#ECCF96]" />,
-        title: isRu ? "100+ Врачей" : isEn ? "100+ Top" : "100+ Ärzte",
-        sub: isRu ? "и специалистов" : isEn ? "Specialists" : "& Spezialisten",
+        title: isRu ? "100+ Врачей" : isEn ? "100+ Top" : isTr ? "100+ Hekim" : isAr ? "+100 طبيب" : "100+ Ärzte",
+        sub: isRu ? "и специалистов" : isEn ? "Specialists" : isTr ? "ve Uzman" : isAr ? "واستشاري" : "& Spezialisten",
       },
       {
         icon: <Lightbulb className="w-5 h-5 text-[#ECCF96]" />,
-        title: isRu ? "Передовые" : isEn ? "State-of-the-Art" : "Modernste",
-        sub: isRu ? "технологии" : isEn ? "Technology" : "Technologie",
+        title: isRu ? "Передовые" : isEn ? "State-of-the-Art" : isTr ? "En Son" : isAr ? "أحدث" : "Modernste",
+        sub: isRu ? "технологии" : isEn ? "Technology" : isTr ? "Teknoloji" : isAr ? "التقنيات" : "Technologie",
       },
     ],
   };
 
   // ── Photo 1: Top 3-Column Intro Section (Spezialisierte Versorgung für jeden Bedarf) ──
   const introData = {
-    eyebrow: isRu ? "НАШИ НАПРАВЛЕНИЯ" : isEn ? "OUR SPECIALTIES" : "UNSERE FACHBEREICHE",
+    eyebrow: isRu ? "НАШИ НАПРАВЛЕНИЯ" : isEn ? "OUR SPECIALTIES" : isTr ? "UZMANLIK ALANLARIMIZ" : isAr ? "تخصصاتنا الطبية" : "UNSERE FACHBEREICHE",
     title: isRu
       ? "Специализированная помощь\nдля каждого пациента"
       : isEn
       ? "Specialized Care\nfor Every Need"
+      : isTr
+      ? "Her İhtiyaç İçin\nUzmanlaşmış Bakım"
+      : isAr
+      ? "رعاية تخصصية\nلكل احتياج"
       : "Spezialisierte Versorgung\nfür jeden Bedarf",
     description: isRu
       ? "Наши медицинские направления охватывают широкий спектр услуг — от профилактики до высокотехнологичной хирургии. Благодаря передовому оснащению и междисциплинарному взаимодействию вы получаете индивидуально подобранную и комплексную помощь."
       : isEn
       ? "Our medical departments cover a broad spectrum – from prevention to highly specialized surgery. Thanks to state-of-the-art technology and interdisciplinary collaboration, you receive individually tailored and holistic care."
+      : isTr
+      ? "Tıbbi uzmanlık alanlarımız, önleyici hekimlikten yüksek teknolojili cerrahiye kadar geniş bir yelpazeyi kapsar. En modern teknoloji ve disiplinler arası iş birliği sayesinde bireysel ve bütüncül bir bakım alırsınız."
+      : isAr
+      ? "تغطي أقسامنا الطبية نطاقاً واسعاً من الخدمات – بدءاً من الطب الوقائي وحتى الجراحات الدقيقة عالية التخصص. بفضل أحدث التقنيات والتعاون بين مختلف التخصصات، نوفر لكم رعاية فردية متكاملة."
       : "Unsere medizinischen Fachbereiche decken ein breites Spektrum ab – von der Prävention bis zur hochspezialisierten Chirurgie. Dank modernster Technologie und interdisziplinärer Zusammenarbeit erhalten Sie eine individuell abgestimmte und ganzheitliche Betreuung.",
-    btn: isRu ? "Все направления" : isEn ? "Explore All Divisions" : "Alle Bereiche entdecken",
+    btn: isRu ? "Все направления" : isEn ? "Explore All Divisions" : isTr ? "Tüm Alanları Keşfedin" : isAr ? "استكشف كافة القطاعات" : "Alle Bereiche entdecken",
     cardTitle: isRu
       ? "От диагностики до реабилитации"
       : isEn
       ? "From Diagnosis to Aftercare"
+      : isTr
+      ? "Tanıdan Rehabilitasyona"
+      : isAr
+      ? "من التشخيص إلى الرعاية اللاحقة"
       : "Von der Diagnose bis zur Nachsorge",
     cardDescription: isRu
       ? "Наши отделения работают в тесном сотрудничестве, чтобы предоставить вам наилучшее лечение — современное, щадящее и ориентированное на ваши индивидуальные потребности."
       : isEn
       ? "Our departments work closely together to provide you with the best possible treatment – modern, gentle, and tailored to your individual needs."
+      : isTr
+      ? "Bölümlerimiz, size mümkün olan en iyi tedaviyi sunmak için yakın iş birliği içinde çalışır; modern, koruyucu ve kişisel ihtiyaçlarınıza göre uyarlanmış."
+      : isAr
+      ? "تعمل أقسامنا بتنسيق وثيق لتقديم أفضل علاج ممكن – عصري، آمن، ومصمم خصيصاً لتلبية احتياجاتكم الفردية."
       : "Unsere Fachbereiche arbeiten eng zusammen, um Ihnen die bestmögliche Behandlung zu bieten – modern, schonend und auf Ihre individuellen Bedürfnisse abgestimmt.",
     features: [
       {
@@ -196,6 +222,10 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
           ? "Высочайшие медицинские стандарты качества"
           : isEn
           ? "Highest Medical Quality Standards"
+          : isTr
+          ? "En Yüksek Tıbbi Kalite Standartları"
+          : isAr
+          ? "أعلى معايير الجودة الطبية"
           : "Höchste medizinische Qualitätsstandards",
       },
       {
@@ -204,6 +234,10 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
           ? "Междисциплинарное сотрудничество"
           : isEn
           ? "Interdisciplinary Collaboration"
+          : isTr
+          ? "Disiplinler Arası İş Birliği"
+          : isAr
+          ? "التعاون متعدد التخصصات"
           : "Interdisziplinäre Zusammenarbeit",
       },
       {
@@ -212,6 +246,10 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
           ? "Передовые технологии и инновации"
           : isEn
           ? "State-of-the-Art Technology & Innovation"
+          : isTr
+          ? "En Yeni Teknoloji ve İnovasyon"
+          : isAr
+          ? "أحدث التقنيات والابتكارات"
           : "Modernste Technik und Innovation",
       },
       {
@@ -220,6 +258,10 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
           ? "Индивидуальная забота и человечность"
           : isEn
           ? "Personal Care & Human Touch"
+          : isTr
+          ? "Bireysel İlgi ve İnsani Yaklaşım"
+          : isAr
+          ? "رعاية شخصية ولمسة إنسانية"
           : "Individuelle Betreuung und Menschlichkeit",
       },
     ],
@@ -231,11 +273,15 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
       icon: Stethoscope,
       image: "/images/areas/medical-departments.webp",
       href: `/${locale}/areas/medizinische-fachbereiche`,
-      title: isRu ? "Медицинские отделения" : isEn ? "Medical Departments" : "Medizinische Fachbereiche",
+      title: isRu ? "Медицинские отделения" : isEn ? "Medical Departments" : isTr ? "Tıbbi Uzmanlık Bölümleri" : isAr ? "الأقسام الطبية التخصصية" : "Medizinische Fachbereiche",
       desc: isRu
         ? "Комплексная амбулаторная помощь по широкому спектру врачебных специальностей."
         : isEn
         ? "Comprehensive care across a wide range of medical specialties."
+        : isTr
+        ? "Geniş bir tıbbi uzmanlık yelpazesinde kapsamlı ayakta tedavi ve bakım."
+        : isAr
+        ? "رعاية شاملة عبر مجموعة واسعة من التخصصات الطبية للعيادات الخارجية."
         : "Umfassende Versorgung über ein breites Spektrum medizinischer Fachdisziplinen.",
     },
     {
@@ -243,11 +289,15 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
       icon: Microscope,
       image: "/images/areas/diagnostics.webp",
       href: `/${locale}/areas/diagnostik`,
-      title: isRu ? "Диагностика" : isEn ? "Diagnostics" : "Diagnostik",
+      title: isRu ? "Диагностика" : isEn ? "Diagnostics" : isTr ? "Tanı ve Teşhis" : isAr ? "التشخيص الطبي" : "Diagnostik",
       desc: isRu
         ? "Передовая визуализация и лаборатория для точного и раннего выявления."
         : isEn
         ? "Advanced imaging and laboratory for accurate and early detection."
+        : isTr
+        ? "Hassas ve erken teşhis için en son görüntüleme ve laboratuvar analizleri."
+        : isAr
+        ? "أحدث تقنيات التصوير الشعاعي والتحاليل المخبرية للتشخيص الدقيق والمبكر."
         : "Modernste Bildgebung und Laboranalytik für präzise und frühe Diagnosen.",
     },
     {
@@ -255,11 +305,15 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
       icon: HeartPulse,
       image: "/images/areas/rehabilitation.webp",
       href: `/${locale}/areas/rehabilitation`,
-      title: isRu ? "Реабилитация" : isEn ? "Rehabilitation" : "Rehabilitation",
+      title: isRu ? "Реабилитация" : isEn ? "Rehabilitation" : isTr ? "Rehabilitasyon" : isAr ? "إعادة التأهيل الطبي" : "Rehabilitation",
       desc: isRu
         ? "Восстановление подвижности, сил и независимости в повседневной жизни."
         : isEn
         ? "Helping you regain strength, mobility and independence."
+        : isTr
+        ? "Hareket kabiliyetini, fiziksel gücü ve bağımsızlığı yeniden kazanma."
+        : isAr
+        ? "استعادة الحركة والقوة البدنية والاعتماد على الذات في الحياة اليومية."
         : "Wiederherstellung von Mobilität, körperlicher Kraft und Selbstständigkeit.",
     },
     {
@@ -267,11 +321,15 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
       icon: Users,
       image: "/images/areas/pflege.webp",
       href: `/${locale}/areas/pflege`,
-      title: isRu ? "Уход и патронаж" : isEn ? "Care for Seniors" : "Pflege",
+      title: isRu ? "Уход и патронаж" : isEn ? "Care for Seniors" : isTr ? "Evde Bakım ve Hemşirelik" : isAr ? "التمريض والرعاية المنزلية" : "Pflege",
       desc: isRu
         ? "Квалифицированный амбулаторный уход и забота в привычной домашней обстановке."
         : isEn
         ? "Compassionate, personalized care and home care for a better quality of life."
+        : isTr
+        ? "Alışılmış ev ortamında nitelikli ayakta bakım ve HomeCare hizmetleri."
+        : isAr
+        ? "خدمات تمريضية متخصصة ورعاية منزلية متكاملة في المحيط الأسري المألوف."
         : "Qualifizierte ambulante Pflege und HomeCare im vertrauten häuslichen Umfeld.",
     },
     {
@@ -279,11 +337,15 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
       icon: Briefcase,
       image: "/images/areas/consulting.webp",
       href: `/${locale}/areas/beratung-projektentwicklung`,
-      title: isRu ? "Консалтинг и девелопмент" : isEn ? "Consulting & Project Development" : "Beratung & Projektentwicklung",
+      title: isRu ? "Консалтинг и девелопмент" : isEn ? "Consulting & Project Development" : isTr ? "Danışmanlık ve Proje Geliştirme" : isAr ? "الاستشارات وتطوير المشاريع" : "Beratung & Projektentwicklung",
       desc: isRu
         ? "Проектирование, развитие и управление современными медицинскими центрами."
         : isEn
         ? "Strategic development, planning and management of modern healthcare facilities."
+        : isTr
+        ? "Modern sağlık gayrimenkullerinin ve MVZ'lerin tasarımı, inşası ve yönetimi."
+        : isAr
+        ? "تخطيط وبناء وإدارة العقارات والمراكز الصحية المتطورة."
         : "Konzeption, Bau und Management moderner Gesundheitsimmobilien und MVZ.",
     },
     {
@@ -291,94 +353,122 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
       icon: Globe,
       image: "/images/areas/international.webp",
       href: `/${locale}/areas/internationale-kooperationen`,
-      title: isRu ? "Международное сотрудничество" : isEn ? "International Cooperation" : "Internationale Kooperationen",
+      title: isRu ? "Международное сотрудничество" : isEn ? "International Cooperation" : isTr ? "Uluslararası İş Birlikleri" : isAr ? "التعاون الدولي" : "Internationale Kooperationen",
       desc: isRu
         ? "Трансграничные партнерства, телемедицина и глобальный обмен опытом."
         : isEn
         ? "Cross-border medical partnerships, telemedicine and global healthcare network."
+        : isTr
+        ? "Sınır ötesi ortaklıklar, teletıp ve küresel bilgi/deneyim transferi."
+        : isAr
+        ? "شراكات عابرة للحدود، طب اتصالي، وتبادل معرفي عالمي في المجال الصحي."
         : "Grenzüberschreitende Partnerschaften, Telemedizin und weltweiter Wissenstransfer.",
     },
   ];
 
   // ── Section 2: Why NabiOta ──
   const whyNabiota = {
-    eyebrow: isRu ? "ПОЧЕМУ НАБИОТА" : isEn ? "WHY NABIOTA" : "WARUM NABIOTA",
+    eyebrow: isRu ? "ПОЧЕМУ НАБИОТА" : isEn ? "WHY NABIOTA" : isTr ? "NEDEN NABIOTA" : isAr ? "لماذا نابي أوتا" : "WARUM NABIOTA",
     title: isRu
       ? "Больше чем отделения.\nСильная команда."
       : isEn
       ? "More than Departments.\nA Stronger Team."
+      : isTr
+      ? "Bölümlerden Daha Fazlası.\nGüçlü Bir Ekip."
+      : isAr
+      ? "أكثر من مجرد أقسام.\nفريق متكامل وقوي."
       : "Mehr als Fachbereiche.\nEin starkes Team.",
     description: isRu
       ? "Наши направления узкоспециализированы, но мы никогда не работаем изолированно. Благодаря тесному взаимодействию, обмену знаниями и культуре ориентации на пациента мы обеспечиваем медицину, превосходящую ожидания."
       : isEn
       ? "Our divisions may be specialized, but we never work in isolation. Through close collaboration, shared knowledge and a patient-first mindset, we deliver healthcare that goes beyond expectations."
+      : isTr
+      ? "Uzmanlık alanlarımız son derece odaklıdır ancak hiçbir zaman izole çalışmayız. Yakın iş birliği, paylaşılan bilgi ve hasta odaklı yaklaşım sayesinde standartları aşan bir sağlık hizmeti sunuyoruz."
+      : isAr
+      ? "تتميز قطاعاتنا بتخصصها الدقيق، لكننا لا نعمل في معزل أبداً. بفضل التعاون الوثيق، وتبادل الخبرات، والتركيز على المريض، نقدم رعاية صحية ترتقي فوق التوقعات."
       : "Unsere Fachbereiche sind hochspezialisiert, arbeiten jedoch niemals isoliert. Durch enge Zusammenarbeit, geteiltes Wissen und einen konsequent patientenzentrierten Ansatz ermöglichen wir eine Versorgung, die Maßstäbe setzt.",
-    btn: isRu ? "О наших ценностях" : isEn ? "About Our Values" : "Über unsere Werte",
+    btn: isRu ? "О наших ценностях" : isEn ? "About Our Values" : isTr ? "Değerlerimiz Hakkında" : isAr ? "حول قيمنا المؤسسية" : "Über unsere Werte",
     pillars: [
       {
         icon: Users,
-        title: isRu ? "Коллаборация" : isEn ? "Collaboration" : "Collaboration",
-        desc: isRu ? "Разные компетенции. Одна команда." : isEn ? "Different expertise. One team." : "Different expertise. One team.",
+        title: isRu ? "Коллаборация" : isEn ? "Collaboration" : isTr ? "İş Birliği" : isAr ? "التعاون المشترك" : "Collaboration",
+        desc: isRu ? "Разные компетенции. Одна команда." : isEn ? "Different expertise. One team." : isTr ? "Farklı uzmanlıklar. Tek bir ekip." : isAr ? "خبرات متنوعة، وفريق واحد." : "Different expertise. One team.",
       },
       {
         icon: ShieldCheck,
-        title: isRu ? "Качество" : isEn ? "Quality" : "Quality",
-        desc: isRu ? "Высочайшие стандарты во всем." : isEn ? "Highest standards in everything we do." : "Highest standards in everything we do.",
+        title: isRu ? "Качество" : isEn ? "Quality" : isTr ? "Kalite" : isAr ? "الجودة" : "Quality",
+        desc: isRu ? "Высочайшие стандарты во всем." : isEn ? "Highest standards in everything we do." : isTr ? "Yaptığımız her şeyde en yüksek standartlar." : isAr ? "أعلى المعايير في كل ما نقوم به." : "Highest standards in everything we do.",
       },
       {
         icon: Lightbulb,
-        title: isRu ? "Инновации" : isEn ? "Innovation" : "Innovation",
-        desc: isRu ? "Современные технологии. Лучшие результаты." : isEn ? "Modern technology. Better outcomes." : "Modern technology. Better outcomes.",
+        title: isRu ? "Инновации" : isEn ? "Innovation" : isTr ? "İnovasyon" : isAr ? "الابتكار" : "Innovation",
+        desc: isRu ? "Современные технологии. Лучшие результаты." : isEn ? "Modern technology. Better outcomes." : isTr ? "Modern teknoloji. Daha iyi sonuçlar." : isAr ? "تقنيات متقدمة لنتائج أفضل." : "Modern technology. Better outcomes.",
       },
       {
         icon: Heart,
-        title: isRu ? "Люди" : isEn ? "People" : "People",
-        desc: isRu ? "Наши пациенты — наш главный приоритет." : isEn ? "Our patients, our priority." : "Our patients, our priority.",
+        title: isRu ? "Люди" : isEn ? "People" : isTr ? "İnsan Odaklılık" : isAr ? "الإنسان أولاً" : "People",
+        desc: isRu ? "Наши пациенты — наш главный приоритет." : isEn ? "Our patients, our priority." : isTr ? "Hastalarımız, bizim önceliğimiz." : isAr ? "مرضانا هم أولويتنا القصوى." : "Our patients, our priority.",
       },
     ],
   };
 
   // ── Section 3: Patient Stories ──
   const patientStories = {
-    eyebrow: isRu ? "ИСТОРИИ ПАЦИЕНТОВ" : isEn ? "PATIENT STORIES" : "PATIENT STORIES",
-    title: isRu ? "Реальные люди.\nРеальные истории." : isEn ? "Real People.\nReal Impact." : "Real People.\nReal Impact.",
+    eyebrow: isRu ? "ИСТОРИИ ПАЦИЕНТОВ" : isEn ? "PATIENT STORIES" : isTr ? "HASTA HİKAYELERİ" : isAr ? "قصص وتجارب المرضى" : "PATIENT STORIES",
+    title: isRu ? "Реальные люди.\nРеальные истории." : isEn ? "Real People.\nReal Impact." : isTr ? "Gerçek İnsanlar.\nGerçek Deneyimler." : isAr ? "تجارب واقعية.\nوأثر ملموس." : "Real People.\nReal Impact.",
     desc: isRu
       ? "Узнайте от наших пациентов об их опыте лечения в NabiOta Health Group и качестве заботы в наших отделениях."
       : isEn
       ? "Hear from our patients about their experience with NabiOta Health Group and the care they received across our divisions."
+      : isTr
+      ? "Hastalarımızdan NabiOta Health Group bünyesindeki deneyimlerini ve bölümlerimizde aldıkları bakım kalitesini dinleyin."
+      : isAr
+      ? "استمع إلى تجارب مرضانا في مجموعة نابي أوتا الصحية ومستوى الرعاية التي تلقوها في مختلف أقسامنا."
       : "Hear from our patients about their experience with NabiOta Health Group and the care they received across our divisions.",
     stories: [
       {
         id: 1,
         name: "Anna Müller",
-        role: isRu ? "Пациентка, Ортопедия" : isEn ? "Patient, Orthopedics" : "Patient, Orthopedics",
+        role: isRu ? "Пациентка, Ортопедия" : isEn ? "Patient, Orthopedics" : isTr ? "Hasta, Ortopedi" : isAr ? "مريضة، جراحة العظام" : "Patient, Orthopedics",
         photo: "/images/testimonials/anna-mueller.webp",
         quote: isRu
           ? "Врачи и медицинский персонал были невероятно профессиональны и заботливы. Я чувствовала искреннюю поддержку на каждом этапе — от первой диагностики до полного выздоровления. Безмерно благодарна за их чуткость и экспертность."
           : isEn
           ? "The doctors and staff were incredibly professional and caring. I felt supported at every step, from diagnosis to recovery. I'm truly grateful for their expertise and kindness."
+          : isTr
+          ? "Doktorlar ve personel son derece profesyonel ve ilgiliydi. Tanıdan iyileşmeye kadar her adımda desteklendiğimi hissettim. Uzmanlıkları ve nezaketleri için minnettarım."
+          : isAr
+          ? "كان الأطباء وفريق التمريض على أعلى مستوى من الاحترافية والاهتمام. شعرت بالدعم الكامل في كل خطوة، من التشخيص وحتى التعافي. أنا ممتنة للغاية لخبرتهم وإنسانيتهم."
           : "The doctors and staff were incredibly professional and caring. I felt supported at every step, from diagnosis to recovery. I'm truly grateful for their expertise and kindness.",
       },
       {
         id: 2,
         name: "Thomas Becker",
-        role: isRu ? "Пациент, Кардиология" : isEn ? "Patient, Cardiology" : "Patient, Cardiology",
+        role: isRu ? "Пациент, Кардиология" : isEn ? "Patient, Cardiology" : isTr ? "Hasta, Kardiyoloji" : isAr ? "مريض، طب القلب" : "Patient, Cardiology",
         photo: "/images/testimonials/thomas-becker.webp",
         quote: isRu
           ? "Уровень медицинской помощи превзошел все ожидания. Особенно ценю четкий, структурированный и по-настоящему человечный подход команды к лечению."
           : isEn
           ? "The level of care was outstanding. I especially appreciate the structured and personalized approach of the team."
+          : isTr
+          ? "Bakım seviyesi olağanüstüydü. Özellikle ekibin yapılandırılmış ve kişiye özel yaklaşımını takdir ediyorum."
+          : isAr
+          ? "كان مستوى الرعاية الطبية استثنائياً. وأثمن بشكل خاص النهج المنظم والمصمم بدقة بما يلائم حالتي من قبل الفريق الطبي."
           : "The level of care was outstanding. I especially appreciate the structured and personalized approach of the team.",
       },
       {
         id: 3,
         name: "Elena Fischer",
-        role: isRu ? "Пациентка, Реабилитация" : isEn ? "Patient, Rehabilitation" : "Patient, Rehabilitation",
+        role: isRu ? "Пациентка, Реабилитация" : isEn ? "Patient, Rehabilitation" : isTr ? "Hasta, Rehabilitasyon" : isAr ? "مريضة، إعادة التأهيل" : "Patient, Rehabilitation",
         photo: "/images/testimonials/elena-fischer.webp",
         quote: isRu
           ? "После операции восстановительный процесс прошел быстро и без осложнений. Индивидуальный план тренировок и поддержка физиотерапевтов вернули мне радость активной жизни."
           : isEn
           ? "After surgery, my rehabilitation was rapid and seamless. The dedicated therapy plan and personal attention gave me my active lifestyle back completely."
+          : isTr
+          ? "Ameliyat sonrasında rehabilitasyon sürecim hızlı ve sorunsuz geçti. Özel terapi planı ve yakın ilgi bana aktif yaşam tarzımı tamamen geri kazandırdı."
+          : isAr
+          ? "بعد الجراحة، كانت مرحلة إعادة التأهيل سريعة وسلسة للغاية. الخطة العلاجية المخصصة والاهتمام الشخصي أعادا إلي نمط حياتي النشط تماماً."
           : "After surgery, my rehabilitation was rapid and seamless. The dedicated therapy plan and personal attention gave me my active lifestyle back completely.",
       },
     ],
@@ -400,18 +490,26 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
 
   // ── Section 4: Pre-footer CTA with Mountains Background (Photo 2) ──
   const ctaData = {
-    eyebrow: isRu ? "СВЯЖИТЕСЬ С НАМИ" : isEn ? "GET IN TOUCH" : "GET IN TOUCH",
+    eyebrow: isRu ? "СВЯЖИТЕСЬ С НАМИ" : isEn ? "GET IN TOUCH" : isTr ? "İLETİŞİME GEÇİN" : isAr ? "تواصل معنا" : "GET IN TOUCH",
     title: isRu
       ? "Ваше здоровье —\nнаша миссия."
       : isEn
       ? "Your Health is\nOur Mission."
+      : isTr
+      ? "Sağlığınız,\nBizim Misyonumuz."
+      : isAr
+      ? "صحتكم هي\nرسالتنا الأسمى."
       : "Ihre Gesundheit ist\nunsere Mission.",
     desc: isRu
       ? "У вас есть вопросы о наших направлениях или вы хотите записаться на прием? Мы всегда готовы помочь вам."
       : isEn
       ? "Do you have questions about our specialties or would you like to schedule an appointment? We are here for you."
+      : isTr
+      ? "Uzmanlık alanlarımız hakkında sorularınız mı var veya randevu almak mı istiyorsunuz? Size yardımcı olmaktan memnuniyet duyarız."
+      : isAr
+      ? "هل لديك استفسارات حول أقسامنا الطبية أو ترغب في حجز موعد؟ نحن دائماً في خدمتكم."
       : "Haben Sie Fragen zu unseren Fachbereichen oder möchten Sie einen Termin vereinbaren? Wir sind gerne für Sie da.",
-    btn: isRu ? "Связаться с нами" : isEn ? "Contact Us" : "Kontakt aufnehmen",
+    btn: isRu ? "Связаться с нами" : isEn ? "Contact Us" : isTr ? "İletişime Geçin" : isAr ? "تواصل معنا" : "Kontakt aufnehmen",
   };
 
   return (

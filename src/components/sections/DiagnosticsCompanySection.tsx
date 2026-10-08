@@ -29,7 +29,7 @@ import { Container } from "@/components/layout/Container";
  * 8 medizinische und organisatorische Aufgaben.
  */
 
-type Lang = "de" | "en" | "ru";
+type Lang = "de" | "en" | "ru" | "tr" | "ar";
 type T = Record<Lang, string>;
 type Icon = React.ComponentType<{ className?: string; strokeWidth?: number }>;
 
@@ -38,28 +38,38 @@ const c = {
     de: "GmbH · Diagnostische Infrastruktur · Notarieller Entwurf",
     en: "GmbH · Diagnostic Infrastructure · Notarial Draft",
     ru: "GmbH · Диагностическая инфраструктура · Проект устава",
+    tr: "GmbH · Tanısal Altyapı · Noter Taslağı",
+    ar: "ذ.م.م · البنية التحتية التشخيصية · مسودة التأسيس",
   } as T,
   title: "NabiOta Diagnostics GmbH",
   subtitle: {
     de: "Diagnostische Infrastruktur und medizinische Diagnostik",
     en: "Diagnostic Infrastructure & Clinical Diagnostics",
     ru: "Диагностическая инфраструктура и клиническая диагностика",
+    tr: "Tanısal Altyapı ve Klinik Tıbbi Tanı",
+    ar: "البنية التحتية للتشخيص والفحوصات الطبية السريرية",
   } as T,
   lead: {
     de: "Gegenstand des Unternehmens ist die Planung, Errichtung, Ausstattung, Organisation und der Betrieb diagnostischer Einrichtungen sowie die Bereitstellung medizinischer Diagnostikinfrastruktur im jeweils rechtlich zulässigen Umfang. Sie kann diagnostische Geräte, technische Anlagen und Räumlichkeiten erwerben, mieten, vermieten und befugten medizinischen Leistungserbringern zur Nutzung überlassen.",
     en: "The company's purpose is the planning, establishment, equipping, organization, and operation of diagnostic facilities, as well as providing medical diagnostic infrastructure within the legally permissible scope. It may acquire, lease, rent, and operate diagnostic devices, technical systems, and premises, or make them available to authorized medical providers.",
     ru: "Предметом деятельности компании является планирование, создание, оснащение, организация и эксплуатация диагностических центров, а также предоставление медицинской диагностической инфраструктуры в законно допустимом объёме. Компания может приобретать, арендовать, сдавать в аренду оборудование, помещения и передавать их в пользование уполномоченным врачам.",
+    tr: "Şirketin faaliyet konusu; tanı tesislerinin planlanması, inşası, donatılması, organizasyonu ve işletilmesinin yanı sıra yasal olarak izin verilen ölçüde tıbbi tanı altyapısının sağlanmasıdır. Tanı cihazları, teknik sistemler ve tesisler edinebilir, kiralayabilir, kiraya verebilir ve yetkili tıbbi hizmet sağlayıcılarının kullanımına tahsis edebilir.",
+    ar: "يتمثل نشاط الشركة في تخطيط وإنشاء وتجهيز وتنظيم وتشغيل مرافق التشخيص، بالإضافة إلى توفير البنية التحتية الطبية التشخيصية في الحدود المسموح بها قانونياً. ويحق لها شراء وتأجير وتشغيل الأجهزة التشخيصية والأنظمة التقنية والمقرات وإتاحتها لمقدمي الخدمات الطبية المعتمدين.",
   } as T,
 
   spectrumEyebrow: {
     de: "Diagnostisches Spektrum",
     en: "Modality Spectrum",
     ru: "Диагностический спектр",
+    tr: "Tanısal Spektrum",
+    ar: "نطاق الفحوصات التشخيصية",
   } as T,
   spectrumTitle: {
     de: "Vorgesehenes diagnostisches Spektrum",
     en: "Planned Diagnostic Modality Spectrum",
     ru: "Планируемый диагностический спектр",
+    tr: "Öngörülen Tanı Yöntemleri Spektrumu",
+    ar: "نطاق تقنيات ووسائل التشخيص المعتمدة",
   } as T,
   spectrumItems: [
     {
@@ -68,11 +78,15 @@ const c = {
         de: "Computertomographie & MRT",
         en: "Computed Tomography & MRI",
         ru: "Компьютерная томография и МРТ",
+        tr: "Bilgisayarlı Tomografi & MR",
+        ar: "الأشعة المقطعية والرنين المغناطيسي",
       } as T,
       desc: {
         de: "Computertomographie (CT) & Magnetresonanztomographie (MRT)",
         en: "Computed Tomography (CT) & Magnetic Resonance Imaging (MRI)",
         ru: "Компьютерная томография (КТ) и магнитно-резонансная томография (МРТ)",
+        tr: "Bilgisayarlı Tomografi (BT) ve Manyetik Rezonans Görüntüleme (MR)",
+        ar: "التصوير المقطعي المحوسب (CT) والرنين المغناطيسي (MRI)",
       } as T,
     },
     {
@@ -81,11 +95,15 @@ const c = {
         de: "Konventionelle Röntgendiagnostik",
         en: "Conventional Radiography",
         ru: "Рентгенодиагностика",
+        tr: "Konvansiyonel Radyoloji",
+        ar: "التصوير الإشعاعي الرقمي",
       } as T,
       desc: {
         de: "Konventionelle Röntgendiagnostik (digitales Röntgen)",
         en: "Conventional Radiography (Digital X-Ray)",
         ru: "Конвенциональная рентгенодиагностика (цифровой рентген)",
+        tr: "Konvansiyonel röntgen teşhisi (dijital röntgen)",
+        ar: "الأشعة السينية التقليدية (الأشعة الرقمية)",
       } as T,
     },
     {
@@ -94,11 +112,15 @@ const c = {
         de: "Ultraschalldiagnostik",
         en: "Ultrasound Diagnostics",
         ru: "Ультразвуковая диагностика",
+        tr: "Ultrasonografi & Doppler",
+        ar: "الموجات فوق الصوتية والدوبلر",
       } as T,
       desc: {
         de: "Medizinisch indizierte Ultraschalluntersuchungen (3D/4D-Sonographie, Doppler- & Duplexsonographie)",
         en: "Medically Indicated Ultrasound (3D/4D Sonography, Doppler & Duplex Sonography)",
         ru: "Ультразвуковые исследования по показаниям (3D/4D сонография, допплер и дуплекс)",
+        tr: "Tıbbi endikasyonlu ultrason incelemeleri (3D/4D sonografi, Doppler ve Dubleks sonografi)",
+        ar: "فحوصات السونار الطبية (أبعاد 3D/4D، وفحوصات الدوبلر والدوبلكس للأوعية)",
       } as T,
     },
     {
@@ -107,11 +129,15 @@ const c = {
         de: "Neurophysiologische Diagnostik",
         en: "Neurophysiological Testing",
         ru: "Нейрофизиологическая диагностика",
+        tr: "Nörofizyolojik Tanı",
+        ar: "التشخيص الفسيولوجي العصبي",
       } as T,
       desc: {
         de: "Neurophysiologische Diagnostik (EMG, ENG, EEG & evozierte Potenziale)",
         en: "Neurophysiological Testing (EMG, ENG, EEG & Evoked Potentials)",
         ru: "Нейрофизиологические исследования (ЭМГ, ЭНГ, ЭЭГ и вызванные потенциалы)",
+        tr: "Nörofizyolojik tanı (EMG, ENG, EEG ve uyarılmış potansiyeller)",
+        ar: "الفحوصات العصبية الوظيفية (تخطيط العضلات EMG، وتوصيل الأعصاب ENG، وتخطيط الدماغ EEG، والجهود المستحثة)",
       } as T,
     },
     {
@@ -120,11 +146,15 @@ const c = {
         de: "Laboratoriumsmedizin",
         en: "Clinical Laboratory",
         ru: "Лабораторная диагностика",
+        tr: "Laboratuvar Tıbbı",
+        ar: "الطب المخبري والتحاليل",
       } as T,
       desc: {
         de: "Laboratoriumsmedizinische Untersuchungen, Probengewinnung, -aufbereitung & -transport",
         en: "Clinical Laboratory Diagnostics, Sample Collection, Preparation & Logistics",
         ru: "Лабораторная диагностика, организация забора, подготовки и транспортировки проб",
+        tr: "Laboratuvar tıbbı incelemeleri, numune alımı, hazırlığı ve lojistiği",
+        ar: "التحاليل المخبرية السريرية، وسحب العينات وتجهيزها ونقلها الآمن",
       } as T,
     },
     {
@@ -133,11 +163,15 @@ const c = {
         de: "Weitere diagnostische Verfahren",
         en: "Additional Diagnostic Procedures",
         ru: "Дополнительные методы",
+        tr: "Diğer Tanı Yöntemleri",
+        ar: "إجراءات تشخيصية إضافية",
       } as T,
       desc: {
         de: "Weitere diagnostische Verfahren gemäß den erforderlichen fachlichen & rechtlichen Voraussetzungen",
         en: "Additional Diagnostic Procedures subject to specialized clinical and regulatory prerequisites",
         ru: "Дополнительные методы диагностики при наличии необходимых профессиональных и правовых условий",
+        tr: "Gerekli mesleki ve yasal gerekliliklere uygun ek tanı yöntemleri",
+        ar: "إجراءات وفحوصات تشخيصية إضافية وفقاً للمتطلبات المهنية والتنظيمية المعتمدة",
       } as T,
     },
   ],
@@ -149,11 +183,15 @@ const c = {
         de: "Infrastruktur & Betreiberpflichten",
         en: "Infrastructure & Operator Mandate",
         ru: "Инфраструктура и обязанности оператора",
+        tr: "Altyapı & İşletmeci Yükümlülükleri",
+        ar: "البنية التحتية ومسؤوليات التشغيل",
       } as T,
       text: {
         de: "Die Gesellschaft stellt diagnostische Geräte, technische Anlagen und Praxisräume bereit und übernimmt damit verbundene technische, administrative und organisatorische Dienstleistungen nach den gesetzlichen Betreiberanforderungen.",
         en: "The company provides diagnostic modalities, technical infrastructure, and clinical premises, delivering associated technical, administrative, and organizational services under statutory operator regulations.",
         ru: "Компания предоставляет диагностическое оборудование, инженерные системы и помещения, выполняя технические, административные и организационные функции согласно требованиям к операторам техники.",
+        tr: "Şirket; tanı cihazları, teknik sistemler ve muayene odaları sağlar ve yasal işletmeci gerekliliklerine uygun teknik, idari ve organizasyonel hizmetleri üstlenir.",
+        ar: "توفر الشركة الأجهزة التشخيصية والأنظمة التقنية ومقرات العيادات، وتتولى الخدمات الفنية والإدارية والتنظيمية المرتبطة بها وفق اشتراطات التشغيل القانونية.",
       } as T,
       image: "/images/diagnostik/scanner-suite.webp",
     },
@@ -163,11 +201,15 @@ const c = {
         de: "Ärztliche Weisungsfreiheit & Delegation",
         en: "Physician Autonomy & Delegation",
         ru: "Врачебная независимость и делегирование",
+        tr: "Hekim Bağımsızlığı & Görev Devri",
+        ar: "الاستقلالية الطبية وتفويض المهام",
       } as T,
       text: {
         de: "Ärztliche Leistungen und Befundungen werden ausschließlich durch berufsrechtlich befugte Ärzte unter Wahrung ihrer medizinischen Weisungsfreiheit erbracht. Delegierbare Tätigkeiten dürfen Fachpersonal unter ärztlicher Aufsicht übertragen werden.",
         en: "Medical evaluations and diagnostic reports are rendered exclusively by licensed physicians with complete clinical independence. Delegable procedures may be assigned to certified staff under medical supervision.",
         ru: "Врачебные осмотры и заключения выполняются исключительно уполномоченными врачами при полной независимости решений. Делегируемые процедуры могут передаваться среднему персоналу под контролем врача.",
+        tr: "Tıbbi hizmetler ve raporlamalar, yalnızca mesleki bağımsızlıkları tam korunan yetkili hekimler tarafından yürütülür. Devredilebilir işlemler hekim gözetiminde uzman personele bırakılabilir.",
+        ar: "تُقدم الخدمات والتقارير الطبية حصرياً من قبل أطباء مرخصين مع الحفاظ الكامل على استقلاليتهم السريرية. ويجوز تفويض المهام المسموح بها للكوادر الفنية تحت إشراف طبي.",
       } as T,
       image: "/images/diagnostik/consultation.webp",
     },
@@ -177,11 +219,15 @@ const c = {
         de: "Kooperation im NabiOta-Verbund",
         en: "Group & Network Cooperation",
         ru: "Кооперация в сети NabiOta",
+        tr: "NabiOta Ağı İçi İş Birliği",
+        ar: "التعاون والتنسيق ضمن شبكة نابي أوتا",
       } as T,
       text: {
         de: "Kooperationen mit Ärzten, Laboren, Krankenhäusern und NabiOta-MVZ sind vertraglich geregelt. Die Zuständigkeiten für Behandlung, Gerätebetrieb, Qualitätssicherung, Datenschutz und Abrechnung sind strikt getrennt und eindeutig zugeordnet.",
         en: "Structured cooperations with physicians, laboratories, clinics, and group MVZs are formalized by contract. Responsibilities for patient care, equipment operations, QA, GDPR, and billing remain distinctly separated.",
         ru: "Сотрудничество с врачами, лабораториями, клиниками и MVZ сети оформляется договорами. Ответственность за лечение, эксплуатацию техники, контроль качества, защиту данных и расчёты строго разграничена.",
+        tr: "Hekimler, laboratuvarlar, klinikler ve grup MVZ'leri ile iş birlikleri sözleşmeye bağlıdır. Tedavi, cihaz kullanımı, kalite güvencesi, veri koruma ve faturalandırma sorumlulukları kesin olarak ayrılmıştır.",
+        ar: "يخضع التعاون مع الأطباء والمختبرات والمستشفيات ومراكز MVZ التابعة للمجموعة لعقود واضحة تفصل بدقة بين مسؤوليات العلاج وتشغيل الأجهزة وضمان الجودة وحماية البيانات والفوترة.",
       } as T,
       image: "/images/areas/consulting.webp",
     },
@@ -192,11 +238,15 @@ const c = {
       de: "Rechtliche Abgrenzung zur vertragsärztlichen Versorgung & GKV-Abrechnung",
       en: "Regulatory Separation: Outpatient Accreditation & Statutory Billing",
       ru: "Правовое разграничение: допуск к практике и расчёты по системе ОМС (GKV)",
+      tr: "Sözleşmeli Hekimlik ve Yasal Sigorta (GKV) Faturalandırmasına Dair Hukuki Sınır",
+      ar: "الحدود القانونية لخدمات التأمين الصحي الحكومي (GKV)",
     } as T,
     body: {
       de: "Soweit die Gesellschaft ausschließlich Infrastruktur oder organisatorische Leistungen bereitstellt, verbleiben die medizinische Indikationsstellung, ärztliche Leistungserbringung, Befundung und ärztliche Abrechnung bei den jeweils befugten Leistungserbringern. Leistungen zulasten der gesetzlichen Krankenversicherung (GKV) werden ausschließlich durch hierzu berechtigte Leistungserbringer im Rahmen ihrer jeweiligen Zulassungen, Genehmigungen und Abrechnungsbefugnisse erbracht und abgerechnet. Der Unternehmensgegenstand und die Handelsregistereintragung allein begründen keine Berechtigung zur vertragsärztlichen Versorgung oder GKV-Abrechnung.",
       en: "Insofar as the company solely provides infrastructure or organizational services, clinical indication, physician performance, reporting, and statutory billing remain with the respective authorized practitioners. Services reimbursed by statutory health insurance (GKV) are provided and billed solely by accredited providers holding appropriate approvals and billing quotas. Corporate registration alone does not establish contract-physician accreditation or direct GKV billing capacity.",
       ru: "В той мере, в какой компания предоставляет исключительно инфраструктуру или организационные услуги, определение медицинских показаний, выполнение процедур, составление заключений и выставление счетов остаются за уполномоченными врачами. Оказание и оплата услуг за счёт обязательного медицинского страхования (GKV) осуществляются исключительно допущенными врачами/учреждениями. Регистрация компании в торговом реестре сама по себе не даёт права на расчёты по системе GKV.",
+      tr: "Şirketin yalnızca altyapı veya organizasyonel hizmetler sunduğu durumlarda; tıbbi endikasyon, hekim uygulaması, raporlama ve hekim faturalandırması ilgili yetkili hizmet sağlayıcılarda kalır. Yasal sağlık sigortası (GKV) kapsamındaki hizmetler yalnızca ruhsat ve faturalandırma yetkisine sahip yetkili sağlayıcılarca sunulur ve fatura edilir. Şirket faaliyet konusu veya ticaret sicil kaydı tek başına sözleşmeli hekimlik veya GKV faturalandırma yetkisi doğurmaz.",
+      ar: "في الحالات التي تقتصر فيها الشركة على توفير البنية التحتية أو الخدمات التنظيمية، يظل تحديد الاستطباب الطبي وتقديم العلاج وكتابة التقارير والفوترة من اختصاص مقدمي الرعاية المرخصين حصراً. ولا تمنح سجلات الشركة التجارية بمفردها حق تقديم خدمات التأمين الحكومي (GKV) دون تراخيص فردية معتمدة.",
     } as T,
   },
 
@@ -204,6 +254,8 @@ const c = {
     de: "Medizinische und organisatorische Aufgaben (8 Kernfelder)",
     en: "Medical & Organizational Tasks (8 Core Domains)",
     ru: "Медицинские и организационные задачи (8 ключевых направлений)",
+    tr: "Tıbbi ve Organizasyonel Görevler (8 Temel Alan)",
+    ar: "المهام الطبية والتنظيمية (8 مجالات رئيسية)",
   } as T,
   tasks: [
     {
@@ -213,11 +265,15 @@ const c = {
         de: "Aufbau diagnostischer Einrichtungen",
         en: "Establishment of Diagnostic Centers",
         ru: "Создание диагностических центров",
+        tr: "Tanı Tesislerinin Kurulması",
+        ar: "إنشاء وتجهيز المرافق التشخيصية",
       } as T,
       desc: {
         de: "Planung geeigneter Standorte, Untersuchungsräume und technischer Ausstattung entsprechend dem vorgesehenen Untersuchungsspektrum.",
         en: "Planning of strategic sites, specialized imaging suites, and technical facilities aligned with the diagnostic scope.",
         ru: "Проектирование локаций, кабинетов для томографии и инженерной инфраструктуры под профильный спектр обследований.",
+        tr: "Öngörülen inceleme yelpazesine uygun stratejik lokasyonların, muayene odalarının ve teknik donanımın planlanması.",
+        ar: "تخطيط المواقع المناسبة وغرف الفحص والتجهيزات التقنية بما يطابق النطاق التشخيصي المعتمد.",
       } as T,
     },
     {
@@ -227,11 +283,15 @@ const c = {
         de: "Gerätebereitstellung und Betrieb",
         en: "Equipment Provision & Operation",
         ru: "Предоставление оборудования и эксплуатация",
+        tr: "Cihaz Temini ve İşletimi",
+        ar: "توفير الأجهزة وتشغيلها",
       } as T,
       desc: {
         de: "Beschaffung und Bereitstellung diagnostischer Geräte einschließlich Wartungsorganisation, Funktionskontrollen und technischer Betreuung.",
         en: "Procurement and commissioning of high-end modalities, proactive maintenance regimes, calibration, and 24/7 technical monitoring.",
         ru: "Закупка и ввод в эксплуатацию экспертной техники, организация сервисного техобслуживания, поверок и технической поддержки.",
+        tr: "Tanı cihazlarının temini ve sağlanması; bakım organizasyonu, fonksiyonel kontroller ve sürekli teknik destek.",
+        ar: "شراء وتشغيل أجهزة التشخيص الحديثة، وإدارة الصيانة الدورية واختبارات الكفاءة والدعم الفني.",
       } as T,
     },
     {
@@ -241,11 +301,15 @@ const c = {
         de: "Organisation der Untersuchungen",
         en: "Organization of Examinations",
         ru: "Организация процесса обследований",
+        tr: "İnceleme Süreçlerinin Organizasyonu",
+        ar: "تنظيم مواعيد ومسارات الفحوصات",
       } as T,
       desc: {
         de: "Terminplanung, Patientenaufnahme, Vorbereitung und Koordination der Untersuchungen unter Berücksichtigung medizinischer Dringlichkeit und Kapazitäten.",
         en: "Scheduling, patient intake, preparation, and workflow orchestration prioritizing clinical urgency and available modality slots.",
         ru: "Управление записью, приём пациентов, подготовка и маршрутизация с учётом клинической срочности и мощности оборудования.",
+        tr: "Tıbbi aciliyet ve kapasiteler gözetilerek randevu planlaması, hasta kabulü, hazırlık ve incelemelerin koordinasyonu.",
+        ar: "جدولة المواعيد واستقبال المرضى والتجهيز وتنسيق الفحوصات مع مراعاة الأولوية والضرورة الطبية.",
       } as T,
     },
     {
@@ -255,11 +319,15 @@ const c = {
         de: "Bildgebende Diagnostik",
         en: "Diagnostic Imaging Workflows",
         ru: "Лучевая диагностика и визуализация",
+        tr: "Görüntüleme Tanı İş Akışları",
+        ar: "مسارات التصوير الإشعاعي",
       } as T,
       desc: {
         de: "Organisation und gegebenenfalls rechtlich zulässige Durchführung bildgebender Untersuchungen einschließlich Sicherheitsprüfungen, Information und Nachbetreuung.",
         en: "Organization and legally compliant execution of imaging procedures, safety protocols, radiation protection, and patient post-care.",
         ru: "Организация и проведение лучевых исследований с соблюдением норм радиационной безопасности, информирования и наблюдения.",
+        tr: "Radyasyon güvenliği kontrolleri, hasta bilgilendirmesi ve takip dahil olmak üzere görüntüleme incelemelerinin organizasyonu.",
+        ar: "تنظيم وإجراء الفحوصات التصويرية مع فحوصات السلامة الإشعاعية وتوعية المرضى والمتابعة.",
       } as T,
     },
     {
@@ -269,11 +337,15 @@ const c = {
         de: "Neurophysiologische Diagnostik",
         en: "Neurophysiological Testing Suites",
         ru: "Нейрофизиологическая диагностика",
+        tr: "Nörofizyolojik İnceleme Birimleri",
+        ar: "أجنحة الفحوصات الفسيولوجية العصبية",
       } as T,
       desc: {
         de: "Bereitstellung geeigneter Untersuchungsplätze und Organisation qualifikationsgerechter Untersuchungen zur Beurteilung von Nerven-, Muskel- und ZNS-Funktionen.",
         en: "Dedicated test suites and workflows for certified electrophysiological assessment of peripheral nerves, muscle, and CNS pathways.",
         ru: "Оснащение специализированных кабинетов и организация квалифицированной оценки функций периферических нервов, мышц и ЦНС.",
+        tr: "Sinir, kas ve merkezi sinir sistemi fonksiyonlarının değerlendirilmesi için uygun inceleme alanlarının sağlanması ve organizasyonu.",
+        ar: "تخصيص غرف فحص ملائمة وتنظيم دراسات متخصصة لتقييم وظائف الأعصاب والعضلات والمسارات العصبية.",
       } as T,
     },
     {
@@ -283,11 +355,15 @@ const c = {
         de: "Labordiagnostik & Probenmanagement",
         en: "Laboratory & Sample Logistics",
         ru: "Лаборатория и логистика биоматериалов",
+        tr: "Laboratuvar Tanısı & Numune Yönetimi",
+        ar: "التحاليل المخبرية وإدارة العينات",
       } as T,
       desc: {
         de: "Organisation eindeutiger Probenidentifikation, Abläufe für Entnahme, Lagerung, Transport, Untersuchung und Entsorgung. Externe Partnerlabore für Spezialanalytik.",
         en: "Fail-safe barcode sample ID, pre-analytical workflows, cold-chain transport, on-site testing, and certified reference lab partnerships.",
         ru: "Штрихкодирование проб, протоколы забора, температурного хранения, логистики и утилизации. Взаимодействие с внешними референс-лабораториями.",
+        tr: "Barkodlu numune takibi, alma, saklama, soğuk zincir lojistiği ve bertaraf süreçleri. Özel analizler için akredite laboratuvar ortaklıkları.",
+        ar: "نظام دقيق لتتبع العينات بالباركود، وسحبها وتخزينها ونقلها المبرد والشراكة مع مختبرات معتمدة للتحاليل المتقدمة.",
       } as T,
     },
     {
@@ -297,11 +373,15 @@ const c = {
         de: "Befundmanagement & Dringlichkeitswege",
         en: "Reporting & Emergency Alerts",
         ru: "Управление заключениями и срочные протоколы",
+        tr: "Rapor Yönetimi & Acil Bildirim Kanalları",
+        ar: "إدارة التقارير وبروتوكولات الطوارئ",
       } as T,
       desc: {
         de: "Sicherstellung nachvollziehbarer Unterlagen, zeitgerechter ärztlicher Befundung und sicherer Übermittlung. Festgelegte Informationswege für kritische Befunde.",
         en: "Traceable records, prompt radiologist reporting, and encrypted digital transfer. Accelerated escalation protocols for critical findings.",
         ru: "Прозрачная документация, оперативная подготовка врачебных заключений и защищённая передача. Экспресс-оповещение при экстренных находках.",
+        tr: "Şeffaf arşivleme, zamanında uzman hekim raporlaması ve güvenli dijital iletim. Kritik bulgular için acil bildirim yolları.",
+        ar: "توثيق منظم، وإصدار فوري للتقارير الطبية ونقل رقمي مشفر، مع قنوات إبلاغ عاجلة للنتائج الحرجة.",
       } as T,
     },
     {
@@ -311,18 +391,22 @@ const c = {
         de: "Zusammenarbeit mit behandelnden Einrichtungen",
         en: "Inter-Clinical Coordination",
         ru: "Взаимодействие с лечебными учреждениями",
+        tr: "Tedavi Eden Kuruluşlarla Koordinasyon",
+        ar: "التنسيق السريري مع المشافي والأطباء",
       } as T,
       desc: {
         de: "Abstimmung der diagnostischen Abläufe mit den zuweisenden oder behandelnden Ärzten und Kliniken unter strikter Wahrung der medizinischen Entscheidungsfreiheit.",
         en: "Synchronization of diagnostic pathways with referring clinicians and hospitals, fully respecting autonomous clinical judgment.",
         ru: "Координация диагностических маршрутов с направляющими врачами и клиниками при сохранении независимости врачебных решений.",
+        tr: "Tanı süreçlerinin sevk eden veya tedavi eden hekim ve kliniklerle, tıbbi karar bağımsızlığı tam korunarak koordine edilmesi.",
+        ar: "مواءمة مسارات التشخيص مع الأطباء والمشافي المحولة مع الاحترام المطلق للاستقلالية السريرية.",
       } as T,
     },
   ],
 };
 
 export function DiagnosticsCompanySection({ locale = "de" }: { locale?: string }) {
-  const l: Lang = locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
+  const l: Lang = locale === "tr" ? "tr" : locale === "ar" ? "ar" : locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
 
   return (
     <section

@@ -32,7 +32,7 @@ import { Container } from "@/components/layout/Container";
  * Behördenzuständigkeit, Trennung Personalvermittlung vs. Arbeitnehmerüberlassung (AÜG).
  */
 
-type Lang = "de" | "en" | "ru";
+type Lang = "de" | "en" | "ru" | "tr" | "ar";
 type T = Record<Lang, string>;
 type Icon = React.ComponentType<{ className?: string; strokeWidth?: number }>;
 
@@ -50,36 +50,82 @@ const c = {
     de: "GmbH · Personalvermittlung & Integration · AÜG-Konform",
     en: "GmbH · Recruitment & Integration · AÜG-Compliant",
     ru: "GmbH · Подбор персонала и интеграция · Стандарты AÜG",
+    tr: "GmbH · Personel Temini ve Entegrasyon · AÜG Uyumlu",
+    ar: "شركة ذات مسؤولية محدودة · توظيف الكوادر والاندماج · متوافقة مع معايير AÜG",
   } as T,
   title: "NabiOta Medical Recruitment Services GmbH",
   subtitle: {
     de: "Medizinische Fachkraft Vermittlungsservice",
     en: "Healthcare Professional Placement & Recruitment Services",
     ru: "Сервис подбора и интеграции медицинских специалистов",
+    tr: "Sağlık Personeli İşe Alım ve Denklik Hizmetleri",
+    ar: "خدمات استقدام وتوظيف الكوادر الطبية المتخصصة",
   } as T,
   lead: {
     de: "Gegenstand des Unternehmens ist die nationale und internationale Gewinnung, Auswahl und Vermittlung medizinischer, pflegerischer, therapeutischer und weiterer Fachkräfte für Einrichtungen des Gesundheitswesens in Deutschland und im Ausland sowie die Erbringung damit verbundener organisatorischer Personal- und Integrationsdienstleistungen.",
     en: "The company's purpose is the national and international sourcing, selection, and placement of medical, nursing, therapeutic, and allied healthcare professionals for institutions in Germany and abroad, as well as providing associated organizational personnel and integration services.",
     ru: "Предметом деятельности компании является национальный и международный поиск, отбор и трудоустройство врачебных, сестринских, терапевтических и руководящих кадров для учреждений здравоохранения в Германии и за рубежом, а также оказание сопутствующих организационных услуг по адаптации и интеграции.",
+    tr: "Şirketin faaliyet konusu; Almanya ve yurt dışındaki sağlık kuruluşları için tıp, hemşirelik, terapi ve diğer uzman personelin ulusal ve uluslararası düzeyde temini, seçimi ve yerleştirilmesi ile bunlarla bağlantılı organizasyonel personel ve entegrasyon hizmetlerinin sunulmasıdır.",
+    ar: "يتمثل الغرض من الشركة في الاستقطاب والاختيار والتوظيف الوطني والدولي للكوادر الطبية والتمريضية والعلاجية والإدارية المتخصصة لمؤسسات الرعاية الصحية في ألمانيا وخارجها، فضلاً عن تقديم خدمات الموارد البشرية والدعم التنظيمي والاندماج المرتبطة بها.",
   } as T,
 
   professionsTitle: {
     de: "Vermittelte Berufsgruppen & Einrichtungen",
     en: "Placements by Profession & Healthcare Facility",
     ru: "Охватываемые профессии и медицинские учреждения",
+    tr: "İstihdam Sağlanan Meslek Grupları ve Sağlık Kuruluşları",
+    ar: "الفئات المهنية والمؤسسات الصحية المشمولة",
   } as T,
   professionsDesc: {
     de: "Die Gesellschaft vermittelt qualifiziertes Fachpersonal an Krankenhäuser, Fachkliniken, Medizinische Versorgungszentren (MVZ), Praxen sowie Pflege-, Therapie- und Rehabilitationseinrichtungen:",
     en: "The company places qualified clinical and operational talent into hospitals, specialty clinics, outpatient medical centers (MVZs), private practices, nursing homes, and rehabilitation institutes:",
     ru: "Компания подбирает квалифицированный персонал для стационаров, профильных клиник, амбулаторных центров (MVZ), частных практик, а также учреждений ухода и реабилитации:",
+    tr: "Şirket; hastanelere, uzman kliniklere, tıp merkezlerine (MVZ), muayenehanelere ve bakım, terapi ve rehabilitasyon tesislerine nitelikli uzman personel yerleştirmektedir:",
+    ar: "تقوم الشركة بتوظيف الكوادر التخصصية المؤهلة في المستشفيات والعيادات التخصصية ومراكز الرعاية الطبية (MVZ) والعيادات الخاصة ومرافق التمريض وإعادة التأهيل:",
   } as T,
   professionsList: [
-    { de: "Ärztliches Fachpersonal (Assistenz-, Fach- & Oberärzte)", en: "Medical Doctors (Residents, Specialists, Senior Physicians)", ru: "Врачи (ассистенты, профильные специалисты, заведующие)" },
-    { de: "Pflegefachkräfte (Intensiv-, Anästhesie-, OP- & Stationspflege)", en: "Registered Nurses (ICU, Anesthesia, Surgical & Ward Care)", ru: "Медсёстры и медбратья (реанимация, анестезия, оперблок, палата)" },
-    { de: "Medizinische Fachangestellte (MFA)", en: "Certified Medical Assistants (MFA)", ru: "Медицинские ассистенты (MFA)" },
-    { de: "Medizinisch-technisches Personal (MTRA, MTLA, MTA)", en: "Radiology & Laboratory Technologists (MTRA, MTLA, MTA)", ru: "Рентген-лаборанты и медицинские техники (MTRA, MTLA, MTA)" },
-    { de: "Therapeuten (Physiotherapeuten, Ergotherapeuten, Logopäden)", en: "Therapists (Physical, Occupational, and Speech-Language Therapists)", ru: "Терапевты (физиотерапевты, эрготерапевты, логопеды)" },
-    { de: "Verwaltungs- und Führungskräfte im Gesundheitswesen", en: "Healthcare Management & Healthcare Administration Executives", ru: "Административный и руководящий персонал здравоохранения" },
+    {
+      de: "Ärztliches Fachpersonal (Assistenz-, Fach- & Oberärzte)",
+      en: "Medical Doctors (Residents, Specialists, Senior Physicians)",
+      ru: "Врачи (ассистенты, профильные специалисты, заведующие)",
+      tr: "Tıbbi Uzman Kadro (Asistan, Uzman ve Başhekimler)",
+      ar: "الكوادر الطبية (أطباء مقيمون، أخصائيون، واستشاريون)",
+    },
+    {
+      de: "Pflegefachkräfte (Intensiv-, Anästhesie-, OP- & Stationspflege)",
+      en: "Registered Nurses (ICU, Anesthesia, Surgical & Ward Care)",
+      ru: "Медсёстры и медбратья (реанимация, анестезия, оперблок, палата)",
+      tr: "Hemşirelik Uzmanları (Yoğun Bakım, Anestezi, Ameliyathane ve Servis)",
+      ar: "أخصائيو التمريض (العناية المركزة، التخدير، العمليات، والأجنحة)",
+    },
+    {
+      de: "Medizinische Fachangestellte (MFA)",
+      en: "Certified Medical Assistants (MFA)",
+      ru: "Медицинские ассистенты (MFA)",
+      tr: "Tıbbi Sekreterler ve Klinik Asistanları (MFA)",
+      ar: "المساعدون الطبيون المعتمدون (MFA)",
+    },
+    {
+      de: "Medizinisch-technisches Personal (MTRA, MTLA, MTA)",
+      en: "Radiology & Laboratory Technologists (MTRA, MTLA, MTA)",
+      ru: "Рентген-лаборанты и медицинские техники (MTRA, MTLA, MTA)",
+      tr: "Tıbbi-Teknik Personel (MTRA, MTLA, MTA Laboratuvar ve Radyoloji)",
+      ar: "الكوادر الفنية الطبية (فنيو الأشعة والمختبرات MTRA, MTLA, MTA)",
+    },
+    {
+      de: "Therapeuten (Physiotherapeuten, Ergotherapeuten, Logopäden)",
+      en: "Therapists (Physical, Occupational, and Speech-Language Therapists)",
+      ru: "Терапевты (физиотерапевты, эрготерапевты, логопеды)",
+      tr: "Terapistler (Fizyoterapistler, Ergoterapistler, Dil ve Konuşma Terapistleri)",
+      ar: "المعالجون (العلاج الطبيعي، العلاج الوظيفي، وتخاطب النطق)",
+    },
+    {
+      de: "Verwaltungs- und Führungskräfte im Gesundheitswesen",
+      en: "Healthcare Management & Healthcare Administration Executives",
+      ru: "Административный и руководящий персонал здравоохранения",
+      tr: "Sağlık Yönetimi ve İdari Lider Kadro",
+      ar: "الكوادر الإدارية والقيادية في قطاع الرعاية الصحية",
+    },
   ] as T[],
 
   pillars: [
@@ -89,11 +135,15 @@ const c = {
         de: "Bedarfsanalyse, Direct Search & Matching",
         en: "Needs Analysis, Direct Search & Matching",
         ru: "Анализ потребностей, прямой поиск и отбор",
+        tr: "İhtiyaç Analizi, Doğrudan Arama ve Eşleştirme",
+        ar: "تحليل الاحتياجات، البحث المباشر والمطابقة",
       } as T,
       text: {
         de: "Ermittlung des konkreten Personalbedarfs, Erstellung präziser Anforderungsprofile, internationales Personalmarketing, strukturierte Eignungsprüfungen, Prüfung von Zeugnissen und Koordination mehrsprachiger Auswahlgespräche.",
         en: "Determining precise staffing requirements, drafting requirement profiles, global HR marketing, candidate screening, qualification document reviews, and orchestrating structured bilingual interviews.",
         ru: "Определение потребности в кадрах, составление профилей вакансий, международный маркетинг, скрининг квалификационных документов и проведение структурированных собеседований.",
+        tr: "Somut personel ihtiyacının belirlenmesi, kesin yetkinlik profillerinin oluşturulması, uluslararası İK pazarlaması, yapılandırılmış uygunluk testleri, diploma ve referans denetimi ile çok dilli mülakatların koordinasyonu.",
+        ar: "تحديد الاحتياجات الدقيقة من الكوادر، وإعداد ملفات التوصيف الوظيفي، والتسويق الدولي للوظائف، واختبارات الأهلية المنهجية، وفحص الشهادات، وتنسيق المقابلات بلغات متعددة.",
       } as T,
       image: "/images/areas/consulting.webp",
     },
@@ -103,11 +153,15 @@ const c = {
         de: "Approbation, Anerkennung & Behördenmanagement",
         en: "Medical Licensure, Recognition & Visas",
         ru: "Апробация, признание дипломов и ведомства",
+        tr: "Denklik (Approbation), Ruhsat ve Resmi Makam Süreçleri",
+        ar: "معادلة الشهادات، الترخيص الطبي (Approbation) والمعاملات الرسمية",
       } as T,
       text: {
         de: "Organisatorische Unterstützung bei der Gleichwertigkeitsprüfung, Approbation und Berufserlaubnis. Betreuung von Visa-, Aufenthalts- und Beschäftigungsverfahren, Beglaubigungen, FSP- & Kenntnisprüfungsvorbereitung.",
         en: "End-to-end guidance through degree equivalence evaluations, medical licensure (Approbation), and temporary work permits. Coordination of visa, residence, certified translations, FSP, and KP exams.",
         ru: "Организационная помощь в проверке эквивалентности диплома, получении апробации (Approbation) и Berufserlaubnis. Полное сопровождение виз, ВНЖ, заверений и подготовки к экзаменам FSP/KP.",
+        tr: "Diploma eşdeğerlik değerlendirmesi, hekimlik denkliği (Approbation) ve çalışma izni (Berufserlaubnis) süreçlerinde organizasyonel destek. Vize, oturum, tasdikli tercümeler, FSP tıbbi dil sınavı ve KP bilgi sınavı hazırlık rehberliği.",
+        ar: "الدعم التنظيمي الشامل في تقييم معادلة المؤهلات، والترخيص الطبي (Approbation)، وتصاريح العمل المؤقتة. إدارة إجراءات التأشيرات والإقامة والترجمات المعتمدة، والإعداد لاختباري FSP وKP.",
       } as T,
       image: "/images/areas/stethoscope-clinic.webp",
     },
@@ -117,11 +171,15 @@ const c = {
         de: "Relocation, Wohnungssuche & soziale Integration",
         en: "Relocation, Housing & Social Onboarding",
         ru: "Релокация, жильё и бытовая интеграция",
+        tr: "Relokasyon, Konut Arama ve Sosyal Entegrasyon",
+        ar: "إعادة التوطين، توفير السكن والاندماج الاجتماعي",
       } as T,
       text: {
         de: "Ganzheitliche Begleitung bei Einreise, administrativer Registrierung, Wohnungssuche, Umzug und Eröffnung von Bankkonten. Unterstützung bei Familiennachzug, Schulplätzen und langfristiger sozialer Verwurzelung.",
         en: "Holistic relocation assistance covering arrival, municipal registration, housing search, moves, and local banking. Hands-on assistance for family reunification visas, schooling, and community integration.",
         ru: "Комплексное содействие при въезде, регистрации, поиске жилья, переезде и открытии счетов. Поддержка в воссоединении семей, устройстве детей в сады/школы и долгосрочной адаптации.",
+        tr: "Ülkeye giriş, belediye kayıtları, ev arama, taşınma ve banka hesabı açılışında bütüncül refakat. Aile birleşimi vizeleri, okul/kreş yerleştirme ve yerel topluma kalıcı uyum desteği.",
+        ar: "مرافقة شاملة عند الوصول، والتسجيل الإداري، والبحث عن السكن، ونقل الأثاث، وفتح الحسابات المصرفية. دعم إجراءات لم شمل الأسرة، والمدارس، والاستقرار الاجتماعي المستدام.",
       } as T,
       image: "/images/areas/card-plant.webp",
     },
@@ -131,11 +189,15 @@ const c = {
         de: "Klinisches Onboarding & Mitarbeiterbindung",
         en: "Clinical Onboarding & Retention Management",
         ru: "Клиническая адаптация и удержание кадров",
+        tr: "Klinik Onboarding ve Çalışan Bağlılığı",
+        ar: "التأهيل السريري في العمل وإدارة استبقاء الكفاءات",
       } as T,
       text: {
         de: "Strukturierte Begleitung des Einarbeitungsprozesses im klinischen Alltag. Beratung von Arbeitgebern bei Personalentwicklung, interkultureller Teamintegration und Maßnahmen zur nachhaltigen Mitarbeiterbindung.",
         en: "Structured workplace onboarding inside clinic environments. Strategic consultation for employers on professional growth pathways, cross-cultural team integration, and sustainable talent retention.",
         ru: "Структурированное сопровождение процесса ввода в должность в клинике. Консультирование работодателей по развитию персонала, межкультурной интеграции и долгосрочному удержанию сотрудников.",
+        tr: "Klinik rutinine alışma ve adaptasyon sürecinin yapılandırılmış takibi. İşverenlere personel gelişimi, kültürlerarası ekip uyumu ve kalıcı çalışan memnuniyeti/bağlılığı konularında stratejik danışmanlık.",
+        ar: "مرافقة منهجية لعملية مباشرة العمل في البيئة السريرية اليومية. تقديم المشورة لأصحاب العمل بشأن التطوير المهني، والاندماج الثقافي للفرق، واستبقاء الكفاءات على المدى الطويل.",
       } as T,
       image: "/images/careers/team.webp",
     },
@@ -145,6 +207,8 @@ const c = {
     de: "Rechtliche Rahmenbedingungen, AÜG & Haftungsausschluss",
     en: "Statutory Governance, AÜG Compliance & Disclaimers",
     ru: "Правовые основы, соблюдение AÜG и правовые оговорки",
+    tr: "Yasal Çerçeve, AÜG Uyumluluğu ve Sorumluluk Reddi",
+    ar: "الأطر القانونية والامتثال لقانون AÜG وإخلاء المسؤولية",
   } as T,
   governanceItems: [
     {
@@ -153,11 +217,15 @@ const c = {
         de: "Behördenzuständigkeit & Keine Verfahrensgarantie",
         en: "Public Authority Mandate & No Outcome Guarantee",
         ru: "Прерогатива госорганов и отсутствие гарантии решения",
+        tr: "Resmi Makam Yetkisi ve Karar Garantisi Verilmemesi",
+        ar: "اختصاص الهيئات الحكومية وعدم ضمان النتائج",
       } as T,
       desc: {
         de: "Entscheidungen über berufliche Anerkennung, Approbation, Berufserlaubnis und Aufenthaltsrechte obliegen ausschließlich den zuständigen Landes- und Ausländerbehörden. Verbindliche Verfahrensergebnisse können nicht garantiert werden. Rechts- und Steuerberatung erfolgen ausschließlich durch befugte Berufsträger.",
         en: "Final decisions regarding qualification recognition, medical licensure, and residency permits rest exclusively with responsible German state authorities. Specific legal outcomes cannot be guaranteed. Legal and tax advice is rendered solely by authorized professionals.",
         ru: "Решения о признании квалификации, апробации, разрешении на работу и виде на жительство принимают исключительно компетентные земельные ведомства ФРГ. Результат рассмотрения не гарантируется. Юридические и налоговые консультации проводятся только уполномоченными лицами.",
+        tr: "Mesleki denklik, Approbation, çalışma izni ve oturum haklarına ilişkin nihai kararlar münhasıran yetkili Alman eyalet ve yabancılar dairelerine aittir. Bağlayıcı süreç sonucu garanti edilemez. Hukuki ve mali müşavirlik yalnızca yetkili meslek mensuplarınca verilir.",
+        ar: "تخضع القرارات المتعلقة بالاعتراف المهني والترخيص الطبي (Approbation) وتصاريح العمل والإقامة حصرياً للسلطات الحكومية الألمانية المختصة. ولا يمكن تقديم ضمانات قانونية ملزمة بنتائج الإجراءات. وتقتصر الاستشارات القانونية والضريبية على أصحاب المهن المرخصين نظاماً.",
       } as T,
     },
     {
@@ -166,11 +234,15 @@ const c = {
         de: "Strikte Trennung: Vermittlung vs. Arbeitnehmerüberlassung (AÜG)",
         en: "Strict Separation: Direct Placement vs. Staff Leasing (AÜG)",
         ru: "Разделение: прямой подбор vs. лизинг персонала (AÜG)",
+        tr: "Kesin Ayrım: Doğrudan İşe Yerleştirme vs. Geçici İş İlişkisi (AÜG)",
+        ar: "الفصل الصارم: التوظيف المباشر مقابل إعارة الموظفين (AÜG)",
       } as T,
       desc: {
         de: "Personalvermittlung und Arbeitnehmerüberlassung werden organisatorisch und vertraglich strikt getrennt. Bei der Personalvermittlung entsteht das Arbeitsverhältnis unmittelbar zwischen Fachkraft und Arbeitgeber. Eine Arbeitnehmerüberlassung erfolgt nur bei Vorliegen der Erlaubnis nach dem Arbeitnehmerüberlassungsgesetz (AÜG).",
         en: "Direct permanent placement and temporary staff leasing are strictly separated organizationally and contractually. In permanent placement, employment contracts arise exclusively between the professional and the hospital. Staff leasing operates solely under valid AÜG permits.",
         ru: "Прямой рекрутинг и заёмный труд (лизинг) разделены организационно и договорно. При прямом подборе трудовой договор заключается строго между специалистом и клиникой. Лизинг персонала возможен только при наличии специального разрешения по закону AÜG.",
+        tr: "Kalıcı personel yerleştirme ile geçici iş ilişkisi (Arbeitnehmerüberlassung) organizasyonel ve sözleşmesel olarak kesin biçimde ayrılmıştır. Doğrudan yerleştirmede iş sözleşmesi uzman ile hastane arasında kurulur. Geçici iş ilişkisi yalnızca AÜG ruhsatı mevcutsa gerçekleştirilir.",
+        ar: "يتم الفصل التنظيمي والتعاقدي الصارم بين التوظيف الدائم المباشر وإعارة الموظفين المؤقتة. في التوظيف المباشر، ينشأ عقد العمل مباشرة بين الأخصائي والمستشفى. ولا تتم إعارة الموظفين إلا بموجب ترخيص رسمي سارٍ وفق قانون إعارة العمالة (AÜG).",
       } as T,
     },
     {
@@ -179,18 +251,22 @@ const c = {
         de: "Datenschutz (DSGVO) & Zulassungskonforme Ausübung",
         en: "GDPR Data Compliance & Authorized Practice Scope",
         ru: "Защита данных (DSGVO) и работа в рамках лицензий",
+        tr: "Veri Koruma (GDPR/DSGVO) ve Yetki Sınırlarında Çalışma",
+        ar: "حماية البيانات (DSGVO) والممارسة المتوافقة مع التراخيص",
       } as T,
       desc: {
         de: "Die Verarbeitung personenbezogener Bewerber- und Mitarbeiterdaten erfolgt unter strikter Einhaltung der geltenden Datenschutzbestimmungen (DSGVO). Berufszulassungspflichtige Tätigkeiten dürfen von Fachkräften ausschließlich im Rahmen ihrer tatsächlich bestehenden behördlichen Berechtigungen ausgeübt werden.",
         en: "Candidate and personnel data are processed under rigorous compliance with European privacy standards (GDPR). Regulated healthcare activities may be performed by placed professionals strictly within the boundaries of their active credentials.",
         ru: "Обработка персональных данных кандидатов ведётся в строгом соответствии с европейскими нормами (DSGVO). Регулируемая медицинская деятельность осуществляется специалистами исключительно в объёме действующих государственных допусков.",
+        tr: "Adayların ve personelin kişisel verileri geçerli veri koruma hükümlerine (DSGVO) tam uyum içinde işlenir. Ruhsata tabi sağlık mesleği faaliyetleri uzmanlar tarafından yalnızca fiilen sahip oldukları resmi izinlerin sınırları dahilinde icra edilebilir.",
+        ar: "تتم معالجة البيانات الشخصية للمتقدمين والموظفين في ظل الالتزام الصارم بلائحة حماية البيانات العامة الأوروبية (DSGVO). ولا يجوز ممارسة الأنشطة الطبية والتمريضية الخاضعة للتراخيص إلا في حدود الصلاحيات الرسمية الفعلية الممنوحة قانوناً.",
       } as T,
     },
   ],
 };
 
 export function RecruitmentCompanySection({ locale = "de" }: { locale?: string }) {
-  const l: Lang = locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
+  const l: Lang = locale === "tr" ? "tr" : locale === "ar" ? "ar" : locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
 
   return (
     <section
@@ -347,7 +423,7 @@ export function RecruitmentCompanySection({ locale = "de" }: { locale?: string }
                         href={`/${l}/contact`}
                         className="inline-flex items-center gap-1.5 text-[11.5px] sm:text-[12px] font-semibold text-[#9E7D3B] hover:text-[#142318] transition-colors"
                       >
-                        <span>{l === "ru" ? "Подробнее" : l === "en" ? "Learn more" : "Mehr erfahren"}</span>
+                        <span>{l === "tr" ? "Daha fazla bilgi" : l === "ar" ? "المزيد من التفاصيل" : l === "ru" ? "Подробнее" : l === "en" ? "Learn more" : "Mehr erfahren"}</span>
                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                       </Link>
                     </div>

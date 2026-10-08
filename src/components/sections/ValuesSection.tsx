@@ -128,12 +128,20 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
       title:
         currentLocale === "ru"
           ? "Качество"
+          : currentLocale === "tr"
+          ? "Kalite"
+          : currentLocale === "ar"
+          ? "الجودة"
           : currentLocale === "en"
           ? "Quality"
           : "Qualität",
       desc:
         currentLocale === "ru"
           ? "Высочайшие стандарты во всех сферах."
+          : currentLocale === "tr"
+          ? "Tüm alanlarda en yüksek standartlar."
+          : currentLocale === "ar"
+          ? "أعلى المعايير في جميع المجالات."
           : currentLocale === "en"
           ? "Highest clinical standards across all divisions."
           : "Höchste Standards in allen Bereichen.",
@@ -144,12 +152,20 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
       title:
         currentLocale === "ru"
           ? "Доверие"
+          : currentLocale === "tr"
+          ? "Güven"
+          : currentLocale === "ar"
+          ? "الثقة"
           : currentLocale === "en"
           ? "Trust"
           : "Vertrauen",
       desc:
         currentLocale === "ru"
           ? "Честное и надежное партнерство."
+          : currentLocale === "tr"
+          ? "Dürüst ve güvenilir ortaklıklar."
+          : currentLocale === "ar"
+          ? "شراكات نزيهة وموثوقة."
           : currentLocale === "en"
           ? "Honest and reliable partnerships."
           : "Ehrliche und verlässliche Partnerschaften.",
@@ -160,12 +176,20 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
       title:
         currentLocale === "ru"
           ? "Надежность"
+          : currentLocale === "tr"
+          ? "Bağlılık & Güvenilirlik"
+          : currentLocale === "ar"
+          ? "الموثوقية"
           : currentLocale === "en"
           ? "Reliability"
           : "Verlässlichkeit",
       desc:
         currentLocale === "ru"
           ? "Постоянство в наших действиях."
+          : currentLocale === "tr"
+          ? "Eylemlerimizde istikrar ve süreklilik."
+          : currentLocale === "ar"
+          ? "ثبات والتزام في كل خطوة."
           : currentLocale === "en"
           ? "Consistency in our actions."
           : "Beständigkeit in unserem Handeln.",
@@ -176,12 +200,20 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
       title:
         currentLocale === "ru"
           ? "Прозрачность"
+          : currentLocale === "tr"
+          ? "Şeffaflık"
+          : currentLocale === "ar"
+          ? "الشفافية"
           : currentLocale === "en"
           ? "Transparency"
           : "Transparenz",
       desc:
         currentLocale === "ru"
           ? "Открытый диалог и понятные процессы."
+          : currentLocale === "tr"
+          ? "Açık iletişim ve anlaşılır süreçler."
+          : currentLocale === "ar"
+          ? "تواصل واضح وإجراءات شفافة."
           : currentLocale === "en"
           ? "Open communication and clear processes."
           : "Offene Kommunikation und klare Prozesse.",
@@ -192,12 +224,20 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
       title:
         currentLocale === "ru"
           ? "Человечность"
+          : currentLocale === "tr"
+          ? "İnsani Yaklaşım"
+          : currentLocale === "ar"
+          ? "الإنسانية"
           : currentLocale === "en"
           ? "Humanity"
           : "Menschlichkeit",
       desc:
         currentLocale === "ru"
           ? "Человек в центре внимания."
+          : currentLocale === "tr"
+          ? "İnsan daima odak noktamızdadır."
+          : currentLocale === "ar"
+          ? "الإنسان في صميم اهتمامنا."
           : currentLocale === "en"
           ? "People at the center of healthcare."
           : "Der Mensch steht im Mittelpunkt.",
@@ -208,12 +248,20 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
       title:
         currentLocale === "ru"
           ? "Инновации"
+          : currentLocale === "tr"
+          ? "Yenilikçilik"
+          : currentLocale === "ar"
+          ? "الابتكار"
           : currentLocale === "en"
           ? "Innovation"
           : "Innovation",
       desc:
         currentLocale === "ru"
           ? "Создаем решения будущего уже сегодня."
+          : currentLocale === "tr"
+          ? "Bugünden geleceğin çözümlerini geliştiriyoruz."
+          : currentLocale === "ar"
+          ? "نطور حلول الغد الطبية اليوم."
           : currentLocale === "en"
           ? "Developing tomorrow's solutions today."
           : "Heute die Lösungen von morgen entwickeln.",

@@ -125,6 +125,8 @@ interface Props {
 export function RehabilitationPageComponent({ locale = "de" }: Props) {
   const isRu = locale === "ru";
   const isEn = locale === "en";
+  const isTr = locale === "tr";
+  const isAr = locale === "ar";
 
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [selectedSpecialization, setSelectedSpecialization] = useState<SpecializationModalData | null>(null);
@@ -149,30 +151,34 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
   }, [selectedSpecialization]);
 
   const heroData = {
-    title: isRu ? "Реабилитация" : isEn ? "Rehabilitation" : "Rehabilitation",
-    eyebrow: isRu ? "ВОССТАНОВЛЕНИЕ И ТЕРАПИЯ" : isEn ? "REHABILITATION & MOBILITY" : "REHABILITATION & THERAPIE",
+    title: isRu ? "Реабилитация" : isEn ? "Rehabilitation" : isTr ? "Rehabilitasyon ve Terapi" : isAr ? "إعادة التأهيل والعلاج الطبيعي" : "Rehabilitation",
+    eyebrow: isRu ? "ВОССТАНОВЛЕНИЕ И ТЕРАПИЯ" : isEn ? "REHABILITATION & MOBILITY" : isTr ? "İYİLEŞME VE TERAPİ" : isAr ? "التعافي والعلاج المتخصص" : "REHABILITATION & THERAPIE",
     desc: isRu
       ? "NabiOta® Rehabilitation & Therapy Center объединяет доказательную физиотерапию, роботизированную тренировку ходьбы, гидротерапию и индивидуальные протоколы восстановления для быстрого и безопасного возвращения к полноценной жизни."
       : isEn
       ? "NabiOta® Rehabilitation & Therapy Center combines evidence-based physiotherapy, robotic gait training, hydrotherapy, and personalized reconditioning programs for a rapid, sustainable return to mobility and independence."
+      : isTr
+      ? "NabiOta® Rehabilitasyon ve Terapi Merkezi; ameliyatlar, spor yaralanmaları ve nörolojik rahatsızlıklar sonrasında hastalarımıza eşlik eder. Kanıta dayalı fizyoterapi, robotik yürüme sistemleri, AlterG® ve kişiselleştirilmiş programlarla hareket kabiliyetinizi kalıcı olarak yeniden kazandırıyoruz."
+      : isAr
+      ? "يرافق مركز NabiOta® لإعادة التأهيل والعلاج الطبيعي المرضى بعد التدخلات الجراحية، الإصابات الرياضية والحالات العصبية. من خلال العلاج الطبيعي القائم على الأدلة، التدريب الروبوتي على المشي (AlterG®)، والبرامج التأهيلية الفردية، نستعيد حركتكم واستقلاليتكم البدنية بشكل مستدام."
       : "Das NabiOta® Rehabilitations- und Therapiezentrum begleitet Patienten nach operativen Eingriffen, Sportverletzungen und bei neurologischen Leiden. Mit evidenzbasierten Methoden, robotischer Gerätetechnik und persönlicher Betreuung stellen wir Ihre Mobilität nachhaltig wieder her.",
   };
 
   const heroBadges = [
     {
       icon: <SpineMobilityIcon className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu ? "Мультидисциплинарно" : isEn ? "Multidisciplinary" : "Interdisziplinär",
-      sub: isRu ? "ЛФК, Эрго & Логопедия" : isEn ? "Physio, Ergo & Speech" : "Physio, Ergo & Logopädie",
+      title: isRu ? "Мультидисциплинарно" : isEn ? "Multidisciplinary" : isTr ? "Disiplinlerarası" : isAr ? "متعدد التخصصات" : "Interdisziplinär",
+      sub: isRu ? "ЛФК, Эрго & Логопедия" : isEn ? "Physio, Ergo & Speech" : isTr ? "Fizyo, Ergo & Logopedi" : isAr ? "علاج طبيعي، وظيفي ونطق" : "Physio, Ergo & Logopädie",
     },
     {
       icon: <WalkingExoskeletonIcon className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu ? "Роботизированная" : isEn ? "Robotic-Assisted" : "Robotik-Assistiert",
-      sub: isRu ? "Технология ходьбы" : isEn ? "Gait & Anti-Gravity" : "AlterG® & Gangtrainer",
+      title: isRu ? "Роботизированная" : isEn ? "Robotic-Assisted" : isTr ? "Robotik Destekli" : isAr ? "مدعوم بالروبوتات" : "Robotik-Assistiert",
+      sub: isRu ? "Технология ходьбы" : isEn ? "Gait & Anti-Gravity" : isTr ? "AlterG® & Yürüme Eğitimi" : isAr ? "جهاز AlterG® وتدريب المشي" : "AlterG® & Gangtrainer",
     },
     {
       icon: <ShieldCheck className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu ? "Все кассы" : isEn ? "Insurance Covered" : "Alle Kassen",
-      sub: isRu ? "GKV, PKV, BG & DRV" : isEn ? "GKV, PKV, BG & DRV" : "GKV, PKV, BG & DRV",
+      title: isRu ? "Все кассы" : isEn ? "Insurance Covered" : isTr ? "Tüm Sigortalar" : isAr ? "جميع جهات التأمين" : "Alle Kassen",
+      sub: "GKV, PKV, BG & DRV",
     },
   ];
 
@@ -180,24 +186,36 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
   const specializations: SpecializationModalData[] = [
     {
       id: "ortho",
-      title: isRu ? "Ортопедическая реабилитация" : isEn ? "Orthopedic Rehabilitation" : "Orthopädische Rehabilitation",
-      badge: isRu ? "Эндопротезирование & Позвоночник" : isEn ? "Joint Replacement & Spine" : "Gelenkersatz & Wirbelsäule",
+      title: isRu ? "Ортопедическая реабилитация" : isEn ? "Orthopedic Rehabilitation" : isTr ? "Ortopedik Rehabilitasyon" : isAr ? "إعادة التأهيل العظمي وتقويم المفاصل" : "Orthopädische Rehabilitation",
+      badge: isRu ? "Эндопротезирование & Позвоночник" : isEn ? "Joint Replacement & Spine" : isTr ? "Eklem Protezi & Omurga" : isAr ? "استبدال المفاصل والعمود الفقري" : "Gelenkersatz & Wirbelsäule",
       subtitle: isRu
         ? "Амбулаторная восстановительная терапия (AHB) и посттравматическое сопровождение"
         : isEn
         ? "Outpatient Post-Acute Rehabilitation (AHB) & Musculoskeletal Aftercare"
+        : isTr
+        ? "Ayakta devam tedavisi (AHB) ve ortopedik-travmatolojik takip"
+        : isAr
+        ? "علاج ما بعد الجراحة للمرضى الخارجيين (AHB) والرعاية التلطيفية للعظام"
         : "Ambulante Anschlussheilbehandlung (AHB) & orthopädisch-traumatologische Nachsorge",
       desc: isRu
         ? "Комплексное восстановление после эндопротезирования суставов (TEP), операций на позвоночнике и сложных переломов."
         : isEn
         ? "Specialized rehabilitation following total hip/knee arthroplasty, spine surgery, and complex fractures."
+        : isTr
+        ? "Eklem protezi (kalça/diz TEP), omurga ameliyatları, çapraz bağ rekonstrüksiyonu ve kırıklar sonrası hedefe yönelik rehabilitasyon."
+        : isAr
+        ? "إعادة تأهيل مستهدفة بعد استبدال المفاصل (الورك والركبة TEP)، جراحات العمود الفقري، وترميم الأربطة والكسور المعقدة."
         : "Gezielte Rehabilitation nach Gelenkersatz (Hüft-/Knie-TEP), Wirbelsäulenoperationen, Kreuzbandplastiken und komplexen Frakturen.",
       fullDesc: isRu
         ? "Согласно пункту 5 NabiOta Rehabilitation & Therapy GmbH, отделение специализируется на постоперационном ведении пациентов после тотального эндопротезирования тазобедренных и коленных суставов, спондилодеза, реконструкций крестообразных связок и травм опорно-двигательного аппарата. Применяются раннее безболезненное восстановление биомеханики, лечебная гимнастика (KG), аппаратная ЛФК (KGG) и прогрессивное укрепление мышечного корсета."
         : isEn
         ? "Under Section 5 of NabiOta Rehabilitation & Therapy GmbH, this department provides comprehensive post-surgical recovery following total joint arthroplasty (hip, knee, shoulder), spinal fusion, ligament reconstructions, and traumatic fractures. We emphasize early pain-free joint mobilization, physical therapy (KG), device-assisted physiotherapy (KGG), and individualized muscle strengthening."
+        : isTr
+        ? "NabiOta Rehabilitation & Therapy GmbH Kısım 5 yönergeleri uyarınca bölümümüz; kalça, diz ve omuz protezleri, omurga dekompresyonu, bağ ve tendon yaralanmaları sonrası postoperatif iyileşmeye odaklanır. Erken fonksiyonel mobilizasyon, ağrının dindirilmesi, fizyoterapi (KG), cihaz destekli egzersiz (KGG) ve kas güçlendirme uygulanır."
+        : isAr
+        ? "وفقاً للبند 5 لشركة NabiOta Rehabilitation & Therapy GmbH، يركز القسم على رعاية ما بعد الجراحة لاستبدال مفاصل الورك والركبة والكتف، جراحات دمج الفقرات، وترميم الأربطة الصليبية والكسور المعقدة. نعتمد على استعادة الحركة المبكرة الخالية من الألم، العلاج الطبيعي (KG)، التمارين الموجهة بالأجهزة (KGG)، وبناء القوة العضلية."
         : "Gemäß Punkt 5 der NabiOta Rehabilitation & Therapy GmbH richtet sich das Leistungsspektrum an postoperative Patienten nach Gelenkersatz (Hüft-, Knie- und Schulter-TEP), Wirbelsäulenoperationen sowie komplexen Unfall- und Bandverletzungen. Im Zentrum stehen frühfunktionelle Mobilisation, Schmerzreduktion, Krankengymnastik (KG), gerätegestützte Krankengymnastik (KGG) und gezielter Muskelaufbau.",
-      indicationsTitle: isRu ? "Клинические показания & методы (по PDF)" : isEn ? "Clinical Indications & Protocols (PDF)" : "Klinische Schwerpunkte & Indikationen",
+      indicationsTitle: isRu ? "Клинические показания & методы (по PDF)" : isEn ? "Clinical Indications & Protocols (PDF)" : isTr ? "Klinik Odaklar ve Endikasyonlar" : isAr ? "دواعي العلاج والمجالات السريرية" : "Klinische Schwerpunkte & Indikationen",
       indications: isRu
         ? [
             "Эндопротезирование тазобедренного, коленного и плечевого суставов (TEP)",
@@ -214,6 +232,22 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
             "Complex traumatic fractures and multi-fragment osteosynthesis aftercare",
             "Chronic degenerative conditions (advanced osteoarthritis, osteoporosis)",
           ]
+        : isTr
+        ? [
+            "Endoprotez uygulamaları (Kalça, diz ve omuz TEP)",
+            "Ameliyat sonrası omurga ve bel fıtığı cerrahisi takibi",
+            "Çapraz bağ, menisküs ve tendon rekonstrüksiyonları",
+            "Osteosentez sonrası karmaşık kırık ve eklem travmaları",
+            "Kronik dejeneratif eklem hastalıkları (ileri osteoartrit, osteoporoz)",
+          ]
+        : isAr
+        ? [
+            "تركيب المفاصل الاصطناعية (مفاصل الورك، الركبة، والكتف TEP)",
+            "متابعة ما بعد جراحات العمود الفقري والانزلاق الغضروفي",
+            "ترميم الرباط الصليبي، الغضاريف الهلالية والأوتار",
+            "إعادة تأهيل الكسور المعقدة بعد التثبيت الجراحي (Osteosynthesis)",
+            "أمراض المفاصل التنكسية المزمنة (خشونة المفاصل المتقدمة وهشاشة العظام)",
+          ]
         : [
             "Endoprothetische Versorgung (Hüft-, Knie- und Schulter-TEP)",
             "Postoperative Wirbelsäuleneingriffe & Bandscheibenoperationen",
@@ -225,34 +259,54 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
         ? "Все больничные кассы: GKV, PKV, Berufsgenossenschaften (BG) & Deutsche Rentenversicherung (DRV)"
         : isEn
         ? "Covered by all payers: Statutory (GKV), Private (PKV), Workers' Comp (BG) & German Pension Fund (DRV)"
+        : isTr
+        ? "Tüm sigorta kurumları için onaylı: GKV, PKV, Meslek Birlikleri (BG) & Alman Emeklilik Sigortası (DRV)"
+        : isAr
+        ? "معتمد لدى جميع جهات التأمين: الحكومي (GKV)، الخاص (PKV)، نقابات الحوادث (BG) وصندوق التقاعد الألماني (DRV)"
         : "Zulassung für alle Kostenträger: GKV, PKV, Berufsgenossenschaften (BG) & Deutsche Rentenversicherung (DRV)",
       image: "/images/areas/rehabilitation.webp",
       features: isRu
         ? ["Ранняя безболезненная мобилизация", "Восстановление биомеханики сустава", "Укрепление мышечного корсета"]
         : isEn
         ? ["Early pain-free joint mobilization", "Restoration of natural gait mechanics", "Stabilizing deep musculature"]
+        : isTr
+        ? ["Erken Fonksiyonel Mobilizasyon", "Yürüme Düzeninin Yeniden Kazanılması", "Hedefe Yönelik Kas Güçlendirme"]
+        : isAr
+        ? ["استعادة الحركة الوظيفية المبكرة", "تصحيح نمط المشي الطبيعي", "تقوية عضلية مستهدفة"]
         : ["Frühfunktionelle Mobilisation", "Wiederherstellung des Gangbilds", "Gezielter Muskelaufbau & Kräftigung"],
     },
     {
       id: "neuro",
-      title: isRu ? "Неврологическая реабилитация" : isEn ? "Neurological Rehabilitation" : "Neurologische Rehabilitation",
-      badge: isRu ? "ЦНС & Нейропластичность" : isEn ? "Neuroplasticity" : "Neuroplastizität",
+      title: isRu ? "Неврологическая реабилитация" : isEn ? "Neurological Rehabilitation" : isTr ? "Nörolojik Rehabilitasyon" : isAr ? "إعادة التأهيل العصبي" : "Neurologische Rehabilitation",
+      badge: isRu ? "ЦНС & Нейропластичность" : isEn ? "Neuroplasticity" : isTr ? "Nöroplastisite & MSS" : isAr ? "المرونة العصبية والجهاز المركزي" : "Neuroplastizität",
       subtitle: isRu
         ? "Восстановление моторики, походки и независимости после поражений нервной системы"
         : isEn
         ? "Re-education of motor control, balance, and independence in neurological conditions"
+        : isTr
+        ? "Merkezi sinir sistemi lezyonları sonrası hareket, denge ve bağımsızlığın yeniden kazanılması"
+        : isAr
+        ? "استعادة الحركة، التوازن والاستقلالية الذاتية بعد إصابات الجهاز العصبي"
         : "Wiedererlangung von Bewegung, Gleichgewicht und Selbstständigkeit nach ZNS-Läsionen",
       desc: isRu
         ? "Восстановление двигательных и координационных функций после инсульта, травм, при болезни Паркинсона и полинейропатии."
         : isEn
         ? "Re-education of motor skills, coordination, and independence after stroke, brain injury, Parkinson's disease, and neuropathies."
+        : isTr
+        ? "İnme (felç), travmatik beyin hasarı veya Parkinson sonrası hareket, denge ve günlük bağımsızlığın yeniden inşası."
+        : isAr
+        ? "إعادة تدريب المهارات الحركية والتوازن والاستقلالية بعد السكتة الدماغية، إصابات الدماغ ومرض باركنسون."
         : "Wiedererlangung von Bewegung, Gleichgewicht und Selbstständigkeit nach Schlaganfall, Schädel-Hirn-Trauma oder bei Parkinson.",
       fullDesc: isRu
         ? "Неврологическое направление холдинга реализует современные концепции нейропластичности для пациентов, перенесших инсульт (ишемический или геморрагический), черепно-мозговую травму или страдающих болезнью Паркинсона, рассеянным склерозом и полинейропатией. Сертифицированные терапевты проводят занятия по методам Бобат и PNF, тренировку ходьбы и профилактику падений."
         : isEn
         ? "Our neurological rehabilitation utilizes evidence-based neuroplasticity concepts for individuals recovering from ischemic stroke, cerebral hemorrhage, traumatic brain injuries, or managing Parkinson's disease, MS, and neuropathies. Certified therapists apply Bobath, PNF protocols, robotic locomotor assistance, and balance re-training to promote lasting functional neural reorganization."
+        : isTr
+        ? "NabiOta Rehabilitation & Therapy GmbH bünyesindeki nörolojik rehabilitasyon, merkezi ve periferik sinir sisteminin nöroplastisite ilkeleriyle reaktivasyonuna odaklanır. İnme, kranioserebral travma veya nörodejeneratif hastalıklarda (Parkinson, MS, polinöropati) uzman terapistlerimiz Bobath, PNF ve robotik yürüme eğitimini kullanır."
+        : isAr
+        ? "تركز إعادة التأهيل العصبي في مجموعة NabiOta على إعادة تنشيط الجهاز العصبي اعتماداً على مفاهيم المرونة العصبية المثبتة علمياً. بعد السكتات الدماغية، إصابات الرأس، أو الأمراض التنكسية (باركنسون، التصلب اللويحي، اعتلال الأعصاب)، يطبق معالجونا أساليب Bobath وPNF والتدريب الروبوتي على المشي."
         : "Die neurologische Rehabilitation der NabiOta Rehabilitation & Therapy GmbH konzentriert sich auf die gezielte Reaktivierung des zentralen und peripheren Nervensystems. Nach Schlaganfall, Schädel-Hirn-Trauma oder bei neurodegenerativen Erkrankungen (Morbus Parkinson, Multiple Sklerose, Polyneuropathie) nutzen unsere Therapeuten evidenzbasierte neurophysiologische Verfahren wie Bobath, PNF und robotisch unterstütztes Gangtraining.",
-      indicationsTitle: isRu ? "Клинические показания & методы (по PDF)" : isEn ? "Clinical Indications & Protocols (PDF)" : "Klinische Schwerpunkte & Indikationen",
+      indicationsTitle: isRu ? "Клинические показания & методы (по PDF)" : isEn ? "Clinical Indications & Protocols (PDF)" : isTr ? "Klinik Odaklar ve Endikasyonlar" : isAr ? "دواعي العلاج والمجالات السريرية" : "Klinische Schwerpunkte & Indikationen",
       indications: isRu
         ? [
             "Постинсультные состояния (ишемия, кровоизлияния) и гемипарезы",
@@ -269,6 +323,22 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
             "Polyneuropathies (diabetic, toxic, autoimmune) & peripheral nerve paresis",
             "Postural balance retraining, ataxia management & fall prevention",
           ]
+        : isTr
+        ? [
+            "İnme sonrası bakım (iskemi, beyin kanaması) ve hemipareziler",
+            "Kranioserebral travmalar ve beyin cerrahisi sonrası durumlar",
+            "Parkinson hastalığı ve ekstrapiramidal hareket bozuklukları",
+            "Polinöropatiler ve periferik sinir lezyonları",
+            "Denge, ataksi ve düşmeyi önleme antrenmanları",
+          ]
+        : isAr
+        ? [
+            "رعاية ما بعد السكتة الدماغية (الاحتشاء والنزيف الدماغي) والشلل النصفي",
+            "إصابات الرأس والتعافي بعد الجراحات العصبية الدقيقة",
+            "مرض باركنسون واضطرابات الحركة خارج الهرمية",
+            "اعتلال الأعصاب المتعدد وتلف الأعصاب المحيطية",
+            "تدريب التوازن، علاج الرنح والوقاية من السقوط",
+          ]
         : [
             "Schlaganfallnachsorge (Ischämie, Hirnblutung) & Hemiparesen",
             "Schädel-Hirn-Traumata & postoperative ZNS-Eingriffe",
@@ -280,34 +350,54 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
         ? "Сертификация Bobath & PNF • Роботизированная поддержка локомоции • Неврологический консилиум"
         : isEn
         ? "Certified Bobath & PNF clinicians • Robotic gait rehabilitation • Interdisciplinary neurology lead"
+        : isTr
+        ? "Uzman Terapist Sertifikaları (Bobath, PNF) • Robotik Destekli Lokomosyon • Disiplinlerarası Hekim Yönetimi"
+        : isAr
+        ? "معالجون معتمدون في Bobath وPNF • دعم روبوتي للحركة • إشراف طبي عصبي متكامل"
         : "Fachtherapeutische Zertifizierungen (Bobath, PNF) • Robotik-unterstützte Lokomotion • Interdisziplinäre ärztliche Leitung",
       image: "/images/rehabilitation/parallel-bars.webp",
       features: isRu
         ? ["Методики Бобат и PNF", "Роботизированный тренажер ходьбы", "Тренировка координации и равновесия"]
         : isEn
         ? ["Bobath & PNF therapy concepts", "Robotic exoskeleton gait recovery", "Postural balance and fall prevention"]
+        : isTr
+        ? ["Bobath & PNF Yöntemleri", "Robotik Yürüme Rehabilitasyonu", "Denge & Koordinasyon Eğitimi"]
+        : isAr
+        ? ["علاج وفق أساليب Bobath وPNF", "إعادة تأهيل المشي بالروبوت", "تدريب التوازن والتناسق الحركي"]
         : ["Therapie nach Bobath & PNF", "Robotische Gangrehabilitation", "Gleichgewichts- & Koordinationstraining"],
     },
     {
       id: "sport",
-      title: isRu ? "Спортивная физиотерапия" : isEn ? "Sports Physiotherapy & Return-to-Play" : "Sportphysiotherapie & Return-to-Play",
-      badge: isRu ? "KGG, MTT & Спорт" : isEn ? "KGG, MTT & Athletic Return" : "KGG, MTT & Leistungssport",
+      title: isRu ? "Спортивная физиотерапия" : isEn ? "Sports Physiotherapy & Return-to-Play" : isTr ? "Spor Fizyoterapisi & Return-to-Play" : isAr ? "العلاج الطبيعي الرياضي والعودة للمنافسة" : "Sportphysiotherapie & Return-to-Play",
+      badge: isRu ? "KGG, MTT & Спорт" : isEn ? "KGG, MTT & Athletic Return" : isTr ? "KGG, MTT & Performans Sporu" : isAr ? "KGG وMTT والرياضة التنافسية" : "KGG, MTT & Leistungssport",
       subtitle: isRu
         ? "Аппаратная ЛФК (KGG), медицинская тренировочная терапия (MTT) и Return-to-Activity"
         : isEn
         ? "Device-assisted physiotherapy (KGG), Medical Training Therapy (MTT) & Return-to-Play"
+        : isTr
+        ? "Cihaz destekli fizyoterapi (KGG), Tıbbi Antrenman Terapisi (MTT) ve spora dönüş"
+        : isAr
+        ? "العلاج الطبيعي بالأجهزة (KGG)، التدريب الطبي الرياضي (MTT) وبرامج العودة للملاعب"
         : "Gerätegestützte Krankengymnastik (KGG) & Medizinische Trainingstherapie (MTT)",
       desc: isRu
         ? "Индивидуальные программы для спортсменов и активных людей: биомеханический анализ, функциональный тренинг и безопасный возврат в спорт."
         : isEn
         ? "Evidence-based rehabilitation for athletes: isokinetic testing, agility drills, and return-to-competition clearance."
+        : isTr
+        ? "Sporcular ve aktif bireyler için izokinetik kuvvet analizi, çeviklik ve spora özgü fonksiyonel yüklenme testleri."
+        : isAr
+        ? "برامج تدريبية متطورة للرياضيين تشمل الاختبارات متساوية القوة، تدريبات الرشاقة ومعايير العودة الآمنة للرياضة."
         : "Wissenschaftlich fundiertes Aufbautraining für Leistungs- und Freizeitsportler mit Isokinetik, Schnelligkeit und sportspezifischen Belastungstests.",
       fullDesc: isRu
         ? "В полном соответствии с предметом деятельности NabiOta Rehabilitation & Therapy GmbH, данное направление включает аппаратную лечебную гимнастику (KGG), медицинскую тренировочную терапию (MTT), изокинетическую динамометрию и функциональный биомеханический скрининг. Спортсмены и активные пациенты после пластики связок или мышечных травм проходят структурированные фазы восстановления вплоть до полного допуска к спортивным нагрузкам."
         : isEn
         ? "In direct alignment with Section 5 of NabiOta Rehabilitation & Therapy GmbH, this department unites device-based physiotherapy (KGG), Medical Exercise Therapy (MTT), isokinetic dynamometry, and functional movement screening. Athletes recovering from ligament tears, tendinopathies, or muscle ruptures are guided through objective Return-to-Activity criteria to safely achieve pre-injury performance."
+        : isTr
+        ? "NabiOta Rehabilitation & Therapy GmbH faaliyet alanı doğrultusunda bu birim; cihaz destekli fizyoterapi (KGG), tıbbi antrenman terapisi (MTT) ve biyomekanik fonksiyonel analizleri bir araya getirir. Bağ kopmaları, kas yırtıkları veya tendon cerrahileri sonrası sporcular, objektif Return-to-Activity kriterleri ile güvenle sahalara döner."
+        : isAr
+        ? "وفقاً لأهداف NabiOta Rehabilitation & Therapy GmbH، يدمج هذا القسم العلاج بالأجهزة (KGG)، التدريب الطبي (MTT)، والتحليل الحركي البايوميكانيكي. يتم توجيه الرياضيين بعد تمزق الأربطة أو العمليات الجراحية عبر معايير علمية دقيقة للعودة للمنافسة (Return-to-Play)."
         : "In Übereinstimmung mit dem Unternehmensgegenstand der NabiOta Rehabilitation & Therapy GmbH umfasst dieser Bereich gerätegestützte Krankengymnastik (KGG), medizinische Trainingstherapie (MTT) sowie biomechanische Funktionsanalysen. Leistungs- und Freizeitsportler werden nach Rupturen, Muskelverletzungen oder Sehnenoperationen anhand objektivierter Return-to-Activity-Kriterien sicher zurück auf ihr Leistungsniveau geführt.",
-      indicationsTitle: isRu ? "Клинические показания & методы (по PDF)" : isEn ? "Clinical Indications & Protocols (PDF)" : "Klinische Schwerpunkte & Indikationen",
+      indicationsTitle: isRu ? "Клинические показания & методы (по PDF)" : isEn ? "Clinical Indications & Protocols (PDF)" : isTr ? "Klinik Odaklar ve Endikasyonlar" : isAr ? "دواعي العلاج والمجالات السريرية" : "Klinische Schwerpunkte & Indikationen",
       indications: isRu
         ? [
             "Разрывы передней/задней крестообразных связок и повреждения менисков",
@@ -324,6 +414,22 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
             "Isokinetic dynamometry testing for bilateral symmetry & strength deficits",
             "Plyometric power, speed agility drills & structured Return-to-Sport clearance",
           ]
+        : isTr
+        ? [
+            "Ön ve arka çapraz bağ rüptürleri, menisküs hasarları",
+            "Tendon lezyonları (Aşil tendonu, rotator manşet, patellar tendon)",
+            "Her dereceden kas ve bağ yaralanmaları",
+            "İzokinetik kuvvet tanılaması ve kuvvet açığı analizi",
+            "Özel çeviklik, koordinasyon ve sıçrama kuvveti antrenmanı",
+          ]
+        : isAr
+        ? [
+            "تمزقات الرباط الصليبي الأمامي والخلفي وإصابات الغضروف الهلالي",
+            "إصابات الأوتار (وتر أخيل، الكفة المدورة، والوتر الرضفي)",
+            "إصابات وتمزقات العضلات والأربطة بمختلف درجاتها",
+            "التشخيص الديناميكي متساوي القوة (Isokinetics) وتحليل عجز القوة",
+            "تدريبات الرشاقة والتناسق والقدرة الانفجارية الخاصة بالرياضات",
+          ]
         : [
             "Vordere und hintere Kreuzbandrupturen, Meniskusschäden",
             "Sehnenläsionen (Achillessehne, Rotatorenmanschette, Patellarsehne)",
@@ -335,34 +441,54 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
         ? "Признание VBG / Berufsgenossenschaften • Медицинские силовые тренажеры по MPG • Сертифицированные спорт-физиотерапевты"
         : isEn
         ? "Accredited for professional athletic injury care • MPG-certified medical training floor • Certified sports physios"
+        : isTr
+        ? "VBG / BG Akreditasyonu • Sertifikalı Spor Fizyoterapistleri • MPG Standardında Medikal Antrenman Alanı"
+        : isAr
+        ? "اعتماد اتحادات التأمين الرياضي VBG/BG • أخصائيو علاج طبيعي رياضي معتمدون • صالة تدريب طبية معتمدة وفق MPG"
         : "VBG- / BG-Anerkennung • Zertifizierte Sportphysiotherapeuten • Medizinische Trainingsfläche nach MPG",
       image: "/images/rehabilitation/equipment-gait.webp",
       features: isRu
         ? ["Изокинетика Biodex", "Плиометрический тренинг", "Критерии Return-to-Activity"]
         : isEn
         ? ["Biodex isokinetic strength testing", "Agility and plyometric training", "Structured Return-to-Play milestones"]
+        : isTr
+        ? ["Biodex Kuvvet Tanılaması", "Pliyometrik Fonksiyonel Antrenman", "Yapılandırılmış Return-to-Activity Testleri"]
+        : isAr
+        ? ["قياس القوة العضلية بجهاز Biodex", "تدريبات وظيفية بليومترية", "اختبارات معيارية للعودة للنشاط الرياضي"]
         : ["Biodex-Kraftdiagnostik", "Pliometrisches Funktionstraining", "Strukturierte Return-to-Activity-Tests"],
     },
     {
       id: "cardio",
-      title: isRu ? "Кардиологическая & пульмонологическая реха" : isEn ? "Cardiopulmonary Rehabilitation" : "Kardiologische Rehabilitation",
-      badge: isRu ? "Сердце, дыхание & выносливость" : isEn ? "Cardiovascular & Pulmonary" : "Herz-Kreislauf & Lunge",
+      title: isRu ? "Кардиологическая & пульмонологическая реха" : isEn ? "Cardiopulmonary Rehabilitation" : isTr ? "Kardiyolojik ve Pulmoner Rehabilitasyon" : isAr ? "إعادة التأهيل القلبي والرئوي" : "Kardiologische Rehabilitation",
+      badge: isRu ? "Сердце, дыхание & выносливость" : isEn ? "Cardiovascular & Pulmonary" : isTr ? "Kalp-Dolaşım & Akciğer" : isAr ? "القلب والدورة الدموية والرئتان" : "Herz-Kreislauf & Lunge",
       subtitle: isRu
         ? "Дозированные аэробные кардиотренировки под непрерывным телеметрическим ЭКГ-мониторингом"
         : isEn
         ? "Monitored aerobic endurance reconditioning under continuous ECG telemetry supervision"
+        : isTr
+        ? "Sürekli telemetrik EKG gözetiminde kontrollü aerobik kondisyon antrenmanı"
+        : isAr
+        ? "تدريب لياقة هوائي خاضع للرقابة تحت المراقبة التخطيطية اللاسلكية المستمرة للقلب"
         : "Kontrolliertes aerobes Konditionstraining unter kontinuierlicher Telemetrie-Überwachung",
       desc: isRu
         ? "Дозированные аэробные тренировки под непрерывным ЭКГ-мониторингом после инфаркта миокарда, стентирования и кардиохирургии."
         : isEn
         ? "Monitored aerobic reconditioning under continuous telemetry following myocardial infarction, stent placement, and bypass surgery."
+        : isTr
+        ? "Kalp krizi, stent veya bypass operasyonları sonrası sürekli EKG telemetrisi altında kontrollü dayanıklılık antrenmanı."
+        : isAr
+        ? "تدريب هوائي موجه بمراقبة التخطيط القلبي المستمر بعد النوبات القلبية، القسطرة والدعامات، وجراحات مجازة الشريان التاجي."
         : "Kontrolliertes Ausdauertraining unter kontinuierlicher EKG-Telemetrie nach Herzinfarkt, Stent-Implantation oder Bypass-Operationen.",
       fullDesc: isRu
         ? "Для пациентов с сердечно-сосудистыми и бронхолегочными заболеваниями холдинг реализует контролируемые программы восстановления выносливости и функционального объема легких. После инфаркта миокарда, АКШ, стентирования коронарных артерий или при ХОБЛ и постковидном синдроме кардиологические тренировки и дыхательная гимнастика проходят под контролем врача-кардиолога и непрерывной телеметрии."
         : isEn
         ? "For patients recovering from cardiac or pulmonary events, our centers deliver medically safe aerobic reconditioning. Following myocardial infarction, bypass surgery, coronary stenting, or for chronic pulmonary disorders (COPD, pulmonary emphysema, post-COVID dyspnea), heart-rate-guided exercise and respiratory therapy are administered under continuous multi-lead telemetry."
+        : isTr
+        ? "Kardiyovasküler veya solunum yolu hastalıkları olan hastalarımız için merkezimiz yapılandırılmış dayanıklılık ve kuvvet programları sunar. Kalp krizi, bypass cerrahisi, stent uygulaması veya KOAH ve Post-COVID durumlarında dayanıklılık ve akciğer kapasitesi uzman hekim gözetiminde güvenle artırılır."
+        : isAr
+        ? "يوفر المركز برامج مصممة لمرضى القلب والجهاز التنفسي. بعد احتشاء عضلة القلب، جراحات المجازة، زراعة الدعامات، أو في حالات الانسداد الرئوي المزمن (COPD) ومتلازمة ما بعد كوفيد، تتم زيادة القدرة البدنية وسعة الرئتين تحت إشراف أطباء القلب وبأمان تام."
         : "Für Patienten mit kardiovaskulären oder pneumologischen Erkrankungen bietet die Gesellschaft strukturierte Ausdauer- und Kraftprogramme. Nach Myokardinfarkt, Bypass-Operation, Stent-Implantation oder bei chronisch obstruktiven Lungenerkrankungen (COPD, Asthma, Post-COVID) werden Belastbarkeit und Lungenvolumen unter fachärztlicher Supervision schrittweise und sicher gesteigert.",
-      indicationsTitle: isRu ? "Клинические показания & методы (по PDF)" : isEn ? "Clinical Indications & Protocols (PDF)" : "Klinische Schwerpunkte & Indikationen",
+      indicationsTitle: isRu ? "Клинические показания & методы (по PDF)" : isEn ? "Clinical Indications & Protocols (PDF)" : isTr ? "Klinik Odaklar ve Endikasyonlar" : isAr ? "دواعي العلاج والمجالات السريرية" : "Klinische Schwerpunkte & Indikationen",
       indications: isRu
         ? [
             "Состояние после острого инфаркта миокарда и стентирования коронарных сосудов",
@@ -379,6 +505,22 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
             "Chronic obstructive pulmonary disease (COPD) & pulmonary emphysema",
             "Targeted respiratory muscle therapy, airway secretion clearance & chest expansion",
           ]
+        : isTr
+        ? [
+            "Akut miyokard enfarktüsü ve koroner stentleme sonrası durum",
+            "Bypass veya kalp kapağı ameliyatları sonrası postoperatif takip",
+            "Stabil evrede kronik kalp yetmezliği",
+            "Kronik obstrüktif akciğer hastalığı (KOAH) ve akciğer amfizemi",
+            "Hedefe yönelik solunum terapisi, sekresyon atımı ve toraks mobilizasyonu",
+          ]
+        : isAr
+        ? [
+            "مرحلة ما بعد احتشاء عضلة القلب الحاد وتركيب دعامات الشرايين التاجية",
+            "متابعة ما بعد جراحات القلب المفتوح وترميم الصمامات",
+            "القصور القلبي المزمن في مراحله المستقرة",
+            "مرض الانسداد الرئوي المزمن (COPD) وانتفاخ الرئة",
+            "العلاج التنفسي الموجه، تصريف الإفرازات وتحريك القفص الصدري",
+          ]
         : [
             "Zustand nach akutem Myokardinfarkt & Koronarstenting",
             "Postoperativ nach Bypass- oder Herzklappenoperationen",
@@ -390,34 +532,54 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
         ? "Непрерывный 12-канальный телеметрический мониторинг • Кардиологический консилиум • Реанимационное оснащение"
         : isEn
         ? "Continuous 12-channel telemetry monitoring • Supervising cardiologist oversight • Immediate resuscitation backup"
+        : isTr
+        ? "Kesintisiz 12 Kanallı Telemetri İzlemi • Yerinde Acil Müdahale Donanımı • Kardiyolojik Uzman Hekim Desteği"
+        : isAr
+        ? "مراقبة لاسلكية مستمرة بـ 12 مسرى للقلب • تجهيزات إنعاش فورية • إشراف استشاري لأمراض القلب"
         : "Kontinuierliches 12-Kanal-Telemetrie-Monitoring • Notfall-Equipment vor Ort • Kardiologische ärztliche Betreuung",
       image: "/images/areas/cardiology-focus.webp",
       features: isRu
         ? ["Непрерывная телеметрия пульса и ЭКГ", "Обучение безопасному пульсовому режиму", "Контроль кардиолога"]
         : isEn
         ? ["Continuous telemetry monitoring", "Target heart-rate zone management", "Supervising cardiologist guidance"]
+        : isTr
+        ? ["Telemetrik Efor EKG'si", "Hedefe Yönelik Dayanıklılık Eğitimi", "Düzenli Kardiyolojik Kontroller"]
+        : isAr
+        ? ["تخطيط القلب الترددي اللاسلكي مع الجهد", "تدريب مستهدف لرفع اللياقة الهوائية", "فحوصات قلبية دورية منتظمة"]
         : ["Telemetrisches Belastungs-EKG", "Gezieltes Ausdauertraining", "Regelmäßige kardiologische Kontrolle"],
     },
     {
       id: "hydro",
-      title: isRu ? "Гидрокинезотерапия & лимфология" : isEn ? "Medical Hydrotherapy & Aquatic Rehab" : "Medizinische Hydrotherapie",
-      badge: isRu ? "Бассейн 32°C & Лимфодренаж" : isEn ? "Warm Water 32°C & MLD" : "Bewegungsbad 32°C & MLD",
+      title: isRu ? "Гидрокинезотерапия & лимфология" : isEn ? "Medical Hydrotherapy & Aquatic Rehab" : isTr ? "Tıbbi Hidroterapi & Lenfoloji" : isAr ? "العلاج المائي الطبي وتصريف اللمف" : "Medizinische Hydrotherapie",
+      badge: isRu ? "Бассейн 32°C & Лимфодренаж" : isEn ? "Warm Water 32°C & MLD" : isTr ? "32°C Termal Havuz & MLD" : isAr ? "حوض مائي 32°C وتصريف لمفاوي" : "Bewegungsbad 32°C & MLD",
       subtitle: isRu
         ? "Щадящая разгрузка суставов в теплой воде и мануальный лимфодренаж (MLD)"
         : isEn
         ? "Buoyancy joint decompression in warm thermal pool & Manual Lymphatic Drainage (MLD)"
+        : isTr
+        ? "Termal suda eklemleri koruyan yerçekimsiz hareket ve hedefe yönelik ödem tedavisi"
+        : isAr
+        ? "انعدام وزن مريح للمفاصل في المياه الحرارية وعلاج متخصص لتصريف الوذمات"
         : "Gelenkschonende Schwerelosigkeit im Thermalwasser und gezielte Entstauungstherapie",
       desc: isRu
         ? "Щадящая разгрузка веса тела до 90% в специализированном терапевтическом бассейне с теплой водой для пациентов с выраженным болевым синдромом."
         : isEn
         ? "Buoyancy unloading of up to 90% body weight in a therapeutic warm-water pool, ideal for severe arthritis, early post-op, and chronic back pain."
+        : isTr
+        ? "Sıcak hidroterapi havuzunda eklem ve omurgayı koruyan ağırlıksız egzersiz. Ağrısız erken mobilizasyon için %90'a varan ağırlık azalması."
+        : isAr
+        ? "تخفيف العبء عن المفاصل والعمود الفقري بنسبة تصل إلى 90% في حوض العلاج المائي الدافئ لتمكين الحركة المبكرة دون ألم."
         : "Schonende Entlastung von Gelenken und Wirbelsäule im warmen Bewegungsbad. Bis zu 90 % Gewichtsreduktion für schmerzfreie Frühmobilisation.",
       fullDesc: isRu
         ? "В качестве физикальных методов терапии (согласно пункту 5 PDF) в холдинге оборудован специализированный лечебный бассейн с постоянной температурой 32°C. Гидростатическая подъемная сила снижает осевую нагрузку на суставы и позвоночник на 90%, снимая болевые спазмы. Комплекс дополняется мануальным лимфодренажем (MLD), выполняемым сертифицированными лимфологами для снятия постоперационных и лимфатических отеков."
         : isEn
         ? "As part of physical modalities stipulated in Section 5 of the PDF, our facility features a specialized 32°C therapeutic motion pool. Buoyant water unloading reduces axial joint load by up to 90%, enabling immediate, pain-free mobility retraining. In addition, certified lymphedema therapists perform Manual Lymph Drainage (MLD) for rapid post-operative hematoma and swelling resolution."
+        : isTr
+        ? "NabiOta grubu, PDF Kısım 5'teki fiziksel tedavi ilkelerine uygun olarak 32°C sıcaklıkta medikal bir egzersiz havuzuna sahiptir. Suyun kaldırma kuvveti vücut ağırlığının %90'ını kaldırarak ağrısız erken hareket imkanı sunar. Sertifikalı terapistlerimiz ayrıca ödem ve hematomların giderilmesi için Manuel Lenfatik Drenaj (MLD) uygular."
+        : isAr
+        ? "كجزء من العلاجات الفيزيائية وفق البند 5، تضم مجموعة NabiOta حوضاً علاجياً بدرجة حرارة 32 مئوية. يقلل طفو الماء وزن الجسم الفعال بنسبة 90%، مما يسمح بحركة مبكرة خالية من الألم. إضافة إلى ذلك، ينفذ أخصائيونا التصريف اللمفاوي اليدوي (MLD) لعلاج التورمات والتجمعات الدموية بعد العمليات."
         : "Als integraler Bestandteil der physikalischen Anwendungen gemäß Punkt 5 des PDF bietet die NabiOta-Gruppe ein 32°C warmes medizinisches Bewegungsbad. Die hydrostatische Entlastung reduziert das wirksame Körpergewicht um bis zu 90%, was schmerzfreie frühe Bewegungsmuster ermöglicht. Ergänzend führen zertifizierte Lymphtherapeuten die Manuelle Lymphdrainage (MLD) zur postoperativen und chronischen Ödemreduktion durch.",
-      indicationsTitle: isRu ? "Клинические показания & методы (по PDF)" : isEn ? "Clinical Indications & Protocols (PDF)" : "Klinische Schwerpunkte & Indikationen",
+      indicationsTitle: isRu ? "Клинические показания & методы (по PDF)" : isEn ? "Clinical Indications & Protocols (PDF)" : isTr ? "Klinik Odaklar ve Endikasyonlar" : isAr ? "دواعي العلاج والمجالات السريرية" : "Klinische Schwerpunkte & Indikationen",
       indications: isRu
         ? [
             "Ранняя послеоперационная мобилизация суставов при разгрузке веса тела",
@@ -434,6 +596,22 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
             "Primary and secondary lymphedema (including post-oncological surgery care)",
             "Chronic axial back pain syndromes, fibromyalgia & complex regional pain",
           ]
+        : isTr
+        ? [
+            "Tam ağırlık kaldırma ile ameliyat sonrası erken mobilizasyon",
+            "Yüklenme ağrısı olan ileri evre diz ve kalça artrozu (kireçlenme)",
+            "Ameliyat ve travma sonrası doku şişlikleri ve hematomlar",
+            "Primer ve sekonder lenfödemler (onkolojik cerrahiler sonrası dahil)",
+            "Kronik omurga ağrısı sendromları ve fibromiyalji",
+          ]
+        : isAr
+        ? [
+            "الاستعادة المبكرة للحركة بعد الجراحة مع انعدام وزن الجسم",
+            "خشونة المفاصل المتقدمة في الركبة والورك مع آلام التحميل",
+            "التورمات والتجمعات الدموية التالية للجراحة والإصابات",
+            "الوذمات اللمفية الأولية والثانوية (بما فيها رعاية ما بعد جراحات الأورام)",
+            "متلازمات آلام الظهر المزمنة والفيبروميالغيا",
+          ]
         : [
             "Postoperative Frühmobilisation bei voller Gewichtsentlastung",
             "Schwere Gon- und Koxarthrose mit Belastungsschmerz",
@@ -445,34 +623,54 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
         ? "Сертифицированные лимфотерапевты • Водоподготовка по DIN 19643 • Безбарьерный подъемник в бассейн"
         : isEn
         ? "Certified manual lymphology therapists • Water hygiene per DIN 19643 • Barrier-free pool hoists"
+        : isTr
+        ? "Sertifikalı Lenf Terapistleri • DIN 19643 Su Hijyen Standardı • Engelsiz Havuz Asansörü"
+        : isAr
+        ? "معالجون معتمدون في تصريف اللمف • معايير نقاء المياه الطبية DIN 19643 • رافعة مخصصة لذوي الاحتياجات"
         : "Zertifizierte Lymphtherapeuten • Medizinische Wasserhygiene nach DIN 19643 • Barrierefreier Hebelift",
       image: "/images/rehabilitation/hydrotherapy-pool.webp",
       features: isRu
         ? ["Снижение нагрузки на суставы", "Улучшение лимфооттока", "Релаксация спазмированных мышц"]
         : isEn
         ? ["Zero-gravity joint decompression", "Enhanced lymphatic drainage", "Spasm relief and mobility gains"]
+        : isTr
+        ? ["Eklemleri Koruyan Yerçekimsiz Hareket", "Lenf Akışının Canlandırılması", "Kronik Kas Spazmlarının Giderilmesi"]
+        : isAr
+        ? ["تخفيف الأحمال المفصلية بانعدام الوزن", "تنشيط التدفق اللمفاوي الطبيعي", "إرخاء التشنجات العضلية المزمنة"]
         : ["Gelenkschonende Schwerelosigkeit", "Anregung des Lymphflusses", "Lösung chronischer Muskelverspannungen"],
     },
     {
       id: "ergo",
-      title: isRu ? "Эрготерапия, логопедия & боли" : isEn ? "Ergotherapy, Speech & Pain Care" : "Ergotherapie & Logopädie",
-      badge: isRu ? "Быт, речь, глотание & боль" : isEn ? "ADL, Speech & Pain Therapy" : "Feinmotorik, Sprache & Schmerz",
+      title: isRu ? "Эрготерапия, логопедия & боли" : isEn ? "Ergotherapy, Speech & Pain Care" : isTr ? "Ergoterapi, Logopedi ve Ağrı Tedavisi" : isAr ? "العلاج الوظيفي، علاج النطق والتحكم بالألم" : "Ergotherapie & Logopädie",
+      badge: isRu ? "Быт, речь, глотание & боль" : isEn ? "ADL, Speech & Pain Therapy" : isTr ? "İnce Motor, Dil & Ağrı" : isAr ? "المهارات الحركية الدقيقة، النطق والألم" : "Feinmotorik, Sprache & Schmerz",
       subtitle: isRu
         ? "Тренировка бытовой независимости (ADL), логопедическая помощь и мультимодальная терапия боли"
         : isEn
         ? "Activities of daily living (ADL), speech-swallowing rehabilitation & multimodal pain relief"
+        : isTr
+        ? "Günlük yaşam bağımsızlığı (ADL), konuşma ve yutma terapisi ile multimodal ağrı tedavisi"
+        : isAr
+        ? "استعادة استقلالية الحياة اليومية (ADL)، علاج النطق والبلع، وعلاج الألم المتعدد"
         : "Wiedererlangung von Alltagsautonomie (ADL), Sprach-/Schlucktherapie & Schmerztherapie",
       desc: isRu
         ? "Восстановление мелкой моторики, речи, глотания и когнитивных функций после неврологических и ортопедических нарушений."
         : isEn
         ? "Rebuilding fine motor dexterity, speech, swallowing, and cognitive independence after stroke or surgical interventions."
+        : isTr
+        ? "Nörolojik veya cerrahi kısıtlamalar sonrası ince motor becerilerin, konuşma, lisan ve yutma fonksiyonlarının yeniden inşası."
+        : isAr
+        ? "إعادة بناء المهارات الحركية الدقيقة، النطق، البلع والقدرات الإدراكية بعد الاضطرابات العصبية والجراحية."
         : "Wiedererlangung von Feinmotorik, Sprach-, Sprech- und Schluckfunktionen sowie Alltagsfähigkeiten nach neurologischen oder operativen Einschränkungen.",
       fullDesc: isRu
         ? "Согласно прямому положению пункта 5 устава NabiOta Rehabilitation & Therapy GmbH, медицинская помощь холдинга включает эрготерапевтические меры для развития моторики и познавательных способностей, тренировку навыков повседневной жизни (ADL), логопедическую терапию нарушений речи, голоса и глотания (дисфагии), а также междисциплинарную терапию хронической боли."
         : isEn
         ? "In rigorous accordance with Section 5 of NabiOta Rehabilitation & Therapy GmbH, our clinical mandate encompasses occupational therapy to restore fine motor and cognitive faculties, activities of daily living (ADL) independence training, specialized speech and swallowing therapy (dysphagia management), and interdisciplinary multimodal chronic pain management."
+        : isTr
+        ? "NabiOta Rehabilitation & Therapy GmbH tüzüğünün 5. maddesi uyarınca hizmetlerimiz; motor ve bilişsel yetileri geliştiren ergoterapi uygulamalarını, günlük yaşam aktiviteleri (ADL) bağımsızlık eğitimini, dil, konuşma ve yutma bozuklukları (disfaji) logopedik tedavisini ve multimodal kronik ağrı tedavisini kapsar."
+        : isAr
+        ? "وفقاً للتفويض السريري للبند 5 لشركة NabiOta Rehabilitation & Therapy GmbH، تشمل الرعاية تدابير العلاج الوظيفي لتنمية المهارات الحركية والإدراكية، التدريب على استقلالية الحياة اليومية (ADL)، علاج اضطرابات النطق والصوت والبلع (عسر البلع)، بالإضافة إلى العلاج متعدد التخصصات للآلام المزمنة."
         : "Gemäß den ausdrücklichen Vorgaben von Punkt 5 der NabiOta Rehabilitation & Therapy GmbH umfasst der Versorgungsauftrag ergotherapeutische Maßnahmen zur Förderung motorischer und kognitiver Fähigkeiten, Selbstständigkeitstraining im Alltag (ADL), logopädische Behandlungen bei Sprach-, Sprech-, Stimm- und Schluckstörungen (Dysphagie) sowie interdisziplinäre multimodale Schmerztherapie.",
-      indicationsTitle: isRu ? "Клинические показания & методы (по PDF)" : isEn ? "Clinical Indications & Protocols (PDF)" : "Klinische Schwerpunkte & Indikationen",
+      indicationsTitle: isRu ? "Клинические показания & методы (по PDF)" : isEn ? "Clinical Indications & Protocols (PDF)" : isTr ? "Klinik Odaklar ve Endikasyonlar" : isAr ? "دواعي العلاج والمجالات السريرية" : "Klinische Schwerpunkte & Indikationen",
       indications: isRu
         ? [
             "Тренировка мелкой моторики кисти, захвата предметов и координации пальцев",
@@ -489,6 +687,22 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
             "Swallowing therapy & aspiration-preventative dysphagia management",
             "Interdisciplinary multimodal chronic pain treatment programs",
           ]
+        : isTr
+        ? [
+            "El ince motorik, duyu ve kavrama fonksiyonu antrenmanı",
+            "Günlük yaşamda bağımsızlık eğitimi (ADL - Giyinme, kişisel bakım, ev işleri)",
+            "Konuşma ve lisan bozuklukları (İnme sonrası afazi ve dizartri)",
+            "Yutma terapisi (Aspirasyon riskine karşı beslenme yönetimi - Disfaji)",
+            "Kronik ağrı sendromlarında multimodal ağrı terapisi",
+          ]
+        : isAr
+        ? [
+            "تدريب المهارات الحركية الدقيقة، الإحساس وقبضة اليد",
+            "التدريب على استقلالية الحياة اليومية (ADL - ارتداء الملابس، النظافة الشخصية)",
+            "اضطرابات النطق واللغة (الحبسة الكلامية وعسر التلفظ بعد الجلطات)",
+            "علاج اضطرابات البلع وتغذية آمنة لمنع الاستنشاق (عسر البلع)",
+            "العلاج متعدد الأنماط لمتلازمات الألم المزمن",
+          ]
         : [
             "Feinmotorik-, Sensibilitäts- und Greiffunktionstraining der Hand",
             "Selbstständigkeitstraining im Alltag (ADL - Activities of Daily Living)",
@@ -500,44 +714,56 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
         ? "Направление по каталогу Heilmittelkatalog (GKV/PKV) • Возможность выезда на дом • Междисциплинарные консилиумы"
         : isEn
         ? "Reimbursed under German Heilmittel catalog • Outpatient home visits available • Pain conferences"
+        : isTr
+        ? "Heilmittelkatalog (GKV/PKV) Kapsamında Geri Ödeme • Ev Ziyaretleri İzni • Disiplinlerarası Ağrı Konseyleri"
+        : isAr
+        ? "مغطى بلائحة العلاجات الطبية الألمانية • ترخيص للزيارات المنزلية • مؤتمرات طبية متعددة التخصصات لعلاج الألم"
         : "Abrechnung nach Heilmittelkatalog (GKV/PKV) • Zulassung für Hausbesuche • Interdisziplinäre Schmerzkonferenzen",
       image: "/images/services/therapie.webp",
       features: isRu
         ? ["Эрготерапия и тренировка быта (ADL)", "Логопедия: речь, голос и глотание", "Когнитивный тренинг и ортезирование"]
         : isEn
         ? ["Ergotherapy & daily life skills (ADL)", "Speech, voice & swallowing therapy", "Cognitive training & custom splints"]
+        : isTr
+        ? ["Ergoterapi & Günlük Yaşam Becerileri (ADL)", "Logopedi: Konuşma, Ses & Yutma Terapisi", "Bilişsel Beyin Eğitimi & Özel Ateller"]
+        : isAr
+        ? ["علاج وظيفي واستقلالية يومية (ADL)", "علاج نطق وتخاطب وصوت وبلع", "تدريب القدرات الإدراكية وتفصيل الجبائر"]
         : ["Ergotherapie & Alltagsfähigkeiten (ADL)", "Logopädie: Sprach-, Sprech- & Schlucktherapie", "Kognitives Hirnleistungstraining & Schienen"],
     },
   ];
 
   // ── Skrin 2 Data: Unser Ansatz (PDF Section 5) ──
   const approachData = {
-    eyebrow: isRu ? "НАШ ПОДХОД" : isEn ? "OUR APPROACH" : "UNSER ANSATZ",
-    title: isRu ? "Комплексная забота. По высшим стандартам." : isEn ? "Holistic Care. To the Highest Standards." : "Ganzheitliche Betreuung. Nach höchsten Standards.",
+    eyebrow: isRu ? "НАШ ПОДХОД" : isEn ? "OUR APPROACH" : isTr ? "YAKLAŞIMIMIZ" : isAr ? "منهجنا العلاجي" : "UNSER ANSATZ",
+    title: isRu ? "Комплексная забота. По высшим стандартам." : isEn ? "Holistic Care. To the Highest Standards." : isTr ? "Bütüncül Bakım. En Yüksek Standartlarda." : isAr ? "رعاية شاملة بأعلى المعايير الطبية." : "Ganzheitliche Betreuung. Nach höchsten Standards.",
     desc: isRu
       ? "Мы объединяем медицинскую экспертизу с передовыми технологиями терапии и персонализированным вниманием — для вашего долгосрочного выздоровления."
       : isEn
       ? "We combine clinical excellence with state-of-the-art physical therapy and compassionate support for lasting mobility."
+      : isTr
+      ? "Kalıcı iyileşmeniz ve hareketliliğiniz için tıbbi uzmanlığı en modern terapi teknolojileri ve birebir ilgiyle birleştiriyoruz."
+      : isAr
+      ? "نجمع بين الخبرة الطبية المرموقة وأحدث تقنيات العلاج والرعاية الفردية الدافئة لتحقيق تعافيكم المستدام."
       : "Wir kombinieren medizinische Expertise mit modernster Therapie und persönlicher Betreuung – für Ihren langfristigen Erfolg.",
     stats: [
       {
         val: "100+",
-        label: isRu ? "Пациентов реабилитации в месяц" : isEn ? "Rehabilitation patients per month" : "Rehabilitationspatienten pro Monat",
+        label: isRu ? "Пациентов реабилитации в месяц" : isEn ? "Rehabilitation patients per month" : isTr ? "Aylık rehabilitasyon hastası" : isAr ? "مريض تأهيل شهرياً" : "Rehabilitationspatienten pro Monat",
         icon: <RehabCloverIcon className="w-5 h-5 text-[#ECCF96]" />,
       },
       {
         val: "95%",
-        label: isRu ? "Удовлетворенность наших пациентов" : isEn ? "Patient satisfaction rate" : "Zufriedenheit unserer Patienten",
+        label: isRu ? "Удовлетворенность наших пациентов" : isEn ? "Patient satisfaction rate" : isTr ? "Hastalarımızın memnuniyet oranı" : isAr ? "نسبة رضا مرضانا" : "Zufriedenheit unserer Patienten",
         icon: <SatisfactionBadgeIcon className="w-5 h-5 text-[#ECCF96]" />,
       },
       {
         val: "24/7",
-        label: isRu ? "Непрерывное сопровождение" : isEn ? "Dedicated clinical support" : "Betreuung und Support",
+        label: isRu ? "Непрерывное сопровождение" : isEn ? "Dedicated clinical support" : isTr ? "Kesintisiz klinik destek" : isAr ? "رعاية ومتابعة سريرية مستمرة" : "Betreuung und Support",
         icon: <SupportShieldIcon className="w-5 h-5 text-[#ECCF96]" />,
       },
       {
         val: ">10",
-        label: isRu ? "Лет клинического опыта в реабилитации" : isEn ? "Years of rehabilitation experience" : "Jahre Erfahrung in der Rehabilitation",
+        label: isRu ? "Лет клинического опыта в реабилитации" : isEn ? "Years of rehabilitation experience" : isTr ? "Rehabilitasyonda klinik tecrübe yılı" : isAr ? "سنوات من الخبرة التأهيلية" : "Jahre Erfahrung in der Rehabilitation",
         icon: <ExperienceAwardIcon className="w-5 h-5 text-[#ECCF96]" />,
       },
     ],
@@ -545,46 +771,62 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
 
   // ── Skrin 4 Data: Process (Your Pathway Back to Greater Quality of Life) ──
   const processData = {
-    eyebrow: isRu ? "НАШ ПРОЦЕСС" : isEn ? "OUR PROCESS" : "UNSER PROZESS",
-    title: isRu ? "Ihr Weg zurück zu mehr Lebensqualität." : isEn ? "Your Pathway Back to Greater Quality of Life." : "Ihr Weg zurück zu mehr Lebensqualität.",
+    eyebrow: isRu ? "НАШ ПРОЦЕСС" : isEn ? "OUR PROCESS" : isTr ? "SÜRECİMİZ" : isAr ? "مراحل رحلة العلاج" : "UNSER PROZESS",
+    title: isRu ? "Ваш путь к возвращению качества жизни." : isEn ? "Your Pathway Back to Greater Quality of Life." : isTr ? "Daha Yüksek Yaşam Kalitesine Giden Yolunuz." : isAr ? "طريقكم نحو استعادة جودة الحياة والحركة." : "Ihr Weg zurück zu mehr Lebensqualität.",
     steps: [
       {
         step: "01",
-        title: isRu ? "Первичная консультация и диагностика" : isEn ? "Initial Consultation & Diagnostics" : "Erstgespräch & Diagnostik",
+        title: isRu ? "Первичная консультация и диагностика" : isEn ? "Initial Consultation & Diagnostics" : isTr ? "İlk Görüşme ve Tanı" : isAr ? "الاستشارة الأولية والتشخيص" : "Erstgespräch & Diagnostik",
         desc: isRu
           ? "Мы анализируем вашу клиническую ситуацию и вместе определяем цели."
           : isEn
           ? "We analyze your condition and jointly establish your personal recovery milestones."
+          : isTr
+          ? "Klinik durumunuzu titizlikle analiz eder ve hedeflerinizi birlikte belirleriz."
+          : isAr
+          ? "نحلل حالتكم الصحية بدقة ونحدد أهداف التعافي المشتركة."
           : "Wir analysieren Ihre Situation und definieren gemeinsam Ihre Ziele.",
         icon: <Stethoscope className="w-5 h-5 text-[#ECCF96]" />,
       },
       {
         step: "02",
-        title: isRu ? "Индивидуальный план терапии" : isEn ? "Personalized Therapy Plan" : "Individuelle Therapieplanung",
+        title: isRu ? "Индивидуальный план терапии" : isEn ? "Personalized Therapy Plan" : isTr ? "Kişiye Özel Terapi Planı" : isAr ? "خطة علاجية مخصصة" : "Individuelle Therapieplanung",
         desc: isRu
           ? "Индивидуальный план с учетом ваших физиологических возможностей."
           : isEn
           ? "A tailored roadmap calibrated to your physiological capabilities and targets."
+          : isTr
+          ? "Fizyolojik ihtiyaç ve kapasitenize göre adım adım yapılandırılmış özel program."
+          : isAr
+          ? "برنامج تأهيلي مفصل بدقة وفق قدراتكم الجسدية واحتياجاتكم."
           : "Ein maßgeschneiderter Plan auf Basis Ihrer Bedürfnisse und Möglichkeiten.",
         icon: <FileText className="w-5 h-5 text-[#ECCF96]" />,
       },
       {
         step: "03",
-        title: isRu ? "Проведение и сопровождение" : isEn ? "Execution & Guidance" : "Durchführung & Begleitung",
+        title: isRu ? "Проведение и сопровождение" : isEn ? "Execution & Guidance" : isTr ? "Uygulama ve Yakın Takip" : isAr ? "التنفيذ والمرافقة اللصيقة" : "Durchführung & Begleitung",
         desc: isRu
           ? "Наши эксперты непрерывно сопровождают вас на всем пути реабилитации."
           : isEn
           ? "Our specialists closely guide and assist you across every phase of rehabilitation."
+          : isTr
+          ? "Uzman terapistlerimiz tüm rehabilitasyon süreci boyunca size rehberlik eder."
+          : isAr
+          ? "يرافقكم خبراؤنا واختصاصيونا خطوة بخطوة خلال مسار التأهيل بأكمله."
           : "Unsere Experten begleiten Sie engmaschig durch den gesamten Rehabilitationsprozess.",
         icon: <Activity className="w-5 h-5 text-[#ECCF96]" />,
       },
       {
         step: "04",
-        title: isRu ? "Долгосрочная забота" : isEn ? "Long-Term Care" : "Langfristige Betreuung",
+        title: isRu ? "Долгосрочная забота" : isEn ? "Long-Term Care" : isTr ? "Uzun Vadeli Destek" : isAr ? "الرعاية اللاحقة المستدامة" : "Langfristige Betreuung",
         desc: isRu
           ? "Мы остаемся рядом и после завершения курса – для вашего устойчивого здоровья."
           : isEn
           ? "We continue by your side even after graduation for enduring mobility and health."
+          : isTr
+          ? "Rehabilitasyon sonrasında da kalıcı sağlığınız ve hareketliliğiniz için yanınızdayız."
+          : isAr
+          ? "نبقى بجانبكم حتى بعد انتهاء البرنامج للحفاظ على حركتكم وصحتكم المستدامة."
           : "Auch nach der Reha bleiben wir an Ihrer Seite – für Ihre nachhaltige Gesundheit.",
         icon: <Heart className="w-5 h-5 text-[#ECCF96]" />,
       },
@@ -593,23 +835,31 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
 
   // ── Skrin 3 Data: 2-Card Grid (Facilities + Innovation) ──
   const facilitiesCard = {
-    badge: isRu ? "СОВРЕМЕННЫЕ УСЛОВИЯ" : isEn ? "MODERN FACILITIES" : "MODERNE EINRICHTUNGEN",
-    title: isRu ? "Терапия в особой атмосфере" : isEn ? "Therapy in an Exceptional Setting" : "Therapie in einer besonderen Umgebung",
+    badge: isRu ? "СОВРЕМЕННЫЕ УСЛОВИЯ" : isEn ? "MODERN FACILITIES" : isTr ? "MODERN TESİSLER" : isAr ? "مرافق حديثة" : "MODERNE EINRICHTUNGEN",
+    title: isRu ? "Терапия в особой атмосфере" : isEn ? "Therapy in an Exceptional Setting" : isTr ? "Ayrıcalıklı Bir Atmosferde Terapi" : isAr ? "العلاج في بيئة استشفائية استثنائية" : "Therapie in einer besonderen Umgebung",
     desc: isRu
       ? "Наши современные реабилитационные пространства создают идеальные условия для успешного восстановления."
       : isEn
       ? "Our state-of-the-art facilities provide the ideal environment for successful rehabilitation."
+      : isTr
+      ? "Modern rehabilitasyon alanlarımız başarılı bir iyileşme süreci için ideal koşulları sağlar."
+      : isAr
+      ? "توفر مرافقنا التأهيلية المتطورة البيئة المثالية لتحقيق أقصى درجات النجاح العلاجي."
       : "Unsere modernen Einrichtungen bieten Ihnen den idealen Rahmen für eine erfolgreiche Rehabilitation.",
-    btn: isRu ? "Наше оснащение" : isEn ? "Our Facilities" : "Unsere Ausstattung",
+    btn: isRu ? "Наше оснащение" : isEn ? "Our Facilities" : isTr ? "Donanımlarımız" : isAr ? "تجهيزاتنا ومرافقنا" : "Unsere Ausstattung",
   };
 
   const innovationCard = {
-    eyebrow: isRu ? "ИННОВАЦИИ И ЭКСПЕРТИЗА" : isEn ? "INNOVATION & EXPERTISE" : "INNOVATION & EXPERTISE",
-    title: isRu ? "Передовая терапия для вашего здоровья." : isEn ? "Cutting-Edge Therapy for Your Health." : "Modernste Therapie für Ihre Gesundheit.",
+    eyebrow: isRu ? "ИННОВАЦИИ И ЭКСПЕРТИЗА" : isEn ? "INNOVATION & EXPERTISE" : isTr ? "İNOVASYON VE UZMANLIK" : isAr ? "الابتكار والخبرة السريرية" : "INNOVATION & EXPERTISE",
+    title: isRu ? "Передовая терапия для вашего здоровья." : isEn ? "Cutting-Edge Therapy for Your Health." : isTr ? "Sağlığınız İçin En Son Teknoloji Terapi." : isAr ? "أحدث التقنيات العلاجية من أجل صحتكم." : "Modernste Therapie für Ihre Gesundheit.",
     desc: isRu
       ? "С помощью инновационных методик и высокотехнологичного оборудования мы помогаем вам вернуться к активной и независимой жизни."
       : isEn
       ? "With innovative procedures and advanced equipment, we empower you on your journey back to an active and self-determined life."
+      : isTr
+      ? "Yenilikçi yöntemler ve son teknoloji ekipmanlarla aktif ve bağımsız bir yaşama dönüşünüzü destekliyoruz."
+      : isAr
+      ? "من خلال التقنيات المبتكرة والأجهزة فائقة التطور، نمكّنكم في طريق العودة إلى حياة مفعمة بالحيوية والاستقلالية."
       : "Mit innovativen Verfahren und modernster Ausstattung unterstützen wir Sie auf Ihrem Weg zurück in ein aktives und selbstbestimmtes Leben.",
     items: isRu
       ? [
@@ -625,6 +875,20 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
           "Interdisciplinary therapy team",
           "Individualized progress monitoring",
         ]
+      : isTr
+      ? [
+          "En son teknoloji egzersiz cihazları",
+          "Dijital hareket ve yürüme analizi",
+          "Disiplinlerarası uzman terapist ekibi",
+          "Bireysel gelişim ve ilerleme takibi",
+        ]
+      : isAr
+      ? [
+          "أجهزة تدريب علاجية فائقة الحداثة",
+          "تحليل رقمي للحركة والمشي",
+          "فريق متعدد التخصصات من خيرة المعالجين",
+          "متابعة دورية مستمرة لتقدم الحالة",
+        ]
       : [
           "Hochmoderne Trainingsgeräte",
           "Digitale Bewegungsanalyse",
@@ -637,77 +901,105 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
   const teamDoctors = [
     {
       name: "Dr. med. Michael Weber",
-      role: isRu ? "Главный врач отделения реабилитации" : isEn ? "Chief Physician Rehabilitation & Sports Medicine" : "Chefarzt Physikalische & Rehabilitative Medizin",
-      spec: isRu ? "Ортопедия, мануальная терапия, спортивная медицина" : isEn ? "Orthopedics, Manual Medicine, Sports Science" : "Orthopädie, Chirotherapie, Sportmedizin",
+      role: isRu ? "Главный врач отделения реабилитации" : isEn ? "Chief Physician Rehabilitation & Sports Medicine" : isTr ? "Fiziksel ve Rehabilitatif Tıp Bölüm Başkanı" : isAr ? "رئيس قسم الطب الطبيعي والتأهيلي" : "Chefarzt Physikalische & Rehabilitative Medizin",
+      spec: isRu ? "Ортопедия, мануальная терапия, спортивная медицина" : isEn ? "Orthopedics, Manual Medicine, Sports Science" : isTr ? "Ortopedi, Kiropraktik, Spor Hekimliği" : isAr ? "طب العظام، العلاج اليدوي والطب الرياضي" : "Orthopädie, Chirotherapie, Sportmedizin",
       image: "/images/areas/doc-michael-weber.webp",
       quote: isRu
         ? "„Наша цель — не просто устранить боль, а полностью восстановить биомеханику и уверенность пациента в каждом движении.“"
         : isEn
         ? "“Our mission is not merely pain relief, but restoring complete biomechanical freedom and confidence in every step.”"
+        : isTr
+        ? "„Hedefimiz sadece ağrıyı dindirmek değil, hastamızın hareket kabiliyetini ve yaşam sevincini bütünüyle yeniden kazandırmaktır.“"
+        : isAr
+        ? "«هدفنا لا يقتصر على تسكين الألم فحسب، بل استعادة كامل الحركة وثقة المريض في كل خطوة بحياته اليومية.»"
         : "„Unser Ziel ist nicht nur Schmerzfreiheit, sondern die vollständige Wiedererlangung Ihrer Mobilität und Lebensfreude im Alltag.“",
     },
     {
       name: "Julia Keller, M.Sc.",
-      role: isRu ? "Ведущий физиотерапевт и координатор программ" : isEn ? "Lead Physical Therapist & Rehabilitation Coordinator" : "Leitende Physiotherapeutin & Reha-Koordinatorin",
-      spec: isRu ? "Специалист по AlterG, OMT и реабилитации коленного сустава" : isEn ? "OMT Certified, AlterG Specialist, Knee & Hip Rehab" : "Manuelle Therapie (OMT), AlterG®-Trainerin, Knie- & Hüftreha",
+      role: isRu ? "Ведущий физиотерапевт и координатор программ" : isEn ? "Lead Physical Therapist & Rehabilitation Coordinator" : isTr ? "Baş Fizyoterapist & Reha Koordinatörü" : isAr ? "كبير أخصائيي العلاج الطبيعي ومنسق البرامج" : "Leitende Physiotherapeutin & Reha-Koordinatorin",
+      spec: isRu ? "Специалист по AlterG, OMT и реабилитации коленного сустава" : isEn ? "OMT Certified, AlterG Specialist, Knee & Hip Rehab" : isTr ? "Manuel Terapi (OMT), AlterG® Uzmanı, Diz & Kalça Reha" : isAr ? "العلاج اليدوي المعتمد (OMT)، أخصائية AlterG®، وتأهيل الركبة والورك" : "Manuelle Therapie (OMT), AlterG®-Trainerin, Knie- & Hüftreha",
       image: "/images/areas/doc-anna-keller.webp",
       quote: isRu
         ? "„Каждый пациент получает персонализированный план с точно дозированным шагом нагрузки.“"
         : isEn
         ? "“Every recovery plan is engineered like high-performance athletic coaching, calibrated to individual limits.”"
+        : isTr
+        ? "„Empati, son teknoloji cihazlar ve hassas dozlanmış yüklenmeyle hedeflere adım adım ulaşıyoruz.“"
+        : isAr
+        ? "«بالتعاطف الإنساني وأحدث الأجهزة الطبية وتدرج الأحمال، نصل إلى أهداف التعافي خطوة بخطوة.»"
         : "„Mit Empathie, modernster Technik und exakt dosierter Belastung erreichen wir Meilensteine Schritt für Schritt.“",
     },
     {
       name: "Dr. med. Sarah Hoffmann",
-      role: isRu ? "Врач-невролог, специалист по нейрореабилитации" : isEn ? "Specialist in Neurological Rehabilitation" : "Fachärztin für Neurologie & Neurorehabilitation",
-      spec: isRu ? "Инсульты, болезнь Паркинсона, роботизированная ходьба" : isEn ? "Neuroplasticity, Stroke Recovery, Robotic Locomotion" : "Schlaganfallnachsorge, Parkinson-Therapie, Gangrehabilitation",
+      role: isRu ? "Врач-невролог, специалист по нейрореабилитации" : isEn ? "Specialist in Neurological Rehabilitation" : isTr ? "Nöroloji & Nörorehabilitasyon Uzmanı" : isAr ? "استشارية طب الأعصاب وإعادة التأهيل العصبي" : "Fachärztin für Neurologie & Neurorehabilitation",
+      spec: isRu ? "Инсульты, болезнь Паркинсона, роботизированная ходьба" : isEn ? "Neuroplasticity, Stroke Recovery, Robotic Locomotion" : isTr ? "İnme Takibi, Parkinson Terapisi, Yürüme Rehabilitasyonu" : isAr ? "رعاية السكتة الدماغية، علاج باركنسون وإعادة تأهيل المشي" : "Schlaganfallnachsorge, Parkinson-Therapie, Gangrehabilitation",
       image: "/images/areas/doc-sarah-hoffmann.webp",
       quote: isRu
         ? "„Мозг способен к восстановлению в любом возрасте благодаря регулярному нейропластическому тренингу.“"
         : isEn
         ? "“The nervous system possesses remarkable plasticity when stimulated with structured, repetitive movement.”"
+        : isTr
+        ? "„Sinir sistemi, hedefe yönelik ve düzenli uyarıldığında olağanüstü bir yenilenme potansiyeline sahiptir.“"
+        : isAr
+        ? "«يمتلك الجهاز العصبي قدرات مذهلة على التجدد والترميم الذاتي عند تحفيزه بحركات موجهة ومتكررة.»"
         : "„Das Nervensystem verfügt über enorme Regenerationspotenziale, wenn es gezielt und repetitiv gefördert wird.“",
     },
   ];
 
   // ── Skrin 5 Data: Testimonials (Patientenstimmen with exact cropped avatars) ──
   const testimonialsData = {
-    eyebrow: isRu ? "ОТЗЫВЫ ПАЦИЕНТОВ" : isEn ? "PATIENT STORIES" : "PATIENTENSTIMMEN",
-    title: isRu ? "Реальные истории.\nНастоящие успехи." : isEn ? "Real People.\nReal Success." : "Echte Menschen.\nEchte Erfolge.",
+    eyebrow: isRu ? "ОТЗЫВЫ ПАЦИЕНТОВ" : isEn ? "PATIENT STORIES" : isTr ? "HASTA GÖRÜŞLERİ" : isAr ? "آراء وتجارب المرضى" : "PATIENTENSTIMMEN",
+    title: isRu ? "Реальные истории.\nНастоящие успехи." : isEn ? "Real People.\nReal Success." : isTr ? "Gerçek İnsanlar.\nGerçek Başarılar." : isAr ? "تجارب حقيقية.\nنجاحات ملموسة." : "Echte Menschen.\nEchte Erfolge.",
     desc: isRu
       ? "Наши пациенты делятся своим опытом восстановления, достигнутыми результатами и новым качеством активной жизни."
       : isEn
       ? "Our patients share their rehabilitation milestones, recovery journeys, and renewed quality of life."
+      : isTr
+      ? "Hastalarımız deneyimlerini, kaydettikleri ilerlemeleri ve yeniden kazandıkları hareket kabiliyetini paylaşıyor."
+      : isAr
+      ? "مرضانا يشاركونكم تجاربهم العلاجية، مراحل تقدمهم، واستعادتهم لجودة حياتهم وحركتهم."
       : "Unsere Patienten berichten von ihren Erfahrungen, Fortschritten und neuen Lebensperspektiven.",
-    btn: isRu ? "Все отзывы пациентов" : isEn ? "View all reviews" : "Alle Bewertungen ansehen",
+    btn: isRu ? "Все отзывы пациентов" : isEn ? "View all reviews" : isTr ? "Tüm Değerlendirmeleri Gör" : isAr ? "عرض جميع تقييمات المرضى" : "Alle Bewertungen ansehen",
     cards: [
       {
         name: "Sabine M.",
-        role: isRu ? "Ортопедическая реабилитация" : isEn ? "Orthopedic Rehabilitation" : "Orthopädische Rehabilitation",
+        role: isRu ? "Ортопедическая реабилитация" : isEn ? "Orthopedic Rehabilitation" : isTr ? "Ortopedik Rehabilitasyon" : isAr ? "إعادة التأهيل العظمي" : "Orthopädische Rehabilitation",
         quote: isRu
           ? "„Благодаря профессиональной заботе и тренировкам я смогла уверенно ходить после операции на колене гораздо быстрее, чем ожидала. Огромное спасибо всей команде!“"
           : isEn
           ? "“Thanks to professional care and progressive rehabilitation, I was able to walk smoothly after my knee replacement much faster than expected. Heartfelt thanks to the team!”"
+          : isTr
+          ? "„Profesyonel bakım sayesinde diz ameliyatımdan sonra beklediğimden çok daha hızlı yürümeye başladım. Tüm ekibe yürekten teşekkür ederim.“"
+          : isAr
+          ? "«بفضل الرعاية المتخصصة وبرامج التأهيل، تمكنت من المشي بسلاسة بعد جراحة الركبة في وقت أسرع بكثير مما توقعت. شكراً جزيلاً للفريق!»"
           : "„Dank der professionellen Betreuung konnte ich nach meiner Knie-OP schneller als erwartet wieder laufen. Ich bin dem ganzen Team sehr dankbar.“",
         image: "/images/testimonials/sabine-m.webp",
       },
       {
         name: "Thomas K.",
-        role: isRu ? "Неврологическая реабилитация" : isEn ? "Neurological Rehabilitation" : "Neurologische Rehabilitation",
+        role: isRu ? "Неврологическая реабилитация" : isEn ? "Neurological Rehabilitation" : isTr ? "Nörolojik Rehabilitasyon" : isAr ? "إعادة التأهيل العصبي" : "Neurologische Rehabilitation",
         quote: isRu
           ? "„Индивидуальная терапия и современные реабилитационные аппараты очень помогли мне вернуть подвижность и уверенность в каждом движении.“"
           : isEn
           ? "“The tailored therapy regimen and state-of-the-art assistive devices greatly helped me regain movement and functional independence.”"
+          : isTr
+          ? "„Bana özel hazırlanan terapi ve modern cihazlar hareket kabiliyetimi yeniden kazanmamda çok büyük rol oynadı.“"
+          : isAr
+          ? "«الخطة العلاجية الفردية والأجهزة المتطورة ساعدتني للغاية في استعادة حركتي وثقتي بنفسي.»"
           : "„Die individuelle Therapie und die modernen Geräte haben mir sehr geholfen, meine Beweglichkeit zurückzugewinnen.“",
         image: "/images/testimonials/thomas-k.webp",
       },
       {
         name: "Julia R.",
-        role: isRu ? "Кардиологическая реабилитация" : isEn ? "Cardiological Rehabilitation" : "Kardiologische Rehabilitation",
+        role: isRu ? "Кардиологическая реабилитация" : isEn ? "Cardiological Rehabilitation" : isTr ? "Kardiyolojik Rehabilitasyon" : isAr ? "إعادة التأهيل القلبي" : "Kardiologische Rehabilitation",
         quote: isRu
           ? "„С самого первого дня я чувствовала чуткую поддержку. Сочетание высокой врачебной компетентности и теплого человеческого отношения здесь чувствуется в каждой детали.“"
           : isEn
           ? "“From day one, I felt in the best possible hands. The combination of medical expertise and genuine empathy is truly felt here.”"
+          : isTr
+          ? "„İlk günden itibaren emin ellerde olduğumu hissettim. Buradaki yüksek tıbbi uzmanlık ile insani yaklaşımın birleşimi gerçekten hissediliyor.“"
+          : isAr
+          ? "«منذ اليوم الأول شعرت بأنني في أيدٍ أمينة تماماً. المزج بين الكفاءة الطبية الرفيعة والتعامل الإنساني الراقي ملموس في كل تفصيل.»"
           : "„Ich habe mich von Anfang an gut aufgehoben gefühlt. Die Kombination aus Fachwissen und Menschlichkeit ist hier wirklich spürbar.“",
         image: "/images/testimonials/julia-r.webp",
       },
@@ -717,35 +1009,51 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
   // ── FAQs ──
   const faqs = [
     {
-      q: isRu ? "Кто оплачивает амбулаторную реабилитацию?" : isEn ? "Who covers the cost of outpatient rehabilitation?" : "Wer übernimmt die Kosten für eine ambulante Rehabilitation?",
+      q: isRu ? "Кто оплачивает амбулаторную реабилитацию?" : isEn ? "Who covers the cost of outpatient rehabilitation?" : isTr ? "Ayakta rehabilitasyon masraflarını kim karşılar?" : isAr ? "من يغطي تكاليف إعادة التأهيل للمرضى الخارجيين؟" : "Wer übernimmt die Kosten für eine ambulante Rehabilitation?",
       a: isRu
         ? "Амбулаторная реабилитация покрывается всеми государственными больничными кассами (GKV), частными медицинскими страховками (PKV), профсоюзами от несчастных случаев (BG) и пенсионным страхованием (Deutsche Rentenversicherung) при наличии врачебного направления."
         : isEn
         ? "Outpatient rehabilitation is fully recognized and funded by statutory health insurances (GKV), private insurers (PKV), workers' compensation boards (Berufsgenossenschaften), and the German Pension Insurance (DRV) upon physician referral."
+        : isTr
+        ? "Ayakta reha ve fizyoterapi/ergoterapi reçeteleri; hekim sevki ile tüm yasal sağlık sigortaları (GKV), özel sigortalar (PKV), Meslek Birlikleri (BG) ve Alman Emeklilik Sigortası (DRV) tarafından karşılanır."
+        : isAr
+        ? "تُغطى برامج إعادة التأهيل للمرضى الخارجيين ووصفات العلاج الطبيعي والوظيفي بالكامل من قبل التأمين الصحي الحكومي (GKV)، الخاص (PKV)، نقابات الحوادث المهنية (BG) وصندوق التقاعد الألماني (DRV) بناءً على تحويل الطبيب."
         : "Ambulante Reha-Maßnahmen sowie Rezepte für Physiotherapie und Ergotherapie werden von allen gesetzlichen Krankenkassen (GKV), privaten Krankenversicherungen (PKV), Berufsgenossenschaften (BG) und der Deutschen Rentenversicherung (DRV) übernommen.",
     },
     {
-      q: isRu ? "В чем преимущество амбулаторной реабилитации перед стационаром?" : isEn ? "What are the advantages of outpatient over inpatient rehabilitation?" : "Welche Vorteile bietet die ambulante Reha im Vergleich zur stationären?",
+      q: isRu ? "В чем преимущество амбулаторной реабилитации перед стационаром?" : isEn ? "What are the advantages of outpatient over inpatient rehabilitation?" : isTr ? "Ayakta rehabilitasyonun yatarak tedaviye göre avantajları nelerdir?" : isAr ? "ما هي مزايا التأهيل الخارجي مقارنة بالإقامة في المصحة؟" : "Welche Vorteile bietet die ambulante Reha im Vergleich zur stationären?",
       a: isRu
         ? "Пациент ежедневно проходит полный спектр высокоинтенсивных процедур в нашей клинике, но вечера и выходные проводит дома в привычной комфортной семейной обстановке, сохраняя социальные связи."
         : isEn
         ? "Patients receive university-grade, high-intensity daily clinical treatments while sleeping and recovering at home in their familiar domestic environment, maintaining social and family balance."
+        : isTr
+        ? "Bir kliniktekiyle aynı yoğunlukta medikal ve terapötik bakımı alırsınız, ancak geceleri kendi evinizde uyur ve alıştığınız aile ortamınızda kalırsınız."
+        : isAr
+        ? "يحصل المريض على نفس مستوى الرعاية الطبية والعلاجية المكثفة المتاحة في المصحات، مع ميزة النوم في منزله والبقاء ضمن محيطه الأسري والاجتماعي المألوف."
         : "Sie erhalten die gleiche hochintensive medizinische und therapeutische Versorgung wie in einer Kurklinik, schlafen jedoch in Ihrem eigenen Bett und bleiben in Ihrem gewohnten familiären Umfeld.",
     },
     {
-      q: isRu ? "Как получить направление в ваш центр?" : isEn ? "How do I get a prescription or referral to NabiOta?" : "Wie erhalte ich eine Verordnung für das NabiOta Rehazentrum?",
+      q: isRu ? "Как получить направление в ваш центр?" : isEn ? "How do I get a prescription or referral to NabiOta?" : isTr ? "NabiOta Reha Merkezi için nasıl sevk/reçete alabilirim?" : isAr ? "كيف أحصل على تحويل أو وصفة طبية لمركز NabiOta؟" : "Wie erhalte ich eine Verordnung für das NabiOta Rehazentrum?",
       a: isRu
         ? "Направление оформляется лечащим хирургом в стационаре перед выпиской (AHB — Anschlussheilbehandlung) либо вашим участковым ортопедом/неврологом через стандартную форму направления (Muster 61 или рецепт на физиотерапию)."
         : isEn
         ? "Referrals can be initiated directly by your hospital surgeon prior to discharge (Anschlussheilbehandlung - AHB) or prescribed by your resident orthopedic specialist or neurologist."
+        : isTr
+        ? "Ameliyat sonrası doğrudan hastane sosyal servisi tarafından takip tedavisi (AHB) düzenlenebilir veya tedavinizi yürüten uzman hekim (ortopedist, nörolog, aile hekimi) sevk yazabilir."
+        : isAr
+        ? "يمكن للخدمة الاجتماعية بالمستشفى ترتيب علاج ما بعد الجراحة (AHB) مباشرة قبل الخروج، أو يمكن لطبيبكم المعالج (طبيب العظام، الأعصاب، أو طبيب الأسرة) إصدار وصفة تحويل رسمية."
         : "Entweder veranlasst der Sozialdienst des Akutkrankenhauses direkt nach Ihrer OP eine Anschlussheilbehandlung (AHB), oder Ihr behandelnder Facharzt (Orthopäde, Neurologe, Hausarzt) stellt eine Verordnung aus.",
     },
     {
-      q: isRu ? "Есть ли возможность продолжать тренировки после завершения курса?" : isEn ? "Can I continue therapy after completing the primary program?" : "Gibt es Nachsorgeprogramme wie T-RENA oder IRENA?",
+      q: isRu ? "Есть ли возможность продолжать тренировки после завершения курса?" : isEn ? "Can I continue therapy after completing the primary program?" : isTr ? "T-RENA veya IRENA gibi takip programları mevcut mu?" : isAr ? "هل تتوفر برامج متابعة لاحقة مثل T-RENA أو IRENA؟" : "Gibt es Nachsorgeprogramme wie T-RENA oder IRENA?",
       a: isRu
         ? "Да, мы аккредитованы для проведения программ долгосрочной поддерживающей терапии T-RENA и IRENA от пенсионного фонда, а также предлагаем медицинский абонемент для самостоятельных тренировок."
         : isEn
         ? "Yes, our centers are accredited for official DRV aftercare programs (T-RENA and IRENA), as well as ongoing medical health club memberships supervised by our exercise physiologists."
+        : isTr
+        ? "Evet, Alman Emeklilik Sigortası'nın (DRV) T-RENA ve IRENA programları için yetkili kuruluşuz. Ayrıca medikal antrenman alanımızda koruyucu kurslar kapsamında antrenmanlarınıza devam edebilirsiniz."
+        : isAr
+        ? "نعم، مركزنا معتمد رسمياً لبرامج الرعاية اللاحقة التابعة لصندوق التقاعد الألماني (T-RENA وIRENA). كما يمكنكم مواصلة التمارين في الصالة الطبية بإشراف أخصائيينا."
         : "Ja, wir sind anerkannte Einrichtung für T-RENA und IRENA der Deutschen Rentenversicherung. Zudem können Sie auf unserer medizinischen Trainingsfläche im Rahmen von Präventionskursen weiter trainieren.",
     },
   ];
@@ -764,8 +1072,8 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
         breadcrumb={
           <Breadcrumb
             items={[
-              { label: isRu ? "Главная" : isEn ? "Home" : "Startseite", href: `/${locale}` },
-              { label: isRu ? "Направления" : isEn ? "Divisions" : "Unternehmensbereiche", href: `/${locale}/areas` },
+              { label: isRu ? "Главная" : isEn ? "Home" : isTr ? "Ana Sayfa" : isAr ? "الرئيسية" : "Startseite", href: `/${locale}` },
+              { label: isRu ? "Направления" : isEn ? "Divisions" : isTr ? "Şirket Alanları" : isAr ? "قطاعات المجموعة" : "Unternehmensbereiche", href: `/${locale}/areas` },
               { label: heroData.title },
             ]}
           />
@@ -785,13 +1093,17 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
         <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <span className="text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase block mb-2">
-              {isRu ? "СПЕЦИАЛИЗИРОВАННЫЕ НАПРАВЛЕНИЯ" : isEn ? "SPECIALIZED DISCIPLINES" : "FACHBEREICHE DER REHABILITATION"}
+              {isRu ? "СПЕЦИАЛИЗИРОВАННЫЕ НАПРАВЛЕНИЯ" : isEn ? "SPECIALIZED DISCIPLINES" : isTr ? "UZMANLIK ALANLARI" : isAr ? "التخصصات التأهيلية الدقيقة" : "FACHBEREICHE DER REHABILITATION"}
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl text-[#132218] font-normal leading-tight">
               {isRu
                 ? "Индивидуальные программы для каждой клинической цели"
                 : isEn
                 ? "Targeted Rehabilitation for Every Clinical Indication"
+                : isTr
+                ? "Kalıcı İyileşme İçin Bireysel Terapi Konseptleri"
+                : isAr
+                ? "مفاهيم علاجية مخصصة لتحقيق تعافٍ مستدام"
                 : "Individuelle Therapiekonzepte für nachhaltige Genesung"}
             </h2>
             <p className="font-sans text-xs sm:text-sm text-[#556358] mt-3 leading-relaxed">
@@ -799,6 +1111,10 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                 ? "От ортопедического восстановления после эндопротезирования до тонкой нейрореабилитации и возвращения в спорт — мы объединяем врачебную экспертизу и современные методики."
                 : isEn
                 ? "From orthopedic post-operative recovery to neurological re-education and competitive athletic return-to-play — our certified specialists guide every milestone."
+                : isTr
+                ? "Eklem protezi sonrası yürüme kabiliyetinin yeniden kazanılmasından erken nörolojik rehabilitasyona kadar tıbbi uzmanlığı modern hareket terapisiyle birleştiriyoruz."
+                : isAr
+                ? "من استعادة القدرة على المشي بعد استبدال المفاصل وحتى التأهيل العصبي المبكر، ندمج الخبرة الطبية المرموقة مع أحدث تقنيات العلاج الحركي."
                 : "Von der Wiedererlangung der Gehfähigkeit nach Gelenkersatz bis hin zur neurologischen Frühreha bündeln wir medizinisches Fachwissen mit modernster Bewegungstherapie."}
             </p>
           </div>
@@ -862,7 +1178,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                     }}
                     className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#142318] group-hover:text-[#B89650] transition-colors cursor-pointer"
                   >
-                    <span>{isRu ? "Подробнее о программе →" : isEn ? "View Program Details →" : "Details zum Programm →"}</span>
+                    <span>{isRu ? "Подробнее о программе →" : isEn ? "View Program Details →" : isTr ? "Program Detayları →" : isAr ? "تفاصيل البرنامج ←" : "Details zum Programm →"}</span>
                   </button>
                 </div>
               </div>
@@ -1170,13 +1486,17 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
         <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase block mb-2">
-              {isRu ? "НАША КОМАНДА ЭКСПЕРТОВ" : isEn ? "EXPERT MEDICAL LEADERSHIP" : "UNSERE ÄRZTE & THERAPEUTEN"}
+              {isRu ? "НАША КОМАНДА ЭКСПЕРТОВ" : isEn ? "EXPERT MEDICAL LEADERSHIP" : isTr ? "HEKİMLERİMİZ VE TERAPİSTLERİMİZ" : isAr ? "أطباؤنا وأطقم المعالجين" : "UNSERE ÄRZTE & THERAPEUTEN"}
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl text-[#132218] font-normal leading-tight">
               {isRu
                 ? "Высокая врачебная квалификация и чуткая забота"
                 : isEn
                 ? "Dedicated Physicians & Master Clinicians"
+                : isTr
+                ? "Uzman Hekim Yönetimi ve Deneyimli Terapistler"
+                : isAr
+                ? "إشراف طبي استشاري وخبرات علاجية رفيعة"
                 : "Fachärztliche Leitung & erfahrene Therapeuten"}
             </h2>
             <p className="font-sans text-xs sm:text-sm text-[#556358] mt-3 leading-relaxed">
@@ -1184,6 +1504,10 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                 ? "Реабилитация под постоянным наблюдением профильных врачей высшей категории и сертифицированных терапевтов."
                 : isEn
                 ? "Your recovery is orchestrated by board-certified physiatrists, physical therapists, and sports medicine directors."
+                : isTr
+                ? "Sürekli uzman hekim gözetimi altında terapistlerimiz her tedavi adımını sizinle yakın iş birliği içinde koordine eder."
+                : isAr
+                ? "تحت إشراف طبي متخصص ومستمر، ينسق معالجونا كل خطوة علاجية بعناية فائقة معكم."
                 : "Unter ständiger fachärztlicher Aufsicht stimmen unsere Therapeuten jeden Behandlungsschritt eng mit Ihnen ab."}
             </p>
           </div>
@@ -1226,7 +1550,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                     href={`/${locale}/contact`}
                     className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#142318] group-hover:text-[#B89650] transition-colors"
                   >
-                    <span>{isRu ? "Консультация с врачом" : isEn ? "Book appointment" : "Termin anfragen"}</span>
+                    <span>{isRu ? "Консультация с врачом" : isEn ? "Book appointment" : isTr ? "Randevu Talebi" : isAr ? "طلب موعد واستشارة" : "Termin anfragen"}</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
@@ -1366,13 +1690,17 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase block mb-1.5">
-              {isRu ? "ВОПРОСЫ И ОТВЕТЫ" : isEn ? "FREQUENTLY ASKED QUESTIONS" : "KOSTENÜBERNAHME & ABLAUF"}
+              {isRu ? "ВОПРОСЫ И ОТВЕТЫ" : isEn ? "FREQUENTLY ASKED QUESTIONS" : isTr ? "MASRAFLAR VE İŞLEYİŞ" : isAr ? "تغطية التكاليف والإجراءات" : "KOSTENÜBERNAHME & ABLAUF"}
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl text-[#132218] font-normal">
               {isRu
                 ? "Часто задаваемые вопросы о реабилитации"
                 : isEn
                 ? "Insurance & Referral Questions"
+                : isTr
+                ? "Rehabilitasyon ve Sevk Hakkında Önemli Sorular"
+                : isAr
+                ? "أسئلة شائعة حول وصفات وبرامج التأهيل"
                 : "Wichtige Fragen zur Reha-Verordnung"}
             </h2>
           </div>
@@ -1439,13 +1767,17 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-3">
               <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
-                {isRu ? "СВЯЖИТЕСЬ С НАМИ" : isEn ? "START YOUR RECOVERY" : "STARTEN SIE IHRE GENESUNG"}
+                {isRu ? "СВЯЖИТЕСЬ С НАМИ" : isEn ? "START YOUR RECOVERY" : isTr ? "İYİLEŞME SÜRECİNİZİ BAŞLATIN" : isAr ? "ابدأوا رحلة تعافيكم الآن" : "STARTEN SIE IHRE GENESUNG"}
               </span>
               <h3 className="page-hero-title font-serif text-2xl sm:text-3xl lg:text-4xl text-white font-normal leading-tight">
                 {isRu
                   ? "Готовы вернуться к активной и полноценной жизни?"
                   : isEn
                   ? "Ready to Regain Your Mobility and Independence?"
+                  : isTr
+                  ? "Hareketliliğinize ve Sağlığınıza Yeniden Kavuşmaya Hazır mısınız?"
+                  : isAr
+                  ? "هل أنتم مستعدون للخطوة التالية نحو استعادة حركتكم ونشاطكم؟"
                   : "Bereit für den nächsten Schritt zurück in Ihre Mobilität?"}
               </h3>
               <p className="hero-text-wrap text-white/75 text-xs sm:text-sm font-sans max-w-2xl leading-relaxed">
@@ -1453,6 +1785,10 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                   ? "Свяжитесь с нами для первичной консультации или быстрой записи на амбулаторную реабилитацию в NabiOta Health Group Germany."
                   : isEn
                   ? "Contact our admissions team directly to discuss your referral, insurance authorization, and therapy scheduling."
+                  : isTr
+                  ? "İlk muayeneniz için hemen randevu alın veya sevk süreci ve sigorta karşılama koşulları hakkında ücretsiz danışmanlık talep edin."
+                  : isAr
+                  ? "احجزوا موعدكم الآن للفحص الأولي أو استشيرونا دون التزام بشأن الوصفات الطبية وتحمل التكاليف التأمينية."
                   : "Vereinbaren Sie jetzt einen Termin für Ihre Eingangsuntersuchung oder lassen Sie sich unverbindlich zu Verordnung und Kostenübernahme beraten."}
               </p>
 
@@ -1473,7 +1809,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                 href={`/${locale}/contact`}
                 className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs sm:text-sm tracking-wide shadow-lg transition-all duration-200 hover:scale-[1.02] text-center"
               >
-                <span>{isRu ? "Записаться на прием" : isEn ? "Request appointment" : "Termin online anfragen"}</span>
+                <span>{isRu ? "Записаться на прием" : isEn ? "Request appointment" : isTr ? "Online Randevu Alın" : isAr ? "طلب موعد عبر الإنترنت" : "Termin online anfragen"}</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
@@ -1481,7 +1817,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                 href={`/${locale}/areas`}
                 className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-white/30 hover:border-[#D5B878] text-white hover:text-[#ECCF96] font-medium text-xs sm:text-sm transition-all bg-white/5 text-center"
               >
-                <span>{isRu ? "Все направления холдинга" : isEn ? "All corporate divisions" : "Unternehmensbereiche Übersicht"}</span>
+                <span>{isRu ? "Все направления холдинга" : isEn ? "All corporate divisions" : isTr ? "Tüm Şirket Alanları" : isAr ? "نظرة عامة على قطاعات المجموعة" : "Unternehmensbereiche Übersicht"}</span>
               </Link>
             </div>
           </div>
@@ -1517,7 +1853,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
               <button
                 type="button"
                 onClick={() => setSelectedSpecialization(null)}
-                aria-label={isRu ? "Закрыть" : isEn ? "Close" : "Schließen"}
+                aria-label={isRu ? "Закрыть" : isEn ? "Close" : isTr ? "Kapat" : isAr ? "إغلاق" : "Schließen"}
                 className="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-[#08170D]/80 hover:bg-[#D5B878] text-white hover:text-[#08170D] border border-white/20 hover:border-[#D5B878] flex items-center justify-center transition-all duration-200 shadow-md z-10 cursor-pointer"
               >
                 <X className="w-4 h-4" />
@@ -1546,7 +1882,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
               {/* Full Description from PDF Section 5 */}
               <div className="space-y-2">
                 <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#8C948D]">
-                  {isRu ? "ТЕРАПЕВТИЧЕСКИЙ ПРОФИЛЬ & МЕТОДЫ" : isEn ? "CLINICAL PROFILE & THERAPY METHODS" : "THERAPEUTISCHES PROFIL & METHODEN"}
+                  {isRu ? "ТЕРАПЕВТИЧЕСКИЙ ПРОФИЛЬ & МЕТОДЫ" : isEn ? "CLINICAL PROFILE & THERAPY METHODS" : isTr ? "TERAPÖTİK PROFİL VE YÖNTEMLER" : isAr ? "الملف العلاجي والأساليب المتبعة" : "THERAPEUTISCHES PROFIL & METHODEN"}
                 </h4>
                 <p className="text-xs sm:text-[13px] text-[#425246] leading-relaxed">
                   {selectedSpecialization.fullDesc}
@@ -1574,7 +1910,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
               <div className="flex items-center gap-3 p-3 rounded-xl bg-[#08170D]/5 border border-[#D5B878]/30 text-[#142318]">
                 <ShieldCheck className="w-5 h-5 text-[#B89650] shrink-0" />
                 <p className="text-[11px] sm:text-[11.5px] leading-tight text-[#3A4A3E]">
-                  <strong className="font-semibold text-[#142318]">{isRu ? "Покрытие расходов: " : isEn ? "Insurance & Coverage: " : "Kostenträger & Richtlinien: "}</strong>
+                  <strong className="font-semibold text-[#142318]">{isRu ? "Покрытие расходов: " : isEn ? "Insurance & Coverage: " : isTr ? "Maliyet Karşılama ve Esaslar: " : isAr ? "الجهات الضامنة والمعايير: " : "Kostenträger & Richtlinien: "}</strong>
                   {selectedSpecialization.standards}
                 </p>
               </div>
@@ -1587,7 +1923,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                 onClick={() => setSelectedSpecialization(null)}
                 className="w-full sm:w-auto px-5 py-2.5 rounded-full border border-[#D0C8B8] hover:bg-white text-[#556358] text-xs font-medium transition-colors cursor-pointer"
               >
-                {isRu ? "Закрыть окно" : isEn ? "Close window" : "Fenster schließen"}
+                {isRu ? "Закрыть окно" : isEn ? "Close window" : isTr ? "Pencereyi Kapat" : isAr ? "إغلاق النافذة" : "Fenster schließen"}
               </button>
 
               <Link
@@ -1595,7 +1931,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                 onClick={() => setSelectedSpecialization(null)}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#08170D] hover:bg-[#0C2B1B] text-[#ECCF96] border border-[#D5B878] text-xs font-semibold tracking-wide transition-all shadow-sm"
               >
-                <span>{isRu ? "Записаться на курс" : isEn ? "Request Therapy Consultation" : "Therapie / Beratung anfragen"}</span>
+                <span>{isRu ? "Записаться на курс" : isEn ? "Request Therapy Consultation" : isTr ? "Terapi / Danışmanlık Talebi" : isAr ? "طلب استشارة / علاج" : "Therapie / Beratung anfragen"}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>

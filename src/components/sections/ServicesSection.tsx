@@ -19,6 +19,8 @@ interface ServicesSectionProps {
 export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) {
   const dict = getDictionary(currentLocale);
   const isRu = currentLocale === "ru";
+  const isTr = currentLocale === "tr";
+  const isAr = currentLocale === "ar";
   const isEn = currentLocale === "en";
 
   const areas = [
@@ -28,11 +30,19 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
       image: "/images/areas/medical-departments.webp",
       title: isRu
         ? "Медицинские направления"
+        : isTr
+        ? "Tıbbi Uzmanlık Alanları"
+        : isAr
+        ? "الأقسام والتخصصات الطبية"
         : isEn
         ? "Medical Departments"
         : "Medizinische Fachbereiche",
       subtitle: isRu
         ? "Амбулаторная помощь (§ 95 SGB V), два центра MVZ и подготовка клиники"
+        : isTr
+        ? "Ayakta uzman hekim tedavisi (§ 95 SGB V), 2 MVZ merkezi ve klinik hazırlığı"
+        : isAr
+        ? "طب العيادات الخارجية التخصصي (§ 95 SGB V)، مركزا MVZ وبناء المستشفى الطبي"
         : isEn
         ? "Outpatient medicine (§ 95 SGB V), two dedicated MVZ centers and clinic preparation"
         : "Ambulante Spitzenmedizin (§ 95 SGB V), zwei MVZ-Zentren & Klinikaufbau",
@@ -41,9 +51,21 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
       slug: "diagnostik",
       icon: Microscope,
       image: "/images/areas/diagnostics.webp",
-      title: isRu ? "Диагностика" : isEn ? "Diagnostics" : "Diagnostik",
+      title: isRu
+        ? "Диагностика"
+        : isTr
+        ? "Tanı ve Radyoloji"
+        : isAr
+        ? "التشخيص الطبي والتصوير"
+        : isEn
+        ? "Diagnostics"
+        : "Diagnostik",
       subtitle: isRu
         ? "3T МРТ, низкодозовая КТ, цифровой рентген и нейрофизиология"
+        : isTr
+        ? "3T MR, düşük dozlu BT, dijital röntgen ve klinik nörofizyoloji"
+        : isAr
+        ? "رنين مغناطيسي 3T، أشعة مقطعية بجرعات منخفضة، أشعة رقمية وتخطيط أعصاب"
         : isEn
         ? "3T MRI, low-dose CT, digital radiography & clinical neurophysiology"
         : "Niedrigdosis-CT, 3T MRT, digitales Röntgen & Neurophysiologie",
@@ -52,9 +74,21 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
       slug: "rehabilitation",
       icon: HeartPulse,
       image: "/images/areas/rehabilitation.webp",
-      title: isRu ? "Реабилитация" : isEn ? "Rehabilitation" : "Rehabilitation",
+      title: isRu
+        ? "Реабилитация"
+        : isTr
+        ? "Rehabilitasyon"
+        : isAr
+        ? "التأهيل الطبي المتكامل"
+        : isEn
+        ? "Rehabilitation"
+        : "Rehabilitation",
       subtitle: isRu
         ? "Амбулаторная реабилитация, физио-, эрго-, логопедия и бассейн 32°C"
+        : isTr
+        ? "Kapsamlı ayakta rehabilitasyon, fizyo-, ergo-, konuşma terapisi ve 32°C hidroterapi"
+        : isAr
+        ? "تأهيل طبي شامل للعيادات الخارجية، علاج طبيعي ووظيفي ونطق ومسبح علاجي 32°م"
         : isEn
         ? "Outpatient rehab, physiotherapy, speech therapy and 32°C hydrotherapy pool"
         : "Ganzheitliche Reha, Physio-, Ergo-, Logopädie & Bewegungsbad 32°C",
@@ -63,9 +97,21 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
       slug: "pflege",
       icon: Users,
       image: "/images/areas/pflege.webp",
-      title: isRu ? "Патронаж и уход" : isEn ? "Nursing & HomeCare" : "Pflege & HomeCare",
+      title: isRu
+        ? "Патронаж и уход"
+        : isTr
+        ? "Bakım & HomeCare"
+        : isAr
+        ? "التمريض والرعاية المنزلية"
+        : isEn
+        ? "Nursing & HomeCare"
+        : "Pflege & HomeCare",
       subtitle: isRu
         ? "Квалифицированный уход по SGB V/XI и сертифицированное лечение ран ICW"
+        : isTr
+        ? "SGB V/XI kapsamında evde bakım & ICW sertifikalı yara tedavisi yönetimi"
+        : isAr
+        ? "رعاية تمريضية متخصصة (SGB V/XI) وإدارة علاج الجروح المعتمدة (ICW)"
         : isEn
         ? "Qualified home care under SGB V/XI and certified ICW wound management"
         : "Ambulante Pflege nach SGB V/XI & zertifizierte ICW-Wundversorgung",
@@ -76,11 +122,19 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
       image: "/images/areas/consulting.webp",
       title: isRu
         ? "Консалтинг и девелопмент"
+        : isTr
+        ? "Danışmanlık & Gayrimenkul Geliştirme"
+        : isAr
+        ? "الاستشارات وتطوير المرافق الصحية"
         : isEn
         ? "Consulting & Real Estate"
         : "Beratung & Projektentwicklung",
       subtitle: isRu
         ? "Медицинская недвижимость, чистые операционные DIN 1946-4 и структуры MVZ"
+        : isTr
+        ? "Sağlık yapıları, DIN 1946-4 standartlarında ameliyathaneler ve MVZ yapıları"
+        : isAr
+        ? "عقارات الرعاية الصحية، مجمعات جراحية وفق معايير DIN 1946-4 وتطوير مراكز MVZ"
         : isEn
         ? "Healthcare facilities, DIN 1946-4 cleanroom suites & MVZ structures"
         : "Gesundheitsimmobilien, OP-Zentren nach DIN 1946-4 & MVZ-Strukturen",
@@ -91,11 +145,19 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
       image: "/images/areas/international.webp",
       title: isRu
         ? "Международное сотрудничество"
+        : isTr
+        ? "Uluslararası İş Birlikleri"
+        : isAr
+        ? "التعاون والشراكات الدولية"
         : isEn
         ? "International Cooperations"
         : "Internationale Kooperationen",
       subtitle: isRu
         ? "Рекрутинг медиков, нострификация и Approbation, партнерство с клиниками"
+        : isTr
+        ? "Medikal istihdam, hekim denklik desteği (Approbation) ve klinik ortaklıkları"
+        : isAr
+        ? "استقطاب الكوادر الطبية، معادلة الشهادات الألمانية (Approbation) وشراكات المشافي"
         : isEn
         ? "Healthcare recruitment, medical degree licensing (Approbation) & clinic partnerships"
         : "Fachkräftegewinnung, Approbationsbegleitung & Klinikpartnerschaften",
@@ -114,6 +176,10 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
             <h2 className="font-serif text-[28px] sm:text-[34px] lg:text-[40px] font-bold text-[#112117] tracking-tight leading-[1.15]">
               {isRu
                 ? "Комплексная забота о здоровье на всех этапах жизни"
+                : isTr
+                ? "Hayatın her aşamasında bütüncül sağlık hizmeti"
+                : isAr
+                ? "رعاية صحية شاملة ومتكاملة عبر جميع مراحل الحياة"
                 : isEn
                 ? "Comprehensive care across all life stages"
                 : "Ganzheitliche Versorgung über alle Lebensphasen"}

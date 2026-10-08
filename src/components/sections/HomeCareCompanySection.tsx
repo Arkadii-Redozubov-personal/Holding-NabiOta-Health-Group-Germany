@@ -31,7 +31,7 @@ import { Container } from "@/components/layout/Container";
  * Spezialisierungen (SAPV/AKI Vorbehalt) & Kostenträger (SGB V / SGB XI).
  */
 
-type Lang = "de" | "en" | "ru";
+type Lang = "de" | "en" | "ru" | "tr" | "ar";
 type T = Record<Lang, string>;
 type Icon = React.ComponentType<{ className?: string }>;
 
@@ -40,103 +40,175 @@ const c = {
     de: "GmbH · Ambulanter Pflegedienst · SGB V & SGB XI",
     en: "GmbH · Outpatient Care Service · SGB V & SGB XI",
     ru: "GmbH · Амбулаторная служба ухода · Нормы SGB V и SGB XI",
+    tr: "GmbH · Ayakta Bakım Hizmeti · SGB V & SGB XI",
+    ar: "ذ.م.م · خدمة التمريض والرعاية المنزلية · SGB V & SGB XI",
   } as T,
   title: "NabiOta HomeCare GmbH",
   subtitle: {
     de: "Häusliche Pflege, Krankenpflege & Wundversorgung",
     en: "Home Nursing, Clinical Treatment & Wound Care",
     ru: "Уход на дому, медицинский патронаж и ведение ран",
+    tr: "Evde Bakım, Hasta Bakımı & Yara Tedavisi",
+    ar: "التمريض المنزلي، الرعاية العلاجية وعلاج الجروح المتقدم",
   } as T,
   lead: {
     de: "Gegenstand des Unternehmens ist der Aufbau, die Organisation und der Betrieb ambulanter Pflegedienste sowie die Erbringung häuslicher Pflege-, Krankenpflege-, Betreuungs- und Unterstützungsleistungen durch entsprechend qualifiziertes Personal im jeweils rechtlich zulässigen Umfang. Die Versorgung steht sowohl Patienten der NabiOta-Einrichtungen als auch externen Personen offen.",
     en: "The company's purpose is the establishment, organization, and operation of outpatient nursing services, delivering home care, treatment nursing, day-to-day assistance, and personal support through qualified personnel within the legally permissible scope. Services are open to patients of NabiOta facilities and all community members.",
     ru: "Предметом деятельности компании является создание, организация и эксплуатация амбулаторных патронажных служб, а также оказание услуг по уходу на дому, медицинской помощи, патронажу и поддержке квалифицированным персоналом в законно допустимом объёме. Помощь открыта как для пациентов сети NabiOta, так и для всех граждан.",
+    tr: "Şirketin faaliyet konusu; ayakta bakım servislerinin kurulması, organizasyonu ve işletilmesinin yanı sıra nitelikli personel aracılığıyla evde bakım, tıbbi bakım, destek ve rehberlik hizmetlerinin yasal olarak izin verilen ölçüde sunulmasıdır. Hizmetler hem NabiOta kuruluşlarının hastalarına hem de toplumdaki tüm bireylere açıktır.",
+    ar: "يتمثل نشاط الشركة في إنشاء وتنظيم وتشغيل خدمات التمريض والرعاية المنزلية المتنقلة، وتقديم الرعاية التمريضية والعلاجية والدعم والمساعدة عبر كوادر مؤهلة في الحدود المسموح بها قانونياً، وتتاح خدماتنا لمرضى مرافق نابي أوتا وكافة أفراد المجتمع.",
   } as T,
 
   servicesTitle: {
     de: "Das 8-Säulen-Leistungsspektrum der NabiOta HomeCare",
     en: "The 8 Core Service Pillars of NabiOta HomeCare",
     ru: "8 ключевых направлений помощи NabiOta HomeCare",
+    tr: "NabiOta HomeCare 8 Temel Hizmet Alanı",
+    ar: "الركائز الـ 8 الأساسية لخدمات نابي أوتا هوم كير",
   } as T,
   services: [
     {
       num: "01",
       icon: Heart as Icon,
-      title: { de: "Körperbezogene Pflege (SGB XI)", en: "Personal Care & Hygiene (SGB XI)", ru: "Базовый гигиенический уход (SGB XI)" } as T,
+      title: {
+        de: "Körperbezogene Pflege (SGB XI)",
+        en: "Personal Care & Hygiene (SGB XI)",
+        ru: "Базовый гигиенический уход (SGB XI)",
+        tr: "Kişisel Bakım & Hijyen (SGB XI)",
+        ar: "العناية الشخصية والنظافة (SGB XI)",
+      } as T,
       desc: {
         de: "Unterstützung bei Körperpflege, Ankleiden, Ernährung, Ausscheidung und Mobilität unter kontinuierlicher Förderung der vorhandenen Fähigkeiten und Selbstständigkeit.",
         en: "Assistance with personal hygiene, dressing, nutrition, elimination, and daily mobility, actively fostering existing faculties and personal autonomy.",
         ru: "Помощь в личной гигиене, одевании, приёме пищи, отправлении естественных потребностей и мобильности с развитием сохранных навыков.",
+        tr: "Mevcut yetenekleri ve bağımsızlığı sürekli teşvik ederek kişisel bakım, giyinme, beslenme, boşaltım ve günlük hareketlilikte destek.",
+        ar: "المساعدة في النظافة الشخصية وارتداء الملابس والتغذية وقضاء الحاجة والحركة اليومية مع التحفيز المستمر للقدرات الذاتية والاستقلالية.",
       } as T,
     },
     {
       icon: Stethoscope as Icon,
       num: "02",
-      title: { de: "Häusliche Kranken- & Behandlungspflege (SGB V)", en: "Treatment & Clinical Nursing (SGB V)", ru: "Медицинский уход по назначению врача (SGB V)" } as T,
+      title: {
+        de: "Häusliche Kranken- & Behandlungspflege (SGB V)",
+        en: "Treatment & Clinical Nursing (SGB V)",
+        ru: "Медицинский уход по назначению врача (SGB V)",
+        tr: "Evde Tedavi & Tıbbi Bakım (SGB V)",
+        ar: "التمريض العلاجي المنزلي بتوجيه طبي (SGB V)",
+      } as T,
       desc: {
         de: "Ärztlich verordnete Maßnahmen: Medikamentengabe, s.c.- und i.m.-Injektionen, Blutzuckerkontrollen, Kompressionstherapie sowie Katheter- und Stomaversorgung.",
         en: "Physician-prescribed clinical interventions: medication administration, injections, blood glucose monitoring, compression therapy, catheter, and ostomy care.",
         ru: "Медицинские процедуры по рецепту врача: выдача лекарств, инъекции, контроль сахара, компрессионный трикотаж, уход за катетерами и стомами.",
+        tr: "Hekim tarafından reçete edilen işlemler: İlaç uygulaması, s.c. ve i.m. enjeksiyonlar, kan şekeri kontrolleri, kompresyon tedavisi ile kateter ve stoma bakımı.",
+        ar: "الإجراءات الطبية الموصوفة من الطبيب: إعطاء الأدوية، الحقن تحت الجلد والعضل، قياس السكر، العلاج بالضغط، ورعاية القساطر وفتحات الإخراج (الستوما).",
       } as T,
     },
     {
       icon: Award as Icon,
       num: "03",
-      title: { de: "Zertifizierte Wundversorgung (ICW®)", en: "Certified Wound Management (ICW®)", ru: "Сертифицированное лечение ран (ICW®)" } as T,
+      title: {
+        de: "Zertifizierte Wundversorgung (ICW®)",
+        en: "Certified Wound Management (ICW®)",
+        ru: "Сертифицированное лечение ран (ICW®)",
+        tr: "Sertifikalı Yara Bakımı (ICW®)",
+        ar: "إدارة وعلاج الجروح المعتمدة (ICW®)",
+      } as T,
       desc: {
         de: "Versorgung postoperativer, chronischer und schwer heilender Wunden einschließlich phasengerechtem Verbandwechsel, digitaler Wundbeobachtung und Dokumentation.",
         en: "Specialized care for postoperative, chronic, and non-healing wounds, including phase-appropriate dressing changes, photo tracking, and physician coordination.",
         ru: "Ведение постоперационных, хронических и труднозаживающих ран, фазовые перевязки, фотофиксация заживления и согласование с лечащими хирургами.",
+        tr: "Ameliyat sonrası, kronik ve zor iyileşen yaraların evreye uygun pansuman değişimi, dijital yara takibi ve hekim koordinasyonuyla uzman bakımı.",
+        ar: "علاج متخصص للجروح المزمنة وما بعد الجراحة، مع غيار الضمادات بحسب مرحلة الالتئام، والتوثيق الرقمي المصور بالتنسيق مع الجراح المعالج.",
       } as T,
     },
     {
       icon: Activity as Icon,
       num: "04",
-      title: { de: "Postoperative Versorgung & Entlassbegleitung", en: "Postoperative Recovery & Monitoring", ru: "Постоперационное восстановление и наблюдение" } as T,
+      title: {
+        de: "Postoperative Versorgung & Entlassbegleitung",
+        en: "Postoperative Recovery & Monitoring",
+        ru: "Постоперационное восстановление и наблюдение",
+        tr: "Ameliyat Sonrası Bakım & Taburculuk Desteği",
+        ar: "رعاية ما بعد الجراحة ومتابعة النقاهة",
+      } as T,
       desc: {
         de: "Gezielte Genesungsbegleitung nach Operationen, lückenlose Beobachtung des Gesundheitszustands, Durchführung verordneter Pflegemaßnahmen und sofortige ärztliche Rückmeldung.",
         en: "Dedicated postoperative convalescence, physiological vital sign monitoring, adherence to prescribed clinical regimens, and prompt physician alerts on complications.",
         ru: "Сопровождение выздоровления после хирургических вмешательств, мониторинг состояния, выполнение предписаний и оперативное информирование врачей.",
+        tr: "Ameliyatlar sonrası hedefe yönelik iyileşme desteği, sağlık durumunun kesintisiz izlenmesi, reçete edilen bakımın uygulanması ve acil hekim bildirimi.",
+        ar: "مواكبة دقيقة لمرحلة النقاهة بعد العمليات، ومراقبة المؤشرات الحيوية بانتظام، وتطبيق خطط التمريض المعتمدة والتواصل الفوري مع الأطباء.",
       } as T,
     },
     {
       icon: Users as Icon,
       num: "05",
-      title: { de: "Betreuung & Entlastung im Alltag (§ 45b)", en: "Companionship & Respite Care (§ 45b)", ru: "Патронаж и помощь в быту (§ 45b)" } as T,
+      title: {
+        de: "Betreuung & Entlastung im Alltag (§ 45b)",
+        en: "Companionship & Respite Care (§ 45b)",
+        ru: "Патронаж и помощь в быту (§ 45b)",
+        tr: "Günlük Destek & Refakat (§ 45b)",
+        ar: "المساندة والرعاية اليومية وتخفيف العبء (§ 45b)",
+      } as T,
       desc: {
         de: "Unterstützung bei der Tagesstrukturierung, sozialen Teilhabe und Haushaltsführung sowie einfühlsame Begleitung von Menschen mit kognitiven Einschränkungen und Demenz.",
         en: "Daily routine structuring, domestic chores, social companionship, and empathetic specialized care for individuals with cognitive impairments or dementia.",
         ru: "Организация распорядка дня, ведение домашнего хозяйства, социальная активность и бережная поддержка пациентов с когнитивными расстройствами и деменцией.",
+        tr: "Günlük rutinlerin planlanması, sosyal katılım ve ev işlerinde destek; bilişsel kısıtlılıkları olan ve demanslı bireylere şefkatli rehberlik.",
+        ar: "المساعدة في تنظيم اليوم وإدارة شؤون المنزل والمشاركة الاجتماعية، ومرافقة إنسانية عطوفة للمرضى الذين يعانون من تراجع الإدراك والزهايمر.",
       } as T,
     },
     {
       icon: HeartHandshake as Icon,
       num: "06",
-      title: { de: "Anleitung & Entlastung für Angehörige", en: "Caregiver Training & Family Relief", ru: "Обучение и поддержка родственников" } as T,
+      title: {
+        de: "Anleitung & Entlastung für Angehörige",
+        en: "Caregiver Training & Family Relief",
+        ru: "Обучение и поддержка родственников",
+        tr: "Hasta Yakınlarına Eğitim & Destek",
+        ar: "تدريب أسر المرضى وتخفيف الأعباء",
+      } as T,
       desc: {
         de: "Vermittlung praktischer Pflegekenntnisse im häuslichen Umfeld, gesetzliche Beratungsbesuche (§ 37.3 SGB XI) und Organisation wirksamer Entlastungsangebote.",
         en: "Hands-on caregiver training at the bedside, statutory consulting sessions (§ 37.3 SGB XI), and arranging community respite services to relieve family fatigue.",
         ru: "Обучение родственников практическим приёмам ухода на дому, обязательные консультации по § 37.3 SGB XI и организация мер психологической разгрузки.",
+        tr: "Ev ortamında pratik bakım becerilerinin aktarılması, yasal danışmanlık ziyaretleri (§ 37.3 SGB XI) ve etkili destek imkanlarının organizasyonu.",
+        ar: "تعليم أفراد الأسرة مهارات التمريض العملية في المنزل، والزيارات الاستشارية الإلزامية (§ 37.3 SGB XI)، وتوفير خدمات الرعاية البديلة المؤقتة.",
       } as T,
     },
     {
       icon: ShieldCheck as Icon,
       num: "07",
-      title: { de: "Prävention pflegebedingter Risiken", en: "Risk Prevention & Fall Prophylaxis", ru: "Профилактика рисков и падений" } as T,
+      title: {
+        de: "Prävention pflegebedingter Risiken",
+        en: "Risk Prevention & Fall Prophylaxis",
+        ru: "Профилактика рисков и падений",
+        tr: "Bakıma Bağlı Risklerin Önlenmesi",
+        ar: "الوقاية من مضاعفات الرعاية ومخاطر السقوط",
+      } as T,
       desc: {
         de: "Individuelle pflegefachliche Maßnahmen zur wirksamen Vermeidung von Stürzen, Dekubitus (Druckgeschwüren), Kontrakturen und weiteren Komplikationen.",
         en: "Tailored prophylactic nursing measures mitigating fall incidents, decubitus pressure ulcers, joint contractures, and other secondary immobility complications.",
         ru: "Индивидуальные сестринские протоколы профилактики падений, пролежней (декубитуса), контрактур суставов и застойных явлений.",
+        tr: "Düşmelerin, bası yaralarının (dekübitus), eklem kontraktürlerinin ve diğer komplikasyonların etkili şekilde önlenmesi için bireysel hemşirelik protokolleri.",
+        ar: "بروتوكولات تمريضية فردية للوقاية الفعالة من السقوط وقرح الفراش وتيبس المفاصل ومضاعفات قلة الحركة.",
       } as T,
     },
     {
       icon: Clock as Icon,
       num: "08",
-      title: { de: "Versorgungskoordination & Schnittstellen", en: "Inter-Provider Care Coordination", ru: "Координация помощи и смежные службы" } as T,
+      title: {
+        de: "Versorgungskoordination & Schnittstellen",
+        en: "Inter-Provider Care Coordination",
+        ru: "Координация помощи и смежные службы",
+        tr: "Bakım Koordinasyonu & Sağlık Ağı",
+        ar: "تنسيق الرعاية والربط بين الجهات الطبية",
+      } as T,
       desc: {
         de: "Engmaschige Abstimmung mit Haus- und Fachärzten, Kliniken, MVZ, Reha-Zentren, Apotheken und Sanitätshäusern für eine lückenlose Versorgungskette.",
         en: "Seamless inter-professional coordination with physicians, clinics, outpatient centers, rehabilitation therapists, pharmacies, and medical supply stores.",
         ru: "Тесное взаимодействие с лечащими врачами, стационарами, MVZ, центрами реабилитации, аптеками и поставщиками медицинских средств.",
+        tr: "Kesintisiz bir bakım zinciri için aile hekimleri, uzmanlar, klinikler, MVZ'ler, reha merkezleri, eczaneler ve medikal malzeme firmalarıyla sıkı koordinasyon.",
+        ar: "تنسيق متكامل مع أطباء الأسرة والاستشاريين والمشافي ومراكز MVZ والتأهيل والصيدليات وموردي المستلزمات لضمان رعاية مستمرة دون انقطاع.",
       } as T,
     },
   ],
@@ -145,24 +217,42 @@ const c = {
     de: "Einsatzplanung, Qualitätsmanagement & Verbundkooperation",
     en: "Tour Planning, Quality Governance & Group Integration",
     ru: "Маршрутизация визитов, контроль качества и координация в сети",
+    tr: "Tur Planlaması, Kalite Yönetimi ve Grup İçi İş Birliği",
+    ar: "تنظيم الجولات، حوكمة الجودة والتكامل ضمن المجموعة",
   } as T,
   orgCards: [
     {
       icon: CalendarCheck2 as Icon,
-      title: { de: "Tourenplanung & Fachliche Leitung", en: "Tour Planning & Nursing Directorship", ru: "Планирование маршрутов и сестринское руководство" } as T,
+      title: {
+        de: "Tourenplanung & Fachliche Leitung",
+        en: "Tour Planning & Nursing Directorship",
+        ru: "Планирование маршрутов и сестринское руководство",
+        tr: "Tur Planlaması & Uzman Hemşirelik Yönetimi",
+        ar: "تخطيط الجولات والإدارة التمريضية المتخصصة",
+      } as T,
       text: {
         de: "Die Gesellschaft organisiert individuelle Bedarfserhebungen, Pflegeplanungen, Tourenplanungen und lückenlose Leistungsdokumentationen. Sie stellt die verantwortliche Pflegedienstleitung (PDL), kontinuierliche Fortbildungen, ein verbindliches Notfallkonzept und 24/7-Erreichbarkeit sicher.",
         en: "The company structures personalized needs assessments, care schedules, optimized tour plans, and verifiable documentation. It guarantees licensed nursing directorship (PDL), regular staff training, and defined 24/7 emergency escalation pathways.",
         ru: "Компания организует оценку потребностей, составление планов ухода, оптимизированные маршруты визитов и ведение документации. Обеспечивается руководство квалифицированной PDL, регулярное обучение персонала и круглосуточная готовность к экстренным вызовам.",
+        tr: "Şirket bireysel ihtiyaç tespitleri, bakım planlamaları, optimize edilmiş tur planları ve eksiksiz hizmet belgeleri düzenler. Sorumlu hemşirelik yönetimini (PDL), sürekli personel eğitimini, bağlayıcı bir acil durum konseptini ve 7/24 ulaşılabilirliği garanti eder.",
+        ar: "تنظم الشركة تقييم الاحتياجات الفردية، وخطط الرعاية، والجولات الميدانية، والتوثيق المعتمد، وتضمن إدارة تمريضية مؤهلة (PDL)، وتدريباً مستمراً، وبروتوكول طوارئ ملزماً وتواصلاً على مدار الساعة 24/7.",
       } as T,
     },
     {
       icon: HeartHandshake as Icon,
-      title: { de: "Freie Wahl des Pflegedienstes & Nahtlose Überleitung", en: "Free Choice of Provider & Seamless Transition", ru: "Свободный выбор службы и бесшовный перевод из клиники" } as T,
+      title: {
+        de: "Freie Wahl des Pflegedienstes & Nahtlose Überleitung",
+        en: "Free Choice of Provider & Seamless Transition",
+        ru: "Свободный выбор службы и бесшовный перевод из клиники",
+        tr: "Bakım Servisini Serbest Seçme Hakkı & Kesintisiz Geçiş",
+        ar: "حرية اختيار خدمة التمريض والانتقال السلس من المستشفى",
+      } as T,
       text: {
         de: "Die Zusammenarbeit mit NabiOta-MVZ, NabiOta Clinics und NabiOta Rehabilitation erfolgt über verbindliche Schnittstellenvereinbarungen zur Schließung von Versorgungslücken. Die gesetzlich garantierte freie Wahl des Pflegedienstes durch die Patienten bleibt dabei stets uneingeschränkt gewahrt.",
         en: "Cooperation with NabiOta MVZs, clinics, and rehabilitation hubs is governed by transition agreements that eliminate post-discharge care voids. Patients' statutory freedom of provider choice and European privacy (GDPR) remain strictly respected at all times.",
         ru: "Взаимодействие с центрами MVZ, стационарами Clinics и отделениями реабилитации устраняет пробелы при выписке. Законное право пациента на свободный выбор службы ухода и врача соблюдается неукоснительно.",
+        tr: "NabiOta-MVZ, NabiOta Clinics ve NabiOta Rehabilitation ile iş birliği, taburculuk sonrası bakım boşluklarını kapatan bağlayıcı geçiş protokolleri ile yürütülür. Hastaların yasal olarak güvence altına alınmış serbest bakım servisi seçme hakkı ve veri gizliliği (GDPR) her zaman tam olarak korunur.",
+        ar: "يتم التعاون مع مراكز MVZ ومشافي ومراكز تأهيل نابي أوتا عبر اتفاقيات انتقال منظمة تمنع حدوث أي فجوات بعد الخروج من المستشفى، مع الاحترام التام لحق المريض القانوني في الاختيار الحر لخدمة التمريض والالتزام الصارم بالسرية.",
       } as T,
     },
   ],
@@ -171,11 +261,15 @@ const c = {
     de: "Gesetzlicher Rahmen & Kostenträger",
     en: "Statutory & Payer Framework",
     ru: "Законодательная база и плательщики",
+    tr: "Yasal Çerçeve & Finansör Kurumlar",
+    ar: "الإطار التنظيمي وجهات التأمين",
   } as T,
   governanceTitle: {
     de: "Rechtliche Rahmenbedingungen, Kostenträger & Spezialisierungen",
     en: "Statutory Framework, Payers & Specialized Services",
     ru: "Правовые основы, страховые кассы и специализированные услуги",
+    tr: "Yasal Çerçeve Koşulları, Finansörler ve Uzmanlaşmış Bakım",
+    ar: "الشروط القانونية، جهات الدفع وخدمات الرعاية التخصصية",
   } as T,
   governanceItems: [
     {
@@ -184,11 +278,15 @@ const c = {
         de: "Abrechnung nach SGB V & SGB XI",
         en: "Billing under SGB V & SGB XI",
         ru: "Расчёты по нормам SGB V и SGB XI",
+        tr: "SGB V & SGB XI Uyarınca Faturalandırma",
+        ar: "الفوترة وفق SGB V و SGB XI",
       } as T,
       desc: {
         de: "Die Abrechnung gegenüber gesetzlichen und privaten Kranken- und Pflegekassen sowie Beihilfestellen erfolgt ausschließlich auf Grundlage der jeweils erforderlichen behördlichen Zulassungen, Versorgungs- und Vergütungsverträge sowie ärztlicher Verordnungen. Privatleistungen werden transparent vereinbart.",
         en: "Reimbursement with statutory and private health and long-term care insurance carriers is conducted exclusively under valid institutional accreditations, regional care supply and remuneration contracts, and official medical prescriptions.",
         ru: "Расчёты с государственными и частными больничными кассами и кассами ухода ведутся строго на основе действующих договоров об оказании услуг и тарифах, а также официальных врачебных назначений. Частные услуги согласуются прозрачно.",
+        tr: "Yasal ve özel sağlık ve bakım sigortaları ile Beihilfe kurumlarına yönelik faturalandırma; yalnızca geçerli resmi ruhsatlar, bölgesel bakım tedarik ve ücret sözleşmeleri ile hekim reçeteleri temelinde yapılır. Özel hizmetler şeffaf olarak kararlaştırılır.",
+        ar: "تتم الفوترة مع صناديق التأمين الصحي والتأمين التمريضي الحكومية والخاصة وهيئات الدعم حصرياً بناءً على التراخيص الرسمية السارية، وعقود تقديم الرعاية والتعريفات المعتمدة والوصفات الطبية.",
       } as T,
     },
     {
@@ -197,11 +295,15 @@ const c = {
         de: "Vorbehalt für Spezialisierte Pflege (SAPV / AKI)",
         en: "Reservation for Specialized Care (SAPV / AKI)",
         ru: "Условие для паллиативного (SAPV) и интенсивного ухода (AKI)",
+        tr: "Uzmanlaşmış Bakım Şartı (SAPV / AKI)",
+        ar: "اشتراطات الرعاية المركزة والتلطيفية (SAPV / AKI)",
       } as T,
       desc: {
         de: "Spezialisierte Leistungen, insbesondere die außerklinische Intensivpflege (AKI) oder die spezialisierte ambulante Palliativversorgung (SAPV), können erst nach gesonderter Prüfung und vollständiger Erfüllung aller personellen, fachlichen, räumlichen und vertraglichen Voraussetzungen aufgenommen werden.",
         en: "Highly specialized modalities, particularly out-of-hospital intensive critical care (AKI) or specialized outpatient palliative care (SAPV), are integrated only following dedicated reviews and full satisfaction of statutory staffing, clinical, and contract mandates.",
         ru: "Высокоспециализированные услуги, в частности внеклинический реанимационный уход (AKI) или специализированная амбулаторная паллиативная помощь (SAPV), вводятся только после отдельной проверки и выполнения всех нормативных, кадровых и контрактных условий.",
+        tr: "Uzmanlaşmış hizmetler, özellikle hastane dışı yoğun bakım (AKI) veya uzmanlaşmış ayakta palyatif bakım (SAPV), ancak tüm personel, mesleki, mekânsal ve sözleşmesel gerekliliklerin ayrıntılı incelemesi ve tam olarak yerine getirilmesinden sonra başlatılabilir.",
+        ar: "لا يتم تقديم الخدمات عالية التخصص، ولا سيما الرعاية المركزة خارج المستشفى (AKI) أو الرعاية التلطيفية المتخصصة (SAPV)، إلا بعد استيفاء وفحص كافة الشروط المهنية والكوادر والاشتراطات التعاقدية بدقة.",
       } as T,
     },
     {
@@ -210,18 +312,22 @@ const c = {
         de: "Zulassungen & Datenschutz (DSGVO)",
         en: "Accreditations & Privacy Governance",
         ru: "Лицензирование и защита данных (DSGVO)",
+        tr: "Ruhsatlar & Veri Koruma (GDPR)",
+        ar: "التراخيص وحماية البيانات وسرية المرضى",
       } as T,
       desc: {
         de: "Die Gesellschaft erbringt Pflegeleistungen ausschließlich im Rahmen der jeweils bestehenden behördlichen Berechtigungen und Versorgungsverträge. Sämtliche Patientendaten und Überleitungsberichte unterliegen den strengen Vorgaben der DSGVO und der Schweigepflicht.",
         en: "Services are rendered strictly within the parameters of active governmental licenses and approved care quotas. Patient data and inter-facility clinical discharge records comply with European GDPR privacy and clinical confidentiality (§ 203 StGB).",
         ru: "Услуги ухода оказываются строго в пределах действующих государственных разрешений и договоров. Все персональные данные и выписные эпикризы защищены строгими нормами закона о защите данных (DSGVO) и врачебной тайны.",
+        tr: "Şirket, bakım hizmetlerini yalnızca mevcut resmi yetkiler ve bakım sözleşmeleri çerçevesinde sunar. Tüm hasta verileri ve geçiş raporları, Avrupa Genel Veri Koruma Tüzüğü'nün (GDPR) ve mesleki sır saklama yükümlülüğünün katı kurallarına tabidir.",
+        ar: "تقدم الشركة خدماتها حصرياً ضمن نطاق التراخيص الحكومية وعقود الرعاية المعتمدة. وتخضع جميع بيانات المرضى والتقارير الطبية للوائح حماية البيانات العامة الأوروبية (GDPR) والسرية الطبية الصارمة.",
       } as T,
     },
   ],
 };
 
 export function HomeCareCompanySection({ locale = "de" }: { locale?: string }) {
-  const l: Lang = locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
+  const l: Lang = locale === "tr" ? "tr" : locale === "ar" ? "ar" : locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
 
   return (
     <section

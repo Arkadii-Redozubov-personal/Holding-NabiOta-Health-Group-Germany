@@ -230,6 +230,10 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
       label:
         currentLocale === "ru"
           ? "Медицинские\nнаправления"
+          : currentLocale === "tr"
+          ? "Tıbbi\nUzmanlıklar"
+          : currentLocale === "ar"
+          ? "التخصصات\nالطبية"
           : currentLocale === "en"
           ? "Medical\nSpecialties"
           : "Medizinische\nFachbereiche",
@@ -240,6 +244,10 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
       label:
         currentLocale === "ru"
           ? "Диагностика"
+          : currentLocale === "tr"
+          ? "Tanı ve\nTeşhis"
+          : currentLocale === "ar"
+          ? "التشخيص\nوالأشعة"
           : currentLocale === "en"
           ? "Diagnostics"
           : "Diagnostik",
@@ -250,6 +258,10 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
       label:
         currentLocale === "ru"
           ? "Реабилитация"
+          : currentLocale === "tr"
+          ? "Tıbbi\nRehabilitasyon"
+          : currentLocale === "ar"
+          ? "التأهيل\nالطبي"
           : currentLocale === "en"
           ? "Rehabilitation"
           : "Rehabilitation",
@@ -260,6 +272,10 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
       label:
         currentLocale === "ru"
           ? "Уход и\nпатронаж"
+          : currentLocale === "tr"
+          ? "Hasta Bakımı\nve Destek"
+          : currentLocale === "ar"
+          ? "التمريض\nوالرعاية"
           : currentLocale === "en"
           ? "Nursing &\nCare"
           : "Pflege",
@@ -270,6 +286,10 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
       label:
         currentLocale === "ru"
           ? "Консалтинг &\nпроекты"
+          : currentLocale === "tr"
+          ? "Danışmanlık &\nProje Geliştirme"
+          : currentLocale === "ar"
+          ? "الاستشارات وتطوير\nالمشاريع"
           : currentLocale === "en"
           ? "Consulting &\nDevelopment"
           : "Beratung &\nProjektentwicklung",
@@ -280,6 +300,10 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
       label:
         currentLocale === "ru"
           ? "Международное\nсотрудничество"
+          : currentLocale === "tr"
+          ? "Uluslararası\nİş Birlikleri"
+          : currentLocale === "ar"
+          ? "التعاون الطبي\nالدولي"
           : currentLocale === "en"
           ? "International\nCooperation"
           : "Internationale\nKooperationen",
@@ -293,12 +317,20 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
       title:
         currentLocale === "ru"
           ? "Сильный бренд"
+          : currentLocale === "tr"
+          ? "Güçlü Marka"
+          : currentLocale === "ar"
+          ? "علامة رائدة"
           : currentLocale === "en"
           ? "Strong Brand"
           : "Starke Marke",
       subtitle:
         currentLocale === "ru"
           ? "Для более здорового общества."
+          : currentLocale === "tr"
+          ? "Daha sağlıklı bir toplum için."
+          : currentLocale === "ar"
+          ? "من أجل مجتمع أكثر صحة."
           : currentLocale === "en"
           ? "For a healthier society."
           : "Für eine gesündere Gesellschaft.",
@@ -309,12 +341,20 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
       title:
         currentLocale === "ru"
           ? "Направлений бизнеса"
+          : currentLocale === "tr"
+          ? "Faaliyet Alanı"
+          : currentLocale === "ar"
+          ? "قطاعات رئيسية"
           : currentLocale === "en"
           ? "Business Divisions"
           : "Unternehmensbereiche",
       subtitle:
         currentLocale === "ru"
           ? "Компетенции под одной крышей."
+          : currentLocale === "tr"
+          ? "Tek çatı altında uzmanlık."
+          : currentLocale === "ar"
+          ? "كفاءات تحت مظلة واحدة."
           : currentLocale === "en"
           ? "Competence under one roof."
           : "Kompetenz unter einem Dach.",
@@ -325,12 +365,20 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
       title:
         currentLocale === "ru"
           ? "Экспертов в сети"
+          : currentLocale === "tr"
+          ? "Ağ İçi Uzman"
+          : currentLocale === "ar"
+          ? "خبير ومتخصص"
           : currentLocale === "en"
           ? "Experts in Network"
           : "Experten im Netzwerk",
       subtitle:
         currentLocale === "ru"
           ? "Опыт. Вовлеченность. Результат."
+          : currentLocale === "tr"
+          ? "Deneyim. Özveri. Etki."
+          : currentLocale === "ar"
+          ? "خبرة. تفانٍ. نتائج موثوقة."
           : currentLocale === "en"
           ? "Experience. Commitment. Impact."
           : "Erfahrung. Engagement. Wirkung.",
@@ -341,12 +389,20 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
       title:
         currentLocale === "ru"
           ? "Одна миссия"
+          : currentLocale === "tr"
+          ? "Ortak Misyon"
+          : currentLocale === "ar"
+          ? "رسالة مشتركة"
           : currentLocale === "en"
           ? "One Mission"
           : "Eine Mission",
       subtitle:
         currentLocale === "ru"
           ? "Устойчивое здравоохранение для будущих поколений."
+          : currentLocale === "tr"
+          ? "Gelecek nesiller için sürdürülebilir sağlık."
+          : currentLocale === "ar"
+          ? "رعاية صحية مستدامة للأجيال القادمة."
           : currentLocale === "en"
           ? "Sustainable healthcare for coming generations."
           : "Nachhaltige Gesundheitsversorgung für kommende Generationen.",

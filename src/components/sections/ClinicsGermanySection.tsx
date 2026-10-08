@@ -25,62 +25,104 @@ import { Container } from "@/components/layout/Container";
  * Unternehmensgegenstand, geplante Fachabteilungen, stationäre Entwicklung.
  */
 
-type Lang = "de" | "en" | "ru";
+type Lang = "de" | "en" | "ru" | "tr" | "ar";
 type T = Record<Lang, string>;
 type Icon = React.ComponentType<{ className?: string; strokeWidth?: number }>;
 
 const c = {
-  tag: { de: "MVZ 3 · § 30 GewO · § 108 SGB V", en: "MVZ 3 · § 30 GewO · § 108 SGB V", ru: "MVZ 3 · § 30 GewO · § 108 SGB V" } as T,
+  tag: {
+    de: "MVZ 3 · § 30 GewO · § 108 SGB V",
+    en: "MVZ 3 · § 30 GewO · § 108 SGB V",
+    ru: "MVZ 3 · § 30 GewO · § 108 SGB V",
+    tr: "MVZ 3 · § 30 GewO · § 108 SGB V",
+    ar: "MVZ 3 · § 30 GewO · § 108 SGB V",
+  } as T,
   title: "NabiOta Clinics Germany GmbH",
   subtitle: {
     de: "Errichtung, Betrieb und Entwicklung medizinischer Kliniken",
     en: "Establishment, operation and development of medical clinics",
     ru: "Создание, эксплуатация и развитие медицинских клиник",
+    tr: "Tıbbi Kliniklerin Kurulumu, İşletimi ve Geliştirilmesi",
+    ar: "إنشاء وتشغيل وتطوير العيادات والمستشفيات الطبية",
   } as T,
   lead: {
     de: "Gegenstand des Unternehmens ist die Errichtung, der Erwerb, der Betrieb und die Organisation von Kliniken und medizinischen Einrichtungen an einem oder mehreren Standorten in Deutschland, insbesondere von Privatkrankenanstalten nach § 30 Gewerbeordnung (GewO), sowie die Erbringung stationärer, teilstationärer und ambulanter medizinischer, chirurgischer, diagnostischer, therapeutischer und pflegerischer Leistungen.",
     en: "The company's purpose is the establishment, acquisition, operation and organisation of clinics and medical facilities at one or more locations in Germany, in particular private hospitals pursuant to § 30 GewO, and the provision of inpatient, day-case and outpatient medical, surgical, diagnostic, therapeutic and nursing services.",
     ru: "Предметом деятельности общества является создание, приобретение, эксплуатация и организация клиник и медицинских учреждений в одном или нескольких местах в Германии, в частности частных больниц по § 30 GewO, а также оказание стационарных, частично стационарных и амбулаторных медицинских, хирургических, диагностических, терапевтических и сестринских услуг.",
+    tr: "Şirketin faaliyet konusu; Almanya genelinde bir veya birden fazla lokasyonda kliniklerin ve tıbbi tesislerin, özellikle de § 30 GewO uyarınca özel hastanelerin kurulması, devralınması, işletilmesi ve organizasyonu ile yatarak, yarı yatarak ve ayakta tedavi kapsamında tıbbi, cerrahi, tanısal, terapötik ve bakım hizmetlerinin sunulmasıdır.",
+    ar: "يتمثل غرض الشركة في إنشاء واقتناء وتشغيل وتنظيم المستشفيات والمرافق الطبية في موقع واحد أو عدة مواقع في ألمانيا، لا سيما المستشفيات الخاصة بموجب المادة 30 من قانون تنظيم المهن الحرة (GewO)، وتقديم الخدمات الطبية والجراحية والتشخيصية والعلاجية والتمريضية سواء أكانت إقامة كاملة أو رعاية نهارية أو عيادات خارجية.",
   } as T,
 
   pillars: [
     {
       icon: Building2 as Icon,
-      title: { de: "Klinischer Betrieb", en: "Clinical operations", ru: "Клинический комплекс" } as T,
+      title: {
+        de: "Klinischer Betrieb",
+        en: "Clinical operations",
+        ru: "Клинический комплекс",
+        tr: "Klinik İşletimi",
+        ar: "العمليات والتشغيل السريري",
+      } as T,
       text: {
         de: "Hierzu gehören insbesondere der Betrieb von Operationszentren, Diagnostik- und Therapiebereichen sowie die pflegerische und postoperative Versorgung. Das Leistungsangebot kann schmerztherapeutische, rehabilitative und sonstige Nachsorgeleistungen umfassen.",
         en: "This includes in particular the operation of operating centres, diagnostic and therapy areas, as well as nursing and post-operative care. The range of services may include pain management, rehabilitative and other aftercare services.",
         ru: "Это включает работу операционных центров, диагностических и терапевтических отделений, а также сестринский уход и послеоперационное обеспечение. Спектр может охватывать обезболивание, реабилитацию и другие виды последующего ухода.",
+        tr: "Bu faaliyetler özellikle ameliyathanelerin, tanı ve tedavi birimlerinin işletilmesini, hemşirelik hizmetlerini ve postoperatif bakımı içerir. Hizmet yelpazesi ağrı tedavisi, rehabilitasyon ve diğer takip/idame bakım hizmetlerini kapsayabilir.",
+        ar: "يشمل ذلك بوجه خاص تشغيل مراكز العمليات الجراحية، وأقسام التشخيص والعلاج، بالإضافة إلى الرعاية التمريضية والتأهيل بعد الجراحة. قد يتضمن نطاق الخدمات علاج الألم، وخدمات إعادة التأهيل، ومختلف برامج الرعاية اللاحقة.",
       } as T,
       image: "/images/areas/surgical-center.webp",
     },
     {
       icon: Users as Icon,
-      title: { de: "Personal & Kooperationen", en: "Staff & cooperations", ru: "Персонал и кооперации" } as T,
+      title: {
+        de: "Personal & Kooperationen",
+        en: "Staff & cooperations",
+        ru: "Персонал и кооперации",
+        tr: "Personel ve İş Birlikleri",
+        ar: "الكوادر والشراكات التعاونية",
+      } as T,
       text: {
         de: "Die Gesellschaft ist berechtigt, ärztliches und nichtärztliches Personal zu beschäftigen sowie Kooperationen mit Ärzten, Krankenhäusern, medizinischen Versorgungszentren, Pflege-, Therapie-, Rehabilitations- und Forschungseinrichtungen einzugehen. Ambulante Operationen und die Zusammenarbeit mit Belegärzten erfolgen unter Beachtung der jeweils geltenden gesetzlichen, berufsrechtlichen und vertraglichen Voraussetzungen.",
         en: "The company is entitled to employ medical and non-medical staff and to enter into cooperations with physicians, hospitals, MVZs, nursing, therapy, rehabilitation and research facilities. Outpatient operations and cooperation with attending physicians are subject to applicable legal, professional and contractual requirements.",
         ru: "Общество вправе нанимать медицинский и немедицинский персонал, а также заключать соглашения о сотрудничестве с врачами, больницами, MVZ, учреждениями по уходу, терапии, реабилитации и исследованиям. Амбулаторные операции и работа с ординаторами осуществляются в рамках закона.",
+        tr: "Şirket; hekim ve hekim dışı personel istihdam etme, hekimler, hastaneler, tıbbi bakım merkezleri (MVZ), bakım, terapi, rehabilitasyon ve araştırma kuruluşları ile iş birlikleri kurma yetkisine sahiptir. Ayakta ameliyatlar ve anlaşmalı doktorlarla (Belegärzte) iş birliği yürürlükteki yasal, mesleki ve sözleşmesel şartlara tabidir.",
+        ar: "يحق للشركة توظيف الكوادر الطبية وغير الطبية وإبرام شراكات تعاونية مع الأطباء والمستشفيات والمراكز الطبية (MVZ) ومؤسسات التمريض والعلاج وإعادة التأهيل والبحث العلمي. وتخضع الجراحات اليومية والتعاون مع الأطباء المنتسبين للشروط القانونية والمهنية والتعاقدية السارية.",
       } as T,
       image: "/images/areas/stethoscope-clinic.webp",
     },
     {
       icon: Scale as Icon,
-      title: { de: "GKV-Zulassung & SGB V", en: "SHI approval & SGB V", ru: "Допуск GKV и SGB V" } as T,
+      title: {
+        de: "GKV-Zulassung & SGB V",
+        en: "SHI approval & SGB V",
+        ru: "Допуск GKV и SGB V",
+        tr: "GKV Ruhsatı ve SGB V",
+        ar: "اعتماد التأمين الصحي الإلزامي و SGB V",
+      } as T,
       text: {
         de: "Die Gesellschaft kann die Zulassung ihrer Krankenhäuser nach § 108 SGB V anstreben, insbesondere durch Aufnahme in den Krankenhausplan oder durch Abschluss eines Versorgungsvertrags nach § 109 SGB V. Leistungen zulasten der gesetzlichen Krankenversicherung werden ausschließlich auf Grundlage der erforderlichen Zulassungen, Genehmigungen und Verträge erbracht.",
         en: "The company may seek approval of its hospitals under § 108 SGB V, in particular through inclusion in the hospital plan or by concluding a care contract under § 109 SGB V. Services at the expense of the statutory health insurance are only provided on the basis of the required approvals, permits and contracts.",
         ru: "Общество может добиваться допуска своих больниц по § 108 SGB V, в частности путём включения в больничный план или заключения договора об оказании помощи по § 109 SGB V. Услуги за счёт обязательного медицинского страхования оказываются исключительно на основе необходимых разрешений и договоров.",
+        tr: "Şirket; özellikle hastane planlamasına dahil olma yoluyla veya § 109 SGB V uyarınca bakım sözleşmesi akdederek hastaneleri için § 108 SGB V kapsamında onay almayı hedefleyebilir. Yasal sağlık sigortası (GKV) kapsamındaki hizmetler yalnızca gerekli onay, ruhsat ve sözleşmeler temelinde sunulur.",
+        ar: "يجوز للشركة السعي لاعتماد مستشفياتها بموجب المادة 108 من SGB V، لا سيما من خلال إدراجها ضمن الخطة العامة للمستشفيات أو إبرام عقود تقديم الرعاية بموجب المادة 109 من SGB V. وتُقدم الخدمات على حساب التأمين الصحي الإلزامي حصرياً استناداً إلى التراخيص والاعتمادات والعقود المقررة.",
       } as T,
       image: "/images/areas/diagnostics.webp",
     },
     {
       icon: Network as Icon,
-      title: { de: "Beteiligungen & Expansion", en: "Investments & expansion", ru: "Участия и экспансия" } as T,
+      title: {
+        de: "Beteiligungen & Expansion",
+        en: "Investments & expansion",
+        ru: "Участия и экспансия",
+        tr: "İştirakler ve Büyüme",
+        ar: "الاستثمارات والتوسع المؤسسي",
+      } as T,
       text: {
         de: "Die Gesellschaft ist berechtigt, Unternehmen mit gleichem oder verwandtem Unternehmensgegenstand zu gründen, zu erwerben oder sich an ihnen zu beteiligen sowie Betriebsstätten, Zweigniederlassungen und Tochtergesellschaften im In- und Ausland zu errichten. Die Gründung oder das Halten von Beteiligungen an vertragsärztlichen MVZ setzt die Erfüllung der geltenden Anforderungen des § 95 SGB V voraus.",
         en: "The company is entitled to found, acquire or acquire interests in companies with the same or related purpose, and to establish branch offices, subsidiaries and affiliated companies in Germany and abroad. The founding or holding of interests in contracted MVZ is subject to the applicable requirements of § 95 SGB V.",
         ru: "Общество вправе основывать, приобретать или участвовать в компаниях с аналогичным предметом деятельности, а также создавать филиалы, дочерние компании в Германии и за рубежом. Участие в MVZ по договорной медицине возможно при соблюдении § 95 SGB V.",
+        tr: "Şirket; aynı veya benzer faaliyet konusuna sahip şirketler kurma, devralma veya bunlara iştirak etme; yurt içinde ve yurt dışında işletmeler, şubeler ve bağlı ortaklıklar tesis etme yetkisine sahiptir. Sözleşmeli hekimlik MVZ'lerinde iştirak tesisi veya holding payı, § 95 SGB V gereksinimlerinin karşılanmasına bağlıdır.",
+        ar: "يحق للشركة تأسيس شركات ذات أغراض مماثلة أو ذات صلة، أو الاستحواذ عليها أو المساهمة فيها، وإنشاء فروع ومقرات تشغيل وشركات تابعة داخل ألمانيا وخارجها. ويشترط لتأسيس أو تملك حصص في مراكز طبية تابعة لأطباء التأمين استيفاء متطلبات المادة 95 من SGB V.",
       } as T,
       image: "/images/areas/consulting.webp",
     },
@@ -90,18 +132,24 @@ const c = {
     de: "Alle Tätigkeiten werden im rechtlich zulässigen Umfang ausgeübt. Erlaubnis- und zulassungspflichtige Tätigkeiten werden an jedem Standort erst nach Vorliegen der jeweils erforderlichen Voraussetzungen aufgenommen. Eine Konzession nach § 30 GewO begründet für sich allein weder eine Zulassung nach § 108 SGB V noch eine MVZ-Gründungsberechtigung als zugelassenes Krankenhaus.",
     en: "All activities are carried out within the legally permissible scope. Activities requiring a permit or approval are not commenced at any location until the respective required prerequisites are met. A concession under § 30 GewO alone does not constitute approval under § 108 SGB V or a right to establish an MVZ as an approved hospital.",
     ru: "Вся деятельность осуществляется в законно допустимых рамках. Лицензируемые виды деятельности начинаются в каждом месте только после выполнения соответствующих условий. Разрешение по § 30 GewO само по себе не является ни допуском по § 108 SGB V, ни правом на создание MVZ как допущенной больницы.",
+    tr: "Tüm faaliyetler yasal olarak izin verilen sınırlar dahilinde yürütülür. İzin ve ruhsata tabi faaliyetler her bir lokasyonda ancak gerekli yasal şartlar sağlandıktan sonra başlatılır. Tek başına § 30 GewO ruhsatı, ne § 108 SGB V uyarınca bir hastane onayına ne de yetkili bir hastane sıfatıyla MVZ kurma hakkına dayanak teşkil etmez.",
+    ar: "تُمارس جميع الأنشطة ضمن النطاق المسموح به قانوناً. ولا تبدأ الأنشطة الخاضعة للتراخيص والاعتمادات في أي موقع إلا بعد استيفاء الشروط القانونية المقررة. إن الترخيص بموجب المادة 30 من GewO وحده لا يشكل اعتماداً وفق المادة 108 من SGB V ولا يمنح أهلية تأسيس مركز MVZ كمستشفى معتمد.",
   } as T,
 
   deptEyebrow: {
     de: "UNSERE PERSPEKTIVE",
     en: "OUR PERSPECTIVE",
     ru: "НАША ПЕРСПЕКТИВА",
+    tr: "PERSPEKTİFİMİZ",
+    ar: "رؤيتنا المستقبلية",
   } as T,
 
   deptIntro: {
     de: "Die ambulanten Fachrichtungen werden anhand des geplanten stationären Eingriffsspektrums weiterentwickelt. Maßgeblich sind die beantragten Leistungsgruppen, ihre Qualitätskriterien und der regionale Bedarf. Ärztliche Vollzeitäquivalente, Dienstbereitschaft, Pflege, Ausstattung und zulässige Kooperationen sind für den Krankenhausstandort gesondert nachzuweisen. Eine automatische Umwandlung von MVZ-Fachrichtungen in Krankenhausabteilungen wird nicht vorausgesetzt.",
     en: "The outpatient specialties will be further developed based on the planned inpatient procedure spectrum. Decisive factors are the applied-for service groups, their quality criteria and regional demand. Medical full-time equivalents, on-call duty, nursing, equipment and permitted cooperations must be demonstrated separately for the hospital site. An automatic conversion of MVZ specialties into hospital departments is not assumed.",
     ru: "Амбулаторные специальности будут развиваться с учётом планируемого стационарного спектра вмешательств. Ключевыми факторами являются заявленные группы услуг, их критерии качества и региональный спрос. Врачебные ставки полного рабочего времени, дежурства, уход, оснащение и разрешённые кооперации должны подтверждаться отдельно для больничного места. Автоматическая трансформация специальностей MVZ в отделения больницы не предполагается.",
+    tr: "Ayakta tedavi uzmanlık alanları, planlanan yatarak cerrahi müdahale yelpazesi doğrultusunda geliştirilmektedir. Başvurulan hizmet grupları, bunların kalite kriterleri ve bölgesel ihtiyaç belirleyicidir. Tam zamanlı hekim kadroları, nöbet hizmetleri, hemşirelik, donanım ve izin verilen iş birlikleri hastane lokasyonu için ayrıca belgelenmelidir. MVZ uzmanlıklarının otomatik olarak hastane departmanlarına dönüşeceği varsayılamaz.",
+    ar: "يتم تطوير التخصصات الطبية للعيادات الخارجية استناداً إلى النطاق المخطط للتدخلات الجراحية السريرية. وتعتبر مجموعات الخدمات المطلوبة، ومعايير جودتها، والاحتياج الإقليمي هي العوامل الحاسمة. كما يجب إثبات مكافئات الدوام الكامل للأطباء، وخدمات النوبات، والتمريض، والتجهيزات، والتعاون المصرح به بشكل منفصل لموقع المستشفى. ولا يُفترض التحويل التلقائي لتخصصات MVZ إلى أقسام مستشفى.",
   } as T,
 
   depts: [
@@ -111,11 +159,15 @@ const c = {
         de: "Anästhesiologie",
         en: "Anaesthesiology",
         ru: "Анестезиология",
+        tr: "Anesteziyoloji",
+        ar: "التخدير والعناية المركزة",
       } as T,
       text: {
         de: "Anästhesiologie, intensivmedizinische Kompetenz und internistische Versorgung werden frühzeitig eingeplant.",
         en: "Anaesthesiology, intensive care expertise and internal medicine are planned at an early stage.",
         ru: "Анестезиология, реанимационная компетенция и терапевтическое обеспечение планируются на раннем этапе.",
+        tr: "Anesteziyoloji, yoğun bakım uzmanlığı ve dahiliye desteği erken aşamada planlanır.",
+        ar: "يتم التخطيط المبكر لطب التخدير، وكفاءات العناية المركزة، والرعاية الباطنية.",
       } as T,
     },
     {
@@ -124,11 +176,15 @@ const c = {
         de: "Radiologie",
         en: "Radiology",
         ru: "Радиология",
+        tr: "Radyoloji",
+        ar: "الأشعة التشخيصية",
       } as T,
       text: {
         de: "Radiologie wird je nach OP-Spektrum angebunden.",
         en: "Radiology is integrated according to the surgical spectrum.",
         ru: "Радиология подключается в зависимости от операционного спектра.",
+        tr: "Radyoloji, cerrahi operasyon yelpazesine göre entegre edilir.",
+        ar: "يتم دمج خدمات الأشعة وفقاً لنطاق العمليات الجراحية المعتمد.",
       } as T,
     },
     {
@@ -137,11 +193,15 @@ const c = {
         de: "Neurologie",
         en: "Neurology",
         ru: "Неврология",
+        tr: "Nöroloji",
+        ar: "طب الأعصاب",
       } as T,
       text: {
         de: "Neurologie wird je nach OP-Spektrum angebunden.",
         en: "Neurology is integrated according to the surgical spectrum.",
         ru: "Неврология — в зависимости от операционного спектра.",
+        tr: "Nöroloji, cerrahi ve klinik operasyon yelpazesine göre entegre edilir.",
+        ar: "يتم ربط طب الأعصاب بحسب نطاق العمليات التخصصية.",
       } as T,
     },
     {
@@ -150,11 +210,15 @@ const c = {
         de: "Endoskopie",
         en: "Endoscopy",
         ru: "Эндоскопия",
+        tr: "Endoskopi",
+        ar: "التنظير الداخلي",
       } as T,
       text: {
         de: "Endoskopie wird je nach OP-Spektrum angebunden.",
         en: "Endoscopy is integrated according to the surgical spectrum.",
         ru: "Эндоскопия — в зависимости от операционного спектра.",
+        tr: "Endoskopi, cerrahi ve tanısal operasyon yelpazesine göre entegre edilir.",
+        ar: "يتم ربط وحدات التنظير وفقاً لنطاق الإجراءات الجراحية والتشخيصية.",
       } as T,
     },
     {
@@ -163,11 +227,15 @@ const c = {
         de: "Planung und Struktur",
         en: "Planning and structure",
         ru: "Планирование и структура",
+        tr: "Planlama ve Yapı",
+        ar: "التخطيط والهيكلة",
       } as T,
       text: {
         de: "Der erforderliche Umfang eigener Strukturen wird vor Investitionsentscheidungen mit der Krankenhausplanung abgestimmt.",
         en: "The required scope of own structures is coordinated with hospital planning prior to investment decisions.",
         ru: "Необходимый объём собственной инфраструктуры согласовывается с планированием больницы до принятия инвестиционных решений.",
+        tr: "Gerekli öz yapıların kapsamı, yatırım kararlarından önce hastane planlama mercileriyle koordine edilir.",
+        ar: "يتم تنسيق النطاق المطلوب للهياكل والمقرات الذاتية مع جهات تخطيط المستشفيات قبل قرارات الاستثمار.",
       } as T,
     },
     {
@@ -176,11 +244,15 @@ const c = {
         de: "Leistungsgruppen und Qualität",
         en: "Service groups and quality",
         ru: "Группы услуг и качество",
+        tr: "Hizmet Grupları ve Kalite",
+        ar: "مجموعات الخدمات والجودة",
       } as T,
       text: {
         de: "Maßgeblich sind die beantragten Leistungsgruppen, ihre Qualitätskriterien und der regionale Bedarf.",
         en: "Decisive are the applied-for service groups, their quality criteria and regional demand.",
         ru: "Ключевыми являются заявленные группы услуг, их критерии качества и региональный спрос.",
+        tr: "Belirleyici olan; başvurulan hizmet grupları, kalite kriterleri ve bölgesel sağlık ihtiyacıdır.",
+        ar: "المحدد الأساسي هو مجموعات الخدمات المقدمة، ومعايير جودتها، والاحتياج الطبي في المنطقة.",
       } as T,
     },
     {
@@ -189,11 +261,15 @@ const c = {
         de: "Personal und Ausstattung",
         en: "Staffing and equipment",
         ru: "Персонал и оснащение",
+        tr: "Personel ve Donanım",
+        ar: "الكوادر والتجهيزات الطبية",
       } as T,
       text: {
         de: "Ärztliche Vollzeitäquivalente, Dienstbereitschaft, Pflege und Ausstattung sind gesondert nachzuweisen.",
         en: "Medical full-time equivalents, on-call duty, nursing and equipment must be demonstrated separately.",
         ru: "Врачебные ставки, дежурства, уход и оснащение подтверждаются отдельно.",
+        tr: "Tam zamanlı hekim kadroları, nöbet hizmetleri, hemşirelik ve teknik donanım ayrıca belgelenmelidir.",
+        ar: "يجب إثبات معدلات التفرغ الطبي الكامل، وجاهزية النوبات، والتمريض، والتجهيزات بشكل مستقل.",
       } as T,
     },
     {
@@ -202,18 +278,22 @@ const c = {
         de: "Kooperationen",
         en: "Cooperations",
         ru: "Кооперации",
+        tr: "İş Birlikleri",
+        ar: "الشراكات التعاونية",
       } as T,
       text: {
         de: "Zulässige Kooperationen sind für den Krankenhausstandort gesondert nachzuweisen.",
         en: "Permitted cooperations must be demonstrated separately for the hospital site.",
         ru: "Разрешённые кооперации подтверждаются отдельно для каждого места больницы.",
+        tr: "Mevzuata uygun iş birlikleri hastane lokasyonu için ayrıca belgelenmelidir.",
+        ar: "يجب توثيق الشراكات التعاونية المصرح بها نظاماً لكل موقع مستشفى على حدة.",
       } as T,
     },
   ],
 };
 
 export function ClinicsGermanySection({ locale = "de" }: { locale?: string }) {
-  const l: Lang = locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
+  const l: Lang = locale === "tr" ? "tr" : locale === "ar" ? "ar" : locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
 
   return (
     <section
@@ -350,7 +430,7 @@ export function ClinicsGermanySection({ locale = "de" }: { locale?: string }) {
                         href={`/${l}/contact`}
                         className="inline-flex items-center gap-1.5 text-[11.5px] sm:text-[12px] font-semibold text-[#9E7D3B] hover:text-[#142318] transition-colors"
                       >
-                        <span>{l === "ru" ? "Подробнее" : l === "en" ? "Learn more" : "Mehr erfahren"}</span>
+                        <span>{l === "ru" ? "Подробнее" : l === "en" ? "Learn more" : l === "tr" ? "Daha fazla bilgi" : l === "ar" ? "اعرف المزيد" : "Mehr erfahren"}</span>
                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                       </Link>
                     </div>
@@ -397,6 +477,16 @@ export function ClinicsGermanySection({ locale = "de" }: { locale?: string }) {
                     Подготовка{" "}
                     <span className="font-serif italic text-[#C5A56A]">будущих</span>{" "}
                     отделений
+                  </>
+                ) : l === "tr" ? (
+                  <>
+                    Gelecekteki uzmanlık bölümlerinin{" "}
+                    <span className="font-serif italic text-[#C5A56A]">hazırlığı</span>
+                  </>
+                ) : l === "ar" ? (
+                  <>
+                    التحضير للأقسام التخصصية{" "}
+                    <span className="font-serif italic text-[#C5A56A]">المستقبلية</span>
                   </>
                 ) : (
                   <>
