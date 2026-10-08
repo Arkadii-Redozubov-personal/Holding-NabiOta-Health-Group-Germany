@@ -174,29 +174,29 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
           <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#07130B]/75 to-transparent pointer-events-none" />
         </div>
 
-        {/* ── Desktop Right Panel: Floating Values Cards Docked to the Right Screen Edge (No right offset) ── */}
+        {/* ── Desktop Right Panel: Floating Values Cards Docked to the Right Screen Edge (Close to right edge) ── */}
         <div className="hidden lg:flex absolute inset-y-0 right-0 z-20 items-center justify-end pointer-events-auto">
-          <div className="w-[335px] xl:w-[370px] 2xl:w-[390px] flex flex-col">
+          <div className="w-[295px] xl:w-[320px] 2xl:w-[335px] flex flex-col">
             {heroValues.map((val, idx) => {
               const IconComp = val.icon;
               return (
                 <React.Fragment key={idx}>
                   <div
-                    className="group rounded-l-[28px] xl:rounded-l-[32px] rounded-r-none py-2.5 pl-3.5 pr-4 xl:py-3.5 xl:pl-4.5 xl:pr-6 transition-all duration-300 hover:bg-[#0A180E]/35"
+                    className="group rounded-l-[26px] xl:rounded-l-[30px] rounded-r-none py-2.5 pl-3 pr-1.5 xl:py-3 xl:pl-3.5 xl:pr-2 transition-all duration-300 hover:bg-[#0A180E]/35"
                     style={{
                       background: "rgba(9, 22, 13, 0.22)",
                       backdropFilter: "blur(5px)",
                       WebkitBackdropFilter: "blur(5px)",
                     }}
                   >
-                    <div className="flex items-center gap-3.5 xl:gap-4">
-                      {/* Thin Champagne-Gold outlined circle icon matching photo */}
-                      <div className="w-13.5 h-13.5 xl:w-14 xl:h-14 rounded-full border border-[#DFCA98]/80 bg-[#0C1C11]/45 backdrop-blur-sm flex items-center justify-center flex-shrink-0 text-[#FAF8F5] shadow-[0_0_12px_rgba(223,202,152,0.15)]">
+                    <div className="flex items-center gap-3 xl:gap-3.5">
+                      {/* Thin Champagne-Gold outlined circle icon */}
+                      <div className="w-13 h-13 xl:w-13.5 xl:h-13.5 rounded-full border border-[#DFCA98]/80 bg-[#0C1C11]/45 backdrop-blur-sm flex items-center justify-center flex-shrink-0 text-[#FAF8F5] shadow-[0_0_12px_rgba(223,202,152,0.15)]">
                         <IconComp className="w-6 h-6 xl:w-6.5 xl:h-6.5 stroke-[1.6]" />
                       </div>
 
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-sans text-[12px] xl:text-[13px] font-bold uppercase tracking-[0.06em] text-white leading-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]">
+                      <div className="flex-1 min-w-0 pr-0.5">
+                        <h3 className="font-sans text-[12px] xl:text-[12.5px] font-bold uppercase tracking-[0.05em] text-white leading-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]">
                           {val.line1}
                           {val.line2 && (
                             <>
@@ -205,18 +205,18 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
                             </>
                           )}
                         </h3>
-                        {/* Compact description text matching photo layout */}
-                        <p className="text-[11px] xl:text-[11.5px] text-[#FAF8F5]/90 leading-[1.45] font-normal mt-0.5 max-w-[210px] drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+                        {/* Compact description text right up to edge */}
+                        <p className="text-[11px] xl:text-[11.5px] text-[#FAF8F5]/90 leading-[1.4] font-normal mt-0.5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
                           {val.description}
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  {/* Split horizontal dividers under circle and text running to the right edge */}
+                  {/* Split horizontal dividers running right to the edge */}
                   {idx < heroValues.length - 1 && (
-                    <div className="flex items-center gap-3.5 xl:gap-4 pl-3.5 pr-0 my-1.5 xl:my-2">
-                      <div className="w-13.5 xl:w-14 h-[1px] bg-white/20 shrink-0" />
+                    <div className="flex items-center gap-3 xl:gap-3.5 pl-3 pr-0 my-1.5 xl:my-2">
+                      <div className="w-13 xl:w-13.5 h-[1px] bg-white/20 shrink-0" />
                       <div className="flex-1 h-[1px] bg-white/20" />
                     </div>
                   )}
