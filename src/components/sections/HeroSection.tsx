@@ -221,49 +221,60 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
               clipPath: "url(#heroCurvedPanelClip)",
               WebkitClipPath: "url(#heroCurvedPanelClip)",
               background:
-                "linear-gradient(180deg, rgba(8, 22, 14, 0.35) 0%, rgba(7, 20, 12, 0.44) 50%, rgba(5, 16, 10, 0.52) 100%)",
-              backdropFilter: "blur(8px) saturate(118%)",
-              WebkitBackdropFilter: "blur(8px) saturate(118%)",
+                "linear-gradient(180deg, rgba(8, 22, 14, 0.28) 0%, rgba(7, 20, 12, 0.35) 50%, rgba(5, 16, 10, 0.42) 100%)",
             }}
           />
 
-          {/* Content inside the curved glass panel */}
-          <div className="relative z-30 h-full flex flex-col justify-center pt-16 pb-4 pl-36 xl:pl-44 pr-6 sm:pr-8 xl:pr-10">
-            <div className="space-y-6 xl:space-y-7">
-              {heroValues.map((val, idx) => {
-                const IconComp = val.icon;
-                return (
-                  <div key={idx} className="group">
-                    <div className="flex items-center gap-3.5 xl:gap-4.5">
-                      {/* Lighter, Larger Gold outlined circle icon */}
-                      <div className="w-13.5 h-13.5 xl:w-15 xl:h-15 rounded-full border border-[#F5E2B8]/85 bg-[#142C1E]/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0 text-[#FCEECB] group-hover:border-[#FFF6E3] group-hover:text-white transition-all duration-300 shadow-[0_0_14px_rgba(245,226,184,0.22)]">
-                        <IconComp className="w-6.5 h-6.5 xl:w-7 xl:h-7 stroke-[1.7]" />
+          {/* Content inside the curved panel with light, elegant frosted blur on the items */}
+          <div className="relative z-30 h-full flex flex-col justify-center pt-16 pb-4 pl-32 xl:pl-40 pr-5 sm:pr-7 xl:pr-9">
+            <div
+              className="relative rounded-[26px] py-5 px-4 xl:py-6 xl:px-5.5 transition-all duration-300"
+              style={{
+                background: "rgba(8, 20, 12, 0.30)",
+                backdropFilter: "blur(12px) saturate(125%)",
+                WebkitBackdropFilter: "blur(12px) saturate(125%)",
+                boxShadow: "0 12px 36px rgba(0, 0, 0, 0.24)",
+              }}
+            >
+              <div className="space-y-4 xl:space-y-5">
+                {heroValues.map((val, idx) => {
+                  const IconComp = val.icon;
+                  return (
+                    <div key={idx} className="group">
+                      <div className="flex items-center gap-3.5 xl:gap-4.5">
+                        {/* Thin Champagne-Gold outlined circle icon matching photo */}
+                        <div className="w-13.5 h-13.5 xl:w-15 xl:h-15 rounded-full border border-[#DFCA98]/85 bg-[#12281B]/40 backdrop-blur-sm flex items-center justify-center flex-shrink-0 text-[#FAF8F5] group-hover:border-[#FFF6E3] transition-all duration-300 shadow-[0_0_14px_rgba(223,202,152,0.18)]">
+                          <IconComp className="w-6.5 h-6.5 xl:w-7 xl:h-7 stroke-[1.7]" />
+                        </div>
+
+                        <div className="flex-1">
+                          <h3 className="font-sans text-[12.5px] xl:text-[13.5px] font-bold uppercase tracking-[0.08em] text-white leading-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]">
+                            {val.line1}
+                            {val.line2 && (
+                              <>
+                                <br />
+                                {val.line2}
+                              </>
+                            )}
+                          </h3>
+                          {/* Light, clearly readable description text */}
+                          <p className="text-[11.5px] xl:text-[12px] text-[#FAF8F5]/90 leading-[1.5] font-normal mt-1 max-w-[225px] drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+                            {val.description}
+                          </p>
+                        </div>
                       </div>
 
-                      <div className="flex-1">
-                        <h3 className="font-sans text-[12px] xl:text-[13.5px] font-bold uppercase tracking-[0.09em] text-white leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.65)]">
-                          {val.line1}
-                          {val.line2 && (
-                            <>
-                              <br />
-                              {val.line2}
-                            </>
-                          )}
-                        </h3>
-                        {/* Light, clearly readable description text */}
-                        <p className="text-[11.5px] xl:text-[12.5px] text-[#FAF8F5]/90 leading-relaxed font-normal mt-1 max-w-[225px] drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]">
-                          {val.description}
-                        </p>
-                      </div>
+                      {/* Split horizontal dividers under circle and text matching photo exactly */}
+                      {idx < heroValues.length - 1 && (
+                        <div className="flex items-center gap-3.5 xl:gap-4.5 mt-4 xl:mt-4.5">
+                          <div className="w-13.5 xl:w-15 h-[1px] bg-white/20 shrink-0" />
+                          <div className="flex-1 max-w-[225px] h-[1px] bg-white/20" />
+                        </div>
+                      )}
                     </div>
-
-                    {/* Faint divider line between items */}
-                    {idx < heroValues.length - 1 && (
-                      <div className="mt-5 xl:mt-6 h-[1px] bg-gradient-to-r from-transparent via-[#F5E2B8]/25 to-transparent" />
-                    )}
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
@@ -314,12 +325,19 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
           </div>
 
           {/* Mobile / Tablet fallback for values panel (<lg) */}
-          <div className="lg:hidden mt-8 pt-6 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <div
+            className="lg:hidden mt-8 rounded-2xl p-4 sm:p-5 border border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-5 shadow-lg"
+            style={{
+              background: "rgba(10, 24, 15, 0.40)",
+              backdropFilter: "blur(12px) saturate(120%)",
+              WebkitBackdropFilter: "blur(12px) saturate(120%)",
+            }}
+          >
             {heroValues.map((val, idx) => {
               const IconComp = val.icon;
               return (
                 <div key={idx} className="flex items-start gap-3">
-                  <div className="w-11 h-11 rounded-full border border-[#F5E2B8]/80 bg-[#142C1E]/30 flex items-center justify-center flex-shrink-0 text-[#FCEECB]">
+                  <div className="w-11 h-11 rounded-full border border-[#DFCA98]/85 bg-[#12281B]/40 backdrop-blur-sm flex items-center justify-center flex-shrink-0 text-[#FAF8F5]">
                     <IconComp className="w-5.5 h-5.5 stroke-[1.7]" />
                   </div>
                   <div>
