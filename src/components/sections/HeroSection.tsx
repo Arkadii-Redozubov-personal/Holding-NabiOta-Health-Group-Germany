@@ -165,7 +165,8 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
           <div
             className="absolute inset-y-0 w-full sm:w-[75%] lg:w-[60%] pointer-events-none left-0"
             style={{
-              background: "linear-gradient(to right, rgba(7,19,11,0.92) 0%, rgba(7,19,11,0.86) 32%, rgba(7,19,11,0.48) 58%, rgba(7,19,11,0.12) 78%, transparent 100%)",
+              background:
+                "linear-gradient(to right, rgba(7,19,11,0.92) 0%, rgba(7,19,11,0.86) 32%, rgba(7,19,11,0.48) 58%, rgba(7,19,11,0.12) 78%, transparent 100%)",
             }}
           />
 
@@ -173,109 +174,48 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
           <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#07130B]/75 to-transparent pointer-events-none" />
         </div>
 
-        {/* ── Desktop Right Panel: Glassmorphism Arc ── */}
-        <div className="hidden lg:block absolute top-0 bottom-0 w-[380px] xl:w-[440px] 2xl:w-[480px] z-10 pointer-events-auto overflow-hidden right-0">
-          {/* SVG Definitions with normalized objectBoundingBox for 100% bug-free lock */}
-          <svg
-            className="absolute inset-0 w-full h-full pointer-events-none z-20"
-            viewBox="0 0 1000 1000"
-            preserveAspectRatio="none"
-          >
-            <defs>
-              <linearGradient id="heroGoldArcGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#DFCA98" stopOpacity="0.4" />
-                <stop offset="25%" stopColor="#D4B06A" stopOpacity="0.95" />
-                <stop offset="50%" stopColor="#ECCF93" stopOpacity="1" />
-                <stop offset="75%" stopColor="#C9A257" stopOpacity="0.9" />
-                <stop offset="100%" stopColor="#DFCA98" stopOpacity="0.4" />
-              </linearGradient>
-
-              <filter id="heroArcGlow" x="-30%" y="-10%" width="160%" height="120%">
-                <feGaussianBlur stdDeviation="3.5" result="blur" />
-                <feMerge>
-                  <feMergeNode in="blur" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-
-              {/* Normalized clip-path: 100% synchronized with the gold line */}
-              <clipPath id="heroCurvedPanelClip" clipPathUnits="objectBoundingBox">
-                <path d="M 0.36 0 C 0.29 0.32, 0.15 0.66, 0.02 1 L 1 1 L 1 0 Z" />
-              </clipPath>
-            </defs>
-
-            {/* Glowing golden arc stroke running gracefully from top to bottom */}
-            <path
-              d="M 360 0 C 290 320, 150 660, 20 1000"
-              fill="none"
-              stroke="url(#heroGoldArcGrad)"
-              strokeWidth="1.8"
-              filter="url(#heroArcGlow)"
-            />
-          </svg>
-
-          {/* ── Frosted Glass Layer ── */}
-          <div
-            className="absolute inset-0 w-full h-full"
-            style={{
-              clipPath: "url(#heroCurvedPanelClip)",
-              WebkitClipPath: "url(#heroCurvedPanelClip)",
-              background:
-                "linear-gradient(180deg, rgba(8, 22, 14, 0.28) 0%, rgba(7, 20, 12, 0.35) 50%, rgba(5, 16, 10, 0.42) 100%)",
-            }}
-          />
-
-          {/* Content inside the curved panel with light, elegant frosted blur on the items */}
-          <div className="relative z-30 h-full flex flex-col justify-center pt-16 pb-4 pl-32 xl:pl-40 pr-5 sm:pr-7 xl:pr-9">
-            <div
-              className="relative rounded-[26px] py-5 px-4 xl:py-6 xl:px-5.5 transition-all duration-300"
-              style={{
-                background: "rgba(8, 20, 12, 0.30)",
-                backdropFilter: "blur(12px) saturate(125%)",
-                WebkitBackdropFilter: "blur(12px) saturate(125%)",
-                boxShadow: "0 12px 36px rgba(0, 0, 0, 0.24)",
-              }}
-            >
-              <div className="space-y-4 xl:space-y-5">
-                {heroValues.map((val, idx) => {
-                  const IconComp = val.icon;
-                  return (
-                    <div key={idx} className="group">
-                      <div className="flex items-center gap-3.5 xl:gap-4.5">
-                        {/* Thin Champagne-Gold outlined circle icon matching photo */}
-                        <div className="w-13.5 h-13.5 xl:w-15 xl:h-15 rounded-full border border-[#DFCA98]/85 bg-[#12281B]/40 backdrop-blur-sm flex items-center justify-center flex-shrink-0 text-[#FAF8F5] group-hover:border-[#FFF6E3] transition-all duration-300 shadow-[0_0_14px_rgba(223,202,152,0.18)]">
-                          <IconComp className="w-6.5 h-6.5 xl:w-7 xl:h-7 stroke-[1.7]" />
-                        </div>
-
-                        <div className="flex-1">
-                          <h3 className="font-sans text-[12.5px] xl:text-[13.5px] font-bold uppercase tracking-[0.08em] text-white leading-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]">
-                            {val.line1}
-                            {val.line2 && (
-                              <>
-                                <br />
-                                {val.line2}
-                              </>
-                            )}
-                          </h3>
-                          {/* Light, clearly readable description text */}
-                          <p className="text-[11.5px] xl:text-[12px] text-[#FAF8F5]/90 leading-[1.5] font-normal mt-1 max-w-[225px] drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
-                            {val.description}
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Split horizontal dividers under circle and text matching photo exactly */}
-                      {idx < heroValues.length - 1 && (
-                        <div className="flex items-center gap-3.5 xl:gap-4.5 mt-4 xl:mt-4.5">
-                          <div className="w-13.5 xl:w-15 h-[1px] bg-white/20 shrink-0" />
-                          <div className="flex-1 max-w-[225px] h-[1px] bg-white/20" />
-                        </div>
-                      )}
+        {/* ── Desktop Right Panel: Floating Values Cards with Individual Rounded Blurs (No diagonal line) ── */}
+        <div className="hidden lg:flex absolute inset-y-0 right-0 z-20 items-center justify-end pr-8 xl:pr-14 2xl:pr-20 pointer-events-auto">
+          <div className="w-[430px] xl:w-[480px] 2xl:w-[520px] flex flex-col gap-3.5 xl:gap-4.5">
+            {heroValues.map((val, idx) => {
+              const IconComp = val.icon;
+              return (
+                <div
+                  key={idx}
+                  className="group rounded-2xl xl:rounded-[22px] p-4.5 xl:p-5 transition-all duration-300 hover:border-white/20 hover:bg-[#0A180E]/40"
+                  style={{
+                    background: "rgba(10, 24, 15, 0.28)",
+                    backdropFilter: "blur(8px) saturate(115%)",
+                    WebkitBackdropFilter: "blur(8px) saturate(115%)",
+                    border: "1px solid rgba(255, 255, 255, 0.08)",
+                    boxShadow: "0 8px 24px rgba(0, 0, 0, 0.18)",
+                  }}
+                >
+                  <div className="flex items-center gap-4 xl:gap-4.5">
+                    {/* Thin Champagne-Gold outlined circle icon matching reference */}
+                    <div className="w-13.5 h-13.5 xl:w-15 xl:h-15 rounded-full border border-[#DFCA98]/85 bg-[#12281B]/40 backdrop-blur-sm flex items-center justify-center flex-shrink-0 text-[#FAF8F5] group-hover:border-[#FFF6E3] transition-all duration-300 shadow-[0_0_14px_rgba(223,202,152,0.18)]">
+                      <IconComp className="w-6.5 h-6.5 xl:w-7 xl:h-7 stroke-[1.7]" />
                     </div>
-                  );
-                })}
-              </div>
-            </div>
+
+                    <div className="flex-1">
+                      <h3 className="font-sans text-[13px] xl:text-[14px] font-bold uppercase tracking-[0.07em] text-white leading-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]">
+                        {val.line1}
+                        {val.line2 && (
+                          <>
+                            <br />
+                            {val.line2}
+                          </>
+                        )}
+                      </h3>
+                      {/* Light, clearly readable description text */}
+                      <p className="text-[12px] xl:text-[12.5px] text-[#FAF8F5]/90 leading-[1.5] font-normal mt-1 max-w-[340px] drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+                        {val.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
@@ -325,18 +265,20 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
           </div>
 
           {/* Mobile / Tablet fallback for values panel (<lg) */}
-          <div
-            className="lg:hidden mt-8 rounded-2xl p-4 sm:p-5 border border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-5 shadow-lg"
-            style={{
-              background: "rgba(10, 24, 15, 0.40)",
-              backdropFilter: "blur(12px) saturate(120%)",
-              WebkitBackdropFilter: "blur(12px) saturate(120%)",
-            }}
-          >
+          <div className="lg:hidden mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3">
             {heroValues.map((val, idx) => {
               const IconComp = val.icon;
               return (
-                <div key={idx} className="flex items-start gap-3">
+                <div
+                  key={idx}
+                  className="rounded-2xl p-4 flex items-start gap-3 shadow-md"
+                  style={{
+                    background: "rgba(10, 24, 15, 0.28)",
+                    backdropFilter: "blur(8px) saturate(115%)",
+                    WebkitBackdropFilter: "blur(8px) saturate(115%)",
+                    border: "1px solid rgba(255, 255, 255, 0.08)",
+                  }}
+                >
                   <div className="w-11 h-11 rounded-full border border-[#DFCA98]/85 bg-[#12281B]/40 backdrop-blur-sm flex items-center justify-center flex-shrink-0 text-[#FAF8F5]">
                     <IconComp className="w-5.5 h-5.5 stroke-[1.7]" />
                   </div>
