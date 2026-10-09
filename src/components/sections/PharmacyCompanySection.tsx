@@ -289,13 +289,7 @@ export function PharmacyCompanySection({ locale = "de" }: { locale?: string }) {
           <div className="max-w-6xl mx-auto">
             {/* Top Row: Title, Eyebrow & Lead on the left (No buttons) */}
             <div className="max-w-xl lg:max-w-2xl mb-6 sm:mb-8 lg:mb-9">
-              {/* Eyebrow with gold line matching unified holding sections */}
-              <div className="flex items-center gap-2.5 mb-2.5 sm:mb-3">
-                <span className="w-6 h-[1.5px] bg-[#C5A56A]" />
-                <span className="text-[10px] sm:text-[10.5px] font-semibold tracking-[0.22em] text-[#C5A56A] uppercase font-sans">
-                  {c.subtitle[l]}
-                </span>
-              </div>
+
 
               {/* Title with styled italic phrase */}
               <h2 className="font-serif text-[24px] sm:text-[28px] lg:text-[34px] xl:text-[38px] text-[#142318] font-normal leading-[1.18] mb-1.5">
@@ -306,9 +300,6 @@ export function PharmacyCompanySection({ locale = "de" }: { locale?: string }) {
                 </span>
               </h2>
 
-              <p className="text-[11px] font-bold tracking-[0.22em] text-[#C5A56A] uppercase mb-3">
-                {c.titleAlt}
-              </p>
 
               <p className="text-[12.5px] sm:text-[13px] text-[#556057] leading-relaxed max-w-xl font-sans">
                 {c.lead[l]}

@@ -1187,18 +1187,18 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             SECTION 1: HERO HEADER (Matching Reference 1:1)
         ══════════════════════════════════════════════════════════ */}
         <section dir="ltr" className="relative w-full min-h-[480px] sm:min-h-[520px] lg:h-[600px] lg:min-h-[600px] pt-32 sm:pt-36 lg:pt-40 pb-14 sm:pb-16 overflow-hidden flex items-center bg-[#07150C] text-[#FAF8F5] border-b border-[#D5B878]/25">
-          {/* Background: Modern Medical Doctors Team on the right - focused on doctors on mobile */}
-          <div className="absolute inset-0 sm:left-[18%] sm:w-[82%] z-0 pointer-events-none overflow-hidden">
+          {/* Background: Modern Medical Doctors Team on the right - pulled back & sharp framing */}
+          <div className="absolute inset-y-0 right-0 z-0 pointer-events-none overflow-hidden w-full sm:left-[28%] sm:w-[72%] lg:left-[35%] lg:w-[65%] xl:left-[38%] xl:w-[62%] 2xl:left-[40%] 2xl:w-[60%]">
             <Image
               src="/images/about/hero-doctors.webp"
               alt="NabiOta Health Group Germany Team"
               fill
               priority
-              sizes="(max-width: 640px) 100vw, 82vw"
-              className="object-cover object-[72%_center] sm:object-[68%_center] lg:object-[center_22%]"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 72vw, 62vw"
+              className="object-cover object-center lg:object-center"
             />
             {/* Desktop right-side subtle blend */}
-            <div className="hidden sm:block absolute inset-0 bg-gradient-to-r sm:from-[#07150C]/25 sm:via-transparent sm:to-black/10" />
+            <div className="hidden sm:block absolute inset-0 bg-gradient-to-r sm:from-[#07150C]/40 sm:via-[#07150C]/10 sm:to-transparent" />
           </div>
 
           {/* Desktop/Tablet SVG with Deep Forest Green Shape & Dual Glowing Golden Arcs */}
@@ -1387,9 +1387,6 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
           <Container size="wide" className="relative z-10">
             {/* Header */}
             <div className="text-center max-w-xl mx-auto mb-5 sm:mb-6">
-              <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-1.5 font-sans">
-                {t.orgEyebrow}
-              </span>
               <h2 className="font-serif text-[30px] sm:text-[36px] lg:text-[40px] font-normal text-[#142318] leading-[1.16]">
                 {t.orgHeading}
               </h2>
@@ -1402,9 +1399,6 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                   <BuildingStatsIcon className="w-7 h-7 sm:w-8 sm:h-8 stroke-[1.6]" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <span className="text-[9.5px] sm:text-[10px] font-bold tracking-[0.24em] text-[#DEC085] uppercase block mb-1 font-sans">
-                    {t.holdingBadge}
-                  </span>
                   <h3 className="font-serif text-[19px] sm:text-[22px] lg:text-[24px] font-normal text-white tracking-wide truncate leading-tight">
                     “NabiOta” Health Group Germany GmbH
                   </h3>
@@ -1466,9 +1460,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                             <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#E5EEE8] border border-[#D4E2D8] flex items-center justify-center text-[#173824] shrink-0 group-hover:bg-[#D5B878]/15 group-hover:border-[#D5B878] group-hover:text-[#8C6D2B] transition-colors shadow-xs">
                               <IconComp className="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.6]" />
                             </div>
-                            <div className="flex-1 min-w-0 flex flex-col items-start gap-1.5">
+                            <div className="flex-1 min-w-0 flex flex-col items-start gap-1">
                               {item.badge && (
-                                <span className="inline-block text-[9px] sm:text-[9.5px] font-bold uppercase tracking-wider text-[#8A6726] bg-[#FAF5EB] px-2.5 py-1 rounded-[4px] border border-[#EADBBD]">
+                                <span className="text-[9.5px] sm:text-[10px] font-bold tracking-[0.2em] text-[#C5A56A] uppercase font-sans">
                                   {item.badge}
                                 </span>
                               )}
@@ -1522,9 +1516,6 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
           <Container size="wide" className="relative z-10">
             {/* Header: Kept exactly unchanged in wording and style */}
             <div className="text-center max-w-2xl mx-auto mb-5 sm:mb-6">
-              <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-1.5 font-sans">
-                {t.twoPhaseEyebrow}
-              </span>
               <h3 className="font-serif text-[26px] sm:text-[32px] lg:text-[36px] font-normal text-[#142318] leading-[1.2]">
                 {t.twoPhaseTitle}
               </h3>
@@ -1815,10 +1806,6 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
 
               {/* Right: History Text */}
               <div className="lg:col-span-6 flex flex-col justify-center">
-                <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase mb-2">
-                  {t.rootsEyebrow}
-                </span>
-
                 <h2 className="font-serif text-[32px] sm:text-[38px] xl:text-[44px] font-normal leading-[1.14] text-[#142318] mb-5">
                   {t.rootsTitle1}
                   <br />
@@ -1877,28 +1864,6 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             <Container size="wide" className="relative z-10 pt-8 sm:pt-12 lg:pt-14">
               <div className="max-w-6xl mx-auto">
                 <div className="max-w-xl lg:max-w-2xl">
-                  {/* Eyebrow with gold line: integrating Medical Leadership & Statutory Founder status */}
-                  <div className="flex items-center gap-2.5 mb-2.5 sm:mb-3 flex-wrap">
-                    <span className="w-6 h-[1.5px] bg-[#C5A56A]" />
-                    <span className="text-[11px] sm:text-[11.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase font-sans">
-                      {isUz
-                        ? "SHIFOKORLAR RAHBARLIGI VA TA'SISCHI MAQOMI"
-                        : isRu
-                        ? "ВРАЧЕБНОЕ РУКОВОДСТВО И СТАТУС УЧРЕДИТЕЛЯ"
-                        : isEn
-                        ? "MEDICAL LEADERSHIP & STATUTORY FOUNDER"
-                        : isTr
-                        ? "TIBBİ LİDERLİK VE KURUCU STATÜSÜ"
-                        : isAr
-                        ? "القيادة الطبية وصفة الطبيب المؤسس"
-                        : "ÄRZTLICHE FÜHRUNG & GRÜNDERSTATUS"}
-                    </span>
-                    <span className="w-1 h-1 rounded-full bg-[#C5A56A]/60" />
-                    <span className="text-[10px] sm:text-[10.5px] font-medium tracking-[0.2em] text-[#6E7870] uppercase font-sans">
-                      § 95 SGB V
-                    </span>
-                  </div>
-
                   {/* Title with styled italic word in serif */}
                   <h2 className="font-serif text-[28px] sm:text-[38px] lg:text-[44px] text-[#142318] font-normal leading-[1.18] mb-3 sm:mb-3.5">
                     {t.leadershipHeading1}{" "}
@@ -1932,11 +1897,12 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
 
                   {/* Right: doctor information */}
                   <div className="p-5 sm:p-6 lg:py-6 lg:pr-8 lg:pl-12 flex flex-col justify-center">
-                    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-3">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full text-[10.5px] font-bold tracking-[0.14em] uppercase bg-[#F3EDE2] text-[#8B7347] border border-[#D5B878]/40">
+                    <div className="flex items-center gap-2.5 mb-2.5 flex-wrap">
+                      <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.22em] text-[#C5A56A] uppercase font-sans">
                         {t.founderBadge}
                       </span>
-                      <span className="inline-flex items-center gap-1.5 text-[10.5px] tracking-[0.14em] uppercase text-[#2C3E31] font-semibold">
+                      <span className="w-1 h-1 rounded-full bg-[#C5A56A]/60" />
+                      <span className="inline-flex items-center gap-1.5 text-[10.5px] tracking-[0.16em] uppercase text-[#6E7870] font-medium font-sans">
                         <Scale className="w-3.5 h-3.5 text-[#B89650] stroke-[1.8]" />
                         <span>
                           {isUz
@@ -2065,19 +2031,6 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
           <Container size="wide" className="relative z-10">
             <div className="lg:ml-auto lg:w-[78%] xl:w-[75%]">
               <div className="max-w-xl mb-5 sm:mb-6">
-                <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#D5B878] uppercase mb-1.5 block">
-                  {isUz
-                    ? "Xoldingning klinik kollegiyasi"
-                    : isRu
-                    ? "Клиническая коллегия холдинга"
-                    : isEn
-                    ? "Holding Clinical Governance"
-                    : isTr
-                    ? "Klinik Kalite Kurulu"
-                    : isAr
-                    ? "مجلس الجودة السريرية للمجموعة"
-                    : "Klinisches Qualitätskollegium"}
-                </span>
                 <h2 className="font-serif text-[28px] sm:text-[34px] lg:text-[38px] font-normal leading-[1.15] text-white mb-2 sm:mb-2.5">
                   {t.boardTitle}
                 </h2>
@@ -2218,9 +2171,6 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch mb-12 sm:mb-16">
               {/* Left: Mission & Vision Heading */}
               <div className="lg:col-span-5 flex flex-col justify-center">
-                <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase mb-2">
-                  {t.missionEyebrow}
-                </span>
                 <h2 className="font-serif text-[32px] sm:text-[38px] lg:text-[42px] font-normal text-[#142318] leading-[1.15] mb-4">
                   {t.missionHeading}
                 </h2>
@@ -2349,9 +2299,6 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
           <Container size="wide" className="relative z-10">
             {/* Header */}
             <div className="text-center max-w-xl mx-auto mb-8 sm:mb-10">
-              <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-1.5">
-                {t.valuesEyebrow}
-              </span>
               <h2 className="font-serif text-[32px] sm:text-[38px] lg:text-[42px] font-normal text-[#142318] leading-[1.15]">
                 {t.valuesHeading}
               </h2>
@@ -2439,9 +2386,6 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
           <Container size="wide" className="relative z-10">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8">
               <div>
-                <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.22em] text-[#C5A56A] uppercase block mb-1.5">
-                  {t.ctaEyebrow}
-                </span>
                 <h2 className="font-serif text-[24px] sm:text-[30px] lg:text-[34px] font-normal text-white leading-tight">
                   {t.ctaHeading}
                 </h2>

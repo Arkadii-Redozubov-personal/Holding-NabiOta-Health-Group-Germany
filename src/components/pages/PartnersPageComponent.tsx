@@ -991,14 +991,7 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
               ]}
             />
           }
-          title={
-            <>
-              {heroData.title}
-              <span className="block text-xl sm:text-2xl text-[#ECCF93] font-light mt-1 font-serif break-words [overflow-wrap:anywhere] hyphens-auto">
-                {heroData.subtitle}
-              </span>
-            </>
-          }
+          title={heroData.title}
           eyebrow={heroData.eyebrow}
           description={heroData.desc}
           badges={heroBadges}
@@ -1013,11 +1006,6 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
           <Container>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12">
               <div className="space-y-2.5 max-w-2xl">
-                <span className="text-xs font-semibold tracking-[0.2em] text-[#B8934A] uppercase font-sans block">
-                  {isUz
-                    ? "HAMKORLIK MODELLARI"
-                    : isRu ? "МОДЕЛИ СОТРУДНИЧЕСТВА" : isEn ? "COOPERATION FRAMEWORK" : isTr ? "ORTAKLIK MODELLERİ" : isAr ? "أطر التعاون والشراكة" : "PARTNERSCHAFTSMODELLE"}
-                </span>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0B2516] leading-tight">
                   {isUz
                     ? "Sog'liqni saqlashning asosiy ishtirokchilari uchun maqsadli yechimlar"
@@ -1168,25 +1156,6 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
             <Container size="wide" className="relative z-10 pt-8 sm:pt-12 lg:pt-16">
               <div className="max-w-6xl mx-auto">
                 <div className="max-w-xl lg:max-w-2xl">
-                  {/* Eyebrow with gold lines on both sides (Photo 1) */}
-                  <div className="flex items-center gap-2.5 mb-2.5 sm:mb-3">
-                    <span className="w-6 sm:w-8 h-[1.5px] bg-[#C5A56A]" />
-                    <span className="text-[10.5px] sm:text-[11.5px] font-semibold tracking-[0.24em] text-[#C5A56A] uppercase font-sans">
-                      {isUz
-                        ? "REGULYATOR ARXITEKTURA VA HUQUQIY NAZORAT"
-                        : isRu
-                        ? "РЕГУЛЯТОРНАЯ АРХИТЕКТУРА И ПРАВОВОЙ КОНТРОЛЬ"
-                        : isEn
-                        ? "STATUTORY ARCHITECTURE & LEGAL GOVERNANCE"
-                        : isTr
-                        ? "YASAL MİMARİ VE ORTAKLIK YAPISI"
-                        : isAr
-                        ? "الهندسة القانونية وهيكل الملكية المؤسسية"
-                        : "RECHTLICHE ARCHITEKTUR & BETEILIGUNGSSTRUKTUR"}
-                    </span>
-                    <span className="w-6 sm:w-8 h-[1.5px] bg-[#C5A56A]" />
-                  </div>
-
                   {/* Title with styled italic phrase */}
                   <h2 className="font-serif text-[28px] sm:text-[38px] lg:text-[44px] text-[#142318] font-normal leading-[1.18] mb-3 sm:mb-3.5">
                     {isUz
@@ -1218,23 +1187,6 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                       </>
                     )}
                   </h2>
-
-                  {/* Supplementary gold text underneath the title (matching MVZ Photo 1 style) */}
-                  <div className="mb-3.5 sm:mb-4">
-                    <span className="text-[10.5px] sm:text-[11.5px] font-bold tracking-[0.22em] text-[#C5A56A] uppercase font-sans">
-                      {isUz
-                        ? "1-BOSQICH (TA'SIS ETISH) · 2-BOSQICH (STATSIONAR LITSENZIYA)"
-                        : isRu
-                        ? "ФАЗА 1 (УЧРЕЖДЕНИЕ) · ФАЗА 2 (СТАЦИОНАРНАЯ ЛИЦЕНЗИЯ § 30 GEWO)"
-                        : isEn
-                        ? "PHASE 1 (ESTABLISHMENT) · PHASE 2 (HOSPITAL LICENSING § 30 GEWO)"
-                        : isTr
-                        ? "AŞAMA 1 (KURULUŞ) · AŞAMA 2 (HASTANE RUHSATI § 30 GEWO)"
-                        : isAr
-                        ? "المرحلة 1 (التأسيس) · المرحلة 2 (ترخيص المستشفى § 30 GEWO)"
-                        : "PHASE 1 (GRÜNDUNG) · PHASE 2 (KLINIKTRÄGERSCHAFT § 30 GEWO)"}
-                    </span>
-                  </div>
 
                   <p className="text-[13px] sm:text-[14px] text-[#556057] leading-relaxed max-w-xl">
                     {isUz
@@ -1332,19 +1284,7 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                       </span>
                       <div className="min-w-0 flex-1">
                         <h3 className="font-serif text-[18px] sm:text-[21px] lg:text-[23px] font-medium text-[#142318] leading-[1.28]">
-                          <span className="text-[#C5A56A] font-sans font-bold text-xs sm:text-[13px] uppercase tracking-wider block mb-1">
-                            {isUz
-                              ? "1-bosqich · Faol ta'sis etish"
-                              : isRu
-                              ? "Фаза 1 · Активное учреждение"
-                              : isEn
-                              ? "Phase 1 · Active Establishment"
-                              : isTr
-                              ? "Aşama 1 · Mevcut Durum ve Kuruluş"
-                              : isAr
-                              ? "المرحلة 1 · التأسيس النشط"
-                              : "Phase 1 · Status Quo & Gründung"}
-                          </span>
+
                           {isUz
                             ? "MVZ da shifokor ishtiroki (§ 95 SGB V) & Markazlashtirilgan xizmatlar"
                             : isRu
@@ -1531,19 +1471,7 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                       </span>
                       <div className="min-w-0 flex-1">
                         <h3 className="font-serif text-[18px] sm:text-[21px] lg:text-[23px] font-medium text-white leading-[1.28]">
-                          <span className="text-[#ECCF96] font-sans font-bold text-xs sm:text-[13px] uppercase tracking-wider block mb-1">
-                            {isUz
-                              ? "2-bosqich · Kasalxona litsenziyasi"
-                              : isRu
-                              ? "Фаза 2 · Больничная лицензия"
-                              : isEn
-                              ? "Phase 2 · Hospital Licensing"
-                              : isTr
-                              ? "Aşama 2 · Hastane Ruhsatı"
-                              : isAr
-                              ? "المرحلة 2 · ترخيص المستشفى"
-                              : "Phase 2 · Krankenhauszulassung"}
-                          </span>
+
                           {isUz
                             ? "NabiOta Clinics Germany GmbH (§ 30 GewO) & Bevosita kasalxona ta'sischiligi"
                             : isRu
@@ -1815,23 +1743,6 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
           <Container size="wide">
             {/* Section Header */}
             <div className="max-w-2xl mx-auto text-center space-y-3 mb-10 sm:mb-14">
-              <div className="flex items-center justify-center gap-2 mb-1.5 sm:mb-2">
-                <span className="w-6 sm:w-8 h-[1.5px] bg-[#C5A56A]" />
-                <span className="text-[10px] sm:text-[11px] font-semibold tracking-[0.24em] text-[#C5A56A] uppercase font-sans">
-                  {isUz
-                    ? "TUZILMALI JARAYON"
-                    : isRu
-                    ? "СТРУКТУРИРОВАННЫЙ ПРОЦЕСС"
-                    : isEn
-                    ? "STRUCTURED ROADMAP"
-                    : isTr
-                    ? "YAPILANDIRILMIŞ SÜREÇ"
-                    : isAr
-                    ? "خارطة طريق منظمة"
-                    : "DER PARTNERSCHAFTSPROZESS"}
-                </span>
-                <span className="w-6 sm:w-8 h-[1.5px] bg-[#C5A56A]" />
-              </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif text-[#0B2516] font-normal leading-tight">
                 {isUz
                   ? "Muvaffaqiyatli hamkorlik sari to'rt qadam"
@@ -1984,22 +1895,8 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                 </div>
               </div>
 
-              {/* Center Column: Eyebrow, Heading, Desc, Gold Button */}
+              {/* Center Column: Heading, Desc, Gold Button */}
               <div className="lg:col-span-4 space-y-3 sm:space-y-3.5">
-                <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans">
-                  {isUz
-                    ? "MAXFIY MULOQOT"
-                    : isRu
-                    ? "КОНФИДЕНЦИАЛЬНЫЙ КОНТАКТ"
-                    : isEn
-                    ? "CONFIDENTIAL DIALOGUE"
-                    : isTr
-                    ? "GİZLİ GÖRÜŞME"
-                    : isAr
-                    ? "مشاورات سرية"
-                    : "VERTRAULICHER DIALOG"}
-                </span>
-
                 <h2 className="font-serif text-2xl sm:text-[28px] lg:text-[30px] xl:text-[32px] text-[#0F2A1D] font-normal leading-[1.2]">
                   {isUz
                     ? "Biz bilan bog'laning"
@@ -2111,10 +2008,6 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
               {/* Modal Header */}
               <div className="space-y-3 mb-6 pr-12">
                 <div className="flex items-center gap-2">
-                  <span className="w-3.5 h-[1.5px] bg-[#C5A56A]" />
-                  <span className="text-[11px] sm:text-xs font-bold tracking-[0.2em] text-[#C5A56A] uppercase font-sans">
-                    {selectedPillar.tag}
-                  </span>
                 </div>
 
                 <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0E281C] leading-tight">

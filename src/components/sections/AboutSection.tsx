@@ -82,13 +82,8 @@ export function AboutSection({ currentLocale = "de" }: AboutSectionProps) {
 
         {/* ── RIGHT: Center Content & Benefits (Compact Height) ─ */}
         <div className="flex-1 flex flex-col xl:flex-row items-center justify-between py-6 sm:py-8 lg:py-9 pl-6 sm:pl-8 lg:pl-10 xl:pl-12 pr-6 sm:pr-8 lg:pr-10 xl:pr-14 gap-6 xl:gap-8">
-          {/* ── Center Content: Eyebrow, Heading, Text, Button ── */}
+          {/* ── Center Content: Heading, Text, Button ── */}
           <div className="flex-1 max-w-xl flex flex-col justify-center">
-            {/* Eyebrow */}
-            <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase mb-1.5 sm:mb-2">
-              {dict.about.eyebrow}
-            </span>
-
             {/* Heading in serif */}
             <h2 className="font-serif text-[26px] sm:text-[30px] xl:text-[34px] font-normal leading-[1.16] tracking-[-0.01em] text-[#142318] mb-3 sm:mb-3.5">
               {dict.about.heading}

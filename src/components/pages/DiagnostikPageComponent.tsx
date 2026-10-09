@@ -175,7 +175,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
     subtitle: "Präzisionstechnologie für fundierte Befunde",
     description:
       "Hochmoderne bildgebende Diagnostik mit CT, MRT und digitalem Röntgen für frühzeitige und exakte therapeutische Entscheidungen.",
-    image: "/images/services/diagnostik.webp",
+    image: "/images/areas/diagnostics.webp",
   };
 
   // ── Hero Content ──
@@ -1049,16 +1049,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             ]}
           />
         }
-        title={
-          <>
-            {heroData.title}
-            <span className="block text-xl sm:text-2xl text-[#ECCF93] font-light mt-1 font-serif break-words [overflow-wrap:anywhere] hyphens-auto">
-              {heroData.subtitle}
-            </span>
-          </>
-        }
+        title={heroData.title}
         description={heroData.description}
-        imageSrc={area.image || "/images/services/diagnostik.webp"}
+        imageSrc={area.image || "/images/areas/diagnostics.webp"}
         imageAlt="NabiOta Diagnostics High-End Medical Imaging"
         badges={heroData.badges}
       />
@@ -1075,10 +1068,6 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             
             {/* Left Header Column */}
             <div className="lg:col-span-4 space-y-4 pt-1">
-              <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
-                {isUz ? "DIAGNOSTIKA USULLARIMIZ" : isRu ? "НАШИ МЕТОДЫ ДИАГНОСТИКИ" : isEn ? "OUR DIAGNOSTIC PROCEDURES" : isTr ? "TANI YÖNTEMLERİMİZ" : isAr ? "طرق الفحوصات والتشخيص لدينا" : "UNSERE DIAGNOSTIKVERFAHREN"}
-              </span>
-
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-[38px] text-[#132218] font-normal leading-[1.18]">
                 {isUz
                   ? "Aniq natijalar uchun zamonaviy usullar"
@@ -1220,10 +1209,6 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
 
             {/* Middle Column: Heading & Description */}
             <div className="w-full lg:w-[42%] xl:w-[40%] p-6 sm:p-10 lg:p-12 space-y-3 relative z-10">
-              <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
-                {isUz ? "ILG'OR TEXNOLOGIYALAR" : isRu ? "ПЕРЕДОВЫЕ ТЕХНОЛОГИИ" : isEn ? "MODERN TECHNOLOGY" : isTr ? "MODERN TEKNOLOJİ" : isAr ? "تقنيات تشخيصية رائدة" : "MODERNE TECHNOLOGIE"}
-              </span>
-
               <h3 className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-white font-normal leading-tight">
                 {isUz
                   ? "Shunchaki tasvirlar emas — aniq javoblar."
@@ -1295,10 +1280,6 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             
             {/* Left Header Area */}
             <div className="lg:col-span-4 space-y-3">
-              <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
-                {isUz ? "DIAGNOSTIKA JARAYONIMIZ" : isRu ? "НАШ ПРОЦЕСС ДИАГНОСТИКИ" : isEn ? "OUR DIAGNOSTIC PROCESS" : isTr ? "TANI SÜRECİMİZ" : isAr ? "مراحل المسار التشخيصي" : "UNSER DIAGNOSTIK-PROZESS"}
-              </span>
-
               <h2 className="font-serif text-3xl sm:text-4xl text-[#132218] font-normal leading-tight">
                 {isUz
                   ? "Aniq natijalarga 4 qadamda"
@@ -1450,10 +1431,6 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
 
             {/* Right Part: Pure White with Checklist */}
             <div className="lg:col-span-7 bg-white p-6 sm:p-7 lg:p-8 flex flex-col justify-center">
-              <span className="text-[9.5px] font-bold tracking-[0.22em] text-[#8C948D] uppercase block mb-1">
-                {isUz ? "KO'P UCHRAYDIGAN TASHXISLAR VA TEKSHIRUVLAR" : isRu ? "ЧАСТЫЕ ДИАГНОЗЫ И ОБСЛЕДОВАНИЯ" : isEn ? "FREQUENT DIAGNOSES & EXAMINATIONS" : isTr ? "SIK KARŞILAŞILAN TEŞHİS VE MUAYENELER" : isAr ? "أبرز مجالات الفحص والتشخيص السريري" : "HÄUFIGE DIAGNOSEN & UNTERSUCHUNGEN"}
-              </span>
-
               <h3 className="font-serif text-xl sm:text-[23px] text-[#142318] font-normal leading-tight mb-4 sm:mb-5">
                 {isUz
                   ? "Siz uchun nimalarni tekshirishimiz mumkin"
@@ -1522,10 +1499,6 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
 
             {/* Center Column: Quote, Author, Carousel Flanked by Arrows */}
             <div className="flex-1 py-7 sm:py-8 px-4 sm:px-6 lg:px-10 text-center flex flex-col items-center justify-center relative z-10 max-w-2xl mx-auto">
-              <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-1.5">
-                {isUz ? "BEMORLAR FIKRLARI" : isRu ? "ОТЗЫВЫ ПАЦИЕНТОВ" : isEn ? "PATIENT VOICES" : isTr ? "HASTA GÖRÜŞLERİ" : isAr ? "آراء وتجارب المرضى" : "PATIENTENSTIMMEN"}
-              </span>
-
               <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal leading-tight mb-2.5">
                 {isUz
                   ? "Tajribaga asoslangan ishonch."
@@ -1626,10 +1599,6 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
 
           <div className="relative z-10 w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 text-center">
             <div className="max-w-2xl mx-auto space-y-4 sm:space-y-5">
-              <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.26em] text-[#C5A56A] uppercase block">
-                {isUz ? "SALOMATLIK ANICHLIKDAN BOSHLANADI" : isRu ? "ЗДОРОВЬЕ НАЧИНАЕТСЯ С ТОЧНОСТИ" : isEn ? "PRECISION FOR YOUR HEALTH" : isTr ? "SAĞLIK HASSASİYETLE BAŞLAR" : isAr ? "صحتكم تبدأ من دقة التشخيص" : "GESUNDHEIT BEGINNT MIT PRÄZISION"}
-              </span>
-
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-[44px] text-white font-normal leading-[1.18]">
                 {isUz
                   ? "O'z vaqtida va aniq diagnostika kerakmi?"
@@ -1720,9 +1689,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                       {React.createElement(selectedProcedure.icon, { className: "w-5 h-5 stroke-[1.6]" })}
                     </div>
                     <div>
-                      <span className="inline-block px-2.5 py-0.5 rounded-full bg-[#D5B878]/90 text-[#08170D] text-[10px] sm:text-[10.5px] font-bold uppercase tracking-wider mb-1">
-                        {selectedProcedure.badge}
-                      </span>
+
                       <h2 id="modal-title" className="font-serif text-xl sm:text-2xl text-white font-normal leading-tight drop-shadow-sm">
                         {selectedProcedure.title}
                       </h2>
@@ -1742,9 +1709,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
 
                 {/* Full Description from PDF Section 4 */}
                 <div className="space-y-2">
-                  <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#8C948D]">
-                    {isUz ? "KLINIK PROFIL VA INFRASTRUKTURA" : isRu ? "КЛИНИЧЕСКИЙ ПРОФИЛЬ & ИНФРАСТРУКТУРА" : isEn ? "CLINICAL PROFILE & INFRASTRUCTURE" : isTr ? "KLİNİK PROFİL & ALTYAPI" : isAr ? "الملف السريري والبنية التحتية" : "KLINISCHES PROFIL & INFRASTRUKTUR"}
-                  </h4>
+
                   <p className="text-xs sm:text-[13px] text-[#425246] leading-relaxed">
                     {selectedProcedure.fullDesc}
                   </p>
@@ -1752,9 +1717,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
 
                 {/* Key Indications Checklist */}
                 <div className="space-y-2.5 pt-1">
-                  <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#8C948D]">
-                    {selectedProcedure.indicationsTitle}
-                  </h4>
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {selectedProcedure.indications.map((ind, i) => (
                       <div key={i} className="flex items-start gap-2 bg-[#FAF8F5] p-2.5 rounded-xl border border-[#EDE8DE]">

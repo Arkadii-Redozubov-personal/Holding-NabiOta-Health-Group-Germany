@@ -13,7 +13,7 @@ export function Eyebrow({
   className,
 }: EyebrowProps) {
   const variantStyles = {
-    gold: "text-gold-400",
+    gold: "text-[#C5A56A]",
     forest: "text-forest-700",
     cream: "text-ivory-100/90",
   };
@@ -30,3 +30,4 @@ export function Eyebrow({
     </span>
   );
 }
+

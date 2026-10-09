@@ -34,20 +34,20 @@ export function PageHero({
       dir="ltr"
       className={`relative w-full min-h-[480px] sm:min-h-[520px] lg:h-[600px] lg:min-h-[600px] pt-32 sm:pt-36 lg:pt-40 pb-14 sm:pb-16 overflow-hidden flex items-center bg-[#07150C] text-[#FAF8F5] border-b border-[#D5B878]/25 ${className}`}
     >
-      {/* ── Background: Medical / Clinic Photo on the right side ── */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden sm:left-[18%] sm:w-[82%]">
+      {/* ── Background: Medical / Clinic Photo on the right side (pulled back & sharp framing) ── */}
+      <div className="absolute inset-y-0 right-0 z-0 pointer-events-none overflow-hidden w-full sm:left-[28%] sm:w-[72%] lg:left-[35%] lg:w-[65%] xl:left-[38%] xl:w-[62%] 2xl:left-[40%] 2xl:w-[60%]">
         <Image
           src={imageSrc}
           alt={imageAlt}
           fill
           priority
-          sizes="(max-width: 640px) 100vw, 82vw"
-          className={`object-cover object-[72%_center] sm:object-[68%_center] ${
-            imagePosition ? `lg:${imagePosition}` : "lg:object-[center_25%]"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 72vw, 62vw"
+          className={`object-cover object-center ${
+            imagePosition ? `lg:${imagePosition}` : "lg:object-center"
           }`}
         />
         {/* Desktop subtle blend */}
-        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r sm:from-[#07150C]/25 sm:via-transparent sm:to-black/10" />
+        <div className="hidden sm:block absolute inset-0 bg-gradient-to-r sm:from-[#07150C]/40 sm:via-[#07150C]/10 sm:to-transparent" />
       </div>
 
       {/* ── Desktop/Tablet SVG Diagonal Divider with Botanical Gold Background ── */}

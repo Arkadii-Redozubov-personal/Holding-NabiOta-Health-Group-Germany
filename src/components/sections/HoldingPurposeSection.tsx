@@ -230,14 +230,6 @@ export function HoldingPurposeSection({ locale = "de" }: { locale?: string }) {
         <Container size="wide" className="relative z-10 pt-8 sm:pt-12 lg:pt-14">
           <div className="max-w-6xl mx-auto">
             <div className="max-w-xl lg:max-w-2xl">
-              {/* Eyebrow with gold line */}
-              <div className="flex items-center gap-2.5 mb-2.5 sm:mb-3">
-                <span className="w-6 h-[1.5px] bg-[#C5A56A]" />
-                <span className="text-[10.5px] sm:text-[11px] font-semibold tracking-[0.24em] text-[#C5A56A] uppercase font-sans">
-                  {content.eyebrow[l]}
-                </span>
-              </div>
-
               {/* Title with styled italic word in serif */}
               <h2 className="font-serif text-[26px] sm:text-[34px] lg:text-[40px] text-[#142318] font-normal leading-[1.18] mb-3 sm:mb-3.5">
                 {l === "ru" ? (

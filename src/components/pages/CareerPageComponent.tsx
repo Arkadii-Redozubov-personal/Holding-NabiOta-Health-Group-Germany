@@ -2577,18 +2577,18 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
       <main className="flex-1">
         {/* ── SECTION 1: HERO (Unified Format: Compact Dark Forest Green + Doctors + Golden Arcs) ── */}
         <section dir="ltr" className="relative w-full min-h-[480px] sm:min-h-[520px] lg:h-[600px] lg:min-h-[600px] pt-32 sm:pt-36 lg:pt-40 pb-14 sm:pb-16 overflow-hidden flex items-center bg-[#07150C] text-[#FAF8F5] border-b border-[#D5B878]/25">
-          {/* Background: Modern Healthcare Professional in scrubs holding tablet */}
-          <div className="absolute inset-0 sm:left-[18%] sm:w-[82%] z-0 pointer-events-none overflow-hidden">
+          {/* Background: Modern Healthcare Professional in scrubs holding tablet - pulled back & sharp framing */}
+          <div className="absolute inset-y-0 right-0 z-0 pointer-events-none overflow-hidden w-full sm:left-[28%] sm:w-[72%] lg:left-[35%] lg:w-[65%] xl:left-[38%] xl:w-[62%] 2xl:left-[40%] 2xl:w-[60%]">
             <Image
               src="/images/careers/hero-career-nurse.webp"
               alt="NabiOta Medical Recruitment Services"
               fill
               priority
-              sizes="(max-width: 640px) 100vw, 82vw"
-              className="object-cover object-[75%_center] sm:object-[70%_center] lg:object-[center_25%]"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 72vw, 62vw"
+              className="object-cover object-center lg:object-center"
             />
             {/* Desktop right-side subtle blend */}
-            <div className="hidden sm:block absolute inset-0 bg-gradient-to-r sm:from-[#07150C]/25 sm:via-transparent sm:to-black/10" />
+            <div className="hidden sm:block absolute inset-0 bg-gradient-to-r sm:from-[#07150C]/40 sm:via-[#07150C]/10 sm:to-transparent" />
           </div>
 
           {/* Desktop/Tablet SVG with Deep Forest Green Shape & Dual Glowing Golden Arcs */}
@@ -2760,10 +2760,6 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
           <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
               <div className="lg:col-span-6 space-y-6">
-                <span className="text-[11px] sm:text-xs font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
-                  {t.mission.eyebrow}
-                </span>
-
                 <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-forest-950 font-normal leading-tight">
                   {t.mission.title}
                 </h2>
@@ -2825,9 +2821,6 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
         <section id="saeulen" className="py-14 sm:py-18 lg:py-20 bg-[#FAF9F6] border-t border-[#EDE8DE]">
           <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-12 sm:mb-16">
-              <span className="text-[11px] sm:text-xs font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-3">
-                {t.pillarSection.eyebrow}
-              </span>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-forest-950 font-normal leading-tight mb-4">
                 {t.pillarSection.title}
               </h2>
@@ -2915,9 +2908,6 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
 
           <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl mb-12 sm:mb-16">
-              <span className="text-[11px] sm:text-xs font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-3">
-                {t.pathwaySection.eyebrow}
-              </span>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-white font-normal leading-tight mb-4">
                 {t.pathwaySection.title}
               </h2>
@@ -2965,9 +2955,6 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
         <section className="py-14 sm:py-18 lg:py-20 bg-[#FAF9F6] border-t border-[#EDE8DE]">
           <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-12 sm:mb-16">
-              <span className="text-[11px] sm:text-xs font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-3">
-                {t.benefits.eyebrow}
-              </span>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-forest-950 font-normal leading-tight mb-4">
                 {t.benefits.title}
               </h2>
@@ -3052,10 +3039,6 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
           <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
               <div className="lg:col-span-5 space-y-6">
-                <span className="text-[11px] sm:text-xs font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
-                  {t.jobs.eyebrow}
-                </span>
-
                 <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-forest-950 font-normal leading-tight">
                   {t.jobs.title}
                 </h2>
@@ -3117,9 +3100,6 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
         <section className="py-14 sm:py-16 bg-[#F5EFE4] border-t border-[#E6DBC9]">
           <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12">
-              <span className="text-[11px] sm:text-xs font-bold tracking-[0.24em] text-[#8D6B27] uppercase block mb-2">
-                {t.compliance.eyebrow}
-              </span>
               <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#142318] font-normal leading-tight mb-3">
                 {t.compliance.title}
               </h2>
@@ -3167,10 +3147,6 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
 
               <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[280px] sm:min-h-[320px] relative z-10">
                 <div className="lg:col-span-6 p-6 sm:p-8 lg:p-10 flex flex-col justify-center space-y-3.5">
-                  <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
-                    {t.culture.eyebrow}
-                  </span>
-
                   <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-white font-normal leading-tight">
                     {t.culture.title}
                   </h2>
@@ -3303,10 +3279,6 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
           <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
               <div className="max-w-2xl space-y-3">
-                <span className="text-[11px] sm:text-xs font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
-                  {t.cta.eyebrow}
-                </span>
-
                 <h2 className="font-serif text-3xl sm:text-4xl text-white font-normal leading-tight">
                   {t.cta.title}
                 </h2>
@@ -3333,9 +3305,6 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
         <section id="bewerbung" className="py-14 sm:py-18 lg:py-20 bg-[#FCFAF7] border-t border-[#EDE7D9] relative overflow-hidden">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-xl mx-auto mb-10 sm:mb-12">
-              <span className="text-[11px] sm:text-xs font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-2">
-                {t.applyForm.eyebrow}
-              </span>
               <h2 className="font-serif text-3xl sm:text-4xl text-forest-950 font-normal leading-tight mb-3">
                 {t.applyForm.title}
               </h2>

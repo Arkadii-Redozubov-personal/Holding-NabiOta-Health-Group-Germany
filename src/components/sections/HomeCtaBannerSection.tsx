@@ -89,10 +89,6 @@ export function HomeCtaBannerSection({ currentLocale = "de" }: HomeCtaBannerSect
 
       <div className="relative z-10 w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 text-center">
         <div className="max-w-2xl mx-auto space-y-4 sm:space-y-5">
-          <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.26em] text-[#C5A56A] uppercase block">
-            {t.eyebrow}
-          </span>
-
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-[44px] text-white font-normal leading-[1.18]">
             {t.title}
           </h2>

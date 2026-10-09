@@ -215,10 +215,6 @@ export function HomeFaqSection({ currentLocale = "de" }: HomeFaqSectionProps) {
       <div className="mx-auto w-full max-w-[1540px] 2xl:max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-10">
         {/* ── Top Header: Centered above questions ── */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-          <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#9B7C38] uppercase block font-sans mb-3">
-            {t.eyebrow}
-          </span>
-
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-[#0F2A1D] font-normal leading-[1.18] tracking-tight">
             {t.title}
           </h2>

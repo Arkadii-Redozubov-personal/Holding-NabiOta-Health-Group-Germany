@@ -110,7 +110,6 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
     badge3Sub: isUz ? "innovatsiyalar" : isRu ? "для будущего" : isEn ? "for the future" : isTr ? "gelecek için" : isAr ? "من أجل المستقبل" : "für die Zukunft",
 
     // Section 2: Mission Section
-    missionEyebrow: isUz ? "BIZNING MISSIYAMIZ" : isRu ? "НАША МИССИЯ" : isEn ? "OUR MISSION" : isTr ? "MİSYONUMUZ" : isAr ? "رسالتنا الطبية" : "UNSERE MISSION",
     missionHeading1: isUz ? "Shunchaki tibbiy yordamdan" : isRu ? "Больше, чем просто" : isEn ? "More than just" : isTr ? "Sadece sağlık hizmetinden" : isAr ? "أكثر من مجرد" : "Mehr als nur",
     missionHeading2: isUz ? "ancha ortig'i." : isRu ? "медицинская помощь." : isEn ? "healthcare." : isTr ? "çok daha fazlası." : isAr ? "رعاية صحية تقليدية." : "Gesundheitsversorgung.",
     missionText: isUz
@@ -139,7 +138,6 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
     signatureTitle: isUz ? "Xolding rahbariyati" : isRu ? "Руководство холдинга" : isEn ? "Executive Management" : isTr ? "Holding Yönetimi" : isAr ? "الإدارة التنفيذية للمجموعة" : "Geschäftsführung",
 
     // Section 3: Values Section (Das macht uns besonders)
-    valuesEyebrow: isUz ? "BIZNING QADRIYATLARIMIZ" : isRu ? "НАШИ ЦЕННОСТИ" : isEn ? "OUR VALUES" : isTr ? "DEĞERLERİMİZ" : isAr ? "قيمنا ومبادئنا" : "UNSERE WERTE",
     valuesHeading: isUz ? "Bizni nima o'ziga xos qiladi." : isRu ? "Что делает нас особенными." : isEn ? "What makes us distinct." : isTr ? "Bizi farklı kılan nitelikler." : isAr ? "ما يميزنا في الرعاية والخدمة." : "Das macht uns besonders.",
     valuesSubtitle: isUz
       ? "Bizning qadriyatlarimiz xatti-harakatlarimiz poydevorini tashkil etadi va butun kompaniyalar guruhidagi hamkorlikni belgilaydi."
@@ -163,7 +161,6 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
     val4Desc: isUz ? "Mutaxassislarimizni qo'llab-quvvatlash va rivojlantirish." : isRu ? "Укрепление и поддержка наших специалистов." : isEn ? "Empowerment and advancement of our teams." : isTr ? "Sağlık uzmanlarımızın ve ekiplerimizin sürekli gelişimi." : isAr ? "تمكين ودعم الكوادر الطبية والسريرية لتحقيق التميز." : "Stärkung und Förderung unserer Teams.",
 
     // Section 3B: Governance & Medical Ethics (PDF Section II & IV)
-    govEyebrow: isUz ? "KOMPLAYENS, SIFAT VA TIBBIY ETIKA" : isRu ? "КОМПЛАЕНС, КАЧЕСТВО И ВРАЧЕБНАЯ ЭТИКА" : isEn ? "COMPLIANCE, QUALITY & MEDICAL ETHICS" : isTr ? "UYUM, KALİTE VE TIBBİ ETİK" : isAr ? "الامتثال والجودة السريرية والأخلاقيات الطبية" : "COMPLIANCE, QUALITÄT & MEDIZINISCHE ETHIK",
     govHeading1: isUz ? "Shifokorlar mustaqilligi" : isRu ? "Врачебная независимость" : isEn ? "Physician Independence" : isTr ? "Tıbbi Bağımsızlık" : isAr ? "استقلالية القرار الطبي" : "Ärztliche Unabhängigkeit",
     govHeading2: isUz ? "va mas'uliyatli boshqaruv." : isRu ? "и ответственное управление." : isEn ? "& Responsible Governance." : isTr ? "ve Sorumlu Yönetim." : isAr ? "والحوكمة المسؤولة." : "& verantwortungsvolle Governance.",
     govSubtitle: isUz
@@ -268,7 +265,6 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
       : "Wir verbinden die bewährten Traditionen des deutschen Berufsbeamtentums und der ärztlichen Standesethik mit modernsten Technologien und nachhaltiger regionaler Wertschöpfung.",
 
     // Section 4: Areas / Divisions Section
-    areasEyebrow: isUz ? "BIZNING YO'NALISHLAR" : isRu ? "НАШИ НАПРАВЛЕНИЯ" : isEn ? "OUR DIVISIONS" : isTr ? "FAALİYET ALANLARIMIZ" : isAr ? "قطاعاتنا الطبية" : "UNSERE BEREICHE",
     areasHeading1: isUz ? "Ko'p qirrali kompetensiyalar" : isRu ? "Многогранные компетенции" : isEn ? "Diverse Expertise" : isTr ? "Sağlığınız için" : isAr ? "خبرات طبية متكاملة" : "Vielfältige Kompetenzen",
     areasHeading2: isUz ? "salomatligingiz uchun." : isRu ? "для вашего здоровья." : isEn ? "for your health." : isTr ? "kapsamlı uzmanlıklar." : isAr ? "لرعاية صحتكم." : "für Ihre Gesundheit.",
     areasText: isUz
@@ -308,7 +304,6 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
     stat4Label: isUz ? "Yagona umumiy missiya" : isRu ? "Одна общая миссия" : isEn ? "One Shared Mission" : isTr ? "Ortak Misyon" : isAr ? "رسالة واحدة مشتركة" : "Eine Mission",
 
     // Section 6: Team Section
-    teamEyebrow: isUz ? "BIZNING JAMOA" : isRu ? "НАША КОМАНДА" : isEn ? "OUR TEAM" : isTr ? "EKİBİMİZ" : isAr ? "فريقنا الطبي" : "UNSER TEAM",
     teamHeading: isUz ? "Birgalikda ko'prog'iga erishish." : isRu ? "Вместе достигать большего." : isEn ? "Achieving more together." : isTr ? "Birlikte daha fazlasını başarmak." : isAr ? "معاً نحقق أعلى درجات التميز." : "Gemeinsam mehr erreichen.",
     teamText: isUz
       ? "NabiOta® ortida har kuni insonlar salomatligi yo'lida mehnat qilayotgan malakali mutaxassislar, ekspertlar va rahbarlarning fidoyi jamoasi turadi."
@@ -361,18 +356,18 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
             SECTION 1: HERO (Dark Forest Green + Sunlit Building)
         ══════════════════════════════════════════════════════════ */}
         <section dir="ltr" className="relative w-full min-h-[480px] sm:min-h-[520px] lg:h-[600px] lg:min-h-[600px] pt-32 sm:pt-36 lg:pt-40 pb-14 sm:pb-16 overflow-hidden flex items-center bg-[#07150C] text-[#FAF8F5] border-b border-[#D5B878]/25">
-          {/* Background: Modern Medical Consultation - focused on subjects on mobile, crisp on desktop */}
-          <div className="absolute inset-0 sm:left-[18%] sm:w-[82%] z-0 pointer-events-none overflow-hidden">
+          {/* Background: Modern Medical Consultation - pulled back & sharp framing */}
+          <div className="absolute inset-y-0 right-0 z-0 pointer-events-none overflow-hidden w-full sm:left-[28%] sm:w-[72%] lg:left-[35%] lg:w-[65%] xl:left-[38%] xl:w-[62%] 2xl:left-[40%] 2xl:w-[60%]">
             <Image
               src="/images/heroes/hero-values.webp"
               alt="NabiOta Health Group Germany Werte"
               fill
               priority
-              sizes="(max-width: 640px) 100vw, 82vw"
-              className="object-cover object-[72%_center] sm:object-[68%_center] lg:object-[center_25%]"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 72vw, 62vw"
+              className="object-cover object-center lg:object-center"
             />
             {/* Desktop right-side subtle blend */}
-            <div className="hidden sm:block absolute inset-0 bg-gradient-to-r sm:from-[#07150C]/25 sm:via-transparent sm:to-black/10" />
+            <div className="hidden sm:block absolute inset-0 bg-gradient-to-r sm:from-[#07150C]/40 sm:via-[#07150C]/10 sm:to-transparent" />
           </div>
 
           {/* Desktop/Tablet SVG with Deep Forest Green Shape & Dual Glowing Golden Arcs */}
@@ -524,10 +519,6 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
               {/* Left Column: Mission Content & Signature */}
               <div className="lg:col-span-6 flex flex-col justify-center">
-                <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase mb-2 block">
-                  {t.missionEyebrow}
-                </span>
-
                 <h2 className="font-serif text-[34px] sm:text-[40px] lg:text-[46px] font-normal leading-[1.12] text-[#142318] mb-5">
                   {t.missionHeading1}
                   <br />
@@ -605,9 +596,6 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
             <div className="lg:ml-auto lg:w-[78%] xl:w-[75%]">
               {/* Header */}
               <div className="max-w-xl mb-5 sm:mb-6">
-                <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#D5B878] uppercase mb-1.5 block">
-                  {t.valuesEyebrow}
-                </span>
                 <h2 className="font-serif text-[28px] sm:text-[34px] lg:text-[38px] font-normal leading-[1.15] text-white mb-2 sm:mb-2.5">
                   {t.valuesHeading}
                 </h2>
@@ -693,9 +681,6 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
           <Container size="wide" className="relative z-10">
             {/* Section Header */}
             <div className="max-w-3xl mb-12 sm:mb-14">
-              <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase mb-2 block">
-                {t.govEyebrow}
-              </span>
               <h2 className="font-serif text-[30px] sm:text-[36px] lg:text-[42px] font-normal leading-[1.15] text-[#142318] mb-4">
                 {t.govHeading1}{" "}
                 <span className="italic text-[#8B7347]">{t.govHeading2}</span>
@@ -946,10 +931,6 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
               {/* Left Column: Heading, text, and button */}
               <div className="lg:col-span-5 flex flex-col justify-center">
-                <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase mb-2 block">
-                  {t.areasEyebrow}
-                </span>
-
                 <h2 className="font-serif text-[34px] sm:text-[40px] lg:text-[46px] font-normal leading-[1.12] text-[#142318] mb-4">
                   {t.areasHeading1}
                   <br />
@@ -1081,10 +1062,6 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
               {/* Left Column: Team Content & Button */}
               <div className="lg:col-span-6 flex flex-col justify-center">
-                <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase mb-2 block">
-                  {t.teamEyebrow}
-                </span>
-
                 <h2 className="font-serif text-[34px] sm:text-[40px] lg:text-[46px] font-normal leading-[1.12] text-[#142318] mb-5">
                   {t.teamHeading}
                 </h2>

@@ -2189,14 +2189,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               ]}
             />
           }
-          title={
-            <>
-              {heroData.title}
-              <span className="block text-xl sm:text-2xl text-[#ECCF93] font-light mt-1 font-serif break-words [overflow-wrap:anywhere] hyphens-auto">
-                {heroData.subtitle}
-              </span>
-            </>
-          }
+          title={heroData.title}
           eyebrow={heroData.eyebrow}
           description={heroData.desc}
           badges={heroBadges}
@@ -2225,10 +2218,6 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
           {/* Left Content: Standard Container alignment - Height reduced as requested */}
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12 xl:py-14">
             <div className="max-w-xl space-y-3.5 sm:space-y-4">
-              <div className="text-[11px] sm:text-xs font-semibold tracking-[0.25em] text-[#A07D3E] uppercase font-sans">
-                {t.s2.eyebrow}
-              </div>
-
               <h2 className="text-2xl sm:text-3xl lg:text-[34px] xl:text-[38px] font-serif font-bold text-[#0B2516] leading-[1.18] tracking-tight">
                 {t.s2.title}
               </h2>
@@ -2258,9 +2247,6 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             {/* Header with Title and Link on the right */}
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
               <div className="space-y-2.5 max-w-2xl">
-                <div className="text-xs font-semibold tracking-[0.2em] text-[#B8934A] uppercase font-sans">
-                  {t.s4.eyebrow}
-                </div>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0B2516] leading-tight">
                   {t.s4.title}
                 </h2>
@@ -2366,9 +2352,6 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               </div>
 
               <div className="relative z-10 space-y-3 sm:space-y-4">
-                <div className="inline-block text-xs font-semibold tracking-[0.2em] text-[#ECCF96] uppercase font-sans">
-                  {t.s5.eyebrow}
-                </div>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[40px] font-serif font-bold text-white leading-tight">
                   {t.s5.title}
                 </h2>
@@ -2405,9 +2388,6 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             {/* Header matching Photo */}
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12">
               <div className="space-y-2.5 max-w-2xl">
-                <div className="text-xs font-semibold tracking-[0.2em] text-[#B8934A] uppercase font-sans">
-                  {t.s6.eyebrow}
-                </div>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0B2516] leading-tight">
                   {t.s6.title}
                 </h2>
@@ -2492,10 +2472,6 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
           {/* Left Text & CTA Button aligned with site container - Increased height & padding */}
           <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
             <div className="max-w-xl space-y-3.5 sm:space-y-4">
-              <div className="text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] text-[#8C6527] uppercase font-sans">
-                {t.s7.eyebrow}
-              </div>
-
               <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-serif font-bold text-[#0B2516] leading-tight">
                 {t.s7.title}
               </h2>
@@ -2553,10 +2529,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
 
               {/* Modal Header */}
               <div className="space-y-3 mb-6 pr-12">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0B2516] text-[#ECCF96] text-[10px] sm:text-xs font-semibold uppercase tracking-wider">
-                  <Globe2 className="w-3.5 h-3.5" />
-                  <span>{selectedProgram.tag}</span>
-                </div>
+
 
                 <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0E281C] leading-tight">
                   {selectedProgram.modal.title}

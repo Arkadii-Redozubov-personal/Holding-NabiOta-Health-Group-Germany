@@ -312,9 +312,6 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
         {/* ── Section Header matching Reference Photo ───────── */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-14">
           <div className="max-w-md">
-            <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.22em] text-[#C5A56A] uppercase block mb-1.5">
-              {dict.values.eyebrow}
-            </span>
             <h2 className="font-serif text-[30px] sm:text-[38px] lg:text-[44px] font-normal tracking-tight text-[#112117] leading-[1.12]">
               {dict.values.heading}
             </h2>

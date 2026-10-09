@@ -199,16 +199,7 @@ export default async function LocalizedAreaDetailPage({ params }: LocalizedAreaD
               ]}
             />
           }
-          title={
-            <>
-              {displayTitle}
-              {area.subtitle && (
-                <span className="block text-xl sm:text-2xl text-[#ECCF93] font-light mt-1 font-serif">
-                  {area.subtitle}
-                </span>
-              )}
-            </>
-          }
+          title={displayTitle}
           description={area.description}
           imageSrc={area.image || "/images/heroes/hero-areas.webp"}
           badges={areaBadges}

@@ -334,14 +334,10 @@ export function MvzContractSection({ locale = "de" }: { locale?: string }) {
           <div className="max-w-6xl mx-auto">
             <div className="max-w-xl lg:max-w-2xl">
               {/* Eyebrow with gold line matching MVZ 1 design (No black pill badge) */}
-              <div className="flex items-center gap-2.5 mb-2.5 sm:mb-3 flex-wrap">
+              <div className="flex items-center gap-2.5 mb-2.5 sm:mb-3">
                 <span className="w-6 h-[1.5px] bg-[#C5A56A]" />
                 <span className="text-[11px] sm:text-[11.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase font-sans">
                   {c.tag[l]}
-                </span>
-                <span className="w-1 h-1 rounded-full bg-[#C5A56A]/60" />
-                <span className="text-[10px] sm:text-[10.5px] font-medium tracking-[0.2em] text-[#6E7870] uppercase font-sans">
-                  {c.eyebrow[l]}
                 </span>
               </div>
 

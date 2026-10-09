@@ -464,13 +464,7 @@ export function DiagnosticsCompanySection({ locale = "de" }: { locale?: string }
         {/* Left Column: Tag, Eyebrow, Title, Lead */}
         <div className="w-full lg:w-[54%] flex flex-col justify-center py-6 sm:py-8 lg:py-10 px-6 sm:px-10 lg:pl-16 xl:pl-28 2xl:pl-36 lg:pr-10 z-10">
           <div className="max-w-xl">
-            {/* Eyebrow with gold line matching MVZ 1 design (No black pill badge) */}
-            <div className="flex items-center gap-2.5 mb-2.5 sm:mb-3">
-              <span className="w-6 h-[1.5px] bg-[#C5A56A]" />
-              <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase font-sans">
-                {c.subtitle[l]}
-              </span>
-            </div>
+
 
             {/* Title with styled italic phrase & distinct GmbH */}
             <h2 className="font-serif text-[24px] sm:text-[28px] lg:text-[32px] xl:text-[36px] text-[#142318] font-normal leading-[1.18] mb-3">
@@ -535,10 +529,6 @@ export function DiagnosticsCompanySection({ locale = "de" }: { locale?: string }
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
               <div>
                 <div className="flex items-center gap-2.5 mb-1.5">
-                  <span className="w-6 h-[1.5px] bg-[#C5A56A]" />
-                  <span className="text-[10px] sm:text-[11px] font-semibold tracking-[0.22em] text-[#C5A56A] uppercase">
-                    {c.spectrumEyebrow[l]}
-                  </span>
                 </div>
                 <h3 className="font-serif text-[24px] sm:text-[28px] lg:text-[32px] font-normal text-[#142318] leading-[1.2]">
                   {c.spectrumTitle[l]}
@@ -679,9 +669,6 @@ export function DiagnosticsCompanySection({ locale = "de" }: { locale?: string }
                 <ShieldAlert className="w-6 h-6 text-[#9E7D3B]" strokeWidth={1.6} />
               </div>
               <div>
-                <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.22em] text-[#C5A56A] uppercase block mb-1">
-                  {l === "ru" ? "ПРАВОВОЕ РАЗГРАНИЧЕНИЕ" : l === "en" ? "REGULATORY FRAMEWORK" : "RECHTLICHER RAHMEN"}
-                </span>
                 <h3 className="font-serif text-[19px] sm:text-[22px] lg:text-[24px] text-[#142318] font-normal leading-snug">
                   {c.disclaimer.title[l]}
                 </h3>

@@ -3018,14 +3018,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             ]}
           />
         }
-        title={
-          <>
-            {heroData.title}
-            <span className="block text-xl sm:text-2xl text-[#ECCF93] font-light mt-1 font-serif break-words [overflow-wrap:anywhere] hyphens-auto">
-              {heroData.subtitle}
-            </span>
-          </>
-        }
+        title={heroData.title}
         eyebrow={heroData.eyebrow}
         description={heroData.desc}
         imageSrc="/images/areas/pflege.webp"
@@ -3064,10 +3057,6 @@ export function PflegePageComponent({ locale = "de" }: Props) {
 
               {/* Right Column: Copy & Checklist */}
               <div className="lg:col-span-6 space-y-6">
-                <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans">
-                  {t.whyChoose.eyebrow}
-                </span>
-
                 <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-[#0F2A1D] font-normal leading-tight">
                   {t.whyChoose.title}
                 </h2>
@@ -3132,10 +3121,6 @@ export function PflegePageComponent({ locale = "de" }: Props) {
 
             {/* Right: Copy & 4 Circular Gold Badges */}
             <div className="w-full lg:w-[64%] xl:w-[62%] p-6 sm:p-8 lg:p-8 lg:pl-10 space-y-4 relative z-10">
-              <span className="text-[10.5px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-[#ECCF96] block font-sans">
-                {t.commitment.eyebrow}
-              </span>
-
               <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] xl:text-[36px] text-white font-normal leading-tight">
                 {t.commitment.title}
               </h2>
@@ -3170,9 +3155,6 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           <Container size="wide">
             {/* Header */}
             <div className="max-w-3xl mb-12 sm:mb-16">
-              <span className="text-[11px] sm:text-xs font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-3">
-                {t.servicesSection.eyebrow}
-              </span>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-forest-950 font-normal leading-tight mb-4">
                 {t.servicesSection.title}
               </h2>
@@ -3280,9 +3262,6 @@ export function PflegePageComponent({ locale = "de" }: Props) {
 
           <Container size="wide" className="relative z-10">
             <div className="max-w-3xl mb-12 sm:mb-16">
-              <span className="text-[11px] sm:text-xs font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-3 font-sans">
-                {t.verbund.eyebrow}
-              </span>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-white font-normal leading-tight mb-4">
                 {t.verbund.title}
               </h2>
@@ -3324,9 +3303,6 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           <Container size="wide">
             {/* Sanitätshaus Header */}
             <div className="max-w-3xl mb-12 sm:mb-16">
-              <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans mb-2">
-                {t.sanitaetshausSection.eyebrow}
-              </span>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-[#0F2A1D] font-normal leading-tight mb-4">
                 {t.sanitaetshausSection.title}
               </h2>
@@ -3423,14 +3399,6 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             <div className="max-w-6xl mx-auto space-y-7 sm:space-y-8">
               {/* Header */}
               <div className="max-w-2xl">
-                {/* Gold line + Eyebrow */}
-                <div className="flex items-center gap-2.5 mb-2 sm:mb-2.5">
-                  <span className="w-6 h-[1.5px] bg-[#C5A56A]" />
-                  <span className="text-[10px] sm:text-[10.5px] font-semibold tracking-[0.24em] text-[#C5A56A] uppercase font-sans">
-                    {t.pharmacySection.eyebrow}
-                  </span>
-                </div>
-
                 {/* Title */}
                 <h2 className="font-serif text-[24px] sm:text-[30px] lg:text-[35px] text-[#142318] font-normal leading-[1.2] mb-2.5 sm:mb-3">
                   {t.pharmacySection.title}
@@ -3501,9 +3469,6 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
               {/* Left Column: Heading & CTA */}
               <div className="lg:col-span-5 space-y-5">
-                <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans">
-                  {t.approach.eyebrow}
-                </span>
                 <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-[#0F2A1D] font-normal leading-tight">
                   {t.approach.title}
                 </h2>
@@ -3556,9 +3521,6 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             {/* Header with Read More button on right */}
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 sm:mb-14">
               <div className="max-w-2xl space-y-2">
-                <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans">
-                  {t.testimonials.eyebrow}
-                </span>
                 <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-[#0F2A1D] font-normal leading-tight">
                   {t.testimonials.title}
                 </h2>
@@ -3639,10 +3601,6 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             {/* Right: Accordion content */}
             <div className="w-full lg:w-[60%] xl:w-[62%] py-8 sm:py-10 lg:py-10 px-6 sm:px-10 lg:px-12 xl:px-16 flex flex-col justify-center">
               <div className="max-w-2xl">
-                <span className="text-[10.5px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans mb-1.5">
-                  {t.faq.eyebrow}
-                </span>
-
                 <h2 className="font-serif text-2xl sm:text-3xl text-[#0F2A1D] font-normal leading-tight mb-4">
                   {t.faq.title}
                 </h2>
@@ -3711,10 +3669,6 @@ export function PflegePageComponent({ locale = "de" }: Props) {
 
           <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 py-12 sm:py-16 relative z-10">
             <div className="max-w-xl space-y-5">
-              <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans">
-                {t.cta.eyebrow}
-              </span>
-
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-[#0F2A1D] font-normal leading-tight">
                 {t.cta.title}
               </h2>
@@ -3794,9 +3748,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
 
                   {/* Modal Header */}
                   <div className="mb-6 pr-8">
-                    <div className="inline-block px-3 py-1 rounded-full bg-[#C5A56A]/15 border border-[#C5A56A]/30 text-[10px] sm:text-[11px] font-bold tracking-wider text-[#8D6B27] uppercase mb-2">
-                      {activeModal.badge}
-                    </div>
+
                     <h2 className="font-serif text-2xl sm:text-3xl font-bold text-forest-950 leading-tight">
                       {activeModal.modal.title}
                     </h2>

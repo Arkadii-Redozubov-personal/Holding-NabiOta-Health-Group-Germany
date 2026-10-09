@@ -1188,9 +1188,6 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
       <section className="py-16 sm:py-20 bg-[#FAF8F5]">
         <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <span className="text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase block mb-2">
-              {isUz ? "IXTISOSLASHGAN YO'NALISHLAR" : isRu ? "СПЕЦИАЛИЗИРОВАННЫЕ НАПРАВЛЕНИЯ" : isEn ? "SPECIALIZED DISCIPLINES" : isTr ? "UZMANLIK ALANLARI" : isAr ? "التخصصات التأهيلية الدقيقة" : "FACHBEREICHE DER REHABILITATION"}
-            </span>
             <h2 className="font-serif text-3xl sm:text-4xl text-[#132218] font-normal leading-tight">
               {isUz
                 ? "Har bir klinik maqsad uchun individual dasturlar"
@@ -1398,10 +1395,6 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
         <div className="w-full flex justify-end relative z-30 py-12 sm:py-16 lg:py-20">
           <div className="w-full lg:w-[68%] xl:w-[66%] px-6 sm:px-10 lg:pl-10 lg:pr-12 xl:pr-20 space-y-5">
             <div className="space-y-3 max-w-xl">
-              <span className="text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
-                {approachData.eyebrow}
-              </span>
-
               <h2 className="font-serif text-2xl sm:text-3xl lg:text-[36px] text-white font-normal leading-[1.16]">
                 {approachData.title}
               </h2>
@@ -1454,9 +1447,6 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left title */}
             <div className="lg:col-span-4 space-y-3">
-              <span className="text-[10.5px] font-bold tracking-[0.24em] text-[#8C733E] uppercase block">
-                {processData.eyebrow}
-              </span>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] text-[#0B2516] font-normal leading-[1.18]">
                 {processData.title}
               </h2>
@@ -1475,9 +1465,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                   </div>
 
                   <div>
-                    <span className="font-sans text-xs font-bold text-[#B89650] block mb-1.5 tracking-wider">
-                      {st.step}
-                    </span>
+
 
                     <h4 className="font-serif text-base text-[#0B2516] font-medium leading-snug mb-2">
                       {st.title}
@@ -1550,9 +1538,6 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
               </div>
 
               <div className="relative z-10 space-y-3 max-w-xl">
-                <span className="text-[10.5px] font-bold tracking-[0.2em] text-[#2C5238] uppercase block">
-                  {innovationCard.eyebrow}
-                </span>
                 <h3 className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-[#0B2516] font-normal leading-snug">
                   {innovationCard.title}
                 </h3>
@@ -1585,9 +1570,6 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
       <section className="py-16 sm:py-22 bg-white border-t border-[#EDE8DE]">
         <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase block mb-2">
-              {isUz ? "SHIFOKORLAR VA TERAPEVTLARIMIZ" : isRu ? "НАША КОМАНДА ЭКСПЕРТОВ" : isEn ? "EXPERT MEDICAL LEADERSHIP" : isTr ? "HEKİMLERİMİZ VE TERAPİSTLERİMİZ" : isAr ? "أطباؤنا وأطقم المعالجين" : "UNSERE ÄRZTE & THERAPEUTEN"}
-            </span>
             <h2 className="font-serif text-3xl sm:text-4xl text-[#132218] font-normal leading-tight">
               {isUz
                 ? "Malakali shifokorlar nazorati va tajribali terapevtlar"
@@ -1631,9 +1613,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                       className="object-cover object-top group-hover:scale-103 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                    <span className="absolute bottom-3 left-3 text-[10px] font-bold tracking-wider uppercase text-white bg-black/40 backdrop-blur-xs px-2.5 py-1 rounded">
-                      {doc.spec}
-                    </span>
+
                   </div>
 
                   <div className="p-5 sm:p-6">
@@ -1692,11 +1672,8 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
 
         <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8">
-            {/* Left Column: Eyebrow, Title, Description, Button */}
+            {/* Left Column: Title, Description, Button */}
             <div className="w-full lg:w-[28%] xl:w-[27%] shrink-0 space-y-3">
-              <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
-                {testimonialsData.eyebrow}
-              </span>
               <h2 className="font-serif text-2xl sm:text-3xl text-white font-normal leading-[1.14] whitespace-pre-line">
                 {testimonialsData.title}
               </h2>
@@ -1793,9 +1770,6 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
       <section className="py-16 sm:py-20 bg-white border-y border-[#EDE8DE]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase block mb-1.5">
-              {isUz ? "XARAJATLARNI QOPLASH VA JARAYON" : isRu ? "ВОПРОСЫ И ОТВЕТЫ" : isEn ? "FREQUENTLY ASKED QUESTIONS" : isTr ? "MASRAFLAR VE İŞLEYİŞ" : isAr ? "تغطية التكاليف والإجراءات" : "KOSTENÜBERNAHME & ABLAUF"}
-            </span>
             <h2 className="font-serif text-2xl sm:text-3xl text-[#132218] font-normal">
               {isUz
                 ? "Reabilitatsiya va yo'llanma bo'yicha muhim savollar"
@@ -1872,9 +1846,6 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
         <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-3">
-              <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
-                {isUz ? "TIKLANISHNI BOSHLANG" : isRu ? "СВЯЖИТЕСЬ С НАМИ" : isEn ? "START YOUR RECOVERY" : isTr ? "İYİLEŞME SÜRECİNİZİ BAŞLATIN" : isAr ? "ابدأوا رحلة تعافيكم الآن" : "STARTEN SIE IHRE GENESUNG"}
-              </span>
               <h3 className="page-hero-title font-serif text-2xl sm:text-3xl lg:text-4xl text-white font-normal leading-tight">
                 {isUz
                   ? "Harakatlanishingizni tiklash sari keyingi qadamga tayyormisiz?"
@@ -1971,9 +1942,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
 
               {/* Badge & Title */}
               <div className="absolute bottom-3 left-4 sm:left-6 right-4 sm:right-6">
-                <span className="inline-block px-2.5 py-0.5 rounded-full bg-[#D5B878]/90 text-[#08170D] text-[10px] sm:text-[10.5px] font-bold uppercase tracking-wider mb-1">
-                  {selectedSpecialization.badge}
-                </span>
+
                 <h2 id="rehab-modal-title" className="font-serif text-xl sm:text-2xl text-white font-normal leading-tight drop-shadow-sm">
                   {selectedSpecialization.title}
                 </h2>
@@ -1991,9 +1960,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
 
               {/* Full Description from PDF Section 5 */}
               <div className="space-y-2">
-                <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#8C948D]">
-                  {isUz ? "TERAPEVTIK PROFIL VA USULLAR" : isRu ? "ТЕРАПЕВТИЧЕСКИЙ ПРОФИЛЬ & МЕТОДЫ" : isEn ? "CLINICAL PROFILE & THERAPY METHODS" : isTr ? "TERAPÖTİK PROFİL VE YÖNTEMLER" : isAr ? "الملف العلاجي والأساليب المتبعة" : "THERAPEUTISCHES PROFIL & METHODEN"}
-                </h4>
+
                 <p className="text-xs sm:text-[13px] text-[#425246] leading-relaxed">
                   {selectedSpecialization.fullDesc}
                 </p>
@@ -2001,9 +1968,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
 
               {/* Key Indications Checklist */}
               <div className="space-y-2.5 pt-1">
-                <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#8C948D]">
-                  {selectedSpecialization.indicationsTitle}
-                </h4>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {selectedSpecialization.indications.map((ind, i) => (
                     <div key={i} className="flex items-start gap-2 bg-[#FAF8F5] p-2.5 rounded-xl border border-[#EDE8DE]">

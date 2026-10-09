@@ -796,9 +796,6 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
               {/* ── Left Column: How to Reach Us (5 Contact Cards) ── */}
               <div className="lg:col-span-5">
                 <div className="mb-5 sm:mb-6">
-                    <span className="text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-1.5 font-sans">
-                      {t.left.eyebrow}
-                    </span>
                     <h2 className="font-serif text-2xl sm:text-3xl text-forest-950 font-normal leading-tight mb-2">
                       {t.left.title}
                     </h2>
@@ -974,9 +971,6 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                   {/* ── Direct Contact Directory: Clinical Divisions & Group Subsidiaries (Lifted up & separated from map) ── */}
                   <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-[#EAE3D5]">
                     <div className="mb-4 sm:mb-5">
-                      <span className="text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-1 font-sans">
-                        {t.directory.eyebrow}
-                      </span>
                       <h3 className="font-serif text-xl sm:text-2xl text-forest-950 font-normal leading-tight mb-1.5">
                         {t.directory.title}
                       </h3>
@@ -990,7 +984,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                       {/* Division 1: MVZ */}
                       <div className="p-3.5 sm:p-4 rounded-xl bg-white border border-[#EDE7D9] shadow-2xs hover:border-[#C5A56A] hover:shadow-xs transition-all flex flex-col justify-between">
                         <div>
-                          <span className="text-[9px] font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-[#FAF5EB] text-[#8D6B27] border border-[#EADFC7] inline-block mb-1.5">
+                          <span className="text-[9.5px] sm:text-[10px] font-bold tracking-[0.2em] text-[#C5A56A] uppercase font-sans mb-1.5 block">
                             MVZ · § 95 SGB V
                           </span>
                           <h4 className="font-serif font-bold text-[13px] text-forest-950 leading-snug mb-1">
@@ -1021,7 +1015,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                       {/* Division 2: Diagnostik & Reha */}
                       <div className="p-3.5 sm:p-4 rounded-xl bg-white border border-[#EDE7D9] shadow-2xs hover:border-[#C5A56A] hover:shadow-xs transition-all flex flex-col justify-between">
                         <div>
-                          <span className="text-[9px] font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-[#FAF5EB] text-[#8D6B27] border border-[#EADFC7] inline-block mb-1.5">
+                          <span className="text-[9.5px] sm:text-[10px] font-bold tracking-[0.2em] text-[#C5A56A] uppercase font-sans mb-1.5 block">
                             3T MRT · REHA
                           </span>
                           <h4 className="font-serif font-bold text-[13px] text-forest-950 leading-snug mb-1">
@@ -1052,8 +1046,16 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                       {/* Division 3: HomeCare, Sanitätshaus & Pharmacy */}
                       <div className="p-3.5 sm:p-4 rounded-xl bg-white border border-[#EDE7D9] shadow-2xs hover:border-[#C5A56A] hover:shadow-xs transition-all flex flex-col justify-between">
                         <div>
-                          <span className="text-[9px] font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-[#FAF5EB] text-[#8D6B27] border border-[#EADFC7] inline-block mb-1.5">
-                            CARE · § 14 ApoG
+                          <span className="text-[9.5px] sm:text-[10px] font-bold tracking-[0.2em] text-[#C5A56A] uppercase font-sans mb-1.5 block">
+                            {locale === "tr"
+                              ? "BAKIM · MEDİKAL · ECZANE"
+                              : locale === "ar"
+                              ? "رعاية · مستلزمات · صيدلية"
+                              : locale === "uz"
+                              ? "PARVARISH · TIBBIY BUYUMLAR · DORIXONA"
+                              : locale === "ru"
+                              ? "УХОД · МЕДТЕХНИКА · АПТЕКА"
+                              : "PFLEGE · SANITÄTSHAUS · APOTHEKE"}
                           </span>
                           <h4 className="font-serif font-bold text-[13px] text-forest-950 leading-snug mb-1">
                             {t.directory.div3Title}
@@ -1083,8 +1085,16 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                       {/* Division 4: Holding HQ, Real Estate & Staffing */}
                       <div className="p-3.5 sm:p-4 rounded-xl bg-white border border-[#EDE7D9] shadow-2xs hover:border-[#C5A56A] hover:shadow-xs transition-all flex flex-col justify-between">
                         <div>
-                          <span className="text-[9px] font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-[#FAF5EB] text-[#8D6B27] border border-[#EADFC7] inline-block mb-1.5">
-                            HOLDING HQ
+                          <span className="text-[9.5px] sm:text-[10px] font-bold tracking-[0.2em] text-[#C5A56A] uppercase font-sans mb-1.5 block">
+                            {locale === "tr"
+                              ? "HOLDİNG · GAYRİMENKUL · İSTİHDAM"
+                              : locale === "ar"
+                              ? "القابضة · العقارات · الكوادر"
+                              : locale === "uz"
+                              ? "XOLDING · KO'CHMAS MULK · REKRUTING"
+                              : locale === "ru"
+                              ? "ХОЛДИНГ · НЕДВИЖИМОСТЬ · РЕКРУТИНГ"
+                              : "HOLDING · IMMOBILIEN · RECRUITING"}
                           </span>
                           <h4 className="font-serif font-bold text-[13px] text-forest-950 leading-snug mb-1">
                             {t.directory.div4Title}
@@ -1118,10 +1128,6 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
               <div className="lg:col-span-7 space-y-6">
                 {/* Form Card */}
                 <div className="bg-white rounded-3xl p-6 sm:p-7 border border-[#EDE7D9] shadow-[0_4px_24px_rgba(0,0,0,0.03)] relative overflow-hidden">
-                  <span className="text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-1.5">
-                    {t.form.eyebrow}
-                  </span>
-
                   <h2 className="font-serif text-2xl sm:text-[26px] text-forest-950 font-normal leading-tight mb-2">
                     {t.form.title}
                   </h2>
@@ -1411,10 +1417,6 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                       </a>
 
                       <div>
-                        <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#EFE9DC] text-[9px] font-semibold text-[#8D6B27] uppercase tracking-wider mb-1">
-                          <QrCode className="w-2.5 h-2.5" />
-                          <span>Smartphone Navigation</span>
-                        </div>
                         <h4 className="font-serif font-bold text-xs sm:text-sm text-forest-950 leading-snug">
                           {t.cards.qrTitle}
                         </h4>

@@ -240,12 +240,7 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
 
         {/* ── Left Content: Typography (same layout for all locales) ─────── */}
         <div className="relative z-10 w-full max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12 xl:px-14">
-          <div className="max-w-xl lg:max-w-[560px] xl:max-w-[660px] 2xl:max-w-[720px] pt-16 sm:pt-20 lg:pt-0">
-            {/* Eyebrow */}
-            <span className="inline-block text-[10.5px] sm:text-xs font-semibold tracking-[0.25em] text-[#C5A56A] uppercase mb-3 sm:mb-4">
-              {dict.hero.eyebrow}
-            </span>
-
+          <div className="max-w-xl lg:max-w-[560px] xl:max-w-[660px] 2xl:max-w-[720px] pt-20 sm:pt-24 lg:pt-10 xl:pt-12">
             {/* Heading: Both lines white (Upright elegant serif) matching reference 1:1 */}
             <h1 className="font-display text-[40px] sm:text-[54px] md:text-[64px] lg:text-[68px] xl:text-[80px] 2xl:text-[86px] font-normal leading-[0.98] tracking-[-0.01em] mb-4 sm:mb-5 break-words [overflow-wrap:anywhere] hyphens-auto">
               <span className="text-white block">

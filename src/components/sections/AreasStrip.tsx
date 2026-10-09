@@ -445,19 +445,6 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-6 xl:gap-8">
             {/* Left: Heading block */}
             <div className="flex-shrink-0 w-full lg:w-[260px] xl:w-[290px] text-left">
-              <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.22em] text-[#C5A56A] uppercase block mb-1">
-                {currentLocale === "ru"
-                  ? "НАШИ НАПРАВЛЕНИЯ"
-                  : currentLocale === "tr"
-                  ? "FAALİYET ALANLARIMIZ"
-                  : currentLocale === "ar"
-                  ? "قطاعاتنا"
-                  : currentLocale === "uz"
-                  ? "BIZNING YO'NALISHLAR"
-                  : currentLocale === "en"
-                  ? "OUR DIVISIONS"
-                  : "UNSERE BEREICHE"}
-              </span>
               <h2 className="font-display text-[22px] sm:text-[25px] lg:text-[28px] font-medium leading-[1.12] tracking-[-0.01em] text-[#142318]">
                 {currentLocale === "ru" ? (
                   <>Многогранная компетенция для здорового будущего.</>

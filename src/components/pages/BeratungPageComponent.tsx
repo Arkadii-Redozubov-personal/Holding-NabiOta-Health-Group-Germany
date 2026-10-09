@@ -2331,14 +2331,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
             ]}
           />
         }
-        title={
-          <>
-            {heroData.title}
-            <span className="block text-xl sm:text-2xl text-[#ECCF93] font-light mt-1 font-serif break-words [overflow-wrap:anywhere] hyphens-auto">
-              {heroData.subtitle}
-            </span>
-          </>
-        }
+        title={heroData.title}
         eyebrow={heroData.eyebrow}
         description={heroData.desc}
         imageSrc="/images/areas/consulting.webp"
@@ -2355,10 +2348,6 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
               {/* Left Column (Copy + Button) */}
               <div className="lg:col-span-4 space-y-3.5 sm:space-y-4 flex flex-col justify-center">
-                <span className="text-[10.5px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans">
-                  {t.s1.eyebrow}
-                </span>
-
                 <h2 className="font-serif text-2xl sm:text-3xl lg:text-[32px] xl:text-[36px] text-[#0F2A1D] font-normal leading-[1.18] tracking-tight">
                   {t.s1.title}
                 </h2>
@@ -2431,10 +2420,6 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           <div className="w-full flex flex-col lg:flex-row items-stretch min-h-[300px] lg:min-h-[340px] relative z-10">
             {/* Left: Text & CTA */}
             <div className="w-full lg:w-[40%] xl:w-[38%] p-6 sm:p-8 lg:p-10 lg:pl-14 xl:pl-20 flex flex-col justify-center space-y-3.5 sm:space-y-4">
-              <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-[0.24em] text-[#C5A56A] block font-sans">
-                {t.s2.eyebrow}
-              </span>
-
               <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] xl:text-[36px] text-white font-normal leading-[1.15]">
                 {t.s2.title}
               </h2>
@@ -2500,9 +2485,6 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         <section className="py-12 sm:py-16 bg-[#FAF9F5] border-t border-[#EAE3D5]">
           <Container size="wide">
             <div className="max-w-2xl mb-10 sm:mb-12">
-              <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans mb-2">
-                {t.s3.eyebrow}
-              </span>
               <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-[#0F2A1D] font-normal leading-tight mb-3">
                 {t.s3.title}
               </h2>
@@ -2554,9 +2536,6 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         <section id="immobilien" className="py-14 sm:py-20 bg-[#FAF9F5] border-t border-[#EAE3D5]">
           <Container size="wide">
             <div className="max-w-3xl mb-12 sm:mb-16">
-              <span className="text-[11px] sm:text-xs font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-3 font-sans">
-                {t.s4.eyebrow}
-              </span>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-forest-950 font-normal leading-tight mb-4">
                 {t.s4.title}
               </h2>
@@ -2656,10 +2635,6 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-6 xl:gap-8">
               <div className="w-full lg:w-[35%] xl:w-[36%] shrink-0 space-y-2 lg:pl-6 xl:pl-10">
-                <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-[0.2em] text-[#C5A56A] block font-sans">
-                  {t.s5.eyebrow}
-                </span>
-
                 <h2 className="font-serif text-2xl sm:text-[26px] lg:text-[28px] text-white font-normal leading-[1.15]">
                   {t.s5.title}
                 </h2>
@@ -2748,12 +2723,8 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
                 </div>
               </div>
 
-              {/* Center Column: Eyebrow, Heading, Desc, Gold Button */}
+              {/* Center Column: Heading, Desc, Gold Button */}
               <div className="lg:col-span-4 space-y-3 sm:space-y-3.5">
-                <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans">
-                  {t.s6.eyebrow}
-                </span>
-
                 <h2 className="font-serif text-2xl sm:text-[28px] lg:text-[30px] xl:text-[32px] text-[#0F2A1D] font-normal leading-[1.2]">
                   {t.s6.title}
                 </h2>
@@ -2831,9 +2802,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
 
               {/* Modal Header */}
               <div className="mb-6 pr-8">
-                <div className="inline-block px-3 py-1 rounded-full bg-[#C5A56A]/15 border border-[#C5A56A]/30 text-[10px] sm:text-[11px] font-bold tracking-wider text-[#8D6B27] uppercase mb-2">
-                  {selectedDomain.badge}
-                </div>
+
                 <h2 className="font-serif text-2xl sm:text-3xl font-bold text-forest-950 leading-tight">
                   {selectedDomain.modal.title}
                 </h2>

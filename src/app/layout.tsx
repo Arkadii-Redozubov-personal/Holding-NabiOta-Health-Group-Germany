@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Inter, Alex_Brush } from "next/font/google";
+import { Lora, Plus_Jakarta_Sans, Inter, Alex_Brush } from "next/font/google";
 import "./globals.css";
 import { companyInfo } from "@/data/company";
+
+const lora = Lora({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-serif",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin", "cyrillic-ext"],
@@ -79,7 +86,7 @@ export default function RootLayout({
   return (
     <html
       lang="de"
-      className={`${jakarta.variable} ${inter.variable} ${alexBrush.variable} scroll-smooth overflow-x-hidden max-w-full`}
+      className={`${lora.variable} ${jakarta.variable} ${inter.variable} ${alexBrush.variable} scroll-smooth overflow-x-hidden max-w-full`}
     >
       <body className="min-h-screen bg-[#FBFAF6] text-[#132018] font-sans antialiased selection:bg-[#BEA06B]/20 selection:text-[#112117] overflow-x-hidden w-full max-w-full">
         {children}

@@ -600,15 +600,11 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
           <div className="max-w-6xl mx-auto">
             {/* Top Row: Title, Eyebrow & Lead on the left (No buttons) */}
             <div className="max-w-xl lg:max-w-2xl mb-5 sm:mb-6 lg:mb-7">
-              {/* Eyebrow with gold line: incorporating MVZ 2 · § 95 SGB V & subtitle */}
-              <div className="flex items-center gap-2.5 mb-2.5 sm:mb-3 flex-wrap">
+              {/* Eyebrow with gold line: MVZ 2 · § 95 SGB V */}
+              <div className="flex items-center gap-2.5 mb-2.5 sm:mb-3">
                 <span className="w-6 h-[1.5px] bg-[#C5A56A]" />
-                <span className="text-[11px] sm:text-[11.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase">
+                <span className="text-[11px] sm:text-[11.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase font-sans">
                   {c.tag[l]}
-                </span>
-                <span className="w-1 h-1 rounded-full bg-[#C5A56A]/60" />
-                <span className="text-[10px] sm:text-[10.5px] font-medium tracking-[0.2em] text-[#6E7870] uppercase">
-                  {c.subtitle[l]}
                 </span>
               </div>
 
@@ -711,9 +707,6 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
                       <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 bg-[#EFE8D8] text-[#9E7D3B] border border-[#D5B878]/30">
                         <Icon className="w-3 h-3" />
                       </div>
-                      <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.2em] uppercase text-[#7A6843]">
-                        {cardEyebrows[cardIdx][l]}
-                      </span>
                     </div>
 
                     {/* Title */}
@@ -767,9 +760,6 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
             {/* Left Column: Original Eyebrow, Title, Description, Pill Button */}
             <div className="w-full lg:w-[52%] xl:w-[48%]">
               <div className="flex items-center gap-2 mb-2 sm:mb-2.5">
-                <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
-                  {cardEyebrows[1][l]}
-                </span>
               </div>
 
               <h3 className="font-serif text-[28px] sm:text-[34px] lg:text-[38px] font-normal text-[#142318] leading-[1.18] mb-3.5 sm:mb-4">
@@ -819,9 +809,6 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
           {/* Medizinische und organisatorische Aufgaben (Photo Style: 4 Columns Grid) */}
           <div className="space-y-6">
             <div>
-              <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-1.5">
-                {l === "uz" ? "VAZIFALAR VA STANDARTLAR" : l === "ru" ? "ЗАДАЧИ И СТАНДАРТЫ" : l === "en" ? "TASKS & OPERATIONS" : l === "tr" ? "GÖREVLER VE ORGANİZASYON" : l === "ar" ? "المهام والتنظيم" : "AUFGABEN & ORGANISATION"}
-              </span>
               <h3 className="font-serif text-[22px] sm:text-[26px] lg:text-[28px] font-normal text-[#142318] leading-[1.2]">
                 {c.tasksTitle[l]}
               </h3>
@@ -877,9 +864,6 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
         {/* Header */}
         <div className="max-w-2xl mb-7 sm:mb-9">
           <div className="flex items-center gap-3 mb-2.5">
-            <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase">
-              {l === "uz" ? "BIZNING MAJBURIYATLARIMIZ" : l === "ru" ? "НАШИ ОБЯЗАТЕЛЬСТВА" : l === "en" ? "OUR COMMITMENT" : l === "tr" ? "YÜKÜMLÜLÜKLERİMİZ" : l === "ar" ? "التزاماتنا" : "UNSERE VERPFLICHTUNGEN"}
-            </span>
             <span className="h-px w-8 bg-[#C5A56A]" />
           </div>
           <h3 className="font-serif text-[26px] sm:text-[32px] lg:text-[38px] text-white font-normal leading-[1.15] mb-2.5">

@@ -107,16 +107,7 @@ export default async function AreaDetailPage({ params }: AreaDetailPageProps) {
               ]}
             />
           }
-          title={
-            <>
-              {area.title}
-              {area.subtitle && (
-                <span className="block text-xl sm:text-2xl text-[#ECCF93] font-light mt-1 font-serif">
-                  {area.subtitle}
-                </span>
-              )}
-            </>
-          }
+          title={area.title}
           description={area.description}
           imageSrc={area.image || "/images/heroes/hero-areas.webp"}
           badges={areaBadges}

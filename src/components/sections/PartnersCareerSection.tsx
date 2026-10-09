@@ -20,9 +20,6 @@ export function PartnersCareerSection({ currentLocale = "de" }: PartnersCareerSe
             {/* Left text column */}
             <div className="flex-1 p-6 sm:p-7 xl:p-8 flex flex-col justify-between">
               <div>
-                <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] text-[#9C8145] uppercase block mb-2">
-                  {dict.split.partners.eyebrow}
-                </span>
                 <h2 className="font-serif text-[24px] sm:text-[27px] xl:text-[31px] font-bold text-[#142318] tracking-tight leading-[1.18] mb-3">
                   {dict.split.partners.heading}
                 </h2>
@@ -58,9 +55,6 @@ export function PartnersCareerSection({ currentLocale = "de" }: PartnersCareerSe
             {/* Left text column */}
             <div className="flex-1 p-6 sm:p-7 xl:p-8 flex flex-col justify-between">
               <div>
-                <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] text-[#D8B979] uppercase block mb-2">
-                  {dict.split.career.eyebrow}
-                </span>
                 <h2 className="font-serif text-[24px] sm:text-[27px] xl:text-[31px] font-bold text-white tracking-tight leading-[1.18] mb-3">
                   {dict.split.career.heading}
                 </h2>

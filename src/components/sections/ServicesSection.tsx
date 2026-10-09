@@ -195,9 +195,6 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
         {/* ── Section Header ───────────── */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-7 sm:mb-9">
           <div>
-            <span className="text-[10.5px] sm:text-[11.5px] font-bold tracking-[0.22em] text-[#9C8145] uppercase block mb-1.5">
-              {dict.areas.eyebrow}
-            </span>
             <h2 className="font-serif text-[28px] sm:text-[34px] lg:text-[40px] font-bold text-[#112117] tracking-tight leading-[1.15]">
               {isRu
                 ? "Комплексная забота о здоровье на всех этапах жизни"

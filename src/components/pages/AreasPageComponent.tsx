@@ -606,15 +606,8 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
             {/* Inner Content Area: aligns with page container, completely open without borders or frames */}
             <div className="relative z-10 w-full max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                {/* Left Column: Eyebrow, Serif Title, Description, Pill Button */}
+                {/* Left Column: Serif Title, Description, Pill Button */}
                 <div className="lg:col-span-5 space-y-4">
-                  <div className="flex items-center gap-2">
-                    <span className="w-6 h-[1.5px] bg-[#C5A56A]" />
-                    <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
-                      {introData.eyebrow}
-                    </span>
-                  </div>
-
                   <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] text-[#142318] font-normal leading-[1.16] whitespace-pre-line">
                     {introData.title}
                   </h2>
@@ -734,15 +727,8 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
           {/* Inner Content Area: aligns with page container, completely open without borders or frames */}
           <div className="relative z-10 w-full max-w-[1440px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 lg:gap-14 w-full">
-              {/* Left Column: Eyebrow, Title, Description, Button */}
+              {/* Left Column: Title, Description, Button */}
               <div className="w-full lg:w-[48%] xl:w-[44%]">
-                <div className="flex items-center gap-2 mb-2 sm:mb-2.5">
-                  <span className="w-6 h-[1.5px] bg-[#C5A56A]" />
-                  <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
-                    {whyNabiota.eyebrow}
-                  </span>
-                </div>
-
                 <h2 className="font-serif text-[28px] sm:text-[34px] lg:text-[40px] font-normal text-[#142318] leading-[1.18] mb-3.5 sm:mb-4 whitespace-pre-line">
                   {whyNabiota.title}
                 </h2>
@@ -804,10 +790,6 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
               {/* Left Column (Title & Controls) */}
               <div className="lg:col-span-4 space-y-3">
-                <span className="text-[11px] sm:text-xs font-bold tracking-[0.24em] text-[#B89650] uppercase block">
-                  {patientStories.eyebrow}
-                </span>
-
                 <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] text-[#132218] font-normal leading-tight whitespace-pre-line">
                   {patientStories.title}
                 </h2>
@@ -963,11 +945,8 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
 
           <Container size="wide" className="relative z-10 py-10 sm:py-12 lg:py-14">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 lg:gap-10">
-              {/* Left: Eyebrow + Title */}
+              {/* Left: Title */}
               <div className="space-y-1.5 lg:max-w-xs shrink-0">
-                <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
-                  {ctaData.eyebrow}
-                </span>
                 <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-white font-normal leading-[1.2] whitespace-pre-line">
                   {ctaData.title}
                 </h2>
