@@ -23,7 +23,7 @@ import { Container } from "@/components/layout/Container";
  * c) Anforderungen an die Zulassung
  */
 
-type Lang = "de" | "en" | "ru" | "tr" | "ar";
+type Lang = "de" | "en" | "ru" | "tr" | "ar" | "uz";
 type T = Record<Lang, string>;
 
 const c = {
@@ -33,6 +33,7 @@ const c = {
     ru: "ХОЛДИНГ И MVZ",
     tr: "HOLDİNG & MVZ",
     ar: "القابضة والمراكز الطبية MVZ",
+    uz: "HOLDING VA MVZ",
   } as T,
   subEyebrow: {
     de: "STRUKTUR · VERANTWORTLICHKEITEN · RECHTSRAHMEN",
@@ -40,6 +41,7 @@ const c = {
     ru: "СТРУКТУРА · ОБЯЗАННОСТИ · ПРАВОВОЙ РЕГЛАМЕНТ",
     tr: "YAPI · SORUMLULUKLAR · YASAL ÇERÇEVE",
     ar: "الهيكل التنظيمي · المسؤوليات · الإطار القانوني",
+    uz: "TUZILMA · MAS'ULIYATLAR · HUQUQIY ASOSLAR",
   } as T,
   tag: {
     de: "MVZ & HOLDING-VERTRAGSWESEN · § 95 SGB V",
@@ -47,6 +49,7 @@ const c = {
     ru: "MVZ И ДОГОВОРНАЯ БАЗА ХОЛДИНГА · § 95 SGB V",
     tr: "MVZ VE HOLDİNG SÖZLEŞME SİSTEMİ · § 95 SGB V",
     ar: "المنظومة التعاقدية للمراكز الطبية والقابضة · § 95 SGB V",
+    uz: "MVZ VA HOLDING SHARTNOMA TIZIMI · § 95 SGB V",
   } as T,
   title: {
     de: "Vertragliche Verbindung zwischen Holding und MVZ",
@@ -54,6 +57,7 @@ const c = {
     ru: "Договорная связь между холдингом и MVZ",
     tr: "Holding ile MVZ Arasındaki Sözleşmesel Bağlantı",
     ar: "الارتباط التعاقدي بين الشركة القابضة والمراكز الطبية MVZ",
+    uz: "Holding va MVZ o'rtasidagi shartnomaviy aloqa",
   } as T,
 
   aLabel: {
@@ -62,6 +66,7 @@ const c = {
     ru: "a) Этап становления с участием врача",
     tr: "a) Hekim Katılımı ile Yapılanma Aşaması",
     ar: "أ) مرحلة التأسيس بمشاركة الأطباء",
+    uz: "a) Shifokor ishtirokidagi shakllanish bosqichi",
   } as T,
   aCards: [
     {
@@ -73,6 +78,7 @@ const c = {
         ru: "Участие врача",
         tr: "Hekim Katılımı",
         ar: "مشاركة الأطباء",
+        uz: "Shifokor ishtiroki",
       } as T,
       text: {
         de: "Für neue MVZ wird zunächst die unmittelbare Beteiligung von Dr. Fischer-Rahimov als zugelassenem Vertragsarzt vorgesehen. Die bestehende persönliche Zulassung soll in diesem Modell erhalten bleiben. Ein eigener Zulassungsverzicht zugunsten einer Anstellung ist nicht Bestandteil des vorgeschlagenen Weges. Eine solche Änderung müsste gesondert geprüft werden.",
@@ -80,6 +86,7 @@ const c = {
         ru: "Для новых MVZ изначально предусмотрено прямое участие Dr. Fischer-Rahimov как допущенного врача системы обязательного страхования. Его действующий личный допуск в этой модели сохраняется. Отказ от собственного допуска в пользу работы по найму не входит в предлагаемый путь. Такое изменение потребовало бы отдельной проверки.",
         tr: "Yeni MVZ'ler için öncelikle Dr. Fischer-Rahimov'un yetkili sözleşmeli hekim olarak doğrudan katılımı öngörülmektedir. Bu modelde mevcut şahsi ruhsatın korunması hedeflenmektedir. Hizmet akdi lehine ruhsattan feragat etmek önerilen modelin bir parçası değildir. Böyle bir değişiklik ayrıca incelenmelidir.",
         ar: "بالنسبة للمراكز الطبية الجديدة (MVZ)، يُعتزم مبدئياً المشاركة المباشرة للدكتور فيشر-رحيموف كطبيب معتمد بموجب العقود التأمينية. ويتم الحفاظ على ترخيصه الشخصي الحالي ضمن هذا النموذج. التنازل عن الترخيص الشخصي لصالح العمل بالتوظيف ليس جزءاً من المسار المقترح، ويتطلب أي تعديل من هذا القبيل دراسة منفصلة.",
+        uz: "Yangi MVZlar uchun avvalo Dr. Fischer-Rahimovning akkreditatsiyadan o'tgan shartnomaviy shifokor sifatida bevosita ishtiroki ko'zda tutilgan. Mavjud shaxsiy litsenziya ushbu modelda saqlab qolinadi. O'z ruxsatnomasidan yollanma ish foydasiga voz kechish taklif etilayotgan yo'lning bir qismi emas. Bunday o'zgarish alohida ko'rib chiqilishi lozim.",
       } as T,
     },
     {
@@ -91,6 +98,7 @@ const c = {
         ru: "Общий бренд NabiOta",
         tr: "Ortak NabiOta Markası",
         ar: "العلامة التجارية المشتركة NabiOta",
+        uz: "Yagona NabiOta brendi",
       } as T,
       text: {
         de: "Die MVZ können unter der Marke NabiOta auftreten. Die gemeinsame Marke stellt keine gesellschaftsrechtliche Beteiligung dar. Die behandelnden Ärzte müssen nicht allein wegen ihrer Tätigkeit Gesellschafter werden. Die ärztliche Leitung muss im MVZ tätig und in medizinischen Fragen weisungsfrei sein.",
@@ -98,6 +106,7 @@ const c = {
         ru: "MVZ могут выступать под брендом NabiOta. Общий бренд не означает корпоративного участия. Лечащие врачи не обязаны становиться участниками общества только из-за своей работы. Врачебное руководство должно работать в MVZ и быть независимым в медицинских вопросах.",
         tr: "MVZ'ler NabiOta markası altında faaliyet gösterebilir. Ortak marka, şirketler hukuku kapsamında bir ortaklık oluşturmaz. Tedavi eden hekimlerin yalnızca mesleki faaliyetleri nedeniyle şirket ortağı olmaları gerekmez. Tıbbi yönetimin MVZ bünyesinde aktif olması ve tıbbi kararlarda talimatlardan bağımsız bulunması şarttır.",
         ar: "يمكن للمراكز الطبية العمل تحت العلامة التجارية المشتركة NabiOta. لا تشكل العلامة التجارية المشتركة مساهمة في رأس مال الشركة. لا يتعين على الأطباء المعالجين أن يصبحوا شركاء لمجرد ممارستهم الطبية. يجب أن تعمل الإدارة الطبية داخل المركز وأن تكون مستقلة تماماً ومتحررة من أي توجيهات في القرارات الطبية.",
+        uz: "MVZlar NabiOta brendi ostida faoliyat yuritishi mumkin. Umumiy brend korporativ huquqiy ishtirokni anglatmaydi. Davolovchi shifokorlar faqat o'zlarining kasbiy faoliyati uchungina jamiyat ishtirokchisi bo'lishlari shart emas. Tibbiy rahbariyat MVZda faoliyat yuritishi va tibbiy masalalarda har qanday ko'rsatmalardan mustaqil bo'lishi shart.",
       } as T,
     },
   ],
@@ -108,6 +117,7 @@ const c = {
     ru: "b) Необходимые договорные сферы",
     tr: "b) Gerekli Sözleşme Alanları",
     ar: "ب) مجالات العقود الإلزامية",
+    uz: "b) Zaruriy shartnoma sohalari",
   } as T,
   thContract: {
     de: "VERTRAG",
@@ -115,6 +125,7 @@ const c = {
     ru: "ДОГОВОР",
     tr: "SÖZLEŞME",
     ar: "العقد",
+    uz: "SHARTNOMA",
   } as T,
   thContent: {
     de: "ZU REGELNDE INHALTE",
@@ -122,6 +133,7 @@ const c = {
     ru: "РЕГУЛИРУЕМОЕ СОДЕРЖАНИЕ",
     tr: "DÜZENLENECEK HUSUSLAR",
     ar: "البنود الواجب تنظيمها",
+    uz: "TARTIBGA SOLINADIGAN MASALALAR",
   } as T,
   contracts: [
     {
@@ -132,6 +144,7 @@ const c = {
         ru: "Управление и администрирование",
         tr: "Yönetim ve İdare",
         ar: "الإدارة والتشغيل الإداري",
+        uz: "Boshqaruv va ma'muriyat",
       } as T,
       content: {
         de: "Einzelne Leistungen, Vergütung, Leistungsnachweise, Verantwortlichkeiten und Kündigung.",
@@ -139,6 +152,7 @@ const c = {
         ru: "Отдельные услуги, вознаграждение, подтверждение оказания услуг, ответственность и расторжение.",
         tr: "Münferit hizmetler, ücretlendirme, performans belgeleri, sorumluluklar ve fesih koşulları.",
         ar: "الخدمات الفردية، الأتعاب، إثباتات الأداء المنجز، توزيع المسؤوليات وشروط إنهاء التعاقد.",
+        uz: "Alohida xizmatlar, to'lovlar, xizmat ko'rsatilganlik dalillari, javobgarlik va bekor qilish shartlari.",
       } as T,
     },
     {
@@ -149,6 +163,7 @@ const c = {
         ru: "Помещения и оборудование",
         tr: "Mekanlar ve Cihazlar",
         ar: "المقرات والمعدات والأجهزة",
+        uz: "Xonalar va uskunalar",
       } as T,
       content: {
         de: "Überlassungsumfang, Nutzungszeiten, Instandhaltung, Betreiberpflichten und Entgelt.",
@@ -156,6 +171,7 @@ const c = {
         ru: "Объём предоставления, время использования, техобслуживание, обязанности оператора и плата.",
         tr: "Tahsis kapsamı, kullanım saatleri, bakım ve onarım, işletici yükümlülükleri ve ücret tarifesi.",
         ar: "نطاق توفير المقرات، أوقات الاستخدام، الصيانة الدورية، التزامات المشغل والمقابل المالي.",
+        uz: "Foydalanishga berish hajmi, foydalanish vaqti, texnik xizmat ko'rsatish, operator majburiyatlari va to'lov.",
       } as T,
     },
     {
@@ -166,6 +182,7 @@ const c = {
         ru: "IT и обработка данных",
         tr: "BT ve Veri İşleme",
         ar: "تكنولوجيا المعلومات ومعالجة البيانات",
+        uz: "IT va ma'lumotlarni qayta ishlash",
       } as T,
       content: {
         de: "Zugriffsrechte, technische Sicherheit, Vertraulichkeit und datenschutzrechtliche Rollen.",
@@ -173,6 +190,7 @@ const c = {
         ru: "Права доступа, техническая безопасность, конфиденциальность и роли по защите данных.",
         tr: "Erişim hakları, teknik güvenlik, gizlilik ve veri koruma mevzuatı kapsamındaki roller.",
         ar: "صلاحيات الوصول، الأمان التقني، السرية التامة والأدوار القانونية لحماية البيانات.",
+        uz: "Kirish huquqlari, texnik xavfsizlik, maxfiylik va ma'lumotlarni himoya qilish bo'yicha majburiyatlar.",
       } as T,
     },
     {
@@ -183,6 +201,7 @@ const c = {
         ru: "Использование бренда",
         tr: "Marka Kullanımı",
         ar: "استخدام العلامة التجارية",
+        uz: "Brenddan foydalanish",
       } as T,
       content: {
         de: "Nutzungsumfang, Qualitätsvorgaben ohne medizinische Weisungsrechte und gegebenenfalls Lizenzentgelt.",
@@ -190,6 +209,7 @@ const c = {
         ru: "Объём использования, требования к качеству без права медицинских указаний и, при необходимости, лицензионная плата.",
         tr: "Kullanım kapsamı, tıbbi talimat yetkisi içermeyen kalite standartları ve gerekirse lisans bedeli.",
         ar: "نطاق الاستخدام، معايير الجودة دون صلاحيات توجيه طبي، ورسوم الترخيص عند الاقتضاء.",
+        uz: "Foydalanish ko'lami, tibbiy ko'rsatma berish huquqisiz sifat talablari va zarur hollarda litsenziya to'lovi.",
       } as T,
     },
   ],
@@ -199,6 +219,7 @@ const c = {
     ru: "Каждый договор оформляется в соответствии с фактически оказываемыми услугами. Паушальная передача всей прибыли MVZ холдингу не предусмотрена. Платёжные потоки, цены и налоговый режим проверяются до внедрения. Договоры о передаче прибыли, господстве, доверительном управлении или аналогичные соглашения о контроле не используются как замена отсутствующему праву на учреждение.",
     tr: "Her sözleşme fiilen sunulan hizmetlere göre yapılandırılmalıdır. Tüm MVZ kârlarının holdinge toptan aktarılması öngörülmemektedir. Ödeme kanalları, fiyatlandırma ve vergi rejimi uygulamadan önce denetlenmelidir. Kâr aktarımı, hakimiyet, yedieminlik veya benzeri kontrol anlaşmaları, kuruluş yetkisi eksikliğinin yerine ikame olarak kullanılamaz.",
     ar: "يجب صياغة كل عقد وفقاً للخدمات المقدمة فعلياً. ولا يُعتزم تحويل إجمالي أرباح المراكز الطبية بشكل جزافي إلى الشركة القابضة. يجب مراجعة قنوات الدفع والتسعير والمعاملة الضريبية بدقة قبل التنفيذ. لا تُستخدم اتفاقيات تحويل الأرباح أو السيطرة أو الائتمان كبديل لغياب أهلية التأسيس القانونية.",
+    uz: "Har bir shartnoma amalda ko'rsatilgan xizmatlarga muvofiq tuziladi. MVZning barcha foydasini holdingga yalpi o'tkazish ko'zda tutilmagan. To'lov yo'llari, narxlar va soliq rejimi amalga oshirishdan oldin tekshiriladi. Foydani o'tkazish, nazorat, ishonchli boshqaruv yoki shunga o'xshash nazorat kelishuvlari ta'sis etish huquqining yo'qligi o'rniga vosita sifatida qo'llanilmaydi.",
   } as T,
 
   cLabel: {
@@ -207,6 +228,7 @@ const c = {
     ru: "c) Требования к допуску",
     tr: "c) Ruhsatlandırma ve İzin Gereksinimleri",
     ar: "ج) متطلبات الترخيص والاعتماد",
+    uz: "c) Litsenziyalash va ruxsatnoma talablari",
   } as T,
   cItems: [
     {
@@ -216,6 +238,7 @@ const c = {
       ru: "Для каждого MVZ подтверждаются круг учредителей, правовая форма, врачебное руководство, записи в реестре врачей, а также необходимые допуски и разрешения на наём.",
       tr: "Her MVZ için kurucu ortaklar, hukuki form, tıbbi yönetim, hekim sicil kayıtları ile gerekli ruhsatlar ve istihdam izinleri belgelenmelidir.",
       ar: "يجب إثبات دائرة المؤسسين، الشكل القانوني، الإدارة الطبية، القيود في سجل الأطباء، والتراخيص وتصاريح التوظيف المطلوبة لكل مركز طبي.",
+      uz: "Har bir MVZ uchun ta'sischilar doirasi, huquqiy shakli, tibbiy rahbariyat, shifokorlar reyestridagi yozuvlar hamda zaruriy litsenziyalar va yollash ruxsatnomalari hujjatlashtirilishi lozim.",
     },
     {
       icon: ShieldCheck,
@@ -224,6 +247,7 @@ const c = {
       ru: "KV Nordrhein называет для учреждения минимум два половинных места в системе обязательного страхования (Kassensitze).",
       tr: "KV Nordrhein, kuruluş için en az iki yarım yasal sigorta hekimliği kontenjanı (Kassensitz) şart koşmaktadır.",
       ar: "تشترط جمعية أطباء التأمين الصحي بنوردراين (KV Nordrhein) حصتين نصفيتين على الأقل من حصص التأمين لتأسيس المركز.",
+      uz: "KV Nordrhein tashkil etish uchun kamida ikkita yarim majburiy sug'urta tibbiy kvotasini (Kassensitze) talab qiladi.",
     },
     {
       icon: Building2,
@@ -232,6 +256,7 @@ const c = {
       ru: "Для GmbH необходимы предусмотренные законом поручительства или иные обеспечения.",
       tr: "Bir GmbH durumunda, kanunen öngörülen kefaletler veya diğer teminatlar zorunludur.",
       ar: "في حالة شركة ذات مسؤولية محدودة (GmbH)، يلزم تقديم الكفالات أو الضمانات الأخرى المنصوص عليها قانوناً.",
+      uz: "GmbH (mas'uliyati cheklangan jamiyat) uchun qonunda nazarda tutilgan kafilliklar yoki boshqa ta'minotlar talab qilinadi.",
     },
     {
       icon: Brain,
@@ -240,6 +265,7 @@ const c = {
       ru: "Для планируемого неврологическо-терапевтического MVZ дополнительно уточняются конкретные места и участие терапевта в семейной или специализированной помощи.",
       tr: "Planlanan nörolojik-dahiliye MVZ'sinde ayrıca somut kontenjanlar ve dahiliye uzmanının aile hekimliği mi yoksa uzman hekimlik mi kapsamında hizmet vereceği netleştirilmelidir.",
       ar: "بالنسبة لمركز الطب الباطني والأعصاب المخطط له، يجب توضيح الحصص المحددة ومشاركة طبيب الباطنة في الرعاية العامة أو التخصصية.",
+      uz: "Rejalashtirilgan nevrologik-terapevtik MVZ uchun qo'shimcha ravishda aniq o'rinlar va terapevtning umumiy amaliyot yoki ixtisoslashgan yordamdagi ishtiroki oydinlashtirilishi lozim.",
     },
     {
       icon: ClipboardCheck,
@@ -248,12 +274,13 @@ const c = {
       ru: "Уже существующий MVZ включается в эту модель только после проверки его действующих решений (Bescheide).",
       tr: "Halihazırda mevcut bir MVZ, ancak mevcut resmi onay ve kararları (Bescheide) incelendikten sonra bu modele dahil edilir.",
       ar: "لا يتم إدراج أي مركز طبي قائم مسبقاً في هذا النموذج إلا بعد المراجعة الشاملة لقرارات اعتماده الرسمية السارية.",
+      uz: "Mavjud MVZ ushbu modelga faqat uning amaldagi rasmiy qarorlari (Bescheide) tekshirilgandan so'ng kiritiladi.",
     },
   ],
 };
 
 export function MvzContractSection({ locale = "de" }: { locale?: string }) {
-  const l: Lang = locale === "tr" ? "tr" : locale === "ar" ? "ar" : locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
+  const l: Lang = locale === "uz" ? "uz" : locale === "tr" ? "tr" : locale === "ar" ? "ar" : locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
 
   const SubLabel = ({ children }: { children: React.ReactNode }) => (
     <h3 className="flex items-center gap-3 font-serif text-[20px] sm:text-[23px] font-normal text-[#142318] mb-5 sm:mb-6">

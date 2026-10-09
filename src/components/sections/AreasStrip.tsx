@@ -234,6 +234,8 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
           ? "Tıbbi\nUzmanlıklar"
           : currentLocale === "ar"
           ? "التخصصات\nالطبية"
+          : currentLocale === "uz"
+          ? "Tibbiyot\nyo'nalishlari"
           : currentLocale === "en"
           ? "Medical\nSpecialties"
           : "Medizinische\nFachbereiche",
@@ -248,6 +250,8 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
           ? "Tanı ve\nTeşhis"
           : currentLocale === "ar"
           ? "التشخيص\nوالأشعة"
+          : currentLocale === "uz"
+          ? "Diagnostika"
           : currentLocale === "en"
           ? "Diagnostics"
           : "Diagnostik",
@@ -262,6 +266,8 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
           ? "Tıbbi\nRehabilitasyon"
           : currentLocale === "ar"
           ? "التأهيل\nالطبي"
+          : currentLocale === "uz"
+          ? "Reabilitatsiya"
           : currentLocale === "en"
           ? "Rehabilitation"
           : "Rehabilitation",
@@ -276,6 +282,8 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
           ? "Hasta Bakımı\nve Destek"
           : currentLocale === "ar"
           ? "التمريض\nوالرعاية"
+          : currentLocale === "uz"
+          ? "Parvarish va\npatronaj"
           : currentLocale === "en"
           ? "Nursing &\nCare"
           : "Pflege",
@@ -290,6 +298,8 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
           ? "Danışmanlık &\nProje Geliştirme"
           : currentLocale === "ar"
           ? "الاستشارات وتطوير\nالمشاريع"
+          : currentLocale === "uz"
+          ? "Konsalting &\nloyihalar"
           : currentLocale === "en"
           ? "Consulting &\nDevelopment"
           : "Beratung &\nProjektentwicklung",
@@ -304,6 +314,8 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
           ? "Uluslararası\nİş Birlikleri"
           : currentLocale === "ar"
           ? "التعاون الطبي\nالدولي"
+          : currentLocale === "uz"
+          ? "Xalqaro\nhamkorlik"
           : currentLocale === "en"
           ? "International\nCooperation"
           : "Internationale\nKooperationen",
@@ -321,6 +333,8 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
           ? "Güçlü Marka"
           : currentLocale === "ar"
           ? "علامة رائدة"
+          : currentLocale === "uz"
+          ? "Kuchli brend"
           : currentLocale === "en"
           ? "Strong Brand"
           : "Starke Marke",
@@ -331,6 +345,8 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
           ? "Daha sağlıklı bir toplum için."
           : currentLocale === "ar"
           ? "من أجل مجتمع أكثر صحة."
+          : currentLocale === "uz"
+          ? "Sog'lom jamiyat sari."
           : currentLocale === "en"
           ? "For a healthier society."
           : "Für eine gesündere Gesellschaft.",
@@ -345,6 +361,8 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
           ? "Faaliyet Alanı"
           : currentLocale === "ar"
           ? "قطاعات رئيسية"
+          : currentLocale === "uz"
+          ? "Faoliyat yo'nalishi"
           : currentLocale === "en"
           ? "Business Divisions"
           : "Unternehmensbereiche",
@@ -355,6 +373,8 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
           ? "Tek çatı altında uzmanlık."
           : currentLocale === "ar"
           ? "كفاءات تحت مظلة واحدة."
+          : currentLocale === "uz"
+          ? "Barcha sohalar yagona tizimda."
           : currentLocale === "en"
           ? "Competence under one roof."
           : "Kompetenz unter einem Dach.",
@@ -369,6 +389,8 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
           ? "Ağ İçi Uzman"
           : currentLocale === "ar"
           ? "خبير ومتخصص"
+          : currentLocale === "uz"
+          ? "Tarmoq mutaxassislari"
           : currentLocale === "en"
           ? "Experts in Network"
           : "Experten im Netzwerk",
@@ -379,6 +401,8 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
           ? "Deneyim. Özveri. Etki."
           : currentLocale === "ar"
           ? "خبرة. تفانٍ. نتائج موثوقة."
+          : currentLocale === "uz"
+          ? "Tajriba. Fidoyilik. Natija."
           : currentLocale === "en"
           ? "Experience. Commitment. Impact."
           : "Erfahrung. Engagement. Wirkung.",
@@ -393,6 +417,8 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
           ? "Ortak Misyon"
           : currentLocale === "ar"
           ? "رسالة مشتركة"
+          : currentLocale === "uz"
+          ? "Yagona missiya"
           : currentLocale === "en"
           ? "One Mission"
           : "Eine Mission",
@@ -403,6 +429,8 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
           ? "Gelecek nesiller için sürdürülebilir sağlık."
           : currentLocale === "ar"
           ? "رعاية صحية مستدامة للأجيال القادمة."
+          : currentLocale === "uz"
+          ? "Kelajak avlodlar uchun barqaror sog'liqni saqlash."
           : currentLocale === "en"
           ? "Sustainable healthcare for coming generations."
           : "Nachhaltige Gesundheitsversorgung für kommende Generationen.",
@@ -420,6 +448,12 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
               <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.22em] text-[#C5A56A] uppercase block mb-1">
                 {currentLocale === "ru"
                   ? "НАШИ НАПРАВЛЕНИЯ"
+                  : currentLocale === "tr"
+                  ? "FAALİYET ALANLARIMIZ"
+                  : currentLocale === "ar"
+                  ? "قطاعاتنا"
+                  : currentLocale === "uz"
+                  ? "BIZNING YO'NALISHLAR"
                   : currentLocale === "en"
                   ? "OUR DIVISIONS"
                   : "UNSERE BEREICHE"}
@@ -427,6 +461,12 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
               <h2 className="font-display text-[22px] sm:text-[25px] lg:text-[28px] font-medium leading-[1.12] tracking-[-0.01em] text-[#142318]">
                 {currentLocale === "ru" ? (
                   <>Многогранная компетенция для здорового будущего.</>
+                ) : currentLocale === "tr" ? (
+                  <>Sağlıklı bir gelecek için çok yönlü uzmanlık.</>
+                ) : currentLocale === "ar" ? (
+                  <>كفاءات متعددة لمستقبل أكثر صحة.</>
+                ) : currentLocale === "uz" ? (
+                  <>Sog'lom kelajak uchun ko'p tarmoqli salohiyat.</>
                 ) : currentLocale === "en" ? (
                   <>Diverse expertise for a healthier future.</>
                 ) : (

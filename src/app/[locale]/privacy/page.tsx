@@ -19,6 +19,7 @@ interface LocalizedPrivacyProps {
 export async function generateMetadata({ params }: LocalizedPrivacyProps): Promise<Metadata> {
   const { locale } = await params;
   const titles: Record<string, string> = {
+    uz: "Maxfiylik siyosati | GDPR / DSGVO muvofiqligi",
     de: "Datenschutzerklärung | DSGVO Konformität",
     en: "Privacy Policy | GDPR Compliance",
     ru: "Политика конфиденциальности | GDPR",
@@ -30,6 +31,7 @@ export async function generateMetadata({ params }: LocalizedPrivacyProps): Promi
     alternates: {
       canonical: `https://www.nabiota-health-group.de/${locale}/privacy`,
       languages: {
+        uz: "https://www.nabiota-health-group.de/uz/privacy",
         de: "https://www.nabiota-health-group.de/de/privacy",
         en: "https://www.nabiota-health-group.de/en/privacy",
         ru: "https://www.nabiota-health-group.de/ru/privacy",
@@ -43,6 +45,7 @@ export async function generateMetadata({ params }: LocalizedPrivacyProps): Promi
 
 export default async function LocalizedPrivacyPage({ params }: LocalizedPrivacyProps) {
   const { locale } = await params;
+  const isUz = locale === "uz";
   const isRu = locale === "ru";
   const isEn = locale === "en";
   const isTr = locale === "tr";
@@ -51,18 +54,18 @@ export default async function LocalizedPrivacyPage({ params }: LocalizedPrivacyP
   const privacyBadges = [
     {
       icon: <ShieldCheck className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu ? "100% GDPR" : isEn ? "100% GDPR" : isTr ? "%100 KVKK & GDPR" : isAr ? "100% امتثال GDPR" : "100% DSGVO",
-      sub: isRu ? "Соответствие" : isEn ? "Compliant" : isTr ? "Tam Uyum" : isAr ? "حماية كاملة" : "Konformität",
+      title: isUz ? "100% GDPR" : isRu ? "100% GDPR" : isEn ? "100% GDPR" : isTr ? "%100 KVKK & GDPR" : isAr ? "100% امتثال GDPR" : "100% DSGVO",
+      sub: isUz ? "Muvofiqlik" : isRu ? "Соответствие" : isEn ? "Compliant" : isTr ? "Tam Uyum" : isAr ? "حماية كاملة" : "Konformität",
     },
     {
       icon: <Lock className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu ? "Защита" : isEn ? "Secure" : isTr ? "Güvenli" : isAr ? "أمان" : "Sichere",
-      sub: isRu ? "Данных" : isEn ? "Data" : isTr ? "Veri Güvenliği" : isAr ? "البيانات" : "Daten",
+      title: isUz ? "Xavfsiz" : isRu ? "Защита" : isEn ? "Secure" : isTr ? "Güvenli" : isAr ? "أمان" : "Sichere",
+      sub: isUz ? "Ma'lumotlar" : isRu ? "Данных" : isEn ? "Data" : isTr ? "Veri Güvenliği" : isAr ? "البيانات" : "Daten",
     },
     {
       icon: <FileText className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu ? "Полная" : isEn ? "Full" : isTr ? "Eksiksiz" : isAr ? "شفافية" : "Volle",
-      sub: isRu ? "Прозрачность" : isEn ? "Transparency" : isTr ? "Şeffaflık" : isAr ? "مطلقة" : "Transparenz",
+      title: isUz ? "To'liq" : isRu ? "Полная" : isEn ? "Full" : isTr ? "Eksiksiz" : isAr ? "شفافية" : "Volle",
+      sub: isUz ? "Shaffoflik" : isRu ? "Прозрачность" : isEn ? "Transparency" : isTr ? "Şeffaflık" : isAr ? "مطلقة" : "Transparenz",
     },
   ];
 
@@ -73,7 +76,9 @@ export default async function LocalizedPrivacyPage({ params }: LocalizedPrivacyP
         <PageHero
           locale={locale}
           eyebrow={
-            isRu
+            isUz
+              ? "MAXFIYLIK VA SHAFFOFLIK"
+              : isRu
               ? "КОНФИДЕНЦИАЛЬНОСТЬ И ПРОЗРАЧНОСТЬ"
               : isEn
               ? "PRIVACY & TRANSPARENCY"
@@ -84,7 +89,9 @@ export default async function LocalizedPrivacyPage({ params }: LocalizedPrivacyP
               : "DATENSCHUTZ & TRANSPARENZ"
           }
           title={
-            isRu
+            isUz
+              ? "Maxfiylik siyosati"
+              : isRu
               ? "Политика конфиденциальности"
               : isEn
               ? "Privacy Policy"
@@ -95,7 +102,9 @@ export default async function LocalizedPrivacyPage({ params }: LocalizedPrivacyP
               : "Datenschutzerklärung"
           }
           description={
-            isRu
+            isUz
+              ? "Yevropa GDPR reglamenti bo'yicha shaxsiy ma'lumotlarni qayta ishlashning xususiyati, ko'lami va maqsadlari to'g'risida ma'lumot."
+              : isRu
               ? "Информация о характере, объеме и целях обработки персональных данных в соответствии с европейским регламентом GDPR."
               : isEn
               ? "Information on the nature, scope, and purpose of personal data processing under the GDPR."
@@ -115,10 +124,12 @@ export default async function LocalizedPrivacyPage({ params }: LocalizedPrivacyP
             <div className="bg-white p-8 sm:p-12 lg:p-14 rounded-3xl border border-forest-900/10 shadow-sm space-y-8 text-sm sm:text-base text-text-secondary leading-relaxed font-sans">
               <div>
                 <h2 className="font-display text-2xl text-forest-950 mb-3">
-                  {isRu ? "1. Ответственный орган" : isEn ? "1. Data Controller" : isTr ? "1. Veri Sorumlusu" : isAr ? "1. الجهة المسؤولة عن معالجة البيانات" : "1. Verantwortliche Stelle"}
+                  {isUz ? "1. Mas'ul organ" : isRu ? "1. Ответственный орган" : isEn ? "1. Data Controller" : isTr ? "1. Veri Sorumlusu" : isAr ? "1. الجهة المسؤولة عن معالجة البيانات" : "1. Verantwortliche Stelle"}
                 </h2>
                 <p>
-                  {isRu
+                  {isUz
+                    ? "Umumiy ma'lumotlarni himoya qilish to'g'risidagi reglament (GDPR) ma'nosida ma'lumotlar nazoratchisi (mas'ul shaxs):"
+                    : isRu
                     ? "Контроллером данных в смысле Общего регламента по защите данных (GDPR) является:"
                     : isEn
                     ? "Responsible body within the meaning of the General Data Protection Regulation (GDPR) is:"
@@ -138,10 +149,12 @@ export default async function LocalizedPrivacyPage({ params }: LocalizedPrivacyP
 
               <div className="pt-6 border-t border-forest-900/10">
                 <h2 className="font-display text-2xl text-forest-950 mb-3">
-                  {isRu ? "2. Сбор и хранение персональных данных" : isEn ? "2. Collection and Storage of Personal Data" : isTr ? "2. Kişisel Verilerin Toplanması ve Saklanması" : isAr ? "2. جمع البيانات الشخصية وتخزينها" : "2. Erhebung und Speicherung personenbezogener Daten"}
+                  {isUz ? "2. Shaxsiy ma'lumotlarni to'plash va saqlash" : isRu ? "2. Сбор и хранение персональных данных" : isEn ? "2. Collection and Storage of Personal Data" : isTr ? "2. Kişisel Verilerin Toplanması ve Saklanması" : isAr ? "2. جمع البيانات الشخصية وتخزينها" : "2. Erhebung und Speicherung personenbezogener Daten"}
                 </h2>
                 <p>
-                  {isRu
+                  {isUz
+                    ? "Bizning veb-saytimizga tashrif buyurganingizda qurilmangizdagi brauzer avtomatik ravishda veb-saytimiz serveriga ma'lumot yuboradi. Ushbu ma'lumotlar vaqtincha jurnal faylida (log-fayl) saqlanadi."
+                    : isRu
                     ? "При посещении нашего веб-сайта браузер на вашем устройстве автоматически передает информацию на сервер нашего веб-сайта. Эта информация временно сохраняется в так называемом лог-файле."
                     : isEn
                     ? "When you visit our website, the browser used on your device automatically sends information to the server of our website. This information is temporarily stored in a log file."
@@ -152,7 +165,9 @@ export default async function LocalizedPrivacyPage({ params }: LocalizedPrivacyP
                     : "Beim Aufrufen unserer Website werden durch den auf Ihrem Endgerät zum Einsatz kommenden Browser automatisch Informationen an den Server unserer Website gesendet. Diese Informationen werden temporär in einem sogenannten Logfile gespeichert."}
                 </p>
                 <p className="mt-2 text-sm text-text-secondary">
-                  {isRu
+                  {isUz
+                    ? "Bunga quyidagilar kiradi: IP-manzil, kirish sanasi va vaqti, so'ralgan faylning nomi va URL-manzili, yo'naltiruvchi veb-sayt (Referrer-URL), foydalanilgan brauzer va operatsion tizim."
+                    : isRu
                     ? "Сюда относятся: IP-адрес, дата и время доступа, имя и URL-адрес запрашиваемого файла, веб-сайт перехода (Referrer-URL), используемый браузер и операционная система."
                     : isEn
                     ? "This includes: IP address, date and time of access, name and URL of retrieved file, referring website (referrer URL), browser used and computer operating system."
@@ -166,12 +181,14 @@ export default async function LocalizedPrivacyPage({ params }: LocalizedPrivacyP
 
               <div className="pt-6 border-t border-forest-900/10">
                 <h2 className="font-display text-2xl text-forest-950 mb-3">
-                  {isRu ? "3. Ваши права (Права субъекта данных)" : isEn ? "3. Your Rights as a Data Subject" : isTr ? "3. İlgili Kişi Olarak Haklarınız (GDPR/DSGVO)" : isAr ? "3. حقوق أصحاب البيانات بموجب اللائحة الأوروبية (GDPR)" : "3. Betroffenenrechte nach DSGVO"}
+                  {isUz ? "3. Sizning huquqlaringiz (Ma'lumot sub'ektining huquqlari)" : isRu ? "3. Ваши права (Права субъекта данных)" : isEn ? "3. Your Rights as a Data Subject" : isTr ? "3. İlgili Kişi Olarak Haklarınız (GDPR/DSGVO)" : isAr ? "3. حقوق أصحاب البيانات بموجب اللائحة الأوروبية (GDPR)" : "3. Betroffenenrechte nach DSGVO"}
                 </h2>
                 <ul className="list-disc pl-5 space-y-2">
                   <li>
                     <strong>
-                      {isRu
+                      {isUz
+                        ? "Ma'lumot olish huquqi (GDPR 15-modda)"
+                        : isRu
                         ? "Право на доступ (ст. 15 GDPR)"
                         : isEn
                         ? "Right of Access (Art. 15 GDPR)"
@@ -182,7 +199,9 @@ export default async function LocalizedPrivacyPage({ params }: LocalizedPrivacyP
                         : "Auskunftsrecht (Art. 15 DSGVO)"}
                       :
                     </strong>{" "}
-                    {isRu
+                    {isUz
+                      ? "Siz biz tomonimizdan qayta ishlanayotgan shaxsiy ma'lumotlaringiz haqida ma'lumot talab qilishingiz mumkin."
+                      : isRu
                       ? "Вы имеете право запросить подтверждение об обработке данных."
                       : isEn
                       ? "You can request information about your personal data processed by us."
@@ -194,7 +213,9 @@ export default async function LocalizedPrivacyPage({ params }: LocalizedPrivacyP
                   </li>
                   <li>
                     <strong>
-                      {isRu
+                      {isUz
+                        ? "Tuzatish huquqi (GDPR 16-modda)"
+                        : isRu
                         ? "Право на исправление (ст. 16 GDPR)"
                         : isEn
                         ? "Right to Rectification (Art. 16 GDPR)"
@@ -205,7 +226,9 @@ export default async function LocalizedPrivacyPage({ params }: LocalizedPrivacyP
                         : "Berichtigungsrecht (Art. 16 DSGVO)"}
                       :
                     </strong>{" "}
-                    {isRu
+                    {isUz
+                      ? "Noto'g'ri yoki to'liq bo'lmagan ma'lumotlarni zudlik bilan tuzatishni talab qilishingiz mumkin."
+                      : isRu
                       ? "Право на исправление неточных данных."
                       : isEn
                       ? "You can request the immediate correction of inaccurate data."
@@ -217,7 +240,9 @@ export default async function LocalizedPrivacyPage({ params }: LocalizedPrivacyP
                   </li>
                   <li>
                     <strong>
-                      {isRu
+                      {isUz
+                        ? "O'chirish huquqi (GDPR 17-modda)"
+                        : isRu
                         ? "Право на удаление (ст. 17 GDPR)"
                         : isEn
                         ? "Right to Erasure (Art. 17 GDPR)"
@@ -228,7 +253,9 @@ export default async function LocalizedPrivacyPage({ params }: LocalizedPrivacyP
                         : "Löschungsrecht (Art. 17 DSGVO)"}
                       :
                     </strong>{" "}
-                    {isRu
+                    {isUz
+                      ? "Qonuniy saqlash majburiyatlari saqlanib qolgan holda, saqlanayotgan shaxsiy ma'lumotlaringizni o'chirishni talab qilishingiz mumkin."
+                      : isRu
                       ? "Право на удаление ваших персональных данных."
                       : isEn
                       ? "You can request the deletion of your personal data stored with us."
@@ -243,10 +270,12 @@ export default async function LocalizedPrivacyPage({ params }: LocalizedPrivacyP
 
               <div className="pt-6 border-t border-forest-900/10">
                 <h2 className="font-display text-2xl text-forest-950 mb-3">
-                  {isRu ? "4. Безопасность данных" : isEn ? "4. Data Security" : isTr ? "4. Veri Güvenliği" : isAr ? "4. أمن البيانات والتشفير" : "4. Datensicherheit"}
+                  {isUz ? "4. Ma'lumotlar xavfsizligi" : isRu ? "4. Безопасность данных" : isEn ? "4. Data Security" : isTr ? "4. Veri Güvenliği" : isAr ? "4. أمن البيانات والتشفير" : "4. Datensicherheit"}
                 </h2>
                 <p>
-                  {isRu
+                  {isUz
+                    ? "Biz veb-saytga tashrif davomida brauzeringiz tomonidan qo'llab-quvvatlanadigan eng yuqori shifrlash darajasiga ega umumiy qabul qilingan SSL (Secure Socket Layer) protokolidan foydalanamiz."
+                    : isRu
                     ? "Мы используем общепринятый протокол SSL (Secure Socket Layer) в сочетании с наивысшим уровнем шифрования, поддерживаемым вашим браузером."
                     : isEn
                     ? "We use the widespread SSL protocol (Secure Socket Layer) in conjunction with the highest level of encryption supported by your browser during your website visit."

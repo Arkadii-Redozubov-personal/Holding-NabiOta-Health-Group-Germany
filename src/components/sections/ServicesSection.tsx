@@ -21,6 +21,7 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
   const isRu = currentLocale === "ru";
   const isTr = currentLocale === "tr";
   const isAr = currentLocale === "ar";
+  const isUz = currentLocale === "uz";
   const isEn = currentLocale === "en";
 
   const areas = [
@@ -34,6 +35,8 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
         ? "Tıbbi Uzmanlık Alanları"
         : isAr
         ? "الأقسام والتخصصات الطبية"
+        : isUz
+        ? "Tibbiyot yo'nalishlari"
         : isEn
         ? "Medical Departments"
         : "Medizinische Fachbereiche",
@@ -43,6 +46,8 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
         ? "Ayakta uzman hekim tedavisi (§ 95 SGB V), 2 MVZ merkezi ve klinik hazırlığı"
         : isAr
         ? "طب العيادات الخارجية التخصصي (§ 95 SGB V)، مركزا MVZ وبناء المستشفى الطبي"
+        : isUz
+        ? "Ambulator yordam (§ 95 SGB V), ikkita MVZ markazi va klinika tayyorlash"
         : isEn
         ? "Outpatient medicine (§ 95 SGB V), two dedicated MVZ centers and clinic preparation"
         : "Ambulante Spitzenmedizin (§ 95 SGB V), zwei MVZ-Zentren & Klinikaufbau",
@@ -57,6 +62,8 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
         ? "Tanı ve Radyoloji"
         : isAr
         ? "التشخيص الطبي والتصوير"
+        : isUz
+        ? "Diagnostika"
         : isEn
         ? "Diagnostics"
         : "Diagnostik",
@@ -66,6 +73,8 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
         ? "3T MR, düşük dozlu BT, dijital röntgen ve klinik nörofizyoloji"
         : isAr
         ? "رنين مغناطيسي 3T، أشعة مقطعية بجرعات منخفضة، أشعة رقمية وتخطيط أعصاب"
+        : isUz
+        ? "3T MRT, past dozali KT, raqamli rentgen va neyrofiziologiya"
         : isEn
         ? "3T MRI, low-dose CT, digital radiography & clinical neurophysiology"
         : "Niedrigdosis-CT, 3T MRT, digitales Röntgen & Neurophysiologie",
@@ -80,6 +89,8 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
         ? "Rehabilitasyon"
         : isAr
         ? "التأهيل الطبي المتكامل"
+        : isUz
+        ? "Reabilitatsiya"
         : isEn
         ? "Rehabilitation"
         : "Rehabilitation",
@@ -89,6 +100,8 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
         ? "Kapsamlı ayakta rehabilitasyon, fizyo-, ergo-, konuşma terapisi ve 32°C hidroterapi"
         : isAr
         ? "تأهيل طبي شامل للعيادات الخارجية، علاج طبيعي ووظيفي ونطق ومسبح علاجي 32°م"
+        : isUz
+        ? "Ambulator reabilitatsiya, fizio-, ergo-, logopediya va 32°C davolash havzasi"
         : isEn
         ? "Outpatient rehab, physiotherapy, speech therapy and 32°C hydrotherapy pool"
         : "Ganzheitliche Reha, Physio-, Ergo-, Logopädie & Bewegungsbad 32°C",
@@ -103,6 +116,8 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
         ? "Bakım & HomeCare"
         : isAr
         ? "التمريض والرعاية المنزلية"
+        : isUz
+        ? "Parvarish va HomeCare"
         : isEn
         ? "Nursing & HomeCare"
         : "Pflege & HomeCare",
@@ -112,6 +127,8 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
         ? "SGB V/XI kapsamında evde bakım & ICW sertifikalı yara tedavisi yönetimi"
         : isAr
         ? "رعاية تمريضية متخصصة (SGB V/XI) وإدارة علاج الجروح المعتمدة (ICW)"
+        : isUz
+        ? "SGB V/XI bo'yicha malakali parvarish va sertifikatlangan ICW jarohat davolash"
         : isEn
         ? "Qualified home care under SGB V/XI and certified ICW wound management"
         : "Ambulante Pflege nach SGB V/XI & zertifizierte ICW-Wundversorgung",
@@ -126,6 +143,8 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
         ? "Danışmanlık & Gayrimenkul Geliştirme"
         : isAr
         ? "الاستشارات وتطوير المرافق الصحية"
+        : isUz
+        ? "Konsalting va developpent"
         : isEn
         ? "Consulting & Real Estate"
         : "Beratung & Projektentwicklung",
@@ -135,6 +154,8 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
         ? "Sağlık yapıları, DIN 1946-4 standartlarında ameliyathaneler ve MVZ yapıları"
         : isAr
         ? "عقارات الرعاية الصحية، مجمعات جراحية وفق معايير DIN 1946-4 وتطوير مراكز MVZ"
+        : isUz
+        ? "Tibbiy ko'chmas mulk, DIN 1946-4 operatsiya xonalari va MVZ tuzilmalari"
         : isEn
         ? "Healthcare facilities, DIN 1946-4 cleanroom suites & MVZ structures"
         : "Gesundheitsimmobilien, OP-Zentren nach DIN 1946-4 & MVZ-Strukturen",
@@ -149,6 +170,8 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
         ? "Uluslararası İş Birlikleri"
         : isAr
         ? "التعاون والشراكات الدولية"
+        : isUz
+        ? "Xalqaro hamkorlik"
         : isEn
         ? "International Cooperations"
         : "Internationale Kooperationen",
@@ -158,6 +181,8 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
         ? "Medikal istihdam, hekim denklik desteği (Approbation) ve klinik ortaklıkları"
         : isAr
         ? "استقطاب الكوادر الطبية، معادلة الشهادات الألمانية (Approbation) وشراكات المشافي"
+        : isUz
+        ? "Tibbiy kadrlar jalb qilish, Approbation va diplom tan olinishi, klinik hamkorlik"
         : isEn
         ? "Healthcare recruitment, medical degree licensing (Approbation) & clinic partnerships"
         : "Fachkräftegewinnung, Approbationsbegleitung & Klinikpartnerschaften",
@@ -180,6 +205,8 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
                 ? "Hayatın her aşamasında bütüncül sağlık hizmeti"
                 : isAr
                 ? "رعاية صحية شاملة ومتكاملة عبر جميع مراحل الحياة"
+                : isUz
+                ? "Hayotning barcha bosqichlarida kompleks salomatlik g'amxo'rligi"
                 : isEn
                 ? "Comprehensive care across all life stages"
                 : "Ganzheitliche Versorgung über alle Lebensphasen"}

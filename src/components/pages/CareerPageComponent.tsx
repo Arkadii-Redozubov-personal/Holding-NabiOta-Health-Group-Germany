@@ -2160,6 +2160,409 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
         closeBtn: "إغلاق النافذة",
       },
     },
+    uz: {
+      hero: {
+        eyebrow: "NABIOTA MEDICAL RECRUITMENT SERVICES GMBH",
+        titlePrefix: "Birgalikda yanada",
+        titleMid: "sog'lom",
+        titleHighlight: "Kelajak sari.",
+        description:
+          "Milliy va xalqaro tibbiyot mutaxassislarini jalb qilish, approbatsiya (Approbation) jarayonini to'liq qo'llab-quvvatlash va NabiOta xoldingi klinikalari, MVZ markazlari hamda butun Germaniyadagi nufuzli hamkorlarimizda ishonchli martaba.",
+        cta: "Bo'sh ish o'rinlarini ko'rish",
+        floatingQuote: "„Shunchaki ish emas — yuksak insoniy burch.“",
+        badge1Title: "Full-Care",
+        badge1Sub: "Approbatsiya va viza",
+        badge2Title: "JSST standarti",
+        badge2Sub: "Odilona rekruting",
+        badge3Title: "Doimiy kontrakt",
+        badge3Sub: "Klinikalar va MVZ",
+      },
+      mission: {
+        eyebrow: "KOMPANIYA FAOLIYAT MAQSADI VA KONSEPSIYASI",
+        title: "Malakali tibbiyot kadrlarini maqsadli jalb qilish va barqaror integratsiya.",
+        desc: "NabiOta Medical Recruitment Services GmbH malakali shifokorlar, hamshiralar, MTA laboratoriya mutaxassislari va reabilitologlarni Germaniyaning yetakchi tibbiyot muassasalari bilan birlashtiradi. Biz mutaxassislarni diplomni baholash va approbatsiya (Approbation / Berufserlaubnis) olishdan tortib, tibbiy nemis tili, viza ko'magi, ko'chib o'tish (relokatsiya) va Germaniyada uzoq muddatli martaba qurishgacha har tomonlama qo'llab-quvvatlaymiz.",
+        role: "Boshqaruv va kadrlar bo'limi",
+        badgeLine1: "Biz tibbiy iqtidorlarni rivojlantiramiz,",
+        badgeLine2: "chunki aynan insonlar sog'liqni saqlash kelajagini yaratadi.",
+      },
+      pillarSection: {
+        eyebrow: "MUTAXASSISLARNI JALB QILISH YO'NALISHLARI",
+        title: "Tibbiy rekrutingimizning 4 ta asosiy ustuni",
+        desc: "Kasalxonalar, ko'p tarmoqli ambulatoriya markazlari (MVZ), radiologik diagnostika va reabilitatsiya klinikalari uchun tizimli xodimlar saralashi.",
+        openModalBtn: "Profil va approbatsiya talablarini ko'rish",
+      },
+      pillars: [
+        {
+          id: "aerzte",
+          title: "Shifokorlar va mutaxassis-vrachlar",
+          category: "Klinik tibbiyot va MVZ",
+          badge: "Approbatsiya va ixtisoslik",
+          targetGroup: "Assistent-shifokorlar, tor mutaxassislar (Fachärzte), bo'lim boshliqlari",
+          shortDesc: "Shifokorlarni klinikalar va MVZ ambulator markazlariga to'liq approbatsiya (§ 3 BÄO) va tibbiy faoliyat ruxsatnomasi (§ 10 BÄO) yordami bilan ishga joylashtirish.",
+          description: "NabiOta Medical Recruitment Services GmbH Germaniyada va xorijda shifokorlarni tizimli jalb qilish va uzoq muddatli integratsiyalashni amalga oshiradi. Terapiya, kardiologiya, gastroenterologiya, jarrohlik, anesteziologiya, nevrologiya yoki radiologiya — biz malakali shifokorlarni eng ilg'or tibbiyot markazlari bilan birlashtiramiz. Xorijiy hamkasblarimizga davlat imtihonlarini topshirish va to'liq nemis approbatsiyasini (§ 3 BÄO) olgunga qadar har bosqichda yuridik ko'mak beramiz.",
+          image: "/images/careers/mission-doctors-highres.webp",
+          rolesList: [
+            "Fachärzte va Oberärzte (kardiologiya, jarrohlik, umumiy amaliyot, anesteziologiya)",
+            "Ordinatura (Weiterbildung) o'tayotgan assistent-shifokorlar (Assistenzärzte)",
+            "Reanimatsiya va shoshilinch yordam shifokorlari",
+            "MVZ birlamchi va ixtisoslashtirilgan ambulator markazlari shifokorlari (§ 95 SGB V)",
+          ],
+          requirements: [
+            "Tan olingan universitetda oliy tibbiy ta'lim (davolash ishi / pediatriya)",
+            "Nemis tili bilish darajasi: B2 umumiy + C1 tibbiy professional til",
+            "Diplom tengligini tekshirish uchun o'quv soatlari va to'liq hujjatlar to'plami",
+            "Landesärztekammer qoshida tibbiy til imtihonini (Fachsprachprüfung FSP) topshirishga tayyorlik",
+          ],
+          approbationService: [
+            "Berufserlaubnis (§ 10 BÄO) va doimiy Approbation uchun hujjatlar tayyorlash va topshirish",
+            "Qasamyodli tarjimalar va hujjatlarni apostil qilishni tashkil etish",
+            "Hujjatlar ekspertizasi (Gutachten / Defizitbescheid) va bilim imtihoniga (Kenntnisprüfung) tayyorgarlik",
+            "Federal bandlik agentligi orqali tezlashtirilgan kadrlar vizasi (§ 16d / § 18a AufenthG)",
+          ],
+          benefitsPackage: [
+            "Klinika bilan to'g'ridan-to'g'ri muddatsiz mehnat shartnomasi (autsorsingsiz)",
+            "TV-Ärzte / Marburger Bund tarif jadvallari bo'yicha kafolatlangan maosh va ustamalar",
+            "Malaka oshirish byudjeti va akkreditatsiyalangan rezidentura dasturlari",
+            "Yiliga 30 ish kuni ta'til va haq to'lanadigan moslashuv davri",
+            "Relokatsiya bonusi, xizmat uyi topish va Germaniyada ro'yxatdan o'tish ko'magi",
+          ],
+          legalFramework: "Qonuniy asos: Shifokorlar to'g'risidagi federal nizom (BÄO), BQFG. Ishlashga ruxsatnoma va approbatsiya berish to'g'risidagi suveren qarorlar faqat vakolatli yer imtihon idoralari (Landesprüfungsamt / Regierungspräsidium) tasarrufida qoladi.",
+        },
+        {
+          id: "pflege",
+          title: "Hamshiralik ishi va operatsiya bloki",
+          category: "Statsionar va ambulator parvarish",
+          badge: "Davlat tan olishi",
+          targetGroup: "Diplomli hamshiralar/aka-ukalar, reanimatsiya va jarrohlik hamshiralari",
+          shortDesc: "Reanimatsiya, jarrohlik va HomeCare xizmatlari uchun malakali hamshiralarni odilona rekruting qilish va uzoq muddatli integratsiyalash.",
+          description: "Hamshiralar bemorlarga g'amxo'rlik qilishning yuragi hisoblanadi. Biz diplomli o'rta tibbiyot xodimlarini statsionarlar, anesteziologiya va reanimatsiya bo'limlari, operatsiya bloklari va ixtisoslashtirilgan HomeCare xizmatlariga joylashtiramiz. Xorijiy mutaxassislarga PflBG qonuni bo'yicha diplomni tan oldirish jarayonida to'liq amaliy yordam beramiz.",
+          image: "/images/careers/hero-career-nurse.webp",
+          rolesList: [
+            "Statsionar bo'limlari uchun diplomli tibbiy hamshiralar va feldsherlar",
+            "Anesteziologiya va reanimatsiya hamshiralari (Intensivpflege)",
+            "Jarrohlik assistentlari (OTA) va operatsiya hamshiralari",
+            "Ambulator parvarish va surunkali yaralarni davolash bo'yicha mutaxassislar (Wundexperte ICW)",
+          ],
+          requirements: [
+            "O'rta maxsus yoki oliy hamshiralik ta'limi (kollej yoki universitet diplomi)",
+            "Nemis tili B2 Pflege sertifikati (Goethe yoki telc)",
+            "Tasdiqlangan klinik amaliyot tajribasi va soatlar ko'rsatilgan o'quv dasturi",
+            "Yuksak empatiya, mas'uliyat va bemorlar xavfsizligiga ustuvorlik",
+          ],
+          approbationService: [
+            "Yer sog'liqni saqlash idoralariga malakani tan olish bo'yicha ariza topshirish",
+            "Moslashuv kurslarini (Anpassungslehrgang) tashkil etish yoki Kenntnisprüfung imtihoniga tayyorgarlik",
+            "Markaziy diplomlarni tan olish agentligi (ZSBA) bilan hamkorlik",
+            "BeschV qonuni bo'yicha tezlashtirilgan ishlash ruxsatnomasi va viza olish",
+          ],
+          benefitsPackage: [
+            "TVöD-P / AVR tariflari bo'yicha maosh, navbatchilik va intensivlik ustamalari",
+            "Korporativ pensiya sug'urtasi va yillik mukofot to'lovlari",
+            "Ish va dam olish muvozanatini saqlash uchun shaffof smena jadvallari",
+            "Klinika ichida bepul til va professional malaka oshirish kurslari",
+            "Oilani birlashtirish va bolalarni bog'chaga joylashtirishda ko'mak",
+          ],
+          legalFramework: "Qonuniy asos: Hamshiralik kasblari to'g'risidagi qonun (PflBG), PflAPrV. Kadrlar saralashi JSSTning odilona xalqaro yollash bo'yicha global kodeksiga qat'iy muvofiq olib boriladi.",
+        },
+        {
+          id: "diagnostik",
+          title: "Rentgen va laboratoriya assistentlari (MTA)",
+          category: "Tibbiy texnika va laboratoriyalar",
+          badge: "Yuqori texnologiyalar",
+          targetGroup: "Radiologiya (MTRA), laboratoriya (MTLA) assistentlari, qabul hamshiralari (MFA)",
+          shortDesc: "Yuqori maydonli tomograflar (KT, MRT, rentgen) va avtomatlashtirilgan klinik laboratoriyalar uchun mutaxassislar.",
+          description: "Aniq tashxis innovatsion texnologiyalar va malakali mutaxassislarsiz imkonsizdir. Biz rentgen-laborantlar (MTRA) va laboratoriya diagnostikasi mutaxassislarini (MTLA) diagnostika markazlari, radiologiya bo'limlari va klinik laboratoriyalarga jalb qilamiz. Xorijiy mutaxassislar MTBG yangi qonuni bo'yicha diplomni tan olishda to'liq ko'mak oladilar.",
+          image: "/images/diagnostik/modality-mrt.webp",
+          rolesList: [
+            "3 Tesla MRT, multispiral KT va raqamli rentgen uchun MTRA mutaxassislari",
+            "Klinik kimyo, gematologiya va mikrobiologiya bo'limlari uchun MTLA mutaxassislari",
+            "Qabulni muvofiqlashtirish va muolaja xonalari uchun tibbiy assistentlar (MFA)",
+            "Radiatsion xavfsizlik va sifat nazorati bo'yicha mas'ul mutaxassislar",
+          ],
+          requirements: [
+            "Rentgen-laborant yoki klinik laboratoriya diagnostikasi mutaxassisi diplomi",
+            "Nemis tilini B2 darajasidan kam bo'lmagan darajada bilish",
+            "Radiatsion xavfsizlik kurslari (Germaniyada o'tish mumkin)",
+            "Texnik savodxonlik, tafsilotlarga e'tibor va mas'uliyat",
+          ],
+          approbationService: [
+            "MTBG qonuniga muvofiq kasbiy faoliyat ruxsatnomasini rasmiylashtirish",
+            "O'quv rejalari va amaliy mashg'ulot soatlarini chuqur tahlil qilish",
+            "Sertifikatlangan radiatsion himoya kurslariga (StrlSchV) yozilish",
+            "Mehnat vizasi va ishga joylashish jarayonida to'liq hamrohlik",
+          ],
+          benefitsPackage: [
+            "Murakkab tibbiy texnika bilan ishlaganlik uchun qo'shimcha ustamalar bilan yuqori tariflar",
+            "Ekspert darajasidagi skanerlarda ishlash (Siemens Healthineers, Philips)",
+            "Tungi ortiqcha yuklamalarsiz va uzun navbatchiliklarsiz me'yoriy ish jadvali",
+            "Chuqurlashtirilgan metodikalar bo'yicha o'qitish (kardio-MRT, neyroradiologiya)",
+            "Moslashuv davrida individual murabbiylik",
+          ],
+          legalFramework: "Qonuniy asos: Tibbiy texnologiyalar sohasidagi kasblar to'g'risidagi qonun (MTBG). Kasbiy faoliyat faqat davlat ruxsatnomasi mavjud bo'lganda amalga oshiriladi.",
+        },
+        {
+          id: "therapie",
+          title: "Fizioterapiya, ergoterapiya va logopediya",
+          category: "Reabilitatsiya va tiklanish",
+          badge: "Terapevtik tajriba",
+          targetGroup: "Fizioterapevtlar, ergoterapevtlar, logopedlar, LFK va MTT mutaxassislari",
+          shortDesc: "Ambulator va statsionar reabilitatsiya bo'yicha mutaxassislar: ortopediya, nevrologiya, pediatriya va geriatriya.",
+          description: "Bemorlarning samarali tiklanishi uchun biz sertifikatlangan fizioterapevtlar, ergoterapevtlar va logopedlarni taklif etamiz. Biz reabilitatsiya markazlari, ortopediya klinikalari va shifoxonalar bilan hamkorlik qilib, chet ellik terapevtlarga MPhG qonuni bo'yicha diplomni tan olishda yuridik ko'mak beramiz.",
+          image: "/images/services/therapie.webp",
+          rolesList: [
+            "Fizioterapevtlar (manual terapiya, KGG, Bobath / PNF metodikalari, limfodrenaj)",
+            "Ergoterapevtlar (motorika, kognitiv funksiyalarni tiklash, ijtimoiy moslashuv)",
+            "Logopedlar (disfagiya, afaziya, insultdan keyingi nutqni tiklash)",
+            "Davolash jismoniy tarbiyasi va tibbiy mashg'ulot terapiyasi (MTT) instruktorlari",
+          ],
+          requirements: [
+            "Fizioterapiya / ergoterapiya mutaxassisligi bo'yicha davlat namunasidagi diplom",
+            "Nemis tilini B2 darajasida ishonchli bilish",
+            "Maxsus metodikalar bo'yicha sertifikatlar (MT, Bobath, MLD) mavjudligi ma'qullanadi",
+            "Ko'p tarmoqli klinik jamoada hamkorlikda ishlash ko'nikmasi",
+          ],
+          approbationService: [
+            "Yer sog'liqni saqlash organlarida malakani tan olish jarayoni",
+            "O'quv soatlari farqi bo'lganda amaliy moslashuv dasturini kelishish",
+            "Ixtisoslashtirilgan sertifikatlash kurslariga kirishda ko'mak",
+            "Viza va uzoq muddatli yashash ruxsatnomasini rasmiylashtirish (§ 16d / § 18a AufenthG)",
+          ],
+          benefitsPackage: [
+            "Haq to'lanadigan o'quv kunlari bilan munosib maosh darajasi",
+            "Klinika tomonidan ixtisoslik kurslarining to'liq yoki qisman qoplanishi (MT, KGG)",
+            "Zamonaviy reabilitatsiya inventarlariga ega yorug' terapevtik zallar",
+            "Moslashuvchan ish jadvallari (to'liq stavka, yarim stavka, haftasiga 4 kunlik ish tartibi)",
+            "Tajribali vrach-reabilitologlar bilan ahil jamoa",
+          ],
+          legalFramework: "Qonuniy asos: Massajchilar va fizioterapevtlar to'g'risidagi qonun (MPhG), ErgThG, LogopG. Sug'urta kassalari tomonidan xizmatlar uchun to'lov (§ 124 SGB V) faqat davlat sertifikati mavjud bo'lganda amalga oshiriladi.",
+        },
+      ],
+      pathwaySection: {
+        eyebrow: "BOSQICHMA-BOSQICH INTEGRATSIYA REJASI",
+        title: "Germaniya klinikasida muddatsiz shartnomaga 5 qadam",
+        desc: "Dastlabki maslahat va notarial tarjimadan boshlab birinchi ish kunigacha: bizning tizimimiz har bir bosqichning ishonchliligi va aniqligini kafolatlaydi.",
+      },
+      pathway: [
+        {
+          step: "01",
+          title: "Diplom tahlili va istiqbollarni baholash",
+          desc: "Diplom, klinik amaliyot soatlari va ish tajribasini batafsil audit qilish. Biz eng to'g'ri tan olish yo'lini (Defizitbescheid yoki to'g'ridan-to'g'ri tasdiqlash) aniqlaymiz va shaxsiy harakatlar rejasini tuzamiz.",
+        },
+        {
+          step: "02",
+          title: "Tibbiy nemis tili va FSP imtihoni (B2/C1)",
+          desc: "Shifokor-o'qituvchilar bilan intensiv til tayyorgarligi: klinik vaziyatlarni tahlil qilish, kasallik tarixini yuritish va shifokorlar palatasida FSP yoki B2 Pflege imtihonini topshirishga tayyorgarlik.",
+        },
+        {
+          step: "03",
+          title: "Hujjatlar, Defizitbescheid va viza",
+          desc: "Qasamyodli tarjimalar, notarial nusxalar, yer idorasiga (Regierungspräsidium) hujjatlar topshirish va elchixonada milliy vizani (§ 16d / § 18a AufenthG) rasmiylashtirish.",
+        },
+        {
+          step: "04",
+          title: "Klinika tanlash, amaliyot va shartnoma",
+          desc: "NabiOta tarmog'idagi shifoxonalar va MVZ bosh shifokorlari bilan suhbatlar tashkil qilish, klinik stajirovka (Hospitation) va rasmiy muddatsiz mehnat shartnomasini imzolash.",
+        },
+        {
+          step: "05",
+          title: "Relokatsiya, uy-joy va ijtimoiy integratsiya",
+          desc: "Kvartira topishda ko'mak, yashash joyi bo'yicha ro'yxatdan o'tish (Bürgeramt), bank hisob raqamini ochish, sug'urta rasmiylashtirish, oilani ko'chirib kelish va shaxsiy kurator ko'magi.",
+        },
+      ],
+      compliance: {
+        eyebrow: "HUQUQIY STANDARTLAR VA KOMPLAENS",
+        title: "Qonuniy, odilona va shaffof tibbiy rekruting",
+        desc: "NabiOta Medical Recruitment Services GmbH faoliyati Germaniya qonunchiligi va xalqaro huquq normalariga to'liq muvofiq keladi.",
+        points: [
+          {
+            title: "To'g'ridan-to'g'ri yollash va xodimlar lizingini (AÜG) qat'iy ajratish",
+            text: "To'g'ridan-to'g'ri rekruting va xodimlarni ijaraga berish tashkiliy va huquqiy jihatdan aniq ajratilgan. To'g'ridan-to'g'ri yollashda mehnat shartnomasi faqatgina mutaxassis va klinika o'rtasida tuziladi.",
+          },
+          {
+            title: "JSST standartlari bo'yicha odilona yollash",
+            text: "Biz JSSTning sog'liqni saqlash xodimlarini xalqaro yollash bo'yicha global kodeksiga (WHO Global Code) qat'iy amal qilamiz va «qizil ro'yxat»dagi mamlakatlardan xodimlarni jalb qilmaymiz.",
+          },
+          {
+            title: "Davlat idoralarining suveren vakolatlari",
+            text: "Ishlash ruxsatnomasi, approbatsiya va viza berish to'g'risidagi qarorlar faqat Germaniya davlat idoralari tomonidan qabul qilinadi. Biz benuqson yuridik tayyorgarlikni ta'minlaymiz.",
+          },
+          {
+            title: "Ma'lumotlar himoyasi va shifokorlik qarorlarining mustaqilligi",
+            text: "Shaxsiy ma'lumotlarni qayta ishlash GDPR/DSGVO talablariga qat'iy muvofiq amalga oshiriladi. Ishga joylashgan mutaxassislar tibbiy qarorlar qabul qilishda to'liq kasbiy erkinlikka ega.",
+          },
+        ],
+      },
+      benefits: {
+        eyebrow: "NEGA AYNAN NABIOTA®",
+        title: "Bizdagi afzalliklaringiz.",
+        desc: "Biz shaxsiy va kasbiy jihatdan har tomonlama o'sishingiz mumkin bo'lgan zamonaviy ish muhitini taklif etamiz.",
+        items: [
+          {
+            icon: Heart,
+            title: "Ahamiyatli va ezgu faoliyat",
+            text: "Siz insonlar salomatligi, farovonligi va hayot sifatiga to'g'ridan-to'g'ri hissa qo'shasiz.",
+          },
+          {
+            icon: GraduationCap,
+            title: "Ta'lim va martaba o'sishi",
+            text: "Biz sizning shaxsiy dasturlar orqali uzluksiz malaka oshirishingizni to'liq qo'llab-quvvatlaymiz.",
+          },
+          {
+            icon: Users,
+            title: "Kuchli va ahil jamoa",
+            text: "O'zaro hurmat, ochiq muloqot va hamkasblarning ishonchli yelkadoshligi — bizning standartimiz.",
+          },
+          {
+            icon: Clock,
+            title: "Moslashuvchan ish jadvallari",
+            text: "Biz ish va shaxsiy hayot o'rtasidagi uyg'un muvozanatni ta'minlaymiz.",
+          },
+          {
+            icon: Sparkles,
+            title: "Zamonaviy infratuzilma",
+            text: "Birinchi toifali tibbiy uskunalar va ilg'or raqamli xizmatlar bilan ishlang.",
+          },
+          {
+            icon: ShieldCheck,
+            title: "Munosib mehnat haqi",
+            text: "Biz shaffof, adolatli va raqobatbardosh mehnat sharoitlarini kafolatlaymiz.",
+          },
+        ],
+      },
+      jobs: {
+        eyebrow: "DOLZARB BO'SH ISH O'RINLARI",
+        title: "Xoldingimizda o'z o'rningizni toping.",
+        desc: "Statsionar klinikalar, MVZ ambulator markazlari va diagnostika bo'limlarida ishlash istiqbollarini kashf eting.",
+        allButton: "Barcha vakansiyalarni ko'rish",
+        positions: [
+          {
+            icon: Stethoscope,
+            title: "Kardiologiya va terapiya bo'yicha mutaxassis-shifokor (m/w/d)",
+            facility: "NabiOta® MVZ Ambulator yordam markazi",
+            type: "To'liq bandlik / Yarim stavka",
+            location: "Mönxengladbax",
+          },
+          {
+            icon: Stethoscope,
+            title: "Ortopediya va travmatologiya bo'yicha mutaxassis-shifokor (m/w/d)",
+            facility: "NabiOta® MVZ Jarrohlik va anesteziologiya",
+            type: "To'liq bandlik",
+            location: "Mönxengladbax / NRW",
+          },
+          {
+            icon: Heart,
+            title: "Anesteziologiya va intensiv terapiya hamshirasi / feldsheri (m/w/d)",
+            facility: "NabiOta® Clinics Germany (Statsionar klinika § 30 GewO)",
+            type: "To'liq bandlik / Yarim stavka",
+            location: "Shimoliy Reyn-Vestfaliya",
+          },
+          {
+            icon: Activity,
+            title: "Fizioterapevt / Reabilitolog (m/w/d)",
+            facility: "NabiOta® Rehabilitation & Therapy Center",
+            type: "To'liq bandlik / Haftasiga 4 kun",
+            location: "Dyusseldorf / hudud",
+          },
+          {
+            icon: Sparkles,
+            title: "Rentgen-laborant MTRA (KT/MRT) (m/w/d)",
+            facility: "NabiOta® Diagnostics Center",
+            type: "To'liq bandlik",
+            location: "Mönxengladbax",
+          },
+          {
+            icon: ShieldCheck,
+            title: "Hamshira / yaralarni davolash bo'yicha ekspert ICW (m/w/d)",
+            facility: "NabiOta® HomeCare (Ambulator parvarish va yaralarni davolash)",
+            type: "To'liq bandlik / Yarim stavka",
+            location: "NRW hududi",
+          },
+        ],
+      },
+      culture: {
+        eyebrow: "BIZNING MADANIYATIMIZ",
+        title: "Insonlar. Qadriyatlar. Hamjihatlik.",
+        desc: "Biz hurmat, ishonch va jamoaviy ruh chin dildan qadrlanadigan ish muhitini yaratamiz. NabiOta® da nafaqat diplomlar, balki jamiyatga samimiy naf keltirishga intiluvchi insonlar muhimdir.",
+        badgeTitle: "Birgalikda o'sish.",
+        badgeSub: "Hayotni yaxshilash.",
+      },
+      testimonials: [
+        {
+          quote:
+            "„NabiOta rekruting xizmati ko'magida diplomimni muvaffaqiyatli tasdiqladim va til imtihonini topshirdim. Hozirda xoldingning ambulator markazida shifokor-kardiolog bo'lib ishlayapman.“",
+          author: "Dr. med. Tariq Al-Mansur",
+          role: "Shifokor-kardiolog, NabiOta® MVZ",
+          avatar: "/images/careers/anna-mueller.webp",
+        },
+        {
+          quote:
+            "„Hamshiralik diplomini tan olish jarayoni juda tez va shaffof o'tdi. Kuratorlar ko'chib kelish, uy-joy va nemis jamoasiga moslashishda har tomonlama yordam berishdi.“",
+          author: "Elena Rostova",
+          role: "Reanimatsiya bo'limi hamshirasi, NabiOta® Clinics",
+          avatar: "/images/careers/anna-mueller.webp",
+        },
+        {
+          quote:
+            "„Zamonaviy 3 Tesla tomograflari, tungi ortiqcha yuklamalarsiz aniq ish tartibi va ochiq rahbariyat diagnostika markazida ishlashni qulay va samarali qiladi.“",
+          author: "Marco Di Bernardo",
+          role: "Yetakchi rentgen-laborant MTRA, NabiOta® Diagnostics",
+          avatar: "/images/careers/anna-mueller.webp",
+        },
+      ],
+      cta: {
+        eyebrow: "KELAJAGINGIZGA TAYYORMISIZ?",
+        title: "NabiOta® ning bir qismiga aylaning.",
+        desc: "Mavjud bo'sh ish o'rinlarini o'rganing yoki xalqaro tibbiy ishga joylashish dasturida ishtirok etish uchun rezyumengizni yuboring.",
+        button: "Hozir ariza topshirish",
+      },
+      applyForm: {
+        eyebrow: "TEZKOR ARIZA",
+        title: "Kelajagingizni NabiOta® da boshlang.",
+        desc: "Hujjatlaringizni yuboring yoki tezkor shaklni to'ldiring. Rekruting bo'limi sizning malakangizni o'rganib chiqadi va 48 soat ichida siz bilan bog'lanadi.",
+        nameLabel: "Ism va familiya",
+        namePlaceholder: "masalan, Nodira Karimova",
+        emailLabel: "Elektron pochta",
+        emailPlaceholder: "sizning.pochtangiz@example.com",
+        phoneLabel: "Telefon raqami",
+        phonePlaceholder: "+49 (0) 123 456789",
+        positionLabel: "Istalgan lavozim / Yo'nalish",
+        positionPlaceholder: "Vakansiyani tanlang...",
+        positions: [
+          "Kardiologiya va terapiya bo'yicha mutaxassis-shifokor (m/w/d)",
+          "Ortopediya va travmatologiya bo'yicha mutaxassis-shifokor (m/w/d)",
+          "Anesteziologiya va intensiv terapiya hamshirasi / feldsheri (m/w/d)",
+          "Fizioterapevt / Reabilitolog (m/w/d)",
+          "Rentgen-laborant MTRA (KT/MRT) (m/w/d)",
+          "Hamshira / yaralarni davolash bo'yicha ekspert ICW (m/w/d)",
+          "Tashabbuskor rezyume — Shifokorlar (Approbatsiya)",
+          "Tashabbuskor rezyume — Hamshiralar jamoasi",
+          "Tashabbuskor rezyume — Diagnostika va MTA",
+          "Tashabbuskor rezyume — Fizioterapiya va reabilitatsiya",
+        ],
+        messageLabel: "Xabar (ixtiyoriy)",
+        messagePlaceholder: "Mutaxassisligingiz, nemis tili darajangiz va qachon ish boshlay olishingiz haqida qisqacha ma'lumot bering...",
+        uploadLabel: "Rezyume / hujjatlarni biriktirish (PDF, DOCX 10MB gacha)",
+        uploadHint: "Faylni tanlang yoki bu yerga tortib olib keling",
+        privacy: "Men nomzodimni ko'rib chiqish va diplomni tan olishni dastlabki baholash maqsadida shaxsiy ma'lumotlarim qayta ishlanishiga rozilik bildiraman.",
+        submitBtn: "Arizani yuborish",
+        submitting: "Yuborilmoqda...",
+        successTitle: "Murojaatingiz uchun tashakkur!",
+        successDesc: "Ma'lumotlaringiz muvaffaqiyatli qabul qilindi. Rekruting bo'limimiz tez orada siz bilan bog'lanadi.",
+        resetBtn: "Yana bitta ariza yuborish",
+      },
+      modal: {
+        badgePrefix: "YO'NALISH",
+        categoryLabel: "Kategoriya",
+        targetLabel: "Maqsadli auditoriya",
+        scopeTitle: "Mutaxassislik profili va klinik vazifalar",
+        approbationTitle: "360° Approbatsiya va viza ko'magi",
+        benefitsTitle: "Mehnat sharoitlari va kompensatsiya paketi",
+        legalTitle: "Normativ-huquqiy standartlar",
+        applyBtn: "Ushbu yo'nalish bo'yicha ariza berish",
+        closeBtn: "Oynani yopish",
+      },
+    },
+
   };
 
   const t =
@@ -2286,7 +2689,9 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
             <div className="max-w-xl lg:max-w-[540px] xl:max-w-[620px]">
               <nav className="flex items-center gap-2 text-xs sm:text-[12.5px] text-[#A2ADA4] mb-3.5 font-sans" aria-label="Breadcrumb">
                 <Link href={`/${locale}`} className="hover:text-[#D5B878] transition-colors">
-                  {locale === "ru"
+                  {locale === "uz"
+                    ? "Bosh sahifa"
+                    : locale === "ru"
                     ? "Главная"
                     : locale === "en"
                     ? "Home"
@@ -2298,7 +2703,9 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
                 </Link>
                 <span className="text-[#A2ADA4]/70 text-[10px] font-bold">›</span>
                 <span className="text-white/95 font-medium">
-                  {locale === "ru"
+                  {locale === "uz"
+                    ? "Karyera va rekruting"
+                    : locale === "ru"
                     ? "Карьера & Рекрутмент"
                     : locale === "en"
                     ? "Career & Recruitment"

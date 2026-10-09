@@ -132,6 +132,8 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
           ? "Kalite"
           : currentLocale === "ar"
           ? "الجودة"
+          : currentLocale === "uz"
+          ? "Sifat"
           : currentLocale === "en"
           ? "Quality"
           : "Qualität",
@@ -142,6 +144,8 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
           ? "Tüm alanlarda en yüksek standartlar."
           : currentLocale === "ar"
           ? "أعلى المعايير في جميع المجالات."
+          : currentLocale === "uz"
+          ? "Barcha sohalarda eng yuqori standartlar."
           : currentLocale === "en"
           ? "Highest clinical standards across all divisions."
           : "Höchste Standards in allen Bereichen.",
@@ -156,6 +160,8 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
           ? "Güven"
           : currentLocale === "ar"
           ? "الثقة"
+          : currentLocale === "uz"
+          ? "Ishonch"
           : currentLocale === "en"
           ? "Trust"
           : "Vertrauen",
@@ -166,6 +172,8 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
           ? "Dürüst ve güvenilir ortaklıklar."
           : currentLocale === "ar"
           ? "شراكات نزيهة وموثوقة."
+          : currentLocale === "uz"
+          ? "Halol va mustahkam hamkorlik."
           : currentLocale === "en"
           ? "Honest and reliable partnerships."
           : "Ehrliche und verlässliche Partnerschaften.",
@@ -180,6 +188,8 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
           ? "Bağlılık & Güvenilirlik"
           : currentLocale === "ar"
           ? "الموثوقية"
+          : currentLocale === "uz"
+          ? "Mas'uliyat"
           : currentLocale === "en"
           ? "Reliability"
           : "Verlässlichkeit",
@@ -190,6 +200,8 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
           ? "Eylemlerimizde istikrar ve süreklilik."
           : currentLocale === "ar"
           ? "ثبات والتزام في كل خطوة."
+          : currentLocale === "uz"
+          ? "Faoliyatimizda qat'iylik va barqarorlik."
           : currentLocale === "en"
           ? "Consistency in our actions."
           : "Beständigkeit in unserem Handeln.",
@@ -204,6 +216,8 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
           ? "Şeffaflık"
           : currentLocale === "ar"
           ? "الشفافية"
+          : currentLocale === "uz"
+          ? "Shaffoflik"
           : currentLocale === "en"
           ? "Transparency"
           : "Transparenz",
@@ -214,6 +228,8 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
           ? "Açık iletişim ve anlaşılır süreçler."
           : currentLocale === "ar"
           ? "تواصل واضح وإجراءات شفافة."
+          : currentLocale === "uz"
+          ? "Ochiq muloqot va aniq jarayonlar."
           : currentLocale === "en"
           ? "Open communication and clear processes."
           : "Offene Kommunikation und klare Prozesse.",
@@ -228,6 +244,8 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
           ? "İnsani Yaklaşım"
           : currentLocale === "ar"
           ? "الإنسانية"
+          : currentLocale === "uz"
+          ? "Insoniylik"
           : currentLocale === "en"
           ? "Humanity"
           : "Menschlichkeit",
@@ -238,6 +256,8 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
           ? "İnsan daima odak noktamızdadır."
           : currentLocale === "ar"
           ? "الإنسان في صميم اهتمامنا."
+          : currentLocale === "uz"
+          ? "Inson har doim e'tiborimiz markazida."
           : currentLocale === "en"
           ? "People at the center of healthcare."
           : "Der Mensch steht im Mittelpunkt.",
@@ -252,6 +272,8 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
           ? "Yenilikçilik"
           : currentLocale === "ar"
           ? "الابتكار"
+          : currentLocale === "uz"
+          ? "Innovatsiyalar"
           : currentLocale === "en"
           ? "Innovation"
           : "Innovation",
@@ -262,6 +284,8 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
           ? "Bugünden geleceğin çözümlerini geliştiriyoruz."
           : currentLocale === "ar"
           ? "نطور حلول الغد الطبية اليوم."
+          : currentLocale === "uz"
+          ? "Ertangi kun yechimlarini bugun yaratamiz."
           : currentLocale === "en"
           ? "Developing tomorrow's solutions today."
           : "Heute die Lösungen von morgen entwickeln.",

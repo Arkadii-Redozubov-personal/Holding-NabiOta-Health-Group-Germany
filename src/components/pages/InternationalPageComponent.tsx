@@ -59,6 +59,7 @@ interface Props {
 
 export function InternationalPageComponent({ locale = "de" }: Props) {
   const [selectedProgram, setSelectedProgram] = useState<InternationalProgram | null>(null);
+  const isUz = locale === "uz";
   const isRu = locale === "ru";
   const isEn = locale === "en";
   const isTr = locale === "tr";
@@ -66,7 +67,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
 
   // Standard Site PageHero Data
   const heroData = {
-    title: isRu
+    title: isUz
+      ? "Xalqaro hamkorlik"
+      : isRu
       ? "Международное сотрудничество"
       : isEn
       ? "International Cooperation"
@@ -75,7 +78,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
       : isAr
       ? "التعاون والشراكات الدولية"
       : "Internationale Kooperationen",
-    subtitle: isRu
+    subtitle: isUz
+      ? "Butun dunyo bo'ylab barqaror sog'liqni saqlash tizimi uchun global hamkorliklar"
+      : isRu
       ? "Глобальные партнерства ради устойчивого здравоохранения"
       : isEn
       ? "Global Partnerships for Sustainable Healthcare Worldwide"
@@ -84,7 +89,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
       : isAr
       ? "شراكات عالمية من أجل رعاية صحية مستدامة حول العالم"
       : "Globale Partnerschaften für eine nachhaltige Gesundheitsversorgung",
-    eyebrow: isRu
+    eyebrow: isUz
+      ? "GLOBAL SOG'LIQNI SAQLASH VA AL'YANSLAR"
+      : isRu
       ? "ГЛОБАЛЬНОЕ ЗДРАВООХРАНЕНИЕ"
       : isEn
       ? "GLOBAL HEALTHCARE & ALLIANCES"
@@ -93,7 +100,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
       : isAr
       ? "الرعاية الصحية العالمية والتحالفات"
       : "GLOBALE GESUNDHEIT & ALLIANZEN",
-    desc: isRu
+    desc: isUz
+      ? "NabiOta® Health Group butun dunyo bo'ylab sog'liqni saqlash tizimlarini barqaror mustahkamlash va kelajakka mos tibbiy xizmat ko'rsatish tuzilmalarini barpo etish maqsadida ilg'or tibbiy tajriba, akademik tadqiqotlar va ko'p tomonlama strategik hamkorlikni birlashtiradi."
+      : isRu
       ? "NabiOta® International развивает трансграничные альянсы с ведущими клиниками, международными организациями и правительствами. Мы объединяем опыт, ресурсы и технологии для устойчивого развития медицины."
       : isEn
       ? "NabiOta® International connects hospitals, academic centers, and global health bodies to exchange knowledge, empower local workforces, and build resilient healthcare systems worldwide."
@@ -107,7 +116,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
   const heroBadges = [
     {
       icon: <Globe2 className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu
+      title: isUz
+        ? "25+ Mamlakat"
+        : isRu
         ? "25+ Стран"
         : isEn
         ? "25+ Countries"
@@ -116,7 +127,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "+25 دولة"
         : "25+ Länder",
-      sub: isRu
+      sub: isUz
+        ? "Global tarmoq"
+        : isRu
         ? "Глобальная сеть"
         : isEn
         ? "Global Network"
@@ -128,7 +141,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
     },
     {
       icon: <Award className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu
+      title: isUz
+        ? "JSST va NNT hamkorlari"
+        : isRu
         ? "WHO & NGO"
         : isEn
         ? "WHO & NGOs"
@@ -137,7 +152,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "منظمة الصحة العالمية والمنظمات غير الحكومية"
         : "WHO & NGO Partner",
-      sub: isRu
+      sub: isUz
+        ? "Akkreditatsiyalangan al'yanslar"
+        : isRu
         ? "Официальные альянсы"
         : isEn
         ? "Official Alliances"
@@ -149,7 +166,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
     },
     {
       icon: <HeartHandshake className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu
+      title: isUz
+        ? "Barqaror natija"
+        : isRu
         ? "Устойчивый Impact"
         : isEn
         ? "Sustainable Impact"
@@ -158,7 +177,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "أثر مستدام"
         : "Nachhaltiger Impact",
-      sub: isRu
+      sub: isUz
+        ? "300.000+ qamrab olingan inson"
+        : isRu
         ? "300.000+ пациентов"
         : isEn
         ? "300,000+ Reached"
@@ -174,7 +195,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
   const t = {
     // Section 2: Vision
     s2: {
-      eyebrow: isRu
+      eyebrow: isUz
+        ? "BIZNING QARASHIMIZ"
+        : isRu
         ? "НАШЕ ВИДЕНИЕ"
         : isEn
         ? "OUR VISION"
@@ -183,7 +206,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "رؤيتنا"
         : "UNSERE VISION",
-      title: isRu
+      title: isUz
+        ? "Salomatlik chegara bilmaydi."
+        : isRu
         ? "Здоровье не знает границ."
         : isEn
         ? "Health Knows No Borders."
@@ -192,7 +217,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "الصحة لا تعرف حدوداً."
         : "Gesundheit kennt keine Grenzen.",
-      desc: isRu
+      desc: isUz
+        ? "Biz hamkorlik kuchiga ishonamiz. Xalqaro al'yanslar orqali yuqori sifatli tibbiy yordamdan foydalanish imkoniyatini kengaytiramiz, mahalliy mutaxassislarni qo'llab-quvvatlaymiz va sog'liqni saqlash tizimlarining uzoq muddatli mustahkamlanishiga hissa qo'shamiz."
+        : isRu
         ? "Мы верим в силу сотрудничества. Благодаря международным партнерствам мы расширяем доступ к высококачественной медицинской помощи, поддерживаем специалистов на местах и способствуем долгосрочному укреплению систем здравоохранения."
         : isEn
         ? "We believe in the power of cooperation. Through international alliances, we promote access to high-quality healthcare, empower local professionals, and contribute to sustainably strengthening health systems."
@@ -201,7 +228,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "نؤمن بقوة التعاون المشترك. من خلال الشراكات الدولية، نعزز الوصول إلى رعاية صحية عالية الجودة، وندعم الكفاءات المحلية، ونسهم في تقوية النظم الصحية على المدى الطويل."
         : "Wir glauben an die Kraft der Zusammenarbeit. Durch internationale Kooperationen fördern wir den Zugang zu qualitativ hochwertiger Gesundheitsversorgung, unterstützen Fachkräfte vor Ort und tragen dazu bei, die Gesundheitssysteme langfristig zu stärken.",
-      btn: isRu
+      btn: isUz
+        ? "Bizning qarashimiz haqida batafsil"
+        : isRu
         ? "Подробнее о нашем видении"
         : isEn
         ? "Learn More About Our Vision"
@@ -210,7 +239,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "المزيد عن رؤيتنا"
         : "Mehr über unsere Vision",
-      stampText1: isRu
+      stampText1: isUz
+        ? "Birgalikda ko'proq"
+        : isRu
         ? "Вместе достигать"
         : isEn
         ? "Together Achieving"
@@ -219,7 +250,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "معاً نحقق"
         : "Gemeinsam mehr",
-      stampText2: isRu
+      stampText2: isUz
+        ? "natijaga erishish. ♡"
+        : isRu
         ? "большего. ♡"
         : isEn
         ? "More. ♡"
@@ -232,7 +265,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
 
     // Section 3: Partners
     s3: {
-      title: isRu
+      title: isUz
+        ? "Bizning hamkorlik bo'yicha sheriklarimiz"
+        : isRu
         ? "Наши партнеры по сотрудничеству"
         : isEn
         ? "Our Cooperation Partners"
@@ -241,7 +276,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "شركاؤنا في التعاون"
         : "Unsere Kooperationspartner",
-      desc: isRu
+      desc: isUz
+        ? "Biz barqaror sog'liqni saqlash yechimlarini birgalikda ishlab chiqish uchun xalqaro e'tirof etilgan tashkilotlar, universitetlar, davlat institutlari va nodavlat tashkilotlar (NNT) bilan hamkorlik qilamiz."
+        : isRu
         ? "Мы сотрудничаем с признанными организациями, университетами, государственными институтами и НКО для совместной разработки устойчивых решений."
         : isEn
         ? "We collaborate with recognized organizations, universities, state institutions, and NGOs to develop sustainable healthcare solutions together."
@@ -250,7 +287,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "نتعاون مع منظمات مرموقة وجامعات ومؤسسات حكومية وهيئات غير حكومية لتطوير حلول صحية مستدامة معاً."
         : "Wir arbeiten mit renommierten Organisationen, Universitäten, staatlichen Institutionen und Nichtregierungsorganisationen zusammen, um gemeinsam nachhaltige Lösungen zu entwickeln.",
-      btn: isRu
+      btn: isUz
+        ? "Barcha hamkorlarni ko'rish"
+        : isRu
         ? "Все партнеры"
         : isEn
         ? "View All Partners"
@@ -285,7 +324,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
           id: "unicef",
           name: "UNICEF",
           short: "unicef",
-          sub: isRu
+          sub: isUz
+            ? "har bir bola uchun"
+            : isRu
             ? "для каждого ребенка"
             : isEn
             ? "for every child"
@@ -298,7 +339,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         },
         {
           id: "universities",
-          name: isRu
+          name: isUz
+            ? "Universitetlar va ilmiy-tadqiqot institutlari"
+            : isRu
             ? "Университеты и НИИ"
             : isEn
             ? "Universities & Research Institutes"
@@ -308,7 +351,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             ? "الجامعات ومعاهد البحوث"
             : "Universitäten & Forschungsinstitute",
           short: "Akademie",
-          sub: isRu
+          sub: isUz
+            ? "Akademik mukammallik va tadqiqotlar"
+            : isRu
             ? "Академическая сеть"
             : isEn
             ? "Academic Excellence"
@@ -321,7 +366,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         },
         {
           id: "ngos",
-          name: isRu
+          name: isUz
+            ? "NNTlar va xayriya fondlari"
+            : isRu
             ? "НКО и благотворительные фонды"
             : isEn
             ? "NGOs & Foundations"
@@ -331,7 +378,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             ? "المنظمات غير الحكومية والمؤسسات الخيرية"
             : "NGOs & Stiftungen",
           short: "NGOs",
-          sub: isRu
+          sub: isUz
+            ? "Insonparvarlik al'yanslari"
+            : isRu
             ? "Гуманитарная помощь"
             : isEn
             ? "Humanitarian Aid"
@@ -347,7 +396,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
 
     // Section 4: 6 Key Strategic Programs & Cooperation Pillars (PDF Scope)
     s4: {
-      eyebrow: isRu
+      eyebrow: isUz
+        ? "STRATEGIK HAMKORLIK YO'NALISHLARI"
+        : isRu
         ? "СТРАТЕГИЧЕСКИЕ НАПРАВЛЕНИЯ"
         : isEn
         ? "STRATEGIC COOPERATION FIELDS"
@@ -356,7 +407,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "مجالات التعاون الاستراتيجي"
         : "STRATEGISCHE KOOPERATIONSFELDER",
-      title: isRu
+      title: isUz
+        ? "Xalqaro hamkorligimizning asosiy sohalari"
+        : isRu
         ? "Ключевые сферы международного партнерства"
         : isEn
         ? "Key Areas of International Partnership"
@@ -365,7 +418,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "المجالات الرئيسية لتعاوننا الدولي"
         : "Schlüsselfelder unserer internationalen Zusammenarbeit",
-      desc: isRu
+      desc: isUz
+        ? "NabiOta® xoldingining oltita o'zaro bog'liq yo'nalishi: transchegaraviy klinik al'yanslar va teletibbiyotdan tortib, malakali shifokorlarni jalb etish, klinik akademiya hamda gumanitar tashabbuslargacha."
+        : isRu
         ? "Шесть взаимосвязанных программ холдинга NabiOta®: от трансграничных клинических альянсов и телемедицины до рекрутинга врачей, академии и гуманитарных инициатив."
         : isEn
         ? "Six interconnected NabiOta® programs: from cross-border hospital alliances and telemedicine to physician recruitment, clinical academy, and humanitarian care."
@@ -374,7 +429,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "ستة مجالات خدمة منظمة لمجموعة NabiOta®: من التحالفات السريرية العابرة للحدود والطب الاتصالي إلى استقطاب الكوادر والأكاديمية والمشاريع الإنسانية."
         : "Sechs strukturierte Leistungsfelder der NabiOta® Gruppe: von grenzüberschreitenden Klinikallianzen und Telemedizin bis hin zur Fachkräfteintegration, Akademie und humanitären Projekten.",
-      linkAll: isRu
+      linkAll: isUz
+        ? "Barcha dasturlar"
+        : isRu
         ? "Все программы"
         : isEn
         ? "All Programs"
@@ -383,7 +440,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "جميع البرامج"
         : "Alle Schwerpunkte",
-      openModalBtn: isRu
+      openModalBtn: isUz
+        ? "Dastur haqida batafsil"
+        : isRu
         ? "Подробнее о программе"
         : isEn
         ? "Explore program"
@@ -395,7 +454,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
       programs: [
         {
           id: "klinikpartnerschaften",
-          tag: isRu
+          tag: isUz
+            ? "KLINIK AL'YANSLAR"
+            : isRu
             ? "КЛИНИЧЕСКИЕ АЛЬЯНСЫ"
             : isEn
             ? "HOSPITAL ALLIANCES"
@@ -406,7 +467,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             : "KLINIKALLIANZEN",
           image: "/images/international/project-europe.webp",
           iconType: "hospital",
-          title: isRu
+          title: isUz
+            ? "Transchegaraviy klinik al'yanslar va shifoxonalar hamkorligi"
+            : isRu
             ? "Трансграничные клинические альянсы & Госпитальные партнерства"
             : isEn
             ? "Cross-Border Clinical Alliances & Hospital Partnerships"
@@ -415,7 +478,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             : isAr
             ? "التحالفات السريرية العابرة للحدود وشبكات المستشفيات"
             : "Grenzüberschreitende Klinikallianzen & Hospital Networks",
-          shortDesc: isRu
+          shortDesc: isUz
+            ? "Dalillarga asoslangan klinik protokollar va tajriba almashish uchun xalqaro universitet klinikalari bilan strategik hamkorlik."
+            : isRu
             ? "Стратегическое партнерство с международными университетскими клиниками: синхронизация стандартов лечения, консилиумы и обмен опытом."
             : isEn
             ? "Strategic collaborations with international university hospitals for evidence-based care pathways and shared clinical protocols."
@@ -425,7 +490,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             ? "تعاون استراتيجي مع المستشفيات الجامعية الدولية لتطبيق مسارات علاجية قائمة على الأدلة وبروتوكولات سريرية مشتركة."
             : "Strategische Kooperationen mit internationalen Universitätskliniken für evidenzbasierte Behandlungspfade und gemeinsame klinische Protokolle.",
           modal: {
-            title: isRu
+            title: isUz
+              ? "Transchegaraviy klinik al'yanslar va shifoxonalar hamkorligi"
+              : isRu
               ? "Трансграничные клинические альянсы & Госпитальные партнерства"
               : isEn
               ? "Cross-Border Clinical Alliances & Hospital Partnerships"
@@ -434,7 +501,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "التحالفات السريرية والشراكات العابرة للحدود"
               : "Grenzüberschreitende Klinikallianzen & Partnerschaften",
-            subtitle: isRu
+            subtitle: isUz
+              ? "Davolash standartlarini uyg'unlashtirish, klinik konsiliumlar va yetakchi tibbiyot markazlari bilan tajriba almashish"
+              : isRu
               ? "Синхронизация стандартов лечения, консилиумы и обмен опытом с ведущими медицинскими центрами"
               : isEn
               ? "Harmonizing standards of care, clinical boards, and institutional peer exchange"
@@ -443,7 +512,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "توحيد مسارات العلاج السريري والاستشارات الطبية متعددة التخصصات ونقل المعرفة"
               : "Harmonisierung klinischer Behandlungspfade, interdisziplinäre Konsile und Wissenstransfer",
-            description: isRu
+            description: isUz
+              ? "NabiOta® International xalqaro klinik protokollarni tatbiq etish, murakkab bemorlar bo'yicha qo'shma konsiliumlar (Board Review) o'tkazish va tibbiyot xodimlarining malakasini oshirish maqsadida Yevropa va dunyoning yetakchi universitet klinikalari bilan institutsional ikki tomonlama hamkorlikni rivojlantiradi."
+              : isRu
               ? "NabiOta® International развивает институциональные партнерства с ведущими клиниками Европы и мира. В рамках долгосрочных соглашений мы внедряем совместные клинические протоколы в хирургии, онкологии, кардиологии и реабилитации, организуем регулярные экспертные советы и обеспечиваем преемственность в ведении сложных пациентов."
               : isEn
               ? "NabiOta® International establishes institutional alliances with premier hospital networks across Europe and globally. Under bilateral cooperation agreements, we implement standardized care pathways in surgery, oncology, cardiology, and rehabilitation, conduct regular multidisciplinary tumor boards, and ensure seamless continuum of care for complex cases."
@@ -452,7 +523,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "تؤسس مجموعة NabiOta® الصحية شراكات سريرية ثنائية منظمة مع كبرى المشافي الجامعية والمراكز التخصصية في أوروبا والعالم. ينصب تركيزنا على نقل المعرفة في التخصصات الجراحية الدقيقة، وتطوير مسارات علاجية موحدة وفق الإرشادات الألمانية والدولية، والإشراف المشترك على الحالات المعقدة."
               : "Die NabiOta® Health Group etabliert strukturierte bilaterale Klinikpartnerschaften mit universitären und überregionalen Maximalversorgern in Europa und weltweit. Im Fokus stehen der Wissenstransfer in hochspezialisierten operativen Disziplinen, die Entwicklung einheitlicher Behandlungspfade nach deutschen und internationalen Leitlinien sowie die gemeinsame Betreuung komplexer Patientenfälle.",
-            specificationsTitle: isRu
+            specificationsTitle: isUz
+              ? "Hamkorlik yo'nalishlari"
+              : isRu
               ? "Направления сотрудничества"
               : isEn
               ? "Cooperation Domains"
@@ -461,7 +534,15 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "المحاور السريرية للتحالفات"
               : "Klinische Schwerpunkte der Allianzen",
-            specifications: isRu
+            specifications: isUz
+              ? [
+                "Fanlararo onkologik konsiliumlar (Interdisziplinäre Tumorkonferenzen)",
+                "Klinik amaliyot standartlarini (SOP) xalqaro ko'rsatmalarga muvofiq uyg'unlashtirish",
+                "Kafedra mudirlari, yetakchi jarrohlar va bosh shifokorlarning o'zaro stajirovka almashinuvi",
+                "Nevrologiya, neyroxirurgiya va kardiojarrohlik bo'yicha transchegaraviy konsultatsiyalar",
+                "Qo'shma klinik tadqiqotlar va sifat ko'rsatkichlarining xalqaro taqqoslovi (Benchmarking)",
+                ]
+              : isRu
               ? [
                   "Совместные междисциплинарные онкологические и хирургические борды (Tumorboards)",
                   "Синхронизация стандартов госпитальной гигиены и безопасности пациентов (RKI / WHO)",
@@ -505,7 +586,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                   "Transfer hochmoderner radiologischer Befundungsstandards (3T MRT / Niedrigdosis-CT)",
                   "Aufbau gemeinsamer Qualitätsregister zur evidenzbasierten Therapiekontrolle",
                 ],
-            scopeTitle: isRu
+            scopeTitle: isUz
+              ? "Amalga oshirish formatlari"
+              : isRu
               ? "Форматы реализации"
               : isEn
               ? "Implementation Scope"
@@ -514,7 +597,15 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "صيغ التعاون وآليات التنفيذ"
               : "Kooperations- & Umsetzungsformate",
-            scopeItems: isRu
+            scopeItems: isUz
+              ? [
+                "Ikki tomonlama institutsional shartnomalar (MoU va Service Level Agreements)",
+                "Germaniya klinikalarida 1 oydan 6 oygacha bo'lgan tuzilmaviy fellowship-dasturlari",
+                "Xavfsiz shifrlangan telemeditsina kanallari orqali ikkinchi tibbiy xulosa (Second Opinion)",
+                "Klinik auditlar va mahalliy shifoxonalarda ish jarayonlarini optimallashtirish",
+                "Qo'shma xalqaro ilmiy-amaliy simpoziumlar va sertifikatlangan CME-seminarlari",
+                ]
+              : isRu
               ? [
                   "Заключение двусторонних меморандумов о сотрудничестве (MoU) и договоров об обмене",
                   "Проведение очных и гибридных клинических консилиумов по сложным случаям",
@@ -553,7 +644,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                   "Einbindung gesicherter digitaler Bilddatenübertragungen nach DICOM/PACS-Standards",
                   "Gemeinsame wissenschaftliche Publikationen und Fachvorträge auf Kongressen",
                 ],
-            technicalTitle: isRu
+            technicalTitle: isUz
+              ? "Standartlar va xavfsizlik"
+              : isRu
               ? "Стандарты и безопасность"
               : isEn
               ? "Standards & Governance"
@@ -562,7 +655,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "معايير الجودة والسلامة"
               : "Qualitäts- & Sicherheitsstandards",
-            technicalText: isRu
+            technicalText: isUz
+              ? "Barcha xalqaro hamkorlik jarayonlari shifokor siriga qat'iy rioya qilish (§ 203 StGB), Yevropa Ittifoqining ma'lumotlarni himoya qilish to'g'risidagi bosh reglamenti (DSGVO/GDPR) hamda DIN EN ISO 9001 klinik sifat menejmenti tizimiga to'liq mos ravishda amalga oshiriladi."
+              : isRu
               ? "Все международные партнерства осуществляются в строгом соответствии с нормами врачебной тайны (§ 203 StGB), европейским регламентом защиты данных (GDPR/DSGVO) и руководствами ВОЗ по безопасности пациентов."
               : isEn
               ? "All international partnerships strictly comply with German medical confidentiality (§ 203 StGB), European data privacy regulations (GDPR/DSGVO), and WHO Patient Safety guidelines."
@@ -571,7 +666,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "تخضع كافة إجراءات التعاون للسرية المهنية الطبية الصارمة (§ 203 StGB)، ولوائح حماية البيانات العامة الأوروبية (GDPR/DSGVO)، ومعايير منظمة الصحة العالمية لسلامة المرضى."
               : "Sämtliche Kooperationsprozesse unterliegen der strikten ärztlichen Schweigepflicht (§ 203 StGB), den Anforderungen der DSGVO sowie den Richtlinien der WHO für Patientensicherheit.",
-            ctaButtonText: isRu
+            ctaButtonText: isUz
+              ? "Klinikalar hamkorligini muhokama qilish"
+              : isRu
               ? "Обсудить партнерство клиник"
               : isEn
               ? "Inquire Clinic Partnership"
@@ -584,7 +681,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         },
         {
           id: "telemedizin",
-          tag: isRu
+          tag: isUz
+            ? "TELETIBBIYOT"
+            : isRu
             ? "ТЕЛЕМЕДИЦИНА"
             : isEn
             ? "TELEHEALTH"
@@ -595,7 +694,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             : "TELEMEDIZIN",
           image: "/images/international/project-asia.webp",
           iconType: "telehealth",
-          title: isRu
+          title: isUz
+            ? "Teletibbiyot va xalqaro ekspert telekonsiliumlari"
+            : isRu
             ? "Телемедицина & Международные экспертные телеконсилиумы"
             : isEn
             ? "Telemedicine & Global Expert Teleconsultations"
@@ -604,7 +705,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             : isAr
             ? "الطب الاتصالي والاستشارات الطبية التخصصية الدولية"
             : "Telemedizin & Internationale Experten-Telekonsile",
-          shortDesc: isRu
+          shortDesc: isUz
+            ? "Germaniyalik yetakchi professorlarning ikkinchi xulosasi (Second Opinion), jonli konsiliumlar va teleradiologik diagnostika uchun himoyalangan raqamli kanallar."
+            : isRu
             ? "Защищенные цифровые каналы для второго мнения немецких профессоров, онлайн-консилиумов и телерадиологии."
             : isEn
             ? "Secure digital bridges for second opinions from German chief physicians, live boards, and teleradiology reading."
@@ -614,7 +717,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             ? "جسور رقمية آمنة للحصول على رأي ثانٍ من كبار الأطباء الألمان والاستشارات الحية والتشخيص الإشعاعي عن بُعد."
             : "Sichere digitale Brücken für Zweitmeinungen deutscher Chefärzte, Live-Konsile und teleradiologische Befundung.",
           modal: {
-            title: isRu
+            title: isUz
+              ? "Teletibbiyot va xalqaro ekspert telekonsiliumlari"
+              : isRu
               ? "Телемедицина & Международные экспертные телеконсилиумы"
               : isEn
               ? "Telemedicine & Global Expert Teleconsultations"
@@ -623,7 +728,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "الطب الاتصالي والاستشارات الطبية التخصصية الدولية"
               : "Telemedizin & Internationale Experten-Telekonsile",
-            subtitle: isRu
+            subtitle: isUz
+              ? "Bemorlarni xorijga jo'natmasdan turib yuqori texnologiyali ikkinchi xulosa olish va teleradiologik ekspertiza"
+              : isRu
               ? "Второе мнение немецких профессоров, дистанционный разбор сложных случаев и телерадиология"
               : isEn
               ? "German specialist second opinions, remote case reviews, and cross-border teleradiology"
@@ -632,7 +739,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "آراء استشارية ثانية، قراءة الأشعة عن بُعد، ومناقشة الحالات متعددة التخصصات"
               : "Fachärztliche Zweitmeinungen, teleradiologische Befundung und interdisziplinäre Fallbesprechung",
-            description: isRu
+            description: isUz
+              ? "NabiOta® Telehealth platformasi xorijdagi shifokorlar va bemorlarga Germaniyaning bosh shifokorlari va ixtisoslashgan mutaxassislari bilan to'g'ridan-to'g'ri bog'lanish imkonini beradi. DICOM radiologik tasvirlari, gistologiya va laboratoriya tahlillari yuqori tezlikdagi shifrlangan tarmoqlar orqali Germaniya telematika infratuzilmasi talablariga mos holda ko'rib chiqiladi."
+              : isRu
               ? "Телемедицинская платформа NabiOta® связывает зарубежные клиники и пациентов с узкопрофильными специалистами Германии. Мы обеспечиваем дистанционный аудит радиологических исследований (КТ/МРТ), экспертное второе мнение перед проведением сложных операций и регулярные онлайн-консилиумы по спорным диагнозам в режиме защищенного видео- и дата-канала."
               : isEn
               ? "The NabiOta® Telehealth platform connects overseas healthcare providers and patients with premier German specialists. We deliver certified teleradiology image audits (CT/MRI), comprehensive second opinions prior to major surgical interventions, and structured remote tumor boards over end-to-end encrypted medical networks."
@@ -641,7 +750,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "من خلال منصة الطب الاتصالي المعتمدة لمجموعة NabiOta، يحصل المرضى والمستشفيات الشريكة دولياً على وصول مباشر لكبار الأطباء الألمان. تشمل الخدمات إعادة قراءة الأشعة المقطعية والرنين المغناطيسي المعقد، وتقديم رأي طبي ثانٍ مستقل قبل الجراحات الكبرى، وعقد استشارات طبية دورية عبر قنوات اتصال فيديو مشفرة."
               : "Über die zertifizierte Telemedizin-Plattform der NabiOta-Gruppe erhalten internationale Partnerkliniken und Patienten direkten Zugang zu führenden deutschen Fachärzten. Das Leistungsspektrum umfasst die teleradiologische Zweitbefundung hochkomplexer Schnittbildaufnahmen, unabhängige Zweitmeinungen vor schweren operativen Eingriffen sowie regelmäßige interdisziplinäre Konsile via verschlüsselter Videoschaltung.",
-            specificationsTitle: isRu
+            specificationsTitle: isUz
+              ? "Teletibbiyot imkoniyatlari"
+              : isRu
               ? "Телемедицинские возможности"
               : isEn
               ? "Telehealth Modalities"
@@ -650,7 +761,15 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "خدمات الطب الاتصالي"
               : "Telemedizinische Leistungen",
-            specifications: isRu
+            specifications: isUz
+              ? [
+                "MRT, KT va PET-KT tasvirlarining xalqaro teleradiologik ekspertizasi (DICOM/PACS)",
+                "Nodir va murakkab kasalliklar bo'yicha onlayn fanlararo konsiliumlar",
+                "Patomorfologik va gistologik preparatlarning raqamli telepatologiyasi",
+                "Tizimli jarrohlik operatsiyalarini masofaviy rejalashtirish va preoperativ konsultatsiyalar",
+                "Og'ir bemorlarni Germaniyaga rejaviy davolanishga jo'natishdan oldingi xavfsiz tele-triaj",
+                ]
+              : isRu
               ? [
                   "Экспертное второе мнение (Second Opinion) ведущих хирургов и онкологов Германии",
                   "Телерадиология: удаленный аудит снимков МРТ, КТ и рентгена с заключением за 24–48 часов",
@@ -694,7 +813,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                   "Digitale Telepathologie zur Verifizierung bioptischer und onkologischer Gewebebefunde",
                   "Ende-zu-Ende verschlüsseltes Portal für DICOM-Bilder und Arztbriefübermittlung",
                 ],
-            scopeTitle: isRu
+            scopeTitle: isUz
+              ? "Texnik platforma"
+              : isRu
               ? "Техническая инфраструктура"
               : isEn
               ? "Technical Infrastructure"
@@ -703,7 +824,15 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "المنصة التقنية وواجهات الربط"
               : "Plattform & Schnittstellen",
-            scopeItems: isRu
+            scopeItems: isUz
+              ? [
+                "TLS 1.3 va AES-256 shifrlangan sertifikatlangan telemeditsina platformasi",
+                "Kasalxona axborot tizimlari (KIS) bilan HL7 va FHIR interfeyslari orqali to'g'ridan-to'g'ri integratsiya",
+                "24 soatdan 48 soatgacha bo'lgan muddatda nemis va ingliz tillarida rasmiy tibbiy xulosalar taqdim etilishi",
+                "Tibbiy tarjimonlar ishtirokida bemorlar uchun jonli video-konsultatsiyalar",
+                "Teleradiologiya va konsiliumlar arxivining to'liq huquqiy himoyalangan saqlanishi",
+                ]
+              : isRu
               ? [
                   "Облачный PACS-архив с поддержкой передачи несжатых DICOM-файлов ультравысокого разрешения",
                   "Соответствие стандарту передачи медицинских данных FHIR / HL7 для интеграции с МИС клиник",
@@ -742,7 +871,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                   "Erstellung detaillierter schriftlicher Gutachten auf Deutsch, Englisch oder Russisch",
                   "Rechtsverbindliche Signatur durch zugelassene Fachärzte mittels elektronischem Heilberufsausweis (eHBA)",
                 ],
-            technicalTitle: isRu
+            technicalTitle: isUz
+              ? "Axborot xavfsizligi va sertifikatsiya"
+              : isRu
               ? "Правовая база"
               : isEn
               ? "Regulatory Framework"
@@ -751,7 +882,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "الأطر القانونية والتنظيمية"
               : "Rechtliche Grundlagen",
-            technicalText: isRu
+            technicalText: isUz
+              ? "Ma'lumotlar uzatish Germaniya SGB V (§ 291a Telematikinfrastruktur) standartlariga mos keladi, serverlar Germaniyadagi ISO 27001 sertifikatiga ega ma'lumotlar markazlarida joylashgan va tibbiy maxfiylik (§ 203 StGB) kafolatlanadi."
+              : isRu
               ? "Предоставление телемедицинских услуг осуществляется в рамках § 7 Abs. 4 (MBO-Ä) Федерального врачебного кодекса Германии и с соблюдением европейских регламентов защиты персональных данных (DSGVO)."
               : isEn
               ? "Telemedical services are delivered in strict compliance with § 7(4) MBO-Ä (German Medical Association Fernbehandlung guidelines) and European GDPR privacy laws."
@@ -760,7 +893,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "يتم تقديم الاستشارات الطبية عن بُعد طبقاً للوائح المهنية الطبية الألمانية (§ 7 فقرة 4 MBO-Ä) ولائحة حماية البيانات العامة الأوروبية (DSGVO)."
               : "Die Durchführung telemedizinischer Konsile erfolgt unter strikter Einhaltung der berufsrechtlichen Vorgaben (§ 7 Abs. 4 MBO-Ä) und den Vorgaben der Datenschutz-Grundverordnung (DSGVO).",
-            ctaButtonText: isRu
+            ctaButtonText: isUz
+              ? "Telekonsilium so'rovini yuborish"
+              : isRu
               ? "Запросить телеконсилиум"
               : isEn
               ? "Request Teleconsultation"
@@ -773,7 +908,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         },
         {
           id: "fachkraefte-recruitment",
-          tag: isRu
+          tag: isUz
+            ? "REKRUTING VA KADRLAR"
+            : isRu
             ? "РЕКРУТИНГ & КАДРЫ"
             : isEn
             ? "RECRUITMENT"
@@ -784,7 +921,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             : "FACHKRÄFTE",
           image: "/images/services/staffing.webp",
           iconType: "recruitment",
-          title: isRu
+          title: isUz
+            ? "Shifokorlarni xalqaro jalb etish va Approbation dasturlari"
+            : isRu
             ? "Международный рекрутинг врачей & Программы Approbation"
             : isEn
             ? "International Healthcare Recruitment & Medical Licensing"
@@ -793,7 +932,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             : isAr
             ? "استقطاب الكوادر الصحية الدولية وبرامج معادلة وترخيص مزاولة المهنة (Approbation)"
             : "Internationale Fachkräftegewinnung & Approbationsprogramme",
-          shortDesc: isRu
+          shortDesc: isUz
+            ? "§ 3 BÄO bo'yicha tibbiy litsenziya olish (Approbation) va Germaniyaga moslashuvni to'liq huquqiy qo'llab-quvvatlash bilan shifokorlar va hamshiralarni tizimli tanlash."
+            : isRu
             ? "Системный подбор и интеграция врачей и медперсонала с полным юридическим сопровождением апробации по § 3 BÄO."
             : isEn
             ? "Structured recruitment and sustainable onboarding of physicians and nurses with licensing (Approbation § 3 BÄO)."
@@ -803,7 +944,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             ? "استقطاب منظم ودمج مستدام للأطباء والكوادر التمريضية مع مرافقة الترخيص الطبي وفق § 3 BÄO."
             : "Strukturierte Gewinnung und nachhaltige Integration von Medizinern und Pflegekräften mit Approbationsbegleitung nach § 3 BÄO.",
           modal: {
-            title: isRu
+            title: isUz
+              ? "Xalqaro kadrlarni jalb qilish va Approbation (NabiOta Medical Recruitment)"
+              : isRu
               ? "Международный рекрутинг кадров & Approbation"
               : isEn
               ? "International Healthcare Recruitment & Licensing"
@@ -812,7 +955,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "استقطاب الكوادر الصحية الدولية وترخيص Approbation"
               : "Internationale Fachkräftegewinnung & Approbation",
-            subtitle: isRu
+            subtitle: isUz
+              ? "NabiOta Medical Recruitment Services GmbH: til o'rganishdan tortib Germaniyada to'liq litsenziyalashgacha"
+              : isRu
               ? "NabiOta Medical Recruitment Services GmbH: от языковой подготовки до немецкой врачебной лицензии"
               : isEn
               ? "NabiOta Medical Recruitment Services GmbH: From language training to full German medical licensure"
@@ -821,7 +966,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "NabiOta Medical Recruitment Services GmbH: دمج وتأهيل الأطباء والتمريض المؤهلين"
               : "NabiOta Medical Recruitment Services GmbH: Qualifizierte Ärzte- und Pflegekräfteintegration",
-            description: isRu
+            description: isUz
+              ? "NabiOta Medical Recruitment Services GmbH xorijiy shifokorlar va malakali hamshiralarni Germaniyaning klinikalari, MVZ markazlari va parvarish muassasalariga jalb qilish, kasbiy tan olish hamda uzoq muddatli integratsiyalashga ixtisoslashgan. Biz nomzodlar uchun bepul dasturlar va 'Faire Anwerbung Pflege Deutschland' mezonlariga qat'iy rioya qilamiz."
+              : isRu
               ? "NabiOta Medical Recruitment Services GmbH специализируется на этичном, системном привлечении квалифицированных врачей, медсестер и терапевтов из-за рубежа. Мы сопровождаем специалистов на каждом шаге: от проверки диплома в ZAB/ZSBA и визы до сдачи экзаменов Fachsprachenprüfung (FSP) и Kenntnisprüfung (KP), обеспечивая полную немецкую апробацию и долгосрочное трудоустройство."
               : isEn
               ? "NabiOta Medical Recruitment Services GmbH provides ethical, comprehensive international recruitment for physicians, registered nurses, and therapists. We guide professionals across all administrative stages: from academic degree validation (ZAB/ZSBA) and visa processing to German medical language (FSP) and clinical knowledge (KP) examinations, securing permanent medical licensure (Approbation § 3 BÄO)."
@@ -830,7 +977,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "تتولى NabiOta Medical Recruitment Services GmbH الاستقطاب الأخلاقي المنظم والدمج المستدام للأطباء والكوادر التمريضية والمعالجين الدوليين. نرافق الكوادر بشكل متكامل بدءاً من فحص معادلة الشهادات وامتحان اللغة الطبية (FSP) وحتى امتحان المعادلة المعرفية السريرية (KP) للحصول على ترخيص مزاولة المهنة الألماني الكامل (Approbation § 3 BÄO)."
               : "Die NabiOta Medical Recruitment Services GmbH übernimmt die strukturierte, ethische Rekrutierung und nachhaltige Eingliederung internationaler Mediziner, Pflegefachkräfte und Therapeuten. Wir begleiten Fachkräfte ganzheitlich von der ersten Äquivalenzprüfung über die Fachsprachprüfung (FSP) bis zur Kenntnisprüfung (KP) zur Erlangung der deutschen Approbation (§ 3 BÄO).",
-            specificationsTitle: isRu
+            specificationsTitle: isUz
+              ? "Hamrohlik bosqichlari"
+              : isRu
               ? "Этапы сопровождения"
               : isEn
               ? "Integration Stages"
@@ -839,7 +988,15 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "مراحل التأهيل والدمج المهني"
               : "Integrations- & Begleitschritte",
-            specifications: isRu
+            specifications: isUz
+              ? [
+                "Tibbiy diplomlar va mutaxassislik hujjatlarining rasmiy ekvivalentligini tekshirish (Defizitbescheid)",
+                "Ixtisoslashgan tibbiy til kurslari (Fachsprache Medizin C1 / Pflege B2)",
+                "Tibbiy til imtihoni (Fachsprachenprüfung - FSP) uchun maqsadli intensiv tayyorgarlik",
+                "Davlat tibbiy malaka imtihoniga (Kenntnisprüfung - KP) tayyorgarlik va nazariy-amaliy simulyatsiyalar",
+                "Kasbiy faoliyat ruxsatnomasi (§ 10 BÄO) va cheklanmagan Approbation (§ 3 BÄO) olishni to'liq boshqarish",
+                ]
+              : isRu
               ? [
                   "Предварительный аудит дипломов и документов в соответствии со стандартами ZAB и Bezirksregierung",
                   "Специализированные курсы медицинского немецкого (B2/C1 Medizin) с фокусом на анамнез и клиническую речь",
@@ -883,7 +1040,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                   "Mehrwöchige klinische Hospitationen in MVZ und Fachabteilungen mit festem Mentoring",
                   "Praktische Falltrainings zur erfolgreichen Vorbereitung auf die Kenntnisprüfung (KP § 3 BÄO)",
                 ],
-            scopeTitle: isRu
+            scopeTitle: isUz
+              ? "Mutaxassislar uchun to'liq paket"
+              : isRu
               ? "Пакет для специалистов"
               : isEn
               ? "Candidate Services"
@@ -892,7 +1051,15 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "باقة الخدمات المقدمة للكوادر الطبية"
               : "Leistungsportfolio für Fachkräfte",
-            scopeItems: isRu
+            scopeItems: isUz
+              ? [
+                "Germaniya elchixonasida tezlashtirilgan malakali ishchi vizasi jarayoni (AufenthG § 16d / § 18a / § 18b)",
+                "NabiOta Real Estate GmbH orqali xizmat kvartiralari va qulay yashash joylari bilan ta'minlash",
+                "Bank hisob raqamini ochish, sog'liqni saqlash sug'urtasi va oilani birlashtirishda to'liq yordam",
+                "Klinikada individual murabbiy (Mentor) biriktirilgan holda moslashuv dasturi",
+                "Xolding tizimidagi klinika va parvarish muassasalarida doimiy mehnat shartnomasi kafolati",
+                ]
+              : isRu
               ? [
                   "Официальный бессрочный трудовой договор с клиникой группы после успешной сдачи экзаменов",
                   "Помощь в поиске жилья, регистрации по месту жительства и открытии банковских счетов",
@@ -931,7 +1098,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                   "Rechtliche und arbeitsrechtliche Betreuung während des gesamten Anerkennungsprozesses",
                   "Verpflichtung auf den ethischen WHO-Verhaltenskodex für die internationale Rekrutierung von Gesundheitsfachkräften",
                 ],
-            technicalTitle: isRu
+            technicalTitle: isUz
+              ? "Qonunchilik bazasi"
+              : isRu
               ? "Законодательная база"
               : isEn
               ? "Legal Framework"
@@ -940,7 +1109,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "الأطر القانونية والتشريعية"
               : "Rechtliche Grundlagen",
-            technicalText: isRu
+            technicalText: isUz
+              ? "Malakani tan olish va ishga qabul qilish Germaniya Federativ Respublikasi qonunlariga (Bundesärzteordnung BÄO, Pflegeberufegesetz PflBG, Fachkräfteeinwanderungsgesetz) hamda Jahon sog'liqni saqlash tashkilotining (JSST) adolatli xalqaro ishga qabul qilish kodeksiga to'liq mos ravishda olib boriladi."
+              : isRu
               ? "Процедура признания квалификации и найма строго регулируется § 3 Bundesärzteordnung (BÄO), § 10 BÄO (Berufserlaubnis), Pflegeberufegesetz (PflBG) и Aufenthaltsgesetz (AufenthG)."
               : isEn
               ? "Professional licensing and immigration operate strictly under § 3 BÄO (Federal Medical Code), § 10 BÄO (Temporary permit), PflBG (Nursing Professions Act), and German AufenthG."
@@ -949,7 +1120,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "تستند إجراءات المعادلة والهجرة المهنية بشكل صارم إلى أحكام § 3 BÄO و§ 10 BÄO وقانون مهن التمريض (PflBG) والمادتين 16d و 18b من قانون الإقامة الألماني."
               : "Das Anerkennungsverfahren und die Zuwanderung erfolgen strikt auf Grundlage von § 3 BÄO, § 10 BÄO, des Pflegeberufegesetzes (PflBG) sowie der §§ 16d, 18b des Aufenthaltsgesetzes.",
-            ctaButtonText: isRu
+            ctaButtonText: isUz
+              ? "Dasturga ariza topshirish"
+              : isRu
               ? "Подать заявку на программу"
               : isEn
               ? "Apply for Program"
@@ -962,7 +1135,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         },
         {
           id: "wissenstransfer-akademie",
-          tag: isRu
+          tag: isUz
+            ? "AKADEMIYA VA TA'LIM"
+            : isRu
             ? "АКАДЕМИЯ & ОБУЧЕНИЕ"
             : isEn
             ? "EDUCATION"
@@ -973,7 +1148,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             : "AKADEMIE",
           image: "/images/international/world-hands.webp",
           iconType: "academy",
-          title: isRu
+          title: isUz
+            ? "Bilim transferi va klinik malaka oshirish (NabiOta Academy)"
+            : isRu
             ? "Wissenstransfer & Klinische Weiterbildung (NabiOta Academy)"
             : isEn
             ? "Knowledge Transfer & Clinical Education (NabiOta Academy)"
@@ -982,7 +1159,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             : isAr
             ? "نقل المعرفة والتعليم الطبي السريري المستمر (NabiOta Academy)"
             : "Wissenstransfer & Klinische Weiterbildung (NabiOta Academy)",
-          shortDesc: isRu
+          shortDesc: isUz
+            ? "Klinik stajirovkalar, kam invaziv jarrohlik bo'yicha amaliy mahorat darslari va Germaniya mutaxassislari bilan xalqaro simpoziumlar."
+            : isRu
             ? "Клинические стажировки, практические мастер-классы по малоинвазивной хирургии и симпозиумы."
             : isEn
             ? "Clinical fellowships, hands-on surgical masterclasses, and international academic symposia."
@@ -992,7 +1171,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             ? "معايشات وزمالات سريرية، ورش عمل تطبيقية في الجراحة طفيفة التوغل، ومؤتمرات متعددة التخصصات."
             : "Klinische Hospitationen, Hands-on-Workshops in minimalinvasiver Chirurgie und interdisziplinäre Symposien.",
           modal: {
-            title: isRu
+            title: isUz
+              ? "Bilim transferi va klinik akademiya (NabiOta Academy)"
+              : isRu
               ? "Трансфер знаний & Клиническая академия (NabiOta Academy)"
               : isEn
               ? "Knowledge Transfer & Clinical Academy (NabiOta Academy)"
@@ -1001,7 +1182,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "نقل المعرفة والتعليم الطبي السريري المستمر (NabiOta Academy)"
               : "Wissenstransfer & Klinische Weiterbildung (NabiOta Academy)",
-            subtitle: isRu
+            subtitle: isUz
+              ? "Kam invaziv jarrohlik bo'yicha amaliy kurslar, klinik stajirovkalar va transchegaraviy CME ta'limi"
+              : isRu
               ? "Практические курсы малоинвазивной хирургии, стажировки и сертификационные программы"
               : isEn
               ? "Advanced surgical masterclasses, clinical observerships, and certified training modules"
@@ -1010,7 +1193,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "مفاهيم تعليمية معتمدة، دورات جراحية تخصصية متقدمة، ونقل معرفي بين التخصصات"
               : "Zertifizierte Fortbildungskonzepte, chirurgische Masterclasses und interdisziplinärer Wissenstransfer",
-            description: isRu
+            description: isUz
+              ? "NabiOta Academy — xoldingning ta'lim bo'linmasi bo'lib, xorijiy shifokorlar va boshqaruvchilarga zamonaviy nemis tibbiyoti standartlarini yetkazadi. Dasturlar laparoskopiya, robotlashtirilgan jarrohlik, shoshilinch yordam, zamonaviy diagnostika va sog'liqni saqlash menejmentini o'z ichiga oladi."
+              : isRu
               ? "NabiOta Academy — образовательное подразделение холдинга, реализующее программы повышения квалификации для зарубежных врачей и медицинских менеджеров. Мы организуем интенсивные клинические стажировки в центрах холдинга, мастер-классы по артроскопии, эндоскопии, микрохирургии и радиационной безопасности, транслируя передовой немецкий медицинский опыт."
               : isEn
               ? "NabiOta Academy is the group's educational arm dedicated to international physician education and healthcare management training. We offer intensive surgical observerships, hands-on workshops in arthroscopy, endoscopy, and microsurgery, and structured courses in radiation protection, equipping global clinicians with German medical excellence."
@@ -1019,7 +1204,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "تشكل NabiOta Academy الجسر العلمي والأكاديمي لشركائنا الدوليين. نقدم مناهج تدريبية مخصصة، ورش عمل جراحية تطبيقية، برامج معايشة سريرية منظمة، ودورات إدارة صحية للقيادات الطبية والتمريضية."
               : "Die NabiOta Academy bildet die wissenschaftliche und didaktische Brücke zu unseren internationalen Partnern. Wir bieten maßgeschneiderte Weiterbildungscurricula, chirurgische Hands-on-Workshops, strukturierte Hospitationsprogramme sowie Management-Seminare für ärztliche Führungskräfte und Pflegedienstleitungen.",
-            specificationsTitle: isRu
+            specificationsTitle: isUz
+              ? "Ta'lim formatlari"
+              : isRu
               ? "Образовательные форматы"
               : isEn
               ? "Curriculum Modules"
@@ -1028,7 +1215,15 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "المناهج والبرامج التدريبية"
               : "Curricula & Weiterbildungsformate",
-            specifications: isRu
+            specifications: isUz
+              ? [
+                "Zamonaviy simulyatsiya markazlarida kam invaziv jarrohlik (MIS) bo'yicha mahorat darslari",
+                "Operatsiya xonalarida bevosita yetakchi jarrohlar bilan klinik kuzatuv (Clinical Observership)",
+                "Ultratovush diagnostikasi (DEGUM standartlari bo'yicha) va intervension radiologiya kurslari",
+                "Shoshilinch tibbiy yordam va reanimatsiya algoritmlari (ACLS / ATLS standartlari)",
+                "Tibbiyot muassasalarini boshqarish va klinik sifat menejmenti bo'yicha sertifikatlangan dasturlar",
+                ]
+              : isRu
               ? [
                   "Клинические стажировки (Observership & Fellowship) продолжительностью от 2 до 12 недель",
                   "Hands-on мастер-классы по малоинвазивной хирургии позвоночника и суставов",
@@ -1072,7 +1267,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                   "Führungskräfte-Workshops zur ambulanten MVZ-Organisation, Qualitätsmanagement und Controlling",
                   "Vergabe zertifizierter Fortbildungsnachweise mit offizieller CME-Punkte-Anerkennung",
                 ],
-            scopeTitle: isRu
+            scopeTitle: isUz
+              ? "Akademiya jihozlanishi"
+              : isRu
               ? "Оснащение академии"
               : isEn
               ? "Academy Infrastructure"
@@ -1081,7 +1278,15 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "التجهيزات التعليمية والتدريبية"
               : "Didaktische Ausstattung",
-            scopeItems: isRu
+            scopeItems: isUz
+              ? [
+                "Yuqori aniqlikdagi laparoskopik va endoskopik simulyatorlar bilan jihozlangan trening zallari",
+                "Germaniyaning yetakchi operatsiya zallaridan real vaqt rejimida 4K video-translatsiya tizimi",
+                "Gibrid ta'lim shakli: raqamli elektron darsliklar va Germaniyada 2 haftalik intensiv amaliyot",
+                "Landesärztekammer (Germaniya tibbiyot palatasi) tomonidan tan olingan rasmiy sertifikatlar va CME ballari",
+                "Xalqaro talabalar va shifokorlar uchun turar joy va transport logistikasini to'liq tashkil etish",
+                ]
+              : isRu
               ? [
                   "Прямая видеотрансляция из чистых операционных залов класса 1a в конференц-зал в формате 4K",
                   "Симуляционные тренировочные стенды для отработки артроскопических и эндоскопических навыков",
@@ -1120,7 +1325,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                   "Simultanübersetzung klinischer Fallvorstellungen auf Englisch und Russisch",
                   "Vollständiger Zugriff auf das klinikinterne digitale SOP- und Qualitätsmanagementsystem",
                 ],
-            technicalTitle: isRu
+            technicalTitle: isUz
+              ? "Akkreditatsiya"
+              : isRu
               ? "Аккредитация"
               : isEn
               ? "Accreditation"
@@ -1129,7 +1336,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "الاعتماد والشهادات الرسمية"
               : "Akkreditierung & Zertifizierung",
-            technicalText: isRu
+            technicalText: isUz
+              ? "Akademiya dasturlari Germaniya uzluksiz tibbiy ta'lim standartlari (CME) hamda DIN ISO 29990 ta'lim xizmatlari sifat menejmenti tizimi bo'yicha sertifikatlangan."
+              : isRu
               ? "Программы академии сертифицированы в соответствии с требованиями Landesärztekammer (Врачебной палаты земли Северный Рейн-Вестфалия) и соответствуют международным рекомендациям CME/CPD."
               : isEn
               ? "Academy curricula comply with continuing medical education directives of the State Medical Chamber of North Rhine-Westphalia (ÄkNo) and international CME/CPD criteria."
@@ -1138,7 +1347,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "يتم اعتماد البرامج التدريبية وفق معايير نقابة الأطباء في شمال الراين (ÄkNo) وتمنح نقاط التعليم الطبي المستمر المعتمدة (CME)."
               : "Die Fortbildungsveranstaltungen werden nach den Richtlinien der Ärztekammer Nordrhein zertifiziert und mit anerkannten Fortbildungspunkten (CME) bewertet.",
-            ctaButtonText: isRu
+            ctaButtonText: isUz
+              ? "Ta'lim dasturini so'rash"
+              : isRu
               ? "Запросить программу обучения"
               : isEn
               ? "Inquire Academy Course"
@@ -1151,7 +1362,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         },
         {
           id: "humanitaere-projekte",
-          tag: isRu
+          tag: isUz
+            ? "INSONPARVARLIK MISSIYALARI"
+            : isRu
             ? "ГУМАНИТАРНЫЕ МИССИИ"
             : isEn
             ? "HUMANITARIAN"
@@ -1162,7 +1375,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             : "HUMANITÄR",
           image: "/images/international/project-africa.webp",
           iconType: "humanitarian",
-          title: isRu
+          title: isUz
+            ? "Gumanitar tibbiy loyihalar va mobil birlamchi yordam"
+            : isRu
             ? "Гуманитарные медицинские проекты & Мобильная помощь"
             : isEn
             ? "Humanitarian Health Initiatives & Mobile Primary Care"
@@ -1171,7 +1386,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             : isAr
             ? "المشاريع الصحية الإنسانية وبناء الرعاية الأولية المتنقلة"
             : "Humanitäre Gesundheitsprojekte & Mobiler Primärversorgungsaufbau",
-          shortDesc: isRu
+          shortDesc: isUz
+            ? "Qishloq tibbiyot punktlarini mustahkamlash, mobil diagnostika majmualari va ona hamda bola salomatligini muhofaza qilish."
+            : isRu
             ? "Укрепление сельских пунктов помощи, мобильные диагностические комплексы и охрана материнства."
             : isEn
             ? "Sustainable enhancement of rural health posts, mobile screening units, and maternal-child care."
@@ -1181,7 +1398,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             ? "التعزيز المستدام للمراكز الصحية الريفية، وحدات الفحص المتنقلة، وحماية صحة الأم والطفل."
             : "Nachhaltige Stärkung ländlicher Gesundheitsstationen, mobile Screening-Einheiten und Schutz von Mutter & Kind.",
           modal: {
-            title: isRu
+            title: isUz
+              ? "Gumanitar loyihalar va mobil birlamchi yordam"
+              : isRu
               ? "Гуманитарные проекты & Мобильная первичная помощь"
               : isEn
               ? "Humanitarian Health Initiatives & Mobile Primary Care"
@@ -1190,7 +1409,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "المشاريع الصحية الإنسانية وبناء الرعاية الأولية المتنقلة"
               : "Humanitäre Gesundheitsprojekte & Mobiler Primärversorgungsaufbau",
-            subtitle: isRu
+            subtitle: isUz
+              ? "Avtonom feldsherlik punktlarini barpo etish, onalikni muhofaza qilish va tibbiy asbob-uskunalar yetkazib berish"
+              : isRu
               ? "Создание автономных фельдшерских пунктов, охрана здоровья матерей и мобильные скрининги"
               : isEn
               ? "Empowering rural clinics, maternal-child health infrastructure, and mobile screening units"
@@ -1199,7 +1420,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "التعزيز المستدام لهياكل الرعاية الريفية والطب الوقائي المتنقل"
               : "Nachhaltige Stärkung ländlicher Versorgungsstrukturen und mobile Präventionsmedizin",
-            description: isRu
+            description: isUz
+              ? "Korporativ ijtimoiy mas'uliyat doirasida NabiOta® qiyin sharoitdagi mintaqalarda tibbiy infratuzilmani rivojlantirishga ko'maklashadi. Biz xalqaro jamg'armalar bilan birgalikda quyosh energiyasida ishlovchi mobil klinikalarni jihozlaymiz, tibbiy apparatlar yetkazib beramiz va mahalliy parvarish xodimlarini o'qitamiz."
+              : isRu
               ? "В рамках корпоративной социальной ответственности (CSR) NabiOta® реализует гуманитарные медицинские проекты в развивающихся регионах. Мы поставляем сертифицированное диагностическое оборудование, организуем автономные акушерские и мобильные смотровые пункты на базе полноприводных шасси, а также обучаем местный медицинский персонал основам скрининга и профилактики."
               : isEn
               ? "As part of our commitment to global health equity, NabiOta® leads humanitarian healthcare deployments in underserved regions. We provide certified refurbished medical hardware, build decentralized maternity and primary care posts, deploy 4x4 mobile health clinics for remote populations, and train community health workers in early disease detection."
@@ -1208,7 +1431,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "انطلاقاً من مسؤوليتنا المجتمعية، تنخرط مجموعة NabiOta في مشاريع صحية إنسانية حول العالم. يتركز العمل على البناء المستدام لمراكز ولادة ورعاية صحية أولية مكتفية ذاتياً في المناطق الريفية، وتشغيل عيادات متنقلة للفحص، وتدريب الكوادر الطبية المحلية عملياً."
               : "Gemäß unserer gesellschaftlichen Verantwortung engagiert sich die NabiOta-Gruppe in humanitären Gesundheitsprojekten weltweit. Der Fokus liegt auf dem nachhaltigen Aufbau autarker Geburts- und Basisgesundheitsstationen in ländlichen Regionen, der Entsendung mobiler Ambulanz- und Screening-Fahrzeuge sowie der praxisnahen Schulung des medizinischen Personals vor Ort.",
-            specificationsTitle: isRu
+            specificationsTitle: isUz
+              ? "Gumanitar tashabbuslar"
+              : isRu
               ? "Гуманитарные инициативы"
               : isEn
               ? "Project Pillars"
@@ -1217,7 +1442,15 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "محاور المشروع الأساسية"
               : "Projektschwerpunkte",
-            specifications: isRu
+            specifications: isUz
+              ? [
+                "Kam ta'minlangan hududlar uchun avtonom quyosh batareyali mobil tibbiyot stansiyalari",
+                "Ona va bola salomatligini muhofaza qilish bo'yicha skrining dasturlari va emlash punktlari",
+                "Germaniya klinikalaridan tekshirilgan va sertifikatlangan tibbiy uskunalarni xayriya sifatida o'tkazish",
+                "Toza ichimlik suvi ta'minoti va shifoxona gigiyenasi bo'yicha barqaror loyihalar",
+                "Mahalliy hamshiralar va feldsherlarni birlamchi reanimatsiya ko'nikmalariga o'rgatish",
+                ]
+              : isRu
               ? [
                   "Оснащение сельских родильных и акушерских пунктов базовым мониторингом и стерилизаторами",
                   "Мобильные диагностические модули (УЗИ, экспресс-лаборатория, офтальмологический скрининг)",
@@ -1261,7 +1494,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                   "Train-the-Trainer-Seminare für Hebammen und Pflegekräfte in Neugeborenen-Notfallversorgung",
                   "Installation solarbetriebener Kühlketten für die zuverlässige Lagerung lebenswichtiger Impfstoffe",
                 ],
-            scopeTitle: isRu
+            scopeTitle: isUz
+              ? "Barqarorlik tamoyillari"
+              : isRu
               ? "Принципы устойчивости"
               : isEn
               ? "Sustainability Principles"
@@ -1270,7 +1505,15 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "مفهوم الاستدامة"
               : "Nachhaltigkeitskonzept",
-            scopeItems: isRu
+            scopeItems: isUz
+              ? [
+                "Faqat uzoq muddatli mustaqil ishlashga qodir infratuzilmani barpo etish (Capacity Building)",
+                "Mahalliy sog'liqni saqlash vazirliklari va munitsipal idoralar bilan yaqin hamkorlik",
+                "Har bir loyihaning maqsadli sarflanishi bo'yicha 100% shaffof moliyaviy va texnik hisobdorlik",
+                "Germaniyalik mutaxassislar tomonidan muntazam texnik ko'rik va tibbiy monitoring o'tkazish",
+                "Favqulodda vaziyatlar va tabiiy ofatlar oqibatlarini bartaraf etishda tezkor gumanitar ko'mak",
+                ]
+              : isRu
               ? [
                   "Партнерство с местными министерствами здравоохранения и аккредитованными НКО",
                   "Отказ от разовых акций — акцент на обучении местных специалистов для самостоятельной работы",
@@ -1309,7 +1552,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                   "Lückenlose Dokumentation und Auditierung aller eingesetzten Sach- und Geldmittel",
                   "Ausrichtung an den UN-Nachhaltigkeitszielen (SDG 3: Gesundheit und Wohlergehen für alle)",
                 ],
-            technicalTitle: isRu
+            technicalTitle: isUz
+              ? "Xalqaro me'yorlar"
+              : isRu
               ? "Международные нормы"
               : isEn
               ? "International Guidelines"
@@ -1318,7 +1563,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "المعايير والمبادئ التوجيهية الدولية"
               : "Internationale Richtlinien",
-            technicalText: isRu
+            technicalText: isUz
+              ? "Barcha loyihalar gumanitar harakatlarning xalqaro standartlari (Sphere Standards) hamda Jahon sog'liqni saqlash tashkilotining birlamchi tibbiy-sanitariya yordami (PHC) bo'yicha direktivalariga muvofiq amalga oshiriladi."
+              : isRu
               ? "Все проекты реализуются в соответствии с гуманитарными принципами Sphere Project, стандартами ВОЗ и требованиями европейского экспортного контроля медицинских технологий."
               : isEn
               ? "All deployments strictly adhere to Sphere Humanitarian Charter standards, WHO Essential Health Package guidelines, and German medical device export compliance."
@@ -1327,7 +1574,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "يتم التنفيذ وفقاً للمعايير الإنسانية الدنيا لمشروع إسفير (Sphere Project) وإرشادات منظمة الصحة العالمية (WHO)."
               : "Die Durchführung erfolgt gemäß den humanitären Mindeststandards des Sphere-Projekts sowie den Leitlinien der Weltgesundheitsorganisation (WHO).",
-            ctaButtonText: isRu
+            ctaButtonText: isUz
+              ? "Gumanitar loyihani qo'llab-quvvatlash"
+              : isRu
               ? "Поддержать гуманитарный проект"
               : isEn
               ? "Support Humanitarian Project"
@@ -1340,7 +1589,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         },
         {
           id: "medical-travel",
-          tag: isRu
+          tag: isUz
+            ? "TIBBIY TURIZM"
+            : isRu
             ? "МЕДИЦИНСКИЙ ТУРИЗМ"
             : isEn
             ? "MEDICAL TRAVEL"
@@ -1351,7 +1602,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             : "PATIENTENSERVICE",
           image: "/images/about/hero-doctors.webp",
           iconType: "medicalTravel",
-          title: isRu
+          title: isUz
+            ? "Bemorlar uchun xalqaro xizmat (Cross-Border Medical Care)"
+            : isRu
             ? "Международный сервис для пациентов (Cross-Border Medical Care)"
             : isEn
             ? "International Patient Service & Cross-Border Medical Care"
@@ -1360,7 +1613,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             : isAr
             ? "رعاية المرضى الدوليين وخدمات السفر للعلاج الطبي"
             : "Internationale Patientenbetreuung & Medical Travel Service",
-          shortDesc: isRu
+          shortDesc: isUz
+            ? "Germaniyada davolanishni kompleks tashkil etish: shifokorlar konsiliumi, tibbiy viza, tarjimonlar va klinikada to'liq hamrohlik."
+            : isRu
             ? "Комплексная организация лечения в Германии: врачебный консилиум, медицинская виза, переводчики и сопровождение."
             : isEn
             ? "End-to-end coordination of premier care in Germany: medical review, visa support, interpreters & aftercare."
@@ -1370,7 +1625,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             ? "تنسيق متكامل للعلاجات الطبية المتقدمة في ألمانيا: رأي ثانٍ، تأشيرة، مترجمون، ورعاية لاحقة."
             : "Ganzheitliche Koordination von Spitzenbehandlungen in Deutschland: Zweitmeinung, Visum, Dolmetscher & Nachsorge.",
           modal: {
-            title: isRu
+            title: isUz
+              ? "Bemorlar uchun xalqaro xizmat (Medical Travel & Cross-Border Care)"
+              : isRu
               ? "Международный сервис для пациентов (Medical Travel & Cross-Border Care)"
               : isEn
               ? "International Patient Office (Cross-Border Medical Care)"
@@ -1379,7 +1636,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "رعاية المرضى الدوليين وخدمات السفر للعلاج الطبي"
               : "Internationale Patientenbetreuung & Medical Travel Service",
-            subtitle: isRu
+            subtitle: isUz
+              ? "Xolding klinikalarida rejaviy yuqori ixtisoslashtirilgan davolanishni kalit ostida tashkil etish"
+              : isRu
               ? "Организация планового лечения в клиниках холдинга NabiOta® в Германии под ключ"
               : isEn
               ? "End-to-end coordination for specialized treatment in German NabiOta® clinical centers"
@@ -1388,7 +1647,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "تنظيم ورعاية متكاملة وشاملة للعلاجات الطبية في ألمانيا"
               : "Ganzheitliche Betreuung und Organisation medizinischer Behandlungen in Deutschland",
-            description: isRu
+            description: isUz
+              ? "NabiOta® xalqaro bo'limi xorijiy bemorlarning Germaniyadagi zamonaviy klinika va reabilitatsiya markazlarimizda rejali statsionar hamda ambulator davolanishini tashkil etadi. Bemor va uning yaqinlariga dastlabki tibbiy ekspertizadan boshlab vatanga qaytgunga qadar to'liq hamrohlik ko'rsatiladi."
+              : isRu
               ? "Международный отдел NabiOta® организует плановое лечение пациентов из любой точки мира в наших хирургических и диагностических центрах в Германии. Мы берем на себя предварительный анализ выписок ведущими немецкими профессорами, составление индивидуального сметного плана лечения, визовую поддержку, трансфер, сопровождение сертифицированными медицинскими переводчиками и реабилитационную реадаптацию."
               : isEn
               ? "The NabiOta® International Patient Department coordinates comprehensive clinical care in Germany for overseas patients. Our multilingual team manages case review by senior department heads, cost transparency through preliminary medical estimates, visa invitation letters, airport transfers, certified medical interpreters, and personalized inpatient or outpatient recovery."
@@ -1397,7 +1658,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "يقدم مكتب المرضى الدولي في مجموعة NabiOta رعاية احترافية شاملة للمرضى من جميع أنحاء العالم الراغبين في العلاج بألمانيا. من المراجعة الاستشارية الأولية للتقارير الطبية وتقدير التكلفة الشفاف، إلى دعم استخراج التأشيرة الطبية، المرافقة بمترجمين متخصصين، وإعادة التأهيل، نرافقكم شخصياً خطوة بخطوة."
               : "Das International Patient Office der NabiOta-Gruppe bietet Patienten aus aller Welt eine lückenlose, hochprofessionelle Betreuung bei Behandlungen in Deutschland. Von der ersten fachärztlichen Sichtung der Vorbefunde über die transparente Kostenschätzung bis hin zur Visumsunterstützung, Begleitung durch Dolmetscher und ambulanten Rehabilitation begleiten wir Sie persönlich.",
-            specificationsTitle: isRu
+            specificationsTitle: isUz
+              ? "Tibbiy xizmatlar spektri"
+              : isRu
               ? "Спектр медицинских услуг"
               : isEn
               ? "Clinical Services Provided"
@@ -1406,7 +1669,15 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "نطاق الخدمات الطبية للمرضى الدوليين"
               : "Leistungsspektrum für internationale Patienten",
-            specifications: isRu
+            specifications: isUz
+              ? [
+                "Kam invaziv ortopedik jarrohlik: chanoq va tizza bo'g'imlarini endoprotezlash",
+                "Umurtqa pog'onasining ixtisoslashgan neyrojarrohligi (disk churrasi, spondilodez, dekompressiya)",
+                "1-2 kun ichida 3T MRT va yurak-qon tomir diagnostikasiga ega kompleks Check-up dasturlari",
+                "Rekonstruktiv, plastik va estetik jarrohlik hamda operatsiyadan keyingi statsionar parvarish",
+                "Nevrologik va kardiologik reabilitatsiya statsionari",
+                ]
+              : isRu
               ? [
                   "Малоинвазивная ортопедическая хирургия: эндопротезирование тазобедренных и коленных суставов",
                   "Специализированная нейрохирургия позвоночника (грыжи дисков, спондилодез, декомпрессия)",
@@ -1450,7 +1721,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                   "Integrierte ambulante Anschlussheilbehandlung (AHB) und Physiotherapie im NabiOta-Rehazentrum",
                   "Ambulante multimodale Schmerztherapie und interventionelle Infiltrationen",
                 ],
-            scopeTitle: isRu
+            scopeTitle: isUz
+              ? "Servis va koordinatsiya"
+              : isRu
               ? "Сервис и координация"
               : isEn
               ? "Concierge & Coordination"
@@ -1459,7 +1732,15 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "التنسيق وخدمات الضيافة الطبية"
               : "Koordination & Patientenservice",
-            scopeItems: isRu
+            scopeItems: isUz
+              ? [
+                "24-48 soat ichida nemis shifokori tomonidan tibbiy hujjatlarning dastlabki auditi",
+                "Elchixonada tezlashtirilgan viza rasmiylashtirish uchun rasmiy tibbiy taklifnoma (Einladung)",
+                "Germaniya GOÄ tariflariga asoslangan shaffof xarajatlar smetasi (Kostenvoranschlag)",
+                "Dyusseldorf/Kyoln aeroportida kutib olish va klinikaga yoki mehmonxonaga shaxsiy transfer",
+                "Klinikada sertifikatlangan tibbiy tarjimon hamrohligi va hisobotlarni tarjima qilish",
+                ]
+              : isRu
               ? [
                   "Первичный аудит медицинских документов немецким врачом в течение 24–48 часов",
                   "Официальное медицинское приглашение (Einladung) для ускоренного оформления визы в посольстве",
@@ -1503,7 +1784,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                   "Persönliche Begleitung durch mehrsprachige Patientenbetreuer und medizinische Dolmetscher",
                   "Vollständige Übersetzung aller Entlassungsberichte, OP-Berichte und Medikationspläne",
                 ],
-            technicalTitle: isRu
+            technicalTitle: isUz
+              ? "Moliyaviy va huquqiy shaffoflik"
+              : isRu
               ? "Финансовая и правовая прозрачность"
               : isEn
               ? "Financial & Legal Standards"
@@ -1512,7 +1795,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "الفواتير والشفافية القانونية"
               : "Abrechnung & Rechtssicherheit",
-            technicalText: isRu
+            technicalText: isUz
+              ? "Barcha to'lovlar rasmiy nemis shifokorlar tariflari (GOÄ) asosida, to'liq shaffof protseduralar ro'yxati va foydalanilmagan depozit mablag'larini zudlik bilan qaytarish kafolati bilan amalga oshiriladi."
+              : isRu
               ? "Все расчеты ведутся строго на основе официального немецкого регламента оплаты медицинских услуг (Gebührenordnung для Ärzte - GOÄ) с открытым перечнем процедур и возвратом неиспользованных депозитных средств."
               : isEn
               ? "All medical invoicing strictly conforms to the statutory German fee schedule for physicians (GOÄ), ensuring itemized transparency and automatic refund of unused deposit balances."
@@ -1521,7 +1806,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isAr
               ? "تتم المحاسبة المالية بشفافية تامة ووفقاً للائحة أجور الأطباء الألمانية الرسمية (GOÄ). ويتم استرداد أي مبالغ متبقية من الوديعة غير مستخدمة على الفور دون تأخير."
               : "Die Abrechnung erfolgt transparent und gesetzeskonform nach der amtlichen Gebührenordnung für Ärzte (GOÄ). Nicht in Anspruch genommene Vorauszahlungen werden unverzüglich rückerstattet.",
-            ctaButtonText: isRu
+            ctaButtonText: isUz
+              ? "Davolash rejasini so'rash"
+              : isRu
               ? "Запросить план лечения"
               : isEn
               ? "Request Treatment Plan"
@@ -1537,7 +1824,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
 
     // Section 5: Impact Banner
     s5: {
-      eyebrow: isRu
+      eyebrow: isUz
+        ? "BIZNING NATIJAMIZ"
+        : isRu
         ? "НАШ IMPACT"
         : isEn
         ? "OUR IMPACT"
@@ -1546,7 +1835,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "أثرنا العالمي"
         : "UNSER IMPACT",
-      title: isRu
+      title: isUz
+        ? "Yana-da ko'proq salomatlik. Yana-da ko'proq imkoniyatlar."
+        : isRu
         ? "Больше здоровья. Больше возможностей."
         : isEn
         ? "More Health. More Opportunities."
@@ -1555,7 +1846,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "مزيد من الصحة. مزيد من الفرص."
         : "Mehr Gesundheit. Mehr Möglichkeiten.",
-      desc: isRu
+      desc: isUz
+        ? "Bizning xalqaro hamkorligimiz sog'liqni saqlash tizimlarini mustahkamlashga, insonlar hayotini yaxshilashga va barcha uchun yanada adolatli kelajak yaratishga hissa qo'shadi."
+        : isRu
         ? "Наше международное сотрудничество способствует укреплению систем здравоохранения, улучшению жизней и созданию более справедливого будущего."
         : isEn
         ? "Our international partnerships help strengthen health systems, improve lives, and foster a more equitable future."
@@ -1564,7 +1857,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "تسهم شراكاتنا الدولية في تعزيز النظم الصحية وتحسين جودة الحياة وتمكين مستقبل أكثر عدالة للجميع."
         : "Unsere internationalen Kooperationen tragen dazu bei, Gesundheitssysteme zu stärken, Leben zu verbessern und eine gerechtere Zukunft zu ermöglichen.",
-      stampText1: isRu
+      stampText1: isUz
+        ? "Sog'lom jamiyatlar uchun"
+        : isRu
         ? "Устойчивые решения для"
         : isEn
         ? "Sustainable Solutions for"
@@ -1573,7 +1868,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "حلول مستدامة من أجل"
         : "Nachhaltige Lösungen für",
-      stampText2: isRu
+      stampText2: isUz
+        ? "barqaror yechimlar. ♡"
+        : isRu
         ? "здоровых сообществ. ♡"
         : isEn
         ? "Healthy Communities. ♡"
@@ -1585,7 +1882,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
       stats: [
         {
           value: "25+",
-          label: isRu
+          label: isUz
+            ? "Hamkor davlatlar"
+            : isRu
             ? "Стран-партнеров"
             : isEn
             ? "Partner Countries"
@@ -1598,7 +1897,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         },
         {
           value: "60+",
-          label: isRu
+          label: isUz
+            ? "Dunyo bo'ylab loyihalar"
+            : isRu
             ? "Проектов по всему миру"
             : isEn
             ? "Projects Worldwide"
@@ -1611,7 +1912,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         },
         {
           value: "1.000+",
-          label: isRu
+          label: isUz
+            ? "O'qitilgan mutaxassislar"
+            : isRu
             ? "Обученных специалистов"
             : isEn
             ? "Professionals Trained"
@@ -1624,7 +1927,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         },
         {
           value: "300.000+",
-          label: isRu
+          label: isUz
+            ? "Qamrab olingan insonlar"
+            : isRu
             ? "Охваченных людей"
             : isEn
             ? "People Reached"
@@ -1640,7 +1945,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
 
     // Section 6: Testimonials
     s6: {
-      eyebrow: isRu
+      eyebrow: isUz
+        ? "MULOHAZALAR"
+        : isRu
         ? "ОТЗЫВЫ"
         : isEn
         ? "EXPERIENCES"
@@ -1649,7 +1956,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "تجارب وشهادات"
         : "ERFAHRUNGEN",
-      title: isRu
+      title: isUz
+        ? "Hamkorligimiz ovozlari"
+        : isRu
         ? "Голоса нашего сотрудничества"
         : isEn
         ? "Voices of Collaboration"
@@ -1658,7 +1967,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "أصداء الشراكة والتعاون"
         : "Stimmen aus der Zusammenarbeit",
-      subtitle: isRu
+      subtitle: isUz
+        ? "Hamkorlarimiz va loyiha ishtirokchilari NABIOTA bilan hamkorlik haqida nima deyishadi."
+        : isRu
         ? "Что говорят наши партнеры и участники проектов о сотрудничестве с NABIOTA."
         : isEn
         ? "What our partners and project participants say about collaborating with NABIOTA."
@@ -1667,7 +1978,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "ما يقوله شركاؤنا والمشاركون في مشاريعنا عن التعاون الوثيق مع NABIOTA."
         : "Was unsere Partner und Projektbeteiligten über die Zusammenarbeit mit NABIOTA sagen.",
-      linkAll: isRu
+      linkAll: isUz
+        ? "Barcha fikrlar"
+        : isRu
         ? "Все отзывы"
         : isEn
         ? "More Testimonials"
@@ -1678,7 +1991,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : "Weitere Erfahrungsberichte",
       items: [
         {
-          quote: isRu
+          quote: isUz
+            ? "„NABIOTA bilan hamkorlik biz uchun yangi ufqlar ochdi va mahalliy sog'liqni saqlash infratuzilmamizni mustahkam mustahkamladi.“"
+            : isRu
             ? "„Сотрудничество с NABIOTA открыло для нас новые горизонты и устойчиво укрепило наши локальные медицинские структуры.“"
             : isEn
             ? "“Collaborating with NABIOTA has opened new horizons for us and sustainably strengthened our local health infrastructure.”"
@@ -1689,7 +2004,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             : "„Die Zusammenarbeit mit NABIOTA hat uns neue Perspektiven eröffnet und unsere lokalen Strukturen nachhaltig gestärkt.“",
           avatar: "/images/international/avatar-amina.webp",
           name: "Dr. Amina Yusuf",
-          role: isRu
+          role: isUz
+            ? "Tibbiyot markazi direktori"
+            : isRu
             ? "Руководитель медцентра"
             : isEn
             ? "Health Center Director"
@@ -1698,10 +2015,12 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             : isAr
             ? "مديرة المركز الصحي"
             : "Leiterin Gesundheitszentrum",
-          location: isRu ? "Кения" : isEn ? "Kenya" : isTr ? "Kenya" : isAr ? "كينيا" : "Kenia",
+          location: isUz ? "Keniya" : isRu ? "Кения" : isEn ? "Kenya" : isTr ? "Kenya" : isAr ? "كينيا" : "Kenia",
         },
         {
-          quote: isRu
+          quote: isUz
+            ? "„Professional yo'l-yo'riq va madaniyatlararo tajriba almashinuvi butun klinik jamoamiz uchun ulkan boylik bo'ldi.“"
+            : isRu
             ? "„Профессиональная поддержка и межкультурный обмен стали огромным обогащением для всей нашей команды.“"
             : isEn
             ? "“The professional guidance and intercultural exchange were of immense value to our entire clinical team.”"
@@ -1712,7 +2031,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             : "„Die fachliche Unterstützung und der interkulturelle Austausch waren für unser Team eine große Bereicherung.“",
           avatar: "/images/international/avatar-keller.webp",
           name: "Prof. Dr. Martin Keller",
-          role: isRu
+          role: isUz
+            ? "Loyiha bo'yicha hamkor, Universitet"
+            : isRu
             ? "Партнер проекта, Университет"
             : isEn
             ? "University Project Partner"
@@ -1721,10 +2042,12 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             : isAr
             ? "الشريك الأكاديمي والجامعي للمشروع"
             : "Projektpartner Universität",
-          location: isRu ? "Германия" : isEn ? "Germany" : isTr ? "Almanya" : isAr ? "ألمانيا" : "Deutschland",
+          location: isUz ? "Germaniya" : isRu ? "Германия" : isEn ? "Germany" : isTr ? "Almanya" : isAr ? "ألمانيا" : "Deutschland",
         },
         {
-          quote: isRu
+          quote: isUz
+            ? "„Ushbu hamkorlik tufayli biz mintaqamizdagi tibbiy xizmat ko'rsatish sifatini sezilarli darajada oshirishga va minglab insonlarga zarur yordamni o'z vaqtida yetkazishga erishdik.“"
+            : isRu
             ? "„Благодаря сотрудничеству мы смогли существенно улучшить медицинское обслуживание в нашем регионе и помочь многим людям.“"
             : isEn
             ? "“Thanks to this partnership, we were able to significantly improve regional care and support thousands of families.”"
@@ -1735,7 +2058,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             : "„Dank der Kooperation konnten wir die Versorgung in unserer Region deutlich verbessern und vielen Menschen helfen.“",
           avatar: "/images/international/avatar-santos.webp",
           name: "Maria Santos",
-          role: isRu
+          role: isUz
+            ? "Loyiha koordinatori"
+            : isRu
             ? "Координатор проекта"
             : isEn
             ? "Project Coordinator"
@@ -1744,14 +2069,16 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             : isAr
             ? "منسقة المشروع"
             : "Projektkoordinatorin",
-          location: isRu ? "Перу" : isEn ? "Peru" : isTr ? "Peru" : isAr ? "بيرو" : "Peru",
+          location: isUz ? "Peru" : isRu ? "Перу" : isEn ? "Peru" : isTr ? "Peru" : isAr ? "بيرو" : "Peru",
         },
       ],
     },
 
     // Section 7: Bottom CTA Banner & Contact Strip
     s7: {
-      eyebrow: isRu
+      eyebrow: isUz
+        ? "XALQARO MISSIYAMIZNING BIR QISMIGA AYLANING"
+        : isRu
         ? "СТАНЬТЕ ЧАСТЬЮ НАШЕЙ МЕЖДУНАРОДНОЙ МИССИИ"
         : isEn
         ? "BECOME PART OF OUR INTERNATIONAL MISSION"
@@ -1760,7 +2087,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "كن جزءاً من رسالتنا الدولية"
         : "WERDEN SIE TEIL UNSERER INTERNATIONALEN MISSION",
-      title: isRu
+      title: isUz
+        ? "Global salomatlik yo'lida birgalikda."
+        : isRu
         ? "Вместе ради глобального здоровья."
         : isEn
         ? "Together for Global Health."
@@ -1769,7 +2098,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "معاً من أجل الصحة العالمية."
         : "Gemeinsam für globale Gesundheit.",
-      desc: isRu
+      desc: isUz
+        ? "Hamkor, homiy yoki ko'ngilli sifatida bo'ladimi — biz sog'lom kelajakni birgalikda yaratish yo'lidagi har qanday hamkorlikni mamnuniyat bilan qutlaymiz."
+        : isRu
         ? "В качестве партнера, спонсора или волонтера — мы рады любой форме сотрудничества ради здорового будущего."
         : isEn
         ? "Whether as an institutional partner, benefactor, or contributor — we welcome every collaboration to advance worldwide wellbeing."
@@ -1778,7 +2109,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "سواء بصفتك شريكاً مؤسسياً، داعماً، أو مساهماً متطوعاً — نرحب بكل أشكال التعاون لبناء مستقبل صحي للجميع."
         : "Ob als Partner, Förderer oder ehrenamtlicher Unterstützer – wir freuen uns über jede Form der Zusammenarbeit.",
-      btn: isRu
+      btn: isUz
+        ? "Biz bilan bog'lanish"
+        : isRu
         ? "Связаться с нами"
         : isEn
         ? "Contact Our Team"
@@ -1787,7 +2120,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "تواصل معنا"
         : "Kontakt aufnehmen",
-      stampText1: isRu
+      stampText1: isUz
+        ? "Global hamkorliklar."
+        : isRu
         ? "Глобальные партнерства."
         : isEn
         ? "Global Partnerships."
@@ -1796,7 +2131,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "شراكات عالمية."
         : "Globale Partnerschaften.",
-      stampText2: isRu
+      stampText2: isUz
+        ? "Mahalliy amaliy natija. ♡"
+        : isRu
         ? "Локальное действие. ♡"
         : isEn
         ? "Local Impact. ♡"
@@ -1821,7 +2158,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
             <Breadcrumb
               items={[
                 {
-                  label: isRu
+                  label: isUz
+                    ? "Asosiy sahifa"
+                    : isRu
                     ? "Главная"
                     : isEn
                     ? "Home"
@@ -1833,7 +2172,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                   href: `/${locale}`,
                 },
                 {
-                  label: isRu
+                  label: isUz
+                    ? "Faoliyat yo'nalishlari"
+                    : isRu
                     ? "Сферы деятельности"
                     : isEn
                     ? "Business Areas"
@@ -2193,7 +2534,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                 type="button"
                 onClick={() => setSelectedProgram(null)}
                 aria-label={
-                  isRu
+                  isUz
+                    ? "Oynani yopish"
+                    : isRu
                     ? "Закрыть окно"
                     : isEn
                     ? "Close modal"
@@ -2284,7 +2627,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                   onClick={() => setSelectedProgram(null)}
                   className="w-full sm:w-auto px-5 py-2.5 rounded-full border border-[#D5C7B0] text-xs font-semibold text-[#405448] hover:bg-[#EFE8D8] transition-colors order-2 sm:order-1"
                 >
-                  {isRu
+                  {isUz
+                    ? "Oynani yopish"
+                    : isRu
                     ? "Закрыть окно"
                     : isEn
                     ? "Close window"

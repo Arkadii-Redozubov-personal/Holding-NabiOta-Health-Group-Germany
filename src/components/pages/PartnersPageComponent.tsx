@@ -66,13 +66,16 @@ interface PartnersPageComponentProps {
 export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentProps) {
   const [selectedPillar, setSelectedPillar] = useState<PartnershipPillar | null>(null);
 
+  const isUz = locale === "uz";
   const isRu = locale === "ru";
   const isEn = locale === "en";
   const isTr = locale === "tr";
   const isAr = locale === "ar";
 
   const heroData = {
-    title: isRu
+    title: isUz
+      ? "Hamkorlik va investitsiyalar"
+      : isRu
       ? "Партнерство и инвестиции"
       : isEn
       ? "Partners & Strategic Alliances"
@@ -81,7 +84,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
       : isAr
       ? "الشركاء والتحالفات الاستراتيجية"
       : "Partner & Strategische Kooperationen",
-    subtitle: isRu
+    subtitle: isUz
+      ? "Strategik al'yanslar, praksis vorisligi va sog'liqni saqlashga investitsiyalar"
+      : isRu
       ? "Надежные модели сотрудничества для врачей, клиник и инвесторов"
       : isEn
       ? "Sustainable Value Creation for Physicians, Clinics, and Healthcare Investors"
@@ -90,8 +95,12 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
       : isAr
       ? "خلق قيمة مستدامة للأطباء والمستشفيات والمستثمرين الصحيين"
       : "Gemeinsam Werte schaffen für das Gesundheitswesen von morgen",
-    eyebrow: isRu ? "ПАРТНЕРСКАЯ СЕТЬ" : isEn ? "PARTNERSHIP ECOSYSTEM" : isTr ? "ORTAKLIK EKOSİSTEMİ" : isAr ? "منظومة الشركاء والاستثمار" : "PARTNER & INVESTOREN",
-    desc: isRu
+    eyebrow: isUz
+      ? "STRATEGIK AL'YANSLAR"
+      : isRu ? "ПАРТНЕРСКАЯ СЕТЬ" : isEn ? "PARTNERSHIP ECOSYSTEM" : isTr ? "ORTAKLIK EKOSİSTEMİ" : isAr ? "منظومة الشركاء والاستثمار" : "PARTNER & INVESTOREN",
+    desc: isUz
+      ? "NabiOta® Health Group Germany GmbH ambulator va statsionar tibbiyot, kadrlar va sog'liqni saqlash ko'chmas mulki bo'yicha mustahkam hamkorlikni rivojlantiradi. Biz shifokorlar, klinikalar, investorlar va munitsipalitetlar uchun Germaniya qonunchiligiga qat'iy mos keluvchi barqaror modellarni taklif etamiz."
+      : isRu
       ? "Холдинг NabiOta® объединяет медицинское превосходство, высокотехнологичную инфраструктуру и инвестиционную надежность. Мы предлагаем врачам, клиникам, муниципалитетам и инвесторам прозрачные юридические модели сотрудничества на равных."
       : isEn
       ? "The NabiOta® Health Group unites medical excellence, advanced clinical infrastructure, and financial resilience. We offer physicians, hospitals, municipalities, and institutional investors transparent, legally robust collaboration models."
@@ -105,28 +114,44 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
   const heroBadges = [
     {
       icon: <Handshake className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu ? "Партнерство" : isEn ? "Reliable" : isTr ? "Güvenilir" : isAr ? "شراكة" : "Verlässliche",
-      sub: isRu ? "на равных" : isEn ? "Partnership" : isTr ? "Ortaklık" : isAr ? "موثوقة" : "Partnerschaft",
+      title: isUz
+        ? "4 ta hamkorlik modeli"
+        : isRu ? "Партнерство" : isEn ? "Reliable" : isTr ? "Güvenilir" : isAr ? "شراكة" : "Verlässliche",
+      sub: isUz
+        ? "Shifokorlar, klinikalar va shaharlar"
+        : isRu ? "на равных" : isEn ? "Partnership" : isTr ? "Ortaklık" : isAr ? "موثوقة" : "Partnerschaft",
     },
     {
       icon: <Scale className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu ? "Закон § 95" : isEn ? "Regulatory" : isTr ? "Yasal Uyum" : isAr ? "امتثال قانوني" : "Rechtssicher",
-      sub: isRu ? "SGB V & GewO" : isEn ? "SGB V Compliant" : isTr ? "§ 95 SGB V" : isAr ? "§ 95 SGB V" : "nach SGB V",
+      title: isUz
+        ? "100% huquqiy tozalik"
+        : isRu ? "Закон § 95" : isEn ? "Regulatory" : isTr ? "Yasal Uyum" : isAr ? "امتثال قانوني" : "Rechtssicher",
+      sub: isUz
+        ? "SGB V, GewO va KV me'yorlari"
+        : isRu ? "SGB V & GewO" : isEn ? "SGB V Compliant" : isTr ? "§ 95 SGB V" : isAr ? "§ 95 SGB V" : "nach SGB V",
     },
     {
       icon: <Target className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu ? "Устойчивые" : isEn ? "Sustainable" : isTr ? "Sürdürülebilir" : isAr ? "تكامل" : "Langfristige",
-      sub: isRu ? "синергии" : isEn ? "Synergies" : isTr ? "Sinerjiler" : isAr ? "مستدام" : "Synergien",
+      title: isUz
+        ? "Uzoq muddatli barqarorlik"
+        : isRu ? "Устойчивые" : isEn ? "Sustainable" : isTr ? "Sürdürülebilir" : isAr ? "تكامل" : "Langfristige",
+      sub: isUz
+        ? "Integratsiyalashgan ekotizim"
+        : isRu ? "синергии" : isEn ? "Synergies" : isTr ? "Sinerjiler" : isAr ? "مستدام" : "Synergien",
     },
   ];
 
   const pillars: PartnershipPillar[] = [
     {
       id: "fachaerzte-nachfolge",
-      tag: isRu ? "ДЛЯ ВРАЧЕЙ & ПРАКСИСОВ" : isEn ? "PHYSICIANS & PRACTICES" : isTr ? "UZMAN HEKİMLER VE MUAYENEHANELER İÇİN" : isAr ? "للأطباء والعيادات التخصصية" : "FÜR FACHÄRZTE & PRAXEN",
+      tag: isUz
+        ? "SHIFOKORLAR VA PRAKSISLAR UCHUN"
+        : isRu ? "ДЛЯ ВРАЧЕЙ & ПРАКСИСОВ" : isEn ? "PHYSICIANS & PRACTICES" : isTr ? "UZMAN HEKİMLER VE MUAYENEHANELER İÇİN" : isAr ? "للأطباء والعيادات التخصصية" : "FÜR FACHÄRZTE & PRAXEN",
       image: "/images/areas/medical-departments.webp",
       iconType: "doctor",
-      title: isRu
+      title: isUz
+        ? "Praksis vorisligi va MVZ ko'p tarmoqli tarmog'iga integratsiya"
+        : isRu
         ? "Преемственность праксисов & Интеграция в MVZ (§ 95 SGB V)"
         : isEn
         ? "Practice Succession & MVZ Integration (§ 95 SGB V)"
@@ -135,7 +160,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
         : isAr
         ? "خلافة العيادات الطبية والاندماج في مراكز MVZ (§ 95 SGB V)"
         : "Praxisnachfolge & MVZ-Integration (§ 95 SGB V)",
-      shortDesc: isRu
+      shortDesc: isUz
+        ? "Katta yoshdagi shifokorlar uchun xavfsiz vorislik: KV shartnoma shifokori o'rnini saqlash, adolatli baholash va to'liq terapevtik erkinlik."
+        : isRu
         ? "Структурированная передача врачебной практики, сохранение автономии, освобождение от бюрократии и доступ к передовым технологиям."
         : isEn
         ? "Structured practice transition, guaranteed medical autonomy, relief from administration, and access to state-of-the-art facilities."
@@ -145,7 +172,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
         ? "انتقال قانوني منظم للعيادة، حرية قرار طبي كاملة، تخفيف الأعباء الإدارية والوصول لأحدث التقنيات."
         : "Rechtssichere Praxisabgabe, volle ärztliche Weisungsfreiheit, Entlastung von bürokratischen Pflichten und Zugang zu moderner Medizintechnik.",
       modal: {
-        title: isRu
+        title: isUz
+          ? "Praksis vorisligi va MVZ ko'p tarmoqli tarmog'iga integratsiya"
+          : isRu
           ? "Преемственность праксисов & Вхождение в структуру MVZ (§ 95 SGB V)"
           : isEn
           ? "Practice Succession & MVZ Integration Framework (§ 95 SGB V)"
@@ -154,7 +183,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
           : isAr
           ? "إطار خلافة العيادات والاندماج في مراكز الرعاية MVZ (§ 95 SGB V)"
           : "Praxisnachfolge & MVZ-Integration (§ 95 SGB V)",
-        subtitle: isRu
+        subtitle: isUz
+          ? "Katta yoshdagi shifokorlar uchun xavfsiz vorislik: KV shartnoma shifokori o'rnini saqlash va to'liq terapevtik erkinlik"
+          : isRu
           ? "Партнерство для практикующих врачей: справедливая оценка стоимости, сохранение команды и фокус на медицине"
           : isEn
           ? "Structured succession for established practitioners: fair valuation, team continuity, and pure medical focus"
@@ -163,7 +194,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
           : isAr
           ? "حلول انتقال مخصصة للأطباء العامين والمتخصصين: تقييم عادل، استمرار الكادر والتركيز الطبي الخالص"
           : "Strukturierte Übergangskonzepte für niedergelassene Haus- und Fachärzte ohne bürokratischen Ballast",
-        description: isRu
+        description: isUz
+          ? "NabiOta® Health Group o'z amaliyotini ishonchli qo'llarga topshirmoqchi bo'lgan yoki yosh hamkasblar bilan ko'p tarmoqli MVZ da ishlashni xohlovchi shifokorlarga individual vorislik modellarini taklif etadi. Biz shartnoma shifokori o'rnini (Kassensitz) saqlab qolamiz, ma'muriy yuklamani o'z zimmamizga olamiz va to'liq davolash erkinligini kafolatlaymiz."
+          : isRu
           ? "Холдинг NabiOta® предлагает опытным и молодым врачам безопасную модель интеграции. При выходе на пенсию или желании избавиться от административного бремени вы можете передать практику в лицензированный центр MVZ холдинга. Доктор Рахимов-Фишер, как лицензированный врач, обеспечивает строгое соблюдение врачебных прав, а управляющая компания берет на себя бухгалтерию, IT, биллинг и юридические вопросы."
           : isEn
           ? "The NabiOta® Group provides a reliable pathway for practicing physicians looking for succession planning or administrative relief. Practices can transition smoothly into our licensed MVZ structures. With physician ownership led by Dr. Fischer-Rahimov, professional autonomy is strictly preserved while centralized holding services manage IT, accounting, billing, and regulatory compliance."
@@ -172,8 +205,18 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
           : isAr
           ? "توفر مجموعة NabiOta® حلولاً مصممة خصيصاً لأطباء الرعاية العامة والمتخصصين المستقلين للتقاعد أو الاندماج في مراكز MVZ الحديثة. تحت الإشراف الطبي للدكتور فيشر-رحيموف، يتم الحفاظ بالكامل على حرية اتخاذ القرارات العلاجية، بينما تتولى المجموعة الإدارة العامة، ومحاسبة التأمين KV، وإدارة الموارد البشرية، والبنية التحتية لتكنولوجيا المعلومات."
           : "Die NabiOta-Gruppe bietet niedergelassenen Allgemeinmedizinern und Fachärzten maßgeschneiderte Lösungen für die Praxisnachfolge und den Einstieg in moderne MVZ-Strukturen. Unter der ärztlichen Trägerschaft von Dr. Fischer-Rahimov bleibt die volle medizinische Therapiefreiheit gewahrt. Die Holding entlastet Sie und Ihr Team vollständig von Verwaltung, KV-Abrechnung, Personalmanagement und IT-Infrastruktur.",
-        specificationsTitle: isRu ? "Преимущества для врача" : isEn ? "Physician Advantages" : isTr ? "Muayenehane Sahibi İçin Avantajlar" : isAr ? "مزايا لأصحاب العيادات" : "Vorteile für Praxisinhaber",
-        specifications: isRu
+        specificationsTitle: isUz
+          ? "Hamkorlik modellari"
+          : isRu ? "Преимущества для врача" : isEn ? "Physician Advantages" : isTr ? "Muayenehane Sahibi İçin Avantajlar" : isAr ? "مزايا لأصحاب العيادات" : "Vorteile für Praxisinhaber",
+        specifications: isUz
+          ? [
+            "Praksisni to'liq yoki bosqichma-bosqich xarid qilish va adolatli bozor narxida baholash",
+            "Sobiq egasining MVZ da yollanma shifokor (Anstellungsvertrag) sifatida o'zi istagan yuklamada ishlashni davom ettirishi",
+            "Tibbiy hujjatlar, xodimlar va mavjud bemorlar bazasining uzluksiz vorisligi",
+            "Kassenärztliche Vereinigung (KV Nordrhein) litsenziyalash qo'mitasi bilan barcha kelishuvlarni to'liq yuridik qo'llab-quvvatlash",
+            "Yillik majburiy byurokratik hisobotlar va KV hisob-kitoblaridan to'liq ozod bo'lish",
+            ]
+          : isRu
           ? [
               "Справедливая рыночная оценка стоимости практики и бессрочного врачебного места (Kassensitz)",
               "Полное сохранение сформированного коллектива медицинских ассистентов (MFA)",
@@ -217,8 +260,18 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
               "Unmittelbarer Zugriff auf Hochleistungsdiagnostik (3T MRT, Niedrigdosis-CT) und Reha-Zentren",
               "Praxisräumlichkeiten nach modernsten ergonomischen und baulichen Standards",
             ],
-        scopeTitle: isRu ? "Процесс передачи практики" : isEn ? "Succession Pathway" : isTr ? "Muayenehane Devir Süreci" : isAr ? "خطوات انتقال العيادة" : "Ablauf der Praxisabgabe",
-        scopeItems: isRu
+        scopeTitle: isUz
+          ? "Xolding tomonidan o'z zimmasiga olinadigan vazifalar"
+          : isRu ? "Процесс передачи практики" : isEn ? "Succession Pathway" : isTr ? "Muayenehane Devir Süreci" : isAr ? "خطوات انتقال العيادة" : "Ablauf der Praxisabgabe",
+        scopeItems: isUz
+          ? [
+            "Markazlashtirilgan kadrlar boshqaruvi, hisob-kitob (Abrechnung) va IT-infratuzilma",
+            "Zamonaviy tibbiy texnika, raqamlashtirish va DIN EN ISO sifat menejmenti tizimiga investitsiyalar",
+            "O'zbekiston va boshqa davlatlardan malakali shifokorlar va hamshiralarni jalb qilish (Medical Recruitment Services GmbH)",
+            "NabiOta Real Estate GmbH orqali bino va xonalarni zamonaviy standartlarga moslab ta'mirlash",
+            "Xoldingning boshqa filiallari (radiologiya, laboratoriya, operatsiya zallari) bilan to'g'ridan-to'g'ri diagnostik aloqa",
+            ]
+          : isRu
           ? [
               "Подписание соглашения о конфиденциальности (NDA) и предварительный аудит показателей",
               "Оценка материальных и нематериальных активов по признанным стандартам (BÄK / IDW)",
@@ -257,8 +310,12 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
               "Zwei-Schrank-Modell zur datenschutzkonformen Übergabe der Patientenkartei (§ 203 StGB)",
               "Reibungsloser Übergang und Integration in die zentrale Holding-Infrastruktur",
             ],
-        technicalTitle: isRu ? "Правовая гарантия" : isEn ? "Statutory Compliance" : isTr ? "Yasal Güvence" : isAr ? "الضمان والامتثال القانوني" : "Rechtliche Sicherheit",
-        technicalText: isRu
+        technicalTitle: isUz
+          ? "Qonunchilik kafolatlari"
+          : isRu ? "Правовая гарантия" : isEn ? "Statutory Compliance" : isTr ? "Yasal Güvence" : isAr ? "الضمان والامتثال القانوني" : "Rechtliche Sicherheit",
+        technicalText: isUz
+          ? "Vorislik modellari SGB V ning 95-moddasi (shartnoma shifokorlik o'rnini MVZ ga topshirish) va Berufsordnung für Ärzte me'yorlariga qat'iy muvofiq tarzda amalga oshiriladi. Shifokorning terapevtik mustaqilligi va shifokor siri (§ 203 StGB) xolding aralashuvidan to'liq himoyalangan."
+          : isRu
           ? "Все сделки по слиянию и передаче практик осуществляются в строгом соответствии с § 95 SGB V, Федеральным врачебным положением (BÄO) и профессиональным кодексом палаты врачей Северного Рейна (ÄkNo)."
           : isEn
           ? "All practice integration transactions adhere strictly to § 95 SGB V (Statutory Health Insurance Code), the Federal Medical Code (BÄO), and North Rhine Medical Chamber regulations."
@@ -267,15 +324,21 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
           : isAr
           ? "تتم كافة عمليات الاستحواذ والاندماج في مراكز MVZ بما يتوافق تماماً مع المادة § 95 SGB V والنظام الطبي الفيدرالي (BÄO) ولوائح نقابة أطباء شمال الراين."
           : "Die Übernahme und MVZ-Eingliederung erfolgt streng nach den Vorgaben des § 95 SGB V, der Bundesärzteordnung (BÄO) sowie den berufsrechtlichen Statuten der Ärztekammer Nordrhein.",
-        ctaButtonText: isRu ? "Запросить конфиденциальный диалог" : isEn ? "Request Confidential Dialogue" : isTr ? "Gizli İlk Görüşme Talep Edin" : isAr ? "طلب مشاورات أولية سرية" : "Vertrauliches Erstgespräch vereinbaren",
+        ctaButtonText: isUz
+          ? "Maxfiy suhbatni rejalashtirish"
+          : isRu ? "Запросить конфиденциальный диалог" : isEn ? "Request Confidential Dialogue" : isTr ? "Gizli İlk Görüşme Talep Edin" : isAr ? "طلب مشاورات أولية سرية" : "Vertrauliches Erstgespräch vereinbaren",
       },
     },
     {
       id: "kliniken-krankenhaeuser",
-      tag: isRu ? "ДЛЯ КЛИНИК & СТАЦИОНАРОВ" : isEn ? "HOSPITALS & CLINICS" : isTr ? "KLİNİKLER VE HASTANE AĞLARI İÇİN" : isAr ? "للمستشفيات وشبكات الرعاية السريرية" : "FÜR KLINIKEN & HOSPITAL-NETZWERKE",
+      tag: isUz
+        ? "KLINIKALAR VA SHIFOJONALAR UCHUN"
+        : isRu ? "ДЛЯ КЛИНИК & СТАЦИОНАРОВ" : isEn ? "HOSPITALS & CLINICS" : isTr ? "KLİNİKLER VE HASTANE AĞLARI İÇİN" : isAr ? "للمستشفيات وشبكات الرعاية السريرية" : "FÜR KLINIKEN & HOSPITAL-NETZWERKE",
       image: "/images/partners/artium.webp",
       iconType: "hospital",
-      title: isRu
+      title: isUz
+        ? "Klinika hamkorliklari va sektorlararo uzluksiz yordam"
+        : isRu
         ? "Межсекторальное партнерство с клиниками (§ 115b SGB V / AOP)"
         : isEn
         ? "Cross-Sector Hospital Partnerships (§ 115b SGB V / AOP)"
@@ -284,7 +347,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
         : isAr
         ? "التحالفات السريرية المشتركة للمستشفيات (§ 115b SGB V / AOP)"
         : "Sektorenübergreifende Klinikallianzen (§ 115b SGB V / AOP)",
-      shortDesc: isRu
+      shortDesc: isUz
+        ? "Statsionar shifoxonalar bilan strategik al'yanslar: operatsiyadan oldingi ambulator tayyorgarlik va statsionardan keyingi reabilitatsiya."
+        : isRu
         ? "Разгрузка стационарных отделений: амбулаторные операции, непрерывная ранняя реабилитация и патронажный уход на дому."
         : isEn
         ? "Inpatient relief: outpatient surgical suites, continuous rehabilitation transitions, and home care discharge pathways."
@@ -294,7 +359,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
         ? "تخفيف العبء عن أجنحة التنويم: جراحات اليوم الواحد، مسارات تأهيل مستمرة ورعاية منزلية فورية."
         : "Entlastung von Bettenstationen durch ambulantes Operieren, lückenlose ambulante Reha-Ketten und HomeCare-Überleitung.",
       modal: {
-        title: isRu
+        title: isUz
+          ? "Klinika hamkorliklari va sektorlararo uzluksiz yordam"
+          : isRu
           ? "Межсекторальное партнерство со стационарными клиниками"
           : isEn
           ? "Cross-Sector Clinical Alliances for Hospitals"
@@ -303,7 +370,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
           : isAr
           ? "شراكات سريرية متكاملة عبر القطاعات للمستشفيات"
           : "Sektorenübergreifende Kooperationen für Krankenhäuser & Kliniken",
-        subtitle: isRu
+        subtitle: isUz
+          ? "Statsionar shifoxonalar bilan strategik al'yanslar: operatsiyadan oldingi ambulator tayyorgarlik va operatsiyadan keyingi reabilitatsiya"
+          : isRu
           ? "Реализация реформы стационаров: амбулаторизация (§ 115b SGB V), до- и послебольничная реабилитация"
           : isEn
           ? "Adapting to hospital reforms: outpatient surgery expansion, pre/post-acute rehab and discharge care"
@@ -312,7 +381,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
           : isAr
           ? "التكيف مع إصلاحات المستشفيات: جراحة اليوم الواحد (§ 115b SGB V)، والتأهيل والمتابعة بعد الخروج"
           : "Ambulantisierung nach § 115b SGB V, poststationäre Versorgung und lückenloses Entlassmanagement",
-        description: isRu
+        description: isUz
+          ? "Biz Germaniya shifoxonalari va klinik markazlari bilan sektorlararo hamkorlik shartnomalarini tuzamiz. Xoldingning ambulator MVZ tarmog'i bemorlarni rejali operatsiyalarga to'liq tekshiruvdan o'tkazib tayyorlaydi, klinika esa statsionar davolash yakunlangach, bemorni bizning reabilitatsiya va uyda parvarishlash tizimimizga topshiradi."
+          : isRu
           ? "В условиях масштабной реформы больничной системы Германии клиникам необходимы надежные амбулаторные партнеры. Холдинг NabiOta® выступает стратегическим интегратором: мы принимаем пациентов на амбулаторные операции (AOP), организуем курсы ранней физиотерапии в лечебном бассейне 32°C и обеспечиваем профессиональный уход на дому (HomeCare GmbH) сразу после выписки."
           : isEn
           ? "In the wake of Germany's hospital reform, acute care hospitals require certified outpatient integration partners. The NabiOta® Group acts as a seamless extension: managing outpatient surgeries in cleanroom theaters (DIN 1946-4), initiating targeted physical rehabilitation with 32°C aquatic therapy, and deploying specialized home care nurses upon discharge."
@@ -321,8 +392,18 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
           : isAr
           ? "تتطلب إصلاحات المستشفيات في ألمانيا تكاملاً وثيقاً بين القطاعين الداخلي والخارجي. وبصفتها شبكة رعاية صحية متكاملة، تخفف NabiOta العبء عن المستشفيات الشريكة: نتولى جراحات اليوم الواحد بموجب § 115b SGB V في غرف عمليات نظيفة متطورة (DIN 1946-4)، ونضمن التأهيل الطبي المباشر بعد العمليات، وندير الخروج برعاية تمريضية منزلية متخصصة."
           : "Die Krankenhausreform erfordert eine enge Verzahnung zwischen stationärem und ambulantem Sektor. Als integrierter Gesundheitsverbund entlastet NabiOta Partnerkliniken: Wir übernehmen ambulante Operationen nach § 115b SGB V in modernsten Reinraum-OPs, sichern eine unmittelbare ambulante Anschlussrehabilitation (AHB) und garantieren ein lückenloses Entlassmanagement über unseren HomeCare-Pflegedienst.",
-        specificationsTitle: isRu ? "Форматы сотрудничества" : isEn ? "Cooperation Domains" : isTr ? "Hastanelerle İş Birliği Alanları" : isAr ? "مجالات التعاون مع المستشفيات" : "Kooperationsfelder mit Kliniken",
-        specifications: isRu
+        specificationsTitle: isUz
+          ? "Klinik integratsiya sohalari"
+          : isRu ? "Форматы сотрудничества" : isEn ? "Cooperation Domains" : isTr ? "Hastanelerle İş Birliği Alanları" : isAr ? "مجالات التعاون مع المستشفيات" : "Kooperationsfelder mit Kliniken",
+        specifications: isUz
+          ? [
+            "§ 115b SGB V bo'yicha ambulator operatsiyalar va operatsiyadan keyingi bir kunlik monitoring",
+            "§ 140a SGB V bo'yicha integratsiyalashgan tibbiy yordam shartnomalari (Integrierte Versorgung)",
+            "Shifoxonadan chiqarilgandan so'ng uzluksiz parvarish (Entlassmanagement nach § 39 Abs. 1a SGB V)",
+            "Kardiologik, ortopedik va nevrologik bemorlarni ambulator reabilitatsiyaga to'g'ridan-to'g'ri o'tkazish",
+            "Klinika mutaxassislari bilan qo'shma konsiliumlar va telemeditsina kanallari",
+            ]
+          : isRu
           ? [
               "Проведение амбулаторных хирургических вмешательств по каталогу AOP (§ 115b SGB V)",
               "Прямой перевод пациентов в амбулаторный реабилитационный центр (Physio, Ergo, Logo, MTT)",
@@ -366,8 +447,18 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
               "Teleradiologische Befundungsunterstützung und Kapazitätsübernahme bei 3T MRT und CT",
               "Flexible Personalgestellung ärztlicher und pflegerischer Fachkräfte in Engpasssituationen",
             ],
-        scopeTitle: isRu ? "Экономический эффект" : isEn ? "Clinical & Economic Impact" : isTr ? "Klinik ve Ekonomik Faydalar" : isAr ? "الفوائد السريرية والاقتصادية" : "Klinische & ökonomische Vorteile",
-        scopeItems: isRu
+        scopeTitle: isUz
+          ? "Klinika hamkorlari uchun ustunliklar"
+          : isRu ? "Экономический эффект" : isEn ? "Clinical & Economic Impact" : isTr ? "Klinik ve Ekonomik Faydalar" : isAr ? "الفوائد السريرية والاقتصادية" : "Klinische & ökonomische Vorteile",
+        scopeItems: isUz
+          ? [
+            "Statsionar o'rinlarining yuklamasini optimallashtirish va bemorlar oqimining barqaror ta'minlanishi",
+            "DRG stavkalari bo'yicha davolanish muddatini qisqartirish va jarima xatarlarini (MDK auditi) kamaytirish",
+            "NabiOta Home Care GmbH orqali bemorlarni uy sharoitida professional patronaj bilan ta'minlash",
+            "Sanitätshaus GmbH orqali statsionardan chiqqan bemorlarni zudlik bilan ortopedik vositalar bilan ta'minlash",
+            "Bemorlarning davolanish natijalaridan qoniqish darajasining oshishi",
+            ]
+          : isRu
           ? [
               "Сокращение средней продолжительности пребывания на койке без потери качества лечения",
               "Снижение штрафных санкций больничных касс за превышение сроков госпитализации",
@@ -406,8 +497,12 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
               "Fokussierung der internen Klinik-OP-Kapazitäten auf hochkomplexe stationäre Fälle",
               "Teilnahme an Selektivverträgen und integrierter Versorgung nach § 140a SGB V",
             ],
-        technicalTitle: isRu ? "Нормативная база" : isEn ? "Legal Framework" : isTr ? "Yasal Dayanaklar" : isAr ? "الأطر التشريعية المنظمة" : "Rechtsgrundlagen",
-        technicalText: isRu
+        technicalTitle: isUz
+          ? "Standartlar va huquq"
+          : isRu ? "Нормативная база" : isEn ? "Legal Framework" : isTr ? "Yasal Dayanaklar" : isAr ? "الأطر التشريعية المنظمة" : "Rechtsgrundlagen",
+        technicalText: isUz
+          ? "Hamkorlik Germaniya shifoxonalar qonunchiligi (KHG), SGB V direktivalari va shifoxonadan chiqarish menejmenti bo'yicha G-BA mezonlariga to'liq mos keladi. Bemor ma'lumotlari xavfsiz telematika tarmog'i (KIM / TI) orqali almashinadi."
+          : isRu
           ? "Сотрудничество базируется на нормах § 115b SGB V (амбулаторные операции), § 39 Abs. 1a SGB V (менеджмент выписки) и законе о реформе стационаров (Krankenhausversorgungsverbesserungsgesetz - KHVVG)."
           : isEn
           ? "Clinical partnerships operate under § 115b SGB V (Outpatient surgery), § 39(1a) SGB V (Discharge management), and the Hospital Care Improvement Act (KHVVG)."
@@ -416,15 +511,21 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
           : isAr
           ? "يرتكز التعاون على المادة § 115b SGB V (جراحات اليوم الواحد) والمادة § 39(1a) SGB V (إدارة الخروج) وقانون تحسين رعاية المستشفيات (KHVVG)."
           : "Die Zusammenarbeit stützt sich auf § 115b SGB V (AOP-Vertrag), § 39 Abs. 1a SGB V (Entlassmanagement) sowie die Leitplanken des Krankenhausversorgungsverbesserungsgesetzes (KHVVG).",
-        ctaButtonText: isRu ? "Обсудить клиническое партнерство" : isEn ? "Inquire Hospital Partnership" : isTr ? "Klinik İş Birliği Talep Edin" : isAr ? "طلب استشارة شراكة سريرية" : "Klinikkooperation anfragen",
+        ctaButtonText: isUz
+          ? "Klinika hamkorligini muhokama qilish"
+          : isRu ? "Обсудить клиническое партнерство" : isEn ? "Inquire Hospital Partnership" : isTr ? "Klinik İş Birliği Talep Edin" : isAr ? "طلب استشارة شراكة سريرية" : "Klinikkooperation anfragen",
       },
     },
     {
       id: "investoren-capital",
-      tag: isRu ? "ДЛЯ ИНВЕСТОРОВ & FAMILY OFFICES" : isEn ? "HEALTHCARE INVESTORS" : isTr ? "YATIRIMCILAR VE FAMILY OFFICES İÇİN" : isAr ? "للمستثمرين والمكاتب العائلية" : "FÜR INVESTOREN & FAMILY OFFICES",
+      tag: isUz
+        ? "INVESTORLAR VA FAMILY OFFICES UCHUN"
+        : isRu ? "ДЛЯ ИНВЕСТОРОВ & FAMILY OFFICES" : isEn ? "HEALTHCARE INVESTORS" : isTr ? "YATIRIMCILAR VE FAMILY OFFICES İÇİN" : isAr ? "للمستثمرين والمكاتب العائلية" : "FÜR INVESTOREN & FAMILY OFFICES",
       image: "/images/beratung/project-mvz.webp",
       iconType: "investor",
-      title: isRu
+      title: isUz
+        ? "Sog'liqni saqlash sohasidagi investitsiyalar va tibbiy ko'chmas mulk"
+        : isRu
         ? "Инвестиции в медицинскую недвижимость & 2-фазная модель"
         : isEn
         ? "Healthcare Real Estate Investments & 2-Phase Equity Model"
@@ -433,7 +534,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
         : isAr
         ? "استثمارات العقارات الصحية ونموذج المساهمة ثنائي المراحل"
         : "Gesundheitsimmobilien & 2-Phasen-Beteiligungsmodell",
-      shortDesc: isRu
+      shortDesc: isUz
+        ? "Demografik o'sishga tayangan sog'liqni saqlash aktivlariga uzoq muddatli barqaror investitsiyalar: zamonaviy MVZ, klinikalar va tibbiy kampuslar."
+        : isRu
         ? "Стабильные инвестиции в специализированную недвижимость здравоохранения: долгосрочные договоры аренды, стандарты ESG и защита капитала."
         : isEn
         ? "Resilient healthcare real estate investments: long-term commercial leases, ESG compliance, and structural capital preservation."
@@ -443,7 +546,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
         ? "تطوير عقارات صحية متقدمة، عقود إيجار تجارية طويلة الأجل، معايير ESG وعوائد استثمارية متينة."
         : "Kauf und Entwicklung hochmoderner Gesundheitsimmobilien, langfristige Gewerbemietverträge, ESG-Standards und solide Renditen.",
       modal: {
-        title: isRu
+        title: isUz
+          ? "Sog'liqni saqlash sohasidagi investitsiyalar va tibbiy ko'chmas mulk"
+          : isRu
           ? "Инвестиции в медицинскую недвижимость & 2-фазная модель холдинга"
           : isEn
           ? "Healthcare Real Estate Investment & 2-Phase Holding Model"
@@ -452,7 +557,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
           : isAr
           ? "الاستثمار في العقارات الصحية ونموذج المجموعة ذو المرحلتين"
           : "Gesundheitsimmobilien & 2-Phasen-Beteiligungsmodell",
-        subtitle: isRu
+        subtitle: isUz
+          ? "Demografik o'sishga tayangan sog'liqni saqlash aktivlariga uzoq muddatli barqaror investitsiyalar"
+          : isRu
           ? "Прозрачное разделение недвижимости и медицинской деятельности с защитой прав инвесторов"
           : isEn
           ? "Clear structural separation between physical real estate assets and medical operations"
@@ -461,7 +568,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
           : isAr
           ? "فصل هيكلي وقانوني واضح بين ملكية الأصول العقارية والتشغيل الطبي السريري"
           : "Rechtssichere Entflechtung von Immobilieneigentum und ärztlicher Leistungserbringung",
-        description: isRu
+        description: isUz
+          ? "NabiOta® Health Group Germaniyaning sog'liqni saqlash bozorida barqaror va xatarlardan himoyalangan loyihalarni amalga oshiradi. Biz xususiy investorlar va institutsional fondlarga zamonaviy tibbiy binolar, ko'p tarmoqli klinik kampuslar va ixtisoslashtirilgan parvarish uylarini rivojlantirishda ishonchli hamkorlikni taklif etamiz."
+          : isRu
           ? "Рынок здравоохранения Германии демонстрирует высокую устойчивость к кризисам и инфляции. Холдинг NabiOta® (HRB 16787, уставный капитал 50.000 EUR) предлагает институциональным инвесторам и Family Offices участие в девелопменте медицинских центров, операционных блоков и объектов персонала через NabiOta Real Estate GmbH с долгосрочными индексированными договорами аренды (15–20 лет)."
           : isEn
           ? "German healthcare real estate offers defensive growth resilient to macroeconomic turbulence. NabiOta® Health Group Germany GmbH (HRB 16787, EUR 50,000 capital) invites institutional partners to co-invest in ambulatory surgery centers, medical centers, and healthcare quarters via NabiOta Real Estate GmbH, backed by indexed long-term leases (15–20 years)."
@@ -470,8 +579,18 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
           : isAr
           ? "يعد قطاع الرعاية الصحية من أكثر فئات الأصول مقاومة للأزمات والتقلبات الاقتصادية في أوروبا. عبر شركة NabiOta Real Estate GmbH، يستثمر الشركاء في مراكز طبية متميزة وعيادات جراحية ومبانٍ تخصصية. وتضمن عقود الإيجار التجارية طويلة الأجل والمرتبطة بالتضخم (15 إلى 20 عاماً) تدفقات نقدية مستقرة ومحمية."
           : "Der Gesundheitssektor ist eine der krisenresistentesten Anlageklassen Europas. Über die NabiOta Real Estate GmbH investieren Partner in erstklassige Gesundheitszentren, ambulante OP-Kliniken und Ärztehäuser. Langfristige, indexierte Gewerbemietverträge (15 bis 20 Jahre) mit bonitätsstarken medizinischen Betreibergesellschaften garantieren planbare Cashflows und Werterhalt.",
-        specificationsTitle: isRu ? "Параметры инвестиций" : isEn ? "Investment Metrics" : isTr ? "Yatırım Profili ve Parametreleri" : isAr ? "ملف ومعايير الاستثمار" : "Investitionsprofil & Parameter",
-        specifications: isRu
+        specificationsTitle: isUz
+          ? "Investitsion aktivlar"
+          : isRu ? "Параметры инвестиций" : isEn ? "Investment Metrics" : isTr ? "Yatırım Profili ve Parametreleri" : isAr ? "ملف ومعايير الاستثمار" : "Investitionsprofil & Parameter",
+        specifications: isUz
+          ? [
+            "Ixtisoslashtirilgan ob'ektlar: ambulator jarrohlik zallari (DIN 1946-4) va radiologiya markazlari (3T MRT)",
+            "Ko'p tarmoqli tibbiyot markazlari (MVZ) va poliklinika majmualari",
+            "Uzoq muddatli parvarish va kunduzgi statsionar rezidentsiyalari (WTG NRW)",
+            "Tibbiyot xodimlari va shifokorlar uchun turar joy binolari (Staff Housing)",
+            "Energiya tejamkor, barqaror ESG standartlariga (KfW 40) javob beruvchi tibbiy infratuzilma",
+            ]
+          : isRu
           ? [
               "Специализированные объекты: амбулаторные центры (MVZ), хирургические комплексы, радиология",
               "Долгосрочные индексированные договоры аренды (Triple-Net / Double-Net) сроком 15–20 лет",
@@ -515,8 +634,18 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
               "Rechtssichere Entflechtung zwischen Immobilienträger und ärztlicher MVZ-Gesellschaft",
               "Zentrales technisches und medizintechnisches Gebäudemanagement durch die Holding",
             ],
-        scopeTitle: isRu ? "Фазы масштабирования холдинга" : isEn ? "Holding Scaling Architecture" : isTr ? "Holdingin Aşama Yapısı" : isAr ? "هيكل مراحل التوسع المؤسسي" : "Phasenstruktur des Holdings",
-        scopeItems: isRu
+        scopeTitle: isUz
+          ? "Xoldingning kengayish bosqichlari"
+          : isRu ? "Фазы масштабирования холдинга" : isEn ? "Holding Scaling Architecture" : isTr ? "Holdingin Aşama Yapısı" : isAr ? "هيكل مراحل التوسع المؤسسي" : "Phasenstruktur des Holdings",
+        scopeItems: isUz
+          ? [
+            "1-bosqich: Shifokor ishtirokida MVZ tarmog'ini ta'sis etish va birlamchi bo'g'inni mustahkamlash",
+            "2-bosqich: NabiOta Clinics Germany GmbH statsionar klinikasini litsenziyalash va kasalxona maqomini olish",
+            "Operatorlik va bino mulkdorligi o'rtasidagi uzoq muddatli (15-25 yillik) indeksatsiyalangan ijara shartnomalari",
+            "Xolding sho'ba korxonalarining to'liq barqaror rentabelligi va o'zaro sinergiyasi",
+            "Kvartallik batafsil moliyaviy hisobotlar va mustaqil auditorlik tekshiruvi",
+            ]
+          : isRu
           ? [
               "Фаза 1: Учреждение сети MVZ под врачебным руководством доктора Рахимова-Фишера (§ 95 SGB V)",
               "Управляющая компания холдинга предоставляет централизованный сервис (биллинг, IT, маркетинг, HR)",
@@ -555,8 +684,12 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
               "Mit Erhalt der Krankenhauskonzession entsteht die direkte Gründungs- und Erwerbsberechtigung für MVZ",
               "Skalierbare Plattform für den weiteren regionalen Rollout in Nordrhein-Westfalen",
             ],
-        technicalTitle: isRu ? "Корпоративные реквизиты" : isEn ? "Corporate Registry" : isTr ? "Sicil ve Şirket Bilgileri" : isAr ? "البيانات المسجلة والشركة" : "Register- & Gesellschaftsdaten",
-        technicalText: isRu
+        technicalTitle: isUz
+          ? "Korporativ rekvizitlar"
+          : isRu ? "Корпоративные реквизиты" : isEn ? "Corporate Registry" : isTr ? "Sicil ve Şirket Bilgileri" : isAr ? "البيانات المسجلة والشركة" : "Register- & Gesellschaftsdaten",
+        technicalText: isUz
+          ? "NabiOta® Health Group Germany GmbH Mönchengladbach shahar sudida (Amtsgericht) HRB 16787 raqami ostida ro'yxatga olingan. Ustav kapitali 50.000 EUR. Barcha investitsion modellar Germaniya korporativ va soliq qonunchiligiga qat'iy muvofiq tuziladi."
+          : isRu
           ? "NabiOta® Health Group Germany GmbH зарегистрирована в торговом реестре участкового суда Мёнхенгладбаха (HRB 16787) с уставным капиталом 50.000 EUR. Юридический адрес: Aachener Straße 114, 41061 Mönchengladbach."
           : isEn
           ? "NabiOta® Health Group Germany GmbH is registered with the commercial register of Amtsgericht Mönchengladbach (HRB 16787) with a share capital of EUR 50,000. Headquarters: Aachener Straße 114, 41061 Mönchengladbach."
@@ -565,15 +698,21 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
           : isAr
           ? "مجموعة NabiOta® Health Group Germany GmbH مسجلة في السجل التجاري بمحكمة مونشنغلادباخ تحت رقم HRB 16787. رأس المال الأساسي: 50,000 يورو. العنوان التجاري: Aachener Straße 114, 41061 Mönchengladbach."
           : "NabiOta® Health Group Germany GmbH, HRB 16787 beim Amtsgericht Mönchengladbach. Stammkapital: 50.000 EUR. Geschäftsanschrift: Aachener Straße 114, 41061 Mönchengladbach.",
-        ctaButtonText: isRu ? "Запросить инвестиционный меморандум" : isEn ? "Request Investment Briefing" : isTr ? "Yatırım Bilgi Dosyasını İsteyin" : isAr ? "طلب مذكرة الاستثمار التمهيدية" : "Investment-Exposé anfordern",
+        ctaButtonText: isUz
+          ? "Investitsiya memorandumini so'rash"
+          : isRu ? "Запросить инвестиционный меморандум" : isEn ? "Request Investment Briefing" : isTr ? "Yatırım Bilgi Dosyasını İsteyin" : isAr ? "طلب مذكرة الاستثمار التمهيدية" : "Investment-Exposé anfordern",
       },
     },
     {
       id: "kommunen-landkreise",
-      tag: isRu ? "ДЛЯ МУНИЦИПАЛИТЕТОВ & KV" : isEn ? "MUNICIPALITIES & HEALTH BOARDS" : isTr ? "BELEDİYELER VE BÖLGE YÖNETİMLERİ İÇİN" : isAr ? "للبلديات والدوائر الحكومية الصحية" : "FÜR KOMMUNEN & LANDKREISE",
+      tag: isUz
+        ? "MUNITSIPALLIKLAR VA KV UCHUN"
+        : isRu ? "ДЛЯ МУНИЦИПАЛИТЕТОВ & KV" : isEn ? "MUNICIPALITIES & HEALTH BOARDS" : isTr ? "BELEDİYELER VE BÖLGE YÖNETİMLERİ İÇİN" : isAr ? "للبلديات والدوائر الحكومية الصحية" : "FÜR KOMMUNEN & LANDKREISE",
       image: "/images/areas/consulting.webp",
       iconType: "municipality",
-      title: isRu
+      title: isUz
+        ? "Mintaqaviy tibbiy infratuzilmani ta'minlash (IGZ)"
+        : isRu
         ? "Обеспечение региональной медицинской инфраструктуры (IGZ)"
         : isEn
         ? "Regional Healthcare Infrastructure & Integrated Care (IGZ)"
@@ -582,7 +721,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
         : isAr
         ? "الرعاية الصحية الإقليمية ومراكز الصحة المتكاملة (IGZ)"
         : "Regionale Grundversorgung & Gesundheitszentren (IGZ)",
-      shortDesc: isRu
+      shortDesc: isUz
+        ? "Kichik va o'rta shaharlarda fanlararo sog'liqni saqlash markazlarini (IGZ) barpo etish va birlamchi tibbiy yordamni saqlab qolish."
+        : isRu
         ? "Создание междисциплинарных центров здоровья в малых и средних городах, устранение дефицита врачей и безбарьерная среда."
         : isEn
         ? "Establishing integrated healthcare centers in regional municipalities, closing physician deficits, and barrier-free care."
@@ -592,7 +733,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
         ? "إنشاء مراكز صحية متكاملة في المدن والمناطق، سد نقص الأطباء وتوفير بنية خالية من العوائق."
         : "Schaffung integrierter Gesundheitszentren in Städten und Landkreisen, Behebung ärztlicher Unterversorgung und Barrierefreiheit.",
       modal: {
-        title: isRu
+        title: isUz
+          ? "Mintaqaviy tibbiy yordamni ta'minlash va IGZ markazlari"
+          : isRu
           ? "Обеспечение региональной медицинской помощи & Центры IGZ"
           : isEn
           ? "Regional Healthcare Security & Integrated Medical Centers"
@@ -601,7 +744,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
           : isAr
           ? "مبادرات الرعاية البلدية ومراكز الصحة المتكاملة (IGZ)"
           : "Kommunale Versorgungsinitiativen & Integrierte Gesundheitszentren (IGZ)",
-        subtitle: isRu
+        subtitle: isUz
+          ? "Tumanlar, munitsipalitetlar va KV bilan shifokorlar tanqisligiga qarshi kurashish bo'yicha hamkorlik"
+          : isRu
           ? "Партнерство с городами, бургомистрами и KV для сохранения доступной медицины в регионах"
           : isEn
           ? "Public-private partnerships with cities and regional health authorities to secure clinical coverage"
@@ -610,7 +755,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
           : isAr
           ? "التعاون مع المدن والبلديات وهيئات التأمين الصحي لضمان استدامة الرعاية الطبية الأساسية"
           : "Zusammenarbeit mit Städten, Landkreisen und Kassenärztlichen Vereinigungen zur Sicherung der Grundversorgung",
-        description: isRu
+        description: isUz
+          ? "Ko'plab mintaqalar amaliyotchi shifokorlarning nafaqaga chiqishi sababli tibbiy xizmat yetishmovchiligiga duch kelmoqda. NabiOta® mahalliy hokimiyatlar va KV bilan birgalikda integral sog'liqni saqlash markazlarini (Intersektorale Gesundheitszentren - IGZ) tashkil etadi va aholini uzluksiz shifokorlik yordami bilan ta'minlaydi."
+          : isRu
           ? "Многие регионы сталкиваются с дефицитом врачей первичного звена и закрытием локальных практик. Холдинг NabiOta® сотрудничает с муниципалитетами и окружными властями для создания современных междисциплинарных медицинских центров (IGZ). Мы объединяем врачей общей практики, кардиологов, хирургов, диагностику, физиотерапию и аптеку в едином многофункциональном квартале."
           : isEn
           ? "Demographic shifts and physician retirements pose acute challenges to regional healthcare delivery. NabiOta® partners with municipal administrations and health boards to plan and operate Integrated Healthcare Centers (IGZ). Under one accessible roof, we co-locate primary care doctors, diagnostic radiology, rehabilitation facilities, and home care coordination."
@@ -619,8 +766,18 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
           : isAr
           ? "تتطلب تحديات التغطية الصحية في المناطق الريفية وشبه الحضرية نماذج تعاونية مبتكرة. تدعم مجموعة NabiOta البلديات وإدارات المدن في تخطيط وإنشاء مراكز الصحة المتكاملة (IGZ)، حيث نجمع بين الرعاية العامة والتخصصية والتشخيص والتأهيل والتمريض تحت سقف واحد متكامل."
           : "Die drohende Unterversorgung im ländlichen und suburbanen Raum erfordert neue, kooperative Lösungsmodelle. Die NabiOta-Gruppe unterstützt Kommunen, Landkreise und Wirtschaftsförderungen bei der Konzeption und Realisierung Integrierter Gesundheitszentren (IGZ). Wir bündeln haus- und fachärztliche Versorgung, Diagnostik, Therapie und Pflege unter einem Dach.",
-        specificationsTitle: isRu ? "Муниципальные решения" : isEn ? "Municipal Solutions" : isTr ? "Belediyeler İçin Çözüm Bileşenleri" : isAr ? "حلول متكاملة للبلديات" : "Lösungsbausteine für Kommunen",
-        specifications: isRu
+        specificationsTitle: isUz
+          ? "Munitsipal yechimlar"
+          : isRu ? "Муниципальные решения" : isEn ? "Municipal Solutions" : isTr ? "Belediyeler İçin Çözüm Bileşenleri" : isAr ? "حلول متكاملة للبلديات" : "Lösungsbausteine für Kommunen",
+        specifications: isUz
+          ? [
+            "Aholi ehtiyojlari va tibbiy qamrov zichligini tahlil qilish",
+            "Birlamchi poliklinika, tor mutaxassislar va tez yordam punktlarini bitta binoda jamlash",
+            "Keksa fuqarolar uchun kunduzgi parvarish va profilaktika xonalarini tashkil etish",
+            "Teletibbiyot orqali yirik universitet klinikalari bilan doimiy masofaviy aloqa",
+            "Yosh shifokorlarni munitsipalitetlarga jalb qilish uchun qulay shart-sharoitlar yaratish",
+            ]
+          : isRu
           ? [
               "Анализ потребностей населения и плотности покрытия врачебными участками",
               "Привлечение квалифицированных врачей и молодых специалистов на работу в регионе",
@@ -664,8 +821,18 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
               "Entwicklung von Fahrdienst- und Shuttleservices für immobilen Senioren im ländlichen Raum",
               "Begleitung kommunaler Förderanträge (z.B. Strukturfördermittel des Landes NRW)",
             ],
-        scopeTitle: isRu ? "Форматы взаимодействия" : isEn ? "Cooperation Modes" : isTr ? "İş Birliği Modelleri" : isAr ? "نماذج العمل والتعاون" : "Modelle der Zusammenarbeit",
-        scopeItems: isRu
+        scopeTitle: isUz
+          ? "O'zaro hamkorlik formatlari"
+          : isRu ? "Форматы взаимодействия" : isEn ? "Cooperation Modes" : isTr ? "İş Birliği Modelleri" : isAr ? "نماذج العمل والتعاون" : "Modelle der Zusammenarbeit",
+        scopeItems: isUz
+          ? [
+            "Munitsipal konsessiya va davlat-xususiy sheriklik (PPP) modellari",
+            "Shahar hokimiyatlari tomonidan ajratilgan binolarni zamonaviy tibbiy talablarga moslab rekonstruksiya qilish",
+            "Klinika va praksis boshqaruvini xolding tomonidan to'liq operatsion ta'minlash",
+            "Mahalliy dorixonalar, Sanitätshaus va ijtimoiy xizmatlar bilan mustahkam aloqalar",
+            "Mintaqa aholisi uchun tibbiy xizmatlarning kafolatlangan uzoq muddatli mavjudligi",
+            ]
+          : isRu
           ? [
               "Муниципальное концессионное партнерство или долгосрочный договор аренды городских площадей",
               "Консультирование администраций по вопросам привлечения врачей и удержания кадров",
@@ -704,8 +871,12 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
               "Entlastung der Notaufnahmen umliegender Krankenhäuser durch starke ambulante Strukturen",
               "Einrichtung digitaler Telemedizin-Sprechstunden für abgelegene Ortsteile",
             ],
-        technicalTitle: isRu ? "Координация с KV" : isEn ? "KV Coordination" : isTr ? "Ruhsat Kurullarıyla Koordinasyon" : isAr ? "التنسيق مع لجان التراخيص الصحية" : "Abstimmung mit Zulassungsgremien",
-        technicalText: isRu
+        technicalTitle: isUz
+          ? "KV bilan muvofiqlashtirish"
+          : isRu ? "Координация с KV" : isEn ? "KV Coordination" : isTr ? "Ruhsat Kurullarıyla Koordinasyon" : isAr ? "التنسيق مع لجان التراخيص الصحية" : "Abstimmung mit Zulassungsgremien",
+        technicalText: isUz
+          ? "Barcha tibbiy quvvatlarni joylashtirish loyihalari Kassenärztliche Vereinigung ning hududiy rejalashtirish qo'mitasi (Bedarfsplanung) bilan to'liq kelishilgan holda amalga oshiriladi."
+          : isRu
           ? "Все проекты развертывания медицинских мощностей согласуются с планами обеспечения Kassenärztliche Vereinigung Nordrhein (KVNO) и ведомствами здравоохранения земли."
           : isEn
           ? "All medical deployment initiatives are closely coordinated with the regional allocation plans of Kassenärztliche Vereinigung Nordrhein (KVNO) and state health authorities."
@@ -714,7 +885,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
           : isAr
           ? "يتم تنسيق كافة الخطط والمشاريع مسبقاً بشكل تفصيلي مع خطط التوزيع ولجان التراخيص التابعة لجمعية أطباء التأمين الصحي (KVNO)."
           : "Sämtliche Vorhaben werden im Vorfeld detailliert mit den Bedarfsplänen und Zulassungsausschüssen der Kassenärztlichen Vereinigung Nordrhein (KVNO) abgestimmt.",
-        ctaButtonText: isRu ? "Инициировать проект для муниципалитета" : isEn ? "Initiate Municipal Project" : isTr ? "Belediye Proje Konsepti İsteyin" : isAr ? "طلب تصور مشروع للبلديات" : "Kommunales Konzept anfragen",
+        ctaButtonText: isUz
+          ? "Munitsipalitet loyihasini boshlash"
+          : isRu ? "Инициировать проект для муниципалитета" : isEn ? "Initiate Municipal Project" : isTr ? "Belediye Proje Konsepti İsteyin" : isAr ? "طلب تصور مشروع للبلديات" : "Kommunales Konzept anfragen",
       },
     },
   ];
@@ -724,8 +897,12 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
       num: "01",
       icon: Users,
       image: "/images/partners/milestone-1-nda-clean.webp",
-      title: isRu ? "Конфиденциальный диалог & NDA" : isEn ? "Confidential Dialogue & NDA" : isTr ? "İlk Temas ve Gizlilik (NDA)" : isAr ? "التواصل الأولي واتفاقية السرية (NDA)" : "Erstkontakt & Geheimhaltung",
-      desc: isRu
+      title: isUz
+        ? "Maxfiy muloqot va NDA"
+        : isRu ? "Конфиденциальный диалог & NDA" : isEn ? "Confidential Dialogue & NDA" : isTr ? "İlk Temas ve Gizlilik (NDA)" : isAr ? "التواصل الأولي واتفاقية السرية (NDA)" : "Erstkontakt & Geheimhaltung",
+      desc: isUz
+        ? "Dastlabki uchrashuv va to'liq maxfiylik to'g'risidagi o'zaro kelishuvni (NDA) imzolash."
+        : isRu
         ? "Первая встреча и подписание взаимного соглашения о неразглашении. Мы строго защищаем ваши конфиденциальные данные."
         : isEn
         ? "Initial consultation and execution of a bilateral Non-Disclosure Agreement (NDA). We strictly protect your confidential data."
@@ -739,8 +916,12 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
       num: "02",
       icon: FileSearch,
       image: "/images/partners/milestone-2-audit-clean.webp",
-      title: isRu ? "Структурный аудит & Оценка" : isEn ? "Structural Audit & Valuation" : isTr ? "Analiz ve Değer Tespiti" : isAr ? "التحليل الشامل والتقييم المالي" : "Analyse & Wertermittlung",
-      desc: isRu
+      title: isUz
+        ? "Tuzilmaviy audit va baholash"
+        : isRu ? "Структурный аудит & Оценка" : isEn ? "Structural Audit & Valuation" : isTr ? "Analiz ve Değer Tespiti" : isAr ? "التحليل الشامل والتقييم المالي" : "Analyse & Wertermittlung",
+      desc: isUz
+        ? "Moddiy aktivlar, praksis ko'rsatkichlari va hududiy shifokorlik o'rinlari holatini chuqur tahlil qilish."
+        : isRu
         ? "Глубокий анализ материальных активов, показателей практики, кадрового потенциала и градостроительных параметров объекта."
         : isEn
         ? "In-depth due diligence covering operational goodwill, patient demographics, staff structure, and asset valuation."
@@ -754,8 +935,12 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
       num: "03",
       icon: ShieldCheck,
       image: "/images/partners/milestone-3-stethoscope-clean.webp",
-      title: isRu ? "Договорная архитектура" : isEn ? "Contractual Structuring" : isTr ? "Kişiye Özel Sözleşmeler" : isAr ? "الصياغة والاتفاقيات المخصصة" : "Maßgeschneiderte Verträge",
-      desc: isRu
+      title: isUz
+        ? "Shartnoma arxitekturasi"
+        : isRu ? "Договорная архитектура" : isEn ? "Contractual Structuring" : isTr ? "Kişiye Özel Sözleşmeler" : isAr ? "الصياغة والاتفاقيات المخصصة" : "Maßgeschneiderte Verträge",
+      desc: isUz
+        ? "Bitimning shaffof modelini ishlab chiqish: oldi-sotdi shartnomasi, litsenziyalash va mehnat shartnomalarini kelishish."
+        : isRu
         ? "Разработка прозрачной модели сделки: согласование договоров аренды, трудовых контрактов и подача документов в комитеты KV."
         : isEn
         ? "Structuring tailored contracts: drafting commercial leases, physician employment terms, and official licensing filings."
@@ -769,8 +954,12 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
       num: "04",
       icon: TrendingUp,
       image: "/images/partners/milestone-4-integration-clean.webp",
-      title: isRu ? "Интеграция & Развитие" : isEn ? "Integration & Growth" : isTr ? "Entegrasyon ve Büyüme" : isAr ? "الاندماج والنمو المستدام" : "Integration & Skalierung",
-      desc: isRu
+      title: isUz
+        ? "Integratsiya va rivojlanish"
+        : isRu ? "Интеграция & Развитие" : isEn ? "Integration & Growth" : isTr ? "Entegrasyon ve Büyüme" : isAr ? "الاندماج والنمو المستدام" : "Integration & Skalierung",
+      desc: isUz
+        ? "Xolding tarkibiga ravon o'tish: IT tizimini ulash, xodimlarni qo'llab-quvvatlash va umumiy o'sish."
+        : isRu
         ? "Плавный переход под крыло холдинга: подключение IT, поддержка HR, маркетинговое сопровождение и стабильное развитие."
         : isEn
         ? "Smooth onboarding into the holding: IT connectivity, HR support, marketing launch, and long-term collaborative growth."
@@ -793,8 +982,12 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
           breadcrumb={
             <Breadcrumb
               items={[
-                { label: isRu ? "Главная" : isEn ? "Home" : isTr ? "Ana Sayfa" : isAr ? "الرئيسية" : "Startseite", href: `/${locale}` },
-                { label: isRu ? "Партнеры и инвестиции" : isEn ? "Partners & Alliances" : isTr ? "Ortaklar ve Yatırımlar" : isAr ? "الشركاء والاستثمار" : "Partner & Investoren" },
+                { label: isUz
+   ? "Asosiy sahifa"
+   : isRu ? "Главная" : isEn ? "Home" : isTr ? "Ana Sayfa" : isAr ? "الرئيسية" : "Startseite", href: `/${locale}` },
+                { label: isUz
+   ? "Hamkorlar va investitsiyalar"
+   : isRu ? "Партнеры и инвестиции" : isEn ? "Partners & Alliances" : isTr ? "Ortaklar ve Yatırımlar" : isAr ? "الشركاء والاستثمار" : "Partner & Investoren" },
               ]}
             />
           }
@@ -809,8 +1002,8 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
           eyebrow={heroData.eyebrow}
           description={heroData.desc}
           badges={heroBadges}
-          imageSrc="/images/heroes/hero-partners.webp"
-          imagePosition="object-[center_20%]"
+          imageSrc="/images/partners/artium.webp"
+          imagePosition="object-[center_35%]"
         />
 
         {/* ========================================================================= */}
@@ -821,10 +1014,14 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-12">
               <div className="space-y-2.5 max-w-2xl">
                 <span className="text-xs font-semibold tracking-[0.2em] text-[#B8934A] uppercase font-sans block">
-                  {isRu ? "МОДЕЛИ СОТРУДНИЧЕСТВА" : isEn ? "COOPERATION FRAMEWORK" : isTr ? "ORTAKLIK MODELLERİ" : isAr ? "أطر التعاون والشراكة" : "PARTNERSCHAFTSMODELLE"}
+                  {isUz
+                    ? "HAMKORLIK MODELLARI"
+                    : isRu ? "МОДЕЛИ СОТРУДНИЧЕСТВА" : isEn ? "COOPERATION FRAMEWORK" : isTr ? "ORTAKLIK MODELLERİ" : isAr ? "أطر التعاون والشراكة" : "PARTNERSCHAFTSMODELLE"}
                 </span>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0B2516] leading-tight">
-                  {isRu
+                  {isUz
+                    ? "Sog'liqni saqlashning asosiy ishtirokchilari uchun maqsadli yechimlar"
+                    : isRu
                     ? "Целевые решения для ключевых участников здравоохранения"
                     : isEn
                     ? "Tailored Solutions for Healthcare Stakeholders"
@@ -835,7 +1032,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                     : "Passgenaue Lösungen für Ärzte, Kliniken und Partner"}
                 </h2>
                 <p className="text-xs sm:text-sm text-[#4A5D52] leading-relaxed">
-                  {isRu
+                  {isUz
+                    ? "Hamkorlikning to'rtta ixtisoslashtirilgan modeli — praksis vorisligidan tortib institutsional investitsiyalargacha."
+                    : isRu
                     ? "Четыре специализированные модели сотрудничества, разработанные в строгом соответствии с немецким законодательством (SGB V, GewO, ApoG)."
                     : isEn
                     ? "Four specialized collaboration tracks engineered under rigorous German healthcare legislation (SGB V, GewO, ApoG)."
@@ -853,7 +1052,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                   className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#B8934A] hover:text-[#0B2516] transition-colors group"
                 >
                   <span>
-                    {isRu
+                    {isUz
+                      ? "Konsultatsiyaga yozilish"
+                      : isRu
                       ? "Записаться на консультацию"
                       : isEn
                       ? "Schedule consultation"
@@ -971,7 +1172,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                   <div className="flex items-center gap-2.5 mb-2.5 sm:mb-3">
                     <span className="w-6 sm:w-8 h-[1.5px] bg-[#C5A56A]" />
                     <span className="text-[10.5px] sm:text-[11.5px] font-semibold tracking-[0.24em] text-[#C5A56A] uppercase font-sans">
-                      {isRu
+                      {isUz
+                        ? "REGULYATOR ARXITEKTURA VA HUQUQIY NAZORAT"
+                        : isRu
                         ? "РЕГУЛЯТОРНАЯ АРХИТЕКТУРА И ПРАВОВОЙ КОНТРОЛЬ"
                         : isEn
                         ? "STATUTORY ARCHITECTURE & LEGAL GOVERNANCE"
@@ -986,7 +1189,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
 
                   {/* Title with styled italic phrase */}
                   <h2 className="font-serif text-[28px] sm:text-[38px] lg:text-[44px] text-[#142318] font-normal leading-[1.18] mb-3 sm:mb-3.5">
-                    {isRu ? (
+                    {isUz
+                      ? "Ikki bosqichli tartibga solish arxitekturasi: to'liq huquqiy xavfsizlik"
+                      : isRu ? (
                       <>
                         Двухфазная модель владения и{" "}
                         <span className="font-serif italic text-[#C5A56A]">корпоративного управления</span>
@@ -1017,7 +1222,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                   {/* Supplementary gold text underneath the title (matching MVZ Photo 1 style) */}
                   <div className="mb-3.5 sm:mb-4">
                     <span className="text-[10.5px] sm:text-[11.5px] font-bold tracking-[0.22em] text-[#C5A56A] uppercase font-sans">
-                      {isRu
+                      {isUz
+                        ? "1-BOSQICH (TA'SIS ETISH) · 2-BOSQICH (STATSIONAR LITSENZIYA)"
+                        : isRu
                         ? "ФАЗА 1 (УЧРЕЖДЕНИЕ) · ФАЗА 2 (СТАЦИОНАРНАЯ ЛИЦЕНЗИЯ § 30 GEWO)"
                         : isEn
                         ? "PHASE 1 (ESTABLISHMENT) · PHASE 2 (HOSPITAL LICENSING § 30 GEWO)"
@@ -1030,7 +1237,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                   </div>
 
                   <p className="text-[13px] sm:text-[14px] text-[#556057] leading-relaxed max-w-xl">
-                    {isRu
+                    {isUz
+                      ? "Germaniya Federativ Respublikasi SGB V va KV Nordrhein qat'iy talablariga to'liq rioya qilish."
+                      : isRu
                       ? "Соблюдение жестких регуляторных требований Федерального кодекса (§ 95 SGB V) и закона о промысле (§ 30 GewO) обеспечивает абсолютную юридическую безопасность для партнеров и инвесторов."
                       : isEn
                       ? "Full compliance with statutory healthcare legislation (§ 95 SGB V) and clinic regulation (§ 30 GewO) ensures watertight legal protection for partners and investors."
@@ -1124,7 +1333,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                       <div className="min-w-0 flex-1">
                         <h3 className="font-serif text-[18px] sm:text-[21px] lg:text-[23px] font-medium text-[#142318] leading-[1.28]">
                           <span className="text-[#C5A56A] font-sans font-bold text-xs sm:text-[13px] uppercase tracking-wider block mb-1">
-                            {isRu
+                            {isUz
+                              ? "1-bosqich · Faol ta'sis etish"
+                              : isRu
                               ? "Фаза 1 · Активное учреждение"
                               : isEn
                               ? "Phase 1 · Active Establishment"
@@ -1134,7 +1345,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                               ? "المرحلة 1 · التأسيس النشط"
                               : "Phase 1 · Status Quo & Gründung"}
                           </span>
-                          {isRu
+                          {isUz
+                            ? "MVZ da shifokor ishtiroki (§ 95 SGB V) & Markazlashtirilgan xizmatlar"
+                            : isRu
                             ? "Врачебное участие в MVZ (§ 95 SGB V) & Централизованное управление"
                             : isEn
                             ? "Physician MVZ Equity (§ 95 SGB V) & Central Management Services"
@@ -1149,7 +1362,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
 
                     {/* Description Paragraph */}
                     <p className="text-[12.5px] sm:text-[13px] text-[#556057] leading-relaxed">
-                      {isRu
+                      {isUz
+                        ? "Dr. Fischer-Rahimov litsenziyalangan shifokor sifatida MVZ ta'sis etadi va tibbiy langar bo'lib xizmat qiladi."
+                        : isRu
                         ? "Доктор Рахимов-Фишер как лицензированный врач владеет долями в компаниях MVZ на основании установленного законом врачебного права. Холдинг NabiOta® Health Group Germany GmbH оказывает централизованные услуги управления (биллинг, IT, закупки, кадры) на основе договоров о сервисном обслуживании."
                         : isEn
                         ? "Dr. Fischer-Rahimov holds MVZ equity based on statutory physician entitlement. NabiOta® Health Group Germany GmbH delivers centralized administrative, billing, purchasing, HR, and marketing management via customized commercial service agreements."
@@ -1167,7 +1382,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                           <ShieldCheck className="w-4 h-4 stroke-[1.8]" />
                         </div>
                         <span className="text-[12.5px] sm:text-[13px] text-[#2C3E32] font-normal leading-snug">
-                          {isRu
+                          {isUz
+                            ? "Shifokor suvereniteti va terapevtik mustaqilligining to'liq huquqiy himoyasi."
+                            : isRu
                             ? "Полная защита врачебного суверенитета и независимости решений"
                             : isEn
                             ? "Full protection of clinical independence and diagnostic autonomy"
@@ -1184,7 +1401,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                           <FileText className="w-4 h-4 stroke-[1.8]" />
                         </div>
                         <span className="text-[12.5px] sm:text-[13px] text-[#2C3E32] font-normal leading-snug">
-                          {isRu
+                          {isUz
+                            ? "Shifokor siriga (§ 203 StGB) to'liq rioya etgan holda markazlashtirilgan IT va hisob-kitob (billing) xizmatlari."
+                            : isRu
                             ? "Централизованный IT-контур и биллинг с гарантией защиты данных (GDPR)"
                             : isEn
                             ? "Centralized GDPR-compliant IT, billing, and accounting systems"
@@ -1201,7 +1420,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                           <Users className="w-4 h-4 stroke-[1.8]" />
                         </div>
                         <span className="text-[12.5px] sm:text-[13px] text-[#2C3E32] font-normal leading-snug">
-                          {isRu
+                          {isUz
+                            ? "KV Nordrhein litsenziyalash qo'mitasi (Zulassungsausschuss) bilan to'liq kelishuv huquqiy tozaligi."
+                            : isRu
                             ? "Правовая чистота согласований с комитетом лицензирования KV"
                             : isEn
                             ? "Clean regulatory approval process with the KV licensing board"
@@ -1219,7 +1440,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                   <div className="flex items-center gap-2.5 pt-4 border-t border-[#EAE3D5]">
                     <span className="w-6 h-[1.5px] bg-[#C5A56A] shrink-0" />
                     <span className="text-[11px] sm:text-[11.5px] text-[#7A694A] font-medium tracking-wide">
-                      {isRu
+                      {isUz
+                        ? "Yuridik asos: § 95(1a) SGB V"
+                        : isRu
                         ? "Юридическая основа: § 95(1a) SGB V"
                         : isEn
                         ? "Legal Basis: § 95(1a) SGB V"
@@ -1309,7 +1532,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                       <div className="min-w-0 flex-1">
                         <h3 className="font-serif text-[18px] sm:text-[21px] lg:text-[23px] font-medium text-white leading-[1.28]">
                           <span className="text-[#ECCF96] font-sans font-bold text-xs sm:text-[13px] uppercase tracking-wider block mb-1">
-                            {isRu
+                            {isUz
+                              ? "2-bosqich · Kasalxona litsenziyasi"
+                              : isRu
                               ? "Фаза 2 · Больничная лицензия"
                               : isEn
                               ? "Phase 2 · Hospital Licensing"
@@ -1319,7 +1544,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                               ? "المرحلة 2 · ترخيص المستشفى"
                               : "Phase 2 · Krankenhauszulassung"}
                           </span>
-                          {isRu
+                          {isUz
+                            ? "NabiOta Clinics Germany GmbH (§ 30 GewO) & Bevosita kasalxona ta'sischiligi"
+                            : isRu
                             ? "NabiOta Clinics Germany GmbH (§ 30 GewO) & Прямое владение"
                             : isEn
                             ? "NabiOta Clinics Germany GmbH (§ 30 GewO) & Direct Equity"
@@ -1334,7 +1561,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
 
                     {/* Description Paragraph */}
                     <p className="text-[12.5px] sm:text-[13px] text-white/80 leading-relaxed">
-                      {isRu
+                      {isUz
+                        ? "Xolding klinikani boshqarish kompaniyasini ta'sis etadi (§ 30 GewO) va statsionar o'rinlarni ochadi."
+                        : isRu
                         ? "Холдинг учреждает компанию управления клиникой (NabiOta Clinics Germany GmbH nach § 30 GewO). После получения лицензии стационарной больницы (§ 108/109 SGB V) компания становится полноправным учредителем MVZ без необходимости личного врачебного участия, открывая путь для прямого институционального инвестирования."
                         : isEn
                         ? "The holding establishes the hospital operating company (NabiOta Clinics Germany GmbH § 30 GewO). Upon hospital licensing (§ 108/109 SGB V), the company acquires statutory entitlement to directly own and operate MVZ centers, enabling streamlined institutional equity expansion."
@@ -1352,7 +1581,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                           <GitFork className="w-4 h-4 stroke-[1.8]" />
                         </div>
                         <span className="text-[12.5px] sm:text-[13px] text-white/90 font-normal leading-snug">
-                          {isRu
+                          {isUz
+                            ? "Kasalxona yuridik shaxsi sifatida MVZ ulushlariga bevosita korporativ egalik qilish (§ 95 Abs. 1a SGB V)."
+                            : isRu
                             ? "Прямое корпоративное владение долями MVZ клинической компанией"
                             : isEn
                             ? "Direct corporate ownership of MVZ subsidiaries by hospital operating company"
@@ -1369,7 +1600,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                           <TrendingUp className="w-4 h-4 stroke-[1.8]" />
                         </div>
                         <span className="text-[12.5px] sm:text-[13px] text-white/90 font-normal leading-snug">
-                          {isRu
+                          {isUz
+                            ? "Institutsional miqyos va xususiy kapital fondlariga to'liq bog'liq bo'lmaslik."
+                            : isRu
                             ? "Институциональная масштабируемость и готовность к синдикации капитала"
                             : isEn
                             ? "Institutional scalability and readiness for major equity syndication"
@@ -1386,7 +1619,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                           <Link2 className="w-4 h-4 stroke-[1.8]" />
                         </div>
                         <span className="text-[12.5px] sm:text-[13px] text-white/90 font-normal leading-snug">
-                          {isRu
+                          {isUz
+                            ? "Statsionar va ambulator davolash o'rtasida uzluksiz integratsiyalashgan tibbiy zanjir."
+                            : isRu
                             ? "Непрерывный континуум между стационаром и амбулаторными центрами"
                             : isEn
                             ? "Unbroken continuum between acute hospital wards and outpatient centers"
@@ -1404,7 +1639,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                   <div className="flex items-center gap-2.5 pt-4 border-t border-white/10">
                     <span className="w-6 h-[1.5px] bg-[#C5A56A] shrink-0" />
                     <span className="text-[11px] sm:text-[11.5px] text-[#ECCF96] font-medium tracking-wide">
-                      {isRu
+                      {isUz
+                        ? "Yuridik asos: § 30 GewO / § 108 SGB V / § 95 SGB V"
+                        : isRu
                         ? "Юридическая основа: § 30 GewO / § 108 SGB V / § 95(1a) SGB V"
                         : isEn
                         ? "Legal Basis: § 30 GewO / § 108 SGB V / § 95(1a) SGB V"
@@ -1445,7 +1682,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                   50.000 €
                 </div>
                 <div className="text-xs sm:text-sm font-semibold text-white">
-                  {isRu
+                  {isUz
+                    ? "Ustav kapitali"
+                    : isRu
                     ? "Уставный капитал"
                     : isEn
                     ? "Registered Capital"
@@ -1456,7 +1695,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                     : "Stammkapital"}
                 </div>
                 <div className="text-[11px] text-white/70">
-                  {isRu
+                  {isUz
+                    ? "HRB 16787 Mönchengladbach"
+                    : isRu
                     ? "HRB 16787 Мёнхенгладбах"
                     : isEn
                     ? "HRB 16787 Mönchengladbach"
@@ -1473,7 +1714,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                   10
                 </div>
                 <div className="text-xs sm:text-sm font-semibold text-white">
-                  {isRu
+                  {isUz
+                    ? "Sho'ba korxonalar"
+                    : isRu
                     ? "Дочерних обществ"
                     : isEn
                     ? "Group Subsidiaries"
@@ -1484,7 +1727,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                     : "Tochtergesellschaften"}
                 </div>
                 <div className="text-[11px] text-white/70">
-                  {isRu
+                  {isUz
+                    ? "3 ta strategik tarmoq"
+                    : isRu
                     ? "3 стратегические ветви"
                     : isEn
                     ? "3 strategic branches"
@@ -1501,7 +1746,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                   100%
                 </div>
                 <div className="text-xs sm:text-sm font-semibold text-white">
-                  {isRu
+                  {isUz
+                    ? "Huquqiy tozalik"
+                    : isRu
                     ? "Правовая чистота"
                     : isEn
                     ? "Regulatory Compliance"
@@ -1512,7 +1759,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                     : "Rechtssicherheit"}
                 </div>
                 <div className="text-[11px] text-white/70">
-                  {isRu
+                  {isUz
+                    ? "KV, SGB V & Berufsordnung"
+                    : isRu
                     ? "KV, SGB V & Berufsordnung"
                     : isEn
                     ? "German healthcare standards"
@@ -1529,7 +1778,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                   32°C & 3T
                 </div>
                 <div className="text-xs sm:text-sm font-semibold text-white">
-                  {isRu
+                  {isUz
+                    ? "High-End infratuzilma"
+                    : isRu
                     ? "Инфраструктура High-End"
                     : isEn
                     ? "High-End Technology"
@@ -1540,7 +1791,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                     : "Spitzentechnologie"}
                 </div>
                 <div className="text-[11px] text-white/70">
-                  {isRu
+                  {isUz
+                    ? "Basseyn, 3T MRT, toza OP zallari"
+                    : isRu
                     ? "Бассейн, 3T MRT, чистые OP"
                     : isEn
                     ? "Aquatic rehab & 3T MRI"
@@ -1565,7 +1818,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
               <div className="flex items-center justify-center gap-2 mb-1.5 sm:mb-2">
                 <span className="w-6 sm:w-8 h-[1.5px] bg-[#C5A56A]" />
                 <span className="text-[10px] sm:text-[11px] font-semibold tracking-[0.24em] text-[#C5A56A] uppercase font-sans">
-                  {isRu
+                  {isUz
+                    ? "TUZILMALI JARAYON"
+                    : isRu
                     ? "СТРУКТУРИРОВАННЫЙ ПРОЦЕСС"
                     : isEn
                     ? "STRUCTURED ROADMAP"
@@ -1578,7 +1833,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                 <span className="w-6 sm:w-8 h-[1.5px] bg-[#C5A56A]" />
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif text-[#0B2516] font-normal leading-tight">
-                {isRu ? (
+                {isUz
+                  ? "Muvaffaqiyatli hamkorlik sari to'rt qadam"
+                  : isRu ? (
                   <>
                     Четыре шага к{" "}
                     <span className="font-serif italic text-[#C5A56A]">успешному партнерству</span>
@@ -1606,7 +1863,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                 )}
               </h2>
               <p className="text-xs sm:text-[13.5px] text-[#4A5D52] leading-relaxed max-w-xl mx-auto">
-                {isRu
+                {isUz
+                  ? "Har bir bosqichda shaffof, maxfiy va qonuniy tekshirilgan jarayon."
+                  : isRu
                   ? "Прозрачный, конфиденциальный и юридически выверенный процесс: от первого контакта до интеграции."
                   : isEn
                   ? "A discreet, transparent, and legally guided pathway from initial dialogue to operational integration."
@@ -1694,7 +1953,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
               {/* Left Column: Statement stamp with subtle heart */}
               <div className="lg:col-span-4 flex flex-col justify-center py-2 lg:py-4">
                 <p className="font-serif italic text-2xl sm:text-[28px] lg:text-[32px] text-[#2F4F3E] leading-[1.18] select-none">
-                  {isRu
+                  {isUz
+                    ? "Keling, hamkorligingizni"
+                    : isRu
                     ? "Давайте обсудим"
                     : isEn
                     ? "Let's Shape the"
@@ -1704,7 +1965,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                     ? "معاً نبني"
                     : "Gemeinsam Zukunft"}
                   <br />
-                  {isRu
+                  {isUz
+                    ? "birgalikda muhokama qilamiz."
+                    : isRu
                     ? "ваше партнерство."
                     : isEn
                     ? "Future Together."
@@ -1724,7 +1987,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
               {/* Center Column: Eyebrow, Heading, Desc, Gold Button */}
               <div className="lg:col-span-4 space-y-3 sm:space-y-3.5">
                 <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-[0.2em] text-[#9B7C38] block font-sans">
-                  {isRu
+                  {isUz
+                    ? "MAXFIY MULOQOT"
+                    : isRu
                     ? "КОНФИДЕНЦИАЛЬНЫЙ КОНТАКТ"
                     : isEn
                     ? "CONFIDENTIAL DIALOGUE"
@@ -1736,7 +2001,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                 </span>
 
                 <h2 className="font-serif text-2xl sm:text-[28px] lg:text-[30px] xl:text-[32px] text-[#0F2A1D] font-normal leading-[1.2]">
-                  {isRu
+                  {isUz
+                    ? "Biz bilan bog'laning"
+                    : isRu
                     ? "Свяжитесь с нами"
                     : isEn
                     ? "Initiate Your Partnership"
@@ -1748,7 +2015,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                 </h2>
 
                 <p className="text-xs sm:text-[13px] text-[#4A5D52] leading-relaxed max-w-sm font-sans">
-                  {isRu
+                  {isUz
+                    ? "Praksis vorisligi, sektorlararo klinika loyihasi yoki investitsion ishtirok bo'ladimi — biz siz bilan shaxsan uchrashishdan mamnun bo'lamiz."
+                    : isRu
                     ? "Будь то преемственность праксиса, межсекторальное партнерство с клиникой или инвестиции — мы гарантируем полную конфиденциальность."
                     : isEn
                     ? "Whether practice succession, clinical hospital networks, or healthcare equity — we ensure maximum confidentiality."
@@ -1765,7 +2034,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                     className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 h-[48px] sm:h-[50px] rounded-full bg-gradient-to-r from-[#ECCF96] via-[#DFBF76] to-[#C8A050] hover:from-[#F4DCAC] hover:to-[#D4AC5B] text-[#08170D] text-xs sm:text-[13.5px] font-semibold transition-all duration-300 shadow-sm group hover:scale-[1.02]"
                   >
                     <span>
-                      {isRu
+                      {isUz
+                        ? "Uchrashuvga yozilish"
+                        : isRu
                         ? "Записаться на встречу"
                         : isEn
                         ? "Request appointment"
@@ -1915,7 +2186,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                   onClick={() => setSelectedPillar(null)}
                   className="w-full sm:w-auto px-5 py-2.5 rounded-full border border-[#D5C7B0] text-xs font-semibold text-[#405448] hover:bg-[#EFE8D8] transition-colors order-2 sm:order-1"
                 >
-                  {isRu
+                  {isUz
+                    ? "Oynani yopish"
+                    : isRu
                     ? "Закрыть окно"
                     : isEn
                     ? "Close window"

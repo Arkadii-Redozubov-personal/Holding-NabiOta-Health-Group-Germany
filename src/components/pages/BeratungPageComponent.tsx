@@ -69,6 +69,7 @@ export interface RealEstateDomain {
 }
 
 export function BeratungPageComponent({ locale = "de" }: Props) {
+  const isUz = locale === "uz";
   const isRu = locale === "ru";
   const isEn = locale === "en";
   const isTr = locale === "tr";
@@ -99,7 +100,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
 
   // Standard Site PageHero Data
   const heroData = {
-    title: isRu
+    title: isUz
+      ? "Ko'chmas mulk va loyihalarni rivojlantirish"
+      : isRu
       ? "Недвижимость & Девелопмент"
       : isEn
       ? "Real Estate & Project Development"
@@ -108,7 +111,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
       : isAr
       ? "الاستشارات والتطوير العقاري الطبي"
       : "Beratung & Immobilienentwicklung",
-    subtitle: isRu
+    subtitle: isUz
+      ? "NabiOta Real Estate GmbH – Kalit ostida tibbiy ko'chmas mulk"
+      : isRu
       ? "NabiOta Real Estate GmbH – Медицинская недвижимость под ключ"
       : isEn
       ? "NabiOta Real Estate GmbH – Healthcare Real Estate & Medical Infrastructure"
@@ -117,7 +122,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
       : isAr
       ? "NabiOta Real Estate GmbH – عقارات وبنية تحتية متخصصة للرعاية الصحية"
       : "NabiOta Real Estate GmbH – Spezialimmobilien für das Gesundheitswesen",
-    eyebrow: isRu
+    eyebrow: isUz
+      ? "NABIOTA REAL ESTATE GMBH • TIBBIY INFRATUZILMA"
+      : isRu
       ? "NABIOTA REAL ESTATE GMBH • МЕДИЦИНСКАЯ ИНФРАСТРУКТУРА"
       : isEn
       ? "NABIOTA REAL ESTATE GMBH • HEALTHCARE INFRASTRUCTURE"
@@ -126,7 +133,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
       : isAr
       ? "NABIOTA REAL ESTATE GMBH • البنية التحتية والعقارات الطبية"
       : "NABIOTA REAL ESTATE GMBH • MEDIZINISCHE IMMOBILIEN",
-    desc: isRu
+    desc: isUz
+      ? "NabiOta Real Estate GmbH sog'liqni saqlash sohasi bo'yicha ixtisoslashtirilgan ko'chmas mulkni sotib oladi, loyihalashtiradi, rivojlantiradi va boshqaradi: zamonaviy klinika va ambulator jarrohlik markazlaridan (OP) tortib, diagnostika majmualari, reabilitatsiya klinikalari, parvarishlash maskanlari va tibbiyot xodimlari uchun qulay turar joylargacha."
+      : isRu
       ? "NabiOta Real Estate GmbH приобретает, проектирует, развивает и управляет специализированной недвижимостью сферы здравоохранения: от современных клиник и амбулаторных хирургических центров (OP) до диагностических комплексов, реабилитационных клиник, домов ухода и комфортного жилья для медперсонала."
       : isEn
       ? "NabiOta Real Estate GmbH acquires, designs, develops, and manages specialized healthcare real estate across Germany: from modern hospital wings and outpatient surgery centers (OP) to diagnostic suites, rehab clinics, nursing homes, and residential accommodation for medical staff."
@@ -140,18 +149,18 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
   const heroBadges = [
     {
       icon: <Building2 className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu ? "Turnkey Realisierung" : isEn ? "Turnkey Delivery" : isTr ? "Anahtar Teslim Proje" : isAr ? "تنفيذ تسليم مفتاح" : "Turnkey Realisierung",
-      sub: isRu ? "Под ключ от А до Я" : isEn ? "Concept to Handover" : isTr ? "Fikirden Teslime Eksiksiz" : isAr ? "من المخطط حتى التسليم" : "Schlüsselfertig",
+      title: isUz ? "Kalit ostida topshirish" : isRu ? "Turnkey Realisierung" : isEn ? "Turnkey Delivery" : isTr ? "Anahtar Teslim Proje" : isAr ? "تنفيذ تسليم مفتاح" : "Turnkey Realisierung",
+      sub: isUz ? "A dan Z gacha kalit ostida" : isRu ? "Под ключ от А до Я" : isEn ? "Concept to Handover" : isTr ? "Fikirden Teslime Eksiksiz" : isAr ? "من المخطط حتى التسليم" : "Schlüsselfertig",
     },
     {
       icon: <ShieldCheck className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu ? "DIN 18040 & RLT" : isEn ? "DIN & Cleanroom" : isTr ? "DIN 18040 & RLT" : isAr ? "DIN 18040 & RLT" : "DIN 18040 & RLT",
-      sub: isRu ? "Медицинские стандарты" : isEn ? "Medical Standards" : isTr ? "Tıbbi Özel Yapı Standartları" : isAr ? "معايير المنشآت الطبية" : "Sonderbau-Standards",
+      title: isUz ? "DIN 18040 & RLT" : isRu ? "DIN 18040 & RLT" : isEn ? "DIN & Cleanroom" : isTr ? "DIN 18040 & RLT" : isAr ? "DIN 18040 & RLT" : "DIN 18040 & RLT",
+      sub: isUz ? "Tibbiy standartlar" : isRu ? "Медицинские стандарты" : isEn ? "Medical Standards" : isTr ? "Tıbbi Özel Yapı Standartları" : isAr ? "معايير المنشآت الطبية" : "Sonderbau-Standards",
     },
     {
       icon: <TrendingUp className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu ? "Рентабельность" : isEn ? "ESG & Feasibility" : isTr ? "Karlılık ve Sürdürülebilirlik" : isAr ? "جدوى وقيمة مستدامة" : "Wirtschaftlich & Tragfähig",
-      sub: isRu ? "Устойчивая ценность" : isEn ? "Sustainable Value" : isTr ? "Uzun Vadeli Değer Koruma" : isAr ? "حفظ القيمة على المدى البعيد" : "Langfristiger Werterhalt",
+      title: isUz ? "Rentabellik" : isRu ? "Рентабельность" : isEn ? "ESG & Feasibility" : isTr ? "Karlılık ve Sürdürülebilirlik" : isAr ? "جدوى وقيمة مستدامة" : "Wirtschaftlich & Tragfähig",
+      sub: isUz ? "Barqaror qiymat" : isRu ? "Устойчивая ценность" : isEn ? "Sustainable Value" : isTr ? "Uzun Vadeli Değer Koruma" : isAr ? "حفظ القيمة على المدى البعيد" : "Langfristiger Werterhalt",
     },
   ];
 
@@ -159,7 +168,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
   const realEstateDomains: RealEstateDomain[] = [
     {
       id: "kliniken-op",
-      badge: isRu
+      badge: isUz
+        ? "KLINIKALAR VA OPERATSIYA XONALARI"
+        : isRu
         ? "КЛИНИКИ И ОПЕРАЦИОННЫЕ"
         : isEn
         ? "CLINICS & SURGERY"
@@ -170,7 +181,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : "KLINIKEN & OP-ZENTREN",
       image: "/images/areas/surgical-center.webp",
       iconType: "building",
-      title: isRu
+      title: isUz
+        ? "Klinika binolari va ambulator jarrohlik markazlari"
+        : isRu
         ? "Клинические корпуса & Амбулаторные OP-центры"
         : isEn
         ? "Clinic Buildings & Outpatient Surgery Centers"
@@ -179,7 +192,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "مباني المستشفيات ومراكز الجراحة اليومية"
         : "Klinikgebäude & Ambulante OP-Zentren",
-      shortDesc: isRu
+      shortDesc: isUz
+        ? "Steril operatsiya zallarini (DIN 1946-4), uyg'onish palatalarini va § 30 GewO / § 115b SGB V bo'yicha statsionar bo'limlarni loyihalash va kalit ostida amalga oshirish."
+        : isRu
         ? "Проектирование и реализация стерильных операционных залов (DIN 1946-4), палат пробуждения и стационарных отделений по § 30 GewO / § 115b SGB V."
         : isEn
         ? "Planning and construction of certified cleanroom operating theaters (DIN 1946-4), PACU recovery suites, and surgical clinic wards."
@@ -189,7 +204,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         ? "تخطيط وبناء متكامل لتسليم غرف العمليات المعقمة (DIN 1946-4)، أجنحة الإفاقة، وأقسام التنويم اليومي وفق أعلى المعايير الجراحية."
         : "Planung und schlüsselfertige Realisierung von OP-Sälen (DIN 1946-4), Aufwachbereichen und tagesklinischen Bettenstationen für höchste chirurgische Standards.",
       modal: {
-        title: isRu
+        title: isUz
+          ? "Klinika binolari va ambulator jarrohlik markazlari"
+          : isRu
           ? "Клинические корпуса & Амбулаторные хирургические центры"
           : isEn
           ? "Hospital Buildings & Ambulatory Surgery Centers"
@@ -198,7 +215,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "مباني المستشفيات ومراكز الجراحة اليومية (§ 115b SGB V / § 30 GewO)"
           : "Klinikgebäude & Ambulante OP-Zentren (§ 115b SGB V / § 30 GewO)",
-        subtitle: isRu
+        subtitle: isUz
+          ? "Murakkab operatsiyalar uchun ixtisoslashgan toza shamollatish va infratuzilma"
+          : isRu
           ? "Специализированная чистая вентиляция и инфраструктура для сложных операций"
           : isEn
           ? "Advanced laminar cleanroom ventilation and surgical suite infrastructure"
@@ -207,7 +226,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تقنيات هندسية متخصصة للغرف المعقمة وتكييف الهواء للجراحات الدقيقة"
           : "Spezialisierte bauliche Reinraum- und Klimatechnik für sterile operative Eingriffe",
-        description: isRu
+        description: isUz
+          ? "Jarrohlik statsionarlarini qurish va qayta jihozlash mutlaq aniqlikni talab qiladi: 1a va 1b toifadagi toza hududlar, operatsiya stoli ustidagi laminar havo oqimi, mustaqil avariya elektr ta'minoti hamda xodimlar va bemorlar uchun germetik shlyuzlar."
+          : isRu
           ? "Строительство и переоборудование хирургических стационаров требует абсолютной точности: чистые зоны классов 1a и 1b, ламинарный поток воздуха над операционным столом, независимое аварийное электроснабжение и бесшовные шлюзы для персонала и пациентов."
           : isEn
           ? "Designing and building modern surgical inpatient and outpatient facilities requires uncompromising engineering precision: cleanroom classification 1a/1b, laminar airflow ceilings, isolated electrical safety systems, and strict aseptic airlocks."
@@ -216,7 +237,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "يتطلب تشييد المستشفيات والمراكز الجراحية اليومية خبرة هندسية وطبية عميقة. تطور NabiOta Real Estate GmbH غرف عمليات مخصصة من فئتي الغرف المعقمة 1a و 1b، وأنظمة عزل هوائي معقمة، وغرف إفاقة، وأقسام تنويم حديثة مصممة لتيسير تدفق عمل الجراحين وأطباء التخدير."
           : "Die Realisierung von Klinikbauten und ambulanten Operationszentren verlangt fundiertes bauliches und medizinisches Schnittstellenwissen. NabiOta Real Estate GmbH entwickelt maßgeschneiderte Operationssäle der Reinraumklassen 1a und 1b, sterile Schleusensysteme, Aufwachbereiche sowie moderne Patientenstationen, die optimal auf die Arbeitsabläufe von Chirurgen und Anästhesisten abgestimmt sind.",
-        specificationsTitle: isRu
+        specificationsTitle: isUz
+          ? "Texnik parametrlar"
+          : isRu
           ? "Технические параметры"
           : isEn
           ? "Technical Specifications"
@@ -225,7 +248,16 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "المواصفات الهندسية والتقنية"
           : "Bauliche & technische Spezifikationen",
-        specifications: isRu
+        specifications: isUz
+          ? [
+              "1a/1b toifadagi laminar shift maydonlariga (TAV) ega operatsiya zallari",
+              "DIN 1946-4 standarti bo'yicha oqimli-tortuvchi shamollatish (RLT) tizimlari",
+              "Tibbiy gazlarning (O2, azot oksidi, siqilgan havo, vakuum) markazlashtirilgan tarmoqlari",
+              "DIN VDE 0100-710 standarti bo'yicha avariya elektr ta'minoti (ZSV/SV)",
+              "Kechayu kunduz asbob-uskunali monitoringga ega uyg'onish palatalari (PACU)",
+              "Antistatik choksiz polimer pol qoplamalari va germetik eshiklar",
+            ]
+          : isRu
           ? [
               "Операционные залы с ламинарными потолочными полями (TAV) класса 1a/1b",
               "Системы приточно-вытяжной вентиляции (RLT) по стандарту DIN 1946-4",
@@ -269,7 +301,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
               "Voll ausgestattete Aufwachräume (PACU) mit lückenloser Monitorüberwachung",
               "Antistatische, fugenlose ableitfähige Bodenbeläge und automatische OP-Schiebetüren",
             ],
-        scopeTitle: isRu
+        scopeTitle: isUz
+          ? "NabiOta Real Estate xizmatlar portfeli"
+          : isRu
           ? "Услуги девелопера"
           : isEn
           ? "Developer Scope"
@@ -278,7 +312,15 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "نطاق خدمات NabiOta Real Estate"
           : "Leistungsportfolio NabiOta Real Estate",
-        scopeItems: isRu
+        scopeItems: isUz
+          ? [
+              "Joylashuvni tanlash, transport qulayligini tahlil qilish va shaharsozlik auditi",
+              "Funksional tibbiy-texnologik topshiriqni (MTZ) ishlab chiqish",
+              "Sog'liqni saqlash va yong'in xavfsizligi idoralari bilan kelishishni to'liq qo'llab-quvvatlash",
+              "Bosh pudrat, qurilish nazorati va kalit ostida foydalanishga topshirish",
+              "Uzoq muddatli ijara shartnomalari va muhandislik tizimlariga texnik xizmat ko'rsatish",
+            ]
+          : isRu
           ? [
               "Поиск локации, анализ транспортной доступности и градостроительный аудит",
               "Разработка функционального медико-технологического задания (МТЗ)",
@@ -317,7 +359,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
               "Generalübernahme, Baubegleitung, Qualitätskontrolle und schlüsselfertige Übergabe",
               "Abschluss maßgeschneiderter Gewerbemietverträge und technisches Facility Management",
             ],
-        technicalTitle: isRu
+        technicalTitle: isUz
+          ? "Me'yoriy baza"
+          : isRu
           ? "Нормативная база"
           : isEn
           ? "Regulatory Standards"
@@ -326,7 +370,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "المعايير واللوائح المنظمة"
           : "Normen & Richtlinien",
-        technicalText: isRu
+        technicalText: isUz
+          ? "Barcha obyektlar Sonderbauverordnung, DIN 1946-4, DIN EN ISO 14644 (toza xonalar) va Robert Koch Instituti (RKI) talablariga to'liq javob beradi."
+          : isRu
           ? "Все объекты соответствуют требованиям Sonderbauverordnung, DIN 1946-4, DIN EN ISO 14644 (чистые помещения) и директивам Института Роберта Коха (RKI)."
           : isEn
           ? "All clinic facilities strictly conform to hospital codes, DIN 1946-4, DIN EN ISO 14644 (cleanrooms), and Robert Koch Institute (RKI) hygiene directives."
@@ -335,7 +381,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تتم أعمال التخطيط والتشييد بالتوافق الصارم مع لوائح المنشآت الطبية الخاصة، ومعيار DIN 1946-4، ومعيار DIN EN ISO 14644 للغرف المعقمة، وتوجيهات معهد روبرت كوخ (RKI)."
           : "Planung und Bau erfolgen streng nach den Krankenhaus-Sonderbauverordnungen, DIN 1946-4, DIN EN ISO 14644 (Reinraumtechnik) und den Hygieneempfehlungen der KRINKO am RKI.",
-        legalTitle: isRu
+        legalTitle: isUz
+          ? "Yuridik ajratish"
+          : isRu
           ? "Юридическое разделение"
           : isEn
           ? "Legal Framework"
@@ -344,7 +392,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "الفصل الهيكلي والقانوني"
           : "Rechtliche Entflechtung",
-        legalText: isRu
+        legalText: isUz
+          ? "Aniq taqsimot: NabiOta Real Estate GmbH binolarning dasturchisi va ijaraga beruvchisi hisoblanadi, tibbiy faoliyat va litsenziyalar esa klinika operatorlariga tegishlidir."
+          : isRu
           ? "Четкое разграничение: NabiOta Real Estate GmbH выступает девелопером и арендодателем помещений, а медицинская деятельность и лицензии принадлежат операторам клиник."
           : isEn
           ? "Clear structural separation: NabiOta Real Estate GmbH acts solely as property owner, developer, and lessor; clinical responsibility remains with licensed operating clinics."
@@ -353,7 +403,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "لا تمارس الشركة العقارية أي نشاط علاجي طبي. يتم الفصل التعاقدي والقانوني الدقيق بين ملكية المبنى والمرافق الهندسية وبين التشغيل الطبي والسريري."
           : "Die Immobiliengesellschaft übernimmt keine medizinischen Behandlungsaufgaben. Die Verantwortlichkeiten für Gebäude, Haustechnik und den medizinischen Betrieb werden vertraglich eindeutig voneinander abgegrenzt.",
-        ctaButtonText: isRu
+        ctaButtonText: isUz
+          ? "Klinika konsepsiyasini so'rash"
+          : isRu
           ? "Запросить концепцию клиники"
           : isEn
           ? "Inquire Clinic Project"
@@ -366,7 +418,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
     },
     {
       id: "mvz-praxen",
-      badge: isRu
+      badge: isUz
+        ? "MVZ VA TIBBIYOT MARKAZLARI"
+        : isRu
         ? "MVZ И МЕДЦЕНТРЫ"
         : isEn
         ? "MVZ & MEDICAL CENTERS"
@@ -377,7 +431,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : "MVZ & ÄRZTEHÄUSER",
       image: "/images/beratung/project-mvz.webp",
       iconType: "stethoscope",
-      title: isRu
+      title: isUz
+        ? "Tibbiyot markazlari (MVZ) va shifokor praksislari"
+        : isRu
         ? "Медицинские центры (MVZ) & Врачебные праксисы"
         : isEn
         ? "Medical Centers (MVZ) & Practice Spaces"
@@ -386,7 +442,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "المراكز الطبية المجمعة (MVZ) ومباني العيادات"
         : "Medizinische Versorgungszentren (MVZ) & Ärztehäuser",
-      shortDesc: isRu
+      shortDesc: isUz
+        ? "KV Nordrhein standartlari bo'yicha zamonaviy praksislar: to'siqsiz muhit (DIN 18040-1), modulli xonalar va moslashuvchan rejalashtirish."
+        : isRu
         ? "Современные праксисы по стандартам KV Nordrhein: безбарьерная среда (DIN 18040-1), модульные кабинеты и гибкие планировки."
         : isEn
         ? "Accredited outpatient clinic spaces adhering to KV guidelines: barrier-free access (DIN 18040-1), modular consultation rooms, and efficient layouts."
@@ -396,7 +454,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         ? "مساحات عيادات معتمدة وفق § 95 SGB V بتصاميم خالية من العوائق ومطابقة لاشتراطات اتحاد أطباء التأمين ووحدات معيارية مرنة."
         : "Zulassungskonforme Praxisflächen nach § 95 SGB V mit barrierefreien Raumkonzepten, KV-Genehmigungsfähigkeit und modularen Einheiten.",
       modal: {
-        title: isRu
+        title: isUz
+          ? "Tibbiyot markazlari (MVZ) va shifokor praksislari"
+          : isRu
           ? "Медицинские центры (MVZ) & Врачебные праксисы"
           : isEn
           ? "Medical Versorgungszentren (MVZ) & Healthcare Hubs"
@@ -405,7 +465,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "المراكز الطبية المجمعة (MVZ) وعيادات الأطباء الاستشاريين"
           : "Medizinische Versorgungszentren (MVZ) & Facharztpraxen",
-        subtitle: isRu
+        subtitle: isUz
+          ? "Turli mutaxassislikdagi shifokorlar uchun funksional maydonlar"
+          : isRu
           ? "Функциональные пространства для врачей различных специальностей"
           : isEn
           ? "Compliant, patient-friendly outpatient spaces tailored for physician practices"
@@ -414,7 +476,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "مساحات عيادات مستقبلية مصممة وفق لوائح نقابات الأطباء والتأمين القانوني"
           : "Zukunftssichere Praxisflächen nach KV- und Berufsrecht",
-        description: isRu
+        description: isUz
+          ? "Yakka shifokor praksisidan tortib ko'p tarmoqli ambulator MVZ kampusigacha: biz mintaqaviy sog'liqni saqlash ehtiyojlarini tahlil qilamiz, Kassenärztliche Vereinigung (KV Nordrhein) me'yorlarini muvofiqlashtiramiz va bemorlar hamda shifokorlar uchun eng qulay harakatlanish logistikasiga ega funksional maydonlarni loyihalashtiramiz."
+          : isRu
           ? "От одиночного врачебного кабинета до крупного многопрофильного амбулаторного кампуса: мы анализируем потребности региона, согласуем проект с Ассоциацией врачей больничных касс (KV Nordrhein) и создаем пространства, где удобно и врачам, и пациентам."
           : isEn
           ? "From single specialist practices to interdisciplinary MVZ hubs: we analyze regional medical demographics, ensure KV Nordrhein licensing alignment, and construct clinic environments engineered for optimal patient flow and confidentiality."
@@ -423,7 +487,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "من عيادة استشارية فردية إلى مجمع طبي متعدد التخصصات: ندرس احتياجات الرعاية الإقليمية، ونتحقق من معايير ترخيص اتحاد أطباء التأمين (KV Nordrhein)، ونبتكر مخططات وظيفية توفر مسارات سلسة للمرضى والأطباء."
           : "Vom Einzelpraxissitz bis zum fachübergreifenden MVZ-Campus: Wir analysieren den lokalen Versorgungsbedarf, prüfen Kassenarztsitz-Vorgaben der Kassenärztlichen Vereinigung (KV Nordrhein) und entwickeln funktionale Raumprogramme, die kurze Wege für Patienten und Ärzte schaffen.",
-        specificationsTitle: isRu
+        specificationsTitle: isUz
+          ? "Me'moriy standartlar va jihozlanish"
+          : isRu
           ? "Архитектурные стандарты"
           : isEn
           ? "Facility Features"
@@ -432,7 +498,16 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "المخطط المعماري والتجهيزات"
           : "Raumprogramm & Ausstattung",
-        specifications: isRu
+        specifications: isUz
+          ? [
+              "DIN 18040-1 bo'yicha to'liq to'siqsizlik (keng eshiklar, zambillar uchun liftlar)",
+              "Modulli qabul xonalari, muolaja xonalari va kichik operatsiya xonalari",
+              "Suhbatlar maxfiyligi uchun SSK 3 toifasidagi to'siqlar va eshiklar tovush izolyatsiyasi",
+              "Tabiiy yorug'likka ega kutish zonalari va bemorlar oqimining puxta taqsimlanishi",
+              "Strukturalangan Cat.7 kabel tarmog'i va himoyalangan server tugunlari",
+              "ASR me'yorlari bo'yicha xodimlar uchun qulay dam olish va kiyinish xonalari",
+            ]
+          : isRu
           ? [
               "Полная безбарьерность по DIN 18040-1 (широкие проемы, лифты для каталок)",
               "Модульные кабинеты приема, процедурные и малые операционные",
@@ -476,7 +551,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
               "Zukunftssichere IT-Infrastruktur mit Cat.7-Verkabelung und klimatisierten Serverräumen",
               "Mitarbeiter- und Sozialräume gemäß Arbeitsstättenverordnung (ASR)",
             ],
-        scopeTitle: isRu
+        scopeTitle: isUz
+          ? "Bizning xizmatlar ko'lami"
+          : isRu
           ? "Что мы берем на себя"
           : isEn
           ? "Our Turnkey Services"
@@ -485,7 +562,15 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "الخدمات المقدمة لأصحاب العيادات ومراكز MVZ"
           : "Leistungen für Praxisinhaber & MVZ",
-        scopeItems: isRu
+        scopeItems: isUz
+          ? [
+              "Istiqbolli yer uchastkalari va obyektlarni tanlash hamda sotib olish",
+              "Muayyan tibbiy ixtisosliklar talablari asosida rejalashtirish yechimlarini ishlab chiqish",
+              "KV, shahar hokimiyati va kommunal xizmatlar bilan hamkorlik",
+              "Qurilish ishlarini moliyalashtirish va binolarni ijarachiga moslashtirish",
+              "Obyekt ekspluatatsiyasini uzoq muddatli boshqarish (Facility Management)",
+            ]
+          : isRu
           ? [
               "Подбор и выкуп перспективных земельных участков и объектов",
               "Разработка планировочных решений под требования конкретных медицинских специализаций",
@@ -524,7 +609,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
               "Finanzierungsstrukturierung, schlüsselfertiger Mieterausbau und Einbau fester Einbauten",
               "Langfristige Betreuung durch hauseigenes Facility Management und Nebenkostenabrechnung",
             ],
-        technicalTitle: isRu
+        technicalTitle: isUz
+          ? "Qurilish me'yorlari"
+          : isRu
           ? "Строительные нормы"
           : isEn
           ? "Applicable Codes"
@@ -533,7 +620,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "المعايير المعتمدة"
           : "Standards",
-        technicalText: isRu
+        technicalText: isUz
+          ? "DIN 18040-1, DIN 4109 (tovush izolyatsiyasi), KV Nordrhein qoidalari va ASR A1.2 ish joylari talablari."
+          : isRu
           ? "DIN 18040-1, DIN 4109 (звукоизоляция), правила KV Nordrhein и требования рабочих мест ASR A1.2."
           : isEn
           ? "DIN 18040-1 accessibility, DIN 4109 acoustic privacy, KV physician facility guidelines, and ASR workplace codes."
@@ -542,7 +631,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "معيار DIN 18040-1 للمباني العامة الخالية من العوائق، DIN 4109 للعزل الصوتي، إرشادات KV، ومعايير ASR."
           : "DIN 18040-1 (Barrierefreiheit öffentlich zugänglicher Gebäude), DIN 4109 (Schallschutz im Hochbau), KV-Richtlinien und ASR.",
-        legalTitle: isRu
+        legalTitle: isUz
+          ? "Ijara modellari"
+          : isRu
           ? "Арендные модели"
           : isEn
           ? "Contractual Setup"
@@ -551,7 +642,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "عقود الإيجار المتوافقة قانونياً"
           : "Rechtskonforme Mietverträge",
-        legalText: isRu
+        legalText: isUz
+          ? "Tibbiy amaliyotning barqarorligini va shifokor qarorlarining to'liq mustaqilligini kafolatlaydigan uzoq muddatli tijorat ijara shartnomalari."
+          : isRu
           ? "Долгосрочные договоры коммерческой аренды, гарантирующие стабильность медицинской практики и полную независимость врачебных решений."
           : isEn
           ? "Long-term commercial healthcare leases ensuring practice longevity while preserving total medical autonomy."
@@ -560,7 +653,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "عقود إيجار تجارية طويلة الأجل تمنح أصحاب العيادات استقراراً اقتصادياً واستقلالية مهنية كاملة."
           : "Gewerbemietverträge mit planungssicheren Laufzeiten, die den Praxisinhabern Unabhängigkeit und langfristige wirtschaftliche Stabilität sichern.",
-        ctaButtonText: isRu
+        ctaButtonText: isUz
+          ? "MVZ uchun xona tanlash"
+          : isRu
           ? "Подобрать помещение для MVZ"
           : isEn
           ? "Find Practice Location"
@@ -573,7 +668,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
     },
     {
       id: "diagnostik-infra",
-      badge: isRu
+      badge: isUz
+        ? "RADIOLOGIYA VA MRT"
+        : isRu
         ? "РАДИОЛОГИЯ И МРТ"
         : isEn
         ? "RADIOLOGY & MRI"
@@ -584,7 +681,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : "HIGH-END RADIOLOGIE",
       image: "/images/areas/diagnostics.webp",
       iconType: "activity",
-      title: isRu
+      title: isUz
+        ? "Diagnostika markazlari va radiatsion himoya"
+        : isRu
         ? "Диагностические центры & Радиационная защита"
         : isEn
         ? "Diagnostic Centers & Radiation Shielding"
@@ -593,7 +692,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "مراكز التشخيص وبنية الوقاية من الإشعاع"
         : "Diagnostikzentren & Strahlenschutz-Infrastruktur",
-      shortDesc: isRu
+      shortDesc: isUz
+        ? "3T MRT, KT va rentgen apparatlari uchun konstruktiv va statik yechimlar: Faradey kataklari, qo'rg'oshinli himoya va tebranishni so'ndirish."
+        : isRu
         ? "Конструктивные и статические решения для томографов 3T МРТ, КТ и рентгена: клетки Фарадея, свинцовая защита и гашение вибраций."
         : isEn
         ? "Structural and shielding engineering for 3T MRI, CT, and X-ray modalities: Faraday RF cages, lead lining, and vibration isolation."
@@ -603,7 +704,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         ? "حلول إنشائية وهندسية متخصصة لأجهزة 3T MRI، الأشعة المقطعية، والرقمية تشمل التدريع الرصاصي، أقفاص فاراداي، وأنابيب تفريغ الهيليوم."
         : "Bauliche und statische Sonderlösungen für 3T MRT, CT und digitales Röntgen inklusive Bleischirmung, HF-Kabinen und Quenchrohren.",
       modal: {
-        title: isRu
+        title: isUz
+          ? "Diagnostika markazlari va nur diagnostikasi infratuzilmasi"
+          : isRu
           ? "Диагностические центры и инфраструктура лучевой диагностики"
           : isEn
           ? "Advanced Imaging Centers & Radiation Protection Infrastructure"
@@ -612,7 +715,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "مراكز التشخيص وبنية الحماية الإشعاعية (3T MRI, CT, Röntgen)"
           : "Diagnostikzentren & Strahlenschutz-Infrastruktur (3T MRT, CT, Röntgen)",
-        subtitle: isRu
+        subtitle: isUz
+          ? "Og'ir va yuqori texnologiyali uskunalar uchun muhandislik yechimlari"
+          : isRu
           ? "Инженерные решения для тяжелого высокотехнологичного оборудования"
           : isEn
           ? "Heavy structural engineering and electromagnetic shielding for high-end radiology"
@@ -621,7 +726,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "هندسة إنشائية، حجب الترددات اللاسلكية، وتدريع إشعاعي للمعدات الطبية الثقيلة"
           : "Statik, HF-Abschirmung und baulicher Strahlenschutz für bildgebende Großgeräte",
-        description: isRu
+        description: isUz
+          ? "Zamonaviy diagnostika uskunalarini (3 Tesla MRT, past dozali kompyuter tomograflari, raqamli rentgen) joylashtirish noyob qurilish yechimlarini talab qiladi: 15 tonnagacha bo'lgan tebranishdan yalıtılmış poydevor plitalari, radiochastotalardan himoyalovchi mis Faradey kataklari, qo'rg'oshinli devor himoyasi va geliyning favqulodda chiqarish quvurlari (kvench liniyalari)."
+          : isRu
           ? "Размещение современного диагностического оборудования (МРТ 3 Тесла, низкодозные компьютерные томографы, цифровой рентген) требует уникальных строительных решений: виброизолированных плит весом до 15 тонн, медных клеток Фарадея для защиты от радиопомех, свинцовой защиты стен и труб экстренного сброса гелия (квенч-линии)."
           : isEn
           ? "Installing cutting-edge imaging modalities such as 3-Tesla MRI and multi-slice CT scanners involves complex architectural engineering: vibration-isolated foundations supporting up to 15 tons, copper Faraday RF shielding, lead radiation barriers, and exterior quench ventilation."
@@ -630,7 +737,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "يتطلب تركيب معدات التصوير التشخيصي الكبرى مثل أجهزة الرنين المغناطيسي عالية المجال (3 تسلا) والأشعة المقطعية دقة هندسية متناهية منذ مرحلة الهيكل الإنشائي. نقوم بتنفيذ قواعد معزولة عن الاهتزاز، أقفاص فاراداي لحجب الترددات، وتدابير الحماية الإشعاعية طبقاً لقانون الوقاية من الإشعاع (StrlSchG)."
           : "Die Installation modernster bildgebender Großgeräte wie High-Field-MRT (3 Tesla) und Computertomographen erfordert bereits in der Rohbauphase höchste ingenieurtechnische Präzision. Wir realisieren schwingungsentkoppelte Fundamente, Faraday-Käfige zur Hochfrequenzabschirmung und bauliche Strahlenschutzmaßnahmen nach den strengsten Vorgaben des Strahlenschutzgesetzes (StrlSchG).",
-        specificationsTitle: isRu
+        specificationsTitle: isUz
+          ? "Muhandislik komponentlari va texnik infratuzilma"
+          : isRu
           ? "Инженерные компоненты"
           : isEn
           ? "Engineering Solutions"
@@ -639,7 +748,16 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "المتطلبات التقنية الخاصة"
           : "Technische Sonderanforderungen",
-        specifications: isRu
+        specifications: isUz
+          ? [
+              "10 tonnadan ortiq yuk ko'tarish qobiliyatiga ega vibroizolyatsiyalangan monolit poydevorlar",
+              "3T MRT uchun mis radiochastota ekranlovchi kabinalari (Faraday-Käfig)",
+              "Po'lat plitalar bilan magnit ekranlash (5 Gauss chizig'ini cheklash)",
+              "Geliyni favqulodda chiqarib yuborish uchun katta diametrli zanglamaydigan kvanch quvurlari",
+              "KT va rentgen uchun devorlar, eshiklar va kuzatuv oynalarining qo'rg'oshinli himoyasi (DIN 6812)",
+              "Avtonom aniq sovitish va uzluksiz elektr ta'minoti (UPS) tizimlari",
+            ]
+          : isRu
           ? [
               "Виброизолированные монолитные фундаменты с несущей способностью свыше 10 т",
               "Медные радиочастотные экранирующие кабины (Faraday-Käfig) для МРТ 3T",
@@ -683,7 +801,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
               "Baulicher Strahlenschutz mit Bleigleichwerten nach DIN 6812 für CT und Röntgenräume",
               "Redundante Kaltwasserversorgungen für die Heliumkompressoren und 100% USV-Pufferung",
             ],
-        scopeTitle: isRu
+        scopeTitle: isUz
+          ? "To'liq amalga oshirish majmuasi"
+          : isRu
           ? "Комплекс работ"
           : isEn
           ? "Turnkey Execution"
@@ -692,7 +812,15 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "مراحل تنفيذ المشروع"
           : "Projektabwicklung",
-        scopeItems: isRu
+        scopeItems: isUz
+          ? [
+              "Loyihalashdan oldin uchastkada tebranish va elektromagnit o'lchovlar o'tkazish",
+              "Konstruktiv yechimlarni tomograf ishlab chiqaruvchilari (Siemens, GE, Philips) bilan kelishish",
+              "Tibbiy fiziklar bilan birgalikda radiatsion himoyani hisoblash va loyihalash",
+              "Ekranlashni o'rnatish va qabul sinovlarini o'tkazish (TÜV)",
+              "Magnit va uskunalarni olib kirish uchun montaj tuynuklarini ta'minlash",
+            ]
+          : isRu
           ? [
               "Вибрационные и электромагнитные замеры на участке перед началом проектирования",
               "Согласование конструктивных решений с производителями томографов (Siemens, GE, Philips)",
@@ -731,7 +859,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
               "Schlüsselfertige Montage der HF-Kabine und Begleitung der TÜV-Bauabnahme",
               "Planung temporärer Einbringöffnungen in Fassade und Dach für Großmagneten",
             ],
-        technicalTitle: isRu
+        technicalTitle: isUz
+          ? "Xavfsizlik standartlari"
+          : isRu
           ? "Стандарты безопасности"
           : isEn
           ? "Safety Codes"
@@ -740,7 +870,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "الأطر واللوائح القانونية"
           : "Gesetzliche Vorgaben",
-        technicalText: isRu
+        technicalText: isUz
+          ? "Strahlenschutzgesetz (StrlSchG), Strahlenschutzverordnung (StrlSchV) va DIN 6812 standarti."
+          : isRu
           ? "Strahlenschutzgesetz (StrlSchG), Strahlenschutzverordnung (StrlSchV) и стандарт DIN 6812."
           : isEn
           ? "German Radiation Protection Act (StrlSchG), Radiation Ordinance (StrlSchV), and DIN 6812."
@@ -749,7 +881,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "قانون الوقاية من الإشعاع الألماني (StrlSchG)، ولائحة الحماية الإشعاعية (StrlSchV)، ومعيار DIN 6812."
           : "Strahlenschutzgesetz (StrlSchG), Strahlenschutzverordnung (StrlSchV) sowie DIN 6812 (Medizinische Röntgenanlagen).",
-        legalTitle: isRu
+        legalTitle: isUz
+          ? "Foydalanish tartibi"
+          : isRu
           ? "Эксплуатация"
           : isEn
           ? "Operational Model"
@@ -758,7 +892,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "نموذج التشغيل والتعاقد"
           : "Betreibervereinbarung",
-        legalText: isRu
+        legalText: isUz
+          ? "NabiOta Real Estate barcha ruxsatnomalarga ega to'liq tayyor xonalarni taqdim etadi, asbob-uskunalar operatori esa NabiOta Diagnostics GmbH hisoblanadi."
+          : isRu
           ? "NabiOta Real Estate сдает полностью подготовленные помещения с допусками, а оператором оборудования выступает NabiOta Diagnostics GmbH."
           : isEn
           ? "NabiOta Real Estate provides turnkey, pre-certified infrastructure leased to NabiOta Diagnostics GmbH."
@@ -767,7 +903,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "يتم تسليم المساحات المجهزة تسليم مفتاح عبر عقود إيجار طويلة الأجل لشركة NabiOta Diagnostics GmbH أو الشركاء المستقلين."
           : "Die Bereitstellung der schlüsselfertigen Räume erfolgt im Rahmen langfristiger Mietverträge an die NabiOta Diagnostics GmbH oder externe radiologische Gemeinschaftspraxen.",
-        ctaButtonText: isRu
+        ctaButtonText: isUz
+          ? "Radiologiya bo'yicha maslahat"
+          : isRu
           ? "Консультация по радиологии"
           : isEn
           ? "Inquire Radiology Facility"
@@ -780,7 +918,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
     },
     {
       id: "reha-therapie",
-      badge: isRu
+      badge: isUz
+        ? "REABILITATSIYA VA SPORT"
+        : isRu
         ? "РЕАБИЛИТАЦИЯ И СПОРТ"
         : isEn
         ? "REHABILITATION"
@@ -791,7 +931,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : "REHA & SPORTTHERAPIE",
       image: "/images/beratung/project-reha.webp",
       iconType: "heartpulse",
-      title: isRu
+      title: isUz
+        ? "Reabilitatsiya va terapiya markazlari"
+        : isRu
         ? "Реабилитационные & Терапевтические центры"
         : isEn
         ? "Rehabilitation & Physical Therapy Centers"
@@ -800,7 +942,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "مراكز التأهيل والعلاج الطبيعي"
         : "Rehabilitations- & Therapieeinrichtungen",
-      shortDesc: isRu
+      shortDesc: isUz
+        ? "Davolovchi jismoniy tarbiya zallari, trenajyor parklari (MTT), gidroterapiya havzalari va ergoterapiya xonalari."
+        : isRu
         ? "Специализированные залы лечебной физкультуры, тренажерные парки (MTT), гидротерапевтические бассейны и кабинеты эрготерапии."
         : isEn
         ? "Specialized physical therapy suites, Medical Training Therapy (MTT) gym floors, hydrotherapy pools, and occupational rooms."
@@ -810,7 +954,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         ? "مساحات متخصصة للعلاج الطبيعي، صالات التدريب الطبي (MTT)، أحواض العلاج المائي، وغرف علاج مهيأة بالكامل."
         : "Spezialflächen für Krankengymnastik, MTT-Geräteparks, Bewegungsbäder und barrierefreie Behandlungsräume.",
       modal: {
-        title: isRu
+        title: isUz
+          ? "Reabilitatsiya va terapiya markazlari"
+          : isRu
           ? "Реабилитационные & Терапевтические центры"
           : isEn
           ? "Outpatient Rehabilitation & Therapy Infrastructure"
@@ -819,7 +965,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "مراكز التأهيل والعلاج الطبيعي (وفق § 125 SGB V)"
           : "Rehabilitations- & Therapieeinrichtungen (nach § 125 SGB V)",
-        subtitle: isRu
+        subtitle: isUz
+          ? "Harakatlanish, kuchni tiklash va faol hayotga qaytish uchun maydonlar"
+          : isRu
           ? "Пространства для движения, восстановления сил и возвращения к активной жизни"
           : isEn
           ? "Specialized spaces engineered for functional movement, aquatic therapy, and restorative care"
@@ -828,7 +976,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "عمارة وظيفية للعلاج الشامل واستعادة القدرة الحركية"
           : "Funktionale Architektur für ganzheitliche Heilmitteltherapie und Mobilisation",
-        description: isRu
+        description: isUz
+          ? "Ambulator reabilitatsiya tibbiy muolaja xonalari, keng tibbiy mashg'ulot maydonlari (MTT) va gidroterapiya zonalari o'rtasidagi uyg'unlikni talab qiladi. Biz davlat tibbiy sug'urtasi (GKV) va Germaniya pensiya sug'urtasi (DRV) litsenziyalash mezonlariga to'liq javob beradigan terapevtik maydonlarni loyihalashtiramiz va quramiz."
+          : isRu
           ? "Амбулаторная реабилитация требует баланса между медицинскими процедурными кабинетами, просторными тренировочными залами и зонами водной терапии. Мы создаем терапевтические пространства, строго соответствующие критериям допуска больничных касс (GKV) и пенсионного страхования (DRV)."
           : isEn
           ? "Outpatient rehabilitation centers combine private clinical therapy rooms with expansive training gym floors and aquatic hydrotherapy facilities. We engineer spaces meeting the exacting licensing specifications of German statutory insurers (GKV) and pension funds (DRV)."
@@ -837,7 +987,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تجمع مراكز التأهيل الخارجية بين غرف العلاج الطبيعي الفردي، صالات التدريب العلاجي الطبي (MTT)، وتطبيقات العلاج المائي. نخطط مساحات تتطابق بدقة مع متطلبات الترخيص لصناديق التأمين الصحي القانوني (GKV) وهيئة التأمين التقاعدي الألمانية (DRV)."
           : "Ambulante Rehabilitationszentren verbinden physiotherapeutische Einzelbehandlung, Medizinische Trainingstherapie (MTT) und hydrotherapeutische Anwendungen. Wir planen Flächen, die den Anforderungen der gesetzlichen Krankenkassen (GKV-Spitzenverband) und der Deutschen Rentenversicherung (DRV) exakt entsprechen.",
-        specificationsTitle: isRu
+        specificationsTitle: isUz
+          ? "Jihozlanish va funksional zonalar"
+          : isRu
           ? "Оснащение и зоны"
           : isEn
           ? "Facility Scope"
@@ -846,7 +998,16 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "المخطط المساحي والمتطلبات الإنشائية"
           : "Raumprogramm & Bauanforderungen",
-        specifications: isRu
+        specifications: isUz
+          ? [
+              "Elastik amortizatsiyalovchi pol qoplamasiga ega keng MTT mashg'ulot zallari",
+              "32–34°C gacha isitiladigan va ko'targichlar bilan jihozlangan gidroterapiya havzalari",
+              "Fizio-, ergo- va logopediya uchun individual tovush o'tkazmaydigan xonalar",
+              "Nogironlar aravachalari uchun to'siqsiz yechinish xonalari, dushlar va sanuzellar",
+              "Basseyn zonasida issiqlik rekuperatsiyasi va havoni quritishga ega ventilatsiya qurilmalari",
+              "Bemorlarning xavfsiz yurishi uchun keng yo'laklar va devor tutqichlari",
+            ]
+          : isRu
           ? [
               "Просторные тренировочные залы MTT с упругими амортизирующими полами",
               "Гидротерапевтические бассейны с подогревом до 32–34°C и подъемниками",
@@ -890,7 +1051,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
               "Spezielle Lüftungsanlagen mit Wärmerückgewinnung und Entfeuchtung für Nassbereiche (VDI 2089)",
               "Breite Verkehrswege und durchgehende Handläufe für gehbehinderte Patienten",
             ],
-        scopeTitle: isRu
+        scopeTitle: isUz
+          ? "Ob'ektni to'liq ishlab chiqish"
+          : isRu
           ? "Девелопмент объекта"
           : isEn
           ? "Development Phase"
@@ -899,7 +1062,15 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "نطاق خدمات NabiOta Real Estate"
           : "Leistungen von NabiOta Real Estate",
-        scopeItems: isRu
+        scopeItems: isUz
+          ? [
+              "NabiOta Reha reabilitologlari bilan birgalikda konsepsiyani ishlab chiqish",
+              "Basseyn kosasi, suvni filtrlash va dezinfeksiya qilish tizimlarini loyihalash",
+              "Sport trenajyorlarining qo'shni xonalardan shovqin va tebranish izolyatsiyasini ta'minlash",
+              "Xonalarni tibbiy sug'urtaga ruxsat berish komissiyalari bilan muvofiqlashtirish",
+              "Obyekt ekspluatatsiyasini boshqarish va energiya sarfini nazorat qilish",
+            ]
+          : isRu
           ? [
               "Разработка концепции совместно с реабилитологами NabiOta Reha",
               "Проектирование чаши бассейна, систем фильтрации и дезинфекции воды",
@@ -938,7 +1109,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
               "Vorbereitung der Kassenzulassungsabnahme nach § 125 SGB V",
               "Nachhaltiges technisches Facility Management und energetische Optimierung",
             ],
-        technicalTitle: isRu
+        technicalTitle: isUz
+          ? "Me'yorlar"
+          : isRu
           ? "Нормативы"
           : isEn
           ? "Codes & Guidelines"
@@ -947,7 +1120,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "المعايير المعتمدة"
           : "Standards",
-        technicalText: isRu
+        technicalText: isUz
+          ? "Davolash muassasalariga GKV-Spitzenverband talablari, VDI 2089 (basseynlar) va DIN 18040-1."
+          : isRu
           ? "Требования GKV-Spitzenverband к лечебным учреждениям, VDI 2089 (бассейны) и DIN 18040-1."
           : isEn
           ? "GKV outpatient rehabilitation guidelines, VDI 2089 (pool ventilation), and DIN 18040-1."
@@ -956,7 +1131,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "إرشادات GKV لاعتماد مقدمي العلاج، معيار VDI 2089 (أحواض السباحة) وDIN 18040-1."
           : "GKV-Zulassungsempfehlungen für Heilmittelerbringer, VDI 2089 (Schwimmbäder) und DIN 18040-1.",
-        legalTitle: isRu
+        legalTitle: isUz
+          ? "Hamkorlik shakli"
+          : isRu
           ? "Форма сотрудничества"
           : isEn
           ? "Leasing Structure"
@@ -965,7 +1142,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "شراكة التشغيل ونموذج التأجير"
           : "Betreiberpartnerschaft",
-        legalText: isRu
+        legalText: isUz
+          ? "Ijarachi sifatida NabiOta Rehabilitation & Therapy GmbH yoki hamkor reabilitatsiya klinikalari ishtirok etadi."
+          : isRu
           ? "Арендаторами выступают NabiOta Rehabilitation & Therapy GmbH либо партнерские реабилитационные клиники."
           : isEn
           ? "Facilities are leased to NabiOta Rehabilitation & Therapy GmbH or accredited partner therapy clinics."
@@ -974,7 +1153,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "يتم تأجير المرافق لشركة NabiOta Rehabilitation & Therapy GmbH أو لمشغلي مراكز التأهيل الشركاء."
           : "Die Vermietung erfolgt an die NabiOta Rehabilitation & Therapy GmbH oder kooperierende Reha-Betreiber.",
-        ctaButtonText: isRu
+        ctaButtonText: isUz
+          ? "Reabilitatsiya loyihasini so'rash"
+          : isRu
           ? "Запросить проект реабилитации"
           : isEn
           ? "Inquire Rehab Project"
@@ -987,7 +1168,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
     },
     {
       id: "pflege-wohnen",
-      badge: isRu
+      badge: isUz
+        ? "PARVARISH VA KEKSALAR"
+        : isRu
         ? "УХОД И СЕНИОРЫ"
         : isEn
         ? "SENIOR LIVING"
@@ -998,7 +1181,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : "PFLEGE & SENIORENRESIDENZEN",
       image: "/images/beratung/project-pflege.webp",
       iconType: "heart",
-      title: isRu
+      title: isUz
+        ? "Parvarish uylari va to'siqsiz qarorgohlar"
+        : isRu
         ? "Дома ухода & Безбарьерные резиденции"
         : isEn
         ? "Nursing Homes & Barrier-Free Senior Living"
@@ -1007,7 +1192,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "دور الرعاية ومجمعات السكن المهيأة للمسنين"
         : "Pflegeeinrichtungen & Barrierefreie Wohnformen",
-      shortDesc: isRu
+      shortDesc: isUz
+        ? "DIN 18040-2 standarti bo'yicha yashash va patronaj majmualari: oilaviy guruhlar formati, sensor bog'lar va qulay muhit."
+        : isRu
         ? "Жилые и патронажные комплексы по стандарту DIN 18040-2: формат семейных групп, сенсорные сады и уютная среда для пожилых."
         : isEn
         ? "Senior residential care complexes per DIN 18040-2: family-style care communities, memory gardens, and supportive elderly environments."
@@ -1017,7 +1204,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         ? "عقارات سكنية ورعائية وفق DIN 18040-2 بمفاهيم المجموعات العائلية وحدائق رعاية الخرف وشقق خالية تماماً من العوائق."
         : "Wohn- und Pflegeimmobilien nach DIN 18040-2 mit Hausgemeinschaftskonzepten, Demenzgärten und barrierefreien Appartements.",
       modal: {
-        title: isRu
+        title: isUz
+          ? "Parvarish uylari, kunduzgi statsionarlar va keksalar uchun servisli turar joylar"
+          : isRu
           ? "Дома ухода, дневные стационары и сервисное жилье для пожилых"
           : isEn
           ? "Nursing Homes, Day-Care Centers & Assisted Living Residences"
@@ -1026,7 +1215,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "مؤسسات الرعاية التمريضية والرعاية النهارية والسكن المدعوم (متوافقة مع WTG)"
           : "Pflegeeinrichtungen, Tagespflegen & Servicewohnen (WTG-konform)",
-        subtitle: isRu
+        subtitle: isUz
+          ? "Uy sharoitidagi qulaylik, xavfsizlik va funksional patronaj infratuzilmasi"
+          : isRu
           ? "Домашний уют, безопасность и функциональная патронажная инфраструктура"
           : isEn
           ? "Homelike warmth, safety, and specialized ergonomic infrastructure for seniors"
@@ -1035,7 +1226,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "أجواء أسرية دافئة وبنية تحتية وظيفية متطورة لرعاية كبار السن"
           : "Wohnliche Geborgenheit und funktionale Pflegeinfrastruktur im Alter",
-        description: isRu
+        description: isUz
+          ? "Keksa yoshdagi insonlar uchun zamonaviy arxitektura uy sharoitidagi qulaylikni eng qat'iy sanitariya-gigiyena me'yorlari, yiqilishdan himoyalanish va xodimlar uchun ergonomik qulaylik bilan birlashtiradi. Biz WTG NRW qonuniga muvofiq kunduzgi parvarish rezidentsiyalari, ko'maklashuvchi xonadonlar va ixtisoslashtirilgan statsionar muassasalarni barpo etamiz."
+          : isRu
           ? "Современная архитектура для пожилых людей сочетает домашний уют с самыми строгими санитарно-гигиеническими нормами, защитой от падений и удобством для персонала. Мы проектируем резиденции для дневного пребывания, квартиры с уходом и стационарные дома престарелых по закону WTG NRW."
           : isEn
           ? "Modern architecture for senior living blends residential comfort with clinical infection prevention, fall prevention technologies, and ergonomic caregiver workspaces. We develop day-care hubs, assisted living communities, and specialized memory care facilities."
@@ -1044,7 +1237,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تجمع عمارة الرعاية الحديثة بين الدفء الأسري والمتطلبات الصارمة لنظافة الرعاية التمريضية والحماية من الحرائق وتخفيف العبء عن الطواقم. نطور مراكز رعاية نهارية مستقلة، ومجموعات سكنية تمريضية، ودور رعاية إيوائية مطابقة لقوانين دور الرعاية الولائية (WTG NRW)."
           : "Moderne Pflegearchitektur verbindet ein behagliches, familiäres Wohnambiente mit den hochkomplexen Anforderungen an Pflegehygiene, Brandschutz und Entlastung des Personals. Wir entwickeln Einrichtungen für solitäre Tagespflegen, ambulante Wohngemeinschaften und stationäre Pflege nach Landesheimgesetz.",
-        specificationsTitle: isRu
+        specificationsTitle: isUz
+          ? "Rejalashtirish xususiyatlari va xavfsizlik"
+          : isRu
           ? "Особенности планировки"
           : isEn
           ? "Design Elements"
@@ -1053,7 +1248,16 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "المفاهيم المعمارية ومعايير الراحة"
           : "Architektur & Wohlfühlkonzepte",
-        specifications: isRu
+        specifications: isUz
+          ? [
+              "Individual vanna xonalariga ega 100% bir kishilik xonalar (DIN 18040-2 R)",
+              "Ochiq oshxona-mehmonxonalarga ega kichik oilaviy guruhlar formati",
+              "Demensiyali bemorlar uchun o'ralgan sensor bog'lar va aylanma sayr yo'laklari",
+              "Navbatchi hamshiralar postlari, toza va ishlatilgan asboblar muolaja xonalari",
+              "Tungi vaqtda xavfsiz harakatlanish uchun polning avtomatik yoritilishi",
+              "DIN VDE 0834 standarti bo'yicha tibbiy xodimlarni chaqirishning integratsiyalashgan tizimi",
+            ]
+          : isRu
           ? [
               "100% одноместные комнаты с индивидуальными ванными комнатами (DIN 18040-2 R)",
               "Формат малых домашних групп с открытыми кухнями-гостиными",
@@ -1097,7 +1301,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
               "Automatische Lichtleitsysteme zur Sturzprophylaxe in der Nacht",
               "Vollständige WLAN- und Schwesternrufanlagenvernetzung nach DIN VDE 0834",
             ],
-        scopeTitle: isRu
+        scopeTitle: isUz
+          ? "Loyiha amalga oshirish ko'lami"
+          : isRu
           ? "Объем реализации"
           : isEn
           ? "Project Scope"
@@ -1106,7 +1312,15 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "نطاق خدمات NabiOta Real Estate"
           : "Leistungsumfang NabiOta Real Estate",
-        scopeItems: isRu
+        scopeItems: isUz
+          ? [
+              "Tanlangan hududda demografiya va parvarish o'rinlari taqchilligini tahlil qilish",
+              "WTG NRW me'yorlariga muvofiq obyekt konsepsiyasini ishlab chiqish",
+              "Rivojlanish banklari (KfW, NRW.BANK) orqali subsidiyalar va imtiyozli kreditlarni kelishish",
+              "To'liq pardozlash va o'rnatma mebellar yetkazib berish bilan kalit ostida qurish",
+              "NabiOta HomeCare GmbH yoki mintaqaviy operatorlar bilan hamkorlikni tashkil etish",
+            ]
+          : isRu
           ? [
               "Анализ демографии и дефицита мест ухода в выбранном районе",
               "Разработка концепции объекта в соответствии с нормами WTG NRW",
@@ -1145,7 +1359,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
               "Schlüsselfertige Erstellung inklusive fester Einbauten, Pflegebäder und Außenanlagen",
               "Kooperation mit der NabiOta HomeCare GmbH oder renommierten Wohlfahrtsverbänden",
             ],
-        technicalTitle: isRu
+        technicalTitle: isUz
+          ? "Qonunchilik"
+          : isRu
           ? "Законодательство"
           : isEn
           ? "Governing Statutes"
@@ -1154,7 +1370,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "التشريعات المنظمة لدور الرعاية"
           : "Heimrechtliche Vorgaben",
-        technicalText: isRu
+        technicalText: isUz
+          ? "Wohn- und Teilhabegesetz (WTG NRW), DIN 18040-2 R (to'siqsizlik) va Sonderbau yong'in xavfsizligi me'yorlari."
+          : isRu
           ? "Wohn- und Teilhabegesetz (WTG NRW), DIN 18040-2 R (безбарьерность) и противопожарные нормы Sonderbau."
           : isEn
           ? "Regional Residential and Participation Act (WTG NRW), DIN 18040-2 R, and specialized healthcare fire codes."
@@ -1163,7 +1381,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "قانون الإقامة والمشاركة (WTG NRW)، ولائحته التنفيذية (WTG DVO)، معيار DIN 18040-2 R ولائحة الأبنية الخاصة."
           : "Wohn- und Teilhabegesetz (WTG NRW), Durchführungsverordnung (WTG DVO), DIN 18040-2 R und Sonderbauverordnung.",
-        legalTitle: isRu
+        legalTitle: isUz
+          ? "Investitsiya modeli"
+          : isRu
           ? "Инвестиционная модель"
           : isEn
           ? "Investment Structure"
@@ -1172,7 +1392,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "نماذج الإيجار والتشغيل الاستثماري"
           : "Pacht- & Betreibermodelle",
-        legalText: isRu
+        legalText: isUz
+          ? "Investorlar uchun barqaror ijtimoiy daromadni va parvarish xizmatining uzluksiz faoliyatini ta'minlovchi 20–25 yillik uzoq muddatli ijara shartnomalari."
+          : isRu
           ? "Долгосрочные договоры аренды на 20–25 лет, обеспечивающие надежный социальный доход инвесторам и стабильную работу службы ухода."
           : isEn
           ? "Long-term institutional 20 to 25-year lease structures delivering dependable, socially responsible returns."
@@ -1181,7 +1403,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "عقود إيجار وتشغيل طويلة الأجل (من 20 إلى 25 عاماً) مع مشغلين ذوي ملاءة مالية عالية تضمن استقرار القيمة الاستثمارية."
           : "Langfristige Pachtverträge (20 bis 25 Jahre) mit bonitätsstarken Betreibern sichern nachhaltigen Werterhalt.",
-        ctaButtonText: isRu
+        ctaButtonText: isUz
+          ? "Parvarish uyi loyihasini so'rash"
+          : isRu
           ? "Запросить проект дома ухода"
           : isEn
           ? "Inquire Senior Care Facility"
@@ -1194,7 +1418,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
     },
     {
       id: "mitarbeiterwohnen",
-      badge: isRu
+      badge: isUz
+        ? "KAMPUS VA TURAR JOY"
+        : isRu
         ? "КАМПУС И ЖИЛЬЕ"
         : isEn
         ? "CAMPUS & HOUSING"
@@ -1205,7 +1431,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : "CAMPUS & MITARBEITERWOHNEN",
       image: "/images/beratung/project-building.webp",
       iconType: "home",
-      title: isRu
+      title: isUz
+        ? "Tibbiyot shaharchasi va tibbiy xodimlar uchun turar joy"
+        : isRu
         ? "Медицинский кампус & Жилье для медперсонала"
         : isEn
         ? "Healthcare Campus & Staff Housing"
@@ -1214,7 +1442,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "بنية المجمع الطبي وإسكان الكوادر الصحية"
         : "Campus-Infrastruktur & Mitarbeiterwohnen",
-      shortDesc: isRu
+      shortDesc: isUz
+        ? "Shifokorlar va hamshiralarni jalb qilish uchun zamonaviy apartamentlar va apart-otellar (Boardinghouses), fotoelektr stansiyalari va elektromobillar infratuzilmasi."
+        : isRu
         ? "Современные апартаменты и апарт-отели (Boardinghouses) для привлечения врачей и медсестер, фотовольтаика и инфраструктура для электромобилей."
         : isEn
         ? "Modern residential boardinghouses and apartments supporting healthcare staff onboarding, campus solar arrays, and EV charging hubs."
@@ -1224,7 +1454,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         ? "مجمعات شقق فندقية وشقق سكنية للموظفين لدمج الكفاءات الطبية الدولية وحلول طاقة مستدامة للمجمع بأكمله."
         : "Boardinghouses und Personalappartements zur nachhaltigen Integration von Fachkräften sowie campusweite Energielösungen.",
       modal: {
-        title: isRu
+        title: isUz
+          ? "Tibbiyot shaharchasi, apart-otellar va tibbiy xodimlar uchun turar joy"
+          : isRu
           ? "Медицинский кампус, апарт-отели & Жилье для медперсонала"
           : isEn
           ? "Medical Campus Infrastructure & Healthcare Staff Residences"
@@ -1233,7 +1465,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "المجمع الصحي وشقق الإقامة وسكن الموظفين"
           : "Gesundheitscampus, Boardinghouses & Mitarbeiterwohnen",
-        subtitle: isRu
+        subtitle: isUz
+          ? "Mutaxassislar yashashi, ishlashi va integratsiyalashuvi uchun qulay sharoitlar yaratish"
+          : isRu
           ? "Создание комфортных условий для жизни, работы и интеграции специалистов"
           : isEn
           ? "Holistic campus ecosystems uniting clinical excellence, sustainability, and staff living"
@@ -1242,7 +1476,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تطوير بيئة متكاملة للمعيشة والعمل والاستشفاء"
           : "Ganzheitliche Standortentwicklung für Leben, Arbeiten und Heilen",
-        description: isRu
+        description: isUz
+          ? "Shifokorlar va malakali hamshiralar uchun kuchli raqobat sharoitida ish joyi yonida sifatli hamyonbop uy-joy mavjudligi muvaffaqiyatning hal qiluvchi omilidir. NabiOta Real Estate GmbH Medical Recruitment Services GmbH orqali jalb qilinayotgan mutaxassislarning qulay moslashuvi uchun zamonaviy apart-otellar va mikro-kvartiralarni quradi."
+          : isRu
           ? "В условиях острой конкуренции за врачей и квалифицированных медсестер наличие доступного качественного жилья рядом с местом работы — решающий фактор успеха. NabiOta Real Estate GmbH строит стильные апарт-отели и микро-квартиры для комфортной адаптации специалистов, привлекаемых через Medical Recruitment Services GmbH."
           : isEn
           ? "In the competitive landscape for certified physicians and international nursing talent, immediate access to quality housing near the hospital campus is an invaluable differentiator. NabiOta Real Estate develops boutique boardinghouses and serviced micro-apartments that make relocation and onboarding seamless."
@@ -1251,7 +1487,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "في ظل التنافس المحموم على استقطاب الأطباء والكوادر التمريضية المؤهلة، يُعد توفير سكن جذاب بجوار موقع العمل مباشرة عامل نجاح حاسم. تطور NabiOta Real Estate GmbH شققاً فندقية وسكنية حديثة لتسهيل استقرار ودمج الكوادر الدولية المستقطبة عبر Medical Recruitment Services GmbH."
           : "Im Wettbewerb um hochqualifizierte Ärzte und Pflegefachkräfte ist attraktiver Wohnraum direkt am Standort ein entscheidender Erfolgsfaktor. NabiOta Real Estate GmbH realisiert moderne Boardinghouses und Mitarbeiterwohnungen für die internationale Fachkräfteintegration der Medical Recruitment Services GmbH.",
-        specificationsTitle: isRu
+        specificationsTitle: isUz
+          ? "Kampus infratuzilmasi va xonadonlar"
+          : isRu
           ? "Инфраструктура кампуса"
           : isEn
           ? "Campus Amenities"
@@ -1260,7 +1498,16 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "مفهوم السكن والبنية التحتية للمجمع"
           : "Wohnkonzept & Campus-Infrastruktur",
-        specifications: isRu
+        specifications: isUz
+          ? [
+              "Oshxonasi bilan to'liq jihozlangan 1 va 2 xonali mikro-kvartiralar",
+              "Yuqori tezlikdagi internet, kovorking zonalari va o'qish uchun anjuman zallari",
+              "O'z-o'ziga xizmat ko'rsatish kirxonalari, fitnes burchaklari va toza havodagi dam olish maskanlari",
+              "Tomdagi quyosh panellari (PV) va nol uglerod izi uchun issiqlik nasoslari",
+              "Elektromobillar uchun quvvatlash stansiyalari (Wallbox) va himoyalangan veloboxlar",
+              "Klinika, MVZ va jamoat transporti bekatlariga piyoda masofada joylashuv",
+            ]
+          : isRu
           ? [
               "Полностью меблированные 1- и 2-комнатные микро-апартаменты с кухнями",
               "Высокоскоростной интернет, коворкинг-зоны и конференц-залы для учебы",
@@ -1304,7 +1551,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
               "Mobilitätsstationen mit E-Auto-Ladeinfrastruktur, Fahrradboxen und Anbindung an den ÖPNV",
               "Zentrales technisches Facility Management mit digitalem Ticket- und Wartungssystem",
             ],
-        scopeTitle: isRu
+        scopeTitle: isUz
+          ? "Loyihaga kiritilgan xizmatlar"
+          : isRu
           ? "Что входит в проект"
           : isEn
           ? "Turnkey Execution"
@@ -1313,7 +1562,15 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "خدمات التطوير والإنشاء"
           : "Entwicklungs- und Bauleistungen",
-        scopeItems: isRu
+        scopeItems: isUz
+          ? [
+              "Tibbiyot shaharchasi hududini master-rejalashtirish va kompleks o'zlashtirish",
+              "KfW 40 QNG standarti bo'yicha energiya tejamkor binolarni loyihalash",
+              "Kvartiralarni mebel, maishiy texnika va aqlli kirish tizimlari bilan jihozlash",
+              "NabiOta Medical Recruitment dasturlari bilan to'liq integratsiya",
+              "Ijarani raqamli boshqarish va kommunal xizmatlarning avtomatlashtirilgan hisobi",
+            ]
+          : isRu
           ? [
               "Мастер-планирование и комплексное освоение территории медицинского городка",
               "Проектирование энергоэффективных зданий по стандарту KfW 40 QNG",
@@ -1352,7 +1609,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
               "Enge Verzahnung mit den Ankunftsplänen der NabiOta Medical Recruitment Services",
               "Digitales Bewirtschaftungskonzept mit Mieter-App und automatisiertem Submetering",
             ],
-        technicalTitle: isRu
+        technicalTitle: isUz
+          ? "Energiya samaradorligi"
+          : isRu
           ? "Энергоэффективность"
           : isEn
           ? "Energy Standards"
@@ -1361,7 +1620,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "معايير الطاقة والاستدامة البيئية (ESG)"
           : "Energiestandards & ESG",
-        technicalText: isRu
+        technicalText: isUz
+          ? "KfW 40 standartlari, barqaror qurilish QNG sertifikati va ESG talablari."
+          : isRu
           ? "Стандарты KfW 40, сертификат устойчивого строительства QNG и требования ESG."
           : isEn
           ? "German KfW 40 efficiency standards, QNG sustainability seal, and strict ESG compliance."
@@ -1370,7 +1631,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "معيار KfW 40 للأبنية الموفرة للطاقة، وختم جودة الأبنية المستدامة (QNG)، ومعايير ESG."
           : "KfW-Effizienzhaus-Standard 40, Qualitätssiegel Nachhaltiges Gebäude (QNG) und ESG-Konformität.",
-        legalTitle: isRu
+        legalTitle: isUz
+          ? "Turar joyni boshqarish"
+          : isRu
           ? "Управление жильем"
           : isEn
           ? "Housing Management"
@@ -1379,7 +1642,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "الصياغة القانونية لعقود الإسكان"
           : "Mietrechtliche Gestaltung",
-        legalText: isRu
+        legalText: isUz
+          ? "Yangi xodimlardan byurokratik yukni olib tashlaydigan xizmat turar joyining moslashuvchan ijara shartnomalari."
+          : isRu
           ? "Гибкие договоры аренды служебного жилья, снимающие бюрократическую нагрузку с новых сотрудников."
           : isEn
           ? "Flexible corporate lease structures designed to facilitate stress-free settling in for healthcare workers."
@@ -1388,7 +1653,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "عقود إيجار وظيفية مرنة لتيسير بدء العمل في ألمانيا مع الامتثال لكافة تشريعات حماية المستأجرين."
           : "Flexible Mitarbeiter-Mietverträge zur Erleichterung des Arbeitsbeginns in Deutschland unter Beachtung aller mietrechtlichen Schutzvorschriften.",
-        ctaButtonText: isRu
+        ctaButtonText: isUz
+          ? "Kampusdagi turar joy haqida bilish"
+          : isRu
           ? "Узнать о жилье на кампусе"
           : isEn
           ? "Inquire Campus Housing"
@@ -1403,7 +1670,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
 
   const t = {
     s1: {
-      eyebrow: isRu
+      eyebrow: isUz
+        ? "BIZNING KONSALTING XIZMATLARIMIZ"
+        : isRu
         ? "НАШИ КОНСАЛТИНГОВЫЕ УСЛУГИ"
         : isEn
         ? "OUR CONSULTING SERVICES"
@@ -1412,7 +1681,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "خدماتنا الاستشارية"
         : "UNSERE BERATUNGSLEISTUNGEN",
-      title: isRu
+      title: isUz
+        ? "Barqaror yechimlar uchun kompleks konsalting."
+        : isRu
         ? "Комплексный консалтинг для устойчивых решений."
         : isEn
         ? "Holistic Consulting for Sustainable Solutions."
@@ -1421,7 +1692,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "استشارات شاملة لحلول صحية مستدامة."
         : "Ganzheitliche Beratung für nachhaltige Lösungen.",
-      desc: isRu
+      desc: isUz
+        ? "Biz siz bilan birgalikda kelajakka mos konsepsiyalarni tahlil qilamiz, maslahat beramiz va ishlab chiqamiz — individual, amaliy hamda sifat, samaradorlik va insonparvarlikka aniq e'tibor qaratgan holda."
+        : isRu
         ? "Мы анализируем, консультируем и разрабатываем вместе с вами перспективные концепции — индивидуально, практично и с четким фокусом на качестве, эффективности и человечности."
         : isEn
         ? "We analyze, advise, and develop future-proof concepts together with you — personalized, hands-on, and with a clear focus on quality, efficiency, and human-centric care."
@@ -1430,7 +1703,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "نحلل ونقدم المشورة ونطور معكم مفاهيم مستقبلية مستدامة؛ فردية وعملية مع تركيز واضح على الجودة والكفاءة والإنسانية."
         : "Wir analysieren, beraten und entwickeln gemeinsam mit Ihnen zukunftsfähige Konzepte – individuell, praxisnah und mit einem klaren Fokus auf Qualität, Effizienz und Menschlichkeit.",
-      btn: isRu
+      btn: isUz
+        ? "Xizmatlar haqida batafsil"
+        : isRu
         ? "Подробнее об услугах"
         : isEn
         ? "Explore Our Services"
@@ -1439,7 +1714,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "المزيد عن خدماتنا"
         : "Mehr zu unseren Leistungen",
-      cardTitle: isRu
+      cardTitle: isUz
+        ? "Konsaltingga bizning yondashuvimiz"
+        : isRu
         ? "Наш подход к консалтингу"
         : isEn
         ? "Our Consulting Approach"
@@ -1451,7 +1728,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
       items: [
         {
           icon: Search,
-          text: isRu
+          text: isUz
+            ? "Ehtiyojlar tahlili va joriy holatni baholash"
+            : isRu
             ? "Анализ потребностей и оценка текущего состояния"
             : isEn
             ? "Needs analysis & current-state evaluation"
@@ -1463,7 +1742,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         },
         {
           icon: Lightbulb,
-          text: isRu
+          text: isUz
+            ? "Moslashtirilgan individual yechimlar strategiyasini ishlab chiqish"
+            : isRu
             ? "Разработка индивидуальных решений"
             : isEn
             ? "Development of tailored solution strategies"
@@ -1475,7 +1756,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         },
         {
           icon: Users,
-          text: isRu
+          text: isUz
+            ? "Loyiha bosqichlarining barchasida doimiy hamrohlik"
+            : isRu
             ? "Сопровождение на всех этапах проекта"
             : isEn
             ? "End-to-end guidance across all project phases"
@@ -1487,7 +1770,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         },
         {
           icon: Leaf,
-          text: isRu
+          text: isUz
+            ? "Barqaror va uzoq muddatli mustahkam natijalar"
+            : isRu
             ? "Устойчивые и долгосрочные результаты"
             : isEn
             ? "Sustainable, future-proof, long-term results"
@@ -1500,7 +1785,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
       ],
     },
     s2: {
-      eyebrow: isRu
+      eyebrow: isUz
+        ? "LOYIHALARNI ISHLAB CHIQISH VA DEVELOPTMENT"
+        : isRu
         ? "ДЕВЕЛОПМЕНТ ПРОЕКТОВ"
         : isEn
         ? "PROJECT DEVELOPMENT"
@@ -1509,7 +1796,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "تطوير المشاريع"
         : "PROJEKTENTWICKLUNG",
-      title: isRu
+      title: isUz
+        ? "G'oyadan to'liq amalga oshirishgacha."
+        : isRu
         ? "От идеи к реализации."
         : isEn
         ? "From Concept to Completion."
@@ -1518,7 +1807,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "من الفكرة إلى التنفيذ."
         : "Von der Idee zur Umsetzung.",
-      desc: isRu
+      desc: isUz
+        ? "Biz sog'liqni saqlash sohasida yangi tibbiyot markazlari va klinikalardan tortib mavjud ob'ektlarni kengaytirish hamda qayta tuzilishigacha bo'lgan loyihalarni ishlab chiqamiz va amalga oshiramiz. Bunda biz iqtisodiy rentabellikni ijtimoiy mas'uliyat va eng yuqori sifat bilan uyg'unlashtiramiz."
+        : isRu
         ? "Мы разрабатываем и реализуем проекты в сфере здравоохранения — от новых медицинских центров и клиник до расширения и реструктуризации существующих объектов. При этом мы сочетаем экономическую рентабельность с социальной ответственностью и высочайшим качеством."
         : isEn
         ? "We develop and implement healthcare infrastructure projects — whether new medical facilities, expansions, or restructuring programs. We combine economic viability with social responsibility and top-tier quality."
@@ -1527,7 +1818,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "نطور وننفذ مشاريع في قطاع الرعاية الصحية؛ سواء كانت منشآت جديدة أو توسعات أو إعادة هيكلة. نجمع بين الجدوى الاقتصادية والمسؤولية الاجتماعية وأعلى معايير الجودة."
         : "Wir entwickeln und realisieren Projekte im Gesundheitswesen – ob neue Einrichtungen, Erweiterungen oder Umstrukturierungen. Dabei verbinden wir wirtschaftliche Tragfähigkeit mit sozialer Verantwortung und höchster Qualität.",
-      btn: isRu
+      btn: isUz
+        ? "Loyihalar bilan tanishish"
+        : isRu
         ? "Ознакомиться с проектами"
         : isEn
         ? "Discover Our Projects"
@@ -1536,7 +1829,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "استكشاف مشاريعنا"
         : "Unsere Projekte entdecken",
-      stamp: isRu
+      stamp: isUz
+        ? "Kelajak salomatlik maydonlari."
+        : isRu
         ? "Пространства здоровья будущего."
         : isEn
         ? "Sustainable Healthcare Spaces."
@@ -1548,7 +1843,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
       features: [
         {
           icon: Building2,
-          text: isRu
+          text: isUz
+            ? "Texnik-iqtisodiy asoslash va kontseptsiyalarni ishlab chiqish"
+            : isRu
             ? "ТЭО и разработка концепций"
             : isEn
             ? "Feasibility studies & concept development"
@@ -1560,7 +1857,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         },
         {
           icon: HardHat,
-          text: isRu
+          text: isUz
+            ? "Qurilish loyihalarini loyihalash va amalga oshirish"
+            : isRu
             ? "Проектирование и реализация строительных проектов"
             : isEn
             ? "Planning & execution of capital construction"
@@ -1572,7 +1871,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         },
         {
           icon: Network,
-          text: isRu
+          text: isUz
+            ? "Barcha ishtirokchilar va rasmiy idoralarni muvofiqlashtirish"
+            : isRu
             ? "Координация участников и ведомств"
             : isEn
             ? "Coordination of all stakeholders & authorities"
@@ -1584,7 +1885,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         },
         {
           icon: ShieldCheck,
-          text: isRu
+          text: isUz
+            ? "Sifatni boshqarish va xatarlarni minimallashtirish"
+            : isRu
             ? "Управление качеством и рисками"
             : isEn
             ? "Comprehensive quality & risk management"
@@ -1597,7 +1900,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
       ],
     },
     s3: {
-      eyebrow: isRu
+      eyebrow: isUz
+        ? "BIZNING JARAYON"
+        : isRu
         ? "НАШ ПРОЦЕСС"
         : isEn
         ? "OUR PROCESS"
@@ -1606,7 +1911,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "مراحل عملنا"
         : "UNSER PROZESS",
-      title: isRu
+      title: isUz
+        ? "Loyihangiz muvaffaqiyati sari 5 qadam."
+        : isRu
         ? "5 шагов к успеху вашего проекта."
         : isEn
         ? "In 5 Steps to Project Success."
@@ -1615,7 +1922,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "5 خطوات لتحقيق نجاح مشروعك."
         : "In 5 Schritten zu Ihrem Projekterfolg.",
-      desc: isRu
+      desc: isUz
+        ? "Shaffof jarayonlar, yaqin hamkorlik va tajribali ekspertlar jamoasi — biz loyihangizni maqsadga ishonchli va xavfsiz yetkazamiz."
+        : isRu
         ? "Прозрачные процессы, тесное взаимодействие и опытная команда экспертов — так мы надежно доводим ваш проект до цели."
         : isEn
         ? "Transparent workflows, close collaboration, and an experienced interdisciplinary team — ensuring your healthcare project reaches its goals safely."
@@ -1628,7 +1937,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         {
           num: "1",
           icon: MessageSquare,
-          title: isRu
+          title: isUz
+            ? "Dastlabki suhbat va tahlil"
+            : isRu
             ? "Первичная беседа и анализ"
             : isEn
             ? "Initial Consultation & Analysis"
@@ -1637,7 +1948,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
             : isAr
             ? "المشورة الأولية والتحليل"
             : "Erstgespräch & Analyse",
-          desc: isRu
+          desc: isUz
+            ? "Biz boshlang'ich vaziyat, maqsadlar va o'ziga xos talablarni chuqur o'rganamiz."
+            : isRu
             ? "Мы внимательно изучаем исходную ситуацию, цели и требования."
             : isEn
             ? "We listen carefully, analyze your current situation, and define shared goals."
@@ -1650,7 +1963,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         {
           num: "2",
           icon: Lightbulb,
-          title: isRu
+          title: isUz
+            ? "Kontseptsiya va rejalashtirish"
+            : isRu
             ? "Концепция и планирование"
             : isEn
             ? "Concept & Planning"
@@ -1659,7 +1974,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
             : isAr
             ? "المفهوم والتخطيط"
             : "Konzept & Planung",
-          desc: isRu
+          desc: isUz
+            ? "Individual yechimlarni va loyihaning batafsil rejasini ishlab chiqamiz."
+            : isRu
             ? "Разрабатываем индивидуальные решения и детальный план проекта."
             : isEn
             ? "We create tailored solutions and establish rigorous project blueprints."
@@ -1672,7 +1989,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         {
           num: "3",
           icon: Users,
-          title: isRu
+          title: isUz
+            ? "Amalga oshirish"
+            : isRu
             ? "Реализация"
             : isEn
             ? "Execution & Coordination"
@@ -1681,7 +2000,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
             : isAr
             ? "التنفيذ"
             : "Umsetzung",
-          desc: isRu
+          desc: isUz
+            ? "Barcha pudratchilar va ishtirokchilarni muvofiqlashtiramiz hamda muddatlarni nazorat qilamiz."
+            : isRu
             ? "Координируем всех подрядчиков и контролируем сроки."
             : isEn
             ? "We coordinate all parties involved and ensure efficient implementation."
@@ -1694,7 +2015,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         {
           num: "4",
           icon: CheckCircle2,
-          title: isRu
+          title: isUz
+            ? "Kuzatuv va nazorat"
+            : isRu
             ? "Сопровождение и контроль"
             : isEn
             ? "Supervision & Quality Control"
@@ -1703,7 +2026,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
             : isAr
             ? "المتابعة والمراقبة"
             : "Begleitung & Kontrolle",
-          desc: isRu
+          desc: isUz
+            ? "Xarajatlar, jadval va sifat standartlarini doimiy qat'iy nazoratda ushlab turamiz."
+            : isRu
             ? "Держим на постоянном контроле расходы, график и качество."
             : isEn
             ? "We maintain rigorous oversight of costs, timelines, and construction quality."
@@ -1716,7 +2041,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         {
           num: "5",
           icon: Flag,
-          title: isRu
+          title: isUz
+            ? "Muvaffaqiyatli topshirish va rivojlanish"
+            : isRu
             ? "Успешный ввод и развитие"
             : isEn
             ? "Launch & Future Growth"
@@ -1725,7 +2052,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
             : isAr
             ? "النجاح والتطوير المستمر"
             : "Erfolg & Weiterentwicklung",
-          desc: isRu
+          desc: isUz
+            ? "Ob'ektni foydalanishga topshirish jarayonida hamrohlik qilamiz va uning keyingi barqaror rivojlanishini qo'llab-quvvatlaymiz."
+            : isRu
             ? "Сопровождаем ввод в эксплуатацию и поддерживаем развитие объекта."
             : isEn
             ? "We oversee commissioning and remain your trusted strategic partner."
@@ -1739,7 +2068,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
     },
     s4: {
       eyebrow: "NABIOTA REAL ESTATE GMBH",
-      title: isRu
+      title: isUz
+        ? "Kalit ostida ixtisoslashtirilgan tibbiy ko'chmas mulk"
+        : isRu
         ? "Специализированная медицинская недвижимость под ключ"
         : isEn
         ? "Specialized Healthcare Real Estate Portfolio"
@@ -1748,7 +2079,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "العقارات الصحية والمساحات التخصصية لمجموعة NabiOta"
         : "Gesundheitsimmobilien & Spezialflächen der NabiOta Gruppe",
-      desc: isRu
+      desc: isUz
+        ? "Tibbiy ko'chmas mulkni rivojlantirishning oltita asosiy yo'nalishi bilan tanishing: yuqori texnologiyali klinika va operatsiya zallaridan tortib, radiatsiyadan himoyalangan diagnostika markazlari, reabilitatsiya majmualari va xodimlar turar joylarigacha."
+        : isRu
         ? "Ознакомьтесь с шестью направлениями девелопмента медицинской недвижимости: от клиник и операционных залов до центров лучевой диагностики, реабилитационных комплексов и жилья для персонала."
         : isEn
         ? "Explore the six core pillars of our healthcare real estate development: from surgical clinic buildings to diagnostic suites, rehabilitation campuses, and modern staff housing."
@@ -1757,7 +2090,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "استكشف الركائز الست لتطويرنا العقاري الصحي: من مباني المشافي الجراحية فائقة التطور ومراكز التشخيص المحمية من الإشعاع إلى دور الرعاية وإسكان الكوادر الطبية."
         : "Erkunden Sie die sechs tragenden Säulen unserer Immobilienentwicklung: Vom hochmodernen Klinikbau über strahlengeschützte Diagnostikzentren bis hin zu Pflegeimmobilien und campusweitem Mitarbeiterwohnen.",
-      openModalBtn: isRu
+      openModalBtn: isUz
+        ? "Tafsilotlar va xonalar kontseptsiyasi"
+        : isRu
         ? "Детали и концепция"
         : isEn
         ? "Details & Room Program"
@@ -1768,7 +2103,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : "Details & Raumkonzept",
     },
     s5: {
-      eyebrow: isRu
+      eyebrow: isUz
+        ? "HAMKORLARIMIZ FIKRLARI"
+        : isRu
         ? "ОТЗЫВЫ ПАРТНЕРОВ"
         : isEn
         ? "PARTNER VOICES"
@@ -1777,7 +2114,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "آراء شركائنا"
         : "STIMMEN UNSERER PARTNER",
-      title: isRu
+      title: isUz
+        ? "Ishonch taraqqiyot yaratadi."
+        : isRu
         ? "Доверие создает прогресс."
         : isEn
         ? "Trust Drives Progress."
@@ -1786,7 +2125,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "الثقة تصنع التقدم."
         : "Vertrauen schafft Fortschritt.",
-      desc: isRu
+      desc: isUz
+        ? "Tibbiyot sohasi rahbarlari va mutaxassislar konsalting hamda infratuzilma loyihalaridagi hamkorligimiz haqida nimalarni aytishadi."
+        : isRu
         ? "Что говорят наши партнеры и заказчики о совместной работе над проектами развития инфраструктуры."
         : isEn
         ? "What healthcare leaders and executives say about partnering with us on consulting and development projects."
@@ -1795,7 +2136,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "ما يقوله عملاؤنا وشركاؤنا عن التعاون معنا في مشاريع الاستشارات والتطوير."
         : "Das sagen unsere Kundinnen und Kunden über die Zusammenarbeit in Beratungs- und Projektentwicklungsprojekten.",
-      btn: isRu
+      btn: isUz
+        ? "Jamoamiz bilan bog'lanish"
+        : isRu
         ? "Связаться с нами"
         : isEn
         ? "Contact Our Team"
@@ -1807,7 +2150,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
       testimonials: [
         {
           name: "Dr. Thomas Berger",
-          role: isRu
+          role: isUz
+            ? "Boshqaruvchi direktor, Tibbiyot markazi (MVZ)"
+            : isRu
             ? "Управляющий директор, MVZ"
             : isEn
             ? "Managing Director, Medical Center"
@@ -1817,7 +2162,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
             ? "المدير التنفيذي، مركز MVZ"
             : "Geschäftsführer, MVZ",
           avatar: "/images/beratung/avatar-berger.webp",
-          quote: isRu
+          quote: isUz
+            ? "«Hamkorlik ilk kundan boshlab yuqori professional, natijaga yo'naltirilgan va juda samimiy tarzda kechdi. Chuqur texnik ekspertiza va insoniy yondashuvning uyg'unligi bizda alohida taassurot qoldirdi.»"
+            : isRu
             ? "«Сотрудничество с самого начала было высокопрофессиональным, ориентированным на решение задач и невероятно комфортным. Нас впечатлил баланс глубоких экспертных знаний и человеческого подхода.»"
             : isEn
             ? "“The collaboration was professional, solution-oriented, and remarkably pleasant right from day one. We were particularly impressed by the blend of deep technical expertise and genuine humanity.”"
@@ -1829,7 +2176,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         },
         {
           name: "Sabine Keller",
-          role: isRu
+          role: isUz
+            ? "Qurilish infratuzilmasi rahbari"
+            : isRu
             ? "Руководитель строительной инфраструктуры"
             : isEn
             ? "Head of Construction & Infrastructure"
@@ -1839,7 +2188,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
             ? "مديرة الإنشاءات والبنية التحتية"
             : "Leiterin Bau & Infrastruktur",
           avatar: "/images/beratung/avatar-keller.webp",
-          quote: isRu
+          quote: isUz
+            ? "«Tizimli metodologiya va doimiy nazorat tufayli biz sog'liqni saqlash ob'ektimizni belgilangan muddatda va qat'iy tasdiqlangan byudjet doirasida muvaffaqiyatli yakunlay oldik.»"
+            : isRu
             ? "«Благодаря структурированному подходу и постоянному сопровождению мы смогли завершить проект точно в срок и строго в рамках утвержденного бюджета.»"
             : isEn
             ? "“Thanks to their structured methodology and continuous oversight, we were able to deliver our healthcare facility strictly on schedule and within budget.”"
@@ -1851,7 +2202,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         },
         {
           name: "Prof. Dr. Markus Weber",
-          role: isRu
+          role: isUz
+            ? "Tibbiyot kampusi bosh shifokori / direktori"
+            : isRu
             ? "Главный врач медицинского центра"
             : isEn
             ? "Medical Director, Healthcare Campus"
@@ -1861,7 +2214,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
             ? "مدير المركز الصحي والرئيس الطبي"
             : "Leitung Gesundheitszentrum",
           avatar: "/images/beratung/avatar-weber.webp",
-          quote: isRu
+          quote: isUz
+            ? "«Murosasiz malaka, fidoyilik va klinik jarayonlarimizni chuqur tushunish — NABIOTA'ni haqiqatan ham qadrli va ishonchli hamkorga aylantiradigan asosiy jihatlardir.»"
+            : isRu
             ? "«Компетентность, вовлеченность и глубокое понимание клинических потребностей — именно это делает NABIOTA по-настоящему ценным партнером.»"
             : isEn
             ? "“Uncompromising competence, commitment, and a deep understanding of our clinical workflows — that is what makes NABIOTA an invaluable partner.”"
@@ -1874,7 +2229,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
       ],
     },
     s6: {
-      eyebrow: isRu
+      eyebrow: isUz
+        ? "BOG'LANISH"
+        : isRu
         ? "КОНТАКТ"
         : isEn
         ? "CONTACT"
@@ -1883,7 +2240,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "اتصل بنا"
         : "KONTAKT",
-      title: isRu
+      title: isUz
+        ? "Murojaatingizni kutib qolamiz."
+        : isRu
         ? "Будем рады вашему обращению."
         : isEn
         ? "We Look Forward to Your Inquiry."
@@ -1892,7 +2251,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "نسعد بتواصلكم واستفساراتكم."
         : "Wir freuen uns auf Ihre Anfrage.",
-      desc: isRu
+      desc: isUz
+        ? "Dastlabki g'oya bo'ladimi yoki aniq kengaytirish loyihasi — jamoamiz sizga shaxsan va hech qanday majburiyatlarsiz maslahat berishdan mamnun bo'ladi."
+        : isRu
         ? "Будь то первая идея или конкретный проект расширения — наша команда с удовольствием проконсультирует вас лично и без обязательств."
         : isEn
         ? "Whether an initial concept or an imminent development project — our team will be delighted to advise you personally."
@@ -1901,7 +2262,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "سواء كانت فكرة أولية أو مشروعاً محدداً؛ يسعد فريقنا بتقديم المشورة لكم شخصياً وبشكل غير ملزم حول أفضل الإمكانيات."
         : "Ob erste Idee oder konkretes Vorhaben – unser Team berät Sie gerne persönlich und unverbindlich zu Ihren Möglichkeiten.",
-      btn: isRu
+      btn: isUz
+        ? "Biz bilan bog'lanish"
+        : isRu
         ? "Связаться с нами"
         : isEn
         ? "Contact Us"
@@ -1910,7 +2273,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "تواصل معنا"
         : "Kontakt aufnehmen",
-      stamp1: isRu
+      stamp1: isUz
+        ? "Keling,"
+        : isRu
         ? "Давайте поговорим"
         : isEn
         ? "Let's talk about"
@@ -1919,7 +2284,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "دعنا نتحدث"
         : "Lassen Sie uns",
-      stamp2: isRu
+      stamp2: isUz
+        ? "loyihangiz haqida gaplashamiz."
+        : isRu
         ? "о вашем проекте."
         : isEn
         ? "your project."
@@ -1930,7 +2297,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         : "über Ihr Projekt sprechen.",
       phone: "+49 2161 4794000",
       email: "info@nabiota-health-group.de",
-      location: isRu
+      location: isUz
+        ? "Myonxengladbax, Germaniya"
+        : isRu
         ? "Мёнхенгладбах, Германия"
         : isEn
         ? "Mönchengladbach, Germany"
@@ -1953,9 +2322,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         breadcrumb={
           <Breadcrumb
             items={[
-              { label: isRu ? "Главная" : isEn ? "Home" : isTr ? "Ana Sayfa" : isAr ? "الرئيسية" : "Startseite", href: `/${locale}` },
+              { label: isUz ? "Bosh sahifa" : isRu ? "Главная" : isEn ? "Home" : isTr ? "Ana Sayfa" : isAr ? "الرئيسية" : "Startseite", href: `/${locale}` },
               {
-                label: isRu ? "Направления холдинга" : isEn ? "Divisions" : isTr ? "Şirket Alanları" : isAr ? "قطاعات المجموعة" : "Unternehmensbereiche",
+                label: isUz ? "Xolding yo'nalishlari" : isRu ? "Направления холдинга" : isEn ? "Divisions" : isTr ? "Şirket Alanları" : isAr ? "قطاعات المجموعة" : "Unternehmensbereiche",
                 href: `/${locale}/areas`,
               },
               { label: heroData.title },
@@ -2454,7 +2823,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
               {/* Close Button */}
               <button
                 onClick={() => setSelectedDomain(null)}
-                aria-label={isRu ? "Закрыть окно" : isEn ? "Close modal" : isTr ? "Pencereyi kapat" : isAr ? "إغلاق النافذة" : "Modal schließen"}
+                aria-label={isUz ? "Oynani yopish" : isRu ? "Закрыть окно" : isEn ? "Close modal" : isTr ? "Pencereyi kapat" : isAr ? "إغلاق النافذة" : "Modal schließen"}
                 className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/80 border border-[#DECDB5] flex items-center justify-center text-[#1C261E] hover:bg-[#ECCF93]/30 transition-colors z-20 shadow-xs"
               >
                 <X className="w-4 h-4" />
@@ -2550,7 +2919,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
                   onClick={() => setSelectedDomain(null)}
                   className="px-5 py-2.5 rounded-full border border-[#D5B878] text-xs font-semibold text-[#142318] hover:bg-[#FAF5EE] transition-colors"
                 >
-                  {isRu ? "Закрыть" : isEn ? "Close" : isTr ? "Kapat" : isAr ? "إغلاق" : "Schließen"}
+                  {isUz ? "Yopish" : isRu ? "Закрыть" : isEn ? "Close" : isTr ? "Kapat" : isAr ? "إغلاق" : "Schließen"}
                 </button>
                 <Link
                   href={`/${locale}/contact`}

@@ -36,6 +36,7 @@ const areaNavItems = [
       ru: "Медицинские направления",
       tr: "Tıbbi Bölümler",
       ar: "الأقسام الطبية التخصصية",
+      uz: "Tibbiyot yo'nalishlari",
     },
     subtitles: {
       de: "Ambulante & Fachärztliche Spitzenmedizin",
@@ -43,6 +44,7 @@ const areaNavItems = [
       ru: "Амбулаторная и специализированная медицина",
       tr: "Ayakta Tedavi & Uzman Hekimlik",
       ar: "الرعاية المتنقلة والطب التخصصي",
+      uz: "Ambulator va ixtisoslashgan ilg'or tibbiyot",
     },
   },
   {
@@ -54,6 +56,7 @@ const areaNavItems = [
       ru: "Диагностика",
       tr: "Tanı & Görüntüleme",
       ar: "التشخيص والتصوير الطبي",
+      uz: "Diagnostika",
     },
     subtitles: {
       de: "MRT, CT & Präzisionstechnologie",
@@ -61,6 +64,7 @@ const areaNavItems = [
       ru: "МРТ, КТ и высокоточная диагностика",
       tr: "3T MRT, CT & Yüksek Teknoloji",
       ar: "الرنين المغناطيسي والأشعة المقطعية",
+      uz: "MRT, KT va yuqori aniqlikdagi texnologiyalar",
     },
   },
   {
@@ -72,6 +76,7 @@ const areaNavItems = [
       ru: "Реабилитация",
       tr: "Rehabilitasyon",
       ar: "التأهيل والعلاج الطبيعي",
+      uz: "Reabilitatsiya",
     },
     subtitles: {
       de: "Ganzheitliche Genesung & Therapie",
@@ -79,6 +84,7 @@ const areaNavItems = [
       ru: "Комплексное восстановление и терапия",
       tr: "Bütüncül İyileşme & Fizik Tedavi",
       ar: "التعافي الشامل والبرامج العلاجية",
+      uz: "Keng qamrovli tiklanish va terapiya",
     },
   },
   {
@@ -90,6 +96,7 @@ const areaNavItems = [
       ru: "Патронаж и уход",
       tr: "Hasta Bakımı & HomeCare",
       ar: "التمريض والرعاية المنزلية",
+      uz: "Parvarish va patronaj",
     },
     subtitles: {
       de: "Ambulante Pflege & HomeCare",
@@ -97,6 +104,7 @@ const areaNavItems = [
       ru: "Амбулаторная помощь и HomeCare",
       tr: "Evde Bakım & Medikal Malzeme",
       ar: "الرعاية المتنقلة والمستلزمات الطبية",
+      uz: "Ambulator parvarish va HomeCare",
     },
   },
   {
@@ -108,6 +116,7 @@ const areaNavItems = [
       ru: "Консалтинг и девелопмент",
       tr: "Danışmanlık & Proje Geliştirme",
       ar: "الاستشارات والتطوير الطبي",
+      uz: "Konsalting va loyihalar boshqaruvi",
     },
     subtitles: {
       de: "Gesundheitsimmobilien & MVZ-Strukturen",
@@ -115,6 +124,7 @@ const areaNavItems = [
       ru: "Медицинские центры и девелопмент",
       tr: "Sağlık Tesisleri & Klinik Projeleri",
       ar: "تطوير المرافق والمجمعات الطبية",
+      uz: "Tibbiy ko'chmas mulk va MVZ tuzilmalari",
     },
   },
   {
@@ -126,6 +136,7 @@ const areaNavItems = [
       ru: "Международное сотрудничество",
       tr: "Uluslararası İş Birlikleri",
       ar: "التعاون الطبي الدولي",
+      uz: "Xalqaro hamkorlik",
     },
     subtitles: {
       de: "Partnerschaften & Wissenstransfer",
@@ -133,6 +144,7 @@ const areaNavItems = [
       ru: "Партнёрство и трансфер знаний",
       tr: "Stratejik Ortaklıklar & Bilgi Transferi",
       ar: "الشراكات ونقل المعرفة والخبرات",
+      uz: "Hamkorlik va bilim almashinuvi",
     },
   },
 ];
@@ -143,6 +155,7 @@ const overviewLabels: Record<string, string> = {
   ru: "Все направления холдинга",
   tr: "Tüm Faaliyet Alanlarına Genel Bakış",
   ar: "نظرة شاملة على جميع القطاعات",
+  uz: "Barcha yo'nalishlar sharhi",
 };
 
 const dropdownEyebrow: Record<string, string> = {
@@ -151,6 +164,7 @@ const dropdownEyebrow: Record<string, string> = {
   ru: "НАПРАВЛЕНИЯ ХОЛДИНГА",
   tr: "KURUMSAL ALANLAR",
   ar: "قطاعات المجموعة",
+  uz: "XOLDING YO'NALISHLARI",
 };
 
 export function Header({ currentLocale = "de" }: HeaderProps) {

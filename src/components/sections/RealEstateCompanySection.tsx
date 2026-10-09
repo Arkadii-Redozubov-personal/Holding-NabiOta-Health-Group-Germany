@@ -46,7 +46,7 @@ const portfolioIcons = [
  * langfristiger Werterhalt & rechtliche Abgrenzung (Keine Behandlungsaufgaben / § 34c GewO).
  */
 
-type Lang = "de" | "en" | "ru" | "tr" | "ar";
+type Lang = "de" | "en" | "ru" | "tr" | "ar" | "uz";
 type T = Record<Lang, string>;
 type Icon = React.ComponentType<{ className?: string }>;
 
@@ -57,6 +57,7 @@ const c = {
     ru: "GmbH · Медицинская недвижимость · Нормы § 34c GewO",
     tr: "GmbH · Özel Sağlık Gayrimenkulleri · § 34c GewO",
     ar: "شركة ذات مسؤولية محدودة · العقارات الطبية المتخصصة · § 34c GewO",
+    uz: "GmbH · Maxsus tibbiy ko'chmas mulk · § 34c GewO",
   } as T,
   title: "NabiOta Real Estate GmbH",
   subtitle: {
@@ -65,6 +66,7 @@ const c = {
     ru: "Специализированная медицинская недвижимость и девелопмент",
     tr: "Özel Tıbbi Gayrimenkuller ve Altyapı Geliştirme",
     ar: "العقارات الطبية المتخصصة وتطوير البنية التحتية",
+    uz: "Maxsus tibbiy ko'chmas mulk va infratuzilmani rivojlantirish",
   } as T,
   lead: {
     de: "Gegenstand des Unternehmens ist der Erwerb, das Halten, die Verwaltung, Entwicklung, Vermietung, Verpachtung und Veräußerung eigener Grundstücke, Gebäude und grundstücksgleicher Rechte, insbesondere von Immobilien für Einrichtungen des Gesundheitswesens. Ergänzend können Verwaltungs-, Lager- und Wohnflächen, insbesondere für Mitarbeiter, erworben, entwickelt und vermietet werden.",
@@ -72,6 +74,7 @@ const c = {
     ru: "Предметом деятельности компании является приобретение, владение, управление, развитие, сдача в аренду, лизинг и продажа собственных земельных участков, зданий и вещных прав, в особенности недвижимости для учреждений здравоохранения. Дополнительно могут приобретаться, развиваться и сдаваться в аренду административные, складские и жилые помещения для сотрудников.",
     tr: "Şirketin faaliyet konusu; sağlık tesislerine tahsis edilmiş gayrimenkuller başta olmak üzere mülkiyeti kendisine ait arsa, bina ve ayni hakların iktisabı, elde tutulması, yönetimi, geliştirilmesi, kiralanması, işletmeye verilmesi ve satışıdır. Buna ek olarak çalışanlar başta olmak üzere idari, lojistik ve konut amaçlı alanlar da iktisap edilebilir, geliştirilebilir ve kiralanabilir.",
     ar: "يتمثل الغرض من الشركة في تملك وحيازة وإدارة وتطوير وتأجير والتصرف في الأراضي والمباني والحقوق العقارية الخاصة بها، لا سيما العقارات المخصصة لمؤسسات الرعاية الصحية. وبالإضافة إلى ذلك، يجوز تملك وتطوير وتأجير المساحات الإدارية ومستودعات التخزين والوحدات السكنية المخصصة للموظفين.",
+    uz: "Kompaniya faoliyatining predmeti sog'liqni saqlash muassasalari uchun mo'ljallangan ko'chmas mulk obyektlari, o'z yer uchastkalari, binolari va ashyoviy huquqlarini sotib olish, egalik qilish, boshqarish, rivojlantirish, ijaraga berish, lizing va sotishdan iborat. Shuningdek, xodimlar uchun ma'muriy, omborxona va turar-joy maydonlari sotib olinishi, rivojlantirilishi va ijaraga berilishi mumkin.",
   } as T,
 
   portfolioTitle: {
@@ -80,6 +83,7 @@ const c = {
     ru: "Портфель объектов здравоохранения",
     tr: "Sağlık Alanında Gayrimenkul Portföyü",
     ar: "محفظة الأصول العقارية في قطاع الرعاية الصحية",
+    uz: "Sog'liqni saqlash sohasidagi ko'chmas mulk portfeli",
   } as T,
   portfolioItems: [
     {
@@ -88,6 +92,7 @@ const c = {
       ru: "Клинические корпуса и профильные больницы",
       tr: "Klinik Binaları ve İhtisas Hastaneleri",
       ar: "مباني العيادات والمستشفيات التخصصية",
+      uz: "Klinika binolari va ixtisoslashtirilgan kasalxonalar",
     },
     {
       de: "Medizinische Versorgungszentren (MVZ)",
@@ -95,6 +100,7 @@ const c = {
       ru: "Медицинские центры (MVZ)",
       tr: "Tıp Merkezleri (MVZ)",
       ar: "مراكز الرعاية الطبية (MVZ)",
+      uz: "Tibbiy yordam markazlari (MVZ)",
     },
     {
       de: "Facharzt- & Hausarztpraxen",
@@ -102,6 +108,7 @@ const c = {
       ru: "Кабинеты и частные врачебные практики",
       tr: "Uzman ve Aile Hekimi Muayenehaneleri",
       ar: "عيادات الأطباء الأخصائيين والعموميين",
+      uz: "Tor mutaxassis va oilaviy shifokor amaliyotlari",
     },
     {
       de: "Ambulante Operationszentren (OP)",
@@ -109,6 +116,7 @@ const c = {
       ru: "Амбулаторные операционные комплексы",
       tr: "Günübirlik Cerrahi ve Ameliyathane Merkezleri",
       ar: "مراكز الجراحة المتنقلة وعيادات العمليات",
+      uz: "Ambulator jarrohlik va operatsiya markazlari",
     },
     {
       de: "Diagnostik- & Radiologiezentren",
@@ -116,6 +124,7 @@ const c = {
       ru: "Диагностические и радиологические центры",
       tr: "Tanı ve Radyoloji Merkezleri",
       ar: "مراكز التشخيص والأشعة التخصصية",
+      uz: "Diagnostika va radiologiya markazlari",
     },
     {
       de: "Therapie- & Rehabilitationseinrichtungen",
@@ -123,6 +132,7 @@ const c = {
       ru: "Терапевтические и реабилитационные центры",
       tr: "Terapi ve Rehabilitasyon Tesisleri",
       ar: "مرافق العلاج وإعادة التأهيل",
+      uz: "Terapiya va reabilitatsiya muassasalari",
     },
     {
       de: "Stationäre & ambulante Pflegeeinrichtungen",
@@ -130,6 +140,7 @@ const c = {
       ru: "Стационарные и дневные учреждения ухода",
       tr: "Yatılı ve Ayakta Bakım Merkezleri",
       ar: "مرافق التمريض والإقامة النهارية والسريرية",
+      uz: "Statsionar va kunduzgi parvarishlash muassasalari",
     },
     {
       de: "Mitarbeiterwohnen, Verwaltung & Logistik",
@@ -137,6 +148,7 @@ const c = {
       ru: "Жильё для сотрудников, офисы и склады",
       tr: "Personel Konutları, Yönetim ve Lojistik Alanları",
       ar: "سكن الموظفين والإدارة والمستودعات اللوجستية",
+      uz: "Xodimlar turar joylari, ma'muriy va logistika maydonlari",
     },
   ] as T[],
 
@@ -146,6 +158,7 @@ const c = {
     ru: "10 ключевых задач компании",
     tr: "Şirketin 10 Temel Görevi",
     ar: "المهام الأساسية العشر للشركة",
+    uz: "Kompaniyaning 10 ta asosiy vazifasi",
   } as T,
   tasks: [
     {
@@ -157,6 +170,7 @@ const c = {
         ru: "Поиск и оценка локаций",
         tr: "Konum Araştırması ve Değerleme",
         ar: "البحث عن المواقع والتقييم الاستراتيجي",
+        uz: "Joylashuvni qidirish va baholash",
       } as T,
       desc: {
         de: "Suche und Bewertung geeigneter Standorte unter Berücksichtigung von Erreichbarkeit, Flächenbedarf, Erweiterungsmöglichkeiten und wirtschaftlicher Tragfähigkeit.",
@@ -164,6 +178,7 @@ const c = {
         ru: "Поиск и оценка локаций с учётом транспортной доступности, потребности в площадях, потенциала расширения и экономической окупаемости.",
         tr: "Erişilebilirlik, alan ihtiyacı, genişleme kapasitesi ve ekonomik sürdürülebilirlik gözetilerek en uygun sağlık lokasyonlarının araştırılması ve değerlemesi.",
         ar: "البحث عن مواقع استراتيجية ملائمة وتقييمها مع مراعاة سهولة الوصول، والاحتياجات المساحية، وفرص التوسع المستقبلية، والجدوى الاقتصادية طويلة الأجل.",
+        uz: "Qulay transport qatnovi, maydon ehtiyoji, kengayish imkoniyatlari va iqtisodiy samaradorlikni hisobga olgan holda tibbiy obyektlar uchun eng ma'qul joylarni qidirish va baholash.",
       } as T,
     },
     {
@@ -175,6 +190,7 @@ const c = {
         ru: "Правовая и техническая экспертиза",
         tr: "Hukuki ve Teknik İnceleme (Due Diligence)",
         ar: "الفحص القانوني والفني النافي للجهالة",
+        uz: "Huquqiy va texnik ekspertiza (Due Diligence)",
       } as T,
       desc: {
         de: "Organisation der rechtlichen, technischen und wirtschaftlichen Prüfung vor einem Immobilienerwerb unter Einbindung qualifizierter Fachberater.",
@@ -182,6 +198,7 @@ const c = {
         ru: "Организация юридического, строительно-технического и финансового аудита перед покупкой объектов с привлечением сертифицированных экспертов.",
         tr: "Gayrimenkul alımı öncesinde bağımsız uzman danışmanlar eşliğinde hukuki, teknik, yapısal ve mali denetim süreçlerinin yürütülmesi.",
         ar: "تنظيم وإجراء الفحص القانوني والفني والإنشائي والمالي الشامل قبل تملك العقارات بمشاركة خبراء واستشاريين معتمدين.",
+        uz: "Ko'chmas mulkni sotib olishdan oldin malakali mustaqil ekspertlarni jalb etgan holda yuridik, texnik, qurilish va moliyaviy auditni tashkil etish.",
       } as T,
     },
     {
@@ -193,6 +210,7 @@ const c = {
         ru: "Планировочные концепции",
         tr: "Klinik Mekân ve Kullanım Planlaması",
         ar: "تخطيط المساحات والمفاهيم السريرية",
+        uz: "Xonalar va ulardan foydalanish konsepsiyalari",
       } as T,
       desc: {
         de: "Entwicklung von Raum- und Nutzungskonzepten in enger Abstimmung mit den vorgesehenen medizinischen und therapeutischen Betreibern.",
@@ -200,6 +218,7 @@ const c = {
         ru: "Разработка функциональных планировок и концепций использования помещений в тесном согласовании с оперирующими врачами и клиниками.",
         tr: "Hizmet verecek tıbbi ve terapötik işletmeciler ile birebir koordinasyon içinde işlevsel mekân, yerleşim ve kullanım planlarının hazırlanması.",
         ar: "تطوير مفاهيم التوزيع المكاني والاستخدام الوظيفي بالتنسيق الوثيق والمباشر مع المشغلين الطبيين والعلاجيين المعتمدين.",
+        uz: "Rejalashtirilgan tibbiy va terapevtik operatorlar bilan yaqin muvofiqlashtirilgan holda funksional loyihalar va foydalanish konsepsiyalarini ishlab chiqish.",
       } as T,
     },
     {
@@ -211,6 +230,7 @@ const c = {
         ru: "Строительство, реконструкция и санация",
         tr: "Yeni Yapım, Yenileme ve Dönüşüm",
         ar: "البناء الجديد والتحديث والترميم",
+        uz: "Yangi qurilish, rekonstruksiya va modernizatsiya",
       } as T,
       desc: {
         de: "Vorbereitung und Koordination von Neubauten, Umbauten, Sanierungen, Modernisierungen und Nutzungsänderungen eigener Immobilien.",
@@ -218,6 +238,7 @@ const c = {
         ru: "Подготовка и координация нового строительства, перепланировок, санации, модернизации и перевода помещений в статус медицинских объектов.",
         tr: "Holding bünyesindeki mülklerin anahtar teslim yeni inşası, tadilatı, modernizasyonu ve tıbbi kullanım amaçlı imar/tahsis dönüşümlerinin yönetimi.",
         ar: "إعداد وتنسيق مشاريع البناء الجديد، وإعادة التهيئة، والتحديث الشامل، وتعديل استخدام المباني لتتوافق مع المعايير الطبية المعتمدة.",
+        uz: "O'z ko'chmas mulk obyektlarini noldan qurish, qayta rejalashtirish, ta'mirlash, modernizatsiya qilish va tibbiy maqsadlarda foydalanishga moslashtirishni muvofiqlashtirish.",
       } as T,
     },
     {
@@ -229,6 +250,7 @@ const c = {
         ru: "Управление проектировщиками и генподрядчиками",
         tr: "Mimar ve Yüklenici Süreç Yönetimi",
         ar: "إدارة المصممين والمقاولين الإنشائيين",
+        uz: "Loyihachilar va pudratchilarni boshqarish",
       } as T,
       desc: {
         de: "Beauftragung und Koordination von Architekten, Fachplanern, Bauunternehmen und weiteren qualifizierten Dienstleistern.",
@@ -236,6 +258,7 @@ const c = {
         ru: "Тендерный отбор и управление профильными архитекторами, инженерами спецсетей, генподрядчиками и строительными компаниями.",
         tr: "Sağlık mimarları, uzman mühendisler, ana yükleniciler ve uzman medikal inşaat firmalarının ihale, görevlendirme ve saha denetimi.",
         ar: "التعاقد مع مهندسي العمارة الطبية المتخصصة، والمخططين المعتمدين، وشركات المقاولات العامة والإشراف المباشر على تنفيذ أعمالهم.",
+        uz: "Tibbiy me'morlar, maxsus muhandislar, bosh pudratchilar va ixtisoslashgan qurilish xizmatlarini jalb qilish hamda ularning ishini nazorat qilish.",
       } as T,
     },
     {
@@ -247,6 +270,7 @@ const c = {
         ru: "Контроль бюджетов, сроков и графиков",
         tr: "Bütçe, Süre ve Takvim Kontrolü",
         ar: "مراقبة الميزانيات والجداول الزمنية",
+        uz: "Byudjet, muddat va bosqichlar nazorati",
       } as T,
       desc: {
         de: "Planung und Überwachung von Investitionsbudgets, Bauzeiten, Meilensteinen und kontinuierlichen Projektfortschritten.",
@@ -254,6 +278,7 @@ const c = {
         ru: "Планирование и строгий мониторинг инвестиционных бюджетов, сроков выполнения работ и проектных контрольных точек.",
         tr: "Yatırım bütçelerinin, inşaat sürelerinin, kritik kilometre taşlarının ve proje ilerleme aşamalarının hassas planlanması ve sürekli denetimi.",
         ar: "تخطيط ومراقبة ميزانيات الاستثمار الرأسمالي، وجداول البناء، والمراحل المفصلية لضمان التقدم المستمر وفق الخطة المعتمدة.",
+        uz: "Investitsiya byudjetlari, qurilish muddatlari, loyiha bosqichlari va taraqqiyot jarayonlarini aniq rejalashtirish va doimiy monitoring qilish.",
       } as T,
     },
     {
@@ -265,6 +290,7 @@ const c = {
         ru: "Техническая эксплуатация зданий",
         tr: "Teknik Tesis ve Bina Yönetimi",
         ar: "إدارة المرافق والتشغيل الفني",
+        uz: "Texnik binolarni boshqarish (Facility Management)",
       } as T,
       desc: {
         de: "Organisation der Instandhaltung, Wartung, Gebäudesicherheit und kontinuierlichen technischen Gebäudeverwaltung.",
@@ -272,6 +298,7 @@ const c = {
         ru: "Организация регулярного техобслуживания, ремонта, инженерных сетей и комплексного управления зданиями.",
         tr: "Koruyucu bakım, onarım, bina güvenliği, medikal gaz ve bina teknolojilerinin 7/24 kesintisiz teknik yönetimi ve işletimi.",
         ar: "تنظيم أعمال الصيانة الدورية، والإصلاح، والسلامة الإنشائية، وإدارة النظم الهندسية والغازات الطبية في المنشآت على مدار الساعة.",
+        uz: "Profilaktik xizmat ko'rsatish, ta'mirlash, bino xavfsizligi, tibbiy gazlar va texnik infratuzilmani 24/7 uzluksiz boshqarishni tashkil qilish.",
       } as T,
     },
     {
@@ -283,6 +310,7 @@ const c = {
         ru: "Безбарьерность, пожарная безопасность и ESG",
         tr: "Erişilebilirlik, Yangın Güvenliği ve Enerji",
         ar: "سهولة الوصول، السلامة من الحرائق ومعايير ESG",
+        uz: "To'siqsiz muhit, yong'in xavfsizligi va energiya tejamkorligi",
       } as T,
       desc: {
         de: "Koordination von Maßnahmen zur Barrierefreiheit (DIN 18040), zum baulichen Brandschutz, zur Energieeffizienz und zur Spezialtechnik.",
@@ -290,6 +318,7 @@ const c = {
         ru: "Реализация норм безбарьерной среды (DIN 18040), противопожарной защиты клиник, энергоэффективности и вентиляционных систем.",
         tr: "DIN 18040 engelsiz erişim standartları, sağlık binalarına özel yangın kompartımanları, enerji verimliliği ve iklimlendirme sistemlerinin uygulanması.",
         ar: "تطبيق معايير DIN 18040 للوصول الشامل، واشتراطات الوقاية من الحرائق في المنشآت الطبية، وحلول كفاءة الطاقة والتهوية المتقدمة.",
+        uz: "DIN 18040 to'siqsiz muhit standartlari, tibbiy binolarning maxsus yong'in xavfsizligi, energiya samaradorligi va shamollatish tizimlarini joriy etish.",
       } as T,
     },
     {
@@ -301,6 +330,7 @@ const c = {
         ru: "Управление арендой и коммунальными расходами",
         tr: "Kira ve İşletme Giderleri Yönetimi",
         ar: "إدارة عقود الإيجار والتكاليف التشغيلية",
+        uz: "Ijara va ekspluatatsiya xarajatlarini boshqarish",
       } as T,
       desc: {
         de: "Abschluss und Verwaltung von Miet-, Pacht- und Nutzungsverträgen sowie Organisation transparenter Betriebskostenabrechnungen.",
@@ -308,6 +338,7 @@ const c = {
         ru: "Заключение и администрирование договоров аренды, лизинга помещений и ведение прозрачных расчётов эксплуатационных расходов.",
         tr: "Kira, intifa ve tahsis sözleşmelerinin akdedilmesi ve idaresi ile şeffaf işletme ve genel gider faturalandırma organizasyonu.",
         ar: "إبرام وإدارة عقود الإيجار والانتفاع التجاري الطبي وتنظيم الحسابات الشفافة والموثقة لتكاليف التشغيل والمرافق.",
+        uz: "Tibbiy tijoriy ijara va foydalanish shartnomalarini tuzish, boshqarish hamda ekspluatatsiya xarajatlarining shaffof hisob-kitoblarini yuritish.",
       } as T,
     },
     {
@@ -319,6 +350,7 @@ const c = {
         ru: "Финансирование и государственные субсидии",
         tr: "Finansman ve Kamu Teşvikleri",
         ar: "تمويل الأصول والمنح الحكومية",
+        uz: "Moliyalashtirish va davlat subsidiyalari",
       } as T,
       desc: {
         de: "Vorbereitung der Finanzierung eigener Immobilienvorhaben und Prüfung geeigneter Förderprogramme (KfW, Landesbanken).",
@@ -326,6 +358,7 @@ const c = {
         ru: "Структурирование проектного финансирования и привлечение государственных программ субсидирования (KfW, земельные банки развития).",
         tr: "Gayrimenkul projelerinin sermaye finansmanının yapılandırılması ve kamu kalkınma fonları ile yeşil kredi teşviklerinin (KfW vb.) incelenmesi.",
         ar: "هيكلة النماذج التمويلية الرأسمالية للمشاريع الخاصة والاستفادة القصوى من برامج الدعم والمنح والقروض الميسرة (KfW والبنوك التنموية).",
+        uz: "O'z ko'chmas mulk loyihalarini kapitallashtirishni tayyorlash hamda davlat rivojlantirish dasturlari va imtiyozli kreditlarni (KfW, federal banklar) jalb etish.",
       } as T,
     },
   ],
@@ -336,6 +369,7 @@ const c = {
     ru: "Договорные соглашения об аренде и инвестициях с операторами",
     tr: "İşletmecilerle Kira ve Yatırım Anlaşmaları",
     ar: "اتفاقيات الإيجار والاستثمار مع المشغلين الطبيين",
+    uz: "Operatorlar bilan ijara va investitsiya shartnomalari",
   } as T,
   agreementsText: {
     de: "Miet- und Investitionsvereinbarungen werden individuell mit den jeweiligen medizinischen Betreibern abgestimmt. Dabei werden Nutzungszweck, Flächenumfang, Ausstattungsstandard, Investitionsbeiträge, Instandhaltungspflichten, technische Verantwortlichkeiten und Vertragslaufzeiten eindeutig und transparent geregelt.",
@@ -343,6 +377,7 @@ const c = {
     ru: "Договоры аренды и инвестиционные соглашения детально согласуются с медицинскими операторами. Целевое назначение, площади, стандарты отделки, доли инвестиций, обязанности по ТО, техническая ответственность и сроки договоров фиксируются прозрачно и однозначно.",
     tr: "Kira ve sermaye yatırımı anlaşmaları ilgili tıbbi işletmecilerle özel olarak kararlaştırılır. Kullanım amacı, alan büyüklüğü, donanım standartları, yatırım katkıları, bakım yükümlülükleri, teknik sorumluluklar ve sözleşme süreleri açık, şeffaf ve bağlayıcı biçimde düzenlenir.",
     ar: "يتم التفاوض على اتفاقيات الإيجار والمساهمات الاستثمارية بصورة فردية ومخصصة مع المشغلين الطبيين المعنيين. ويتم تحديد الغرض من الاستخدام، والمساحات، ومعايير التجهيز، وحصص الاستثمار، والتزامات الصيانة، والمسؤوليات الفنية، ومدد العقود بكل شفافية ودقة.",
+    uz: "Ijara va investitsiya shartnomalari tegishli tibbiy operatorlar bilan individual ravishda kelishiladi. Bunda foydalanish maqsadi, maydon hajmi, jihozlanish standartlari, investitsiya ulushlari, texnik xizmat ko'rsatish majburiyatlari, texnik javobgarlik va shartnoma muddatlari aniq va shaffof belgilanadi.",
   } as T,
 
   goalTitle: {
@@ -351,6 +386,7 @@ const c = {
     ru: "Цель компании: долгосрочное сохранение стоимости",
     tr: "Şirketin Amacı: Sürdürülebilir Değer Korunması",
     ar: "هدف الشركة: الاستدامة والحفاظ طويل الأجل على قيمة الأصول",
+    uz: "Kompaniyaning maqsadi: Barqaror qiymatni saqlash",
   } as T,
   goalText: {
     de: "Ziel der Gesellschaft ist die langfristige Bereitstellung geeigneter und wirtschaftlich tragfähiger Immobilien für die NabiOta-Unternehmensgruppe und weitere Mieter. Sie unterstützt den Aufbau zusätzlicher Standorte, die bedarfsgerechte Erweiterung bestehender Einrichtungen und den nachhaltigen Werterhalt des Immobilienbestands.",
@@ -358,6 +394,7 @@ const c = {
     ru: "Цель компании — долгосрочное обеспечение пригодной и экономически окупаемой недвижимости для группы NabiOta и сторонних арендаторов. Компания поддерживает запуск новых локаций, планомерное расширение действующих центров и сохранение капитализации активов.",
     tr: "Şirketin hedefi; NabiOta Şirketler Grubu ve harici kiracılar için uygun, nitelikli ve ekonomik açıdan sürdürülebilir gayrimenkullerin uzun vadeli teminidir. Yeni lokasyonların kurulmasını, mevcut merkezlerin genişletilmesini ve gayrimenkul portföyünün kalıcı değer artışını destekler.",
     ar: "يتمثل هدف الشركة في التوفير المستدام لعقارات عالية الجودة وذات جدوى اقتصادية متينة لمجموعة شركات NabiOta والمستأجرين الآخرين. تدعم الشركة إنشاء مواقع إضافية، والتوسع المدروس للمرافق الحالية، وصون القيمة الرأسمالية طويلة الأجل للأصول.",
+    uz: "Kompaniyaning maqsadi NabiOta korxonalar guruhi va boshqa ijarachilar uchun yuqori sifatli va iqtisodiy jihatdan barqaror ko'chmas mulkni uzoq muddatli ta'minlashdir. U qo'shimcha filiallar ochishni, mavjud muassasalarni rejaviy kengaytirishni va ko'chmas mulk portfelining barqaror qiymatini saqlab qolishni qo'llab-quvvatlaydi.",
   } as T,
 
   governanceEyebrow: {
@@ -366,6 +403,7 @@ const c = {
     ru: "ПРАВОВЫЕ ОСНОВЫ И КОМПЛАЕНС",
     tr: "YASAL ÇERÇEVE VE UYUMLULUK (COMPLIANCE)",
     ar: "الأطر القانونية والامتثال التنظيمي",
+    uz: "HUQUQIY ASOSLAR VA COMPLIANCE",
   } as T,
   governanceTitle: {
     de: "Rechtliche Abgrenzung & Gesetzliche Pflichten (§ 34c GewO)",
@@ -373,6 +411,7 @@ const c = {
     ru: "Правовое разграничение и требования к лицензированию (§ 34c GewO)",
     tr: "Yasal Ayrım ve Ruhsatlandırma Yükümlülükleri (§ 34c GewO)",
     ar: "الفصل التنظيمي والالتزامات القانونية للتراخيص (§ 34c GewO)",
+    uz: "Huquqiy chegaralar va qonuniy litsenziyalash majburiyatlari (§ 34c GewO)",
   } as T,
   governanceItems: [
     {
@@ -383,6 +422,7 @@ const c = {
         ru: "Компания не ведёт медицинскую деятельность",
         tr: "Tıbbi Tedavi Görevi Üstlenilmez",
         ar: "عدم تولي مهام العلاج الطبي المباشر",
+        uz: "Tibbiy davolash faoliyati olib borilmaydi",
       } as T,
       desc: {
         de: "Die Immobiliengesellschaft übernimmt keine medizinischen Behandlungsaufgaben. Die Verantwortlichkeiten für Gebäude, technische Anlagen und den medizinischen Betrieb werden unter Beachtung zwingender gesetzlicher Pflichten vertraglich strikt voneinander abgegrenzt.",
@@ -390,6 +430,7 @@ const c = {
         ru: "Девелоперская компания не осуществляет лечебных процедур. Ответственность за строительные конструкции, инженерные сети здания и непосредственную медицинскую практику операторов разграничена договорами.",
         tr: "Gayrimenkul şirketi tıbbi tedavi hizmeti sunmaz. Bina, teknik altyapı ve tıbbi işletme sorumlulukları emredici yasal kurallar gözetilerek sözleşmelerle kesin hatlarla ayrılmıştır.",
         ar: "لا تتولى شركة العقارات أية مهام علاجية أو طبية. يتم الفصل التعاقدي الصارم بين المسؤوليات المتعلقة بالمباني والمرافق الهندسية من جهة، والتشغيل الطبي للمنشآت من جهة أخرى وفق القوانين الإلزامية.",
+        uz: "Ko'chmas mulk kompaniyasi hech qanday tibbiy davolash vazifalarini bajarmaydi. Binolar, muhandislik tarmoqlari va bevosita tibbiy amaliyot uchun javobgarlik shartnomalar orqali qat'iy ajratilgan.",
       } as T,
     },
     {
@@ -400,6 +441,7 @@ const c = {
         ru: "Официальные строительные и эксплуатационные допуски",
         tr: "Resmi İnşaat ve İşletme Ruhsatları",
         ar: "تصاريح البناء والتشغيل الرسمية",
+        uz: "Qurilish va faoliyat yuritish bo'yicha rasmiy ruxsatnomalar",
       } as T,
       desc: {
         de: "Die erforderlichen bau-, nutzungs- und betriebsbezogenen Genehmigungen werden an jedem Standort vor Aufnahme der jeweiligen medizinischen Nutzung vollständig eingeholt.",
@@ -407,6 +449,7 @@ const c = {
         ru: "Все необходимые разрешения на строительство, санитарно-гигиенические допуски и перевод помещений в статус медицинских получаются до начала приёма пациентов.",
         tr: "Gerekli imar, kullanım ve işletme ruhsatları her lokasyonda tıbbi faaliyete başlanmadan önce eksiksiz olarak temin edilir.",
         ar: "يتم استيفاء واستخراج كافة التراخيص والتصاريح المعمارية والتشغيلية والتنظيمية في كل موقع بشكل كامل قبل البدء الفعلي في الممارسة الطبية.",
+        uz: "Har bir obyektdan tibbiy maqsadda foydalanish boshlanishidan oldin barcha zarur shaharsozlik, arxitektura, foydalanish va gigiyenik ruxsatnomalar to'liq olinadi.",
       } as T,
     },
     {
@@ -417,6 +460,7 @@ const c = {
         ru: "Лицензирование по § 34c промыслового устава (GewO)",
         tr: "§ 34c GewO Kapsamında İzin Yükümlülüğü",
         ar: "التراخيص الإلزامية بموجب المادة § 34c من قانون التجارة (GewO)",
+        uz: "Tadbirkorlik nizomining § 34c bandi bo'yicha litsenziya talabi (GewO)",
       } as T,
       desc: {
         de: "Erlaubnispflichtige Tätigkeiten, insbesondere Immobilienvermittlung, Bauträger- und Baubetreuertätigkeiten sowie Wohnimmobilienverwaltung für Dritte, werden ausschließlich nach Vorliegen der jeweils erforderlichen behördlichen Erlaubnis nach § 34c GewO ausgeübt.",
@@ -424,13 +468,14 @@ const c = {
         ru: "Виды деятельности, требующие разрешения (риелторское посредничество, функции застройщика/девелопера и управление чужой жилой недвижимостью), осуществляются исключительно при наличии специальной лицензии по § 34c GewO.",
         tr: "İzne tabi faaliyetler, özellikle gayrimenkul aracılığı, müteahhitlik/geliştiricilik ve üçüncü şahıslara ait konut yönetimi, yalnızca § 34c GewO uyarınca resmi makam izinleri alındıktan sonra icra edilir.",
         ar: "الأنشطة الخاضعة للتراخيص القانونية، ولا سيما الوساطة العقارية وأعمال التطوير العقاري وإدارة العقارات السكنية للغير، تُمارس حصرياً بعد الحصول المسبق على التصريح الرسمي الإلزامي بموجب المادة § 34c GewO.",
+        uz: "Ruxsatnoma talab qilinadigan faoliyat turlari (ko'chmas mulk vositachiligi, qurilish-tashkiliy faoliyat va uchinchi shaxslarning turar-joylarini boshqarish) faqat § 34c GewO bo'yicha rasmiy litsenziya olingandan keyingina amalga oshiriladi.",
       } as T,
     },
   ],
 };
 
 export function RealEstateCompanySection({ locale = "de" }: { locale?: string }) {
-  const l: Lang = locale === "tr" ? "tr" : locale === "ar" ? "ar" : locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
+  const l: Lang = locale === "uz" ? "uz" : locale === "tr" ? "tr" : locale === "ar" ? "ar" : locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
 
   return (
     <section

@@ -496,6 +496,96 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
         clinicSlogan2: "في أيدٍ أمينة.",
       },
     },
+    uz: {
+      left: {
+        eyebrow: "BIZNING ALOQA MA'LUMOTLARIMIZ",
+        title: "Biz bilan bog'lanish",
+        desc: "Murojaatingizdan mamnun bo'lamiz. Bizning jamoamiz sizga yordam berishga va savollaringizga javob berishga doim tayyor — telefon, elektron pochta orqali yoki shaxsan uchrashuvda.",
+        addressTitle: "Pochta manzili",
+        street: "Aachener Straße 114",
+        city: "41061 Mönchengladbach, Deutschland",
+        phoneTitle: "Telefon orqali bog'lanish",
+        reception: "Kotibiyat:",
+        admission: "Qabul bo'limi:",
+        executive: "Rahbariyat:",
+        emailTitle: "Elektron pochta",
+        hqEmail: "Bosh ofis:",
+        careerEmail: "Kadrlar bo'limi / Karyera:",
+        hoursTitle: "Ish vaqti",
+        hours: "Dushanba – Juma: 08:00 – 18:00",
+        registryTitle: "Xolding va tijorat reestri",
+        registryCourt: "Amtsgericht Mönchengladbach",
+        registryHrb: "Reestr raqami: HRB 16787",
+        registryCapital: "Ustav kapitali: 50 000 EUR",
+      },
+      form: {
+        eyebrow: "XABAR YUBORISH",
+        title: "Murojaatingizni kutib qolamiz",
+        subtitle:
+          "Aloqa shaklini to'ldiring — mutaxassislarimiz tez orada siz bilan bog'lanishadi.",
+        nameLabel: "TO'LIQ ISM *",
+        namePlaceholder: "masalan, Dr. med. Nodira Karimova",
+        emailLabel: "E-MAIL *",
+        emailPlaceholder: "pochta@misol.uz",
+        phoneLabel: "TELEFON (IXTIYORIY)",
+        phonePlaceholder: "+49 170 1234567",
+        companyLabel: "TASHKILOT / PRAKSIS",
+        companyPlaceholder: "Klinika / Tibbiyot markazi",
+        subjectLabel: "MUROJAAT MAVZUSI",
+        subjects: [
+          "Umumiy so'rov (Xolding bosh qarorgohi)",
+          "NabiOta MVZ (Birlamchi va jarrohlik markazlari)",
+          "NabiOta Diagnostics (3T MRT, KT, laboratoriya)",
+          "NabiOta Rehabilitation & Therapy (Ambulator reabilitatsiya)",
+          "NabiOta HomeCare (Hamshiralik parvarishi va yara markazi)",
+          "NabiOta Sanitätshaus & Apotheke (Tibbiy buyumlar va dorixona)",
+          "NabiOta Real Estate (Tibbiy ko'chmas mulk)",
+          "NabiOta Medical Recruitment (Karyera va approbatsiya)",
+          "Hamkorlar va investorlar (2 bosqichli model)",
+          "Boshqa masala",
+        ],
+        messageLabel: "XABARINGIZ *",
+        messagePlaceholder: "Sizga qanday yordam bera olamiz?",
+        privacyText:
+          "Men maxfiylik siyosati bilan tanishdim va shaxsiy ma'lumotlarim qayta ishlanishiga rozilik bildiraman. *",
+        submitBtn: "Xabarni yuborish",
+        successMsg: "Rahmat! Murojaatingiz muvaffaqiyatli yuborildi.",
+        errorRequired: "Iltimos, barcha majburiy maydonlarni to'ldiring.",
+        errorPrivacy: "Maxfiylik siyosatiga rozilik bildirish majburiydir.",
+      },
+      directory: {
+        eyebrow: "BO'LINMALARNING TO'G'RIDAN-TO'G'RI ALOQALARI",
+        title: "Xolding bo'limlari va sho''ba korxonalari",
+        desc: "Bemorlar, shifokorlar, hamkorlar va yo'llovchi klinikalar uchun to'g'ridan-to'g'ri telefonlar va mutaxassislar.",
+        div1Title: "Ambulator va jarrohlik markazlari (MVZ)",
+        div1Desc: "NabiOta MVZ birlamchi yordam va NabiOta MVZ jarrohlik hamda anesteziologiya GmbH (§ 95 SGB V)",
+        div1Email: "mvz@nabiota-health-group.de",
+        div1Phone: "+49 2161 9170017",
+        div2Title: "Yuqori texnologiyali diagnostika va reabilitatsiya",
+        div2Desc: "NabiOta Diagnostics GmbH (3T MRT, KT, rentgen, laboratoriya) va NabiOta Rehabilitation & Therapy GmbH",
+        div2Email: "diagnostik@nabiota-health-group.de",
+        div2Phone: "+49 2161 9170016",
+        div3Title: "Patronaj, tibbiy buyumlar uyi va dorixona",
+        div3Desc: "NabiOta HomeCare GmbH, NabiOta Sanitätshaus GmbH (§§ 126, 127 SGB V) va NabiOta Pharmacy (§ 14 ApoG)",
+        div3Email: "pflege@nabiota-health-group.de",
+        div3Phone: "+49 2161 9170019",
+        div4Title: "Xolding boshqaruvi, ko'chmas mulk va rekruting",
+        div4Desc: "NabiOta Health Group bosh qarorgohi, NabiOta Real Estate GmbH va Medical Recruitment Services GmbH",
+        div4Email: "holding@nabiota-health-group.de",
+        div4Phone: "+49 2161 9170018",
+      },
+      cards: {
+        mapTitle: "NabiOta Health Group Germany GmbH",
+        mapAddress: "Aachener Straße 114, 41061 Mönchengladbach",
+        openMaps: "Google Maps orqali ochish",
+        qrTitle: "Google Maps uchun QR-kod",
+        qrDesc:
+          "Google Maps ilovasida manzilimizga marshrutni ochish uchun smartfon kamerasi bilan QR-kodni skanerlang.",
+        qrBtn: "QR-kodni skanerlash",
+        clinicSlogan1: "Sizning salomatligingiz",
+        clinicSlogan2: "ishonchli qo'llarda.",
+      },
+    },
   };
 
   const t = contactTranslations[locale as keyof typeof contactTranslations] || contactTranslations.de;
@@ -548,7 +638,9 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
               items={[
                 {
                   label:
-                    locale === "ru"
+                    locale === "uz"
+                      ? "Bosh sahifa"
+                      : locale === "ru"
                       ? "Главная"
                       : locale === "en"
                       ? "Home"
@@ -561,7 +653,9 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                 },
                 {
                   label:
-                    locale === "ru"
+                    locale === "uz"
+                      ? "Aloqa"
+                      : locale === "ru"
                       ? "Контакты"
                       : locale === "en"
                       ? "Contact"
@@ -575,7 +669,9 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
             />
           }
           title={
-            locale === "ru"
+            locale === "uz"
+              ? "Biz bilan bog'laning"
+              : locale === "ru"
               ? "Свяжитесь с нами"
               : locale === "en"
               ? "Get in Touch"
@@ -586,7 +682,9 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
               : "Treten Sie mit uns in Kontakt"
           }
           description={
-            locale === "ru"
+            locale === "uz"
+              ? "Savollaringizga javob berishdan, xoldingning tibbiy yo'nalishlari haqida ma'lumot taqdim etishdan va hamkorlikni muhokama qilishdan mamnun bo'lamiz."
+              : locale === "ru"
               ? "Мы рады ответить на ваши вопросы, предоставить информацию о медицинских направлениях холдинга и обсудить сотрудничество."
               : locale === "en"
               ? "We look forward to hearing from you. Our team is available by phone, email, or in person at our Mönchengladbach headquarters."
@@ -600,7 +698,9 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
             {
               icon: Clock,
               title:
-                locale === "ru"
+                locale === "uz"
+                  ? "Tezkor"
+                  : locale === "ru"
                   ? "Быстрая"
                   : locale === "en"
                   ? "Fast"
@@ -610,7 +710,9 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                   ? "وصول"
                   : "Schnelle",
               sub:
-                locale === "ru"
+                locale === "uz"
+                  ? "bog'lanish"
+                  : locale === "ru"
                   ? "доступность"
                   : locale === "en"
                   ? "availability"
@@ -623,7 +725,9 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
             {
               icon: UserCheck,
               title:
-                locale === "ru"
+                locale === "uz"
+                  ? "Shaxsiy"
+                  : locale === "ru"
                   ? "Личная"
                   : locale === "en"
                   ? "Personal"
@@ -633,7 +737,9 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                   ? "استشارة"
                   : "Persönliche",
               sub:
-                locale === "ru"
+                locale === "uz"
+                  ? "maslahat"
+                  : locale === "ru"
                   ? "консультация"
                   : locale === "en"
                   ? "consultation"
@@ -646,7 +752,9 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
             {
               icon: MapPin,
               title:
-                locale === "ru"
+                locale === "uz"
+                  ? "Qulay"
+                  : locale === "ru"
                   ? "Удобная"
                   : locale === "en"
                   ? "Central"
@@ -656,7 +764,9 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                   ? "موقع"
                   : "Zentraler",
               sub:
-                locale === "ru"
+                locale === "uz"
+                  ? "manzil"
+                  : locale === "ru"
                   ? "локация"
                   : locale === "en"
                   ? "location"
@@ -1164,7 +1274,18 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                         htmlFor="privacyConsent"
                         className="text-[11px] text-[#556057] leading-snug cursor-pointer"
                       >
-                        {locale === "ru" ? (
+                        {locale === "uz" ? (
+                          <>
+                            Men{" "}
+                            <Link
+                              href={`/${locale}/privacy`}
+                              className="text-[#96742E] underline hover:text-forest-950"
+                            >
+                              maxfiylik siyosati
+                            </Link>{" "}
+                            bilan tanishdim va ma'lumotlarim qayta ishlanishiga rozilik bildiraman. *
+                          </>
+                        ) : locale === "ru" ? (
                           <>
                             Я ознакомился с{" "}
                             <Link

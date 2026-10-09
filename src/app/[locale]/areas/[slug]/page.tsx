@@ -42,6 +42,7 @@ const areaTitles: Record<string, Record<SupportedLocale, string>> = {
     ru: "Медицинские направления",
     tr: "Tıbbi Uzmanlık Alanları",
     ar: "الأقسام الطبية التخصصية",
+    uz: "Tibbiyot yo'nalishlari",
   },
   "diagnostik": {
     de: "Diagnostik",
@@ -49,6 +50,7 @@ const areaTitles: Record<string, Record<SupportedLocale, string>> = {
     ru: "Диагностика",
     tr: "Tanı & Teşhis",
     ar: "التشخيص والتحاليل",
+    uz: "Diagnostika",
   },
   "rehabilitation": {
     de: "Rehabilitation",
@@ -56,6 +58,7 @@ const areaTitles: Record<string, Record<SupportedLocale, string>> = {
     ru: "Реабилитация",
     tr: "Rehabilitasyon",
     ar: "إعادة التأهيل",
+    uz: "Reabilitatsiya",
   },
   "pflege": {
     de: "Pflege & Betreuung",
@@ -63,6 +66,7 @@ const areaTitles: Record<string, Record<SupportedLocale, string>> = {
     ru: "Уход и забота",
     tr: "Hasta Bakımı & Destek",
     ar: "التمريض والرعاية المنزلية",
+    uz: "Parvarish va qo'llab-quvvatlash",
   },
   "beratung-projektentwicklung": {
     de: "Beratung & Services",
@@ -70,6 +74,7 @@ const areaTitles: Record<string, Record<SupportedLocale, string>> = {
     ru: "Консалтинг и сервис",
     tr: "Danışmanlık & Hizmetler",
     ar: "الاستشارات والخدمات",
+    uz: "Konsalting va xizmatlar",
   },
   "internationale-kooperationen": {
     de: "Internationale Kooperationen",
@@ -77,13 +82,25 @@ const areaTitles: Record<string, Record<SupportedLocale, string>> = {
     ru: "Международная деятельность",
     tr: "Uluslararası İş Birlikleri",
     ar: "التعاون الدولي والكوادر",
+    uz: "Xalqaro hamkorlik",
   },
 };
 
 export async function generateMetadata({ params }: LocalizedAreaDetailProps): Promise<Metadata> {
   const { locale, slug } = await params;
   const area = businessAreas.find((a) => a.slug === slug);
-  const notFoundText = locale === "tr" ? "Faaliyet alanı bulunamadı" : locale === "ar" ? "القسم غير موجود" : locale === "ru" ? "Направление не найдено" : locale === "en" ? "Area not found" : "Bereich nicht gefunden";
+  const notFoundText =
+    locale === "tr"
+      ? "Faaliyet alanı bulunamadı"
+      : locale === "ar"
+      ? "القسم غير موجود"
+      : locale === "ru"
+      ? "Направление не найдено"
+      : locale === "uz"
+      ? "Yo'nalish topilmadi"
+      : locale === "en"
+      ? "Area not found"
+      : "Bereich nicht gefunden";
   if (!area) return { title: notFoundText };
 
   const displayTitle = areaTitles[slug]?.[locale] || area.title;
@@ -99,6 +116,7 @@ export async function generateMetadata({ params }: LocalizedAreaDetailProps): Pr
         ru: `https://www.nabiota-health-group.de/ru/areas/${slug}`,
         tr: `https://www.nabiota-health-group.de/tr/areas/${slug}`,
         ar: `https://www.nabiota-health-group.de/ar/areas/${slug}`,
+        uz: `https://www.nabiota-health-group.de/uz/areas/${slug}`,
         "x-default": `https://www.nabiota-health-group.de/de/areas/${slug}`,
       },
     },
@@ -144,24 +162,25 @@ export default async function LocalizedAreaDetailPage({ params }: LocalizedAreaD
   const isEn = locale === "en";
   const isTr = locale === "tr";
   const isAr = locale === "ar";
+  const isUz = locale === "uz";
 
   const displayTitle = areaTitles[slug]?.[locale] || area.title;
 
   const areaBadges = [
     {
       icon: <Award className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu ? "Высокие" : isEn ? "Highest" : isTr ? "En Yüksek" : isAr ? "أعلى" : "Höchste",
-      sub: isRu ? "Стандарты" : isEn ? "Standards" : isTr ? "Standartlar" : isAr ? "المعايير" : "Standards",
+      title: isRu ? "Высокие" : isEn ? "Highest" : isTr ? "En Yüksek" : isAr ? "أعلى" : isUz ? "Eng yuqori" : "Höchste",
+      sub: isRu ? "Стандарты" : isEn ? "Standards" : isTr ? "Standartlar" : isAr ? "المعايير" : isUz ? "Standartlar" : "Standards",
     },
     {
       icon: <Stethoscope className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu ? "Врачебная" : isEn ? "Medical" : isTr ? "Uzman Tıbbi" : isAr ? "خبرة طبية" : "Fachärztliche",
-      sub: isRu ? "Экспертиза" : isEn ? "Expertise" : isTr ? "Uzmanlık" : isAr ? "تخصصية" : "Expertise",
+      title: isRu ? "Врачебная" : isEn ? "Medical" : isTr ? "Uzman Tıbbi" : isAr ? "خبرة طبية" : isUz ? "Ixtisoslashgan" : "Fachärztliche",
+      sub: isRu ? "Экспертиза" : isEn ? "Expertise" : isTr ? "Uzmanlık" : isAr ? "تخصصية" : isUz ? "Ekspertiza" : "Expertise",
     },
     {
       icon: <Building2 className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu ? "В составе" : isEn ? "Group" : isTr ? "Holding" : isAr ? "ضمن شبكة" : "Holding",
-      sub: isRu ? "Холдинга" : isEn ? "Network" : isTr ? "Ağı" : isAr ? "المجموعة" : "Verbund",
+      title: isRu ? "В составе" : isEn ? "Group" : isTr ? "Holding" : isAr ? "ضمن شبكة" : isUz ? "Xolding" : "Holding",
+      sub: isRu ? "Холдинга" : isEn ? "Network" : isTr ? "Ağı" : isAr ? "المجموعة" : isUz ? "Tarkibida" : "Verbund",
     },
   ];
 
@@ -219,6 +238,8 @@ export default async function LocalizedAreaDetailPage({ params }: LocalizedAreaD
                     ? "YETKİNLİK VE KALİTE"
                     : isAr
                     ? "الكفاءة وأعلى المعايير"
+                    : isUz
+                    ? "SALOHIYAT VA STANDARTLAR"
                     : "KOMPETENZ & ANSPRUCH"}
                 </Eyebrow>
                 <h2 className="font-display text-3xl sm:text-4xl text-forest-950 leading-tight">
@@ -230,6 +251,8 @@ export default async function LocalizedAreaDetailPage({ params }: LocalizedAreaD
                     ? "Alman Standartlarında Yapılandırılmış Üst Düzey Sağlık Hizmeti"
                     : isAr
                     ? "رعاية صحية متقدمة ومنظمة وفق أعلى المعايير الألمانية"
+                    : isUz
+                    ? "Nemis standartlari bo'yicha yuqori texnologiyali tibbiy xizmat"
                     : "Strukturierte Spitzenversorgung nach deutschen Standards"}
                 </h2>
                 <p className="text-sm sm:text-base text-text-secondary leading-relaxed font-sans">
@@ -270,6 +293,8 @@ export default async function LocalizedAreaDetailPage({ params }: LocalizedAreaD
                       ? "Temel Hizmet Alanları"
                       : isAr
                       ? "مجالات الخدمات الرئيسية"
+                      : isUz
+                      ? "Asosiy yo'nalishlar"
                       : "Leistungsschwerpunkte"}
                   </h3>
                   <div className="space-y-3.5">
@@ -296,6 +321,8 @@ export default async function LocalizedAreaDetailPage({ params }: LocalizedAreaD
                       ? "Holding Bünyesindeki Avantajlarınız"
                       : isAr
                       ? "مزايا الانضمام إلى شبكة المجموعة"
+                      : isUz
+                      ? "Xolding tarkibidagi afzalliklaringiz"
                       : "Ihre Vorteile im Verbund"}
                   </h3>
                   <div className="space-y-3.5">
@@ -324,6 +351,8 @@ export default async function LocalizedAreaDetailPage({ params }: LocalizedAreaD
                     ? `${displayTitle} hakkında daha fazla bilgi almak ister misiniz?`
                     : isAr
                     ? `هل ترغبون في معرفة المزيد عن ${displayTitle}؟`
+                    : isUz
+                    ? `«${displayTitle}» yo'nalishi haqida ko'proq bilmoqchimisiz?`
                     : `Möchten Sie mehr über ${displayTitle} erfahren?`}
                 </h4>
                 <p className="text-xs sm:text-sm text-ivory-200/80">
@@ -335,6 +364,8 @@ export default async function LocalizedAreaDetailPage({ params }: LocalizedAreaD
                     ? "Ekibimiz özel sorularınızı yanıtlamaktan ve iş birliği olanaklarını görüşmekten memnuniyet duyacaktır."
                     : isAr
                     ? "يسعد فريقنا الإجابة عن كافة استفساراتكم وبحث فرص التعاون المشترك معكم."
+                    : isUz
+                    ? "Bizning jamoamiz savollaringizga mamnuniyat bilan javob beradi va hamkorlik imkoniyatlarini muhokama qiladi."
                     : "Unser Team beantwortet gerne Ihre individuellen Fragen und Kooperationsanfragen."}
                 </p>
               </div>
@@ -357,6 +388,8 @@ export default async function LocalizedAreaDetailPage({ params }: LocalizedAreaD
                 ? "Holdingin Diğer Faaliyet Alanları"
                 : isAr
                 ? "قطاعات المجموعة الأخرى"
+                : isUz
+                ? "Xoldingning boshqa yo'nalishlari"
                 : "Weitere Unternehmensbereiche"}
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

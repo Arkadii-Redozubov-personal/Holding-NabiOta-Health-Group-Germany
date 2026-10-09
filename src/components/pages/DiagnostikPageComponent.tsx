@@ -140,6 +140,7 @@ interface Props {
 }
 
 export function DiagnostikPageComponent({ locale = "de" }: Props) {
+  const isUz = locale === "uz";
   const isRu = locale === "ru";
   const isEn = locale === "en";
   const isTr = locale === "tr";
@@ -179,8 +180,10 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
 
   // ── Hero Content ──
   const heroData = {
-    title: isRu ? "Диагностика" : isEn ? "Diagnostics" : isTr ? "Tanı ve Görüntüleme" : isAr ? "التشخيص والتصوير الطبي" : "Diagnostik",
-    subtitle: isRu
+    title: isUz ? "Diagnostika" : isRu ? "Диагностика" : isEn ? "Diagnostics" : isTr ? "Tanı ve Görüntüleme" : isAr ? "التشخيص والتصوير الطبي" : "Diagnostik",
+    subtitle: isUz
+      ? "Ekspert darajasidagi yuqori texnologiyali tibbiy vizualizatsiya"
+      : isRu
       ? "Высокотехнологичная визуализация экспертного уровня"
       : isEn
       ? "High-Precision Diagnostic Imaging"
@@ -189,7 +192,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
       : isAr
       ? "تقنيات فائقة الدقة لتشخيص سريري موثوق"
       : "Präzisionstechnologie für fundierte Befunde",
-    description: isRu
+    description: isUz
+      ? "NabiOta® Diagnostics GmbH Germaniya klinik standartlari asosida yuqori aniqlikdagi nurlanish, neyrofiziologiya va laboratoriya diagnostikasining to'liq spektrini taqdim etadi: 3-Tesla MRT, kam dozali KT, raqamli rentgen, EMG/ENG/EEG hamda tezkor POCT laboratoriya tahlillari."
+      : isRu
       ? "NabiOta® Diagnostics GmbH предоставляет полный спектр высокоточной лучевой, нейрофизиологической и лабораторной диагностики: 3-Тесла МРТ, низкодозовая КТ, цифровой рентген, ЭМГ/ЭНГ/ЭЭГ и экспресс-тестирование POCT по немецким стандартам."
       : isEn
       ? "NabiOta® Diagnostics GmbH delivers university-grade medical imaging, neurophysiology, and clinical laboratory testing: 3-Tesla wide-bore MRI, low-dose CT, digital radiography, EMG/ENG/EEG, and rapid POCT analysis according to rigorous German clinical standards."
@@ -201,18 +206,18 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
     badges: [
       {
         icon: <MriScannerIcon className="w-5 h-5 text-[#ECCF96]" />,
-        title: isRu ? "3-Тесла МРТ" : isEn ? "3-Tesla MRI" : isTr ? "3-Tesla MR" : isAr ? "رنين مغناطيسي 3 تسلا" : "3-Tesla-MRT",
-        sub: isRu ? "Макс. детализация" : isEn ? "High-Field Precision" : isTr ? "Yüksek Alan Hassasiyeti" : isAr ? "دقة متناهية المجال" : "High-Field Präzision",
+        title: isUz ? "3-Tesla MRT" : isRu ? "3-Тесла МРТ" : isEn ? "3-Tesla MRI" : isTr ? "3-Tesla MR" : isAr ? "رنين مغناطيسي 3 تسلا" : "3-Tesla-MRT",
+        sub: isUz ? "Maksimal aniqlik" : isRu ? "Макс. детализация" : isEn ? "High-Field Precision" : isTr ? "Yüksek Alan Hassasiyeti" : isAr ? "دقة متناهية المجال" : "High-Field Präzision",
       },
       {
         icon: <Clock className="w-5 h-5 text-[#ECCF96]" />,
         title: "< 24h",
-        sub: isRu ? "Сроки заключения" : isEn ? "Report Turnaround" : isTr ? "Rapor Teslim Süresi" : isAr ? "تسليم التقرير الطبي" : "Befunderstellung",
+        sub: isUz ? "Xulosa tayyorlash" : isRu ? "Сроки заключения" : isEn ? "Report Turnaround" : isTr ? "Rapor Teslim Süresi" : isAr ? "تسليم التقرير الطبي" : "Befunderstellung",
       },
       {
         icon: <ShieldCheck className="w-5 h-5 text-[#ECCF96]" />,
         title: "Low-Dose",
-        sub: isRu ? "Бережная КТ" : isEn ? "Minimal Dose CT" : isTr ? "Düşük Dozlu BT" : isAr ? "أشعة مقطعية بجرعة دنيا" : "Schonende CT",
+        sub: isUz ? "Kam dozali KT" : isRu ? "Бережная КТ" : isEn ? "Minimal Dose CT" : isTr ? "Düşük Dozlu BT" : isAr ? "أشعة مقطعية بجرعة دنيا" : "Schonende CT",
       },
     ],
   };
@@ -222,8 +227,10 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
     {
       id: "mrt",
       badge: "High-Field 3T",
-      title: isRu ? "3-Тесла МРТ" : isEn ? "3-Tesla MRI" : isTr ? "3-Tesla MR" : isAr ? "الرنين المغناطيسي 3 تسلا" : "3-Tesla-MRT",
-      subtitle: isRu
+      title: isUz ? "3-Tesla MRT" : isRu ? "3-Тесла МРТ" : isEn ? "3-Tesla MRI" : isTr ? "3-Tesla MR" : isAr ? "الرنين المغناطيسي 3 تسلا" : "3-Tesla-MRT",
+      subtitle: isUz
+        ? "Yumshoq to'qimalar, MNS va bo'g'imlar uchun yuqori aniqlikdagi 3T tomografiya"
+        : isRu
         ? "Высокоразрешающая томография мягких тканей, ЦНС и суставов"
         : isEn
         ? "High-Resolution Cross-Sectional MRI for Soft Tissue, CNS & Joints"
@@ -232,7 +239,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "تصوير مقطعي عالي الدقة 3 تسلا للأنسجة الرخوة والجهاز العصبي المركزي والمفاصل"
         : "Hochauflösende 3T-Schnittbilddiagnostik für Weichteile, ZNS und Gelenke",
-      desc: isRu
+      desc: isUz
+        ? "Yumshoq to'qimalar va markaziy asab tizimini batafsil ko'rish uchun yuqori aniqlikdagi MRT."
+        : isRu
         ? "МРТ высокого разрешения для детальной визуализации мягких тканей и ЦНС."
         : isEn
         ? "High-resolution 3T imaging for CNS, spine, and joints."
@@ -241,7 +250,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "تصوير 3 تسلا عالي الاستبانة للجهاز العصبي المركزي والمفاصل والأنسجة الرخوة."
         : "Hochauflösende 3T-Bilder für Weichteile, ZNS und Gelenke.",
-      fullDesc: isRu
+      fullDesc: isUz
+        ? "3-Tesla yuqori maydonli MRT ionlashtiruvchi nurlanishsiz maksimal fazoviy aniqlikni ta'minlaydi. Zamonaviy ko'p kanalli g'altaklar va bemor uchun qulay keng tunnel (70 sm) asab tizimi, bo'g'imlar, tog'aylar va qorin bo'shlig'i a'zolarini mukammal vizualizatsiya qilishni kafolatlaydi."
+        : isRu
         ? "Высокопольная 3-Тесла МРТ обеспечивает максимальную пространственную детализацию без использования ионизирующего излучения. Современные многоканальные катушки и широкий туннель (70 см) гарантируют комфорт и превосходную визуализацию нервной системы, суставов, хрящей и органов брюшной полости."
         : isEn
         ? "University-grade 3-Tesla high-field MRI delivers outstanding spatial resolution with zero ionizing radiation. Featuring advanced multi-channel coils and a patient-friendly 70 cm wide-bore tunnel, it cleanly differentiates delicate neurovascular, cartilage, and abdominal structures."
@@ -250,8 +261,16 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "يوفر التصوير بالرنين المغناطيسي عالي المجال 3 تسلا دقة تصويرية فائقة دون أدنى تعرض للإشعاع المؤين. بفضل تقنية الملفات متعددة القنوات والنفق الرحب بقطر 70 سم، يتم الكشف بوضوح استثنائي عن أدق التراكيب العصبية والغضاريف وأنسجة البطن."
         : "Die 3-Tesla-Hochfeld-Magnetresonanztomographie bietet eine herausragende Bildauflösung ohne jegliche Belastung durch ionisierende Strahlung. Dank modernster Mehrkanal-Spulentechnologie und einem patientenfreundlichen Wide-Bore-Tunnel (70 cm) werden selbst feinste Strukturen des Nervensystems, des Knorpels und der Weichteile exakt differenziert.",
-      indicationsTitle: isRu ? "Ключевые показания (по PDF)" : isEn ? "Key Clinical Indications (PDF)" : isTr ? "Klinik Odaklar ve Endikasyonlar" : isAr ? "دواعي الفحص والمجالات السريرية" : "Klinische Schwerpunkte & Indikationen",
-      indications: isRu
+      indicationsTitle: isUz ? "Asosiy klinik ko'rsatmalar" : isRu ? "Ключевые показания (по PDF)" : isEn ? "Key Clinical Indications (PDF)" : isTr ? "Klinik Odaklar ve Endikasyonlar" : isAr ? "دواعي الفحص والمجالات السريرية" : "Klinische Schwerpunkte & Indikationen",
+      indications: isUz
+        ? [
+            "Bosh va orqa miya, kalla suyagi nervlarining neyrovizualizatsiyasi",
+            "Umurtqa pog'onasi, umurtqalararo disklar va nerv ildizlari",
+            "Yirik va periferik bo'g'imlar (tizza, yelka, chanoq-son)",
+            "Bosh va bo'yin qon tomirlarining nurlanishsiz MR-angiografiyasi",
+            "Onkologik diagnostika va yumshoq to'qimalar holatini baholash",
+          ]
+        : isRu
         ? [
             "Головной и спинной мозг, черепно-мозговые нервы",
             "Позвоночник, межпозвонковые диски и корешки",
@@ -290,7 +309,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             "Strahlungsfreie MR-Angiographie der Hirn- & Halsgefäße",
             "Onkologische Schnittbilddiagnostik & Weichteiltumore",
           ],
-      standards: isRu
+      standards: isUz
+        ? "100% nurlanishsiz • PACS teleradiologik arxivi • Shifokor qarorlarining mustaqilligi (§ 95 SGB V)"
+        : isRu
         ? "100% без радиации • Телерадиологический архив PACS • Независимость врачебных решений (§ 95 SGB V)"
         : isEn
         ? "100% Radiation-free • Instant PACS digital transfer • Full physician autonomy (§ 95 SGB V)"
@@ -305,8 +326,10 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
     {
       id: "ct",
       badge: "Low-Dose CT",
-      title: isRu ? "Low-Dose КТ" : isEn ? "Low-Dose CT" : isTr ? "Düşük Dozlu BT" : isAr ? "الأشعة المقطعية منخفضة الجرعة" : "Low-Dose CT",
-      subtitle: isRu
+      title: isUz ? "Past dozali KT" : isRu ? "Low-Dose КТ" : isEn ? "Low-Dose CT" : isTr ? "Düşük Dozlu BT" : isAr ? "الأشعة المقطعية منخفضة الجرعة" : "Low-Dose CT",
+      subtitle: isUz
+        ? "Ultra past nurlanish yuki bilan tezkor qatlamli 3D-tomografiya"
+        : isRu
         ? "Быстрая послойная 3D-томография с ультранизкой лучевой нагрузкой"
         : isEn
         ? "Ultra-Fast 3D Volumetric CT with Iterative Dose Reduction"
@@ -315,7 +338,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "تصوير مقطعي ثلاثي الأبعاد فائق السرعة مع تقليل جرعة الإشعاع التكراري"
         : "Schnelle und schonende Querschnittsbilder mit reduzierter Dosis",
-      desc: isRu
+      desc: isUz
+        ? "Skelet va ichki a'zolarning past dozali qatlamli 3D-tomografiyasi."
+        : isRu
         ? "Низкодозовая послойная 3D-томография скелета и внутренних органов."
         : isEn
         ? "Fast, low-radiation cross-sectional 3D imaging."
@@ -324,7 +349,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "تصوير مقطعي سريع للجسد والأعضاء الداخلية بجرعات إشعاعية مخفضة."
         : "Schnelle und schonende Querschnittsbilder mit reduzierter Dosis.",
-      fullDesc: isRu
+      fullDesc: isUz
+        ? "Iterativ rekonstruksiya algoritmlariga ega ko'p qatlamli kompyuter tomografiyasi nurlanish dozasini maksimal aniqlikda minimal darajagacha kamaytirish imkonini beradi. Bir necha soniya ichida skelet, ko'krak qafasi va qorin bo'shlig'i a'zolarining uch o'lchovli modellari yaratiladi."
+        : isRu
         ? "Многосрезовая компьютерная томография с алгоритмами итеративной реконструкции позволяет сократить дозу облучения до физического минимума при максимальной чёткости. За считанные секунды формируются трехмерные модели скелета, органов грудной клетки и брюшной полости."
         : isEn
         ? "Multi-detector computed tomography utilizing modern iterative dose-reduction algorithms minimizes radiation exposure while delivering pristine 3D cross-sectional volume data of the skeletal frame, thoracic cavity, and abdominal organs in seconds."
@@ -333,8 +360,16 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "تستخدم الأشعة المقطعية متعددة الكواشف خوارزميات إعادة البناء التكرارية الحديثة لتقليل الجرعة الإشعاعية إلى أدنى حد ممكن، منتجةً نماذج حجمية ثلاثية الأبعاد للعظام والقفص الصدري والبطن خلال ثوانٍ معدودة."
         : "Unsere Computertomographie nutzt modernste iterative Rekonstruktionsalgorithmen, um die Strahlendosis auf ein absolutes Minimum zu senken. Innerhalb weniger Sekunden entstehen lückenlose dreidimensionale Bilddaten von Knochenstrukturen, Thorax und Abdomen für eine verlässliche Akut- und Verlaufsbeurteilung.",
-      indicationsTitle: isRu ? "Ключевые показания (по PDF)" : isEn ? "Key Clinical Indications (PDF)" : isTr ? "Klinik Odaklar ve Endikasyonlar" : isAr ? "دواعي الفحص والمجالات السريرية" : "Klinische Schwerpunkte & Indikationen",
-      indications: isRu
+      indicationsTitle: isUz ? "Asosiy klinik ko'rsatmalar" : isRu ? "Ключевые показания (по PDF)" : isEn ? "Key Clinical Indications (PDF)" : isTr ? "Klinik Odaklar ve Endikasyonlar" : isAr ? "دواعي الفحص والمجالات السريرية" : "Klinische Schwerpunkte & Indikationen",
+      indications: isUz
+        ? [
+            "Jarohatlar va murakkab sinishlarning shoshilinch diagnostikasi",
+            "Ko'krak qafasi a'zolari va o'pka (High-Resolution Low-Dose HRCT)",
+            "Qorin bo'shlig'i, qorinparda orti sohasi va kichik chanoq",
+            "Arteriyalar va tomir malformatsiyalarining KT-angiografiyasi",
+            "Kam invaziv blokadalarda KT nazorati (PRT)",
+          ]
+        : isRu
         ? [
             "Экстренная диагностика травм и сложных переломов",
             "Органы грудной клетки и легкие (High-Resolution Low-Dose HRCT)",
@@ -373,7 +408,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             "CT-Angiographie der cerebralen & peripheren Gefäße",
             "Präzise CT-gestützte Schmerztherapie (PRT)",
           ],
-      standards: isRu
+      standards: isUz
+        ? "StrlSchG radiatsiyadan himoyalanish me'yorlari • Shoshilinch holatlarda tezkor xulosa"
+        : isRu
         ? "Нормы радиационной защиты StrlSchG • Экспресс-заключение при критических находках"
         : isEn
         ? "StrlSchG radiation protection • Rapid emergency turnaround protocol"
@@ -388,8 +425,10 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
     {
       id: "roentgen",
       badge: "Digital Rö",
-      title: isRu ? "Цифровой рентген" : isEn ? "Digital X-Ray" : isTr ? "Dijital Röntgen" : isAr ? "الأشعة السينية الرقمية" : "Digitales Röntgen",
-      subtitle: isRu
+      title: isUz ? "Raqamli rentgen" : isRu ? "Цифровой рентген" : isEn ? "Digital X-Ray" : isTr ? "Dijital Röntgen" : isAr ? "الأشعة السينية الرقمية" : "Digitales Röntgen",
+      subtitle: isUz
+        ? "Skelet va ko'krak qafasi a'zolarining tezkor raqamli rentgenografiyasi"
+        : isRu
         ? "Мгновенная цифровая рентгенография скелета и органов грудной клетки"
         : isEn
         ? "Direct Digital Radiography with Flat-Panel Detectors"
@@ -398,7 +437,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "تصوير إشعاعي رقمي مباشر للجهاز الحركي بالكامل والصدر بكواشف مسطحة"
         : "Volldigitale Röntgendiagnostik (Rö) des gesamten Bewegungsapparats",
-      desc: isRu
+      desc: isUz
+        ? "Minimal nurlanish yuki bilan tezkor tekshiruv."
+        : isRu
         ? "Быстрое обследование с минимальной лучевой нагрузкой."
         : isEn
         ? "Rapid examination with minimal radiation exposure."
@@ -407,7 +448,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "فحص سريع ومباشر بأدنى مستويات التعرض الإشعاعي."
         : "Schnelle Untersuchung mit geringer Strahlenbelastung.",
-      fullDesc: isRu
+      fullDesc: isUz
+        ? "Yassi panelli raqamli detektorlar skelet va ko'krak qafasining yuqori aniqlikdagi tasvirlarini soniya ulushlarida taqdim etadi. Raqamli suratlar zudlik bilan yagona himoyalangan PACS arxiviga yuboriladi va xolding jarrohlari hamda ixtisoslashgan shifokorlari uchun darhol ochiq bo'ladi."
+        : isRu
         ? "Плоскопанельные цифровые детекторы обеспечивают снимки скелета и грудной клетки в высоком разрешении за доли секунды. Цифровые снимки мгновенно передаются в единый защищенный архив PACS и доступны оперирующим хирургам и профильным врачам холдинга."
         : isEn
         ? "Direct digital flat-panel detectors yield ultra-sharp radiographs in fractions of a second with minimized radiation exposure. Radiographs are immediately transferred into the group's secure PACS for instant access by attending surgeons and physicians."
@@ -416,8 +459,15 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "تتيح الكواشف الرقمية ذات اللوحة المسطحة التقاط صور إشعاعية بالغة الوضوح في أجزاء من الثانية بأقل جرعة إشعاعية. تتاح الصور فوراً في نظام الأرشفة الرقمي PACS للاطلاع المباشر من قِبل الجراحين والأطباء المعالجين."
         : "Volldigitale Festkörper-Detektoren ermöglichen strahlungsarme Aufnahmen in Sekundenbruchteilen. Die Röntgenbilder stehen sofort im digitalen PACS-Archiv zur Verfügung und können direkt von den behandelnden Fachärzten und Chirurgen der Gruppe eingesehen werden.",
-      indicationsTitle: isRu ? "Ключевые показания (по PDF)" : isEn ? "Key Clinical Indications (PDF)" : isTr ? "Klinik Odaklar ve Endikasyonlar" : isAr ? "دواعي الفحص والمجالات السريرية" : "Klinische Schwerpunkte & Indikationen",
-      indications: isRu
+      indicationsTitle: isUz ? "Asosiy klinik ko'rsatmalar" : isRu ? "Ключевые показания (по PDF)" : isEn ? "Key Clinical Indications (PDF)" : isTr ? "Klinik Odaklar ve Endikasyonlar" : isAr ? "دواعي الفحص والمجالات السريرية" : "Klinische Schwerpunkte & Indikationen",
+      indications: isUz
+        ? [
+            "Skelet, suyaklar va bo'g'imlar fiziologik proyeksiyalarda",
+            "Ko'krak qafasi a'zolari rentgenografiyasi (yurak va o'pka)",
+            "Operatsiyadan keyin implantlar holatini nazorat qilish",
+            "Artroz, deformatsiyalar va sinishlarni erta aniqlash",
+          ]
+        : isRu
         ? [
             "Скелет, кости и суставы в физиологических проекциях",
             "Рентгенография органов грудной клетки (сердце и легкие)",
@@ -451,7 +501,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             "Postoperative Verlaufskontrolle & Implantatsitz",
             "Ausschluss von Frakturen, Fehlstellungen & Arthrosen",
           ],
-      standards: isRu
+      standards: isUz
+        ? "StrlSchG nurlanishdan himoyalanish to'g'risidagi qonuni • PACS tizimiga darhol kirish"
+        : isRu
         ? "Закон о защите от излучения StrlSchG • Моментальный доступ в PACS"
         : isEn
         ? "German Radiation Protection Act • Instant PACS digital transmission"
@@ -466,8 +518,10 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
     {
       id: "ultraschall",
       badge: "3D/4D Duplex",
-      title: isRu ? "УЗИ & Допплер" : isEn ? "Ultrasound & Doppler" : isTr ? "Ultrason & Doppler" : isAr ? "الموجات فوق الصوتية والدوبلر" : "Ultraschall & Doppler",
-      subtitle: isRu
+      title: isUz ? "UTT va Doppler" : isRu ? "УЗИ & Допплер" : isEn ? "Ultrasound & Doppler" : isTr ? "Ultrason & Doppler" : isAr ? "الموجات فوق الصوتية والدوبلر" : "Ultraschall & Doppler",
+      subtitle: isUz
+        ? "3D/4D sonografiya, rangli dupleks va doppler skanerlash"
+        : isRu
         ? "3D/4D сонография, цветовое дуплексное и допплеровское сканирование"
         : isEn
         ? "3D/4D Ultrasound & Color-Coded Duplex Vascular Sonography"
@@ -476,7 +530,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "تخطيط الصدى السريري، تقنيات 3D/4D وتصوير الأوعية بالدوبلر الملون"
         : "Medizinisch indizierte Sonographie, 3D/4D-Verfahren & Gefäßdoppler",
-      desc: isRu
+      desc: isUz
+        ? "A'zolar va qon tomirlari uchun xavfsiz, ishonchli va universal tekshiruv."
+        : isRu
         ? "Бережно, надежно и универсально для органов и сосудов."
         : isEn
         ? "Gentle, reliable, and versatile application for vessels & organs."
@@ -485,7 +541,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "فحص آمن، لطيف ودقيق للأعضاء الداخلية والأوعية الدموية."
         : "Schonend, zuverlässig und vielseitig für Organe und Gefäße.",
-      fullDesc: isRu
+      fullDesc: isUz
+        ? "Ko'p chastotali datchiklarga ega ekspert toifasidagi ultratovush apparatlari qorin bo'shlig'i a'zolari, yumshoq to'qimalar, qalqonsimon bez va qon tomirlarini batafsil baholashni ta'minlaydi. Rangli dupleks skanerlash qon oqimi tezligi va xususiyatini xatosiz aniqlash imkonini beradi."
+        : isRu
         ? "Ультразвуковые аппараты экспертного класса с многочастотными датчиками обеспечивают детальную оценку органов брюшной полости, мягких тканей, щитовидной железы и сосудов. Цветовое дуплексное сканирование позволяет безошибочно оценить скорость и характер кровотока."
         : isEn
         ? "High-end ultrasound platforms equipped with multi-frequency probes allow pain-free, radiation-free real-time examination. Color duplex sonography accurately assesses vascular flow dynamics, vessel walls, and organ parenchymal perfusion."
@@ -494,8 +552,15 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "توفر أجهزة السونار المتطورة ذات المجسات متعددة الترددات فحصاً غير جراحي وخالياً تماماً من الألم والإشعاع في الوقت الفعلي. يحلل الدوبلر الملون بدقة تدفق الدم في الأوعية، حالة الجدران الوعائية، وتروية أنسجة الأعضاء الداخلية."
         : "Modernste Ultraschallgeräte mit hochauflösenden multifrequenten Sonden ermöglichen eine schmerz- und strahlungsfreie Untersuchung in Echtzeit. Farbcodierte Duplex- und Dopplersonographie analysieren Durchblutung, Gefäßwände und Strömungsverhältnisse präzise.",
-      indicationsTitle: isRu ? "Ключевые показания (по PDF)" : isEn ? "Key Clinical Indications (PDF)" : isTr ? "Klinik Odaklar ve Endikasyonlar" : isAr ? "دواعي الفحص والمجالات السريرية" : "Klinische Schwerpunkte & Indikationen",
-      indications: isRu
+      indicationsTitle: isUz ? "Asosiy klinik ko'rsatmalar" : isRu ? "Ключевые показания (по PDF)" : isEn ? "Key Clinical Indications (PDF)" : isTr ? "Klinik Odaklar ve Endikasyonlar" : isAr ? "دواعي الفحص والمجالات السريرية" : "Klinische Schwerpunkte & Indikationen",
+      indications: isUz
+        ? [
+            "Uyqu va umurtqa arteriyalarini dupleks skanerlash",
+            "Pastki oyoq-qo'l venalari (tromboz va varikozni inkor qilish)",
+            "Qorin bo'shlig'i a'zolari (jigar, o't pufagi, buyraklar, oshqozon osti bezi)",
+            "Qalqonsimon bez, limfa tugunlari va yumshoq to'qimalar",
+          ]
+        : isRu
         ? [
             "Дуплексное сканирование сонных и позвоночных артерий",
             "Вены нижних конечностей (исключение тромбоза и варикоза)",
@@ -529,7 +594,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             "Bauchorgane (Leber, Gallenwege, Nieren, Pankreas, Milz)",
             "Schilddrüse, Halsweichteile & Lymphknotenstatus",
           ],
-      standards: isRu
+      standards: isUz
+        ? "100% nurlanishsiz • Barcha yoshdagilar uchun xavfsiz • Cheklovlarsiz takrorlanish imkoni"
+        : isRu
         ? "100% без облучения • Безопасно для всех возрастов • Повторение без ограничений"
         : isEn
         ? "100% Radiation-free • Fully non-invasive • Unlimited repeatability"
@@ -544,8 +611,10 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
     {
       id: "neurophys",
       badge: "EMG • ENG • EEG",
-      title: isRu ? "Нейрофизиология" : isEn ? "Neurophysiology" : isTr ? "Nörofizyoloji" : isAr ? "الفسيولوجيا العصبية" : "Neurophysiologie",
-      subtitle: isRu
+      title: isUz ? "Neyrofiziologiya" : isRu ? "Нейрофизиология" : isEn ? "Neurophysiology" : isTr ? "Nörofizyoloji" : isAr ? "الفسيولوجيا العصبية" : "Neurophysiologie",
+      subtitle: isUz
+        ? "Asablar, muskullar va markaziy asab tizimining funksional diagnostikasi"
+        : isRu
         ? "Функциональная диагностика нервов, мышц и центральной нервной системы"
         : isEn
         ? "Electrophysiological Diagnostics of Nerves, Musculature & CNS"
@@ -554,7 +623,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "التشخيص الوظيفي للجهاز العصبي المحيطي والعضلات والجهاز العصبي المركزي"
         : "Funktionsdiagnostik des peripheren Nervensystems, der Muskulatur und des ZNS",
-      desc: isRu
+      desc: isUz
+        ? "EMG, ENG, EEG va chaqirilgan potensiallar (VEP, AEP, SEP)."
+        : isRu
         ? "ЭМГ, ЭНГ, ЭЭГ и вызванные потенциалы (VEP, AEP, SEP)."
         : isEn
         ? "EMG, ENG, EEG, and evoked potentials (VEP, AEP, SEP)."
@@ -563,7 +634,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "تخطيط العضلات والأعصاب والدماغ والجهود المستحثة (VEP, AEP, SEP)."
         : "EMG, ENG, EEG und evozierte Potenziale (VEP, AEP, SEP).",
-      fullDesc: isRu
+      fullDesc: isUz
+        ? "Xolding PDF hujjati 4-bandiga ko'ra, neyrofiziologiya bo'limi nerv va muskullarning bioelektr faolligini obyektiv baholash uchun maxsus jihozlangan. Elektromiografiya (EMG), elektroneyrografiya (ENG), EEG va chaqirilgan potensiallar aniq nevrologik tashxislarni kafolatlaydi."
+        : isRu
         ? "В соответствии с пунктом 4 PDF холдинга, отделение нейрофизиологии оснащено для объективной оценки биоэлектрической активности нервов и мышц. Электромиография (ЭМГ), электронейрография (ЭНГ), ЭЭГ и вызванные потенциалы обеспечивают выверенные неврологические диагнозы."
         : isEn
         ? "According to Section 4 of the holding guidelines, our neurophysiology unit provides dedicated examination suites for evaluating nerve, muscle, and CNS functions. EMG, nerve conduction velocity (ENG), EEG, and evoked potentials (AEP, VEP, SEP) support definitive clinical management."
@@ -572,8 +645,16 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "وفقاً للبند 4 من لوائح الهولدينغ، تضم وحدة الفسيولوجيا العصبية محطات فحص متقدمة للتقييم الموضوعي لوظائف الأعصاب والعضلات والدماغ. يشمل ذلك تخطيط العضلات (EMG)، سرعة التوصيل العصبي (ENG)، تخطيط الدماغ (EEG)، والجهود المستحثة (AEP, VEP, SEP)."
         : "Gemäß Punkt 4 des Holdings umfasst die Neurophysiologie spezifische Untersuchungsplätze zur objektiven Beurteilung von Nerven-, Muskel- und zentralnervösen Funktionen. Elektromyographie (EMG), Elektroneurographie (ENG), Elektroenzephalographie (EEG) und evozierte Potenziale (AEP, VEP, SEP) sichern fundierte therapeutische Entscheidungen.",
-      indicationsTitle: isRu ? "Ключевые показания (по PDF)" : isEn ? "Key Clinical Indications (PDF)" : isTr ? "Klinik Odaklar ve Endikasyonlar" : isAr ? "دواعي الفحص والمجالات السريرية" : "Klinische Schwerpunkte & Indikationen",
-      indications: isRu
+      indicationsTitle: isUz ? "Asosiy klinik ko'rsatmalar" : isRu ? "Ключевые показания (по PDF)" : isEn ? "Key Clinical Indications (PDF)" : isTr ? "Klinik Odaklar ve Endikasyonlar" : isAr ? "دواعي الفحص والمجالات السريرية" : "Klinische Schwerpunkte & Indikationen",
+      indications: isUz
+        ? [
+            "Tunnel sindromlari (karpal, kubital, tarzal kanallari)",
+            "Disk churralaridagi ildizcha sindromlari va radikulopatiyalar",
+            "Polineyropatiyalar (diabetik, toksik, yallig'lanishli)",
+            "Miopatiyalar, miasteniya va asab-mushak buzilishlari",
+            "Epilepsiya, hushdan ketish va bosh og'riqlarining EEG diagnostikasi",
+          ]
+        : isRu
         ? [
             "Туннельные синдромы (карпальный, кубитальный, тарзальный каналы)",
             "Корешковые синдромы и радикулопатии при грыжах дисков",
@@ -612,7 +693,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             "Epilepsieabklärung, Schwindel & ungeklärte Kopfschmerzen",
             "Evozierte Potenziale zur Prüfung zentraler Bahnen (AEP, VEP, SEP)",
           ],
-      standards: isRu
+      standards: isUz
+        ? "Ixtisoslashgan shifokor ekspertizasi • Yuqori aniqlikdagi elektrodiagnostika"
+        : isRu
         ? "Врачебная специализированная экспертиза • Прецизионная электродиагностика"
         : isEn
         ? "Fellowship-trained neurophysiologists • High-precision electromyography"
@@ -627,8 +710,10 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
     {
       id: "labor",
       badge: "POCT & Probenlogistik",
-      title: isRu ? "Лаборатория & Пробы" : isEn ? "Laboratory & POCT" : isTr ? "Laboratuvar & POCT" : isAr ? "المختبر الطبي والفحوصات الفورية" : "Labordiagnostik & Probenmanagement",
-      subtitle: isRu
+      title: isUz ? "Laboratoriya va POCT" : isRu ? "Лаборатория & Пробы" : isEn ? "Laboratory & POCT" : isTr ? "Laboratuvar & POCT" : isAr ? "المختبر الطبي والفحوصات الفورية" : "Labordiagnostik & Probenmanagement",
+      subtitle: isUz
+        ? "Namunalar olish, harorat nazorati ostidagi logistika va tezkor POCT tahlillari"
+        : isRu
         ? "Организация забора проб, температурная логистика и экспресс-анализы POCT"
         : isEn
         ? "Sample Lifecycle Management, Cold-Chain Transport & Rapid POCT"
@@ -637,7 +722,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "إدارة متكاملة للعينات، لوجستيات مبردة وتحاليل فورية (POCT)"
         : "Strukturierte Probengewinnung, lückenlose Probenlogistik & Notfall-POCT",
-      desc: isRu
+      desc: isUz
+        ? "Klinik biokimyo, gematologiya va tezkor tahlillar."
+        : isRu
         ? "Клиническая химия, гематология и экспресс-анализы."
         : isEn
         ? "Clinical biochemistry, hematology, and rapid POCT markers."
@@ -646,7 +733,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "الكيمياء السريرية، أمراض الدم وعلامات الطوارئ الفورية."
         : "Klinische Chemie, Hämatologie und Point-of-Care-Diagnostik.",
-      fullDesc: isRu
+      fullDesc: isUz
+        ? "NabiOta Diagnostics GmbH 4-bandi talablariga muvofiq, xolding standartlashtirilgan namunalar siklini tashkil etadi: shtrix-kod orqali identifikatsiya qilish, olish, sentrifuglash va harorat nazoratidagi logistika. Ichki tezkor POCT laboratoriyasi muhim parametrlarni bir necha daqiqada taqdim etadi."
+        : isRu
         ? "Согласно требованиям пункта 4 NabiOta Diagnostics GmbH, холдинг организует стандартизированный цикл: однозначная штрихкод-идентификация проб, забор, центрифугирование и температурная логистика. Встроенная экспресс-лаборатория POCT обеспечивает ключевые анализы за считанные минуты."
         : isEn
         ? "Under Section 4 of NabiOta Diagnostics GmbH, the group manages the complete sample lifecycle: barcoded sample tracking, standardized collection, pre-analytical preparation, and temperature-controlled logistics. On-site POCT testing delivers critical biomarkers within minutes."
@@ -655,8 +744,16 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         : isAr
         ? "بموجب المادة 4 لشركة NabiOta Diagnostics GmbH، تنظم الشركة دورة العينات السريرية بأكملها: التتبع بالباركود الموحد، السحب المطابق لمعايير الجودة، المعالجة السليمة، والنقل الخاضع للتحكم الحراري. يوفر مختبر POCT المدمج العلامات الحيوية خلال دقائق."
         : "Gemäß den Vorgaben von Punkt 4 der NabiOta Diagnostics GmbH organisiert die Gesellschaft den gesamten Probenprozess: eindeutige Probenidentifikation, qualitätsgesicherte Entnahme, sachgerechte Aufbereitung und temperaturgeführten Transport. Ein vor Ort integriertes POCT-Sofortlabor liefert vitale Laborparameter innerhalb von Minuten.",
-      indicationsTitle: isRu ? "Ключевые показания (по PDF)" : isEn ? "Key Clinical Indications (PDF)" : isTr ? "Klinik Odaklar ve Endikasyonlar" : isAr ? "دواعي الفحص والمجالات السريرية" : "Klinische Schwerpunkte & Indikationen",
-      indications: isRu
+      indicationsTitle: isUz ? "Asosiy klinik ko'rsatmalar" : isRu ? "Ключевые показания (по PDF)" : isEn ? "Key Clinical Indications (PDF)" : isTr ? "Klinik Odaklar ve Endikasyonlar" : isAr ? "دواعي الفحص والمجالات السريرية" : "Klinische Schwerpunkte & Indikationen",
+      indications: isUz
+        ? [
+            "Klinik biokimyo, kengaytirilgan qon tahlili va koagulogramma",
+            "Shoshilinch tibbiy yordam kardiomarkerlari (troponin, D-dimer, proBNP)",
+            "Tizimli yallig'lanish markerlari (SRB, prokalsitonin)",
+            "Gormonal profillar, diabet markerlari (HbA1c) va moddalar almashinuvi",
+            "Akkreditatsiyadan o'tgan ixtisoslashtirilgan laboratoriyalar bilan muvofiqlashtirish",
+          ]
+        : isRu
         ? [
             "Клиническая биохимия, развернутый анализ крови и коагулограмма",
             "Кардиомаркеры экстренной помощи (тропонин, Д-димер, proBNP)",
@@ -695,7 +792,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             "Stoffwechsel-, Schilddrüsen- & Hormonprofile",
             "Qualitätsgesicherte Probenweiterleitung an Partnerlabore",
           ],
-      standards: isRu
+      standards: isUz
+        ? "RiliBÄK sifat nazorati • Biologik materiallarni shtrix-kodlash va verifikatsiya qilish"
+        : isRu
         ? "Контроль качества RiliBÄK • Штрихкодирование и верификация биоматериалов"
         : isEn
         ? "RiliBÄK quality assurance • End-to-end barcode chain of custody"
@@ -714,8 +813,10 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
     {
       num: "01",
       icon: Calendar,
-      title: isRu ? "Запись на прием" : isEn ? "Appointment Booking" : isTr ? "Randevu Alma" : isAr ? "حجز الموعد" : "Terminvereinbarung",
-      desc: isRu
+      title: isUz ? "Qabulga yozilish" : isRu ? "Запись на прием" : isEn ? "Appointment Booking" : isTr ? "Randevu Alma" : isAr ? "حجز الموعد" : "Terminvereinbarung",
+      desc: isUz
+        ? "Onlayn yoki telefon orqali tez va qulay."
+        : isRu
         ? "Быстро и удобно онлайн или по телефону."
         : isEn
         ? "Fast and uncomplicated online or by phone."
@@ -728,8 +829,10 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
     {
       num: "02",
       icon: ScannerArchIcon,
-      title: isRu ? "Обследование" : isEn ? "Examination" : isTr ? "Muayene & Tarama" : isAr ? "الفحص والتصوير" : "Untersuchung",
-      desc: isRu
+      title: isUz ? "Tekshiruv" : isRu ? "Обследование" : isEn ? "Examination" : isTr ? "Muayene & Tarama" : isAr ? "الفحص والتصوير" : "Untersuchung",
+      desc: isUz
+        ? "Ilg'or texnologiyalar, ehtiyotkorlik bilan o'tkazish."
+        : isRu
         ? "Передовые технологии, бережное проведение."
         : isEn
         ? "Modern technology, professionally conducted."
@@ -742,8 +845,10 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
     {
       num: "03",
       icon: FileText,
-      title: isRu ? "Анализ и заключение" : isEn ? "Evaluation" : isTr ? "Değerlendirme" : isAr ? "التحليل وإعداد التقرير" : "Auswertung",
-      desc: isRu
+      title: isUz ? "Tahlil va xulosa" : isRu ? "Анализ и заключение" : isEn ? "Evaluation" : isTr ? "Değerlendirme" : isAr ? "التحليل وإعداد التقرير" : "Auswertung",
+      desc: isUz
+        ? "Yetakchi mutaxassislarimiz tomonidan ekspert xulosasi."
+        : isRu
         ? "Экспертное заключение нашими специалистами."
         : isEn
         ? "Diagnostic reporting by fellowship specialists."
@@ -756,8 +861,10 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
     {
       num: "04",
       icon: User,
-      title: isRu ? "Личная консультация" : isEn ? "Personal Consultation" : isTr ? "Bireysel Görüşme" : isAr ? "الاستشارة الطبية الفردية" : "Persönliches Gespräch",
-      desc: isRu
+      title: isUz ? "Shaxsiy maslahat" : isRu ? "Личная консультация" : isEn ? "Personal Consultation" : isTr ? "Bireysel Görüşme" : isAr ? "الاستشارة الطبية الفردية" : "Persönliches Gespräch",
+      desc: isUz
+        ? "Tushunarli natijalar va individual tavsiyalar."
+        : isRu
         ? "Понятные результаты и индивидуальные рекомендации."
         : isEn
         ? "Clear results and tailored recommendations."
@@ -770,7 +877,15 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
   ];
 
   // ── Section 4: Indications List matching Photo 2 ──
-  const indicationsCol1 = isRu
+  const indicationsCol1 = isUz
+    ? [
+        "Bosh miya va asab tizimi",
+        "Umurtqa pog'onasi va bo'g'imlar",
+        "Yurak va qon aylanish tizimi",
+        "O'pka va nafas yo'llari",
+        "Qorin bo'shlig'i a'zolari va hazm qilish",
+      ]
+    : isRu
     ? [
         "Головной мозг и нервная система",
         "Позвоночник и суставы",
@@ -810,7 +925,15 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         "Bauchorgane und Verdauung",
       ];
 
-  const indicationsCol2 = isRu
+  const indicationsCol2 = isUz
+    ? [
+        "Onkologiyani erta aniqlash",
+        "Yallig'lanish jarayonlari va infeksiyalar",
+        "Gormonal va metabolik buzilishlar",
+        "Qon tomirlari va qon ta'minoti",
+        "Sport tibbiyoti tekshiruvlari",
+      ]
+    : isRu
     ? [
         "Ранняя диагностика онкологии",
         "Воспалительные процессы и инфекции",
@@ -853,7 +976,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
   // ── Section 5: Testimonials Carousel matching Photo 2 ──
   const testimonials = [
     {
-      quote: isRu
+      quote: isUz
+        ? "Professional va samimiy g'amxo'rlik menga juda yordam berdi. Tez va aniq tashxis tufayli to'g'ri davolash darhol boshlandi."
+        : isRu
         ? "Профессиональная и чуткая забота мне очень помогла. Благодаря быстрой и точной диагностике верное лечение было начато без промедления."
         : isEn
         ? "The professional and empathetic care helped me tremendously. Thanks to rapid, high-precision diagnostics, the right therapy was initiated immediately."
@@ -863,12 +988,14 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         ? "الرعاية المهنية والاهتمام الإنساني ساعداني بشكل لا يُصدق. بفضل التشخيص السريع والدقيق، تم البدء في العلاج الصحيح دون أدنى تأخير."
         : "Die professionelle und einfühlsame Betreuung hat mir sehr geholfen. Dank der schnellen und präzisen Diagnostik konnte die richtige Therapie rasch eingeleitet werden.",
       author: "Anna Müller",
-      role: isRu ? "Пациентка" : isEn ? "Patient" : isTr ? "Hasta" : isAr ? "مريضة" : "Patientin",
+      role: isUz ? "Bemor" : isRu ? "Пациентка" : isEn ? "Patient" : isTr ? "Hasta" : isAr ? "مريضة" : "Patientin",
       patientImage: "/images/diagnostik/patient-anna.webp",
       scanImage: "/images/diagnostik/scan-review.webp",
     },
     {
-      quote: isRu
+      quote: isUz
+        ? "3-Tesla tomografining tasvir sifati va radiolog shifokorning har bir tasvirni batafsil tushuntirib berishi menda to'liq ishonch uyg'otdi."
+        : isRu
         ? "Впечатляющее качество томографии 3 Тесла и подробное разъяснение каждого снимка врачом-рентгенологом. Полное чувство уверенности."
         : isEn
         ? "Impressive 3-Tesla image resolution and clear explanation of every slice by the radiologist. Total clinical confidence."
@@ -878,12 +1005,14 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         ? "دقة التصوير الاستثنائية للرنين المغناطيسي 3 تسلا والشرح الوافي من طبيب الأشعة منحاني طمأنينة سريرية كاملة."
         : "Beeindruckende Bildauflösung des 3-Tesla-MRT und verständliche Erläuterung aller Befunde durch den Radiologen. Höchste Sicherheit.",
       author: "Thomas Becker",
-      role: isRu ? "Пациент" : isEn ? "Patient" : isTr ? "Hasta" : isAr ? "مريض" : "Patient",
+      role: isUz ? "Bemor" : isRu ? "Пациент" : isEn ? "Patient" : isTr ? "Hasta" : isAr ? "مريض" : "Patient",
       patientImage: "/images/testimonials/thomas-becker.webp",
       scanImage: "/images/services/diagnostik.webp",
     },
     {
-      quote: isRu
+      quote: isUz
+        ? "Xulosa 24 soatdan kam vaqt ichida tayyor bo'ldi. Raqamli tasvirlar tufayli jarrohim darhol kerakli davolashni rejalashtirishga muvaffaq bo'ldi."
+        : isRu
         ? "Очень быстрое получение заключения в течение суток. Мой хирург смог моментально спланировать операцию благодаря цифровому доступу."
         : isEn
         ? "Report ready in less than 24 hours. My orthopedist accessed the full digital scans immediately to plan targeted therapy."
@@ -893,7 +1022,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         ? "تم استلام التقرير الطبي في أقل من 24 ساعة. تمكن جراح العظام من فحص الصور الرقمية فوراً وبدء خطة العلاج الموجهة."
         : "Befundbereitstellung in unter 24 Stunden. Mein Orthopäde konnte dank digitalem Bildzugang direkt die gezielte Therapie planen.",
       author: "Elena Fischer",
-      role: isRu ? "Пациентка" : isEn ? "Patient" : isTr ? "Hasta" : isAr ? "مريضة" : "Patientin",
+      role: isUz ? "Bemor" : isRu ? "Пациентка" : isEn ? "Patient" : isTr ? "Hasta" : isAr ? "مريضة" : "Patientin",
       patientImage: "/images/testimonials/elena-fischer.webp",
       scanImage: "/images/diagnostik/scan-review.webp",
     },
@@ -911,9 +1040,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         breadcrumb={
           <Breadcrumb
             items={[
-              { label: isRu ? "Главная" : isEn ? "Home" : isTr ? "Ana Sayfa" : isAr ? "الرئيسية" : "Startseite", href: `/${locale}` },
+              { label: isUz ? "Bosh sahifa" : isRu ? "Главная" : isEn ? "Home" : isTr ? "Ana Sayfa" : isAr ? "الرئيسية" : "Startseite", href: `/${locale}` },
               {
-                label: isRu ? "Направления холдинга" : isEn ? "Divisions" : isTr ? "Şirket Alanları" : isAr ? "قطاعات المجموعة" : "Unternehmensbereiche",
+                label: isUz ? "Yo'nalishlar" : isRu ? "Направления холдинга" : isEn ? "Divisions" : isTr ? "Şirket Alanları" : isAr ? "قطاعات المجموعة" : "Unternehmensbereiche",
                 href: `/${locale}/areas`,
               },
               { label: heroData.title },
@@ -947,11 +1076,13 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             {/* Left Header Column */}
             <div className="lg:col-span-4 space-y-4 pt-1">
               <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
-                {isRu ? "НАШИ МЕТОДЫ ДИАГНОСТИКИ" : isEn ? "OUR DIAGNOSTIC PROCEDURES" : isTr ? "TANI YÖNTEMLERİMİZ" : isAr ? "طرق الفحوصات والتشخيص لدينا" : "UNSERE DIAGNOSTIKVERFAHREN"}
+                {isUz ? "DIAGNOSTIKA USULLARIMIZ" : isRu ? "НАШИ МЕТОДЫ ДИАГНОСТИКИ" : isEn ? "OUR DIAGNOSTIC PROCEDURES" : isTr ? "TANI YÖNTEMLERİMİZ" : isAr ? "طرق الفحوصات والتشخيص لدينا" : "UNSERE DIAGNOSTIKVERFAHREN"}
               </span>
 
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-[38px] text-[#132218] font-normal leading-[1.18]">
-                {isRu
+                {isUz
+                  ? "Aniq natijalar uchun zamonaviy usullar"
+                  : isRu
                   ? "Современные методы для точных результатов"
                   : isEn
                   ? "Advanced Methods for Accurate Results"
@@ -963,7 +1094,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
               </h2>
 
               <p className="text-xs sm:text-[13px] text-[#556358] leading-relaxed font-sans max-w-md">
-                {isRu
+                {isUz
+                  ? "Bizning diagnostika bo'limimiz ilg'or tibbiy texnologiyalarni ko'p yillik klinik tajriba bilan birlashtiradi. Bu kasalliklarni erta bosqichda aniqlash va eng maqbul davolashni belgilash imkonini beradi."
+                  : isRu
                   ? "Наша диагностика объединяет передовую медицинскую технику с многолетним клиническим опытом. Это позволяет распознавать заболевания на ранних стадиях и назначать оптимальную терапию."
                   : isEn
                   ? "Our diagnostic division unites cutting-edge medical technology with decades of clinical experience. We detect conditions early, evaluate them accurately, and establish the best possible treatment."
@@ -979,7 +1112,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                   href={`/${locale}/contact`}
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#D5B878] text-[#142318] hover:bg-[#D5B878] hover:text-[#0C1C11] font-semibold text-xs tracking-wide transition-all shadow-sm group bg-white/70"
                 >
-                  <span>{isRu ? "Все процедуры →" : isEn ? "View all procedures →" : isTr ? "Tüm Yöntemleri Gör →" : isAr ? "عرض جميع الإجراءات التشخيصية ←" : "Alle Verfahren ansehen →"}</span>
+                  <span>{isUz ? "Barcha muolajalar →" : isRu ? "Все процедуры →" : isEn ? "View all procedures →" : isTr ? "Tüm Yöntemleri Gör →" : isAr ? "عرض جميع الإجراءات التشخيصية ←" : "Alle Verfahren ansehen →"}</span>
                 </Link>
               </div>
             </div>
@@ -1088,11 +1221,13 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             {/* Middle Column: Heading & Description */}
             <div className="w-full lg:w-[42%] xl:w-[40%] p-6 sm:p-10 lg:p-12 space-y-3 relative z-10">
               <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
-                {isRu ? "ПЕРЕДОВЫЕ ТЕХНОЛОГИИ" : isEn ? "MODERN TECHNOLOGY" : isTr ? "MODERN TEKNOLOJİ" : isAr ? "تقنيات تشخيصية رائدة" : "MODERNE TECHNOLOGIE"}
+                {isUz ? "ILG'OR TEXNOLOGIYALAR" : isRu ? "ПЕРЕДОВЫЕ ТЕХНОЛОГИИ" : isEn ? "MODERN TECHNOLOGY" : isTr ? "MODERN TEKNOLOJİ" : isAr ? "تقنيات تشخيصية رائدة" : "MODERNE TECHNOLOGIE"}
               </span>
 
               <h3 className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-white font-normal leading-tight">
-                {isRu
+                {isUz
+                  ? "Shunchaki tasvirlar emas — aniq javoblar."
+                  : isRu
                   ? "Больше чем снимки — ясные ответы."
                   : isEn
                   ? "More than Images – Clear Answers."
@@ -1104,7 +1239,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
               </h3>
 
               <p className="text-white/85 text-xs sm:text-[13.5px] leading-relaxed font-sans max-w-lg">
-                {isRu
+                {isUz
+                  ? "Yuqori texnologiyali uskunalarimiz favqulodda aniq va xavfsiz diagnostikani ta'minlaydi — maksimal ishonch, to'g'ri qarorlar va samarali davolash uchun."
+                  : isRu
                   ? "Наше высокотехнологичное оборудование обеспечивает исключительно точную и щадящую диагностику — для максимальной уверенности, правильных решений и эффективного лечения."
                   : isEn
                   ? "Our cutting-edge equipment enables exceptionally precise and gentle diagnostics—for greater security, informed clinical decisions, and targeted therapy."
@@ -1123,7 +1260,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                   3T
                 </span>
                 <span className="text-[11px] sm:text-xs text-white/80 font-sans leading-tight block">
-                  {isRu ? "Мощность поля МРТ" : isEn ? "MRI Magnet Strength" : isTr ? "MR Manyetik Alan Gücü" : isAr ? "قوة المجال المغناطيسي للرنين" : "MRT-Magnetfeldstärke"}
+                  {isUz ? "MRT maydon quvvati" : isRu ? "Мощность поля МРТ" : isEn ? "MRI Magnet Strength" : isTr ? "MR Manyetik Alan Gücü" : isAr ? "قوة المجال المغناطيسي للرنين" : "MRT-Magnetfeldstärke"}
                 </span>
               </div>
 
@@ -1132,7 +1269,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                   &lt;24h
                 </span>
                 <span className="text-[11px] sm:text-xs text-white/80 font-sans leading-tight block">
-                  {isRu ? "Готовность заключения" : isEn ? "Report Turnaround" : isTr ? "Rapor Teslim Süresi" : isAr ? "إعداد التقرير الطبي" : "Befunderstellung"}
+                  {isUz ? "Xulosa tayyorlash" : isRu ? "Готовность заключения" : isEn ? "Report Turnaround" : isTr ? "Rapor Teslim Süresi" : isAr ? "إعداد التقرير الطبي" : "Befunderstellung"}
                 </span>
               </div>
 
@@ -1141,7 +1278,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                   99%
                 </span>
                 <span className="text-[11px] sm:text-xs text-white/80 font-sans leading-tight block">
-                  {isRu ? "Удовлетворенность пациентов" : isEn ? "Patient Satisfaction" : isTr ? "Hasta Memnuniyeti" : isAr ? "معدل رضا المرضى" : "Patientenzufriedenheit"}
+                  {isUz ? "Bemorlar mamnunligi" : isRu ? "Удовлетворенность пациентов" : isEn ? "Patient Satisfaction" : isTr ? "Hasta Memnuniyeti" : isAr ? "معدل رضا المرضى" : "Patientenzufriedenheit"}
                 </span>
               </div>
             </div>
@@ -1159,11 +1296,13 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             {/* Left Header Area */}
             <div className="lg:col-span-4 space-y-3">
               <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
-                {isRu ? "НАШ ПРОЦЕСС ДИАГНОСТИКИ" : isEn ? "OUR DIAGNOSTIC PROCESS" : isTr ? "TANI SÜRECİMİZ" : isAr ? "مراحل المسار التشخيصي" : "UNSER DIAGNOSTIK-PROZESS"}
+                {isUz ? "DIAGNOSTIKA JARAYONIMIZ" : isRu ? "НАШ ПРОЦЕСС ДИАГНОСТИКИ" : isEn ? "OUR DIAGNOSTIC PROCESS" : isTr ? "TANI SÜRECİMİZ" : isAr ? "مراحل المسار التشخيصي" : "UNSER DIAGNOSTIK-PROZESS"}
               </span>
 
               <h2 className="font-serif text-3xl sm:text-4xl text-[#132218] font-normal leading-tight">
-                {isRu
+                {isUz
+                  ? "Aniq natijalarga 4 qadamda"
+                  : isRu
                   ? "В 4 шага к ясным результатам"
                   : isEn
                   ? "In 4 Steps to Clear Results"
@@ -1175,7 +1314,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
               </h2>
 
               <p className="text-xs sm:text-[13px] text-[#556358] leading-relaxed font-sans max-w-sm">
-                {isRu
+                {isUz
+                  ? "Birinchi murojaatdan xulosani olishgacha — biz har bir bosqichda sizga hamrohlik qilamiz."
+                  : isRu
                   ? "От первого обращения до получения заключения — мы бережно сопровождаем вас на каждом этапе."
                   : isEn
                   ? "From initial inquiry to diagnostic report—we guide you through every single step."
@@ -1191,7 +1332,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                   href={`/${locale}/contact`}
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#D5B878] text-[#142318] hover:bg-[#D5B878] hover:text-[#0C1C11] font-semibold text-xs tracking-wide transition-all shadow-sm bg-transparent"
                 >
-                  <span>{isRu ? "Как это работает →" : isEn ? "How it works →" : isTr ? "Nasıl Çalışır →" : isAr ? "كيف تسير الإجراءات ←" : "So funktioniert es →"}</span>
+                  <span>{isUz ? "Qanday ishlaydi →" : isRu ? "Как это работает →" : isEn ? "How it works →" : isTr ? "Nasıl Çalışır →" : isAr ? "كيف تسير الإجراءات ←" : "So funktioniert es →"}</span>
                 </Link>
               </div>
             </div>
@@ -1270,7 +1411,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
               {/* Content over background on left */}
               <div className="relative z-10 max-w-[230px] sm:max-w-[250px] space-y-2">
                 <h3 className="font-serif text-2xl sm:text-[27px] text-white font-normal leading-tight">
-                  {isRu
+                  {isUz
+                    ? "Diagnostika bo'yicha savollaringiz bormi?"
+                    : isRu
                     ? "Вопросы по диагностике?"
                     : isEn
                     ? "Questions about Diagnostics?"
@@ -1281,7 +1424,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                     : "Fragen zur Diagnostik?"}
                 </h3>
                 <p className="text-white/80 text-[11.5px] sm:text-xs font-sans leading-relaxed">
-                  {isRu
+                  {isUz
+                    ? "Jamoamiz har doim xizmatingizda va barcha tekshiruvlar hamda imkoniyatlar bo'yicha mamnuniyat bilan maslahat beradi."
+                    : isRu
                     ? "Наша команда всегда к вашим услугам и с радостью проконсультирует вас обо всех обследованиях и возможностях."
                     : isEn
                     ? "Our team is always at your service and will gladly advise you on all examinations and modalities."
@@ -1298,7 +1443,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                   href={`/${locale}/contact`}
                   className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full bg-[#ECCF96] hover:bg-[#D5B878] text-[#0C1C11] font-semibold text-xs tracking-wide transition-all shadow-sm"
                 >
-                  <span>{isRu ? "Связаться с нами →" : isEn ? "Contact us →" : isTr ? "İletişime Geçin →" : isAr ? "تواصل معنا ←" : "Kontakt aufnehmen →"}</span>
+                  <span>{isUz ? "Bog'lanish →" : isRu ? "Связаться с нами →" : isEn ? "Contact us →" : isTr ? "İletişime Geçin →" : isAr ? "تواصل معنا ←" : "Kontakt aufnehmen →"}</span>
                 </Link>
               </div>
             </div>
@@ -1306,11 +1451,13 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             {/* Right Part: Pure White with Checklist */}
             <div className="lg:col-span-7 bg-white p-6 sm:p-7 lg:p-8 flex flex-col justify-center">
               <span className="text-[9.5px] font-bold tracking-[0.22em] text-[#8C948D] uppercase block mb-1">
-                {isRu ? "ЧАСТЫЕ ДИАГНОЗЫ И ОБСЛЕДОВАНИЯ" : isEn ? "FREQUENT DIAGNOSES & EXAMINATIONS" : isTr ? "SIK KARŞILAŞILAN TEŞHİS VE MUAYENELER" : isAr ? "أبرز مجالات الفحص والتشخيص السريري" : "HÄUFIGE DIAGNOSEN & UNTERSUCHUNGEN"}
+                {isUz ? "KO'P UCHRAYDIGAN TASHXISLAR VA TEKSHIRUVLAR" : isRu ? "ЧАСТЫЕ ДИАГНОЗЫ И ОБСЛЕДОВАНИЯ" : isEn ? "FREQUENT DIAGNOSES & EXAMINATIONS" : isTr ? "SIK KARŞILAŞILAN TEŞHİS VE MUAYENELER" : isAr ? "أبرز مجالات الفحص والتشخيص السريري" : "HÄUFIGE DIAGNOSEN & UNTERSUCHUNGEN"}
               </span>
 
               <h3 className="font-serif text-xl sm:text-[23px] text-[#142318] font-normal leading-tight mb-4 sm:mb-5">
-                {isRu
+                {isUz
+                  ? "Siz uchun nimalarni tekshirishimiz mumkin"
+                  : isRu
                   ? "Что мы можем исследовать для вас"
                   : isEn
                   ? "What We Can Examine for You"
@@ -1376,11 +1523,13 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             {/* Center Column: Quote, Author, Carousel Flanked by Arrows */}
             <div className="flex-1 py-7 sm:py-8 px-4 sm:px-6 lg:px-10 text-center flex flex-col items-center justify-center relative z-10 max-w-2xl mx-auto">
               <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-1.5">
-                {isRu ? "ОТЗЫВЫ ПАЦИЕНТОВ" : isEn ? "PATIENT VOICES" : isTr ? "HASTA GÖRÜŞLERİ" : isAr ? "آراء وتجارب المرضى" : "PATIENTENSTIMMEN"}
+                {isUz ? "BEMORLAR FIKRLARI" : isRu ? "ОТЗЫВЫ ПАЦИЕНТОВ" : isEn ? "PATIENT VOICES" : isTr ? "HASTA GÖRÜŞLERİ" : isAr ? "آراء وتجارب المرضى" : "PATIENTENSTIMMEN"}
               </span>
 
               <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal leading-tight mb-2.5">
-                {isRu
+                {isUz
+                  ? "Tajribaga asoslangan ishonch."
+                  : isRu
                   ? "Доверие, основанное на опыте."
                   : isEn
                   ? "Trust Built on Experience."
@@ -1478,11 +1627,13 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
           <div className="relative z-10 w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 text-center">
             <div className="max-w-2xl mx-auto space-y-4 sm:space-y-5">
               <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.26em] text-[#C5A56A] uppercase block">
-                {isRu ? "ЗДОРОВЬЕ НАЧИНАЕТСЯ С ТОЧНОСТИ" : isEn ? "PRECISION FOR YOUR HEALTH" : isTr ? "SAĞLIK HASSASİYETLE BAŞLAR" : isAr ? "صحتكم تبدأ من دقة التشخيص" : "GESUNDHEIT BEGINNT MIT PRÄZISION"}
+                {isUz ? "SALOMATLIK ANICHLIKDAN BOSHLANADI" : isRu ? "ЗДОРОВЬЕ НАЧИНАЕТСЯ С ТОЧНОСТИ" : isEn ? "PRECISION FOR YOUR HEALTH" : isTr ? "SAĞLIK HASSASİYETLE BAŞLAR" : isAr ? "صحتكم تبدأ من دقة التشخيص" : "GESUNDHEIT BEGINNT MIT PRÄZISION"}
               </span>
 
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-[44px] text-white font-normal leading-[1.18]">
-                {isRu
+                {isUz
+                  ? "O'z vaqtida va aniq diagnostika kerakmi?"
+                  : isRu
                   ? "Нужна своевременная и точная диагностика?"
                   : isEn
                   ? "Require Timely & Precise Diagnostics?"
@@ -1494,7 +1645,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
               </h2>
 
               <p className="text-white/85 text-xs sm:text-[14px] leading-relaxed font-sans max-w-xl mx-auto">
-                {isRu
+                {isUz
+                  ? "NabiOta® markazlarida 3-Tesla MRT, past dozali KT yoki raqamli rentgenga yoziling. Biz ehtiyotkor munosabat, minimal kutish muddati va shifokorlaringiz uchun to'liq tibbiy xulosani kafolatlaymiz."
+                  : isRu
                   ? "Запишитесь на МРТ 3 Тесла, низкодозовую КТ или цифровой рентген в центрах NabiOta®. Мы гарантируем бережное отношение, минимальные сроки ожидания и исчерпывающее врачебное заключение."
                   : isEn
                   ? "Schedule your 3-Tesla MRI, low-dose CT, or digital X-ray at NabiOta® diagnostics centers. Fast appointments, maximum patient comfort, and reliable reports for you and your physicians."
@@ -1510,7 +1663,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                   href={`/${locale}/contact`}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs sm:text-[13.5px] tracking-wide shadow-lg transition-all duration-200 hover:scale-102"
                 >
-                  <span>{isRu ? "Записаться на прием" : isEn ? "Book an Appointment" : isTr ? "Randevu Al" : isAr ? "حجز موعد فحص" : "Termin vereinbaren"}</span>
+                  <span>{isUz ? "Qabulga yozilish" : isRu ? "Запись на прием" : isEn ? "Book an Appointment" : isTr ? "Randevu Al" : isAr ? "حجز موعد فحص" : "Termin vereinbaren"}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
 
@@ -1518,7 +1671,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                   href={`/${locale}/contact`}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full border border-white/30 hover:border-[#D5B878] text-white hover:text-[#ECCF96] font-medium text-xs sm:text-[13px] transition-all bg-white/5 backdrop-blur-sm"
                 >
-                  <span>{isRu ? "Связаться с центром" : isEn ? "Direct Contact" : isTr ? "Merkezle İletişim" : isAr ? "التواصل المباشر" : "Direkter Kontakt"}</span>
+                  <span>{isUz ? "Markaz bilan bog'lanish" : isRu ? "Связаться с центром" : isEn ? "Direct Contact" : isTr ? "Merkezle İletişim" : isAr ? "التواصل المباشر" : "Direkter Kontakt"}</span>
                 </Link>
               </div>
             </div>
@@ -1554,7 +1707,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                 <button
                   type="button"
                   onClick={() => setSelectedProcedure(null)}
-                  aria-label={isRu ? "Закрыть" : isEn ? "Close" : isTr ? "Kapat" : isAr ? "إغلاق" : "Schließen"}
+                  aria-label={isUz ? "Yopish" : isRu ? "Закрыть" : isEn ? "Close" : isTr ? "Kapat" : isAr ? "إغلاق" : "Schließen"}
                   className="absolute top-3.5 right-3.5 w-9 h-9 rounded-full bg-[#08170D]/80 hover:bg-[#D5B878] text-white hover:text-[#08170D] border border-white/20 hover:border-[#D5B878] flex items-center justify-center transition-all duration-200 shadow-md z-10 cursor-pointer"
                 >
                   <X className="w-4 h-4" />
@@ -1590,7 +1743,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                 {/* Full Description from PDF Section 4 */}
                 <div className="space-y-2">
                   <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#8C948D]">
-                    {isRu ? "КЛИНИЧЕСКИЙ ПРОФИЛЬ & ИНФРАСТРУКТУРА" : isEn ? "CLINICAL PROFILE & INFRASTRUCTURE" : isTr ? "KLİNİK PROFİL & ALTYAPI" : isAr ? "الملف السريري والبنية التحتية" : "KLINISCHES PROFIL & INFRASTRUKTUR"}
+                    {isUz ? "KLINIK PROFIL VA INFRASTRUKTURA" : isRu ? "КЛИНИЧЕСКИЙ ПРОФИЛЬ & ИНФРАСТРУКТУРА" : isEn ? "CLINICAL PROFILE & INFRASTRUCTURE" : isTr ? "KLİNİK PROFİL & ALTYAPI" : isAr ? "الملف السريري والبنية التحتية" : "KLINISCHES PROFIL & INFRASTRUKTUR"}
                   </h4>
                   <p className="text-xs sm:text-[13px] text-[#425246] leading-relaxed">
                     {selectedProcedure.fullDesc}
@@ -1618,7 +1771,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                 <div className="flex items-center gap-3 p-3 rounded-xl bg-[#08170D]/5 border border-[#D5B878]/30 text-[#142318]">
                   <ShieldCheck className="w-5 h-5 text-[#B89650] shrink-0" />
                   <p className="text-[11px] sm:text-[11.5px] leading-tight text-[#3A4A3E]">
-                    <strong className="font-semibold text-[#142318]">{isRu ? "Стандарты безопасности: " : isEn ? "Standards & Quality: " : isTr ? "Güvenlik & Kalite Standardı: " : isAr ? "معايير الجودة والسلامة: " : "Qualitäts- & Sicherheitsstandard: "}</strong>
+                    <strong className="font-semibold text-[#142318]">{isUz ? "Xavfsizlik standartlari: " : isRu ? "Стандарты безопасности: " : isEn ? "Standards & Quality: " : isTr ? "Güvenlik & Kalite Standardı: " : isAr ? "معايير الجودة والسلامة: " : "Qualitäts- & Sicherheitsstandard: "}</strong>
                     {selectedProcedure.standards}
                   </p>
                 </div>
@@ -1631,7 +1784,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                   onClick={() => setSelectedProcedure(null)}
                   className="w-full sm:w-auto px-5 py-2.5 rounded-full border border-[#D0C8B8] hover:bg-white text-[#556358] text-xs font-medium transition-colors cursor-pointer"
                 >
-                  {locale === "ru" ? "Закрыть окно" : locale === "tr" ? "Pencereyi Kapat" : locale === "ar" ? "إغلاق النافذة" : isEn ? "Close window" : "Fenster schließen"}
+                  {locale === "uz" ? "Oynani yopish" : locale === "ru" ? "Закрыть окно" : locale === "tr" ? "Pencereyi Kapat" : locale === "ar" ? "إغلاق النافذة" : isEn ? "Close window" : "Fenster schließen"}
                 </button>
 
                 <Link
@@ -1639,7 +1792,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                   onClick={() => setSelectedProcedure(null)}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#08170D] hover:bg-[#0C2B1B] text-[#ECCF96] border border-[#D5B878] text-xs font-semibold tracking-wide transition-all shadow-sm"
                 >
-                  <span>{locale === "ru" ? "Записаться на процедуру" : locale === "tr" ? "Muayene Randevusu Al" : locale === "ar" ? "طلب موعد فحص طبي" : isEn ? "Book Examination" : "Termin für Untersuchung anfragen"}</span>
+                  <span>{locale === "uz" ? "Tekshiruvga yozilish" : locale === "ru" ? "Записаться на процедуру" : locale === "tr" ? "Muayene Randevusu Al" : locale === "ar" ? "طلب موعد فحص طبي" : isEn ? "Book Examination" : "Termin für Untersuchung anfragen"}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>

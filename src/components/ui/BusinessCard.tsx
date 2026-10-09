@@ -18,6 +18,7 @@ const areaTitles: Record<string, Record<SupportedLocale, string>> = {
     ru: "Медицинские направления",
     tr: "Tıbbi Uzmanlık Alanları",
     ar: "الأقسام الطبية التخصصية",
+    uz: "Tibbiyot yo'nalishlari",
   },
   "diagnostik": {
     de: "Diagnostik",
@@ -25,6 +26,7 @@ const areaTitles: Record<string, Record<SupportedLocale, string>> = {
     ru: "Диагностика",
     tr: "Tanı & Teşhis",
     ar: "التشخيص والتحاليل",
+    uz: "Diagnostika",
   },
   "rehabilitation": {
     de: "Rehabilitation",
@@ -32,6 +34,7 @@ const areaTitles: Record<string, Record<SupportedLocale, string>> = {
     ru: "Реабилитация",
     tr: "Rehabilitasyon",
     ar: "إعادة التأهيل",
+    uz: "Reabilitatsiya",
   },
   "pflege": {
     de: "Pflege & Betreuung",
@@ -39,6 +42,7 @@ const areaTitles: Record<string, Record<SupportedLocale, string>> = {
     ru: "Уход и забота",
     tr: "Hasta Bakımı & Destek",
     ar: "التمريض والرعاية المنزلية",
+    uz: "Parvarish va qo'llab-quvvatlash",
   },
   "beratung-projektentwicklung": {
     de: "Beratung & Services",
@@ -46,6 +50,7 @@ const areaTitles: Record<string, Record<SupportedLocale, string>> = {
     ru: "Консалтинг и сервис",
     tr: "Danışmanlık & Hizmetler",
     ar: "الاستشارات والخدمات",
+    uz: "Konsalting va xizmatlar",
   },
   "internationale-kooperationen": {
     de: "Internationale Kooperationen",
@@ -53,6 +58,7 @@ const areaTitles: Record<string, Record<SupportedLocale, string>> = {
     ru: "Международная деятельность",
     tr: "Uluslararası İş Birlikleri",
     ar: "التعاون الدولي والكوادر",
+    uz: "Xalqaro hamkorlik",
   },
 };
 

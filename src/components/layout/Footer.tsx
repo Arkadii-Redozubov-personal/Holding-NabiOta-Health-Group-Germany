@@ -18,15 +18,15 @@ export function Footer({ currentLocale = "de" }: FooterProps) {
 
   const legalNav = [
     {
-      label: currentLocale === "ru" ? "Выходные данные" : currentLocale === "tr" ? "Künye" : currentLocale === "ar" ? "بيانات النشر القانونية" : currentLocale === "en" ? "Imprint" : "Impressum",
+      label: currentLocale === "ru" ? "Выходные данные" : currentLocale === "tr" ? "Künye" : currentLocale === "ar" ? "بيانات النشر القانونية" : currentLocale === "uz" ? "Huquqiy ma'lumotlar (Imprint)" : currentLocale === "en" ? "Imprint" : "Impressum",
       href: `/${currentLocale}/imprint`,
     },
     {
-      label: currentLocale === "ru" ? "Конфиденциальность" : currentLocale === "tr" ? "Gizlilik Politikası" : currentLocale === "ar" ? "سياسة الخصوصية" : currentLocale === "en" ? "Privacy Policy" : "Datenschutz",
+      label: currentLocale === "ru" ? "Конфиденциальность" : currentLocale === "tr" ? "Gizlilik Politikası" : currentLocale === "ar" ? "سياسة الخصوصية" : currentLocale === "uz" ? "Maxfiylik siyosati" : currentLocale === "en" ? "Privacy Policy" : "Datenschutz",
       href: `/${currentLocale}/privacy`,
     },
     {
-      label: currentLocale === "ru" ? "Настройки Cookies" : currentLocale === "tr" ? "Çerez Ayarları" : currentLocale === "ar" ? "إعدادات الكوكيز" : currentLocale === "en" ? "Cookie Settings" : "Cookie-Einstellungen",
+      label: currentLocale === "ru" ? "Настройки Cookies" : currentLocale === "tr" ? "Çerez Ayarları" : currentLocale === "ar" ? "إعدادات الكوكيز" : currentLocale === "uz" ? "Cookie sozlamalari" : currentLocale === "en" ? "Cookie Settings" : "Cookie-Einstellungen",
       href: "#cookies",
     },
   ];

@@ -1,0 +1,110 @@
+{
+  "locale": "uz",
+  "meta": {
+    "title": "NabiOta® Health Group Germany | Kompetensiyalarni birlashtirib. Salomatlikni shakllantiramiz.",
+    "description": "NabiOta® Health Group Germany GmbH – Sog'liqni saqlash sohasidagi yetakchi korporativ guruh. Ambulatoriya yordami, diagnostika, reabilitatsiya, parvarish va tibbiy innovatsiyalar."
+  },
+  "nav": {
+    "home": "Bosh sahifa",
+    "about": "Biz haqimizda",
+    "areas": "Faoliyat yo'nalishlarimiz",
+    "values": "Qadriyatlarimiz",
+    "career": "Karyera",
+    "partners": "Hamkorlar",
+    "contact": "Aloqa",
+    "contactCta": "Bog'lanish"
+  },
+  "hero": {
+    "eyebrow": "KOMPETENSIYALARNI BIRLASHTIRIB.",
+    "headingLine1": "Salomatlikni",
+    "headingLine2": "shakllantiramiz.",
+    "description": "NabiOta® Health Group Germany GmbH – sog'liqni saqlash sohasidagi yetakchi xolding guruhi. Tibbiy mahorat, zamonaviy boshqaruv tuzilmalari va innovatsion yechimlarni barqaror tibbiy xizmat uchun birlashtiramiz.",
+    "ctaMore": "Batafsil ma'lumot",
+    "ctaTermin": "Qabulga yozilish",
+    "ctaAreas": "Faoliyat yo'nalishlari",
+    "values": [
+      {
+        "id": "menschen",
+        "title": "INSON MANFAATLARI MARKAZDA",
+        "description": "Bemorlar, ularning yaqinlari, tibbiyot mutaxassislari va hamkorlarimiz uchun."
+      },
+      {
+        "id": "qualitaet",
+        "title": "SIFAT VA ISHONCH",
+        "description": "Ishonchli. Shaffof. Mas'uliyatli tibbiy yondashuv."
+      },
+      {
+        "id": "nachhaltigkeit",
+        "title": "BARQAROR TIBBIY TIZIM",
+        "description": "Kelajak avlodlar salomatligi uchun bugundan harakat qilamiz."
+      }
+    ]
+  },
+  "strip": {
+    "stats": [
+      { "value": "1", "label": "Kuchli brend", "sublabel": "Sog'lom jamiyat yo'lida." },
+      { "value": "10", "label": "Guruh kompaniyalari", "sublabel": "Yagona tizim ostidagi ixtisoslashuv." },
+      { "value": "100+", "label": "Tarmoqdagi ekspertlar", "sublabel": "Tajriba. Fidoyilik. Natija." },
+      { "value": "∞", "label": "Birlashgan missiya", "sublabel": "Kelajak avlodlar uchun barqaror sog'liqni saqlash." }
+    ]
+  },
+  "about": {
+    "eyebrow": "BIZ HAQIMIZDA",
+    "heading": "Sog'lom kelajak sari mustahkam korporativ guruh.",
+    "description": "Myonxengladbax shahrida joylashgan NabiOta® Health Group Germany GmbH sog'liqni saqlash sohasidagi ko'p tarmoqli xoldingdir. Ambulatoriya va ixtisoslashgan tibbiy yordam, ilg'or diagnostika, reabilitatsiya, uyda parvarish va tibbiy loyihalarni yagona brend ostida birlashtirib, bemorlar va hamkorlar uchun yuqori qiymat yaratamiz.",
+    "cta": "Tariximiz",
+    "benefits": [
+      {
+        "title": "Ishonchli hamkor",
+        "description": "Teng huquqli uzoq muddatli strategik hamkorlik."
+      },
+      {
+        "title": "Innovatsion yechimlar",
+        "description": "Zamonaviy va yuqori samarali tibbiy xizmatlar uchun."
+      },
+      {
+        "title": "Amaliy mas'uliyat",
+        "description": "Har bir qadamimizda sifat, shaffoflik va insonparvarlik."
+      }
+    ]
+  },
+  "areas": {
+    "eyebrow": "FAOLIYAT YO'NALISHLARIMIZ",
+    "heading": "Salomatligingiz uchun\nko'p qirrali mahorat.",
+    "description": "Xolding kompaniyalarimiz tibbiy yordam va yuqori aniqlikdagi diagnostikadan tortib reabilitatsiya, uyda parvarish, tibbiy buyumlar ta'minoti va xalqaro loyihalargacha bo'lgan barcha muhim sohalarni qamrab oladi.",
+    "cta": "Barcha yo'nalishlar bilan tanishing"
+  },
+  "services": {
+    "eyebrow": "XIZMATLARIMIZ",
+    "heading": "Yagona manzil ostida yaxlit tibbiy yechimlar.",
+    "cta": "Barcha xizmatlarni ko'rish"
+  },
+  "values": {
+    "eyebrow": "QADRIYATLARIMIZ",
+    "heading": "Bizga yo'l ko'rsatuvchi tamoyillar.",
+    "description": "Qadriyatlarimiz faoliyatimizning mustahkam poydevorini tashkil etadi va guruh miqyosidagi barcha hamkorlik aloqalarini belgilaydi."
+  },
+  "split": {
+    "partners": {
+      "eyebrow": "HAMKORLIK VA INVESTITSIYALAR",
+      "heading": "Birgalikda yuksak natijalarga erishish.",
+      "description": "Tibbiyot markazlari, klinikalar, shifokorlar va korporativ investorlar bilan yaqindan hamkorlik qilamiz. Mustahkam sog'liqni saqlash tizimi uchun uzoq muddatli va barqaror sheriklik.",
+      "cta": "Hamkorlik modellari",
+      "quote": "SOG'LOM KELAJAK UCHUN MUSTAHKAM HAMKORLIK."
+    },
+    "career": {
+      "eyebrow": "KARYERA",
+      "heading": "Tibbiyot kelajagini biz bilan birga shakllantiring.",
+      "description": "Bizning qarashlarimizni baham ko'radigan va Germaniya sog'liqni saqlash tizimida yangi ufqlarni ochishga intiladigan shifokorlar va tibbiyot mutaxassislarini jamoamizga taklif etamiz.",
+      "cta": "Hoziroq ariza topshiring"
+    }
+  },
+  "footer": {
+    "slogan": "Kompetensiyalarni birlashtirib. Salomatlikni shakllantiramiz.",
+    "addressTitle": "Bosh ofis va aloqa",
+    "phonesTitle": "Telefon liniyalari",
+    "networkTitle": "Tarmoq va media",
+    "allRights": "Barcha huquqlar himoyalangan.",
+    "brandNotice": "NabiOta® ro'yxatdan o'tgan va qonun bilan himoyalangan savdo belgisidir."
+  }
+}

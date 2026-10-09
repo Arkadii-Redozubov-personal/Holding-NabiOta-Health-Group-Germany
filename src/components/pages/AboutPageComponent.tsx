@@ -242,13 +242,16 @@ function LightbulbValuesIcon({ className = "w-6 h-6" }: { className?: string }) 
 
 export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
   // Multilingual content dictionary
+  const isUz = locale === "uz";
   const isEn = locale === "en";
   const isRu = locale === "ru";
   const isTr = locale === "tr";
   const isAr = locale === "ar";
 
   const t = {
-    breadcrumbHome: isRu
+    breadcrumbHome: isUz
+      ? "Asosiy sahifa"
+      : isRu
       ? "Главная"
       : isEn
       ? "Home"
@@ -257,7 +260,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "الرئيسية"
       : "Startseite",
-    breadcrumbAbout: isRu
+    breadcrumbAbout: isUz
+      ? "Xolding haqida"
+      : isRu
       ? "О холдинге"
       : isEn
       ? "About Us"
@@ -266,7 +271,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "عن المجموعة"
       : "Über uns",
-    heroEyebrow: isRu
+    heroEyebrow: isUz
+      ? "XOLDING HAQIDA"
+      : isRu
       ? "О ХОЛДИНГЕ"
       : isEn
       ? "ABOUT THE HOLDING"
@@ -275,7 +282,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "عن مجموعة الشركات"
       : "ÜBER DIE UNTERNEHMENSGRUPPE",
-    heroTitlePart1: isRu
+    heroTitlePart1: isUz
+      ? "Kuchli guruh"
+      : isRu
       ? "Сильная группа"
       : isEn
       ? "A strong group"
@@ -284,7 +293,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "مجموعة رائدة متكاملة"
       : "Eine starke Gruppe",
-    heroTitlePart2: isRu
+    heroTitlePart2: isUz
+      ? "sog'lom kelajak yo'lida."
+      : isRu
       ? "для здорового будущего."
       : isEn
       ? "for a healthier future."
@@ -293,7 +304,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "من أجل مستقبل صحي مستدام."
       : "für eine gesündere Zukunft.",
-    heroDesc: isRu
+    heroDesc: isUz
+      ? "Mönchengladbach shahrida joylashgan NabiOta® Health Group Germany GmbH birlamchi tibbiy yordam, diagnostika, reabilitatsiya, parvarishlash va yondosh sog'liqni saqlash xizmatlarini yagona brend ostida birlashtirib, bemorlar, xodimlar va hamkorlar uchun uzoq muddatli barqaror qadriyatlarni yaratadi."
+      : isRu
       ? "NabiOta® Health Group Germany GmbH с головным офисом в Мёнхенгладбахе объединяет первичную медицинскую помощь, диагностику, реабилитацию, уход и сопутствующие медицинские услуги под единым брендом, создавая долгосрочную ценность для пациентов, сотрудников и партнеров."
       : isEn
       ? "NabiOta® Health Group Germany GmbH based in Mönchengladbach unites primary medical care, diagnostics, rehabilitation, home care, and related healthcare services under one cohesive brand, creating long-term value for patients, staff, and partners."
@@ -302,8 +315,10 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "تجمع شركة NabiOta® Health Group Germany GmbH، ومقرها مونشنغلادباخ، بين الرعاية الطبية الأولية، التشخيص المتقدم، إعادة التأهيل، الرعاية التمريضية المنزلية والخدمات الصحية الشاملة تحت مظلة موحدة — لصناعة قيمة مستدامة للمرضى والكوادر والشركاء."
       : "Die NabiOta® Health Group Germany GmbH mit Sitz in Mönchengladbach vereint medizinische Grundversorgung, Diagnostik, Rehabilitation, Pflege und angrenzende Gesundheitsleistungen unter einer gemeinsamen Marke – für nachhaltige Werte für Patienten, Mitarbeitende und Partner.",
-    badge1Title: isRu ? "Человек" : isEn ? "People" : isTr ? "İnsan" : isAr ? "الإنسان" : "Mensch",
-    badge1Sub: isRu
+    badge1Title: isUz ? "Inson" : isRu ? "Человек" : isEn ? "People" : isTr ? "İnsan" : isAr ? "الإنسان" : "Mensch",
+    badge1Sub: isUz
+      ? "diqqat markazida"
+      : isRu
       ? "в центре внимания"
       : isEn
       ? "at the center"
@@ -312,7 +327,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "في قلب اهتمامنا"
       : "im Mittelpunkt",
-    badge2Title: isRu
+    badge2Title: isUz
+      ? "Barqaror"
+      : isRu
       ? "Устойчивый"
       : isEn
       ? "Sustainable"
@@ -321,8 +338,10 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "نمو"
       : "Nachhaltiges",
-    badge2Sub: isRu ? "рост" : isEn ? "growth" : isTr ? "büyüme" : isAr ? "مستدام" : "Wachstum",
-    badge3Title: isRu
+    badge2Sub: isUz ? "o'sish" : isRu ? "рост" : isEn ? "growth" : isTr ? "büyüme" : isAr ? "مستدام" : "Wachstum",
+    badge3Title: isUz
+      ? "Sog'lom"
+      : isRu
       ? "Здоровое"
       : isEn
       ? "A healthier"
@@ -331,9 +350,11 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "غدٌ أكثر"
       : "Gesünderes",
-    badge3Sub: isRu ? "завтра" : isEn ? "tomorrow" : isTr ? "bir yarın" : isAr ? "صحة وعافية" : "Morgen",
+    badge3Sub: isUz ? "ertangi kun" : isRu ? "завтра" : isEn ? "tomorrow" : isTr ? "bir yarın" : isAr ? "صحة وعافية" : "Morgen",
 
-    rootsEyebrow: isRu
+    rootsEyebrow: isUz
+      ? "TARIX VA ILDIZLAR"
+      : isRu
       ? "ИСТОРИЯ И КОРНИ"
       : isEn
       ? "OUR ROOTS & HISTORY"
@@ -342,7 +363,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "جذورنا ومسيرتنا"
       : "UNSERE WURZELN & GESCHICHTE",
-    rootsTitle1: isRu
+    rootsTitle1: isUz
+      ? "O'n yilliklar tajribasi."
+      : isRu
       ? "Опыт десятилетий."
       : isEn
       ? "Rooted in Experience."
@@ -351,7 +374,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "خبرة متجذرة في التميز."
       : "Aus Erfahrung gewachsen.",
-    rootsTitle2: isRu
+    rootsTitle2: isUz
+      ? "Kelajakka intilish."
+      : isRu
       ? "Направленность в будущее."
       : isEn
       ? "Built for the Future."
@@ -360,7 +385,12 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "رؤية راسخة نحو المستقبل."
       : "Für die Zukunft aufgestellt.",
-    rootsP1: isRu ? (
+    rootsP1: isUz ? (
+      <>
+        NabiOta® Health Group Germany GmbH Mönchengladbach shahar sudida (Amtsgericht) HRB 16787 raqami ostida ro'yxatga olingan. 2026-yil 9-yanvardagi ro'yxatdan o'tkazish bildirishnomasida 50.000 EUR ustav kapitali va rasmiy yuridik manzil ko'rsatilgan: Aachener Straße 114, 41061 Mönchengladbach. Faoliyat maqsadi — sog'liqni saqlash sohasida ulushlarni boshqarish va markazlashtirilgan boshqaruv xizmatlarini ko'rsatishdan iborat. Guruhning ildizlari strategik tibbiy ekspertiza hamda{" "}
+        <strong className="font-bold text-[#142318]">Medical A-Z Consulting GmbH</strong> merosiga borib taqaladi; tuzilmaviy korporativ rivojlanish va litsenziyalangan shifokorlarning ishtiroki tufayli uzoq muddatli integratsiyalashgan tibbiy guruhning mustahkam poydevori yaratildi.
+      </>
+    ) : isRu ? (
       <>
         NabiOta® Health Group Germany GmbH зарегистрирована в Amtsgericht Mönchengladbach под номером HRB 16787. Уведомление о регистрации от 9 января 2026 года указывает уставный капитал 50.000 EUR и юридический адрес: Aachener Straße 114, 41061 Mönchengladbach. Предмет деятельности — управление участиями и централизованные управленческие услуги в сфере здравоохранения. Корни группы восходят к стратегическому развитию медицинской экспертизы и{" "}
         <strong className="font-bold text-[#142318]">Medical A-Z Consulting GmbH</strong>. Благодаря расширению корпоративной структуры и привлечению лицензированных специалистов был заложен фундамент долгосрочной медицинской группы.
@@ -386,7 +416,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         <strong className="font-bold text-[#142318]">Medical A-Z Consulting GmbH</strong> wurde durch organisatorische Weiterentwicklung und den Ausbau gesellschaftsrechtlicher Strukturen die Grundlage für einen integrierten Verbund ambulanter und stationärer medizinischer Einrichtungen geschaffen.
       </>
     ),
-    rootsP2: isRu
+    rootsP2: isUz
+      ? "Maqsad — umumiy amaliyot va ichki kasalliklar, nevrologiya va jarrohlik yordamini, shuningdek, dastlabki bosqichda § 30 GewO bo'yicha faoliyat yuritadigan xususiy klinikani yagona tarmoqqa birlashtirishdir. Xolding markaziy iqtisodiy va tashkiliy vazifalarni o'z zimmasiga oladi. Litsenziyalar (Zulassungen), tibbiy mas'uliyat va xizmatlar ko'rsatish tegishli vakolatli operatorlar tasarrufida qoladi. Davlat tibbiy sug'urtasiga ega bemorlarni keyingi statsionar davolash va MVZ ta'sischisi sifatida kasalxona boshqaruv kompaniyasini tashkil etish alohida rivojlanish bosqichlari sifatida tayyorlanmoqda."
+      : isRu
       ? "Цель — объединение семейной и терапевтической, неврологической и хирургической помощи, а также частной клиники, которая на первом этапе работает по § 30 GewO. Холдинг берет на себя центральные экономические и организационные задачи. Допуски (Zulassungen), медицинская ответственность и оказание услуг остаются у соответствующих уполномоченных операторов. Последующее стационарное обслуживание пациентов обязательного медицинского страхования и больничное общество как учредитель MVZ готовятся как отдельные этапы развития."
       : isEn
       ? "The goal is a network of general practice and internal medicine, neurological and surgical care, as well as a private clinic initially operated under § 30 GewO. The holding assumes central economic and organizational tasks. Approvals, medical responsibility and service provision remain with the respective authorized operators. Later inpatient care for statutorily insured patients and a hospital company acting as MVZ sponsor are being prepared as separate development steps."
@@ -396,7 +428,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       ? "الهدف هو تأسيس شبكة رعاية طبية متكاملة تضم طب الأسرة والأمراض الباطنية، طب الأعصاب، الجراحة، بالإضافة إلى مستشفى خاص يعمل مبدئياً وفق § 30 GewO. تتولى القابضة المهام الاقتصادية والتنظيمية المركزية، بينما تظل التراخيص والمسؤولية الطبية وتقديم الرعاية السريرية تحت الإشراف الكامل والمستقل للأطباء المرخصين. ويجري التحضير لتقديم الرعاية السريرية لمرضى التأمين الصحي العام وتأسيس شركة مستشفيات كجهة مشغلة لمراكز MVZ كخطوات تطويرية منفصلة."
       : "Ziel ist ein Verbund aus hausärztlicher und internistischer Versorgung, neurologischer und chirurgischer Versorgung sowie einer zunächst nach § 30 GewO betriebenen Privatklinik. Die Holding übernimmt zentrale wirtschaftliche und organisatorische Aufgaben. Zulassungen, medizinische Verantwortung und Leistungserbringung verbleiben bei den jeweils berechtigten Betreibern. Die spätere stationäre Versorgung gesetzlich Versicherter und eine Krankenhausgesellschaft als MVZ-Trägerin werden als gesonderte Entwicklungsschritte vorbereitet.",
 
-    missionEyebrow: isRu
+    missionEyebrow: isUz
+      ? "MISSIYA VA QARASH"
+      : isRu
       ? "МИССИЯ И ВИДЕНИЕ"
       : isEn
       ? "OUR MISSION & GOALS"
@@ -405,7 +439,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "رسالتنا وأهدافنا"
       : "UNSER AUFTRAG & ZIELE",
-    missionHeading: isRu
+    missionHeading: isUz
+      ? "Bizni nima harakatga keltiradi"
+      : isRu
       ? "Что нами движет"
       : isEn
       ? "What Drives Us"
@@ -414,7 +450,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "ما يلهم مسيرتنا"
       : "Was uns antreibt",
-    missionLead: isRu
+    missionLead: isUz
+      ? "Biz salomatlikni nafaqat kasalliklarni davolash, balki yaxlit vazifa deb bilamiz: insonlarga hayotning barcha bosqichlarida hamrohlik qilish, ularning hayot sifatini saqlash va tibbiy tuzilmalarni uzoq muddatli istiqbolda mustahkamlash."
+      : isRu
       ? "Мы понимаем здоровье не только как лечение заболеваний, но и как целостную задачу: всесторонняя поддержка человека в различных жизненных ситуациях и долгосрочное повышение качества жизни."
       : isEn
       ? "We understand health not merely as the treatment of illnesses, but as a holistic mission: supporting people in diverse life situations and sustainably enhancing their quality of life."
@@ -423,7 +461,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "نحن ننظر إلى الصحة ليس فقط باعتبارها علاجاً للأمراض، بل كرسالة إنسانية شاملة؛ لذا نكرس جهودنا لدعم المرضى في مختلف مراحل حياتهم بأعلى مستويات الرعاية وتعزيز جودة حياتهم بصورة مستدامة."
       : "Wir verstehen Gesundheit nicht nur als Behandlung von Krankheiten, sondern als ganzheitliche Aufgabe. Deshalb setzen wir uns dafür ein, Menschen in unterschiedlichen Lebenssituationen bestmöglich zu unterstützen und ihre Lebensqualität langfristig zu fördern.",
-    cardMissionTitle: isRu
+    cardMissionTitle: isUz
+      ? "Bizning vazifamiz (Missiya)"
+      : isRu
       ? "Наш заказ (Миссия)"
       : isEn
       ? "Our Mission"
@@ -432,7 +472,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "رسالتنا"
       : "Unser Auftrag",
-    cardMissionText: isRu
+    cardMissionText: isUz
+      ? "Insonlarga yuqori sifatli, mehr-oqibatli va shaxsiylashtirilgan tibbiy xizmat ko'rsatish orqali eng yaxshi yordamni taqdim etish — birlamchi bo'g'indan tortib reabilitatsiyagacha."
+      : isRu
       ? "Оказывать людям наилучшую поддержку посредством высококачественной медицинской помощи, современной диагностики, индивидуального ухода и инновационных услуг — надежно сопровождая пациентов на всем пути лечения."
       : isEn
       ? "To provide people with the best possible support through high-quality medical care, modern diagnostics, personalized attention, and innovative healthcare services throughout their entire treatment journey."
@@ -441,7 +483,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "رسالتنا هي تقديم أفضل دعم ممكن للمرضى من خلال رعاية طبية فائقة الجودة، تقنيات تشخيص حديثة، رعاية شخصية دقيقة، وخدمات صحية مبتكرة ترافق المريض بكل موثوقية عبر مسار علاجه بأكمله."
       : "Unser Auftrag ist es, Menschen durch hochwertige medizinische Versorgung, moderne Diagnostik, individuelle Betreuung und innovative Gesundheitsdienstleistungen bestmöglich zu unterstützen und Patienten auf ihrem gesamten Behandlungsweg verlässlich zu begleiten.",
-    cardVisionTitle: isRu
+    cardVisionTitle: isUz
+      ? "Bizning maqsadlarimiz (Qarash)"
+      : isRu
       ? "Наши цели"
       : isEn
       ? "Our Goals"
@@ -450,7 +494,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "أهدافنا"
       : "Unsere Ziele",
-    cardVisionText: isRu
+    cardVisionText: isUz
+      ? "Tibbiy malaka, shaxsiy g'amxo'rlik va zamonaviy tuzilmalar qo'l berib harakat qiladigan hamda inson doimo diqqat markazida turadigan sog'liqni saqlash tizimi."
+      : isRu
       ? "Здравоохранение, в котором медицинская компетентность, передовые технологии и человеческая забота идут рука об руку: объединение медицинских услуг, облегчение доступа к лечению и создание устойчивых структур."
       : isEn
       ? "Healthcare in which medical competence, modern technologies, and human compassion go hand in hand: connecting care services, easing access to treatments, and creating sustainable structures for the future."
@@ -461,7 +507,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : "Unser Ziel ist eine Gesundheitsversorgung, in der medizinische Kompetenz, moderne Technologien und menschliche Zuwendung Hand in Hand gehen. Wir vernetzen Versorgungsangebote, erleichtern den Zugang und schaffen nachhaltige Versorgungsstrukturen.",
 
     stat1Num: "3.000+",
-    stat1Label: isRu
+    stat1Label: isUz
+      ? "Fidoyi mutaxassislar"
+      : isRu
       ? "Преданных специалистов"
       : isEn
       ? "Dedicated professionals"
@@ -471,7 +519,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       ? "كادراً متخصصاً متفانياً"
       : "Engagierte Fachkräfte",
     stat2Num: "10",
-    stat2Label: isRu
+    stat2Label: isUz
+      ? "Tarkibiy bo'linmalar va korxonalar"
+      : isRu
       ? "Подразделений и предприятий"
       : isEn
       ? "Divisions & operating entities"
@@ -481,7 +531,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       ? "قطاعات ووحدات تشغيلية"
       : "Unternehmensbereiche & Einheiten",
     stat3Num: "100+",
-    stat3Label: isRu
+    stat3Label: isUz
+      ? "Hamkorlik tarmog'i"
+      : isRu
       ? "Партнерская сеть"
       : isEn
       ? "Partner network"
@@ -490,8 +542,10 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "شريكاً في الشبكة الطبية"
       : "Partner im Netzwerk",
-    stat4Num: isRu ? "Одна" : isEn ? "One" : isTr ? "Tek" : isAr ? "رسالة" : "Eine",
-    stat4Label: isRu
+    stat4Num: isUz ? "Yagona" : isRu ? "Одна" : isEn ? "One" : isTr ? "Tek" : isAr ? "رسالة" : "Eine",
+    stat4Label: isUz
+      ? "Sog'lom kelajak yo'lidagi umumiy missiya"
+      : isRu
       ? "Общая миссия во имя здорового будущего"
       : isEn
       ? "Shared mission for a healthier tomorrow"
@@ -501,7 +555,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       ? "واحدة مشتركة لمستقبل صحي واعد"
       : "Gemeinsame Mission für eine gesündere Zukunft",
 
-    orgEyebrow: isRu
+    orgEyebrow: isUz
+      ? "TASHKILIY TUZILMA"
+      : isRu
       ? "ОРГАНИЗАЦИОННАЯ СТРУКТУРА"
       : isEn
       ? "ORGANIZATIONAL STRUCTURE"
@@ -510,7 +566,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "الهيكل التنظيمي والمؤسسي"
       : "ORGANISATION & STRUKTUR",
-    orgHeading: isRu
+    orgHeading: isUz
+      ? "Xolding tuzilmasi va sho'ba korxonalar"
+      : isRu
       ? "Структура холдинга и дочерние общества"
       : isEn
       ? "Holding & Subsidiary Entities"
@@ -519,7 +577,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "الهيكل المؤسسي – القابضة والشركات التابعة"
       : "Unternehmensstruktur – Holding & Tochtergesellschaften",
-    holdingBadge: isRu
+    holdingBadge: isUz
+      ? "XOLDING / KONSERN"
+      : isRu
       ? "ХОЛДИНГ / КОНЦЕРН"
       : isEn
       ? "HOLDING / KONZERN"
@@ -529,7 +589,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       ? "الشركة القابضة / المجموعة"
       : "HOLDING / KONZERN",
 
-    twoPhaseEyebrow: isRu
+    twoPhaseEyebrow: isUz
+      ? "RIVOJLANISH STRATEGIYASI"
+      : isRu
       ? "СТРАТЕГИЯ РАЗВИТИЯ"
       : isEn
       ? "DEVELOPMENT STRATEGY"
@@ -538,7 +600,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "التطوير الاستراتيجي"
       : "STRATEGISCHE ENTWICKLUNG",
-    twoPhaseTitle: isRu
+    twoPhaseTitle: isUz
+      ? "Ikki bosqichli ishtirok etish modeli"
+      : isRu
       ? "Структура участия в две фазы"
       : isEn
       ? "Two-Phase Corporate Evolution"
@@ -547,7 +611,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "هيكل المساهمة والاستثمار عبر مرحلتين"
       : "Beteiligungsstruktur in zwei Phasen",
-    twoPhaseDesc: isRu
+    twoPhaseDesc: isUz
+      ? "Xolding rivojlanishi SGB V bo'yicha qonuniy me'yorlar va KV Nordrhein talablariga to'liq mos kelishini ta'minlash uchun bosqichma-bosqich amalga oshiriladi."
+      : isRu
       ? "Развитие холдинга строится последовательно для обеспечения юридической безупречности и устойчивого масштабирования."
       : isEn
       ? "The group's corporate expansion is engineered systematically to ensure full regulatory compliance and sustainable scaling."
@@ -556,7 +622,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "يتم بناء وتوسيع مجموعة NabiOta عبر مرحلتين محددتين بدقة لضمان الامتثال التام للأنظمة المهنية وقوانين تراخيص الرعاية الطبية."
       : "Der Aufbau der NabiOta-Gruppe erfolgt in zwei klar definierten Phasen zur Sicherstellung voller berufs- und zulassungsrechtlicher Konformität.",
-    phase1Title: isRu
+    phase1Title: isUz
+      ? "1-bosqich: Shifokor ishtirokidagi shakllanish bosqichi"
+      : isRu
       ? "Фаза 1: Этап становления с участием врача"
       : isEn
       ? "Phase 1: Foundation Phase with Physician"
@@ -565,7 +633,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "المرحلة الأولى: مرحلة التأسيس بمشاركة الأطباء المرخصين"
       : "Phase 1: Aufbauphase mit ärztlicher Beteiligung",
-    phase1Desc: isRu
+    phase1Desc: isUz
+      ? "Dr. Fischer-Rahimov litsenziyalangan shartnoma shifokori sifatida MVZ tuzilmasining asoschisi va tibbiy langari hisoblanadi (§ 95 Abs. 1a SGB V). Xolding 1-bosqichda tibbiy bo'lmagan xizmatlar va infratuzilmani rivojlantirishga e'tibor qaratadi."
+      : isRu
       ? "Dr. Fischer-Rahimov как лицензированный врач-контрактник владеет долями MVZ на основе права учредителя. Холдинг берет на себя центральные сервисные и управляющие функции через индивидуальные договоры услуг."
       : isEn
       ? "Dr. Fischer-Rahimov holds MVZ shares directly on the basis of his statutory physician entitlement. The holding company provides centralized management services via individually defined service agreements."
@@ -574,7 +644,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "يمتلك د. فيشر-رحيموف حصص مراكز MVZ مباشرةً استناداً إلى أهليته التأسيسية كطبيب معتمد. وترتبط الشركة القابضة بمراكز MVZ عبر اتفاقيات خدمات إدارية محددة."
       : "Dr. Fischer-Rahimov hält MVZ-Anteile unmittelbar auf Grundlage seiner Gründungsberechtigung. Die Holding verbindet sich mit den MVZ durch einzeln vereinbarte Dienstleistungen. Andere zulässige Beteiligungen werden separat aufgebaut.",
-    phase2Title: isRu
+    phase2Title: isUz
+      ? "2-bosqich: Statsionar shifoxona tuzilmasi"
+      : isRu
       ? "Фаза 2: Стационарная больничная структура"
       : isEn
       ? "Phase 2: Hospital Corporation Structure"
@@ -583,7 +655,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "المرحلة الثانية: هيكل المستشفى المؤسسي اللاحق"
       : "Phase 2: Spätere Krankenhausstruktur",
-    phase2Desc: isRu
+    phase2Desc: isUz
+      ? "Xolding klinikani boshqarish kompaniyasini (NabiOta Clinics Germany GmbH) ta'sis etadi va § 30 GewO litsenziyasiga ega bo'ladi hamda kasalxona rejasiga muvofiq statsionar shifoxona sifatida MVZ ning qonuniy ta'sischisi maqomini oladi."
+      : isRu
       ? "Холдинг учреждает компанию управления клиникой (NabiOta Clinics Germany GmbH nach § 30 GewO). После получения лицензии больницы (§ 108/109 SGB V) компания сможет напрямую участвовать в долях MVZ."
       : isEn
       ? "The holding operates the hospital operating entity (under § 30 GewO). Upon obtaining official hospital accreditation (§ 108/109 SGB V), it can hold MVZ shares directly."
@@ -593,7 +667,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       ? "تمتلك الشركة القابضة شركة إدارة وتشغيل المستشفى (§ 30 GewO). وفور الحصول على اعتماد المستشفيات المطلوب (§ 108/109 SGB V) وبعد فحص تحويل الحصص، يمكن لهذه الشركة امتلاك حصص MVZ مباشرةً."
       : "Die Holding hält die Krankenhaus-Betriebsgesellschaft. Erst bei deren erforderlicher Krankenhauszulassung (§ 108/109 SGB V) und nach Prüfung der Anteilsübertragung kann diese unmittelbar MVZ-Anteile halten.",
 
-    independenceTitle: isRu
+    independenceTitle: isUz
+      ? "Tibbiy qarorlarning to'liq mustaqilligi"
+      : isRu
       ? "Полная независимость врачебных решений"
       : isEn
       ? "Guaranteed Medical Independence"
@@ -602,7 +678,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "استقلالية كاملة ومضمونة للقرارات الطبية"
       : "Garantierte ärztliche Weisungsfreiheit",
-    independenceDesc: isRu
+    independenceDesc: isUz
+      ? "Xolding iqtisodiy, IT va infratuzilma yordamini ko'rsatadi, ammo shifokorlarning davolash usullari, dori-darmonlar tayinlash va tibbiy erkinligiga hech qanday aralashmaydi."
+      : isRu
       ? "Холдинг обеспечивает экономическое, IT- и инфраструктурное сопровождение, но не имеет полномочий влиять на индивидуальные медицинские решения. Врачебное руководство каждого центра действует абсолютно автономно в соответствии с § 95 SGB V."
       : isEn
       ? "The holding handles administrative, IT, and facility management without interfering in clinical care. The medical directorship of each facility remains completely autonomous in all healthcare matters."
@@ -613,7 +691,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : "Die medizinischen Einrichtungen bleiben für Behandlungsentscheidungen, Diagnostik und ärztliche Organisation eigenverantwortlich. Die medizinische Weisungsfreiheit der ärztlichen Leitung eines MVZ bleibt uneingeschränkt gewahrt (§ 95 SGB V).",
 
     // Section 3B: Medical Leadership & Founder (PDF Pages 2-4)
-    leadershipEyebrow: isRu
+    leadershipEyebrow: isUz
+      ? "SHIFOKORLAR RAHBARLIGI VA TA'SISCHI"
+      : isRu
       ? "ВРАЧЕБНОЕ РУКОВОДСТВО И ОСНОВАТЕЛЬ"
       : isEn
       ? "MEDICAL LEADERSHIP & FOUNDER"
@@ -622,7 +702,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "القيادة الطبية ومؤسس المجموعة"
       : "ÄRZTLICHE FÜHRUNG & GRÜNDER",
-    leadershipHeading1: isRu
+    leadershipHeading1: isUz
+      ? "Mas'uliyatli tibbiyot"
+      : isRu
       ? "Ответственная медицина"
       : isEn
       ? "Responsible Healthcare"
@@ -631,7 +713,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "طب مسؤول"
       : "Verantwortungsvolle Medizin",
-    leadershipHeading2: isRu
+    leadershipHeading2: isUz
+      ? "shifokorlar rahbarligida."
+      : isRu
       ? "под руководством врачей."
       : isEn
       ? "Led by Physicians."
@@ -640,7 +724,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "بقيادة استشارية طبية رائدة."
       : "durch ärztliche Führung.",
-    leadershipSubtitle: isRu
+    leadershipSubtitle: isUz
+      ? "NabiOta® Health Group Germany poydevori klinik ekspertiza, mustaqil shifokorlik mas'uliyati va nemis tibbiyot an'analariga asoslangan."
+      : isRu
       ? "Фундамент NabiOta® Health Group Germany основан на клиническом авторитете и статусе врача-учредителя (Gründungsberechtigter Vertragsarzt). Медицинский совет гарантирует превосходство в лечении, свободное от коммерческого давления."
       : isEn
       ? "The bedrock of NabiOta® Health Group Germany rests upon clinical integrity and the statutory founder status of licensed physicians. Our clinical board guarantees superior standards of care independent of purely commercial return pressures."
@@ -651,7 +737,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : "Das Fundament der NabiOta® Health Group Germany basiert auf der klinischen Exzellenz und der gesetzlichen Gründungsberechtigung niedergelassener Vertragsärzte. Die medizinische Leitung sichert höchste Behandlungsqualität frei von rein ökonomischem Renditedruck.",
 
     founderName: "Dr. Fischer-Rahimov",
-    founderRole: isRu
+    founderRole: isUz
+      ? "Ta'sischi shifokor va 1-bosqich tibbiy kuratori"
+      : isRu
       ? "Врач-учредитель & Медицинский куратор Фазы 1"
       : isEn
       ? "Founding Statutory Physician & Phase 1 Medical Sponsor"
@@ -661,7 +749,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       ? "طبيب معتمد مؤسس وراعٍ طبي معتمد"
       : "Gründungsberechtigter Vertragsarzt & Medizinischer Schirmherr",
     founderBadge: "§ 95 Abs. 1a SGB V",
-    founderBio1: isRu
+    founderBio1: isUz
+      ? "Shimoliy Reyn-Vestfaliya (NRW) hududida ko'p yillik amaliyot tajribasiga ega litsenziyalangan shifokor sifatida Dr. Fischer-Rahimov xoldingning barcha tibbiy jarayonlari va ambulator yo'nalishlarining klinik sifatini nazorat qiladi."
+      : isRu
       ? "Как лицензированный врач с многолетним опытом практики в Рейнланде, Dr. Fischer-Rahimov представляет собой ключевой профессиональный и правовой ориентир в первой фазе создания группы. Его авторитет и врачебная лицензия послужили юридическим фундаментом для развертывания сети амбулаторных центров MVZ."
       : isEn
       ? "As a licensed statutory health insurance physician with decades of regional medical practice in the Rhineland, Dr. Fischer-Rahimov anchors the clinical and regulatory foundation of the holding's initial growth phase, providing the legal prerequisite for the MVZ network."
@@ -670,7 +760,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "بصفته طبيباً معتمداً ممارساً لسنوات طويلة في منطقة راينلاند، يمثل د. فيشر-رحيموف الركيزة المهنية والقانونية الأساسية للمرحلة الأولى من التوسع، حيث شكلت عيادته وخبرته السريرية القاعدة القانونية لإطلاق شبكة مراكز MVZ."
       : "Als niedergelassener Vertragsarzt und langjährig praktizierender Mediziner im Rheinland bildet Dr. Fischer-Rahimov den berufs- und kassenarztrechtlichen Ankerpunkt der ersten Wachstumsphase. Seine Praxis und sein Renommee schufen die gesetzliche Basis für die Initiierung des MVZ-Verbundes.",
-    founderBio2: isRu
+    founderBio2: isUz
+      ? "Uning maqsadi — nemis shifokorlik an'analarini zamonaviy tashkiliy boshqaruv bilan birlashtirish, xodimlar uchun qulay mehnat sharoitlarini yaratish va har bir bemorga insoniy munosabatni ta'minlashdir."
+      : isRu
       ? "Его цель — объединить традиционные ценности немецкой врачебной этики, персональное внимание к пациенту и современные технологии многопрофильного амбулаторного лечения."
       : isEn
       ? "His vision unites traditional physician ethics, personalized patient trust, and cutting-edge multidisciplinary outpatient infrastructure."
@@ -680,7 +772,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       ? "يجمع نهجه ورؤيته بين التقاليد الراسخة لأخلاقيات مهنة الطب الألمانية ومفاهيم الرعاية المبتكرة متعددة التخصصات لما فيه مصلحة كل مريض."
       : "Sein Leitmotiv verbindet die bewährten Tugenden des ärztlichen Standesethos mit innovativen fachübergreifenden Versorgungskonzepten zum Wohle jedes einzelnen Patienten.",
     founderPoints: [
-      isRu
+      isUz
+        ? "SGB V qonuniga muvofiq MVZ kapitalida shifokorning bevosita ishtiroki"
+        : isRu
         ? "Прямое участие врача в капитале MVZ по закону SGB V"
         : isEn
         ? "Direct physician equity in MVZ under § 95 SGB V"
@@ -689,7 +783,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         : isAr
         ? "مساهمة ومشاركة طبية مباشرة في مراكز MVZ وفق § 95 SGB V"
         : "Unmittelbare vertragsärztliche Beteiligung an den MVZ",
-      isRu
+      isUz
+        ? "Xodimlar uchun to'liq terapevtik erkinlik kafolati"
+        : isRu
         ? "Гарантия полной терапевтической свободы персонала"
         : isEn
         ? "Guaranteed clinical autonomy for all medical staff"
@@ -698,7 +794,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         : isAr
         ? "حماية وضمان كامل لحرية القرار الطبي واستقلالية العلاج"
         : "Volle Wahrung der ärztlichen Weisungsfreiheit",
-      isRu
+      isUz
+        ? "KV Nordrhein va tibbiy sug'urta jamg'armalari bilan mustahkam hamkorlik"
+        : isRu
         ? "Тесное партнерство с KV Nordrhein и больничными кассами"
         : isEn
         ? "Close integration with KV Nordrhein and insurers"
@@ -709,7 +807,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         : "Enge Abstimmung mit der Kassenärztlichen Vereinigung Nordrhein",
     ],
 
-    boardTitle: isRu
+    boardTitle: isUz
+      ? "Shifokorlar kengashi va klinik standartlar"
+      : isRu
       ? "Врачебный совет и клинические стандарты"
       : isEn
       ? "Medical Advisory Board & Clinical Standards"
@@ -718,7 +818,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "المجلس الاستشاري الطبي والحوكمة السريرية"
       : "Der Ärztliche Beirat & Klinische Governance",
-    boardDesc: isRu
+    boardDesc: isUz
+      ? "Xoldingning yetakchi amaliyotchi shifokorlaridan iborat kollegial organ barcha sho'ba korxonalarda davolash protokollari (AWMF ko'rsatmalari) va bemorlar xavfsizligini ta'minlaydi."
+      : isRu
       ? "Коллегиальный орган из ведущих практикующих врачей холдинга, определяющий клинические протоколы, контролирующий безопасность пациентов и развивающий образовательные программы."
       : isEn
       ? "A collegial board of leading senior clinicians that defines evidence-based pathways, oversees patient safety, and guides residency programs."
@@ -728,7 +830,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       ? "تضمن الهيئة الاستشارية متعددة التخصصات من كبار الأطباء الاستشاريين جودة رعاية موحدة ومبنية على أحدث الأدلة الطبية وتوجه برامج تدريب الأطباء."
       : "Das interdisziplinäre Kollegium aus leitenden Fachärzten sichert die einheitliche Behandlungsqualität nach aktuellen Leitlinien und steuert die Weiterbildung.",
 
-    valuesEyebrow: isRu
+    valuesEyebrow: isUz
+      ? "BIZNING QADRIYATLARIMIZ"
+      : isRu
       ? "НАШИ ЦЕННОСТИ"
       : isEn
       ? "OUR VALUES"
@@ -737,7 +841,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "قيمنا الجوهرية"
       : "UNSERE WERTE",
-    valuesHeading: isRu
+    valuesHeading: isUz
+      ? "Bizni nima o'ziga xos qiladi."
+      : isRu
       ? "Что делает нас особенными."
       : isEn
       ? "What sets us apart."
@@ -747,7 +853,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       ? "ما يميزنا ويصنع تفردنا"
       : "Das macht uns besonders.",
 
-    val1Title: isRu
+    val1Title: isUz
+      ? "Ishonchli hamkor"
+      : isRu
       ? "Надежный партнер"
       : isEn
       ? "Reliable Partner"
@@ -756,7 +864,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "شريك موثوق"
       : "Verlässlicher Partner",
-    val1Desc: isRu
+    val1Desc: isUz
+      ? "O'zaro ishonch, ishonchlilik va umumiy maqsadlarga asoslangan uzoq muddatli hamkorlik."
+      : isRu
       ? "Долгосрочное партнерство, основанное на взаимном доверии и уважении."
       : isEn
       ? "Long-term partnership built on mutual trust and respect."
@@ -765,7 +875,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "شراكة استراتيجية طويلة الأمد تقوم على التقدير والثقة المتبادلة."
       : "Langfristige Partnerschaft auf Augenhöhe und gegenseitigem Vertrauen.",
-    val2Title: isRu
+    val2Title: isUz
+      ? "Innovatsion yechimlar"
+      : isRu
       ? "Инновационные решения"
       : isEn
       ? "Innovative Solutions"
@@ -774,7 +886,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "حلول مبتكرة"
       : "Innovative Lösungen",
-    val2Desc: isRu
+    val2Desc: isUz
+      ? "Zamonaviy, barqaror va uzoqni ko'zlagan sog'liqni saqlash tizimini rivojlantirish."
+      : isRu
       ? "Продвижение современного, устойчивого и дальновидного здравоохранения."
       : isEn
       ? "Advancing modern, resilient, and forward-looking healthcare."
@@ -783,7 +897,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "منظومة رعاية صحية حديثة ومستدامة واستشرافية للمستقبل."
       : "Moderne, zukunftsfähige und vorausschauende Gesundheitsversorgung.",
-    val3Title: isRu
+    val3Title: isUz
+      ? "Jonli mas'uliyat"
+      : isRu
       ? "Живая ответственность"
       : isEn
       ? "Living Responsibility"
@@ -792,7 +908,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "مسؤولية حية"
       : "Gelebte Verantwortung",
-    val3Desc: isRu
+    val3Desc: isUz
+      ? "Biz qilayotgan barcha ishlarda sifat, shaffoflik va insonparvarlik tamoyillariga sodiqlik."
+      : isRu
       ? "Качество, прозрачность и человечность во всем, что мы делаем."
       : isEn
       ? "Quality, transparency, and humanity in everything we do."
@@ -801,7 +919,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "جودة، شفافية، وإنسانية متأصلة في كل إجراء نقوم به."
       : "Qualität, Transparenz und Menschlichkeit in unserem gesamten Handeln.",
-    val4Title: isRu
+    val4Title: isUz
+      ? "Insonlar kamoloti"
+      : isRu
       ? "Развитие людей"
       : isEn
       ? "People Development"
@@ -810,7 +930,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "تطوير الكفاءات"
       : "Mitarbeiterförderung",
-    val4Desc: isRu
+    val4Desc: isUz
+      ? "Kuchli jamoa va sog'lom kelajak uchun xodimlarimizni qo'llab-quvvatlash va iste'dodlarni rivojlantirish."
+      : isRu
       ? "Поддержка наших сотрудников и взращивание талантов для сильного будущего."
       : isEn
       ? "Empowering our staff and fostering talent for a strong tomorrow."
@@ -820,7 +942,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       ? "تمكين مستمر للكوادر المتخصصة وصقل المواهب لغدٍ واعد."
       : "Gezielte Förderung von Fachkräften und Potenzialen für eine starke Zukunft.",
 
-    ctaEyebrow: isRu
+    ctaEyebrow: isUz
+      ? "SOG'LOM KELAJAKNI BIRGALIKDA YARATAMIZ"
+      : isRu
       ? "СОЗИДАЕМ ЗДОРОВОЕ БУДУЩЕЕ"
       : isEn
       ? "LET'S BUILD A HEALTHIER TOMORROW"
@@ -829,7 +953,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "معاً نصنع مستقبل الصحة"
       : "GEMEINSAM GESUNDHEIT GESTALTEN",
-    ctaHeading: isRu
+    ctaHeading: isUz
+      ? "Sog'lom kelajak yo'lida bizning hamkorimizga aylaning."
+      : isRu
       ? "Станьте нашим партнером во имя здорового будущего."
       : isEn
       ? "Partner with us for a healthier future."
@@ -838,7 +964,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "شاركنا في صياغة مستقبل صحي أكثر أماناً وإشراقاً."
       : "Gestalten Sie mit uns eine gesündere Zukunft.",
-    ctaBtn: isRu
+    ctaBtn: isUz
+      ? "Biz bilan bog'lanish →"
+      : isRu
       ? "Связаться с нами →"
       : isEn
       ? "Get in Touch →"
@@ -851,7 +979,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
 
   const organigramColumns = [
     {
-      colTitle: isRu
+      colTitle: isUz
+        ? "Ambulator va statsionar tibbiyot"
+        : isRu
         ? "Амбулаторная и стационарная медицина"
         : isEn
         ? "Primary & Inpatient Medicine"
@@ -863,7 +993,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       items: [
         {
           name: "“NabiOta” MVZ",
-          sub: isRu
+          sub: isUz
+            ? "Terapiya va ixtisoslashtirilgan yordam markazi (terapiya, kardiologiya, nevrologiya) — KV NRW shartnoma shifokorlik o'rinlari"
+            : isRu
             ? "Центр терапевтической и специализированной помощи (терапия, кардиология, гастроэнтерология, пульмонология, неврология, эндокринология)"
             : isEn
             ? "Center for Primary & Specialist Care (General Practice, Cardiology, Gastroenterology, Pulmonology, Neurology, Endocrinology)"
@@ -878,7 +1010,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         },
         {
           name: "“NabiOta” Klinik Germany GmbH",
-          sub: isRu
+          sub: isUz
+            ? "Tibbiy klinika (§ 30 GewO bo'yicha) — statsionar, kunduzgi va ambulator jarrohlik o'rinlari"
+            : isRu
             ? "Медицинская клиника (по § 30 GewO) — стационарные, дневные и операционные центры"
             : isEn
             ? "Inpatient & Specialty Clinic (acc. to § 30 GewO) — Inpatient surgery & recovery"
@@ -893,7 +1027,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         },
         {
           name: "“NabiOta” Rehabilitation Center",
-          sub: isRu
+          sub: isUz
+            ? "Reabilitatsiya va terapiya markazi (Rehabilitation & Therapy GmbH) — ambulator harakat va nevrologik reabilitatsiya"
+            : isRu
             ? "Центр реабилитации и терапии (Rehabilitation & Therapy GmbH) — физиотерапия, эрготерапия, логопедия"
             : isEn
             ? "Rehabilitation & Therapy Center — Physiotherapy, Occupational & Speech therapy"
@@ -909,7 +1045,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       ],
     },
     {
-      colTitle: isRu
+      colTitle: isUz
+        ? "Jarrohlik, diagnostika va parvarish"
+        : isRu
         ? "Хирургия, диагностика и уход"
         : isEn
         ? "Surgery, Diagnostics & Care"
@@ -921,7 +1059,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       items: [
         {
           name: "“NabiOta” MVZ",
-          sub: isRu
+          sub: isUz
+            ? "Jarrohlik va anesteziologiya (ortopediya/travmatologiya, neyrojarrohlik, umumiy jarrohlik) — DIN 1946-4 bo'yicha zamonaviy operatsiya zallari"
+            : isRu
             ? "Хирургия и анестезиология (ортопедия/травматология, нейрохирургия, абдоминальная и пластическая хирургия, противоболевая терапия)"
             : isEn
             ? "Surgery & Anesthesiology (Orthopedics, Neurosurgery, Visceral & Plastic Surgery, Pain therapy)"
@@ -936,7 +1076,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         },
         {
           name: "“NabiOta” Diagnostics GmbH",
-          sub: isRu
+          sub: isUz
+            ? "Yuqori texnologiyali diagnostika: 3T MRT, Low-Dose KT, raqamli rentgen va ultratovush tekshiruvlari"
+            : isRu
             ? "Высокотехнологичная диагностика: МРТ 3T, КТ Low-Dose, цифровой рентген, нейрофизиология (ЭМГ/ЭЭГ) и лабораторная логистика"
             : isEn
             ? "Advanced Diagnostics: 3T MRI, Low-Dose CT, X-ray, Neurophysiology (EMG/EEG) & Lab logistics"
@@ -951,7 +1093,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         },
         {
           name: "“NabiOta” HomeCare GmbH",
-          sub: isRu
+          sub: isUz
+            ? "Patronaj va uyda parvarishlash: malakali hamshiralik yordami, intensiv parvarish va SGB XI bo'yicha kunduzgi parvarish"
+            : isRu
             ? "Патронаж и уход на дому: квалифицированная сестринская помощь и специализированное лечение ран (Wundversorgung)"
             : isEn
             ? "In-Home Nursing Care: Qualified outpatient nursing & specialized wound care"
@@ -967,7 +1111,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       ],
     },
     {
-      colTitle: isRu
+      colTitle: isUz
+        ? "Kadrlar, ko'chmas mulk va ta'minot"
+        : isRu
         ? "Кадры, недвижимость и снабжение"
         : isEn
         ? "Recruitment, Real Estate & Supplies"
@@ -979,7 +1125,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       items: [
         {
           name: "“NabiOta” Medical Recruitment",
-          sub: isRu
+          sub: isUz
+            ? "Tibbiy rekruting xizmati (GmbH) — xalqaro shifokorlar va malakali hamshiralarni jalb qilish hamda Approbation dasturi"
+            : isRu
             ? "Служба медицинского рекрутинга (GmbH) — привлечение врачей и медперсонала, нострификация и Approbation"
             : isEn
             ? "Medical Recruitment Services GmbH — Healthcare staffing & degree recognition (Approbation)"
@@ -994,7 +1142,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         },
         {
           name: "“NabiOta” Real Estate GmbH",
-          sub: isRu
+          sub: isUz
+            ? "Tibbiy ko'chmas mulk — sog'liqni saqlash ob'ektlarini ishlab chiqish, qayta rejalashtirish va boshqarish"
+            : isRu
             ? "Медицинская недвижимость — девелопмент, перепланировка и управление специализированными зданиями клиник и MVZ"
             : isEn
             ? "Medical Real Estate GmbH — Acquisition, clinic construction & medical facility management"
@@ -1009,7 +1159,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         },
         {
           name: "“NabiOta” Sanitätshaus & Apotheke",
-          sub: isRu
+          sub: isUz
+            ? "Ortopediya salonlari (Sanitätshaus GmbH), tibbiy texnika va dori-darmon ta'minoti bilan integratsiya"
+            : isRu
             ? "Ортопедические салоны (Sanitätshaus GmbH), обеспечение медикаментами клиник и NabiOta Pharmacy"
             : isEn
             ? "Medical Supplies & NabiOta Pharmacy — Orthopedic aids, rehab products & clinical pharmacy"
@@ -1257,7 +1409,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                     “NabiOta” Health Group Germany GmbH
                   </h3>
                   <p className="text-[12px] sm:text-[12.5px] text-[#A8C2B1] mt-1 font-sans">
-                    {isRu
+                    {isUz
+                      ? "Xolding / Konsern • Mönchengladbach"
+                      : isRu
                       ? "Холдинг / Концерн • Мёнхенгладбах"
                       : isEn
                       ? "Holding / Group • Mönchengladbach"
@@ -1411,7 +1565,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                     <div className="flex items-center gap-2 mb-2">
                       <CheckCircle2 className="w-4.5 h-4.5 text-[#B89650] shrink-0" />
                       <span className="text-[12px] sm:text-[12.5px] font-bold text-[#142318]">
-                        {isRu
+                        {isUz
+                          ? "1-bosqichdagi asosiy faoliyatlar"
+                          : isRu
                           ? "Ключевые активности в Фазе 1"
                           : isEn
                           ? "Key Activities in Phase 1"
@@ -1426,7 +1582,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       <li className="flex items-start gap-1.5">
                         <span className="text-[#142318] font-bold">•</span>
                         <span>
-                          {isRu
+                          {isUz
+                            ? "MVZ tuzilmasini shakllantirish va ishga tushirish"
+                            : isRu
                             ? "Формирование и запуск структуры MVZ"
                             : isEn
                             ? "Establishment of the MVZ structure"
@@ -1440,7 +1598,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       <li className="flex items-start gap-1.5">
                         <span className="text-[#142318] font-bold">•</span>
                         <span>
-                          {isRu
+                          {isUz
+                            ? "Dr. Fischer-Rahimovning ta'sischi shifokor sifatidagi ishtiroki"
+                            : isRu
                             ? "Участие д-ра Фишер-Рахимова как врача-учредителя"
                             : isEn
                             ? "Founding equity of Dr. Fischer-Rahimov"
@@ -1454,7 +1614,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       <li className="flex items-start gap-1.5">
                         <span className="text-[#142318] font-bold">•</span>
                         <span>
-                          {isRu
+                          {isUz
+                            ? "Keyingi sho'ba korxonalarni tayyorlash"
+                            : isRu
                             ? "Подготовка дальнейших дочерних обществ"
                             : isEn
                             ? "Preparation of additional subsidiaries"
@@ -1509,7 +1671,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                     <div className="flex items-center gap-2 mb-2">
                       <CheckCircle2 className="w-4.5 h-4.5 text-[#B89650] shrink-0" />
                       <span className="text-[12px] sm:text-[12.5px] font-bold text-[#142318]">
-                        {isRu
+                        {isUz
+                          ? "Boshqaruvning asosiy tamoyillari"
+                          : isRu
                           ? "Ключевые принципы управления"
                           : isEn
                           ? "Central Governance Principles"
@@ -1524,7 +1688,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       <li className="flex items-start gap-1.5">
                         <span className="text-[#142318] font-bold">•</span>
                         <span>
-                          {isRu
+                          {isUz
+                            ? "Shifokor siri va ma'lumotlarni qat'iy himoya qilish (DSGVO)"
+                            : isRu
                             ? "Врачебная тайна и строгая защита данных (DSGVO)"
                             : isEn
                             ? "Medical confidentiality & strict data protection"
@@ -1538,7 +1704,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       <li className="flex items-start gap-1.5">
                         <span className="text-[#142318] font-bold">•</span>
                         <span>
-                          {isRu
+                          {isUz
+                            ? "Markaziy boshqaruv: IT, moliya, xaridlar va marketing"
+                            : isRu
                             ? "Центральное управление: IT, финансы, закупки и маркетинг"
                             : isEn
                             ? "Central management: IT, Finance, Purchasing & Marketing"
@@ -1552,7 +1720,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       <li className="flex items-start gap-1.5">
                         <span className="text-[#142318] font-bold">•</span>
                         <span>
-                          {isRu
+                          {isUz
+                            ? "DIN EN ISO sifat menejmenti va bemorlar xavfsizligi"
+                            : isRu
                             ? "Менеджмент качества DIN EN ISO и безопасность пациентов"
                             : isEn
                             ? "DIN EN ISO quality management & patient safety"
@@ -1583,7 +1753,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
               <ShieldCheck className="w-5 h-5 text-[#B89650] shrink-0 mt-0.5" />
               <p className="text-[12px] sm:text-[12.5px] text-[#4E5650] leading-relaxed font-sans">
                 <strong className="font-semibold text-[#142318]">
-                  {isRu
+                  {isUz
+                    ? "Maqsadli model. "
+                    : isRu
                     ? "Целевая модель. "
                     : isEn
                     ? "Target model. "
@@ -1593,7 +1765,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                     ? "النموذج المستهدف. "
                     : "Zielmodell. "}
                 </strong>
-                {isRu
+                {isUz
+                  ? "Keltirilgan organogrammalar maqsadli modelni tavsiflaydi. Amaldagi korporativ huquqiy tuzilma tijorat reestridagi ma'lumotlarga mos keladi."
+                  : isRu
                   ? "Представленные органиграммы описывают целевую модель. Текущая структура собственников и допуск каждого существующего MVZ устанавливаются отдельно на основании его списка участников (Gesellschafterliste) и решений о допуске (Zulassungsbescheide). Регистрация холдинга в торговом реестре не заменяет допуск MVZ."
                   : isEn
                   ? "The organizational charts shown describe a target model. The current ownership structure and approval of each existing MVZ must be determined separately on the basis of its shareholder list and approval notices. The commercial register entry of the holding does not replace an MVZ approval."
@@ -1607,7 +1781,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
 
             {/* Legal Footnote: small font size and subtle weight */}
             <p className="text-center text-[10.5px] sm:text-[11px] text-[#78857C] mt-5 sm:mt-6 font-sans">
-              {isRu
+              {isUz
+                ? "Ma'lumotlar notarial ustav loyihasi va amaldagi huquqiy me'yorlarga muvofiq taqdim etilgan."
+                : isRu
                 ? "Сведения в соответствии с нотариальным проектом устава и положениями § 95 SGB V. По состоянию на 4 октября 2026 г."
                 : isEn
                 ? "In accordance with notarized corporate filings and statutory § 95 SGB V regulations. As of 4 October 2026."
@@ -1705,7 +1881,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                   <div className="flex items-center gap-2.5 mb-2.5 sm:mb-3 flex-wrap">
                     <span className="w-6 h-[1.5px] bg-[#C5A56A]" />
                     <span className="text-[11px] sm:text-[11.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase font-sans">
-                      {isRu
+                      {isUz
+                        ? "SHIFOKORLAR RAHBARLIGI VA TA'SISCHI MAQOMI"
+                        : isRu
                         ? "ВРАЧЕБНОЕ РУКОВОДСТВО И СТАТУС УЧРЕДИТЕЛЯ"
                         : isEn
                         ? "MEDICAL LEADERSHIP & STATUTORY FOUNDER"
@@ -1761,7 +1939,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       <span className="inline-flex items-center gap-1.5 text-[10.5px] tracking-[0.14em] uppercase text-[#2C3E31] font-semibold">
                         <Scale className="w-3.5 h-3.5 text-[#B89650] stroke-[1.8]" />
                         <span>
-                          {isRu
+                          {isUz
+                            ? "SGB V qonuni bo'yicha ta'sischi huquqi"
+                            : isRu
                             ? "Право учредителя по закону SGB V"
                             : isEn
                             ? "Statutory Physician Status"
@@ -1803,7 +1983,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       <div className="space-y-3">
                         <div>
                           <h4 className="font-serif text-[18px] sm:text-[19px] font-bold text-[#142318] mb-1.5">
-                            {isRu
+                            {isUz
+                              ? "1-bosqichning tibbiy langari"
+                              : isRu
                               ? "Медицинский якорь Фазы 1"
                               : isEn
                               ? "Phase 1 Medical Anchor"
@@ -1814,7 +1996,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                               : "Vertragsärztlicher Anker"}
                           </h4>
                           <p className="text-[12.5px] sm:text-[13px] text-[#555E56] leading-[1.7] font-sans">
-                            {isRu
+                            {isUz
+                              ? "MVZ ulushlarining bevosita ta'sischi shifokorga tegishliligi KV qoidalariga to'liq moslikni kafolatlaydi."
+                              : isRu
                               ? "Прямое владение долями MVZ врачом-учредителем гарантирует безупречную юридическую легитимность перед Kassenärztliche Vereinigung Nordrhein."
                               : isEn
                               ? "Direct MVZ equity held by the licensed founding physician establishes unequivocal regulatory legitimacy with KV Nordrhein."
@@ -1827,7 +2011,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                         </div>
                         <div className="pt-3 border-t border-[#E7DFD2]">
                           <div className="text-[10.5px] font-bold tracking-[0.14em] uppercase text-[#142318]">
-                            {isRu
+                            {isUz
+                              ? "Institutsional himoya"
+                              : isRu
                               ? "Институциональная защита"
                               : isEn
                               ? "Institutional Protection"
@@ -1838,7 +2024,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                               : "Standesrechtlicher Schutz"}
                           </div>
                           <p className="text-[#555E56] text-[12px] leading-[1.6] mt-1 font-sans">
-                            {isRu
+                            {isUz
+                              ? "Xolding shifokorlar jamoasiga tibbiy ko'rsatmalar berish huquqiga ega emas."
+                              : isRu
                               ? "Холдинг не вправе давать медицинские указания врачебному руководству."
                               : isEn
                               ? "Corporate holding entities are legally barred from clinical directives."
@@ -1878,7 +2066,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             <div className="lg:ml-auto lg:w-[78%] xl:w-[75%]">
               <div className="max-w-xl mb-5 sm:mb-6">
                 <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.24em] text-[#D5B878] uppercase mb-1.5 block">
-                  {isRu
+                  {isUz
+                    ? "Xoldingning klinik kollegiyasi"
+                    : isRu
                     ? "Клиническая коллегия холдинга"
                     : isEn
                     ? "Holding Clinical Governance"
@@ -1900,7 +2090,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                 {[
                   {
                     Icon: Stethoscope,
-                    title: isRu
+                    title: isUz
+                      ? "Terapevtik erkinlik"
+                      : isRu
                       ? "Терапевтическая свобода"
                       : isEn
                       ? "Clinical Autonomy"
@@ -1909,7 +2101,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       : isAr
                       ? "حرية اختيار العلاج"
                       : "Freie Therapiewahl",
-                    desc: isRu
+                    desc: isUz
+                      ? "Tijoriy rejalarsiz, faqat shifokorlik burchi va bemor manfaatlariga qat'iy rioya qilish."
+                      : isRu
                       ? "Строгое следование врачебному долгу без навязанных планов по процедурам."
                       : isEn
                       ? "Strict adherence to medical duty without commercial treatment quotas."
@@ -1921,7 +2115,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                   },
                   {
                     Icon: ShieldCheck,
-                    title: isRu
+                    title: isUz
+                      ? "AWMF va CIRS sifati"
+                      : isRu
                       ? "Качество AWMF & CIRS"
                       : isEn
                       ? "AWMF & CIRS Guidelines"
@@ -1930,7 +2126,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       : isAr
                       ? "إرشادات AWMF ونظام CIRS"
                       : "AWMF-Leitlinien & CIRS",
-                    desc: isRu
+                    desc: isUz
+                      ? "Fanlararo konsiliumlar va hodisalar monitoringi (CIRS) orqali xatolarni erta oldini olish tizimi."
+                      : isRu
                       ? "Междисциплинарные консилиумы и система контроля инцидентов CIRS."
                       : isEn
                       ? "Regular case conferences and active clinical incident reporting."
@@ -1942,7 +2140,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                   },
                   {
                     Icon: GraduationCap,
-                    title: isRu
+                    title: isUz
+                      ? "Ordinatorlarni o'qitish"
+                      : isRu
                       ? "Обучение ординаторов"
                       : isEn
                       ? "Residency Training"
@@ -1951,7 +2151,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       : isAr
                       ? "التدريب التخصصي للأطباء"
                       : "Facharzt-Weiterbildung",
-                    desc: isRu
+                    desc: isUz
+                      ? "Mintaqada yosh shifokorlar va mutaxassislarni tayyorlash bo'yicha rasmiy vakolatlar."
+                      : isRu
                       ? "Официальные полномочия на подготовку молодых специалистов в MVZ."
                       : isEn
                       ? "Accredited residency authorizations for junior doctors across our MVZ network."
@@ -1963,7 +2165,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                   },
                   {
                     Icon: HeartHandshake,
-                    title: isRu
+                    title: isUz
+                      ? "Yaxlit konsiliumlar"
+                      : isRu
                       ? "Сквозные консилиумы"
                       : isEn
                       ? "Interdisciplinary Care"
@@ -1972,7 +2176,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       : isAr
                       ? "تنسيق متكامل عابر للقطاعات"
                       : "Sektorübergreifend",
-                    desc: isRu
+                    desc: isUz
+                      ? "Terapevtlar, jarrohlar, diagnostlar va reabilitatsiya xizmati o'rtasida to'g'ridan-to'g'ri muloqot."
+                      : isRu
                       ? "Прямой диалог терапевтов, хирургов, диагностов и службы реабилитации."
                       : isEn
                       ? "Direct communication between primary care, surgeons, imaging, and rehab."

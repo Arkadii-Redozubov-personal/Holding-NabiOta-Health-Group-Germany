@@ -16,7 +16,7 @@ import { Container } from "@/components/layout/Container";
  * (NabiOta Health Group Germany GmbH). Wording follows the PDF.
  */
 
-type Lang = "de" | "en" | "ru" | "tr" | "ar";
+type Lang = "de" | "en" | "ru" | "tr" | "ar" | "uz";
 
 interface Block {
   icon: React.ComponentType<{ className?: string }>;
@@ -32,6 +32,7 @@ const content = {
     ru: "ПРЕДМЕТ ДЕЯТЕЛЬНОСТИ",
     tr: "FAALİYET KONUSU",
     ar: "موضوع نشاط الشركة",
+    uz: "FAOLIYAT MAQSADI",
   },
   title: {
     de: "Aufgaben und Unternehmensgegenstand der Holding",
@@ -39,6 +40,7 @@ const content = {
     ru: "Задачи и предмет деятельности холдинга",
     tr: "Holdingin Görevleri ve Şirket Faaliyet Konusu",
     ar: "مهام وأهداف نشاط الشركة القابضة",
+    uz: "Xoldingning vazifalari va faoliyat maqsadi",
   },
   lead: {
     de: "Gegenstand des Unternehmens ist der Erwerb, das Halten und die Verwaltung eigener Beteiligungen sowie die wirtschaftliche, organisatorische und strategische Führung von Unternehmen im Gesundheitswesen.",
@@ -46,6 +48,7 @@ const content = {
     ru: "Предметом деятельности общества является приобретение, владение и управление собственными долями участия, а также экономическое, организационное и стратегическое руководство предприятиями в сфере здравоохранения.",
     tr: "Şirketin faaliyet konusu, kendi iştiraklerini edinmek, elde tutmak ve yönetmek ile sağlık sektöründeki şirketlerin ekonomik, organizasyonel ve stratejik yönetimini üstlenmektir.",
     ar: "يتمثل غرض الشركة في حيازة وإدارة حصصها ومساهماتها الخاصة، بالإضافة إلى الإدارة الاقتصادية والتنظيمية والاستراتيجية للشركات العاملة في قطاع الرعاية الصحية.",
+    uz: "Jamiyat faoliyatining predmeti o'z ulushlarini sotib olish, saqlash va boshqarish hamda sog'liqni saqlash sohasidagi korxonalarni iqtisodiy, tashkiliy va strategik boshqarish hisoblanadi.",
   },
   blocks: [
     {
@@ -56,6 +59,7 @@ const content = {
         ru: "Участия",
         tr: "İştirakler",
         ar: "المساهمات والشركات التابعة",
+        uz: "Ishtirok va ulushlar",
       },
       text: {
         de: "Hierzu gehören insbesondere Beteiligungen an Kliniken, medizinischen Versorgungszentren (MVZ), Diagnostikzentren, Therapie- und Rehabilitationseinrichtungen, Pflegeunternehmen sowie weiteren Gesundheitsdienstleistern. Beteiligungen werden ausschließlich unter Beachtung der jeweils geltenden gesetzlichen Anforderungen an Träger, Gesellschafter und Zulassungen eingegangen und gehalten.",
@@ -63,6 +67,7 @@ const content = {
         ru: "Сюда относятся, в частности, участия в клиниках, медицинских центрах (MVZ), диагностических центрах, терапевтических и реабилитационных учреждениях, предприятиях по уходу и других поставщиках медицинских услуг. Участия приобретаются и удерживаются исключительно с соблюдением действующих законодательных требований к учредителям, участникам и допускам.",
         tr: "Buna özellikle klinikler, tıbbi bakım merkezleri (MVZ), tanı merkezleri, terapi ve rehabilitasyon tesisleri, bakım şirketleri ve diğer sağlık hizmeti sağlayıcılarındaki iştirakler dahildir. İştirakler, yalnızca kurucular, ortaklar ve ruhsatlar için geçerli yasal gerekliliklere titizlikle uyularak kurulur ve sürdürülür.",
         ar: "يشمل ذلك تحديداً المساهمات في المستشفيات ومراكز الرعاية الطبية (MVZ) ومراكز التشخيص ومرافق التأهيل والعلاج وشركات التمريض ومقدمي الرعاية الصحية الآخرين. يتم الدخول في المساهمات وإدارتها حصرياً وفقاً للمتطلبات القانونية المعمول بها.",
+        uz: "Bunga xususan klinikalar, tibbiy xizmat ko'rsatish markazlari (MVZ), diagnostika markazlari, terapiya va reabilitatsiya muassasalari, parvarishlash korxonalari hamda boshqa tibbiy xizmat ko'rsatuvchilardagi ulushlar kiradi. Ulushlar faqat ta'sischilar, hamkorlar va ruxsatnomalar bo'yicha amaldagi barcha qonuniy talablarga qat'iy rioya qilgan holda olinadi va boshqariladi.",
       },
     },
     {
@@ -73,6 +78,7 @@ const content = {
         ru: "Централизованные управленческие и административные услуги",
         tr: "Merkezi Yönetim ve İdari Hizmetler",
         ar: "خدمات الإدارة والمساندة المركزية",
+        uz: "Markazlashtirilgan boshqaruv va ma'muriy xizmatlar",
       },
       text: {
         de: "Die Gesellschaft übernimmt auf vertraglicher Grundlage zentrale Management- und Verwaltungsleistungen für Beteiligungsunternehmen und kooperierende Einrichtungen. Die steuerliche Gestaltung der Unternehmensgruppe erfolgt in Zusammenarbeit mit entsprechend befugten Beratern.",
@@ -80,6 +86,7 @@ const content = {
         ru: "На договорной основе общество оказывает централизованные управленческие и административные услуги для дочерних компаний и сотрудничающих учреждений. Налоговое структурирование группы осуществляется совместно с уполномоченными консультантами.",
         tr: "Şirket, sözleşmeye dayalı olarak bağlı şirketler ve iş birliği yapan tesisler için merkezi yönetim ve idari hizmetler sunar. Şirketler grubunun vergi yapılandırması yetkili danışmanlarla iş birliği içinde gerçekleştirilir.",
         ar: "تتولى الشركة، بناءً على أسس تعاقدية، تقديم خدمات الإدارة المركزية والمساندة الإدارية للشركات التابعة والمرافق الشريكة. ويتم الهيكلة الضريبية للمجموعة بالتعاون مع مستشارين معتمدين قانونياً.",
+        uz: "Jamiyat shartnoma asosida sho'ba korxonalar va hamkorlikdagi muassasalar uchun markazlashtirilgan boshqaruv va ma'muriy xizmatlarni o'z zimmasiga oladi. Guruhning soliq tuzilishi vakolatli maslahatchilar bilan hamkorlikda amalga oshiriladi.",
       },
     },
     {
@@ -90,6 +97,7 @@ const content = {
         ru: "Бренды, лицензии и консалтинг",
         tr: "Markalar, Lisanslar & Danışmanlık",
         ar: "العلامات التجارية والتراخيص والاستشارات",
+        uz: "Brendlar, litsenziyalar va konsalting",
       },
       text: {
         de: "Zum Unternehmensgegenstand gehören ferner die Entwicklung, der Erwerb, die Verwaltung und der Schutz von Marken, Lizenzen und gewerblichen Schutzrechten sowie deren Überlassung zur Nutzung. Die Gesellschaft kann Unternehmen und Projekte im Gesundheitswesen wirtschaftlich und organisatorisch beraten und begleiten.",
@@ -97,6 +105,7 @@ const content = {
         ru: "К предмету деятельности также относятся разработка, приобретение, управление и защита товарных знаков, лицензий и прав промышленной собственности, а также предоставление их в пользование. Общество может консультировать и сопровождать предприятия и проекты в здравоохранении в экономических и организационных вопросах.",
         tr: "Faaliyet konusu ayrıca ticari markaların, lisansların ve sınai mülkiyet haklarının geliştirilmesini, edinilmesini, yönetilmesini ve korunmasını ile bunların kullanıma sunulmasını kapsar. Şirket, sağlık sektöründeki işletmelere ve projelere ekonomik ve organizasyonel danışmanlık sağlayabilir.",
         ar: "يشمل نشاط الشركة أيضاً تطوير واقتناء وإدارة وحماية العلامات التجارية والتراخيص وحقوق الملكية الصناعية ومنح حق استخدامها. كما يحق للشركة تقديم المشورة الاقتصادية والتنظيمية للمشاريع الصحية.",
+        uz: "Faoliyat predmeti shuningdek tovar belgilari, litsenziyalar va sanoat mulki huquqlarini ishlab chiqish, sotib olish, boshqarish va himoya qilish hamda ulardan foydalanish huquqini berishni o'z ichiga oladi. Jamiyat sog'liqni saqlash sohasidagi korxonalar va loyihalarga iqtisodiy va tashkiliy maslahat berishi mumkin.",
       },
     },
     {
@@ -107,6 +116,7 @@ const content = {
         ru: "Качество, гигиена, безопасность пациентов и защита данных",
         tr: "Kalite, Hijyen, Hasta Güvenliği & Veri Koruma",
         ar: "الجودة والنظافة وسلامة المرضى وحماية البيانات",
+        uz: "Sifat, gigiyena, bemorlar xavfsizligi va ma'lumotlar himoyasi",
       },
       text: {
         de: "Die Holding unterstützt und koordiniert die organisatorischen Voraussetzungen für Qualitätsmanagement, Hygiene, Patientensicherheit und Datenschutz innerhalb des Unternehmensverbunds. Sie fördert gemeinsame Standards und unterstützt deren Umsetzung, ohne die gesetzliche und fachliche Verantwortung der jeweiligen Betreiber und zuständigen Personen zu ersetzen.",
@@ -114,6 +124,7 @@ const content = {
         ru: "Холдинг поддерживает и координирует организационные условия для менеджмента качества, гигиены, безопасности пациентов и защиты данных внутри группы. Он продвигает общие стандарты и поддерживает их внедрение, не заменяя законную и профессиональную ответственность соответствующих операторов и ответственных лиц.",
         tr: "Holding, grup bünyesinde kalite yönetimi, hijyen, hasta güvenliği ve veri koruma için organizasyonel ön koşulları destekler ve koordine eder. İlgili işletmecilerin yasal ve mesleki sorumluluğunu devralmaksızın ortak standartları teşvik eder.",
         ar: "تدعم الشركة القابضة وتنسق المتطلبات التنظيمية لإدارة الجودة والنظافة وسلامة المرضى وحماية البيانات داخل المجموعة، وتعزز المعايير المشتركة دون الإخلال بالمسؤولية المهنية والقانونية لكل منشأة.",
+        uz: "Xolding korxonalar guruhi doirasida sifat menejmenti, gigiyena, bemorlar xavfsizligi va ma'lumotlar himoyasi bo'yicha tashkiliy shart-sharoitlarni qo'llab-quvvatlaydi va muvofiqlashtiradi. U tegishli operatorlar va mas'ul shaxslarning qonuniy va kasbiy javobgarligini almashtirmagan holda umumiy standartlarni ilgari suradi.",
       },
     },
     {
@@ -124,6 +135,7 @@ const content = {
         ru: "Ответственность медицинских учреждений",
         tr: "Tıbbi Kuruluşların Bağımsızlığı ve Sorumluluğu",
         ar: "استقلالية ومسؤولية المرافق الطبية",
+        uz: "Tibbiyot muassasalarining mustaqilligi va mas'uliyati",
       },
       text: {
         de: "Die medizinischen Einrichtungen bleiben für Behandlungsentscheidungen, medizinische Organisation, qualifiziertes Personal, vorgeschriebene Personalverfügbarkeit, fachliche Qualität, Patientensicherheit, Hygiene sowie die ordnungsgemäße Leistungsdokumentation und Abrechnung verantwortlich. Die medizinische Weisungsfreiheit der ärztlichen Leitung eines MVZ bleibt uneingeschränkt gewahrt. Die Holding erhält durch ihre Management- und Verwaltungsaufgaben keine Befugnis zur Einflussnahme auf individuelle medizinische Entscheidungen.",
@@ -131,6 +143,7 @@ const content = {
         ru: "Медицинские учреждения остаются ответственными за решения о лечении, медицинскую организацию, квалифицированный персонал, обязательное наличие персонала, профессиональное качество, безопасность пациентов, гигиену, а также надлежащую документацию услуг и расчёты. Медицинская независимость врачебного руководства MVZ полностью сохраняется. Управленческие и административные задачи не дают холдингу полномочий влиять на индивидуальные медицинские решения.",
         tr: "Tıbbi tesisler; tedavi kararları, tıbbi organizasyon, nitelikli personel, zorunlu personel mevcudiyeti, uzmanlık kalitesi, hasta güvenliği, hijyen ve usulüne uygun hizmet belgelemesi ile faturalandırmadan sorumlu olmaya devam eder. Bir MVZ'nin tıbbi yönetiminin bağımsızlığı tam olarak korunur. Holding, yönetim görevleri vasıtasıyla bireysel tıbbi kararlara müdahale etme yetkisine sahip değildir.",
         ar: "تظل المرافق الطبية مسؤولة عن قرارات العلاج والتنظيم الطبي وتوفير الكوادر المؤهلة وجودة الخدمات وسلامة المرضى والتوثيق والفوترة السليمة. وتتمتع الإدارة الطبية لكل مركز MVZ باستقلالية سريرية كاملة دون أي تدخل إداري من القابضة في القرارات الطبية الفردية.",
+        uz: "Tibbiyot muassasalari davolash qarorlari, tibbiy tashkiliy ishlar, malakali xodimlar, belgilangan kadrlar mavjudligi, kasbiy sifat, bemorlar xavfsizligi, gigiyena hamda xizmatlarni to'g'ri hujjatlashtirish va hisob-kitob qilish uchun to'liq mas'ul bo'lib qoladi. MVZ tibbiy rahbariyatining tibbiy mustaqilligi to'liq saqlanib qoladi. Xolding o'z boshqaruv vazifalari orqali individual tibbiy qarorlarga ta'sir o'tkazish vakolatiga ega emas.",
       },
     },
     {
@@ -141,6 +154,7 @@ const content = {
         ru: "Связующее звено учреждений",
         tr: "Kuruluşların Entegrasyonu ve Birliği",
         ar: "الربط المؤسسي وتكامل المرافق",
+        uz: "Muassasalar integratsiyasi va birligi",
       },
       text: {
         de: "Die Gesellschaft bildet die wirtschaftliche und organisatorische Verbindung der rechtlich selbstständigen Einrichtungen. Ziel ist es, gemeinsame Ressourcen effizient einzusetzen, Verwaltungsabläufe zu vereinheitlichen und die Weiterentwicklung der Unternehmensgruppe zu unterstützen.",
@@ -148,6 +162,7 @@ const content = {
         ru: "Общество является экономическим и организационным связующим звеном юридически самостоятельных учреждений. Цель — эффективно использовать общие ресурсы, унифицировать административные процессы и поддерживать дальнейшее развитие группы.",
         tr: "Şirket, hukuken bağımsız kuruluşlar arasındaki ekonomik ve organizasyonel bağı oluşturur. Amaç, ortak kaynakları verimli kullanmak, idari süreçleri standartlaştırmak ve şirketler grubunun gelişimini desteklemektir.",
         ar: "تشكل الشركة الرابط الاقتصادي والتنظيمي بين المرافق المستقلة قانونياً، بهدف الاستخدام الفعال للموارد المشتركة وتوحيد الإجراءات الإدارية ودعم التطور المستمر للمجموعة الصحية.",
+        uz: "Jamiyat qonuniy jihatdan mustaqil muassasalar o'rtasidagi iqtisodiy va tashkiliy bog'lovchi zanjirni tashkil etadi. Maqsad — umumiy resurslardan samarali foydalanish, ma'muriy jarayonlarni standartlashtirish va kompaniyalar guruhining rivojlanishini qo'llab-quvvatlashdir.",
       },
     },
   ] as Block[],
@@ -157,6 +172,7 @@ const content = {
     ru: "Правовые рамки",
     tr: "Yasal Çerçeve",
     ar: "الإطار القانوني والتنظيمي",
+    uz: "Huquqiy asos",
   },
   legal: {
     de: "Die Gesellschaft ist berechtigt, alle rechtlich zulässigen Geschäfte vorzunehmen, die dem Unternehmensgegenstand unmittelbar oder mittelbar dienen, Unternehmen zu gründen, zu erwerben oder sich an ihnen zu beteiligen sowie Zweigniederlassungen im In- und Ausland zu errichten. Erlaubnis- oder zulassungspflichtige Tätigkeiten werden erst nach Vorliegen der erforderlichen Voraussetzungen aufgenommen. Die Gründung oder Beteiligung an vertragsärztlichen MVZ setzt insbesondere die Erfüllung der Anforderungen des § 95 SGB V voraus.",
@@ -164,11 +180,12 @@ const content = {
     ru: "Общество вправе совершать все законно допустимые сделки, прямо или косвенно служащие предмету деятельности, учреждать или приобретать предприятия либо участвовать в них, а также открывать филиалы в Германии и за рубежом. Деятельность, требующая разрешения или допуска, начинается только при наличии необходимых условий. Учреждение MVZ в системе обязательного страхования или участие в нём предполагает, в частности, выполнение требований § 95 SGB V.",
     tr: "Şirket, doğrudan veya dolaylı olarak faaliyet konusuna hizmet eden tüm yasal işlemleri yapmaya, şirketler kurmaya, satın almaya veya bunlara iştirak etmeye ve yurt içinde veya yurt dışında şubeler açmaya yetkilidir. İzne veya ruhsata tabi faaliyetler ancak gerekli şartlar sağlandıktan sonra başlatılır. Sözleşmeli hekim MVZ'lerinin kurulması veya bunlara iştirak edilmesi, özellikle Alman Sosyal Güvenlik Kanunu § 95 SGB V şartlarının yerine getirilmesini gerektirir.",
     ar: "يحق للشركة إبرام كافة المعاملات القانونية التي تخدم أغراضها مباشرة أو غير مباشرة، وتأسيس الشركات أو الاستحواذ عليها أو المساهمة فيها وإنشاء الفروع داخل ألمانيا وخارجها. وتبدأ الأنشطة الخاضعة للتراخيص بعد استيفاء الشروط القانونية، وتتطلب مراكز MVZ استيفاء متطلبات المادة 95 من القانون الاجتماعي الألماني (SGB V).",
+    uz: "Jamiyat o'z faoliyat maqsadiga bevosita yoki bilvosita xizmat qiladigan barcha qonuniy bitimlarni amalga oshirishga, korxonalar tashkil etish, sotib olish yoki ularda ishtirok etishga, shuningdek Germaniyada va chet elda filiallar ochishga haqlidir. Ruxsatnoma yoki litsenziya talab qilinadigan faoliyat faqat zarur shartlar bajarilgandan so'ng boshlanadi. Sug'urta shifokorlari tizimidagi MVZ tashkil etish yoki ularda ishtirok etish xususan § 95 SGB V talablarining bajarilishini taqozo etadi.",
   },
 };
 
 export function HoldingPurposeSection({ locale = "de" }: { locale?: string }) {
-  const l: Lang = locale === "tr" ? "tr" : locale === "ar" ? "ar" : locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
+  const l: Lang = locale === "tr" ? "tr" : locale === "ar" ? "ar" : locale === "ru" ? "ru" : locale === "uz" ? "uz" : locale === "en" ? "en" : "de";
 
   return (
     <section

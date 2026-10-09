@@ -38,7 +38,7 @@ import { Container } from "@/components/layout/Container";
  * Unternehmensgegenstand, medizinische/organisatorische Aufgaben, rechtliche/betriebliche Pflichten.
  */
 
-type Lang = "de" | "en" | "ru" | "tr" | "ar";
+type Lang = "de" | "en" | "ru" | "tr" | "ar" | "uz";
 type T = Record<Lang, string>;
 type Icon = React.ComponentType<{ className?: string }>;
 
@@ -49,6 +49,7 @@ const c = {
     ru: "MVZ 2 · § 95 SGB V",
     tr: "MVZ 2 · § 95 SGB V",
     ar: "MVZ 2 · § 95 SGB V",
+    uz: "MVZ 2 · § 95 SGB V",
   } as T,
   title: "NabiOta MVZ für Chirurgie und Anästhesiologie GmbH",
   subtitle: {
@@ -57,6 +58,7 @@ const c = {
     ru: "Предмет деятельности, задачи и обязанности",
     tr: "Şirket Faaliyet Konusu, Görev ve Yükümlülükleri",
     ar: "أغراض الشركة والمهام والالتزامات التشغيلية",
+    uz: "Faoliyat predmeti, vazifalar va majburiyatlar",
   } as T,
   lead: {
     de: "Gegenstand des Unternehmens ist die Errichtung und der Betrieb eines oder mehrerer ärztlich geleiteter medizinischer Versorgungszentren gemäß § 95 SGB V zur fachärztlichen Versorgung gesetzlich und privat versicherter Patienten.",
@@ -64,6 +66,7 @@ const c = {
     ru: "Предметом деятельности общества является создание и эксплуатация одного или нескольких медицинских центров под врачебным руководством согласно § 95 SGB V для специализированной помощи пациентам с обязательной и частной страховкой.",
     tr: "Şirketin faaliyet konusu, yasal ve özel sigortalı hastalara yönelik uzman hekimlik cerrahi ve anestezi hizmetleri sunmak amacıyla § 95 SGB V uyarınca hekim yönetiminde bir veya birden fazla tıp merkezinin (MVZ) kurulması ve işletilmesidir.",
     ar: "يتمثل الغرض من الشركة في إنشاء وتشغيل مركز أو أكثر من مراكز الرعاية الطبية (MVZ) بإشراف وإدارة طبية وفقاً للمادة § 95 SGB V، لتقديم خدمات الجراحة والتخدير التخصصية للمرضى الخاضعين للتأمين الإلزامي والخاص.",
+    uz: "Jamiyat faoliyatining predmeti majburiy va ixtiyoriy sug'urtaga ega bo'lgan bemorlarga ixtisoslashtirilgan jarrohlik va anesteziologik yordam ko'rsatish maqsadida § 95 SGB V ga muvofiq shifokorlar boshchiligidagi bir yoki bir nechta tibbiy markazlarni (MVZ) tashkil etish va boshqarishdan iborat.",
   } as T,
 
   specialtiesTitle: {
@@ -79,6 +82,7 @@ const c = {
     ru: ["Ортопедия и травматология", "Нейрохирургия", "Общая и висцеральная хирургия", "Пластическая и реконструктивная хирургия", "Анестезиология"],
     tr: ["Ortopedi ve Travmatoloji", "Beyin ve Sinir Cerrahisi (Nöroşirürji)", "Genel ve Visseral Cerrahi", "Plastik ve Rekonstrüktif Cerrahi", "Anesteziyoloji"],
     ar: ["جراحة العظام والإصابات", "جراحة المخ والأعصاب", "الجراحة العامة وجراحة الأحشاء", "الجراحة التجميلية والترميمية", "التخدير وعلاج الألم"],
+    uz: ["Ortopediya va travmatologiya", "Neyrojarrohlik", "Umumiy va visseral jarrohlik", "Plastik va rekonstruktiv jarrohlik", "Anesteziologiya"],
   },
   specialtiesNote: {
     de: "Die verwendeten Fachgebietsbezeichnungen richten sich nach den jeweils anerkannten ärztlichen Qualifikationen. Weitere ärztliche Fachgebiete können unter Wahrung der fachlichen, berufsrechtlichen und zulassungsrechtlichen Voraussetzungen ergänzt werden.",
@@ -86,6 +90,7 @@ const c = {
     ru: "Используемые названия специальностей основаны на признанных врачебных квалификациях. Другие специальности могут быть добавлены при соблюдении профессиональных, профессионально-правовых и разрешительных требований.",
     tr: "Kullanılan uzmanlık unvanları tanınmış hekimlik niteliklerine dayanmaktadır. İlgili uzmanlık, meslek hukuku ve ruhsatlandırma koşullarına uyulması şartıyla diğer tıbbi branşlar eklenebilir.",
     ar: "تستند مسميات التخصصات إلى المؤهلات الطبية المعترف بها رسمياً. ويجوز إضافة تخصصات طبية أخرى وفقاً للاشتراطات المهنية ولوائح التراخيص المقررة.",
+    uz: "Qo'llaniladigan mutaxassislik nomlari tan olingan shifokorlik malakalariga asoslanadi. Tegishli kasbiy, huquqiy va litsenziyalash talablariga rioya qilingan holda boshqa tibbiy mutaxassisliklar ham qo'shilishi mumkin.",
   } as T,
 
   paragraphs: [
@@ -97,6 +102,7 @@ const c = {
         ru: "Амбулаторные и хирургические услуги",
         tr: "Ayakta ve Cerrahi Hizmetler",
         ar: "الخدمات الجراحية والعيادية المتنقلة",
+        uz: "Ambulator va jarrohlik xizmatlari",
       } as T,
       text: {
         de: "Die Gesellschaft erbringt durch entsprechend qualifizierte Ärzte und sonstiges befugtes Fachpersonal Leistungen der Prävention, Beratung, Diagnostik, konservativen und operativen Behandlung sowie Nachsorge. Das Leistungsangebot umfasst insbesondere ambulante Operationen und interventionelle Behandlungen, anästhesiologische Betreuung, perioperative Überwachung sowie Schmerztherapie im jeweils rechtlich zulässigen und genehmigten Umfang.",
@@ -104,6 +110,7 @@ const c = {
         ru: "Квалифицированные врачи и уполномоченный персонал оказывают услуги по профилактике, консультированию, диагностике, консервативному и оперативному лечению, а также последующему наблюдению. Спектр включает амбулаторные операции и интервенционные процедуры, анестезиологическое сопровождение, периоперационное наблюдение и обезболивание в законно допустимом и утверждённом объёме.",
         tr: "Şirket; nitelikli hekimler ve yetkili sağlık personeli aracılığıyla koruma, danışmanlık, tanı, konservatif ve cerrahi tedavi ile ameliyat sonrası takip hizmetleri sunar. Hizmet yelpazesi özellikle günübirlik ameliyatları, girişimsel tedavileri, anesteziyolojik takibi, perioperatif monitörizasyonu ve ağrı tedavisini yasal ve onaylı kapsamda içerir.",
         ar: "تقدم الشركة، عبر أطباء مؤهلين وكوادر معتمدة، خدمات الوقاية والاستشارات والتشخيص والعلاج التحفظي والجراحي والرعاية اللاحقة. وتشمل الخدمات العمليات الجراحية المتنقلة، والإجراءات التداخلية، والرعاية التخديرية، والمراقبة المحيطة بالجراحة، وعلاج الألم ضمن النطاق المصرح به قانوناً.",
+        uz: "Jamiyat tegishli malakaga ega shifokorlar va boshqa vakolatli xodimlar orqali profilaktika, maslahat, diagnostika, konservativ va operativ davolash hamda keyingi kuzatuv xizmatlarini ko'rsatadi. Xizmatlar spektri qonuniy va tasdiqlangan hajmda, xususan, ambulator operatsiyalar va intervension muolajalar, anesteziologik hamrohlik, perioperatsion monitoring va og'riq terapiyasini o'z ichiga oladi.",
       } as T,
     },
     {
@@ -114,6 +121,7 @@ const c = {
         ru: "Помещения и кооперации",
         tr: "Tesisler ve İş Birlikleri",
         ar: "المرافق والشراكات التعاونية",
+        uz: "Xonalar va hamkorlik",
       } as T,
       text: {
         de: "Die Gesellschaft ist berechtigt, die erforderlichen personellen, räumlichen, technischen und organisatorischen Einrichtungen vorzuhalten und zu betreiben. Hierzu können Untersuchungs- und Behandlungsräume, ambulante Operationsbereiche sowie Aufwach- und Überwachungsbereiche gehören, soweit die hierfür erforderlichen Voraussetzungen erfüllt sind. Die internistische Mitbetreuung kann durch Kooperation mit dem gesonderten NabiOta MVZ für hausärztliche und fachärztliche Versorgung organisiert werden. Eine solche Kooperation begründet für sich keine eigene internistische Arztstelle oder Abrechnungsbefugnis des chirurgischen MVZ.",
@@ -121,6 +129,7 @@ const c = {
         ru: "Общество вправе содержать и эксплуатировать необходимые ресурсы, включая кабинеты, операционные зоны и зоны пробуждения/наблюдения. Терапевтическое сопровождение может организовываться через кооперацию с отдельным MVZ семейной медицины NabiOta. Такое сотрудничество само по себе не создаёт терапевтическую врачебную ставку или право расчётов у хирургического MVZ.",
         tr: "Şirket; muayene odaları, ayakta operasyon alanları ile derlenme ve izlem üniteleri dahil gerekli personeli, mekânı, teknik ve organizasyonel tesisleri bulundurma yetkisine sahiptir. Dahiliye branş konsültasyonları, birinci basamak NabiOta MVZ ile iş birliği yapılarak organize edilebilir. Bu iş birliği cerrahi MVZ için tek başına bağımsız dahiliye kadrosu veya faturalandırma hakkı doğurmaz.",
         ar: "يحق للشركة تجهيز وتشغيل البنية التحتية اللازمة من كوادر ومبانٍ وغرف فحص وأجنحة جراحية متنقلة ومناطق إفاقة ومراقبة. ويمكن تنظيم الدعم الطبي الباطني التكاملي بالتعاون مع مركز MVZ لطب الأسرة التابع لـ NabiOta، دون أن يترتب على ذلك شاغر باطني مستقل أو حق فوترة للمركز الجراحي.",
+        uz: "Jamiyat zarur kadrlar, binolar, texnik va tashkiliy infratuzilmani, jumladan ko'rik va muolaja xonalarini, ambulator operatsiya zallarini hamda uyg'onish va kuzatuv zonalarini saqlash va boshqarish huquqiga ega. Ichki kasalliklar bo'yicha qo'shimcha yordam alohida NabiOta oilaviy va ixtisoslashgan MVZ markazi bilan hamkorlik orqali tashkil etilishi mumkin. Bunday hamkorlik jarrohlik MVZ uchun mustaqil terapevtik shtat yoki hisob-kitob qilish huquqini bermaydi.",
       } as T,
     },
     {
@@ -131,6 +140,7 @@ const c = {
         ru: "Сотрудничество с клиникой и допуски",
         tr: "Hastane İş Birlikleri ve Ruhsatlar",
         ar: "التعاون مع المستشفيات والتراخيص",
+        uz: "Klinikalar bilan hamkorlik va ruxsatnomalar",
       } as T,
       text: {
         de: "Die Gesellschaft darf im rechtlich zulässigen Umfang mit Krankenhäusern, insbesondere der geplanten NabiOta Clinics Germany GmbH, zusammenarbeiten. Die jeweiligen Zulassungen, Versorgungsaufträge, medizinischen Verantwortlichkeiten und Abrechnungsbefugnisse sind vertraglich eindeutig zuzuordnen und bleiben rechtlich gesondert. Erlaubnis- oder genehmigungspflichtige Tätigkeiten dürfen erst nach Vorliegen der erforderlichen Erlaubnisse oder Genehmigungen aufgenommen werden.",
@@ -138,6 +148,7 @@ const c = {
         ru: "Общество вправе в законно допустимых рамках сотрудничать с больницами, в частности с планируемой NabiOta Clinics Germany GmbH. Соответствующие допуски, объёмы помощи, медицинская ответственность и права расчётов однозначно определяются договором и остаются юридически раздельными. Лицензируемая деятельность начинается только после получения разрешений.",
         tr: "Şirket, yasal sınırlar dahilinde başta planlanan NabiOta Clinics Germany GmbH olmak üzere hastanelerle iş birliği yapabilir. İlgili ruhsatlar, hizmet görevleri, tıbbi sorumluluklar ve fatura yetkileri sözleşmeyle açıkça belirlenir ve hukuki olarak ayrı tutulur. İzne tabi faaliyetler ancak gerekli ruhsatlar alındıktan sonra başlatılır.",
         ar: "يجوز للشركة التعاون نظاماً مع المستشفيات، ولا سيما مشروع NabiOta Clinics Germany GmbH. وتُحدد التراخيص ومهام الرعاية والمسؤوليات الطبية وصلاحيات الفوترة تعاقدياً بشكل قاطع وتظل منفصلة قانونياً. ولا تبدأ الأنشطة الخاضعة للتصريح إلا بعد صدور الموافقات الرسمية.",
+        uz: "Jamiyat qonun doirasida shifoxonalar, xususan, rejalashtirilgan NabiOta Clinics Germany GmbH bilan hamkorlik qilishi mumkin. Tegishli litsenziyalar, xizmat ko'rsatish vazifalari, tibbiy javobgarlik va hisob-kitob vakolatlari shartnomada aniq taqsimlanadi va huquqiy jihatdan alohida bo'lib qoladi. Litsenziyalanadigan faoliyat faqat zarur ruxsatnomalar olingandan keyin boshlanadi.",
       } as T,
     },
   ],
@@ -148,97 +159,108 @@ const c = {
     ru: "Медицинские и организационные задачи",
     tr: "Tıbbi ve Organizasyonel Görevler",
     ar: "المهام الطبية والتنظيمية",
+    uz: "Tibbiy va tashkiliy vazifalar",
   } as T,
   tasks: [
     {
       icon: ClipboardCheck as Icon,
-      title: { de: "Fachärztliche Behandlung", en: "Specialist Treatment", ru: "Специализированное лечение", tr: "Uzman Hekim Tedavisi", ar: "العلاج التخصصي" } as T,
+      title: { de: "Fachärztliche Behandlung", en: "Specialist Treatment", ru: "Специализированное лечение", tr: "Uzman Hekim Tedavisi", ar: "العلاج التخصصي", uz: "Ixtisoslashtirilgan davolash" } as T,
       de: "Fachärztliche Untersuchung, Beratung und Behandlung von Erkrankungen und Verletzungen innerhalb der tatsächlich angebotenen Fachgebiete.",
       en: "Specialist examination, counselling and treatment of illnesses and injuries within the specialties actually offered.",
       ru: "Специализированные осмотр, консультирование и лечение заболеваний и травм в рамках предлагаемых специальностей.",
       tr: "Sunulan cerrahi ve anestezi branşlarında hastalık ve yaralanmaların uzman hekim muayenesi, danışmanlığı ve tedavisi.",
       ar: "الفحص التخصصي والاستشارات والعلاج للأمراض والإصابات ضمن التخصصات الجراحية والتخديرية المتاحة.",
+      uz: "Mavjud taklif etilayotgan mutaxassisliklar doirasida kasalliklar va jarohatlarni tor mutaxassis tomonidan tekshirish, maslahat berish va davolash.",
     },
     {
       icon: Activity as Icon,
-      title: { de: "Indikationsprüfung", en: "Indication Assessment", ru: "Оценка показаний", tr: "Tıbbi Endikasyon Değerlendirmesi", ar: "تقييم دواعي التدخل الجراحي" } as T,
+      title: { de: "Indikationsprüfung", en: "Indication Assessment", ru: "Оценка показаний", tr: "Tıbbi Endikasyon Değerlendirmesi", ar: "تقييم دواعي التدخل الجراحي", uz: "Ko'rsatmalarni baholash" } as T,
       de: "Prüfung der medizinischen Indikation und Auswahl geeigneter konservativer, interventioneller oder operativer Behandlungsmöglichkeiten.",
       en: "Assessment of medical indication and selection of appropriate conservative, interventional or surgical treatment options.",
       ru: "Оценка медицинских показаний и выбор подходящих консервативных, интервенционных или оперативных методов.",
       tr: "Tıbbi endikasyonun titizlikle değerlendirilmesi ve uygun konservatif, girişimsel veya cerrahi tedavi seçeneğinin belirlenmesi.",
       ar: "التقييم الدقيق للدواعي الطبية واختيار الخيارات العلاجية التحفظية أو التداخلية أو الجراحية الأنسب.",
+      uz: "Tibbiy ko'rsatmalarni sinchkovlik bilan tekshirish va tegishli konservativ, intervension yoki jarrohlik davolash usulini tanlash.",
     },
     {
       icon: Scissors as Icon,
-      title: { de: "Ambulante Operationen", en: "Outpatient Operations", ru: "Амбулаторные операции", tr: "Ayakta Cerrahi Operasyonlar", ar: "الجراحات المتنقلة" } as T,
+      title: { de: "Ambulante Operationen", en: "Outpatient Operations", ru: "Амбулаторные операции", tr: "Ayakta Cerrahi Operasyonlar", ar: "الجراحات المتنقلة", uz: "Ambulator operatsiyalar" } as T,
       de: "Organisation ambulanter Operationen einschließlich Vorbereitung, Durchführung, Überwachung, Entlassung und Nachsorge.",
       en: "Organization of outpatient operations including preparation, performance, monitoring, discharge and aftercare.",
       ru: "Организация амбулаторных операций, включая подготовку, проведение, наблюдение, выписку и последующий уход.",
       tr: "Hazırlık, operasyonun icrası, izlem, taburculuk ve ameliyat sonrası takip dahil ayakta cerrahi operasyonların organizasyonu.",
       ar: "تنظيم العمليات الجراحية النهارية بما يشمل التحضير، والتنفيذ، والمراقبة، والخروج، والمتابعة اللاحقة.",
+      uz: "Ambulator operatsiyalarni tashkil qilish, jumladan tayyorgarlik, o'tkazish, monitoring, chiqarish va keyingi parvarish.",
     },
     {
       icon: Syringe as Icon,
-      title: { de: "Anästhesie & Aufklärung", en: "Anesthesia & Consent", ru: "Анестезия и разъяснение", tr: "Anestezi ve Hasta Aydınlatması", ar: "التخدير والتوعية الطبية" } as T,
+      title: { de: "Anästhesie & Aufklärung", en: "Anesthesia & Consent", ru: "Анестезия и разъяснение", tr: "Anestezi ve Hasta Aydınlatması", ar: "التخدير والتوعية الطبية", uz: "Anesteziya va tushuntirish" } as T,
       de: "Anästhesiologische Untersuchung, Aufklärung und Betreuung einschließlich Auswahl und Durchführung geeigneter Anästhesieverfahren.",
       en: "Anaesthesiological examination, explanation and care including selection and performance of appropriate anaesthetic procedures.",
       ru: "Анестезиологические обследование, разъяснение и сопровождение, включая выбор и проведение анестезии.",
       tr: "Uygun anestezi yönteminin seçimi, uygulanması, anestezi muayenesi, bilgilendirilmiş onam ve hasta refakati.",
       ar: "الفحص التخديري والتوعية والمرافقة واختيار وتطبيق أساليب التخدير الملائمة لكل حالة.",
+      uz: "Anesteziologik ko'rik, tushuntirish va hamrohlik, tegishli og'riqsizlantirish usullarini tanlash va o'tkazish.",
     },
     {
       icon: Network as Icon,
-      title: { de: "Interdisziplinäre Abstimmung", en: "Interdisciplinary Links", ru: "Междисциплинарное согласование", tr: "Disiplinlerarası Koordinasyon", ar: "التنسيق متعدد التخصصات" } as T,
+      title: { de: "Interdisziplinäre Abstimmung", en: "Interdisciplinary Links", ru: "Междисциплинарное согласование", tr: "Disiplinlerarası Koordinasyon", ar: "التنسيق متعدد التخصصات", uz: "Sohalararo muvofiqlashtirish" } as T,
       de: "Abstimmung der operativen und anästhesiologischen Behandlung sowie Koordination notwendiger internistischer oder weiterer fachärztlicher Untersuchungen.",
       en: "Coordination of surgical and anaesthesiological treatment and organization of required internal medicine or further specialist examinations.",
       ru: "Согласование хирургического и анестезиологического лечения, координация необходимых терапевтических или иных специализированных обследований.",
       tr: "Cerrahi ve anestezi tedavisinin uyumu ile gerekli dahiliye ve diğer uzmanlık konsültasyonlarının koordinasyonu.",
       ar: "تنسيق العلاج الجراحي والتخديري وتنظيم الفحوصات الباطنية والتخصصية التكميلية اللازمة.",
+      uz: "Jarrohlik va anesteziologik davolashni muvofiqlashtirish, zarur terapevtik yoki boshqa mutaxassislik tekshiruvlarini tashkil etish.",
     },
     {
       icon: HeartPulse as Icon,
-      title: { de: "Schmerztherapie", en: "Pain Management", ru: "Обезболивание и терапия", tr: "Ağrı Tedavisi (Algoterapi)", ar: "إدارة وعلاج الألم" } as T,
+      title: { de: "Schmerztherapie", en: "Pain Management", ru: "Обезболивание и терапия", tr: "Ağrı Tedavisi (Algoterapi)", ar: "إدارة وعلاج الألم", uz: "Og'riq terapiyasi" } as T,
       de: "Durchführung qualifikationsgerechter Schmerzdiagnostik und Schmerztherapie einschließlich perioperativer Schmerzbehandlung.",
       en: "Qualified pain diagnostics and pain management including perioperative pain treatment.",
       ru: "Квалифицированная диагностика и лечение боли, включая периоперационное обезболивание.",
       tr: "Perioperatif ağrı yönetimi dahil olmak üzere yetkin ağrı teşhisi ve kişiye özel ağrı tedavisinin uygulanması.",
       ar: "تشخيص وعلاج الألم وفق أعلى المعايير التخصصية بما يشمل تسكين الألم المحيط بالجراحة.",
+      uz: "Malakali og'riq diagnostikasi va og'riq terapiyasini, jumladan perioperatsion og'riqsizlantirishni amalga oshirish.",
     },
     {
       icon: Bandage as Icon,
-      title: { de: "Wundversorgung & Reha", en: "Wound Care & Rehab", ru: "Уход за ранами и реабилитация", tr: "Yara Bakımı ve Rehabilitasyon", ar: "العناية بالجروح والتأهيل" } as T,
+      title: { de: "Wundversorgung & Reha", en: "Wound Care & Rehab", ru: "Уход за ранами и реабилитация", tr: "Yara Bakımı ve Rehabilitasyon", ar: "العناية بالجروح والتأهيل", uz: "Jarohatlarni parvarishlash va reabilitatsiya" } as T,
       de: "Organisation der Wundversorgung, Verlaufskontrollen und gegebenenfalls erforderlicher rehabilitativer Maßnahmen.",
       en: "Organization of wound care, follow-up checks and any required rehabilitative measures.",
       ru: "Организация ухода за ранами, контрольных осмотров и при необходимости реабилитационных мероприятий.",
       tr: "Yara bakımı organizasyonu, düzenli dikiş ve iyileşme kontrolleri ile gerekli rehabilitasyon adımlarının planlanması.",
       ar: "تنظيم التئام ورعاية الجروح والفحوصات الدورية ومتابعة التدابير التأهيلية المقررة.",
+      uz: "Jarohatlarni parvarishlashni tashkil qilish, davriy nazorat va zarur hollarda reabilitatsiya choralarini ko'rish.",
     },
     {
       icon: Siren as Icon,
-      title: { de: "Notfallmanagement", en: "Emergency Care", ru: "Действия при осложнениях", tr: "Komplikasyon ve Acil Durum Yönetimi", ar: "إدارة الطوارئ والمضاعفات" } as T,
+      title: { de: "Notfallmanagement", en: "Emergency Care", ru: "Действия при осложнениях", tr: "Komplikasyon ve Acil Durum Yönetimi", ar: "إدارة الطوارئ والمضاعفات", uz: "Shoshilinch yordamni boshqarish" } as T,
       de: "Sicherstellung geeigneter Abläufe bei Komplikationen und medizinischen Notfällen einschließlich einer erforderlichen Weiterbehandlung oder Krankenhausverlegung.",
       en: "Ensuring appropriate procedures for complications and medical emergencies, including necessary further treatment or hospital transfer.",
       ru: "Обеспечение надлежащих процедур при осложнениях и экстренных ситуациях, включая дальнейшее лечение или перевод в стационар.",
       tr: "Komplikasyon ve tıbbi acillerde ileri tedavi veya hastaneye nakil dahil olmak üzere güvenli müdahale protokolleri.",
       ar: "ضمان بروتوكولات آمنة وفورية للتعامل مع المضاعفات وحالات الطوارئ ونقل المريض للمستشفى عند الحاجة.",
+      uz: "Asoratlar va tibbiy favqulodda vaziyatlarda xavfsiz tartib-qoidalar, jumladan zarur keyingi davolash yoki shifoxonaga ko'chirishni ta'minlash.",
     },
     {
       icon: Hospital as Icon,
-      title: { de: "Klinik-Kooperationen", en: "Clinic Partnerships", ru: "Кооперация с больницами", tr: "Klinik ve Merkez Ortaklıkları", ar: "الشراكات السريرية" } as T,
+      title: { de: "Klinik-Kooperationen", en: "Clinic Partnerships", ru: "Кооперация с больницами", tr: "Klinik ve Merkez Ortaklıkları", ar: "الشراكات السريرية", uz: "Klinik hamkorliklar" } as T,
       de: "Zusammenarbeit mit weiterbehandelnden Ärzten, Krankenhäusern, Rehabilitationseinrichtungen, Pflege und befugten Heilmittelerbringern.",
       en: "Cooperation with treating physicians, hospitals, rehabilitation facilities, nursing and authorized remedies providers.",
       ru: "Взаимодействие с лечащими врачами, больницами, реабилитационными учреждениями, уходом и лечебными учреждениями.",
       tr: "Takip eden hekimler, hastaneler, rehabilitasyon ve bakım kuruluşları ile entegre profesyonel iş birliği.",
       ar: "التعاون الوثيق مع الأطباء المعالجين والمستشفيات ومراكز إعادة التأهيل ومقدمي الرعاية المعتمدين.",
+      uz: "Keyingi davolovchi shifokorlar, shifoxonalar, reabilitatsiya markazlari, parvarishlash va vakolatli tibbiy muassasalar bilan hamkorlik.",
     },
     {
       icon: GraduationCap as Icon,
-      title: { de: "Fort- & Weiterbildung", en: "Staff Training & Education", ru: "Обучение и квалификация", tr: "Mesleki Eğitim ve Gelişim", ar: "التدريب والتأهيل المستمر" } as T,
+      title: { de: "Fort- & Weiterbildung", en: "Staff Training & Education", ru: "Обучение и квалификация", tr: "Mesleki Eğitim ve Gelişim", ar: "التدريب والتأهيل المستمر", uz: "Malaka oshirish va o'qitish" } as T,
       de: "Fachliche Fortbildung des Personals und gegebenenfalls ärztliche Weiterbildung auf Grundlage der erforderlichen Weiterbildungsbefugnisse.",
       en: "Professional training of staff and, where applicable, postgraduate medical training based on the required training authorizations.",
       ru: "Повышение квалификации персонала и, при наличии полномочий, врачебная последипломная подготовка.",
       tr: "Sağlık personelinin sürekli eğitimi ve yetkili eğitim izinleri doğrultusunda cerrahi hekimlik uzmanlık eğitimi.",
       ar: "التدريب المهني المستمر للكوادر والتأهيل التخصصي للأطباء استناداً إلى الاعتمادات الرسمية.",
+      uz: "Xodimlarning kasbiy malakasini oshirish va tegishli ruxsatnomalar asosida shifokorlarning jarrohlik ixtisosligi bo'yicha tayyorgarligi.",
     },
   ],
 
@@ -248,6 +270,7 @@ const c = {
     ru: "Правовые и операционные обязанности",
     tr: "Yasal ve Operasyonel Yükümlülükler",
     ar: "الالتزامات القانونية والتشغيلية",
+    uz: "Huquqiy va operatsion majburiyatlar",
   } as T,
   dutiesLead: {
     de: "Die Gesellschaft stellt durch geeignete Zuständigkeiten und Kontrollverfahren insbesondere Folgendes sicher:",
@@ -255,6 +278,7 @@ const c = {
     ru: "Посредством распределения ответственности и процедур контроля общество обеспечивает, в частности, следующее:",
     tr: "Şirket, tanımlanmış sorumluluklar ve denetim süreçleri aracılığıyla özellikle şunları güvence altına alır:",
     ar: "تضمن الشركة، عبر توزيع المسؤوليات وإجراءات الرقابة المحكمة، استيفاء الاشتراطات التالية على وجه الخصوص:",
+    uz: "Kompaniya mas'uliyatni aniq taqsimlash va nazorat tartib-qoidalari orqali xususan quyidagilarni ta'minlaydi:",
   } as T,
   duties: [
     {
@@ -265,6 +289,7 @@ const c = {
         ru: "Допуск и объём помощи",
         tr: "Ruhsat ve Hizmet Görevi",
         ar: "التراخيص ونطاق الرعاية",
+        uz: "Ruxsatnoma va xizmat ko'rsatish topshirig'i",
       } as T,
       text: {
         de: "Einhaltung der MVZ-Zulassung, der genehmigten Arztstellen und Anstellungen sowie der zulässigen Tätigkeitsorte und Beschäftigungsumfänge. Veränderungen werden entsprechend den geltenden Vorgaben angezeigt oder vorab zur Genehmigung vorgelegt.",
@@ -272,6 +297,7 @@ const c = {
         ru: "Соблюдение допуска MVZ, утверждённых врачебных ставок и трудоустройства, допустимых мест работы и объёмов занятости. Изменения уведомляются или представляются на утверждение заблаговременно.",
         tr: "MVZ ruhsatına, onaylı hekim kadrolarına, izinli çalışma merkezlerine ve çalışma saatlerine tam uyum; değişikliklerin vaktinde bildirilmesi.",
         ar: "الالتزام بترخيص المركز والشواغر المصرح بها وأماكن العمل المعتمدة، وإخطار السلطات بأي تغييرات في الوقت المحدد.",
+        uz: "MVZ litsenziyasiga, tasdiqlangan shifokor shtatlariga, ruxsat etilgan faoliyat joylariga va ish vaqtlariga to'liq rioya qilish; o'zgarishlarni o'z vaqtida bildirish.",
       } as T,
     },
     {
@@ -282,6 +308,7 @@ const c = {
         ru: "Врачебное руководство и ответственность",
         tr: "Tıbbi Direktörlük ve Sorumluluklar",
         ar: "الإدارة الطبية والمسؤوليات",
+        uz: "Tibbiy rahbarlik va mas'uliyat",
       } as T,
       text: {
         de: "Bestellung einer ärztlichen Leitung entsprechend den gesetzlichen Voraussetzungen. Eindeutige Zuordnung der operativen, anästhesiologischen und nachsorgenden Verantwortlichkeiten unter Wahrung der ärztlichen Weisungsfreiheit.",
@@ -289,6 +316,7 @@ const c = {
         ru: "Назначение врачебного руководителя в соответствии с требованиями закона. Чёткое распределение операционной, анестезиологической и последующей ответственности при соблюдении независимости врача.",
         tr: "Yasal şartlara uygun tıbbi direktör atanması. Cerrahi, anestezi ve ameliyat sonrası sorumlulukların bağımsız hekimlik ilkesiyle net dağıtımı.",
         ar: "تعيين مدير طبي وفق الاشتراطات النظامية، وتوزيع مسؤوليات الجراحة والتخدير والمتابعة مع صون استقلالية القرار الطبي.",
+        uz: "Qonun talablariga javob beradigan tibbiy rahbarni tayinlash. Jarrohlik, anesteziologik va parvarishlash mas'uliyatini shifokorlik mustaqilligi asosida aniq taqsimlash.",
       } as T,
     },
     {
@@ -299,6 +327,7 @@ const c = {
         ru: "Квалификации и разрешения на услуги",
         tr: "Uzmanlık Yeterliliği ve Hizmet İzinleri",
         ar: "المؤهلات وتراخيص الإجراءات",
+        uz: "Malaka va xizmat ruxsatnomalari",
       } as T,
       text: {
         de: "Prüfung der erforderlichen Facharztqualifikationen, Zusatzqualifikationen und Berechtigungen. Genehmigungspflichtige Leistungen werden erst nach Erteilung der erforderlichen Genehmigungen erbracht und abgerechnet.",
@@ -306,6 +335,7 @@ const c = {
         ru: "Проверка необходимых квалификаций специалиста, дополнительных квалификаций и разрешений. Услуги, требующие разрешения, оказываются и выставляются в счёт только после его получения.",
         tr: "Uzman hekim ve yan dal yeterliliklerinin kontrolü. Onaya tabi cerrahi ve anestezi işlemlerinin yalnızca resmi izin alındıktan sonra yapılması.",
         ar: "التحقق من المؤهلات والخبرات التخصصية، وعدم تقديم أو فوترة الخدمات المقيدة إلا بعد نيل التراخيص الرسمية اللازمة.",
+        uz: "Mutaxassis shifokor va qo'shimcha malakalarni tekshirish. Ruxsat talab qilinadigan xizmatlarni faqat rasmiy ruxsat olingandan keyin ko'rsatish va hisob-kitob qilish.",
       } as T,
     },
     {
@@ -316,6 +346,7 @@ const c = {
         ru: "Отбор пациентов и планирование операций",
         tr: "Hasta Seçimi ve Ameliyat Planlaması",
         ar: "اختيار المرضى وتخطيط العمليات",
+        uz: "Bemorlarni saralash va operatsiyalarni rejalashtirish",
       } as T,
       text: {
         de: "Medizinische Prüfung, ob der vorgesehene Eingriff ambulant durchgeführt werden kann, und Sicherstellung einer ausreichenden präoperativen Abklärung sowie einer angemessenen Patientenaufklärung. Beachtung der geltenden rechtlichen und fachlichen Anforderungen an die Operationsvorbereitung.",
@@ -323,6 +354,7 @@ const c = {
         ru: "Медицинская оценка возможности проведения вмешательства амбулаторно, обеспечение надлежащей предоперационной подготовки и информирования пациента. Соблюдение требований к подготовке операции.",
         tr: "Girişimin ayakta yapılabilirliğinin tıbbi kontrolü, kapsamlı preoperatif tetkikler ve aydınlatılmış onam ile cerrahi hazırlık standartlarına tam uyum.",
         ar: "التقييم الطبي لإمكانية إجراء التدخل بالعيادة النهارية، وضمان الفحوصات السابقة للجراحة والتوعية الشاملة والموافقة المستنيرة.",
+        uz: "Amaliyotning ambulator sharoitda o'tkazilishini tibbiy tekshirish, operatsiyadan oldingi yetarli tahlillar va to'liq bemor roziligini ta'minlash.",
       } as T,
     },
     {
@@ -333,6 +365,7 @@ const c = {
         ru: "Документация и защита данных",
         tr: "Belgeleme ve Veri Koruma",
         ar: "التوثيق وحماية البيانات",
+        uz: "Hujjatlashtirish va ma'lumotlar xavfsizligi",
       } as T,
       text: {
         de: "Ordnungsgemäße Führung, Sicherung und Aufbewahrung der Behandlungsdokumentation. Wahrung der Schweigepflicht und Umsetzung der geltenden Datenschutzanforderungen durch geregelte Zugriffsrechte und sichere Datenübermittlung.",
@@ -340,6 +373,7 @@ const c = {
         ru: "Надлежащее ведение, защита и хранение документации. Соблюдение врачебной тайны и требований защиты данных через регламентированные права доступа и защищённую передачу данных.",
         tr: "Ameliyat ve tedavi kayıtlarının eksiksiz tutulması ve güvenli saklanması. Tıbbi sır ve GDPR/DSGVO veri gizliliği standartlarına kesin riayet.",
         ar: "التوثيق الدقيق للسجلات الجراحية والعلاجية وحفظها الآمن، والامتثال للسرية المهنية ولوائح حماية البيانات العامة (DSGVO).",
+        uz: "Davolash va operatsiya yozuvlarini to'g'ri yuritish, saqlash va arxivlash. Shifokorlik siriga va ma'lumotlar xavfsizligi standartlariga (DSGVO) to'liq rioya qilish.",
       } as T,
     },
     {
@@ -350,6 +384,7 @@ const c = {
         ru: "Менеджмент качества и гигиена",
         tr: "Kalite Yönetimi ve Ameliyathane Hijyeni",
         ar: "إدارة الجودة ومكافحة العدوى",
+        uz: "Sifat menejmenti va gigiyena",
       } as T,
       text: {
         de: "Einrichtung und Weiterentwicklung eines einrichtungsinternen Qualitätsmanagements. Umsetzung der einschlägigen Hygieneanforderungen, insbesondere für Operationsbereiche und Aufwachräume, sowie eines angemessenen Fehler-, Beschwerde- und Risikomanagements.",
@@ -357,6 +392,7 @@ const c = {
         ru: "Создание и развитие внутреннего менеджмента качества. Выполнение гигиенических требований, особенно для операционных и зон пробуждения, а также управление ошибками, жалобами и рисками.",
         tr: "Kurum içi kalite sistemi geliştirme; ameliyathane ve derlenme odaları için DIN ve RKI enfeksiyon kontrol kurallarına ve risk yönetimine tam uyum.",
         ar: "تطوير نظام الجودة الداخلي وتطبيق أعلى معايير النظافة والتعقيم في غرف العمليات والإفاقة وإدارة المخاطر والشكاوى.",
+        uz: "Ichki sifat menejmentini rivojlantirish. Operatsiya zonalari va uyg'onish xonalari uchun gigiyena talablariga hamda xatolar va xavflarni boshqarishga to'liq rioya qilish.",
       } as T,
     },
     {
@@ -367,6 +403,7 @@ const c = {
         ru: "Медизделия и техническое оснащение",
         tr: "Medikal Cihazlar ve Teknik Donanım",
         ar: "الأجهزة الطبية والتجهيزات الفنية",
+        uz: "Tibbiy buyumlar va texnik uskunalar",
       } as T,
       text: {
         de: "Sicherstellung eines ordnungsgemäßen Betriebs der eingesetzten Medizinprodukte und Geräte einschließlich erforderlicher Einweisungen, Wartungen, Kontrollen und Dokumentationen. Beachtung des Strahlenschutzrechts, soweit entsprechende Anwendungen erfolgen.",
@@ -374,6 +411,7 @@ const c = {
         ru: "Надлежащая эксплуатация медицинских изделий, включая инструктажи, обслуживание, проверки и документацию. Соблюдение законодательства о радиационной защите, если применимо.",
         tr: "Ameliyathane cihazları ve anestezi sistemlerinin düzenli bakımı, kalibrasyonu, güvenli işletimi ve radyasyondan korunma kurallarına riayet.",
         ar: "ضمان التشغيل والصيانة والمعايرة الدورية للأجهزة الجراحية والتخديرية ومراعاة لوائح الوقاية من الإشعاع بدقة.",
+        uz: "Operatsiya va anesteziya uskunalarining xavfsiz ishlashini ta'minlash, muntazam texnik xizmat, tekshiruvlar va nurlanishdan himoyalanish qoidalariga rioya qilish.",
       } as T,
     },
     {
@@ -384,6 +422,7 @@ const c = {
         ru: "Расчёты и экономичность",
         tr: "Faturalandırma ve Ekonomiklik İlkesi",
         ar: "الفوترة والكفاءة الاقتصادية",
+        uz: "Hisob-kitoblar va iqtisodiy samaradorlik",
       } as T,
       text: {
         de: "Sicherstellung einer vollständigen, zutreffenden und nachvollziehbaren Abrechnung. Beachtung der jeweils anwendbaren Vergütungsregelungen, des Wirtschaftlichkeitsgebots und der Voraussetzungen für genehmigungspflichtige Leistungen.",
@@ -391,6 +430,7 @@ const c = {
         ru: "Полные, корректные и прозрачные расчёты. Соблюдение применимых правил вознаграждения, принципа экономичности и условий для услуг, требующих разрешения.",
         tr: "Eksiksiz, şeffaf ve denetlenebilir faturalandırma; geçerli hekimlik tarife mevzuatına, ekonomiklik kuralına ve onay şartlarına tam bağlılık.",
         ar: "ضمان فوترة مكتملة وقابلة للتدقيق والامتثال للوائح الأجور المعتمدة ومبدأ الكفاءة الاقتصادية للخدمات المرخصة.",
+        uz: "Hisob-kitoblarning to'liq, aniq va shaffof bo'lishini ta'minlash. Amaldagi tarif qoidalariga, iqtisodiy tejamkorlik tamoyiliga va ruxsat berilgan xizmatlar shartlariga rioya qilish.",
       } as T,
     },
   ],
@@ -405,9 +445,9 @@ const specialtyIconsList: React.ComponentType<{ className?: string }>[] = [
 ];
 
 const cardEyebrows: T[] = [
-  { de: "OPERATIVE MEDIZIN", en: "SURGICAL CARE", ru: "ОПЕРАТИВНАЯ ПОМОЩЬ", tr: "CERRAHİ HİZMETLER", ar: "الطب الجراحي" },
-  { de: "INFRASTRUKTUR & OP-RÄUME", en: "FACILITIES & OR SUITES", ru: "ИНФРАСТРУКТУРА И ОПЕРБЛОКИ", tr: "TESİSLER VE AMELİYATHANELER", ar: "المرافق وأجنحة العمليات" },
-  { de: "KLINIK-VERBUND & RECHT", en: "CLINIC NETWORK & LAW", ru: "КЛИНИЧЕСКАЯ СЕТЬ И ПРАВО", tr: "KLİNİK AĞI VE HUKUK", ar: "شبكة العيادات والأطر القانونية" },
+  { de: "OPERATIVE MEDIZIN", en: "SURGICAL CARE", ru: "ОПЕРАТИВНАЯ ПОМОЩЬ", tr: "CERRAHİ HİZMETLER", ar: "الطب الجراحي", uz: "OPERATIV TIBBIYOT" },
+  { de: "INFRASTRUKTUR & OP-RÄUME", en: "FACILITIES & OR SUITES", ru: "ИНФРАСТРУКТУРА И ОПЕРБЛОКИ", tr: "TESİSLER VE AMELİYATHANELER", ar: "المرافق وأجنحة العمليات", uz: "INFRATUZILMA VA OPERATSIYA BLOKLARI" },
+  { de: "KLINIK-VERBUND & RECHT", en: "CLINIC NETWORK & LAW", ru: "КЛИНИЧЕСКАЯ СЕТЬ И ПРАВО", tr: "KLİNİK AĞI VE HUKUK", ar: "شبكة العيادات والأطر القانونية", uz: "KLINIKA TARMOG'I VA HUQUQ" },
 ];
 
 const surgeryFacilitiesIcons = [Scissors, HeartPulse, Network];
@@ -440,6 +480,11 @@ const cardPoints: Record<Lang, string[]>[] = [
       "المراقبة والرعاية التخديرية المتكاملة",
       "العلاج التحفظي وإدارة الألم التخصصية",
     ],
+    uz: [
+      "Ambulator operatsiyalar va muolajalar",
+      "Anesteziologik hamrohlik va monitoring",
+      "Konservativ terapiya va og'riq qoldirish",
+    ],
   },
   // Card 2: Räume & Kooperationen
   {
@@ -467,6 +512,11 @@ const cardPoints: Record<Lang, string[]>[] = [
       "أجنحة عمليات وغرف علاج حديثة",
       "مناطق إفاقة ومراقبة سريرية متقدمة",
       "تعاون مباشر مع مركز MVZ الباطني",
+    ],
+    uz: [
+      "Zamonaviy operatsiya zallari va xonalar",
+      "Uyg'onish va bemorlarni kuzatish zonalari",
+      "Terapevtik MVZ bilan to'g'ridan-to'g'ri hamkorlik",
     ],
   },
   // Card 3: Krankenhaus-Kooperation & Zulassungen
@@ -496,11 +546,16 @@ const cardPoints: Record<Lang, string[]>[] = [
       "تراخيص وصلاحيات فوترة مستقلة نظاماً",
       "امتثال كامل لجميع متطلبات التراخيص الرسمية",
     ],
+    uz: [
+      "NabiOta Clinics Germany GmbH bilan hamkorlik",
+      "Mustaqil litsenziyalar va hisob-kitob huquqlari",
+      "Litsenziyalash talablariga to'liq rioya qilish",
+    ],
   },
 ];
 
 export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
-  const l: Lang = locale === "tr" ? "tr" : locale === "ar" ? "ar" : locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
+  const l: Lang = locale === "uz" ? "uz" : locale === "tr" ? "tr" : locale === "ar" ? "ar" : locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
 
   return (
     <>
@@ -730,7 +785,7 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
                   href={`/${l}/contact`}
                   className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-[#8C9886] bg-white/70 hover:bg-[#142318] hover:text-white hover:border-[#142318] text-[#2C3B2E] text-[12.5px] font-medium tracking-wide transition-all shadow-xs"
                 >
-                  <span>{l === "ru" ? "Подробнее" : l === "en" ? "Learn more" : l === "tr" ? "Daha fazla bilgi" : l === "ar" ? "اعرف المزيد" : "Mehr erfahren"}</span>
+                  <span>{l === "uz" ? "Batafsil" : l === "ru" ? "Подробнее" : l === "en" ? "Learn more" : l === "tr" ? "Daha fazla bilgi" : l === "ar" ? "اعرف المزيد" : "Mehr erfahren"}</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </div>
@@ -765,7 +820,7 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
           <div className="space-y-6">
             <div>
               <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block mb-1.5">
-                {l === "ru" ? "ЗАДАЧИ И СТАНДАРТЫ" : l === "en" ? "TASKS & OPERATIONS" : l === "tr" ? "GÖREVLER VE ORGANİZASYON" : l === "ar" ? "المهام والتنظيم" : "AUFGABEN & ORGANISATION"}
+                {l === "uz" ? "VAZIFALAR VA STANDARTLAR" : l === "ru" ? "ЗАДАЧИ И СТАНДАРТЫ" : l === "en" ? "TASKS & OPERATIONS" : l === "tr" ? "GÖREVLER VE ORGANİZASYON" : l === "ar" ? "المهام والتنظيم" : "AUFGABEN & ORGANISATION"}
               </span>
               <h3 className="font-serif text-[22px] sm:text-[26px] lg:text-[28px] font-normal text-[#142318] leading-[1.2]">
                 {c.tasksTitle[l]}
@@ -823,7 +878,7 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
         <div className="max-w-2xl mb-7 sm:mb-9">
           <div className="flex items-center gap-3 mb-2.5">
             <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase">
-              {l === "ru" ? "НАШИ ОБЯЗАТЕЛЬСТВА" : l === "en" ? "OUR COMMITMENT" : l === "tr" ? "YÜKÜMLÜLÜKLERİMİZ" : l === "ar" ? "التزاماتنا" : "UNSERE VERPFLICHTUNGEN"}
+              {l === "uz" ? "BIZNING MAJBURIYATLARIMIZ" : l === "ru" ? "НАШИ ОБЯЗАТЕЛЬСТВА" : l === "en" ? "OUR COMMITMENT" : l === "tr" ? "YÜKÜMLÜLÜKLERİMİZ" : l === "ar" ? "التزاماتنا" : "UNSERE VERPFLICHTUNGEN"}
             </span>
             <span className="h-px w-8 bg-[#C5A56A]" />
           </div>
@@ -831,6 +886,10 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
             {l === "de" ? (
               <>
                 Rechtliche und betriebliche <span className="italic text-[#ECCF96]">Pflichten</span>
+              </>
+            ) : l === "uz" ? (
+              <>
+                Huquqiy va operatsion <span className="italic text-[#ECCF96]">majburiyatlar</span>
               </>
             ) : (
               c.dutiesTitle[l]

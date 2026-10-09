@@ -12,6 +12,7 @@ export function HomeCtaBannerSection({ currentLocale = "de" }: HomeCtaBannerSect
   const isRu = currentLocale === "ru";
   const isTr = currentLocale === "tr";
   const isAr = currentLocale === "ar";
+  const isUz = currentLocale === "uz";
   const isEn = currentLocale === "en";
 
   const t = {
@@ -21,6 +22,8 @@ export function HomeCtaBannerSection({ currentLocale = "de" }: HomeCtaBannerSect
       ? "UZMANLIĞI BİRLEŞTİRMEK. SAĞLIĞI ŞEKİLLENDİRMEK."
       : isAr
       ? "توحيد الكفاءات. صياغة مستقبل الرعاية الصحية."
+      : isUz
+      ? "KOMPETENTSIYALARNI BIRLASHTIRIB. TIBBIYOT KELAJAGINI SHAKLLANTIRAMIZ."
       : isEn
       ? "CONNECTING COMPETENCE. SHAPING HEALTHCARE."
       : "KOMPETENZ VERBINDEN. GESUNDHEIT GESTALTEN.",
@@ -30,6 +33,8 @@ export function HomeCtaBannerSection({ currentLocale = "de" }: HomeCtaBannerSect
       ? "Geleceğe güvenle bakan bir sağlık hizmeti için birlikte."
       : isAr
       ? "معاً من أجل رعاية صحية مستدامة ومتقدمة."
+      : isUz
+      ? "Kelajakka ishonch bilan boquvchi tibbiyot uchun birgalikda."
       : isEn
       ? "Partnering for a Healthier, Forward-Thinking Future."
       : "Gemeinsam für eine zukunftssichere Gesundheitsversorgung.",
@@ -39,6 +44,8 @@ export function HomeCtaBannerSection({ currentLocale = "de" }: HomeCtaBannerSect
       ? "İster birinci sınıf tıbbi bakım arayan bir hasta, ister güçlü bir ortaklık arayan bir hekim, ister sağlık projeleri geliştiren bir kurum olun – NabiOta® Health Group güvenilir yol arkadaşınızdır."
       : isAr
       ? "سواء كنتم مرضى تبحثون عن رعاية طبية ألمانية رفيعة، أو أطباء تتطلعون لشراكة متينة، أو مستثمرين يطورون مشاريع طبية – مجموعة نابي أوتا هي شريككم الموثوق."
+      : isUz
+      ? "Siz yuqori darajadagi tibbiy yordam izlayotgan bemor bo'lasizmi, shifokorlik amaliyotida mustahkam sheriklikni xohlovchi mutaxassis bo'lasizmi yoki tibbiy infratuzilma loyihalarini amalga oshiruvchi tashkilot bo'lasizmi — NabiOta® Health Group sizning ishonchli hamkoringizdir."
       : isEn
       ? "Whether you are a patient seeking top-tier clinical care, a physician exploring collaborative network opportunities, or a partner realizing medical infrastructure — NabiOta® is your committed companion."
       : "Ob Sie als Patient erstklassige medizinische Betreuung suchen, als Arzt eine starke partnerschaftliche Praxisstruktur schätzen oder als Träger zukunftssichere Projekte realisieren möchten – die NabiOta® Health Group ist Ihr verlässlicher Begleiter.",
@@ -48,6 +55,8 @@ export function HomeCtaBannerSection({ currentLocale = "de" }: HomeCtaBannerSect
       ? "Bize Ulaşın"
       : isAr
       ? "تواصل معنا"
+      : isUz
+      ? "Biz bilan bog'laning"
       : isEn
       ? "Get in Touch With Us"
       : "Kontakt aufnehmen",
@@ -57,6 +66,8 @@ export function HomeCtaBannerSection({ currentLocale = "de" }: HomeCtaBannerSect
       ? "Faaliyet Alanlarımız"
       : isAr
       ? "قطاعات المجموعة"
+      : isUz
+      ? "Faoliyat yo'nalishlarimiz"
       : isEn
       ? "Explore Our Divisions"
       : "Unternehmensbereiche",

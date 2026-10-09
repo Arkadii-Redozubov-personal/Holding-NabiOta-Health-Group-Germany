@@ -74,6 +74,7 @@ export interface CareServiceModalData {
 }
 
 export function PflegePageComponent({ locale = "de" }: Props) {
+  const isUz = locale === "uz";
   const isRu = locale === "ru";
   const isEn = locale === "en";
   const isTr = locale === "tr";
@@ -107,7 +108,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
 
   // Standard Header/Hero Data
   const heroData = {
-    title: isRu
+    title: isUz
+      ? "Hamshiralik parvarishi va patronaj"
+      : isRu
       ? "Сестринский уход & патронаж"
       : isEn
       ? "Nursing Care & HomeCare"
@@ -116,7 +119,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
       : isAr
       ? "التمريض المنزلي والرعاية المتكاملة"
       : "Pflege & HomeCare",
-    subtitle: isRu
+    subtitle: isUz
+      ? "NabiOta HomeCare GmbH – Uy sharoitida g'amxo'rlik va muolajalar"
+      : isRu
       ? "NabiOta HomeCare GmbH – Забота и лечение на дому"
       : isEn
       ? "NabiOta HomeCare GmbH – Compassionate Care at Home"
@@ -125,7 +130,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
       : isAr
       ? "NabiOta HomeCare GmbH – رعاية كريمة ودافئة في محيطكم الأسري المألوف"
       : "NabiOta HomeCare GmbH – Würdevolle Fürsorge im vertrauten Umfeld",
-    eyebrow: isRu
+    eyebrow: isUz
+      ? "NABIOTA HOMECARE GMBH • SGB V & SGB XI"
+      : isRu
       ? "NABIOTA HOMECARE GMBH • SGB V & SGB XI"
       : isEn
       ? "NABIOTA HOMECARE GMBH • SGB V & SGB XI"
@@ -134,7 +141,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
       : isAr
       ? "NABIOTA HOMECARE GMBH • SGB V & SGB XI"
       : "NABIOTA HOMECARE GMBH • SGB V & SGB XI",
-    desc: isRu
+    desc: isUz
+      ? "NabiOta HomeCare GmbH odatiy uy muhitida malakali ambulator hamshiralik parvarishi, shifokor ko'rsatmasi bo'yicha tibbiy yordam (SGB V), sertifikatlangan yaralarni davolash (ICW®) va asosiy parvarishni (SGB XI) inson qadr-qimmatini e'zozlagan holda hamda yaqinlariga ko'mak berib ta'minlaydi."
+      : isRu
       ? "NabiOta HomeCare GmbH обеспечивает квалифицированный амбулаторный сестринский уход, медицинскую помощь по назначению врачей (SGB V), сертифицированное ведение ран (ICW®) и базовый уход (SGB XI) в привычном домашнем окружении — с высочайшим уважением к достоинству человека и поддержкой его близких."
       : isEn
       ? "NabiOta HomeCare GmbH provides accredited outpatient nursing care, prescribed medical treatment nursing (SGB V), certified wound care (ICW®), and personal care support (SGB XI) at home — preserving personal independence, dignity, and active relief for family caregivers."
@@ -148,18 +157,18 @@ export function PflegePageComponent({ locale = "de" }: Props) {
   const heroBadges = [
     {
       icon: <Award className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu ? "Wundexperten ICW®" : isEn ? "ICW® Wound Care" : isTr ? "Wundexperten ICW®" : isAr ? "خبراء جروح معتمدون ICW®" : "Wundexperten ICW®",
-      sub: isRu ? "Сертификация" : isEn ? "Certified Care" : isTr ? "Sertifikalı Yönetim" : isAr ? "إدارة جروح معتمدة" : "Zertifiziertes Management",
+      title: isUz ? "Wundexperten ICW®" : isRu ? "Wundexperten ICW®" : isEn ? "ICW® Wound Care" : isTr ? "Wundexperten ICW®" : isAr ? "خبراء جروح معتمدون ICW®" : "Wundexperten ICW®",
+      sub: isUz ? "Sertifikatlangan" : isRu ? "Сертификация" : isEn ? "Certified Care" : isTr ? "Sertifikalı Yönetim" : isAr ? "إدارة جروح معتمدة" : "Zertifiziertes Management",
     },
     {
       icon: <Stethoscope className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu ? "SGB V & SGB XI" : isEn ? "SGB V & SGB XI" : isTr ? "SGB V & SGB XI" : isAr ? "SGB V & SGB XI" : "SGB V & SGB XI",
-      sub: isRu ? "Все кассы Германии" : isEn ? "Statutory & Private" : isTr ? "Tüm Sağlık ve Bakım Sandıkları" : isAr ? "معتمد لكافة صناديق التأمين" : "Zugelassener Partner",
+      title: isUz ? "SGB V & SGB XI" : isRu ? "SGB V & SGB XI" : isEn ? "SGB V & SGB XI" : isTr ? "SGB V & SGB XI" : isAr ? "SGB V & SGB XI" : "SGB V & SGB XI",
+      sub: isUz ? "Barcha sug'urta kassalari" : isRu ? "Все кассы Германии" : isEn ? "Statutory & Private" : isTr ? "Tüm Sağlık ve Bakım Sandıkları" : isAr ? "معتمد لكافة صناديق التأمين" : "Zugelassener Partner",
     },
     {
       icon: <Clock className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu ? "24/7 Забота" : isEn ? "24/7 Care" : isTr ? "24/7 Nöbetçi Destek" : isAr ? "مناوبة ورعاية 24/7" : "24/7 Rufbereitschaft",
-      sub: isRu ? "Экстренная связь" : isEn ? "Emergency On-Call" : isTr ? "Günün Her Saati" : isAr ? "على مدار الساعة" : "Rund-um-die-Uhr",
+      title: isUz ? "24/7 G'amxo'rlik" : isRu ? "24/7 Забота" : isEn ? "24/7 Care" : isTr ? "24/7 Nöbetçi Destek" : isAr ? "مناوبة ورعاية 24/7" : "24/7 Rufbereitschaft",
+      sub: isUz ? "Shoshilinch aloqa" : isRu ? "Экстренная связь" : isEn ? "Emergency On-Call" : isTr ? "Günün Her Saati" : isAr ? "على مدار الساعة" : "Rund-um-die-Uhr",
     },
   ];
 
@@ -167,7 +176,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
   const servicesData: CareServiceModalData[] = [
     {
       id: "behandlungspflege",
-      badge: isRu
+      badge: isUz
+        ? "SGB V • SHIFOKOR KO'RSATMASI"
+        : isRu
         ? "SGB V • НАЗНАЧЕНИЕ ВРАЧА"
         : isEn
         ? "SGB V • MEDICAL PRESCRIPTION"
@@ -178,7 +189,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : "SGB V • ÄRZTLICHE VERORDNUNG",
       image: "/images/services/homecare.webp",
       iconType: "stethoscope",
-      title: isRu
+      title: isUz
+        ? "Tibbiy davolash parvarishi (SGB V)"
+        : isRu
         ? "Медицинский уход & процедуры (SGB V)"
         : isEn
         ? "Clinical Treatment Nursing (SGB V)"
@@ -187,7 +200,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : isAr
         ? "الرعاية الطبية والعلاجية الموصوفة (SGB V)"
         : "Behandlungspflege & Med. Versorgung (SGB V)",
-      shortDesc: isRu
+      shortDesc: isUz
+        ? "Shifokor ko'rsatmasi bo'yicha tibbiy muolajalarni malakali bajarish: inyeksiyalar, infuziyalar, dori vositalarini berish, kompressiya terapiyasi va hayotiy ko'rsatkichlar nazorati."
+        : isRu
         ? "Квалифицированное выполнение медицинских назначений врача: инъекции, инфузии, выдача лекарств, компрессионная терапия и контроль показателей."
         : isEn
         ? "Professional clinical nursing according to physician orders: injections, infusions, medication administration, compression therapy, and vital monitoring."
@@ -197,7 +212,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         ? "تنفيذ الإجراءات الطبية الموصوفة من قبل ممرضين معتمدين: الحقن، المحاليل الوريدية، إعطاء الأدوية، العلاج بالضغط ومراقبة المؤشرات الحيوية."
         : "Fachgerechte Durchführung verordneter medizinischer Maßnahmen wie Injektionen, Infusionen, Medikamentengabe, Kompressionstherapie und Vitalzeichenkontrollen.",
       modal: {
-        title: isRu
+        title: isUz
+          ? "Uyda tibbiy parvarish va davolash (SGB V)"
+          : isRu
           ? "Медицинская помощь и лечение на дому (SGB V)"
           : isEn
           ? "Home Treatment Nursing & Clinical Procedures (SGB V)"
@@ -206,7 +223,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "التمريض المنزلي والرعاية الطبية العلاجية (SGB V)"
           : "Häusliche Krankenpflege & Behandlungspflege (SGB V)",
-        subtitle: isRu
+        subtitle: isUz
+          ? "Diplomli hamshiralar nazorati ostida shifokor ko'rsatmalarini bajarish"
+          : isRu
           ? "Врачебные назначения под контролем дипломированных медсестер"
           : isEn
           ? "Physician-prescribed home nursing under certified clinical oversight"
@@ -215,7 +234,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تنفيذ تعليمات الطبيب في المنزل تحت إشراف تمريضي متخصص"
           : "Fachpflegerische Durchführung ärztlicher Anordnungen im vertrauten Zuhause",
-        description: isRu
+        description: isUz
+          ? "§ 37 SGB V bo'yicha davolash parvarishi ambulator davolanishni kafolatlash yoki shifoxonada yotish muddatini qisqartirish uchun davolovchi shifokor tomonidan buyurilgan barcha tibbiy choralarni o'z ichiga oladi. Bizning davlat imtihonidan o'tgan hamshiralarimiz barcha ko'rsatmalarni eng yuqori sifat va gigiyena standartlarida bajaradilar va davolovchi shifokorlar bilan bevosita muloqotda bo'ladilar."
+          : isRu
           ? "Лечебный уход по § 37 SGB V включает все медицинские процедуры, назначенные лечащим врачом или специалистом MVZ для ускорения выздоровления, предотвращения осложнений или сокращения пребывания в стационаре. Наши специалисты строго соблюдают протоколы безопасности и поддерживают постоянный контакт с лечащим доктором."
           : isEn
           ? "Treatment nursing under § 37 SGB V encompasses all clinical interventions prescribed by attending general practitioners or hospital specialists to support recovery, prevent complications, or shorten inpatient hospital stays. Our certified nurses maintain strict aseptic protocols and direct communication with physicians."
@@ -224,8 +245,17 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تشمل الرعاية العلاجية وفق المادة § 37 SGB V جميع الإجراءات الطبية الموصوفة من طبيب الأسرة أو الأخصائي لضمان نجاح العلاج أو تجنب الإقامة في المستشفى. ينفذ كادرنا التمريضي المتخصص كافة التعليمات وفق أعلى معايير الجودة والتعقيم وبالتنسيق المباشر مع الأطباء."
           : "Die Behandlungspflege nach § 37 SGB V umfasst alle vom Haus- oder Facharzt verordneten medizinischen Maßnahmen, die der Sicherung der ambulanten ärztlichen Behandlung dienen oder einen Krankenhausaufenthalt verkürzen bzw. vermeiden. Unsere examinierten Pflegefachkräfte führen alle Verordnungen nach strengsten Qualitäts- und Hygienestandards durch und stehen im direkten Austausch mit den behandelnden Ärzten.",
-        indicationsTitle: isRu ? "Медицинские показания" : isEn ? "Clinical Indications" : isTr ? "Tıbbi Endikasyonlar" : isAr ? "دواعي الرعاية النموذجية" : "Typische Indikationen",
-        indications: isRu
+        indicationsTitle: isUz ? "Tibbiy ko'rsatmalar" : isRu ? "Медицинские показания" : isEn ? "Clinical Indications" : isTr ? "Tıbbi Endikasyonlar" : isAr ? "دواعي الرعاية النموذجية" : "Typische Indikationen",
+        indications: isUz
+          ? [
+              "Insulin talab qiluvchi 1 va 2-tur qandli diabet va qon shakarini o'lchash",
+              "Qon bosimi va pulsni qat'iy nazorat qilishni talab qiluvchi yurak-qon tomir kasalliklari",
+              "Antikoagulyant terapiya va teri ostiga geparin inyeksiyalari (s.c. / i.m.)",
+              "Murakkab dori-darmon terapiyasi va nazoratli dori tayyorlash hamda berish",
+              "Kompressiya terapiyasi bilan surunkali venoz yetishmovchilik (I–IV sinf)",
+              "Ambulator va statsionar jarrohlik amaliyotlaridan keyingi operatsiyadan keyingi kuzatuv",
+            ]
+          : isRu
           ? [
               "Инсулинотерапия и сахарный диабет I и II типа",
               "Артериальная гипертензия и кардиоваскулярные заболевания",
@@ -269,8 +299,17 @@ export function PflegePageComponent({ locale = "de" }: Props) {
               "Chronische venöse Insuffizienz mit Kompressionstherapie (Klasse I–IV)",
               "Postoperative Überwachung nach ambulanten und stationären Eingriffen",
             ],
-        scopeTitle: isRu ? "Спектр медицинских услуг" : isEn ? "Scope of Interventions" : isTr ? "Hizmet Yelpazesi" : isAr ? "نطاق الخدمات التمريضية" : "Leistungsspektrum",
-        scopeItems: isRu
+        scopeTitle: isUz ? "Tibbiy xizmatlar ko'lami" : isRu ? "Спектр медицинских услуг" : isEn ? "Scope of Interventions" : isTr ? "Hizmet Yelpazesi" : isAr ? "نطاق الخدمات التمريضية" : "Leistungsspektrum",
+        scopeItems: isUz
+          ? [
+              "Inyeksiyalar (s.c. va i.m.) hamda shifokor buyurgan infuziyalarni monitoring qilish",
+              "Tayinlangan dori vositalarini dozirovka qilish, tartibga solish va berish",
+              "Qon shakari darajasini nazorat qilish va ehtiyojga ko'ra insulin yuborish",
+              "Kompressiya bog'lamalarini qo'yish/almashtirish va kompressiya paypoqlarini kiyish/yechish",
+              "Hayotiy ko'rsatkichlarni (qon bosimi, puls, kislorod saturatsiyasi) doimiy nazorat qilish",
+              "Drenajlarni nazorat qilish va parvarish hisobotida holatni to'liq hujjatlashtirish",
+            ]
+          : isRu
           ? [
               "Инъекции (подкожные, внутримышечные) и капельные инфузии",
               "Раскладка, контроль и выдача медикаментов по рецепту",
@@ -314,8 +353,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
               "Kontinuierliche Vitalzeichenkontrolle (Blutdruck, Puls, Sauerstoffsättigung)",
               "Überwachung von Drainagen und lückenlose Verlaufsdokumentation im Pflegebericht",
             ],
-        billingTitle: isRu ? "Финансирование и кассы" : isEn ? "Insurance & Coverage" : isTr ? "Gider Karşılama ve Reçete" : isAr ? "تغطية التكاليف والوصفة الطبية" : "Kostenübernahme & Verordnung",
-        billingText: isRu
+        billingTitle: isUz ? "Xarajatlarni qoplash va retsept" : isRu ? "Финансирование и кассы" : isEn ? "Insurance & Coverage" : isTr ? "Gider Karşılama ve Reçete" : isAr ? "تغطية التكاليف والوصفة الطبية" : "Kostenübernahme & Verordnung",
+        billingText: isUz
+          ? "Tibbiy parvarish xarajatlari uyda tibbiy parvarish bo'yicha shifokor retsepti (Muster 12) mavjud bo'lganda, tasdiqlangandan so'ng davlat (GKV) va xususiy (PKV) tibbiy sug'urta kassalari tomonidan 100% to'liq qoplanadi. NabiOta HomeCare barcha rasmiylashtirish va tasdiqlash jarayonini o'z zimmasiga oladi."
+          : isRu
           ? "Все услуги медицинской помощи (SGB V) на 100% покрываются государственными (GKV) и частными (PKV) страховыми кассами Германии при наличии рецепта врача (Muster 12). Мы берем на себя полное согласование с вашей страховой компанией."
           : isEn
           ? "All prescribed clinical services under SGB V are covered by statutory (GKV) and private (PKV) health insurance funds with a valid physician prescription (Muster 12). We handle all administrative clearance with your insurance provider."
@@ -324,8 +365,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تُغطى تكاليف الرعاية العلاجية بنسبة 100% من قبل صناديق التأمين الصحي الحكومية (GKV) والخاصة (PKV) بموجب وصفة طبية (Muster 12). تتولى NabiOta HomeCare إجراءات التقديم والحصول على الموافقات بالكامل نيابة عنكم."
           : "Die Kosten der Behandlungspflege werden bei Vorliegen einer ärztlichen Verordnung häuslicher Krankenpflege (Muster 12) nach Genehmigung vollständig von den gesetzlichen (GKV) und privaten (PKV) Krankenkassen übernommen. NabiOta HomeCare übernimmt für Sie die gesamte Einreichung und Genehmigungsabstimmung.",
-        qualityTitle: isRu ? "Стандарты безопасности" : isEn ? "Quality & Safety" : isTr ? "Kalite ve Güvenlik Standartları" : isAr ? "معايير الجودة والسلامة" : "Qualitäts- & Sicherheitsstandards",
-        qualityText: isRu
+        qualityTitle: isUz ? "Xavfsizlik va sifat standartlari" : isRu ? "Стандарты безопасности" : isEn ? "Quality & Safety" : isTr ? "Kalite ve Güvenlik Standartları" : isAr ? "معايير الجودة والسلامة" : "Qualitäts- & Sicherheitsstandards",
+        qualityText: isUz
+          ? "Muolajalar faqatgina davlat tomonidan imtihondan o'tgan diplomli hamshiralar tomonidan Robert Koch Instituti (RKI) gigiyena ko'rsatmalariga qat'iy rioya qilgan holda bajariladi."
+          : isRu
           ? "Процедуры проводятся исключительно государственно экзаменованными медицинскими сестрами в строгом соответствии с санитарно-эпидемиологическими стандартами Института Роберта Коха (RKI)."
           : isEn
           ? "Procedures are delivered exclusively by licensed, state-certified registered nurses strictly adhering to the infection control guidelines of the Robert Koch Institute (RKI)."
@@ -334,12 +377,14 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تُقدم الخدمات حصرياً من قبل ممرضين مجازين رسمياً ومعتمدين، مع الالتزام الصارم بإرشادات التعقيم الصادرة عن معهد روبرت كوخ (RKI)."
           : "Die Leistungen werden ausnahmslos durch staatlich examinierte Pflegefachkräfte erbracht. Strenge Einhaltung der Hygiene-Richtlinien des Robert Koch-Instituts (RKI) und regelmäßige Fortbildungen garantieren maximale Behandlungssicherheit.",
-        ctaButtonText: isRu ? "Запросить организацию ухода" : isEn ? "Request Nursing Consultation" : isTr ? "Tedavi Bakımı Talebi" : isAr ? "طلب رعاية علاجية منزلية" : "Behandlungspflege anfragen",
+        ctaButtonText: isUz ? "Tibbiy parvarish so'rash" : isRu ? "Запросить организацию ухода" : isEn ? "Request Nursing Consultation" : isTr ? "Tedavi Bakımı Talebi" : isAr ? "طلب رعاية علاجية منزلية" : "Behandlungspflege anfragen",
       },
     },
     {
       id: "wundversorgung",
-      badge: isRu
+      badge: isUz
+        ? "ICW® • YARALARNI DAVOLASH"
+        : isRu
         ? "ICW® • ВЕДЕНИЕ РАН"
         : isEn
         ? "ICW® • WOUND MANAGEMENT"
@@ -350,7 +395,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : "ICW® • ZERTIFIZIERTES MANAGEMENT",
       image: "/images/services/wundversorgung.webp",
       iconType: "award",
-      title: isRu
+      title: isUz
+        ? "Sertifikatlangan yaralarni davolash (ICW®)"
+        : isRu
         ? "Сертифицированное лечение ран (ICW®)"
         : isEn
         ? "Certified Wound Management (ICW®)"
@@ -359,7 +406,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : isAr
         ? "إدارة الجروح المعتمدة (معايير ICW®)"
         : "Zertifiziertes Wundmanagement (ICW®)",
-      shortDesc: isRu
+      shortDesc: isUz
+        ? "Surunkali, operatsiyadan keyingi va qiyin bituvchi yaralarni zamonaviy nam usulda davolash va fotohujjatlashtirish bo'yicha ixtisoslashgan parvarish."
+        : isRu
         ? "Профессиональный уход за хроническими, послеоперационными и труднозаживающими ранами с применением влажного заживления и фотодокументации."
         : isEn
         ? "Specialized management of chronic, postoperative, and non-healing wounds utilizing modern moist wound therapy and digital photo documentation."
@@ -369,7 +418,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         ? "علاج متخصص للجروح المزمنة، ما بعد الجراحة وصعبة الالتئام باستخدام تقنيات الضماد الرطب والتوثيق الرقمي."
         : "Spezialisierte Versorgung chronischer, postoperativer und sekundär heilender Wunden mit moderner Feuchtwundbehandlung und Fotodokumentation.",
       modal: {
-        title: isRu
+        title: isUz
+          ? "ICW® standarti bo'yicha sertifikatlangan yara boshqaruvi"
+          : isRu
           ? "Zertifiziertes Wundmanagement nach ICW®"
           : isEn
           ? "Certified Wound Management according to ICW®"
@@ -378,7 +429,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "إدارة الجروح المعتمدة وفق معايير ICW®"
           : "Zertifiziertes Wundmanagement (ICW®-Standard)",
-        subtitle: isRu
+        subtitle: isUz
+          ? "Zamonaviy bosqichma-bosqich yara terapiyasi va to'liq fotomonitoring"
+          : isRu
           ? "Современное влажное заживление ран и экспертная фотодокументация"
           : isEn
           ? "Modern moist wound therapy and digital clinical progress documentation"
@@ -387,7 +440,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "علاج حديث للجروح وفق مراحل الالتئام وتوثيق سريري رقمي متكامل"
           : "Moderne phasengerechte Wundtherapie und lückenlose Verlaufsdokumentation",
-        description: isRu
+        description: isUz
+          ? "Surunkali va ikkilamchi bituvchi yaralar chuqur klinik mahorat va tizimli parvarishni talab qiladi. NabiOta HomeCare kompaniyasining Initiative Chronische Wunden e.V. (ICW®) standartlari bo'yicha sertifikatlangan yara mutaxassislari og'riqni yengillashtiruvchi, granulyatsiyani tezlashtiruvchi va infeksiyalarni oldini oluvchi dalillarga asoslangan zamonaviy nam yara vositalarini qo'llaydilar."
+          : isRu
           ? "Хронические и вторично заживающие раны требуют глубоких специализированных знаний и терпеливого подхода. Сертифицированные эксперты по ранам ICW® (Initiative Chronische Wunden) компании NabiOta HomeCare применяют доказательные методики влажного заживления, снижая болевой синдром и стимулируя естественную регенерацию тканей."
           : isEn
           ? "Chronic and non-healing wounds demand specialized clinical expertise and structured care protocols. NabiOta HomeCare's certified ICW® wound care specialists employ modern evidence-based moist healing principles that alleviate pain, accelerate tissue granulation, and prevent infections."
@@ -396,8 +451,17 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تتطلب الجروح المزمنة والمعقدة خبرة سريرية متقدمة ورعاية مستمرة. يطبق أخصائيو الجروح المعتمدون من جمعية (ICW®) لدى NabiOta أحدث أساليب العلاج الرطب للجروح، مما يسكن الألم ويحفز نمو الأنسجة ويقي من العدوى."
           : "Chronische, postoperative und schwer heilende Wunden erfordern fundierte Fachkompetenz und strukturierte Betreuung. Unsere nach den Standards der Initiative Chronische Wunden e.V. (ICW®) zertifizierten Wundexperten setzen moderne, phasengerechte Wundtherapeutika ein. Durch das Prinzip der feuchten Wundbehandlung werden Wundschmerzen gelindert, Granulation gefördert und Infektionen wirksam verhindert.",
-        indicationsTitle: isRu ? "Виды ран и диагнозы" : isEn ? "Treated Wound Types" : isTr ? "Tedavi Kapsamı ve Yara Türleri" : isAr ? "نطاق الحالات وأنواع الجروح" : "Behandlungsspektrum",
-        indications: isRu
+        indicationsTitle: isUz ? "Yara turlari va tashxislar" : isRu ? "Виды ран и диагнозы" : isEn ? "Treated Wound Types" : isTr ? "Tedavi Kapsamı ve Yara Türleri" : isAr ? "نطاق الحالات وأنواع الجروح" : "Behandlungsspektrum",
+        indications: isUz
+          ? [
+              "Boldirning venoz, arterial yoki aralash trofik yaralari (Ulcus cruris)",
+              "Barcha bosqichdagi yotoq yaralari (Dekubitus I–IV daraja)",
+              "Neyropatik yoki ishemik zararlanishlar bilan diabetik tovon sindromi (DFS)",
+              "Ikkilamchi bituvchi yoki infeksiyalangan operatsiya yaralari va chok ochilishlari",
+              "Ortopedik va umumiy jarrohlik amaliyotlaridan keyingi yara bitish buzilishlari",
+              "Termik yaralar, kuyishlar va shikastlanishdan keyingi to'qima nuqsonlari",
+            ]
+          : isRu
           ? [
               "Трофические язвы голени (Ulcus cruris venosum / arteriosum / mixtum)",
               "Пролежни всех степеней тяжести (Dekubitus Grad I–IV)",
@@ -441,8 +505,17 @@ export function PflegePageComponent({ locale = "de" }: Props) {
               "Wundheilungsstörungen nach orthopädischen und viszeralchirurgischen Eingriffen",
               "Thermische Wunden, Verbrennungen und traumatische Hautdefekte",
             ],
-        scopeTitle: isRu ? "План лечения и процедуры" : isEn ? "Clinical Protocol" : isTr ? "Terapötik Önlemler" : isAr ? "الإجراءات والتدخلات العلاجية" : "Therapeutische Maßnahmen",
-        scopeItems: isRu
+        scopeTitle: isUz ? "Davolash rejasi va muolajalar" : isRu ? "План лечения и процедуры" : isEn ? "Clinical Protocol" : isTr ? "Terapötik Önlemler" : isAr ? "الإجراءات والتدخلات العلاجية" : "Therapeutische Maßnahmen",
+        scopeItems: isUz
+          ? [
+              "Steril sharoitda bog'lamalarni avaylab va og'riqsiz almashtirish",
+              "Zamonaviy yara qoplamalarini bosqichga mos tanlash (alginatlar, gidrokolloidlar, ko'piklar, kumush)",
+              "Antiseptik yara yuvish va mikrob yuklamasini kamaytirish",
+              "Yuqori aniqlikdagi raqamli fotodokumentatsiya va yara o'lchamlarini doimiy qayd etish",
+              "Venoz yaralarda shishni qaytaruvchi kompressiya terapiyasi",
+              "Davolovchi jarrohlar, qon tomir shifokorlari va MVZ mutaxassislari bilan bevosita klinik muvofiqlashtirish",
+            ]
+          : isRu
           ? [
               "Атравматическая смена повязок с обезболиванием",
               "Фазовое применение современных повязок (гидроколлоиды, альгинаты, пены, серебро)",
@@ -486,8 +559,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
               "Entstauende Kompressionstherapie bei venöser Wundgenese",
               "Direkte Fallabstimmung mit behandelnden Chirurgen, Gefäßmedizinern und MVZ-Ärzten",
             ],
-        billingTitle: isRu ? "Оплата и рецепты" : isEn ? "Insurance & Reimbursement" : isTr ? "Reçete ve Masraf Karşılama" : isAr ? "الوصفة الطبية والجهات الضامنة" : "Verordnung & Kostenträger",
-        billingText: isRu
+        billingTitle: isUz ? "To'lov va retseptlar" : isRu ? "Оплата и рецепты" : isEn ? "Insurance & Reimbursement" : isTr ? "Reçete ve Masraf Karşılama" : isAr ? "الوصفة الطبية والجهات الضامنة" : "Verordnung & Kostenträger",
+        billingText: isUz
+          ? "Yaralarni davolash SGB V bo'yicha tan olingan tibbiy xizmatdir. Bog'lamalarni almashtirish va zamonaviy yara vositalari xarajatlari davlat va xususiy sug'urta kassalari tomonidan to'liq qoplanadi. NabiOta dorixonasi va Sanitätshaus orqali steril materiallar yetkazib berilishini muvofiqlashtiramiz."
+          : isRu
           ? "Уход за ранами и перевязочные материалы оплачиваются медицинскими страховками по SGB V на основании врачебного назначения. NabiOta HomeCare координирует доставку стерильных материалов через партнерские аптеки и Sanitätshaus."
           : isEn
           ? "Wound management and advanced dressing supplies are covered under SGB V statutory and private health insurance. NabiOta HomeCare coordinates the swift delivery of sterile dressings via our affiliated pharmacy and medical supply store."
@@ -496,8 +571,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تعتبر رعاية الجروح خدمة معتمدة وممولة ضمن التأمين الصحي (SGB V). تغطي الصناديق تكاليف تغيير الضمادات ومواد العلاج الحديثة بالكامل. ننسق التوريد المباشر عبر صيدلية ومتجر المستلزمات الطبية التابع للمجموعة."
           : "Die Wundversorgung ist eine anerkannte Leistung der häuslichen Krankenpflege nach SGB V. Die Kosten für Verbandwechsel und moderne Wundauflagen werden von den gesetzlichen und privaten Krankenkassen übernommen. Wir koordinieren die reibungslose Belieferung über die NabiOta Apotheke und das Sanitätshaus.",
-        qualityTitle: isRu ? "Квалификация ICW®" : isEn ? "ICW® Quality Certification" : isTr ? "ICW® Sertifikasyonu" : isAr ? "اعتماد وجودة ICW®" : "ICW®-Zertifizierung",
-        qualityText: isRu
+        qualityTitle: isUz ? "ICW® sertifikatsiyasi" : isRu ? "Квалификация ICW®" : isEn ? "ICW® Quality Certification" : isTr ? "ICW® Sertifikasyonu" : isAr ? "اعتماد وجودة ICW®" : "ICW®-Zertifizierung",
+        qualityText: isUz
+          ? "Bizning yara koordinatorlarimiz tan olingan ICW® (Initiative Chronische Wunden e.V.) sertifikatlariga ega bo'lib, DNQP milliy ekspert standartlari bo'yicha har yili muntazam malaka oshirib boradilar."
+          : isRu
           ? "Наши специалисты имеют действующие сертификаты Wundexperte ICW® и ежегодно проходят курсы повышения квалификации в соответствии с национальными экспертными стандартами DNQP."
           : isEn
           ? "Our wound coordinators hold accredited ICW® certifications and complete annual clinical training adhering to German National Expert Standards (DNQP)."
@@ -506,12 +583,14 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "يحمل خبراؤنا شهادات رسمية معتمدة من مبادرة الجروح المزمنة (ICW®) ويخضعون لتدريب مستمر وفق معايير الجودة السريرية الوطنية (DNQP)."
           : "Unsere Wundmanager verfügen über anerkannte ICW®-Zertifikate (Initiative Chronische Wunden e.V.) und bilden sich fortlaufend nach den nationalen Expertenstandards des DNQP weiter.",
-        ctaButtonText: isRu ? "Записаться на осмотр раны" : isEn ? "Request Wound Assessment" : isTr ? "Yara Muayenesi Talebi" : isAr ? "حجز فحص ومعاينة للجروح" : "Wundvisite vereinbaren",
+        ctaButtonText: isUz ? "Yara ko'rigiga yozilish" : isRu ? "Записаться на осмотр раны" : isEn ? "Request Wound Assessment" : isTr ? "Yara Muayenesi Talebi" : isAr ? "حجز فحص ومعاينة للجروح" : "Wundvisite vereinbaren",
       },
     },
     {
       id: "grundpflege",
-      badge: isRu
+      badge: isUz
+        ? "SGB XI • PARVARISH DARAJALARI 1–5"
+        : isRu
         ? "SGB XI • СТЕПЕНИ УХОДА 1–5"
         : isEn
         ? "SGB XI • CARE LEVELS 1–5"
@@ -522,7 +601,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : "SGB XI • PFLEGEGRADE 1–5",
       image: "/images/nursing/stage-senior.webp",
       iconType: "heart",
-      title: isRu
+      title: isUz
+        ? "Tana parvarishi va kundalik yordam (SGB XI)"
+        : isRu
         ? "Базовый уход & помощь в быту (SGB XI)"
         : isEn
         ? "Personal Care & Daily Living (SGB XI)"
@@ -531,7 +612,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : isAr
         ? "الرعاية الشخصية والأساسية (SGB XI)"
         : "Körperbezogene Pflege & Grundpflege (SGB XI)",
-      shortDesc: isRu
+      shortDesc: isUz
+        ? "Shaxsiy mustaqillik va qulaylikni saqlash uchun gigiyena, kiyinish, ovqatlanish va harakatlanishda ehtiromli ko'mak."
+        : isRu
         ? "Бережная помощь в гигиене, одевании, приеме пищи и мобилизации для сохранения личной автономии и комфорта."
         : isEn
         ? "Dignified assistance with personal hygiene, dressing, nutrition, and mobilization to foster autonomy and comfort at home."
@@ -541,7 +624,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         ? "دعم كريم ومهني في النظافة الشخصية، التغذية والحركة للحفاظ على الاستقلالية والراحة في المنزل."
         : "Respektvolle Unterstützung bei der Körperpflege, Ernährung und Mobilität zur Erhaltung und Förderung der persönlichen Selbstständigkeit.",
       modal: {
-        title: isRu
+        title: isUz
+          ? "Tana parvarishi va kundalik hayot ko'magi (SGB XI)"
+          : isRu
           ? "Базовый сестринский уход и помощь в быту (SGB XI)"
           : isEn
           ? "Personal Care & Activities of Daily Living (SGB XI)"
@@ -550,7 +635,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "الرعاية التمريضية الأساسية والدعم اليومي (SGB XI)"
           : "Körperbezogene Grundpflege & Alltagshilfe (SGB XI)",
-        subtitle: isRu
+        subtitle: isUz
+          ? "O'z uyida mustaqil yashash uchun ehtiromli va faollashtiruvchi yordam"
+          : isRu
           ? "Уважительная поддержка для сохранения самостоятельности в родных стенах"
           : isEn
           ? "Respectful, empowering assistance preserving independence at home"
@@ -559,7 +646,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "دعم محترم ومحفز للحفاظ على حياة مريحة ومستقلة في المنزل"
           : "Würdevolle, aktivierende Unterstützung für ein selbstbestimmtes Leben zu Hause",
-        description: isRu
+        description: isUz
+          ? "SGB XI bo'yicha tana parvarishi faollashtiruvchi parvarish yetakchi g'oyasiga asoslanadi: Biz yordam talab qilinadigan sohalarda ko'maklashamiz, shu bilan birga mijozlarimiz o'z resurslari va ko'nikmalarini saqlab qolishlarini va o'z uyida erkin va mustaqil yashashlarini maqsadli qo'llab-quvvatlaymiz."
+          : isRu
           ? "Каждый человек заслуживает уважительного и бережного отношения. Базовый уход по SGB XI строится на принципе активирующего ухода: мы помогаем в том, что вызывает затруднения, но бережно сохраняем и стимулируем те навыки, которые пациент может выполнять сам."
           : isEn
           ? "Every person deserves dignified and compassionate care. Personal care under SGB XI is centered around restorative, activating nursing: we assist where help is needed while encouraging and maintaining existing capabilities so clients remain self-determined in their own home."
@@ -568,8 +657,17 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "ترتكز الرعاية الأساسية وفق SGB XI على مبدأ الرعاية التنشيطية: نقدم العون حيث تدعو الحاجة، مع تعزيز القدرات الذاتية المتبقية لتمكين المريض من الحفاظ على استقلاليته وكرامته في بيته."
           : "Die körperbezogene Pflege nach SGB XI basiert auf dem Leitgedanken der aktivierenden Pflege: Wir unterstützen dort, wo Hilfe benötigt wird, fördern aber gleichzeitig gezielt vorhandene Ressourcen und Fähigkeiten, damit unsere Klienten ihre Eigenständigkeit und Lebensfreude im vertrauten Zuhause bewahren.",
-        indicationsTitle: isRu ? "Для кого предназначен уход" : isEn ? "Target Audience" : isTr ? "Hedef Kitle ve Koşullar" : isAr ? "الفئات المستهدفة وشروط الاستحقاق" : "Zielgruppe & Voraussetzungen",
-        indications: isRu
+        indicationsTitle: isUz ? "Kimlar uchun mo'ljallangan" : isRu ? "Для кого предназначен уход" : isEn ? "Target Audience" : isTr ? "Hedef Kitle ve Koşullar" : isAr ? "الفئات المستهدفة وشروط الاستحقاق" : "Zielgruppe & Voraussetzungen",
+        indications: isUz
+          ? [
+              "Tasdiqlangan parvarish darajasiga ega (Pflegegrad 1–5) parvarishga muhtoj insonlar",
+              "Harakatlanish va motorikada yoshga bog'liq cheklovlari bo'lgan keksalar",
+              "Og'ir kasalliklar, insult yoki bo'g'im protezlash amaliyotidan keyingi bemorlar",
+              "Surunkali nevrologik kasalliklarga chalingan insonlar (masalan, Parkinson kasalligi)",
+              "Xotira buzilishlari, kognitiv cheklovlar yoki demensiyasi bo'lgan mijozlar",
+              "Vaqtinchalik sog'ayish va tiklanish bosqichida bo'lgan shaxslar",
+            ]
+          : isRu
           ? [
               "Люди пожилого возраста с присвоенной степенью ухода (Pflegegrad 1–5)",
               "Пациенты после тяжелых операций, инсультов или травм",
@@ -613,8 +711,17 @@ export function PflegePageComponent({ locale = "de" }: Props) {
               "Klienten mit dementiellen Veränderungen oder kognitiven Einschränkungen",
               "Personen in vorübergehenden Rekonvaleszenz- und Erholungsphasen",
             ],
-        scopeTitle: isRu ? "Что входит в базовый уход" : isEn ? "Scope of Services" : isTr ? "Modüler Bakım Hizmetleri" : isAr ? "خدمات الرعاية المعيارية" : "Modulare Pflegeleistungen",
-        scopeItems: isRu
+        scopeTitle: isUz ? "Asosiy parvarish xizmatlari" : isRu ? "Что входит в базовый уход" : isEn ? "Scope of Services" : isTr ? "Modüler Bakım Hizmetleri" : isAr ? "خدمات الرعاية المعيارية" : "Modulare Pflegeleistungen",
+        scopeItems: isUz
+          ? [
+              "To'liq va qisman yuvinish, vanna, dush qabul qilish hamda og'iz, soch va tish parvarishi",
+              "Kiyinish va yechinishda yordam, shu jumladan protez/ortezlarni taqish",
+              "Ovqatni tayyorlash hamda oziqlanish va suyuqlik ichishda yordamlashish",
+              "Hojatga chiqishda yordam va ehtiromli, xushmuomala inkontinensiya parvarishi",
+              "Faollashtiruvchi mobilizatsiya: o'rindan aravachaga o'tkazish, yurish va turish mashqlari",
+              "Dekubitus va kontrakturani oldini olish uchun tibbiy krovatda to'g'ri joylashtirish",
+            ]
+          : isRu
           ? [
               "Полное или частичное умывание, душ, купание, гигиена полости рта и волос",
               "Помощь при одевании, раздевании и подборе комфортной одежды",
@@ -658,8 +765,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
               "Aktivierende Mobilisation: Transfer vom Bett in den Rollstuhl, Geh- und Stehübungen",
               "Fachgerechte Lagerung im Pflegebett zur Dekubitus- und Kontrakturvermeidung",
             ],
-        billingTitle: isRu ? "Оплата через кассу ухода" : isEn ? "Care Fund Billing" : isTr ? "Finansman ve Ayni Bakım Yardımları" : isAr ? "التمويل والمزايا العينية لصندوق الرعاية" : "Finanzierung & Sachleistungen",
-        billingText: isRu
+        billingTitle: isUz ? "Parvarish kassasi orqali moliyalashtirish" : isRu ? "Оплата через кассу ухода" : isEn ? "Care Fund Billing" : isTr ? "Finansman ve Ayni Bakım Yardımları" : isAr ? "التمويل والمزايا العينية لصندوق الرعاية" : "Finanzierung & Sachleistungen",
+        billingText: isUz
+          ? "Xarajatlar tegishli Pflegegrad (1 dan 5 gacha) qonuniy me'yoriga muvofiq bevosita parvarish kassasi (Pflegekasse) bilan Pflegesachleistung sifatida hisob-kitob qilinadi. Shuningdek, pul shaklidagi nafaqa bilan kombinatsiya qilish imkoni mavjud. Biz mutlaqo shaffof narx hisob-kitobini taqdim etamiz."
+          : isRu
           ? "Услуги оплачиваются кассой по уходу (Pflegekasse) в виде натуральных пособий (Pflegesachleistungen) в соответствии с присвоенным Pflegegrad (1–5) либо в комбинации с Pflegegeld. Мы рассчитываем оптимальный индивидуальный тариф без скрытых затрат."
           : isEn
           ? "Services are billed directly to statutory and private long-term care insurance funds (Pflegekassen) via care in-kind benefits (Pflegesachleistungen) based on Pflegegrad 1–5, or as a combination with monetary care allowances."
@@ -668,8 +777,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تُسوى التكاليف مباشرة كخدمات عينية (Pflegesachleistung) مع صندوق الرعاية حتى السقف القانوني لدرجة الرعاية (1 إلى 5)، مع إمكانية الجمع بين المساعدة العينية والبدل النقدي."
           : "Die Kosten werden bis zum gesetzlichen Höchstbetrag des jeweiligen Pflegegrads (1 bis 5) direkt als Pflegesachleistung mit der Pflegekasse abgerechnet. Auch Kombinationsleistungen (Pflegegeld + Pflegedienst) sind möglich. Wir erstellen transparente, verständliche Kostenvoranschläge.",
-        qualityTitle: isRu ? "Система закрепленной медсестры" : isEn ? "Primary Nursing Model" : isTr ? "Sabit Primer Hemşire Sistemi" : isAr ? "نظام الممرض المرجعي المخصص" : "Bezugspflegesystem",
-        qualityText: isRu
+        qualityTitle: isUz ? "Biriktirilgan hamshira tizimi (Bezugspflege)" : isRu ? "Система закрепленной медсестры" : isEn ? "Primary Nursing Model" : isTr ? "Sabit Primer Hemşire Sistemi" : isAr ? "نظام الممرض المرجعي المخصص" : "Bezugspflegesystem",
+        qualityText: isUz
+          ? "Bizning biriktirilgan hamshira modelimiz orqali sizning uyingizga har doim tanish va ishonchli xodimlar keladi. Bu esa mustahkam ishonch muhitini va mijozlar hamda ularning oilalari uchun to'liq xotirjamlikni yaratadi."
+          : isRu
           ? "Мы внедряем систему постоянных кураторов (Bezugspflege): за вами закрепляется небольшая команда медсестер, знающая ваши индивидуальные привычки и пожелания."
           : isEn
           ? "We implement a dedicated primary nursing system ensuring consistent, familiar caregivers who know your daily routines and preferences intimately."
@@ -678,12 +789,14 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "يضمن نظام الممرض المرجعي قدوم نفس الكوادر التمريضية المألوفة لديكم بانتظام، مما يبني علاقة ثقة راسخة ويمنح العائلة راحة البال."
           : "Unser Bezugspflegesystem stellt sicher, dass feste und vertraute Pflegekräfte zu Ihnen kommen. Das schafft eine vertrauensvolle Bindung und gibt den Klienten sowie ihren Angehörigen ein beruhigendes Gefühl von Sicherheit.",
-        ctaButtonText: isRu ? "Рассчитать план ухода" : isEn ? "Calculate Care Plan" : isTr ? "Bakım Danışmanlığı Talebi" : isAr ? "طلب استشارة وحساب خطة الرعاية" : "Pflegeberatung anfordern",
+        ctaButtonText: isUz ? "Parvarish bo'yicha maslahat olish" : isRu ? "Рассчитать план ухода" : isEn ? "Calculate Care Plan" : isTr ? "Bakım Danışmanlığı Talebi" : isAr ? "طلب استشارة وحساب خطة الرعاية" : "Pflegeberatung anfordern",
       },
     },
     {
       id: "postoperativ",
-      badge: isRu
+      badge: isUz
+        ? "KLINIKADAN O'TKAZISH"
+        : isRu
         ? "ПЕРЕВОД ИЗ КЛИНИКИ"
         : isEn
         ? "DISCHARGE TRANSITION"
@@ -694,7 +807,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : "KLINIK- & MVZ-ÜBERLEITUNG",
       image: "/images/nursing/stage-postsurgical.webp",
       iconType: "shield",
-      title: isRu
+      title: isUz
+        ? "Operatsiyadan keyingi patronaj va parvarish"
+        : isRu
         ? "Послеоперационный патронаж & переливание"
         : isEn
         ? "Postoperative Care & Discharge Management"
@@ -703,7 +818,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : isAr
         ? "الرعاية بعد العمليات وإدارة الخروج من المستشفى"
         : "Postoperative Nachsorge & Entlassmanagement",
-      shortDesc: isRu
+      shortDesc: isUz
+        ? "Jarrohlik amaliyotlaridan so'ng uy sharoitida xavfsiz va xotirjam tiklanish uchun statsionardan to'g'ridan-to'g'ri uzluksiz o'tkazish."
+        : isRu
         ? "Бесшовный перевод из стационара домой после хирургических операций для безопасного и спокойного восстановления в домашнем уюте."
         : isEn
         ? "Seamless hospital discharge transition following surgical procedures ensuring guided and complication-free recovery at home."
@@ -713,7 +830,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         ? "انتقال طبي وتمريضي سلس بعد الإقامة بالمستشفى أو العمليات الجراحية لضمان تعافٍ منزلي آمن وبدون مضاعفات."
         : "Nahtlose medizinisch-pflegerische Überleitung nach Klinikaufenthalten oder ambulanten Operationen für eine sichere Genesung zu Hause.",
       modal: {
-        title: isRu
+        title: isUz
+          ? "Operatsiyadan keyingi patronaj va chiqarilgandan keyingi parvarish"
+          : isRu
           ? "Послеоперационный патронаж и ведение после выписки"
           : isEn
           ? "Postoperative Transitional Care & Discharge Management"
@@ -722,7 +841,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "الرعاية اللاحقة بعد الجراحة وإدارة الخروج"
           : "Postoperative Nachsorge & Entlassmanagement",
-        subtitle: isRu
+        subtitle: isUz
+          ? "Shifoxona va uy qulayligi o'rtasidagi xavfsiz ko'prik"
+          : isRu
           ? "Безопасный мост между больницей и домашним уютом"
           : isEn
           ? "Safe continuity of clinical care from hospital bedside to home"
@@ -731,7 +852,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "الجسر الآمن بين الإقامة في المستشفى والتعافي المريح في المنزل"
           : "Die sichere Brücke zwischen Klinikaufenthalt und Genesung zu Hause",
-        description: isRu
+        description: isUz
+          ? "Shifoxonadan chiqarilgandan keyingi dastlabki kunlar muvaffaqiyatli sog'ayish uchun hal qiluvchi ahamiyatga ega. NabiOta HomeCare shifoxonadan (NabiOta Clinics Germany GmbH yoki boshqa klinikalardan) to'g'ridan-to'g'ri uy muhitiga o'tishni muvofiqlashtiradi. Biz operatsiya choklari bitishini, drenajlarni nazorat qilamiz, og'riqni qoldiramiz va asoratlarning oldini olamiz."
+          : isRu
           ? "Первые дни после выписки из больницы критически важны для успешного выздоровления. NabiOta HomeCare координирует переход из клиники (NabiOta Clinics Germany GmbH или других стационаров) прямо в домашнюю обстановку. Мы следим за заживлением швов, дренажами, снимаем болевой синдром и предотвращаем опасные осложнения."
           : isEn
           ? "The initial days following surgical discharge are critical for complication-free recovery. NabiOta HomeCare establishes an uninterrupted care continuum from the hospital ward (NabiOta Clinics or regional partner hospitals) to the client's home. We monitor healing, drainage, manage medications, and prevent unplanned rehospitalizations."
@@ -740,8 +863,17 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تعد الأيام الأولى بعد الجراحة حاسمة لنجاح العلاج. تتولى NabiOta HomeCare إدارة الخروج المنظم مباشرة من المستشفى (مثل مستشفيات NabiOta الشريكة) إلى المنزل. نراقب التئام الجروح، مصارف السوائل، العلامات الحيوية، وننظم الأجهزة لتجنب أي انتكاسات."
           : "Die ersten Tage nach einem operativen Eingriff sind entscheidend für den Heilungserfolg. NabiOta HomeCare übernimmt das koordinierte Entlassmanagement direkt aus dem Krankenhaus (z.B. NabiOta Clinics Germany GmbH oder anderen Akutkliniken) in die häusliche Umgebung. Wir überwachen Wundheilung, Drainagen und Vitalwerte, organisieren Hilfsmittel und verhindern Komplikationen.",
-        indicationsTitle: isRu ? "Кому необходима помощь" : isEn ? "Common Surgeries" : isTr ? "Sık Karşılaşılan Uygulama Alanları" : isAr ? "أبرز الحالات ومجالات التطبيق" : "Häufige Einsatzbereiche",
-        indications: isRu
+        indicationsTitle: isUz ? "Kimlarga yordam zarur" : isRu ? "Кому необходима помощь" : isEn ? "Common Surgeries" : isTr ? "Sık Karşılaşılan Uygulama Alanları" : isAr ? "أبرز الحالات ومجالات التطبيق" : "Häufige Einsatzbereiche",
+        indications: isUz
+          ? [
+              "Bo'g'imlarni endoprotezlashdan keyingi holat (chanoq-son, tizza)",
+              "Qorin bo'shlig'i va ichki a'zolar operatsiyalaridan keyin (visseral jarrohlik)",
+              "Umurtqa pog'onasi va disklar bo'yicha neyrojarrohlik amaliyotlaridan so'ng",
+              "Qon tomir va kardiojarrohlik amaliyotlaridan keyingi holat",
+              "Keng qamrovli onkologik rezektsiyalardan keyingi bemorlar",
+              "Drenajlar, kateterlar yoki choklar bilan shifoxonadan chiqarilgan bemorlar",
+            ]
+          : isRu
           ? [
               "Состояние после эндопротезирования суставов (тазобедренный, коленный)",
               "После операций на брюшной полости и внутренних органах (висцеральная хирургия)",
@@ -785,8 +917,17 @@ export function PflegePageComponent({ locale = "de" }: Props) {
               "Komplexe onkologische Operationen mit erhöhtem Pflegebedarf",
               "Entlassung mit chirurgischen Drainagen, Portkathetern oder Wundnähten",
             ],
-        scopeTitle: isRu ? "Послеоперационные мероприятия" : isEn ? "Clinical Care Protocol" : isTr ? "Hemşirelik ve Bakım Hizmetleri" : isAr ? "الخدمات والتدخلات التمريضية" : "Pflegerische Leistungen",
-        scopeItems: isRu
+        scopeTitle: isUz ? "Operatsiyadan keyingi choralar" : isRu ? "Послеоперационные мероприятия" : isEn ? "Clinical Care Protocol" : isTr ? "Hemşirelik ve Bakım Hizmetleri" : isAr ? "الخدمات والتدخلات التمريضية" : "Pflegerische Leistungen",
+        scopeItems: isUz
+          ? [
+              "Jarrohlik choklarini nazorat qilish, shifokor ko'rsatmasi bo'yicha qisqich va choklarni olish",
+              "Drenajlar bo'yicha ajralmalar hajmi va xususiyatini monitoring qilish",
+              "Og'riqni nazorat qilish va og'riqsizlantiruvchi dori vositalarini xavfsiz berish",
+              "Tromboz profilaktikasi (antikoagulyant inyeksiyalari, kompressiya paypoqlari)",
+              "Erta mobilizatsiya va NabiOta Reha ambulator fizioterapiyasi bilan muvofiqlashtirish",
+              "Yallig'lanish belgilari paydo bo'lganda navbatchi shifokor bilan 24/7 aloqa",
+            ]
+          : isRu
           ? [
               "Контроль хирургических швов, снятие скоб и швов по назначению врача",
               "Мониторинг объема и характера отделяемого по дренажам",
@@ -830,8 +971,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
               "Frühmobilisation im häuslichen Umfeld in Kooperation mit der NabiOta Rehabilitation",
               "24/7 Rufbereitschaft und sofortige Rücksprache mit den Operateuren bei Auffälligkeiten",
             ],
-        billingTitle: isRu ? "Покрытие расходов" : isEn ? "Billing & Coverage" : "Kostenträger & Anspruch",
-        billingText: isRu
+        billingTitle: isUz ? "Xarajatlarni qoplash" : isRu ? "Покрытие расходов" : isEn ? "Billing & Coverage" : "Kostenträger & Anspruch",
+        billingText: isUz
+          ? "Tibbiy sug'urta kassasi tomonidan § 37 1 yoki 2-bandi SGB V (shifoxonadan keyingi parvarish) yoxud § 38 SGB V (vaqtincha mehnatga layoqatsizlikda uy ro'zg'origa yordam) bo'yicha moliyalashtiriladi. Yo'llanma chiqarilishdan oldin klinika tomonidan rasmiylashtiriladi."
+          : isRu
           ? "Финансируется кассой медицинского страхования по § 37 Abs. 1 или 2 SGB V (послебольничный уход) либо по § 38 SGB V (помощь по хозяйству при временной нетрудоспособности). Направление оформляет клиника перед выпиской."
           : isEn
           ? "Covered by statutory and private health insurance under § 37 SGB V (transitional hospital care) or § 38 SGB V (household assistance during acute recovery). Hospital social services initiate the prescription prior to discharge."
@@ -840,8 +983,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تُغطى التكاليف عبر رعاية ما بعد المستشفى وفق § 37 SGB V والمساعدة المنزلية وفق § 38 SGB V. تصدر الوصفة مباشرة ضمن خدمة إدارة الخروج من المستشفى."
           : "Die Kosten werden über die Krankenhausnachsorge gemäß § 37 Abs. 1 oder Abs. 2 SGB V sowie bei Bedarf über Haushaltshilfe nach § 38 SGB V abgedeckt. Die Verordnung wird bereits im Rahmen des Entlassmanagements im Krankenhaus ausgestellt.",
-        qualityTitle: isRu ? "Координация с хирургами" : isEn ? "Surgical Coordination" : isTr ? "Holding İçi Entegre Ağ" : isAr ? "سلسلة متكاملة داخل منظومة المجموعة" : "Nahtlose Verbundkette",
-        qualityText: isRu
+        qualityTitle: isUz ? "Jarrohlar bilan muvofiqlashtirish" : isRu ? "Координация с хирургами" : isEn ? "Surgical Coordination" : isTr ? "Holding İçi Entegre Ağ" : isAr ? "سلسلة متكاملة داخل منظومة المجموعة" : "Nahtlose Verbundkette",
+        qualityText: isUz
+          ? "NabiOta yagona ekotizimi tufayli operatsiya jarayoni va jarroh tavsiyalari to'g'risidagi ma'lumotlar patronaj hamshirasiga tezkor va xavfsiz tarzda uzatiladi."
+          : isRu
           ? "Благодаря единой экосистеме NabiOta информация о ходе операции и рекомендациях хирурга передается патронажной сестре мгновенно и безопасно."
           : isEn
           ? "Within the NabiOta Health Group ecosystem, surgical discharge summaries and surgeon instructions are transferred directly and securely to the visiting nurse."
@@ -850,12 +995,14 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "يضمن التنسيق الوثيق مع الأقسام الجراحية في مجموعة NabiOta انتقال كافة تفاصيل الجراحة وتوصيات الأطباء إلى خطة الرعاية المنزلية دون أي فجوات."
           : "Die enge Verzahnung mit den operativen Einheiten der NabiOta-Gruppe stellt sicher, dass postoperative Besonderheiten und OP-Berichte ohne Informationsverlust in den häuslichen Pflegeplan einfließen.",
-        ctaButtonText: isRu ? "Заказать послеоперационный уход" : isEn ? "Arrange Post-Op Care" : isTr ? "Ameliyat Sonrası Bakım Talebi" : isAr ? "ترتيب رعاية ما بعد الجراحة" : "Nachsorge organisieren",
+        ctaButtonText: isUz ? "Operatsiyadan keyingi parvarishga buyurtma berish" : isRu ? "Заказать послеоперационный уход" : isEn ? "Arrange Post-Op Care" : isTr ? "Ameliyat Sonrası Bakım Talebi" : isAr ? "ترتيب رعاية ما بعد الجراحة" : "Nachsorge organisieren",
       },
     },
     {
       id: "spezialpflege",
-      badge: isRu
+      badge: isUz
+        ? "MAXSUS PARVARISH"
+        : isRu
         ? "СПЕЦИАЛЬНЫЙ УХОД"
         : isEn
         ? "SPECIALIZED NURSING"
@@ -866,7 +1013,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : "SPEZIALISIERTE BEHANDLUNG",
       image: "/images/nursing/why-choose-nurse.webp",
       iconType: "pill",
-      title: isRu
+      title: isUz
+        ? "Stomalar, kateterlar va port-tizimlar"
+        : isRu
         ? "Стомы, катетеры & порт-системы"
         : isEn
         ? "Stoma, Catheter & Port Management"
@@ -875,7 +1024,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : isAr
         ? "رعاية الفغرات، القساطر وأنظمة البورت"
         : "Stoma-, Katheter- & Portversorgung",
-      shortDesc: isRu
+      shortDesc: isUz
+        ? "Steril sharoitda stomalar, kateterlar, port-tizimlar hamda enteral va parenteral oziqlantirish bo'yicha yuqori malakali parvarish."
+        : isRu
         ? "Квалифицированный уход за стомами, катетерами, порт-системами, а также энтеральным и парентеральным питанием в стерильных условиях."
         : isEn
         ? "Expert management of artificial access routes, enteral and parenteral nutrition, and sterile port flushing routines."
@@ -885,7 +1036,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         ? "رعاية فائقة للمنافذ والمصارف الجراحية، التغذية المعوية والوريدية، وغسيل البورت في ظروف معقمة تماماً."
         : "Qualifizierte Versorgung ableitender und künstlicher Zugänge, enterale/parenterale Ernährung und Portspülungen unter sterilen Bedingungen.",
       modal: {
-        title: isRu
+        title: isUz
+          ? "Stomalar, kateterlar va port-tizimlar parvarishi"
+          : isRu
           ? "Уход за стомами, катетерами и порт-системами"
           : isEn
           ? "Specialized Stoma, Catheter & Port System Care"
@@ -894,7 +1047,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "رعاية الفغرات، القساطر وأنظمة البورت الوريدي"
           : "Stoma-, Katheter- & Portversorgung",
-        subtitle: isRu
+        subtitle: isUz
+          ? "Maksimal sterillik, ishonchlilik va infeksiyalarning oldini olish"
+          : isRu
           ? "Максимальная стерильность, надежность и предотвращение инфекций"
           : isEn
           ? "Maximum asepsis, skin protection, and catheter infection prevention"
@@ -903,7 +1058,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "أعلى درجات التعقيم وحماية الجلد والوقاية الصارمة من العدوى"
           : "Höchste Asepsis, Hautschutz und zuverlässige Infektionsprävention",
-        description: isRu
+        description: isUz
+          ? "Maxsus invaziv tizimlar (kateterlar, kalo- va urostomalar, infuzion portlar, PEG zondlari) aseptika qoidalariga qat'iy rioya qilishni talab qiladi. Bizning hamshiralarimiz ixtisoslashgan parvarish bo'yicha chuqur tayyorgarlikdan o'tgan bo'lib, bu qon oqimi infeksiyalari, teri ta'sirlanishi va asboblar buzilishining oldini oladi."
+          : isRu
           ? "Специальные инвазивные системы (катетеры, кало- и уростомы, инфузионные порты, зонды PEG) требуют строжайшего соблюдения правил асептики. Наши медсестры прошли углубленную подготовку по специализированному уходу, что позволяет предотвратить инфекции кровотока, раздражения кожи и поломку оборудования."
           : isEn
           ? "Invasive clinical access devices such as urinary catheters, enterostomies, urostomies, subcutaneous infusion ports, and PEG feeding tubes require rigorous aseptic protocols. Our specialized nurses possess advanced training to protect delicate peristomal skin, prevent bloodstream infections, and ensure smooth therapy delivery."
@@ -912,8 +1069,17 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تتطلب الأجهزة التداخلية مثل القساطر البولية، الفغرات، قساطر البورت، أو أنابيب التغذية PEG عناية دقيقة وتعقيماً مطلقاً. يتقن كادرنا التمريضي المتخصص تقنيات اللمس المعقم لمنع العدوى الخطيرة وحماية صحة المريض."
           : "Invasive Zugangs- und Ableitungssysteme – wie suprapubische Katheter, Enterostomata, Portkatheter oder PEG-Ernährungssonden – verlangen äußerste Sorgfalt und strikte Asepsis. Unsere speziell geschulten Pflegefachkräfte beherrschen die sterile Non-Touch-Technik, um lebensbedrohliche Infektionen zu vermeiden und die Lebensqualität der Betroffenen zu sichern.",
-        indicationsTitle: isRu ? "Области применения" : isEn ? "Clinical Devices & Systems" : isTr ? "Bakım ve Uygulama Odakları" : isAr ? "محاور الرعاية والتطبيقات" : "Versorgungsschwerpunkte",
-        indications: isRu
+        indicationsTitle: isUz ? "Qo'llash sohalari" : isRu ? "Области применения" : isEn ? "Clinical Devices & Systems" : isTr ? "Bakım ve Uygulama Odakları" : isAr ? "محاور الرعاية والتطبيقات" : "Versorgungsschwerpunkte",
+        indications: isUz
+          ? [
+              "Kolostoma, ileostoma va urostomalar (vaqtinchalik va doimiy)",
+              "Transuretral va qovuq usti (suprapubik) siydik kateterlari",
+              "Teri osti venoz port-tizimlari (kimyoterapiya, uzoq muddatli infuziyalar)",
+              "Nazogastral zondlar va gastrostomalar (PEG / PEJ) orqali enteral oziqlantirish",
+              "Uy sharoitida parenteral tomir ichiga oziqlantirish",
+              "Traxeostomali va sanatsiyaga muhtoj bemorlar",
+            ]
+          : isRu
           ? [
               "Колостомы, илеостомы и уростомы (временные и постоянные)",
               "Трансуретральные и надлобковые (супрапубические) мочевые катетеры",
@@ -957,8 +1123,17 @@ export function PflegePageComponent({ locale = "de" }: Props) {
               "Parenterale Ernährung und intravenöse Flüssigkeitssubstitution",
               "Tracheostoma-Versorgung und fachgerechte endotracheale Absaugung",
             ],
-        scopeTitle: isRu ? "План ухода и процедуры" : isEn ? "Care Interventions" : isTr ? "Hemşirelik ve Bakım Hizmetleri" : isAr ? "الخدمات والتدخلات التمريضية" : "Pflegerische Leistungen",
-        scopeItems: isRu
+        scopeTitle: isUz ? "Parvarish rejasi va muolajalar" : isRu ? "План ухода и процедуры" : isEn ? "Care Interventions" : isTr ? "Hemşirelik ve Bakım Hizmetleri" : isAr ? "الخدمات والتدخلات التمريضية" : "Pflegerische Leistungen",
+        scopeItems: isUz
+          ? [
+              "Terini himoya qilgan holda stoma plastinalari va kalopriyomniklarni aseptik almashtirish",
+              "Shifokor ko'rsatmasiga binoan siydik kateterlarini yuvish va almashtirish",
+              "Steril sharoitda maxsus Gyuber ignalari bilan port-tizimlarni punksiya qilish va yuvish",
+              "Enteral va parenteral oziqlantirish nasoslarini sozlash va nazorat qilish",
+              "Kateter bilan bog'liq siydik yo'llari infeksiyalarining (CAUTI) oldini olish",
+              "Bemor va uning oila a'zolarini mustaqil muolaja qilishga o'rgatish",
+            ]
+          : isRu
           ? [
               "Асептическая смена стомических пластин и калоприемников с защитой кожи",
               "Промывание и смена мочевых катетеров в соответствии с предписанием врача",
@@ -1002,8 +1177,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
               "Strikte Einhaltung der RKI-Präventionsempfehlungen gegen Katheter-assoziierte Infektionen",
               "Einfühlsame Anleitung und Schulung von Angehörigen für mehr Sicherheit im Alltag",
             ],
-        billingTitle: isRu ? "Страховое финансирование" : isEn ? "Reimbursement" : isTr ? "Masraf Karşılama ve Tıbbi Cihazlar" : isAr ? "الجهات الضامنة والمستلزمات الطبية" : "Kostenträger & Hilfsmittel",
-        billingText: isRu
+        billingTitle: isUz ? "Sug'urta orqali moliyalashtirish" : isRu ? "Страховое финансирование" : isEn ? "Reimbursement" : isTr ? "Masraf Karşılama ve Tıbbi Cihazlar" : isAr ? "الجهات الضامنة والمستلزمات الطبية" : "Kostenträger & Hilfsmittel",
+        billingText: isUz
+          ? "Barcha muolajalar shifokor retsepti bo'yicha tibbiy kassa (SGB V) tomonidan qoplanadi. Kerakli sarf materiallari va uskunalar NabiOta Sanitätshaus GmbH orqali kassa bilan to'g'ridan-to'g'ri hisob-kitob qilinadi."
+          : isRu
           ? "Все манипуляции покрываются больничной кассой (SGB V) по рецепту врача. Необходимые расходные материалы и аппараты поставляются через санитарный дом NabiOta Sanitätshaus GmbH с прямым расчетом с кассой."
           : isEn
           ? "Nursing interventions are covered by health insurance under SGB V. Associated consumables and equipment are supplied directly via our NabiOta Sanitätshaus GmbH medical supply unit."
@@ -1012,8 +1189,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تُغطى الإجراءات التمريضية بالكامل وفق SGB V من قبل التأمين الصحي. وتُورد المستلزمات الطبية، مجموعات القساطر، وأدوات الفغر مباشرة عبر متجر Sanitätshaus التابع للمجموعة."
           : "Die pflegerischen Maßnahmen werden vollumfänglich nach SGB V von den Krankenkassen vergütet. Die erforderlichen Hilfsmittel, Kathetersets, Stomaartikel und Ernährungsprodukte werden direkt über das NabiOta Sanitätshaus bezogen.",
-        qualityTitle: isRu ? "Инфекционный контроль" : isEn ? "Infection Control" : isTr ? "En Yüksek Hijyen Güvenliği" : isAr ? "أعلى معايير الأمان والتعقيم" : "Höchste Hygienesicherheit",
-        qualityText: isRu
+        qualityTitle: isUz ? "Infeksion nazorat" : isRu ? "Инфекционный контроль" : isEn ? "Infection Control" : isTr ? "En Yüksek Hijyen Güvenliği" : isAr ? "أعلى معايير الأمان والتعقيم" : "Höchste Hygienesicherheit",
+        qualityText: isUz
+          ? "Gospital gigiyenasi protokollariga rioya qilgan holda, faqat bir martalik steril to'plamlar va sertifikatlangan antiseptiklardan foydalanamiz."
+          : isRu
           ? "Мы используем исключительно одноразовые стерильные наборы и сертифицированные антисептики, соблюдая протоколы госпитальной гигиены."
           : isEn
           ? "We utilize strictly sterile disposable procedural packs and hospital-grade antiseptics, adhering to high-standard clinical hygiene guidelines."
@@ -1022,12 +1201,14 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "يتم التنفيذ حصرياً باستخدام أطقم معقمة ذات استخدام أحادي ووفق خطط التعقيم المعتمدة بالمستشفيات."
           : "Die Durchführung erfolgt ausnahmslos mit zertifizierten sterilen Einmal-Sets unter strikter Beachtung unserer klinikkonformen Hygienepläne.",
-        ctaButtonText: isRu ? "Консультация по катетерам и стомам" : isEn ? "Request Specialist Nursing" : isTr ? "Özel Bakım Hizmeti Talebi" : isAr ? "طلب رعاية تمريضية متخصصة" : "Spezialpflege anfordern",
+        ctaButtonText: isUz ? "Kateter va stomalar bo'yicha maslahat" : isRu ? "Консультация по катетерам и стомам" : isEn ? "Request Specialist Nursing" : isTr ? "Özel Bakım Hizmeti Talebi" : isAr ? "طلب رعاية تمريضية متخصصة" : "Spezialpflege anfordern",
       },
     },
     {
       id: "beratung-entlastung",
-      badge: isRu
+      badge: isUz
+        ? "§ 37.3 SGB XI • YENGILLATISH"
+        : isRu
         ? "§ 37.3 SGB XI • РАЗГРУЗКА"
         : isEn
         ? "§ 37.3 SGB XI • COUNSELING"
@@ -1038,7 +1219,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : "§ 37.3 SGB XI & ENTLASTUNG",
       image: "/images/nursing/hero-nurse.webp",
       iconType: "users",
-      title: isRu
+      title: isUz
+        ? "Maslahatlar, profilaktika va yaqinlarni qo'llab-quvvatlash"
+        : isRu
         ? "Консультации, профилактика & разгрузка близких"
         : isEn
         ? "Care Counseling, Prophylaxis & Respite"
@@ -1047,7 +1230,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : isAr
         ? "استشارات الرعاية، الوقاية ودعم وتخفيف العبء عن الأسرة"
         : "Pflegeberatung, Prophylaxen & Angehörigenentlastung",
-      shortDesc: isRu
+      shortDesc: isUz
+        ? "§ 37.3 SGB XI bo'yicha majburiy maslahatlar, dekubitus va yiqilishlar profilaktikasi, qarindoshlarni o'rgatish va vaqtinchalik o'rinbosar parvarish."
+        : isRu
         ? "Обязательные консультации по § 37.3 SGB XI, профилактика пролежней и падений, обучение родственников и временный замещающий уход."
         : isEn
         ? "Mandatory § 37.3 SGB XI counseling visits, fall and pressure injury prevention, caregiver coaching, and hourly respite care."
@@ -1057,7 +1242,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         ? "زيارات الاستشارة القانونية الإلزامية (§ 37.3 SGB XI)، الوقاية من السقوط وقرح الفراش، تدريب الأسرة، والرعاية البديلة بالساعة."
         : "Gesetzliche Beratungseinsätze (§ 37 Abs. 3 SGB XI), Sturz- und Dekubitusprophylaxe, Anleitung Angehöriger sowie stundenweise Entlastung.",
       modal: {
-        title: isRu
+        title: isUz
+          ? "Maslahatlar, profilaktika va qarindoshlarni qo'llab-quvvatlash"
+          : isRu
           ? "Консультации, профилактика и поддержка родственников"
           : isEn
           ? "Care Counseling (§ 37.3 SGB XI), Prevention & Respite Care"
@@ -1066,7 +1253,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "استشارات الرعاية (§ 37.3 SGB XI)، الوقاية وتخفيف العبء الأسري"
           : "Pflegeberatung (§ 37 Abs. 3 SGB XI), Prophylaxen & Entlastung",
-        subtitle: isRu
+        subtitle: isUz
+          ? "Yaqinlarni charchoqdan asrash va sug'urta kassalari uchun rasmiy hisobotlar"
+          : isRu
           ? "Защита близких от выгорания и официальные отчеты для больничных касс"
           : isEn
           ? "Preventing caregiver burnout and official statutory counseling for insurance funds"
@@ -1075,7 +1264,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تخفيف ملموس للعبء عن كاهل الأسرة ومرافقة قانونية واجتماعية موثوقة"
           : "Spürbare Entlastung für Angehörige und verlässliche Begleitung im Sozialrecht",
-        description: isRu
+        description: isUz
+          ? "Yaqin insonni parvarish qilish ulkan ruhiy va jismoniy kuch talab etadi. NabiOta HomeCare nafaqat § 37.3 SGB XI bo'yicha kassa uchun majburiy tasdiqlash hujjatlarini rasmiylashtiradi, balki qarindoshlarga to'g'ri parvarish usullarini o'rgatadi, yuqoriroq Pflegegrad olishda ko'maklashadi va dam olishingiz zarur bo'lganda vaqtinchalik o'rinbosar parvarishni (Verhinderungspflege) tashkil etadi."
+          : isRu
           ? "Уход за близким человеком требует колоссальных душевных и физических сил. NabiOta HomeCare не только оформляет обязательные для кассы подтверждения по § 37.3 SGB XI, но и практически обучает родственников правильным приемам ухода, помогает получить более высокий Pflegegrad и организует временную замену (Verhinderungspflege), когда вам нужен отдых."
           : isEn
           ? "Caring for a loved one is emotionally and physically demanding. NabiOta HomeCare not only conducts mandatory statutory counseling visits under § 37.3 SGB XI to preserve cash benefits, but also trains family members in ergonomic techniques, helps adjust Pflegegrad ratings, and provides respite care (§ 39/45b SGB XI) when caregivers need a well-deserved break."
@@ -1085,7 +1276,16 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           ? "تتطلب رعاية أحد أفراد الأسرة جهداً بدنياً ونفسياً هائلاً. تنفذ NabiOta HomeCare الزيارات الاستشارية الإلزامية وفق § 37.3 SGB XI لضمان استمرار بدل الرعاية، وتساعد في طلبات رفع درجة الرعاية، وتقدم الرعاية البديلة المؤقتة (§ 39) لتوفير قسط من الراحة للأسرة."
           : "Die Pflege eines Angehörigen erfordert enorme körperliche und seelische Kraft. Die NabiOta HomeCare führt die gesetzlich vorgeschriebenen Beratungseinsätze nach § 37 Abs. 3 SGB XI durch, sichert Ihren Anspruch auf Pflegegeld und unterstützt bei Höherstufungsanträgen. Zudem entlasten wir pflegende Angehörige durch stundenweise Verhinderungspflege (§ 39 SGB XI) und gezielte Entlastungsangebote (§ 45b SGB XI).",
         indicationsTitle: isRu ? "Кому адресована программа" : isEn ? "Who Needs This" : isTr ? "Bu Desteğin Devreye Girdiği Durumlar" : isAr ? "متى تحتاج الأسرة إلى هذا الدعم" : "Wann diese Unterstützung greift",
-        indications: isRu
+        indications: isUz
+          ? [
+              "Kassaga majburiy hisobot topshirishi kerak bo'lgan Pflegegeld oluvchilar",
+              "Hissiy yoki jismoniy toliqishni his qilayotgan parvarishlovchi qarindoshlar",
+              "Tibbiy-ijtimoiy ekspertizaga (MD / Pflegegrad) tayyorlanayotgan oilalar",
+              "Yiqilish yoki yotoq yarasi paydo bo'lish xavfi yuqori bo'lgan bemorlar",
+              "Parvarishlovchi qarindoshning ta'tili, kasalligi yoki shoshilinch ishlari davri",
+              "Xonadonni nogironlar aravachasiga moslashtirish zarurati bo'lgan holatlar",
+            ]
+          : isRu
           ? [
               "Получатели пособия по уходу (Pflegegeld) для обязательного отчета в кассу",
               "Родственники, испытывающие эмоциональное или физическое истощение",
@@ -1129,8 +1329,17 @@ export function PflegePageComponent({ locale = "de" }: Props) {
               "Bedarf an praktischer Anleitung ergonomischer Hebetechniken im Alltag",
               "Beratung zu wohnumfeldverbessernden Maßnahmen und Pflegehilfsmitteln",
             ],
-        scopeTitle: isRu ? "Наши услуги и помощь" : isEn ? "Services Included" : isTr ? "Hizmet Kapsamı ve Destekler" : isAr ? "نطاق الخدمات والمساندة المقدمة" : "Leistungsumfang & Entlastung",
-        scopeItems: isRu
+        scopeTitle: isUz ? "Xizmatlarimiz va yordamimiz" : isRu ? "Наши услуги и помощь" : isEn ? "Services Included" : isTr ? "Hizmet Kapsamı ve Destekler" : isAr ? "نطاق الخدمات والمساندة المقدمة" : "Leistungsumfang & Entlastung",
+        scopeItems: isUz
+          ? [
+              "§ 37.3 SGB XI bo'yicha rasmiy tashriflarni o'tkazish va hisobotni kassaga yuborish",
+              "Tibbiy xizmat eksperti (MD/MDK) tashrifi chog'ida hamrohlik qilish",
+              "Yaqinlar uchun amaliy mashg'ulotlar: xavfsiz ko'chirish, cho'miltirish, jarohatlar profilaktikasi",
+              "Ta'til yoki kasallik vaqtingizda o'rinbosar parvarish (§ 39 SGB XI)",
+              "§ 45b SGB XI bo'yicha uy ro'zg'origa yordam va hamrohlik xizmatlari (kassadan 131 €/oy)",
+              "Yiqilish xavfini baholash va NabiOta Sanitätshaus bilan antidekubitus tizimlarini tanlash",
+            ]
+          : isRu
           ? [
               "Проведение официальных визитов по § 37.3 SGB XI с отправкой отчета в кассу",
               "Сопровождение при визите эксперта Медицинской службы (MD/MDK)",
@@ -1174,8 +1383,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
               "Zusätzliche Betreuungs- und Entlastungsleistungen nach § 45b SGB XI (z.B. Begleitung, Haushalt)",
               "Sturz- und Dekubitus-Screening sowie Bereitstellung von Spezialhilfsmitteln via Sanitätshaus",
             ],
-        billingTitle: isRu ? "100% оплата кассой" : isEn ? "No Out-of-Pocket Cost" : isTr ? "Masraf Karşılama ve Yasal Bütçeler" : isAr ? "تغطية التكاليف والميزانيات القانونية" : "Kostenübernahme & Budgets",
-        billingText: isRu
+        billingTitle: isUz ? "Kassa tomonidan 100% to'lanadi" : isRu ? "100% оплата кассой" : isEn ? "No Out-of-Pocket Cost" : isTr ? "Masraf Karşılama ve Yasal Bütçeler" : isAr ? "تغطية التكاليف والميزانيات القانونية" : "Kostenübernahme & Budgets",
+        billingText: isUz
+          ? "§ 37.3 SGB XI bo'yicha tashriflar parvarish kassasi tomonidan bemor tomonidan hech qanday qo'shimcha to'lovlarsiz 100% to'lanadi. O'rinbosar parvarish (§ 39: 1.612 € gacha) va yengillatish byudjetlari (§ 45b: oyiga 131 €) davlat tomonidan moliyalashtiriladi."
+          : isRu
           ? "Визиты по § 37.3 SGB XI на 100% оплачиваются кассой по уходу без каких-либо доплат со стороны пациента. Бюджеты на замещающий уход (§ 39: до 1.612 €) и разгрузку (§ 45b: 131 €/мес) финансируются государством."
           : isEn
           ? "Statutory § 37.3 SGB XI counseling visits are 100% covered by long-term care insurance with zero out-of-pocket costs. Annual respite budgets (§ 39) and monthly relief allowances (§ 45b) can be fully utilized."
@@ -1184,8 +1395,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "زيارات الاستشارة القانونية وفق § 37.3 SGB XI مجانية تماماً بالنسبة لكم وتُسوى مباشرة مع الصندوق. كما يحق لكم الاستفادة الكاملة من ميزانيات الرعاية البديلة (حتى 1.612 € سنوياً) ومبلغ تخفيف العبء (131 € شهرياً)."
           : "Die gesetzlichen Beratungseinsätze nach § 37 Abs. 3 SGB XI sind für Sie kostenfrei und werden direkt mit der Pflegekasse abgerechnet. Auch die Budgets für Verhinderungspflege (bis zu 1.612 €/Jahr) und der Entlastungsbetrag (131 €/Monat) stehen Ihnen gesetzlich zu.",
-        qualityTitle: isRu ? "Сертифицированные консультанты" : isEn ? "Licensed Care Advisors" : isTr ? "Sertifikalı Bakım Danışmanları" : isAr ? "مستشارو رعاية معتمدون" : "Zertifizierte Pflegeberater",
-        qualityText: isRu
+        qualityTitle: isUz ? "Sertifikatlangan maslahatchilar" : isRu ? "Сертифицированные консультанты" : isEn ? "Licensed Care Advisors" : isTr ? "Sertifikalı Bakım Danışmanları" : isAr ? "مستشارو رعاية معتمدون" : "Zertifizierte Pflegeberater",
+        qualityText: isUz
+          ? "Maslahatlarni Germaniya ijtimoiy huquqini chuqur biladigan va boy amaliy tajribaga ega bo'lgan diplomli parvarish mutaxassislari o'tkazadilar."
+          : isRu
           ? "Консультации проводят дипломированные эксперты по уходу с глубоким знанием немецкого социального права и богатым практическим опытом."
           : isEn
           ? "Counseling is conducted by accredited eldercare specialists with comprehensive mastery of German social insurance regulations."
@@ -1194,7 +1407,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "يحمل مستشارونا مؤهلات إضافية معتمدة وفق § 7a SGB XI ويقدمون مشورتهم بأسلوب إنساني رفيع وحلول عملية."
           : "Unsere Pflegeberater verfügen über anerkannte Zusatzqualifikationen nach § 7a SGB XI und beraten Sie empathisch, kompetent und lösungsorientiert.",
-        ctaButtonText: isRu ? "Записаться на консультацию (§ 37.3)" : isEn ? "Schedule § 37.3 Visit" : isTr ? "Danışmanlık Ziyareti Talebi (§ 37.3)" : isAr ? "طلب زيارة استشارية (§ 37.3)" : "Beratungseinsatz anfordern",
+        ctaButtonText: isUz ? "Maslahatga yozilish (§ 37.3)" : isRu ? "Записаться на консультацию (§ 37.3)" : isEn ? "Schedule § 37.3 Visit" : isTr ? "Danışmanlık Ziyareti Talebi (§ 37.3)" : isAr ? "طلب زيارة استشارية (§ 37.3)" : "Beratungseinsatz anfordern",
       },
     },
   ];
@@ -1203,7 +1416,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
   const sanitaetshausData: CareServiceModalData[] = [
     {
       id: "orthopaedie-bandagen",
-      badge: isRu
+      badge: isUz
+        ? "§§ 126, 127 SGB V • HUNARMANDLIK PALATASI"
+        : isRu
         ? "§§ 126, 127 SGB V • РЕМЕСЛЕННАЯ ПАЛАТА"
         : isEn
         ? "§§ 126, 127 SGB V • CRAFTS GUILD"
@@ -1214,7 +1429,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : "§§ 126, 127 SGB V • HANDWERKSROLLE",
       image: "/images/nursing/stage-postsurgical.webp",
       iconType: "accessibility",
-      title: isRu
+      title: isUz
+        ? "Ortopedik ta'minot va bandajlar"
+        : isRu
         ? "Ортопедическое обеспечение и бандажи"
         : isEn
         ? "Orthopedic Braces & Custom Bandages"
@@ -1223,7 +1440,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : isAr
         ? "الأجهزة التعويضية والضمادات التقويمية"
         : "Orthopädische Hilfsmittel & Bandagen",
-      shortDesc: isRu
+      shortDesc: isUz
+        ? "Ortezlar, bo'g'im bandajlari, tayanch korsetlari va kompressiya trikotajini (I–IV sinf) individual tanlash va tayyorlash."
+        : isRu
         ? "Индивидуальный подбор и изготовление ортезов, суставных бандажей, поддерживающих корсетов и компрессионного трикотажа (I–IV класс)."
         : isEn
         ? "Custom-fitted orthoses, dynamic joint braces, spinal support corsets, and medical compression garments (classes I–IV)."
@@ -1233,7 +1452,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         ? "جبائر وتقويمات مخصصة، دعامات المفاصل الوظيفية، مشدات الظهر الداعمة، والجوارب الضاغطة الطبية (الفئات I-IV)."
         : "Maßgefertigte Orthesen, funktionelle Gelenkbandagen, Stützkorsetts und medizinische Kompressionsversorgung (Klassen I–IV).",
       modal: {
-        title: isRu
+        title: isUz
+          ? "NabiOta Sanitätshaus: Ortopedik ta'minot"
+          : isRu
           ? "NabiOta Sanitätshaus: Ортопедическое обеспечение"
           : isEn
           ? "NabiOta Medical Supplies: Orthopedic Appliances"
@@ -1242,7 +1463,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "NabiOta Sanitätshaus: الأجهزة التعويضية والتجهيزات التقويمية"
           : "NabiOta Sanitätshaus: Orthopädische Versorgung",
-        subtitle: isRu
+        subtitle: isUz
+          ? "Aniq biomexanik barqarorlashtirish va funksiyalarni tiklash"
+          : isRu
           ? "Точная биомеханическая стабилизация и восстановление функций"
           : isEn
           ? "Precision Biomechanical Stabilization & Functional Recovery"
@@ -1251,7 +1474,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تثبيت ميكانيكي حيوي دقيق واستعادة وظائف الحركة"
           : "Präzise biomechanische Stabilisierung und Funktionssicherung",
-        description: isRu
+        description: isUz
+          ? "NabiOta Sanitätshaus GmbH ortopediya ustaxonasi ilg'or hunarmandlik mahoratini tibbiy standartlar bilan birlashtiradi. Biz bo'g'imlarni yengillatish, qad-qomatni to'g'rilash va operatsiyadan keyingi himoya uchun ortopedik mahsulotlarni ishlab chiqaramiz va individual moslashtiramiz."
+          : isRu
           ? "Ортопедическая мастерская NabiOta Sanitätshaus GmbH сочетает передовое ремесленное мастерство с медицинскими стандартами. Мы производим и индивидуально подгоняем ортопедические изделия для разгрузки суставов, коррекции осанки и постоперационной защиты."
           : isEn
           ? "The certified orthopedic workshop of NabiOta Sanitätshaus GmbH unites traditional master craftsmanship with clinical precision. We configure and customize orthopedic appliances to relieve joint stress, correct alignment, and ensure safe postoperative recovery."
@@ -1260,7 +1485,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تجمع ورشة الأجهزة التعويضية المعتمدة في NabiOta Sanitätshaus GmbH بين الدقة الحرفية المتوارثة وأحدث المعايير الطبية السريرية. وفقاً للائحة الحرف والفقرات §§ 126, 127 SGB V، نقوم بتصنيع ومواءمة الأجهزة التقويمية لتخفيف الحمل عن الجهاز الحركي وتثبيته بكفاءة."
           : "Die zertifizierte orthopädietechnische Werkstatt der NabiOta Sanitätshaus GmbH verbindet handwerkliche Präzision mit modernster medizinischer Versorgung. Gemäß Handwerksordnung und §§ 126, 127 SGB V fertigen und adaptieren wir orthopädische Hilfsmittel zur gezielten Entlastung, Führung und Stabilisierung des Bewegungsapparats.",
-        indicationsTitle: isRu
+        indicationsTitle: isUz
+          ? "Tibbiy ko'rsatmalar"
+          : isRu
           ? "Медицинские показания"
           : isEn
           ? "Clinical Indications"
@@ -1269,7 +1496,14 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "دواعي الاستعمال الطبية"
           : "Medizinische Indikationen",
-        indications: isRu
+        indications: isUz
+          ? [
+              "Xochsimon paylar, menisklar va bo'g'imlar operatsiyalaridan keyingi holatlar",
+              "Yaqqol gonartroz, koksartroz va to'piq beqarorligi",
+              "Umurtqa pog'onasi deformatsiyalari va degenerativ kasalliklari (grija, skolioz)",
+              "Surunkali venoz yetishmovchilik, limfedema va tromboz profilaktikasi",
+            ]
+          : isRu
           ? [
               "Состояния после операций на крестообразных связках, менисках и суставах",
               "Выраженный гонартроз, коксартроз и нестабильность голеностопа",
@@ -1303,7 +1537,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
               "Degenerative Wirbelsäulenerkrankungen, Bandscheibenvorfälle und Skoliosen",
               "Chronisch-venöse Insuffizienz, Lymphödeme und postoperative Thromboseprophylaxe",
             ],
-        scopeTitle: isRu
+        scopeTitle: isUz
+          ? "Mahsulotlar va xizmatlar ko'lami"
+          : isRu
           ? "Спектр изделий и услуг"
           : isEn
           ? "Product & Service Scope"
@@ -1312,7 +1548,14 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "نطاق المنتجات والخدمات"
           : "Leistungsumfang & Versorgung",
-        scopeItems: isRu
+        scopeItems: isUz
+          ? [
+              "Tizza, yelka, tirsak va bilak bo'g'imlari uchun anatomik bandajlar",
+              "Bukilish burchagi sozlanadigan sharnirli qattiq va yarim qattiq ortezlar",
+              "Bel va ko'krak umurtqa sohalari uchun ixtisoslashtirilgan korsetlar",
+              "Tibbiy kompressiya trikotajini individual o'lchash va tanlash (RAL standarti)",
+            ]
+          : isRu
           ? [
               "Анатомические бандажи для коленного, плечевого, локтевого и лучезапястного суставов",
               "Шарнирные жесткие и полужесткие ортезы с регулируемым углом сгибания",
@@ -1346,7 +1589,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
               "Stabilisierende Wirbelsäulenorthesen, Rumpfkorsetts und Entlastungsbandagen",
               "Zertifizierte Maßabnahme für medizinische Rund- und Flachstrickkompression",
             ],
-        billingTitle: isRu
+        billingTitle: isUz
+          ? "Moliyalashtirish va retseptlar"
+          : isRu
           ? "Финансирование и рецепты"
           : isEn
           ? "Statutory Reimbursement"
@@ -1355,7 +1600,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "طرق الوصفة الطبية وتسوية التكاليف"
           : "Verordnungs- und Abrechnungswege",
-        billingText: isRu
+        billingText: isUz
+          ? "Barcha mahsulotlar shifokor retsepti (Muster 16) bo'yicha §§ 126, 127 SGB V ga binoan Germaniyaning barcha davlat (GKV) va xususiy (PKV) sug'urta kassalari bilan to'g'ridan-to'g'ri hisob-kitob asosida yetkazib beriladi."
+          : isRu
           ? "Все изделия поставляются по врачебному рецепту (Muster 16) с прямым расчетом со всеми государственными (GKV) и частными (PKV) страховыми кассами Германии в соответствии с §§ 126, 127 SGB V."
           : isEn
           ? "Reimbursed under statutory physician prescription (Muster 16) with direct settlement across all German public (GKV) and private (PKV) health insurers pursuant to §§ 126, 127 SGB V."
@@ -1364,7 +1611,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "يتم التوريد بموجب وصفة المستلزمات الطبية المعتمدة من الطبيب (Muster 16). بصفتنا مزود رعاية معتمد ومؤهل وفق §§ 126, 127 SGB V، نسوي النفقات مباشرة مع كافة صناديق التأمين الصحي القانونية والخاصة."
           : "Die Versorgung erfolgt auf Grundlage einer vertragsärztlichen Hilfsmittelverordnung (Muster 16). Als präqualifizierter Leistungserbringer nach §§ 126, 127 SGB V rechnen wir direkt mit allen gesetzlichen und privaten Krankenkassen ab.",
-        qualityTitle: isRu
+        qualityTitle: isUz
+          ? "Sifat standartlari"
+          : isRu
           ? "Стандарты качества"
           : isEn
           ? "Quality Standards"
@@ -1373,7 +1622,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "معايير الجودة والاعتماد"
           : "Qualitätsstandards",
-        qualityText: isRu
+        qualityText: isUz
+          ? "Hunarmandlik palatasida (Handwerksrolle) ro'yxatdan o'tganlik, EU-MDR sertifikatsiyasi va tajribali usta-ortopedlar tomonidan shaxsan kiyib ko'rsatish."
+          : isRu
           ? "Запись в ремесленной палате (Handwerksrolle), сертификация EU-MDR и персональная примерка опытными мастерами-ортопедами."
           : isEn
           ? "Registered with the German Crafts Guild (Handwerksrolle), EU-MDR compliant, and fitted by master orthopedic technicians."
@@ -1382,7 +1633,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "قيد رسمي في سجل الحرف اليدوية للأجهزة التقويمية (Handwerksrolle)، الامتثال للائحة الأوروبية للأجهزة الطبية (EU-MDR)، ومتابعة فردية من فنيين وخبراء معتمدين."
           : "Eintragung in die Handwerksrolle für Orthopädietechnik, Einhaltung der EU-Medizinprodukteverordnung (MDR) und individuelle Fachberatung durch Meister.",
-        ctaButtonText: isRu
+        ctaButtonText: isUz
+          ? "Ortopedik yordam so'rash"
+          : isRu
           ? "Запросить ортопедическую помощь"
           : isEn
           ? "Request Orthopedic Consultation"
@@ -1395,7 +1648,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
     },
     {
       id: "mobilitaet-rehatechnik",
-      badge: isRu
+      badge: isUz
+        ? "HARAKATCHANLIK • ERKIN HARAKAT"
+        : isRu
         ? "МОБИЛЬНОСТЬ • СВОБОДА ДВИЖЕНИЯ"
         : isEn
         ? "MOBILITY • INDEPENDENCE"
@@ -1406,7 +1661,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : "MOBILITÄT • SELBSTSTÄNDIGKEIT",
       image: "/images/nursing/stage-senior.webp",
       iconType: "accessibility",
-      title: isRu
+      title: isUz
+        ? "Harakatchanlik va reabilitatsiya texnikasi"
+        : isRu
         ? "Мобильность и реабилитационная техника"
         : isEn
         ? "Mobility & Rehabilitation Technology"
@@ -1415,7 +1672,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : isAr
         ? "تقنيات الحركة والتأهيل الطبي"
         : "Mobilitäts- & Rehabilitationstechnik",
-      shortDesc: isRu
+      shortDesc: isUz
+        ? "Xavfsiz harakatlanish uchun faol va palliativ nogironlar aravachalari, yengil rollatorlar, qo'ltiqtayoqlar va elektr ko'targichlar."
+        : isRu
         ? "Активные и паллиативные инвалидные коляски, легкие роллаторы, костыли и электрические подъемники для безопасного передвижения."
         : isEn
         ? "Active and multi-position wheelchairs, lightweight rollators, crutches, and patient transfer lifters for safe mobility."
@@ -1425,7 +1684,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         ? "كراسي متحركة نشطة ومخصصة للرعاية، مشايات خفيفة الوزن ومريحة (Rollator)، عكازات ورافعات كهربائية لنقل المرضى بأمان."
         : "Aktiv- und Pflegerollstühle, ergonomische Leichtgewicht-Rollatoren, Gehhilfen und elektrische Patientenlifter.",
       modal: {
-        title: isRu
+        title: isUz
+          ? "NabiOta Sanitätshaus: Harakatchanlik va reabilitatsiya texnikasi"
+          : isRu
           ? "NabiOta Sanitätshaus: Мобильность и реабилитационная техника"
           : isEn
           ? "NabiOta Medical Supplies: Mobility & Rehabilitation"
@@ -1434,7 +1695,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "NabiOta Sanitätshaus: تقنيات الحركة والتأهيل"
           : "NabiOta Sanitätshaus: Mobilitäts- & Rehatechnik",
-        subtitle: isRu
+        subtitle: isUz
+          ? "Faollikni saqlash, yiqilishlarning oldini olish va parvarishni osonlashtirish"
+          : isRu
           ? "Сохранение активности, предотвращение падений и облегчение ухода"
           : isEn
           ? "Preserving Independence, Fall Prevention & Transfer Assistance"
@@ -1443,7 +1706,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "الحفاظ على الحركة، الوقاية من السقوط وتيسير الحياة اليومية"
           : "Erhalt der Mobilität, Sturzprävention und Unterstützung im Alltag",
-        description: isRu
+        description: isUz
+          ? "Harakatlanishning cheklanishi hayotni chegaralamasligi kerak. NabiOta Sanitätshaus GmbH har bir bemorning individual anatomik va jismoniy xususiyatlariga mos keladigan harakatlanish vositalarini tanlaydi, yetkazib beradi va sozlaydi."
+          : isRu
           ? "Потеря подвижности не должна ограничивать жизнь. NabiOta Sanitätshaus GmbH подбирает, доставляет и настраивает средства передвижения под индивидуальные анатомические и физические особенности каждого пациента."
           : isEn
           ? "Mobility restrictions should never diminish quality of life. NabiOta Sanitätshaus GmbH configures, delivers, and ergonomically adapts mobility equipment to each patient's individual biomechanical requirements."
@@ -1452,7 +1717,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "محدودية الحركة لا تعني فقدان جودة الحياة. توفر NabiOta Sanitätshaus GmbH أحدث وسائل الحركة المساعدة المصممة بدقة لتناسب البنية الجسدية للمريض وبيئته المنزلية ومستوى نشاطه اليومي."
           : "Eingeschränkte Mobilität bedeutet Verlust an Lebensqualität. Die NabiOta Sanitätshaus GmbH versorgt Patienten mit modernsten Mobilitätshilfen, die exakt auf die körperliche Verfassung, die häusliche Umgebung und den individuellen Aktivitätsgrad abgestimmt werden.",
-        indicationsTitle: isRu
+        indicationsTitle: isUz
+          ? "Tibbiy ko'rsatmalar"
+          : isRu
           ? "Медицинские показания"
           : isEn
           ? "Clinical Indications"
@@ -1461,7 +1728,14 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "دواعي الاستعمال الطبية"
           : "Medizinische Indikationen",
-        indications: isRu
+        indications: isUz
+          ? [
+              "Chanoq-son va tizza bo'g'imlarini endoprotezlashdan (TEP) keyin tiklanish",
+              "Insult yoki bosh miya jarohatidan keyingi parezlar va yurish buzilishlari",
+              "Yoshga bog'liq zaiflik, ataksiya hamda uyda va ko'chada yiqilish xavfining yuqoriligi",
+              "Mushak distrofiyasi, tarqoq skleroz va Parkinson kasalligining og'ir shakllari",
+            ]
+          : isRu
           ? [
               "Восстановление после эндопротезирования тазобедренного и коленного суставов (TEP)",
               "Парезы и нарушения походки после инсульта или черепно-мозговой травмы",
@@ -1495,7 +1769,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
               "Alterstraumatologie, Gangataxie und signifikant erhöhtes Sturzrisiko",
               "Fortgeschrittene neurologische Erkrankungen (Morbus Parkinson, Multiple Sklerose)",
             ],
-        scopeTitle: isRu
+        scopeTitle: isUz
+          ? "Reabilitatsiya texnikasi ko'lami"
+          : isRu
           ? "Спектр реабилитационной техники"
           : isEn
           ? "Equipment Continuum"
@@ -1504,7 +1780,14 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "طيف الأجهزة المساعدة المتاحة"
           : "Hilfsmittelspektrum",
-        scopeItems: isRu
+        scopeItems: isUz
+          ? [
+              "Individual sozlanadigan xona ichi va ko'cha uchun yengillashtirilgan aravachalar",
+              "Orqa suyanchig'i egiluvchan va bosh tayanchiga ega ko'p funksiyali aravachalar",
+              "Tormozlar, sumka va yumshoq o'rindiqqa ega alyuminiy va uglerod tolali rollatorlar",
+              "Tirsakli qo'ltiqtayoqlar, xodunoklar, aylanma yostiqlar va elektr ko'targichlar",
+            ]
+          : isRu
           ? [
               "Комнатные и уличные облегченные коляски с индивидуальной регулировкой",
               "Многофункциональные кресла-коляски с функцией наклона спинки и подголовником",
@@ -1538,7 +1821,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
               "Ergonomische Leichtgewicht-Rollatoren mit Sitznetz, Tasche und Doppelfeststellbremse",
               "Unterarmgehstützen, Vierfuß-Gehhilfen, Drehscheiben und elektrische Patientenlifter",
             ],
-        billingTitle: isRu
+        billingTitle: isUz
+          ? "Kassalar to'lovi va yetkazib berish"
+          : isRu
           ? "Оплата кассами и доставка"
           : isEn
           ? "Insurance Settlement"
@@ -1547,7 +1832,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تغطية التكاليف والتوصيل المنزلي"
           : "Kostenübernahme & Lieferung",
-        billingText: isRu
+        billingText: isUz
+          ? "Tibbiy kassalar (SGB V) tomonidan moliyalashtiriladi. Biz xarajat smetasini tasdiqlashni (Kostenvoranschlag), uyga bepul yetkazib berishni va xavfsizlik bo'yicha amaliy ko'rsatmalarni o'z zimmamizga olamiz."
+          : isRu
           ? "Финансируется медицинскими кассами (SGB V). Мы берем на себя оформление согласований (Kostenvoranschlag), бесплатную доставку на дом и практический инструктаж по безопасности."
           : isEn
           ? "Covered under German statutory health insurance (SGB V). We handle all pre-authorizations (Kostenvoranschlag), home delivery, and safe usage training."
@@ -1556,7 +1843,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "يتحمل التأمين الصحي القانوني أو الخاص التكاليف بعد الموافقة على عرض السعر (Kostenvoranschlag). نتولى جميع إجراءات التقديم والتسوية، والتوصيل المجاني إلى المنزل مع التدريب العملي على الاستخدام الآمن."
           : "Die Kosten werden nach Bewilligung des Kostenvoranschlags durch die gesetzliche oder private Krankenversicherung getragen. Wir übernehmen die gesamte Einreichung, die kostenfreie Anlieferung nach Hause und die ergonomische Einweisung.",
-        qualityTitle: isRu
+        qualityTitle: isUz
+          ? "Xizmat ko'rsatish va xavfsizlik"
+          : isRu
           ? "Сервис и безопасность"
           : isEn
           ? "Safety & Maintenance"
@@ -1565,7 +1854,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "السلامة والصيانة الفنية"
           : "Sicherheit & Wartung",
-        qualityText: isRu
+        qualityText: isUz
+          ? "Muntazam texnik ko'rik (STK), ta'mirlash, eskirgan qismlarni almashtirish va uskunalarni sanitariya ishlovi."
+          : isRu
           ? "Регулярный технический осмотр (STK), ремонт, замена быстроизнашивающихся деталей и санитарная обработка оборудования."
           : isEn
           ? "Safety inspections (STK), technical servicing, spare parts warranty, and certified hygienic preparation."
@@ -1574,7 +1865,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "فحوصات سلامة دورية معتمدة (STK)، خدمة صيانة وإصلاح متنقلة، وتجهيز صحي وتعقيم معتمد للأجهزة."
           : "Regelmäßige sicherheitstechnische Kontrollen (STK), mobiler Reparaturservice und zertifizierte hygienische Wiederaufbereitung.",
-        ctaButtonText: isRu
+        ctaButtonText: isUz
+          ? "Aravacha yoki rollator tanlash"
+          : isRu
           ? "Подобрать коляску или роллатор"
           : isEn
           ? "Inquire Mobility Aid"
@@ -1587,7 +1880,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
     },
     {
       id: "haeusliche-betten",
-      badge: isRu
+      badge: isUz
+        ? "SGB XI & SGB V • UYDA PARVARISH"
+        : isRu
         ? "SGB XI & SGB V • УХОД НА ДОМУ"
         : isEn
         ? "SGB XI & SGB V • HOME CARE BEDS"
@@ -1598,7 +1893,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : "SGB XI & SGB V • PFLEGEBETTEN",
       image: "/images/nursing/stage-rehab.webp",
       iconType: "home",
-      title: isRu
+      title: isUz
+        ? "Funksional krovatlar va parvarish jihozlari"
+        : isRu
         ? "Функциональные кровати и оснащение для ухода"
         : isEn
         ? "Medical Care Beds & Home Ergonomics"
@@ -1607,7 +1904,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : isAr
         ? "أسرة الرعاية وتجهيزات المنزل الطبية"
         : "Häusliche Pflege- & Bettenausstattung",
-      shortDesc: isRu
+      shortDesc: isUz
+        ? "Elektr uzatmali tibbiy funksional krovatlar, antidekubitus matraslari, ko'targichlar va sanuzel jihozlari."
+        : isRu
         ? "Медицинские функциональные кровати с электроприводом, противопролежневые матрасы, подъемники и оснащение санузлов."
         : isEn
         ? "Electric profiling medical care beds, dynamic pressure-relieving mattresses, bathroom lifters, and safety rails."
@@ -1617,7 +1916,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         ? "أسرة رعاية كهربائية متعددة الأوضاع، مراتب وقاية وعلاج قرح الفراش، رافعات مساعدة للمريض وتجهيزات حمام خالية من العوائق."
         : "Elektrisch verstellbare Pflegebetten, Antidekubitus-Matratzen, Patientenaufrichter und barrierefreie Hygienehilfen.",
       modal: {
-        title: isRu
+        title: isUz
+          ? "NabiOta Sanitätshaus: Funksional krovatlar va uyda parvarish"
+          : isRu
           ? "NabiOta Sanitätshaus: Функциональные кровати и уход на дому"
           : isEn
           ? "NabiOta Medical Supplies: Specialized Care Beds"
@@ -1626,7 +1927,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "NabiOta Sanitätshaus: أسرة الرعاية وتكييف بيئة المعيشة"
           : "NabiOta Sanitätshaus: Pflegebetten & Wohnraumanpassung",
-        subtitle: isRu
+        subtitle: isUz
+          ? "Uy sharoitida ergonomika, xavfsizlik va yotoq yaralaridan himoya"
+          : isRu
           ? "Эргономика, безопасность и защита от пролежней в домашних условиях"
           : isEn
           ? "Clinical Ergonomics, Safety, and Advanced Pressure Injury Prevention"
@@ -1635,7 +1938,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "ظروف عمل مريحة ومريحة وتوفير أقصى درجات الراحة للمريض"
           : "Ergonomische Arbeitsbedingungen und maximaler Liegekomfort",
-        description: isRu
+        description: isUz
+          ? "Sifatli parvarishni to'g'ri jihozlarsiz tasavvur qilib bo'lmaydi. NabiOta Sanitätshaus elektr ko'p funksiyali krovatlarni tezkor o'rnatadi, yotoq yarasi xavfiga mos matraslarni tanlaydi va maksimal xavfsizlik uchun yuvinish xonalarini jihozlaydi."
+          : isRu
           ? "Качественный уход невозможен без правильного оборудования. NabiOta Sanitätshaus оперативно устанавливает электрические многофункциональные кровати, подбирает матрасы под степень риска пролежней и оснащает санузлы для максимальной безопасности."
           : isEn
           ? "Dignified home care requires ergonomic medical infrastructure. NabiOta Sanitätshaus swiftly installs electric care beds, determines pressure mattress requirements to prevent ulcers, and adapts bathroom facilities for patient safety."
@@ -1644,7 +1949,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "يوفر سرير الرعاية المناسب راحة كبرى للمريض والأسرة وفريق التمريض المنزلي على حد سواء. نقوم بتوريد وتركيب أسرة رعاية قابلة للتعديل كهربائياً، وأنظمة متطورة مضادة لقرح الفراش، ومستلزمات صحية خالية من العوائق مباشرة في منزلكم."
           : "Ein bedarfsgerechtes Pflegebett entlastet pflegende Angehörige und ambulante Pflegekräfte gleichermaßen. Wir liefern und montieren elektrisch verstellbare Pflegebetten, innovative Antidekubitus-Systeme sowie barrierefreie Sanitärhilfen direkt vor Ort.",
-        indicationsTitle: isRu
+        indicationsTitle: isUz
+          ? "Tibbiy ko'rsatmalar"
+          : isRu
           ? "Медицинские показания"
           : isEn
           ? "Clinical Indications"
@@ -1653,7 +1960,14 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "دواعي الاستعمال الطبية"
           : "Medizinische Indikationen",
-        indications: isRu
+        indications: isUz
+          ? [
+              "Og'ir kasalliklarda uzoq muddatli yoki doimiy yotoq tartibi",
+              "Yotoq yaralari paydo bo'lish xavfining yuqoriligi yoki I–IV darajali dekubitus terapiyasi",
+              "Krovatdan mustaqil turishning qiyinligi va yon to'siqlarga bo'lgan ehtiyoj",
+              "Kundalik muolajalarni osonlashtirish uchun parvarish darajasi (Pflegegrad 1–5) belgilanishi",
+            ]
+          : isRu
           ? [
               "Длительный или постоянный постельный режим при тяжелых заболеваниях",
               "Высокий риск образования пролежней или терапия пролежней I–IV степени",
@@ -1687,7 +2001,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
               "Erschwerter selbstständiger Positionswechsel und Notwendigkeit stürzverhindernder Seitengitter",
               "Vorliegen eines Pflegegrads (PG 1–5) zur Sicherstellung der häuslichen Pflege",
             ],
-        scopeTitle: isRu
+        scopeTitle: isUz
+          ? "Uskunalar to'plami"
+          : isRu
           ? "Комплектация оборудования"
           : isEn
           ? "Equipment Continuum"
@@ -1696,7 +2012,14 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "طيف التجهيزات والمعدات"
           : "Ausstattungsspektrum",
-        scopeItems: isRu
+        scopeItems: isUz
+          ? [
+              "Balandligi, bosh va oyoq qismi elektr boshqariladigan 4 seksiyali krovatlar",
+              "Ko'tarilish shtangasi (trapeziya) va buklanuvchi himoya yon to'siqlari",
+              "O'zgaruvchan bosimli dinamik kompressor matraslar va ortopedik ko'pik",
+              "Vanna ko'targichlari, hojatxona-stullari, dush kursilari va devor tutqichlari",
+            ]
+          : isRu
           ? [
               "4-секционные кровати с электроприводом регулировки высоты, спинки и изножья",
               "Штанги-подъемники (трапеции/гусаки) и складные защитные боковые решетки",
@@ -1730,7 +2053,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
               "Dynamische Wechseldrucksysteme mit digitaler Druckanpassung sowie Weichlagerungsmatratzen",
               "Badewannenlifter, Dusch- und Toilettenstühle, Sitzerhöhungen und modulare Haltegriffe",
             ],
-        billingTitle: isRu
+        billingTitle: isUz
+          ? "Sug'urta kassasi to'lovi"
+          : isRu
           ? "Оплата страховой кассой"
           : isEn
           ? "Insurance Coverage"
@@ -1739,7 +2064,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تغطية النفقات وفق SGB XI / SGB V"
           : "Kostenübernahme nach SGB XI / SGB V",
-        billingText: isRu
+        billingText: isUz
+          ? "Parvarish darajasi (Pflegegrad) mavjud bo'lganda funksional krovat parvarish kassasi (Pflegekasse) tomonidan 10 € gacha ramziy qo'shimcha to'lov bilan (undan ham ozod bo'lish mumkin) bepul taqdim etiladi."
+          : isRu
           ? "При наличии степени ухода (Pflegegrad) функциональная кровать предоставляется бесплатно кассой ухода (Pflegekasse) с символической доплатой до 10 € (от которой можно освободиться)."
           : isEn
           ? "Funded by statutory long-term care insurance (Pflegekasse) upon approved care grade with minimal statutory co-pay (capped at 10 € unless exempt)."
@@ -1748,7 +2075,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "في حال وجود درجة رعاية (Pflegegrad)، يتكفل صندوق تأمين الرعاية (SGB XI) بتكاليف سرير الرعاية كمستلزم تقني مساعد. وتبلغ المساهمة الشخصية القانونية 10 يورو بحد أقصى ما لم يكن هناك إعفاء من المساهمة."
           : "Bei Vorliegen eines Pflegegrads übernimmt die Pflegekasse (SGB XI) die Kosten für ein Pflegebett als technisches Pflegehilfsmittel. Der gesetzliche Eigenanteil beträgt maximal 10 EUR, sofern keine Zuzahlungsbefreiung vorliegt.",
-        qualityTitle: isRu
+        qualityTitle: isUz
+          ? "O'rnatish va kafolat"
+          : isRu
           ? "Монтаж и гарантия"
           : isEn
           ? "Installation & Warranty"
@@ -1757,7 +2086,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "التركيب وخدمة الصيانة السريعة"
           : "Montage & Express-Service",
-        qualityText: isRu
+        qualityText: isUz
+          ? "Tezkor yetkazib berish, malakali texniklar tomonidan joyida professional yig'ish va zarurat tug'ilganda eski mebelni olib chiqib ketish."
+          : isRu
           ? "Экспресс-доставка, профессиональная сборка на месте квалифицированными техниками и вывоз старой мебели при необходимости."
           : isEn
           ? "Express delivery, full on-site mechanical assembly by certified technicians, and removal service."
@@ -1766,7 +2097,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تركيب احترافي في المنزل، فحص أمان كهربائي رسمي وفق لائحة DGUV 3، وإصلاح سريع لأي أعطال من خلال خدمة الطوارئ لدينا."
           : "Fachgerechte Montage vor Ort, elektrische Prüfung nach DGUV Vorschrift 3 und prompte Störungsbeseitigung im Rahmen unseres Notdienstes.",
-        ctaButtonText: isRu
+        ctaButtonText: isUz
+          ? "Krovat o'rnatishga buyurtma berish"
+          : isRu
           ? "Заказать установку кровати"
           : isEn
           ? "Request Care Bed Setup"
@@ -1779,7 +2112,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
     },
     {
       id: "wund-verbrauchsmaterial",
-      badge: isRu
+      badge: isUz
+        ? "STERIL • OYIGA 40 € BEPUL"
+        : isRu
         ? "СТЕРИЛЬНО • 40 € В МЕСЯЦ БЕСПЛАТНО"
         : isEn
         ? "STERILE LOGISTICS • €40 MONTHLY ALLOWANCE"
@@ -1790,7 +2125,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : "STERILE LOGISTIK • 40 € PFLEGEPAUSCHALE",
       image: "/images/services/wundversorgung.webp",
       iconType: "pill",
-      title: isRu
+      title: isUz
+        ? "Sarf materiallari, yaralar va stomalar"
+        : isRu
         ? "Расходные материалы, раны и стомы"
         : isEn
         ? "Wound Consumables & Ostomy Supplies"
@@ -1799,7 +2136,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : isAr
         ? "مستلزمات علاج الجروح والمواد الاستهلاكية"
         : "Wund- & Verbrauchsmaterialversorgung",
-      shortDesc: isRu
+      shortDesc: isUz
+        ? "Zamonaviy yara bog'lamalari, urologik va stomik kateterlar, dezinfeksiya va oyiga 40 € miqdoridagi bepul parvarish to'plami."
+        : isRu
         ? "Современные раневые повязки, урологические и стомические катетеры, дезинфекция и ежемесячный набор для ухода на 40 €."
         : isEn
         ? "Advanced wound dressings, ostomy and urological supplies, disinfectants, and the free €40 monthly caregiver consumable box."
@@ -1809,7 +2148,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         ? "ضمادات جروح حديثة تواكب مراحل الالتئام، مستلزمات الفغرة والقساطر والسلس البولي، وصندوق مستلزمات الرعاية الشهري المجاني بقيمة 40 يورو."
         : "Phasengerechte Wundauflagen, Stoma-, Katheter- und Inkontinenzartikel sowie die monatliche 40-EUR-Pflegehilfsmittelbox.",
       modal: {
-        title: isRu
+        title: isUz
+          ? "NabiOta Sanitätshaus: Yara va sarf materiallari"
+          : isRu
           ? "NabiOta Sanitätshaus: Раневые и расходные материалы"
           : isEn
           ? "NabiOta Medical Supplies: Wound & Medical Consumables"
@@ -1818,7 +2159,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "NabiOta Sanitätshaus: مستلزمات الجروح والمواد المستهلكة"
           : "NabiOta Sanitätshaus: Wund- & Verbrauchsmaterialien",
-        subtitle: isRu
+        subtitle: isUz
+          ? "Navbatlarsiz va retsept kechikishlarisiz steril materiallar bilan uzluksiz ta'minlash"
+          : isRu
           ? "Бесперебойное снабжение стерильными материалами без очередей и рецептурных задержек"
           : isEn
           ? "Uninterrupted Supply of Sterile Consumables and Specialized Dressing Protocols"
@@ -1827,7 +2170,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "توريد منتظم ومستمر لضمادات الجروح الحديثة بموجب الوصفات الطبية"
           : "Kontinuierliche, rezeptgestützte Belieferung mit modernen Verbandstoffen",
-        description: isRu
+        description: isUz
+          ? "Surunkali yaralar va parvarish ehtiyojlari sifatli steril vositalarning doimiy mavjud bo'lishini talab qiladi. Biz shifokorlar bilan retseptlarni muntazam muvofiqlashtiramiz va zarur yara qoplamalari, qo'lqoplar hamda gigiyena vositalarini to'g'ridan-to'g'ri xonadoningizga yetkazib beramiz."
+          : isRu
           ? "Хронические раны и потребности в уходе требуют постоянного наличия качественных стерильных средств. Мы берем на себя регулярное согласование рецептов с врачами и доставляем необходимые раневые покрытия, перчатки и средства гигиены прямо на дом."
           : isEn
           ? "Chronic wounds and daily nursing demand dependable sterile supplies. We coordinate recurring prescriptions directly with treating physicians and deliver specialized dressings, protective gloves, and disinfectants straight to your door."
@@ -1836,7 +2181,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "يتطلب علاج الجروح حسب مراحل الشفاء والرعاية الصحية التمريضية منتجات متخصصة ومعقمة. تتولى NabiOta Sanitätshaus GmbH طلب الوصفات الطبية بانتظام، والتنسيق مع الأطباء المعالجين، والتوصيل الشهري المباشر إلى باب المنزل."
           : "Eine phasengerechte Wundversorgung und hygienische Krankenpflege erfordern spezialisierte Produkte. Die NabiOta Sanitätshaus GmbH übernimmt die lückenlose Rezeptanforderung, Abstimmung mit behandelnden Ärzten und monatliche Direktbelieferung frei Haus.",
-        indicationsTitle: isRu
+        indicationsTitle: isUz
+          ? "Tibbiy ko'rsatmalar"
+          : isRu
           ? "Медицинские показания"
           : isEn
           ? "Clinical Indications"
@@ -1845,7 +2192,14 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "دواعي الاستعمال الطبية"
           : "Medizinische Indikationen",
-        indications: isRu
+        indications: isUz
+          ? [
+              "Surunkali yaralar: boldirning venoz yaralari, diabetik tovon, dekubitus",
+              "Stomali bemorlar (kolostoma, ileostoma, urostoma)",
+              "Doimiy yoki davriy siydik kateterlariga bo'lgan ehtiyoj",
+              "Parvarish paytida dezinfeksiya va himoyaga doimiy ehtiyoj (Pflegegrad 1–5)",
+            ]
+          : isRu
           ? [
               "Хронические раны: венозные язвы голени, диабетическая стопа, пролежни",
               "Пациенты со стомой (колостома, илеостома, уростома)",
@@ -1879,7 +2233,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
               "Transurethrale und suprapubische Katheterableitung sowie intermittierender Selbstkatheterismus",
               "Häusliche Pflegebedürftigkeit mit täglichem Desinfektions- und Schutzbedarf",
             ],
-        scopeTitle: isRu
+        scopeTitle: isUz
+          ? "Yetkazib berish nomenklaturasi"
+          : isRu
           ? "Номенклатура поставок"
           : isEn
           ? "Supply Continuum"
@@ -1888,7 +2244,14 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "طيف المستلزمات الطبية المتوفرة"
           : "Versorgungssortiment",
-        scopeItems: isRu
+        scopeItems: isUz
+          ? [
+              "Poliuretanli gubka bog'lamalar, alginatlar, gidrokolloidlar va kumushli qoplamalar",
+              "Bog'lash uchun steril to'plamlar, yaralarni yuvish eritmalari (poligeksanid/oktenidin)",
+              "Bir va ikki komponentli stoma xaltachalari, pastalar, himoya halqalari va kamarlar",
+              "Oylik parvarish qutisi (§ 40 SGB XI): nitril qo'lqoplar, niqoblar, choyshablar, antiseptiklar",
+            ]
+          : isRu
           ? [
               "Губчатые повязки с полиуретаном, альгинаты, гидроколлоиды и серебросодержащие покрытия",
               "Стерильные наборы для перевязок, растворы для промывания ран (полигексанид/октенидин)",
@@ -1922,7 +2285,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
               "Moderne ein- und zweiteilige Stomasysteme, Hautschutzplatten und Stomapflegeartikel",
               "Monatliche Pflegebox (§ 40 SGB XI) mit Einweghandschuhen, Bettschutzeinlagen und Desinfektionsmitteln",
             ],
-        billingTitle: isRu
+        billingTitle: isUz
+          ? "Kassa to'lovi va imtiyozlar"
+          : isRu
           ? "Оплата кассой и льготы"
           : isEn
           ? "Billing & Care Box Allowance"
@@ -1931,7 +2296,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "التسوية والمخصصات الشهرية بقيمة 40 يورو من صندوق الرعاية"
           : "Abrechnung & 40-EUR-Pflegekassenpauschale",
-        billingText: isRu
+        billingText: isUz
+          ? "Yara materiallari retsept bo'yicha tibbiy kassalar tomonidan to'lanadi (SGB V). Oyiga 40 € gacha bo'lgan gigiyenik sarf materiallari to'plami parvarish kassasi (SGB XI) tomonidan 100% bepul qoplanadi."
+          : isRu
           ? "Раневые материалы оплачиваются больничными кассами по рецепту (SGB V). Набор гигиенических расходников до 40 € в месяц оплачивается кассой ухода (SGB XI) на 100% бесплатно."
           : isEn
           ? "Specialized dressings are covered via health insurance prescription (SGB V). The €40 monthly caregiver hygiene box is 100% reimbursed by the nursing care fund (SGB XI)."
@@ -1940,7 +2307,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تغطي صناديق التأمين الصحي مستلزمات الضمادات والفغرة كخدمات موصوفة طبياً بموجب SGB V. كما يحق للمستفيدين من درجات الرعاية الحصول قانونياً على مواد استهلاكية تصل قيمتها إلى 40 يورو شهرياً (§ 40 Abs. 2 SGB XI) نسويها مباشرة دون عناء."
           : "Verbandmittel und Stomaartikel werden als ärztlich verordnete Leistungen nach SGB V von den Krankenkassen getragen. Pflegebedürftige mit Pflegegrad haben zudem gesetzlichen Anspruch auf Pflegehilfsmittel zum Verbrauch im Wert von bis zu 40 EUR monatlich (§ 40 Abs. 2 SGB XI), die wir direkt abrechnen.",
-        qualityTitle: isRu
+        qualityTitle: isUz
+          ? "Sifat nazorati"
+          : isRu
           ? "Контроль качества"
           : isEn
           ? "Clinical Quality"
@@ -1949,7 +2318,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "توثيق الجودة والمتابعة الفوتوغرافية"
           : "Qualitäts- & Fotodokumentation",
-        qualityText: isRu
+        qualityText: isUz
+          ? "Shifokorlar va NabiOta HomeCare ICW® yara mutaxassislari bilan bitish jarayonini raqamli fotofiksatsiya qilgan holda yaqin hamkorlik."
+          : isRu
           ? "Тесная координация с врачами и экспертами ICW® по ранам NabiOta HomeCare с цифровой фотофиксацией процесса заживления."
           : isEn
           ? "Tight alignment with NabiOta HomeCare ICW® wound nurses including digital photographic healing tracking."
@@ -1958,7 +2329,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تنسيق وثيق مع خبراء الجروح المعتمدين (ICW®) من NabiOta HomeCare مع توثيق مسار الشفاء بالصور الرقمية."
           : "Enge Abstimmung mit den zertifizierten ICW®-Wundexperten von NabiOta HomeCare und lückenlose Verlaufsdokumentation.",
-        ctaButtonText: isRu
+        ctaButtonText: isUz
+          ? "Materiallar / Pflegebox buyurtma qilish"
+          : isRu
           ? "Заказать материалы / Pflegebox"
           : isEn
           ? "Order Consumables / Care Box"
@@ -1973,8 +2346,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
 
   const t = {
     servicesSection: {
-      eyebrow: isRu ? "NABIOTA HOMECARE GMBH" : isEn ? "NABIOTA HOMECARE GMBH" : isTr ? "NABIOTA HOMECARE GMBH" : isAr ? "NABIOTA HOMECARE GMBH" : "NABIOTA HOMECARE GMBH",
-      title: isRu
+      eyebrow: isUz ? "NABIOTA HOMECARE GMBH" : isRu ? "NABIOTA HOMECARE GMBH" : isEn ? "NABIOTA HOMECARE GMBH" : isTr ? "NABIOTA HOMECARE GMBH" : isAr ? "NABIOTA HOMECARE GMBH" : "NABIOTA HOMECARE GMBH",
+      title: isUz
+        ? "Kompleks ambulator va patronaj xizmatlari"
+        : isRu
         ? "Комплексные амбулаторные и патронажные услуги"
         : isEn
         ? "Comprehensive Home Nursing & Care Services"
@@ -1983,7 +2358,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : isAr
         ? "نطاق خدمات شركة NabiOta HomeCare GmbH"
         : "Leistungsspektrum der NabiOta HomeCare GmbH",
-      desc: isRu
+      desc: isUz
+        ? "Biz SGB V va SGB XI bo'yicha litsenziyalangan hamshiralik xizmatlarining to'liq spektrini taklif etamiz: tibbiy muolajalar va yaralarni davolashdan tortib, g'amxo'r parvarish va yaqinlarni huquqiy qo'llab-quvvatlashgacha."
+        : isRu
         ? "Мы предлагаем полный спектр лицензированных сестринских услуг по SGB V и SGB XI: от медицинских процедур и лечения ран до заботливого ухода и юридической поддержки близких."
         : isEn
         ? "We provide an exhaustive continuum of accredited home care services under SGB V and SGB XI: from complex clinical procedures and wound healing to personal hygiene and caregiver respite."
@@ -1992,11 +2369,13 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : isAr
         ? "اكتشفوا الركائز الست لخدمات الرعاية المنزلية لدينا: من الرعاية الطبية العلاجية الموصوفة من الطبيب (SGB V) والإدارة المعتمدة للجروح (ICW®) إلى الرعاية الجسدية (SGB XI) والتخفيف الملموس عن الأسرة."
         : "Entdecken Sie die sechs tragenden Säulen unserer ambulanten Versorgung: Von ärztlich verordneter Behandlungspflege (SGB V) über zertifiziertes Wundmanagement (ICW®) bis hin zu körperbezogener Pflege (SGB XI) und spürbarer Entlastung der Angehörigen.",
-      openModalBtn: isRu ? "Подробнее о процедурах" : isEn ? "View Details" : isTr ? "Detaylar ve Endikasyonlar" : isAr ? "التفاصيل ودواعي الاستعمال" : "Details & Indikationen",
+      openModalBtn: isUz ? "Muolajalar haqida batafsil" : isRu ? "Подробнее о процедурах" : isEn ? "View Details" : isTr ? "Detaylar ve Endikasyonlar" : isAr ? "التفاصيل ودواعي الاستعمال" : "Details & Indikationen",
     },
     sanitaetshausSection: {
-      eyebrow: isRu ? "NABIOTA SANITÄTSHAUS GMBH" : isEn ? "NABIOTA SANITÄTSHAUS GMBH" : isTr ? "NABIOTA SANITÄTSHAUS GMBH" : isAr ? "NABIOTA SANITÄTSHAUS GMBH" : "NABIOTA SANITÄTSHAUS GMBH",
-      title: isRu
+      eyebrow: isUz ? "NABIOTA SANITÄTSHAUS GMBH" : isRu ? "NABIOTA SANITÄTSHAUS GMBH" : isEn ? "NABIOTA SANITÄTSHAUS GMBH" : isTr ? "NABIOTA SANITÄTSHAUS GMBH" : isAr ? "NABIOTA SANITÄTSHAUS GMBH" : "NABIOTA SANITÄTSHAUS GMBH",
+      title: isUz
+        ? "Ortopediya, reabilitatsiya va tibbiy buyumlar"
+        : isRu
         ? "Ортопедия, реабилитация и медицинские изделия"
         : isEn
         ? "Medical Supplies, Orthopedics & Rehabilitation Technology"
@@ -2005,7 +2384,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : isAr
         ? "المتجر الطبي وتوفير المستلزمات الطبية والأجهزة المعينة"
         : "Sanitätshaus & Medizinische Hilfsmittelversorgung",
-      desc: isRu
+      desc: isUz
+        ? "NabiOta Sanitätshaus GmbH bemorlarni §§ 126, 127 SGB V bo'yicha Germaniyaning barcha sug'urta kassalari bilan to'g'ridan-to'g'ri hisob-kitob asosida zamonaviy ortopedik mahsulotlar, nogironlar aravachalari, funksional krovatlar va steril bog'lov materiallari bilan ta'minlaydi."
+        : isRu
         ? "NabiOta Sanitätshaus GmbH обеспечивает пациентов современными ортопедическими изделиями, инвалидными колясками, функциональными кроватями и стерильными перевязочными материалами по §§ 126, 127 SGB V с прямым расчетом со всеми страховыми кассами Германии."
         : isEn
         ? "NabiOta Sanitätshaus GmbH provides high-grade orthopedic appliances, rehabilitation wheelchairs, specialized care beds, and sterile wound supplies pursuant to §§ 126, 127 SGB V, settling directly with all statutory and private health funds."
@@ -2014,11 +2395,13 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : isAr
         ? "تضمن NabiOta Sanitätshaus GmbH التوريد السريع والموثوق للمستلزمات الطبية، أجهزة الرعاية المساعدة والمواد الاستهلاكية وفق §§ 126, 127 SGB V. نجمع بين مهارة الأجهزة التعويضية الحرفية واللوجستيات السريعة والتسوية المباشرة."
         : "Die NabiOta Sanitätshaus GmbH garantiert eine verlässliche und schnelle Versorgung mit medizinischen Hilfsmitteln, Pflegehilfsmitteln und Verbrauchsartikeln gemäß §§ 126, 127 SGB V. Wir verbinden meisterhafte Orthopädietechnik mit patientenfreundlicher Logistik und direkter Kassenabrechnung.",
-      openModalBtn: isRu ? "Характеристики и рецепт" : isEn ? "Specs & Prescription" : isTr ? "Detaylar ve Reçete" : isAr ? "التفاصيل وطريقة الوصفة الطبية" : "Details & Verordnung",
+      openModalBtn: isUz ? "Xususiyatlar va retsept" : isRu ? "Характеристики и рецепт" : isEn ? "Specs & Prescription" : isTr ? "Detaylar ve Reçete" : isAr ? "التفاصيل وطريقة الوصفة الطبية" : "Details & Verordnung",
     },
     pharmacySection: {
-      eyebrow: isRu ? "NABIOTA PHARMACY & КЛИНИКИ" : isEn ? "NABIOTA PHARMACY & CLINIC SUPPLY" : isTr ? "NABIOTA PHARMACY & KLİNİK İLAÇ TEDARİK" : isAr ? "NABIOTA PHARMACY وتوريد الأدوية للمستشفيات" : "NABIOTA PHARMACY & KLINIKVERSORGUNG",
-      title: isRu
+      eyebrow: isUz ? "NABIOTA PHARMACY VA KLINIKALAR" : isRu ? "NABIOTA PHARMACY & КЛИНИКИ" : isEn ? "NABIOTA PHARMACY & CLINIC SUPPLY" : isTr ? "NABIOTA PHARMACY & KLİNİK İLAÇ TEDARİK" : isAr ? "NABIOTA PHARMACY وتوريد الأدوية للمستشفيات" : "NABIOTA PHARMACY & KLINIKVERSORGUNG",
+      title: isUz
+        ? "Dorixonalar to'g'risidagi qonun (§ 14 ApoG) bo'yicha dori ta'minoti konsepsiyasi"
+        : isRu
         ? "Концепция лекарственного обеспечения по закону об аптеках (§ 14 ApoG)"
         : isEn
         ? "Dedicated Hospital Medication Logistics pursuant to § 14 Apothekengesetz"
@@ -2027,7 +2410,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : isAr
         ? "توريد الأدوية للعيادات ومستشفيات المجموعة عبر NabiOta Pharmacy (§ 14 ApoG)"
         : "Arzneimittelversorgung der Kliniken & NabiOta Pharmacy (§ 14 ApoG)",
-      desc: isRu
+      desc: isUz
+        ? "Germaniya qonunchiligiga ko'ra statsionarlarni dori-darmon bilan ta'minlash davlat ruxsati berilgan rasmiy ta'minot shartnomalari (§ 14 ApoG) asosida vakolatli dorixona orqali amalga oshiriladi. NabiOta Pharmacy jamoat dorixonasi farmatsevtika qonunchiligiga to'liq muvofiq mustaqil provizor boshqaruvida faoliyat yuritadi."
+        : isRu
         ? "В соответствии с законодательством Германии снабжение стационаров медикаментами осуществляется через уполномоченную аптеку на основании официальных договоров снабжения с государственным разрешением (§ 14 ApoG). Общественная аптека NabiOta Pharmacy функционирует под независимым руководством провизора в полном соответствии с фармацевтическим правом."
         : isEn
         ? "Pursuant to German pharmaceutical legislation, inpatient medication supply is delivered via an accredited pharmacy holding statutory supply agreements approved by regional health authorities (§ 14 ApoG). NabiOta Pharmacy operates under independent licensed pharmacist directorship, ensuring strictly segregated pharmaceutical oversight."
@@ -2038,8 +2423,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : "Die Arzneimittelversorgung der verbundenen Kliniken und OP-Zentren wird durch ein gesondertes, auf den jeweiligen Klinikbetrieb abgestimmtes Versorgungskonzept sichergestellt. Sie erfolgt über eine berechtigte Apotheke auf Grundlage schriftlicher Versorgungsverträge nach § 14 Apothekengesetz (ApoG) mit behördlicher Genehmigung. Die NabiOta Pharmacy agiert mit eigenverantwortlicher fachlicher Leitung.",
       points: [
         {
-          title: isRu ? "Независимое руководство" : isEn ? "Independent Pharmacy Leadership" : isTr ? "Bağımsız Eczane Yönetimi" : isAr ? "إدارة صيدلانية مستقلة" : "Eigenverantwortliche Apothekenleitung",
-          desc: isRu
+          title: isUz ? "Mustaqil boshqaruv" : isRu ? "Независимое руководство" : isEn ? "Independent Pharmacy Leadership" : isTr ? "Bağımsız Eczane Yönetimi" : isAr ? "إدارة صيدلانية مستقلة" : "Eigenverantwortliche Apothekenleitung",
+          desc: isUz
+            ? "Dorixona tijorat GmbH tuzilmasiga bo'ysunmaydi: boshqaruv Apothekengesetz talablariga binoan akkreditatsiyadan o'tgan provizor tomonidan amalga oshiriladi."
+            : isRu
             ? "Аптека не подчинена коммерческой GmbH-структуре: руководство осуществляется аккредитованным провизором согласно Apothekengesetz."
             : isEn
             ? "Legally independent operations under a licensed supervising pharmacist, safeguarding strict clinical autonomy."
@@ -2050,8 +2437,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             : "Betrieb ausschließlich durch einen nach dem Apothekengesetz berechtigten Erlaubnisinhaber in gesetzlich vorgeschriebener Unabhängigkeit.",
         },
         {
-          title: isRu ? "Снабжение клиник (§ 14 ApoG)" : isEn ? "Statutory Hospital Supply (§ 14 ApoG)" : isTr ? "Onaylı Klinik Tedariği (§ 14 ApoG)" : isAr ? "توريد معتمد للمستشفيات (§ 14 ApoG)" : "Genehmigte Klinikbelieferung (§ 14 ApoG)",
-          desc: isRu
+          title: isUz ? "Klinikalarni ta'minlash (§ 14 ApoG)" : isRu ? "Снабжение клиник (§ 14 ApoG)" : isEn ? "Statutory Hospital Supply (§ 14 ApoG)" : isTr ? "Onaylı Klinik Tedariği (§ 14 ApoG)" : isAr ? "توريد معتمد للمستشفيات (§ 14 ApoG)" : "Genehmigte Klinikbelieferung (§ 14 ApoG)",
+          desc: isUz
+            ? "Statsionarlar, operatsiya bloklari va MVZni zarur dori vositalari bilan ta'minlash bo'yicha regulyator tomonidan tasdiqlangan to'g'ridan-to'g'ri shartnomalar."
+            : isRu
             ? "Прямые утвержденные регулятором договоры снабжения стационаров, операционных блоков и MVZ необходимыми медикаментами."
             : isEn
             ? "Officially approved supply covenants covering inpatient hospital wards, surgical suites, and ambulatory surgery centers."
@@ -2062,8 +2451,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             : "Schriftliche Versorgungsverträge mit behördlicher Genehmigung zur lückenlosen Versorgung stationärer Fachabteilungen und OP-Säle.",
         },
         {
-          title: isRu ? "Безопасность терапии (AMTS)" : isEn ? "Medication Safety (AMTS)" : isTr ? "Bireysel İlaç Güvenliği (AMTS)" : isAr ? "أمان العلاج الدوائي للمريض (AMTS)" : "Patientenindividuelle AMTS",
-          desc: isRu
+          title: isUz ? "Terapiya xavfsizligi (AMTS)" : isRu ? "Безопасность терапии (AMTS)" : isEn ? "Medication Safety (AMTS)" : isTr ? "Bireysel İlaç Güvenliği (AMTS)" : isAr ? "أمان العلاج الدوائي للمريض (AMTS)" : "Patientenindividuelle AMTS",
+          desc: isUz
+            ? "Dori-darmonlar o'zaro ta'sirini individual nazorat qilish, shaxsiy qadoqlash (blisterlash) va 24 soatlik zaxira ombori."
+            : isRu
             ? "Индивидуальный контроль взаимодействий лекарств, персональная фасовка (блистеризация) и круглосуточный резервный склад."
             : isEn
             ? "Pharmacological interaction screening, unit-dose pouch packaging, and 24/7 emergency clinical drug depots."
@@ -2075,16 +2466,18 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         },
       ],
       complianceBadges: [
-        isRu ? "§ 14 Apothekengesetz (ApoG)" : isEn ? "§ 14 Apothekengesetz (ApoG)" : isTr ? "§ 14 Eczacılık Kanunu (ApoG)" : isAr ? "§ 14 قانون الصيدلة الألماني (ApoG)" : "§ 14 Apothekengesetz (ApoG)",
-        isRu ? "§§ 126, 127 SGB V Преквалификация" : isEn ? "§§ 126, 127 SGB V Pre-qualification" : isTr ? "§§ 126, 127 SGB V Ön Yeterlilik" : isAr ? "§§ 126, 127 SGB V الاعتماد المسبق" : "§§ 126, 127 SGB V Präqualifizierung",
-        isRu ? "Ремесленная палата (Handwerksrolle)" : isEn ? "Crafts Guild Registration" : isTr ? "Ortopedi Zanaat Sicili" : isAr ? "سجل الحرف للأجهزة التقويمية" : "Handwerksrolle Orthopädietechnik",
-        isRu ? "Регламент EU-MDR & MPDG" : isEn ? "EU-MDR & MPDG Compliant" : isTr ? "EU-MDR & MPDG Uyumu" : isAr ? "مطابقة لوائح EU-MDR و MPDG" : "EU-MDR & MPDG Konformität",
-        isRu ? "Защищенный обмен данными DSGVO" : isEn ? "GDPR Medical Data Segregation" : isTr ? "DSGVO Uyumlu Arayüzler" : isAr ? "واجهات رقمية متوافقة مع DSGVO" : "DSGVO-konforme Schnittstellen",
+        isUz ? "§ 14 Apothekengesetz (ApoG)" : isRu ? "§ 14 Apothekengesetz (ApoG)" : isEn ? "§ 14 Apothekengesetz (ApoG)" : isTr ? "§ 14 Eczacılık Kanunu (ApoG)" : isAr ? "§ 14 قانون الصيدلة الألماني (ApoG)" : "§ 14 Apothekengesetz (ApoG)",
+        isUz ? "§§ 126, 127 SGB V Prekvalifikatsiya" : isRu ? "§§ 126, 127 SGB V Преквалификация" : isEn ? "§§ 126, 127 SGB V Pre-qualification" : isTr ? "§§ 126, 127 SGB V Ön Yeterlilik" : isAr ? "§§ 126, 127 SGB V الاعتماد المسبق" : "§§ 126, 127 SGB V Präqualifizierung",
+        isUz ? "Hunarmandlik palatasi (Handwerksrolle)" : isRu ? "Ремесленная палата (Handwerksrolle)" : isEn ? "Crafts Guild Registration" : isTr ? "Ortopedi Zanaat Sicili" : isAr ? "سجل الحرف للأجهزة التقويمية" : "Handwerksrolle Orthopädietechnik",
+        isUz ? "EU-MDR & MPDG reglamenti" : isRu ? "Регламент EU-MDR & MPDG" : isEn ? "EU-MDR & MPDG Compliant" : isTr ? "EU-MDR & MPDG Uyumu" : isAr ? "مطابقة لوائح EU-MDR و MPDG" : "EU-MDR & MPDG Konformität",
+        isUz ? "DSGVO bo'yicha himoyalangan ma'lumotlar almashinuvi" : isRu ? "Защищенный обмен данными DSGVO" : isEn ? "GDPR Medical Data Segregation" : isTr ? "DSGVO Uyumlu Arayüzler" : isAr ? "واجهات رقمية متوافقة مع DSGVO" : "DSGVO-konforme Schnittstellen",
       ],
     },
     verbund: {
-      eyebrow: isRu ? "ИНТЕГРИРОВАННАЯ ЭКОСИСТЕМА" : isEn ? "INTEGRATED HEALTHCARE NETWORK" : isTr ? "ENTEGRE SAĞLIK AĞI" : isAr ? "شبكة الرعاية الصحية المتكاملة" : "INTEGRIERTER VERSORGUNGSVERBUND",
-      title: isRu
+      eyebrow: isUz ? "INTEGRATSIYALASHGAN EKOTIZIM" : isRu ? "ИНТЕГРИРОВАННАЯ ЭКОСИСТЕМА" : isEn ? "INTEGRATED HEALTHCARE NETWORK" : isTr ? "ENTEGRE SAĞLIK AĞI" : isAr ? "شبكة الرعاية الصحية المتكاملة" : "INTEGRIERTER VERSORGUNGSVERBUND",
+      title: isUz
+        ? "Uzluksiz g'amxo'rlik: NabiOta® Xoldingi"
+        : isRu
         ? "Бесшовная забота: Холдинг NabiOta®"
         : isEn
         ? "Seamless Continuity: The NabiOta® Healthcare Network"
@@ -2093,7 +2486,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : isAr
         ? "رعاية مستمرة وسلسة ضمن شبكة مجموعة NabiOta®"
         : "Nahtlose Betreuung im Verbund der NabiOta® Gruppe",
-      desc: isRu
+      desc: isUz
+        ? "NabiOta HomeCare GmbH tibbiy xoldingimizning barcha bo'g'inlari bilan uzviy bog'langan — poliklinika va statsionardan tortib to uy o'rnigacha bo'lgan uzluksiz zanjirni ta'minlaydi."
+        : isRu
         ? "NabiOta HomeCare GmbH тесно связана со всеми звеньями нашего медицинского холдинга — обеспечивая непрерывную цепочку от поликлиники и стационара до домашней постели."
         : isEn
         ? "NabiOta HomeCare GmbH collaborates seamlessly with all specialized entities across the NabiOta Group — delivering uninterrupted continuity from clinic to bedside."
@@ -2104,8 +2499,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : "Als Teil der NabiOta-Unternehmensgruppe kooperiert die NabiOta HomeCare GmbH eng mit den weiteren medizinischen Einrichtungen des Verbunds. Für Patienten und Angehörige bedeutet dies: keine Versorgungslücken, rasche Hilfsmittelversorgung und verlässliche Kommunikation zwischen Arzt und Pflege.",
       pillars: [
         {
-          title: isRu ? "NabiOta MVZ & Kliniken" : isEn ? "NabiOta MVZ & Clinics" : isTr ? "NabiOta MVZ & Kliniken" : isAr ? "NabiOta MVZ & العيادات" : "NabiOta MVZ & Clinics",
-          desc: isRu
+          title: isUz ? "NabiOta MVZ & Kliniken" : isRu ? "NabiOta MVZ & Kliniken" : isEn ? "NabiOta MVZ & Clinics" : isTr ? "NabiOta MVZ & Kliniken" : isAr ? "NabiOta MVZ & العيادات" : "NabiOta MVZ & Clinics",
+          desc: isUz
+            ? "Operatsiya qiluvchi va davolovchi shifokorlar bilan bevosita aloqa, retseptlarni tez rasmiylashtirish va tayinlovlarni tuzatish."
+            : isRu
             ? "Прямой контакт с оперирующими и лечащими врачами, быстрое оформление рецептов и корректировка назначений."
             : isEn
             ? "Direct coordination with attending physicians and surgeons, swift prescription processing, and clinical oversight."
@@ -2117,8 +2514,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           icon: Building2,
         },
         {
-          title: isRu ? "NabiOta Sanitätshaus GmbH" : isEn ? "NabiOta Medical Supplies" : isTr ? "NabiOta Sanitätshaus GmbH" : isAr ? "NabiOta Sanitätshaus GmbH" : "NabiOta Sanitätshaus GmbH",
-          desc: isRu
+          title: isUz ? "NabiOta Sanitätshaus GmbH" : isRu ? "NabiOta Sanitätshaus GmbH" : isEn ? "NabiOta Medical Supplies" : isTr ? "NabiOta Sanitätshaus GmbH" : isAr ? "NabiOta Sanitätshaus GmbH" : "NabiOta Sanitätshaus GmbH",
+          desc: isUz
+            ? "Elektr uzatmali krovatlar, antidekubitus matraslari, xodunoklar, kateterlar va bog'lamalarni tezkor yetkazib berish."
+            : isRu
             ? "Экспресс-доставка кроватей с электроприводом, противопролежневых матрасов, ходунков, катетеров и повязок."
             : isEn
             ? "Rapid home delivery of electric care beds, anti-decubitus mattresses, walkers, wheelchairs, and dressings."
@@ -2130,8 +2529,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           icon: Accessibility,
         },
         {
-          title: isRu ? "NabiOta Apotheke" : isEn ? "NabiOta Pharmacy" : isTr ? "NabiOta Eczanesi" : isAr ? "NabiOta Apotheke" : "NabiOta Apotheke",
-          desc: isRu
+          title: isUz ? "NabiOta Apotheke" : isRu ? "NabiOta Apotheke" : isEn ? "NabiOta Pharmacy" : isTr ? "NabiOta Eczanesi" : isAr ? "NabiOta Apotheke" : "NabiOta Apotheke",
+          desc: isUz
+            ? "Hayotiy muhim dorilar, insulin, enteral oziqlantirish va steril materiallar bilan uzluksiz ta'minlash."
+            : isRu
             ? "Бесперебойное снабжение жизненно важными лекарствами, инсулином, энтеральным питанием и стерильными материалами."
             : isEn
             ? "Uninterrupted logistics for prescription medications, insulin, enteral nutrition, and sterile medical disposables."
@@ -2143,8 +2544,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           icon: Pill,
         },
         {
-          title: isRu ? "NabiOta Rehabilitation" : isEn ? "NabiOta Rehabilitation" : isTr ? "NabiOta Rehabilitasyon" : isAr ? "NabiOta Rehabilitation" : "NabiOta Rehabilitation & Therapy",
-          desc: isRu
+          title: isUz ? "NabiOta Rehabilitation" : isRu ? "NabiOta Rehabilitation" : isEn ? "NabiOta Rehabilitation" : isTr ? "NabiOta Rehabilitasyon" : isAr ? "NabiOta Rehabilitation" : "NabiOta Rehabilitation & Therapy",
+          desc: isUz
+            ? "Uyda tiklanishni davom ettirish: moslashtirilgan DFJ (LFK), ergoterapiya va faol hayotga qaytish dasturlari."
+            : isRu
             ? "Продолжение восстановления дома: согласованные программы ЛФК, эрготерапии и возвращения к активной жизни."
             : isEn
             ? "Restorative continuation at home: coordinated physiotherapy, occupational therapy, and regaining mobility."
@@ -2158,8 +2561,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
       ],
     },
     whyChoose: {
-      eyebrow: isRu ? "ПОЧЕМУ NABIOTA HOMECARE" : isEn ? "WHY CHOOSE US" : isTr ? "NEDEN NABIOTA HOMECARE" : isAr ? "لماذا تختار NABIOTA HOMECARE" : "WARUM NABIOTA HOMECARE",
-      title: isRu
+      eyebrow: isUz ? "NEGA NABIOTA HOMECARE" : isRu ? "ПОЧЕМУ NABIOTA HOMECARE" : isEn ? "WHY CHOOSE US" : isTr ? "NEDEN NABIOTA HOMECARE" : isAr ? "لماذا تختار NABIOTA HOMECARE" : "WARUM NABIOTA HOMECARE",
+      title: isUz
+        ? "Individual g'amxo'rlik. Professional qo'llab-quvvatlash."
+        : isRu
         ? "Индивидуальная забота. Профессиональная поддержка."
         : isEn
         ? "Personalized Care. Professional Support."
@@ -2168,7 +2573,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : isAr
         ? "عناية شخصية فائقة. خبرة مهنية موثوقة."
         : "Persönliche Fürsorge. Professionelle Expertise.",
-      desc: isRu
+      desc: isUz
+        ? "Biz har bir inson shaxsiy ehtiyojlariga moslashtirilgan ehtiromli, samimiy parvarishga loyiq ekaniga ishonamiz. Tajribali diplomli hamshiralar jamoamiz hayot sifatingizni oshirishga va o'zingizni qulay, xavfsiz hamda mustaqil his qilishingizga intiladi."
+        : isRu
         ? "Мы убеждены, что каждый человек заслуживает уважительного, чуткого ухода, разработанного с учетом его личных потребностей. Наша опытная команда дипломированных медсестер стремится повысить качество вашей жизни и помочь вам чувствовать себя комфортно, безопасно и независимо."
         : isEn
         ? "We believe that every person deserves care that is respectful, compassionate and tailored to their individual needs. Our experienced nursing team is dedicated to improving your quality of life and helping you live with greater comfort, safety, and independence."
@@ -2178,7 +2585,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         ? "نؤمن بأن كل إنسان يستحق رعاية تتسم بالاحترام والتعاطف وتلبي احتياجاته الفردية تماماً. يكرس فريق التمريض الخبير جهوده لتحسين جودة حياتكم وتمكينكم من العيش بمزيد من الراحة والأمان والاستقلالية."
         : "Wir sind überzeugt, dass jeder Mensch eine respektvolle, einfühlsame und maßgeschneiderte Pflege verdient. Unser erfahrenes Pflegeteam setzt sich dafür ein, Ihre Lebensqualität spürbar zu verbessern und Ihnen mehr Komfort sowie Unabhängigkeit zu ermöglichen.",
       checks: [
-        isRu
+        isUz
+          ? "100% davlat diplomiga ega hamshiralar va ICW® ekspertlari"
+          : isRu
           ? "100% дипломированные медицинские сестры и эксперты ICW®"
           : isEn
           ? "100% licensed nurses and certified ICW® wound experts"
@@ -2187,7 +2596,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "طواقم تمريض حاصلة 100% على شهادات حكومية معتمدة وخبراء جروح مرخصون من ICW®"
           : "100% staatlich examinierte Pflegefachkräfte & ICW®-Wundexperten",
-        isRu
+        isUz
+          ? "Individual parvarish rejalari va biriktirilgan hamshira"
+          : isRu
           ? "Индивидуальные планы ухода и закрепленная медсестра"
           : isEn
           ? "Individualized care plans and dedicated primary nursing model"
@@ -2196,7 +2607,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "خطط رعاية مصممة فردياً مع تكليف ممرضين معتمدين ثابتين لمتابعة كل حالة"
           : "Individuell abgestimmte Pflegepläne mit festen Bezugspflegekräften",
-        isRu
+        isUz
+          ? "Germaniyaning barcha sug'urta kassalari bilan to'g'ridan-to'g'ri hisob-kitob (SGB V & XI)"
+          : isRu
           ? "Прямой расчет со всеми страховыми кассами Германии (SGB V & XI)"
           : isEn
           ? "Direct billing with all German statutory and private health insurances"
@@ -2205,7 +2618,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           : isAr
           ? "تسوية مباشرة ومريحة مع كافة صناديق التأمين الصحي والرعاية القانونية والخاصة (SGB V & XI)"
           : "Direkte Abrechnung mit allen gesetzlichen und privaten Kassen (SGB V & XI)",
-        isRu
+        isUz
+          ? "Favqulodda vaziyatlar uchun 24/7 kechayu kunduz navbatchilik aloqasi"
+          : isRu
           ? "Круглосуточная дежурная связь 24/7 для экстренных ситуаций"
           : isEn
           ? "24/7 emergency telephone response for acute medical concerns"
@@ -2217,8 +2632,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
       ],
     },
     commitment: {
-      eyebrow: isRu ? "НАШЕ ОБЯЗАТЕЛЬСТВО" : isEn ? "OUR COMMITMENT" : isTr ? "SÖZÜMÜZ VE TAAHHÜDÜMÜZ" : isAr ? "عهدنا والتزامنا" : "UNSER VERSPRECHEN",
-      title: isRu
+      eyebrow: isUz ? "BIZNING BURCHIMIZ" : isRu ? "НАШЕ ОБЯЗАТЕЛЬСТВО" : isEn ? "OUR COMMITMENT" : isTr ? "SÖZÜMÜZ VE TAAHHÜDÜMÜZ" : isAr ? "عهدنا والتزامنا" : "UNSER VERSPRECHEN",
+      title: isUz
+        ? "Parvarishdan ham ortiq — samimiy insoniylik"
+        : isRu
         ? "Больше чем уход — искренняя человечность"
         : isEn
         ? "More Than Just Care — Human Dignity & Warmth"
@@ -2227,7 +2644,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : isAr
         ? "أكثر من مجرد رعاية – احترام وكرامة وإنسانية خالصة"
         : "Mehr als nur Pflege – Respekt, Würde und Menschlichkeit",
-      desc: isRu
+      desc: isUz
+        ? "Biz mijozlarimiz va ularning oilalari bilan uzoq muddatli ishonchli munosabatlar o'rnatamiz, nafaqat malakali tibbiy yordam, balki samimiy ruhiy xotirjamlikni ham ta'minlaymiz. Sizning salomatligingiz — bizning bosh ustuvor vazifamizdir."
+        : isRu
         ? "Мы строим долгосрочные доверительные отношения с клиентами и их семьями, обеспечивая не только квалифицированную медицинскую помощь, но и искреннее эмоциональное спокойствие. Ваше благополучие — наш главный приоритет."
         : isEn
         ? "We build lasting relationships with our clients and their families, providing not just medical excellence, but emotional support and peace of mind. Your well-being is our top priority."
@@ -2238,26 +2657,28 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : "Wir bauen dauerhafte, vertrauensvolle Beziehungen zu unseren Klienten und ihren Familien auf. Dabei bieten wir nicht nur fachärztlich verordnete Spitzenpflege, sondern auch emotionalen Halt und Sicherheit. Ihr Wohlbefinden steht an erster Stelle.",
       badges: [
         {
-          title: isRu ? "Чуткая команда" : isEn ? "Compassionate Team" : isTr ? "Empatik Ekip" : isAr ? "فريق متعاطف" : "Einfühlsames Team",
+          title: isUz ? "Mehribon jamoa" : isRu ? "Чуткая команда" : isEn ? "Compassionate Team" : isTr ? "Empatik Ekip" : isAr ? "فريق متعاطف" : "Einfühlsames Team",
           icon: Heart,
         },
         {
-          title: isRu ? "Безопасность и доверие" : isEn ? "Safety & Trust" : isTr ? "Güven ve Emniyet" : isAr ? "أمان وثقة" : "Sicherheit & Vertrauen",
+          title: isUz ? "Xavfsizlik va ishonch" : isRu ? "Безопасность и доверие" : isEn ? "Safety & Trust" : isTr ? "Güven ve Emniyet" : isAr ? "أمان وثقة" : "Sicherheit & Vertrauen",
           icon: ShieldCheck,
         },
         {
-          title: isRu ? "Семейный подход" : isEn ? "Family Centered" : isTr ? "Aile Odaklı" : isAr ? "محورها الأسرة" : "Familienzentriert",
+          title: isUz ? "Oilaviy yondashuv" : isRu ? "Семейный подход" : isEn ? "Family Centered" : isTr ? "Aile Odaklı" : isAr ? "محورها الأسرة" : "Familienzentriert",
           icon: Users,
         },
         {
-          title: isRu ? "Высокое качество" : isEn ? "Excellence in Care" : isTr ? "Mükemmel Kalite" : isAr ? "جودة استثنائية" : "Exzellente Qualität",
+          title: isUz ? "Yuqori sifat" : isRu ? "Высокое качество" : isEn ? "Excellence in Care" : isTr ? "Mükemmel Kalite" : isAr ? "جودة استثنائية" : "Exzellente Qualität",
           icon: Star,
         },
       ],
     },
     approach: {
-      eyebrow: isRu ? "НАШ ПОДХОД" : isEn ? "OUR APPROACH" : isTr ? "BAKIM YAKLAŞIMIMIZ" : isAr ? "نهجنا في الرعاية" : "UNSER PFLEGEANSATZ",
-      title: isRu
+      eyebrow: isUz ? "BIZNING YONDASHUVIMIZ" : isRu ? "НАШ ПОДХОД" : isEn ? "OUR APPROACH" : isTr ? "BAKIM YAKLAŞIMIMIZ" : isAr ? "نهجنا في الرعاية" : "UNSER PFLEGEANSATZ",
+      title: isUz
+        ? "Hayotning har bir bosqichida kompleks parvarish"
+        : isRu
         ? "Комплексный уход на каждом этапе жизни"
         : isEn
         ? "Holistic Care for Every Stage of Life"
@@ -2266,7 +2687,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : isAr
         ? "رعاية شاملة لكل مرحلة من مراحل الحياة"
         : "Ganzheitliche Pflege für jede Lebensphase",
-      desc: isRu
+      desc: isUz
+        ? "Operatsiyadan keyin sog'ayishdan tortib keksa yoshdagi uzoq muddatli qo'llab-quvvatlashgacha — bizning hamshiralik parvarishimiz sizning ehtiyojlaringizga moslashadi, hamisha mehr va professionallik bilan."
+        : isRu
         ? "От выздоровления после операции до долгосрочной поддержки в пожилом возрасте — наш сестринский уход гибко подстраивается под ваши потребности, неизменно с теплом и профессионализмом."
         : isEn
         ? "From recovery and rehabilitation to long-term elderly support, our nursing care adapts to your needs — always with compassion and professionalism."
@@ -2275,11 +2698,13 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : isAr
         ? "من التعافي بعد الجراحة وحتى الرعاية طويلة الأمد لكبار السن، تتكيف خدماتنا التمريضية بمرونة مع متطلباتكم – دائماً بإنسانية وكفاءة مهنية راقية."
         : "Von der Genesung nach Operationen bis zur verlässlichen Langzeitbetreuung passt sich unsere Pflege flexibel Ihren Bedürfnissen an – stets mit Mitgefühl und höchster Fachkompetenz.",
-      btn: isRu ? "Узнать больше об услугах" : isEn ? "Explore Our Services" : isTr ? "Hizmetlerimizi Keşfedin" : isAr ? "استكشف خدماتنا" : "Leistungen entdecken",
+      btn: isUz ? "Xizmatlar haqida ko'proq bilish" : isRu ? "Узнать больше об услугах" : isEn ? "Explore Our Services" : isTr ? "Hizmetlerimizi Keşfedin" : isAr ? "استكشف خدماتنا" : "Leistungen entdecken",
       stages: [
         {
-          title: isRu ? "Пожилой возраст" : isEn ? "Senior Care" : isTr ? "Yaşlı Bakımı" : isAr ? "رعاية كبار السن" : "Seniorenpflege",
-          desc: isRu
+          title: isUz ? "Keksalik yoshi" : isRu ? "Пожилой возраст" : isEn ? "Senior Care" : isTr ? "Yaşlı Bakımı" : isAr ? "رعاية كبار السن" : "Seniorenpflege",
+          desc: isUz
+            ? "Mustaqillik va farovonlikni qo'llab-quvvatlash."
+            : isRu
             ? "Поддержание независимости и благополучия."
             : isEn
             ? "Promoting independence and well-being."
@@ -2291,8 +2716,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           image: "/images/nursing/stage-senior.webp",
         },
         {
-          title: isRu ? "После операций" : isEn ? "Post-Surgical Care" : isTr ? "Ameliyat Sonrası Bakım" : isAr ? "الرعاية بعد الجراحة" : "Postoperative Pflege",
-          desc: isRu
+          title: isUz ? "Operatsiyalardan keyin" : isRu ? "После операций" : isEn ? "Post-Surgical Care" : isTr ? "Ameliyat Sonrası Bakım" : isAr ? "الرعاية بعد الجراحة" : "Postoperative Pflege",
+          desc: isUz
+            ? "Uyda xavfsiz va ishonchli tiklanish."
+            : isRu
             ? "Безопасное и надежное восстановление дома."
             : isEn
             ? "Safe and effective recovery at home."
@@ -2304,8 +2731,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           image: "/images/nursing/stage-postsurgical.webp",
         },
         {
-          title: isRu ? "Реабилитация" : isEn ? "Rehabilitation Care" : isTr ? "Rehabilitasyon Bakımı" : isAr ? "رعاية التأهيل الطبي" : "Rehabilitationspflege",
-          desc: isRu
+          title: isUz ? "Reabilitatsiya" : isRu ? "Реабилитация" : isEn ? "Rehabilitation Care" : isTr ? "Rehabilitasyon Bakımı" : isAr ? "رعاية التأهيل الطبي" : "Rehabilitationspflege",
+          desc: isUz
+            ? "Sog'ayish va harakatchanlikni tiklashda yordam."
+            : isRu
             ? "Помощь в восстановлении и подвижности."
             : isEn
             ? "Support for recovery and mobility."
@@ -2317,8 +2746,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
           image: "/images/nursing/stage-rehab.webp",
         },
         {
-          title: isRu ? "Хронические раны" : isEn ? "Wound Recovery" : isTr ? "Yara Tedavisi" : isAr ? "علاج الجروح" : "Wundversorgung",
-          desc: isRu
+          title: isUz ? "Surunkali yaralar" : isRu ? "Хронические раны" : isEn ? "Wound Recovery" : isTr ? "Yara Tedavisi" : isAr ? "علاج الجروح" : "Wundversorgung",
+          desc: isUz
+            ? "Ehtiyotkorona bitirish va bog'lov muolajalari."
+            : isRu
             ? "Бережное заживление и перевязки."
             : isEn
             ? "Accelerated tissue repair and healing."
@@ -2332,8 +2763,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
       ],
     },
     testimonials: {
-      eyebrow: isRu ? "ОТЗЫВЫ ПАЦИЕНТОВ" : isEn ? "PATIENT TESTIMONIALS" : isTr ? "HASTA DENEYİMLERİ" : isAr ? "آراء المرضى وعائلاتهم" : "ERFAHRUNGSBERICHTE",
-      title: isRu
+      eyebrow: isUz ? "BEMORLARNING FIKRLARI" : isRu ? "ОТЗЫВЫ ПАЦИЕНТОВ" : isEn ? "PATIENT TESTIMONIALS" : isTr ? "HASTA DENEYİMLERİ" : isAr ? "آراء المرضى وعائلاتهم" : "ERFAHRUNGSBERICHTE",
+      title: isUz
+        ? "Haqiqiy hikoyalar. Haqiqiy yordam."
+        : isRu
         ? "Реальные истории. Реальная помощь."
         : isEn
         ? "Real Stories. Real Impact."
@@ -2342,7 +2775,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : isAr
         ? "قصص واقعية. عون حقيقي وملموس."
         : "Echte Geschichten. Echte Hilfe.",
-      desc: isRu
+      desc: isUz
+        ? "Jamoamiz g'amxo'rligi bemorlar va ularning yaqinlari hayotini qay darajada yaxshilaganini ularning o'zidan bilib oling."
+        : isRu
         ? "Узнайте от пациентов и их близких, как забота нашей команды изменила их жизнь к лучшему."
         : isEn
         ? "Hear from families who have experienced the difference our nursing care makes."
@@ -2351,10 +2786,12 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : isAr
         ? "تعرف على الأثر الإيجابي الحقيقي الذي تحدثه رعايتنا التمريضية في الحياة اليومية للعائلات."
         : "Erfahren Sie von Familien, welchen spürbaren Unterschied unsere Pflege im Alltag macht.",
-      btnMore: isRu ? "Все отзывы +" : isEn ? "Read More Reviews +" : isTr ? "Diğer Değerlendirmeler +" : isAr ? "المزيد من التقييمات +" : "Weitere Bewertungen +",
+      btnMore: isUz ? "Barcha fikrlar +" : isRu ? "Все отзывы +" : isEn ? "Read More Reviews +" : isTr ? "Diğer Değerlendirmeler +" : isAr ? "المزيد من التقييمات +" : "Weitere Bewertungen +",
       cards: [
         {
-          quote: isRu
+          quote: isUz
+            ? "«NabiOta HomeCare hamshiralari nihoyatda e'tiborli, punktual va professional. Ular oyoqdagi operatsiyadan keyingi murakkab yarani davolashni o'z zimmalariga olishdi va bir oy ichida hammasi butunlay bitib ketdi!»"
+            : isRu
             ? "«Медсёстры NabiOta HomeCare невероятно чуткие, пунктуальные и профессиональные. Они взяли на себя обработку сложной раны после операции на стопе, и за месяц всё идеально зажило!»"
             : isEn
             ? "“The nurses from NabiOta HomeCare are kind, punctual, and remarkably skilled. They treated a complicated postoperative wound, and it healed completely within four weeks!”"
@@ -2364,11 +2801,13 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             ? "«طواقم NabiOta HomeCare في قمة اللطف والدقة والمهنية العالية. بفضل الإدارة المعتمدة للجروح، التئم جرحي الجراحي تماماً بعد أسابيع من المعاناة!»"
             : "„Die Pflegekräfte von NabiOta HomeCare sind herzlich, pünktlich und hochkompetent. Dank des zertifizierten Wundmanagements ist meine postoperative Wunde nach wochenlangem Stillstand endlich vollkommen verheilt!“",
           name: "Sarah L.",
-          role: isRu ? "Пациентка, Мёнхенгладбах" : isEn ? "Patient, Mönchengladbach" : isTr ? "Hasta, Mönchengladbach" : isAr ? "مريضة، مونشنغلادباخ" : "Patientin, Mönchengladbach",
+          role: isUz ? "Bemor, Myonxengladbax" : isRu ? "Пациентка, Мёнхенгладбах" : isEn ? "Patient, Mönchengladbach" : isTr ? "Hasta, Mönchengladbach" : isAr ? "مريضة، مونشنغلادباخ" : "Patientin, Mönchengladbach",
           avatar: "/images/nursing/avatar-sarah.webp",
         },
         {
-          quote: isRu
+          quote: isUz
+            ? "«Biriktirilgan hamshira tufayli onam o'zini mutlaqo xavfsiz his qilmoqda. Ular parvarish darajasini oshirishga yordam berishdi va dorilarni tarqatishni to'liq o'z zimmalariga olishdi.»"
+            : isRu
             ? "«Благодаря закрепленной медсестре моя мама чувствует себя в полной безопасности. Они помогли оформить повышение степени ухода и взяли на себя выдачу лекарств.»"
             : isEn
             ? "“Thanks to the primary nurse system, my mother feels completely secure at home. They guided us through the Pflegegrad upgrade and handle all medications flawlessly.”"
@@ -2378,11 +2817,13 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             ? "«بفضل نظام الممرض المخصص الثابت، تشعر والدتي بالأمان التام في بيتها. كما ساعدنا الفريق باحترافية في إجراءات رفع درجة الرعاية لدى الصندوق.»"
             : "„Dank der festen Bezugspflegekraft fühlt sich meine Mutter zu Hause rundum geborgen. Das Team hat uns auch beim Antrag auf Höherstufung des Pflegegrads optimal zur Seite gestanden.“",
           name: "James T.",
-          role: isRu ? "Сын пациентки (Pflegegrad 3)" : isEn ? "Son of Patient (Care Level 3)" : isTr ? "Hasta Yakını (Bakım Derecesi 3)" : isAr ? "ابن مريضة (درجة الرعاية 3)" : "Sohn einer Klientin (Pflegegrad 3)",
+          role: isUz ? "Bemorning o'g'li (Pflegegrad 3)" : isRu ? "Сын пациентки (Pflegegrad 3)" : isEn ? "Son of Patient (Care Level 3)" : isTr ? "Hasta Yakını (Bakım Derecesi 3)" : isAr ? "ابن مريضة (درجة الرعاية 3)" : "Sohn einer Klientin (Pflegegrad 3)",
           avatar: "/images/nursing/avatar-james.webp",
         },
         {
-          quote: isRu
+          quote: isUz
+            ? "«Oila a'zosidek samimiy munosabat. Shifoxonadan chiqqandan so'ng dadamga zond va inyeksiyalar kerak bo'lganda, NabiOta mutaxassislari kuniga ikki marta qat'iy jadval bo'yicha kelishdi. Katta rahmat!»"
+            : isRu
             ? "«Отношение как к члену семьи. Когда после больницы папе требовался зонд и инъекции, специалисты NabiOta приезжали дважды в день точно по графику. Огромное спасибо!»"
             : isEn
             ? "“They treat you like family. When my father required tube feeding and injections after hospital discharge, NabiOta nurses were there reliably twice a day. True lifesavers.”"
@@ -2392,17 +2833,19 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             ? "«رعاية تتسم بدفء إنساني حقيقي كأنك بين أهلك. عندما احتاج والدي للتغذية بالأنبوب والحقن بعد خروجه من المستشفى، كانت NabiOta HomeCare حاضرة فوراً.»"
             : "„Hier wird man mit echter Herzenswärme betreut. Als mein Vater nach der Klinik Sondenernährung und Injektionen brauchte, war NabiOta HomeCare sofort zur Stelle. Höchste Verlässlichkeit!“",
           name: "Linda M.",
-          role: isRu ? "Дочь пациента" : isEn ? "Daughter of Patient" : isTr ? "Hasta Yakını" : isAr ? "ابنة مريض" : "Angehörige eines Patienten",
+          role: isUz ? "Bemorning qizi" : isRu ? "Дочь пациента" : isEn ? "Daughter of Patient" : isTr ? "Hasta Yakını" : isAr ? "ابنة مريض" : "Angehörige eines Patienten",
           avatar: "/images/nursing/avatar-linda.webp",
         },
       ],
     },
     faq: {
       eyebrow: "FAQ",
-      title: isRu ? "Часто задаваемые вопросы" : isEn ? "Frequently Asked Questions" : isTr ? "Sıkça Sorulan Sorular" : isAr ? "الأسئلة الشائعة" : "Häufig gestellte Fragen",
+      title: isUz ? "Ko'p beriladigan savollar" : isRu ? "Часто задаваемые вопросы" : isEn ? "Frequently Asked Questions" : isTr ? "Sıkça Sorulan Sorular" : isAr ? "الأسئلة الشائعة" : "Häufig gestellte Fragen",
       items: [
         {
-          q: isRu
+          q: isUz
+            ? "Behandlungspflege (SGB V) va Grundpflege (SGB XI) o'rtasidagi farq nima?"
+            : isRu
             ? "В чем разница между Behandlungspflege (SGB V) и Grundpflege (SGB XI)?"
             : isEn
             ? "What is the difference between Clinical Care (SGB V) and Basic Care (SGB XI)?"
@@ -2411,7 +2854,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             : isAr
             ? "ما الفرق بين الرعاية الطبية العلاجية (SGB V) والرعاية الأساسية (SGB XI)؟"
             : "Was ist der Unterschied zwischen Behandlungspflege (SGB V) und Grundpflege (SGB XI)?",
-          a: isRu
+          a: isUz
+            ? "Behandlungspflege (SGB V) — bu shifokor tomonidan tayinlangan tibbiy muolajalardir (inyeksiyalar, bog'lamalar, tomchilatib quyish, dorilar). Ular tibbiy sug'urta tomonidan 100% to'lanadi. Grundpflege (SGB XI) — bu gigiyena, ovqatlanish va kiyinishdagi yordam bo'lib, tayinlangan Pflegegrad bo'yicha parvarish kassasi tomonidan moliyalashtiriladi."
+            : isRu
             ? "Behandlungspflege (SGB V) — это медицинские процедуры, назначенные врачом (уколы, перевязки, капельницы, таблетки). Они на 100% оплачиваются медицинской страховкой. Grundpflege (SGB XI) — это помощь в гигиене, питании и одевании, которая финансируется кассой по уходу в соответствии с присвоенным Pflegegrad."
             : isEn
             ? "Treatment care (SGB V) consists of clinical interventions prescribed by a doctor (injections, wound dressings, IVs, medications) and is 100% paid by health insurance. Basic care (SGB XI) covers personal hygiene, mobilization, and nutrition, funded by the long-term care insurance according to your Pflegegrad (1–5)."
@@ -2422,7 +2867,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             : "Die Behandlungspflege nach SGB V umfasst ärztlich verordnete medizinische Maßnahmen (z.B. Injektionen, Wundverbände, Medikamentengabe) und wird vollständig von der Krankenkasse bezahlt. Die Grundpflege nach SGB XI umfasst körperbezogene Hilfen (Waschen, Kleiden, Ernährung) und wird über das Sachleistungsbudget des jeweiligen Pflegegrads finanziert.",
         },
         {
-          q: isRu
+          q: isUz
+            ? "NabiOta HomeCare parvarishni qanchalik tez boshlay oladi?"
+            : isRu
             ? "Как быстро NabiOta HomeCare может приступить к уходу?"
             : isEn
             ? "How quickly can NabiOta HomeCare initiate services?"
@@ -2431,7 +2878,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             : isAr
             ? "ما مدى سرعة NabiOta HomeCare في بدء تقديم الرعاية؟"
             : "Wie schnell kann die NabiOta HomeCare die Versorgung aufnehmen?",
-          a: isRu
+          a: isUz
+            ? "Shoshilinch holatlarda (masalan, statsionardan chiqarilganda yoki o'tkir yarada) biz birinchi qo'ng'iroq yoki retsept topshirilgandan keyin 24–48 soat ichida parvarishni boshlaymiz."
+            : isRu
             ? "В срочных случаях (например, при выписке из стационара или острой ране) мы начинаем уход в течение 24–48 часов после первого звонка или передачи рецепта."
             : isEn
             ? "In urgent cases, such as immediate hospital discharge or acute wound treatment, we can initiate care within 24 to 48 hours following an initial phone consultation or recipe transfer."
@@ -2442,7 +2891,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             : "In dringlichen Fällen – insbesondere bei kurzfristiger Krankenhausentlassung oder frischen Operationswunden – können wir die Versorgung in der Regel innerhalb von 24 bis 48 Stunden nach Kontaktaufnahme starten.",
         },
         {
-          q: isRu
+          q: isUz
+            ? "§ 37 Abs. 3 SGB XI bo'yicha majburiy maslahat tashriflarini o'tkazasizmi?"
+            : isRu
             ? "Проводите ли вы обязательные консультации по § 37 Abs. 3 SGB XI?"
             : isEn
             ? "Do you conduct mandatory counseling visits under § 37.3 SGB XI?"
@@ -2451,7 +2902,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             : isAr
             ? "هل تقومون بإجراء زيارات الاستشارة القانونية الإلزامية وفق § 37 Abs. 3 SGB XI؟"
             : "Führen Sie gesetzliche Beratungseinsätze nach § 37 Abs. 3 SGB XI durch?",
-          a: isRu
+          a: isUz
+            ? "Ha, bizning sertifikatlangan maslahatchilarimiz Pflegegeld oluvchilar uchun uyda majburiy tashriflarni o'tkazadilar (Pflegegrad 2–3 uchun har yarim yilda bir marta, Pflegegrad 4–5 uchun har chorakda bir marta) va hisobotni to'g'ridan-to'g'ri sug'urta kassangizga yuboradilar."
+            : isRu
             ? "Да, наши сертифицированные консультанты проводят обязательные визиты на дому для получателей Pflegegeld (раз в полгода для Pflegegrad 2–3, раз в квартал для Pflegegrad 4–5) и сразу направляют отчет в вашу страховую кассу."
             : isEn
             ? "Yes, our certified care advisors conduct official home visits for recipients of statutory care allowances (semi-annually for Pflegegrad 2–3, quarterly for Pflegegrad 4–5) and submit documentation directly to your insurer."
@@ -2462,7 +2915,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             : "Ja, unsere examinierten Pflegeberater führen die gesetzlich vorgeschriebenen Beratungseinsätze bei Ihnen zu Hause durch und leiten den Nachweis direkt an Ihre Pflegekasse weiter, damit Ihr Pflegegeldanspruch gesichert bleibt.",
         },
         {
-          q: isRu
+          q: isUz
+            ? "Ish vaqtidan tashqari navbatchilik xizmati va chaqiruv qanday tashkil etilgan?"
+            : isRu
             ? "Как организована дежурная служба и вызов в нерабочее время?"
             : isEn
             ? "How is out-of-hours on-call availability handled?"
@@ -2471,7 +2926,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             : isAr
             ? "كيف يتم تنظيم الاستجابة للطوارئ والتواصل خارج أوقات العمل الرسمية؟"
             : "Wie ist die Erreichbarkeit außerhalb der regulären Zeiten geregelt?",
-          a: isRu
+          a: isUz
+            ? "Barcha doimiy bemorlarimiz uchun 24/7 kechayu kunduz telefon liniyasi ishlaydi. Holat to'satdan yomonlashganda, navbatchi hamshira maslahat beradi yoki tezda uyga yetib keladi."
+            : isRu
             ? "Для всех наших постоянных пациентов действует круглосуточная телефонная линия 24/7. В случае внезапного ухудшения состояния дежурная медсестра проконсультирует или оперативно приедет на дом."
             : isEn
             ? "For registered clients, we provide a dedicated 24/7 emergency telephone hotline. In case of acute health changes or complications, our on-call nursing supervisor responds immediately."
@@ -2482,7 +2939,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             : "Für unsere betreuten Klienten besteht eine 24-stündige Rufbereitschaft an 365 Tagen im Jahr. Bei unvorhergesehenen gesundheitlichen Verschlechterungen oder Notfällen ist jederzeit eine examinierte Fachkraft erreichbar.",
         },
         {
-          q: isRu
+          q: isUz
+            ? "Hamshiralar davlat malaka sertifikatiga egami?"
+            : isRu
             ? "Имеют ли медсёстры государственную квалификацию?"
             : isEn
             ? "Is all nursing staff fully certified and insured?"
@@ -2491,7 +2950,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             : isAr
             ? "هل جميع أفراد طاقم التمريض مؤهلون وحاصلون على شهادات معتمدة؟"
             : "Sind alle Pflegekräfte examiniert und geschult?",
-          a: isRu
+          a: isUz
+            ? "Barcha xodimlarimiz — davlat namunasidagi diplomli hamshiralar (Pflegefachkräfte / Krankenschwester) bo'lib, Wundexperte ICW® sertifikatlariga ega va muntazam malaka oshirish kurslaridan o'tadilar."
+            : isRu
             ? "Все наши сотрудники — это дипломированные медицинские сестры государственного образца (Pflegefachkräfte / Krankenschwester) с сертификатами Wundexperte ICW® и регулярными курсами повышения квалификации."
             : isEn
             ? "All our caregivers are state-certified registered nurses with specialized training in ICW® wound care and continuous professional development adhering to German medical standards."
@@ -2504,8 +2965,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
       ],
     },
     cta: {
-      eyebrow: isRu ? "СВЯЖИТЕСЬ С НАМИ" : isEn ? "GET IN TOUCH" : isTr ? "BİZİMLE İLETİŞİME GEÇİN" : isAr ? "تواصلوا معنا الآن" : "JETZT KONTAKT AUFNEHMEN",
-      title: isRu
+      eyebrow: isUz ? "BIZ BILAN BOG'LANING" : isRu ? "СВЯЖИТЕСЬ С НАМИ" : isEn ? "GET IN TOUCH" : isTr ? "BİZİMLE İLETİŞİME GEÇİN" : isAr ? "تواصلوا معنا الآن" : "JETZT KONTAKT AUFNEHMEN",
+      title: isUz
+        ? "Sizning salomatligingiz va xotirjamligingiz — ishonchli qo'llarda"
+        : isRu
         ? "Ваше здоровье и покой — в надежных руках"
         : isEn
         ? "Your Well-Being. Our Dedicated Mission."
@@ -2514,7 +2977,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : isAr
         ? "صحتكم وسلامتكم. في أيدي تمريضية أمينة ومحترفة."
         : "Ihre Gesundheit. In besten pflegerischen Händen.",
-      desc: isRu
+      desc: isUz
+        ? "Bepul dastlabki tashrifni kelishib olish va individual parvarish rejasini tuzish uchun bizga qo'ng'iroq qiling yoki ariza qoldiring."
+        : isRu
         ? "Позвоните нам или оставьте заявку, чтобы согласовать первичный бесплатный визит и составить индивидуальный план ухода."
         : isEn
         ? "Call us or submit an inquiry to schedule a complimentary initial assessment and tailored home nursing plan."
@@ -2523,13 +2988,13 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         : isAr
         ? "تواصلوا معنا اليوم لترتيب استشارة أولية مجانية وغير ملزمة في منزلكم أو في المستشفى قبل موعد الخروج."
         : "Kontaktieren Sie uns noch heute für ein kostenfreies, unverbindliches Erstgespräch bei Ihnen zu Hause oder in der Klinik vor der Entlassung.",
-      btn: isRu ? "Записаться на консультацию" : isEn ? "Contact HomeCare Team" : isTr ? "Ücretsiz İlk Danışmanlık Randevusu Alın" : isAr ? "حجز موعد استشارة أولية مجانية" : "Kostenlose Erstberatung vereinbaren",
+      btn: isUz ? "Maslahatga yozilish" : isRu ? "Записаться на консультацию" : isEn ? "Contact HomeCare Team" : isTr ? "Ücretsiz İlk Danışmanlık Randevusu Alın" : isAr ? "حجز موعد استشارة أولية مجانية" : "Kostenlose Erstberatung vereinbaren",
       phone: "+49 2161 4794560",
       email: "info@nabiota-health-group.de",
-      location: isRu ? "Мёнхенгладбах, Германия" : isEn ? "Mönchengladbach, Germany" : isTr ? "Mönchengladbach, Almanya" : isAr ? "مونشنغلادباخ، ألمانيا" : "Mönchengladbach, Deutschland",
-      stamp1: isRu ? "Забота сегодня" : isEn ? "Caring Today" : isTr ? "Bugün gösterilen özen" : isAr ? "عناية اليوم" : "Fürsorge heute",
-      stamp2: isRu ? "для здорового" : isEn ? "for a Healthier" : isTr ? "daha sağlıklı bir" : isAr ? "من أجل غدٍ أكثر" : "für ein gesünderes",
-      stamp3: isRu ? "завтра ~" : isEn ? "Tomorrow ~" : isTr ? "yarın içindir ~" : isAr ? "صحة وعافية ~" : "Morgen ~",
+      location: isUz ? "Myonxengladbax, Germaniya" : isRu ? "Мёнхенгладбах, Германия" : isEn ? "Mönchengladbach, Germany" : isTr ? "Mönchengladbach, Almanya" : isAr ? "مونشنغلادباخ، ألمانيا" : "Mönchengladbach, Deutschland",
+      stamp1: isUz ? "Bugungi g'amxo'rlik" : isRu ? "Забота сегодня" : isEn ? "Caring Today" : isTr ? "Bugün gösterilen özen" : isAr ? "عناية اليوم" : "Fürsorge heute",
+      stamp2: isUz ? "sog'lom" : isRu ? "для здорового" : isEn ? "for a Healthier" : isTr ? "daha sağlıklı bir" : isAr ? "من أجل غدٍ أكثر" : "für ein gesünderes",
+      stamp3: isUz ? "ertangi kun uchun ~" : isRu ? "завтра ~" : isEn ? "Tomorrow ~" : isTr ? "yarın içindir ~" : isAr ? "صحة وعافية ~" : "Morgen ~",
     },
   };
 
@@ -2544,9 +3009,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         breadcrumb={
           <Breadcrumb
             items={[
-              { label: isRu ? "Главная" : isEn ? "Home" : isTr ? "Ana Sayfa" : isAr ? "الرئيسية" : "Startseite", href: `/${locale}` },
+              { label: isUz ? "Bosh sahifa" : isRu ? "Главная" : isEn ? "Home" : isTr ? "Ana Sayfa" : isAr ? "الرئيسية" : "Startseite", href: `/${locale}` },
               {
-                label: isRu ? "Направления холдинга" : isEn ? "Divisions" : isTr ? "Şirket Alanları" : isAr ? "قطاعات المجموعة" : "Unternehmensbereiche",
+                label: isUz ? "Xolding yo'nalishlari" : isRu ? "Направления холдинга" : isEn ? "Divisions" : isTr ? "Şirket Alanları" : isAr ? "قطاعات المجموعة" : "Unternehmensbereiche",
                 href: `/${locale}/areas`,
               },
               { label: heroData.title },
@@ -3321,7 +3786,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
                       setSelectedService(null);
                       setSelectedSupplyModal(null);
                     }}
-                    aria-label={isRu ? "Закрыть окно" : isEn ? "Close modal" : isTr ? "Pencereyi kapat" : isAr ? "إغلاق النافذة" : "Modal schließen"}
+                    aria-label={isUz ? "Oynani yopish" : isRu ? "Закрыть окно" : isEn ? "Close modal" : isTr ? "Pencereyi kapat" : isAr ? "إغلاق النافذة" : "Modal schließen"}
                     className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/80 border border-[#DECDB5] flex items-center justify-center text-[#1C261E] hover:bg-[#ECCF93]/30 transition-colors z-20 shadow-xs cursor-pointer"
                   >
                     <X className="w-4 h-4" />
@@ -3425,7 +3890,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
                       }}
                       className="px-5 py-2.5 rounded-full border border-[#D5B878] text-xs font-semibold text-[#142318] hover:bg-[#FAF5EE] transition-colors cursor-pointer"
                     >
-                      {isRu ? "Закрыть" : isEn ? "Close" : isTr ? "Kapat" : isAr ? "إغلاق" : "Schließen"}
+                      {isUz ? "Yopish" : isRu ? "Закрыть" : isEn ? "Close" : isTr ? "Kapat" : isAr ? "إغلاق" : "Schließen"}
                     </button>
                     <Link
                       href={`/${locale}/contact`}

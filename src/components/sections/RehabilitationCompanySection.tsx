@@ -25,7 +25,7 @@ import { Container } from "@/components/layout/Container";
  * Reha-Ziele (Teilhabe) & Abrechnung mit Kostenträgern (GKV, DRV, BG).
  */
 
-type Lang = "de" | "en" | "ru" | "tr" | "ar";
+type Lang = "de" | "en" | "ru" | "tr" | "ar" | "uz";
 type T = Record<Lang, string>;
 type Icon = React.ComponentType<{ className?: string }>;
 
@@ -51,6 +51,7 @@ const c = {
     ru: "GmbH · Амбулаторная реабилитация и терапия · § 111c / § 124 SGB V",
     tr: "GmbH · Ayakta Reha & Tedavi · § 111c / § 124 SGB V",
     ar: "ذ.م.م · التأهيل الطبي للعيادات الخارجية · § 111c / § 124 SGB V",
+    uz: "GmbH · Ambulator reabilitatsiya va terapiya · § 111c / § 124 SGB V",
   } as T,
   title: "NabiOta Rehabilitation & Therapy GmbH",
   subtitle: {
@@ -59,6 +60,7 @@ const c = {
     ru: "Амбулаторная реабилитация, физиотерапия и восстановительное лечение",
     tr: "Ayakta Tedavi, Fizyoterapi ve Rehabilitasyon",
     ar: "التأهيل الطبي الخارجي، العلاج الطبيعي والتعافي الشامل",
+    uz: "Ambulator reabilitatsiya, fizioterapiya va tiklanish",
   } as T,
   lead: {
     de: "Gegenstand des Unternehmens ist der Aufbau, die Organisation und der Betrieb von Therapie- und Rehabilitationseinrichtungen sowie die Erbringung physiotherapeutischer, ergotherapeutischer, logopädischer und weiterer rehabilitativer Leistungen im jeweils rechtlich zulässigen Umfang.",
@@ -66,6 +68,7 @@ const c = {
     ru: "Предметом деятельности компании является создание, организация и эксплуатация терапевтических и реабилитационных центров, а также оказание услуг по физиотерапии, эрготерапии, логопедии и иных видов восстановительного лечения в законно допустимом объёме.",
     tr: "Şirketin faaliyet konusu; terapi ve rehabilitasyon tesislerinin kurulması, organizasyonu ve işletilmesinin yanı sıra fizyoterapi, ergoterapi, konuşma terapisi ve diğer rehabilitasyon hizmetlerinin yasal olarak izin verilen ölçüde sunulmasıdır.",
     ar: "يتمثل نشاط الشركة في إنشاء وتنظيم وتشغيل مرافق العلاج والتأهيل الطبي، وتقديم خدمات العلاج الطبيعي، والعلاج الوظيفي، وعلاج النطق، وخدمات التأهيل الأخرى في الحدود المسموح بها قانونياً.",
+    uz: "Kompaniya faoliyatining predmeti terapiya va reabilitatsiya muassasalarini tashkil etish, yo'lga qo'yish va boshqarish, shuningdek qonunchilikda ruxsat etilgan hajmda fizioterapevtik, ergoterapevtik, logopedik va boshqa reabilitatsiya xizmatlarini ko'rsatishdan iborat.",
   } as T,
 
   patientGroupsTitle: {
@@ -74,6 +77,7 @@ const c = {
     ru: "Целевые группы пациентов и клинические показания",
     tr: "Hedef Gruplar & Klinik Odak Alanları",
     ar: "الفئات المستهدفة ومجالات التركيز السريري",
+    uz: "Maqsadli guruhlar va klinik ko'rsatmalar",
   } as T,
   patientGroupsDesc: {
     de: "Die Angebote richten sich an postoperative Patienten sowie an Menschen mit akuten oder chronischen Erkrankungen, Verletzungsfolgen, Behinderungen und funktionellen Einschränkungen in folgenden Fachdisziplinen:",
@@ -81,6 +85,7 @@ const c = {
     ru: "Программы ориентированы на постоперационных пациентов, а также людей с острыми или хроническими заболеваниями, последствиями травм, ограничениями подвижности и инвалидностью по направлениям:",
     tr: "Hizmetlerimiz; ameliyat sonrası hastalar ile akut veya kronik hastalıkları, yaralanma sonuçları, engellilikleri ve fonksiyonel kısıtlılıkları olan bireylere şu uzmanlık alanlarında yöneliktir:",
     ar: "تستهدف برامجنا المرضى بعد العمليات الجراحية، والأشخاص الذين يعانون من أمراض حادة أو مزمنة، وإصابات الحوادث، والإعاقات والقيود الوظيفية في التخصصات التالية:",
+    uz: "Xizmatlar operatsiyadan keyingi bemorlarga hamda o'tkir yoki surunkali kasalliklarga, jarohatlar oqibatlariga, harakat cheklovlariga ega bo'lgan shaxslarga quyidagi asosiy yo'nalishlar bo'yicha mo'ljallangan:",
   } as T,
   specialties: [
     {
@@ -89,6 +94,7 @@ const c = {
       ru: "Ортопедическая реабилитация",
       tr: "Ortopedik Rehabilitasyon",
       ar: "التأهيل العظمي وتقويم المفاصل",
+      uz: "Ortopedik reabilitatsiya",
     },
     {
       de: "Unfallchirurgische Nachbehandlung",
@@ -96,6 +102,7 @@ const c = {
       ru: "Травматологическое долечивание",
       tr: "Travma Cerrahisi Sonrası Tedavi",
       ar: "رعاية ما بعد جراحة الحوادث والكسور",
+      uz: "Travmatologik jarrohlikdan keyingi parvarish va davolash",
     },
     {
       de: "Neurologische Rehabilitation",
@@ -103,6 +110,7 @@ const c = {
       ru: "Неврологическая реабилитация",
       tr: "Nörolojik Rehabilitasyon",
       ar: "التأهيل العصبي",
+      uz: "Nevrologik reabilitatsiya",
     },
     {
       de: "Kardiologische Rehabilitation",
@@ -110,6 +118,7 @@ const c = {
       ru: "Кардиологическая реабилитация",
       tr: "Kardiyolojik Rehabilitasyon",
       ar: "تأهيل القلب والأوعية الدموية",
+      uz: "Kardiologik reabilitatsiya",
     },
     {
       de: "Pneumologische Therapie (Lunge & Atemwege)",
@@ -117,6 +126,7 @@ const c = {
       ru: "Пульмонологическая терапия (легкие и дыхание)",
       tr: "Pnömolojik Terapi (Akciğer & Solunum)",
       ar: "العلاج التنفسي وأمراض الرئة",
+      uz: "Pulmonologik terapiya (o'pka va nafas yo'llari)",
     },
   ] as T[],
 
@@ -129,6 +139,7 @@ const c = {
         ru: "Физиотерапия и медицинская тренировочная терапия",
         tr: "Fizyoterapi & Tıbbi Egzersiz Terapisi",
         ar: "العلاج الطبيعي والتمارين الطبية العلاجية",
+        uz: "Fizioterapiya va tibbiy mashg'ulot terapiyasi",
       } as T,
       text: {
         de: "Krankengymnastik, manuelle Therapie, gerätegestützte Krankengymnastik (KGG), medizinische Trainingstherapie (MTT), Gang-, Gleichgewichts- und Koordinationstraining, Atemtherapie, manuelle Lymphdrainage (MLD) sowie physikalische Anwendungen.",
@@ -136,6 +147,7 @@ const c = {
         ru: "Лечебная гимнастика, мануальная терапия, аппаратная гимнастика (KGG), медицинская тренировочная терапия (MTT), тренировки ходьбы, равновесия и координации, дыхательная терапия, мануальный лимфодренаж и физиопроцедуры.",
         tr: "Fizik tedavi, manuel terapi, cihaz destekli fizyoterapi (KGG), tıbbi egzersiz terapisi (MTT), yürüme, denge ve koordinasyon eğitimi, solunum terapisi, manuel lenf drenajı (MLD) ve fiziksel uygulamalar.",
         ar: "العلاج الطبيعي، العلاج اليدوي، التمارين الموجهة بالأجهزة (KGG)، التدريب الطبي العلاجي (MTT)، تدريب المشي والتوازن والتنسيق الحركي، العلاج التنفسي، التصريف اللمفاوي والوسائل الفيزيائية.",
+        uz: "Davolovchi gimnastika, manual terapiya, apparatli fizioterapiya (KGG), tibbiy mashg'ulot terapiyasi (MTT), yurish, muvozanat va koordinatsiya mashg'ulotlari, nafas terapiyasi, manual limfodrenaj (MLD) va fizioterapevtik muolajalar.",
       } as T,
       image: "/images/rehabilitation/equipment-gait.webp",
     },
@@ -147,6 +159,7 @@ const c = {
         ru: "Эрготерапия и самостоятельность в быту (ADL)",
         tr: "Ergoterapi & Günlük Yaşam Bağımsızlığı (ADL)",
         ar: "العلاج الوظيفي والاستقلالية اليومية (ADL)",
+        uz: "Ergoterapiya va kundalik mustaqillik (ADL)",
       } as T,
       text: {
         de: "Gezielte ergotherapeutische Maßnahmen zur Förderung motorischer, sensorischer und kognitiver Fähigkeiten. Training von Alltagskompetenzen (Activities of Daily Living) zur schnellen Wiedererlangung persönlicher Unabhängigkeit.",
@@ -154,6 +167,7 @@ const c = {
         ru: "Целевая эрготерапия для развития моторных, сенсорных и когнитивных функций. Тренировка бытовых навыков (Activities of Daily Living) для быстрого возвращения к самостоятельности.",
         tr: "Motor, duyusal ve bilişsel yetenekleri geliştirmeye yönelik hedefe yönelik ergoterapi uygulamaları. Kişisel ve mesleki bağımsızlığı hızla yeniden kazanmak için Günlük Yaşam Aktiviteleri (ADL) eğitimi.",
         ar: "تدخلات العلاج الوظيفي لتعزيز القدرات الحركية والحسية والإدراكية، والتدريب على أنشطة الحياة اليومية (ADL) لاستعادة الاستقلالية الشخصية والمهنية بأسرع وقت.",
+        uz: "Motorika, sensorika va kognitiv qobiliyatlarni rivojlantirishga qaratilgan ergoterapevtik choralar. Shaxsiy va kasbiy mustaqillikni tezda tiklash uchun kundalik faoliyat ko'nikmalarini (Activities of Daily Living) mashq qilish.",
       } as T,
       image: "/images/rehabilitation/parallel-bars.webp",
     },
@@ -165,6 +179,7 @@ const c = {
         ru: "Логопедия и терапия глотания (дисфагия)",
         tr: "Konuşma Terapisi & Yutma Tedavisi (Disfaji)",
         ar: "علاج النطق واضطرابات البلع (عسر البلع)",
+        uz: "Logopediya va yutish terapiyasi (disfagiya)",
       } as T,
       text: {
         de: "Qualifizierte logopädische Behandlungen von Sprach-, Sprech-, Stimm- und Schluckstörungen (Dysphagie) infolge von neurologischen Ereignissen (z. B. Schlaganfall) oder operativen Eingriffen im Kopf-Hals-Bereich.",
@@ -172,6 +187,7 @@ const c = {
         ru: "Квалифицированное логопедическое лечение нарушений речи, голоса и глотания (дисфагии) вследствие неврологических патологий (инсульт) или операций в области головы и шеи.",
         tr: "Nörolojik olaylar (ör. inme) veya baş-boyun cerrahisi operasyonları sonucu ortaya çıkan dil, konuşma, ses ve yutma bozukluklarının (disfaji) nitelikli logopedik tedavisi.",
         ar: "علاج متخصص لاضطرابات اللغة والنطق والصوت وصعوبات البلع (الديسفاجيا) الناتجة عن إصابات عصبية (مثل الجلطات الدماغية) أو التدخلات الجراحية في الرأس والرقبة.",
+        uz: "Nevrologik asoratlar (masalan, insult) yoki bosh va bo'yin sohasidagi jarrohlik amaliyotlaridan keyingi nutq, ovoz va yutish buzilishlarini (disfagiya) malakali logopedik davolash.",
       } as T,
       image: "/images/areas/stethoscope-clinic.webp",
     },
@@ -183,6 +199,7 @@ const c = {
         ru: "Амбулаторная реабилитация, профилактика и участие",
         tr: "Ayakta Reha, Önleme & Toplumsal Katılım",
         ar: "التأهيل الخارجي، الوقاية والمشاركة الاجتماعية",
+        uz: "Ambulator reabilitatsiya, profilaktika va ijtimoiy moslashuv",
       } as T,
       text: {
         de: "Ambulante medizinische Rehabilitation, rehabilitative Nachsorge (IRENA/T-RENA), Präventionsprogramme, Patientenschulungen und interdisziplinäre Schmerztherapie zur Sicherung von Mobilität und beruflicher Teilhabe.",
@@ -190,6 +207,7 @@ const c = {
         ru: "Амбулаторная медицинская реабилитация, восстановительное долечивание, профилактические курсы, школы пациентов и мультимодальная терапия боли для поддержания здоровья и трудоспособности.",
         tr: "Sağlığı, hareket kabiliyetini ve mesleki katılımı güvence altına almak için ayakta tıbbi rehabilitasyon, yapılandırılmış takip programları, önleme kursları, hasta eğitimleri ve interdisipliner ağrı terapisi.",
         ar: "التأهيل الطبي لمرضى العيادات الخارجية، وبرامج المتابعة والرعاية البعدية، ودورات الوقاية وتثقيف المرضى وعلاج الألم متعدد التخصصات لضمان الحركة والاندماج المهني.",
+        uz: "Salomatlik, harakatchanlik va kasbiy faollikni saqlash maqsadida ambulator tibbiy reabilitatsiya, reabilitatsiyadan keyingi tizimli parvarish (IRENA/T-RENA), profilaktika kurslari, bemorlarni o'qitish va ko'p tarmoqli og'riq terapiyasi.",
       } as T,
       image: "/images/rehabilitation/facility-pool.webp",
     },
@@ -201,6 +219,7 @@ const c = {
     ru: "Главная цель реабилитации",
     tr: "Temel Rehabilitasyon Hedefi",
     ar: "الهدف الأسمى لبرامج التأهيل الطبي",
+    uz: "Reabilitatsiyaning asosiy maqsadi",
   } as T,
   purposeGoalsText: {
     de: "Die Maßnahmen der Gesellschaft dienen der nachhaltigen Verbesserung oder Erhaltung von Gesundheit, Mobilität, persönlicher Selbstständigkeit sowie gesellschaftlicher und beruflicher Teilhabe der Patienten. Sämtliche Therapie- und Nachsorgeangebote werden eng mit den behandelnden Fachärzten, Kliniken und MVZ der NabiOta-Gruppe abgestimmt.",
@@ -208,6 +227,7 @@ const c = {
     ru: "Все терапевтические меры направлены на устойчивое улучшение или сохранение здоровья, подвижности, личной независимости, а также интеграцию в социальную и трудовую жизнь. Программы согласовываются с лечащими врачами, клиниками и центрами холдинга.",
     tr: "Şirketin tüm uygulamaları; hastaların sağlığının, hareket kabiliyetinin, kişisel bağımsızlığının ve toplumsal ve mesleki katılımının sürdürülebilir biçimde iyileştirilmesine veya korunmasına hizmet eder. Tüm terapi ve takip programları, NabiOta grubunun tedavi eden uzman hekimleri, klinikleri ve MVZ'leri ile yakın koordinasyon içinde yürütülür.",
     ar: "تهدف كافة برامج الشركة إلى التحسين المستدام لصحة المرضى وقدرتهم الحركية واستقلاليتهم الذاتية ومشاركتهم الاجتماعية والمهنية. ويتم تنسيق كافة خطط العلاج والمتابعة عن كثب مع الأطباء المعالجين والمستشفيات ومراكز MVZ التابعة للمجموعة.",
+    uz: "Jamiyatning barcha choralari bemorlarning salomatligi, harakatchanligi, shaxsiy mustaqilligi hamda ijtimoiy va kasbiy hayotda faol ishtirokini barqaror yaxshilash yoki saqlab qolishga xizmat qiladi. Barcha terapiya va kuzatuv dasturlari NabiOta guruhining davolovchi mutaxassis shifokorlari, klinikalari va MVZ markazlari bilan yaqindan muvofiqlashtiriladi.",
   } as T,
 
   payersTitle: {
@@ -216,6 +236,7 @@ const c = {
     ru: "Правовые основы, допуски и расчёты со страховыми институтами",
     tr: "Yasal Dayanaklar, Ruhsatlar ve Finansör Kurumlarla Faturalandırma",
     ar: "الأسس القانونية والتراخيص والتعاقد مع جهات التأمين",
+    uz: "Huquqiy asoslar, litsenziyalar va to'lovchi tashkilotlar bilan hisob-kitoblar",
   } as T,
   payersLead: {
     de: "Heilmittelbehandlungen und medizinische Rehabilitationsleistungen unterliegen rechtlich unterschiedlichen Zulassungs- und Vertragsanforderungen. Die Abrechnung erfolgt ausschließlich auf Grundlage der jeweils erforderlichen behördlichen und kassenrechtlichen Genehmigungen:",
@@ -223,6 +244,7 @@ const c = {
     ru: "Амбулаторные лечебные процедуры и медицинская реабилитация регулируются различными законодательными требованиями к лицензированию. Расчёты производятся строго на основании действующих допусков и договоров:",
     tr: "Tedavi edici uygulamalar ve tıbbi rehabilitasyon hizmetleri, hukuken farklı ruhsat ve sözleşme şartlarına tabidir. Faturalandırma yalnızca ilgili resmi ve sigorta hukuku izinlerine dayanarak yapılır:",
     ar: "تخضع جلسات العلاج وخدمات التأهيل الطبي لشروط ترخيص وتعاقد قانونية محددة. وتتم الفوترة حصرياً وفقاً للتراخيص المعتمدة رسمياً:",
+    uz: "Davolovchi vositalar bilan muolajalar va tibbiy reabilitatsiya xizmatlari qonunchilikda turli litsenziyalash va shartnoma talablariga bo'ysunadi. Hisob-kitoblar faqat tegishli rasmiy va sug'urta ruxsatnomalari asosida amalga oshiriladi:",
   } as T,
   payersList: [
     {
@@ -232,6 +254,7 @@ const c = {
         ru: "Государственные и частные больничные кассы (GKV / PKV)",
         tr: "Yasal ve Özel Sağlık Sigortaları (GKV / PKV)",
         ar: "صناديق التأمين الصحي الحكومية والخاصة (GKV / PKV)",
+        uz: "Davlat va xususiy tibbiy sug'urta jamg'armalari (GKV / PKV)",
       } as T,
       desc: {
         de: "Heilmittelverordnungen (Muster 13 für Physiotherapie, Ergotherapie, Logopädie) gemäß Heilmittel-Richtlinie nach § 124 SGB V sowie ambulante Reha-Versorgungsverträge nach § 111c SGB V.",
@@ -239,6 +262,7 @@ const c = {
         ru: "Рецепты на лечебные процедуры (форма 13) по директивам § 124 SGB V, а также договоры на амбулаторную реабилитацию по § 111c SGB V.",
         tr: "§ 124 SGB V yönergelerine göre tedavi reçeteleri (Reçete Formu 13) ve § 111c SGB V uyarınca ayakta rehabilitasyon bakım sözleşmeleri.",
         ar: "وصفات العلاج الطبيعي والوظيفي والنطق (نموذج 13) وفق المادة 124 SGB V، بالإضافة لعقود التأهيل الخارجي وفق المادة 111c SGB V.",
+        uz: "§ 124 SGB V bo'yicha davolash muolajalari retseptlari (fizioterapiya, ergoterapiya, logopediya uchun 13-shakl) hamda § 111c SGB V bo'yicha ambulator reabilitatsiya ta'minoti shartnomalari.",
       } as T,
     },
     {
@@ -248,6 +272,7 @@ const c = {
         ru: "Пенсионные фонды Германии (DRV)",
         tr: "Almanya Emeklilik Sigortası Kurumları (DRV)",
         ar: "مؤسسات التأمين التقاعدي الألمانية (DRV)",
+        uz: "Pensiya sug'urtasi institutlari (DRV)",
       } as T,
       desc: {
         de: "Ambulante medizinische Rehabilitation zur Wiederherstellung der Erwerbsfähigkeit ('Reha vor Rente') sowie strukturierte Nachsorgeprogramme (IRENA, T-RENA) nach SGB VI.",
@@ -255,6 +280,7 @@ const c = {
         ru: "Амбулаторная реабилитация для восстановления трудоспособности («реабилитация вместо пенсии») и долечивание (IRENA, T-RENA) по нормам SGB VI.",
         tr: "Çalışma kapasitesinin yeniden kazanılması için ayakta tıbbi rehabilitasyon ('Emeklilikten Önce Reha') ve SGB VI uyarınca yapılandırılmış takip programları (IRENA, T-RENA).",
         ar: "التأهيل الطبي الخارجي لاستعادة القدرة على العمل ('التأهيل قبل التقاعد') وبرامج الرعاية اللاحقة المنظمة (IRENA, T-RENA) وفق SGB VI.",
+        uz: "Mehnat qobiliyatini tiklash uchun ambulator tibbiy reabilitatsiya ('Pensiyadan oldin reabilitatsiya') hamda SGB VI bo'yicha reabilitatsiyadan keyingi tizimli dasturlar (IRENA, T-RENA).",
       } as T,
     },
     {
@@ -264,6 +290,7 @@ const c = {
         ru: "Фонды страхования от несчастных случаев (BG / DGUV)",
         tr: "Kaza Sigortası Kurumları & Meslek Birlikleri (BG)",
         ar: "مؤسسات التأمين ضد الحوادث وإصابات العمل (BG / DGUV)",
+        uz: "Baxtsiz hodisalardan sug'urta institutlari va kasbiy birlashmalar (BG)",
       } as T,
       desc: {
         de: "Erweiterte Ambulante Physiotherapie (EAP), berufsgenossenschaftliche Heilverfahren und arbeitsplatzbezogene Rehabilitation nach Arbeitsunfällen und Wegeunfällen nach SGB VII.",
@@ -271,6 +298,7 @@ const c = {
         ru: "Расширенная амбулаторная физиотерапия (EAP) и специализированные программы восстановления после производственных травм по SGB VII.",
         tr: "Genişletilmiş Ayakta Fizyoterapi (EAP), meslek birliği tedavi süreçleri ve SGB VII uyarınca iş ve iş yolu kazaları sonrası işe dönüş odaklı rehabilitasyon.",
         ar: "العلاج الطبيعي الخارجي المتقدم (EAP)، وبرامج العلاج المهني والتأهيل المرتبط ببيئة العمل بعد حوادث العمل والتنقل وفق SGB VII.",
+        uz: "Kengaytirilgan ambulator fizioterapiya (EAP), kasbiy birlashma davolash tartiblari va SGB VII bo'yicha mehnat va transport hodisalaridan keyingi ish joyiga yo'naltirilgan reabilitatsiya.",
       } as T,
     },
     {
@@ -280,6 +308,7 @@ const c = {
         ru: "Госслужащие (Beihilfe), частные пациенты и международные фонды",
         tr: "Beihilfe, Bireysel Ödeme & Uluslararası Kurumlar",
         ar: "مساعدات موظفي الدولة (Beihilfe)، الدفع الخاص والجهات الدولية",
+        uz: "Davlat subsidiyalari (Beihilfe), o'z hisobidan to'lovchilar va xalqaro tashkilotlar",
       } as T,
       desc: {
         de: "Transparente Abrechnung nach der Gebührenordnung für Therapeuten (GebüTh) bzw. individuellen Vereinbarungen für maßgeschneiderte Präventions- und Kompaktkuren.",
@@ -287,13 +316,14 @@ const c = {
         ru: "Прозрачный расчёт по прейскуранту GebüTh или индивидуальным соглашениям на комплексные восстановительные курсы.",
         tr: "Terapistler Ücret Tarifesi (GebüTh) veya kişiye özel hazırlanmış yoğun iyileşme ve kür protokolleri için bireysel anlaşmalara göre şeffaf faturalandırma.",
         ar: "فوترة شفافة وفق لائحة أجور المعالجين (GebüTh) أو اتفاقيات فردية لبرامج التأهيل المكثفة والمصممة خصيصاً للمرضى الدوليين.",
+        uz: "Terapevtlar tarif jadvali (GebüTh) yoki intensiv tiklanish protokollari uchun individual kelishuvlar asosida shaffof hisob-kitob.",
       } as T,
     },
   ],
 };
 
 export function RehabilitationCompanySection({ locale = "de" }: { locale?: string }) {
-  const l: Lang = locale === "tr" ? "tr" : locale === "ar" ? "ar" : locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
+  const l: Lang = locale === "uz" ? "uz" : locale === "tr" ? "tr" : locale === "ar" ? "ar" : locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
 
   return (
     <>
@@ -497,7 +527,7 @@ export function RehabilitationCompanySection({ locale = "de" }: { locale?: strin
           <div className="max-w-2xl mb-7 sm:mb-9">
             <div className="flex items-center gap-3 mb-2.5">
               <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase">
-                {l === "ru" ? "НАШИ ОБЯЗАТЕЛЬСТВА" : l === "en" ? "OUR COMMITMENT" : "UNSERE VERPFLICHTUNGEN"}
+                {l === "ru" ? "НАШИ ОБЯЗАТЕЛЬСТВА" : l === "uz" ? "BIZNING MAJBURIYATLARIMIZ" : l === "en" ? "OUR COMMITMENT" : "UNSERE VERPFLICHTUNGEN"}
               </span>
               <span className="h-px w-8 bg-[#C5A56A]" />
             </div>

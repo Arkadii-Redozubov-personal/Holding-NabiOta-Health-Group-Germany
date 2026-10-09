@@ -29,4 +29,5 @@ export const languages = [
   { code: "ru", label: "RU", name: "Русский" },
   { code: "tr", label: "TR", name: "Türkçe" },
   { code: "ar", label: "AR", name: "العربية" },
+  { code: "uz", label: "UZ", name: "O'zbekcha" },
 ];

@@ -19,6 +19,7 @@ interface LocalizedImprintProps {
 export async function generateMetadata({ params }: LocalizedImprintProps): Promise<Metadata> {
   const { locale } = await params;
   const titles: Record<string, string> = {
+    uz: "Chiqish ma'lumotlari (Impressum) | Yuridik ma'lumotlar",
     de: "Impressum | Rechtliche Angaben nach § 5 TMG",
     en: "Imprint | Legal Notice according to § 5 TMG",
     ru: "Выходные данные (Impressum) | Юридическая информация",
@@ -30,6 +31,7 @@ export async function generateMetadata({ params }: LocalizedImprintProps): Promi
     alternates: {
       canonical: `https://www.nabiota-health-group.de/${locale}/imprint`,
       languages: {
+        uz: "https://www.nabiota-health-group.de/uz/imprint",
         de: "https://www.nabiota-health-group.de/de/imprint",
         en: "https://www.nabiota-health-group.de/en/imprint",
         ru: "https://www.nabiota-health-group.de/ru/imprint",
@@ -43,6 +45,7 @@ export async function generateMetadata({ params }: LocalizedImprintProps): Promi
 
 export default async function LocalizedImprintPage({ params }: LocalizedImprintProps) {
   const { locale } = await params;
+  const isUz = locale === "uz";
   const isRu = locale === "ru";
   const isEn = locale === "en";
   const isTr = locale === "tr";
@@ -51,18 +54,18 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
   const imprintBadges = [
     {
       icon: <Scale className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu ? "Правовые" : isEn ? "Legal" : isTr ? "Yasal" : isAr ? "الامتثال" : "Rechtssicherheit",
-      sub: isRu ? "Нормы (§5 TMG)" : isEn ? "Compliance" : isTr ? "Uyum (§ 5 TMG)" : isAr ? "القانوني (§ 5 TMG)" : "nach § 5 TMG",
+      title: isUz ? "Huquqiy" : isRu ? "Правовые" : isEn ? "Legal" : isTr ? "Yasal" : isAr ? "الامتثال" : "Rechtssicherheit",
+      sub: isUz ? "Me'yorlar (§ 5 TMG)" : isRu ? "Нормы (§5 TMG)" : isEn ? "Compliance" : isTr ? "Uyum (§ 5 TMG)" : isAr ? "القانوني (§ 5 TMG)" : "nach § 5 TMG",
     },
     {
       icon: <Building2 className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu ? "Структура" : isEn ? "Corporate" : isTr ? "Kurumsal" : isAr ? "الهيكل" : "NabiOta GmbH",
-      sub: isRu ? "Холдинга" : isEn ? "Structure" : isTr ? "Holding Yapısı" : isAr ? "المؤسسي" : "Holding",
+      title: isUz ? "Tuzilma" : isRu ? "Структура" : isEn ? "Corporate" : isTr ? "Kurumsal" : isAr ? "الهيكل" : "NabiOta GmbH",
+      sub: isUz ? "Xolding" : isRu ? "Холдинга" : isEn ? "Structure" : isTr ? "Holding Yapısı" : isAr ? "المؤسسي" : "Holding",
     },
     {
       icon: <FileCheck className="w-5 h-5 text-[#ECCF96]" />,
-      title: isRu ? "Прозрачность" : isEn ? "Registry" : isTr ? "Şeffaflık" : isAr ? "الشفافية" : "Transparenz",
-      sub: isRu ? "И Реестр" : isEn ? "Transparency" : isTr ? "ve Sicil Kaydı" : isAr ? "والسجل التجاري" : "& Register",
+      title: isUz ? "Shaffoflik" : isRu ? "Прозрачность" : isEn ? "Registry" : isTr ? "Şeffaflık" : isAr ? "الشفافية" : "Transparenz",
+      sub: isUz ? "Va Reestr" : isRu ? "И Реестр" : isEn ? "Transparency" : isTr ? "ve Sicil Kaydı" : isAr ? "والسجل التجاري" : "& Register",
     },
   ];
 
@@ -73,7 +76,9 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
         <PageHero
           locale={locale}
           eyebrow={
-            isRu
+            isUz
+              ? "YURIDIK MA'LUMOTLAR"
+              : isRu
               ? "ЮРИДИЧЕСКАЯ ИНФОРМАЦИЯ"
               : isEn
               ? "LEGAL NOTICE"
@@ -84,7 +89,9 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
               : "RECHTLICHE PFLICHTANGABEN"
           }
           title={
-            isRu
+            isUz
+              ? "Chiqish ma'lumotlari (Impressum)"
+              : isRu
               ? "Выходные данные (Impressum)"
               : isEn
               ? "Imprint & Legal Notice"
@@ -95,7 +102,9 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
               : "Impressum"
           }
           description={
-            isRu
+            isUz
+              ? "Germaniya Telemedia to'g'risidagi qonuni (§ 5 TMG) va Davlat ommaviy axborot vositalari shartnomasi (§ 18 2-band MStV) bo'yicha majburiy ma'lumotlar."
+              : isRu
               ? "Сведения в соответствии с § 5 Закона о средствах телекоммуникации Германии (TMG) и § 18 разд. 2 MStV."
               : isEn
               ? "Information pursuant to § 5 Telemedia Act (TMG) and § 18 para. 2 Interstate Media Treaty (MStV)."
@@ -115,21 +124,23 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
             <div className="bg-white p-8 sm:p-12 lg:p-14 rounded-3xl border border-forest-900/10 shadow-sm space-y-8 text-sm sm:text-base text-text-secondary leading-relaxed font-sans">
               <div>
                 <h2 className="font-display text-2xl text-forest-950 mb-3">
-                  {isRu ? "Поставщик услуг" : isEn ? "Service Provider" : isTr ? "Hizmet Sağlayıcı" : isAr ? "الجهة المقدمة للخدمة" : "Diensteanbieter"}
+                  {isUz ? "Xizmat ko'rsatuvchi" : isRu ? "Поставщик услуг" : isEn ? "Service Provider" : isTr ? "Hizmet Sağlayıcı" : isAr ? "الجهة المقدمة للخدمة" : "Diensteanbieter"}
                 </h2>
                 <p className="font-semibold text-forest-950">{companyInfo.legalName}</p>
                 <p>{companyInfo.street}</p>
                 <p>{companyInfo.postalCode} {companyInfo.city}</p>
-                <p>{isTr ? "Almanya" : isAr ? "ألمانيا" : companyInfo.country}</p>
+                <p>{isUz ? "Germaniya" : isTr ? "Almanya" : isAr ? "ألمانيا" : companyInfo.country}</p>
               </div>
 
               <div className="pt-6 border-t border-forest-900/10">
                 <h2 className="font-display text-2xl text-forest-950 mb-3">
-                  {isRu ? "Уполномоченные представители" : isEn ? "Authorized Representatives" : isTr ? "Temsile Yetkili Kişiler" : isAr ? "الممثلون القانونيون والمفوضون بالتوقيع" : "Vertretungsberechtigte"}
+                  {isUz ? "Vakolatli vakillar" : isRu ? "Уполномоченные представители" : isEn ? "Authorized Representatives" : isTr ? "Temsile Yetkili Kişiler" : isAr ? "الممثلون القانونيون والمفوضون بالتوقيع" : "Vertretungsberechtigte"}
                 </h2>
                 <p>
                   <strong className="text-forest-950 font-medium">
-                    {isRu
+                    {isUz
+                      ? "Rahbariyat nomidan:"
+                      : isRu
                       ? "В лице руководства:"
                       : isEn
                       ? "Represented by the Management Board:"
@@ -145,7 +156,9 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
                 {companyInfo.medicalFounder && (
                   <p className="mt-2">
                     <strong className="text-forest-950 font-medium">
-                      {isRu
+                      {isUz
+                        ? "Tashkil etuvchi shartnoma shifokori:"
+                        : isRu
                         ? "Учредитель / Врач-основатель:"
                         : isEn
                         ? "Founding Licensed Physician:"
@@ -163,16 +176,16 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
 
               <div className="pt-6 border-t border-forest-900/10">
                 <h2 className="font-display text-2xl text-forest-950 mb-3">
-                  {isRu ? "Контакты" : isEn ? "Contact" : isTr ? "İletişim" : isAr ? "الاتصال" : "Kontakt"}
+                  {isUz ? "Aloqa" : isRu ? "Контакты" : isEn ? "Contact" : isTr ? "İletişim" : isAr ? "الاتصال" : "Kontakt"}
                 </h2>
                 <p>
-                  {isTr ? "Telefon (Sekreterlik): " : isAr ? "الهاتف (السكرتارية): " : "Telefon (Sekretariat): "}{companyInfo.phones.sekretariat}
+                  {isUz ? "Telefon (Kotibiyat): " : isTr ? "Telefon (Sekreterlik): " : isAr ? "الهاتف (السكرتارية): " : "Telefon (Sekretariat): "}{companyInfo.phones.sekretariat}
                   <br />
-                  {isTr ? "Telefon (Hasta Kabul): " : isAr ? "الهاتف (استقبال المرضى): " : "Telefon (Aufnahme): "}{companyInfo.phones.aufnahme}
+                  {isUz ? "Telefon (Qabul): " : isTr ? "Telefon (Hasta Kabul): " : isAr ? "الهاتف (استقبال المرضى): " : "Telefon (Aufnahme): "}{companyInfo.phones.aufnahme}
                   <br />
-                  {isTr ? "Telefon (Yönetim): " : isAr ? "الهاتف (الإدارة): " : "Telefon (Geschäftsführung): "}{companyInfo.phones.geschaeftsfuehrung}
+                  {isUz ? "Telefon (Boshqaruv): " : isTr ? "Telefon (Yönetim): " : isAr ? "الهاتف (الإدارة): " : "Telefon (Geschäftsführung): "}{companyInfo.phones.geschaeftsfuehrung}
                   <br />
-                  {isTr ? "Faks: " : isAr ? "الفاكس: " : "Telefax: "}{companyInfo.phones.fax}
+                  {isUz ? "Telefaks: " : isTr ? "Faks: " : isAr ? "الفاكس: " : "Telefax: "}{companyInfo.phones.fax}
                 </p>
                 <p className="mt-2">
                   E-Mail:{" "}
@@ -189,10 +202,12 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
 
               <div className="pt-6 border-t border-forest-900/10">
                 <h2 className="font-display text-2xl text-forest-950 mb-3">
-                  {isRu ? "Реестровая запись" : isEn ? "Register Entry" : isTr ? "Ticaret Sicil Kaydı" : isAr ? "بيانات السجل التجاري" : "Registereintrag"}
+                  {isUz ? "Reestr yozuvi" : isRu ? "Реестровая запись" : isEn ? "Register Entry" : isTr ? "Ticaret Sicil Kaydı" : isAr ? "بيانات السجل التجاري" : "Registereintrag"}
                 </h2>
                 <p>
-                  {isRu
+                  {isUz
+                    ? "Tijorat reestriga kiritish:"
+                    : isRu
                     ? "Внесение в торговый реестр:"
                     : isEn
                     ? "Commercial Register Entry:"
@@ -202,13 +217,15 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
                     ? "القيد في السجل التجاري:"
                     : "Eintragung im Handelsregister."}
                   <br />
-                  {isTr ? "Sicil Mahkemesi: " : isAr ? "محكمة السجل: " : "Registergericht: "}{companyInfo.commercialRegister.court}
+                  {isUz ? "Reestr sudi: " : isTr ? "Sicil Mahkemesi: " : isAr ? "محكمة السجل: " : "Registergericht: "}{companyInfo.commercialRegister.court}
                   <br />
-                  {isTr ? "Ticaret Sicil Numarası: " : isAr ? "رقم السجل التجاري: " : "Handelsregisternummer: "}{companyInfo.commercialRegister.number}
+                  {isUz ? "Tijorat reestri raqami: " : isTr ? "Ticaret Sicil Numarası: " : isAr ? "رقم السجل التجاري: " : "Handelsregisternummer: "}{companyInfo.commercialRegister.number}
                   {companyInfo.registrationDate && (
                     <>
                       <br />
-                      {isRu
+                      {isUz
+                        ? "Ro'yxatdan o'tgan sana:"
+                        : isRu
                         ? "Дата регистрации:"
                         : isEn
                         ? "Registration Date:"
@@ -223,7 +240,9 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
                   {companyInfo.shareCapital && (
                     <>
                       <br />
-                      {isRu
+                      {isUz
+                        ? "Ustav kapitali:"
+                        : isRu
                         ? "Уставный капитал:"
                         : isEn
                         ? "Share Capital:"
@@ -240,10 +259,12 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
 
               <div className="pt-6 border-t border-forest-900/10">
                 <h2 className="font-display text-2xl text-forest-950 mb-3">
-                  {isRu ? "Идентификационный номер налогоплательщика" : isEn ? "VAT Identification Number" : isTr ? "KDV Kimlik Numarası" : isAr ? "الرقم التعريفي لضريبة القيمة المضافة" : "Umsatzsteuer-Identifikationsnummer"}
+                  {isUz ? "Soliq to'lovchining identifikatsiya raqami" : isRu ? "Идентификационный номер налогоплательщика" : isEn ? "VAT Identification Number" : isTr ? "KDV Kimlik Numarası" : isAr ? "الرقم التعريفي لضريبة القيمة المضافة" : "Umsatzsteuer-Identifikationsnummer"}
                 </h2>
                 <p>
-                  {isRu
+                  {isUz
+                    ? "Germaniya qo'shilgan qiymat solig'i to'g'risidagi qonuni § 27a bo'yicha QQS identifikatsiya raqami:"
+                    : isRu
                     ? "Идентификационный номер плательщика НДС согласно § 27a Закона о налоге на добавленную стоимость Германии:"
                     : isEn
                     ? "VAT identification number pursuant to § 27a Value Added Tax Act:"
@@ -261,7 +282,7 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
 
               <div className="pt-6 border-t border-forest-900/10">
                 <h2 className="font-display text-2xl text-forest-950 mb-3">
-                  {isRu ? "Ответственный за содержание" : isEn ? "Responsible for Editorial Content" : isTr ? "İçerikten Sorumlu Kişi (§ 18 Fıkra 2 MStV)" : isAr ? "المسؤول عن المحتوى التحريري بموجب المادة § 18 الفقرة 2 MStV" : "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV"}
+                  {isUz ? "Tahririy mazmun uchun mas'ul (§ 18 2-band MStV)" : isRu ? "Ответственный за содержание" : isEn ? "Responsible for Editorial Content" : isTr ? "İçerikten Sorumlu Kişi (§ 18 Fıkra 2 MStV)" : isAr ? "المسؤول عن المحتوى التحريري بموجب المادة § 18 الفقرة 2 MStV" : "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV"}
                 </h2>
                 <p>
                   {companyInfo.commercialRegister.responsiblePerson}
@@ -272,10 +293,12 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
 
               <div className="pt-6 border-t border-forest-900/10">
                 <h2 className="font-display text-2xl text-forest-950 mb-3">
-                  {isRu ? "Защита товарного знака и авторское право" : isEn ? "Trademark & Copyright Protection" : isTr ? "Marka ve Telif Hakkı Koruması" : isAr ? "حماية العلامة التجارية وحقوق النشر" : "Markenschutz"}
+                  {isUz ? "Tovar belgisini himoya qilish va mualliflik huquqi" : isRu ? "Защита товарного знака и авторское право" : isEn ? "Trademark & Copyright Protection" : isTr ? "Marka ve Telif Hakkı Koruması" : isAr ? "حماية العلامة التجارية وحقوق النشر" : "Markenschutz"}
                 </h2>
                 <p>
-                  {isRu
+                  {isUz
+                    ? "NabiOta® — NabiOta® Health Group Germany GmbH kompaniyasining ro'yxatdan o'tkazilgan va qonun bilan muhofaza qilinadigan tovar belgisidir. Tovar belgisi, logotiplar, korporativ belgilar va boshqa himoyalangan aktivlardan foydalanish faqat huquq egasining oldindan berilgan yozma roziligi bilan ruxsat etiladi."
+                    : isRu
                     ? "NabiOta® является зарегистрированным и охраняемым законом товарным знаком NabiOta® Health Group Germany GmbH. Использование товарного знака, логотипов, фирменных наименований и иных охраняемых элементов допускается только с предварительного письменного согласия правообладателя."
                     : isEn
                     ? "NabiOta® is a registered and protected trademark of NabiOta® Health Group Germany GmbH. Any use of the trademark, logos, corporate identifiers, or other protected assets requires the prior written consent of the rights holder."
@@ -289,10 +312,12 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
 
               <div className="pt-6 border-t border-forest-900/10">
                 <h2 className="font-display text-2xl text-forest-950 mb-3">
-                  {isRu ? "Правовое указание" : isEn ? "Legal Notice" : isTr ? "Yasal Bildirim" : isAr ? "إشعار قانوني" : "Hinweis"}
+                  {isUz ? "Huquqiy eslatma" : isRu ? "Правовое указание" : isEn ? "Legal Notice" : isTr ? "Yasal Bildirim" : isAr ? "إشعار قانوني" : "Hinweis"}
                 </h2>
                 <p>
-                  {isRu
+                  {isUz
+                    ? "NabiOta® Health Group Germany GmbH — Germaniya qonunchiligiga muvofiq tuzilgan va tijorat reestrida ro'yxatdan o'tgan mas'uliyati cheklangan jamiyat (GmbH)."
+                    : isRu
                     ? "NabiOta® Health Group Germany GmbH — общество с ограниченной ответственностью, зарегистрированное в торговом реестре в соответствии с законодательством Германии."
                     : isEn
                     ? "NabiOta® Health Group Germany GmbH is a limited liability company incorporated under German law and registered in the commercial register."
@@ -303,7 +328,9 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
                     : "Die NabiOta® Health Group Germany GmbH ist eine im Handelsregister eingetragene Gesellschaft mit beschränkter Haftung nach deutschem Recht."}
                 </p>
                 <p className="mt-2">
-                  {isRu
+                  {isUz
+                    ? "NabiOta® — NabiOta® Health Group Germany GmbH kompaniyasining himoyalangan tovar belgisi. Tovar belgisi, logotiplar, kompaniya nomlari yoki boshqa muhofaza qilinadigan elementlardan foydalanish huquq egasining oldindan yozma roziligini talab qiladi."
+                    : isRu
                     ? "NabiOta® — охраняемый товарный знак NabiOta® Health Group Germany GmbH. Использование товарного знака, логотипов, фирменных обозначений или иных охраняемых элементов требует предварительного письменного согласия правообладателя."
                     : isEn
                     ? "NabiOta® is a protected trademark of NabiOta® Health Group Germany GmbH. The use of the trademark, logos, company identifiers or other protected components requires the prior written consent of the rights holder."
@@ -314,7 +341,9 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
                     : "NabiOta® ist eine geschützte Marke der NabiOta® Health Group Germany GmbH. Die Nutzung der Marke, der Logos, Unternehmenskennzeichen oder sonstiger geschützter Bestandteile bedarf der vorherigen schriftlichen Zustimmung der Rechteinhaberin."}
                 </p>
                 <p className="mt-4 text-xs text-text-secondary/80 font-medium">
-                  {isRu
+                  {isUz
+                    ? "© 2026 NabiOta® Health Group Germany GmbH. Barcha huquqlar himoyalangan."
+                    : isRu
                     ? "© 2026 NabiOta® Health Group Germany GmbH. Все права защищены."
                     : isEn
                     ? "© 2026 NabiOta® Health Group Germany GmbH. All rights reserved."
@@ -324,7 +353,9 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
                     ? "© 2026 NabiOta® Health Group Germany GmbH. كافة الحقوق محفوظة."
                     : "© 2026 NabiOta® Health Group Germany GmbH. Alle Rechte vorbehalten."}
                   <br />
-                  {isRu
+                  {isUz
+                    ? "NabiOta® — NabiOta® Health Group Germany GmbH kompaniyasining ro'yxatdan o'tgan tovar belgisi."
+                    : isRu
                     ? "NabiOta® является зарегистрированным товарным знаком NabiOta® Health Group Germany GmbH."
                     : isEn
                     ? "NabiOta® is a registered trademark of NabiOta® Health Group Germany GmbH."

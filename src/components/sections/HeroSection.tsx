@@ -80,6 +80,8 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
           ? "الإنسان أولاً"
           : currentLocale === "tr"
           ? "ÖNCE İNSAN"
+          : currentLocale === "uz"
+          ? "INSON MARKAZDA"
           : currentLocale === "en"
           ? "PEOPLE AT THE CENTER"
           : "MENSCHEN",
@@ -89,6 +91,8 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
           ? "للمرضى، عائلاتهم، الكوادر الطبية والشركاء."
           : currentLocale === "tr"
           ? "Hastalar, aileleri, uzmanlar ve ortaklar için."
+          : currentLocale === "uz"
+          ? "Bemorlar, ularning yaqinlari, mutaxassislar va hamkorlar uchun."
           : dict.hero.values[0]?.description ||
             "Für Patienten, Angehörige, Fachkräfte und Partner.",
     },
@@ -101,6 +105,8 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
           ? "الجودة والثقة"
           : currentLocale === "tr"
           ? "KALİTE VE GÜVEN"
+          : currentLocale === "uz"
+          ? "SIFAT VA ISHONCH"
           : currentLocale === "en"
           ? "QUALITY & TRUST"
           : "QUALITÄT",
@@ -110,6 +116,8 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
           ? "موثوقية. شفافية. مسؤولية طبية كاملة."
           : currentLocale === "tr"
           ? "Güvenilir. Şeffaf. Sorumluluk sahibi."
+          : currentLocale === "uz"
+          ? "Ishonchli. Shaffof. Mas'uliyatli."
           : dict.hero.values[1]?.description ||
             "Verlässlich. Transparent. Verantwortungsvoll.",
     },
@@ -122,6 +130,8 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
           ? "الرعاية المستدامة"
           : currentLocale === "tr"
           ? "SÜRDÜRÜLEBİLİR SAĞLIK"
+          : currentLocale === "uz"
+          ? "BARQAROR TIBBIYOT"
           : currentLocale === "en"
           ? "SUSTAINABLE HEALTHCARE"
           : "NACHHALTIGE",
@@ -131,6 +141,8 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
           ? "نعمل اليوم من أجل مستقبل صحي مستدام."
           : currentLocale === "tr"
           ? "Bugünden hareket ediyoruz. Yarınlar için."
+          : currentLocale === "uz"
+          ? "Bugun harakat qilamiz. Kelajak uchun."
           : dict.hero.values[2]?.description || "Heute handeln. Für morgen.",
     },
   ];

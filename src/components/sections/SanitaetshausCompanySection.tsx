@@ -26,7 +26,7 @@ import { Container } from "@/components/layout/Container";
  * Handwerksordnung, EU-MDR/MPDG, DSGVO).
  */
 
-type Lang = "de" | "en" | "ru" | "tr" | "ar";
+type Lang = "de" | "en" | "ru" | "tr" | "ar" | "uz";
 type T = Record<Lang, string>;
 type Icon = React.ComponentType<{ className?: string }>;
 
@@ -37,6 +37,7 @@ const c = {
     ru: "GmbH · Медицинский магазин · §§ 126/127 SGB V",
     tr: "GmbH · Medikal Malzeme ve Ortopedi Evi · §§ 126/127 SGB V",
     ar: "شركة ذات مسؤولية محدودة · متجر المستلزمات الطبية والتقويمية · §§ 126/127 SGB V",
+    uz: "GmbH · Tibbiy buyumlar do'koni · §§ 126/127 SGB V",
   } as T,
   title: "NabiOta Sanitätshaus GmbH",
   titleAlt: "NabiOta Medical Supplies GmbH",
@@ -46,6 +47,7 @@ const c = {
     ru: "Средства реабилитации, медицинские изделия и товары по уходу",
     tr: "Tıbbi Yardımcı Cihazlar, Medikal Ürünler ve Bakım Malzemeleri",
     ar: "الأجهزة الطبية المساعدة، المستلزمات الطبية ورعاية التمريض",
+    uz: "Reabilitatsiya vositalari, tibbiy buyumlar va parvarish vositalari",
   } as T,
   lead: {
     de: "Gegenstand des Unternehmens ist der Betrieb von Sanitätshäusern sowie der Handel, die Bereitstellung, der Verkauf und die Vermietung von medizinischen Hilfsmitteln, Pflegehilfsmitteln, Medizinprodukten, Rehabilitationsmitteln und medizinischen Verbrauchsmaterialien. Die Gesellschaft versorgt insbesondere Menschen nach Operationen, bei Erkrankungen des Bewegungsapparates, neurologischen und chronischen Erkrankungen sowie Pflegebedürftigkeit – für Patienten der NabiOta-Einrichtungen ebenso wie für externe Kunden und medizinische Einrichtungen.",
@@ -53,6 +55,7 @@ const c = {
     ru: "Предметом деятельности компании является эксплуатация санитарных домов, а также торговля, поставка, продажа и аренда медицинских вспомогательных средств, изделий по уходу, медицинских изделий, реабилитационного оборудования и расходных материалов. Компания обслуживает пациентов после операций, лиц с заболеваниями опорно-двигательного аппарата, неврологическими и хроническими заболеваниями, а также нуждающихся в уходе.",
     tr: "Şirketin faaliyet konusu, medikal marketlerin (Sanitätshaus) işletilmesi ile tıbbi yardımcı gereçlerin, bakım gereçlerinin, tıbbi cihazların, rehabilitasyon ekipmanlarının ve klinik sarf malzemelerinin ticareti, temini, satışı ve kiralanmasıdır. Şirket; cerrahi operasyon sonrası hastalar, kas-iskelet sistemi, nörolojik ve kronik rahatsızlıkları bulunanlar ile bakıma muhtaç bireyler başta olmak üzere hem NabiOta bünyesindeki hastalara hem de harici müşterilere ve sağlık kuruluşlarına hizmet sunmaktadır.",
     ar: "يتمثل الغرض من الشركة في تشغيل متاجر المستلزمات الطبية والتقويمية (Sanitätshaus)، وتجارة وتوفير وبيع وتأجير الأجهزة المساعدة الطبية ومستلزمات الرعاية والأجهزة الطبية ومعدات إعادة التأهيل والمستهلكات السريرية. تخدم الشركة بشكل خاص المرضى بعد العمليات الجراحية، والأشخاص الذين يعانون من اضطرابات الجهاز العضلي الهيكلي والعصبي والأمراض المزمنة، والمحتاجين للرعاية — سواء لمرضى مرافق NabiOta أو للعملاء الخارجيين والمؤسسات الطبية.",
+    uz: "Kompaniya faoliyatining predmeti tibbiy buyumlar markazlarini (Sanitätshaus) boshqarish hamda tibbiy yordamchi vositalar, parvarish vositalari, tibbiy buyumlar, reabilitatsiya uskunalari va sarflash materiallari bilan savdo qilish, ta'minlash, sotish va ijaraga berishdan iborat. Kompaniya operatsiyalardan keyingi bemorlarga, tayanch-harakat tizimi, nevrologik va surunkali xastaliklarga ega bo'lgan shaxslarga hamda parvarishga muhtoj insonlarga xizmat ko'rsatadi — bu NabiOta tarmog'i bemorlari uchun ham, tashqi mijozlar va tibbiy muassasalar uchun ham taalluqlidir.",
   } as T,
 
   servicesTitle: {
@@ -61,6 +64,7 @@ const c = {
     ru: "8 ключевых направлений работы NabiOta Sanitätshaus GmbH",
     tr: "NabiOta Sanitätshaus GmbH'nin 8 Temel Hizmet Sütunu",
     ar: "الركائز الخدمية الثماني الأساسية لشركة NabiOta Sanitätshaus GmbH",
+    uz: "NabiOta Sanitätshaus GmbH faoliyatining 8 ta asosiy yo'nalishi",
   } as T,
   services: [
     {
@@ -72,6 +76,7 @@ const c = {
         ru: "Ортопедическое снабжение",
         tr: "Ortopedik Destek ve Tedarik",
         ar: "التجهيزات التقويمية ودعم العظام",
+        uz: "Ortopedik ta'minot",
       } as T,
       desc: {
         de: "Bereitstellung und fachgerechte Anpassung von Bandagen, Orthesen, Stützkorsetts, Kompressionsprodukten und weiteren orthopädischen Hilfsmitteln.",
@@ -79,6 +84,7 @@ const c = {
         ru: "Профессиональный подбор и поставка бандажей, ортезов, корсетов, компрессионных изделий и иных ортопедических вспомогательных средств.",
         tr: "Bandaj, ortez, destek korseleri, kompresyon ürünleri ve diğer ortopedik yardımcı araçların profesyonel temini ve kişiye özel uyarlanması.",
         ar: "توفير وتعديل دقيق للضمادات، والجبائر التقويمية، والمشدات الداعمة، والمنتجات الضاغطة وغيرها من الأجهزة التقويمية المساعدة.",
+        uz: "Bandajlar, ortezlar, korsetlar, kompressiya mahsulotlari va boshqa ortopedik yordamchi vositalarni professional tanlash va moslashtirish.",
       } as T,
     },
     {
@@ -90,6 +96,7 @@ const c = {
         ru: "Средства мобильности и реабилитации",
         tr: "Hareketlilik ve Rehabilitasyon Tedariği",
         ar: "مستلزمات التنقل وإعادة التأهيل",
+        uz: "Harakatchanlik va reabilitatsiya vositalari",
       } as T,
       desc: {
         de: "Verkauf und Vermietung von Gehstützen, Rollatoren, Rollstühlen, Transferhilfen und weiteren Hilfsmitteln zur Unterstützung der Mobilität und Selbstständigkeit.",
@@ -97,6 +104,7 @@ const c = {
         ru: "Продажа и аренда костылей, ходунков, инвалидных колясок, средств перемещения и иных устройств для мобильности и самостоятельности.",
         tr: "Koltuk değnekleri, yürüteçler (rollator), tekerlekli sandalyeler, transfer yardımcıları ve hareket kabiliyetini ve bağımsızlığı artıran araçların satışı ve kiralanması.",
         ar: "بيع وتأجير العكازات، والمشايات، والكراسي المتحركة، ووسائل النقل والمساعدة وغيرها من الأجهزة الداعمة للحركة والاستقلالية.",
+        uz: "Qo'ltiqtayoqlar, yurish moslamalari (rollatorlar), nogironlar aravachalari, ko'chirish vositalari va mustaqillikni oshiruvchi boshqa vositalarni sotish va ijaraga berish.",
       } as T,
     },
     {
@@ -108,6 +116,7 @@ const c = {
         ru: "Оборудование для домашнего ухода",
         tr: "Evde Bakım Ekipmanları",
         ar: "معدات الرعاية المنزلية",
+        uz: "Uyda parvarishlash uskunalari",
       } as T,
       desc: {
         de: "Bereitstellung von Pflegebetten, Lagerungs- und Positionierungshilfen, Hilfsmitteln zur Dekubitusprophylaxe sowie geeigneten Hilfsmitteln für Bad, Toilette und Alltag.",
@@ -115,6 +124,7 @@ const c = {
         ru: "Поставка функциональных кроватей, средств позиционирования, противопролежневых устройств и принадлежностей для ванной, туалета и повседневной жизни.",
         tr: "Hasta yatakları, pozisyonlandırma yardımcıları, bası yarası (dekübit) önleme sistemleri ile banyo, tuvalet ve günlük yaşamı kolaylaştıran medikal gereçlerin temini.",
         ar: "توفير أسرة الرعاية والتمريض، ووسائل تحديد الوضعية، ومعدات الوقاية من قرح الفراش، والأجهزة المساعدة المناسبة للحمام والمرحاض والحياة اليومية.",
+        uz: "Funksional parvarish karavotlari, pozitsiyalash vositalari, yotoq yaralarini oldini oluvchi vositalar hamda vanna, hojatxona va kundalik hayot uchun qulay moslamalar.",
       } as T,
     },
     {
@@ -126,6 +136,7 @@ const c = {
         ru: "Расходные материалы для ухода за ранами",
         tr: "Yara Bakımı ve Sarf Malzemeleri",
         ar: "مستلزمات العناية بالجروح والمواد الاستهلاكية",
+        uz: "Jarohatlarni parvarishlash va sarflash materiallari",
       } as T,
       desc: {
         de: "Lieferung von Verbandstoffen, Wundversorgungsprodukten, Inkontinenzprodukten und weiteren zulässigen Pflege- und Verbrauchsmaterialien.",
@@ -133,6 +144,7 @@ const c = {
         ru: "Поставка перевязочных материалов, продуктов для ухода за ранами, средств при недержании и иных разрешённых расходных материалов.",
         tr: "Pansuman malzemeleri, ileri yara bakım ürünleri, inkontinans ürünleri ve izin verilen tüm medikal bakım ve sarf malzemelerinin temini.",
         ar: "توريد مواد التضميد، ومنتجات العناية المتقدمة بالجروح، ومستلزمات سلس البول وجميع مواد الرعاية والمستهلكات المعتمدة.",
+        uz: "Bog'lov materiallari, jarohatlarni davolash vositalari, tutolmaslikka qarshi mahsulotlar va boshqa barcha ruxsat etilgan parvarish va sarflash materiallarini yetkazib berish.",
       } as T,
     },
     {
@@ -144,6 +156,7 @@ const c = {
         ru: "Консультирование и обучение пациентов",
         tr: "Danışmanlık ve Hasta Eğitimi",
         ar: "الاستشارات والتوجيه التدريبي",
+        uz: "Maslahat berish va bemorlarni o'rgatish",
       } as T,
       desc: {
         de: "Ermittlung des Hilfsmittelbedarfs, Produktauswahl, Anpassung sowie verständliche Einweisung der Kunden, Angehörigen und Betreuungspersonen.",
@@ -151,6 +164,7 @@ const c = {
         ru: "Определение потребностей, выбор продукта, подгонка и понятный инструктаж клиентов, родственников и ухаживающего персонала.",
         tr: "İhtiyaç analizi, doğru ürün seçimi, bireysel uyarlama ve hasta, yakınları ve bakım personeline anlaşılır pratik kullanım eğitimi verilmesi.",
         ar: "تحديد الاحتياجات من الأجهزة المساعدة، واختيار المنتجات وملاءمتها، وتقديم تدريب وتوجيه واضح للعملاء وأفراد أسرهم ومقدمي الرعاية.",
+        uz: "Yordamchi vositalarga ehtiyojni aniqlash, mahsulot tanlash, moslashtirish hamda mijozlar, ularning yaqinlari va parvarish qiluvchilarga tushunarli amaliy ko'rsatmalar berish.",
       } as T,
     },
     {
@@ -162,6 +176,7 @@ const c = {
         ru: "Доставка и послепродажное обслуживание",
         tr: "Teslimat, Kurulum ve Takip",
         ar: "التوصيل والدعم والمتابعة",
+        uz: "Yetkazib berish va kuzatuv",
       } as T,
       desc: {
         de: "Organisation von Hausbesuchen, Lieferung, Aufbau, Abholung und bedarfsgerechter Nachbetreuung der bereitgestellten Hilfsmittel.",
@@ -169,6 +184,7 @@ const c = {
         ru: "Организация домашних визитов, доставка, сборка, забор оборудования и индивидуальное последующее обслуживание.",
         tr: "Ev ziyaretlerinin organizasyonu, doğrudan eve teslimat, kurulum, geri toplama ve temin edilen cihazların gereksinim odaklı periyodik takibi.",
         ar: "تنظيم الزيارات المنزلية، والتوصيل، والتركيب، والاستلام، والمتابعة اللاحقة المخصصة حسب الاحتياج لجميع الأجهزة الموردة.",
+        uz: "Uyga tashriflarni tashkil qilish, yetkazib berish, o'rnatish, qaytarib olish hamda taqdim etilgan vositalarga ehtiyojga mos keyingi xizmat ko'rsatish.",
       } as T,
     },
     {
@@ -180,6 +196,7 @@ const c = {
         ru: "Техническое обслуживание",
         tr: "Teknik Servis ve Bakım",
         ar: "الخدمة الفنية والصيانة",
+        uz: "Texnik xizmat ko'rsatish",
       } as T,
       desc: {
         de: "Wartung, Reparatur, sicherheitstechnische Prüfungen und Aufbereitung zur erneuten Verwendung, soweit die erforderlichen Voraussetzungen vorliegen.",
@@ -187,6 +204,7 @@ const c = {
         ru: "Техническое обслуживание, ремонт, проверки безопасности и подготовка к повторному использованию при наличии всех требований.",
         tr: "Gerekli yasal şartlar ve uzmanlıklar doğrultusunda bakım, onarım, teknik güvenlik kontrolleri ve yeniden kullanıma hazırlama işlemleri.",
         ar: "الصيانة والإصلاح وفحوصات السلامة الفنية وإعادة التهيئة للاستخدام المتكرر، وفقاً للمتطلبات واللوائح القانونية السارية.",
+        uz: "Qonuniy talablar va kasbiy malakalar mavjud bo'lganda texnik xizmat, ta'mirlash, xavfsizlik tekshiruvlari va qayta foydalanish uchun tayyorlash.",
       } as T,
     },
     {
@@ -198,6 +216,7 @@ const c = {
         ru: "Организация обеспечения",
         tr: "Tedarik ve Süreç Yönetimi",
         ar: "إدارة الإمداد والتنسيق التأميني",
+        uz: "Ta'minotni tashkil etish va boshqarish",
       } as T,
       desc: {
         de: "Erstellung von Kostenvoranschlägen, Bearbeitung von Versorgungsanträgen, Abstimmung mit Kostenträgern sowie vertragsgemäße Dokumentation und Abrechnung.",
@@ -205,6 +224,7 @@ const c = {
         ru: "Составление смет, обработка заявок, согласование с плательщиками, документирование и расчёты в соответствии с договором.",
         tr: "Fiyat tekliflerinin hazırlanması, tedarik başvurularının işlenmesi, sağlık sigortaları ve ödeme kurumlarıyla mutabakat, sözleşmeye uygun belgelendirme ve faturalandırma.",
         ar: "إعداد تقديرات التكاليف، ومعالجة طلبات التوريد، والتنسيق مع الجهات الضامنة، والتوثيق والفوترة المتوافقة مع العقود واللوائح.",
+        uz: "Xarajatlar smetalarini tayyorlash, ta'minot arizalarini ko'rib chiqish, sug'urta to'lovchilari bilan muvofiqlashtirish hamda shartnomaviy hujjatlashtirish va hisob-kitoblar.",
       } as T,
     },
   ],
@@ -215,6 +235,7 @@ const c = {
     ru: "Сеть и партнёрства",
     tr: "Ağ ve İş Birlikleri",
     ar: "الشبكة والشراكات التعاونية",
+    uz: "Tarmoq va hamkorlik",
   } as T,
   networkText: {
     de: "Die Gesellschaft kann mit Arztpraxen, medizinischen Versorgungszentren, Krankenhäusern, Therapie- und Rehabilitationseinrichtungen sowie ambulanten Pflegediensten zusammenarbeiten – insbesondere für die rechtzeitige Hilfsmittelversorgung und die abgestimmte Versorgung nach Entlassung. Ärztliche Verordnungsentscheidungen bleiben unabhängig; die freie Wahl des Leistungserbringers durch die Patienten ist zu wahren.",
@@ -222,6 +243,7 @@ const c = {
     ru: "Компания может сотрудничать с врачебными практиками, амбулаторными клиниками, больницами, терапевтическими и реабилитационными учреждениями и патронажными службами — в первую очередь для своевременного обеспечения вспомогательными средствами и скоординированного ухода после выписки.",
     tr: "Şirket; muayenehaneler, tıp merkezleri (MVZ), hastaneler, terapi ve rehabilitasyon merkezleri ve ayakta bakım servisleriyle — özellikle zamanında medikal araç temini ve taburculuk sonrası koordineli bakım için — iş birliği yapabilir. Hekimlerin reçete yazma bağımsızlığı ve hastaların serbest hizmet sağlayıcı seçme hakkı tam olarak korunur.",
     ar: "يجوز للشركة التعاون مع العيادات الطبية، ومراكز الرعاية الطبية (MVZ)، والمستشفيات، ومرافق العلاج وإعادة التأهيل، وخدمات التمريض المتنقلة — لا سيما لتوفير الأجهزة المساعدة في الوقت المناسب والرعاية المنسقة بعد الخروج. يظل القرار الطبي في وصف العلاج مستقلاً ومحفوظاً، كما يُصان حق المريض الكامل في حرية اختيار مقدم الخدمة.",
+    uz: "Kompaniya shifokorlik amaliyotlari, tibbiy markazlar (MVZ), shifoxonalar, terapiya va reabilitatsiya markazlari hamda ambulator parvarish xizmatlari bilan — ayniqsa yordamchi vositalarni o'z vaqtida yetkazib berish va kasalxonadan chiqqandan so'ng muvofiqlashtirilgan parvarishlash uchun — hamkorlik qilishi mumkin. Shifokorlarning retsept yozish mustaqilligi va bemorlarning xizmat ko'rsatuvchini erkin tanlash huquqi to'liq saqlanadi.",
   } as T,
 
   pharmacyTitle: {
@@ -230,6 +252,7 @@ const c = {
     ru: "Лекарственное обеспечение аффилированных клиник",
     tr: "Bağlı Kliniklerin İlaç Tedariği",
     ar: "الإمداد الدوائي للعيادات والمستشفيات التابعة",
+    uz: "Hamkor klinikalarni dori vositalari bilan ta'minlash",
   } as T,
   pharmacyText: {
     de: "Die Arzneimittelversorgung der verbundenen Kliniken erfolgt über eine hierzu berechtigte Apotheke auf Grundlage der erforderlichen Verträge. Die NabiOta Medical Supplies GmbH kann im rechtlich zulässigen Umfang organisatorische und logistische Unterstützungsleistungen übernehmen. Eine eigene apothekenrechtliche Betriebs- oder Abgabeberechtigung wird hierdurch nicht begründet.",
@@ -237,6 +260,7 @@ const c = {
     ru: "Лекарственное обеспечение аффилированных клиник осуществляется через уполномоченную аптеку. NabiOta Medical Supplies GmbH может оказывать организационную и логистическую поддержку в объёме, разрешённом законом. Это не является основанием для получения собственной аптечной лицензии.",
     tr: "Bağlı kliniklerin ilaç tedariği, gerekli sözleşmeler çerçevesinde yetkili bir eczane aracılığıyla gerçekleştirilir. NabiOta Medical Supplies GmbH, yasal olarak izin verilen çerçevede organizasyonel ve lojistik destek sağlayabilir; bu durum bağımsız bir eczane işletme veya ilaç dağıtım yetkisi doğurmaz.",
     ar: "يتم الإمداد الدوائي للعيادات والمستشفيات التابعة عبر صيدلية مرخصة قانوناً على أساس العقود الإلزامية. يجوز لشركة NabiOta Medical Supplies GmbH تقديم خدمات دعم تنظيمية ولوجستية في الحدود المسموح بها قانوناً، دون أن يمنحها ذلك ترخيصاً تشغيلياً أو صلاحية لصرف الأدوية بصفتها صيدلية مستقلة.",
+    uz: "Hamkor klinikalarni dori-darmonlar bilan ta'minlash tegishli shartnomalar asosida vakolatli dorixona orqali amalga oshiriladi. NabiOta Medical Supplies GmbH qonun doirasida tashkiliy va logistik yordam ko'rsatishi mumkin; bu mustaqil dorixona faoliyati yoki dori tarqatish huquqini bermaydi.",
   } as T,
 
   legalEyebrow: {
@@ -245,6 +269,7 @@ const c = {
     ru: "Законодательные требования",
     tr: "Yasal Çerçeve ve Yükümlülükler",
     ar: "المتطلبات القانونية والتنظيمية",
+    uz: "Qonuniy talablar",
   } as T,
   legalTitle: {
     de: "Für die Umsetzung sind insbesondere diese Vorschriften relevant",
@@ -252,6 +277,7 @@ const c = {
     ru: "Ключевые правовые требования к реализации",
     tr: "Uygulama için özellikle geçerli olan yasal düzenlemeler",
     ar: "اللوائح والمتطلبات القانونية ذات الأهمية المباشرة للتنفيذ",
+    uz: "Amalga oshirish uchun bevosita ahamiyatga ega bo'lgan qonuniy me'yorlar",
   } as T,
   legalRows: [
     {
@@ -262,6 +288,7 @@ const c = {
         ru: "Вспомогательные средства для застрахованных по GKV",
         tr: "Yasal Sigortalılar İçin Yardımcı Araçlar",
         ar: "الأجهزة المساعدة للمؤمن عليهم قانونياً",
+        uz: "Davlat sug'urtasi bo'yicha yordamchi vositalar",
       } as T,
       req: {
         de: "§§ 126 und 127 SGB V: Eignungsnachweise und entsprechende Versorgungsverträge. Eine Präqualifizierung allein begründet keine umfassende Abrechnungsberechtigung.",
@@ -269,6 +296,7 @@ const c = {
         ru: "§§ 126 и 127 SGB V: подтверждение соответствия требованиям и соответствующие договоры снабжения. Предварительная квалификация сама по себе не даёт полного права на расчёты.",
         tr: "§§ 126 ve 127 SGB V: Uygunluk belgeleri ve ilgili tedarik sözleşmeleri. Tek başına ön yeterlilik (Präqualifizierung), kapsamlı bir faturalandırma hakkı sağlamaz.",
         ar: "المادتان §§ 126 و 127 من قانون الضمان الاجتماعي V: إثباتات الأهلية وعقود التوريد المعتمدة. التأهيل المسبق وحده لا يمنح حقاً شاملاً في الفوترة.",
+        uz: "§§ 126 va 127 SGB V: Muvofiqlik dalillari va tegishli ta'minot shartnomalari. Dastlabki malaka (Präqualifizierung) ning o'zi to'liq hisob-kitob qilish huquqini bermaydi.",
       } as T,
     },
     {
@@ -279,6 +307,7 @@ const c = {
         ru: "Ортопедическая мастерская",
         tr: "Ortopedik Teknik Atölyesi",
         ar: "ورشة تقويم العظام والتقنيات الطبية",
+        uz: "Ortopedik texnik ustaxona",
       } as T,
       req: {
         de: "Handwerksordnung: Orthopädietechniker und Orthopädieschuhmacher gehören zu den zulassungspflichtigen Handwerken. Handwerksrolleneintragung und qualifizierte Betriebsleitung sind zu prüfen.",
@@ -286,6 +315,7 @@ const c = {
         ru: "Положение о ремёслах: ортопедические техники и сапожники относятся к лицензируемым ремёслам. Необходима регистрация в реестре ремёсел и наличие квалифицированного руководителя.",
         tr: "Zanaat Yönetmeliği (Handwerksordnung): Ortopedi teknisyenliği ve ayakkabıcılığı ruhsata tabi zanaatlardandır. Zanaat sicil kaydı ve yetkili usta işletme yöneticisi şarttır.",
         ar: "قانون تنظيم الحرف: ينتمي فنيو تقويم العظام وصناع الأحذية التقويمية إلى الحرف الخاضعة للتراخيص الإلزامية. يجب التحقق من القيد في سجل الحرف ووجود مدير فني مؤهل.",
+        uz: "Hunarmandchilik to'g'risidagi nizom (Handwerksordnung): Ortopedik texniklar va poyabzal ustalari litsenziyalanadigan hunarmandchilik turiga kiradi. Hunarmandchilik reestriga kiritish va malakali boshqaruvchi talab qilinadi.",
       } as T,
     },
     {
@@ -296,6 +326,7 @@ const c = {
         ru: "Медицинские изделия",
         tr: "Tıbbi Cihazlar ve Ürünler",
         ar: "الأجهزة والمستلزمات الطبية",
+        uz: "Tibbiy buyumlar",
       } as T,
       req: {
         de: "EU-Medizinprodukteverordnung (MDR), MPDG und Medizinprodukte-Betreiberverordnung. Handel, Herstellung, Wartung und Aufbereitung bringen unterschiedliche Pflichten mit sich.",
@@ -303,6 +334,7 @@ const c = {
         ru: "Регламент ЕС MDR, MPDG и Постановление об эксплуатации изделий. Торговля, производство, обслуживание и подготовка к повторному использованию влекут различные обязательства.",
         tr: "AB Tıbbi Cihaz Tüzüğü (MDR), MPDG ve Tıbbi Cihaz İşletme Yönetmeliği. Ticaret, üretim, bakım ve yeniden işleme ayrı yasal sorumluluklar gerektirir.",
         ar: "لائحة الأجهزة الطبية الأوروبية (MDR)، وقانون MPDG ولائحة تشغيل الأجهزة الطبية. تتضمن التجارة والتصنيع والصيانة وإعادة التهيئة التزامات تنظيمية محددة.",
+        uz: "Yevropa Ittifoqining MDR reglamenti, MPDG va Tibbiy buyumlardan foydalanish to'g'risidagi nizom. Savdo, ishlab chiqarish, texnik xizmat ko'rsatish va qayta ishlash turli xil huquqiy majburiyatlarni yuklaydi.",
       } as T,
     },
     {
@@ -313,6 +345,7 @@ const c = {
         ru: "Данные пациентов",
         tr: "Hasta Verileri ve Gizlilik",
         ar: "بيانات المرضى وحماية الخصوصية",
+        uz: "Bemorlar ma'lumotlari va maxfiylik",
       } as T,
       req: {
         de: "DSGVO und ergänzende Datenschutzvorschriften: geschützte Verarbeitung von Gesundheitsdaten und zulässige Datenübermittlung zwischen Sanitätshaus, MVZ, Klinik und HomeCare.",
@@ -320,13 +353,14 @@ const c = {
         ru: "DSGVO и дополнительные нормы защиты данных: защищённая обработка медицинских данных и допустимая передача между санитарным домом, MVZ, клиникой и HomeCare.",
         tr: "GDPR (DSGVO) ve tamamlayıcı veri koruma hükümleri: Sağlık verilerinin korunarak işlenmesi ve medikal market, MVZ, klinik ve HomeCare arasında yasal veri aktarımı.",
         ar: "اللائحة العامة لحماية البيانات (DSGVO) واللوائح التكميلية: المعالجة الآمنة للبيانات الصحية ونقل البيانات المسموح به بين متجر المستلزمات الطبية وMVZ والعيادة وHomeCare.",
+        uz: "DSGVO (GDPR) va ma'lumotlarni himoya qilish bo'yicha qo'shimcha qoidalar: Tibbiy ma'lumotlarni himoyalangan holda qayta ishlash va tibbiy do'kon, MVZ, klinika va HomeCare o'rtasida qonuniy ma'lumot uzatish.",
       } as T,
     },
   ],
 };
 
 export function SanitaetshausCompanySection({ locale = "de" }: { locale?: string }) {
-  const l: Lang = locale === "tr" ? "tr" : locale === "ar" ? "ar" : locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
+  const l: Lang = locale === "uz" ? "uz" : locale === "tr" ? "tr" : locale === "ar" ? "ar" : locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
 
   return (
     <section

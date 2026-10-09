@@ -177,15 +177,18 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
   const isEn = locale === "en";
   const isTr = locale === "tr";
   const isAr = locale === "ar";
+  const isUz = locale === "uz";
 
   const area = businessAreas.find((a) => a.slug === "medizinische-fachbereiche") || businessAreas[0];
 
   // ── Hero Data ──
   const heroData = {
-    breadcrumbHome: isRu ? "Главная" : isEn ? "Home" : isTr ? "Ana Sayfa" : isAr ? "الرئيسية" : "Startseite",
-    breadcrumbAreas: isRu ? "Направления" : isEn ? "Our Divisions" : isTr ? "Faaliyet Alanları" : isAr ? "قطاعات الأعمال" : "Unternehmensbereiche",
-    title: isRu ? "Медицинские отделения" : isEn ? "Medical Departments" : isTr ? "Tıbbi Uzmanlık Bölümleri" : isAr ? "الأقسام الطبية التخصصية" : "Medizinische Fachbereiche",
-    subtitle: isRu
+    breadcrumbHome: isUz ? "Bosh sahifa" : isRu ? "Главная" : isEn ? "Home" : isTr ? "Ana Sayfa" : isAr ? "الرئيسية" : "Startseite",
+    breadcrumbAreas: isUz ? "Yo'nalishlar" : isRu ? "Направления" : isEn ? "Our Divisions" : isTr ? "Faaliyet Alanları" : isAr ? "قطاعات الأعمال" : "Unternehmensbereiche",
+    title: isUz ? "Tibbiy mutaxassisliklar" : isRu ? "Медицинские отделения" : isEn ? "Medical Departments" : isTr ? "Tıbbi Uzmanlık Bölümleri" : isAr ? "الأقسام الطبية التخصصية" : "Medizinische Fachbereiche",
+    subtitle: isUz
+      ? "Ambulator va yuqori darajadagi ixtisoslashtirilgan tibbiyot"
+      : isRu
       ? "Амбулаторная и специализированная медицина высшего уровня"
       : isEn
       ? "Outpatient & Specialized Medicine of Excellence"
@@ -194,7 +197,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
       : isAr
       ? "طب تخصصي ورعاية عيادات خارجية على أعلى مستوى"
       : "Ambulante & Fachärztliche Spitzenmedizin",
-    description: isRu
+    description: isUz
+      ? "Umumiy amaliyotdan tortib yuqori texnologiyali jarrohlik markazlarigacha bo'lgan ixtisoslashtirilgan markazlar orqali Germaniyaning eng yuqori sifat standartlari asosida keng qamrovli ambulator tibbiy yordam."
+      : isRu
       ? "Комплексная амбулаторная помощь от первичного приема до высокотехнологичных хирургических центров. Ведущие врачи-специалисты, передовое оборудование и междисциплинарный подход."
       : isEn
       ? "Comprehensive outpatient care through specialized medical centers, from primary prevention to cutting-edge surgical procedures under highest German quality standards."
@@ -206,26 +211,28 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
     badges: [
       {
         icon: <Award className="w-5 h-5 text-[#ECCF96]" />,
-        title: isRu ? "Высокие" : isEn ? "Highest" : isTr ? "En Yüksek" : isAr ? "أعلى" : "Höchste",
-        sub: isRu ? "Стандарты" : isEn ? "Standards" : isTr ? "Standartlar" : isAr ? "المعايير" : "Standards",
+        title: isUz ? "Eng yuqori" : isRu ? "Высокие" : isEn ? "Highest" : isTr ? "En Yüksek" : isAr ? "أعلى" : "Höchste",
+        sub: isUz ? "Standartlar" : isRu ? "Стандарты" : isEn ? "Standards" : isTr ? "Standartlar" : isAr ? "المعايير" : "Standards",
       },
       {
         icon: <Stethoscope className="w-5 h-5 text-[#ECCF96]" />,
-        title: isRu ? "Врачебная" : isEn ? "Medical" : isTr ? "Uzman Hekim" : isAr ? "خبرة طبية" : "Fachärztliche",
-        sub: isRu ? "Экспертиза" : isEn ? "Expertise" : isTr ? "Uzmanlığı" : isAr ? "تخصصية" : "Expertise",
+        title: isUz ? "Mutaxassis" : isRu ? "Врачебная" : isEn ? "Medical" : isTr ? "Uzman Hekim" : isAr ? "خبرة طبية" : "Fachärztliche",
+        sub: isUz ? "Ekspertizasi" : isRu ? "Экспертиза" : isEn ? "Expertise" : isTr ? "Uzmanlığı" : isAr ? "تخصصية" : "Expertise",
       },
       {
         icon: <Building2 className="w-5 h-5 text-[#ECCF96]" />,
-        title: isRu ? "В составе" : isEn ? "Group" : isTr ? "Holding" : isAr ? "شبكة" : "Holding",
-        sub: isRu ? "Холдинга" : isEn ? "Network" : isTr ? "Ağı" : isAr ? "المجموعة" : "Verbund",
+        title: isUz ? "Holding" : isRu ? "В составе" : isEn ? "Group" : isTr ? "Holding" : isAr ? "شبكة" : "Holding",
+        sub: isUz ? "Tarkibida" : isRu ? "Холдинга" : isEn ? "Network" : isTr ? "Ağı" : isAr ? "المجموعة" : "Verbund",
       },
     ],
   };
 
   // ── Overview & Core Capabilities Section (From PDF & Previous Version) ──
   const overviewData = {
-    eyebrow: isRu ? "КОМПЕТЕНЦИИ И СТАНДАРТЫ" : isEn ? "COMPETENCE & QUALITY" : isTr ? "YETKİNLİK VE STANDARTLAR" : isAr ? "الكفاءة والمعايير" : "KOMPETENZ & ANSPRUCH",
-    title: isRu
+    eyebrow: isUz ? "KOMPETENTSIYA VA TALABCHANLIK" : isRu ? "КОМПЕТЕНЦИИ И СТАНДАРТЫ" : isEn ? "COMPETENCE & QUALITY" : isTr ? "YETKİNLİK VE STANDARTLAR" : isAr ? "الكفاءة والمعايير" : "KOMPETENZ & ANSPRUCH",
+    title: isUz
+      ? "Nemis standartlari asosidagi tuzilmaviy yuqori darajali yordam"
+      : isRu
       ? "Высокотехнологичная медицинская помощь немецкого качества"
       : isEn
       ? "Structured Healthcare Excellence according to German Standards"
@@ -234,7 +241,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
       : isAr
       ? "رعاية صحية منظمة بمعايير التميز الألمانية"
       : "Strukturierte Spitzenversorgung nach deutschen Standards",
-    desc: isRu
+    desc: isUz
+      ? "NabiOta® guruhining tibbiy yo'nalishlari oilaviy shifokorlik asosiy yordamini yuqori ixtisoslashtirilgan jarrohlik markazlari va statsionar klinik yordam bilan birlashtiradi. Ixtisoslashtirilgan shifokorlar markazlarimiz (MVZ) va rejalashtirilgan klinikamizda umumiy tibbiyot, kardiologiya, ortopediya, neyroxirurgiya, plastik jarrohlik hamda anesteziologiya eng yuqori nemis sifat standartlariga muvofiq qamrab olingan."
+      : isRu
       ? "Медицинские направления группы NabiOta® объединяют первичную терапевтическую помощь с высокоспециализированными хирургическими центрами и стационарной клиникой. В наших специализированных центрах (MVZ) и планируемой клинике представлены терапия, кардиология, ортопедия, нейрохирургия, пластическая хирургия и анестезиология по высшим немецким стандартам качества."
       : isEn
       ? "The medical divisions of the NabiOta® Group combine primary general medical care with highly specialized surgical centers and inpatient facilities. Across our outpatient medical centers (MVZ) and upcoming clinic, we cover general medicine, cardiology, orthopedics, neurosurgery, plastic surgery, and anesthesiology according to highest German standards."
@@ -243,9 +252,11 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
       : isAr
       ? "تجمع الأقسام الطبية لمجموعة نابي أوتا (NabiOta®) بين الرعاية العامة الأولية والمراكز الجراحية عالية التخصص والمستشفى السريري. وفي مراكزنا الطبية التخصصية (MVZ) والمستشفى المخطط له، نغطي الطب العام، وأمراض القلب، وجراحة العظام، وجراحة المخ والأعصاب، والجراحة التجميلية، والتخدير وفق أرقى معايير الجودة الألمانية."
       : "Die medizinischen Fachbereiche der NabiOta® Gruppe verbinden hausärztliche Grundversorgung mit hochspezialisierten operativen Zentren und stationärer Klinikversorgung. In unseren Facharztzentren (MVZ) und der geplanten Fachklinik decken wir Allgemeinmedizin, Kardiologie, Orthopädie, Neurochirurgie, plastische Chirurgie sowie Anästhesiologie nach höchsten deutschen Qualitätsstandards ab.",
-    capabilitiesTitle: isRu ? "Структура медицинских подразделений" : isEn ? "Clinical Divisions & Entities" : isTr ? "Tıbbi Bölümler ve Merkezler Yapısı" : isAr ? "هيكل الأقسام والمراكز الطبية" : "Struktur der Fachbereiche & Zentren",
+    capabilitiesTitle: isUz ? "Mutaxassisliklar va markazlar tuzilmasi" : isRu ? "Структура медицинских подразделений" : isEn ? "Clinical Divisions & Entities" : isTr ? "Tıbbi Bölümler ve Merkezler Yapısı" : isAr ? "هيكل الأقسام والمراكز الطبية" : "Struktur der Fachbereiche & Zentren",
     capabilities: [
-      isRu
+      isUz
+        ? "Terapiya va oilaviy MVZ: umumiy amaliyot, ichki kasalliklar, kardiologiya va diabetologiya"
+        : isRu
         ? "MVZ Терапии: семейная медицина, общая терапия, кардиология и диабетология"
         : isEn
         ? "Primary Care MVZ: General practice, internal medicine, cardiology & diabetology"
@@ -254,7 +265,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
         : isAr
         ? "مركز MVZ للرعاية الأولية والباطنة: الطب العام، الأمراض الباطنية، القلب والسكري"
         : "MVZ Hausärztlich / Internistisch: Allgemeinmedizin, Innere Medizin, Kardiologie & Diabetologie",
-      isRu
+      isUz
+        ? "Jarrohlik va anesteziologiya MVZ: ortopediya, travmatologiya, neyroxirurgiya va plastik jarrohlik"
+        : isRu
         ? "MVZ Хирургии: ортопедия, травматология, нейрохирургия позвоночника и пластическая хирургия"
         : isEn
         ? "Surgical MVZ: Orthopedics, traumatology, spinal neurosurgery & plastic surgery"
@@ -263,7 +276,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
         : isAr
         ? "مركز MVZ للجراحة والتخدير: جراحة العظام، الحوادث والإصابات، جراحة العمود الفقري والجراحة التجميلية"
         : "MVZ Chirurgie & Anästhesiologie: Orthopädie, Unfallchirurgie, Neurochirurgie & Plastische Chirurgie",
-      isRu
+      isUz
+        ? "Ambulator jarrohlik (AOP) va zamonaviy anesteziologiya markazi"
+        : isRu
         ? "Амбулаторный операционный центр (AOP) и специализированное отделение анестезиологии"
         : isEn
         ? "Outpatient Surgical Center (AOP) & specialized department for anesthesiology"
@@ -272,7 +287,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
         : isAr
         ? "مركز الجراحة اليومية (AOP) وقسم التخدير المتقدم"
         : "Ambulantes Operieren (AOP) & modernes Anästhesiezentrum",
-      isRu
+      isUz
+        ? "NabiOta® Clinics Germany GmbH: § 30 GewO bo'yicha statsionar koykalarga ega ixtisoslashtirilgan klinika"
+        : isRu
         ? "NabiOta® Clinics Germany GmbH: стационарная клиника по § 30 GewO с коечным фондом"
         : isEn
         ? "NabiOta® Clinics Germany GmbH: Inpatient surgical clinic under § 30 GewO with ward beds"
@@ -281,7 +298,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
         : isAr
         ? "NabiOta® Clinics Germany GmbH: مستشفى تخصصي للأقسام الداخلية وفق § 30 GewO مع غرف التنويم"
         : "NabiOta® Clinics Germany GmbH: Stationäre Fachklinik nach § 30 GewO mit Bettenstationen",
-      isRu
+      isUz
+        ? "Barcha davolovchi shifokorlar uchun § 95 SGB V bo'yicha to'liq tibbiy erkinlik va mustaqillik"
+        : isRu
         ? "Полная врачебная независимость клинических решений (§ 95 SGB V)"
         : isEn
         ? "Guaranteed clinical autonomy and freedom of medical decisions (§ 95 SGB V)"
@@ -291,9 +310,11 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
         ? "استقلالية طبية كاملة في القرارات العلاجية وفق المادة 95 من SGB V لكافة الأطباء"
         : "Volle ärztliche Weisungsfreiheit nach § 95 SGB V für alle Behandelnden",
     ],
-    advantagesTitle: isRu ? "Преимущества в составе холдинга" : isEn ? "Group Advantages" : isTr ? "Holding Bünyesindeki Avantajlarınız" : isAr ? "مزاياكم ضمن شبكة المجموعة" : "Ihre Vorteile im Verbund",
+    advantagesTitle: isUz ? "Holding tarkibidagi afzalliklaringiz" : isRu ? "Преимущества в составе холдинга" : isEn ? "Group Advantages" : isTr ? "Holding Bünyesindeki Avantajlarınız" : isAr ? "مزاياكم ضمن شبكة المجموعة" : "Ihre Vorteile im Verbund",
     advantages: [
-      isRu
+      isUz
+        ? "Barcha mutaxassis shifokorlarning bir tom ostidagi fanlararo hamkorligi"
+        : isRu
         ? "Междисциплинарное сотрудничество всех специалистов под одной крышей"
         : isEn
         ? "Interdisciplinary collaboration of all specialists under one roof"
@@ -302,7 +323,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
         : isAr
         ? "تعاون متعدد التخصصات بين كافة الأطباء والاستشاريين تحت سقف واحد"
         : "Interdisziplinäre Zusammenarbeit aller Fachärzte unter einem Dach",
-      isRu
+      isUz
+        ? "Diagnostikadan jarrohlikka, reabilitatsiyaga va ambulator parvarishga uzluksiz o'tish"
+        : isRu
         ? "Прямой переход от амбулаторного приема к хирургии и реабилитации"
         : isEn
         ? "Seamless transition from outpatient diagnosis to surgery and rehabilitation"
@@ -311,7 +334,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
         : isAr
         ? "انتقال سلس من التشخيص إلى العمليات الجراحية والتأهيل والرعاية المنزلية"
         : "Nahtloser Übergang von Diagnostik zu OP, Reha und ambulanter Pflege",
-      isRu
+      isUz
+        ? "Tezkor qabulga yozilish va tibbiy xulosalarni raqamli uzatish"
+        : isRu
         ? "Быстрая запись на прием и цифровая передача медицинских заключений"
         : isEn
         ? "Rapid appointment scheduling and digital report transfer"
@@ -320,7 +345,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
         : isAr
         ? "حجوزات مواعيد سريعة ونقل رقمي آمن لكافة التقارير الطبية"
         : "Schnelle Terminvergabe und digitale Befundübermittlung",
-      isRu
+      isUz
+        ? "Germaniya klinik ko'rsatmalariga qat'iy rioya qilish va bemorlar xavfsizligining eng yuqori darajasi"
+        : isRu
         ? "Строгое соблюдение немецких клинических рекомендаций и стандартов безопасности"
         : isEn
         ? "Strict compliance with German clinical guidelines and patient safety standards"
@@ -333,47 +360,47 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
     stats: [
       {
         value: "2 MVZ",
-        label: isRu ? "Специализированных центра" : isEn ? "Specialist MVZs" : isTr ? "MVZ Uzmanlık Merkezi" : isAr ? "مراكز MVZ تخصصية" : "MVZ Facharztzentren",
+        label: isUz ? "MVZ ixtisoslashgan markazlari" : isRu ? "Специализированных центра" : isEn ? "Specialist MVZs" : isTr ? "MVZ Uzmanlık Merkezi" : isAr ? "مراكز MVZ تخصصية" : "MVZ Facharztzentren",
       },
       {
         value: "§ 30",
-        label: isRu ? "Клиника (GewO)" : isEn ? "Inpatient Clinic (GewO)" : isTr ? "Klinik Ruhsatı (GewO)" : isAr ? "ترخيص مستشفى (GewO)" : "Klinikzulassung (GewO)",
+        label: isUz ? "Klinika ruxsatnomasi (GewO)" : isRu ? "Клиника (GewO)" : isEn ? "Inpatient Clinic (GewO)" : isTr ? "Klinik Ruhsatı (GewO)" : isAr ? "ترخيص مستشفى (GewO)" : "Klinikzulassung (GewO)",
       },
       {
         value: "§ 95",
-        label: isRu ? "Врачебная автономия (SGB V)" : isEn ? "Clinical Autonomy (SGB V)" : isTr ? "Tıbbi Bağımsızlık (SGB V)" : isAr ? "استقلالية طبية (SGB V)" : "Ärztl. Unabhängigkeit (SGB V)",
+        label: isUz ? "Shifokor mustaqilligi (SGB V)" : isRu ? "Врачебная автономия (SGB V)" : isEn ? "Clinical Autonomy (SGB V)" : isTr ? "Tıbbi Bağımsızlık (SGB V)" : isAr ? "استقلالية طبية (SGB V)" : "Ärztl. Unabhängigkeit (SGB V)",
       },
     ],
-    entitiesTitle: isRu ? "Медицинские структуры холдинга" : isEn ? "Medical Group Entities" : isTr ? "Holdingin Tıbbi İştirakleri" : isAr ? "الشركات والمؤسسات الطبية للمجموعة" : "Medizinische Gesellschaften des Holdings",
+    entitiesTitle: isUz ? "Holdingning tibbiy kompaniyalari" : isRu ? "Медицинские структуры холдинга" : isEn ? "Medical Group Entities" : isTr ? "Holdingin Tıbbi İştirakleri" : isAr ? "الشركات والمؤسسات الطبية للمجموعة" : "Medizinische Gesellschaften des Holdings",
     entities: [
       {
         tag: "MVZ 1",
-        title: isRu ? "MVZ Терапии и семейной медицины" : isEn ? "MVZ Primary Care & Internal Medicine" : isTr ? "Dahiliye ve Birinci Basamak MVZ" : isAr ? "مركز MVZ للرعاية الأولية والباطنة" : "MVZ Hausärztlich / Internistisch",
-        sub: isRu ? "Амбулаторная помощь" : isEn ? "Outpatient Primary Care" : isTr ? "Ayakta Temel ve Uzmanlık Bakımı" : isAr ? "رعاية تخصصية وعامة للعيادات الخارجية" : "Ambulante Grund- & Schwerpunktversorgung",
+        title: isUz ? "Terapiya va oilaviy MVZ" : isRu ? "MVZ Терапии и семейной медицины" : isEn ? "MVZ Primary Care & Internal Medicine" : isTr ? "Dahiliye ve Birinci Basamak MVZ" : isAr ? "مركز MVZ للرعاية الأولية والباطنة" : "MVZ Hausärztlich / Internistisch",
+        sub: isUz ? "Ambulator asosiy va ixtisoslashgan yordam" : isRu ? "Амбулаторная помощь" : isEn ? "Outpatient Primary Care" : isTr ? "Ayakta Temel ve Uzmanlık Bakımı" : isAr ? "رعاية تخصصية وعامة للعيادات الخارجية" : "Ambulante Grund- & Schwerpunktversorgung",
         items: [
-          isRu ? "Семейная медицина и первичная помощь" : isEn ? "General Practice & Family Medicine" : isTr ? "Genel tıp ve aile hekimliği hizmetleri" : isAr ? "الطب العام وخدمات طب الأسرة" : "Allgemeinmedizin & Hausärztliche Versorgung",
-          isRu ? "Внутренние болезни, кардиология и диабет" : isEn ? "Internal Medicine, Cardiology & Diabetes" : isTr ? "İç hastalıkları, kardiyoloji ve diyabetoloji" : isAr ? "الأمراض الباطنية، طب القلب والسكري" : "Innere Medizin, Kardiologie & Diabetologie",
-          isRu ? "Профилактические чекапы и программы DMP" : isEn ? "Check-ups & Chronic Disease Programs (DMP)" : isTr ? "Önleyici tıp, check-up ve DMP programları" : isAr ? "الطب الوقائي، الفحوصات الشاملة وبرامج DMP" : "Präventionsmedizin, Check-ups & DMP-Programme",
+          isUz ? "Umumiy tibbiyot va oilaviy shifokorlik yordami" : isRu ? "Семейная медицина и первичная помощь" : isEn ? "General Practice & Family Medicine" : isTr ? "Genel tıp ve aile hekimliği hizmetleri" : isAr ? "الطب العام وخدمات طب الأسرة" : "Allgemeinmedizin & Hausärztliche Versorgung",
+          isUz ? "Ichki kasalliklar, kardiologiya va diabetologiya" : isRu ? "Внутренние болезни, кардиология и диабет" : isEn ? "Internal Medicine, Cardiology & Diabetes" : isTr ? "İç hastalıkları, kardiyoloji ve diyabetoloji" : isAr ? "الأمراض الباطنية، طب القلب والسكري" : "Innere Medizin, Kardiologie & Diabetologie",
+          isUz ? "Profilaktika tibbiyoti, chek-aplar va DMP dasturlari" : isRu ? "Профилактические чекапы и программы DMP" : isEn ? "Check-ups & Chronic Disease Programs (DMP)" : isTr ? "Önleyici tıp, check-up ve DMP programları" : isAr ? "الطب الوقائي، الفحوصات الشاملة وبرامج DMP" : "Präventionsmedizin, Check-ups & DMP-Programme",
         ],
       },
       {
         tag: "MVZ 2",
-        title: isRu ? "MVZ Хирургии и анестезиологии" : isEn ? "MVZ Surgery & Anesthesiology" : isTr ? "Cerrahi ve Anesteziyoloji MVZ" : isAr ? "مركز MVZ للجراحة والتخدير" : "MVZ Chirurgie & Anästhesiologie",
-        sub: isRu ? "Специализированная хирургия" : isEn ? "Specialized Surgical Care" : isTr ? "Uzmanlaşmış Cerrahi Disiplinler" : isAr ? "تخصصات جراحية دقيقة" : "Operative Spezialdisziplinen",
+        title: isUz ? "Jarrohlik va anesteziologiya MVZ" : isRu ? "MVZ Хирургии и анестезиологии" : isEn ? "MVZ Surgery & Anesthesiology" : isTr ? "Cerrahi ve Anesteziyoloji MVZ" : isAr ? "مركز MVZ للجراحة والتخدير" : "MVZ Chirurgie & Anästhesiologie",
+        sub: isUz ? "Ixtisoslashtirilgan jarrohlik yo'nalishlari" : isRu ? "Специализированная хирургия" : isEn ? "Specialized Surgical Care" : isTr ? "Uzmanlaşmış Cerrahi Disiplinler" : isAr ? "تخصصات جراحية دقيقة" : "Operative Spezialdisziplinen",
         items: [
-          isRu ? "Ортопедия и травматологическая хирургия" : isEn ? "Orthopedics & Trauma Surgery" : isTr ? "Ortopedi ve travmatoloji cerrahisi" : isAr ? "جراحة العظام والإصابات والحوادث" : "Orthopädie & Unfallchirurgie",
-          isRu ? "Нейрохирургия (позвоночник и боль)" : isEn ? "Neurosurgery (Spine & Pain Therapy)" : isTr ? "Beyin ve sinir cerrahisi (omurga ve ağrı tedavisi)" : isAr ? "جراحة الأعصاب (العمود الفقري وعلاج الألم)" : "Neurochirurgie (Wirbelsäule & Schmerztherapie)",
-          isRu ? "Пластическая и амбулаторные операции (AOP)" : isEn ? "Plastic Surgery & Outpatient ORs (AOP)" : isTr ? "Plastik cerrahi ve günübirlik ameliyatlar (AOP)" : isAr ? "الجراحة التجميلية والجراحات اليومية (AOP)" : "Plastische Chirurgie & Ambulantes Operieren (AOP)",
+          isUz ? "Ortopediya va jarohat jarrohligi" : isRu ? "Ортопедия и травматологическая хирургия" : isEn ? "Orthopedics & Trauma Surgery" : isTr ? "Ortopedi ve travmatoloji cerrahisi" : isAr ? "جراحة العظام والإصابات والحوادث" : "Orthopädie & Unfallchirurgie",
+          isUz ? "Neyroxirurgiya (umurtqa pog'onasi va og'riq terapiyasi)" : isRu ? "Нейрохирургия (позвоночник и боль)" : isEn ? "Neurosurgery (Spine & Pain Therapy)" : isTr ? "Beyin ve sinir cerrahisi (omurga ve ağrı tedavisi)" : isAr ? "جراحة الأعصاب (العمود الفقري وعلاج الألم)" : "Neurochirurgie (Wirbelsäule & Schmerztherapie)",
+          isUz ? "Plastik jarrohlik va ambulator operatsiyalar (AOP)" : isRu ? "Пластическая и амбулаторные операции (AOP)" : isEn ? "Plastic Surgery & Outpatient ORs (AOP)" : isTr ? "Plastik cerrahi ve günübirlik ameliyatlar (AOP)" : isAr ? "الجراحة التجميلية والجراحات اليومية (AOP)" : "Plastische Chirurgie & Ambulantes Operieren (AOP)",
         ],
       },
       {
         tag: "Klinik",
         title: "NabiOta® Clinics Germany GmbH",
-        sub: isRu ? "Стационарная клиника (§ 30 GewO)" : isEn ? "Inpatient Clinic (§ 30 GewO)" : isTr ? "Yatarak Tedavi (§ 30 GewO)" : isAr ? "رعاية الأقسام الداخلية (§ 30 GewO)" : "Stationäre Versorgung (§ 30 GewO)",
+        sub: isUz ? "Statsionar yordam (§ 30 GewO)" : isRu ? "Стационарная клиника (§ 30 GewO)" : isEn ? "Inpatient Clinic (§ 30 GewO)" : isTr ? "Yatarak Tedavi (§ 30 GewO)" : isAr ? "رعاية الأقسام الداخلية (§ 30 GewO)" : "Stationäre Versorgung (§ 30 GewO)",
         items: [
-          isRu ? "Операционные блоки и коечные палаты" : isEn ? "Inpatient Operating Suites & Ward Beds" : isTr ? "Yataklı ameliyathane kompleksleri ve servis odaları" : isAr ? "غرف عمليات سريرية وأجنحة تنويم مجهزة" : "Stationäre OP-Säle & bettenführende Stationen",
-          isRu ? "Круглосуточный послеоперационный мониторинг" : isEn ? "24/7 Post-Surgical Clinical Monitoring" : isTr ? "Ameliyat sonrası 7/24 izlem ve ağrı yönetimi" : isAr ? "مراقبة طبية وعلاج للألم على مدار الساعة بعد الجراحة" : "Postoperative Überwachung & Schmerztherapie",
-          isRu ? "Интеграция с больничным планом (§ 108/109 SGB V)" : isEn ? "Hospital Plan Integration (§ 108/109 SGB V)" : isTr ? "İş birlikleri ve hizmet anlaşmaları (§ 108/109 SGB V)" : isAr ? "شراكات وعقود تقديم الرعاية (§ 108/109 SGB V)" : "Kooperationen & Versorgungsverträge (§ 108/109 SGB V)",
+          isUz ? "Statsionar operatsiya xonalari va yotoq o'rinli bo'limlar" : isRu ? "Операционные блоки и коечные палаты" : isEn ? "Inpatient Operating Suites & Ward Beds" : isTr ? "Yataklı ameliyathane kompleksleri ve servis odaları" : isAr ? "غرف عمليات سريرية وأجنحة تنويم مجهزة" : "Stationäre OP-Säle & bettenführende Stationen",
+          isUz ? "Operatsiyadan keyingi kuzatuv va og'riq terapiyasi" : isRu ? "Круглосуточный послеоперационный мониторинг" : isEn ? "24/7 Post-Surgical Clinical Monitoring" : isTr ? "Ameliyat sonrası 7/24 izlem ve ağrı yönetimi" : isAr ? "مراقبة طبية وعلاج للألم على مدار الساعة بعد الجراحة" : "Postoperative Überwachung & Schmerztherapie",
+          isUz ? "Hamkorliklar va ta'minot shartnomalari (§ 108/109 SGB V)" : isRu ? "Интеграция с больничным планом (§ 108/109 SGB V)" : isEn ? "Hospital Plan Integration (§ 108/109 SGB V)" : isTr ? "İş birlikleri ve hizmet anlaşmaları (§ 108/109 SGB V)" : isAr ? "شراكات وعقود تقديم الرعاية (§ 108/109 SGB V)" : "Kooperationen & Versorgungsverträge (§ 108/109 SGB V)",
         ],
       },
     ],
@@ -381,8 +408,10 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
 
   // ── Photo 1: Spotlight Section (Kardiologie) ──
   const spotlight = {
-    eyebrow: isRu ? "В ФОКУСЕ" : isEn ? "IN FOCUS" : isTr ? "ODAK NOKTASI" : isAr ? "تسليط الضوء" : "IM FOKUS",
-    title: isRu
+    eyebrow: isUz ? "DIQQAT MARKAZIDA" : isRu ? "В ФОКУСЕ" : isEn ? "IN FOCUS" : isTr ? "ODAK NOKTASI" : isAr ? "تسليط الضوء" : "IM FOKUS",
+    title: isUz
+      ? "Kardiologiya — sog'lom yurak\nuchun aniqlik"
+      : isRu
       ? "Кардиология — точность\nдля здорового сердца"
       : isEn
       ? "Cardiology – Precision\nfor a Healthy Heart"
@@ -391,7 +420,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
       : isAr
       ? "طب القلب – دقة متناهية\nمن أجل قلب سليم"
       : "Kardiologie – Präzision\nfür ein gesundes Herz",
-    desc: isRu
+    desc: isUz
+      ? "Bizning kardiologiya jamoamiz yurak-qon tomir kasalliklarini kompleks tashxislash va individual davolashni taklif etadi. Zamonaviy texnologiyalar va ko'p yillik tajriba bilan biz sizga yana yuqori hayot sifatini qaytaramiz."
+      : isRu
       ? "Наша кардиологическая команда предлагает комплексную диагностику и персонализированную терапию сердечно-сосудистых заболеваний. Благодаря современным технологиям и многолетнему опыту мы возвращаем пациентам высокое качество жизни."
       : isEn
       ? "Our cardiology team offers comprehensive diagnostics and personalized therapy for cardiovascular conditions. With cutting-edge technology and extensive clinical experience, we ensure you regain your quality of life."
@@ -400,8 +431,10 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
       : isAr
       ? "يقدم فريقنا المتخصص في طب القلب تشخيصاً شاملاً وعلاجاً مخصصاً لأمراض القلب والأوعية الدموية. بفضل التقنيات المتقدمة وسنوات الخبرة الطويلة، نحرص على استعادة جودة حياتكم وصحتكم."
       : "Unser kardiologisches Team bietet Ihnen eine umfassende Diagnostik und individuelle Therapie bei Herz-Kreislauf-Erkrankungen. Mit modernster Technik und langjähriger Erfahrung sorgen wir dafür, dass Sie wieder mehr Lebensqualität gewinnen.",
-    pillTitle: isRu ? "Кардиология" : isEn ? "Cardiology" : isTr ? "Kardiyoloji" : isAr ? "طب القلب" : "Kardiologie",
-    pillSubtitle: isRu
+    pillTitle: isUz ? "Kardiologiya" : isRu ? "Кардиология" : isEn ? "Cardiology" : isTr ? "Kardiyoloji" : isAr ? "طب القلب" : "Kardiologie",
+    pillSubtitle: isUz
+      ? "Zamonaviy diagnostika. Individual terapiya."
+      : isRu
       ? "Современная диагностика. Индивидуальная терапия."
       : isEn
       ? "Modern Diagnostics. Personalized Therapy."
@@ -413,7 +446,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
     features: [
       {
         icon: DiagnosticIcon,
-        label: isRu
+        label: isUz
+          ? "Eng zamonaviy diagnostika usullari"
+          : isRu
           ? "Передовые методы диагностики"
           : isEn
           ? "Advanced Diagnostic Methods"
@@ -425,7 +460,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
       },
       {
         icon: MinimallyInvasiveIcon,
-        label: isRu
+        label: isUz
+          ? "Minimal invaziv davolash usullari"
+          : isRu
           ? "Малоинвазивные методы лечения"
           : isEn
           ? "Minimally Invasive Treatments"
@@ -437,7 +474,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
       },
       {
         icon: TherapyPlanIcon,
-        label: isRu
+        label: isUz
+          ? "Individual terapiya rejalari"
+          : isRu
           ? "Индивидуальные планы терапии"
           : isEn
           ? "Individual Therapy Plans"
@@ -448,7 +487,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
           : "Individuelle Therapiepläne",
       },
     ],
-    linkText: isRu
+    linkText: isUz
+      ? "Kardiologiya haqida batafsil ma'lumot"
+      : isRu
       ? "Узнать больше о кардиологии"
       : isEn
       ? "Learn more about Cardiology"
@@ -461,9 +502,11 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
 
   // ── Photo 2: Full-Width Edge-to-Edge Section (Warum NabiOta? Mehr als Medizin.) ──
   const whySection = {
-    eyebrow: isRu ? "ПОЧЕМУ НАБИОТА?" : isEn ? "WHY NABIOTA?" : isTr ? "NEDEN NABIOTA?" : isAr ? "لماذا نابي أوتا؟" : "WARUM NABIOTA?",
-    title: isRu ? "Больше чем медицина." : isEn ? "More than Medicine." : isTr ? "Tıptan Daha Fazlası." : isAr ? "أكثر من مجرد طب." : "Mehr als Medizin.",
-    desc: isRu
+    eyebrow: isUz ? "NEGA NABIOTA?" : isRu ? "ПОЧЕМУ НАБИОТА?" : isEn ? "WHY NABIOTA?" : isTr ? "NEDEN NABIOTA?" : isAr ? "لماذا نابي أوتا؟" : "WARUM NABIOTA?",
+    title: isUz ? "Tibbiyotdan ko'prog'i." : isRu ? "Больше чем медицина." : isEn ? "More than Medicine." : isTr ? "Tıptan Daha Fazlası." : isAr ? "أكثر من مجرد طب." : "Mehr als Medizin.",
+    desc: isUz
+      ? "Biz tibbiy mukammallikni insoniylik bilan uyg'unlashtiramiz. Taniqli mutaxassis shifokorlardan iborat fanlararo jamoamiz sog'lig'ingiz, ishonchingiz va kelajagingiz uchun birgalikda ishlaydi."
+      : isRu
       ? "Мы объединяем передовую медицину с искренней человечностью. Наша междисциплинарная команда ведущих врачей-специалистов работает сообща — ради вашего здоровья, доверия и уверенного будущего."
       : isEn
       ? "We combine medical excellence with human care. Our interdisciplinary team of renowned medical specialists works hand in hand – for your health, your trust, and your future."
@@ -472,15 +515,17 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
       : isAr
       ? "نجمع بين التميز الطبي واللمسة الإنسانية الصادقة. يعمل فريقنا الطبي متعدد التخصصات يداً بيد – من أجل صحتكم وثقتكم ومستقبلكم."
       : "Wir verbinden medizinische Exzellenz mit Menschlichkeit. Unser interdisziplinäres Team aus renommierten Fachärztinnen und Fachärzten arbeitet Hand in Hand – für Ihre Gesundheit, Ihr Vertrauen und Ihre Zukunft.",
-    btn: isRu ? "Наши ценности" : isEn ? "Our Values" : isTr ? "Değerlerimiz" : isAr ? "قيمنا المؤسسية" : "Unsere Werte",
+    btn: isUz ? "Qadriyatlarimiz" : isRu ? "Наши ценности" : isEn ? "Our Values" : isTr ? "Değerlerimiz" : isAr ? "قيمنا المؤسسية" : "Unsere Werte",
     stats: [
       {
         icon: CloverEmblemIcon,
-        label: isRu ? "6+ Направлений" : isEn ? "6+ Departments" : isTr ? "6+ Uzmanlık Alanı" : isAr ? "+6 تخصصات طبية" : "6+ Fachbereiche",
+        label: isUz ? "6+ Mutaxassislik sohasi" : isRu ? "6+ Направлений" : isEn ? "6+ Departments" : isTr ? "6+ Uzmanlık Alanı" : isAr ? "+6 تخصصات طبية" : "6+ Fachbereiche",
       },
       {
         icon: TeamSpecialistsIcon,
-        label: isRu
+        label: isUz
+          ? "100+ Mutaxassislar"
+          : isRu
           ? "100+ Специалистов"
           : isEn
           ? "100+ Specialists"
@@ -492,19 +537,21 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
       },
       {
         icon: TechNodesIcon,
-        label: isRu ? "Передовые технологии" : isEn ? "State-of-the-Art Technology" : isTr ? "En Son Teknoloji" : isAr ? "أحدث التقنيات الطبية" : "Modernste Technologie",
+        label: isUz ? "Eng zamonaviy texnologiyalar" : isRu ? "Передовые технологии" : isEn ? "State-of-the-Art Technology" : isTr ? "En Son Teknoloji" : isAr ? "أحدث التقنيات الطبية" : "Modernste Technologie",
       },
       {
         icon: HeartContourIcon,
-        label: isRu ? "Комплексная забота" : isEn ? "Holistic Care" : isTr ? "Bütüncül Bakım" : isAr ? "رعاية شاملة ومتكاملة" : "Ganzheitliche Betreuung",
+        label: isUz ? "Yaxlit g'amxo'rlik" : isRu ? "Комплексная забота" : isEn ? "Holistic Care" : isTr ? "Bütüncül Bakım" : isAr ? "رعاية شاملة ومتكاملة" : "Ganzheitliche Betreuung",
       },
     ],
   };
 
   // ── Photo 3: Team Section (Unser Team - Kompetenz. Empathie. Teamgeist.) ──
   const teamSection = {
-    eyebrow: isRu ? "НАША КОМАНДА" : isEn ? "OUR TEAM" : isTr ? "EKİBİMİZ" : isAr ? "فريقنا الطبي" : "UNSER TEAM",
-    title: isRu
+    eyebrow: isUz ? "BIZNING JAMOA" : isRu ? "НАША КОМАНДА" : isEn ? "OUR TEAM" : isTr ? "EKİBİMİZ" : isAr ? "فريقنا الطبي" : "UNSER TEAM",
+    title: isUz
+      ? "Kompetentsiya. Hamdardlik.\nJamoaviy ruh."
+      : isRu
       ? "Компетентность. Эмпатия.\nКомандный дух."
       : isEn
       ? "Competence. Empathy.\nTeam Spirit."
@@ -513,7 +560,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
       : isAr
       ? "الكفاءة. التعاطف.\nوروح الفريق."
       : "Kompetenz. Empathie.\nTeamgeist.",
-    desc: isRu
+    desc: isUz
+      ? "Bizning mutaxassis shifokorlarimiz eng yuqori tibbiy kompetentsiya, ko'p yillik tajriba va yaqin fanlararo hamkorlikni ta'minlaydi. Sizning salomatligingiz uchun birga."
+      : isRu
       ? "Наши врачи-специалисты обеспечивают высочайший уровень медицинской экспертизы, многолетний практический опыт и слаженное междисциплинарное взаимодействие. Вместе ради вашего здоровья."
       : isEn
       ? "Our medical specialists stand for the highest clinical excellence, extensive experience, and seamless interdisciplinary cooperation. Together for your well-being."
@@ -522,12 +571,14 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
       : isAr
       ? "يمثل أطباؤنا الاستشاريون أعلى درجات الكفاءة الطبية، والخبرة العملية الممتدة، والتعاون الوثيق بين مختلف التخصصات. معاً من أجل صحتكم."
       : "Unsere Fachärztinnen und Fachärzte stehen für höchste medizinische Kompetenz, langjährige Erfahrung und eine enge, interdisziplinäre Zusammenarbeit. Gemeinsam für Ihre Gesundheit.",
-    btn: isRu ? "Подробнее о команде" : isEn ? "Meet Our Team" : isTr ? "Ekibimizi Tanıyın" : isAr ? "تعرف على فريقنا" : "Mehr über unser Team",
+    btn: isUz ? "Jamoamiz haqida batafsil" : isRu ? "Подробнее о команде" : isEn ? "Meet Our Team" : isTr ? "Ekibimizi Tanıyın" : isAr ? "تعرف على فريقنا" : "Mehr über unser Team",
     doctors: [
       {
         name: isRu ? "Д-р мед. Анна Келлер" : "Dr. med. Anna Keller",
-        role: isRu ? "Терапия и кардиология" : isEn ? "Internal Medicine & Cardiology" : isTr ? "İç Hastalıkları ve Kardiyoloji" : isAr ? "الأمراض الباطنية وطب القلب" : "Innere Medizin & Kardiologie",
-        desc: isRu
+        role: isUz ? "Ichki kasalliklar va kardiologiya" : isRu ? "Терапия и кардиология" : isEn ? "Internal Medicine & Cardiology" : isTr ? "İç Hastalıkları ve Kardiyoloji" : isAr ? "الأمراض الباطنية وطب القلب" : "Innere Medizin & Kardiologie",
+        desc: isUz
+          ? "15 yildan ortiq klinik tajribaga ega ichki kasalliklar va noinvaziv kardiologiya bo'yicha yetakchi mutaxassis."
+          : isRu
           ? "Ведущий специалист по комплексной терапии и неинвазивной кардиодиагностике с более чем 15-летним клиническим стажем."
           : isEn
           ? "Lead specialist in comprehensive internal medicine and non-invasive cardiovascular diagnostics with over 15 years of experience."
@@ -540,8 +591,10 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
       },
       {
         name: isRu ? "Проф. д-р Михаэль Вебер" : "Prof. Dr. Michael Weber",
-        role: isRu ? "Хирургия" : isEn ? "General & Visceral Surgery" : isTr ? "Genel Cerrahi ve Operatif Tıp" : isAr ? "الجراحة العامة والجراحة التنظيرية" : "Chirurgie & Operative Medizin",
-        desc: isRu
+        role: isUz ? "Umumiy va visseral jarrohlik" : isRu ? "Хирургия" : isEn ? "General & Visceral Surgery" : isTr ? "Genel Cerrahi ve Operatif Tıp" : isAr ? "الجراحة العامة والجراحة التنظيرية" : "Chirurgie & Operative Medizin",
+        desc: isUz
+          ? "Umumiy va minimal invaziv jarrohlik bo'yicha taniqli ekspert, jarrohlik markazimiz rahbari."
+          : isRu
           ? "Эксперт в области общей и малоинвазивной хирургии, руководитель междисциплинарного хирургического центра NabiOta."
           : isEn
           ? "Renowned specialist in general and minimally invasive surgery, leading our interdisciplinary surgical center."
@@ -554,8 +607,10 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
       },
       {
         name: isRu ? "Д-р мед. Сара Хоффманн" : "Dr. med. Sarah Hoffmann",
-        role: isRu ? "Неврология" : isEn ? "Neurology & Neurodiagnostics" : isTr ? "Nöroloji ve Nörodiagnostik" : isAr ? "طب الأعصاب والتشخيص العصبي" : "Neurologie & Neurodiagnostik",
-        desc: isRu
+        role: isUz ? "Nevrologiya va neyrodiagnostika" : isRu ? "Неврология" : isEn ? "Neurology & Neurodiagnostics" : isTr ? "Nöroloji ve Nörodiagnostik" : isAr ? "طب الأعصاب والتشخيص العصبي" : "Neurologie & Neurodiagnostik",
+        desc: isUz
+          ? "Zamonaviy neyrodiagnostika va yaxlit terapiya konsepsiyalariga ixtisoslashgan nevrolog shifokor."
+          : isRu
           ? "Специалист по клинической неврологии и нейродиагностике, эксперт по персонализированным схемам лечения."
           : isEn
           ? "Specialist in clinical neurology, neurodiagnostics, and individual therapy concepts for neurological health."
@@ -571,7 +626,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
 
   // ── Photo 4: Pre-footer Mountain Banner (Gesundheit beginnt mit Vertrauen) ──
   const ctaSection = {
-    eyebrow: isRu
+    eyebrow: isUz
+      ? "SALOMATLIK ISHONCHDAN BOSHLANADI"
+      : isRu
       ? "ЗДОРОВЬЕ НАЧИНАЕТСЯ С ДОВЕРИЯ"
       : isEn
       ? "HEALTH BEGINS WITH TRUST"
@@ -580,7 +637,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
       : isAr
       ? "الصحة تبدأ بالثقة"
       : "GESUNDHEIT BEGINNT MIT VERTRAUEN",
-    title: isRu
+    title: isUz
+      ? "Tibbiy mutaxassisliklarimiz haqida\nsavollaringiz bormi?"
+      : isRu
       ? "У вас есть вопросы о наших\nмедицинских отделениях?"
       : isEn
       ? "Do you have questions about our\nmedical specialties?"
@@ -589,7 +648,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
       : isAr
       ? "هل لديك استفسارات حول\nأقسامنا الطبية التخصصية؟"
       : "Sie haben Fragen zu unseren\nmedizinischen Fachbereichen?",
-    desc: isRu
+    desc: isUz
+      ? "Bizning jamoamiz sizga shaxsan — malakali, samimiy va shaxsiy ehtiyojlaringizga mos ravishda maslahat berishdan mamnun."
+      : isRu
       ? "Наша команда с радостью проконсультирует вас лично — профессионально, внимательно и с учетом ваших индивидуальных потребностей."
       : isEn
       ? "Our team is happy to advise you personally – competently, empathetically, and tailored to your individual needs."
@@ -598,7 +659,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
       : isAr
       ? "يسعد فريقنا بتقديم المشورة الشخصية لكم – بكفاءة عالية، وتعاطف تام، ووفقاً لاحتياجاتكم الفردية."
       : "Unser Team berät Sie gerne persönlich – kompetent, einfühlsam und auf Ihre individuellen Bedürfnisse abgestimmt.",
-    btn: isRu ? "Связаться с нами" : isEn ? "Contact Us" : isTr ? "İletişime Geçin" : isAr ? "تواصل معنا" : "Kontakt aufnehmen",
+    btn: isUz ? "Bog'lanish" : isRu ? "Связаться с нами" : isEn ? "Contact Us" : isTr ? "İletişime Geçin" : isAr ? "تواصل معنا" : "Kontakt aufnehmen",
   };
 
   return (
@@ -831,7 +892,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                     <div className="flex items-center gap-2 mb-2 sm:mb-2.5">
                       <span className="w-5 h-[1.5px] bg-[#C5A56A]" />
                       <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-[0.22em] text-[#C5A56A] font-sans">
-                        {isRu ? "МЕДИЦИНСКАЯ ПОМОЩЬ" : isEn ? "MEDICAL CARE" : isTr ? "TIBBİ BAKIM" : isAr ? "الرعاية الطبية" : "MEDIZINISCHE VERSORGUNG"}
+                        {isUz ? "TIBBIY YORDAM" : isRu ? "МЕДИЦИНСКАЯ ПОМОЩЬ" : isEn ? "MEDICAL CARE" : isTr ? "TIBBİ BAKIM" : isAr ? "الرعاية الطبية" : "MEDIZINISCHE VERSORGUNG"}
                       </span>
                     </div>
 
@@ -859,7 +920,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                       href={`/${locale}/contact`}
                       className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-full bg-gradient-to-r from-[#EED4A2] via-[#E4C58B] to-[#D5B878] text-[#142318] hover:brightness-105 font-semibold text-[12px] sm:text-[12.5px] shadow-sm transition-all"
                     >
-                      <span>{isRu ? "Записаться на прием" : isEn ? "Book an Appointment" : isTr ? "Randevu Alın" : isAr ? "حجز موعد" : "Termin vereinbaren"}</span>
+                      <span>{isUz ? "Qabulga yozilish" : isRu ? "Записаться на прием" : isEn ? "Book an Appointment" : isTr ? "Randevu Alın" : isAr ? "حجز موعد" : "Termin vereinbaren"}</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
@@ -885,7 +946,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                     <div className="flex items-center gap-2 mb-2 sm:mb-2.5">
                       <span className="w-5 h-[1.5px] bg-[#C5A56A]" />
                       <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-[0.22em] text-[#C5A56A] font-sans">
-                        {isRu ? "ВАШИ ПРЕИМУЩЕСТВА" : isEn ? "YOUR ADVANTAGES" : isTr ? "AVANTAJLARINIZ" : isAr ? "مزاياكم" : "IHRE VORTEILE"}
+                        {isUz ? "SIZNING AFZALLIKLARINGIZ" : isRu ? "ВАШИ ПРЕИМУЩЕСТВА" : isEn ? "YOUR ADVANTAGES" : isTr ? "AVANTAJLARINIZ" : isAr ? "مزاياكم" : "IHRE VORTEILE"}
                       </span>
                     </div>
 
@@ -946,7 +1007,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
               </div>
 
               <h3 className="font-serif text-2xl sm:text-[30px] lg:text-[32px] text-[#142318] font-normal text-center leading-[1.25] max-w-3xl mx-auto mt-4">
-                {isRu
+                {isUz
+                  ? "Yuqori darajadagi ambulator va statsionar tibbiyot uchun guruhning ixtisoslashtirilgan bo'linmalari"
+                  : isRu
                   ? "Специализированные подразделения группы для амбулаторной и стационарной медицины высшего уровня"
                   : isEn
                   ? "Specialized group entities for outpatient and inpatient medicine of excellence"
@@ -1112,7 +1175,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                       {/* Bottom Row with Arrow Button */}
                       <div className="pt-3.5 mt-3.5 border-t border-[#EDE8DE]/70 flex items-center justify-between">
                         <span className="text-[11px] font-medium text-[#142318]/70 group-hover:text-[#142318] transition-colors">
-                          {isRu ? "Профиль врача" : isEn ? "View Profile" : isTr ? "Hekim Profili" : isAr ? "الملف التعريفي للطبيب" : "Arztprofil"}
+                          {isUz ? "Shifokor profili" : isRu ? "Профиль врача" : isEn ? "View Profile" : isTr ? "Hekim Profili" : isAr ? "الملف التعريفي للطبيب" : "Arztprofil"}
                         </span>
                         <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#142318]/15 group-hover:border-[#D5B878] group-hover:bg-[#D5B878] group-hover:text-[#0C1C11] flex items-center justify-center text-[#142318] transition-all shrink-0">
                           <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
