@@ -18,9 +18,6 @@ import {
   Home,
   ArrowRight,
   Shield,
-  ShieldCheck,
-  Scale,
-  Lock,
   CheckCircle2,
   Users,
   HeartHandshake,
@@ -175,7 +172,6 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
       ? "بصفتنا مجموعة رعاية صحية ألمانية خاصة، نضمن بموجب المادة § 95 SGB V حرية القرار العلاجي التام لأطبائنا، وندمج ذلك بأعلى معايير الجودة السريرية والنظافة وحماية البيانات."
       : "Als inhabergeführte Gesundheitsholding garantieren wir gemäß § 95 SGB V die uneingeschränkte ärztliche Therapiefreiheit unserer Mediziner und verbinden dies mit höchsten Standards für klinische Qualität, Hygiene und Patientensicherheit.",
 
-    govPillar1Tag: "§ 95 Abs. 1 SGB V",
     govPillar1Title: isUz ? "Shifokorlar mustaqilligi va terapiya erkinligi" : isRu ? "Врачебная независимость и свобода терапии" : isEn ? "Physician Independence & Clinical Autonomy" : isTr ? "Tıbbi Bağımsızlık ve Tedavi Özgürlüğü" : isAr ? "استقلالية الأطباء وحرية اتخاذ القرارات العلاجية" : "Ärztliche Weisungsfreiheit & Therapiefreiheit",
     govPillar1Desc: isUz
       ? "Tibbiy rahbariyat va shifokorlar diagnostika, ko'rsatmalar va davolash to'g'risidagi qarorlarni faqat tibbiy zarurat asosida qabul qiladilar."
@@ -194,7 +190,6 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
       isUz ? "Bosh ustuvorlik — bemor farovonligi" : isRu ? "Главный приоритет — благополучие пациента" : isEn ? "Absolute focus on patient welfare" : isTr ? "Hasta sağlığı ve yararının koşulsuz önceliği" : isAr ? "الأولوية المطلقة لصحة وسلامة المريض" : "Bedingungsloses Primat des Patientenwohls",
     ],
 
-    govPillar2Tag: "DIN EN ISO 9001 & G-BA",
     govPillar2Title: isUz ? "Klinik sifat va bemorlar xavfsizligi" : isRu ? "Клиническое качество и безопасность пациентов" : isEn ? "Clinical Quality & Patient Safety" : isTr ? "Klinik Kalite ve Hasta Güvenliği Yönetimi" : isAr ? "إدارة الجودة السريرية وإدارة المخاطر وسلامة المرضى" : "Klinisches Qualitäts- & Risikomanagement",
     govPillar2Desc: isUz
       ? "Sifat nazorati bo'yicha G-BA direktivalariga qat'iy rioya qilish, uzluksiz gigiyenik verifikatsiya va barcha tibbiy jarayonlarning muntazam sertifikatsiyasi."
@@ -213,7 +208,6 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
       isUz ? "Muntazam audit va xavfsizlik nazorati" : isRu ? "Регулярный аудит и контроль безопасности" : isEn ? "Regular medical device safety inspections" : isTr ? "Düzenli tıbbi cihaz (MPG) ve radyasyondan korunma denetimleri" : isAr ? "فحوصات وتدقيق دوري لسلامة الأجهزة الطبية والحماية من الإشعاع" : "Regelmäßige MPG- und Strahlenschutz-Audits",
     ],
 
-    govPillar3Tag: "§ 203 StGB & DSGVO Art. 9",
     govPillar3Title: isUz ? "Shifokor siri va shaxsiy ma'lumotlarni himoya qilish" : isRu ? "Врачебная тайна и защита персональных данных" : isEn ? "Medical Confidentiality & Data Privacy" : isTr ? "Tıbbi Sır Saklama Yükümlülüğü ve Veri Gizliliği" : isAr ? "السرية الطبية وحماية البيانات الشخصية والصحية" : "Ärztliche Schweigepflicht & Datenschutz",
     govPillar3Desc: isUz
       ? "Shifrlangan nemis telematika infratuzilmasi va DSGVO ning eng qat'iy talablariga rioya qilish orqali tibbiy ma'lumotlarni murosasiz himoyalash."
@@ -232,7 +226,6 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
       isUz ? "Yevropa GDPR reglamentiga 100% muvofiqlik" : isRu ? "100% соответствие европейскому регламенту GDPR" : isEn ? "Full compliance with GDPR Art. 9" : isTr ? "GDPR Madde 9 ile %100 uyumlu hasta portalları ve arşivleme" : isAr ? "امتثال كامل للمادة 9 من اللائحة العامة لحماية البيانات (GDPR)" : "DSGVO-konforme Patientenportale und Archive",
     ],
 
-    govPillar4Tag: "KV Nordrhein & Kassen",
     govPillar4Title: isUz ? "Davlat va xususiy sug'urta jamg'armalari bilan hamkorlik" : isRu ? "Партнерство с государственными и частными кассами" : isEn ? "Statutory & Private Healthcare Integration" : isTr ? "Yasal ve Özel Sağlık Sigortalarıyla Güçlü Ortaklık" : isAr ? "الشراكة المتكاملة مع صناديق التأمين الصحي العام والخاص" : "Partnerschaftliche Versorgung im Rheinland",
     govPillar4Desc: isUz
       ? "Tibbiy sug'urta jamg'armalari va shifokorlar uyushmalari bilan shartnomalar orqali Germaniya davlat sog'liqni saqlash tizimiga ishonchli integratsiya."
@@ -673,7 +666,7 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
         {/* ══════════════════════════════════════════════════════════
             SECTION 3B: GOVERNANCE & ÄRZTLICHE ETHIK (PDF Section II & IV)
         ══════════════════════════════════════════════════════════ */}
-        <section className="py-16 sm:py-20 lg:py-24 bg-[#FAF7F2] border-b border-[#E8DFD0] relative overflow-hidden">
+        <section className="py-12 sm:py-14 lg:py-16 bg-[#FAF7F2] border-b border-[#E8DFD0] relative overflow-hidden">
           {/* Subtle ambient blur */}
           <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#EBDDC0]/25 blur-3xl pointer-events-none" />
           <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-[#D5B878]/15 blur-3xl pointer-events-none" />
@@ -707,15 +700,6 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
                 </div>
                 <div className="p-4 sm:p-5 lg:p-5.5 flex-1 flex flex-col justify-center">
                   <div>
-                    <div className="flex items-center gap-2.5 mb-2 sm:mb-2.5">
-                      <div className="w-8 h-8 sm:w-8.5 sm:h-8.5 rounded-full bg-[#FAF3E8] border border-[#E8DFC8] flex items-center justify-center text-[#9E7D3B] shrink-0 shadow-2xs">
-                        <Scale className="w-4 h-4 stroke-[1.75]" />
-                      </div>
-                      <span className="w-4 h-[1.5px] bg-[#C5A56A]" />
-                      <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.2em] text-[#C5A56A] uppercase font-sans">
-                        {t.govPillar1Tag}
-                      </span>
-                    </div>
                     <h3 className="font-serif text-[17px] sm:text-[18.5px] font-bold text-[#142318] mb-1.5 leading-snug">
                       {t.govPillar1Title}
                     </h3>
@@ -738,15 +722,6 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
               <div className="bg-white/95 rounded-2xl sm:rounded-3xl border border-[#EAE4D7] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-[#D5B878]/70 transition-all duration-300 flex flex-col-reverse sm:flex-row items-stretch overflow-hidden group">
                 <div className="p-4 sm:p-5 lg:p-5.5 flex-1 flex flex-col justify-center">
                   <div>
-                    <div className="flex items-center gap-2.5 mb-2 sm:mb-2.5">
-                      <div className="w-8 h-8 sm:w-8.5 sm:h-8.5 rounded-full bg-[#FAF3E8] border border-[#E8DFC8] flex items-center justify-center text-[#9E7D3B] shrink-0 shadow-2xs">
-                        <ShieldCheck className="w-4 h-4 stroke-[1.75]" />
-                      </div>
-                      <span className="w-4 h-[1.5px] bg-[#C5A56A]" />
-                      <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.2em] text-[#C5A56A] uppercase font-sans">
-                        {t.govPillar2Tag}
-                      </span>
-                    </div>
                     <h3 className="font-serif text-[17px] sm:text-[18.5px] font-bold text-[#142318] mb-1.5 leading-snug">
                       {t.govPillar2Title}
                     </h3>
@@ -791,15 +766,6 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
                 </div>
                 <div className="p-4 sm:p-5 lg:p-5.5 flex-1 flex flex-col justify-center">
                   <div>
-                    <div className="flex items-center gap-2.5 mb-2 sm:mb-2.5">
-                      <div className="w-8 h-8 sm:w-8.5 sm:h-8.5 rounded-full bg-[#FAF3E8] border border-[#E8DFC8] flex items-center justify-center text-[#9E7D3B] shrink-0 shadow-2xs">
-                        <Lock className="w-4 h-4 stroke-[1.75]" />
-                      </div>
-                      <span className="w-4 h-[1.5px] bg-[#C5A56A]" />
-                      <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.2em] text-[#C5A56A] uppercase font-sans">
-                        {t.govPillar3Tag}
-                      </span>
-                    </div>
                     <h3 className="font-serif text-[17px] sm:text-[18.5px] font-bold text-[#142318] mb-1.5 leading-snug">
                       {t.govPillar3Title}
                     </h3>
@@ -822,15 +788,6 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
               <div className="bg-white/95 rounded-2xl sm:rounded-3xl border border-[#EAE4D7] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-[#D5B878]/70 transition-all duration-300 flex flex-col-reverse sm:flex-row items-stretch overflow-hidden group">
                 <div className="p-4 sm:p-5 lg:p-5.5 flex-1 flex flex-col justify-center">
                   <div>
-                    <div className="flex items-center gap-2.5 mb-2 sm:mb-2.5">
-                      <div className="w-8 h-8 sm:w-8.5 sm:h-8.5 rounded-full bg-[#FAF3E8] border border-[#E8DFC8] flex items-center justify-center text-[#9E7D3B] shrink-0 shadow-2xs">
-                        <Users className="w-4 h-4 stroke-[1.75]" />
-                      </div>
-                      <span className="w-4 h-[1.5px] bg-[#C5A56A]" />
-                      <span className="text-[10px] sm:text-[10.5px] font-bold tracking-[0.2em] text-[#C5A56A] uppercase font-sans">
-                        {t.govPillar4Tag}
-                      </span>
-                    </div>
                     <h3 className="font-serif text-[17px] sm:text-[18.5px] font-bold text-[#142318] mb-1.5 leading-snug">
                       {t.govPillar4Title}
                     </h3>
@@ -885,9 +842,6 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
                     </svg>
                   </div>
                   <div>
-                    <span className="text-[9.5px] sm:text-[10px] font-bold tracking-[0.2em] text-[#ECCF96] uppercase mb-1.5 block font-sans">
-                      NABIOTA® HOLDING GOVERNANCE STANDARD
-                    </span>
                     <h3 className="font-serif text-[20px] sm:text-[24px] lg:text-[26px] text-white font-normal leading-tight mb-2">
                       {t.govBannerTitle}
                     </h3>
@@ -1057,9 +1011,9 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
         {/* ══════════════════════════════════════════════════════════
             SECTION 6: UNSER TEAM (Gemeinsam mehr erreichen.)
         ══════════════════════════════════════════════════════════ */}
-        <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-[#ECE7DC] relative">
+        <section className="py-12 sm:py-14 lg:py-16 bg-white border-b border-[#ECE7DC] relative">
           <Container size="wide">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-9 items-center">
               {/* Left Column: Team Content & Button */}
               <div className="lg:col-span-6 flex flex-col justify-center">
                 <h2 className="font-serif text-[34px] sm:text-[40px] lg:text-[46px] font-normal leading-[1.12] text-[#142318] mb-5">
@@ -1083,7 +1037,7 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
 
               {/* Right Column: Medical Team Photo with Floating Pill */}
               <div className="lg:col-span-6 relative">
-                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-[#EDE7D9] bg-[#F7F4EE]">
+                <div className="relative aspect-[16/10] rounded-3xl overflow-hidden shadow-xl border border-[#EDE7D9] bg-[#F7F4EE]">
                   <Image
                     src="/images/careers/team.webp"
                     alt="NabiOta Health Group Medical Team"

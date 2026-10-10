@@ -11,7 +11,6 @@ import {
   ClipboardList,
   Monitor,
   Brain,
-  Scale,
   ArrowRight,
 } from "lucide-react";
 import { Container } from "@/components/layout/Container";
@@ -42,14 +41,6 @@ const c = {
     tr: "YAPI · SORUMLULUKLAR · YASAL ÇERÇEVE",
     ar: "الهيكل التنظيمي · المسؤوليات · الإطار القانوني",
     uz: "TUZILMA · MAS'ULIYATLAR · HUQUQIY ASOSLAR",
-  } as T,
-  tag: {
-    de: "MVZ & HOLDING-VERTRAGSWESEN · § 95 SGB V",
-    en: "MVZ & HOLDING CONTRACTUAL FRAMEWORK · § 95 SGB V",
-    ru: "MVZ И ДОГОВОРНАЯ БАЗА ХОЛДИНГА · § 95 SGB V",
-    tr: "MVZ VE HOLDİNG SÖZLEŞME SİSTEMİ · § 95 SGB V",
-    ar: "المنظومة التعاقدية للمراكز الطبية والقابضة · § 95 SGB V",
-    uz: "MVZ VA HOLDING SHARTNOMA TIZIMI · § 95 SGB V",
   } as T,
   title: {
     de: "Vertragliche Verbindung zwischen Holding und MVZ",
@@ -333,14 +324,6 @@ export function MvzContractSection({ locale = "de" }: { locale?: string }) {
         <Container size="wide" className="relative z-10 pt-8 sm:pt-12 lg:pt-16">
           <div className="max-w-6xl mx-auto">
             <div className="max-w-xl lg:max-w-2xl">
-              {/* Eyebrow with gold line matching MVZ 1 design (No black pill badge) */}
-              <div className="flex items-center gap-2.5 mb-2.5 sm:mb-3">
-                <span className="w-6 h-[1.5px] bg-[#C5A56A]" />
-                <span className="text-[11px] sm:text-[11.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase font-sans">
-                  {c.tag[l]}
-                </span>
-              </div>
-
               {/* Title (Photo 1) */}
               <h2 className="font-serif text-[28px] sm:text-[38px] lg:text-[44px] text-[#142318] font-normal leading-[1.15]">
                 {c.title[l]}

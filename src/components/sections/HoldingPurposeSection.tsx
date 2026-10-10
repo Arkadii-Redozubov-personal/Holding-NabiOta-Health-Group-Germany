@@ -266,7 +266,6 @@ export function HoldingPurposeSection({ locale = "de" }: { locale?: string }) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4.5 sm:gap-5 items-stretch">
             {content.blocks.map((b, idx) => {
               const Icon = b.icon;
-              const numStr = String(idx + 1).padStart(2, "0");
               const hasLeaf = idx === 0 || idx === 2 || idx === 3 || idx === 5;
 
               return (
@@ -294,9 +293,6 @@ export function HoldingPurposeSection({ locale = "de" }: { locale?: string }) {
                         <Icon className="w-4.5 h-4.5 sm:w-5 sm:h-5 stroke-[1.75]" />
                       </div>
                       <div className="min-w-0">
-                        <span className="text-[10.5px] sm:text-[11px] font-medium text-[#C5A56A] tracking-wider font-sans block mb-0.5">
-                          {numStr} —
-                        </span>
                         <h3 className="font-serif text-[16px] sm:text-[17.5px] font-medium text-[#142318] leading-snug">
                           {b.title[l]}
                         </h3>

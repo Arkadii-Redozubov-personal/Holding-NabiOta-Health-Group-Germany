@@ -369,14 +369,6 @@ export function ClinicsGermanySection({ locale = "de" }: { locale?: string }) {
           <div className="max-w-6xl mx-auto">
             {/* Top Row: Title, Eyebrow & Lead on the left (No buttons) */}
             <div className="max-w-xl lg:max-w-2xl mb-6 sm:mb-8 lg:mb-9">
-              {/* Eyebrow with gold line: MVZ 3 · § 30 GewO · § 108 SGB V */}
-              <div className="flex items-center gap-2.5 mb-2.5 sm:mb-3">
-                <span className="w-6 h-[1.5px] bg-[#C5A56A]" />
-                <span className="text-[11px] sm:text-[11.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase font-sans">
-                  {c.tag[l]}
-                </span>
-              </div>
-
               {/* Title with highlighted phrase */}
               <h2 className="font-serif text-[24px] sm:text-[28px] lg:text-[34px] xl:text-[38px] text-[#142318] font-normal leading-[1.18] mb-3">
                 {(() => {
@@ -415,7 +407,6 @@ export function ClinicsGermanySection({ locale = "de" }: { locale?: string }) {
           {/* 4 Pillar Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {c.pillars.map((p, i) => {
-              const Icon = p.icon;
               return (
                 <article
                   key={i}
@@ -435,12 +426,6 @@ export function ClinicsGermanySection({ locale = "de" }: { locale?: string }) {
                   {/* Left content */}
                   <div className="relative z-10 p-5 sm:p-6 flex flex-col justify-between h-full">
                     <div>
-                      <div className="flex items-center gap-3 mb-2.5">
-                        <div className="w-9 h-9 rounded-full bg-[#FAF3E8] border border-[#E8DFC8] text-[#9E7D3B] flex items-center justify-center shrink-0 group-hover:bg-[#F0E5CD] transition-colors">
-                          <Icon className="w-4 h-4" />
-                        </div>
-                      </div>
-
                       {/* Title */}
                       <h3 className="font-serif text-[17px] sm:text-[18.5px] text-[#142318] font-medium leading-snug mb-2.5 max-w-[62%] sm:max-w-[60%]">
                         {p.title[l]}
@@ -484,13 +469,6 @@ export function ClinicsGermanySection({ locale = "de" }: { locale?: string }) {
           {/* Left Column: Eyebrow, Title, Description */}
           <div className="w-full lg:w-[52%] xl:w-[54%] flex flex-col justify-center py-6 sm:py-8 lg:py-10 px-6 sm:px-10 lg:pl-16 xl:pl-28 2xl:pl-36 lg:pr-10 z-10">
             <div className="max-w-xl">
-              {/* Eyebrow with gold line */}
-              <div className="flex items-center gap-2.5 mb-2 sm:mb-2.5">
-                <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.2em] text-[#C5A56A] uppercase font-sans">
-                  {c.deptEyebrow[l]}
-                </span>
-              </div>
-
               {/* Main Title with highlighted word */}
               <h3 className="font-serif text-[24px] sm:text-[28px] lg:text-[32px] xl:text-[36px] text-[#142318] font-normal leading-[1.18] mb-2.5 sm:mb-3">
                 {l === "en" ? (

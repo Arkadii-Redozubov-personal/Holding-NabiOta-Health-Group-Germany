@@ -125,3 +125,342 @@ body {
     transform: translateY(0);
   }
 }
+
+/* NabiOta corporate stationery preview and print layouts */
+.stationery-card-face {
+  position: relative;
+  display: flex;
+  aspect-ratio: 85 / 55;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border-radius: 16px;
+  padding: clamp(18px, 4vw, 30px);
+  box-shadow: 0 16px 36px rgba(28, 39, 29, 0.16);
+}
+
+.stationery-card-front {
+  color: #fff9ea;
+  border: 1px solid rgba(213, 184, 120, 0.58);
+  background:
+    radial-gradient(circle at 91% 12%, transparent 0 23%, rgba(213, 184, 120, 0.16) 23.2% 23.5%, transparent 23.7% 34%, rgba(213, 184, 120, 0.1) 34.2% 34.5%, transparent 34.7%),
+    #0a2115;
+}
+
+.stationery-card-back {
+  color: #26362b;
+  border: 1px solid #e3d8bd;
+  background: linear-gradient(135deg, #fffefa, #f7f2e6);
+}
+
+.stationery-card-front .stationery-card-front-name {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 82%;
+  font-size: 10px;
+  color: #d9c99e;
+}
+
+.stationery-card-front-name strong {
+  color: #fff9ea;
+  font-family: var(--font-serif), Georgia, Cambria, serif;
+  font-size: clamp(13px, 2vw, 18px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.stationery-card-gold-line {
+  position: absolute;
+  right: 24px;
+  bottom: 18px;
+  width: 54px;
+  height: 3px;
+  border-radius: 999px;
+  background: #d5b878;
+}
+
+.stationery-card-back-company {
+  max-width: 90%;
+  padding-bottom: 9px;
+  border-bottom: 1px solid rgba(164, 133, 72, 0.35);
+  font-family: var(--font-serif), Georgia, Cambria, serif;
+  font-size: clamp(12px, 1.7vw, 16px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.stationery-card-back-details {
+  display: grid;
+  gap: 4px;
+  font-size: clamp(9px, 1.3vw, 12px);
+  line-height: 1.2;
+}
+
+.stationery-print-source {
+  display: none;
+}
+
+.stationery-print-sheet {
+  display: none;
+  box-sizing: border-box;
+  width: 210mm;
+  height: 297mm;
+  overflow: hidden;
+  background: #fff;
+  break-after: page;
+  page-break-after: always;
+}
+
+.stationery-print-sheet:last-child {
+  break-after: auto;
+  page-break-after: auto;
+}
+
+.stationery-print-letter {
+  position: relative;
+  padding: 16mm 18mm 23mm;
+  color: #26362b;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.stationery-print-letter-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 0.3mm solid #ded6c5;
+  padding-bottom: 7mm;
+}
+
+.stationery-print-letter-header > a {
+  flex: 0 0 auto;
+}
+
+.stationery-print-legal {
+  display: flex;
+  flex-direction: column;
+  gap: 1mm;
+  padding-top: 1mm;
+  text-align: right;
+  font-size: 8pt;
+  line-height: 1.35;
+}
+
+.stationery-print-legal strong {
+  color: #142318;
+  font-size: 9pt;
+}
+
+.stationery-print-sender-line {
+  margin-top: 13mm;
+  width: 85mm;
+  border-bottom: 0.2mm solid #aaa;
+  padding-bottom: 1mm;
+  color: #545b54;
+  font-size: 7.5pt;
+}
+
+.stationery-print-recipient {
+  width: 85mm;
+  height: 36mm;
+  padding-top: 4mm;
+  color: #999;
+  font-size: 8pt;
+}
+
+.stationery-print-date {
+  margin-left: auto;
+  width: 65mm;
+  text-align: right;
+  color: #626860;
+  font-size: 9pt;
+}
+
+.stationery-print-body {
+  margin-top: 14mm;
+  color: #8a754a;
+  font-size: 9pt;
+}
+
+.stationery-print-letter-footer {
+  position: absolute;
+  right: 18mm;
+  bottom: 11mm;
+  left: 18mm;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 6mm;
+  border-top: 0.3mm solid #d5b878;
+  padding-top: 4mm;
+  color: #535b53;
+  font-size: 7pt;
+  line-height: 1.45;
+}
+
+.stationery-print-letter-footer > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.stationery-print-letter-footer strong {
+  margin-bottom: 1.2mm;
+  color: #18291d;
+  font-size: 7.2pt;
+}
+
+.stationery-print-gold-rule {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1.5mm;
+  background: linear-gradient(90deg, #8d6b2d, #d7b96f, #8d6b2d);
+}
+
+.stationery-print-card-sheet {
+  display: none;
+  grid-template-columns: repeat(2, 85mm);
+  grid-template-rows: repeat(4, 55mm);
+  align-content: center;
+  justify-content: center;
+  gap: 7mm 6mm;
+}
+
+.stationery-print-card-cut {
+  box-sizing: border-box;
+  width: 85mm;
+  height: 55mm;
+  border: 0.2mm dashed #9c9c9c;
+}
+
+.stationery-card-face.stationery-card-print {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  aspect-ratio: auto;
+  border-radius: 0;
+  padding: 5mm;
+  box-shadow: none;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+.stationery-card-print .stationery-card-front-name {
+  gap: 1mm;
+  max-width: 82%;
+  font-size: 7pt;
+}
+
+.stationery-card-print .stationery-card-front-name strong {
+  font-size: 10pt;
+}
+
+.stationery-card-print .stationery-card-back-company {
+  padding-bottom: 2mm;
+  font-size: 9pt;
+}
+
+.stationery-card-print .stationery-card-back-details {
+  gap: 1mm;
+  font-size: 7.3pt;
+}
+
+.stationery-card-print .stationery-card-gold-line {
+  right: 5mm;
+  bottom: 4mm;
+  width: 14mm;
+  height: 0.8mm;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html,
+  body {
+    width: 210mm !important;
+    min-width: 210mm !important;
+    max-width: none !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    background: #fff !important;
+  }
+
+  body[data-nabiota-stationery-print] {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  body[data-nabiota-stationery-print] > :not(#nabiota-stationery-print-root) {
+    display: none !important;
+  }
+
+  body[data-nabiota-stationery-print] #nabiota-stationery-print-root {
+    position: static !important;
+    inset: auto !important;
+    display: block !important;
+    width: 210mm !important;
+    height: auto !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    visibility: visible !important;
+  }
+
+  body[data-nabiota-stationery-print] #nabiota-stationery-print-root * {
+    visibility: visible !important;
+  }
+
+  body[data-nabiota-stationery-print] .stationery-print-sheet {
+    display: none !important;
+  }
+
+  body[data-nabiota-stationery-print="letter"] [data-print-document="letter"],
+  body[data-nabiota-stationery-print="all"] [data-print-document="letter"] {
+    display: block !important;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  body[data-nabiota-stationery-print="letter"] [data-print-document="letter"] {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  body[data-nabiota-stationery-print="all"] [data-print-document="blank"] {
+    display: block !important;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  body[data-nabiota-stationery-print="cards"] [data-print-document="card-front"],
+  body[data-nabiota-stationery-print="cards"] [data-print-document="card-back"],
+  body[data-nabiota-stationery-print="all"] [data-print-document="card-front"],
+  body[data-nabiota-stationery-print="all"] [data-print-document="card-back"] {
+    display: grid !important;
+  }
+
+  body[data-nabiota-stationery-print="cards"] [data-print-document="card-front"],
+  body[data-nabiota-stationery-print="all"] [data-print-document="card-front"] {
+    break-after: page;
+    page-break-after: always;
+  }
+
+  body[data-nabiota-stationery-print="cards"] [data-print-document="card-back"],
+  body[data-nabiota-stationery-print="all"] [data-print-document="card-back"] {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  body[data-nabiota-stationery-print="cards"] #nabiota-stationery-print-root > [data-print-document="letter"],
+  body[data-nabiota-stationery-print="cards"] #nabiota-stationery-print-root > [data-print-document="blank"] {
+    display: none !important;
+  }
+
+  body[data-nabiota-stationery-print="letter"] #nabiota-stationery-print-root > [data-print-document="blank"],
+  body[data-nabiota-stationery-print="letter"] #nabiota-stationery-print-root > [data-print-document^="card-"] {
+    display: none !important;
+  }
+}

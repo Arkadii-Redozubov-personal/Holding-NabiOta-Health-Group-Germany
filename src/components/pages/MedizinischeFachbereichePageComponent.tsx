@@ -11,8 +11,6 @@ import {
   CheckCircle2,
   ShieldCheck,
   Heart,
-  Lightbulb,
-  Sparkles,
   Clock,
   Users,
 } from "lucide-react";
@@ -694,9 +692,6 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
           <Container size="wide">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end">
               <div className="lg:col-span-6 space-y-2">
-                <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
-                  {overviewData.eyebrow}
-                </span>
                 <h2 className="font-serif text-3xl sm:text-4xl text-[#132218] font-normal leading-tight">
                   {overviewData.title}
                 </h2>
@@ -786,10 +781,6 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
 
               {/* Right Column: Title, Description, 3 Badges, Link */}
               <div className="lg:col-span-6 space-y-4 sm:space-y-5 lg:pl-2">
-                <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
-                  {spotlight.eyebrow}
-                </span>
-
                 <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] text-[#132218] font-normal leading-[1.18] whitespace-pre-line">
                   {spotlight.title}
                 </h2>
@@ -885,14 +876,6 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                 {/* Content Layer (Left ~60%) */}
                 <div className="relative z-10 max-w-[62%] sm:max-w-[60%] flex flex-col justify-between h-full">
                   <div>
-                    {/* Eyebrow with gold line */}
-                    <div className="flex items-center gap-2 mb-2 sm:mb-2.5">
-                      <span className="w-5 h-[1.5px] bg-[#C5A56A]" />
-                      <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-[0.22em] text-[#C5A56A] font-sans">
-                        {isUz ? "TIBBIY YORDAM" : isRu ? "МЕДИЦИНСКАЯ ПОМОЩЬ" : isEn ? "MEDICAL CARE" : isTr ? "TIBBİ BAKIM" : isAr ? "الرعاية الطبية" : "MEDIZINISCHE VERSORGUNG"}
-                      </span>
-                    </div>
-
                     {/* Main Heading */}
                     <h3 className="font-serif text-[22px] sm:text-[25px] lg:text-[27px] text-[#142318] font-normal leading-[1.18] mb-3">
                       {overviewData.capabilitiesTitle}
@@ -939,14 +922,6 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
 
                 <div className="relative z-10 flex flex-col justify-between h-full">
                   <div>
-                    {/* Eyebrow with gold line */}
-                    <div className="flex items-center gap-2 mb-2 sm:mb-2.5">
-                      <span className="w-5 h-[1.5px] bg-[#C5A56A]" />
-                      <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-[0.22em] text-[#C5A56A] font-sans">
-                        {isUz ? "SIZNING AFZALLIKLARINGIZ" : isRu ? "ВАШИ ПРЕИМУЩЕСТВА" : isEn ? "YOUR ADVANTAGES" : isTr ? "AVANTAJLARINIZ" : isAr ? "مزاياكم" : "IHRE VORTEILE"}
-                      </span>
-                    </div>
-
                     {/* Heading */}
                     <h3 className="font-serif text-[21px] sm:text-[24px] lg:text-[26px] text-[#142318] font-normal leading-[1.18] mb-3">
                       {overviewData.advantagesTitle}
@@ -992,18 +967,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
 
             {/* Section Divider & Centered Company Entities Header */}
             <div className="my-12 sm:my-16">
-              <div className="relative flex items-center justify-center mb-5">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-[#EDE8DE]"></div>
-                </div>
-                <div className="relative bg-[#FAF8F5] px-6 text-center">
-                  <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#B89650] uppercase font-sans">
-                    {overviewData.entitiesTitle}
-                  </span>
-                </div>
-              </div>
-
-              <h3 className="font-serif text-2xl sm:text-[30px] lg:text-[32px] text-[#142318] font-normal text-center leading-[1.25] max-w-3xl mx-auto mt-4">
+              <h3 className="font-serif text-2xl sm:text-[30px] lg:text-[32px] text-[#142318] font-normal text-center leading-[1.25] max-w-3xl mx-auto">
                 {isUz
                   ? "Yuqori darajadagi ambulator va statsionar tibbiyot uchun guruhning ixtisoslashtirilgan bo'linmalari"
                   : isRu
@@ -1036,17 +1000,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                     className="bg-white rounded-[20px] sm:rounded-[22px] p-5 sm:p-5.5 border border-[#EDE8DE] hover:border-[#D5B878] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all flex flex-col justify-between group"
                   >
                     <div>
-                      {/* Top row: Eyebrow with gold line left, secondary descriptor right */}
-                      <div className="flex items-center justify-between gap-2 mb-3">
-                        <div className="flex items-center gap-2">
-                          <span className="w-4 h-[1.5px] bg-[#C5A56A]" />
-                          <span className="text-[11px] sm:text-[11.5px] font-bold tracking-[0.2em] text-[#C5A56A] uppercase">
-                            {entity.tag}
-                          </span>
-                        </div>
-                        <span className="text-[11px] sm:text-[11.5px] text-[#7A857D] font-sans truncate ml-2 text-right">
-                          {entity.sub}
-                        </span>
+                      {/* Entity descriptor */}
+                      <div className="mb-3 text-[11px] sm:text-[11.5px] text-[#7A857D] font-sans">
+                        {entity.sub}
                       </div>
 
                       {/* Icon & Title Row (Larger Circular Icon) */}
@@ -1131,10 +1087,6 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
               {/* Left Column: Eyebrow, Title, Description, Button */}
               <div className="lg:col-span-4 space-y-4 pt-2">
-                <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.24em] text-[#B89650] uppercase block">
-                  {teamSection.eyebrow}
-                </span>
-
                 <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] text-[#132218] font-normal leading-[1.18] whitespace-pre-line">
                   {teamSection.title}
                 </h2>
@@ -1176,7 +1128,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
 
                         {/* Doctor Info */}
                         <div className="space-y-1 px-0.5">
-                          <span className="text-[11px] font-semibold tracking-wide text-[#B89650] uppercase block">
+                          <span className="text-[11px] font-medium text-[#6E756D] block">
                             {doc.role}
                           </span>
                           <h4 className="text-[15px] sm:text-[16.5px] font-serif font-medium text-[#142318] group-hover:text-[#B89650] transition-colors leading-snug">
@@ -1248,9 +1200,6 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 lg:gap-10">
               {/* Left: Eyebrow + Title */}
               <div className="space-y-1.5 lg:max-w-md shrink-0">
-                <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase block">
-                  {ctaSection.eyebrow}
-                </span>
                 <h2 className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-white font-normal leading-[1.2] whitespace-pre-line">
                   {ctaSection.title}
                 </h2>

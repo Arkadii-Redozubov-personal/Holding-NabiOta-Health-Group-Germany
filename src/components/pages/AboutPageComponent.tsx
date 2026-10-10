@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { HoldingPurposeSection } from "@/components/sections/HoldingPurposeSection";
+import { CorporateStationerySection } from "@/components/sections/CorporateStationerySection";
 import { SupportedLocale } from "@/lib/i18n";
 import {
   ChevronRight,
@@ -1619,15 +1620,6 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       </li>
                     </ul>
                   </div>
-                  <div className="flex justify-end -mt-7">
-                    <Link
-                      href={`/${locale}/contact`}
-                      aria-label="Phase 1 details"
-                      className="w-8 h-8 rounded-full border border-[#D1C9B8] bg-white text-[#7A6843] hover:border-[#D5B878] hover:bg-[#D5B878] hover:text-[#0C1C11] flex items-center justify-center transition-all shadow-xs"
-                    >
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
-                  </div>
                 </div>
               </div>
 
@@ -1724,15 +1716,6 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                         </span>
                       </li>
                     </ul>
-                  </div>
-                  <div className="flex justify-end -mt-7">
-                    <Link
-                      href={`/${locale}/contact`}
-                      aria-label="Phase 2 details"
-                      className="w-8 h-8 rounded-full border border-[#D1C9B8] bg-white text-[#7A6843] hover:border-[#D5B878] hover:bg-[#D5B878] hover:text-[#0C1C11] flex items-center justify-center transition-all shadow-xs"
-                    >
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Link>
                   </div>
                 </div>
               </div>
@@ -2278,6 +2261,8 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             </div>
           </Container>
         </section>
+
+        <CorporateStationerySection locale={locale} />
 
         {/* ══════════════════════════════════════════════════════════
             SECTION 5: UNSERE WERTE ("Das macht uns besonders.")

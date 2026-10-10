@@ -711,14 +711,6 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
           <div className="max-w-6xl mx-auto">
             {/* Top Row: Title, Eyebrow & Lead on the left (No buttons) */}
             <div className="max-w-xl lg:max-w-2xl mb-5 sm:mb-6 lg:mb-7">
-              {/* Eyebrow with gold line: MVZ 2 · § 95 SGB V */}
-              <div className="flex items-center gap-2.5 mb-2.5 sm:mb-3">
-                <span className="w-6 h-[1.5px] bg-[#C5A56A]" />
-                <span className="text-[11px] sm:text-[11.5px] font-bold tracking-[0.24em] text-[#C5A56A] uppercase font-sans">
-                  {c.tag[l]}
-                </span>
-              </div>
-
               {/* Title with highlighted phrase */}
               <h2 className="font-serif text-[24px] sm:text-[28px] lg:text-[34px] xl:text-[38px] text-[#142318] font-normal leading-[1.18] mb-3">
                 {(() => {
@@ -793,7 +785,6 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-7 items-stretch pt-2 sm:pt-4">
             {[0, 2].map((cardIdx) => {
               const p = c.paragraphs[cardIdx];
-              const Icon = p.icon;
               const bgImage =
                 cardIdx === 0
                   ? "/images/areas/card-stethoscope.webp"
@@ -822,13 +813,6 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
                   </div>
 
                   <div className="relative z-10 max-w-[90%] sm:max-w-[84%] lg:max-w-[80%] pb-2">
-                    {/* Eyebrow badge with icon */}
-                    <div className="flex items-center gap-2 mb-3.5 sm:mb-4">
-                      <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 bg-[#EFE8D8] text-[#9E7D3B] border border-[#D5B878]/30">
-                        <Icon className="w-3 h-3" />
-                      </div>
-                    </div>
-
                     {/* Title */}
                     <h3 className="font-serif text-[22px] sm:text-[24px] lg:text-[25px] font-medium leading-[1.25] mb-3 sm:mb-3.5 text-[#142318]">
                       {p.title[l]}
