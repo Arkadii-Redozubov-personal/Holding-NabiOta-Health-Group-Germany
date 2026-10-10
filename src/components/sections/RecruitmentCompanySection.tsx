@@ -340,10 +340,10 @@ export function RecruitmentCompanySection({ locale = "de" }: { locale?: string }
             <div className="max-w-xl lg:max-w-2xl mb-6 sm:mb-8 lg:mb-9">
 
 
-              {/* Title with styled italic phrase & distinct GmbH */}
+              {/* Title with highlighted phrase & distinct GmbH */}
               <h2 className="font-serif text-[24px] sm:text-[28px] lg:text-[34px] xl:text-[38px] text-[#142318] font-normal leading-[1.18] mb-3">
                 NabiOta{" "}
-                <span className="font-serif italic text-[#C5A56A]">Medical Recruitment Services</span>{" "}
+                <span className="font-serif text-[#C5A56A]">Medical Recruitment Services</span>{" "}
                 <span className="text-[#C5A56A] font-sans font-semibold text-[0.72em] tracking-wider uppercase ml-1 align-baseline">
                   GmbH
                 </span>
@@ -352,12 +352,16 @@ export function RecruitmentCompanySection({ locale = "de" }: { locale?: string }
               <p className="text-[12.5px] sm:text-[13px] text-[#556057] leading-relaxed max-w-xl font-sans">
                 {c.lead[l]}
               </p>
+              <Link href={`/${l}/nabiota-medical-recruitment`} className="mt-4 inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-full bg-gradient-to-r from-[#EED4A2] via-[#E4C58B] to-[#D5B878] text-[#142318] hover:brightness-105 font-semibold text-[12px] sm:text-[12.5px] shadow-sm transition-all">
+                {l === "ru" ? "Перейти на сайт Recruitment" : l === "en" ? "Visit Recruitment website" : l === "tr" ? "Recruitment sitesine git" : l === "ar" ? "زيارة موقع Recruitment" : l === "uz" ? "Recruitment saytiga o‘tish" : "Zur Recruitment-Website"}
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
 
-            {/* Bottom: 6 Profession Cards spanning across width (Matching MVZ style) */}
+            {/* Core profession groups: doctors, nurses, and medical assistants */}
             <div className="w-full">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-2.5">
-                {c.professionsList.map((item, idx) => {
+                {c.professionsList.slice(0, 3).map((item, idx) => {
                   const ProfIcon = professionIcons[idx % professionIcons.length] || UserCheck;
                   return (
                     <div
@@ -440,7 +444,7 @@ export function RecruitmentCompanySection({ locale = "de" }: { locale?: string }
                     {/* Learn more link */}
                     <div className="mt-4 pt-3.5 border-t border-[#EDE8DE]">
                       <Link
-                        href={`/${l}/contact`}
+                        href={`/${l}/nabiota-medical-recruitment`}
                         className="inline-flex items-center gap-1.5 text-[11.5px] sm:text-[12px] font-semibold text-[#9E7D3B] hover:text-[#142318] transition-colors"
                       >
                         <span>{l === "uz" ? "Batafsil" : l === "tr" ? "Daha fazla bilgi" : l === "ar" ? "المزيد من التفاصيل" : l === "ru" ? "Подробнее" : l === "en" ? "Learn more" : "Mehr erfahren"}</span>

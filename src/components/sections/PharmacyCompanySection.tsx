@@ -291,10 +291,10 @@ export function PharmacyCompanySection({ locale = "de" }: { locale?: string }) {
             <div className="max-w-xl lg:max-w-2xl mb-6 sm:mb-8 lg:mb-9">
 
 
-              {/* Title with styled italic phrase */}
+              {/* Title with highlighted phrase */}
               <h2 className="font-serif text-[24px] sm:text-[28px] lg:text-[34px] xl:text-[38px] text-[#142318] font-normal leading-[1.18] mb-1.5">
                 NabiOta{" "}
-                <span className="font-serif italic text-[#C5A56A]">Apotheke</span>{" "}
+                <span className="font-serif text-[#C5A56A]">Apotheke</span>{" "}
                 <span className="text-[#C5A56A] font-sans font-semibold text-[0.72em] tracking-wider uppercase ml-1 align-baseline">
                   Mönchengladbach
                 </span>

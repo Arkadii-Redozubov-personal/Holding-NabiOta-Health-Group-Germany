@@ -2358,7 +2358,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
 
                 <div className="pt-1.5 sm:pt-2">
                   <Link
-                    href={`/${locale}/contact`}
+                    href={`/${locale}/nabiota-real-estate`}
                     className="inline-flex items-center gap-3 px-6 sm:px-7 py-3 rounded-full bg-[#FAF9F5] hover:bg-white text-[#0D2619] border border-[#BFA87E] hover:border-[#9B7C38] text-xs sm:text-sm font-medium transition-all duration-300 shadow-sm hover:shadow group hover:scale-[1.01]"
                   >
                     <span>{t.s1.btn}</span>
@@ -2430,7 +2430,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
 
               <div className="pt-1.5 sm:pt-2">
                 <Link
-                  href={`/${locale}/contact`}
+                  href={`/${locale}/nabiota-real-estate`}
                   className="inline-flex items-center gap-2.5 px-6 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-[#ECCF96] via-[#DFBF76] to-[#C8A050] hover:from-[#F4DCAC] hover:to-[#D4AC5B] text-[#08170D] text-xs sm:text-[13px] font-semibold transition-all duration-300 shadow-md group hover:scale-[1.02]"
                 >
                   <span>{t.s2.btn}</span>
@@ -2645,7 +2645,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
 
                 <div className="pt-1">
                   <Link
-                    href={`/${locale}/contact`}
+                    href={`/${locale}/nabiota-real-estate`}
                     className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[#D5B878]/70 hover:border-[#D5B878] bg-white/5 hover:bg-white/10 text-white text-[11px] sm:text-xs font-medium transition-all duration-300"
                   >
                     <span>{t.s5.btn}</span>
@@ -2735,7 +2735,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
 
                 <div className="pt-1.5">
                   <Link
-                    href={`/${locale}/contact`}
+                    href={`/${locale}/nabiota-real-estate`}
                     className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 h-[48px] sm:h-[50px] rounded-full bg-gradient-to-r from-[#ECCF96] via-[#DFBF76] to-[#C8A050] hover:from-[#F4DCAC] hover:to-[#D4AC5B] text-[#08170D] text-xs sm:text-[13.5px] font-semibold transition-all duration-300 shadow-sm group hover:scale-[1.02]"
                   >
                     <span>{t.s6.btn}</span>
@@ -2747,25 +2747,19 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
               {/* Right Column: 3 Contact entries with round icons */}
               <div className="lg:col-span-4 flex justify-start lg:justify-start lg:pl-4 xl:pl-6">
                 <div className="w-full max-w-[340px] space-y-3.5 sm:space-y-4">
-                  <a
-                    href={`tel:${t.s6.phone.replace(/\s+/g, "")}`}
-                    className="flex items-center gap-3.5 text-xs sm:text-[13.5px] text-[#1B3A29] hover:text-[#0D2619] transition-colors group"
-                  >
+                  <div className="flex items-center gap-3.5 text-xs sm:text-[13.5px] text-[#1B3A29]">
                     <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/80 border border-[#DFCDBA] flex items-center justify-center text-[#8C6D37] shrink-0 shadow-2xs group-hover:bg-[#E5DFC9] transition-colors">
                       <Phone className="w-4 h-4 fill-[#8C6D37] text-[#8C6D37]" />
                     </div>
                     <span className="font-medium font-sans">{t.s6.phone}</span>
-                  </a>
+                  </div>
 
-                  <a
-                    href={`mailto:${t.s6.email}`}
-                    className="flex items-center gap-3.5 text-xs sm:text-[13.5px] text-[#1B3A29] hover:text-[#0D2619] transition-colors group"
-                  >
+                  <div className="flex items-center gap-3.5 text-xs sm:text-[13.5px] text-[#1B3A29]">
                     <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/80 border border-[#DFCDBA] flex items-center justify-center text-[#0F2A1D] shrink-0 shadow-2xs group-hover:bg-[#E5DFC9] transition-colors">
                       <Mail className="w-4 h-4 fill-[#0F2A1D] text-[#0F2A1D]" />
                     </div>
                     <span className="font-medium font-sans">{t.s6.email}</span>
-                  </a>
+                  </div>
 
                   <div className="flex items-center gap-3.5 text-xs sm:text-[13.5px] text-[#1B3A29]">
                     <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/80 border border-[#DFCDBA] flex items-center justify-center text-[#0F2A1D] shrink-0 shadow-2xs">
@@ -2891,7 +2885,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
                   {isUz ? "Yopish" : isRu ? "Закрыть" : isEn ? "Close" : isTr ? "Kapat" : isAr ? "إغلاق" : "Schließen"}
                 </button>
                 <Link
-                  href={`/${locale}/contact`}
+                  href={`/${locale}/nabiota-real-estate`}
                   onClick={() => setSelectedDomain(null)}
                   className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-gradient-to-r from-[#ECCF96] to-[#D4AF67] hover:from-[#F2DAB0] hover:to-[#DEBD7A] text-[#142217] font-semibold text-xs sm:text-sm tracking-wide shadow-md transition-all hover:scale-[1.01]"
                 >

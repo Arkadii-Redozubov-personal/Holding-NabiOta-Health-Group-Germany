@@ -1054,7 +1054,15 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         imageSrc={area.image || "/images/areas/diagnostics.webp"}
         imageAlt="NabiOta Diagnostics High-End Medical Imaging"
         badges={heroData.badges}
-      />
+      >
+        <Link
+          href={`/${locale}/nabiota-diagnostics`}
+          className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-full bg-gradient-to-r from-[#EED4A2] via-[#E4C58B] to-[#D5B878] text-[#142318] hover:brightness-105 font-semibold text-[12px] sm:text-[12.5px] shadow-sm transition-all"
+        >
+          <span>{isUz ? "Diagnostika sayti" : isRu ? "Сайт диагностики" : isEn ? "Diagnostics website" : isTr ? "Tanı sitesi" : isAr ? "موقع التشخيص" : "Diagnostik-Website"}</span>
+          <ArrowRight className="h-3.5 w-3.5" />
+        </Link>
+      </PageHero>
 
       <main className="flex-1 bg-[#FAF8F5]">
         
@@ -1098,7 +1106,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
 
               <div className="pt-2">
                 <Link
-                  href={`/${locale}/contact`}
+                  href={`/${locale}/nabiota-diagnostics`}
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#D5B878] text-[#142318] hover:bg-[#D5B878] hover:text-[#0C1C11] font-semibold text-xs tracking-wide transition-all shadow-sm group bg-white/70"
                 >
                   <span>{isUz ? "Barcha muolajalar →" : isRu ? "Все процедуры →" : isEn ? "View all procedures →" : isTr ? "Tüm Yöntemleri Gör →" : isAr ? "عرض جميع الإجراءات التشخيصية ←" : "Alle Verfahren ansehen →"}</span>
@@ -1310,7 +1318,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
 
               <div className="pt-2">
                 <Link
-                  href={`/${locale}/contact`}
+                  href={`/${locale}/nabiota-diagnostics`}
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#D5B878] text-[#142318] hover:bg-[#D5B878] hover:text-[#0C1C11] font-semibold text-xs tracking-wide transition-all shadow-sm bg-transparent"
                 >
                   <span>{isUz ? "Qanday ishlaydi →" : isRu ? "Как это работает →" : isEn ? "How it works →" : isTr ? "Nasıl Çalışır →" : isAr ? "كيف تسير الإجراءات ←" : "So funktioniert es →"}</span>
@@ -1421,7 +1429,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
 
               <div className="relative z-10 pt-3">
                 <Link
-                  href={`/${locale}/contact`}
+                  href={`/${locale}/nabiota-diagnostics`}
                   className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full bg-[#ECCF96] hover:bg-[#D5B878] text-[#0C1C11] font-semibold text-xs tracking-wide transition-all shadow-sm"
                 >
                   <span>{isUz ? "Bog'lanish →" : isRu ? "Связаться с нами →" : isEn ? "Contact us →" : isTr ? "İletişime Geçin →" : isAr ? "تواصل معنا ←" : "Kontakt aufnehmen →"}</span>
@@ -1629,7 +1637,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
 
               <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5">
                 <Link
-                  href={`/${locale}/contact`}
+                  href={`/${locale}/nabiota-diagnostics`}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs sm:text-[13.5px] tracking-wide shadow-lg transition-all duration-200 hover:scale-102"
                 >
                   <span>{isUz ? "Qabulga yozilish" : isRu ? "Запись на прием" : isEn ? "Book an Appointment" : isTr ? "Randevu Al" : isAr ? "حجز موعد فحص" : "Termin vereinbaren"}</span>
@@ -1637,7 +1645,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                 </Link>
 
                 <Link
-                  href={`/${locale}/contact`}
+                  href={`/${locale}/nabiota-diagnostics`}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full border border-white/30 hover:border-[#D5B878] text-white hover:text-[#ECCF96] font-medium text-xs sm:text-[13px] transition-all bg-white/5 backdrop-blur-sm"
                 >
                   <span>{isUz ? "Markaz bilan bog'lanish" : isRu ? "Связаться с центром" : isEn ? "Direct Contact" : isTr ? "Merkezle İletişim" : isAr ? "التواصل المباشر" : "Direkter Kontakt"}</span>
@@ -1751,7 +1759,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                 </button>
 
                 <Link
-                  href={`/${locale}/contact`}
+                  href={`/${locale}/nabiota-diagnostics`}
                   onClick={() => setSelectedProcedure(null)}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#08170D] hover:bg-[#0C2B1B] text-[#ECCF96] border border-[#D5B878] text-xs font-semibold tracking-wide transition-all shadow-sm"
                 >

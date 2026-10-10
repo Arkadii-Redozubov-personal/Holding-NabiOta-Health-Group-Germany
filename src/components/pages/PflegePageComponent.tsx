@@ -3530,7 +3530,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
               </div>
 
               <Link
-                href={`/${locale}/contact`}
+                href={`/${locale}/nabiota-homecare`}
                 className="self-start sm:self-auto inline-flex items-center gap-1.5 px-6 py-3 rounded-full bg-white hover:bg-[#FAF9F5] text-[#0D2619] border border-[#C8B896] text-xs sm:text-sm font-medium transition-all duration-300 shadow-sm"
               >
                 {t.testimonials.btnMore}
@@ -3679,7 +3679,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
 
               <div>
                 <Link
-                  href={`/${locale}/contact`}
+                  href={`/${locale}/nabiota-homecare`}
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#0D2619] hover:bg-[#163D29] text-white text-xs sm:text-sm font-medium transition-all duration-300 shadow-md group"
                 >
                   <span>{t.cta.btn}</span>
@@ -3690,21 +3690,15 @@ export function PflegePageComponent({ locale = "de" }: Props) {
 
             {/* Bottom Contact Details Bar */}
             <div className="mt-10 pt-5 border-t border-[#DECDB5]/60 flex flex-wrap items-center gap-6 sm:gap-10 text-xs sm:text-sm text-[#1B3A29] font-medium">
-              <a
-                href={`tel:${t.cta.phone.replace(/\s+/g, "")}`}
-                className="flex items-center gap-2.5 hover:text-[#0D2619] transition-colors"
-              >
+              <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#2D5A3E]" />
                 <span>{t.cta.phone}</span>
-              </a>
+              </div>
 
-              <a
-                href={`mailto:${t.cta.email}`}
-                className="flex items-center gap-2.5 hover:text-[#0D2619] transition-colors"
-              >
+              <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#2D5A3E]" />
                 <span>{t.cta.email}</span>
-              </a>
+              </div>
 
               <div className="flex items-center gap-2.5 text-[#2C4C39]">
                 <MapPin className="w-4 h-4 text-[#2D5A3E]" />
@@ -3845,7 +3839,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
                       {isUz ? "Yopish" : isRu ? "Закрыть" : isEn ? "Close" : isTr ? "Kapat" : isAr ? "إغلاق" : "Schließen"}
                     </button>
                     <Link
-                      href={`/${locale}/contact`}
+                      href={`/${locale}/${selectedSupplyModal ? "nabiota-sanitaetshaus" : "nabiota-homecare"}`}
                       onClick={() => {
                         setSelectedService(null);
                         setSelectedSupplyModal(null);

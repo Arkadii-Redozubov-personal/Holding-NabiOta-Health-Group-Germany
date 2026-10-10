@@ -68,12 +68,12 @@ const c = {
         uz: "Klinik faoliyat",
       } as T,
       text: {
-        de: "Hierzu gehören insbesondere der Betrieb von Operationszentren, Diagnostik- und Therapiebereichen sowie die pflegerische und postoperative Versorgung. Das Leistungsangebot kann schmerztherapeutische, rehabilitative und sonstige Nachsorgeleistungen umfassen.",
-        en: "This includes in particular the operation of operating centres, diagnostic and therapy areas, as well as nursing and post-operative care. The range of services may include pain management, rehabilitative and other aftercare services.",
-        ru: "Это включает работу операционных центров, диагностических и терапевтических отделений, а также сестринский уход и послеоперационное обеспечение. Спектр может охватывать обезболивание, реабилитацию и другие виды последующего ухода.",
-        tr: "Bu faaliyetler özellikle ameliyathanelerin, tanı ve tedavi birimlerinin işletilmesini, hemşirelik hizmetlerini ve postoperatif bakımı içerir. Hizmet yelpazesi ağrı tedavisi, rehabilitasyon ve diğer takip/idame bakım hizmetlerini kapsayabilir.",
-        ar: "يشمل ذلك بوجه خاص تشغيل مراكز العمليات الجراحية، وأقسام التشخيص والعلاج، بالإضافة إلى الرعاية التمريضية والتأهيل بعد الجراحة. قد يتضمن نطاق الخدمات علاج الألم، وخدمات إعادة التأهيل، ومختلف برامج الرعاية اللاحقة.",
-        uz: "Bunga xususan jarrohlik markazlari, diagnostika va davolash bo'limlarini boshqarish, shuningdek hamshiralik parvarishi va operatsiyadan keyingi reabilitatsiya kiradi. Xizmatlar qatoriga og'riqni davolash, reabilitatsiya va boshqa keyingi parvarish choralari kirishi mumkin.",
+        de: "Dazu zählen Operationszentren, Diagnostik- und Therapiebereiche sowie Pflege und postoperative Versorgung. Ergänzend sind Schmerztherapie, Rehabilitation und weitere Nachsorge möglich.",
+        en: "This covers operating centres, diagnostic and therapy areas, nursing and post-operative care, with pain management, rehabilitation and other aftercare as additional services.",
+        ru: "Это включает операционные центры, диагностику, терапию, сестринский уход и послеоперационное наблюдение, а также при необходимости обезболивание и реабилитацию.",
+        tr: "Ameliyathaneler, tanı ve tedavi birimleri, hemşirelik ve ameliyat sonrası bakım bu kapsamdadır; ağrı tedavisi ve rehabilitasyon da sunulabilir.",
+        ar: "يشمل ذلك تشغيل غرف العمليات وأقسام التشخيص والعلاج، والتمريض والرعاية بعد الجراحة، مع إمكانية تقديم علاج الألم وإعادة التأهيل.",
+        uz: "Bunga operatsiya markazlari, diagnostika va davolash bo‘limlari, hamshiralik hamda operatsiyadan keyingi parvarish kiradi; og‘riqni davolash va reabilitatsiya ham ko‘rsatilishi mumkin.",
       } as T,
       image: "/images/areas/surgical-center.webp",
     },
@@ -88,12 +88,12 @@ const c = {
         uz: "Xodimlar va hamkorlik",
       } as T,
       text: {
-        de: "Die Gesellschaft ist berechtigt, ärztliches und nichtärztliches Personal zu beschäftigen sowie Kooperationen mit Ärzten, Krankenhäusern, medizinischen Versorgungszentren, Pflege-, Therapie-, Rehabilitations- und Forschungseinrichtungen einzugehen. Ambulante Operationen und die Zusammenarbeit mit Belegärzten erfolgen unter Beachtung der jeweils geltenden gesetzlichen, berufsrechtlichen und vertraglichen Voraussetzungen.",
-        en: "The company is entitled to employ medical and non-medical staff and to enter into cooperations with physicians, hospitals, MVZs, nursing, therapy, rehabilitation and research facilities. Outpatient operations and cooperation with attending physicians are subject to applicable legal, professional and contractual requirements.",
-        ru: "Общество вправе нанимать медицинский и немедицинский персонал, а также заключать соглашения о сотрудничестве с врачами, больницами, MVZ, учреждениями по уходу, терапии, реабилитации и исследованиям. Амбулаторные операции и работа с ординаторами осуществляются в рамках закона.",
-        tr: "Şirket; hekim ve hekim dışı personel istihdam etme, hekimler, hastaneler, tıbbi bakım merkezleri (MVZ), bakım, terapi, rehabilitasyon ve araştırma kuruluşları ile iş birlikleri kurma yetkisine sahiptir. Ayakta ameliyatlar ve anlaşmalı doktorlarla (Belegärzte) iş birliği yürürlükteki yasal, mesleki ve sözleşmesel şartlara tabidir.",
-        ar: "يحق للشركة توظيف الكوادر الطبية وغير الطبية وإبرام شراكات تعاونية مع الأطباء والمستشفيات والمراكز الطبية (MVZ) ومؤسسات التمريض والعلاج وإعادة التأهيل والبحث العلمي. وتخضع الجراحات اليومية والتعاون مع الأطباء المنتسبين للشروط القانونية والمهنية والتعاقدية السارية.",
-        uz: "Jamiyat shifokorlar va tibbiy bo'lmagan xodimlarni ishga olishga hamda shifokorlar, shifoxonalar, MVZlar, parvarish, terapiya, reabilitatsiya va ilmiy-tadqiqot muassasalari bilan hamkorlik qilishga haqlidir. Ambulator jarrohlik amaliyotlari va shartnomaviy shifokorlar (Belegärzte) bilan hamkorlik amaldagi qonunchilik, kasbiy va shartnomaviy talablarga rioya qilgan holda amalga oshiriladi.",
+        de: "Die Gesellschaft kann ärztliches und nichtärztliches Personal beschäftigen und mit Ärzten, Krankenhäusern, MVZ sowie Pflege-, Therapie-, Reha- und Forschungseinrichtungen kooperieren. Ambulante Operationen und Belegarzt-Kooperationen richten sich nach den geltenden gesetzlichen, beruflichen und vertraglichen Vorgaben.",
+        en: "The company may employ medical and non-medical staff and cooperate with physicians, hospitals, MVZs, and care, therapy, rehabilitation and research facilities. Outpatient surgery and attending-physician arrangements follow applicable legal, professional and contractual requirements.",
+        ru: "Общество может нанимать медицинский и немедицинский персонал и сотрудничать с врачами, больницами, MVZ, учреждениями ухода, терапии, реабилитации и исследований. Амбулаторные операции и работа с приглашёнными врачами ведутся в рамках закона.",
+        tr: "Şirket hekim ve diğer personeli istihdam edebilir; hekimler, hastaneler, MVZ'ler ile bakım, terapi, rehabilitasyon ve araştırma kuruluşlarıyla iş birliği yapabilir. Ayakta ameliyatlar ve anlaşmalı hekimlerle çalışma yürürlükteki yasal ve sözleşmesel kurallara tabidir.",
+        ar: "يجوز للشركة توظيف كوادر طبية وغير طبية والتعاون مع الأطباء والمستشفيات ومراكز MVZ ومؤسسات الرعاية والعلاج والتأهيل والبحث. وتخضع الجراحات الخارجية والتعاون مع الأطباء المنتسبين للقواعد القانونية والمهنية والتعاقدية.",
+        uz: "Jamiyat tibbiy va boshqa xodimlarni ishga olishi, shifokorlar, shifoxonalar, MVZ hamda parvarish, terapiya, reabilitatsiya va tadqiqot muassasalari bilan hamkorlik qilishi mumkin. Ambulator jarrohlik va shartnomaviy shifokorlar bilan ish amaldagi qonun va shartnomalarga muvofiq olib boriladi.",
       } as T,
       image: "/images/areas/stethoscope-clinic.webp",
     },
@@ -108,12 +108,12 @@ const c = {
         uz: "GKV litsenziyasi va SGB V",
       } as T,
       text: {
-        de: "Die Gesellschaft kann die Zulassung ihrer Krankenhäuser nach § 108 SGB V anstreben, insbesondere durch Aufnahme in den Krankenhausplan oder durch Abschluss eines Versorgungsvertrags nach § 109 SGB V. Leistungen zulasten der gesetzlichen Krankenversicherung werden ausschließlich auf Grundlage der erforderlichen Zulassungen, Genehmigungen und Verträge erbracht.",
-        en: "The company may seek approval of its hospitals under § 108 SGB V, in particular through inclusion in the hospital plan or by concluding a care contract under § 109 SGB V. Services at the expense of the statutory health insurance are only provided on the basis of the required approvals, permits and contracts.",
-        ru: "Общество может добиваться допуска своих больниц по § 108 SGB V, в частности путём включения в больничный план или заключения договора об оказании помощи по § 109 SGB V. Услуги за счёт обязательного медицинского страхования оказываются исключительно на основе необходимых разрешений и договоров.",
-        tr: "Şirket; özellikle hastane planlamasına dahil olma yoluyla veya § 109 SGB V uyarınca bakım sözleşmesi akdederek hastaneleri için § 108 SGB V kapsamında onay almayı hedefleyebilir. Yasal sağlık sigortası (GKV) kapsamındaki hizmetler yalnızca gerekli onay, ruhsat ve sözleşmeler temelinde sunulur.",
-        ar: "يجوز للشركة السعي لاعتماد مستشفياتها بموجب المادة 108 من SGB V، لا سيما من خلال إدراجها ضمن الخطة العامة للمستشفيات أو إبرام عقود تقديم الرعاية بموجب المادة 109 من SGB V. وتُقدم الخدمات على حساب التأمين الصحي الإلزامي حصرياً استناداً إلى التراخيص والاعتمادات والعقود المقررة.",
-        uz: "Jamiyat o'z shifoxonalari uchun § 108 SGB V bo'yicha ruxsatnoma olishga, xususan shifoxonalar rejasiga kiritilish yoki § 109 SGB V bo'yicha xizmat ko'rsatish shartnomasini tuzish orqali erishishi mumkin. Majburiy tibbiy sug'urta (GKV) hisobidan xizmatlar faqat zaruriy ruxsatnomalar, litsenziyalar va shartnomalar asosida ko'rsatiladi.",
+        de: "Die Gesellschaft kann die Zulassung ihrer Krankenhäuser nach § 108 SGB V anstreben, etwa durch Aufnahme in den Krankenhausplan oder einen Versorgungsvertrag nach § 109 SGB V. GKV-Leistungen setzen die erforderlichen Zulassungen, Genehmigungen und Verträge voraus.",
+        en: "The company may seek hospital approval under § 108 SGB V through inclusion in the hospital plan or a care contract under § 109 SGB V. SHI services require the relevant approvals, permits and contracts.",
+        ru: "Общество может добиваться допуска больниц по § 108 SGB V через включение в больничный план или договор по § 109 SGB V. Услуги по обязательному страхованию требуют соответствующих разрешений и договоров.",
+        tr: "Şirket, hastane planına dahil edilerek veya § 109 SGB V kapsamında bakım sözleşmesi yaparak § 108 SGB V onayı almayı hedefleyebilir. GKV hizmetleri gerekli izin ve sözleşmelere bağlıdır.",
+        ar: "يجوز للشركة طلب اعتماد مستشفياتها بموجب المادة 108 من SGB V عبر إدراجها في خطة المستشفيات أو إبرام عقد رعاية وفق المادة 109. وتتطلب خدمات التأمين الصحي الإلزامي التراخيص والموافقات والعقود اللازمة.",
+        uz: "Jamiyat shifoxonalarni § 108 SGB V bo‘yicha tasdiqlatishni shifoxonalar rejasiga kiritish yoki § 109 SGB V shartnomasi orqali ko‘zlashi mumkin. GKV xizmatlari zarur ruxsat va shartnomalarga bog‘liq.",
       } as T,
       image: "/images/areas/diagnostics.webp",
     },
@@ -128,12 +128,12 @@ const c = {
         uz: "Ishtirok va kengayish",
       } as T,
       text: {
-        de: "Die Gesellschaft ist berechtigt, Unternehmen mit gleichem oder verwandtem Unternehmensgegenstand zu gründen, zu erwerben oder sich an ihnen zu beteiligen sowie Betriebsstätten, Zweigniederlassungen und Tochtergesellschaften im In- und Ausland zu errichten. Die Gründung oder das Halten von Beteiligungen an vertragsärztlichen MVZ setzt die Erfüllung der geltenden Anforderungen des § 95 SGB V voraus.",
-        en: "The company is entitled to found, acquire or acquire interests in companies with the same or related purpose, and to establish branch offices, subsidiaries and affiliated companies in Germany and abroad. The founding or holding of interests in contracted MVZ is subject to the applicable requirements of § 95 SGB V.",
-        ru: "Общество вправе основывать, приобретать или участвовать в компаниях с аналогичным предметом деятельности, а также создавать филиалы, дочерние компании в Германии и за рубежом. Участие в MVZ по договорной медицине возможно при соблюдении § 95 SGB V.",
-        tr: "Şirket; aynı veya benzer faaliyet konusuna sahip şirketler kurma, devralma veya bunlara iştirak etme; yurt içinde ve yurt dışında işletmeler, şubeler ve bağlı ortaklıklar tesis etme yetkisine sahiptir. Sözleşmeli hekimlik MVZ'lerinde iştirak tesisi veya holding payı, § 95 SGB V gereksinimlerinin karşılanmasına bağlıdır.",
-        ar: "يحق للشركة تأسيس شركات ذات أغراض مماثلة أو ذات صلة، أو الاستحواذ عليها أو المساهمة فيها، وإنشاء فروع ومقرات تشغيل وشركات تابعة داخل ألمانيا وخارجها. ويشترط لتأسيس أو تملك حصص في مراكز طبية تابعة لأطباء التأمين استيفاء متطلبات المادة 95 من SGB V.",
-        uz: "Jamiyat bir xil yoki turdosh faoliyat yo'nalishiga ega korxonalarni ta'sis etish, sotib olish yoki ularda ishtirok etish, shuningdek Germaniyada va xorijda filiallar, bo'linmalar va sho'ba korxonalarni tashkil qilish huquqiga ega. Shartnomaviy tibbiyot MVZlarida ishtirok etish yoki ularni ta'sis etish § 95 SGB V talablariga to'liq javob berishni talab qiladi.",
+        de: "Die Gesellschaft kann Unternehmen mit gleichem oder verwandtem Zweck gründen, erwerben oder sich beteiligen sowie Standorte, Zweigniederlassungen und Tochtergesellschaften im In- und Ausland errichten. Beteiligungen an vertragsärztlichen MVZ setzen § 95 SGB V voraus.",
+        en: "The company may found or acquire related businesses, take interests in them, and establish sites, branches and subsidiaries in Germany or abroad. Interests in contracted MVZs must meet § 95 SGB V requirements.",
+        ru: "Общество может создавать или приобретать профильные компании, участвовать в них и открывать филиалы и дочерние предприятия в Германии и за рубежом. Участие в MVZ договорной медицины требует соблюдения § 95 SGB V.",
+        tr: "Şirket benzer amaçlı işletmeler kurabilir, devralabilir veya bunlara ortak olabilir; Almanya'da ve yurt dışında şube ve bağlı ortaklıklar açabilir. Sözleşmeli hekimlik MVZ'lerine katılım § 95 SGB V şartlarına tabidir.",
+        ar: "يجوز للشركة تأسيس شركات ذات أغراض مماثلة أو الاستحواذ عليها والمساهمة فيها، وإنشاء فروع وشركات تابعة داخل ألمانيا وخارجها. وتخضع المساهمة في مراكز MVZ المتعاقدة لمتطلبات المادة 95 من SGB V.",
+        uz: "Jamiyat turdosh korxonalarni tashkil qilishi yoki sotib olishi, ularda ishtirok etishi hamda Germaniya va xorijda filiallar ochishi mumkin. Shartnomaviy MVZlarda ishtirok etish § 95 SGB V talablariga bog‘liq.",
       } as T,
       image: "/images/areas/consulting.webp",
     },
@@ -158,12 +158,12 @@ const c = {
   } as T,
 
   deptIntro: {
-    de: "Die ambulanten Fachrichtungen werden anhand des geplanten stationären Eingriffsspektrums weiterentwickelt. Maßgeblich sind die beantragten Leistungsgruppen, ihre Qualitätskriterien und der regionale Bedarf. Ärztliche Vollzeitäquivalente, Dienstbereitschaft, Pflege, Ausstattung und zulässige Kooperationen sind für den Krankenhausstandort gesondert nachzuweisen. Eine automatische Umwandlung von MVZ-Fachrichtungen in Krankenhausabteilungen wird nicht vorausgesetzt.",
-    en: "The outpatient specialties will be further developed based on the planned inpatient procedure spectrum. Decisive factors are the applied-for service groups, their quality criteria and regional demand. Medical full-time equivalents, on-call duty, nursing, equipment and permitted cooperations must be demonstrated separately for the hospital site. An automatic conversion of MVZ specialties into hospital departments is not assumed.",
-    ru: "Амбулаторные специальности будут развиваться с учётом планируемого стационарного спектра вмешательств. Ключевыми факторами являются заявленные группы услуг, их критерии качества и региональный спрос. Врачебные ставки полного рабочего времени, дежурства, уход, оснащение и разрешённые кооперации должны подтверждаться отдельно для больничного места. Автоматическая трансформация специальностей MVZ в отделения больницы не предполагается.",
-    tr: "Ayakta tedavi uzmanlık alanları, planlanan yatarak cerrahi müdahale yelpazesi doğrultusunda geliştirilmektedir. Başvurulan hizmet grupları, bunların kalite kriterleri ve bölgesel ihtiyaç belirleyicidir. Tam zamanlı hekim kadroları, nöbet hizmetleri, hemşirelik, donanım ve izin verilen iş birlikleri hastane lokasyonu için ayrıca belgelenmelidir. MVZ uzmanlıklarının otomatik olarak hastane departmanlarına dönüşeceği varsayılamaz.",
-    ar: "يتم تطوير التخصصات الطبية للعيادات الخارجية استناداً إلى النطاق المخطط للتدخلات الجراحية السريرية. وتعتبر مجموعات الخدمات المطلوبة، ومعايير جودتها، والاحتياج الإقليمي هي العوامل الحاسمة. كما يجب إثبات مكافئات الدوام الكامل للأطباء، وخدمات النوبات، والتمريض، والتجهيزات، والتعاون المصرح به بشكل منفصل لموقع المستشفى. ولا يُفترض التحويل التلقائي لتخصصات MVZ إلى أقسام مستشفى.",
-    uz: "Ambulator mutaxassisliklar rejalashtirilgan statsionar jarrohlik aralashuvlari doirasiga muvofiq yanada rivojlantiriladi. Ariza topshirilgan xizmat guruhlari, ularning sifat mezonlari va mintaqaviy ehtiyoj hal qiluvchi ahamiyatga ega. To'liq stavkali shifokorlar, navbatchilik xizmati, parvarishlash, jihozlar va ruxsat etilgan hamkorliklar shifoxona joylashgan manzil uchun alohida tasdiqlanishi lozim. MVZ ixtisosliklarining shifoxona bo'limlariga avtomatik aylanishi ko'zda tutilmaydi.",
+    de: "Die ambulanten Fachrichtungen orientieren sich am geplanten stationären Eingriffsspektrum, den beantragten Leistungsgruppen, deren Qualitätskriterien und dem regionalen Bedarf. Ärztliche Stellen, Bereitschaft, Pflege, Ausstattung und Kooperationen sind für den Klinikstandort gesondert nachzuweisen. MVZ-Fachrichtungen werden nicht automatisch zu Krankenhausabteilungen.",
+    en: "Outpatient specialties will align with planned inpatient procedures, applied-for service groups, quality criteria and regional demand. Physician staffing, on-call cover, nursing, equipment and cooperations must be demonstrated separately for the hospital. MVZ specialties do not automatically become hospital departments.",
+    ru: "Амбулаторные специальности развиваются с учётом планируемых стационарных вмешательств, заявленных групп услуг, критериев качества и регионального спроса. Штат врачей, дежурства, уход, оснащение и кооперации отдельно подтверждаются для больницы. Специальности MVZ не становятся больничными отделениями автоматически.",
+    tr: "Ayakta tedavi uzmanlıkları; planlanan yatarak müdahalelere, başvurulan hizmet gruplarına, kalite ölçütlerine ve bölgesel ihtiyaca göre geliştirilir. Hekim kadrosu, nöbet, hemşirelik, donanım ve iş birlikleri hastane için ayrıca belgelenir. MVZ uzmanlıkları otomatik olarak hastane bölümlerine dönüşmez.",
+    ar: "تُطوّر تخصصات العيادات الخارجية وفق التدخلات المخطط لها ومجموعات الخدمات المطلوبة ومعايير الجودة والاحتياج الإقليمي. ويجب إثبات الكوادر الطبية والمناوبات والتمريض والتجهيزات والتعاون بشكل مستقل للمستشفى. ولا تتحول تخصصات MVZ تلقائياً إلى أقسام مستشفى.",
+    uz: "Ambulator mutaxassisliklar rejalashtirilgan statsionar muolajalar, xizmat guruhlari, sifat mezonlari va hududiy ehtiyojga qarab rivojlantiriladi. Shifokor shtati, navbatchilik, parvarish, jihozlar va hamkorliklar shifoxona uchun alohida tasdiqlanadi. MVZ mutaxassisliklari avtomatik tarzda shifoxona bo‘limlariga aylanmaydi.",
   } as T,
 
   depts: [
@@ -377,7 +377,7 @@ export function ClinicsGermanySection({ locale = "de" }: { locale?: string }) {
                 </span>
               </div>
 
-              {/* Title with styled italic phrase */}
+              {/* Title with highlighted phrase */}
               <h2 className="font-serif text-[24px] sm:text-[28px] lg:text-[34px] xl:text-[38px] text-[#142318] font-normal leading-[1.18] mb-3">
                 {(() => {
                   const phrase = "Clinics Germany";
@@ -387,7 +387,7 @@ export function ClinicsGermanySection({ locale = "de" }: { locale?: string }) {
                   ) : (
                     <>
                       {before}
-                      <span className="font-serif italic text-[#C5A56A]">{phrase}</span>
+                      <span className="font-serif text-[#C5A56A]">{phrase}</span>
                       {after}
                     </>
                   );
@@ -397,6 +397,13 @@ export function ClinicsGermanySection({ locale = "de" }: { locale?: string }) {
               <p className="text-[12.5px] sm:text-[13px] text-[#556057] leading-relaxed max-w-xl">
                 {c.lead[l]}
               </p>
+              <Link
+                href={`/${l}/nabiota-clinics-germany`}
+                className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#EED4A2] via-[#E4C58B] to-[#D5B878] text-[#142318] hover:brightness-105 font-semibold text-xs shadow-sm transition-all"
+              >
+                <span>{l === "ru" ? "Перейти на сайт клиники" : l === "en" ? "Visit the clinic website" : l === "tr" ? "Klinik web sitesine git" : l === "ar" ? "زيارة موقع العيادة" : l === "uz" ? "Klinika veb-saytiga o‘tish" : "Zur Klinik-Website"}</span>
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
             </div>
           </div>
         </Container>
@@ -409,7 +416,6 @@ export function ClinicsGermanySection({ locale = "de" }: { locale?: string }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {c.pillars.map((p, i) => {
               const Icon = p.icon;
-              const numStr = String(i + 1).padStart(2, "0");
               return (
                 <article
                   key={i}
@@ -429,11 +435,7 @@ export function ClinicsGermanySection({ locale = "de" }: { locale?: string }) {
                   {/* Left content */}
                   <div className="relative z-10 p-5 sm:p-6 flex flex-col justify-between h-full">
                     <div>
-                      {/* Number + Icon row */}
                       <div className="flex items-center gap-3 mb-2.5">
-                        <span className="font-serif text-[22px] sm:text-[24px] text-[#C5A56A] font-normal leading-none w-8 shrink-0">
-                          {numStr}
-                        </span>
                         <div className="w-9 h-9 rounded-full bg-[#FAF3E8] border border-[#E8DFC8] text-[#9E7D3B] flex items-center justify-center shrink-0 group-hover:bg-[#F0E5CD] transition-colors">
                           <Icon className="w-4 h-4" />
                         </div>
@@ -453,7 +455,7 @@ export function ClinicsGermanySection({ locale = "de" }: { locale?: string }) {
                     {/* Mehr erfahren link */}
                     <div className="mt-4 pt-3.5 border-t border-[#EDE8DE]">
                       <Link
-                        href={`/${l}/contact`}
+                        href={`/${l}/nabiota-clinics-germany`}
                         className="inline-flex items-center gap-1.5 text-[11.5px] sm:text-[12px] font-semibold text-[#9E7D3B] hover:text-[#142318] transition-colors"
                       >
                         <span>{l === "ru" ? "Подробнее" : l === "en" ? "Learn more" : l === "tr" ? "Daha fazla bilgi" : l === "ar" ? "اعرف المزيد" : l === "uz" ? "Batafsil" : "Mehr erfahren"}</span>
@@ -489,39 +491,39 @@ export function ClinicsGermanySection({ locale = "de" }: { locale?: string }) {
                 </span>
               </div>
 
-              {/* Main Title with styled italic word */}
+              {/* Main Title with highlighted word */}
               <h3 className="font-serif text-[24px] sm:text-[28px] lg:text-[32px] xl:text-[36px] text-[#142318] font-normal leading-[1.18] mb-2.5 sm:mb-3">
                 {l === "en" ? (
                   <>
                     Preparation of{" "}
-                    <span className="font-serif italic text-[#C5A56A]">future</span>{" "}
+                    <span className="font-serif text-[#C5A56A]">future</span>{" "}
                     departments
                   </>
                 ) : l === "ru" ? (
                   <>
                     Подготовка{" "}
-                    <span className="font-serif italic text-[#C5A56A]">будущих</span>{" "}
+                    <span className="font-serif text-[#C5A56A]">будущих</span>{" "}
                     отделений
                   </>
                 ) : l === "tr" ? (
                   <>
                     Gelecekteki uzmanlık bölümlerinin{" "}
-                    <span className="font-serif italic text-[#C5A56A]">hazırlığı</span>
+                    <span className="font-serif text-[#C5A56A]">hazırlığı</span>
                   </>
                 ) : l === "ar" ? (
                   <>
                     التحضير للأقسام التخصصية{" "}
-                    <span className="font-serif italic text-[#C5A56A]">المستقبلية</span>
+                    <span className="font-serif text-[#C5A56A]">المستقبلية</span>
                   </>
                 ) : l === "uz" ? (
                   <>
                     Kelgusi mutaxassislik bo&apos;limlarini{" "}
-                    <span className="font-serif italic text-[#C5A56A]">tayyorlash</span>
+                    <span className="font-serif text-[#C5A56A]">tayyorlash</span>
                   </>
                 ) : (
                   <>
                     Vorbereitung der{" "}
-                    <span className="font-serif italic text-[#C5A56A]">späteren</span>{" "}
+                    <span className="font-serif text-[#C5A56A]">späteren</span>{" "}
                     Fachabteilungen
                   </>
                 )}
@@ -682,6 +684,9 @@ export function ClinicsGermanySection({ locale = "de" }: { locale?: string }) {
                       {d.text[l]}
                     </p>
                   </div>
+                  <Link href={`/${l}/nabiota-clinics-germany`} aria-label={d.title[l]} className="w-8 h-8 rounded-full border border-[#D5B878]/50 flex items-center justify-center text-[#9E7D3B] shrink-0 hover:bg-[#9E7D3B] hover:text-white transition-all">
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
                 </div>
               );
             })}

@@ -1156,34 +1156,34 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
             <Container size="wide" className="relative z-10 pt-8 sm:pt-12 lg:pt-16">
               <div className="max-w-6xl mx-auto">
                 <div className="max-w-xl lg:max-w-2xl">
-                  {/* Title with styled italic phrase */}
+                  {/* Title with highlighted phrase */}
                   <h2 className="font-serif text-[28px] sm:text-[38px] lg:text-[44px] text-[#142318] font-normal leading-[1.18] mb-3 sm:mb-3.5">
                     {isUz
                       ? "Ikki bosqichli tartibga solish arxitekturasi: to'liq huquqiy xavfsizlik"
                       : isRu ? (
                       <>
                         Двухфазная модель владения и{" "}
-                        <span className="font-serif italic text-[#C5A56A]">корпоративного управления</span>
+                        <span className="font-serif text-[#C5A56A]">корпоративного управления</span>
                       </>
                     ) : isEn ? (
                       <>
                         Two-Phase Corporate Governance &{" "}
-                        <span className="font-serif italic text-[#C5A56A]">Ownership Architecture</span>
+                        <span className="font-serif text-[#C5A56A]">Ownership Architecture</span>
                       </>
                     ) : isTr ? (
                       <>
                         İki Aşamalı Kurumsal Yönetim ve{" "}
-                        <span className="font-serif italic text-[#C5A56A]">Ortaklık Mimarisi</span>
+                        <span className="font-serif text-[#C5A56A]">Ortaklık Mimarisi</span>
                       </>
                     ) : isAr ? (
                       <>
                         نموذج المرحلتين للحوكمة المؤسسية و{" "}
-                        <span className="font-serif italic text-[#C5A56A]">هيكل الملكية والمساهمة</span>
+                        <span className="font-serif text-[#C5A56A]">هيكل الملكية والمساهمة</span>
                       </>
                     ) : (
                       <>
                         Zwei-Phasen-Modell der Corporate Governance &{" "}
-                        <span className="font-serif italic text-[#C5A56A]">Beteiligungsarchitektur</span>
+                        <span className="font-serif text-[#C5A56A]">Beteiligungsarchitektur</span>
                       </>
                     )}
                   </h2>
@@ -1749,27 +1749,27 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                   : isRu ? (
                   <>
                     Четыре шага к{" "}
-                    <span className="font-serif italic text-[#C5A56A]">успешному партнерству</span>
+                    <span className="font-serif text-[#C5A56A]">успешному партнерству</span>
                   </>
                 ) : isEn ? (
                   <>
                     Four Milestones to a{" "}
-                    <span className="font-serif italic text-[#C5A56A]">Successful Partnership</span>
+                    <span className="font-serif text-[#C5A56A]">Successful Partnership</span>
                   </>
                 ) : isTr ? (
                   <>
                     4 Yapılandırılmış Adımda{" "}
-                    <span className="font-serif italic text-[#C5A56A]">Ortaklığa</span>
+                    <span className="font-serif text-[#C5A56A]">Ortaklığa</span>
                   </>
                 ) : isAr ? (
                   <>
                     أربع مراحل منظمة نحو{" "}
-                    <span className="font-serif italic text-[#C5A56A]">الشراكة الناجحة</span>
+                    <span className="font-serif text-[#C5A56A]">الشراكة الناجحة</span>
                   </>
                 ) : (
                   <>
                     In 4 strukturierten Schritten zur{" "}
-                    <span className="font-serif italic text-[#C5A56A]">Partnerschaft</span>
+                    <span className="font-serif text-[#C5A56A]">Partnerschaft</span>
                   </>
                 )}
               </h2>

@@ -2721,7 +2721,7 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
                 {t.hero.titlePrefix}
                 <br />
                 {t.hero.titleMid}{" "}
-                <span className="italic font-serif text-[#C5A56A] font-normal inline">
+                <span className="font-serif text-[#C5A56A] font-normal inline">
                   {t.hero.titleHighlight}
                 </span>
               </h1>

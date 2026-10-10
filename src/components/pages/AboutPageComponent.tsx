@@ -992,20 +992,20 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         : "Ambulante & Stationäre Medizin",
       items: [
         {
-          name: "“NabiOta” MVZ",
+          name: "“NabiOta” MVZ Zentrum für hausärztliche und fachärztliche Versorgung",
           sub: isUz
-            ? "Terapiya va ixtisoslashtirilgan yordam markazi (terapiya, kardiologiya, nevrologiya) — KV NRW shartnoma shifokorlik o'rinlari"
+            ? "Oilaviy shifokorlik va ixtisoslashtirilgan tibbiy yordam"
             : isRu
-            ? "Центр терапевтической и специализированной помощи (терапия, кардиология, гастроэнтерология, пульмонология, неврология, эндокринология)"
+            ? "Первичная и специализированная медицинская помощь"
             : isEn
-            ? "Center for Primary & Specialist Care (General Practice, Cardiology, Gastroenterology, Pulmonology, Neurology, Endocrinology)"
+            ? "Primary and specialist medical care"
             : isTr
-            ? "Birinci basamak ve uzman hekimlik bakım merkezi (Aile Hekimi, Kardiyoloji, Gastroenteroloji, Göğüs Hastalıkları, Nöroloji, Endokrinoloji)"
+            ? "Birinci basamak ve uzman hekimlik hizmetleri"
             : isAr
-            ? "مركز الرعاية الأولية والتخصصية (طب الأسرة، القلب، الجهاز الهضمي، الرئة، الأعصاب، الغدد الصماء)"
-            : "Zentrum für hausärztliche und fachärztliche Versorgung (Hausarzt, Kardiologie, Gastroenterologe, Pulmonologie, Neurologie, Endokrinologie)",
+            ? "الرعاية الطبية الأولية والمتخصصة"
+            : "Hausärztliche und fachärztliche Versorgung",
           badge: "§ 95 SGB V",
-          href: `/${locale}/areas/medizinische-fachbereiche`,
+          href: `/${locale}/mvz-hausarzt-facharzt`,
           icon: StethoscopeIcon,
         },
         {
@@ -1022,7 +1022,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             ? "Klinik Germany GmbH (وفق § 30 GewO) — رعاية استشفائية سريرية وجراحية متكاملة"
             : "Klinik Germany GmbH (n. § 30 KH / GewO) — Stationäre, teilstationäre & operative Versorgung",
           badge: "§ 30 GewO",
-          href: `/${locale}/areas/medizinische-fachbereiche`,
+          href: `/${locale}/nabiota-clinics-germany`,
           icon: BuildingStatsIcon,
         },
         {
@@ -1039,7 +1039,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             ? "مركز إعادة التأهيل والعلاج (GmbH) — علاج طبيعي، علاج وظيفي، علاج النطق، وتمارين تأهيلية"
             : "Rehabilitation & Therapy Center (GmbH) — Physiotherapie, Ergotherapie, Logopädie & MTT",
           badge: isTr ? "Ayakta Reha" : isAr ? "تأهيل متنقل" : "Ambulante Reha",
-          href: `/${locale}/areas/rehabilitation`,
+          href: `/${locale}/nabiota-rehabilitation`,
           icon: ActivityRehabIcon,
         },
       ],
@@ -1058,20 +1058,20 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         : "Chirurgie, Diagnostik & Pflege",
       items: [
         {
-          name: "“NabiOta” MVZ",
+          name: "“NabiOta” MVZ Chirurgie und Anästhesiologie",
           sub: isUz
-            ? "Jarrohlik va anesteziologiya (ortopediya/travmatologiya, neyrojarrohlik, umumiy jarrohlik) — DIN 1946-4 bo'yicha zamonaviy operatsiya zallari"
+            ? "Jarrohlik va anesteziologiya mutaxassisliklari"
             : isRu
-            ? "Хирургия и анестезиология (ортопедия/травматология, нейрохирургия, абдоминальная и пластическая хирургия, противоболевая терапия)"
+            ? "Хирургические направления и анестезиология"
             : isEn
-            ? "Surgery & Anesthesiology (Orthopedics, Neurosurgery, Visceral & Plastic Surgery, Pain therapy)"
+            ? "Surgical specialties and anesthesiology"
             : isTr
-            ? "Cerrahi ve Anesteziyoloji (Ortopedi, Travmatoloji, Nöroşirürji, Genel/Viseral Cerrahi, Plastik Cerrahi, Anestezi)"
+            ? "Cerrahi uzmanlıklar ve anesteziyoloji"
             : isAr
-            ? "الجراحة والتخدير (جراحة العظام، الحوادث، جراحة الأعصاب، الجراحة العامة والباطنية، الجراحة التجميلية، التخدير)"
-            : "Chirurgie und Anästhesiologie (Orthopädie, Unfallchirurgie, Neurochirurgie, Allgemein-/Viszeral-, Plastische Chirurgie, Anästhesie)",
+            ? "التخصصات الجراحية والتخدير"
+            : "Chirurgische Fachbereiche und Anästhesiologie",
           badge: isTr ? "Ayakta Cerrahi" : isAr ? "جراحة اليوم الواحد" : "Ambulante OP",
-          href: `/${locale}/areas/medizinische-fachbereiche`,
+          href: "https://my-bandscheibe.de/",
           icon: ScalpelIcon,
         },
         {
@@ -1088,7 +1088,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             ? "Diagnostics GmbH (أشعة مقطعية + 3T MRI + أشعة سينية + فسيولوجيا عصبية وإدارة العينات المخبرية)"
             : "Diagnostics GmbH (CT + MRT 3T + Rö + Neurophysiologie & Labor-Probenmanagement)",
           badge: "3T MRT / CT",
-          href: `/${locale}/areas/diagnostik`,
+          href: `/${locale}/nabiota-diagnostics`,
           icon: ScannerMriIcon,
         },
         {
@@ -1105,7 +1105,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             ? "HomeCare GmbH (تمريض تخصصي معتمد / علاج متقدم للجروح وفق SGB V & XI)"
             : "HomeCare GmbH (Qualifizierte Pflege / spezialisierte Wundversorgung nach SGB V & XI)",
           badge: "HomeCare",
-          href: `/${locale}/areas/pflege`,
+          href: `/${locale}/nabiota-homecare`,
           icon: HomeCareIcon,
         },
       ],
@@ -1137,7 +1137,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             ? "Medical Recruitment Services GmbH (استقطاب الكوادر الطبية ومعادلة ترخيص Approbation)"
             : "Medical Recruitment Services GmbH (Med. Vermittlungsservice & Approbationsbegleitung)",
           badge: isTr ? "Uzman İstihdamı" : isAr ? "استقطاب الكوادر" : "Recruitment",
-          href: `/${locale}/areas/internationale-kooperationen`,
+          href: `/${locale}/nabiota-medical-recruitment`,
           icon: TeamStatsIcon,
         },
         {
@@ -1154,7 +1154,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             ? "Real Estate GmbH (العقارات الطبية، تطوير العيادات، ومفاهيم التشغيل)"
             : "Real Estate GmbH (Med. Immobilien, Praxisentwicklung & Betreiberkonzepte)",
           badge: isTr ? "Medikal Gayrimenkul" : isAr ? "العقارات الطبية" : "Real Estate",
-          href: `/${locale}/areas/beratung-projektentwicklung`,
+          href: `/${locale}/nabiota-real-estate`,
           icon: RealEstateIcon,
         },
         {
@@ -1171,7 +1171,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             ? "الإمداد الدوائي وSanitätshaus GmbH (المعينات الطبية التعويضية وصيدلية NabiOta)"
             : "Arzneimittelversorgung & Sanitätshaus GmbH (Med. Hilfsmittel & NabiOta Pharmacy)",
           badge: isTr ? "Medikal Malzeme & Eczane" : isAr ? "معينات وصيدلية" : "Supplies & Pharmacy",
-          href: `/${locale}/areas/pflege`,
+          href: `/${locale}/nabiota-sanitaetshaus`,
           icon: CrossPharmacyIcon,
         },
       ],
@@ -1436,7 +1436,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             {/* 3 Pillars Grid with compact, identical-height cards (matching Photo 2) */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5 max-w-6xl mx-auto mt-4 lg:mt-0">
               {organigramColumns.map((col, cIdx) => (
-                <div key={cIdx} className="flex flex-col space-y-3 relative h-full">
+                <div key={cIdx} className="flex flex-col gap-3 relative h-full">
                   {/* Category Heading with subtle thin horizontal decorative lines */}
                   <div className="flex items-center justify-center gap-2 pb-0.5">
                     <span className="h-[1px] w-5 sm:w-6 bg-[#C5A56A]/50 shrink-0"></span>
@@ -1446,13 +1446,16 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                     <span className="h-[1px] w-5 sm:w-6 bg-[#C5A56A]/50 shrink-0"></span>
                   </div>
 
+                  <div className="grid flex-1 grid-rows-3 gap-3">
                   {col.items.map((item, rIdx) => {
                     const IconComp = item.icon;
                     return (
                       <Link
                         key={rIdx}
                         href={item.href}
-                        className="group flex-1 bg-white/95 backdrop-blur-xs rounded-xl sm:rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878] p-3.5 sm:p-4 flex flex-col justify-between shadow-[0_1px_4px_rgba(0,0,0,0.02)] hover:shadow-md transition-all hover:-translate-y-0.5"
+                        target={item.href.startsWith("http") ? "_blank" : undefined}
+                        rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                        className="group h-full min-h-[170px] bg-white/95 backdrop-blur-xs rounded-xl sm:rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878] p-3.5 sm:p-4 flex flex-col justify-between shadow-[0_1px_4px_rgba(0,0,0,0.02)] hover:shadow-md transition-all hover:-translate-y-0.5"
                       >
                         <div>
                           {/* Header: icon left, badge + title stacked on the right */}
@@ -1461,11 +1464,6 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                               <IconComp className="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.6]" />
                             </div>
                             <div className="flex-1 min-w-0 flex flex-col items-start gap-1">
-                              {item.badge && (
-                                <span className="text-[9.5px] sm:text-[10px] font-bold tracking-[0.2em] text-[#C5A56A] uppercase font-sans">
-                                  {item.badge}
-                                </span>
-                              )}
                               <h4 className="font-serif font-bold text-[15px] sm:text-[16px] text-[#142318] leading-snug group-hover:text-[#B89650] transition-colors">
                                 {item.name}
                               </h4>
@@ -1486,6 +1484,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       </Link>
                     );
                   })}
+                  </div>
                 </div>
               ))}
             </div>
@@ -1864,10 +1863,10 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             <Container size="wide" className="relative z-10 pt-8 sm:pt-12 lg:pt-14">
               <div className="max-w-6xl mx-auto">
                 <div className="max-w-xl lg:max-w-2xl">
-                  {/* Title with styled italic word in serif */}
+                  {/* Title with highlighted word in serif */}
                   <h2 className="font-serif text-[28px] sm:text-[38px] lg:text-[44px] text-[#142318] font-normal leading-[1.18] mb-3 sm:mb-3.5">
                     {t.leadershipHeading1}{" "}
-                    <span className="font-serif italic text-[#C5A56A]">{t.leadershipHeading2}</span>
+                    <span className="font-serif text-[#C5A56A]">{t.leadershipHeading2}</span>
                   </h2>
 
                   {/* Lead text */}

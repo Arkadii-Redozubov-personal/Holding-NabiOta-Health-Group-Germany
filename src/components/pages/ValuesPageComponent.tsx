@@ -683,7 +683,7 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
             <div className="max-w-3xl mb-12 sm:mb-14">
               <h2 className="font-serif text-[30px] sm:text-[36px] lg:text-[42px] font-normal leading-[1.15] text-[#142318] mb-4">
                 {t.govHeading1}{" "}
-                <span className="italic text-[#8B7347]">{t.govHeading2}</span>
+                <span className="text-[#8B7347]">{t.govHeading2}</span>
               </h2>
               <p className="text-[13.5px] sm:text-[14.5px] text-[#555E56] leading-relaxed font-sans">
                 {t.govSubtitle}

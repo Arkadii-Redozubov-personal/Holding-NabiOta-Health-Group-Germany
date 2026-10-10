@@ -78,12 +78,12 @@ const c = {
     ar: "نطاق الرعاية والخدمات الطبية",
   } as T,
   specialties: {
-    de: ["Allgemeinmedizin", "Hausärztliche Innere Medizin", "Fachärztliche Innere Medizin", "Kardiologie", "Gastroenterologie", "Endokrinologie", "Pneumologie", "Neurologie"],
-    en: ["General medicine", "GP internal medicine", "Specialist internal medicine", "Cardiology", "Gastroenterology", "Endocrinology", "Pulmonology", "Neurology"],
-    ru: ["Общая медицина", "Терапия (семейная)", "Терапия (специализированная)", "Кардиология", "Гастроэнтерология", "Эндокринология", "Пульмонология", "Неврология"],
-    tr: ["Genel Tıp / Aile Hekimliği", "Birinci Basamak Dahiliye", "Uzman Dahiliye", "Kardiyoloji", "Gastroenteroloji", "Endokrinoloji", "Göğüs Hastalıkları (Pnömoloji)", "Nöroloji"],
-    ar: ["الطب العام", "الباطنية العامة وطب الأسرة", "الباطنية التخصصية", "أمراض القلب", "أمراض الجهاز الهضمي", "الغدد الصماء والسكري", "أمراض الصدر والرئة", "طب الأعصاب"],
-    uz: ["Umumiy amaliyot tibbiyoti", "Ichki kasalliklar (oilaviy)", "Ichki kasalliklar (ixtisoslashgan)", "Kardiologiya", "Gastroenterologiya", "Endokrinologiya", "Pulmonologiya", "Nevrologiya"],
+    de: ["Hausarztmedizin", "Kardiologie", "Gastroenterologie", "Pneumologie", "Neurologie", "Endokrinologie"],
+    en: ["General practice", "Cardiology", "Gastroenterology", "Pulmonology", "Neurology", "Endocrinology"],
+    ru: ["Семейная медицина", "Кардиология", "Гастроэнтерология", "Пульмонология", "Неврология", "Эндокринология"],
+    tr: ["Aile hekimliği", "Kardiyoloji", "Gastroenteroloji", "Göğüs hastalıkları", "Nöroloji", "Endokrinoloji"],
+    ar: ["طب الأسرة", "أمراض القلب", "أمراض الجهاز الهضمي", "أمراض الرئة", "طب الأعصاب", "الغدد الصماء"],
+    uz: ["Oilaviy tibbiyot", "Kardiologiya", "Gastroenterologiya", "Pulmonologiya", "Nevrologiya", "Endokrinologiya"],
   },
   specialtiesNote: {
     de: "Weitere ärztliche Fachgebiete können unter Wahrung der jeweiligen fachlichen, berufsrechtlichen und zulassungsrechtlichen Voraussetzungen ergänzt werden.",
@@ -456,6 +456,129 @@ const cardEyebrows: T[] = [
 
 const facilitiesPointIcons = [Hospital, GitMerge, Users];
 
+const conciseCopy: Record<Lang, { lead: string; specialtiesNote: string; paragraphTexts: string[]; dutiesIntro: string; dutySummaries: string[] }> = {
+  de: {
+    lead: c.lead.de,
+    specialtiesNote: c.specialtiesNote.de,
+    paragraphTexts: [
+      "Die Gesellschaft erbringt durch qualifizierte Ärzte und befugtes Fachpersonal ambulante Leistungen in Prävention, Früherkennung, Diagnostik, Beratung, Behandlung und Nachsorge. Dazu zählen die Betreuung akuter und chronischer Erkrankungen, konservative Therapien sowie die Koordination fachübergreifender Abläufe und erforderlicher Kooperationen.",
+      "Die Gesellschaft kann Personal sowie räumliche, technische und organisatorische Ressourcen bereitstellen. Dazu gehören Praxisräume, zulässige Zweigpraxen und Kooperationen mit Ärzten, MVZ, Kliniken und Rehabilitationseinrichtungen.",
+      "Vertragsärztliche Versorgung, Arztstellen und genehmigungspflichtige Leistungen setzen die erforderlichen Zulassungen voraus. Fachgebietsgrenzen und ärztliche Unabhängigkeit bleiben gewahrt; erlaubnispflichtige Tätigkeiten beginnen erst nach Genehmigung.",
+    ],
+    dutiesIntro: "Die wichtigsten Anforderungen betreffen Zulassung, ärztliche Unabhängigkeit, Datenschutz sowie Qualität und Hygiene.",
+    dutySummaries: [
+      "Einhaltung des genehmigten Versorgungsauftrags, der Arztstellen und Tätigkeitsorte; Änderungen werden fristgerecht angezeigt oder beantragt.",
+      "Eine qualifizierte, im MVZ tätige ärztliche Leitung sichert unabhängige medizinische Entscheidungen.",
+      "Qualifikationen und Berechtigungen werden geprüft; delegierte Aufgaben erfolgen unter ärztlicher Anleitung und Aufsicht.",
+      "Patienten erhalten verständliche Informationen, erforderliche Aufklärung und Zugang zu Kosten- und Behandlungsinformationen.",
+      "Behandlungsunterlagen werden ordnungsgemäß geführt und geschützt; Schweigepflicht und Datenschutz werden eingehalten.",
+      "Das MVZ setzt Qualitätsmanagement, Hygiene sowie angemessenes Fehler-, Beschwerde- und Risikomanagement um.",
+      "Medizinprodukte werden sachgerecht eingewiesen, gewartet und geprüft; geltender Strahlenschutz wird beachtet.",
+      "Abrechnungen erfolgen vollständig und nachvollziehbar nach den geltenden Vergütungs- und Wirtschaftlichkeitsregeln.",
+    ],
+  },
+  en: {
+    lead: c.lead.en,
+    specialtiesNote: c.specialtiesNote.en,
+    paragraphTexts: [
+      "Qualified physicians and authorized staff provide outpatient prevention, early detection, diagnostics, counselling, treatment and follow-up. This includes acute and chronic care, conservative therapies, coordination across specialties and necessary cooperation with other providers.",
+      "The company may provide the required staff, premises, equipment and organizational resources. These include practice rooms, permitted branches and cooperation with physicians, MVZs, hospitals and rehabilitation facilities.",
+      "Contract-physician care, physician positions and services requiring approval depend on the relevant authorizations. Specialty boundaries and medical independence are maintained; regulated activities begin only after approval.",
+    ],
+    dutiesIntro: "Key requirements cover approvals, medical independence, data protection, quality and hygiene.",
+    dutySummaries: [
+      "The approved care mandate, physician positions and practice locations are observed; changes are notified or submitted for approval on time.",
+      "A qualified medical director working at the MVZ safeguards independent clinical decisions.",
+      "Qualifications and authorizations are checked; delegated tasks are supervised by physicians.",
+      "Patients receive clear information, required explanations and access to cost and treatment records.",
+      "Treatment records are properly maintained and protected, with confidentiality and data protection observed.",
+      "The MVZ maintains quality management, hygiene and appropriate incident, complaint and risk processes.",
+      "Medical devices are properly operated, maintained and inspected, with radiation rules observed where relevant.",
+      "Billing is complete and traceable and follows applicable fee and efficiency requirements.",
+    ],
+  },
+  ru: {
+    lead: c.lead.ru,
+    specialtiesNote: c.specialtiesNote.ru,
+    paragraphTexts: [
+      "Квалифицированные врачи и уполномоченные сотрудники оказывают амбулаторную помощь: профилактику, раннее выявление, диагностику, консультирование, лечение и наблюдение. Сюда входят ведение острых и хронических заболеваний, консервативная терапия, координация специалистов и необходимое взаимодействие с другими организациями.",
+      "Общество может предоставлять персонал, помещения, оборудование и организационные ресурсы. Это включает кабинеты, разрешённые филиалы и сотрудничество с врачами, MVZ, клиниками и реабилитационными учреждениями.",
+      "Участие в системе обязательного страхования, врачебные ставки и услуги, требующие разрешения, возможны при наличии необходимых допусков. Соблюдаются границы специальностей и независимость врачей; лицензируемая деятельность начинается после разрешения.",
+    ],
+    dutiesIntro: "Основные требования касаются допусков, врачебной независимости, защиты данных, качества и гигиены.",
+    dutySummaries: [
+      "Соблюдаются утверждённый объём помощи, врачебные ставки и места приёма; изменения своевременно согласуются или сообщаются.",
+      "Квалифицированный врачебный руководитель, работающий в MVZ, обеспечивает независимость медицинских решений.",
+      "Квалификация и полномочия проверяются; делегированные задачи выполняются под врачебным контролем.",
+      "Пациентам предоставляют понятную информацию, необходимые разъяснения и доступ к сведениям о расходах и лечении.",
+      "Медицинская документация ведётся и хранится надлежащим образом; соблюдаются врачебная тайна и защита данных.",
+      "В MVZ действуют менеджмент качества, гигиенические требования и управление ошибками, жалобами и рисками.",
+      "Медицинское оборудование обслуживается и проверяется; при необходимости соблюдаются нормы радиационной защиты.",
+      "Расчёты ведутся полно и прозрачно с соблюдением правил оплаты и экономичности.",
+    ],
+  },
+  tr: {
+    lead: c.lead.tr,
+    specialtiesNote: c.specialtiesNote.tr,
+    paragraphTexts: [
+      "Nitelikli hekimler ve yetkili personel; önleme, erken teşhis, tanı, danışmanlık, tedavi ve takip alanlarında ayakta hizmet sunar. Akut ve kronik hastalıkların takibi, konservatif tedaviler, branşlar arası koordinasyon ve gerekli iş birlikleri buna dahildir.",
+      "Şirket gerekli personeli, mekânı, teknik donanımı ve organizasyonu sağlayabilir. Buna muayene alanları, izin verilen şubeler ve hekimler, MVZ'ler, hastaneler ve rehabilitasyon kurumlarıyla iş birlikleri dahildir.",
+      "Anlaşmalı hekimlik, hekim kadroları ve izin gerektiren hizmetler gerekli ruhsatlara bağlıdır. Uzmanlık sınırları ve hekim bağımsızlığı korunur; izinli faaliyetler onaydan sonra başlar.",
+    ],
+    dutiesIntro: "Temel gereklilikler ruhsatları, tıbbi bağımsızlığı, veri korumasını, kaliteyi ve hijyeni kapsar.",
+    dutySummaries: [
+      "Onaylı hizmet kapsamı, hekim kadroları ve çalışma yerleri korunur; değişiklikler zamanında bildirilir veya onaya sunulur.",
+      "MVZ'de çalışan nitelikli tıbbi direktör, klinik kararların bağımsızlığını sağlar.",
+      "Mesleki yeterlilikler ve yetkiler kontrol edilir; devredilen görevler hekim gözetiminde yürütülür.",
+      "Hastalara anlaşılır bilgi, gerekli açıklamalar ve maliyet ile tedavi kayıtlarına erişim sağlanır.",
+      "Tedavi kayıtları düzenli ve güvenli tutulur; tıbbi gizlilik ve veri koruma kurallarına uyulur.",
+      "MVZ kalite yönetimi, hijyen ve uygun hata, şikâyet ve risk süreçlerini yürütür.",
+      "Tıbbi cihazlar uygun şekilde kullanılır, bakımı ve kontrolleri yapılır; gerektiğinde radyasyon kurallarına uyulur.",
+      "Faturalandırma eksiksiz ve izlenebilir yapılır; ücret ve verimlilik kuralları gözetilir.",
+    ],
+  },
+  ar: {
+    lead: c.lead.ar,
+    specialtiesNote: c.specialtiesNote.ar,
+    paragraphTexts: [
+      "يقدم الأطباء المؤهلون والكوادر المعتمدة خدمات الوقاية والكشف المبكر والتشخيص والاستشارة والعلاج والمتابعة. ويشمل ذلك رعاية الحالات الحادة والمزمنة والعلاج التحفظي وتنسيق التخصصات والتعاون الطبي اللازم.",
+      "يمكن للشركة توفير الكوادر والمرافق والتجهيزات والتنظيم اللازم، بما يشمل العيادات والفروع المسموح بها والتعاون مع الأطباء ومراكز MVZ والمستشفيات ومرافق التأهيل.",
+      "تتطلب الرعاية التعاقدية ومناصب الأطباء والخدمات المقيدة التراخيص اللازمة. تُحترم حدود التخصص والاستقلال الطبي، ولا تبدأ الأنشطة المقيدة قبل الموافقة.",
+    ],
+    dutiesIntro: "تشمل المتطلبات الأساسية التراخيص والاستقلال الطبي وحماية البيانات والجودة والنظافة.",
+    dutySummaries: [
+      "يُلتزم بنطاق الرعاية ومناصب الأطباء ومواقع العمل المعتمدة، وتُبلغ التغييرات أو تُطلب الموافقة عليها في حينها.",
+      "يضمن مدير طبي مؤهل يعمل في المركز استقلالية القرارات الطبية.",
+      "تُراجع المؤهلات والصلاحيات، وتُنفذ المهام المفوضة تحت إشراف طبي.",
+      "يحصل المرضى على معلومات واضحة وشروحات لازمة وإمكانية الاطلاع على التكاليف والسجلات العلاجية.",
+      "تُحفظ السجلات العلاجية بشكل سليم مع صون السرية الطبية وحماية البيانات.",
+      "يطبق المركز إدارة الجودة والنظافة وإجراءات مناسبة للأخطاء والشكاوى والمخاطر.",
+      "تُشغل الأجهزة الطبية وتُصان وتُفحص على نحو سليم، مع مراعاة قواعد الإشعاع عند اللزوم.",
+      "تكون الفوترة كاملة وقابلة للتتبع ومتوافقة مع قواعد الأتعاب والكفاءة.",
+    ],
+  },
+  uz: {
+    lead: c.lead.uz,
+    specialtiesNote: c.specialtiesNote.uz,
+    paragraphTexts: [
+      "Malakali shifokorlar va vakolatli xodimlar profilaktika, erta aniqlash, diagnostika, maslahat, davolash va keyingi kuzatuv bo‘yicha ambulator xizmat ko‘rsatadi. Bunga o‘tkir va surunkali kasalliklarni davolash, konservativ terapiya, mutaxassislararo muvofiqlashtirish va zarur hamkorlik kiradi.",
+      "Jamiyat zarur xodimlar, binolar, texnika va tashkiliy resurslarni ta'minlashi mumkin. Bunga amaliyot xonalari, ruxsat etilgan filiallar hamda shifokorlar, MVZlar, klinikalar va reabilitatsiya muassasalari bilan hamkorlik kiradi.",
+      "Shartnomaviy tibbiy yordam, shifokor shtatlari va ruxsat talab qiladigan xizmatlar tegishli litsenziyalarga asoslanadi. Mutaxassislik chegaralari va shifokor mustaqilligi saqlanadi; ruxsatli ishlar faqat tasdiqdan keyin boshlanadi.",
+    ],
+    dutiesIntro: "Asosiy talablar ruxsatlar, tibbiy mustaqillik, ma'lumotlarni himoya qilish, sifat va gigiyenani qamrab oladi.",
+    dutySummaries: [
+      "Tasdiqlangan xizmat hajmi, shifokor shtatlari va ish joylari saqlanadi; o‘zgarishlar o‘z vaqtida bildiriladi yoki tasdiqqa kiritiladi.",
+      "MVZda ishlaydigan malakali tibbiy rahbar klinik qarorlar mustaqilligini ta'minlaydi.",
+      "Malaka va vakolatlar tekshiriladi; topshirilgan vazifalar shifokor nazoratida bajariladi.",
+      "Bemorlarga tushunarli ma'lumot, zarur tushuntirish va xarajat hamda tibbiy yozuvlarga kirish imkoniyati beriladi.",
+      "Tibbiy hujjatlar to‘g‘ri yuritiladi va himoyalanadi; tibbiy sir va ma'lumotlarni himoya qilish qoidalari saqlanadi.",
+      "MVZ sifat menejmenti, gigiyena hamda xatolar, shikoyatlar va xavflarni boshqarishni yo‘lga qo‘yadi.",
+      "Tibbiy uskunalar to‘g‘ri ishlatiladi, ta'mirlanadi va tekshiriladi; zarur hollarda radiatsiya qoidalari bajariladi.",
+      "Hisob-kitoblar to‘liq va tekshiriladigan bo‘lib, amaldagi to‘lov va tejamkorlik qoidalariga amal qiladi.",
+    ],
+  },
+};
+
 const cardPoints: Record<Lang, string[]>[] = [
   // Card 1: Ambulante Leistungen
   {
@@ -565,7 +688,7 @@ export function MvzPrimaryCareSection({ locale = "de" }: { locale?: string }) {
     <>
       <section
         id="mvz-hausaerztlich-fachaerztlich"
-        className="relative pt-0 pb-14 sm:pb-18 lg:pb-20 bg-[#FAF7F2] border-t border-[#EDE8DE]/60 overflow-hidden"
+        className="relative pt-0 pb-0 bg-[#FAF7F2] border-t border-[#EDE8DE]/60 overflow-hidden"
       >
       <div className="absolute -top-40 -right-32 w-[520px] h-[520px] rounded-full bg-[#D5B878]/10 blur-3xl pointer-events-none" />
 
@@ -612,7 +735,7 @@ export function MvzPrimaryCareSection({ locale = "de" }: { locale?: string }) {
                 </span>
               </div>
 
-              {/* Title with styled italic phrase */}
+              {/* Title with highlighted phrase */}
               <h2 className="font-serif text-[24px] sm:text-[28px] lg:text-[34px] xl:text-[38px] text-[#142318] font-normal leading-[1.18] mb-3">
                 {(() => {
                   const phrase = "hausärztliche und fachärztliche";
@@ -622,7 +745,7 @@ export function MvzPrimaryCareSection({ locale = "de" }: { locale?: string }) {
                   ) : (
                     <>
                       {before}
-                      <span className="font-serif italic text-[#C5A56A]">{phrase}</span>
+                      <span className="font-serif text-[#C5A56A]">{phrase}</span>
                       {after}
                     </>
                   );
@@ -630,8 +753,15 @@ export function MvzPrimaryCareSection({ locale = "de" }: { locale?: string }) {
               </h2>
 
               <p className="text-[12.5px] sm:text-[13px] text-[#556057] leading-relaxed max-w-xl">
-                {c.lead[l]}
+                {conciseCopy[l].lead}
               </p>
+              <Link
+                href={`/${l}/mvz-hausarzt-facharzt`}
+                className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#EED4A2] via-[#E4C58B] to-[#D5B878] text-[#142318] hover:brightness-105 font-semibold text-xs shadow-sm transition-all"
+              >
+                <span>{l === "ru" ? "Перейти на сайт MVZ" : l === "en" ? "Visit the MVZ website" : l === "tr" ? "MVZ web sitesine git" : l === "ar" ? "زيارة موقع MVZ" : l === "uz" ? "MVZ veb-saytiga o‘tish" : "Zur MVZ-Website"}</span>
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
             </div>
 
             {/* Bottom: 8 Specialty Cards spanning along the entire width */}
@@ -662,7 +792,7 @@ export function MvzPrimaryCareSection({ locale = "de" }: { locale?: string }) {
               <div className="flex items-start sm:items-center gap-2.5 mt-2.5 sm:mt-3 px-3.5 py-2 rounded-xl border border-[#E8DFC8]/75 bg-white/75 backdrop-blur-xs text-[#556057]">
                 <Info className="w-3.5 h-3.5 text-[#9E7D3B] shrink-0" />
                 <p className="text-[11px] sm:text-[11.5px] leading-relaxed">
-                  {c.specialtiesNote[l]}
+                  {conciseCopy[l].specialtiesNote}
                 </p>
               </div>
             </div>
@@ -720,7 +850,7 @@ export function MvzPrimaryCareSection({ locale = "de" }: { locale?: string }) {
 
                     {/* Paragraph Text */}
                     <p className="text-[12.5px] sm:text-[13px] leading-relaxed mb-5 text-[#4E5650]">
-                      {p.text[l]}
+                      {conciseCopy[l].paragraphTexts[cardIdx]}
                     </p>
 
                     {/* Bullet Points with Gold Checkmarks */}
@@ -745,7 +875,7 @@ export function MvzPrimaryCareSection({ locale = "de" }: { locale?: string }) {
       </Container>
 
       {/* ── Card 1: Facilities & Cooperations – 100% FULL WIDTH EDGE-TO-EDGE (Photo 2 Style, No Frames) ── */}
-      <div className="w-full relative overflow-hidden my-8 sm:my-10 lg:my-12">
+      <div className="w-full relative overflow-hidden mt-8 sm:mt-10 lg:mt-12 mb-0">
         {/* Full-bleed background image across 100% of the screen */}
         <div className="absolute inset-0 pointer-events-none select-none z-0">
           <Image
@@ -771,12 +901,12 @@ export function MvzPrimaryCareSection({ locale = "de" }: { locale?: string }) {
               </h3>
 
               <p className="text-[13px] sm:text-[13.5px] text-[#4E5650] leading-relaxed max-w-xl mb-6">
-                {c.paragraphs[1].text[l]}
+                {conciseCopy[l].paragraphTexts[1]}
               </p>
 
               <div>
                 <Link
-                  href={`/${l}/contact`}
+                  href={`/${l}/mvz-hausarzt-facharzt`}
                   className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-[#8C9886] bg-white/70 hover:bg-[#142318] hover:text-white hover:border-[#142318] text-[#2C3B2E] text-[12.5px] font-medium tracking-wide transition-all shadow-xs"
                 >
                   <span>{l === "uz" ? "Batafsil" : l === "tr" ? "Daha fazla bilgi" : l === "ar" ? "المزيد من التفاصيل" : l === "ru" ? "Подробнее" : l === "en" ? "Learn more" : "Mehr erfahren"}</span>
@@ -807,50 +937,10 @@ export function MvzPrimaryCareSection({ locale = "de" }: { locale?: string }) {
         </div>
       </div>
 
-      <Container size="wide">
-        <div className="space-y-12 sm:space-y-16">
-
-          {/* Medizinische und organisatorische Aufgaben (Photo Style: 4 Columns Grid) */}
-          <div className="space-y-6">
-            <div>
-              <h3 className="font-serif text-[22px] sm:text-[26px] lg:text-[28px] font-normal text-[#142318] leading-[1.2]">
-                {c.tasksTitle[l]}
-              </h3>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-3.5">
-              {c.tasks.map((t, i) => {
-                const Icon = t.icon;
-                return (
-                  <article
-                    key={i}
-                    className="group relative rounded-[18px] sm:rounded-[20px] p-3.5 sm:p-4 bg-white border border-[#EAE4D7] hover:border-[#D5B878] hover:shadow-[0_4px_16px_-4px_rgba(20,35,24,0.08)] hover:-translate-y-0.5 transition-all duration-300"
-                  >
-                    {/* Top Row: Circular Icon + Title */}
-                    <div className="flex items-center gap-2.5 mb-2 sm:mb-2.5">
-                      <div className="w-8.5 h-8.5 sm:w-9 sm:h-9 rounded-full bg-[#FAF7F2] border border-[#E8DFC8] flex items-center justify-center text-[#B89650] shrink-0 group-hover:bg-[#0B2317] group-hover:text-[#ECCF96] group-hover:border-[#0B2317] transition-all">
-                        <Icon className="w-4 h-4" />
-                      </div>
-                      <h4 className="font-serif font-medium text-[13.5px] sm:text-[14px] text-[#142318] group-hover:text-[#8C6D2D] transition-colors leading-snug">
-                        {t.title[l]}
-                      </h4>
-                    </div>
-
-                    {/* Description Text */}
-                    <p className="text-[11.5px] sm:text-[12px] text-[#556057] leading-snug sm:leading-relaxed">
-                      {t[l]}
-                    </p>
-                  </article>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </Container>
     </section>
 
     {/* Rechtliche und betriebliche Pflichten – FULL WIDTH SCREEN SECTION (leaves_bag.png background) */}
-    <section className="relative w-full bg-[#011B0B] text-white py-12 sm:py-16 lg:py-20 overflow-hidden border-b border-[#D5B878]/25">
+    <section className="relative w-full bg-[#011B0B] text-white pt-6 sm:pt-8 lg:pt-10 pb-12 sm:pb-16 lg:pb-20 overflow-hidden border-b border-[#D5B878]/25">
       {/* Full-width foliage & background layer spanning 100% of the screen width */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
         <Image
@@ -873,30 +963,29 @@ export function MvzPrimaryCareSection({ locale = "de" }: { locale?: string }) {
           <h3 className="font-serif text-[26px] sm:text-[32px] lg:text-[38px] text-white font-normal leading-[1.15] mb-2.5">
             {l === "de" ? (
               <>
-                Rechtliche und betriebliche <span className="italic text-[#ECCF96]">Pflichten</span>
+                Rechtliche und betriebliche <span className="text-[#ECCF96]">Pflichten</span>
               </>
             ) : l === "tr" ? (
               <>
-                Yasal ve Operasyonel <span className="italic text-[#ECCF96]">Yükümlülükler</span>
+                Yasal ve Operasyonel <span className="text-[#ECCF96]">Yükümlülükler</span>
               </>
             ) : l === "ar" ? (
               <>
-                الالتزامات القانونية <span className="italic text-[#ECCF96]">والتشغيلية</span>
+                الالتزامات القانونية <span className="text-[#ECCF96]">والتشغيلية</span>
               </>
             ) : (
               c.dutiesTitle[l]
             )}
           </h3>
           <p className="text-[12.5px] sm:text-[13.5px] text-[#A6BCB0] leading-relaxed">
-            {c.dutiesLead[l]}
+            {conciseCopy[l].dutiesIntro}
           </p>
         </div>
 
-        {/* 8 Cards Grid (2 Columns, 4 Rows) – Lighter Card Background & High Text Contrast */}
+        {/* Four key compliance cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4.5">
           {c.duties.map((d, i) => {
             const Icon = d.icon;
-            const numStr = String(i + 1).padStart(2, "0");
 
             return (
               <article
@@ -914,11 +1003,7 @@ export function MvzPrimaryCareSection({ locale = "de" }: { locale?: string }) {
                 </div>
 
                 <div className="relative z-10">
-                  {/* Top Row: Number 01 + Circular Icon + Title */}
                   <div className="flex items-center gap-3 mb-2 sm:mb-2.5">
-                    <span className="font-serif text-[22px] sm:text-[25px] text-[#F4DFC0] font-normal leading-none shrink-0 w-7 sm:w-8">
-                      {numStr}
-                    </span>
                     <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D5B878]/50 bg-[#164329] text-[#F4DFC0] flex items-center justify-center shrink-0 group-hover:border-[#ECCF96] group-hover:bg-[#1b4e31] group-hover:scale-105 transition-all shadow-xs">
                       <Icon className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
                     </div>
@@ -929,8 +1014,11 @@ export function MvzPrimaryCareSection({ locale = "de" }: { locale?: string }) {
 
                   {/* Description Text with high contrast readable color */}
                   <p className="text-[12px] sm:text-[12.5px] text-[#E4EFE8] leading-relaxed pl-0.5 font-normal">
-                    {d.text[l]}
+                    {conciseCopy[l].dutySummaries[i]}
                   </p>
+                  <Link href={`/${l}/mvz-hausarzt-facharzt`} aria-label={d.title[l]} className="absolute right-4 bottom-4 w-8 h-8 rounded-full border border-[#D5B878]/60 text-[#F4DFC0] flex items-center justify-center hover:bg-[#D5B878] hover:text-[#0E281C] transition-colors">
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
               </article>
             );

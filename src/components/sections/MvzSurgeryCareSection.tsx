@@ -436,6 +436,117 @@ const c = {
   ],
 };
 
+const surgerySummaryCopy: Record<Lang, { paragraphTexts: string[]; dutiesLead: string; dutyTexts: string[] }> = {
+  de: {
+    paragraphTexts: [
+      "Qualifizierte Ärzte und befugtes Fachpersonal übernehmen Prävention, Beratung, Diagnostik, konservative und operative Behandlung sowie Nachsorge. Dazu zählen ambulante Operationen, interventionelle Behandlungen, Anästhesie, perioperative Überwachung und Schmerztherapie im genehmigten Umfang.",
+      "Die Gesellschaft kann Personal, Räume, Technik und Organisation für Untersuchungen, Behandlungen, ambulante Operationen und Überwachung bereitstellen. Die internistische Mitbetreuung lässt sich mit dem separaten hausärztlichen und fachärztlichen MVZ koordinieren; eigene internistische Arztstellen oder Abrechnungsrechte entstehen dadurch nicht.",
+      "Kooperationen mit Krankenhäusern, insbesondere der geplanten NabiOta Clinics Germany GmbH, sind im zulässigen Rahmen möglich. Zulassungen, Versorgungsaufträge, medizinische Verantwortung und Abrechnung bleiben vertraglich klar zugeordnet und rechtlich getrennt.",
+    ],
+    dutiesLead: "Die wichtigsten Pflichten sichern Zulassung, ärztliche Verantwortung, Patientenschutz, Hygiene und korrekte Abrechnung.",
+    dutyTexts: [
+      "Zulassung, genehmigte Arztstellen und Tätigkeitsorte werden eingehalten; Änderungen werden rechtzeitig gemeldet oder beantragt.",
+      "Eine ärztliche Leitung wird bestellt; operative, anästhesiologische und nachsorgende Verantwortung ist klar geregelt.",
+      "Fachliche Qualifikationen und Berechtigungen werden geprüft; genehmigungspflichtige Leistungen erfolgen erst nach Zulassung.",
+      "Vor Eingriffen werden ambulante Durchführbarkeit, präoperative Abklärung und Patientenaufklärung medizinisch geprüft.",
+      "Behandlungsunterlagen werden sicher geführt und aufbewahrt; Schweigepflicht und Datenschutz gelten durchgängig.",
+      "Qualitätsmanagement, Hygiene in OP- und Aufwachbereichen sowie Fehler- und Risikomanagement werden sichergestellt.",
+      "Medizinprodukte und Geräte werden eingewiesen, gewartet und geprüft; Strahlenschutz wird, soweit relevant, beachtet.",
+      "Abrechnungen sind vollständig und nachvollziehbar und entsprechen Vergütungs-, Wirtschaftlichkeits- und Genehmigungsregeln.",
+    ],
+  },
+  en: {
+    paragraphTexts: [
+      "Qualified physicians and authorized staff provide prevention, counselling, diagnostics, conservative and surgical treatment, and follow-up. This includes outpatient surgery, interventions, anaesthesia, perioperative monitoring and pain management within the approved scope.",
+      "The company may provide staff, premises, equipment and organization for examinations, treatment, outpatient surgery and monitoring. Internal medicine care can be coordinated with the separate primary and specialist MVZ; this creates no internal medicine posts or billing rights for the surgical MVZ.",
+      "Cooperation with hospitals, including the planned NabiOta Clinics Germany GmbH, is possible where permitted. Approvals, care mandates, medical responsibility and billing remain clearly assigned by contract and legally separate.",
+    ],
+    dutiesLead: "Key duties protect approvals, medical responsibility, patients, hygiene and accurate billing.",
+    dutyTexts: [
+      "Approvals, physician positions and practice locations are observed; changes are reported or submitted on time.",
+      "A medical director is appointed, with surgical, anaesthesiological and aftercare responsibilities clearly assigned.",
+      "Qualifications and authorizations are checked; services requiring approval begin only after it is granted.",
+      "Before surgery, outpatient suitability, preoperative assessment and patient information are medically reviewed.",
+      "Treatment records are securely maintained and stored, with confidentiality and data protection observed.",
+      "Quality management, hygiene in operating and recovery areas, and incident and risk processes are maintained.",
+      "Medical devices are instructed, maintained and inspected; radiation rules are observed where relevant.",
+      "Billing is complete and traceable and follows fee, efficiency and approval requirements.",
+    ],
+  },
+  ru: {
+    paragraphTexts: [
+      "Квалифицированные врачи и уполномоченный персонал обеспечивают профилактику, консультации, диагностику, консервативное и хирургическое лечение, а также наблюдение. Сюда входят амбулаторные операции, вмешательства, анестезия, периоперационный контроль и обезболивание в утверждённом объёме.",
+      "Общество может предоставить персонал, помещения, оборудование и организацию обследований, лечения, амбулаторных операций и наблюдения. Терапевтическую помощь можно координировать с отдельным MVZ семейной и специализированной помощи; это не создаёт хирургическому MVZ терапевтических ставок или прав на расчёты.",
+      "В рамках закона возможно сотрудничество с больницами, включая планируемую NabiOta Clinics Germany GmbH. Допуски, объёмы помощи, медицинская ответственность и расчёты закрепляются договорами и остаются юридически раздельными.",
+    ],
+    dutiesLead: "Основные требования обеспечивают допуски, врачебную ответственность, защиту пациентов, гигиену и корректные расчёты.",
+    dutyTexts: [
+      "Соблюдаются допуски, утверждённые врачебные ставки и места работы; изменения своевременно сообщаются или согласуются.",
+      "Назначается врачебный руководитель; ответственность за операцию, анестезию и последующее наблюдение разграничена.",
+      "Квалификация и полномочия проверяются; требующие разрешения услуги оказываются после его получения.",
+      "До операции оцениваются возможность амбулаторного вмешательства, предоперационная подготовка и информирование пациента.",
+      "Медицинская документация ведётся и хранится безопасно с соблюдением врачебной тайны и защиты данных.",
+      "Обеспечиваются менеджмент качества, гигиена операционных и зон пробуждения, управление ошибками и рисками.",
+      "Медицинские изделия обучают использовать, обслуживают и проверяют; при необходимости соблюдают радиационные нормы.",
+      "Расчёты ведутся полно и прозрачно с соблюдением тарифов, экономичности и условий разрешений.",
+    ],
+  },
+  tr: {
+    paragraphTexts: [
+      "Nitelikli hekimler ve yetkili personel; önleme, danışmanlık, tanı, konservatif ve cerrahi tedavi ile takip hizmetleri sunar. Buna onaylı kapsamda günübirlik ameliyatlar, girişimler, anestezi, ameliyat çevresi izlem ve ağrı tedavisi dahildir.",
+      "Şirket; muayene, tedavi, ayakta ameliyat ve izlem için personel, mekân, donanım ve organizasyon sağlayabilir. Dahiliye desteği ayrı aile hekimliği ve uzmanlık MVZ'siyle koordine edilebilir; bu, cerrahi MVZ'ye dahiliye kadrosu veya faturalama yetkisi vermez.",
+      "Yasal sınırlar içinde, planlanan NabiOta Clinics Germany GmbH dahil hastanelerle iş birliği yapılabilir. Ruhsatlar, hizmet görevleri, tıbbi sorumluluklar ve faturalama sözleşmeyle ayrı ayrı belirlenir.",
+    ],
+    dutiesLead: "Temel yükümlülükler ruhsatları, tıbbi sorumluluğu, hasta güvenliğini, hijyeni ve doğru faturalandırmayı korur.",
+    dutyTexts: [
+      "Ruhsatlar, hekim kadroları ve çalışma yerleri korunur; değişiklikler zamanında bildirilir veya onaya sunulur.",
+      "Tıbbi direktör atanır; cerrahi, anestezi ve ameliyat sonrası sorumluluklar açıkça belirlenir.",
+      "Uzmanlık ve çalışma yetkileri kontrol edilir; izin gerektiren hizmetler onaydan sonra sunulur.",
+      "Ameliyat öncesinde ayakta işlem uygunluğu, hazırlık tetkikleri ve hasta bilgilendirmesi değerlendirilir.",
+      "Tedavi kayıtları güvenli tutulur; tıbbi gizlilik ve veri koruma kurallarına uyulur.",
+      "Kalite yönetimi, ameliyathane ve derlenme alanlarında hijyen ile hata ve risk süreçleri sağlanır.",
+      "Tıbbi cihazlar için eğitim, bakım ve kontroller yapılır; gerektiğinde radyasyon kuralları uygulanır.",
+      "Faturalandırma eksiksiz ve izlenebilir yapılır; ücret, verimlilik ve izin kuralları gözetilir.",
+    ],
+  },
+  ar: {
+    paragraphTexts: [
+      "يقدم الأطباء المؤهلون والكوادر المعتمدة الوقاية والاستشارة والتشخيص والعلاج التحفظي والجراحي والمتابعة. وتشمل الخدمات الجراحات المتنقلة والتدخلات والتخدير والمراقبة المحيطة بالجراحة وعلاج الألم ضمن النطاق المعتمد.",
+      "يمكن للشركة توفير الكوادر والمرافق والتجهيزات والتنظيم للفحص والعلاج والجراحة المتنقلة والمراقبة. ويمكن تنسيق الرعاية الباطنية مع مركز MVZ المنفصل للرعاية الأولية والتخصصية؛ ولا يمنح ذلك المركز الجراحي وظيفة باطنية أو صلاحية فوترة.",
+      "يجوز التعاون مع المستشفيات ضمن الحدود القانونية، بما فيها NabiOta Clinics Germany GmbH المخطط لها. وتظل التراخيص ومهام الرعاية والمسؤولية الطبية والفوترة محددة تعاقدياً ومنفصلة قانونياً.",
+    ],
+    dutiesLead: "تحمي المتطلبات الأساسية التراخيص والمسؤولية الطبية والمرضى والنظافة ودقة الفوترة.",
+    dutyTexts: [
+      "تُحترم التراخيص ومناصب الأطباء ومواقع العمل المعتمدة، وتُبلغ التغييرات أو تُطلب الموافقة عليها في حينها.",
+      "يُعيّن مدير طبي وتُحدد مسؤوليات الجراحة والتخدير والمتابعة بوضوح.",
+      "تُراجع المؤهلات والصلاحيات، ولا تقدم الخدمات المقيدة قبل الحصول على الموافقة.",
+      "تُراجع ملاءمة الجراحة المتنقلة والفحوصات السابقة للجراحة ومعلومات المريض قبل الإجراء.",
+      "تُدار السجلات العلاجية وتحفظ بأمان مع الالتزام بالسرية وحماية البيانات.",
+      "تُطبق إدارة الجودة والنظافة في غرف العمليات والإفاقة وإجراءات الأخطاء والمخاطر.",
+      "تُستخدم الأجهزة الطبية وتُصان وتُفحص على نحو سليم، مع مراعاة قواعد الإشعاع عند اللزوم.",
+      "تكون الفوترة كاملة وقابلة للتتبع ومتوافقة مع قواعد الأتعاب والكفاءة والتراخيص.",
+    ],
+  },
+  uz: {
+    paragraphTexts: [
+      "Malakali shifokorlar va vakolatli xodimlar profilaktika, maslahat, diagnostika, konservativ va jarrohlik davolash hamda keyingi kuzatuvni amalga oshiradi. Bunga tasdiqlangan doirada ambulator operatsiyalar, muolajalar, anesteziya, operatsiya atrofidagi monitoring va og‘riq terapiyasi kiradi.",
+      "Jamiyat ko‘rik, davolash, ambulator operatsiya va kuzatuv uchun xodimlar, xonalar, uskunalar hamda tashkiliy resurslarni ta'minlashi mumkin. Ichki kasalliklar yordami alohida oilaviy va ixtisoslashgan MVZ bilan muvofiqlashtiriladi; bu jarrohlik MVZga terapevt shtati yoki hisob-kitob huquqini bermaydi.",
+      "Qonun doirasida, jumladan rejalashtirilgan NabiOta Clinics Germany GmbH bilan hamkorlik qilish mumkin. Ruxsatlar, xizmat vazifalari, tibbiy javobgarlik va hisob-kitob shartnomada alohida belgilanadi.",
+    ],
+    dutiesLead: "Asosiy talablar ruxsatlar, tibbiy javobgarlik, bemorlar himoyasi, gigiyena va to‘g‘ri hisob-kitobni ta'minlaydi.",
+    dutyTexts: [
+      "Ruxsatlar, tasdiqlangan shifokor shtatlari va ish joylariga amal qilinadi; o‘zgarishlar vaqtida bildiriladi yoki tasdiqlanadi.",
+      "Tibbiy rahbar tayinlanadi; jarrohlik, anesteziya va keyingi kuzatuv mas'uliyati aniq taqsimlanadi.",
+      "Mutaxassislik malakasi va vakolatlar tekshiriladi; ruxsat talab qiluvchi xizmatlar tasdiqdan keyin boshlanadi.",
+      "Operatsiyadan oldin ambulator muolaja imkoniyati, tayyorgarlik tekshiruvlari va bemorga tushuntirish baholanadi.",
+      "Tibbiy hujjatlar xavfsiz yuritiladi va saqlanadi; tibbiy sir va ma'lumotlar himoyasi ta'minlanadi.",
+      "Sifat boshqaruvi, operatsiya va uyg‘onish xonalari gigiyenasi, xato va xavflarni boshqarish yo‘lga qo‘yiladi.",
+      "Tibbiy uskunalardan foydalanish o‘rgatiladi, ularga xizmat ko‘rsatiladi va tekshiriladi; radiatsiya qoidalariga amal qilinadi.",
+      "Hisob-kitoblar to‘liq va tekshiriladigan bo‘lib, to‘lov, tejamkorlik va ruxsat qoidalariga muvofiq yuritiladi.",
+    ],
+  },
+};
+
 const specialtyIconsList: React.ComponentType<{ className?: string }>[] = [
   Activity,
   Brain,
@@ -561,7 +672,7 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
     <>
       <section
         id="mvz-chirurgie-anaesthesiologie"
-        className="relative pt-0 pb-14 sm:pb-18 lg:pb-20 bg-[#FAF7F2] border-t border-[#EDE8DE]/60 overflow-hidden"
+        className="relative pt-0 pb-0 bg-[#FAF7F2] border-t border-[#EDE8DE]/60 overflow-hidden"
       >
       <div className="absolute -bottom-40 -left-32 w-[520px] h-[520px] rounded-full bg-[#1E3B29]/[0.06] blur-3xl pointer-events-none" />
 
@@ -608,7 +719,7 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
                 </span>
               </div>
 
-              {/* Title with styled italic phrase */}
+              {/* Title with highlighted phrase */}
               <h2 className="font-serif text-[24px] sm:text-[28px] lg:text-[34px] xl:text-[38px] text-[#142318] font-normal leading-[1.18] mb-3">
                 {(() => {
                   const phrase = "Chirurgie und Anästhesiologie";
@@ -618,7 +729,7 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
                   ) : (
                     <>
                       {before}
-                      <span className="font-serif italic text-[#C5A56A]">{phrase}</span>
+                      <span className="font-serif text-[#C5A56A]">{phrase}</span>
                       {after}
                     </>
                   );
@@ -628,6 +739,15 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
               <p className="text-[12.5px] sm:text-[13px] text-[#556057] leading-relaxed max-w-xl">
                 {c.lead[l]}
               </p>
+              <Link
+                href="https://my-bandscheibe.de/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#EED4A2] via-[#E4C58B] to-[#D5B878] text-[#142318] hover:brightness-105 font-semibold text-xs shadow-sm transition-all"
+              >
+                <span>{l === "ru" ? "Перейти на сайт MVZ 2" : l === "en" ? "Visit the MVZ 2 website" : l === "tr" ? "MVZ 2 web sitesine git" : l === "ar" ? "زيارة موقع MVZ 2" : l === "uz" ? "MVZ 2 veb-saytiga o‘tish" : "Zur MVZ-2-Website"}</span>
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
             </div>
 
             {/* Bottom: 5 Specialty Cards spanning along the entire width */}
@@ -716,7 +836,7 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
 
                     {/* Paragraph Text */}
                     <p className="text-[12.5px] sm:text-[13px] leading-relaxed mb-5 text-[#4E5650]">
-                      {p.text[l]}
+                      {surgerySummaryCopy[l].paragraphTexts[cardIdx]}
                     </p>
 
                     {/* Bullet Points with Gold Checkmarks */}
@@ -741,7 +861,7 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
       </Container>
 
       {/* ── Card 1: Facilities & Cooperations – 100% FULL WIDTH EDGE-TO-EDGE (Photo 2 Style, No Frames) ── */}
-      <div className="w-full relative overflow-hidden my-8 sm:my-10 lg:my-12">
+      <div className="w-full relative overflow-hidden mt-8 sm:mt-10 lg:mt-12 mb-0">
         {/* Full-bleed background image across 100% of the screen */}
         <div className="absolute inset-0 pointer-events-none select-none z-0">
           <Image
@@ -767,12 +887,14 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
               </h3>
 
               <p className="text-[13px] sm:text-[13.5px] text-[#4E5650] leading-relaxed max-w-xl mb-6">
-                {c.paragraphs[1].text[l]}
+                {surgerySummaryCopy[l].paragraphTexts[1]}
               </p>
 
               <div>
                 <Link
-                  href={`/${l}/contact`}
+                  href="https://my-bandscheibe.de/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-[#8C9886] bg-white/70 hover:bg-[#142318] hover:text-white hover:border-[#142318] text-[#2C3B2E] text-[12.5px] font-medium tracking-wide transition-all shadow-xs"
                 >
                   <span>{l === "uz" ? "Batafsil" : l === "ru" ? "Подробнее" : l === "en" ? "Learn more" : l === "tr" ? "Daha fazla bilgi" : l === "ar" ? "اعرف المزيد" : "Mehr erfahren"}</span>
@@ -803,50 +925,10 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
         </div>
       </div>
 
-      <Container size="wide">
-        <div className="space-y-12 sm:space-y-16">
-
-          {/* Medizinische und organisatorische Aufgaben (Photo Style: 4 Columns Grid) */}
-          <div className="space-y-6">
-            <div>
-              <h3 className="font-serif text-[22px] sm:text-[26px] lg:text-[28px] font-normal text-[#142318] leading-[1.2]">
-                {c.tasksTitle[l]}
-              </h3>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-3.5">
-              {c.tasks.map((t, i) => {
-                const Icon = t.icon;
-                return (
-                  <article
-                    key={i}
-                    className="group relative rounded-[18px] sm:rounded-[20px] p-3.5 sm:p-4 bg-white border border-[#EAE4D7] hover:border-[#D5B878] hover:shadow-[0_4px_16px_-4px_rgba(20,35,24,0.08)] hover:-translate-y-0.5 transition-all duration-300"
-                  >
-                    {/* Top Row: Circular Icon + Title */}
-                    <div className="flex items-center gap-2.5 mb-2 sm:mb-2.5">
-                      <div className="w-8.5 h-8.5 sm:w-9 sm:h-9 rounded-full bg-[#FAF7F2] border border-[#E8DFC8] flex items-center justify-center text-[#B89650] shrink-0 group-hover:bg-[#1E3B29] group-hover:text-[#ECCF96] group-hover:border-[#1E3B29] transition-all">
-                        <Icon className="w-4 h-4" />
-                      </div>
-                      <h4 className="font-serif font-medium text-[13.5px] sm:text-[14px] text-[#142318] group-hover:text-[#8C6D2D] transition-colors leading-snug">
-                        {t.title[l]}
-                      </h4>
-                    </div>
-
-                    {/* Description Text */}
-                    <p className="text-[11.5px] sm:text-[12px] text-[#556057] leading-snug sm:leading-relaxed">
-                      {t[l]}
-                    </p>
-                  </article>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </Container>
     </section>
 
     {/* Rechtliche und betriebliche Pflichten – FULL WIDTH SCREEN SECTION (leaves_bag.png background) */}
-    <section className="relative w-full bg-[#011B0B] text-white py-12 sm:py-16 lg:py-20 overflow-hidden border-b border-[#D5B878]/25">
+    <section className="relative w-full bg-[#011B0B] text-white pt-6 sm:pt-8 lg:pt-10 pb-12 sm:pb-16 lg:pb-20 overflow-hidden border-b border-[#D5B878]/25">
       {/* Full-width foliage & background layer spanning 100% of the screen width */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
         <Image
@@ -869,18 +951,18 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
           <h3 className="font-serif text-[26px] sm:text-[32px] lg:text-[38px] text-white font-normal leading-[1.15] mb-2.5">
             {l === "de" ? (
               <>
-                Rechtliche und betriebliche <span className="italic text-[#ECCF96]">Pflichten</span>
+                Rechtliche und betriebliche <span className="text-[#ECCF96]">Pflichten</span>
               </>
             ) : l === "uz" ? (
               <>
-                Huquqiy va operatsion <span className="italic text-[#ECCF96]">majburiyatlar</span>
+                Huquqiy va operatsion <span className="text-[#ECCF96]">majburiyatlar</span>
               </>
             ) : (
               c.dutiesTitle[l]
             )}
           </h3>
           <p className="text-[12.5px] sm:text-[13.5px] text-[#A6BCB0] leading-relaxed">
-            {c.dutiesLead[l]}
+            {surgerySummaryCopy[l].dutiesLead}
           </p>
         </div>
 
@@ -888,7 +970,6 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4.5">
           {c.duties.map((d, i) => {
             const Icon = d.icon;
-            const numStr = String(i + 1).padStart(2, "0");
 
             return (
               <article
@@ -906,11 +987,7 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
                 </div>
 
                 <div className="relative z-10">
-                  {/* Top Row: Number 01 + Circular Icon + Title */}
                   <div className="flex items-center gap-3 mb-2 sm:mb-2.5">
-                    <span className="font-serif text-[22px] sm:text-[25px] text-[#F4DFC0] font-normal leading-none shrink-0 w-7 sm:w-8">
-                      {numStr}
-                    </span>
                     <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D5B878]/50 bg-[#164329] text-[#F4DFC0] flex items-center justify-center shrink-0 group-hover:border-[#ECCF96] group-hover:bg-[#1b4e31] group-hover:scale-105 transition-all shadow-xs">
                       <Icon className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
                     </div>
@@ -921,8 +998,11 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
 
                   {/* Description Text with high contrast readable color */}
                   <p className="text-[12px] sm:text-[12.5px] text-[#E4EFE8] leading-relaxed pl-0.5 font-normal">
-                    {d.text[l]}
+                    {surgerySummaryCopy[l].dutyTexts[i]}
                   </p>
+                  <Link href="https://my-bandscheibe.de/" target="_blank" rel="noopener noreferrer" aria-label={d.title[l]} className="absolute right-4 bottom-4 w-8 h-8 rounded-full border border-[#D5B878]/60 text-[#F4DFC0] flex items-center justify-center hover:bg-[#D5B878] hover:text-[#0E281C] transition-colors">
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
               </article>
             );

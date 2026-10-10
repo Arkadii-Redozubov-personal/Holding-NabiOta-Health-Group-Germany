@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Building2,
   HardHat,
@@ -17,27 +18,16 @@ import {
   ShieldAlert,
   ShieldCheck,
   TrendingUp,
-  Home,
   CheckCircle2,
   Hospital,
   Stethoscope,
   Activity,
   BedDouble,
+  Home,
   Heart,
   ArrowRight,
 } from "lucide-react";
 import { Container } from "@/components/layout/Container";
-
-const portfolioIcons = [
-  Hospital,
-  Building2,
-  Stethoscope,
-  Activity,
-  Layers,
-  Heart,
-  BedDouble,
-  Home,
-];
 
 /**
  * PDF Section IV.7 – "NabiOta Real Estate GmbH"
@@ -49,6 +39,8 @@ const portfolioIcons = [
 type Lang = "de" | "en" | "ru" | "tr" | "ar" | "uz";
 type T = Record<Lang, string>;
 type Icon = React.ComponentType<{ className?: string }>;
+
+const portfolioIcons = [Hospital, Building2, Stethoscope, Activity, Layers, Heart, BedDouble, Home];
 
 const c = {
   tag: {
@@ -523,10 +515,10 @@ export function RealEstateCompanySection({ locale = "de" }: { locale?: string })
             <div className="max-w-xl lg:max-w-2xl mb-5 sm:mb-6 lg:mb-7">
 
 
-              {/* Title with styled italic phrase & distinct GmbH */}
+              {/* Title with highlighted phrase & distinct GmbH */}
               <h2 className="font-serif text-[24px] sm:text-[28px] lg:text-[34px] xl:text-[38px] text-[#142318] font-normal leading-[1.18] mb-3">
                 NabiOta{" "}
-                <span className="font-serif italic text-[#C5A56A]">Real Estate</span>{" "}
+                <span className="font-serif text-[#C5A56A]">Real Estate</span>{" "}
                 <span className="text-[#C5A56A] font-sans font-semibold text-[0.72em] tracking-wider uppercase ml-1 align-baseline">
                   GmbH
                 </span>
@@ -535,33 +527,30 @@ export function RealEstateCompanySection({ locale = "de" }: { locale?: string })
               <p className="text-[12.5px] sm:text-[13px] text-[#556057] leading-relaxed max-w-xl font-sans">
                 {c.lead[l]}
               </p>
+              <Link href={`/${l}/nabiota-real-estate`} className="mt-4 inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-full bg-gradient-to-r from-[#EED4A2] via-[#E4C58B] to-[#D5B878] text-[#142318] hover:brightness-105 font-semibold text-[12px] sm:text-[12.5px] shadow-sm transition-all">
+                {l === "ru" ? "Перейти на сайт Real Estate" : l === "en" ? "Visit Real Estate website" : l === "tr" ? "Real Estate sitesine git" : l === "ar" ? "زيارة موقع Real Estate" : l === "uz" ? "Real Estate saytiga o‘tish" : "Zur Real-Estate-Website"}
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
 
-            {/* Bottom: 8 Healthcare Property Asset Classes Cards spanning along the entire width */}
-            <div className="w-full">
+            <div className="mt-6 w-full">
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-5 h-[1.5px] bg-[#C5A56A]" />
                 <h3 className="font-serif text-[15px] sm:text-[16px] text-[#142318] font-medium">
                   {c.portfolioTitle[l]}
                 </h3>
               </div>
-
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-2.5">
-                {c.portfolioItems.map((item, idx) => {
-                  const ItemIcon = portfolioIcons[idx % portfolioIcons.length] || Building2;
+                {c.portfolioItems.slice(0, 4).map((item, idx) => {
+                  const ItemIcon = portfolioIcons[idx];
                   return (
-                    <div
-                      key={idx}
-                      className="group relative rounded-xl bg-white/85 hover:bg-white border border-[#EAE4D7] hover:border-[#D5B878]/70 py-2.5 px-3 sm:px-3.5 flex items-center gap-2.5 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-sm transition-all duration-300 backdrop-blur-xs"
-                    >
-                      <div className="w-7 h-7 sm:w-7.5 sm:h-7.5 rounded-full bg-[#FAF5EB] border border-[#EFE5D5] flex items-center justify-center shrink-0 group-hover:bg-[#F3EAD9] transition-colors">
+                    <div key={idx} className="rounded-xl bg-white/85 border border-[#EAE4D7] py-2.5 px-3 sm:px-3.5 flex items-center gap-2.5 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                      <div className="w-7 h-7 rounded-full bg-[#FAF5EB] border border-[#EFE5D5] flex items-center justify-center shrink-0">
                         <ItemIcon className="w-3.5 h-3.5 text-[#9E7D3B]" />
                       </div>
-                      <div className="flex-1 min-w-0">
-                        <h4 className="font-serif text-[12px] sm:text-[12.5px] text-[#142318] font-medium leading-tight">
-                          {item[l]}
-                        </h4>
-                      </div>
+                      <h4 className="font-serif text-[12px] sm:text-[12.5px] text-[#142318] font-medium leading-tight">
+                        {item[l]}
+                      </h4>
                     </div>
                   );
                 })}
@@ -600,7 +589,7 @@ export function RealEstateCompanySection({ locale = "de" }: { locale?: string })
                   return (
                     <div
                       key={task.num}
-                      className="group relative rounded-[18px] bg-white border border-[#EAE4D7] p-3.5 sm:p-4 flex items-center justify-between gap-3 sm:gap-4 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:shadow-md hover:border-[#D5B878]/60 transition-all duration-300"
+                      className="group relative rounded-[18px] bg-white border border-[#EAE4D7] p-3.5 sm:p-4 flex items-center gap-3 sm:gap-4 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:shadow-md hover:border-[#D5B878]/60 transition-all duration-300"
                     >
                       {/* Left: Icon circle */}
                       <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#FAF5EB] border border-[#EFE5D5] flex items-center justify-center shrink-0 group-hover:bg-[#F3EAD9] transition-colors">
@@ -609,23 +598,16 @@ export function RealEstateCompanySection({ locale = "de" }: { locale?: string })
 
                       {/* Center: Title + Description */}
                       <div className="flex-1 min-w-0 pr-1">
-                        <div className="flex items-center gap-2 mb-0.5">
-                          <span className="text-[10px] font-bold tracking-wider text-[#C5A56A] font-mono">
-                            {task.num}
-                          </span>
-                          <h4 className="font-serif text-[15px] sm:text-[16px] text-[#142318] font-medium leading-snug">
-                            {task.title[l]}
-                          </h4>
-                        </div>
+                        <h4 className="font-serif text-[15px] sm:text-[16px] text-[#142318] font-medium leading-snug mb-0.5">
+                          {task.title[l]}
+                        </h4>
                         <p className="text-[11.5px] sm:text-[12px] text-[#556057] leading-relaxed font-sans">
                           {task.desc[l]}
                         </p>
                       </div>
-
-                      {/* Right: Round button with arrow */}
-                      <div className="w-8.5 h-8.5 rounded-full border border-[#D5B878]/50 flex items-center justify-center text-[#9E7D3B] shrink-0 group-hover:bg-[#9E7D3B] group-hover:text-white group-hover:border-[#9E7D3B] transition-all duration-300">
-                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                      </div>
+                      <Link href={`/${l}/nabiota-real-estate`} aria-label={task.title[l]} className="w-8.5 h-8.5 rounded-full border border-[#D5B878]/50 flex items-center justify-center text-[#9E7D3B] shrink-0 hover:bg-[#9E7D3B] hover:text-white hover:border-[#9E7D3B] transition-all duration-300">
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
                     </div>
                   );
                 })}

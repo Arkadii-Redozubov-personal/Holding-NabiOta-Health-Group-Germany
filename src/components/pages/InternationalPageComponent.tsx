@@ -2257,7 +2257,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
 
               <div className="shrink-0">
                 <Link
-                  href={`/${locale}/contact`}
+                  href={`/${locale}/nabiota-medical-recruitment`}
                   className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#B8934A] hover:text-[#0B2516] transition-colors group"
                 >
                   <span>{t.s4.linkAll}</span>
@@ -2398,7 +2398,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
 
               <div className="shrink-0">
                 <Link
-                  href={`/${locale}/contact`}
+                  href={`/${locale}/nabiota-medical-recruitment`}
                   className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#B8934A] hover:text-[#0B2516] transition-colors group"
                 >
                   <span>{t.s6.linkAll}</span>
@@ -2482,7 +2482,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
 
               <div className="pt-2 sm:pt-2.5">
                 <Link
-                  href={`/${locale}/contact`}
+                  href={`/${locale}/nabiota-medical-recruitment`}
                   className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#FAF7F2] hover:bg-[#ECCF96] text-[#0B2516] border border-[#D8C7A5] text-xs sm:text-sm font-semibold transition-all duration-300 shadow-sm group"
                 >
                   <span>{t.s7.btn}</span>
@@ -2614,7 +2614,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                 </button>
 
                 <Link
-                  href={`/${locale}/contact`}
+                  href={`/${locale}/nabiota-medical-recruitment`}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-[#0B2516] hover:bg-[#163D29] text-white text-xs sm:text-sm font-semibold transition-all duration-300 shadow-md group order-1 sm:order-2"
                 >
                   <span>{selectedProgram.modal.ctaButtonText}</span>

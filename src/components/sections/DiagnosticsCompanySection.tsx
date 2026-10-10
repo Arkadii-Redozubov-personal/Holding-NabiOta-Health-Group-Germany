@@ -466,14 +466,21 @@ export function DiagnosticsCompanySection({ locale = "de" }: { locale?: string }
           <div className="max-w-xl">
 
 
-            {/* Title with styled italic phrase & distinct GmbH */}
+            {/* Title with highlighted phrase & distinct GmbH */}
             <h2 className="font-serif text-[24px] sm:text-[28px] lg:text-[32px] xl:text-[36px] text-[#142318] font-normal leading-[1.18] mb-3">
-              NabiOta <span className="font-serif italic text-[#C5A56A]">Diagnostics</span> <span className="text-[#C5A56A] font-sans font-semibold text-[0.72em] tracking-wider uppercase ml-1 align-baseline">GmbH</span>
+              NabiOta <span className="font-serif text-[#C5A56A]">Diagnostics</span> <span className="text-[#C5A56A] font-sans font-semibold text-[0.72em] tracking-wider uppercase ml-1 align-baseline">GmbH</span>
             </h2>
 
             <p className="text-[12.5px] sm:text-[13px] text-[#556057] leading-relaxed max-w-lg">
               {c.lead[l]}
             </p>
+            <Link
+              href={`/${l}/nabiota-diagnostics`}
+              className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#EED4A2] via-[#E4C58B] to-[#D5B878] text-[#142318] hover:brightness-105 font-semibold text-xs shadow-sm transition-all"
+            >
+              <span>{l === "ru" ? "Перейти на сайт диагностики" : l === "en" ? "Visit the diagnostics website" : l === "tr" ? "Tanı web sitesine git" : l === "ar" ? "زيارة موقع التشخيص" : l === "uz" ? "Diagnostika veb-saytiga o‘tish" : "Zur Diagnostik-Website"}</span>
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
           </div>
         </div>
 
@@ -572,9 +579,9 @@ export function DiagnosticsCompanySection({ locale = "de" }: { locale?: string }
                       </div>
 
                       {/* Right: Round button with arrow */}
-                      <div className="w-8.5 h-8.5 rounded-full border border-[#D5B878]/50 flex items-center justify-center text-[#9E7D3B] shrink-0 group-hover:bg-[#9E7D3B] group-hover:text-white group-hover:border-[#9E7D3B] transition-all duration-300">
+                      <Link href={`/${l}/nabiota-diagnostics`} aria-label={item.title[l]} className="w-8.5 h-8.5 rounded-full border border-[#D5B878]/50 flex items-center justify-center text-[#9E7D3B] shrink-0 group-hover:bg-[#9E7D3B] group-hover:text-white group-hover:border-[#9E7D3B] transition-all duration-300">
                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                      </div>
+                      </Link>
                     </div>
                   );
                 })}
@@ -586,7 +593,6 @@ export function DiagnosticsCompanySection({ locale = "de" }: { locale?: string }
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {c.pillars.map((p, i) => {
               const Icon = p.icon;
-              const numStr = String(i + 1).padStart(2, "0");
               return (
                 <article
                   key={i}
@@ -606,11 +612,7 @@ export function DiagnosticsCompanySection({ locale = "de" }: { locale?: string }
                   {/* Left content */}
                   <div className="relative z-10 p-5 sm:p-6 flex flex-col justify-between h-full">
                     <div>
-                      {/* Number + Icon row */}
                       <div className="flex items-center gap-3 mb-2.5">
-                        <span className="font-serif text-[22px] sm:text-[24px] text-[#C5A56A] font-normal leading-none w-8 shrink-0">
-                          {numStr}
-                        </span>
                         <div className="w-9 h-9 rounded-full bg-[#FAF3E8] border border-[#E8DFC8] text-[#9E7D3B] flex items-center justify-center shrink-0 group-hover:bg-[#F0E5CD] transition-colors">
                           <Icon className="w-4 h-4" />
                         </div>
@@ -630,7 +632,7 @@ export function DiagnosticsCompanySection({ locale = "de" }: { locale?: string }
                     {/* Learn more link */}
                     <div className="mt-4 pt-3.5 border-t border-[#EDE8DE]">
                       <Link
-                        href={`/${l}/contact`}
+                        href={`/${l}/nabiota-diagnostics`}
                         className="inline-flex items-center gap-1.5 text-[11.5px] sm:text-[12px] font-semibold text-[#9E7D3B] hover:text-[#142318] transition-colors"
                       >
                         <span>{l === "ru" ? "Подробнее" : l === "en" ? "Learn more" : "Mehr erfahren"}</span>
@@ -688,7 +690,7 @@ export function DiagnosticsCompanySection({ locale = "de" }: { locale?: string }
             {/* Right: Mehr über uns / Learn more pill button */}
             <div className="shrink-0 self-start sm:self-auto">
               <Link
-                href={`/${l}/contact`}
+                href={`/${l}/nabiota-diagnostics`}
                 className="group inline-flex items-center gap-2 px-6 sm:px-7 py-3 rounded-full border border-[#D5B878] bg-white/80 hover:bg-white text-[#8C6D2D] hover:text-[#142318] hover:border-[#9E7D3B] text-[12.5px] sm:text-[13px] font-semibold transition-all shadow-xs backdrop-blur-xs whitespace-nowrap"
               >
                 <span>{l === "ru" ? "Подробнее о нас" : l === "en" ? "Learn more about us" : "Mehr über uns"}</span>
@@ -724,18 +726,16 @@ export function DiagnosticsCompanySection({ locale = "de" }: { locale?: string }
                     </div>
 
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-[10.5px] font-bold tracking-wider text-[#B89650] font-mono">
-                          {task.num}
-                        </span>
-                        <h4 className="font-serif text-[15px] sm:text-[16px] font-medium text-[#142318] group-hover:text-[#8C6D2D] transition-colors leading-tight">
-                          {task.title[l]}
-                        </h4>
-                      </div>
+                      <h4 className="font-serif text-[15px] sm:text-[16px] font-medium text-[#142318] group-hover:text-[#8C6D2D] transition-colors leading-tight mb-1">
+                        {task.title[l]}
+                      </h4>
                       <p className="text-[12px] sm:text-[12.5px] text-[#556057] leading-relaxed font-sans">
                         {task.desc[l]}
                       </p>
                     </div>
+                    <Link href={`/${l}/nabiota-diagnostics`} aria-label={task.title[l]} className="w-8.5 h-8.5 rounded-full border border-[#D5B878]/50 flex items-center justify-center text-[#9E7D3B] shrink-0 hover:bg-[#9E7D3B] hover:text-white transition-all">
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
                   </div>
                 );
               })}
@@ -746,4 +746,3 @@ export function DiagnosticsCompanySection({ locale = "de" }: { locale?: string }
     </section>
   );
 }
-

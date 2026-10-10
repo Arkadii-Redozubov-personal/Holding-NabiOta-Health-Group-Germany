@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Bandage,
   ShoppingCart,
@@ -407,10 +408,10 @@ export function SanitaetshausCompanySection({ locale = "de" }: { locale?: string
             <div className="max-w-xl lg:max-w-2xl mb-6 sm:mb-8 lg:mb-9">
 
 
-              {/* Title with styled italic phrase & distinct GmbH */}
+              {/* Title with highlighted phrase & distinct GmbH */}
               <h2 className="font-serif text-[24px] sm:text-[28px] lg:text-[34px] xl:text-[38px] text-[#142318] font-normal leading-[1.18] mb-1.5">
                 NabiOta{" "}
-                <span className="font-serif italic text-[#C5A56A]">Sanitätshaus</span>{" "}
+                <span className="font-serif text-[#C5A56A]">Sanitätshaus</span>{" "}
                 <span className="text-[#C5A56A] font-sans font-semibold text-[0.72em] tracking-wider uppercase ml-1 align-baseline">
                   GmbH
                 </span>
@@ -420,6 +421,10 @@ export function SanitaetshausCompanySection({ locale = "de" }: { locale?: string
               <p className="text-[12.5px] sm:text-[13px] text-[#556057] leading-relaxed max-w-xl font-sans">
                 {c.lead[l]}
               </p>
+              <Link href={`/${l}/nabiota-sanitaetshaus`} className="mt-4 inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-full bg-gradient-to-r from-[#EED4A2] via-[#E4C58B] to-[#D5B878] text-[#142318] hover:brightness-105 font-semibold text-[12px] sm:text-[12.5px] shadow-sm transition-all">
+                {l === "ru" ? "Перейти на сайт Sanitätshaus" : l === "en" ? "Visit Sanitätshaus website" : l === "tr" ? "Sanitätshaus sitesine git" : l === "ar" ? "زيارة موقع Sanitätshaus" : l === "uz" ? "Sanitätshaus saytiga o‘tish" : "Zur Sanitätshaus-Website"}
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </Container>
@@ -463,23 +468,18 @@ export function SanitaetshausCompanySection({ locale = "de" }: { locale?: string
 
                       {/* Center: Title + Description */}
                       <div className="flex-1 min-w-0 pr-1">
-                        <div className="flex items-center gap-2 mb-0.5">
-                          <span className="text-[10px] font-bold tracking-wider text-[#C5A56A] font-mono">
-                            {item.num}
-                          </span>
-                          <h4 className="font-serif text-[15px] sm:text-[16px] text-[#142318] font-medium leading-snug">
-                            {item.title[l]}
-                          </h4>
-                        </div>
+                        <h4 className="font-serif text-[15px] sm:text-[16px] text-[#142318] font-medium leading-snug mb-0.5">
+                          {item.title[l]}
+                        </h4>
                         <p className="text-[11.5px] sm:text-[12px] text-[#556057] leading-relaxed font-sans">
                           {item.desc[l]}
                         </p>
                       </div>
 
                       {/* Right: Round button with arrow */}
-                      <div className="w-8.5 h-8.5 rounded-full border border-[#D5B878]/50 flex items-center justify-center text-[#9E7D3B] shrink-0 group-hover:bg-[#9E7D3B] group-hover:text-white group-hover:border-[#9E7D3B] transition-all duration-300">
+                      <Link href={`/${l}/nabiota-sanitaetshaus`} aria-label={item.title[l]} className="w-8.5 h-8.5 rounded-full border border-[#D5B878]/50 flex items-center justify-center text-[#9E7D3B] shrink-0 group-hover:bg-[#9E7D3B] group-hover:text-white group-hover:border-[#9E7D3B] transition-all duration-300">
                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                      </div>
+                      </Link>
                     </div>
                   );
                 })}

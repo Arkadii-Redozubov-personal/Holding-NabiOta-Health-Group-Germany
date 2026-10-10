@@ -369,10 +369,10 @@ export function RehabilitationCompanySection({ locale = "de" }: { locale?: strin
               <div className="max-w-xl lg:max-w-2xl mb-5 sm:mb-6 lg:mb-7">
 
 
-                {/* Title with styled italic phrase & distinct GmbH */}
+                {/* Title with highlighted phrase & distinct GmbH */}
                 <h2 className="font-serif text-[24px] sm:text-[28px] lg:text-[34px] xl:text-[38px] text-[#142318] font-normal leading-[1.18] mb-3">
                   NabiOta{" "}
-                  <span className="font-serif italic text-[#C5A56A]">Rehabilitation & Therapy</span>{" "}
+                  <span className="font-serif text-[#C5A56A]">Rehabilitation & Therapy</span>{" "}
                   <span className="text-[#C5A56A] font-sans font-semibold text-[0.72em] tracking-wider uppercase ml-1 align-baseline">
                     GmbH
                   </span>
@@ -381,6 +381,13 @@ export function RehabilitationCompanySection({ locale = "de" }: { locale?: strin
                 <p className="text-[12.5px] sm:text-[13px] text-[#556057] leading-relaxed max-w-xl font-sans">
                   {c.lead[l]}
                 </p>
+                <Link
+                  href={`/${l}/nabiota-rehabilitation`}
+                  className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#EED4A2] via-[#E4C58B] to-[#D5B878] text-[#142318] hover:brightness-105 font-semibold text-xs shadow-sm transition-all"
+                >
+                  <span>{l === "ru" ? "Перейти на сайт реабилитации" : l === "en" ? "Visit the rehabilitation website" : l === "tr" ? "Rehabilitasyon web sitesine git" : l === "ar" ? "زيارة موقع إعادة التأهيل" : l === "uz" ? "Reabilitatsiya veb-saytiga o‘tish" : "Zur Rehabilitations-Website"}</span>
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
               </div>
 
               {/* Bottom: 5 Specialty Cards spanning along the entire width (No numbers, centered text) */}
@@ -470,7 +477,7 @@ export function RehabilitationCompanySection({ locale = "de" }: { locale?: strin
                       {/* Learn more link */}
                       <div className="mt-4 pt-3.5 border-t border-[#EDE8DE]">
                         <Link
-                          href={`/${l}/contact`}
+                          href={`/${l}/nabiota-rehabilitation`}
                           className="inline-flex items-center gap-1.5 text-[11.5px] sm:text-[12px] font-semibold text-[#9E7D3B] hover:text-[#142318] transition-colors"
                         >
                           <span>{l === "ru" ? "Подробнее" : l === "en" ? "Learn more" : "Mehr erfahren"}</span>

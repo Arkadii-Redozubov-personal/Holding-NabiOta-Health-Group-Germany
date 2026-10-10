@@ -1180,7 +1180,15 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
         badges={heroBadges}
         imageSrc="/images/areas/rehabilitation.webp"
         imageAlt="NabiOta Health Group Rehabilitation"
-      />
+      >
+        <Link
+          href={`/${locale}/nabiota-rehabilitation`}
+          className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-full bg-gradient-to-r from-[#EED4A2] via-[#E4C58B] to-[#D5B878] text-[#142318] hover:brightness-105 font-semibold text-[12px] sm:text-[12.5px] shadow-sm transition-all"
+        >
+          <span>{isUz ? "Reabilitatsiya sayti" : isRu ? "Сайт реабилитации" : isEn ? "Rehabilitation website" : isTr ? "Rehabilitasyon sitesi" : isAr ? "موقع إعادة التأهيل" : "Rehabilitations-Website"}</span>
+          <ArrowRight className="h-3.5 w-3.5" />
+        </Link>
+      </PageHero>
 
       {/* ══════════════════════════════════════════════════════════
           SECTION 1: SPECIALIZED REHABILITATION SPECIALIZATIONS
@@ -1515,7 +1523,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                 </p>
                 <div className="pt-2">
                   <Link
-                    href={`/${locale}/contact`}
+                    href={`/${locale}/nabiota-rehabilitation`}
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#132218] font-semibold text-xs tracking-wide shadow-md transition-all duration-200 hover:scale-[1.02]"
                   >
                     <span>{facilitiesCard.btn}</span>
@@ -1631,7 +1639,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
 
                 <div className="p-5 sm:p-6 pt-0">
                   <Link
-                    href={`/${locale}/contact`}
+                    href={`/${locale}/nabiota-rehabilitation`}
                     className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#142318] group-hover:text-[#B89650] transition-colors"
                   >
                     <span>{isUz ? "Qabulga yozilish" : isRu ? "Консультация с врачом" : isEn ? "Book appointment" : isTr ? "Randevu Talebi" : isAr ? "طلب موعد واستشارة" : "Termin anfragen"}</span>
@@ -1682,7 +1690,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
               </p>
               <div className="pt-2">
                 <Link
-                  href={`/${locale}/contact`}
+                  href={`/${locale}/nabiota-rehabilitation`}
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs tracking-wide shadow-sm transition-all duration-200 hover:scale-[1.02]"
                 >
                   <span>{testimonialsData.btn}</span>
@@ -1887,7 +1895,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
 
             <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3">
               <Link
-                href={`/${locale}/contact`}
+                href={`/${locale}/nabiota-rehabilitation`}
                 className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs sm:text-sm tracking-wide shadow-lg transition-all duration-200 hover:scale-[1.02] text-center"
               >
                 <span>{isUz ? "Onlayn qabulga yozilish" : isRu ? "Записаться на прием" : isEn ? "Request appointment" : isTr ? "Online Randevu Alın" : isAr ? "طلب موعد عبر الإنترنت" : "Termin online anfragen"}</span>
@@ -1895,7 +1903,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
               </Link>
 
               <Link
-                href={`/${locale}/areas`}
+                href={`/${locale}/nabiota-rehabilitation`}
                 className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-white/30 hover:border-[#D5B878] text-white hover:text-[#ECCF96] font-medium text-xs sm:text-sm transition-all bg-white/5 text-center"
               >
                 <span>{isUz ? "Xolding yo'nalishlari sharhi" : isRu ? "Все направления холдинга" : isEn ? "All corporate divisions" : isTr ? "Tüm Şirket Alanları" : isAr ? "نظرة عامة على قطاعات المجموعة" : "Unternehmensbereiche Übersicht"}</span>
@@ -2002,7 +2010,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
               </button>
 
               <Link
-                href={`/${locale}/contact`}
+                href={`/${locale}/nabiota-rehabilitation`}
                 onClick={() => setSelectedSpecialization(null)}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#08170D] hover:bg-[#0C2B1B] text-[#ECCF96] border border-[#D5B878] text-xs font-semibold tracking-wide transition-all shadow-sm"
               >

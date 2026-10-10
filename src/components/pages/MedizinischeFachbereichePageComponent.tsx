@@ -773,9 +773,13 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                       </div>
                     </div>
 
-                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#142318]/15 bg-white flex items-center justify-center text-[#142318] hover:bg-[#D5B878] hover:border-[#D5B878] hover:text-[#0C1C11] transition-all shrink-0 ml-1">
+                    <Link
+                      href={`/${locale}/mvz-hausarzt-facharzt`}
+                      aria-label={spotlight.linkText}
+                      className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#142318]/15 bg-white flex items-center justify-center text-[#142318] hover:bg-[#D5B878] hover:border-[#D5B878] hover:text-[#0C1C11] transition-all shrink-0 ml-1"
+                    >
                       <ArrowRight className="w-3.5 h-3.5" />
-                    </div>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -814,7 +818,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                 {/* Link with underline and arrow */}
                 <div className="pt-2 sm:pt-4">
                   <Link
-                    href={`/${locale}/contact`}
+                    href={`/${locale}/mvz-hausarzt-facharzt`}
                     className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-semibold text-[#142318] hover:text-[#B89650] underline decoration-[#D5B878] underline-offset-4 transition-colors"
                   >
                     <span>{spotlight.linkText}</span>
@@ -910,7 +914,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                   {/* Bottom-left CTA Button */}
                   <div className="pt-2">
                     <Link
-                      href={`/${locale}/contact`}
+                      href={`/${locale}/mvz-hausarzt-facharzt`}
                       className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-full bg-gradient-to-r from-[#EED4A2] via-[#E4C58B] to-[#D5B878] text-[#142318] hover:brightness-105 font-semibold text-[12px] sm:text-[12.5px] shadow-sm transition-all"
                     >
                       <span>{isUz ? "Qabulga yozilish" : isRu ? "Записаться на прием" : isEn ? "Book an Appointment" : isTr ? "Randevu Alın" : isAr ? "حجز موعد" : "Termin vereinbaren"}</span>
@@ -1018,6 +1022,14 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
               {overviewData.entities.map((entity, eIdx) => {
                 const EntityIcon = [Stethoscope, ScalpelIcon, Building2][eIdx] || Building2;
+                const entityHref =
+                    eIdx === 0
+                    ? `/${locale}/mvz-hausarzt-facharzt`
+                    : eIdx === 1
+                    ? "https://my-bandscheibe.de/"
+                    : eIdx === 2
+                    ? `/${locale}/nabiota-clinics-germany`
+                    : null;
                 return (
                   <div
                     key={eIdx}
@@ -1062,9 +1074,21 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
 
                     {/* Bottom-right corner arrow button */}
                     <div className="pt-2.5 flex justify-end">
-                      <div className="w-6.5 h-6.5 sm:w-7 sm:h-7 rounded-full border border-[#DCD5C6] bg-[#FAF8F5] group-hover:border-[#C5A56A] group-hover:bg-[#C5A56A] group-hover:text-white text-[#B89650] flex items-center justify-center transition-all shadow-xs">
-                        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-                      </div>
+                      {entityHref ? (
+                        <Link
+                          href={entityHref}
+                          aria-label={entity.title}
+                          target={eIdx === 1 ? "_blank" : undefined}
+                          rel={eIdx === 1 ? "noopener noreferrer" : undefined}
+                          className="w-6.5 h-6.5 sm:w-7 sm:h-7 rounded-full border border-[#DCD5C6] bg-[#FAF8F5] group-hover:border-[#C5A56A] group-hover:bg-[#C5A56A] group-hover:text-white text-[#B89650] flex items-center justify-center transition-all shadow-xs"
+                        >
+                          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                        </Link>
+                      ) : (
+                        <div className="w-6.5 h-6.5 sm:w-7 sm:h-7 rounded-full border border-[#DCD5C6] bg-[#FAF8F5] group-hover:border-[#C5A56A] group-hover:bg-[#C5A56A] group-hover:text-white text-[#B89650] flex items-center justify-center transition-all shadow-xs">
+                          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                        </div>
+                      )}
                     </div>
                   </div>
                 );
@@ -1121,7 +1145,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
 
                 <div className="pt-2">
                   <Link
-                    href={`/${locale}/about`}
+                    href={`/${locale}/mvz-hausarzt-facharzt`}
                     className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#132218] font-semibold text-xs sm:text-[13px] tracking-wide shadow-sm hover:shadow transition-all duration-200 hover:scale-[1.02]"
                   >
                     <span>{teamSection.btn}</span>
@@ -1170,9 +1194,15 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                         <span className="text-[11px] font-medium text-[#142318]/70 group-hover:text-[#142318] transition-colors">
                           {isUz ? "Shifokor profili" : isRu ? "Профиль врача" : isEn ? "View Profile" : isTr ? "Hekim Profili" : isAr ? "الملف التعريفي للطبيب" : "Arztprofil"}
                         </span>
-                        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#142318]/15 group-hover:border-[#D5B878] group-hover:bg-[#D5B878] group-hover:text-[#0C1C11] flex items-center justify-center text-[#142318] transition-all shrink-0">
+                        <Link
+                          href={idx === 1 ? "https://my-bandscheibe.de/" : `/${locale}/mvz-hausarzt-facharzt`}
+                          aria-label={isRu ? `Открыть подразделение: ${doc.role}` : isEn ? `Open department: ${doc.role}` : isTr ? `Bölümü aç: ${doc.role}` : isAr ? `افتح القسم: ${doc.role}` : isUz ? `Bo‘limni ochish: ${doc.role}` : `Fachbereich öffnen: ${doc.role}`}
+                          target={idx === 1 ? "_blank" : undefined}
+                          rel={idx === 1 ? "noopener noreferrer" : undefined}
+                          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#142318]/15 group-hover:border-[#D5B878] group-hover:bg-[#D5B878] group-hover:text-[#0C1C11] flex items-center justify-center text-[#142318] transition-all shrink-0"
+                        >
                           <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-                        </div>
+                        </Link>
                       </div>
                     </div>
                   ))}
@@ -1236,7 +1266,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
               {/* Right: Gold Pill Button */}
               <div className="shrink-0">
                 <Link
-                  href={`/${locale}/contact`}
+                  href={`/${locale}/nabiota-clinics-germany`}
                   className="inline-flex items-center gap-2.5 px-7 py-3 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs sm:text-sm tracking-wide shadow-md transition-all duration-200 hover:scale-[1.03]"
                 >
                   <span>{ctaSection.btn}</span>

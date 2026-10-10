@@ -230,22 +230,22 @@ export function HoldingPurposeSection({ locale = "de" }: { locale?: string }) {
         <Container size="wide" className="relative z-10 pt-8 sm:pt-12 lg:pt-14">
           <div className="max-w-6xl mx-auto">
             <div className="max-w-xl lg:max-w-2xl">
-              {/* Title with styled italic word in serif */}
+              {/* Title with highlighted word in serif */}
               <h2 className="font-serif text-[26px] sm:text-[34px] lg:text-[40px] text-[#142318] font-normal leading-[1.18] mb-3 sm:mb-3.5">
                 {l === "ru" ? (
                   <>
                     Задачи и предмет деятельности{" "}
-                    <span className="font-serif italic text-[#C5A56A]">холдинга</span>
+                    <span className="font-serif text-[#C5A56A]">холдинга</span>
                   </>
                 ) : l === "en" ? (
                   <>
                     Tasks and Corporate Purpose of the{" "}
-                    <span className="font-serif italic text-[#C5A56A]">Holding</span>
+                    <span className="font-serif text-[#C5A56A]">Holding</span>
                   </>
                 ) : (
                   <>
                     Aufgaben und Unternehmensgegenstand der{" "}
-                    <span className="font-serif italic text-[#C5A56A]">Holding</span>
+                    <span className="font-serif text-[#C5A56A]">Holding</span>
                   </>
                 )}
               </h2>
