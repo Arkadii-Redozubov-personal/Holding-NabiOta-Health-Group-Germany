@@ -155,7 +155,15 @@ export function PflegePageComponent({ locale = "de" }: Props) {
   const servicesData = getHomeCareServices(locale);
   const sanitaetshausData = getSanitaetshausServices(locale);
 
- Nursing & Care Services"
+  const t = {
+    servicesSection: {
+      eyebrow: isUz ? "NABIOTA HOMECARE GMBH" : isRu ? "NABIOTA HOMECARE GMBH" : isEn ? "NABIOTA HOMECARE GMBH" : isTr ? "NABIOTA HOMECARE GMBH" : isAr ? "NABIOTA HOMECARE GMBH" : "NABIOTA HOMECARE GMBH",
+      title: isUz
+        ? "Kompleks ambulator va patronaj xizmatlari"
+        : isRu
+        ? "Комплексные амбулаторные и патронажные услуги"
+        : isEn
+        ? "Comprehensive Home Nursing & Care Services"
         : isTr
         ? "NabiOta HomeCare GmbH Hizmet Yelpazesi"
         : isAr
