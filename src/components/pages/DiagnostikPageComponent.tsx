@@ -1065,7 +1065,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
       </PageHero>
 
       <main className="flex-1 bg-[#FAF8F5]">
-        
+
         {/* ══════════════════════════════════════════════════════════
             SECTION 1 (PHOTO 2 TOP): UNSERE DIAGNOSTIKVERFAHREN
             - Left: Eyebrow, Title, Description, Button
@@ -1073,7 +1073,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         ══════════════════════════════════════════════════════════ */}
         <section className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-8 sm:pb-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-            
+
             {/* Left Header Column */}
             <div className="lg:col-span-4 space-y-4 pt-1">
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-[38px] text-[#132218] font-normal leading-[1.18]">
@@ -1177,6 +1177,12 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             </div>
           </div>
         </section>
+
+        {/* ══════════════════════════════════════════════════════════
+            SECTION 4B: NABIOTA DIAGNOSTICS GMBH – PDF SECTION IV.4
+            - Corporate purpose, legal separation, 8 core tasks
+        ══════════════════════════════════════════════════════════ */}
+        <DiagnosticsCompanySection locale={locale} />
 
         {/* ══════════════════════════════════════════════════════════
             SECTION 2 (PHOTO 3): FULL-WIDTH BANNER
@@ -1480,12 +1486,6 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             </div>
           </div>
         </section>
-
-        {/* ══════════════════════════════════════════════════════════
-            SECTION 4B: NABIOTA DIAGNOSTICS GMBH – PDF SECTION IV.4
-            - Corporate purpose, legal separation, 8 core tasks
-        ══════════════════════════════════════════════════════════ */}
-        <DiagnosticsCompanySection locale={locale} />
 
         {/* ══════════════════════════════════════════════════════════
             SECTION 5 (PHOTO 4): PATIENTENSTIMMEN (FULL-WIDTH EDGE-TO-EDGE)

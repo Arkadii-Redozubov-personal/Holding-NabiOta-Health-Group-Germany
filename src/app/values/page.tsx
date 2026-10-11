@@ -5,11 +5,13 @@ import { Container } from "@/components/layout/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { IconCircle } from "@/components/ui/IconCircle";
 import { coreValues } from "@/data/values";
+import { getLocaleAlternates } from "@/lib/seo";
 
 export const metadata = {
   title: "Unsere Werte & Verantwortung | NabiOta® Health Group Germany",
   description:
     "Verlässlichkeit, Qualität, Transparenz und Menschlichkeit bilden das Fundament unseres Handelns in allen Unternehmensbereichen.",
+  alternates: getLocaleAlternates("de", "values"),
 };
 
 import { ValuesPageComponent } from "@/components/pages/ValuesPageComponent";

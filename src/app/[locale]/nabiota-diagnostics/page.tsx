@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { Container } from "@/components/layout/Container";
 import { locales, SupportedLocale } from "@/lib/i18n";
+import { getLocaleAlternates } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -26,7 +27,10 @@ const copy: Record<SupportedLocale, { title: string; note: string; link: string;
 
 export async function generateMetadata({ params }: DiagnosticsPlaceholderProps): Promise<Metadata> {
   const { locale } = await params;
-  return { title: `${copy[locale].title} | NabiOta Health Group` };
+  return {
+    title: `${copy[locale].title} | NabiOta Health Group`,
+    alternates: getLocaleAlternates(locale, "nabiota-diagnostics"),
+  };
 }
 
 export default async function DiagnosticsPlaceholderPage({ params }: DiagnosticsPlaceholderProps) {

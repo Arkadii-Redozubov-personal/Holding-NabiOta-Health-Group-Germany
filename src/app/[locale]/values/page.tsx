@@ -7,6 +7,7 @@ import { IconCircle } from "@/components/ui/IconCircle";
 import { coreValues } from "@/data/values";
 import { locales, SupportedLocale, getDictionary } from "@/lib/i18n";
 import { Metadata } from "next";
+import { getLocaleAlternates } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -22,17 +23,7 @@ export async function generateMetadata({ params }: LocalizedValuesProps): Promis
   return {
     title: `${dict.values.heading} | NabiOta® Health Group`,
     description: dict.values.description,
-    alternates: {
-      canonical: `https://www.nabiota-health-group.de/${locale}/values`,
-      languages: {
-        de: "https://www.nabiota-health-group.de/de/values",
-        en: "https://www.nabiota-health-group.de/en/values",
-        ru: "https://www.nabiota-health-group.de/ru/values",
-        tr: "https://www.nabiota-health-group.de/tr/values",
-        ar: "https://www.nabiota-health-group.de/ar/values",
-        "x-default": "https://www.nabiota-health-group.de/de/values",
-      },
-    },
+    alternates: getLocaleAlternates(locale, "values"),
   };
 }
 

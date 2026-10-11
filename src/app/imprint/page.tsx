@@ -5,11 +5,13 @@ import { Container } from "@/components/layout/Container";
 import { PageHero } from "@/components/layout/PageHero";
 import { Scale, Building2, FileCheck } from "lucide-react";
 import { companyInfo } from "@/data/company";
+import { getLocaleAlternates } from "@/lib/seo";
 
 export const metadata = {
   title: "Impressum | Rechtliche Angaben nach § 5 TMG",
   description:
     "Impressum und Pflichtangaben der NabiOta® Health Group Germany GmbH gemäß § 5 TMG und § 18 Abs. 2 MStV.",
+  alternates: getLocaleAlternates("de", "imprint"),
 };
 
 const imprintBadges = [

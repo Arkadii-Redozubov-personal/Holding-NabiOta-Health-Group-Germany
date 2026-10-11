@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Lora, Plus_Jakarta_Sans, Inter, Alex_Brush } from "next/font/google";
 import "./globals.css";
 import { companyInfo } from "@/data/company";
+import { siteUrl } from "@/lib/seo";
 
 const lora = Lora({
   subsets: ["latin", "cyrillic"],
@@ -49,11 +50,11 @@ export const metadata: Metadata = {
     "Gesundheitswesen",
   ],
   authors: [{ name: companyInfo.name }],
-  metadataBase: new URL("https://www.nabiota-health-group.de"),
+  metadataBase: new URL(siteUrl),
   openGraph: {
     title: `${companyInfo.name} – ${companyInfo.slogan}`,
     description: companyInfo.mission,
-    url: "https://www.nabiota-health-group.de",
+    url: siteUrl,
     siteName: companyInfo.name,
     locale: "de_DE",
     type: "website",

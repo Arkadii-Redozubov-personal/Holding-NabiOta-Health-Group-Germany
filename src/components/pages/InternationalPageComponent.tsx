@@ -2240,6 +2240,11 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
+        {/* SECTION 2B: NABIOTA MEDICAL RECRUITMENT SERVICES GMBH – PDF IV.6         */}
+        {/* ========================================================================= */}
+        <RecruitmentCompanySection locale={locale} />
+
+        {/* ========================================================================= */}
         {/* SECTION 4: UNSERE INTERNATIONALEN SCHWERPUNKTE (6 PROGRAMME IN 3 SPALTEN) */}
         {/* ========================================================================= */}
         <section id="projekte" className="py-14 sm:py-18 bg-white border-t border-[#F0ECE1]">
@@ -2312,10 +2317,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
           </Container>
         </section>
 
-        {/* ========================================================================= */}
-        {/* SECTION 4B: NABIOTA MEDICAL RECRUITMENT SERVICES GMBH – PDF IV.6         */}
-        {/* ========================================================================= */}
-        <RecruitmentCompanySection locale={locale} />
+
 
         {/* ========================================================================= */}
         {/* SECTION 5: IMPACT BANNER (DARK EMERALD SPLIT SECTION WITH BOTANICAL BG)    */}

@@ -60,139 +60,6 @@ const c = {
     uz: "Jamiyat faoliyatining predmeti qonuniy ruxsat etilgan doirada diagnostika muassasalarini rejalashtirish, barpo etish, jihozlash, tashkil etish va ulardan foydalanish, shuningdek tibbiy diagnostika infratuzilmasini taqdim etishdan iborat. U diagnostika uskunalari, texnik tizimlar va xonalarni sotib olishi, ijaraga olishi, ijaraga berishi va vakolatli tibbiy xizmat ko'rsatuvchilarga foydalanish uchun topshirishi mumkin.",
   } as T,
 
-  spectrumEyebrow: {
-    de: "Diagnostisches Spektrum",
-    en: "Modality Spectrum",
-    ru: "Диагностический спектр",
-    tr: "Tanısal Spektrum",
-    ar: "نطاق الفحوصات التشخيصية",
-    uz: "Diagnostika spektri",
-  } as T,
-  spectrumTitle: {
-    de: "Vorgesehenes diagnostisches Spektrum",
-    en: "Planned Diagnostic Modality Spectrum",
-    ru: "Планируемый диагностический спектр",
-    tr: "Öngörülen Tanı Yöntemleri Spektrumu",
-    ar: "نطاق تقنيات ووسائل التشخيص المعتمدة",
-    uz: "Rejalashtirilgan diagnostika spektri",
-  } as T,
-  spectrumItems: [
-    {
-      icon: Cpu as Icon,
-      title: {
-        de: "Computertomographie & MRT",
-        en: "Computed Tomography & MRI",
-        ru: "Компьютерная томография и МРТ",
-        tr: "Bilgisayarlı Tomografi & MR",
-        ar: "الأشعة المقطعية والرنين المغناطيسي",
-        uz: "Kompyuter tomografiyasi va MRT",
-      } as T,
-      desc: {
-        de: "Computertomographie (CT) & Magnetresonanztomographie (MRT)",
-        en: "Computed Tomography (CT) & Magnetic Resonance Imaging (MRI)",
-        ru: "Компьютерная томография (КТ) и магнитно-резонансная томография (МРТ)",
-        tr: "Bilgisayarlı Tomografi (BT) ve Manyetik Rezonans Görüntüleme (MR)",
-        ar: "التصوير المقطعي المحوسب (CT) والرنين المغناطيسي (MRI)",
-        uz: "Kompyuter tomografiyasi (KT) va magnit-rezonans tomografiya (MRT)",
-      } as T,
-    },
-    {
-      icon: Layers as Icon,
-      title: {
-        de: "Konventionelle Röntgendiagnostik",
-        en: "Conventional Radiography",
-        ru: "Рентгенодиагностика",
-        tr: "Konvansiyonel Radyoloji",
-        ar: "التصوير الإشعاعي الرقمي",
-        uz: "Konvensional rentgenodiagnostika",
-      } as T,
-      desc: {
-        de: "Konventionelle Röntgendiagnostik (digitales Röntgen)",
-        en: "Conventional Radiography (Digital X-Ray)",
-        ru: "Конвенциональная рентгенодиагностика (цифровой рентген)",
-        tr: "Konvansiyonel röntgen teşhisi (dijital röntgen)",
-        ar: "الأشعة السينية التقليدية (الأشعة الرقمية)",
-        uz: "Konvensional rentgenodiagnostika (raqamli rentgen)",
-      } as T,
-    },
-    {
-      icon: HeartPulse as Icon,
-      title: {
-        de: "Ultraschalldiagnostik",
-        en: "Ultrasound Diagnostics",
-        ru: "Ультразвуковая диагностика",
-        tr: "Ultrasonografi & Doppler",
-        ar: "الموجات فوق الصوتية والدوبلر",
-        uz: "Ultratovush diagnostikasi",
-      } as T,
-      desc: {
-        de: "Medizinisch indizierte Ultraschalluntersuchungen (3D/4D-Sonographie, Doppler- & Duplexsonographie)",
-        en: "Medically Indicated Ultrasound (3D/4D Sonography, Doppler & Duplex Sonography)",
-        ru: "Ультразвуковые исследования по показаниям (3D/4D сонография, допплер и дуплекс)",
-        tr: "Tıbbi endikasyonlu ultrason incelemeleri (3D/4D sonografi, Doppler ve Dubleks sonografi)",
-        ar: "فحوصات السونار الطبية (أبعاد 3D/4D، وفحوصات الدوبلر والدوبلكس للأوعية)",
-        uz: "Tibbiy ko'rsatmalarga muvofiq ultratovush tekshiruvlari (3D/4D-sonografiya, doppler va dupleks sonografiya)",
-      } as T,
-    },
-    {
-      icon: Brain as Icon,
-      title: {
-        de: "Neurophysiologische Diagnostik",
-        en: "Neurophysiological Testing",
-        ru: "Нейрофизиологическая диагностика",
-        tr: "Nörofizyolojik Tanı",
-        ar: "التشخيص الفسيولوجي العصبي",
-        uz: "Neyrofiziologik diagnostika",
-      } as T,
-      desc: {
-        de: "Neurophysiologische Diagnostik (EMG, ENG, EEG & evozierte Potenziale)",
-        en: "Neurophysiological Testing (EMG, ENG, EEG & Evoked Potentials)",
-        ru: "Нейрофизиологические исследования (ЭМГ, ЭНГ, ЭЭГ и вызванные потенциалы)",
-        tr: "Nörofizyolojik tanı (EMG, ENG, EEG ve uyarılmış potansiyeller)",
-        ar: "الفحوصات العصبية الوظيفية (تخطيط العضلات EMG، وتوصيل الأعصاب ENG، وتخطيط الدماغ EEG، والجهود المستحثة)",
-        uz: "Neyrofiziologik diagnostika (EMG, ENG, EEG va chaqirilgan potensiallar)",
-      } as T,
-    },
-    {
-      icon: TestTubes as Icon,
-      title: {
-        de: "Laboratoriumsmedizin",
-        en: "Clinical Laboratory",
-        ru: "Лабораторная диагностика",
-        tr: "Laboratuvar Tıbbı",
-        ar: "الطب المخبري والتحاليل",
-        uz: "Laboratoriya tibbiyoti",
-      } as T,
-      desc: {
-        de: "Laboratoriumsmedizinische Untersuchungen, Probengewinnung, -aufbereitung & -transport",
-        en: "Clinical Laboratory Diagnostics, Sample Collection, Preparation & Logistics",
-        ru: "Лабораторная диагностика, организация забора, подготовки и транспортировки проб",
-        tr: "Laboratuvar tıbbı incelemeleri, numune alımı, hazırlığı ve lojistiği",
-        ar: "التحاليل المخبرية السريرية، وسحب العينات وتجهيزها ونقلها الآمن",
-        uz: "Laboratoriya tibbiyoti tekshiruvlari, namunalarni olish, tayyorlash va tashish",
-      } as T,
-    },
-    {
-      icon: ShieldCheck as Icon,
-      title: {
-        de: "Weitere diagnostische Verfahren",
-        en: "Additional Diagnostic Procedures",
-        ru: "Дополнительные методы",
-        tr: "Diğer Tanı Yöntemleri",
-        ar: "إجراءات تشخيصية إضافية",
-        uz: "Qo'shimcha diagnostika usullari",
-      } as T,
-      desc: {
-        de: "Weitere diagnostische Verfahren gemäß den erforderlichen fachlichen & rechtlichen Voraussetzungen",
-        en: "Additional Diagnostic Procedures subject to specialized clinical and regulatory prerequisites",
-        ru: "Дополнительные методы диагностики при наличии необходимых профессиональных и правовых условий",
-        tr: "Gerekli mesleki ve yasal gerekliliklere uygun ek tanı yöntemleri",
-        ar: "إجراءات وفحوصات تشخيصية إضافية وفقاً للمتطلبات المهنية والتنظيمية المعتمدة",
-        uz: "Zarur kasbiy va huquqiy shartlarga muvofiq qo'shimcha diagnostika usullari",
-      } as T,
-    },
-  ],
-
   pillars: [
     {
       icon: Cpu as Icon,
@@ -453,7 +320,7 @@ export function DiagnosticsCompanySection({ locale = "de" }: { locale?: string }
   return (
     <section
       id="nabiota-diagnostics-gmbh-structure"
-      className="relative pt-8 sm:pt-10 lg:pt-12 pb-14 sm:pb-18 lg:pb-20 bg-[#FAF7F2] border-t border-[#EDE8DE]/60 overflow-hidden"
+      className="relative pb-14 sm:pb-18 lg:pb-20 bg-[#FAF7F2] border-t border-[#EDE8DE]/60 overflow-hidden"
     >
       {/* Decorative background glow */}
       <div className="absolute -top-40 -right-32 w-[520px] h-[520px] rounded-full bg-[#D5B878]/10 blur-3xl pointer-events-none" />
@@ -531,64 +398,6 @@ export function DiagnosticsCompanySection({ locale = "de" }: { locale?: string }
 
       <Container size="wide" className="relative z-10 mt-10 sm:mt-12">
         <div className="max-w-6xl mx-auto space-y-12 sm:space-y-14">
-          {/* ── Planned Diagnostic Modality Spectrum (Photo 2 style) ── */}
-          <div className="relative space-y-5 sm:space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
-              <div>
-                <div className="flex items-center gap-2.5 mb-1.5">
-                </div>
-                <h3 className="font-serif text-[24px] sm:text-[28px] lg:text-[32px] font-normal text-[#142318] leading-[1.2]">
-                  {c.spectrumTitle[l]}
-                </h3>
-              </div>
-            </div>
-
-            {/* Cards Grid with subtle botanical leaf watermark behind */}
-            <div className="relative pb-2">
-              <div className="absolute -bottom-8 -right-8 w-64 h-64 pointer-events-none opacity-20 select-none sepia">
-                <Image
-                  src="/images/areas/botanical-branch-clean.webp"
-                  alt=""
-                  fill
-                  className="object-contain rotate-12"
-                  unoptimized
-                />
-              </div>
-
-              <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-3.5">
-                {c.spectrumItems.map((item, idx) => {
-                  const Icon = item.icon;
-                  return (
-                    <div
-                      key={idx}
-                      className="group relative rounded-[18px] bg-white border border-[#EAE4D7] p-3.5 sm:p-4 flex items-center justify-between gap-3 sm:gap-4 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:shadow-md hover:border-[#D5B878]/60 transition-all duration-300"
-                    >
-                      {/* Left: Icon circle */}
-                      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#FAF5EB] border border-[#EFE5D5] flex items-center justify-center shrink-0 group-hover:bg-[#F3EAD9] transition-colors">
-                        <Icon className="w-5 h-5 text-[#9E7D3B]" strokeWidth={1.7} />
-                      </div>
-
-                      {/* Center: Title + Description */}
-                      <div className="flex-1 min-w-0 pr-1">
-                        <h4 className="font-serif text-[15px] sm:text-[16px] text-[#142318] font-medium leading-snug mb-0.5">
-                          {item.title[l]}
-                        </h4>
-                        <p className="text-[11.5px] sm:text-[12px] text-[#556057] leading-relaxed">
-                          {item.desc[l]}
-                        </p>
-                      </div>
-
-                      {/* Right: Round button with arrow */}
-                      <Link href={`/${l}/nabiota-diagnostics`} aria-label={item.title[l]} className="w-8.5 h-8.5 rounded-full border border-[#D5B878]/50 flex items-center justify-center text-[#9E7D3B] shrink-0 group-hover:bg-[#9E7D3B] group-hover:text-white group-hover:border-[#9E7D3B] transition-all duration-300">
-                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                      </Link>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-
           {/* 3 Pillar Cards matching Photo 2 from Medical Departments */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {c.pillars.map((p, i) => {

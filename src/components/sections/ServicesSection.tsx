@@ -10,7 +10,7 @@ import {
   Network,
   Globe,
 } from "lucide-react";
-import { getDictionary, SupportedLocale } from "@/lib/i18n";
+import { getDictionary, getLocalePath, SupportedLocale } from "@/lib/i18n";
 
 interface ServicesSectionProps {
   currentLocale?: SupportedLocale;
@@ -211,7 +211,7 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
           </div>
 
           <Link
-            href={`/${currentLocale}/areas`}
+            href={getLocalePath(currentLocale, "areas")}
             className="group inline-flex items-center gap-1.5 text-xs sm:text-[13.5px] font-semibold text-[#9C8145] hover:text-[#7D6532] transition-colors self-start sm:self-end whitespace-nowrap mb-1"
           >
             <span>{dict.areas.cta}</span>
@@ -226,7 +226,7 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
             return (
               <Link
                 key={area.slug}
-                href={`/${currentLocale}/areas/${area.slug}`}
+                href={getLocalePath(currentLocale, `areas/${area.slug}`)}
                 className="group relative flex flex-row items-stretch rounded-2xl bg-white border border-[#EDE8DE] shadow-[0_2px_10px_rgba(0,0,0,0.03)] overflow-hidden transition-all duration-300 hover:border-[#D5B878] hover:shadow-[0_6px_20px_rgba(197,165,106,0.14)] hover:-translate-y-0.5 focus:outline-none h-[146px] sm:h-[152px] lg:h-[156px]"
               >
                 {/* Left Thumbnail Image */}

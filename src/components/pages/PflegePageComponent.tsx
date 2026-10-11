@@ -3084,6 +3084,21 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
+        {/* SECTION 3B: NABIOTA HOMECARE GMBH – PDF SECTION IV.8                      */}
+        {/* ========================================================================= */}
+        <HomeCareCompanySection locale={locale} />
+
+        {/* ========================================================================= */}
+        {/* SECTION 3C: NABIOTA SANITÄTSHAUS GMBH – PDF SECTION IV.9                  */}
+        {/* ========================================================================= */}
+        <SanitaetshausCompanySection locale={locale} />
+
+        {/* ========================================================================= */}
+        {/* SECTION 3D: NABIOTA APOTHEKE MÖNCHENGLADBACH – PDF SECTION IV.10          */}
+        {/* ========================================================================= */}
+        <PharmacyCompanySection locale={locale} />
+
+        {/* ========================================================================= */}
         {/* SECTION 2: OUR COMMITMENT (FULL-WIDTH EDGE-TO-EDGE)                       */}
         {/* ========================================================================= */}
         <section className="w-full bg-[#0B2516] text-white relative overflow-hidden border-y border-[#D5B878]/30">
@@ -3231,21 +3246,6 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             </div>
           </Container>
         </section>
-
-        {/* ========================================================================= */}
-        {/* SECTION 3B: NABIOTA HOMECARE GMBH – PDF SECTION IV.8                      */}
-        {/* ========================================================================= */}
-        <HomeCareCompanySection locale={locale} />
-
-        {/* ========================================================================= */}
-        {/* SECTION 3C: NABIOTA SANITÄTSHAUS GMBH – PDF SECTION IV.9                  */}
-        {/* ========================================================================= */}
-        <SanitaetshausCompanySection locale={locale} />
-
-        {/* ========================================================================= */}
-        {/* SECTION 3D: NABIOTA APOTHEKE MÖNCHENGLADBACH – PDF SECTION IV.10          */}
-        {/* ========================================================================= */}
-        <PharmacyCompanySection locale={locale} />
 
         {/* ========================================================================= */}
         {/* SECTION 4: INTEGRATED NETWORK COORDINATION (Holding Verbund)              */}

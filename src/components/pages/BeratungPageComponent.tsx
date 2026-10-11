@@ -2404,6 +2404,95 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
+        {/* SECTION 1B: NABIOTA REAL ESTATE GMBH – PDF SECTION IV.7                   */}
+        {/* ========================================================================= */}
+        <RealEstateCompanySection locale={locale} />
+
+        {/* ========================================================================= */}
+        {/* SECTION 1C: SPECIALIZED HEALTHCARE REAL ESTATE PORTFOLIO       */}
+        {/* ========================================================================= */}
+        <section id="immobilien" className="py-14 sm:py-20 bg-[#FAF9F5] border-t border-[#EAE3D5]">
+          <Container size="wide">
+            <div className="max-w-3xl mb-12 sm:mb-16">
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-forest-950 font-normal leading-tight mb-4">
+                {t.s4.title}
+              </h2>
+              <p className="text-sm sm:text-base text-[#4E5650] leading-relaxed max-w-2xl">
+                {t.s4.desc}
+              </p>
+            </div>
+
+            {/* 6 Cards Grid: 3 cols x 2 rows with User-Approved Styling */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+              {realEstateDomains.map((domain) => (
+                <div
+                  key={domain.id}
+                  onClick={() => setSelectedDomain(domain)}
+                  className="rounded-3xl bg-white border border-[#EAE4D7] shadow-sm hover:shadow-xl hover:border-[#C5A56A] transition-all duration-300 flex flex-col justify-between overflow-hidden group cursor-pointer"
+                >
+                  {/* Photo without pill badge */}
+                  <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-[#07150C]">
+                    <Image
+                      src={domain.image}
+                      alt={domain.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+
+                  {/* Card Content with circular icon overlapping the image & gentle wave */}
+                  <div className="relative bg-white pt-2 pb-6 px-6 sm:px-7 flex-1 flex flex-col justify-between">
+                    {/* Curved wave transition at top */}
+                    <div className="absolute -top-6 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none">
+                      <svg
+                        viewBox="0 0 400 32"
+                        preserveAspectRatio="none"
+                        className="w-full h-7 fill-white"
+                      >
+                        <path d="M 0,16 C 18,5 34,0 64,0 C 98,0 118,13 145,17 C 225,27 325,16 400,13 L 400,32 L 0,32 Z" />
+                      </svg>
+                    </div>
+
+                    {/* Circular Icon with light green background overlapping photo */}
+                    <div className="relative -mt-9 mb-3.5 z-10">
+                      <div className="w-12 h-12 rounded-full bg-[#E5F0E8] border border-[#CCE0D2] flex items-center justify-center text-[#1C3E2A] shadow-xs group-hover:scale-105 transition-transform">
+                        {domain.iconType === "building" && <Building2 className="w-6 h-6 stroke-[1.8]" />}
+                        {domain.iconType === "stethoscope" && <Stethoscope className="w-6 h-6 stroke-[1.8]" />}
+                        {domain.iconType === "activity" && <Activity className="w-6 h-6 stroke-[1.8]" />}
+                        {domain.iconType === "heartpulse" && <HeartPulse className="w-6 h-6 stroke-[1.8]" />}
+                        {domain.iconType === "heart" && <Heart className="w-6 h-6 stroke-[1.8]" />}
+                        {domain.iconType === "home" && <Home className="w-6 h-6 stroke-[1.8]" />}
+                      </div>
+                    </div>
+
+                    {/* Title & Description on white background */}
+                    <div className="space-y-2 mb-4">
+                      <h3 className="font-serif text-xl sm:text-[21px] font-bold text-[#142318] leading-tight group-hover:text-[#8D6B27] transition-colors">
+                        {domain.title}
+                      </h3>
+                      <p className="text-xs sm:text-[13px] text-[#55695C] leading-relaxed">
+                        {domain.shortDesc}
+                      </p>
+                    </div>
+
+                    {/* Bottom Action Area: Pill Button + Circle Arrow Button */}
+                    <div className="pt-4 mt-auto border-t border-[#F2ECE1] flex items-center justify-between">
+                      <span className="px-4 py-2 rounded-full bg-[#FAF3E7] text-[#93712C] text-xs font-semibold group-hover:bg-[#F5EAD4] transition-colors">
+                        {t.s4.openModalBtn}
+                      </span>
+                      <div className="w-9 h-9 rounded-full bg-[#FAF3E7] border border-[#EADBBE] flex items-center justify-center text-[#93712C] group-hover:bg-[#C5A56A] group-hover:text-white group-hover:border-[#C5A56A] transition-all">
+                        <ArrowRight className="w-4 h-4" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </section>
+
+
+        {/* ========================================================================= */}
         {/* SECTION 2: PROJEKTENTWICKLUNG - VON DER IDEE ZUR UMSETZUNG               */}
         {/* ========================================================================= */}
         <section className="w-full bg-[#08170D] text-white relative overflow-hidden border-y border-[#D5B878]/30 my-8 sm:my-12">
@@ -2529,94 +2618,6 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
             </div>
           </Container>
         </section>
-
-        {/* ========================================================================= */}
-        {/* SECTION 4: NABIOTA REAL ESTATE GMBH - 6 HEALTHCARE FACILITY PILLARS       */}
-        {/* ========================================================================= */}
-        <section id="immobilien" className="py-14 sm:py-20 bg-[#FAF9F5] border-t border-[#EAE3D5]">
-          <Container size="wide">
-            <div className="max-w-3xl mb-12 sm:mb-16">
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-forest-950 font-normal leading-tight mb-4">
-                {t.s4.title}
-              </h2>
-              <p className="text-sm sm:text-base text-[#4E5650] leading-relaxed max-w-2xl">
-                {t.s4.desc}
-              </p>
-            </div>
-
-            {/* 6 Cards Grid: 3 cols x 2 rows with User-Approved Styling */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
-              {realEstateDomains.map((domain) => (
-                <div
-                  key={domain.id}
-                  onClick={() => setSelectedDomain(domain)}
-                  className="rounded-3xl bg-white border border-[#EAE4D7] shadow-sm hover:shadow-xl hover:border-[#C5A56A] transition-all duration-300 flex flex-col justify-between overflow-hidden group cursor-pointer"
-                >
-                  {/* Photo without pill badge */}
-                  <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-[#07150C]">
-                    <Image
-                      src={domain.image}
-                      alt={domain.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-
-                  {/* Card Content with circular icon overlapping the image & gentle wave */}
-                  <div className="relative bg-white pt-2 pb-6 px-6 sm:px-7 flex-1 flex flex-col justify-between">
-                    {/* Curved wave transition at top */}
-                    <div className="absolute -top-6 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none">
-                      <svg
-                        viewBox="0 0 400 32"
-                        preserveAspectRatio="none"
-                        className="w-full h-7 fill-white"
-                      >
-                        <path d="M 0,16 C 18,5 34,0 64,0 C 98,0 118,13 145,17 C 225,27 325,16 400,13 L 400,32 L 0,32 Z" />
-                      </svg>
-                    </div>
-
-                    {/* Circular Icon with light green background overlapping photo */}
-                    <div className="relative -mt-9 mb-3.5 z-10">
-                      <div className="w-12 h-12 rounded-full bg-[#E5F0E8] border border-[#CCE0D2] flex items-center justify-center text-[#1C3E2A] shadow-xs group-hover:scale-105 transition-transform">
-                        {domain.iconType === "building" && <Building2 className="w-6 h-6 stroke-[1.8]" />}
-                        {domain.iconType === "stethoscope" && <Stethoscope className="w-6 h-6 stroke-[1.8]" />}
-                        {domain.iconType === "activity" && <Activity className="w-6 h-6 stroke-[1.8]" />}
-                        {domain.iconType === "heartpulse" && <HeartPulse className="w-6 h-6 stroke-[1.8]" />}
-                        {domain.iconType === "heart" && <Heart className="w-6 h-6 stroke-[1.8]" />}
-                        {domain.iconType === "home" && <Home className="w-6 h-6 stroke-[1.8]" />}
-                      </div>
-                    </div>
-
-                    {/* Title & Description on white background */}
-                    <div className="space-y-2 mb-4">
-                      <h3 className="font-serif text-xl sm:text-[21px] font-bold text-[#142318] leading-tight group-hover:text-[#8D6B27] transition-colors">
-                        {domain.title}
-                      </h3>
-                      <p className="text-xs sm:text-[13px] text-[#55695C] leading-relaxed">
-                        {domain.shortDesc}
-                      </p>
-                    </div>
-
-                    {/* Bottom Action Area: Pill Button + Circle Arrow Button */}
-                    <div className="pt-4 mt-auto border-t border-[#F2ECE1] flex items-center justify-between">
-                      <span className="px-4 py-2 rounded-full bg-[#FAF3E7] text-[#93712C] text-xs font-semibold group-hover:bg-[#F5EAD4] transition-colors">
-                        {t.s4.openModalBtn}
-                      </span>
-                      <div className="w-9 h-9 rounded-full bg-[#FAF3E7] border border-[#EADBBE] flex items-center justify-center text-[#93712C] group-hover:bg-[#C5A56A] group-hover:text-white group-hover:border-[#C5A56A] transition-all">
-                        <ArrowRight className="w-4 h-4" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
-
-        {/* ========================================================================= */}
-        {/* SECTION 4B: NABIOTA REAL ESTATE GMBH – PDF SECTION IV.7                   */}
-        {/* ========================================================================= */}
-        <RealEstateCompanySection locale={locale} />
 
         {/* ========================================================================= */}
         {/* SECTION 5: STIMMEN UNSERER PARTNER (COMPACT RIBBON)                       */}

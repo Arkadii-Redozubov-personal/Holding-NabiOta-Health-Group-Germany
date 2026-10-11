@@ -7,6 +7,7 @@ import { Scale, Building2, FileCheck } from "lucide-react";
 import { companyInfo } from "@/data/company";
 import { locales, SupportedLocale } from "@/lib/i18n";
 import { Metadata } from "next";
+import { getLocaleAlternates } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -28,18 +29,7 @@ export async function generateMetadata({ params }: LocalizedImprintProps): Promi
   };
   return {
     title: titles[locale] || titles.de,
-    alternates: {
-      canonical: `https://www.nabiota-health-group.de/${locale}/imprint`,
-      languages: {
-        uz: "https://www.nabiota-health-group.de/uz/imprint",
-        de: "https://www.nabiota-health-group.de/de/imprint",
-        en: "https://www.nabiota-health-group.de/en/imprint",
-        ru: "https://www.nabiota-health-group.de/ru/imprint",
-        tr: "https://www.nabiota-health-group.de/tr/imprint",
-        ar: "https://www.nabiota-health-group.de/ar/imprint",
-        "x-default": "https://www.nabiota-health-group.de/de/imprint",
-      },
-    },
+    alternates: getLocaleAlternates(locale, "imprint"),
   };
 }
 

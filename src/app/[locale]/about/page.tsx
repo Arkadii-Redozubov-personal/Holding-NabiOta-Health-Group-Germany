@@ -2,6 +2,7 @@ import React from "react";
 import { AboutPageComponent } from "@/components/pages/AboutPageComponent";
 import { locales, SupportedLocale } from "@/lib/i18n";
 import { Metadata } from "next";
+import { getLocaleAlternates } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -19,20 +20,11 @@ export async function generateMetadata({ params }: LocalizedAboutProps): Promise
     ru: "О холдинге | История, структура и видение | NabiOta®",
     tr: "Hakkımızda | Tarihçe, Yapı ve Vizyon | NabiOta®",
     ar: "من نحن | التاريخ، الهيكل والرؤية | NabiOta®",
+    uz: "Biz haqimizda | Tarix, tuzilma va kelajak | NabiOta®",
   };
   return {
     title: titles[locale] || titles.de,
-    alternates: {
-      canonical: `https://www.nabiota-health-group.de/${locale}/about`,
-      languages: {
-        de: "https://www.nabiota-health-group.de/de/about",
-        en: "https://www.nabiota-health-group.de/en/about",
-        ru: "https://www.nabiota-health-group.de/ru/about",
-        tr: "https://www.nabiota-health-group.de/tr/about",
-        ar: "https://www.nabiota-health-group.de/ar/about",
-        "x-default": "https://www.nabiota-health-group.de/de/about",
-      },
-    },
+    alternates: getLocaleAlternates(locale, "about"),
   };
 }
 

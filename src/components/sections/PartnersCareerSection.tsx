@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { getDictionary, SupportedLocale } from "@/lib/i18n";
+import { getDictionary, getLocalePath, SupportedLocale } from "@/lib/i18n";
 
 interface PartnersCareerSectionProps {
   currentLocale?: SupportedLocale;
@@ -29,7 +29,7 @@ export function PartnersCareerSection({ currentLocale = "de" }: PartnersCareerSe
               </div>
 
               <Link
-                href={`/${currentLocale}/partners`}
+                href={getLocalePath(currentLocale, "partners")}
                 className="group/btn inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#D5BE8A] text-[#142318] font-medium text-xs tracking-wide bg-white hover:bg-[#FAF6F0] hover:border-[#BFA267] transition-all self-start mt-auto shadow-sm"
               >
                 <span>{dict.split.partners.cta}</span>
@@ -64,7 +64,7 @@ export function PartnersCareerSection({ currentLocale = "de" }: PartnersCareerSe
               </div>
 
               <Link
-                href={`/${currentLocale}/career`}
+                href={getLocalePath(currentLocale, "career")}
                 className="group/btn inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#ECCF96] to-[#D5B066] text-[#112117] font-semibold text-xs tracking-wide shadow-md hover:from-[#F3D9A5] hover:to-[#DEC07B] transition-all self-start mt-auto"
               >
                 <span>{dict.split.career.cta}</span>

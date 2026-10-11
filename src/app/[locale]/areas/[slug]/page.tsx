@@ -20,6 +20,7 @@ import { BeratungPageComponent } from "@/components/pages/BeratungPageComponent"
 import { InternationalPageComponent } from "@/components/pages/InternationalPageComponent";
 import { locales, SupportedLocale, getDictionary } from "@/lib/i18n";
 import { Metadata } from "next";
+import { getLocaleAlternates } from "@/lib/seo";
 
 export async function generateStaticParams() {
   const paths: { locale: SupportedLocale; slug: string }[] = [];
@@ -108,18 +109,7 @@ export async function generateMetadata({ params }: LocalizedAreaDetailProps): Pr
   return {
     title: `${displayTitle} | NabiOta® Health Group`,
     description: area.description,
-    alternates: {
-      canonical: `https://www.nabiota-health-group.de/${locale}/areas/${slug}`,
-      languages: {
-        de: `https://www.nabiota-health-group.de/de/areas/${slug}`,
-        en: `https://www.nabiota-health-group.de/en/areas/${slug}`,
-        ru: `https://www.nabiota-health-group.de/ru/areas/${slug}`,
-        tr: `https://www.nabiota-health-group.de/tr/areas/${slug}`,
-        ar: `https://www.nabiota-health-group.de/ar/areas/${slug}`,
-        uz: `https://www.nabiota-health-group.de/uz/areas/${slug}`,
-        "x-default": `https://www.nabiota-health-group.de/de/areas/${slug}`,
-      },
-    },
+    alternates: getLocaleAlternates(locale, `areas/${slug}`),
   };
 }
 

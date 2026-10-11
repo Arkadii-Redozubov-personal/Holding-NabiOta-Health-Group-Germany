@@ -18,6 +18,7 @@ import { RehabilitationPageComponent } from "@/components/pages/RehabilitationPa
 import { PflegePageComponent } from "@/components/pages/PflegePageComponent";
 import { BeratungPageComponent } from "@/components/pages/BeratungPageComponent";
 import { InternationalPageComponent } from "@/components/pages/InternationalPageComponent";
+import { getLocaleAlternates } from "@/lib/seo";
 
 interface AreaDetailPageProps {
   params: Promise<{ slug: string }>;
@@ -37,6 +38,7 @@ export async function generateMetadata({ params }: AreaDetailPageProps) {
   return {
     title: `${area.title} | Unternehmensbereich`,
     description: area.description,
+    alternates: getLocaleAlternates("de", `areas/${slug}`),
   };
 }
 

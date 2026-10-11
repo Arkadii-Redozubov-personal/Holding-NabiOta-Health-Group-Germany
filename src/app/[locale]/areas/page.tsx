@@ -2,6 +2,7 @@ import React from "react";
 import { AreasPageComponent } from "@/components/pages/AreasPageComponent";
 import { locales, SupportedLocale, getDictionary } from "@/lib/i18n";
 import { Metadata } from "next";
+import { getLocaleAlternates } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -17,17 +18,7 @@ export async function generateMetadata({ params }: LocalizedAreasProps): Promise
   return {
     title: `${dict.areas.heading} | NabiOta® Health Group Germany`,
     description: dict.areas.description,
-    alternates: {
-      canonical: `https://www.nabiota-health-group.de/${locale}/areas`,
-      languages: {
-        de: "https://www.nabiota-health-group.de/de/areas",
-        en: "https://www.nabiota-health-group.de/en/areas",
-        ru: "https://www.nabiota-health-group.de/ru/areas",
-        tr: "https://www.nabiota-health-group.de/tr/areas",
-        ar: "https://www.nabiota-health-group.de/ar/areas",
-        "x-default": "https://www.nabiota-health-group.de/de/areas",
-      },
-    },
+    alternates: getLocaleAlternates(locale, "areas"),
   };
 }
 

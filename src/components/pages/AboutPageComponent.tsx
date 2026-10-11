@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { HoldingPurposeSection } from "@/components/sections/HoldingPurposeSection";
 import { CorporateStationerySection } from "@/components/sections/CorporateStationerySection";
+import { AboutPeopleCarousel } from "@/components/sections/AboutPeopleCarousel";
 import { SupportedLocale } from "@/lib/i18n";
 import {
   ChevronRight,
@@ -1869,7 +1870,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                   {/* Left: portrait */}
                   <div className="relative min-h-[240px] sm:min-h-[280px] lg:min-h-full">
                     <Image
-                      src="/images/about/dr-fischer-rahimov.webp"
+                      src="/images/about/dr-fisher-rahimov.png"
                       alt={t.founderName}
                       fill
                       sizes="(min-width: 1024px) 36vw, 100vw"
@@ -1990,6 +1991,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                   </div>
                 </div>
               </div>
+              <AboutPeopleCarousel locale={locale} />
             </div>
           </Container>
         </section>

@@ -1191,314 +1191,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
       </PageHero>
 
       {/* ══════════════════════════════════════════════════════════
-          SECTION 1: SPECIALIZED REHABILITATION SPECIALIZATIONS
-      ══════════════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-20 bg-[#FAF8F5]">
-        <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <h2 className="font-serif text-3xl sm:text-4xl text-[#132218] font-normal leading-tight">
-              {isUz
-                ? "Har bir klinik maqsad uchun individual dasturlar"
-                : isRu
-                ? "Индивидуальные программы для каждой клинической цели"
-                : isEn
-                ? "Targeted Rehabilitation for Every Clinical Indication"
-                : isTr
-                ? "Kalıcı İyileşme İçin Bireysel Terapi Konseptleri"
-                : isAr
-                ? "مفاهيم علاجية مخصصة لتحقيق تعافٍ مستدام"
-                : "Individuelle Therapiekonzepte für nachhaltige Genesung"}
-            </h2>
-            <p className="font-sans text-xs sm:text-sm text-[#556358] mt-3 leading-relaxed">
-              {isUz
-                ? "Endoprotezlashdan keyin yurish qobiliyatini tiklashdan erta nevrologik reabilitatsiyagacha — biz tibbiy bilim va zamonaviy harakat terapiyasini birlashtiramiz."
-                : isRu
-                ? "От ортопедического восстановления после эндопротезирования до тонкой нейрореабилитации и возвращения в спорт — мы объединяем врачебную экспертизу и современные методики."
-                : isEn
-                ? "From orthopedic post-operative recovery to neurological re-education and competitive athletic return-to-play — our certified specialists guide every milestone."
-                : isTr
-                ? "Eklem protezi sonrası yürüme kabiliyetinin yeniden kazanılmasından erken nörolojik rehabilitasyona kadar tıbbi uzmanlığı modern hareket terapisiyle birleştiriyoruz."
-                : isAr
-                ? "من استعادة القدرة على المشي بعد استبدال المفاصل وحتى التأهيل العصبي المبكر، ندمج الخبرة الطبية المرموقة مع أحدث تقنيات العلاج الحركي."
-                : "Von der Wiedererlangung der Gehfähigkeit nach Gelenkersatz bis hin zur neurologischen Frühreha bündeln wir medizinisches Fachwissen mit modernster Bewegungstherapie."}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
-            {specializations.map((spec) => (
-              <div
-                key={spec.id}
-                onClick={() => setSelectedSpecialization(spec)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    setSelectedSpecialization(spec);
-                  }
-                }}
-                className="bg-white rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878]/80 overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_32px_rgba(12,43,27,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group cursor-pointer text-left focus:outline-none focus:ring-2 focus:ring-[#D5B878]"
-              >
-                <div>
-                  {/* Photo without Tag */}
-                  <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-neutral-100">
-                    <Image
-                      src={spec.image}
-                      alt={spec.title}
-                      fill
-                      className="object-cover group-hover:scale-104 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
-                  </div>
-
-                  {/* Body */}
-                  <div className="p-5 sm:p-6">
-                    <h3 className="font-serif text-lg sm:text-[19px] text-[#132218] font-normal leading-snug mb-2 group-hover:text-[#B89650] transition-colors">
-                      {spec.title}
-                    </h3>
-                    <p className="font-sans text-xs text-[#556358] leading-relaxed mb-4">
-                      {spec.desc}
-                    </p>
-
-                    {/* Features list */}
-                    <div className="space-y-2 pt-2 border-t border-[#F0ECE1]">
-                      {spec.features.map((feat, fIdx) => (
-                        <div key={fIdx} className="flex items-center gap-2">
-                          <GoldCircleCheckIcon className="w-3.5 h-3.5 shrink-0" />
-                          <span className="font-sans text-[11.5px] text-[#3D4B40] font-medium">
-                            {feat}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="px-5 sm:px-6 pb-5 pt-0">
-                  <button
-                    type="button"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setSelectedSpecialization(spec);
-                    }}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#142318] group-hover:text-[#B89650] transition-colors cursor-pointer"
-                  >
-                    <span>{isUz ? "Dastur haqida batafsil →" : isRu ? "Подробнее о программе →" : isEn ? "View Program Details →" : isTr ? "Program Detayları →" : isAr ? "تفاصيل البرنامج ←" : "Details zum Programm →"}</span>
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════════
-          SECTION 2: UNSER ANSATZ (FULL WIDTH WITH CURVED GOLDEN SEAM & LEAVES-BG ON RIGHT ONLY)
-      ══════════════════════════════════════════════════════════ */}
-      <section className="w-full relative overflow-hidden bg-[#07190F] text-white border-y border-[#D5B878]/30">
-        {/* SVG Definitions for Normalized Curved Clips and Golden Stroke */}
-        <svg className="absolute w-0 h-0 pointer-events-none" aria-hidden="true">
-          <defs>
-            {/* Left Photo Clip: clean photo on the left, cut shifted slightly more to the left */}
-            <clipPath id="approachCurveClip" clipPathUnits="objectBoundingBox">
-              <path d="M 0 0 L 0.36 0 C 0.305 0.32, 0.245 0.68, 0.18 1 L 0 1 Z" />
-            </clipPath>
-
-            {/* Right Leaves Background Clip: leaves strictly on the right of the curved seam */}
-            <clipPath id="approachLeavesClip" clipPathUnits="objectBoundingBox">
-              <path d="M 0.36 0 L 1 0 L 1 1 L 0.18 1 C 0.245 0.68, 0.305 0.32, 0.36 0 Z" />
-            </clipPath>
-
-            <linearGradient id="approachGoldGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#DFCA98" stopOpacity="0.4" />
-              <stop offset="25%" stopColor="#D4B06A" stopOpacity="0.95" />
-              <stop offset="50%" stopColor="#ECCF93" stopOpacity="1" />
-              <stop offset="75%" stopColor="#C9A257" stopOpacity="0.9" />
-              <stop offset="100%" stopColor="#DFCA98" stopOpacity="0.4" />
-            </linearGradient>
-
-            <filter id="approachGlow" x="-30%" y="-30%" width="160%" height="160%">
-              <feGaussianBlur stdDeviation="3.5" result="blur" />
-              <feMerge>
-                <feMergeNode in="blur" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
-          </defs>
-        </svg>
-
-        {/* Desktop: Parallel Bars Image on the left ONLY (clean, no leaves on top) */}
-        <div
-          className="hidden lg:block absolute inset-y-0 left-0 w-full h-full pointer-events-none z-10"
-          style={{
-            clipPath: "url(#approachCurveClip)",
-            WebkitClipPath: "url(#approachCurveClip)",
-          }}
-        >
-          <Image
-            src="/images/rehabilitation/parallel-bars.webp"
-            alt="Unser Ansatz Rehabilitation"
-            fill
-            className="object-cover object-[20%_center]"
-            priority
-          />
-        </div>
-
-        {/* Desktop: Botanical Leaves Background for the right green part */}
-        <div
-          className="hidden lg:block absolute inset-0 pointer-events-none z-10 overflow-hidden"
-          style={{
-            clipPath: "url(#approachLeavesClip)",
-            WebkitClipPath: "url(#approachLeavesClip)",
-          }}
-        >
-          <div className="absolute inset-0 bg-[#07190F]" />
-          <Image
-            src="/images/values/leaves-bg.webp"
-            alt="Leaves Background"
-            fill
-            className="object-cover object-right opacity-70 scale-x-[-1]"
-            priority
-          />
-          {/* Subtle soft dark gradient overlay to ensure perfect text readability while leaves remain distinctly visible */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#07190F]/75 via-[#07190F]/30 to-transparent" />
-        </div>
-
-        {/* Desktop: Glowing Golden Arc Running from Top (36%) to Bottom (18%) */}
-        <svg
-          className="hidden lg:block absolute inset-0 w-full h-full pointer-events-none z-20"
-          viewBox="0 0 1000 1000"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M 360 0 C 305 320, 245 680, 180 1000"
-            fill="none"
-            stroke="url(#approachGoldGrad)"
-            strokeWidth="3.2"
-            filter="url(#approachGlow)"
-          />
-        </svg>
-
-        {/* Mobile: Clean stacked fallback */}
-        <div className="lg:hidden relative w-full h-72 sm:h-84">
-          <Image
-            src="/images/rehabilitation/parallel-bars.webp"
-            alt="Unser Ansatz Rehabilitation"
-            fill
-            className="object-cover object-center"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#07190F] via-transparent to-transparent" />
-        </div>
-        <div className="lg:hidden absolute inset-0 pointer-events-none z-0">
-          <Image
-            src="/images/values/leaves-bg.webp"
-            alt=""
-            fill
-            className="object-cover object-right opacity-40 mix-blend-screen scale-x-[-1]"
-          />
-        </div>
-
-        {/* Right Content Area */}
-        <div className="w-full flex justify-end relative z-30 py-12 sm:py-16 lg:py-20">
-          <div className="w-full lg:w-[68%] xl:w-[66%] px-6 sm:px-10 lg:pl-10 lg:pr-12 xl:pr-20 space-y-5">
-            <div className="space-y-3 max-w-xl">
-              <h2 className="font-serif text-2xl sm:text-3xl lg:text-[36px] text-white font-normal leading-[1.16]">
-                {approachData.title}
-              </h2>
-
-              <p className="font-sans text-xs sm:text-[13px] text-white/85 leading-relaxed pt-1">
-                {approachData.desc}
-              </p>
-            </div>
-
-            {/* 4 Stats in a row with gold outlined icons */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 pt-6 mt-4 border-t border-white/15">
-              {approachData.stats.map((s, idx) => (
-                <div key={idx} className="space-y-2">
-                  <div className="w-10 h-10 rounded-full border border-[#D5B878]/60 bg-[#0A2316]/90 flex items-center justify-center text-[#ECCF96] shadow-sm">
-                    {s.icon}
-                  </div>
-
-                  <span className="font-serif text-2xl sm:text-[28px] text-white font-normal block leading-tight pt-1">
-                    {s.val}
-                  </span>
-
-                  <span className="font-sans text-[10.5px] sm:text-[11.5px] text-white/80 block leading-snug">
-                    {s.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════════
-          SECTION 3: REHABILITATION PROCESS (YOUR PATHWAY BACK TO GREATER QUALITY OF LIFE)
-          - Placed directly after Unser Ansatz
-          - Background: /images/about/photo2.webp
-      ══════════════════════════════════════════════════════════ */}
-      <section className="w-full relative py-16 sm:py-22 overflow-hidden bg-[#FAF6EE] border-t border-[#EDE8DE]">
-        {/* Full-bleed background: photo2.webp */}
-        <div className="absolute inset-0 pointer-events-none z-0">
-          <Image
-            src="/images/about/photo2.webp"
-            alt="Process Background"
-            fill
-            className="object-cover object-center opacity-95"
-            priority
-          />
-        </div>
-
-        <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left title */}
-            <div className="lg:col-span-4 space-y-3">
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] text-[#0B2516] font-normal leading-[1.18]">
-                {processData.title}
-              </h2>
-            </div>
-
-            {/* Right 4-step cards */}
-            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-4 pt-4 sm:pt-0 relative">
-              {processData.steps.map((st, idx) => (
-                <div
-                  key={idx}
-                  className="bg-white/95 backdrop-blur-xs rounded-2xl p-5 sm:p-6 pt-8 sm:pt-9 border border-[#E5ECE3] shadow-md relative flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group mt-4 sm:mt-0"
-                >
-                  {/* Top round green badge overlapping top edge */}
-                  <div className="absolute -top-5 left-5 w-11 h-11 rounded-full bg-[#0B2516] border-2 border-white flex items-center justify-center text-[#ECCF96] shadow-md group-hover:scale-105 transition-transform z-10">
-                    {st.icon}
-                  </div>
-
-                  <div>
-
-
-                    <h4 className="font-serif text-base text-[#0B2516] font-medium leading-snug mb-2">
-                      {st.title}
-                    </h4>
-
-                    <p className="font-sans text-[11.5px] text-[#526356] leading-relaxed">
-                      {st.desc}
-                    </p>
-                  </div>
-
-                  {/* Connecting subtle arrow on desktop */}
-                  {idx < 3 && (
-                    <span className="hidden lg:block absolute -right-3 top-8 text-[#C5A56A] text-sm z-20 pointer-events-none">
-                      →
-                    </span>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════════
-          SECTION 4: 2-CARD GRID (MATCHING SKRIN 3)
+          SECTION 1: REHABILITATION FACILITIES & INNOVATION
       ══════════════════════════════════════════════════════════ */}
       <section className="py-12 sm:py-18 bg-[#FAF8F5]">
         <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -1567,6 +1260,177 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════
+          SECTION 5B: NABIOTA REHABILITATION & THERAPY GMBH – PDF IV.5
+          - Corporate purpose, 4 pillars, goals & payer framework
+      ══════════════════════════════════════════════════════════ */}
+      <RehabilitationCompanySection locale={locale}>
+        {/* ══════════════════════════════════════════════════════════
+            SECTION 3: SPECIALIZED REHABILITATION SPECIALIZATIONS
+        ══════════════════════════════════════════════════════════ */}
+        <section className="pt-6 pb-16 sm:pt-8 sm:pb-20 bg-[#FAF8F5]">
+          <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#132218] font-normal leading-tight">
+                {isUz
+                  ? "Har bir klinik maqsad uchun individual dasturlar"
+                  : isRu
+                  ? "Индивидуальные программы для каждой клинической цели"
+                  : isEn
+                  ? "Targeted Rehabilitation for Every Clinical Indication"
+                  : isTr
+                  ? "Kalıcı İyileşme İçin Bireysel Terapi Konseptleri"
+                  : isAr
+                  ? "مفاهيم علاجية مخصصة لتحقيق تعافٍ مستدام"
+                  : "Individuelle Therapiekonzepte für nachhaltige Genesung"}
+              </h2>
+              <p className="font-sans text-xs sm:text-sm text-[#556358] mt-3 leading-relaxed">
+                {isUz
+                  ? "Endoprotezlashdan keyin yurish qobiliyatini tiklashdan erta nevrologik reabilitatsiyagacha — biz tibbiy bilim va zamonaviy harakat terapiyasini birlashtiramiz."
+                  : isRu
+                  ? "От ортопедического восстановления после эндопротезирования до тонкой нейрореабилитации и возвращения в спорт — мы объединяем врачебную экспертизу и современные методики."
+                  : isEn
+                  ? "From orthopedic post-operative recovery to neurological re-education and competitive athletic return-to-play — our certified specialists guide every milestone."
+                  : isTr
+                  ? "Eklem protezi sonrası yürüme kabiliyetinin yeniden kazanılmasından erken nörolojik rehabilitasyona kadar tıbbi uzmanlığı modern hareket terapisiyle birleştiriyoruz."
+                  : isAr
+                  ? "من استعادة القدرة على المشي بعد استبدال المفاصل وحتى التأهيل العصبي المبكر، ندمج الخبرة الطبية المرموقة مع أحدث تقنيات العلاج الحركي."
+                  : "Von der Wiedererlangung der Gehfähigkeit nach Gelenkersatz bis hin zur neurologischen Frühreha bündeln wir medizinisches Fachwissen mit modernster Bewegungstherapie."}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+              {specializations.map((spec) => (
+                <div
+                  key={spec.id}
+                  onClick={() => setSelectedSpecialization(spec)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setSelectedSpecialization(spec);
+                    }
+                  }}
+                  className="bg-white rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878]/80 overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_32px_rgba(12,43,27,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group cursor-pointer text-left focus:outline-none focus:ring-2 focus:ring-[#D5B878]"
+                >
+                  <div>
+                    {/* Photo without Tag */}
+                    <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-neutral-100">
+                      <Image
+                        src={spec.image}
+                        alt={spec.title}
+                        fill
+                        className="object-cover group-hover:scale-104 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
+                    </div>
+
+                    {/* Body */}
+                    <div className="p-5 sm:p-6">
+                      <h3 className="font-serif text-lg sm:text-[19px] text-[#132218] font-normal leading-snug mb-2 group-hover:text-[#B89650] transition-colors">
+                        {spec.title}
+                      </h3>
+                      <p className="font-sans text-xs text-[#556358] leading-relaxed mb-4">
+                        {spec.desc}
+                      </p>
+
+                      {/* Features list */}
+                      <div className="space-y-2 pt-2 border-t border-[#F0ECE1]">
+                        {spec.features.map((feat, fIdx) => (
+                          <div key={fIdx} className="flex items-center gap-2">
+                            <GoldCircleCheckIcon className="w-3.5 h-3.5 shrink-0" />
+                            <span className="font-sans text-[11.5px] text-[#3D4B40] font-medium">
+                              {feat}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="px-5 sm:px-6 pb-5 pt-0">
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedSpecialization(spec);
+                      }}
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#142318] group-hover:text-[#B89650] transition-colors cursor-pointer"
+                    >
+                      <span>{isUz ? "Dastur haqida batafsil →" : isRu ? "Подробнее о программе →" : isEn ? "View Program Details →" : isTr ? "Program Detayları →" : isAr ? "تفاصيل البرنامج ←" : "Details zum Programm →"}</span>
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </RehabilitationCompanySection>
+
+      {/* ══════════════════════════════════════════════════════════
+          SECTION 4: REHABILITATION PROCESS (YOUR PATHWAY BACK TO GREATER QUALITY OF LIFE)
+          - Continues the rehabilitation pathway with a step-by-step process
+          - Background: /images/about/photo2.webp
+      ══════════════════════════════════════════════════════════ */}
+      <section className="w-full relative py-16 sm:py-22 overflow-hidden bg-[#FAF6EE] border-t border-[#EDE8DE]">
+        {/* Full-bleed background: photo2.webp */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+          <Image
+            src="/images/about/photo2.webp"
+            alt="Process Background"
+            fill
+            className="object-cover object-center opacity-95"
+            priority
+          />
+        </div>
+
+        <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left title */}
+            <div className="lg:col-span-4 space-y-3">
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] text-[#0B2516] font-normal leading-[1.18]">
+                {processData.title}
+              </h2>
+            </div>
+
+            {/* Right 4-step cards */}
+            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-4 pt-4 sm:pt-0 relative">
+              {processData.steps.map((st, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white/95 backdrop-blur-xs rounded-2xl p-5 sm:p-6 pt-8 sm:pt-9 border border-[#E5ECE3] shadow-md relative flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group mt-4 sm:mt-0"
+                >
+                  {/* Top round green badge overlapping top edge */}
+                  <div className="absolute -top-5 left-5 w-11 h-11 rounded-full bg-[#0B2516] border-2 border-white flex items-center justify-center text-[#ECCF96] shadow-md group-hover:scale-105 transition-transform z-10">
+                    {st.icon}
+                  </div>
+
+                  <div>
+
+
+                    <h4 className="font-serif text-base text-[#0B2516] font-medium leading-snug mb-2">
+                      {st.title}
+                    </h4>
+
+                    <p className="font-sans text-[11.5px] text-[#526356] leading-relaxed">
+                      {st.desc}
+                    </p>
+                  </div>
+
+                  {/* Connecting subtle arrow on desktop */}
+                  {idx < 3 && (
+                    <span className="hidden lg:block absolute -right-3 top-8 text-[#C5A56A] text-sm z-20 pointer-events-none">
+                      →
+                    </span>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -1651,12 +1515,6 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
           </div>
         </div>
       </section>
-
-      {/* ══════════════════════════════════════════════════════════
-          SECTION 5B: NABIOTA REHABILITATION & THERAPY GMBH – PDF IV.5
-          - Corporate purpose, 4 pillars, goals & payer framework
-      ══════════════════════════════════════════════════════════ */}
-      <RehabilitationCompanySection locale={locale} />
 
       {/* ══════════════════════════════════════════════════════════
           SECTION 6: PATIENT TESTIMONIALS (EXACTLY MATCHING TARGET LAYOUT)
@@ -1826,7 +1684,149 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
       </section>
 
       {/* ══════════════════════════════════════════════════════════
-          SECTION 8: CONTACT & BOOKING BANNER (FULL-WIDTH WITH BACGROUND.WEBP)
+          SECTION 8: HOLISTIC CARE & HIGH STANDARDS
+      ══════════════════════════════════════════════════════════ */}
+      <section className="w-full relative overflow-hidden bg-[#07190F] text-white border-y border-[#D5B878]/30">
+        {/* SVG Definitions for Normalized Curved Clips and Golden Stroke */}
+        <svg className="absolute w-0 h-0 pointer-events-none" aria-hidden="true">
+          <defs>
+            {/* Left Photo Clip: clean photo on the left, cut shifted slightly more to the left */}
+            <clipPath id="approachCurveClip" clipPathUnits="objectBoundingBox">
+              <path d="M 0 0 L 0.36 0 C 0.305 0.32, 0.245 0.68, 0.18 1 L 0 1 Z" />
+            </clipPath>
+
+            {/* Right Leaves Background Clip: leaves strictly on the right of the curved seam */}
+            <clipPath id="approachLeavesClip" clipPathUnits="objectBoundingBox">
+              <path d="M 0.36 0 L 1 0 L 1 1 L 0.18 1 C 0.245 0.68, 0.305 0.32, 0.36 0 Z" />
+            </clipPath>
+
+            <linearGradient id="approachGoldGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#DFCA98" stopOpacity="0.4" />
+              <stop offset="25%" stopColor="#D4B06A" stopOpacity="0.95" />
+              <stop offset="50%" stopColor="#ECCF93" stopOpacity="1" />
+              <stop offset="75%" stopColor="#C9A257" stopOpacity="0.9" />
+              <stop offset="100%" stopColor="#DFCA98" stopOpacity="0.4" />
+            </linearGradient>
+
+            <filter id="approachGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="3.5" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+        </svg>
+
+        {/* Desktop: Parallel Bars Image on the left ONLY (clean, no leaves on top) */}
+        <div
+          className="hidden lg:block absolute inset-y-0 left-0 w-full h-full pointer-events-none z-10"
+          style={{
+            clipPath: "url(#approachCurveClip)",
+            WebkitClipPath: "url(#approachCurveClip)",
+          }}
+        >
+          <Image
+            src="/images/rehabilitation/parallel-bars.webp"
+            alt="Unser Ansatz Rehabilitation"
+            fill
+            className="object-cover object-[20%_center]"
+            priority
+          />
+        </div>
+
+        {/* Desktop: Botanical Leaves Background for the right green part */}
+        <div
+          className="hidden lg:block absolute inset-0 pointer-events-none z-10 overflow-hidden"
+          style={{
+            clipPath: "url(#approachLeavesClip)",
+            WebkitClipPath: "url(#approachLeavesClip)",
+          }}
+        >
+          <div className="absolute inset-0 bg-[#07190F]" />
+          <Image
+            src="/images/values/leaves-bg.webp"
+            alt="Leaves Background"
+            fill
+            className="object-cover object-right opacity-70 scale-x-[-1]"
+            priority
+          />
+          {/* Subtle soft dark gradient overlay to ensure perfect text readability while leaves remain distinctly visible */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#07190F]/75 via-[#07190F]/30 to-transparent" />
+        </div>
+
+        {/* Desktop: Glowing Golden Arc Running from Top (36%) to Bottom (18%) */}
+        <svg
+          className="hidden lg:block absolute inset-0 w-full h-full pointer-events-none z-20"
+          viewBox="0 0 1000 1000"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M 360 0 C 305 320, 245 680, 180 1000"
+            fill="none"
+            stroke="url(#approachGoldGrad)"
+            strokeWidth="3.2"
+            filter="url(#approachGlow)"
+          />
+        </svg>
+
+        {/* Mobile: Clean stacked fallback */}
+        <div className="lg:hidden relative w-full h-72 sm:h-84">
+          <Image
+            src="/images/rehabilitation/parallel-bars.webp"
+            alt="Unser Ansatz Rehabilitation"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#07190F] via-transparent to-transparent" />
+        </div>
+        <div className="lg:hidden absolute inset-0 pointer-events-none z-0">
+          <Image
+            src="/images/values/leaves-bg.webp"
+            alt=""
+            fill
+            className="object-cover object-right opacity-40 mix-blend-screen scale-x-[-1]"
+          />
+        </div>
+
+        {/* Right Content Area */}
+        <div className="w-full flex justify-end relative z-30 py-12 sm:py-16 lg:py-20">
+          <div className="w-full lg:w-[68%] xl:w-[66%] px-6 sm:px-10 lg:pl-10 lg:pr-12 xl:pr-20 space-y-5">
+            <div className="space-y-3 max-w-xl">
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-[36px] text-white font-normal leading-[1.16]">
+                {approachData.title}
+              </h2>
+
+              <p className="font-sans text-xs sm:text-[13px] text-white/85 leading-relaxed pt-1">
+                {approachData.desc}
+              </p>
+            </div>
+
+            {/* 4 Stats in a row with gold outlined icons */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 pt-6 mt-4 border-t border-white/15">
+              {approachData.stats.map((s, idx) => (
+                <div key={idx} className="space-y-2">
+                  <div className="w-10 h-10 rounded-full border border-[#D5B878]/60 bg-[#0A2316]/90 flex items-center justify-center text-[#ECCF96] shadow-sm">
+                    {s.icon}
+                  </div>
+
+                  <span className="font-serif text-2xl sm:text-[28px] text-white font-normal block leading-tight pt-1">
+                    {s.val}
+                  </span>
+
+                  <span className="font-sans text-[10.5px] sm:text-[11.5px] text-white/80 block leading-snug">
+                    {s.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════
+          SECTION 9: CONTACT & BOOKING BANNER (FULL-WIDTH WITH BACGROUND.WEBP)
       ══════════════════════════════════════════════════════════ */}
       <section className="w-full relative overflow-hidden bg-[#07150C] text-white py-16 sm:py-24 border-t border-[#D5B878]/30">
         {/* Full bleed leaf background: /images/bacground.webp */}

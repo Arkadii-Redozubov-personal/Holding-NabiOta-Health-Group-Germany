@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { BusinessCard } from "@/components/ui/BusinessCard";
 import { businessAreas } from "@/data/areas";
-import { getDictionary, SupportedLocale } from "@/lib/i18n";
+import { getDictionary, getLocalePath, SupportedLocale } from "@/lib/i18n";
 
 interface BusinessAreasSectionProps {
   currentLocale?: SupportedLocale;
@@ -40,7 +40,7 @@ export function BusinessAreasSection({ currentLocale = "de" }: BusinessAreasSect
             <Button
               variant="cream"
               size="md"
-              href={`/${currentLocale}/areas`}
+              href={getLocalePath(currentLocale, "areas")}
               className="mt-2"
             >
               {dict.areas.cta}

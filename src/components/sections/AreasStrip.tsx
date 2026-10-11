@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
-import { getDictionary, SupportedLocale } from "@/lib/i18n";
+import { getDictionary, getLocalePath, SupportedLocale } from "@/lib/i18n";
 
 interface AreasStripProps {
   currentLocale?: SupportedLocale;
@@ -473,7 +473,7 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
                 return (
                   <Link
                     key={idx}
-                    href={`/${currentLocale}/areas/${cat.slug}`}
+                    href={getLocalePath(currentLocale, `areas/${cat.slug}`)}
                     className="group bg-[#FAF8F3]/60 hover:bg-[#F3EFE6] border border-[#EFECE3]/70 hover:border-[#DFD5C2] rounded-xl sm:rounded-2xl px-1.5 py-2 sm:px-2.5 sm:py-3.5 flex flex-col items-center justify-between text-center min-h-[102px] sm:min-h-[132px] transition-all duration-200 hover:shadow-sm"
                   >
                     {/* Icon inside soft circular disc */}

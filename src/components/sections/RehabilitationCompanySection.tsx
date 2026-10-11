@@ -322,7 +322,13 @@ const c = {
   ],
 };
 
-export function RehabilitationCompanySection({ locale = "de" }: { locale?: string }) {
+export function RehabilitationCompanySection({
+  locale = "de",
+  children,
+}: {
+  locale?: string;
+  children: React.ReactNode;
+}) {
   const l: Lang = locale === "uz" ? "uz" : locale === "tr" ? "tr" : locale === "ar" ? "ar" : locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
 
   return (
@@ -507,6 +513,8 @@ export function RehabilitationCompanySection({ locale = "de" }: { locale?: strin
           </div>
         </Container>
       </section>
+
+      {children}
 
       {/* ── Regulatory Foundations, Accreditations & Payer Remuneration (Photo 4 design: Full width with leaves_bag.png) ── */}
       <section className="relative w-full bg-[#011B0B] text-white py-12 sm:py-16 lg:py-20 overflow-hidden border-t border-[#D5B878]/25">

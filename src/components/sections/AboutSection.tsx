@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowRight, Handshake, Lightbulb, ShieldCheck } from "lucide-react";
-import { getDictionary, SupportedLocale } from "@/lib/i18n";
+import { getDictionary, getLocalePath, SupportedLocale } from "@/lib/i18n";
 
 interface AboutSectionProps {
   currentLocale?: SupportedLocale;
@@ -96,7 +96,7 @@ export function AboutSection({ currentLocale = "de" }: AboutSectionProps) {
 
             {/* CTA – Golden pill button */}
             <Link
-              href={`/${currentLocale}/about`}
+              href={getLocalePath(currentLocale, "about")}
               className="group inline-flex items-center gap-2 px-5 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-[#ECCF93] to-[#D4AF67] text-[#142217] font-sans font-semibold text-[12px] sm:text-[12.5px] tracking-wide shadow-sm hover:from-[#F2DAB0] hover:to-[#DEBD7A] transition-all duration-300 self-start"
             >
               <span>{dict.about.cta}</span>

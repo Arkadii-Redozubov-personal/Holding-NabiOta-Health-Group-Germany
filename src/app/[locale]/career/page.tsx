@@ -2,6 +2,7 @@ import React from "react";
 import { locales, SupportedLocale } from "@/lib/i18n";
 import { Metadata } from "next";
 import { CareerPageComponent } from "@/components/pages/CareerPageComponent";
+import { getLocaleAlternates } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -19,20 +20,11 @@ export async function generateMetadata({ params }: LocalizedCareerProps): Promis
     ru: "Карьера | Создавайте будущее медицины вместе с нами",
     tr: "Kariyer | Sağlığın Geleceğini Bizimle Şekillendirin",
     ar: "الوظائف | شاركنا في تشكيل مستقبل الرعاية الصحية",
+    uz: "Karyera | Sog‘liqni saqlash kelajagini biz bilan yarating",
   };
   return {
     title: titles[locale] || titles.de,
-    alternates: {
-      canonical: `https://www.nabiota-health-group.de/${locale}/career`,
-      languages: {
-        de: "https://www.nabiota-health-group.de/de/career",
-        en: "https://www.nabiota-health-group.de/en/career",
-        ru: "https://www.nabiota-health-group.de/ru/career",
-        tr: "https://www.nabiota-health-group.de/tr/career",
-        ar: "https://www.nabiota-health-group.de/ar/career",
-        "x-default": "https://www.nabiota-health-group.de/de/career",
-      },
-    },
+    alternates: getLocaleAlternates(locale, "career"),
   };
 }
 

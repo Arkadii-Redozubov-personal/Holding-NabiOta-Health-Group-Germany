@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CalendarDays } from "lucide-react";
-import { getDictionary, SupportedLocale } from "@/lib/i18n";
+import { getDictionary, getLocalePath, SupportedLocale } from "@/lib/i18n";
 import { AreasStrip } from "@/components/sections/AreasStrip";
 
 interface HeroSectionProps {
@@ -260,7 +260,7 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
             <div className="flex flex-row items-center gap-2 sm:gap-4 w-full sm:w-auto">
               {/* Primary: Warm sand/gold filled pill */}
               <Link
-                href={`/${currentLocale}/about`}
+                href={getLocalePath(currentLocale, "about")}
                 className="group flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 sm:gap-2.5 px-3.5 sm:px-7 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-[#ECCF96] to-[#D8B772] text-[#142217] font-sans font-semibold text-[12px] sm:text-[13.5px] tracking-wide shadow-lg hover:from-[#F2DAB0] hover:to-[#DEBD7A] transition-all duration-300 text-center whitespace-nowrap"
               >
                 <span>{dict.hero.ctaMore}</span>
@@ -269,7 +269,7 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
 
               {/* Secondary: Outlined "Termin anfragen" with calendar icon */}
               <Link
-                href={`/${currentLocale}/contact`}
+                href={getLocalePath(currentLocale, "contact")}
                 className="group flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 sm:gap-2.5 px-3.5 sm:px-7 py-2.5 sm:py-3 rounded-full border border-white/60 hover:border-white bg-black/25 hover:bg-white/10 backdrop-blur-sm text-white font-sans font-semibold text-[12px] sm:text-[13.5px] tracking-wide transition-all duration-300 text-center whitespace-nowrap"
               >
                 <CalendarDays className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white/90 shrink-0" />

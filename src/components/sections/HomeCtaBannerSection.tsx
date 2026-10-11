@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { SupportedLocale } from "@/lib/i18n";
+import { getLocalePath, SupportedLocale } from "@/lib/i18n";
 
 interface HomeCtaBannerSectionProps {
   currentLocale?: SupportedLocale;
@@ -99,7 +99,7 @@ export function HomeCtaBannerSection({ currentLocale = "de" }: HomeCtaBannerSect
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5">
             <Link
-              href={`/${currentLocale}/contact`}
+              href={getLocalePath(currentLocale, "contact")}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs sm:text-[13.5px] tracking-wide shadow-lg transition-all duration-200 hover:scale-102"
             >
               <span>{t.btnPrimary}</span>
@@ -107,7 +107,7 @@ export function HomeCtaBannerSection({ currentLocale = "de" }: HomeCtaBannerSect
             </Link>
 
             <Link
-              href={`/${currentLocale}/areas`}
+              href={getLocalePath(currentLocale, "areas")}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full border border-white/30 hover:border-[#D5B878] text-white hover:text-[#ECCF96] font-medium text-xs sm:text-[13px] transition-all bg-white/5 backdrop-blur-sm"
             >
               <span>{t.btnSecondary}</span>

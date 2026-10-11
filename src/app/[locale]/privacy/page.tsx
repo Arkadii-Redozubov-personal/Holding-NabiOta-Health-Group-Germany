@@ -7,6 +7,7 @@ import { ShieldCheck, Lock, FileText } from "lucide-react";
 import { companyInfo } from "@/data/company";
 import { locales, SupportedLocale } from "@/lib/i18n";
 import { Metadata } from "next";
+import { getLocaleAlternates } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -28,18 +29,7 @@ export async function generateMetadata({ params }: LocalizedPrivacyProps): Promi
   };
   return {
     title: titles[locale] || titles.de,
-    alternates: {
-      canonical: `https://www.nabiota-health-group.de/${locale}/privacy`,
-      languages: {
-        uz: "https://www.nabiota-health-group.de/uz/privacy",
-        de: "https://www.nabiota-health-group.de/de/privacy",
-        en: "https://www.nabiota-health-group.de/en/privacy",
-        ru: "https://www.nabiota-health-group.de/ru/privacy",
-        tr: "https://www.nabiota-health-group.de/tr/privacy",
-        ar: "https://www.nabiota-health-group.de/ar/privacy",
-        "x-default": "https://www.nabiota-health-group.de/de/privacy",
-      },
-    },
+    alternates: getLocaleAlternates(locale, "privacy"),
   };
 }
 

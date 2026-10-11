@@ -7,7 +7,7 @@ import { MapPin, Globe, Mail, Phone, Linkedin, Instagram, Youtube, Briefcase } f
 import { Container } from "./Container";
 import { Logo } from "@/components/ui/Logo";
 import { companyInfo } from "@/data/company";
-import { getDictionary, SupportedLocale } from "@/lib/i18n";
+import { getDictionary, getLocalePath, SupportedLocale } from "@/lib/i18n";
 
 interface FooterProps {
   currentLocale?: SupportedLocale;
@@ -19,11 +19,11 @@ export function Footer({ currentLocale = "de" }: FooterProps) {
   const legalNav = [
     {
       label: currentLocale === "ru" ? "Выходные данные" : currentLocale === "tr" ? "Künye" : currentLocale === "ar" ? "بيانات النشر القانونية" : currentLocale === "uz" ? "Huquqiy ma'lumotlar (Imprint)" : currentLocale === "en" ? "Imprint" : "Impressum",
-      href: `/${currentLocale}/imprint`,
+      href: getLocalePath(currentLocale, "imprint"),
     },
     {
       label: currentLocale === "ru" ? "Конфиденциальность" : currentLocale === "tr" ? "Gizlilik Politikası" : currentLocale === "ar" ? "سياسة الخصوصية" : currentLocale === "uz" ? "Maxfiylik siyosati" : currentLocale === "en" ? "Privacy Policy" : "Datenschutz",
-      href: `/${currentLocale}/privacy`,
+      href: getLocalePath(currentLocale, "privacy"),
     },
     {
       label: currentLocale === "ru" ? "Настройки Cookies" : currentLocale === "tr" ? "Çerez Ayarları" : currentLocale === "ar" ? "إعدادات الكوكيز" : currentLocale === "uz" ? "Cookie sozlamalari" : currentLocale === "en" ? "Cookie Settings" : "Cookie-Einstellungen",

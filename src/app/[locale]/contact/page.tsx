@@ -2,6 +2,7 @@ import React from "react";
 import { ContactPageComponent } from "@/components/pages/ContactPageComponent";
 import { locales, SupportedLocale } from "@/lib/i18n";
 import { Metadata } from "next";
+import { getLocaleAlternates } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: LocalizedContactProps): Promi
     ru: "Контакты | NabiOta® Health Group Germany",
     tr: "İletişim | NabiOta® Health Group Germany",
     ar: "اتصل بنا | مجموعة نابي أوتا الصحية بألمانيا",
+    uz: "Aloqa | NabiOta® Health Group Germany",
   };
   const descriptions: Record<string, string> = {
     de: "Treten Sie mit der NabiOta® Health Group Germany in Kontakt. Ansprechpartner, Standorte in Mönchengladbach und Kontaktformular.",
@@ -26,22 +28,13 @@ export async function generateMetadata({ params }: LocalizedContactProps): Promi
     ru: "Свяжитесь с NabiOta® Health Group Germany. Контактные лица, офис в Мёнхенгладбахе и форма обратной связи.",
     tr: "NabiOta® Health Group Germany ile iletişime geçin. İrtibat kişileri, Mönchengladbach yerleşkesi ve iletişim formu.",
     ar: "تواصل مع مجموعة نابي أوتا الصحية بألمانيا. جهات الاتصال ومقر مونشنغلادباخ واستمارة الاستفسارات.",
+    uz: "NabiOta® Health Group Germany bilan bog‘laning. Mönchengladbachdagi manzil va murojaatlar uchun aloqa ma’lumotlari.",
   };
 
   return {
     title: titles[locale] || titles.de,
     description: descriptions[locale] || descriptions.de,
-    alternates: {
-      canonical: `https://www.nabiota-health-group.de/${locale}/contact`,
-      languages: {
-        de: "https://www.nabiota-health-group.de/de/contact",
-        en: "https://www.nabiota-health-group.de/en/contact",
-        ru: "https://www.nabiota-health-group.de/ru/contact",
-        tr: "https://www.nabiota-health-group.de/tr/contact",
-        ar: "https://www.nabiota-health-group.de/ar/contact",
-        "x-default": "https://www.nabiota-health-group.de/de/contact",
-      },
-    },
+    alternates: getLocaleAlternates(locale, "contact"),
   };
 }
 

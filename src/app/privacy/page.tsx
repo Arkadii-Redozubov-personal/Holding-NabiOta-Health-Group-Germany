@@ -5,11 +5,13 @@ import { Container } from "@/components/layout/Container";
 import { PageHero } from "@/components/layout/PageHero";
 import { ShieldCheck, Lock, FileText } from "lucide-react";
 import { companyInfo } from "@/data/company";
+import { getLocaleAlternates } from "@/lib/seo";
 
 export const metadata = {
   title: "Datenschutzerklärung | DSGVO Konformität",
   description:
     "Datenschutzerklärung der NabiOta® Health Group Germany GmbH gemäß Datenschutz-Grundverordnung (DSGVO).",
+  alternates: getLocaleAlternates("de", "privacy"),
 };
 
 const privacyBadges = [

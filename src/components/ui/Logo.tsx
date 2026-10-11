@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { SupportedLocale } from "@/lib/i18n";
+import { getLocalePath, SupportedLocale } from "@/lib/i18n";
 
 interface LogoProps {
   variant?: "dark" | "light";
@@ -51,7 +51,7 @@ export function Logo({
   };
 
   const currentSize = sizeClasses[size];
-  const targetHref = href || (locale ? `/${locale}` : "/");
+  const targetHref = href || (locale ? getLocalePath(locale, "") : "/");
 
   return (
     <Link

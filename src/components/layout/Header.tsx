@@ -19,7 +19,14 @@ import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
 import { Container } from "./Container";
 import { languages } from "@/data/navigation";
-import { getDictionary, locales, SupportedLocale } from "@/lib/i18n";
+import {
+  getDictionary,
+  getLocalePath,
+  getLocalizedPathname,
+  isValidLocale,
+  locales,
+  SupportedLocale,
+} from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 interface HeaderProps {
@@ -188,17 +195,18 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
   const activeLocale: SupportedLocale = locales.includes(pathSegments[0] as SupportedLocale)
     ? (pathSegments[0] as SupportedLocale)
     : currentLocale;
+  const currentLocalizedPath = getLocalizedPathname(pathname, activeLocale);
 
   const dict = getDictionary(activeLocale);
 
   const localizedNav = [
-    { label: dict.nav.home, href: `/${activeLocale}` },
-    { label: dict.nav.about, href: `/${activeLocale}/about` },
-    { label: dict.nav.areas, href: `/${activeLocale}/areas` },
-    { label: dict.nav.values, href: `/${activeLocale}/values` },
-    { label: dict.nav.career, href: `/${activeLocale}/career` },
-    { label: dict.nav.partners, href: `/${activeLocale}/partners` },
-    { label: dict.nav.contact, href: `/${activeLocale}/contact` },
+    { label: dict.nav.home, href: getLocalePath(activeLocale, "") },
+    { label: dict.nav.about, href: getLocalePath(activeLocale, "about") },
+    { label: dict.nav.areas, href: getLocalePath(activeLocale, "areas") },
+    { label: dict.nav.values, href: getLocalePath(activeLocale, "values") },
+    { label: dict.nav.career, href: getLocalePath(activeLocale, "career") },
+    { label: dict.nav.partners, href: getLocalePath(activeLocale, "partners") },
+    { label: dict.nav.contact, href: getLocalePath(activeLocale, "contact") },
   ];
 
   useEffect(() => {
@@ -299,22 +307,17 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
       setAreasDropdownOpen(true);
     } else {
       setAreasDropdownOpen(false);
-      router.push(`/${activeLocale}/areas`);
+      router.push(getLocalePath(activeLocale, "areas"));
     }
   };
 
   const handleSwitchLanguage = (newLocale: string) => {
+    if (!isValidLocale(newLocale)) return;
+
     setLangDropdownOpen(false);
     setMobileMenuOpen(false);
     setAreasDropdownOpen(false);
-
-    // Replace locale in path
-    if (locales.includes(pathSegments[0] as SupportedLocale)) {
-      const rest = pathSegments.slice(1).join("/");
-      router.push(`/${newLocale}${rest ? `/${rest}` : ""}`);
-    } else {
-      router.push(`/${newLocale}`);
-    }
+    router.push(getLocalizedPathname(pathname, newLocale));
   };
 
   return (
@@ -340,8 +343,8 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
             >
               {localizedNav.map((item) => {
                 const isActive =
-                  pathname === item.href ||
-                  (item.href !== `/${activeLocale}` && pathname.startsWith(item.href));
+                  currentLocalizedPath === item.href ||
+                  (item.href !== getLocalePath(activeLocale, "") && currentLocalizedPath.startsWith(item.href));
                 const isAreas = item.href.includes("/areas");
 
                 if (isAreas) {
@@ -412,13 +415,13 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
                               <div className="py-1.5">
                                 {areaNavItems.map((area) => {
                                   const isSubActive =
-                                    pathname === `/${activeLocale}/areas/${area.slug}`;
+                                    currentLocalizedPath === getLocalePath(activeLocale, `areas/${area.slug}`);
                                   const AreaIcon = area.icon;
 
                                   return (
                                     <Link
                                       key={area.slug}
-                                      href={`/${activeLocale}/areas/${area.slug}`}
+                                      href={getLocalePath(activeLocale, `areas/${area.slug}`)}
                                       onClick={() => setAreasDropdownOpen(false)}
                                       className={cn(
                                         "group/item flex items-center gap-2.5 px-3.5 py-2 transition-all duration-150",
@@ -446,7 +449,7 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
                               {/* overview link */}
                               <div className="border-t border-white/10 mx-3 mb-1.5" />
                               <Link
-                                href={`/${activeLocale}/areas`}
+                                href={getLocalePath(activeLocale, "areas")}
                                 onClick={() => setAreasDropdownOpen(false)}
                                 className="flex items-center justify-between px-3.5 pb-2.5 pt-1.5 text-[11px] font-semibold tracking-wide text-gold-400/80 hover:text-gold-300 transition-colors group/overview"
                               >
@@ -578,7 +581,7 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
 
               {/* Header CTA - Solid Warm Sand/Gold Pill with Arrow matching 1:1 */}
               <Link
-                href={`/${activeLocale}/contact`}
+                href={getLocalePath(activeLocale, "contact")}
                 className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#ECCF96] to-[#D8B772] text-[#142217] font-sans font-semibold text-xs tracking-wide shadow-md hover:from-[#F2DAB0] hover:to-[#DEBD7A] transition-all duration-300 group"
               >
                 <span>{dict.nav.contactCta}</span>
@@ -615,8 +618,8 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
           <nav className="flex flex-col gap-2 my-auto" aria-label="Mobile Navigation">
             {localizedNav.map((item) => {
               const isActive =
-                pathname === item.href ||
-                (item.href !== `/${activeLocale}` && pathname.startsWith(item.href));
+                currentLocalizedPath === item.href ||
+                (item.href !== getLocalePath(activeLocale, "") && currentLocalizedPath.startsWith(item.href));
               const isAreas = item.href.includes("/areas");
 
               if (isAreas) {
@@ -657,11 +660,11 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
                         {areaNavItems.map((area) => {
                           const AreaIcon = area.icon;
                           const isSubActive =
-                            pathname === `/${activeLocale}/areas/${area.slug}`;
+                            currentLocalizedPath === getLocalePath(activeLocale, `areas/${area.slug}`);
                           return (
                             <Link
                               key={area.slug}
-                              href={`/${activeLocale}/areas/${area.slug}`}
+                              href={getLocalePath(activeLocale, `areas/${area.slug}`)}
                               onClick={() => {
                                 setMobileMenuOpen(false);
                                 setMobileAreasOpen(false);
@@ -679,7 +682,7 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
                           );
                         })}
                         <Link
-                          href={`/${activeLocale}/areas`}
+                          href={getLocalePath(activeLocale, "areas")}
                           onClick={() => {
                             setMobileMenuOpen(false);
                             setMobileAreasOpen(false);
@@ -718,7 +721,7 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
             <Button
               variant="gold-solid"
               size="md"
-              href={`/${activeLocale}/contact`}
+              href={getLocalePath(activeLocale, "contact")}
               className="w-full"
               onClick={() => setMobileMenuOpen(false)}
             >
