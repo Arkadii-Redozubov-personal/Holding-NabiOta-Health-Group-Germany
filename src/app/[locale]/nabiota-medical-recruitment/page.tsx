@@ -5,12 +5,8 @@ import { Metadata } from "next";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { Container } from "@/components/layout/Container";
-import { locales, SupportedLocale } from "@/lib/i18n";
+import { SupportedLocale } from "@/lib/i18n";
 import { getLocaleAlternates } from "@/lib/seo";
-
-export async function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
 
 interface PlaceholderProps {
   params: Promise<{ locale: SupportedLocale }>;

@@ -1,12 +1,8 @@
 import React from "react";
 import { ContactPageComponent } from "@/components/pages/ContactPageComponent";
-import { locales, SupportedLocale } from "@/lib/i18n";
+import { SupportedLocale } from "@/lib/i18n";
 import { Metadata } from "next";
 import { getLocaleAlternates } from "@/lib/seo";
-
-export async function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
 
 interface LocalizedContactProps {
   params: Promise<{ locale: SupportedLocale }>;

@@ -1,12 +1,8 @@
 import React from "react";
 import { AreasPageComponent } from "@/components/pages/AreasPageComponent";
-import { locales, SupportedLocale, getDictionary } from "@/lib/i18n";
+import { SupportedLocale, getDictionary } from "@/lib/i18n";
 import { Metadata } from "next";
 import { getLocaleAlternates } from "@/lib/seo";
-
-export async function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
 
 interface LocalizedAreasProps {
   params: Promise<{ locale: SupportedLocale }>;

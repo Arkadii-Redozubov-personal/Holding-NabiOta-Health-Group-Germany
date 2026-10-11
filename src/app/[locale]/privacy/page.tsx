@@ -5,13 +5,9 @@ import { Container } from "@/components/layout/Container";
 import { PageHero } from "@/components/layout/PageHero";
 import { ShieldCheck, Lock, FileText } from "lucide-react";
 import { companyInfo } from "@/data/company";
-import { locales, SupportedLocale } from "@/lib/i18n";
+import { SupportedLocale } from "@/lib/i18n";
 import { Metadata } from "next";
 import { getLocaleAlternates } from "@/lib/seo";
-
-export async function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
 
 interface LocalizedPrivacyProps {
   params: Promise<{ locale: SupportedLocale }>;

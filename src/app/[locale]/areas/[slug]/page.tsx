@@ -18,18 +18,12 @@ import { RehabilitationPageComponent } from "@/components/pages/RehabilitationPa
 import { PflegePageComponent } from "@/components/pages/PflegePageComponent";
 import { BeratungPageComponent } from "@/components/pages/BeratungPageComponent";
 import { InternationalPageComponent } from "@/components/pages/InternationalPageComponent";
-import { locales, SupportedLocale, getDictionary } from "@/lib/i18n";
+import { SupportedLocale, getDictionary } from "@/lib/i18n";
 import { Metadata } from "next";
 import { getLocaleAlternates } from "@/lib/seo";
 
-export async function generateStaticParams() {
-  const paths: { locale: SupportedLocale; slug: string }[] = [];
-  for (const locale of locales) {
-    for (const area of businessAreas) {
-      paths.push({ locale, slug: area.slug });
-    }
-  }
-  return paths;
+export function generateStaticParams() {
+  return businessAreas.map((area) => ({ slug: area.slug }));
 }
 
 interface LocalizedAreaDetailProps {

@@ -252,12 +252,6 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
-  // Sync document lang and dir with activeLocale
-  useEffect(() => {
-    document.documentElement.lang = activeLocale;
-    document.documentElement.dir = activeLocale === "ar" ? "rtl" : "ltr";
-  }, [activeLocale]);
-
   // Close dropdowns on route navigation
   useEffect(() => {
     setAreasDropdownOpen(false);

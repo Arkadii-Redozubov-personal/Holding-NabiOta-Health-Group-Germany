@@ -1,12 +1,8 @@
 import React from "react";
-import { locales, SupportedLocale } from "@/lib/i18n";
+import { SupportedLocale } from "@/lib/i18n";
 import { Metadata } from "next";
 import { PartnersPageComponent } from "@/components/pages/PartnersPageComponent";
 import { getLocaleAlternates } from "@/lib/seo";
-
-export async function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
 
 interface LocalizedPartnersProps {
   params: Promise<{ locale: SupportedLocale }>;

@@ -5,13 +5,9 @@ import { Container } from "@/components/layout/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { IconCircle } from "@/components/ui/IconCircle";
 import { coreValues } from "@/data/values";
-import { locales, SupportedLocale, getDictionary } from "@/lib/i18n";
+import { SupportedLocale, getDictionary } from "@/lib/i18n";
 import { Metadata } from "next";
 import { getLocaleAlternates } from "@/lib/seo";
-
-export async function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
-}
 
 interface LocalizedValuesProps {
   params: Promise<{ locale: SupportedLocale }>;
