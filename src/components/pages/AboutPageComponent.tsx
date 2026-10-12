@@ -5,7 +5,6 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { HoldingPurposeSection } from "@/components/sections/HoldingPurposeSection";
-import { CorporateStationerySection } from "@/components/sections/CorporateStationerySection";
 import { AboutPeopleCarousel } from "@/components/sections/AboutPeopleCarousel";
 import { SupportedLocale } from "@/lib/i18n";
 import {
@@ -2263,8 +2262,6 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             </div>
           </Container>
         </section>
-
-        <CorporateStationerySection locale={locale} />
 
         {/* ══════════════════════════════════════════════════════════
             SECTION 5: UNSERE WERTE ("Das macht uns besonders.")
