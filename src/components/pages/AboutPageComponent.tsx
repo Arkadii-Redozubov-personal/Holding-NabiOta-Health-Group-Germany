@@ -5,7 +5,6 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { HoldingPurposeSection } from "@/components/sections/HoldingPurposeSection";
-import { AboutPeopleCarousel } from "@/components/sections/AboutPeopleCarousel";
 import { SupportedLocale } from "@/lib/i18n";
 import {
   ChevronRight,
@@ -19,6 +18,7 @@ import {
   HeartHandshake,
   GraduationCap,
   Scale,
+  Briefcase,
 } from "lucide-react";
 
 interface AboutPageComponentProps {
@@ -737,19 +737,112 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       ? "يرتكز أساس NabiOta® Health Group Germany على التميز السريري الرفيع والحق التأسيسي القانوني للأطباء المعتمدين. تضمن الإدارة الطبية أعلى معايير جودة الرعاية دون أي ضغوط ربحية تجارية بحتة."
       : "Das Fundament der NabiOta® Health Group Germany basiert auf der klinischen Exzellenz und der gesetzlichen Gründungsberechtigung niedergelassener Vertragsärzte. Die medizinische Leitung sichert höchste Behandlungsqualität frei von rein ökonomischem Renditedruck.",
 
-    founderName: "Dr. Fischer-Rahimov",
-    founderRole: isUz
-      ? "Ta'sischi shifokor va 1-bosqich tibbiy kuratori"
-      : isRu
-      ? "Врач-учредитель & Медицинский куратор Фазы 1"
-      : isEn
-      ? "Founding Statutory Physician & Phase 1 Medical Sponsor"
+    founderName: isRu
+      ? "Доктор медицины К. Фишер-Рахимов"
+      : isUz
+      ? "Tibbiyot fanlari doktori K. Fisher-Raximov"
       : isTr
-      ? "Yasal Kurucu Sözleşmeli Hekim & Tıbbi Hami"
+      ? "Tıp Doktoru K. Fischer-Rahimov"
       : isAr
-      ? "طبيب معتمد مؤسس وراعٍ طبي معتمد"
-      : "Gründungsberechtigter Vertragsarzt & Medizinischer Schirmherr",
-    founderBadge: "§ 95 Abs. 1a SGB V",
+      ? "د. ك. فيشر-رحيموف"
+      : "Dr. med. K. Fischer-Rahimov",
+    founderRole: isUz
+      ? "Xoldingning yagona ta'sischisi va bosh direktori · Gründungsberechtigter Vertragsarzt"
+      : isRu
+      ? "Единственный участник и генеральный директор холдинга · Врач-учредитель"
+      : isEn
+      ? "Sole Shareholder & Managing Director of the Holding · Statutory Founding Physician"
+      : isTr
+      ? "Holdingin Tek Ortağı ve Genel Müdürü · Yasal Kurucu Hekim"
+      : isAr
+      ? "المساهم الوحيد والمدير العام للمجموعة · طبيب مؤسس معتمد"
+      : "Alleingesellschafter und Geschäftsführer der Holding · Gründungsberechtigter Vertragsarzt",
+    founderBadge: isRu ? "§ 95 Abs. 1a SGB V · Врач-учредитель" : "§ 95 Abs. 1a SGB V",
+
+    consultantName: isRu
+      ? "Азизбек Фишер-Рахимов (Azizbek Fischer-Rahimov)"
+      : isUz
+      ? "Azizbek Fisher-Raximov"
+      : "Azizbek Fischer-Rahimov",
+    consultantRole: isUz
+      ? "Menejer-konsultant"
+      : isRu
+      ? "Менеджер-консультант"
+      : isEn
+      ? "Management Consultant"
+      : isTr
+      ? "Yönetici Danışman (Manager-Consultant)"
+      : isAr
+      ? "مدير استشاري (Manager-Consultant)"
+      : "Manager-Consultant",
+    consultantBadge: isUz
+      ? "Boshqaruv va konsalting"
+      : isRu
+      ? "Управление & Консалтинг"
+      : isEn
+      ? "Management & Corporate Consulting"
+      : isTr
+      ? "Yönetim ve Kurumsal Danışmanlık"
+      : isAr
+      ? "الإدارة والاستشارات المؤسسية"
+      : "Unternehmensberatung & Management",
+    consultantBio1: isUz
+      ? "Xolding tuzilmalarining strategik o'sishini, yangi loyihalarni joriy etishni va kompaniyalar o'rtasidagi operatsion jarayonlarni muvofiqlashtirishni qo'llab-quvvatlaydi."
+      : isRu
+      ? "Сопровождает стратегическое развитие дочерних обществ холдинга, внедрение современных стандартов управления и оперативную координацию между подразделениями группы NabiOta."
+      : isEn
+      ? "Supports the strategic expansion of holding subsidiaries, implementation of modern corporate workflows, and cross-entity operational coordination across all NabiOta units."
+      : isTr
+      ? "Holding bağlı ortaklıklarının stratejik büyümesini, modern yönetim standartlarının entegrasyonunu ve NabiOta birimleri arasındaki operasyonel uyumu koordine eder."
+      : isAr
+      ? "يدعم التوسع الاستراتيجي للشركات التابعة للمجموعة، وتطبيق معايير الإدارة الحديثة، والتنسيق التشغيلي الفعال بين جميع أقسام مجموعة NabiOta."
+      : "Unterstützt die strategische Weiterentwicklung der Holdinggesellschaften, die Einführung moderner Organisationsstandards und die operative Koordination zwischen den Standorten der NabiOta-Gruppe.",
+    consultantBio2: isUz
+      ? "Uning faoliyati holding filiallarining samarali o'zaro hamkorligini ta'minlash, mijozlar va hamkorlar bilan ishonchli muloqotni rivojlantirishga qaratilgan."
+      : isRu
+      ? "Курирует консультационную поддержку проектов развития, взаимодействие с партнерами и оптимизацию административных процессов внутри структуры холдинга."
+      : isEn
+      ? "Oversees advisory support for expansion initiatives, partner relationships, and the streamlining of administrative workflows across holding operations."
+      : isTr
+      ? "Büyüme girişimleri için danışmanlık desteğini, iş ortaklıklarını ve holding operasyonlarındaki idari süreçlerin optimize edilmesini yönetir."
+      : isAr
+      ? "يشرف على الدعم الاستشاري لمبادرات التوسع، وعلاقات الشركاء، وتحسين سير العمل الإداري في جميع عمليات المجموعة."
+      : "Fokussiert sich auf die beratende Begleitung von Entwicklungsprojekten, partnerschaftliche Kommunikation sowie die Optimierung administrativer Abläufe innerhalb der Holding.",
+    consultantPoints: [
+      isUz
+        ? "Holding kompaniyalari faoliyatini operatsion muvofiqlashtirish"
+        : isRu
+        ? "Операционная координация подразделений холдинга"
+        : isEn
+        ? "Operational coordination across holding entities"
+        : isTr
+        ? "Holding birimleri arasında operasyonel koordinasyon"
+        : isAr
+        ? "التنسيق التشغيلي بين كيانات المجموعة"
+        : "Operative Standort- und Prozesskoordination",
+      isUz
+        ? "Boshqaruv va konsalting jarayonlarini optimallashtirish"
+        : isRu
+        ? "Оптимизация консультационных и управленческих процессов"
+        : isEn
+        ? "Strategic workflow & management consulting"
+        : isTr
+        ? "Yönetim süreçleri ve danışmanlık optimizasyonu"
+        : isAr
+        ? "تحسين مسارات العمل والاستشارات الإدارية"
+        : "Strategische Prozess- und Managementberatung",
+      isUz
+        ? "Xalqaro va hududiy hamkorlar bilan o'zaro hamkorlikni rivojlantirish"
+        : isRu
+        ? "Развитие взаимодействия с региональными и международными партнерами"
+        : isEn
+        ? "Advancing regional and international partner dialogue"
+        : isTr
+        ? "Bölgesel ve uluslararası ortaklarla ilişkilerin geliştirilmesi"
+        : isAr
+        ? "تطوير الحوار مع الشركاء الإقليميين والدوليين"
+        : "Förderung von Partner- und Netzwerkkooperationen",
+    ],
     founderBio1: isUz
       ? "Shimoliy Reyn-Vestfaliya (NRW) hududida ko'p yillik amaliyot tajribasiga ega litsenziyalangan shifokor sifatida Dr. Fischer-Rahimov xoldingning barcha tibbiy jarayonlari va ambulator yo'nalishlarining klinik sifatini nazorat qiladi."
       : isRu
@@ -1990,7 +2083,57 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                   </div>
                 </div>
               </div>
-              <AboutPeopleCarousel locale={locale} />
+
+              {/* Azizbek Fischer-Rahimov Card (Son, Manager-Consultant) */}
+              <div className="bg-white rounded-[28px] lg:rounded-[32px] border border-[#EDE6D8] shadow-[0_10px_40px_-24px_rgba(20,35,24,0.14)] mb-8 relative overflow-hidden">
+                <div className="grid grid-cols-1 lg:grid-cols-[30%_minmax(0,1fr)]">
+                  {/* Left: portrait */}
+                  <div className="relative min-h-[260px] sm:min-h-[300px] lg:min-h-full">
+                    <Image
+                      src="/images/about/son-rahimov.png"
+                      alt={t.consultantName}
+                      fill
+                      sizes="(min-width: 1024px) 36vw, 100vw"
+                      className="object-cover object-[50%_15%]"
+                    />
+                  </div>
+
+                  {/* Right: consultant information */}
+                  <div className="p-5 sm:p-6 lg:py-7 lg:pr-8 lg:pl-12 flex flex-col justify-center">
+                    <div className="flex items-center gap-2.5 mb-2.5 flex-wrap">
+                      <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.22em] text-[#C5A56A] uppercase font-sans">
+                        {t.consultantBadge}
+                      </span>
+                      <span className="w-1 h-1 rounded-full bg-[#C5A56A]/60" />
+                      <span className="inline-flex items-center gap-1.5 text-[10.5px] tracking-[0.16em] uppercase text-[#6E7870] font-medium font-sans">
+                        <Briefcase className="w-3.5 h-3.5 text-[#B89650] stroke-[1.8]" />
+                        <span>NabiOta Group</span>
+                      </span>
+                    </div>
+
+                    <h3 className="font-serif text-[28px] sm:text-[34px] lg:text-[38px] font-bold text-[#142318] leading-[1.08]">
+                      {t.consultantName}
+                    </h3>
+                    <p className="text-[13.5px] sm:text-[14.5px] font-semibold tracking-wide text-[#8B7347] mt-1.5 font-sans">
+                      {t.consultantRole}
+                    </p>
+
+                    <div className="space-y-2 max-w-[620px] text-[13px] sm:text-[13.5px] text-[#4E5650] leading-[1.6] font-sans mt-3">
+                      <p>{t.consultantBio1}</p>
+                      <p>{t.consultantBio2}</p>
+                    </div>
+
+                    <div className="mt-3.5 space-y-1.5">
+                      {t.consultantPoints.map((point: string, idx: number) => (
+                        <div key={idx} className="flex items-start gap-3 text-[13px] sm:text-[13.5px] text-[#2C3E31] font-medium leading-snug">
+                          <CheckCircle2 className="w-5 h-5 text-[#8B7347] shrink-0 stroke-[1.8]" />
+                          <span>{point}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </Container>
         </section>
