@@ -9,7 +9,6 @@ import { Container } from "@/components/layout/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { BusinessCard } from "@/components/ui/BusinessCard";
-import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { PageHero } from "@/components/layout/PageHero";
 import { businessAreas } from "@/data/areas";
 import { MedizinischeFachbereichePageComponent } from "@/components/pages/MedizinischeFachbereichePageComponent";
@@ -98,17 +97,8 @@ export default async function AreaDetailPage({ params }: AreaDetailPageProps) {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1 pb-20">
-        {/* Hero Section with Breadcrumb */}
+        {/* Hero Section */}
         <PageHero
-          breadcrumb={
-            <Breadcrumb
-              items={[
-                { label: "Startseite", href: "/" },
-                { label: "Unternehmensbereiche", href: "/areas" },
-                { label: area.title },
-              ]}
-            />
-          }
           title={area.title}
           description={area.description}
           imageSrc={area.image || "/images/heroes/hero-areas.webp"}

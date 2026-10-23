@@ -28,7 +28,6 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { PageHero } from "@/components/layout/PageHero";
-import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { SupportedLocale } from "@/lib/i18n";
 import { RecruitmentCompanySection } from "@/components/sections/RecruitmentCompanySection";
 
@@ -2151,44 +2150,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
       <Header currentLocale={locale} />
 
       <main className="flex-1">
-        {/* 2. Site Page Hero with Botanical Background and Breadcrumbs */}
+        {/* 2. Site Page Hero with Botanical Background */}
         <PageHero
           locale={locale}
-          breadcrumb={
-            <Breadcrumb
-              items={[
-                {
-                  label: isUz
-                    ? "Asosiy sahifa"
-                    : isRu
-                    ? "Главная"
-                    : isEn
-                    ? "Home"
-                    : isTr
-                    ? "Ana Sayfa"
-                    : isAr
-                    ? "الرئيسية"
-                    : "Startseite",
-                  href: `/${locale}`,
-                },
-                {
-                  label: isUz
-                    ? "Faoliyat yo'nalishlari"
-                    : isRu
-                    ? "Сферы деятельности"
-                    : isEn
-                    ? "Business Areas"
-                    : isTr
-                    ? "Şirket Alanları"
-                    : isAr
-                    ? "قطاعات المجموعة"
-                    : "Unternehmensbereiche",
-                  href: `/${locale}/areas`,
-                },
-                { label: heroData.title },
-              ]}
-            />
-          }
           title={heroData.title}
           eyebrow={heroData.eyebrow}
           description={heroData.desc}

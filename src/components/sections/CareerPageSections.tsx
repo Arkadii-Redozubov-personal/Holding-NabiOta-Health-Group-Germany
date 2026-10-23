@@ -1,6 +1,5 @@
 import { type Dispatch, type FormEventHandler, type SetStateAction } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { HeroBadges } from "@/components/ui/HeroBadges";
 import type { SupportedLocale } from "@/lib/i18n";
 import type { CareerContent } from "@/data/career-translations";
@@ -29,7 +28,7 @@ export function CareerHero({ locale, t }: { locale: SupportedLocale; t: CareerCo
   return (
     <>
         {/* ── SECTION 1: HERO (Unified Format: Compact Dark Forest Green + Doctors + Golden Arcs) ── */}
-        <section dir="ltr" className="relative w-full min-h-[480px] sm:min-h-[520px] lg:h-[600px] lg:min-h-[600px] pt-32 sm:pt-36 lg:pt-40 pb-14 sm:pb-16 overflow-hidden flex items-center bg-[#07150C] text-[#FAF8F5] border-b border-[#D5B878]/25">
+        <section dir="ltr" className="relative w-full min-h-[420px] sm:min-h-[460px] lg:h-[500px] lg:min-h-[500px] pt-28 sm:pt-32 lg:pt-36 pb-10 sm:pb-12 overflow-hidden flex items-center bg-[#07150C] text-[#FAF8F5] border-b border-[#D5B878]/25">
           {/* Background: Modern Healthcare Professional in scrubs holding tablet - pulled back & sharp framing */}
           <div className="absolute inset-y-0 right-0 z-0 pointer-events-none overflow-hidden w-full sm:left-[28%] sm:w-[72%] lg:left-[35%] lg:w-[65%] xl:left-[38%] xl:w-[62%] 2xl:left-[40%] 2xl:w-[60%]">
             <Image
@@ -139,38 +138,8 @@ export function CareerHero({ locale, t }: { locale: SupportedLocale; t: CareerCo
           </div>
 
           <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
-            <div className="max-w-xl lg:max-w-[540px] xl:max-w-[620px]">
-              <nav className="flex items-center gap-2 text-xs sm:text-[12.5px] text-[#A2ADA4] mb-3.5 font-sans" aria-label="Breadcrumb">
-                <Link href={`/${locale}`} className="hover:text-[#D5B878] transition-colors">
-                  {locale === "uz"
-                    ? "Bosh sahifa"
-                    : locale === "ru"
-                    ? "Главная"
-                    : locale === "en"
-                    ? "Home"
-                    : locale === "tr"
-                    ? "Ana Sayfa"
-                    : locale === "ar"
-                    ? "الرئيسية"
-                    : "Startseite"}
-                </Link>
-                <span className="text-[#A2ADA4]/70 text-[10px] font-bold">›</span>
-                <span className="text-white/95 font-medium">
-                  {locale === "uz"
-                    ? "Karyera va rekruting"
-                    : locale === "ru"
-                    ? "Карьера & Рекрутмент"
-                    : locale === "en"
-                    ? "Career & Recruitment"
-                    : locale === "tr"
-                    ? "Kariyer ve İşe Alım"
-                    : locale === "ar"
-                    ? "الوظائف والتوظيف الطبي"
-                    : "Karriere & Recruitment"}
-                </span>
-              </nav>
-
-              <h1 dir="auto" className="page-hero-title text-left font-serif text-[32px] sm:text-[40px] lg:text-[44px] xl:text-[50px] text-white font-normal leading-[1.12] tracking-tight mb-4 break-words [overflow-wrap:anywhere] hyphens-auto">
+            <div className="max-w-xl lg:max-w-[540px] xl:max-w-[620px] pl-2 sm:pl-6 lg:pl-8 xl:pl-10">
+              <h1 dir="auto" className="page-hero-title text-left font-serif text-[30px] sm:text-[38px] lg:text-[42px] xl:text-[46px] text-white font-normal leading-[1.12] tracking-tight mb-3.5 sm:mb-4 break-words [overflow-wrap:anywhere] hyphens-auto">
                 {t.hero.titlePrefix}
                 <br />
                 {t.hero.titleMid}{" "}
@@ -179,7 +148,7 @@ export function CareerHero({ locale, t }: { locale: SupportedLocale; t: CareerCo
                 </span>
               </h1>
 
-              <p dir="auto" className="hero-text-wrap text-left text-[13.5px] sm:text-[14.5px] text-[#D2DED5] leading-[1.72] font-sans max-w-xl mb-6 font-normal break-words [overflow-wrap:anywhere] hyphens-auto">
+              <p dir="auto" className="hero-text-wrap text-left text-[13px] sm:text-[14px] text-[#D2DED5] leading-[1.65] font-sans max-w-xl mb-4 sm:mb-5 font-normal break-words [overflow-wrap:anywhere] hyphens-auto">
                 {t.hero.description}
               </p>
 

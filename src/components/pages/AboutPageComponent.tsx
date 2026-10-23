@@ -257,28 +257,6 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
   const isAr = locale === "ar";
 
   const t = {
-    breadcrumbHome: isUz
-      ? "Asosiy sahifa"
-      : isRu
-      ? "Главная"
-      : isEn
-      ? "Home"
-      : isTr
-      ? "Ana Sayfa"
-      : isAr
-      ? "الرئيسية"
-      : "Startseite",
-    breadcrumbAbout: isUz
-      ? "Xolding haqida"
-      : isRu
-      ? "О холдинге"
-      : isEn
-      ? "About Us"
-      : isTr
-      ? "Hakkımızda"
-      : isAr
-      ? "عن المجموعة"
-      : "Über uns",
     heroEyebrow: isUz
       ? "XOLDING HAQIDA"
       : isRu
@@ -1395,7 +1373,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         {/* ══════════════════════════════════════════════════════════
             SECTION 1: HERO HEADER (Matching Reference 1:1)
         ══════════════════════════════════════════════════════════ */}
-        <section dir="ltr" className="relative w-full min-h-[480px] sm:min-h-[520px] lg:h-[600px] lg:min-h-[600px] pt-32 sm:pt-36 lg:pt-40 pb-14 sm:pb-16 overflow-hidden flex items-center bg-[#07150C] text-[#FAF8F5] border-b border-[#D5B878]/25">
+        <section dir="ltr" className="relative w-full min-h-[420px] sm:min-h-[460px] lg:h-[500px] lg:min-h-[500px] pt-28 sm:pt-32 lg:pt-36 pb-10 sm:pb-12 overflow-hidden flex items-center bg-[#07150C] text-[#FAF8F5] border-b border-[#D5B878]/25">
           {/* Background: Modern Medical Doctors Team on the right - pulled back & sharp framing */}
           <div className="absolute inset-y-0 right-0 z-0 pointer-events-none overflow-hidden w-full sm:left-[28%] sm:w-[72%] lg:left-[35%] lg:w-[65%] xl:left-[38%] xl:w-[62%] 2xl:left-[40%] 2xl:w-[60%]">
             <Image
@@ -1502,25 +1480,16 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
           <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#051208]/85 to-transparent pointer-events-none z-10" />
 
           <Container size="wide" className="relative z-20">
-            <div className="max-w-xl lg:max-w-[520px] xl:max-w-[600px]">
-              {/* Breadcrumb matching Photo 2 */}
-              <nav className="flex items-center gap-2 text-xs sm:text-[12.5px] text-[#A2ADA4] mb-3.5 font-sans" aria-label="Breadcrumb">
-                <Link href={`/${locale}`} className="hover:text-[#D5B878] transition-colors">
-                  {t.breadcrumbHome}
-                </Link>
-                <span className="text-[#A2ADA4]/70 text-[10px] font-bold">›</span>
-                <span className="text-white/95 font-medium">{t.breadcrumbAbout}</span>
-              </nav>
-
+            <div className="max-w-xl lg:max-w-[520px] xl:max-w-[600px] pl-2 sm:pl-6 lg:pl-8 xl:pl-10">
               {/* Main Heading */}
-              <h1 dir="auto" className="page-hero-title text-left font-serif text-[32px] sm:text-[40px] lg:text-[44px] xl:text-[50px] font-normal leading-[1.12] tracking-[-0.01em] text-white mb-5 sm:mb-6 break-words [overflow-wrap:anywhere] hyphens-auto">
+              <h1 dir="auto" className="page-hero-title text-left font-serif text-[30px] sm:text-[38px] lg:text-[42px] xl:text-[46px] font-normal leading-[1.12] tracking-[-0.01em] text-white mb-4 sm:mb-5 break-words [overflow-wrap:anywhere] hyphens-auto">
                 {t.heroTitlePart1}
                 <br />
                 {t.heroTitlePart2}
               </h1>
 
               {/* Description */}
-              <p dir="auto" className="hero-text-wrap text-left text-[13.5px] sm:text-[14.5px] text-[#D2DED5] leading-[1.72] font-sans max-w-xl mb-9 sm:mb-11 font-normal break-words [overflow-wrap:anywhere] hyphens-auto">
+              <p dir="auto" className="hero-text-wrap text-left text-[13px] sm:text-[14px] text-[#D2DED5] leading-[1.65] font-sans max-w-xl mb-5 sm:mb-6 font-normal break-words [overflow-wrap:anywhere] hyphens-auto">
                 {t.heroDesc}
               </p>
 

@@ -21,7 +21,6 @@ import { MvzPrimaryCareSection } from "@/components/sections/MvzPrimaryCareSecti
 import { MvzSurgeryCareSection } from "@/components/sections/MvzSurgeryCareSection";
 import { ClinicsGermanySection } from "@/components/sections/ClinicsGermanySection";
 import { PageHero } from "@/components/layout/PageHero";
-import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { SupportedLocale } from "@/lib/i18n";
 import { businessAreas } from "@/data/areas";
 
@@ -181,8 +180,6 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
 
   // ── Hero Data ──
   const heroData = {
-    breadcrumbHome: isUz ? "Bosh sahifa" : isRu ? "Главная" : isEn ? "Home" : isTr ? "Ana Sayfa" : isAr ? "الرئيسية" : "Startseite",
-    breadcrumbAreas: isUz ? "Yo'nalishlar" : isRu ? "Направления" : isEn ? "Our Divisions" : isTr ? "Faaliyet Alanları" : isAr ? "قطاعات الأعمال" : "Unternehmensbereiche",
     title: isUz ? "Tibbiy mutaxassisliklar" : isRu ? "Медицинские отделения" : isEn ? "Medical Departments" : isTr ? "Tıbbi Uzmanlık Bölümleri" : isAr ? "الأقسام الطبية التخصصية" : "Medizinische Fachbereiche",
     subtitle: isUz
       ? "Ambulator va yuqori darajadagi ixtisoslashtirilgan tibbiyot"
@@ -667,15 +664,6 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
       {/* ── Page Hero ── */}
       <PageHero
           locale={locale}
-        breadcrumb={
-          <Breadcrumb
-            items={[
-              { label: heroData.breadcrumbHome, href: `/${locale}` },
-              { label: heroData.breadcrumbAreas, href: `/${locale}/areas` },
-              { label: heroData.title },
-            ]}
-          />
-        }
         title={heroData.title}
         description={heroData.description}
         imageSrc={area.image || "/images/heroes/hero-areas.webp"}

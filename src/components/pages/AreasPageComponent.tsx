@@ -20,7 +20,6 @@ import { Container } from "@/components/layout/Container";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { PageHero } from "@/components/layout/PageHero";
-import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { SupportedLocale } from "@/lib/i18n";
 
 // ── Decorative SVG Icons for Photo 1 ──
@@ -136,8 +135,6 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
 
   // ── Hero Translations ──
   const heroData = {
-    breadcrumbHome: isUz ? "Bosh sahifa" : isRu ? "Главная" : isEn ? "Home" : isTr ? "Ana Sayfa" : isAr ? "الرئيسية" : "Startseite",
-    breadcrumbAreas: isUz ? "Yo'nalishlar" : isRu ? "Направления" : isEn ? "Our Divisions" : isTr ? "Faaliyet Alanları" : isAr ? "قطاعات الأعمال" : "Unternehmensbereiche",
     eyebrow: isUz ? "HOLDING YO'NALISHLARI" : isRu ? "НАПРАВЛЕНИЯ ХОЛДИНГА" : isEn ? "OUR DIVISIONS" : isTr ? "HOLDİNG FAALİYET ALANLARI" : isAr ? "قطاعات أعمال المجموعة" : "UNTERNEHMENSBEREICHE",
     title: isUz
       ? "Turli sohalardagi yetakchilik. Yagona mushtarak maqsad."
@@ -568,14 +565,6 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
       {/* ── Page Hero with Badges ── */}
       <PageHero
           locale={locale}
-        breadcrumb={
-          <Breadcrumb
-            items={[
-              { label: heroData.breadcrumbHome, href: `/${locale}` },
-              { label: heroData.breadcrumbAreas },
-            ]}
-          />
-        }
         title={heroData.title}
         description={heroData.description}
         badges={heroData.badges}

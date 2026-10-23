@@ -9,7 +9,6 @@ import { Container } from "@/components/layout/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { BusinessCard } from "@/components/ui/BusinessCard";
-import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { PageHero } from "@/components/layout/PageHero";
 import { businessAreas } from "@/data/areas";
 import { MedizinischeFachbereichePageComponent } from "@/components/pages/MedizinischeFachbereichePageComponent";
@@ -172,17 +171,8 @@ export default async function LocalizedAreaDetailPage({ params }: LocalizedAreaD
     <div className="flex flex-col min-h-screen">
       <Header currentLocale={locale} />
       <main className="flex-1 pb-20">
-        {/* Hero Section with Integrated Breadcrumb matching Photo 2 */}
+        {/* Hero Section */}
         <PageHero
-          breadcrumb={
-            <Breadcrumb
-              items={[
-                { label: dict.nav.home, href: `/${locale}` },
-                { label: dict.nav.areas, href: `/${locale}/areas` },
-                { label: displayTitle },
-              ]}
-            />
-          }
           title={displayTitle}
           description={area.description}
           imageSrc={area.image || "/images/heroes/hero-areas.webp"}

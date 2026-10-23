@@ -21,7 +21,6 @@ import {
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { PageHero } from "@/components/layout/PageHero";
-import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { SupportedLocale } from "@/lib/i18n";
 import { RehabilitationCompanySection } from "@/components/sections/RehabilitationCompanySection";
 
@@ -1165,15 +1164,6 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
       ══════════════════════════════════════════════════════════ */}
       <PageHero
           locale={locale}
-        breadcrumb={
-          <Breadcrumb
-            items={[
-              { label: isUz ? "Bosh sahifa" : isRu ? "Главная" : isEn ? "Home" : isTr ? "Ana Sayfa" : isAr ? "الرئيسية" : "Startseite", href: `/${locale}` },
-              { label: isUz ? "Yo'nalishlar" : isRu ? "Направления" : isEn ? "Divisions" : isTr ? "Şirket Alanları" : isAr ? "قطاعات المجموعة" : "Unternehmensbereiche", href: `/${locale}/areas` },
-              { label: heroData.title },
-            ]}
-          />
-        }
         eyebrow={heroData.eyebrow}
         title={heroData.title}
         description={heroData.desc}

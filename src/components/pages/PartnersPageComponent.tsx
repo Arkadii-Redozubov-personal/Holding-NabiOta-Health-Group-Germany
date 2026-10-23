@@ -34,7 +34,6 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { PageHero } from "@/components/layout/PageHero";
-import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { SupportedLocale } from "@/lib/i18n";
 import { MvzContractSection } from "@/components/sections/MvzContractSection";
 
@@ -979,18 +978,6 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
         {/* 1. PageHero */}
         <PageHero
           locale={locale}
-          breadcrumb={
-            <Breadcrumb
-              items={[
-                { label: isUz
-   ? "Asosiy sahifa"
-   : isRu ? "Главная" : isEn ? "Home" : isTr ? "Ana Sayfa" : isAr ? "الرئيسية" : "Startseite", href: `/${locale}` },
-                { label: isUz
-   ? "Hamkorlar va investitsiyalar"
-   : isRu ? "Партнеры и инвестиции" : isEn ? "Partners & Alliances" : isTr ? "Ortaklar ve Yatırımlar" : isAr ? "الشركاء والاستثمار" : "Partner & Investoren" },
-              ]}
-            />
-          }
           title={heroData.title}
           eyebrow={heroData.eyebrow}
           description={heroData.desc}

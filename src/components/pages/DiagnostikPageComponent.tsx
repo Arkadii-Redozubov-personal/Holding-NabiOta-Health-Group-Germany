@@ -25,7 +25,6 @@ import {
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { PageHero } from "@/components/layout/PageHero";
-import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { SupportedLocale } from "@/lib/i18n";
 import { businessAreas } from "@/data/areas";
 import { DiagnosticsCompanySection } from "@/components/sections/DiagnosticsCompanySection";
@@ -1034,21 +1033,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
     <div className="flex flex-col min-h-screen bg-[#FAF8F5]">
       <Header currentLocale={locale} />
 
-      {/* ── Page Hero with integrated breadcrumb ── */}
+      {/* ── Page Hero ── */}
       <PageHero
           locale={locale}
-        breadcrumb={
-          <Breadcrumb
-            items={[
-              { label: isUz ? "Bosh sahifa" : isRu ? "Главная" : isEn ? "Home" : isTr ? "Ana Sayfa" : isAr ? "الرئيسية" : "Startseite", href: `/${locale}` },
-              {
-                label: isUz ? "Yo'nalishlar" : isRu ? "Направления холдинга" : isEn ? "Divisions" : isTr ? "Şirket Alanları" : isAr ? "قطاعات المجموعة" : "Unternehmensbereiche",
-                href: `/${locale}/areas`,
-              },
-              { label: heroData.title },
-            ]}
-          />
-        }
         title={heroData.title}
         description={heroData.description}
         imageSrc={area.image || "/images/areas/diagnostics.webp"}

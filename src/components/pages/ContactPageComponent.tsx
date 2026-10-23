@@ -7,7 +7,6 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { PageHero } from "@/components/layout/PageHero";
-import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { SupportedLocale } from "@/lib/i18n";
 import {
   MapPin,
@@ -633,41 +632,6 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
         {/* ── Page Hero Header (Unified across all subpages) ── */}
         <PageHero
           locale={locale}
-          breadcrumb={
-            <Breadcrumb
-              items={[
-                {
-                  label:
-                    locale === "uz"
-                      ? "Bosh sahifa"
-                      : locale === "ru"
-                      ? "Главная"
-                      : locale === "en"
-                      ? "Home"
-                      : locale === "tr"
-                      ? "Ana Sayfa"
-                      : locale === "ar"
-                      ? "الرئيسية"
-                      : "Startseite",
-                  href: `/${locale}`,
-                },
-                {
-                  label:
-                    locale === "uz"
-                      ? "Aloqa"
-                      : locale === "ru"
-                      ? "Контакты"
-                      : locale === "en"
-                      ? "Contact"
-                      : locale === "tr"
-                      ? "İletişim"
-                      : locale === "ar"
-                      ? "اتصل بنا"
-                      : "Kontakt",
-                },
-              ]}
-            />
-          }
           title={
             locale === "uz"
               ? "Biz bilan bog'laning"

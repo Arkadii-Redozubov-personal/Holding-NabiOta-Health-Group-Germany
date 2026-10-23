@@ -33,7 +33,6 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { PageHero } from "@/components/layout/PageHero";
-import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import type { SupportedLocale } from "@/lib/i18n";
 import { HomeCareCompanySection } from "@/components/sections/HomeCareCompanySection";
 import { SanitaetshausCompanySection } from "@/components/sections/SanitaetshausCompanySection";
@@ -817,18 +816,6 @@ export function PflegePageComponent({ locale = "de" }: Props) {
       {/* ── 2. SITE STANDARD PAGE HERO (Unified Header with botanical gold background) ── */}
       <PageHero
           locale={locale}
-        breadcrumb={
-          <Breadcrumb
-            items={[
-              { label: isUz ? "Bosh sahifa" : isRu ? "Главная" : isEn ? "Home" : isTr ? "Ana Sayfa" : isAr ? "الرئيسية" : "Startseite", href: `/${locale}` },
-              {
-                label: isUz ? "Xolding yo'nalishlari" : isRu ? "Направления холдинга" : isEn ? "Divisions" : isTr ? "Şirket Alanları" : isAr ? "قطاعات المجموعة" : "Unternehmensbereiche",
-                href: `/${locale}/areas`,
-              },
-              { label: heroData.title },
-            ]}
-          />
-        }
         title={heroData.title}
         eyebrow={heroData.eyebrow}
         description={heroData.desc}

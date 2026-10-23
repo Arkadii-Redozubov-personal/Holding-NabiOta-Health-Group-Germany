@@ -32,7 +32,7 @@ export function PageHero({
   return (
     <section
       dir="ltr"
-      className={`relative w-full min-h-[480px] sm:min-h-[520px] lg:h-[600px] lg:min-h-[600px] pt-32 sm:pt-36 lg:pt-40 pb-14 sm:pb-16 overflow-hidden flex items-center bg-[#07150C] text-[#FAF8F5] border-b border-[#D5B878]/25 ${className}`}
+      className={`relative w-full min-h-[420px] sm:min-h-[460px] lg:h-[500px] lg:min-h-[500px] pt-28 sm:pt-32 lg:pt-36 pb-10 sm:pb-12 overflow-hidden flex items-center bg-[#07150C] text-[#FAF8F5] border-b border-[#D5B878]/25 ${className}`}
     >
       {/* ── Background: Medical / Clinic Photo on the right side (pulled back & sharp framing) ── */}
       <div className="absolute inset-y-0 right-0 z-0 pointer-events-none overflow-hidden w-full sm:left-[28%] sm:w-[72%] lg:left-[35%] lg:w-[65%] xl:left-[38%] xl:w-[62%] 2xl:left-[40%] 2xl:w-[60%]">
@@ -135,7 +135,7 @@ export function PageHero({
 
       {/* ── Content Container (Comfortable max-w within narrower left wing) ── */}
       <Container size="wide" className="relative z-20">
-        <div className="max-w-xl lg:max-w-[520px] xl:max-w-[600px] text-left">
+        <div className="max-w-xl lg:max-w-[520px] xl:max-w-[600px] text-left pl-2 sm:pl-6 lg:pl-8 xl:pl-10">
           {breadcrumb && <div className="mb-3.5 sm:mb-4">{breadcrumb}</div>}
 
           <div
