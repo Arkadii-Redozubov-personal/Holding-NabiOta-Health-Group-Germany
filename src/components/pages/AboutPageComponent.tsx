@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
@@ -8,6 +10,8 @@ import { HoldingPurposeSection } from "@/components/sections/HoldingPurposeSecti
 import { SupportedLocale } from "@/lib/i18n";
 import {
   ChevronRight,
+  ChevronDown,
+  ChevronUp,
   ArrowRight,
   Users,
   Building2,
@@ -19,6 +23,7 @@ import {
   GraduationCap,
   Scale,
   Briefcase,
+  Quote,
 } from "lucide-react";
 
 interface AboutPageComponentProps {
@@ -242,6 +247,8 @@ function LightbulbValuesIcon({ className = "w-6 h-6" }: { className?: string }) 
 }
 
 export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
+  const [isFounderExpanded, setIsFounderExpanded] = useState(false);
+
   // Multilingual content dictionary
   const isUz = locale === "uz";
   const isEn = locale === "en";
@@ -757,7 +764,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isAr
       ? "المؤسس والمساهم الوحيد والمدير العام لمجموعة NabiOta Health Group Germany القابضة"
       : "Gründer, Alleingesellschafter und Geschäftsführer der Holding NabiOta Health Group Germany",
-    founderParagraphs: [
+    founderBadge: isRu ? "§ 95 Abs. 1a SGB V · Врач-учредитель" : "§ 95 Abs. 1a SGB V · Gründungsarzt",
+
+    founderIntroParagraphs: [
       isUz
         ? "Mening turli mamlakatlardagi shifokorlik faoliyatim tibbiy tajribamni kengaytirdi va turli xil sog'liqni saqlash tuzilmalari haqidagi tushunchamni shakllantirdi. Bu jarayonda bemorlarga yuqori sifatli yordam ko'rsatish nafaqat kasbiy malakani, balki tibbiyot yo'nalishlari o'rtasida yaqin hamkorlikni ham talab qilishi haqidagi qat'iy ishonch paydo bo'ldi."
         : isRu
@@ -780,6 +789,132 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         : isAr
         ? "ومن هذه القناعة ولدت فكرة تأسيس NabiOta Health Group Germany: الجمع بين كفاءات طب الأسرة والطب التخصصي تحت مظلة تنظيمية واحدة، وتصميم منظومة الرعاية من منظور المريض واحتياجاته."
         : "Aus dieser Überzeugung entstand die Idee zur NabiOta Health Group Germany: hausärztliche und fachärztliche Kompetenzen unter einem gemeinsamen organisatorischen Dach zusammenzuführen und die Versorgung aus der Perspektive der Patienten zu gestalten.",
+    ],
+
+    founderKeyPoints: [
+      {
+        title: isRu
+          ? "Междисциплинарная помощь"
+          : isUz
+          ? "Ko'p tarmoqli tibbiy yordam"
+          : isEn
+          ? "Cross-Disciplinary Care"
+          : isTr
+          ? "Branşlar Arası Sağlık Hizmeti"
+          : isAr
+          ? "رعاية متعددة التخصصات"
+          : "Fachübergreifende Versorgung",
+        desc: isRu
+          ? "Тесное взаимодействие терапевтов и узких специалистов под одной крышей."
+          : isUz
+          ? "Umumiy amaliyot va ixtisoslashgan shifokorlarning yagona tizimda hamkorligi."
+          : isEn
+          ? "Close integration of primary care and medical specialists under one roof."
+          : isTr
+          ? "Aile hekimleri ve uzman hekimlerin tek çatı altında kesintisiz iş birliği."
+          : isAr
+          ? "تكامل وثيق بين أطباء الأسرة والأطباء الاختصاصيين تحت سقف تنظيمي واحد."
+          : "Enge Vernetzung von Haus- und Fachärzten unter einem gemeinsamen Dach.",
+      },
+      {
+        title: isRu
+          ? "Ориентир на пациента"
+          : isUz
+          ? "Bemorga yo'naltirilganlik"
+          : isEn
+          ? "Patient-Centered Guidance"
+          : isTr
+          ? "Hasta Odaklı Yaklaşım"
+          : isAr
+          ? "توجيه ورعاية المريض"
+          : "Patientenorientierung",
+        desc: isRu
+          ? "Надежная маршрутизация и координация при сложных и хронических заболеваниях."
+          : isUz
+          ? "Murakkab va surunkali kasalliklarda ishonchli yo'naltirish va muvofiqlashtirilgan davolash."
+          : isEn
+          ? "Dependable guidance and coordinated treatment steps for complex & chronic conditions."
+          : isTr
+          ? "Karmaşık ve kronik rahatsızlıklarda güvenilir rehberlik ve koordineli tedavi."
+          : isAr
+          ? "مسار موثوق وتوجيه دقيق في الحالات المرضية المعقدة والأمراض المزمنة."
+          : "Verlässliche Orientierung und koordinierte Betreuung bei komplexen & chronischen Fällen.",
+      },
+      {
+        title: isRu
+          ? "Врачебная независимость"
+          : isUz
+          ? "Shifokorlik mustaqilligi"
+          : isEn
+          ? "Clinical Independence"
+          : isTr
+          ? "Tıbbi Bağımsızlık"
+          : isAr
+          ? "الاستقلالية الطبية التامة"
+          : "Ärztliche Weisungsfreiheit",
+        desc: isRu
+          ? "Медицинское руководство центров полностью свободно от сторонних указаний в клинических вопросах."
+          : isUz
+          ? "Tibbiyot markazlari bosh shifokorlari klinik qarorlarda to'liq mustaqildir."
+          : isEn
+          ? "Medical directorship of centers remains strictly free from non-clinical directives."
+          : isTr
+          ? "Merkezlerin tıbbi yönetimi klinik kararlarda talimatsız ve bağımsızdır."
+          : isAr
+          ? "تتمتع الإدارات الطبية في المراكز باستقلالية كاملة في جميع القرارات العلاجية."
+          : "Die ärztliche Leitung der Zentren ist in medizinischen Fragen vollkommen weisungsfrei.",
+      },
+    ],
+
+    founderQuote: isRu
+      ? "«Наш руководящий принцип: объединять медицинский опыт, укреплять партнерство и ставить человека в центр внимания.»"
+      : isUz
+      ? "«Bosh tamoyilimiz: tibbiy tajribani jamlash, hamkorlikni mustahkamlash va insonni markaziy o'ringa qo'yish.»"
+      : isEn
+      ? "“Our guiding principle: uniting clinical experience, strengthening collaboration, and placing people at the center.”"
+      : isTr
+      ? "“Temel ilkemiz: Tıbbi deneyimi birleştirmek, iş birliğini güçlendirmek ve insanı merkeze koymak.”"
+      : isAr
+      ? "«مبدؤنا التوجيهي: حشد الخبرة الطبية، تعزيز التعاون، ووضع الإنسان في قلب كل اهتمام.»"
+      : "„Unser Leitgedanke: medizinische Erfahrung bündeln, Zusammenarbeit stärken und den Menschen in den Mittelpunkt stellen.“",
+
+    founderExpandBtn: isRu
+      ? "Читать полное обращение"
+      : isUz
+      ? "To'liq murojaatni o'qish"
+      : isEn
+      ? "Read Full Statement"
+      : isTr
+      ? "Tam Metni Oku"
+      : isAr
+      ? "قراءة البيان الكامل"
+      : "Vollständiges Leitbild lesen",
+
+    founderCollapseBtn: isRu
+      ? "Свернуть обращение"
+      : isUz
+      ? "Murojaatni yopish"
+      : isEn
+      ? "Show Less"
+      : isTr
+      ? "Daha Az Göster"
+      : isAr
+      ? "طي البيان"
+      : "Weniger anzeigen",
+
+    founderExpandedTitle: isRu
+      ? "Подробная концепция помощи и структура ответственности"
+      : isUz
+      ? "Kengaytirilgan yordam konsepsiyasi va mas'uliyat"
+      : isEn
+      ? "Comprehensive Care Model & Corporate Governance"
+      : isTr
+      ? "Kapsamlı Sağlık Modeli ve Kurumsal Yönetim"
+      : isAr
+      ? "نموذج الرعاية الشامل والحوكمة المؤسسية"
+      : "Ausführliches Versorgungskonzept & Verantwortung",
+
+    founderExpandedParagraphs: [
       isUz
         ? "Bizning maqsadimiz — shaxsiylashtirilgan, ko'p tarmoqli va muvofiqlashtirilgan tibbiy parvarish. Birlamchi tibbiy yordamdan boshlab ixtisoslashgan diagnostika va keyingi davolanishgacha barcha xizmatlar o'zaro uzviy bog'lanishi kerak."
         : isRu
@@ -835,18 +970,8 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         : isAr
         ? "تبقى المسؤولية الطبية تجاه المرضى هي المعيار الأساسي والمحدد. وتتمتع الإدارة الطبية في مراكز الرعاية الطبية (MVZ) باستقلالية تامة وحرية كاملة دون أي تعليمات تجارية في القرارات العلاجية."
         : "Maßgeblich bleibt dabei die ärztliche Verantwortung gegenüber den Patienten. Die ärztliche Leitung der jeweiligen Medizinischen Versorgungszentren ist in medizinischen Fragen weisungsfrei.",
-      isUz
-        ? "Bosh tamoyilimiz: tibbiy tajribani jamlash, hamkorlikni mustahkamlash va insonni markaziy o'ringa qo'yish."
-        : isRu
-        ? "Наш руководящий принцип: объединять медицинский опыт, укреплять партнерство и ставить человека в центр внимания."
-        : isEn
-        ? "Our guiding principle: uniting clinical experience, strengthening collaboration, and placing people at the center."
-        : isTr
-        ? "Temel ilkemiz: Tıbbi deneyimi birleştirmek, iş birliğini güçlendirmek ve insanı merkeze koymak."
-        : isAr
-        ? "مبدؤنا التوجيهي: حشد الخبرة الطبية، تعزيز التعاون، ووضع الإنسان في قلب كل اهتمام."
-        : "Unser Leitgedanke: medizinische Erfahrung bündeln, Zusammenarbeit stärken und den Menschen in den Mittelpunkt stellen.",
     ],
+    founderParagraphs: [],
 
     consultantName: isRu
       ? "Азизбек Фишер-Рахимов (Azizbek Fischer-Rahimov)"
@@ -1962,6 +2087,12 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
 
                   {/* Right: doctor information */}
                   <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold tracking-wider uppercase bg-[#F4EFE6] text-[#8B7347] border border-[#E8DFC8]">
+                        {t.founderBadge}
+                      </span>
+                    </div>
+
                     <h3 className="font-serif text-[26px] sm:text-[32px] lg:text-[36px] font-bold text-[#142318] leading-[1.12]">
                       {t.founderName}
                     </h3>
@@ -1969,10 +2100,76 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       {t.founderRole}
                     </p>
 
+                    {/* Introductory core paragraphs */}
                     <div className="space-y-3.5 text-[13px] sm:text-[13.5px] lg:text-[14px] text-[#4E5650] leading-[1.7] font-sans mt-5">
-                      {t.founderParagraphs.map((para: string, idx: number) => (
+                      {t.founderIntroParagraphs.map((para: string, idx: number) => (
                         <p key={idx}>{para}</p>
                       ))}
+                    </div>
+
+                    {/* Key Highlights (3 cards) */}
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 my-5">
+                      {t.founderKeyPoints.map((point: { title: string; desc: string }, idx: number) => (
+                        <div
+                          key={idx}
+                          className="bg-[#FAF7F0] border border-[#EBE3D3] rounded-2xl p-3.5 flex flex-col justify-start transition-all hover:border-[#D5B878]/70 hover:shadow-xs"
+                        >
+                          <div className="w-8 h-8 rounded-xl bg-white border border-[#E8DFC8] text-[#1B3D2F] flex items-center justify-center shrink-0 mb-2.5 shadow-xs">
+                            {idx === 0 && <Stethoscope className="w-4 h-4 text-[#1B3D2F]" />}
+                            {idx === 1 && <HeartHandshake className="w-4 h-4 text-[#1B3D2F]" />}
+                            {idx === 2 && <ShieldCheck className="w-4 h-4 text-[#1B3D2F]" />}
+                          </div>
+                          <h4 className="text-[12.5px] font-bold text-[#142318] leading-snug">
+                            {point.title}
+                          </h4>
+                          <p className="text-[11.5px] text-[#5C645E] leading-relaxed mt-1 font-sans">
+                            {point.desc}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Featured Guiding Principle Quote (Leitgedanke) */}
+                    <div className="bg-gradient-to-r from-[#F7F4EB] to-[#FCFAF5] border-l-4 border-[#C5A859] rounded-r-2xl p-4 sm:p-5 my-2 shadow-xs">
+                      <div className="flex items-start gap-3">
+                        <Quote className="w-5 h-5 text-[#C5A859] shrink-0 mt-0.5" />
+                        <p className="text-[13.5px] sm:text-[14px] font-serif italic text-[#1B3D2F] leading-relaxed">
+                          {t.founderQuote}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Expand/Collapse Toggle Button */}
+                    <div className="mt-4 pt-1 flex items-center">
+                      <button
+                        type="button"
+                        onClick={() => setIsFounderExpanded(!isFounderExpanded)}
+                        className="group inline-flex items-center gap-2 text-[13px] sm:text-[13.5px] font-semibold text-[#1B3D2F] hover:text-[#8B7347] bg-[#F4EFE6] hover:bg-[#EFE8DC] active:scale-[0.99] transition-all duration-200 px-4 py-2.5 rounded-full border border-[#E2D8C3] cursor-pointer shadow-xs"
+                        aria-expanded={isFounderExpanded}
+                      >
+                        <span>{isFounderExpanded ? t.founderCollapseBtn : t.founderExpandBtn}</span>
+                        {isFounderExpanded ? (
+                          <ChevronUp className="w-4 h-4 transition-transform duration-200 group-hover:-translate-y-0.5" />
+                        ) : (
+                          <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:translate-y-0.5" />
+                        )}
+                      </button>
+                    </div>
+
+                    {/* Expandable Section with Detailed Model & Responsibilities */}
+                    <div
+                      className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                        isFounderExpanded ? "max-h-[2200px] opacity-100 mt-5 pt-5 border-t border-[#EDE6D8]" : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      <h4 className="text-[12.5px] font-bold uppercase tracking-wider text-[#8B7347] mb-3 font-sans">
+                        {t.founderExpandedTitle}
+                      </h4>
+                      <div className="space-y-3.5 text-[13px] sm:text-[13.5px] lg:text-[14px] text-[#4E5650] leading-[1.7] font-sans">
+                        {t.founderExpandedParagraphs.map((para: string, idx: number) => (
+                          <p key={idx}>{para}</p>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
