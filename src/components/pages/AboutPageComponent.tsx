@@ -2072,12 +2072,13 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
           <Container size="wide" className="relative z-10 mt-6 sm:mt-8">
             <div className="max-w-6xl mx-auto">
               {/* Main Founder Spotlight Card */}
-              <div className="bg-white rounded-[28px] lg:rounded-[32px] border border-[#EDE6D8] shadow-[0_10px_40px_-24px_rgba(20,35,24,0.14)] mb-10 sm:mb-12 relative overflow-hidden">
+              <div className="bg-white rounded-[28px] lg:rounded-[32px] border border-[#EDE6D8] shadow-[0_10px_40px_-24px_rgba(20,35,24,0.14)] mb-10 sm:mb-12 relative overflow-hidden transition-all duration-300">
+                {/* Upper grid: Portrait + Profile Summary */}
                 <div className="grid grid-cols-1 lg:grid-cols-[32%_minmax(0,1fr)]">
-                  {/* Left: portrait */}
-                  <div className="relative min-h-[340px] sm:min-h-[420px] lg:min-h-full">
+                  {/* Left: portrait (fixed/natural, does not stretch) */}
+                  <div className="relative min-h-[380px] sm:min-h-[460px] lg:min-h-full bg-[#0D1D13] overflow-hidden">
                     <Image
-                      src="/images/about/dr-fisher-rahimov.png"
+                      src="/images/about/dr-kasim-fischer-rahimov.jpg"
                       alt={t.founderName}
                       fill
                       sizes="(min-width: 1024px) 36vw, 100vw"
@@ -2087,12 +2088,6 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
 
                   {/* Right: doctor information */}
                   <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
-                    <div className="flex flex-wrap items-center gap-2 mb-2">
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold tracking-wider uppercase bg-[#F4EFE6] text-[#8B7347] border border-[#E8DFC8]">
-                        {t.founderBadge}
-                      </span>
-                    </div>
-
                     <h3 className="font-serif text-[26px] sm:text-[32px] lg:text-[36px] font-bold text-[#142318] leading-[1.12]">
                       {t.founderName}
                     </h3>
@@ -2155,21 +2150,48 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                         )}
                       </button>
                     </div>
+                  </div>
+                </div>
 
-                    {/* Expandable Section with Detailed Model & Responsibilities */}
-                    <div
-                      className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                        isFounderExpanded ? "max-h-[2200px] opacity-100 mt-5 pt-5 border-t border-[#EDE6D8]" : "max-h-0 opacity-0"
-                      }`}
-                    >
-                      <h4 className="text-[12.5px] font-bold uppercase tracking-wider text-[#8B7347] mb-3 font-sans">
+                {/* Bottom: FULL-WIDTH Expandable Section across the entire card container */}
+                <div
+                  className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                    isFounderExpanded
+                      ? "max-h-[2200px] opacity-100 border-t border-[#EDE6D8] bg-[#FAF8F3]"
+                      : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div className="p-6 sm:p-8 lg:p-10">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="h-px bg-[#E2D8C3] flex-1" />
+                      <h4 className="text-[12.5px] font-bold uppercase tracking-wider text-[#8B7347] font-sans px-2">
                         {t.founderExpandedTitle}
                       </h4>
-                      <div className="space-y-3.5 text-[13px] sm:text-[13.5px] lg:text-[14px] text-[#4E5650] leading-[1.7] font-sans">
-                        {t.founderExpandedParagraphs.map((para: string, idx: number) => (
+                      <div className="h-px bg-[#E2D8C3] flex-1" />
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 text-[13.5px] sm:text-[14px] text-[#4E5650] leading-[1.8] font-sans">
+                      <div className="space-y-4">
+                        {t.founderExpandedParagraphs.slice(0, 3).map((para: string, idx: number) => (
                           <p key={idx}>{para}</p>
                         ))}
                       </div>
+                      <div className="space-y-4">
+                        {t.founderExpandedParagraphs.slice(3).map((para: string, idx: number) => (
+                          <p key={idx}>{para}</p>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="mt-8 pt-4 border-t border-[#EDE6D8]/60 flex justify-end">
+                      <button
+                        type="button"
+                        onClick={() => setIsFounderExpanded(false)}
+                        className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-[#8B7347] hover:text-[#1B3D2F] transition-colors cursor-pointer"
+                      >
+                        <span>{t.founderCollapseBtn}</span>
+                        <ChevronUp className="w-4 h-4" />
+                      </button>
                     </div>
                   </div>
                 </div>
