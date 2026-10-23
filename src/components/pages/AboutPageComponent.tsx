@@ -747,158 +747,148 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       ? "د. ك. فيشر-رحيموف"
       : "Dr. med. K. Fischer-Rahimov",
     founderRole: isUz
-      ? "Xoldingning yagona ta'sischisi va bosh direktori · Gründungsberechtigter Vertragsarzt"
+      ? "Xoldingning asoschisi, yagona ta'sischisi va bosh direktori · NabiOta Health Group Germany"
       : isRu
-      ? "Единственный участник и генеральный директор холдинга · Врач-учредитель"
+      ? "Основатель, единственный участник и генеральный директор холдинга NabiOta Health Group Germany"
       : isEn
-      ? "Sole Shareholder & Managing Director of the Holding · Statutory Founding Physician"
+      ? "Founder, Sole Shareholder and Managing Director of the Holding NabiOta Health Group Germany"
       : isTr
-      ? "Holdingin Tek Ortağı ve Genel Müdürü · Yasal Kurucu Hekim"
+      ? "NabiOta Health Group Germany Holdingi Kurucusu, Tek Ortağı ve Genel Müdürü"
       : isAr
-      ? "المساهم الوحيد والمدير العام للمجموعة · طبيب مؤسس معتمد"
-      : "Alleingesellschafter und Geschäftsführer der Holding · Gründungsberechtigter Vertragsarzt",
-    founderBadge: isRu ? "§ 95 Abs. 1a SGB V · Врач-учредитель" : "§ 95 Abs. 1a SGB V",
+      ? "المؤسس والمساهم الوحيد والمدير العام لمجموعة NabiOta Health Group Germany القابضة"
+      : "Gründer, Alleingesellschafter und Geschäftsführer der Holding NabiOta Health Group Germany",
+    founderParagraphs: [
+      isUz
+        ? "Mening turli mamlakatlardagi shifokorlik faoliyatim tibbiy tajribamni kengaytirdi va turli xil sog'liqni saqlash tuzilmalari haqidagi tushunchamni shakllantirdi. Bu jarayonda bemorlarga yuqori sifatli yordam ko'rsatish nafaqat kasbiy malakani, balki tibbiyot yo'nalishlari o'rtasida yaqin hamkorlikni ham talab qilishi haqidagi qat'iy ishonch paydo bo'ldi."
+        : isRu
+        ? "Моя врачебная деятельность в различных странах расширила мой медицинский опыт и сформировала понимание различных структур здравоохранения. При этом окрепло убеждение, что качественная помощь пациентам, помимо профессиональной компетентности, требует тесного взаимодействия между различными медицинскими дисциплинами."
+        : isEn
+        ? "My medical practice in various countries has broadened my clinical experience and shaped my understanding of different healthcare delivery structures. Through this, I developed the firm conviction that good patient care requires not only technical expertise, but also close cooperation between medical disciplines."
+        : isTr
+        ? "Farklı ülkelerdeki hekimlik faaliyetlerim tıbbi deneyimimi genişletti ve farklı sağlık sistemi yapılarına dair anlayışımı şekillendirdi. Bu süreçte, nitelikli bir hasta bakımının yalnızca mesleki yetkinlik değil, aynı zamanda tıbbi disiplinler arasında yakın bir iş birliği gerektirdiği inancı gelişti."
+        : isAr
+        ? "لقد وسعت ممارستي الطبية في بلدان مختلفة من خبرتي السريرية وصقلت فهمي لهياكل الرعاية الصحية المتنوعة. ومن هنا ترسخت قناعتي بأن الرعاية المثلى للمرضى لا تتطلب الكفاءة المهنية فحسب، بل تستلزم أيضاً تعاوناً وثيقاً بين مختلف التخصصات الطبية."
+        : "Meine ärztliche Tätigkeit in verschiedenen Ländern hat meine medizinische Erfahrung erweitert und mein Verständnis für unterschiedliche Versorgungsstrukturen geprägt. Dabei entwickelte sich die Überzeugung, dass eine gute Patientenversorgung neben fachlicher Kompetenz auch eine enge Zusammenarbeit zwischen den medizinischen Disziplinen braucht.",
+      isUz
+        ? "Ushbu ishonchdan NabiOta Health Group Germany g'oyasi vujudga keldi: umumiy amaliyot va ixtisoslashtirilgan mutaxassislar tajribasini yagona tashkiliy tizim ostida birlashtirish hamda tibbiy xizmatni bemor manfaatlari nuqtai nazaridan tashkil etish."
+        : isRu
+        ? "Из этого убеждения родилась идея создания NabiOta Health Group Germany: объединить терапевтические и узкопрофильные врачебные компетенции под единой организационной крышей и выстраивать медицинскую помощь с точки зрения интересов пациента."
+        : isEn
+        ? "From this conviction arose the idea for NabiOta Health Group Germany: bringing primary and specialized clinical competencies together under a shared organizational roof and shaping healthcare from the patient's perspective."
+        : isTr
+        ? "Bu inanç doğrultusunda NabiOta Health Group Germany fikri doğdu: Aile hekimliği ve uzman hekimlik yetkinliklerini ortak bir kurumsal çatı altında toplamak ve sağlık hizmetlerini hastanın bakış açısıyla şekillendirmek."
+        : isAr
+        ? "ومن هذه القناعة ولدت فكرة تأسيس NabiOta Health Group Germany: الجمع بين كفاءات طب الأسرة والطب التخصصي تحت مظلة تنظيمية واحدة، وتصميم منظومة الرعاية من منظور المريض واحتياجاته."
+        : "Aus dieser Überzeugung entstand die Idee zur NabiOta Health Group Germany: hausärztliche und fachärztliche Kompetenzen unter einem gemeinsamen organisatorischen Dach zusammenzuführen und die Versorgung aus der Perspektive der Patienten zu gestalten.",
+      isUz
+        ? "Bizning maqsadimiz — shaxsiylashtirilgan, ko'p tarmoqli va muvofiqlashtirilgan tibbiy parvarish. Birlamchi tibbiy yordamdan boshlab ixtisoslashgan diagnostika va keyingi davolanishgacha barcha xizmatlar o'zaro uzviy bog'lanishi kerak."
+        : isRu
+        ? "Наша цель — персональное, междисциплинарное и четко скоординированное сопровождение. От первичного амбулаторного приема и специализированной диагностики до последующего лечения — все медицинские звенья должны работать слаженно и гармонично."
+        : isEn
+        ? "Our objective is personalized, cross-disciplinary, and well-coordinated care. From initial primary consultation through specialized diagnostics to continuous treatment, medical services should meaningfully interlock."
+        : isTr
+        ? "Amacımız kişiye özel, branşlar arası ve iyi koordine edilmiş bir bakımdır. Temel aile hekimliği hizmetinden ileri uzmanlık tanılarına ve müteakip tedaviye kadar tüm tıbbi hizmetlerin anlamlı bir bütünlük içinde işlemesini hedefliyoruz."
+        : isAr
+        ? "هدفنا هو تقديم رعاية شخصية، متعددة التخصصات ومنسقة بدقة. فمن الرعاية الأولية إلى التشخيص التخصصي الدقيق وحتى مراحل العلاج المتقدمة، يجب أن تتكامل الخدمات الطبية بشكل متناغم."
+        : "Unser Ziel ist eine persönliche, fachübergreifende und gut koordinierte Betreuung. Von der hausärztlichen Erstversorgung über die spezialisierte Diagnostik bis zur weiteren Behandlung sollen medizinische Leistungen sinnvoll ineinandergreifen.",
+      isUz
+        ? "Ayniqsa murakkab yoki surunkali kasalliklarga chalingan insonlarga ishonchli yo'nalish berishga intilamiz. Tushunarli ma'lumotlar, aniq mas'ul shaxslar va o'zaro muvofiqlashtirilgan davolash bosqichlari bizning tibbiy konsepsiyamiz markazida turadi."
+        : isRu
+        ? "Особое внимание мы уделяем надежной маршрутизации людей со сложными или хроническими заболеваниями. Доступная информация, понятные контактные лица и согласованные этапы лечения находятся в центре нашей концепции медицинской помощи."
+        : isEn
+        ? "We place particular emphasis on offering dependable guidance to patients with complex or chronic conditions. Understandable medical information, clear contact partners, and coordinated treatment milestones form the core of our healthcare concept."
+        : isTr
+        ? "Özellikle karmaşık veya kronik rahatsızlıkları olan bireylere güvenilir bir rehberlik sunmayı amaçlıyoruz. Anlaşılır bilgilendirme, net muhataplar ve birbiriyle uyumlu tedavi basamakları hizmet modelimizin merkezindedir."
+        : isAr
+        ? "نحرص بشكل خاص على توفير مسار موثوق للأشخاص الذين يعانون من أمراض معقدة أو مزمنة. إن المعلومات الواضحة، والتواصل المباشر مع المسؤولين، والخطوات العلاجية المنسقة تمثل جوهر مفهومنا للرعاية."
+        : "Dabei möchten wir insbesondere Menschen mit komplexen oder chronischen Erkrankungen eine verlässliche Orientierung bieten. Verständliche Informationen, klare Ansprechpartner und aufeinander abgestimmte Behandlungsschritte stehen im Mittelpunkt unseres Versorgungskonzepts.",
+      isUz
+        ? "«Bir tom ostidagi tibbiyot» biz uchun muassasalarimiz va filiallarimiz salohiyatini umumiy tarmoqqa jamlashni anglatadi. Ko'rsatiladigan xizmatlar ko'lami har bir hududdagi ixtisosliklar va litsenziyalarga muvofiq belgilanadi."
+        : isRu
+        ? "«Медицина под одной крышей» означает для нас объединение потенциала наших учреждений и медицинских центров в единую сеть. Конкретный перечень услуг формируется с учетом специализаций и локальных допусков каждого филиала."
+        : isEn
+        ? "“Medicine under one roof” means uniting the competencies of our facilities and regional sites into an integrated group. The concrete scope of services is oriented toward the respective specialties and accreditations on site."
+        : isTr
+        ? "Bizim için 'Tek Çatı Altında Tıp', kurumlarımızın ve merkezlerimizin yetkinliklerini ortak bir ağda bir araya getirmek anlamına gelir. Sunulan hizmetler ilgili lokasyondaki uzmanlık alanlarına ve ruhsatlara göre belirlenir."
+        : isAr
+        ? "«الطب تحت سقف واحد» يعني بالنسبة لنا توحيد إمكانات مؤسساتنا ومواقعنا ضمن شبكة متكاملة. وتتحدد باقة الخدمات المقدمة وفقاً للتخصصات والتراخيص المعتمدة في كل موقع."
+        : "„Medizin unter einem Dach“ bedeutet für uns, die Kompetenzen unserer Einrichtungen und Standorte in einem gemeinsamen Verbund zusammenzubringen. Das konkrete Leistungsangebot richtet sich nach den jeweiligen Fachrichtungen und Zulassungen vor Ort.",
+      isUz
+        ? "Xoldingning yagona ta'sischisi va bosh direktori sifatida guruhning strategik yo'nalishi va tashkiliy rivojlanishi uchun mas'uliyatni o'z zimmamga olaman. Umumiy tuzilma markazlarimizning kundalik faoliyatini qo'llab-quvvatlash va tibbiy ishlar uchun qulay sharoit yaratishga xizmat qiladi."
+        : isRu
+        ? "Как единственный участник и генеральный директор холдинга я отвечаю за стратегический вектор и организационное развитие группы компаний. Общая структура призвана поддерживать наши центры в повседневной практике и создавать условия для врачебной работы."
+        : isEn
+        ? "As sole shareholder and managing director of the holding, I oversee the strategic direction and organizational expansion of the corporate group. The common corporate structure is designed to support our clinics in daily operations and preserve dedicated room for medical practice."
+        : isTr
+        ? "Holdingin tek ortağı ve genel müdürü olarak şirketler grubunun stratejik yöneliminden ve organizasyonel gelişiminden sorumluyum. Ortak yapı, merkezlerimizi günlük pratikte desteklemek ve hekimlik çalışmalarına alan açmak için vardır."
+        : isAr
+        ? "بصفتي المساهم الوحيد والمدير العام للمجموعة القابضة، أتولى مسؤولية التوجه الاستراتيجي والتطوير المؤسسي للمجموعة. وتهدف هذه الهيكلية المشتركة إلى دعم مراكزنا في العمل اليومي وتوفير البيئة المثلى للممارسة الطبية."
+        : "Als Alleingesellschafter und Geschäftsführer der Holding verantworte ich die strategische Ausrichtung und organisatorische Weiterentwicklung der Unternehmensgruppe. Die gemeinsame Struktur soll unsere Einrichtungen im Praxisalltag unterstützen und Raum für die medizinische Arbeit schaffen.",
+      isUz
+        ? "Bemorlar oldidagi shifokorlik mas'uliyati asosiy mezon bo'lib qoladi. Har bir tibbiyot markazi (MVZ)ning bosh shifokori klinik masalalarda tijoriy ko'rsatmalardan to'liq mustaqildir."
+        : isRu
+        ? "Определяющей остается врачебная ответственность перед пациентом. Руководство каждого медицинского центра (MVZ) полностью свободно от сторонних указаний в клинических вопросах (weisungsfrei)."
+        : isEn
+        ? "The decisive factor remains the clinical responsibility toward the patient. The medical directorship of each respective medical center is strictly independent and free from commercial directives in clinical matters."
+        : isTr
+        ? "Hastalara karşı hekimlik sorumluluğu daima belirleyici kalır. İlgili Tıbbi Bakım Merkezlerinin (MVZ) tıbbi direktörlüğü klinik konularda talimatsız ve tamamen bağımsızdır."
+        : isAr
+        ? "تبقى المسؤولية الطبية تجاه المرضى هي المعيار الأساسي والمحدد. وتتمتع الإدارة الطبية في مراكز الرعاية الطبية (MVZ) باستقلالية تامة وحرية كاملة دون أي تعليمات تجارية في القرارات العلاجية."
+        : "Maßgeblich bleibt dabei die ärztliche Verantwortung gegenüber den Patienten. Die ärztliche Leitung der jeweiligen Medizinischen Versorgungszentren ist in medizinischen Fragen weisungsfrei.",
+      isUz
+        ? "Bosh tamoyilimiz: tibbiy tajribani jamlash, hamkorlikni mustahkamlash va insonni markaziy o'ringa qo'yish."
+        : isRu
+        ? "Наш руководящий принцип: объединять медицинский опыт, укреплять партнерство и ставить человека в центр внимания."
+        : isEn
+        ? "Our guiding principle: uniting clinical experience, strengthening collaboration, and placing people at the center."
+        : isTr
+        ? "Temel ilkemiz: Tıbbi deneyimi birleştirmek, iş birliğini güçlendirmek ve insanı merkeze koymak."
+        : isAr
+        ? "مبدؤنا التوجيهي: حشد الخبرة الطبية، تعزيز التعاون، ووضع الإنسان في قلب كل اهتمام."
+        : "Unser Leitgedanke: medizinische Erfahrung bündeln, Zusammenarbeit stärken und den Menschen in den Mittelpunkt stellen.",
+    ],
 
     consultantName: isRu
       ? "Азизбек Фишер-Рахимов (Azizbek Fischer-Rahimov)"
       : isUz
       ? "Azizbek Fisher-Raximov"
+      : isAr
+      ? "عزيز بيك فيشر-رحيموف (Azizbek Fischer-Rahimov)"
       : "Azizbek Fischer-Rahimov",
     consultantRole: isUz
-      ? "Menejer-konsultant"
+      ? "Menejer va konsultant"
       : isRu
-      ? "Менеджер-консультант"
+      ? "Менеджер и консультант"
       : isEn
-      ? "Management Consultant"
+      ? "Manager and Consultant"
       : isTr
-      ? "Yönetici Danışman (Manager-Consultant)"
+      ? "Yönetici ve Danışman"
       : isAr
-      ? "مدير استشاري (Manager-Consultant)"
-      : "Manager-Consultant",
-    consultantBadge: isUz
-      ? "Boshqaruv va konsalting"
-      : isRu
-      ? "Управление & Консалтинг"
-      : isEn
-      ? "Management & Corporate Consulting"
-      : isTr
-      ? "Yönetim ve Kurumsal Danışmanlık"
-      : isAr
-      ? "الإدارة والاستشارات المؤسسية"
-      : "Unternehmensberatung & Management",
-    consultantBio1: isUz
-      ? "Xolding tuzilmalarining strategik o'sishini, yangi loyihalarni joriy etishni va kompaniyalar o'rtasidagi operatsion jarayonlarni muvofiqlashtirishni qo'llab-quvvatlaydi."
-      : isRu
-      ? "Сопровождает стратегическое развитие дочерних обществ холдинга, внедрение современных стандартов управления и оперативную координацию между подразделениями группы NabiOta."
-      : isEn
-      ? "Supports the strategic expansion of holding subsidiaries, implementation of modern corporate workflows, and cross-entity operational coordination across all NabiOta units."
-      : isTr
-      ? "Holding bağlı ortaklıklarının stratejik büyümesini, modern yönetim standartlarının entegrasyonunu ve NabiOta birimleri arasındaki operasyonel uyumu koordine eder."
-      : isAr
-      ? "يدعم التوسع الاستراتيجي للشركات التابعة للمجموعة، وتطبيق معايير الإدارة الحديثة، والتنسيق التشغيلي الفعال بين جميع أقسام مجموعة NabiOta."
-      : "Unterstützt die strategische Weiterentwicklung der Holdinggesellschaften, die Einführung moderner Organisationsstandards und die operative Koordination zwischen den Standorten der NabiOta-Gruppe.",
-    consultantBio2: isUz
-      ? "Uning faoliyati holding filiallarining samarali o'zaro hamkorligini ta'minlash, mijozlar va hamkorlar bilan ishonchli muloqotni rivojlantirishga qaratilgan."
-      : isRu
-      ? "Курирует консультационную поддержку проектов развития, взаимодействие с партнерами и оптимизацию административных процессов внутри структуры холдинга."
-      : isEn
-      ? "Oversees advisory support for expansion initiatives, partner relationships, and the streamlining of administrative workflows across holding operations."
-      : isTr
-      ? "Büyüme girişimleri için danışmanlık desteğini, iş ortaklıklarını ve holding operasyonlarındaki idari süreçlerin optimize edilmesini yönetir."
-      : isAr
-      ? "يشرف على الدعم الاستشاري لمبادرات التوسع، وعلاقات الشركاء، وتحسين سير العمل الإداري في جميع عمليات المجموعة."
-      : "Fokussiert sich auf die beratende Begleitung von Entwicklungsprojekten, partnerschaftliche Kommunikation sowie die Optimierung administrativer Abläufe innerhalb der Holding.",
-    consultantPoints: [
+      ? "مدير واستشاري"
+      : "Manager und Consultant",
+    consultantParagraphs: [
       isUz
-        ? "Holding kompaniyalari faoliyatini operatsion muvofiqlashtirish"
+        ? "Azizbek Fisher-Raximov NabiOta Health Group Germany kompaniyasining tashkiliy va strategik rivojlanishini qo'llab-quvvatlaydi. Uning asosiy yo'nalishi operatsion jarayonlarni muvofiqlashtirish, loyihalarni boshqarish hamda rahbariyat va alohida muassasalar o'rtasidagi hamkorlikni ta'minlashdan iborat."
         : isRu
-        ? "Операционная координация подразделений холдинга"
+        ? "Азизбек Фишер-Рахимов сопровождает организационное и стратегическое развитие NabiOta Health Group Germany. В фокусе его работы — координация операционных процессов, сопровождение ключевых проектов и взаимодействие между руководством холдинга и отдельными медицинскими подразделениями."
         : isEn
-        ? "Operational coordination across holding entities"
+        ? "Azizbek Fischer-Rahimov supports the organizational and strategic expansion of NabiOta Health Group Germany. His focus lies on coordinating operational workflows, overseeing projects, and facilitating cooperation between executive leadership and individual healthcare centers."
         : isTr
-        ? "Holding birimleri arasında operasyonel koordinasyon"
+        ? "Azizbek Fischer-Rahimov, NabiOta Health Group Germany'nin kurumsal ve stratejik gelişimini desteklemektedir. Odak noktası; operasyonel süreçlerin koordinasyonu, projelerin takibi ile genel yönetim ve münferit sağlık merkezleri arasındaki iş birliğinin sağlanmasıdır."
         : isAr
-        ? "التنسيق التشغيلي بين كيانات المجموعة"
-        : "Operative Standort- und Prozesskoordination",
+        ? "يدعم عزيز بيك فيشر-رحيموف التطوير المؤسسي والاستراتيجي لمجموعة NabiOta Health Group Germany. ويتركز نشاطه على تنسيق العمليات التشغيلية، ومتابعة المشاريع، وتعزيز التعاون بين الإدارة التنفيذية ومختلف المنشآت الطبية التابعة للمجموعة."
+        : "Azizbek Fischer-Rahimov unterstützt die organisatorische und strategische Weiterentwicklung der NabiOta Health Group Germany. Sein Schwerpunkt liegt auf der Koordination betrieblicher Abläufe, der Begleitung von Projekten und der Zusammenarbeit zwischen Geschäftsführung und den einzelnen Einrichtungen.",
       isUz
-        ? "Boshqaruv va konsalting jarayonlarini optimallashtirish"
+        ? "Ushbu faoliyatning maqsadi — aniq tuzilmalarni shakllantirish, jarayonlar samaradorligini oshirish va kundalik amaliyotda jamoalarni tashkiliy jihatdan yengillatishdir. U tadbirkorlik tafakkurini bemorlarga yo'naltirilgan sog'liqni saqlashning o'ziga xos talablarini chuqur tushunish bilan uyg'unlashtiradi."
         : isRu
-        ? "Оптимизация консультационных и управленческих процессов"
+        ? "Цель его деятельности — содействие прозрачным структурам, повышение эффективности процессов и организационная разгрузка команд на местах в повседневной практике. Он сочетает предпринимательский подход с пониманием особых требований пациент-ориентированного здравоохранения."
         : isEn
-        ? "Strategic workflow & management consulting"
+        ? "The goal of his work is to promote clear structures, optimize operating processes, and relieve healthcare teams of administrative burdens in daily practice. He unites entrepreneurial thinking with a deep appreciation for the unique requirements of patient-oriented healthcare."
         : isTr
-        ? "Yönetim süreçleri ve danışmanlık optimizasyonu"
+        ? "Çalışmalarının temel hedefi, net kurumsal yapıları teşvik etmek, süreçleri verimli kılmak ve muayenehane ekiplerinin günlük idari yükünü hafifletmektir. Girişimci yaklaşımını hasta odaklı sağlık hizmetlerinin hassas gereksinimleriyle birleştirmektedir."
         : isAr
-        ? "تحسين مسارات العمل والاستشارات الإدارية"
-        : "Strategische Prozess- und Managementberatung",
-      isUz
-        ? "Xalqaro va hududiy hamkorlar bilan o'zaro hamkorlikni rivojlantirish"
-        : isRu
-        ? "Развитие взаимодействия с региональными и международными партнерами"
-        : isEn
-        ? "Advancing regional and international partner dialogue"
-        : isTr
-        ? "Bölgesel ve uluslararası ortaklarla ilişkilerin geliştirilmesi"
-        : isAr
-        ? "تطوير الحوار مع الشركاء الإقليميين والدوليين"
-        : "Förderung von Partner- und Netzwerkkooperationen",
-    ],
-    founderBio1: isUz
-      ? "Shimoliy Reyn-Vestfaliya (NRW) hududida ko'p yillik amaliyot tajribasiga ega litsenziyalangan shifokor sifatida Dr. Fischer-Rahimov xoldingning barcha tibbiy jarayonlari va ambulator yo'nalishlarining klinik sifatini nazorat qiladi."
-      : isRu
-      ? "Как лицензированный врач с многолетним опытом практики в Рейнланде, Dr. Fischer-Rahimov представляет собой ключевой профессиональный и правовой ориентир в первой фазе создания группы. Его авторитет и врачебная лицензия послужили юридическим фундаментом для развертывания сети амбулаторных центров MVZ."
-      : isEn
-      ? "As a licensed statutory health insurance physician with decades of regional medical practice in the Rhineland, Dr. Fischer-Rahimov anchors the clinical and regulatory foundation of the holding's initial growth phase, providing the legal prerequisite for the MVZ network."
-      : isTr
-      ? "Rheinland bölgesinde uzun yıllardır hekimlik yapan deneyimli bir sözleşmeli hekim olarak Dr. Fischer-Rahimov, ilk büyüme aşamasının mesleki ve kaza sigortası mevzuatındaki temel dayanağını oluşturur. Kliniği ve saygınlığı, MVZ ağının kurulması için yasal zemini hazırlamıştır."
-      : isAr
-      ? "بصفته طبيباً معتمداً ممارساً لسنوات طويلة في منطقة راينلاند، يمثل د. فيشر-رحيموف الركيزة المهنية والقانونية الأساسية للمرحلة الأولى من التوسع، حيث شكلت عيادته وخبرته السريرية القاعدة القانونية لإطلاق شبكة مراكز MVZ."
-      : "Als niedergelassener Vertragsarzt und langjährig praktizierender Mediziner im Rheinland bildet Dr. Fischer-Rahimov den berufs- und kassenarztrechtlichen Ankerpunkt der ersten Wachstumsphase. Seine Praxis und sein Renommee schufen die gesetzliche Basis für die Initiierung des MVZ-Verbundes.",
-    founderBio2: isUz
-      ? "Uning maqsadi — nemis shifokorlik an'analarini zamonaviy tashkiliy boshqaruv bilan birlashtirish, xodimlar uchun qulay mehnat sharoitlarini yaratish va har bir bemorga insoniy munosabatni ta'minlashdir."
-      : isRu
-      ? "Его цель — объединить традиционные ценности немецкой врачебной этики, персональное внимание к пациенту и современные технологии многопрофильного амбулаторного лечения."
-      : isEn
-      ? "His vision unites traditional physician ethics, personalized patient trust, and cutting-edge multidisciplinary outpatient infrastructure."
-      : isTr
-      ? "Temel ilkesi, hekimlik meslek ahlakının köklü erdemlerini, her hastanın iyiliği için disiplinler arası yenilikçi bakım konseptleriyle birleştirmektir."
-      : isAr
-      ? "يجمع نهجه ورؤيته بين التقاليد الراسخة لأخلاقيات مهنة الطب الألمانية ومفاهيم الرعاية المبتكرة متعددة التخصصات لما فيه مصلحة كل مريض."
-      : "Sein Leitmotiv verbindet die bewährten Tugenden des ärztlichen Standesethos mit innovativen fachübergreifenden Versorgungskonzepten zum Wohle jedes einzelnen Patienten.",
-    founderPoints: [
-      isUz
-        ? "SGB V qonuniga muvofiq MVZ kapitalida shifokorning bevosita ishtiroki"
-        : isRu
-        ? "Прямое участие врача в капитале MVZ по закону SGB V"
-        : isEn
-        ? "Direct physician equity in MVZ under § 95 SGB V"
-        : isTr
-        ? "§ 95 SGB V uyarınca MVZ'lerde doğrudan hekim ortaklığı"
-        : isAr
-        ? "مساهمة ومشاركة طبية مباشرة في مراكز MVZ وفق § 95 SGB V"
-        : "Unmittelbare vertragsärztliche Beteiligung an den MVZ",
-      isUz
-        ? "Xodimlar uchun to'liq terapevtik erkinlik kafolati"
-        : isRu
-        ? "Гарантия полной терапевтической свободы персонала"
-        : isEn
-        ? "Guaranteed clinical autonomy for all medical staff"
-        : isTr
-        ? "Tıbbi bağımsızlığın ve serbest kararın tam olarak korunması"
-        : isAr
-        ? "حماية وضمان كامل لحرية القرار الطبي واستقلالية العلاج"
-        : "Volle Wahrung der ärztlichen Weisungsfreiheit",
-      isUz
-        ? "KV Nordrhein va tibbiy sug'urta jamg'armalari bilan mustahkam hamkorlik"
-        : isRu
-        ? "Тесное партнерство с KV Nordrhein и больничными кассами"
-        : isEn
-        ? "Close integration with KV Nordrhein and insurers"
-        : isTr
-        ? "KV Nordrhein ve sigorta sandıklarıyla yakın koordinasyon"
-        : isAr
-        ? "تنسيق وثيق ومستمر مع نقابة أطباء التأمين KV Nordrhein وصناديق التأمين"
-        : "Enge Abstimmung mit der Kassenärztlichen Vereinigung Nordrhein",
+        ? "يهدف عمله إلى ترسيخ هياكل واضحة، ورفع كفاءة العمليات التشغيلية، وتخفيف الأعباء الإدارية والتنظيمية عن الكوادر الطبية في الممارسة اليومية، جامعاً بين الفكر الريادي والفهم الدقيق لمتطلبات الرعاية الصحية الموجهة نحو خدمة المريض."
+        : "Ziel seiner Arbeit ist es, klare Strukturen zu fördern, Prozesse effizient zu gestalten und die Teams im Praxisalltag organisatorisch zu entlasten. Dabei verbindet er unternehmerisches Denken mit einem Verständnis für die besonderen Anforderungen einer patientenorientierten Gesundheitsversorgung.",
     ],
 
     boardTitle: isUz
@@ -1958,9 +1948,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             <div className="max-w-6xl mx-auto">
               {/* Main Founder Spotlight Card */}
               <div className="bg-white rounded-[28px] lg:rounded-[32px] border border-[#EDE6D8] shadow-[0_10px_40px_-24px_rgba(20,35,24,0.14)] mb-10 sm:mb-12 relative overflow-hidden">
-                <div className="grid grid-cols-1 lg:grid-cols-[30%_minmax(0,1fr)]">
+                <div className="grid grid-cols-1 lg:grid-cols-[32%_minmax(0,1fr)]">
                   {/* Left: portrait */}
-                  <div className="relative min-h-[240px] sm:min-h-[280px] lg:min-h-full">
+                  <div className="relative min-h-[340px] sm:min-h-[420px] lg:min-h-full">
                     <Image
                       src="/images/about/dr-fisher-rahimov.png"
                       alt={t.founderName}
@@ -1971,114 +1961,18 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                   </div>
 
                   {/* Right: doctor information */}
-                  <div className="p-5 sm:p-6 lg:py-6 lg:pr-8 lg:pl-12 flex flex-col justify-center">
-                    <div className="flex items-center gap-2.5 mb-2.5 flex-wrap">
-                      <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.22em] text-[#C5A56A] uppercase font-sans">
-                        {t.founderBadge}
-                      </span>
-                      <span className="w-1 h-1 rounded-full bg-[#C5A56A]/60" />
-                      <span className="inline-flex items-center gap-1.5 text-[10.5px] tracking-[0.16em] uppercase text-[#6E7870] font-medium font-sans">
-                        <Scale className="w-3.5 h-3.5 text-[#B89650] stroke-[1.8]" />
-                        <span>
-                          {isUz
-                            ? "SGB V qonuni bo'yicha ta'sischi huquqi"
-                            : isRu
-                            ? "Право учредителя по закону SGB V"
-                            : isEn
-                            ? "Statutory Physician Status"
-                            : isTr
-                            ? "Sözleşmeli Hekimlik Statüsü"
-                            : isAr
-                            ? "الصفة القانونية للأطباء المعتمدين"
-                            : "Kassenarztrechtlicher Status"}
-                        </span>
-                      </span>
-                    </div>
-
-                    <h3 className="font-serif text-[30px] sm:text-[36px] lg:text-[40px] font-bold text-[#142318] leading-[1.05]">
+                  <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
+                    <h3 className="font-serif text-[26px] sm:text-[32px] lg:text-[36px] font-bold text-[#142318] leading-[1.12]">
                       {t.founderName}
                     </h3>
                     <p className="text-[13px] sm:text-[14px] font-semibold tracking-wide text-[#8B7347] mt-1.5 font-sans">
                       {t.founderRole}
                     </p>
 
-                    <div className="space-y-2 max-w-[620px] text-[13px] sm:text-[13.5px] text-[#4E5650] leading-[1.6] font-sans mt-3">
-                      <p>{t.founderBio1}</p>
-                      <p>{t.founderBio2}</p>
-                    </div>
-
-                    <div className="mt-3 space-y-1">
-                      {t.founderPoints.map((point: string, idx: number) => (
-                        <div key={idx} className="flex items-start gap-3 text-[13px] sm:text-[13.5px] text-[#2C3E31] font-medium leading-snug">
-                          <CheckCircle2 className="w-5 h-5 text-[#8B7347] shrink-0 stroke-[1.8]" />
-                          <span>{point}</span>
-                        </div>
+                    <div className="space-y-3.5 text-[13px] sm:text-[13.5px] lg:text-[14px] text-[#4E5650] leading-[1.7] font-sans mt-5">
+                      {t.founderParagraphs.map((para: string, idx: number) => (
+                        <p key={idx}>{para}</p>
                       ))}
-                    </div>
-
-                    {/* Integrated information panel */}
-                    <div className="mt-4 max-w-[620px] rounded-2xl bg-[#FAF7F2] p-3.5 flex items-start gap-4">
-                      <div className="w-14 h-14 rounded-full bg-white border border-[#D5B878]/60 flex items-center justify-center text-[#B89650] shrink-0">
-                        <Stethoscope className="w-7 h-7 stroke-[1.8]" />
-                      </div>
-                      <div className="space-y-3">
-                        <div>
-                          <h4 className="font-serif text-[18px] sm:text-[19px] font-bold text-[#142318] mb-1.5">
-                            {isUz
-                              ? "1-bosqichning tibbiy langari"
-                              : isRu
-                              ? "Медицинский якорь Фазы 1"
-                              : isEn
-                              ? "Phase 1 Medical Anchor"
-                              : isTr
-                              ? "Aşama 1 Sözleşmeli Hekim Dayanağı"
-                              : isAr
-                              ? "الركيزة الطبية المعتمدة للمرحلة الأولى"
-                              : "Vertragsärztlicher Anker"}
-                          </h4>
-                          <p className="text-[12.5px] sm:text-[13px] text-[#555E56] leading-[1.7] font-sans">
-                            {isUz
-                              ? "MVZ ulushlarining bevosita ta'sischi shifokorga tegishliligi KV qoidalariga to'liq moslikni kafolatlaydi."
-                              : isRu
-                              ? "Прямое владение долями MVZ врачом-учредителем гарантирует безупречную юридическую легитимность перед Kassenärztliche Vereinigung Nordrhein."
-                              : isEn
-                              ? "Direct MVZ equity held by the licensed founding physician establishes unequivocal regulatory legitimacy with KV Nordrhein."
-                              : isTr
-                              ? "Kurucu hekimin doğrudan MVZ ortaklığı, KV Nordrhein nezdinde eksiksiz mesleki ve yasal meşruiyeti güvence altına alır."
-                              : isAr
-                              ? "تضمن المشاركة المباشرة للطبيب المؤسس في مراكز MVZ الشرعية المهنية والقانونية الكاملة أمام نقابة أطباء التأمين KV Nordrhein."
-                              : "Die unmittelbare MVZ-Beteiligung des Gründungsarztes sichert die vollständige berufsrechtliche Legitimation gegenüber der KV Nordrhein."}
-                          </p>
-                        </div>
-                        <div className="pt-3 border-t border-[#E7DFD2]">
-                          <div className="text-[10.5px] font-bold tracking-[0.14em] uppercase text-[#142318]">
-                            {isUz
-                              ? "Institutsional himoya"
-                              : isRu
-                              ? "Институциональная защита"
-                              : isEn
-                              ? "Institutional Protection"
-                              : isTr
-                              ? "Meslek Hukuku Koruması"
-                              : isAr
-                              ? "الحماية المهنية النقابية"
-                              : "Standesrechtlicher Schutz"}
-                          </div>
-                          <p className="text-[#555E56] text-[12px] leading-[1.6] mt-1 font-sans">
-                            {isUz
-                              ? "Xolding shifokorlar jamoasiga tibbiy ko'rsatmalar berish huquqiga ega emas."
-                              : isRu
-                              ? "Холдинг не вправе давать медицинские указания врачебному руководству."
-                              : isEn
-                              ? "Corporate holding entities are legally barred from clinical directives."
-                              : isTr
-                              ? "Tıbbi direktörlüğe karşı hiçbir ticari talimat yetkisi bulunmamaktadır."
-                              : isAr
-                              ? "لا توجد أي صلاحيات لإصدار توجيهات تجارية للإدارة الطبية."
-                              : "Keine kaufmännischen Weisungsrechte gegenüber der ärztlichen Leitung."}
-                          </p>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -2086,9 +1980,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
 
               {/* Azizbek Fischer-Rahimov Card (Son, Manager-Consultant) */}
               <div className="bg-white rounded-[28px] lg:rounded-[32px] border border-[#EDE6D8] shadow-[0_10px_40px_-24px_rgba(20,35,24,0.14)] mb-8 relative overflow-hidden">
-                <div className="grid grid-cols-1 lg:grid-cols-[30%_minmax(0,1fr)]">
+                <div className="grid grid-cols-1 lg:grid-cols-[32%_minmax(0,1fr)]">
                   {/* Left: portrait */}
-                  <div className="relative min-h-[260px] sm:min-h-[300px] lg:min-h-full">
+                  <div className="relative min-h-[260px] sm:min-h-[320px] lg:min-h-full">
                     <Image
                       src="/images/about/son-rahimov.png"
                       alt={t.consultantName}
@@ -2099,36 +1993,17 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                   </div>
 
                   {/* Right: consultant information */}
-                  <div className="p-5 sm:p-6 lg:py-7 lg:pr-8 lg:pl-12 flex flex-col justify-center">
-                    <div className="flex items-center gap-2.5 mb-2.5 flex-wrap">
-                      <span className="text-[10.5px] sm:text-[11px] font-bold tracking-[0.22em] text-[#C5A56A] uppercase font-sans">
-                        {t.consultantBadge}
-                      </span>
-                      <span className="w-1 h-1 rounded-full bg-[#C5A56A]/60" />
-                      <span className="inline-flex items-center gap-1.5 text-[10.5px] tracking-[0.16em] uppercase text-[#6E7870] font-medium font-sans">
-                        <Briefcase className="w-3.5 h-3.5 text-[#B89650] stroke-[1.8]" />
-                        <span>NabiOta Group</span>
-                      </span>
-                    </div>
-
-                    <h3 className="font-serif text-[28px] sm:text-[34px] lg:text-[38px] font-bold text-[#142318] leading-[1.08]">
+                  <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
+                    <h3 className="font-serif text-[26px] sm:text-[32px] lg:text-[36px] font-bold text-[#142318] leading-[1.12]">
                       {t.consultantName}
                     </h3>
-                    <p className="text-[13.5px] sm:text-[14.5px] font-semibold tracking-wide text-[#8B7347] mt-1.5 font-sans">
+                    <p className="text-[13px] sm:text-[14px] font-semibold tracking-wide text-[#8B7347] mt-1.5 font-sans">
                       {t.consultantRole}
                     </p>
 
-                    <div className="space-y-2 max-w-[620px] text-[13px] sm:text-[13.5px] text-[#4E5650] leading-[1.6] font-sans mt-3">
-                      <p>{t.consultantBio1}</p>
-                      <p>{t.consultantBio2}</p>
-                    </div>
-
-                    <div className="mt-3.5 space-y-1.5">
-                      {t.consultantPoints.map((point: string, idx: number) => (
-                        <div key={idx} className="flex items-start gap-3 text-[13px] sm:text-[13.5px] text-[#2C3E31] font-medium leading-snug">
-                          <CheckCircle2 className="w-5 h-5 text-[#8B7347] shrink-0 stroke-[1.8]" />
-                          <span>{point}</span>
-                        </div>
+                    <div className="space-y-3.5 text-[13px] sm:text-[13.5px] lg:text-[14px] text-[#4E5650] leading-[1.7] font-sans mt-5">
+                      {t.consultantParagraphs.map((para: string, idx: number) => (
+                        <p key={idx}>{para}</p>
                       ))}
                     </div>
                   </div>
