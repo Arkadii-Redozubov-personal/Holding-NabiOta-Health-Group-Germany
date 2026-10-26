@@ -9,143 +9,8 @@ interface HeroSectionProps {
   currentLocale?: SupportedLocale;
 }
 
-/* ── Custom SVGs matching Photo reference exactly ────────────────── */
-function PeopleIcon({ className = "w-7 h-7" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 28 28"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.7"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <circle cx="14" cy="9" r="3.3" />
-      <path d="M8 21.5c0-3.3 2.7-6 6-6s6 2.7 6 6" />
-      <circle cx="7" cy="11.5" r="2.5" />
-      <path d="M2.5 21.5c0-2.3 2-4.2 4.5-4.5" />
-      <circle cx="21" cy="11.5" r="2.5" />
-      <path d="M21 17c2.5.3 4.5 2.2 4.5 4.5" />
-    </svg>
-  );
-}
-
-function DiamondIcon({ className = "w-7 h-7" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 28 28"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.7"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="M5.5 10.5 L9.5 4.5 L18.5 4.5 L22.5 10.5 L14 23.5 Z" />
-      <path d="M5.5 10.5 L22.5 10.5" />
-      <path d="M9.5 4.5 L14 10.5 L18.5 4.5" />
-      <path d="M9.5 10.5 L14 23.5 L18.5 10.5" />
-    </svg>
-  );
-}
-
-function LeafIcon({ className = "w-7 h-7" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 28 28"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.7"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="M6 22 C6 22 7.5 13 14 8.5 C18.5 5.5 22.5 5 22.5 5 C22.5 5 22 9 19 13.5 C14.5 20 6 22 6 22 Z" />
-      <path d="M4 24 C5.5 22.5 9.5 18 14 14 C18 10.5 22.5 5 22.5 5" />
-    </svg>
-  );
-}
-
 export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
   const dict = getDictionary(currentLocale);
-
-  const heroValues = [
-    {
-      icon: PeopleIcon,
-      line1:
-        currentLocale === "ru"
-          ? "ЧЕЛОВЕК В ЦЕНТРЕ"
-          : currentLocale === "ar"
-          ? "الإنسان أولاً"
-          : currentLocale === "tr"
-          ? "ÖNCE İNSAN"
-          : currentLocale === "uz"
-          ? "INSON MARKAZDA"
-          : currentLocale === "en"
-          ? "PEOPLE AT THE CENTER"
-          : "MENSCHEN",
-      line2: currentLocale === "de" ? "IM MITTELPUNKT" : "",
-      description:
-        currentLocale === "ar"
-          ? "للمرضى، عائلاتهم، الكوادر الطبية والشركاء."
-          : currentLocale === "tr"
-          ? "Hastalar, aileleri, uzmanlar ve ortaklar için."
-          : currentLocale === "uz"
-          ? "Bemorlar, ularning yaqinlari, mutaxassislar va hamkorlar uchun."
-          : dict.hero.values[0]?.description ||
-            "Für Patienten, Angehörige, Fachkräfte und Partner.",
-    },
-    {
-      icon: DiamondIcon,
-      line1:
-        currentLocale === "ru"
-          ? "КАЧЕСТВО И ДОВЕРИЕ"
-          : currentLocale === "ar"
-          ? "الجودة والثقة"
-          : currentLocale === "tr"
-          ? "KALİTE VE GÜVEN"
-          : currentLocale === "uz"
-          ? "SIFAT VA ISHONCH"
-          : currentLocale === "en"
-          ? "QUALITY & TRUST"
-          : "QUALITÄT",
-      line2: currentLocale === "de" ? "UND VERTRAUEN" : "",
-      description:
-        currentLocale === "ar"
-          ? "موثوقية. شفافية. مسؤولية طبية كاملة."
-          : currentLocale === "tr"
-          ? "Güvenilir. Şeffaf. Sorumluluk sahibi."
-          : currentLocale === "uz"
-          ? "Ishonchli. Shaffof. Mas'uliyatli."
-          : dict.hero.values[1]?.description ||
-            "Verlässlich. Transparent. Verantwortungsvoll.",
-    },
-    {
-      icon: LeafIcon,
-      line1:
-        currentLocale === "ru"
-          ? "УСТОЙЧИВОЕ РАЗВИТИЕ"
-          : currentLocale === "ar"
-          ? "الرعاية المستدامة"
-          : currentLocale === "tr"
-          ? "SÜRDÜRÜLEBİLİR SAĞLIK"
-          : currentLocale === "uz"
-          ? "BARQAROR TIBBIYOT"
-          : currentLocale === "en"
-          ? "SUSTAINABLE HEALTHCARE"
-          : "NACHHALTIGE",
-      line2: currentLocale === "de" ? "GESUNDHEITSVERSORGUNG" : "",
-      description:
-        currentLocale === "ar"
-          ? "نعمل اليوم من أجل مستقبل صحي مستدام."
-          : currentLocale === "tr"
-          ? "Bugünden hareket ediyoruz. Yarınlar için."
-          : currentLocale === "uz"
-          ? "Bugun harakat qilamiz. Kelajak uchun."
-          : dict.hero.values[2]?.description || "Heute handeln. Für morgen.",
-    },
-  ];
 
   return (
     <section dir="ltr" className="relative w-full min-h-screen lg:h-screen lg:min-h-[700px] lg:max-h-[1080px] flex flex-col justify-between bg-[#07130B] text-[#FAF8F5] overflow-x-hidden">
@@ -186,57 +51,6 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
           <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#07130B]/75 to-transparent pointer-events-none" />
         </div>
 
-        {/* ── Desktop Right Panel: Floating Values Cards Docked to the Right Screen Edge (Close to right edge) ── */}
-        <div className="hidden lg:flex absolute inset-y-0 right-0 z-20 items-center justify-end pointer-events-auto">
-          <div className="w-[295px] xl:w-[320px] 2xl:w-[335px] flex flex-col">
-            {heroValues.map((val, idx) => {
-              const IconComp = val.icon;
-              return (
-                <React.Fragment key={idx}>
-                  <div
-                    className="group rounded-l-[26px] xl:rounded-l-[30px] rounded-r-none py-2.5 pl-3 pr-1.5 xl:py-3 xl:pl-3.5 xl:pr-2 transition-all duration-300 hover:bg-[#0A180E]/35"
-                    style={{
-                      background: "rgba(9, 22, 13, 0.22)",
-                      backdropFilter: "blur(5px)",
-                      WebkitBackdropFilter: "blur(5px)",
-                    }}
-                  >
-                    <div className="flex items-center gap-3 xl:gap-3.5">
-                      {/* Thin Champagne-Gold outlined circle icon */}
-                      <div className="w-13 h-13 xl:w-13.5 xl:h-13.5 rounded-full border border-[#DFCA98]/80 bg-[#0C1C11]/45 backdrop-blur-sm flex items-center justify-center flex-shrink-0 text-[#FAF8F5] shadow-[0_0_12px_rgba(223,202,152,0.15)]">
-                        <IconComp className="w-6 h-6 xl:w-6.5 xl:h-6.5 stroke-[1.6]" />
-                      </div>
-
-                      <div className="flex-1 min-w-0 pr-0.5">
-                        <h3 className="font-sans text-[12px] xl:text-[12.5px] font-bold uppercase tracking-[0.05em] text-white leading-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]">
-                          {val.line1}
-                          {val.line2 && (
-                            <>
-                              <br />
-                              {val.line2}
-                            </>
-                          )}
-                        </h3>
-                        {/* Compact description text right up to edge */}
-                        <p className="text-[11px] xl:text-[11.5px] text-[#FAF8F5]/90 leading-[1.4] font-normal mt-0.5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
-                          {val.description}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Split horizontal dividers running right to the edge */}
-                  {idx < heroValues.length - 1 && (
-                    <div className="flex items-center gap-3 xl:gap-3.5 pl-3 pr-0 my-1.5 xl:my-2">
-                      <div className="w-13 xl:w-13.5 h-[1px] bg-white/20 shrink-0" />
-                      <div className="flex-1 h-[1px] bg-white/20" />
-                    </div>
-                  )}
-                </React.Fragment>
-              );
-            })}
-          </div>
-        </div>
 
         {/* ── Left Content: Typography (same layout for all locales) ─────── */}
         <div className="relative z-10 w-full max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12 xl:px-14">
@@ -278,35 +92,7 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
             </div>
           </div>
 
-          {/* Mobile / Tablet fallback for values panel (<lg) */}
-          <div className="lg:hidden mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3">
-            {heroValues.map((val, idx) => {
-              const IconComp = val.icon;
-              return (
-                <div
-                  key={idx}
-                  className="rounded-2xl p-3.5 flex items-start gap-3"
-                  style={{
-                    background: "rgba(9, 22, 13, 0.22)",
-                    backdropFilter: "blur(5px)",
-                    WebkitBackdropFilter: "blur(5px)",
-                  }}
-                >
-                  <div className="w-11 h-11 rounded-full border border-[#DFCA98]/85 bg-[#12281B]/40 backdrop-blur-sm flex items-center justify-center flex-shrink-0 text-[#FAF8F5]">
-                    <IconComp className="w-5.5 h-5.5 stroke-[1.7]" />
-                  </div>
-                  <div>
-                    <h3 className="text-[11.5px] font-bold uppercase tracking-wider text-white">
-                      {val.line1} {val.line2}
-                    </h3>
-                    <p className="text-[11px] text-[#FAF8F5]/85 mt-0.5 leading-snug">
-                      {val.description}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+
         </div>
       </div>
 
