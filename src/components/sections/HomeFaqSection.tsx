@@ -249,16 +249,16 @@ export function HomeFaqSection({ currentLocale = "de" }: HomeFaqSectionProps) {
                     {item.q}
                   </span>
                   <span
-                    className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-200 mt-0.5 ${
+                    className={`flex items-center justify-center flex-shrink-0 transition-colors duration-200 mt-0.5 ${
                       isOpen
-                        ? "bg-[#0D2619] text-white"
-                        : "bg-[#EBF0EA] text-[#244E33] group-hover:bg-[#0D2619] group-hover:text-white"
+                        ? "text-[#9B7C38]"
+                        : "text-[#244E33] group-hover:text-[#9B7C38]"
                     }`}
                   >
                     {isOpen ? (
-                      <Minus className="w-3.5 h-3.5 stroke-[2.5]" />
+                      <Minus className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2]" />
                     ) : (
-                      <Plus className="w-3.5 h-3.5 stroke-[2.5]" />
+                      <Plus className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2]" />
                     )}
                   </span>
                 </button>

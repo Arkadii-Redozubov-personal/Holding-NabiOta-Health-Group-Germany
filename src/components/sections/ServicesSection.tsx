@@ -257,10 +257,10 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
                     </p>
                   </div>
 
-                  {/* Bottom-right: Small gold circular outline with ArrowRight */}
+                  {/* Bottom-right: Clean ArrowRight transition without circular border */}
                   <div className="flex justify-end mt-auto pt-1">
-                    <div className="w-6 h-6 sm:w-6.5 sm:h-6.5 rounded-full border border-[#D5BE8A] text-[#B89650] flex items-center justify-center flex-shrink-0 group-hover:border-[#B89650] group-hover:bg-[#B89650] group-hover:text-white transition-all shadow-[0_1px_4px_rgba(213,190,138,0.2)]">
-                      <ArrowRight className="w-3.5 h-3.5 stroke-[1.8] transition-transform duration-300 group-hover:translate-x-0.5" />
+                    <div className="text-[#B89650] group-hover:text-[#7D6532] transition-colors flex items-center justify-center flex-shrink-0">
+                      <ArrowRight className="w-4 h-4 stroke-[1.8] transition-transform duration-300 group-hover:translate-x-1" />
                     </div>
                   </div>
                 </div>

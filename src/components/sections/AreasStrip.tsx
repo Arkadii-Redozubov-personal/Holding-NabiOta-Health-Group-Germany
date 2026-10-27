@@ -476,9 +476,9 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
                     href={getLocalePath(currentLocale, `areas/${cat.slug}`)}
                     className="group bg-[#FAF8F3]/60 hover:bg-[#F3EFE6] border border-[#EFECE3]/70 hover:border-[#DFD5C2] rounded-xl sm:rounded-2xl px-1.5 py-2 sm:px-2.5 sm:py-3.5 flex flex-col items-center justify-between text-center min-h-[102px] sm:min-h-[132px] transition-all duration-200 hover:shadow-sm"
                   >
-                    {/* Icon inside soft circular disc */}
-                    <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-[#F3EEE3]/80 group-hover:bg-[#EBE3D3] flex items-center justify-center text-[#1A261D] group-hover:text-black transition-all mb-1 flex-shrink-0">
-                      <IconComp className="w-5 h-5 sm:w-6.5 sm:h-6.5 stroke-[1.6]" />
+                    {/* Icon without circle */}
+                    <div className="text-[#1A261D] group-hover:text-[#9C8145] transition-colors mb-1.5 flex items-center justify-center flex-shrink-0">
+                      <IconComp className="w-6.5 h-6.5 sm:w-8 sm:h-8 stroke-[1.5]" />
                     </div>
 
                     {/* Centered Category Label */}
@@ -509,9 +509,9 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
                   key={idx}
                   className="flex items-center gap-3.5 sm:gap-4 px-3 sm:px-4 lg:px-6 xl:px-8"
                 >
-                  {/* Gold outlined circle icon (larger size & warm glow) */}
-                  <div className="w-12 h-12 sm:w-13 sm:h-13 rounded-full border border-[#D8BC7E]/80 bg-[#142A1D]/60 text-[#ECCF96] flex items-center justify-center flex-shrink-0 shadow-[0_0_12px_rgba(216,188,126,0.18)]">
-                    <IconComp className="w-6 h-6 sm:w-6.5 sm:h-6.5 stroke-[1.6]" />
+                  {/* Icon without circle */}
+                  <div className="text-[#ECCF96] flex items-center justify-center flex-shrink-0">
+                    <IconComp className="w-7 h-7 sm:w-8 sm:h-8 stroke-[1.5]" />
                   </div>
 
                   {/* Text content (untruncated, clear line-height) */}

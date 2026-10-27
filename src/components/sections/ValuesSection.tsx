@@ -333,9 +333,9 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
                 key={val.id}
                 className="flex flex-col items-center text-center px-2 sm:px-3 lg:px-4 py-2 group"
               >
-                {/* Gold outlined circle icon matching reference photo */}
-                <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-full border border-[#D5B878] bg-white/75 backdrop-blur-sm flex items-center justify-center text-[#B89650] mb-3 shadow-[0_0_12px_rgba(213,184,120,0.18)] transition-all duration-300 group-hover:scale-105 group-hover:border-[#B89650] group-hover:bg-[#B89650]/15">
-                  <Icon className="w-5.5 h-5.5 sm:w-6 sm:h-6 stroke-[1.5]" />
+                {/* Icon without circle */}
+                <div className="text-[#9C8145] group-hover:text-[#B89650] mb-3 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                  <Icon className="w-8 h-8 sm:w-9 sm:h-9 stroke-[1.4]" />
                 </div>
 
                 <h3 className="font-sans text-[13.5px] sm:text-[14.5px] font-bold text-[#112117] mb-1 group-hover:text-[#BFA267] transition-colors">
