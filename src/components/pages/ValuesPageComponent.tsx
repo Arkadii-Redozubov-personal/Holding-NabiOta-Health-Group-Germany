@@ -530,7 +530,7 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
               <div className="lg:col-span-6 relative">
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-[#EDE7D9] bg-[#F7F4EE]">
                   <Image
-                    src="/images/about/doctor-patient.webp"
+                    src="/images/values/values-doctor-patient.webp"
                     alt="Ärztliche Betreuung bei NabiOta Health Group"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -904,8 +904,8 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
                         href={divItem.href}
                         className="bg-white/90 hover:bg-white border border-[#EAE4D7] hover:border-[#D5B878] rounded-xl p-4 sm:p-5 flex flex-col items-center text-center justify-center transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 group shadow-[0_1px_4px_rgba(0,0,0,0.02)] min-h-[120px]"
                       >
-                        <div className="text-[#B89650] mb-2.5 transition-transform duration-200 group-hover:scale-110">
-                          <DivIcon className="w-6 h-6 stroke-[1.6]" />
+                        <div className="text-[#B89650] mb-2.5 sm:mb-3 transition-transform duration-200 group-hover:scale-110">
+                          <DivIcon className="w-8 h-8 sm:w-9 sm:h-9 stroke-[1.5]" />
                         </div>
                         <h4 className="font-serif font-medium text-[12.5px] sm:text-[13px] text-[#142318] leading-snug group-hover:text-[#BFA267] transition-colors">
                           {divItem.name}
@@ -1026,7 +1026,7 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
               <div className="lg:col-span-6 relative">
                 <div className="relative aspect-[16/10] rounded-3xl overflow-hidden shadow-xl border border-[#EDE7D9] bg-[#F7F4EE]">
                   <Image
-                    src="/images/careers/team.webp"
+                    src="/images/values/values-team.webp"
                     alt="NabiOta Health Group Medical Team"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
