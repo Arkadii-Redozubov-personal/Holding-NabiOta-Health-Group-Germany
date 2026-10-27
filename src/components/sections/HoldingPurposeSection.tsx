@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import {
   Users,
@@ -8,6 +10,8 @@ import {
   Stethoscope,
   Network,
   Scale,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 
@@ -186,6 +190,22 @@ const content = {
 
 export function HoldingPurposeSection({ locale = "de" }: { locale?: string }) {
   const l: Lang = locale === "tr" ? "tr" : locale === "ar" ? "ar" : locale === "ru" ? "ru" : locale === "uz" ? "uz" : locale === "en" ? "en" : "de";
+  const [openIndices, setOpenIndices] = useState<number[]>([0]);
+
+  const toggleIndex = (index: number) => {
+    setOpenIndices((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    );
+  };
+
+  const allBlocks = [
+    ...content.blocks,
+    {
+      icon: Scale,
+      title: content.legalTitle,
+      text: content.legal,
+    },
+  ];
 
   return (
     <section
@@ -259,84 +279,57 @@ export function HoldingPurposeSection({ locale = "de" }: { locale?: string }) {
         </Container>
       </div>
 
-      {/* ── Cards Container (Photo 2 design: 6 cards in 3 cols + 1 wide banner below) ── */}
+      {/* ── Cards Container (Photo design: single-column accordion cards) ── */}
       <Container size="wide" className="relative z-10 mt-6 sm:mt-8">
-        <div className="max-w-6xl mx-auto space-y-5 sm:space-y-6">
-          {/* 6 Cards in 3 Columns */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4.5 sm:gap-5 items-stretch">
-            {content.blocks.map((b, idx) => {
-              const Icon = b.icon;
-              const hasLeaf = idx === 0 || idx === 2 || idx === 3 || idx === 5;
+        <div className="max-w-4xl lg:max-w-5xl mx-auto space-y-3 sm:space-y-3.5">
+          {allBlocks.map((b, idx) => {
+            const Icon = b.icon;
+            const isOpen = openIndices.includes(idx);
 
-              return (
-                <article
-                  key={idx}
-                  className="group relative rounded-[20px] sm:rounded-[22px] p-4.5 sm:p-5 bg-white border border-[#EAE4D7] shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:border-[#C5A56A]/80 hover:shadow-md transition-all duration-300 flex flex-col justify-between overflow-hidden"
+            return (
+              <div
+                key={idx}
+                className="bg-white rounded-2xl sm:rounded-[20px] border border-[#EBE3D4] shadow-[0_2px_10px_rgba(20,35,24,0.02)] overflow-hidden transition-all duration-200"
+              >
+                <button
+                  type="button"
+                  id={`holding-purpose-btn-${idx}`}
+                  aria-expanded={isOpen}
+                  aria-controls={`holding-purpose-content-${idx}`}
+                  onClick={() => toggleIndex(idx)}
+                  className="w-full p-3.5 sm:p-4.5 flex items-center justify-between text-left cursor-pointer group select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A56A] rounded-2xl"
                 >
-                  {/* Subtle botanical branch in bottom-left corner */}
-                  {hasLeaf && (
-                    <div className="absolute -bottom-4 -left-4 w-24 h-24 pointer-events-none opacity-25 group-hover:opacity-35 transition-opacity select-none">
-                      <Image
-                        src="/images/areas/botanical-branch-clean.webp"
-                        alt=""
-                        fill
-                        className="object-contain object-bottom-left"
-                        unoptimized
-                      />
+                  <div className="flex items-center gap-3.5 sm:gap-4 min-w-0 flex-1">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#F6F0E6] border border-[#EFE7D8] flex items-center justify-center text-[#244634] shrink-0 group-hover:bg-[#EFE5D5] transition-colors shadow-2xs">
+                      <Icon className="w-5 h-5 stroke-[1.75]" />
                     </div>
-                  )}
-
-                  {/* Top Row: Icon + Number & Title */}
-                  <div className="relative z-10">
-                    <div className="flex items-start gap-3 mb-2.5">
-                      <div className="w-10 h-10 sm:w-10.5 sm:h-10.5 rounded-full bg-[#FAF5EB] border border-[#E8DFC8] flex items-center justify-center text-[#2A4736] shrink-0 group-hover:bg-[#F0E6D5] transition-colors shadow-2xs">
-                        <Icon className="w-4.5 h-4.5 sm:w-5 sm:h-5 stroke-[1.75]" />
-                      </div>
-                      <div className="min-w-0">
-                        <h3 className="font-serif text-[16px] sm:text-[17.5px] font-medium text-[#142318] leading-snug">
-                          {b.title[l]}
-                        </h3>
-                      </div>
-                    </div>
-
-                    {/* Description */}
-                    <p className="text-[11.5px] sm:text-[12px] text-[#556057] leading-[1.65] font-sans">
-                      {b.text[l]}
-                    </p>
+                    <h3 className="font-serif text-[15.5px] sm:text-[17px] lg:text-[17.5px] font-bold text-[#14261B] leading-snug group-hover:text-[#8B7347] transition-colors">
+                      {b.title[l]}
+                    </h3>
                   </div>
-                </article>
-              );
-            })}
-          </div>
 
-          {/* Card 7 – Legal Framework Wide Banner */}
-          <div className="group relative rounded-[20px] sm:rounded-[22px] p-4 sm:p-5 lg:py-4.5 lg:px-6 bg-[#FAF8F4] border border-[#EAE4D7] shadow-xs flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-5 overflow-hidden">
-            {/* Watercolor botanical branch on far right */}
-            <div className="absolute right-0 top-0 bottom-0 w-36 sm:w-44 pointer-events-none opacity-35 select-none overflow-hidden hidden sm:block">
-              <Image
-                src="/images/areas/botanical-branch-clean.webp"
-                alt=""
-                fill
-                className="object-contain object-right"
-                unoptimized
-              />
-            </div>
+                  <span className="w-7 h-7 flex items-center justify-center shrink-0 text-[#244634] group-hover:text-[#8B7347] transition-colors ml-3">
+                    {isOpen ? (
+                      <ChevronUp className="w-5 h-5 stroke-[2]" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 stroke-[2]" />
+                    )}
+                  </span>
+                </button>
 
-            {/* Left: Icon + Title */}
-            <div className="flex items-center gap-3 shrink-0 lg:w-[240px] xl:w-[260px]">
-              <div className="w-10.5 h-10.5 sm:w-11 sm:h-11 rounded-full bg-[#163826] text-[#EADBBD] border border-[#D5B878]/50 flex items-center justify-center shrink-0 shadow-sm">
-                <Scale className="w-5 h-5 stroke-[1.8]" />
+                {isOpen && (
+                  <div
+                    id={`holding-purpose-content-${idx}`}
+                    role="region"
+                    aria-labelledby={`holding-purpose-btn-${idx}`}
+                    className="pl-[54px] sm:pl-[64px] pr-4 sm:pr-8 pb-4 sm:pb-5 pt-0 text-[12.5px] sm:text-[13.5px] text-[#556057] leading-relaxed font-sans"
+                  >
+                    {b.text[l]}
+                  </div>
+                )}
               </div>
-              <h3 className="font-serif text-[17.5px] sm:text-[19px] font-medium text-[#142318] leading-tight">
-                {content.legalTitle[l]}
-              </h3>
-            </div>
-
-            {/* Middle: Text */}
-            <p className="text-[11.5px] sm:text-[12px] text-[#556057] leading-relaxed flex-1 relative z-10 font-sans pr-2">
-              {content.legal[l]}
-            </p>
-          </div>
+            );
+          })}
         </div>
       </Container>
     </section>
