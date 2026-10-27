@@ -20,15 +20,15 @@ export function ArrowButton({
   "aria-label": ariaLabel = "Details anzeigen",
 }: ArrowButtonProps) {
   const sizeClasses = {
-    sm: "w-5 h-5 text-xs",
-    md: "w-6 h-6 text-sm",
-    lg: "w-7 h-7 text-base",
+    sm: "w-5.5 h-5.5 text-xs",
+    md: "w-6.5 h-6.5 text-sm",
+    lg: "w-7.5 h-7.5 text-base",
   };
 
   const iconSizes = {
-    sm: "w-4 h-4",
-    md: "w-4.5 h-4.5",
-    lg: "w-5 h-5",
+    sm: "w-4.5 h-4.5",
+    md: "w-5 h-5",
+    lg: "w-5.5 h-5.5",
   };
 
   const variantClasses = {

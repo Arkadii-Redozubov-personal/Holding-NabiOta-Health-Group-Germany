@@ -2271,7 +2271,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                         {t.s4.openModalBtn}
                       </span>
                       <div className="text-[#B8934A] group-hover:text-[#0B2516] transition-colors flex items-center justify-center">
-                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                        <ArrowRight className="w-4.5 h-4.5 transition-transform group-hover:translate-x-1" />
                       </div>
                     </div>
                   </div>

@@ -256,9 +256,9 @@ export function HomeFaqSection({ currentLocale = "de" }: HomeFaqSectionProps) {
                     }`}
                   >
                     {isOpen ? (
-                      <Minus className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2]" />
+                      <Minus className="w-4.5 h-4.5 sm:w-5.5 sm:h-5.5 stroke-[2]" />
                     ) : (
-                      <Plus className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2]" />
+                      <Plus className="w-4.5 h-4.5 sm:w-5.5 sm:h-5.5 stroke-[2]" />
                     )}
                   </span>
                 </button>

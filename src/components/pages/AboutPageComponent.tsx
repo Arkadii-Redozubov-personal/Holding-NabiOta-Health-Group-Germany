@@ -1498,7 +1498,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                 {/* Badge 1: People at the center */}
                 <div className="flex items-center gap-3">
                   <div className="text-[#ECCF96] flex items-center justify-center flex-shrink-0">
-                    <PeopleCenterIcon className="w-6 h-6 stroke-[1.6]" />
+                    <PeopleCenterIcon className="w-7 h-7 stroke-[1.6]" />
                   </div>
                   <div className="flex flex-col justify-center">
                     <span className="text-[13px] sm:text-[13.5px] font-medium text-white tracking-wide leading-tight">
@@ -1513,7 +1513,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                 {/* Badge 2: Sustainable growth */}
                 <div className="flex items-center gap-3">
                   <div className="text-[#ECCF96] flex items-center justify-center flex-shrink-0">
-                    <ShieldIcon className="w-6 h-6 stroke-[1.6]" />
+                    <ShieldIcon className="w-7 h-7 stroke-[1.6]" />
                   </div>
                   <div className="flex flex-col justify-center">
                     <span className="text-[13px] sm:text-[13.5px] font-medium text-white tracking-wide leading-tight">
@@ -1528,7 +1528,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                 {/* Badge 3: A healthier tomorrow */}
                 <div className="flex items-center gap-3">
                   <div className="text-[#ECCF96] flex items-center justify-center flex-shrink-0">
-                    <LeafIcon className="w-6 h-6 stroke-[1.6]" />
+                    <LeafIcon className="w-7 h-7 stroke-[1.6]" />
                   </div>
                   <div className="flex flex-col justify-center">
                     <span className="text-[13px] sm:text-[13.5px] font-medium text-white tracking-wide leading-tight">
@@ -1574,7 +1574,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             <div className="flex justify-center mb-0">
               <div className="w-full max-w-[680px] sm:max-w-[760px] lg:max-w-[800px] bg-gradient-to-r from-[#0C3322] to-[#0A2A1C] text-white px-6 sm:px-8 py-4 sm:py-5 rounded-2xl border border-[#D5B878]/80 shadow-xl flex items-center gap-4 sm:gap-5 text-left">
                 <div className="text-[#DEC085] flex items-center justify-center flex-shrink-0">
-                  <BuildingStatsIcon className="w-8 h-8 sm:w-9 sm:h-9 stroke-[1.6]" />
+                  <BuildingStatsIcon className="w-9 h-9 sm:w-10 sm:h-10 stroke-[1.6]" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="font-serif text-[19px] sm:text-[22px] lg:text-[24px] font-normal text-white tracking-wide truncate leading-tight">
@@ -1639,7 +1639,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                           {/* Header: icon left, badge + title stacked on the right */}
                           <div className="flex items-center gap-3.5 mb-2">
                             <div className="text-[#173824] group-hover:text-[#8C6D2B] flex items-center justify-center shrink-0 transition-colors">
-                              <IconComp className="w-6.5 h-6.5 sm:w-7.5 sm:h-7.5 stroke-[1.6]" />
+                              <IconComp className="w-7.5 h-7.5 sm:w-8.5 sm:h-8.5 stroke-[1.6]" />
                             </div>
                             <div className="flex-1 min-w-0 flex flex-col items-start gap-1">
                               <h4 className="font-serif font-bold text-[15px] sm:text-[16px] text-[#142318] leading-snug group-hover:text-[#B89650] transition-colors">
@@ -1717,7 +1717,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       </h4>
                     </div>
                     <div className="text-[#1E3B29] flex items-center justify-center shrink-0 ml-auto">
-                      <Users className="w-7 h-7 sm:w-8 sm:h-8 stroke-[1.6]" />
+                      <Users className="w-8 h-8 sm:w-9 sm:h-9 stroke-[1.6]" />
                     </div>
                   </div>
 
@@ -1814,7 +1814,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       </h4>
                     </div>
                     <div className="text-[#1E3B29] flex items-center justify-center shrink-0 ml-auto">
-                      <Building2 className="w-7 h-7 sm:w-8 sm:h-8 stroke-[1.6]" />
+                      <Building2 className="w-8 h-8 sm:w-9 sm:h-9 stroke-[1.6]" />
                     </div>
                   </div>
 
@@ -2339,7 +2339,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                   >
                     <div>
                       <div className="text-[#ECCF96] mb-2.5 flex items-center transition-transform group-hover:scale-105">
-                        <Icon className="w-6 h-6 stroke-[1.6]" />
+                        <Icon className="w-7 h-7 stroke-[1.6]" />
                       </div>
                       <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-white mb-1 group-hover:text-[#ECCF96] transition-colors leading-snug">
                         {title}
@@ -2376,7 +2376,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                 <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#EDE8DE] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:border-[#D5B878] hover:shadow-md transition-all flex flex-col justify-between">
                   <div>
                     <div className="text-[#B89650] flex items-center mb-3">
-                      <TargetIcon className="w-6.5 h-6.5 stroke-[1.6]" />
+                      <TargetIcon className="w-7.5 h-7.5 stroke-[1.6]" />
                     </div>
                     <h3 className="font-sans text-[16px] font-bold text-[#142318] mb-2">
                       {t.cardMissionTitle}
@@ -2391,7 +2391,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                 <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#EDE8DE] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:border-[#D5B878] hover:shadow-md transition-all flex flex-col justify-between">
                   <div>
                     <div className="text-[#B89650] flex items-center mb-3">
-                      <VisionEyeIcon className="w-6.5 h-6.5 stroke-[1.6]" />
+                      <VisionEyeIcon className="w-7.5 h-7.5 stroke-[1.6]" />
                     </div>
                     <h3 className="font-sans text-[16px] font-bold text-[#142318] mb-2">
                       {t.cardVisionTitle}
@@ -2410,7 +2410,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                 {/* Stat 1 */}
                 <div className="flex items-center gap-4 px-2 sm:px-4 lg:px-6">
                   <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
-                    <TeamStatsIcon className="w-7 h-7 stroke-[1.6]" />
+                    <TeamStatsIcon className="w-8 h-8 stroke-[1.6]" />
                   </div>
                   <div>
                     <span className="block font-serif text-[28px] sm:text-[32px] font-bold text-[#142318] leading-none mb-1">
@@ -2425,7 +2425,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                 {/* Stat 2 */}
                 <div className="flex items-center gap-4 px-2 sm:px-4 lg:px-6">
                   <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
-                    <BuildingStatsIcon className="w-7 h-7 stroke-[1.6]" />
+                    <BuildingStatsIcon className="w-8 h-8 stroke-[1.6]" />
                   </div>
                   <div>
                     <span className="block font-serif text-[28px] sm:text-[32px] font-bold text-[#142318] leading-none mb-1">
@@ -2440,7 +2440,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                 {/* Stat 3 */}
                 <div className="flex items-center gap-4 px-2 sm:px-4 lg:px-6">
                   <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
-                    <HandshakeIcon className="w-7 h-7 stroke-[1.6]" />
+                    <HandshakeIcon className="w-8 h-8 stroke-[1.6]" />
                   </div>
                   <div>
                     <span className="block font-serif text-[28px] sm:text-[32px] font-bold text-[#142318] leading-none mb-1">
@@ -2455,7 +2455,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                 {/* Stat 4 */}
                 <div className="flex items-center gap-4 px-2 sm:px-4 lg:px-6">
                   <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
-                    <HeartStatsIcon className="w-7 h-7 stroke-[1.6]" />
+                    <HeartStatsIcon className="w-8 h-8 stroke-[1.6]" />
                   </div>
                   <div>
                     <span className="block font-serif text-[28px] sm:text-[32px] font-bold text-[#142318] leading-none mb-1">
@@ -2500,7 +2500,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
               {/* Card 1 */}
               <div className="bg-white rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878] p-4 sm:p-5 flex items-center gap-3.5 sm:gap-4 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all group">
                 <div className="text-[#B89650] group-hover:text-[#9C8145] flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110">
-                  <HandshakeIcon className="w-7 h-7 stroke-[1.6]" />
+                  <HandshakeIcon className="w-8 h-8 stroke-[1.6]" />
                 </div>
                 <div>
                   <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-[#142318] mb-0.5 group-hover:text-[#BFA267] transition-colors leading-snug">
@@ -2515,7 +2515,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
               {/* Card 2 */}
               <div className="bg-white rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878] p-4 sm:p-5 flex items-center gap-3.5 sm:gap-4 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all group">
                 <div className="text-[#B89650] group-hover:text-[#9C8145] flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110">
-                  <LightbulbValuesIcon className="w-7 h-7 stroke-[1.6]" />
+                  <LightbulbValuesIcon className="w-8 h-8 stroke-[1.6]" />
                 </div>
                 <div>
                   <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-[#142318] mb-0.5 group-hover:text-[#BFA267] transition-colors leading-snug">
@@ -2530,7 +2530,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
               {/* Card 3 */}
               <div className="bg-white rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878] p-4 sm:p-5 flex items-center gap-3.5 sm:gap-4 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all group">
                 <div className="text-[#B89650] group-hover:text-[#9C8145] flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110">
-                  <LeafIcon className="w-7 h-7 stroke-[1.6]" />
+                  <LeafIcon className="w-8 h-8 stroke-[1.6]" />
                 </div>
                 <div>
                   <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-[#142318] mb-0.5 group-hover:text-[#BFA267] transition-colors leading-snug">
@@ -2545,7 +2545,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
               {/* Card 4 */}
               <div className="bg-white rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878] p-4 sm:p-5 flex items-center gap-3.5 sm:gap-4 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all group">
                 <div className="text-[#B89650] group-hover:text-[#9C8145] flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110">
-                  <TeamStatsIcon className="w-7 h-7 stroke-[1.6]" />
+                  <TeamStatsIcon className="w-8 h-8 stroke-[1.6]" />
                 </div>
                 <div>
                   <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-[#142318] mb-0.5 group-hover:text-[#BFA267] transition-colors leading-snug">

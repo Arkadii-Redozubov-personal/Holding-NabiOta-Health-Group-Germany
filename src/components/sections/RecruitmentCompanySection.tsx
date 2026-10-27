@@ -354,7 +354,7 @@ export function RecruitmentCompanySection({ locale = "de" }: { locale?: string }
               </p>
               <Link href={`/${l}/nabiota-medical-recruitment`} className="mt-4 inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-full bg-gradient-to-r from-[#EED4A2] via-[#E4C58B] to-[#D5B878] text-[#142318] hover:brightness-105 font-semibold text-[12px] sm:text-[12.5px] shadow-sm transition-all">
                 {l === "ru" ? "Перейти на сайт Recruitment" : l === "en" ? "Visit Recruitment website" : l === "tr" ? "Recruitment sitesine git" : l === "ar" ? "زيارة موقع Recruitment" : l === "uz" ? "Recruitment saytiga o‘tish" : "Zur Recruitment-Website"}
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4.5 h-4.5" />
               </Link>
             </div>
 
@@ -368,8 +368,8 @@ export function RecruitmentCompanySection({ locale = "de" }: { locale?: string }
                       key={idx}
                       className="group relative rounded-xl bg-white/85 hover:bg-white border border-[#EAE4D7] hover:border-[#D5B878]/70 py-2.5 px-3 sm:px-3.5 flex items-center gap-2.5 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-sm transition-all duration-300 backdrop-blur-xs"
                     >
-                      <div className="w-6 h-6 flex items-center justify-center shrink-0">
-                        <ProfIcon className="w-4 h-4 text-[#9E7D3B]" />
+                      <div className="w-7 h-7 flex items-center justify-center shrink-0">
+                        <ProfIcon className="w-5 h-5 text-[#9E7D3B]" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h4 className="font-serif text-[11.5px] sm:text-[12px] text-[#142318] font-medium leading-tight">
@@ -425,8 +425,8 @@ export function RecruitmentCompanySection({ locale = "de" }: { locale?: string }
                         <span className="font-serif text-[22px] sm:text-[24px] text-[#C5A56A] font-normal leading-none w-8 shrink-0">
                           {numStr}
                         </span>
-                        <div className="w-7 h-7 flex items-center justify-center shrink-0 text-[#9E7D3B]">
-                          <Icon className="w-5 h-5" />
+                        <div className="w-8 h-8 flex items-center justify-center shrink-0 text-[#9E7D3B]">
+                          <Icon className="w-6 h-6" />
                         </div>
                       </div>
 
@@ -448,7 +448,7 @@ export function RecruitmentCompanySection({ locale = "de" }: { locale?: string }
                         className="inline-flex items-center gap-1.5 text-[11.5px] sm:text-[12px] font-semibold text-[#9E7D3B] hover:text-[#142318] transition-colors"
                       >
                         <span>{l === "uz" ? "Batafsil" : l === "tr" ? "Daha fazla bilgi" : l === "ar" ? "المزيد من التفاصيل" : l === "ru" ? "Подробнее" : l === "en" ? "Learn more" : "Mehr erfahren"}</span>
-                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                        <ArrowRight className="w-4.5 h-4.5 group-hover:translate-x-0.5 transition-transform" />
                       </Link>
                     </div>
                   </div>

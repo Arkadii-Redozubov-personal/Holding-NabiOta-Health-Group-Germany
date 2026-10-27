@@ -385,14 +385,14 @@ export function MvzContractSection({ locale = "de" }: { locale?: string }) {
                       <div className="flex items-center justify-between gap-3 mb-3 sm:mb-3.5">
                         <div className="flex items-center gap-3">
                           <div className="w-8 h-8 flex items-center justify-center shrink-0 text-[#2C4436]">
-                            <Icon className="w-6 h-6" />
+                            <Icon className="w-7 h-7" />
                           </div>
                           <h4 className="font-serif text-[18px] sm:text-[20px] font-medium text-[#142318] leading-tight">
                             {card.title[l]}
                           </h4>
                         </div>
                         <div className="text-[#8C6D37] group-hover:text-[#0B2317] flex items-center justify-center shrink-0 transition-colors">
-                          <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                          <ArrowRight className="w-4.5 h-4.5 group-hover:translate-x-0.5 transition-transform" />
                         </div>
                       </div>
 
@@ -425,14 +425,14 @@ export function MvzContractSection({ locale = "de" }: { locale?: string }) {
                   >
                     <div className="flex items-center gap-3 px-6 py-4 sm:border-r border-[#F0EBE1]">
                       <div className="w-7 h-7 flex items-center justify-center shrink-0 text-[#8C6D37]">
-                        <Icon className="w-5 h-5 stroke-[1.8]" />
+                        <Icon className="w-6 h-6 stroke-[1.8]" />
                       </div>
                       <span className="text-[13.5px] sm:text-[14px] font-medium text-[#142318]">{row.name[l]}</span>
                     </div>
                     <div className="flex items-center justify-between gap-4 px-6 py-4 text-[12.5px] sm:text-[13px] text-[#556057] leading-relaxed">
                       <span>{row.content[l]}</span>
                       <div className="text-[#8C6D37] group-hover:text-[#0B2317] flex items-center justify-center shrink-0 transition-colors">
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                        <ArrowRight className="w-4.5 h-4.5 group-hover:translate-x-0.5 transition-transform" />
                       </div>
                     </div>
                   </div>
@@ -450,7 +450,7 @@ export function MvzContractSection({ locale = "de" }: { locale?: string }) {
                 {c.bNote[l]}
               </p>
               <div className="text-[#8C6D37] flex items-center justify-center shrink-0 hidden sm:flex">
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4.5 h-4.5" />
               </div>
             </div>
           </div>
@@ -471,7 +471,7 @@ export function MvzContractSection({ locale = "de" }: { locale?: string }) {
                       className="group rounded-[20px] sm:rounded-[22px] bg-white border border-[#EAE4D7] p-5 sm:p-6 flex items-start gap-4 shadow-2xs hover:shadow-md hover:border-[#D5B878]/60 transition-all duration-300"
                     >
                       <div className="w-8 h-8 flex items-center justify-center shrink-0 text-[#2C4436] mt-0.5">
-                        <Icon className="w-6 h-6" />
+                        <Icon className="w-7 h-7" />
                       </div>
                       <p className="text-[12.5px] sm:text-[13px] text-[#556057] leading-relaxed font-sans flex-1">
                         {item[l]}
@@ -491,7 +491,7 @@ export function MvzContractSection({ locale = "de" }: { locale?: string }) {
                       className="group rounded-[20px] sm:rounded-[22px] bg-white border border-[#EAE4D7] p-5 sm:p-6 flex items-start gap-4 shadow-2xs hover:shadow-md hover:border-[#D5B878]/60 transition-all duration-300"
                     >
                       <div className="w-8 h-8 flex items-center justify-center shrink-0 text-[#2C4436] mt-0.5">
-                        <Icon className="w-6 h-6" />
+                        <Icon className="w-7 h-7" />
                       </div>
                       <p className="text-[12.5px] sm:text-[13px] text-[#556057] leading-relaxed font-sans flex-1">
                         {item[l]}

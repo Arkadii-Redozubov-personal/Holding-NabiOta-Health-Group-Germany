@@ -423,7 +423,7 @@ export function SanitaetshausCompanySection({ locale = "de" }: { locale?: string
               </p>
               <Link href={`/${l}/nabiota-sanitaetshaus`} className="mt-4 inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 rounded-full bg-gradient-to-r from-[#EED4A2] via-[#E4C58B] to-[#D5B878] text-[#142318] hover:brightness-105 font-semibold text-[12px] sm:text-[12.5px] shadow-sm transition-all">
                 {l === "ru" ? "Перейти на сайт Sanitätshaus" : l === "en" ? "Visit Sanitätshaus website" : l === "tr" ? "Sanitätshaus sitesine git" : l === "ar" ? "زيارة موقع Sanitätshaus" : l === "uz" ? "Sanitätshaus saytiga o‘tish" : "Zur Sanitätshaus-Website"}
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4.5 h-4.5" />
               </Link>
             </div>
           </div>
@@ -463,7 +463,7 @@ export function SanitaetshausCompanySection({ locale = "de" }: { locale?: string
                     >
                       {/* Left: Icon */}
                       <div className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center shrink-0 text-[#9E7D3B]">
-                        <ItemIcon className="w-6 h-6" />
+                        <ItemIcon className="w-7 h-7" />
                       </div>
 
                       {/* Center: Title + Description */}
@@ -478,7 +478,7 @@ export function SanitaetshausCompanySection({ locale = "de" }: { locale?: string
 
                       {/* Right: Arrow link */}
                       <Link href={`/${l}/nabiota-sanitaetshaus`} aria-label={item.title[l]} className="text-[#9E7D3B] hover:text-[#142318] shrink-0 p-1.5 transition-colors">
-                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                        <ArrowRight className="w-4.5 h-4.5 transition-transform group-hover:translate-x-0.5" />
                       </Link>
                     </div>
                   );
@@ -490,8 +490,8 @@ export function SanitaetshausCompanySection({ locale = "de" }: { locale?: string
           {/* Network + Pharmacy info cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
             <div className="rounded-2xl sm:rounded-3xl p-6 sm:p-7 bg-[#F4F9F6] border border-[#D0E3D6] flex items-start gap-4">
-              <div className="w-7 h-7 flex items-center justify-center text-[#1E3B29] shrink-0 mt-0.5">
-                <Network className="w-6 h-6" />
+              <div className="w-8 h-8 flex items-center justify-center text-[#1E3B29] shrink-0 mt-0.5">
+                <Network className="w-7 h-7" />
               </div>
               <div className="space-y-1.5 flex-1">
                 <h4 className="font-serif text-[16.5px] sm:text-[17.5px] text-[#142318] font-semibold">
@@ -504,8 +504,8 @@ export function SanitaetshausCompanySection({ locale = "de" }: { locale?: string
             </div>
 
             <div className="rounded-2xl sm:rounded-3xl p-6 sm:p-7 bg-[#FAF5EB] border border-[#E7DDC9] flex items-start gap-4">
-              <div className="w-7 h-7 flex items-center justify-center text-[#8C6D2B] shrink-0 mt-0.5">
-                <ShieldCheck className="w-6 h-6" />
+              <div className="w-8 h-8 flex items-center justify-center text-[#8C6D2B] shrink-0 mt-0.5">
+                <ShieldCheck className="w-7 h-7" />
               </div>
               <div className="space-y-1.5 flex-1">
                 <h4 className="font-serif text-[16.5px] sm:text-[17.5px] text-[#142318] font-semibold">
@@ -556,8 +556,8 @@ export function SanitaetshausCompanySection({ locale = "de" }: { locale?: string
                     className="bg-[#0A1F13]/85 hover:bg-[#0D2618]/95 border border-[#D5B878]/30 hover:border-[#D5B878]/70 backdrop-blur-md rounded-xl sm:rounded-2xl p-3.5 sm:p-4 transition-all duration-300 hover:-translate-y-1 shadow-[0_6px_20px_rgba(0,0,0,0.3)] group flex flex-col justify-between"
                   >
                     <div>
-                      <div className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center text-[#ECCF96] mb-2.5">
-                        <RowIcon className="w-5 h-5 sm:w-5.5 sm:h-5.5 stroke-[1.6]" />
+                      <div className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center text-[#ECCF96] mb-2.5">
+                        <RowIcon className="w-6 h-6 sm:w-6.5 sm:h-6.5 stroke-[1.6]" />
                       </div>
                       <h4 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-white mb-1 group-hover:text-[#ECCF96] transition-colors leading-snug">
                         {row.area[l]}

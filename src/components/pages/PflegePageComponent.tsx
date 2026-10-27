@@ -868,7 +868,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
                   {t.whyChoose.checks.map((checkText, idx) => (
                     <div key={idx} className="flex items-center gap-2.5">
                       <div className="text-[#133924] flex items-center justify-center flex-shrink-0">
-                        <Check className="w-4 h-4 stroke-[2.4]" />
+                        <Check className="w-5 h-5 stroke-[2.4]" />
                       </div>
                       <span className="text-xs sm:text-sm font-medium text-[#1E382A]">
                         {checkText}
@@ -948,7 +948,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
                   return (
                     <div key={idx} className="flex flex-col items-center text-center space-y-1.5 group">
                       <div className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center text-[#ECCF96]">
-                        <IconComp className="w-5 h-5 sm:w-6 sm:h-6 stroke-[1.6]" />
+                        <IconComp className="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.6]" />
                       </div>
                       <span className="text-[11.5px] sm:text-xs font-medium text-[#F4EFE6] leading-tight">
                         {b.title}
@@ -1100,15 +1100,15 @@ export function PflegePageComponent({ locale = "de" }: Props) {
                       {/* Icon */}
                       <div className="mb-3 sm:mb-3.5">
                         <div
-                          className={`w-7 h-7 flex items-center justify-center shrink-0 ${
+                          className={`w-8 h-8 flex items-center justify-center shrink-0 ${
                             idx === 0
                               ? "text-[#1E3B29]"
                               : "text-[#9E7D3B]"
                           }`}
                         >
-                          {idx === 0 && <ShieldCheck className="w-6 h-6 stroke-[1.8]" />}
-                          {idx === 1 && <Hospital className="w-6 h-6 stroke-[1.8]" />}
-                          {idx === 2 && <Pill className="w-6 h-6 stroke-[1.8]" />}
+                          {idx === 0 && <ShieldCheck className="w-7 h-7 stroke-[1.8]" />}
+                          {idx === 1 && <Hospital className="w-7 h-7 stroke-[1.8]" />}
+                          {idx === 2 && <Pill className="w-7 h-7 stroke-[1.8]" />}
                         </div>
                       </div>
 

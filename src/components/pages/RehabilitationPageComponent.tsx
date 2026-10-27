@@ -168,17 +168,17 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
 
   const heroBadges = [
     {
-      icon: <SpineMobilityIcon className="w-5 h-5 text-[#ECCF96]" />,
+      icon: <SpineMobilityIcon className="w-6 h-6 text-[#ECCF96]" />,
       title: isUz ? "Multidisiplinar" : isRu ? "Мультидисциплинарно" : isEn ? "Multidisciplinary" : isTr ? "Disiplinlerarası" : isAr ? "متعدد التخصصات" : "Interdisziplinär",
       sub: isUz ? "Fizioterapiya, Ergo va Logo" : isRu ? "ЛФК, Эрго & Логопедия" : isEn ? "Physio, Ergo & Speech" : isTr ? "Fizyo, Ergo & Logopedi" : isAr ? "علاج طبيعي، وظيفي ونطق" : "Physio, Ergo & Logopädie",
     },
     {
-      icon: <WalkingExoskeletonIcon className="w-5 h-5 text-[#ECCF96]" />,
+      icon: <WalkingExoskeletonIcon className="w-6 h-6 text-[#ECCF96]" />,
       title: isUz ? "Robotlashtirilgan" : isRu ? "Роботизированная" : isEn ? "Robotic-Assisted" : isTr ? "Robotik Destekli" : isAr ? "مدعوم بالروبوتات" : "Robotik-Assistiert",
       sub: isUz ? "Yurish mashqlari va AlterG®" : isRu ? "Технология ходьбы" : isEn ? "Gait & Anti-Gravity" : isTr ? "AlterG® & Yürüme Eğitimi" : isAr ? "جهاز AlterG® وتدريب المشي" : "AlterG® & Gangtrainer",
     },
     {
-      icon: <ShieldCheck className="w-5 h-5 text-[#ECCF96]" />,
+      icon: <ShieldCheck className="w-6 h-6 text-[#ECCF96]" />,
       title: isUz ? "Barcha sug'urtalar" : isRu ? "Все кассы" : isEn ? "Insurance Covered" : isTr ? "Tüm Sigortalar" : isAr ? "جميع جهات التأمين" : "Alle Kassen",
       sub: "GKV, PKV, BG & DRV",
     },
@@ -1242,7 +1242,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                 {innovationCard.items.map((item, idx) => (
                   <div key={idx} className="flex items-center gap-2.5">
                     <div className="text-[#8C6D2B] shrink-0 flex items-center justify-center">
-                      <Check className="w-4 h-4 stroke-[2.2]" />
+                      <Check className="w-5 h-5 stroke-[2.2]" />
                     </div>
                     <span className="font-sans text-xs sm:text-[13px] text-[#1A2E20] font-medium">
                       {item}

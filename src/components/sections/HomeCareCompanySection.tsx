@@ -463,7 +463,7 @@ export function HomeCareCompanySection({ locale = "de" }: { locale?: string }) {
                     >
                       {/* Left: Icon */}
                       <div className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center shrink-0 text-[#9E7D3B]">
-                        <Icon className="w-6 h-6" />
+                        <Icon className="w-7 h-7" />
                       </div>
 
                       {/* Center: Title + Description */}
@@ -478,7 +478,7 @@ export function HomeCareCompanySection({ locale = "de" }: { locale?: string }) {
 
                       {/* Right: Arrow link */}
                       <Link href={`/${l}/nabiota-homecare`} aria-label={item.title[l]} className="text-[#9E7D3B] hover:text-[#142318] shrink-0 p-1.5 transition-colors">
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                        <ArrowRight className="w-4.5 h-4.5 group-hover:translate-x-0.5 transition-transform" />
                       </Link>
                     </div>
                   );
@@ -497,7 +497,7 @@ export function HomeCareCompanySection({ locale = "de" }: { locale?: string }) {
                   className="rounded-2xl sm:rounded-3xl p-6 sm:p-7 bg-[#FAF5EB] border border-[#E7DDC9] flex items-start gap-4"
                 >
                   <div className="w-7 h-7 flex items-center justify-center text-[#8C6D2B] shrink-0 mt-0.5">
-                    <Icon className="w-6 h-6" />
+                    <Icon className="w-7 h-7" />
                   </div>
                   <div className="space-y-1.5 flex-1">
                     <h4 className="font-serif text-[16.5px] sm:text-[17.5px] text-[#142318] font-semibold">
@@ -551,7 +551,7 @@ export function HomeCareCompanySection({ locale = "de" }: { locale?: string }) {
                   >
                     <div>
                       <div className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center text-[#ECCF96] mb-2.5">
-                        <Icon className="w-5 h-5 sm:w-5.5 sm:h-5.5 stroke-[1.6]" />
+                        <Icon className="w-6 h-6 sm:w-6.5 sm:h-6.5 stroke-[1.6]" />
                       </div>
                       <h4 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-white mb-1.5 group-hover:text-[#ECCF96] transition-colors leading-snug">
                         {item.title[l]}

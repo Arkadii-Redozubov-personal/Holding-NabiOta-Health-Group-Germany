@@ -335,7 +335,7 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
               >
                 {/* Icon without circle */}
                 <div className="text-[#9C8145] group-hover:text-[#B89650] mb-3 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                  <Icon className="w-8 h-8 sm:w-9 sm:h-9 stroke-[1.4]" />
+                  <Icon className="w-9 h-9 sm:w-10 sm:h-10 stroke-[1.4]" />
                 </div>
 
                 <h3 className="font-sans text-[13.5px] sm:text-[14.5px] font-bold text-[#112117] mb-1 group-hover:text-[#BFA267] transition-colors">

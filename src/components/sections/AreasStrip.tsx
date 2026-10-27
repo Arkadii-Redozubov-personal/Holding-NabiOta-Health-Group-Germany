@@ -478,7 +478,7 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
                   >
                     {/* Icon without circle */}
                     <div className="text-[#1A261D] group-hover:text-[#9C8145] transition-colors mb-1.5 flex items-center justify-center flex-shrink-0">
-                      <IconComp className="w-6.5 h-6.5 sm:w-8 sm:h-8 stroke-[1.5]" />
+                      <IconComp className="w-7.5 h-7.5 sm:w-9 sm:h-9 stroke-[1.5]" />
                     </div>
 
                     {/* Centered Category Label */}
@@ -511,7 +511,7 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
                 >
                   {/* Icon without circle */}
                   <div className="text-[#ECCF96] flex items-center justify-center flex-shrink-0">
-                    <IconComp className="w-7 h-7 sm:w-8 sm:h-8 stroke-[1.5]" />
+                    <IconComp className="w-8 h-8 sm:w-9 sm:h-9 stroke-[1.5]" />
                   </div>
 
                   {/* Text content (untruncated, clear line-height) */}

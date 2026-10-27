@@ -197,11 +197,11 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
                         {item.step}
                       </div>
                       <div className="text-[#ECCF96] flex items-center justify-center">
-                        {idx === 0 && <FileText className="w-6 h-6" />}
-                        {idx === 1 && <Search className="w-6 h-6" />}
-                        {idx === 2 && <Users className="w-6 h-6" />}
-                        {idx === 3 && <Building2 className="w-6 h-6" />}
-                        {idx === 4 && <Plane className="w-6 h-6" />}
+                        {idx === 0 && <FileText className="w-7 h-7" />}
+                        {idx === 1 && <Search className="w-7 h-7" />}
+                        {idx === 2 && <Users className="w-7 h-7" />}
+                        {idx === 3 && <Building2 className="w-7 h-7" />}
+                        {idx === 4 && <Plane className="w-7 h-7" />}
                       </div>
                     </div>
 

@@ -1805,7 +1805,7 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                     {/* Icon + Serif Italic Number */}
                     <div className="flex items-center gap-3">
                       <div className="text-[#4A6353] group-hover:text-[#274632] flex items-center justify-center shrink-0 transition-colors">
-                        <step.icon className="w-7 h-7 stroke-[1.8]" />
+                        <step.icon className="w-8 h-8 stroke-[1.8]" />
                       </div>
                       <span className="font-serif italic text-2xl sm:text-[27px] text-[#C5A56A] font-light leading-none select-none pl-0.5">
                         {step.num}
@@ -1942,7 +1942,7 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                     className="flex items-center gap-3 text-xs sm:text-[13.5px] text-[#1B3A29] hover:text-[#0D2619] transition-colors group"
                   >
                     <div className="text-[#8C6D37] flex items-center justify-center shrink-0">
-                      <Phone className="w-4.5 h-4.5 fill-[#8C6D37] text-[#8C6D37]" />
+                      <Phone className="w-5.5 h-5.5 fill-[#8C6D37] text-[#8C6D37]" />
                     </div>
                     <span className="font-medium font-sans">+49 2161 4794000</span>
                   </a>
@@ -1952,14 +1952,14 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                     className="flex items-center gap-3 text-xs sm:text-[13.5px] text-[#1B3A29] hover:text-[#0D2619] transition-colors group"
                   >
                     <div className="text-[#0F2A1D] flex items-center justify-center shrink-0">
-                      <Mail className="w-4.5 h-4.5 fill-[#0F2A1D] text-[#0F2A1D]" />
+                      <Mail className="w-5.5 h-5.5 fill-[#0F2A1D] text-[#0F2A1D]" />
                     </div>
                     <span className="font-medium font-sans">partner@nabiota-health-group.de</span>
                   </a>
 
                   <div className="flex items-center gap-3 text-xs sm:text-[13.5px] text-[#1B3A29]">
                     <div className="text-[#0F2A1D] flex items-center justify-center shrink-0">
-                      <MapPin className="w-4.5 h-4.5 fill-[#0F2A1D] text-[#0F2A1D]" />
+                      <MapPin className="w-5.5 h-5.5 fill-[#0F2A1D] text-[#0F2A1D]" />
                     </div>
                     <span className="font-medium font-sans">Mönchengladbach, Germany</span>
                   </div>

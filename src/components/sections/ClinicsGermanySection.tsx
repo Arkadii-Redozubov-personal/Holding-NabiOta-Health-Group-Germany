@@ -650,7 +650,7 @@ export function ClinicsGermanySection({ locale = "de" }: { locale?: string }) {
                 >
                   {/* Left: Icon */}
                   <div className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center shrink-0 text-[#9E7D3B]">
-                    <Icon className="w-6 h-6" />
+                    <Icon className="w-7 h-7" />
                   </div>
 
                   {/* Center: Title + Description */}
@@ -663,7 +663,7 @@ export function ClinicsGermanySection({ locale = "de" }: { locale?: string }) {
                     </p>
                   </div>
                   <Link href={`/${l}/nabiota-clinics-germany`} aria-label={d.title[l]} className="text-[#9E7D3B] hover:text-[#142318] shrink-0 p-1.5 transition-colors">
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                    <ArrowRight className="w-4.5 h-4.5 transition-transform group-hover:translate-x-0.5" />
                   </Link>
                 </div>
               );

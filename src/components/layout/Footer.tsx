@@ -158,7 +158,7 @@ export function Footer({ currentLocale = "de" }: FooterProps) {
                   className="text-white/75 hover:text-[#ECCF96] transition-colors p-1 flex items-center justify-center"
                   aria-label="NabiOta auf LinkedIn"
                 >
-                  <Linkedin className="w-4.5 h-4.5" />
+                  <Linkedin className="w-5.5 h-5.5" />
                 </a>
                 <a
                   href="https://www.xing.com"
@@ -167,7 +167,7 @@ export function Footer({ currentLocale = "de" }: FooterProps) {
                   className="text-white/75 hover:text-[#ECCF96] transition-colors p-1 flex items-center justify-center"
                   aria-label="NabiOta auf XING"
                 >
-                  <Briefcase className="w-4.5 h-4.5" />
+                  <Briefcase className="w-5.5 h-5.5" />
                 </a>
                 <a
                   href="https://www.instagram.com"
@@ -176,7 +176,7 @@ export function Footer({ currentLocale = "de" }: FooterProps) {
                   className="text-white/75 hover:text-[#ECCF96] transition-colors p-1 flex items-center justify-center"
                   aria-label="NabiOta auf Instagram"
                 >
-                  <Instagram className="w-4.5 h-4.5" />
+                  <Instagram className="w-5.5 h-5.5" />
                 </a>
                 <a
                   href="https://www.youtube.com"
@@ -185,7 +185,7 @@ export function Footer({ currentLocale = "de" }: FooterProps) {
                   className="text-white/75 hover:text-[#ECCF96] transition-colors p-1 flex items-center justify-center"
                   aria-label="NabiOta auf YouTube"
                 >
-                  <Youtube className="w-4.5 h-4.5" />
+                  <Youtube className="w-5.5 h-5.5" />
                 </a>
               </div>
             </div>

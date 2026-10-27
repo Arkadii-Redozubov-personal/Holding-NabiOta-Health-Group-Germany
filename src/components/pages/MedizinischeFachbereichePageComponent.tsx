@@ -744,7 +744,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                   <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-auto sm:max-w-md bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-full px-4 sm:px-5 py-2.5 sm:py-3 shadow-lg flex items-center justify-between gap-3 border border-white/60">
                     <div className="flex items-center gap-3 min-w-0">
                       <div className="w-8 h-8 flex items-center justify-center text-[#ECCF96] shrink-0">
-                        <CloverEmblemIcon className="w-6 h-6 stroke-[1.6]" />
+                        <CloverEmblemIcon className="w-7 h-7 stroke-[1.6]" />
                       </div>
                       <div className="min-w-0">
                         <h4 className="text-[13.5px] sm:text-[14px] font-bold text-[#142318] truncate leading-tight">
@@ -784,7 +784,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                     return (
                       <div key={idx} className="flex items-center gap-2">
                         <div className="text-[#B89650] flex items-center justify-center shrink-0">
-                          <FeatureIcon className="w-5 h-5 stroke-[1.6]" />
+                          <FeatureIcon className="w-6 h-6 stroke-[1.6]" />
                         </div>
                         <span className="text-[11.5px] sm:text-xs font-medium text-[#425046] leading-snug">
                           {feat.label}
@@ -922,7 +922,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                         return (
                           <div key={idx} className="flex items-center gap-2">
                             <div className="text-[#1E3B29] flex items-center justify-center shrink-0">
-                              <AdvantageIcon className="w-5 h-5 sm:w-5.5 sm:h-5.5 stroke-[1.6]" />
+                              <AdvantageIcon className="w-6 h-6 sm:w-6.5 sm:h-6.5 stroke-[1.6]" />
                             </div>
                             <span className="text-[11.5px] sm:text-[12px] text-[#334237] font-normal leading-snug font-sans">
                               {item}
@@ -996,7 +996,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                       {/* Icon & Title Row */}
                       <div className="flex items-center gap-3 mb-2.5">
                         <div className="text-[#183B26] group-hover:text-[#8C6D2B] flex items-center justify-center shrink-0 transition-colors">
-                          <EntityIcon className="w-7 h-7 sm:w-8 sm:h-8" />
+                          <EntityIcon className="w-8 h-8 sm:w-9 sm:h-9" />
                         </div>
                         <h4 className="font-serif text-[15.5px] sm:text-[16.5px] text-[#142318] font-bold leading-snug group-hover:text-[#B89650] transition-colors">
                           {entity.title}

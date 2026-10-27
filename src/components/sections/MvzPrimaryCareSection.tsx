@@ -768,7 +768,7 @@ export function MvzPrimaryCareSection({ locale = "de" }: { locale?: string }) {
                       className="group relative rounded-xl bg-white/85 hover:bg-white border border-[#EAE4D7] hover:border-[#D5B878]/70 py-2 px-3 sm:py-2.5 sm:px-3.5 flex items-center gap-2.5 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-sm transition-all duration-300 backdrop-blur-xs"
                     >
                       <div className="w-6 h-6 flex items-center justify-center shrink-0">
-                        <SpecIcon className="w-4 h-4 text-[#9E7D3B]" />
+                        <SpecIcon className="w-5 h-5 text-[#9E7D3B]" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h4 className="font-serif text-[12.5px] sm:text-[13px] text-[#142318] font-medium leading-tight">
@@ -842,7 +842,7 @@ export function MvzPrimaryCareSection({ locale = "de" }: { locale?: string }) {
                       {cardPoints[cardIdx][l].map((point, pIdx) => (
                         <li key={pIdx} className="flex items-center gap-2">
                           <span className="text-[#8C6D2D] shrink-0">
-                            <Check className="w-4 h-4 stroke-[2.2]" />
+                            <Check className="w-4.5 h-4.5 stroke-[2.2]" />
                           </span>
                           <span className="text-[12px] sm:text-[12.5px] font-medium leading-snug text-[#1B3624]">
                             {point}
@@ -907,7 +907,7 @@ export function MvzPrimaryCareSection({ locale = "de" }: { locale?: string }) {
                   return (
                     <div key={pIdx} className="flex flex-col items-center text-center p-2">
                       <div className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center text-[#9E7D3B] mb-2">
-                        <PointIcon className="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.6]" />
+                        <PointIcon className="w-7 h-7 sm:w-8 sm:h-8 stroke-[1.6]" />
                       </div>
                       <span className="text-[12px] sm:text-[12.5px] font-medium text-[#3E4940] leading-snug">
                         {point}
@@ -989,7 +989,7 @@ export function MvzPrimaryCareSection({ locale = "de" }: { locale?: string }) {
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-2 sm:mb-2.5">
                     <div className="w-7 h-7 flex items-center justify-center shrink-0 text-[#F4DFC0]">
-                      <Icon className="w-5 h-5 sm:w-5.5 sm:h-5.5" />
+                      <Icon className="w-6 h-6 sm:w-6.5 sm:h-6.5" />
                     </div>
                     <h4 className="font-serif font-medium text-[15px] sm:text-[16px] text-white leading-snug">
                       {d.title[l]}
@@ -1001,7 +1001,7 @@ export function MvzPrimaryCareSection({ locale = "de" }: { locale?: string }) {
                     {conciseCopy[l].dutySummaries[i]}
                   </p>
                   <Link href={`/${l}/mvz-hausarzt-facharzt`} aria-label={d.title[l]} className="absolute right-4 bottom-4 text-[#F4DFC0] hover:text-[#D5B878] p-1 transition-colors">
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                    <ArrowRight className="w-4.5 h-4.5 transition-transform group-hover:translate-x-0.5" />
                   </Link>
                 </div>
               </article>

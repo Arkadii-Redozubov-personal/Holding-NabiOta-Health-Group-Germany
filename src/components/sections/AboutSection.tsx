@@ -115,7 +115,7 @@ export function AboutSection({ currentLocale = "de" }: AboutSectionProps) {
                 <div key={idx} className="flex items-center gap-3.5 group">
                   {/* Icon without circle */}
                   <div className="text-[#9C8145] group-hover:text-[#7D6532] flex items-center justify-center flex-shrink-0 transition-colors">
-                    <IconComponent className="w-5.5 h-5.5 sm:w-6 sm:h-6 stroke-[1.5]" />
+                    <IconComponent className="w-6.5 h-6.5 sm:w-7 sm:h-7 stroke-[1.5]" />
                   </div>
 
                   <div className="flex-1 min-w-0">

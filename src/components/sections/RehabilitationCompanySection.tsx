@@ -392,7 +392,7 @@ export function RehabilitationCompanySection({
                   className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#EED4A2] via-[#E4C58B] to-[#D5B878] text-[#142318] hover:brightness-105 font-semibold text-xs shadow-sm transition-all"
                 >
                   <span>{l === "ru" ? "Перейти на сайт реабилитации" : l === "en" ? "Visit the rehabilitation website" : l === "tr" ? "Rehabilitasyon web sitesine git" : l === "ar" ? "زيارة موقع إعادة التأهيل" : l === "uz" ? "Reabilitatsiya veb-saytiga o‘tish" : "Zur Rehabilitations-Website"}</span>
-                  <ArrowRight className="h-3.5 w-3.5" />
+                  <ArrowRight className="h-4.5 w-4.5" />
                 </Link>
               </div>
 
@@ -406,8 +406,8 @@ export function RehabilitationCompanySection({
                         key={idx}
                         className="group relative rounded-xl bg-white/85 hover:bg-white border border-[#EAE4D7] hover:border-[#D5B878]/70 py-2.5 px-3 sm:py-2.5 sm:px-3.5 flex items-center gap-2.5 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-sm transition-all duration-300 backdrop-blur-xs"
                       >
-                        <div className="w-6 h-6 flex items-center justify-center shrink-0">
-                          <SpecIcon className="w-4 h-4 text-[#9E7D3B]" />
+                        <div className="w-7 h-7 flex items-center justify-center shrink-0">
+                          <SpecIcon className="w-5 h-5 text-[#9E7D3B]" />
                         </div>
                         <div className="flex-1 min-w-0">
                           <h4 className="font-serif text-[12px] sm:text-[12.5px] text-[#142318] font-medium leading-tight">
@@ -421,7 +421,7 @@ export function RehabilitationCompanySection({
 
                 {/* Patient Populations Note banner matching MVZ 1 & 2 */}
                 <div className="flex items-start sm:items-center gap-2.5 mt-2.5 sm:mt-3 px-3.5 py-2 rounded-xl border border-[#E8DFC8]/75 bg-white/75 backdrop-blur-xs text-[#556057]">
-                  <Info className="w-3.5 h-3.5 text-[#9E7D3B] shrink-0 mt-0.5 sm:mt-0" />
+                  <Info className="w-4.5 h-4.5 text-[#9E7D3B] shrink-0 mt-0.5 sm:mt-0" />
                   <p className="text-[11px] sm:text-[11.5px] leading-relaxed">
                     <span className="font-semibold text-[#142318] mr-1">{c.patientGroupsTitle[l]}:</span>
                     {c.patientGroupsDesc[l]}
@@ -464,8 +464,8 @@ export function RehabilitationCompanySection({
                           <span className="font-serif text-[22px] sm:text-[24px] text-[#C5A56A] font-normal leading-none w-8 shrink-0">
                             {numStr}
                           </span>
-                          <div className="w-7 h-7 flex items-center justify-center shrink-0 text-[#9E7D3B]">
-                            <Icon className="w-5 h-5" />
+                          <div className="w-8 h-8 flex items-center justify-center shrink-0 text-[#9E7D3B]">
+                            <Icon className="w-6 h-6" />
                           </div>
                         </div>
 
@@ -487,7 +487,7 @@ export function RehabilitationCompanySection({
                           className="inline-flex items-center gap-1.5 text-[11.5px] sm:text-[12px] font-semibold text-[#9E7D3B] hover:text-[#142318] transition-colors"
                         >
                           <span>{l === "ru" ? "Подробнее" : l === "en" ? "Learn more" : "Mehr erfahren"}</span>
-                          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                          <ArrowRight className="w-4.5 h-4.5 group-hover:translate-x-0.5 transition-transform" />
                         </Link>
                       </div>
                     </div>
@@ -498,8 +498,8 @@ export function RehabilitationCompanySection({
 
             {/* Overarching Rehabilitation Mandate Callout */}
             <div className="flex flex-col sm:flex-row items-start gap-4 rounded-xl sm:rounded-2xl border border-[#E0D5C1] bg-[#FAF5EC] p-5 sm:p-6 shadow-xs">
-              <div className="w-7 h-7 flex items-center justify-center shrink-0 text-[#9E7D3B] mt-0.5">
-                <Sparkles className="w-6 h-6" />
+              <div className="w-8 h-8 flex items-center justify-center shrink-0 text-[#9E7D3B] mt-0.5">
+                <Sparkles className="w-7 h-7" />
               </div>
               <div className="space-y-1">
                 <h4 className="font-serif text-[16px] sm:text-[17.5px] text-[#142318] font-semibold">
@@ -572,8 +572,8 @@ export function RehabilitationCompanySection({
                       <span className="font-serif text-[22px] sm:text-[25px] text-[#F4DFC0] font-normal leading-none shrink-0 w-7 sm:w-8">
                         {numStr}
                       </span>
-                      <div className="w-7 h-7 flex items-center justify-center shrink-0 text-[#F4DFC0]">
-                        <Icon className="w-5 h-5 sm:w-5.5 sm:h-5.5" />
+                      <div className="w-8 h-8 flex items-center justify-center shrink-0 text-[#F4DFC0]">
+                        <Icon className="w-6 h-6 sm:w-6.5 sm:h-6.5" />
                       </div>
                       <h4 className="font-serif font-medium text-[15px] sm:text-[16px] text-white leading-snug">
                         {payer.title[l]}

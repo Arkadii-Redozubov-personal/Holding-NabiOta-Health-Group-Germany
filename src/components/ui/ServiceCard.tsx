@@ -23,7 +23,7 @@ function ServiceIcon({ id }: { id: string }) {
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="w-5.5 h-5.5 sm:w-6 sm:h-6 text-[#C5A56A]"
+          className="w-6.5 h-6.5 sm:w-7 sm:h-7 text-[#C5A56A]"
         >
           <path d="M3 21h18M5 21V7l7-4 7 4v14" />
           <path d="M10 11h4M12 9v4" />
@@ -39,7 +39,7 @@ function ServiceIcon({ id }: { id: string }) {
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="w-5.5 h-5.5 sm:w-6 sm:h-6 text-[#C5A56A]"
+          className="w-6.5 h-6.5 sm:w-7 sm:h-7 text-[#C5A56A]"
         >
           <rect x="2" y="3" width="20" height="13" rx="2" />
           <path d="M8 21h8M12 16v5" />
@@ -56,7 +56,7 @@ function ServiceIcon({ id }: { id: string }) {
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="w-5.5 h-5.5 sm:w-6 sm:h-6 text-[#C5A56A]"
+          className="w-6.5 h-6.5 sm:w-7 sm:h-7 text-[#C5A56A]"
         >
           <circle cx="12" cy="7" r="3.5" />
           <path d="M6 21v-2a6 6 0 0 1 12 0v2" />
@@ -72,7 +72,7 @@ function ServiceIcon({ id }: { id: string }) {
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="w-5.5 h-5.5 sm:w-6 sm:h-6 text-[#C5A56A]"
+          className="w-6.5 h-6.5 sm:w-7 sm:h-7 text-[#C5A56A]"
         >
           <path d="M3 10.5 12 3l9 7.5v9.5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-9.5z" />
           <path d="M9 21v-6h6v6" />
@@ -88,7 +88,7 @@ function ServiceIcon({ id }: { id: string }) {
           strokeWidth="1.6"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="w-5.5 h-5.5 sm:w-6 sm:h-6 text-[#C5A56A]"
+          className="w-6.5 h-6.5 sm:w-7 sm:h-7 text-[#C5A56A]"
         >
           <path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6V3z" />
         </svg>
@@ -103,7 +103,7 @@ function ServiceIcon({ id }: { id: string }) {
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="w-5.5 h-5.5 sm:w-6 sm:h-6 text-[#C5A56A]"
+          className="w-6.5 h-6.5 sm:w-7 sm:h-7 text-[#C5A56A]"
         >
           <circle cx="12" cy="7" r="2.5" />
           <path d="M7 19v-1a5 5 0 0 1 10 0v1" />
@@ -123,7 +123,7 @@ function ServiceIcon({ id }: { id: string }) {
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="w-5.5 h-5.5 sm:w-6 sm:h-6 text-[#C5A56A]"
+          className="w-6.5 h-6.5 sm:w-7 sm:h-7 text-[#C5A56A]"
         >
           <path d="M9 18h6M10 22h4" />
           <path d="M12 2a7 7 0 0 0-7 7c0 2.5 1.5 4.5 3 6h8c1.5-1.5 3-3.5 3-6a7 7 0 0 0-7-7z" />
@@ -137,7 +137,7 @@ function ServiceIcon({ id }: { id: string }) {
           fill="none"
           stroke="currentColor"
           strokeWidth="1.5"
-          className="w-5.5 h-5.5 text-[#C5A56A]"
+          className="w-6.5 h-6.5 text-[#C5A56A]"
         >
           <circle cx="12" cy="12" r="9" />
         </svg>
@@ -204,7 +204,7 @@ export function ServiceCard({
         {/* Bottom-right: ArrowRight */}
         <div className="flex justify-end mt-auto pt-1">
           <div className="text-[#B89650] group-hover:text-[#8C6D2D] transition-colors flex items-center justify-center flex-shrink-0">
-            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowRight className="w-4.5 h-4.5 transition-transform duration-300 group-hover:translate-x-1" />
           </div>
         </div>
       </div>

@@ -73,9 +73,9 @@ export function IconCircle({
   };
 
   const iconSizes = {
-    sm: "w-5 h-5",
-    md: "w-7 h-7 md:w-8 md:h-8",
-    lg: "w-9 h-9",
+    sm: "w-6 h-6",
+    md: "w-8 h-8 md:w-9 md:h-9",
+    lg: "w-10 h-10",
   };
 
   const variantClasses = {

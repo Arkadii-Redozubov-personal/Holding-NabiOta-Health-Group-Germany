@@ -23,7 +23,7 @@ export function HeroBadges({ items, className = "" }: HeroBadgesProps) {
           }
           if (typeof item.icon === "function" || (typeof item.icon === "object" && item.icon !== null)) {
             const IconComp = item.icon as React.ComponentType<{ className?: string }>;
-            return <IconComp className="w-4.5 h-4.5 sm:w-5 sm:h-5 stroke-[1.6]" />;
+            return <IconComp className="w-5.5 h-5.5 sm:w-6 sm:h-6 stroke-[1.6]" />;
           }
           return null;
         };

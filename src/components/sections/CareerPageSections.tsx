@@ -228,10 +228,10 @@ export function CareerPillarCatalog({ t, onSelect }: { t: CareerContent; onSelec
                     {/* Icon overlapping the photo on the left */}
                     <div className="relative -mt-7 mb-3 z-10">
                       <div className="text-[#1C3E2A] flex items-center">
-                        {pillar.id === "aerzte" && <Stethoscope className="w-7 h-7" />}
-                        {pillar.id === "pflege" && <FileCheck className="w-7 h-7" />}
-                        {pillar.id === "diagnostik" && <Settings className="w-7 h-7" />}
-                        {pillar.id === "therapie" && <HeartHandshake className="w-7 h-7" />}
+                        {pillar.id === "aerzte" && <Stethoscope className="w-8 h-8" />}
+                        {pillar.id === "pflege" && <FileCheck className="w-8 h-8" />}
+                        {pillar.id === "diagnostik" && <Settings className="w-8 h-8" />}
+                        {pillar.id === "therapie" && <HeartHandshake className="w-8 h-8" />}
                       </div>
                     </div>
 
@@ -251,7 +251,7 @@ export function CareerPillarCatalog({ t, onSelect }: { t: CareerContent; onSelec
                         {t.pillarSection.openModalBtn}
                       </span>
                       <div className="text-[#93712C] group-hover:text-[#1C3E2A] transition-colors flex items-center justify-center">
-                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                        <ArrowRight className="w-4.5 h-4.5 transition-transform group-hover:translate-x-1" />
                       </div>
                     </div>
                   </div>
@@ -659,7 +659,7 @@ export function CareerPillarModal({
                   {pillar.benefitsPackage.map((benefit, idx) => (
                     <div key={idx} className="flex items-start gap-2 text-xs sm:text-[13px] text-[#243327]">
                       <div className="text-[#8D6B27] shrink-0 mt-0.5 flex items-center justify-center">
-                        <Check className="w-3.5 h-3.5 stroke-[2.2]" />
+                        <Check className="w-4.5 h-4.5 stroke-[2.2]" />
                       </div>
                       <span>{benefit}</span>
                     </div>

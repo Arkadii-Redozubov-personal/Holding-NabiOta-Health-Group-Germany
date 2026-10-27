@@ -215,7 +215,7 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
             className="group inline-flex items-center gap-1.5 text-xs sm:text-[13.5px] font-semibold text-[#9C8145] hover:text-[#7D6532] transition-colors self-start sm:self-end whitespace-nowrap mb-1"
           >
             <span>{dict.areas.cta}</span>
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            <ArrowRight className="w-4.5 h-4.5 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
 
@@ -245,7 +245,7 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
                   <div>
                     <div className="flex items-start gap-2 sm:gap-2.5">
                       <div className="flex-shrink-0 text-[#C5A56A] mt-0.5">
-                        <Icon className="w-5 h-5 sm:w-5.5 sm:h-5.5 stroke-[1.6]" />
+                        <Icon className="w-6 h-6 sm:w-6.5 sm:h-6.5 stroke-[1.6]" />
                       </div>
                       <h3 className="font-serif font-bold text-[#142318] leading-[1.2] group-hover:text-[#BFA267] transition-colors text-[13px] sm:text-[14px] lg:text-[14.5px] line-clamp-2">
                         {area.title}
@@ -260,7 +260,7 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
                   {/* Bottom-right: Clean ArrowRight transition without circular border */}
                   <div className="flex justify-end mt-auto pt-1">
                     <div className="text-[#B89650] group-hover:text-[#7D6532] transition-colors flex items-center justify-center flex-shrink-0">
-                      <ArrowRight className="w-4 h-4 stroke-[1.8] transition-transform duration-300 group-hover:translate-x-1" />
+                      <ArrowRight className="w-4.5 h-4.5 stroke-[1.8] transition-transform duration-300 group-hover:translate-x-1" />
                     </div>
                   </div>
                 </div>
