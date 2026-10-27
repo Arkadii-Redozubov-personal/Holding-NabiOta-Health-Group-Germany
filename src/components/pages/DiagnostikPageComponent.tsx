@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
-  ArrowLeft,
   Calendar,
   Clock,
   CheckCircle2,
@@ -145,7 +144,6 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
   const isTr = locale === "tr";
   const isAr = locale === "ar";
 
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [selectedProcedure, setSelectedProcedure] = useState<ProcedureModalData | null>(null);
   const [activeProcId, setActiveProcId] = useState<string>("mrt");
 
@@ -973,62 +971,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
         "Sportmedizinische Untersuchungen",
       ];
 
-  // ── Section 5: Testimonials Carousel matching Photo 2 ──
-  const testimonials = [
-    {
-      quote: isUz
-        ? "Professional va samimiy g'amxo'rlik menga juda yordam berdi. Tez va aniq tashxis tufayli to'g'ri davolash darhol boshlandi."
-        : isRu
-        ? "Профессиональная и чуткая забота мне очень помогла. Благодаря быстрой и точной диагностике верное лечение было начато без промедления."
-        : isEn
-        ? "The professional and empathetic care helped me tremendously. Thanks to rapid, high-precision diagnostics, the right therapy was initiated immediately."
-        : isTr
-        ? "Gördüğüm profesyonel ve yakın ilgi bana çok yardımcı oldu. Hızlı ve isabetli tanı sayesinde doğru tedaviye vakit kaybetmeden başlandı."
-        : isAr
-        ? "الرعاية المهنية والاهتمام الإنساني ساعداني بشكل لا يُصدق. بفضل التشخيص السريع والدقيق، تم البدء في العلاج الصحيح دون أدنى تأخير."
-        : "Die professionelle und einfühlsame Betreuung hat mir sehr geholfen. Dank der schnellen und präzisen Diagnostik konnte die richtige Therapie rasch eingeleitet werden.",
-      author: "Anna Müller",
-      role: isUz ? "Bemor" : isRu ? "Пациентка" : isEn ? "Patient" : isTr ? "Hasta" : isAr ? "مريضة" : "Patientin",
-      patientImage: "/images/diagnostik/patient-anna.webp",
-      scanImage: "/images/diagnostik/scan-review.webp",
-    },
-    {
-      quote: isUz
-        ? "3-Tesla tomografining tasvir sifati va radiolog shifokorning har bir tasvirni batafsil tushuntirib berishi menda to'liq ishonch uyg'otdi."
-        : isRu
-        ? "Впечатляющее качество томографии 3 Тесла и подробное разъяснение каждого снимка врачом-рентгенологом. Полное чувство уверенности."
-        : isEn
-        ? "Impressive 3-Tesla image resolution and clear explanation of every slice by the radiologist. Total clinical confidence."
-        : isTr
-        ? "3-Tesla MR cihazının görüntü kalitesi ve radyoloğun tüm bulguları anlaşılır şekilde izah etmesi son derece güven vericiydi."
-        : isAr
-        ? "دقة التصوير الاستثنائية للرنين المغناطيسي 3 تسلا والشرح الوافي من طبيب الأشعة منحاني طمأنينة سريرية كاملة."
-        : "Beeindruckende Bildauflösung des 3-Tesla-MRT und verständliche Erläuterung aller Befunde durch den Radiologen. Höchste Sicherheit.",
-      author: "Thomas Becker",
-      role: isUz ? "Bemor" : isRu ? "Пациент" : isEn ? "Patient" : isTr ? "Hasta" : isAr ? "مريض" : "Patient",
-      patientImage: "/images/testimonials/thomas-becker.webp",
-      scanImage: "/images/services/diagnostik.webp",
-    },
-    {
-      quote: isUz
-        ? "Xulosa 24 soatdan kam vaqt ichida tayyor bo'ldi. Raqamli tasvirlar tufayli jarrohim darhol kerakli davolashni rejalashtirishga muvaffaq bo'ldi."
-        : isRu
-        ? "Очень быстрое получение заключения в течение суток. Мой хирург смог моментально спланировать операцию благодаря цифровому доступу."
-        : isEn
-        ? "Report ready in less than 24 hours. My orthopedist accessed the full digital scans immediately to plan targeted therapy."
-        : isTr
-        ? "Rapor 24 saatin altında teslim edildi. Ortopedistim dijital görüntülere derhal erişip ameliyat planlamasını hemen yaptı."
-        : isAr
-        ? "تم استلام التقرير الطبي في أقل من 24 ساعة. تمكن جراح العظام من فحص الصور الرقمية فوراً وبدء خطة العلاج الموجهة."
-        : "Befundbereitstellung in unter 24 Stunden. Mein Orthopäde konnte dank digitalem Bildzugang direkt die gezielte Therapie planen.",
-      author: "Elena Fischer",
-      role: isUz ? "Bemor" : isRu ? "Пациентка" : isEn ? "Patient" : isTr ? "Hasta" : isAr ? "مريضة" : "Patientin",
-      patientImage: "/images/testimonials/elena-fischer.webp",
-      scanImage: "/images/diagnostik/scan-review.webp",
-    },
-  ];
 
-  const currentTestimonial = testimonials[activeTestimonial];
 
   return (
     <div className="flex flex-col min-h-screen bg-[#FAF8F5]">
@@ -1539,105 +1482,6 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
           </div>
         </section>
 
-        {/* ══════════════════════════════════════════════════════════
-            SECTION 5 (PHOTO 4): PATIENTENSTIMMEN (FULL-WIDTH EDGE-TO-EDGE)
-            - Seamlessly connected to Section 6 with NO white gap!
-        ══════════════════════════════════════════════════════════ */}
-        <section className="w-full bg-[#08170D] text-white overflow-hidden border-t border-[#D5B878]/30 relative">
-          <div className="w-full flex items-center justify-between min-h-[240px] sm:min-h-[260px] lg:min-h-[280px]">
-            
-            {/* Left Column: Patient Portrait fading towards center */}
-            <div className="relative hidden md:block w-[24%] lg:w-[26%] h-[240px] sm:h-[260px] lg:h-[280px] overflow-hidden shrink-0">
-              <Image
-                src={currentTestimonial.patientImage}
-                alt={currentTestimonial.author}
-                fill
-                className="object-cover object-center"
-              />
-              <div className="absolute inset-y-0 right-0 w-28 bg-gradient-to-l from-[#08170D] to-transparent pointer-events-none" />
-            </div>
-
-            {/* Center Column: Quote, Author, Carousel Flanked by Arrows */}
-            <div className="flex-1 py-7 sm:py-8 px-4 sm:px-6 lg:px-10 text-center flex flex-col items-center justify-center relative z-10 max-w-2xl mx-auto">
-              <h3 className="font-serif text-2xl sm:text-3xl text-white font-normal leading-tight mb-2.5">
-                {isUz
-                  ? "Tajribaga asoslangan ishonch."
-                  : isRu
-                  ? "Доверие, основанное на опыте."
-                  : isEn
-                  ? "Trust Built on Experience."
-                  : isTr
-                  ? "Deneyimden Gelen Güven."
-                  : isAr
-                  ? "ثقة راسخة تنبع من الخبرة."
-                  : "Vertrauen durch Erfahrung."}
-              </h3>
-
-              {/* Quote row flanked by Left & Right Arrows (Photo 4) */}
-              <div className="w-full flex items-center justify-between gap-3 sm:gap-5 my-1.5">
-                <button
-                  onClick={() =>
-                    setActiveTestimonial((prev) =>
-                      prev === 0 ? testimonials.length - 1 : prev - 1
-                    )
-                  }
-                  aria-label="Previous testimonial"
-                  className="w-8 h-8 rounded-full border border-white/20 hover:border-[#D5B878] bg-white/5 hover:bg-[#D5B878] hover:text-[#08170D] text-white flex items-center justify-center shrink-0 transition-all cursor-pointer"
-                >
-                  <ArrowLeft className="w-3.5 h-3.5" />
-                </button>
-
-                <blockquote className="text-white/90 text-xs sm:text-[13px] italic leading-relaxed font-sans flex-1 text-center max-w-lg mx-auto">
-                  „{currentTestimonial.quote}“
-                </blockquote>
-
-                <button
-                  onClick={() =>
-                    setActiveTestimonial((prev) =>
-                      prev === testimonials.length - 1 ? 0 : prev + 1
-                    )
-                  }
-                  aria-label="Next testimonial"
-                  className="w-8 h-8 rounded-full border border-white/20 hover:border-[#D5B878] bg-white/5 hover:bg-[#D5B878] hover:text-[#08170D] text-white flex items-center justify-center shrink-0 transition-all cursor-pointer"
-                >
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
-
-              {/* Author in Gold */}
-              <span className="text-xs text-[#ECCF96] font-medium block mt-1.5">
-                {currentTestimonial.author}, {currentTestimonial.role}
-              </span>
-
-              {/* Dots Indicator: Active Gold Pill + Inactive Circular Dots */}
-              <div className="flex items-center gap-1.5 mt-3">
-                {testimonials.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveTestimonial(idx)}
-                    aria-label={`Slide ${idx + 1}`}
-                    className={`transition-all ${
-                      activeTestimonial === idx
-                        ? "w-5 h-1.5 rounded-full bg-[#ECCF96]"
-                        : "w-1.5 h-1.5 rounded-full bg-white/30 hover:bg-white/50"
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* Right Column: Scan Review Image fading towards center */}
-            <div className="relative hidden md:block w-[24%] lg:w-[26%] h-[240px] sm:h-[260px] lg:h-[280px] overflow-hidden shrink-0">
-              <Image
-                src={currentTestimonial.scanImage}
-                alt="Specialist reviewing MRI scan"
-                fill
-                className="object-cover object-center"
-              />
-              <div className="absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-[#08170D] to-transparent pointer-events-none" />
-            </div>
-          </div>
-        </section>
 
         {/* ══════════════════════════════════════════════════════════
             SECTION 6: SIGNATURE PANORAMIC MOUNTAIN CTA BANNER
