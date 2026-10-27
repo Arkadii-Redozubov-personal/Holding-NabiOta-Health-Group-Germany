@@ -15,6 +15,7 @@ import {
   Check,
   MapPin,
   ChevronDown,
+  ChevronRight,
   X,
   Info,
 } from "lucide-react";
@@ -117,6 +118,93 @@ function ExperienceAwardIcon({ className = "w-4 h-4" }: { className?: string }) 
   );
 }
 
+// ── 6 Bespoke Heraldic Icons for Clinical Programs (Matching Reference Design) ──
+function OrthoHeraldicIcon({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M12 2L4 6v6c0 5.5 3.5 10 8 11 4.5-1 8-5.5 8-11V6l-8-4z" />
+      <path d="M12 7v10" />
+      <path d="M9 10h6" />
+      <path d="M9 14h6" />
+      <circle cx="12" cy="7" r="1.5" fill="currentColor" />
+      <circle cx="12" cy="17" r="1.5" fill="currentColor" />
+    </svg>
+  );
+}
+
+function NeuroLotusIcon({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <circle cx="12" cy="12" r="2.5" fill="currentColor" />
+      <path d="M12 3c-2 3-2 6 0 6.5 2-0.5 2-3.5 0-6.5z" />
+      <path d="M12 21c-2-3-2-6 0-6.5 2 0.5 2 3.5 0 6.5z" />
+      <path d="M3 12c3-2 6-2 6.5 0-.5 2-3.5 2-6.5 0z" />
+      <path d="M21 12c-3-2-6-2-6.5 0 .5 2 3.5 2 6.5 0z" />
+      <circle cx="6" cy="6" r="1" fill="currentColor" />
+      <circle cx="18" cy="6" r="1" fill="currentColor" />
+      <circle cx="6" cy="18" r="1" fill="currentColor" />
+      <circle cx="18" cy="18" r="1" fill="currentColor" />
+    </svg>
+  );
+}
+
+function SportKineticIcon({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <circle cx="12" cy="4" r="2" />
+      <path d="M6 9l4 2 2-3 3 2 3-1" />
+      <path d="M10 13l-3 7" />
+      <path d="M12 11v4l4 5" />
+      <path d="M4 17l4-2" />
+      <path d="M16 15l4 2" />
+    </svg>
+  );
+}
+
+function CardioEmblemIcon({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M12 21s-7-4.5-9-9a5.5 5.5 0 0 1 9-3 5.5 5.5 0 0 1 9 3c-2 4.5-9 9-9 9z" />
+      <path d="M7 12h2.5l1.5-3 2 6 1.5-3H17" strokeWidth="1.6" />
+    </svg>
+  );
+}
+
+function HydroVesselIcon({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M8 3h8M9 3v2c0 2-2 3-2 5 0 4 2.5 7 5 7s5-3 5-7c0-2-2-3-2-5V3" />
+      <path d="M6 10c-1.5 0-2 1-2 2s1 2 3 2" />
+      <path d="M18 10c1.5 0 2 1 2 2s-1 2-3 2" />
+      <path d="M9 21h6M12 17v4" />
+      <path d="M10 12c1 .5 3 .5 4 0" />
+    </svg>
+  );
+}
+
+function ErgoBalanceIcon({ className = "w-6 h-6" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <circle cx="12" cy="7" r="2.5" />
+      <path d="M6 21v-3c0-2 2-3 4-3h4c2 0 4 1 4 3v3" />
+      <path d="M3 13c1-3 3-5 5-6" />
+      <path d="M21 13c-1-3-3-5-5-6" />
+      <circle cx="4" cy="9" r="1" fill="currentColor" />
+      <circle cx="20" cy="9" r="1" fill="currentColor" />
+      <path d="M9 18h6" />
+    </svg>
+  );
+}
+
+const specIconsMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  ortho: OrthoHeraldicIcon,
+  neuro: NeuroLotusIcon,
+  sport: SportKineticIcon,
+  cardio: CardioEmblemIcon,
+  hydro: HydroVesselIcon,
+  ergo: ErgoBalanceIcon,
+};
+
 interface Props {
   locale?: SupportedLocale;
 }
@@ -130,6 +218,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
 
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [selectedSpecialization, setSelectedSpecialization] = useState<SpecializationModalData | null>(null);
+  const [activeSpecId, setActiveSpecId] = useState<string>("ortho");
 
   // Keyboard escape listener and body scroll lock for modal
   useEffect(() => {
@@ -1262,103 +1351,177 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
       <RehabilitationCompanySection locale={locale}>
         {/* ══════════════════════════════════════════════════════════
             SECTION 3: SPECIALIZED REHABILITATION SPECIALIZATIONS
+            - Matching Reference Photo Layout 1:1
+            - Featured Left Card + Right Interactive Specialty Tabs
         ══════════════════════════════════════════════════════════ */}
-        <section className="pt-6 pb-16 sm:pt-8 sm:pb-20 bg-[#FAF8F5]">
-          <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-              <h2 className="font-serif text-3xl sm:text-4xl text-[#132218] font-normal leading-tight">
-                {isUz
-                  ? "Har bir klinik maqsad uchun individual dasturlar"
-                  : isRu
-                  ? "Индивидуальные программы для каждой клинической цели"
-                  : isEn
-                  ? "Targeted Rehabilitation for Every Clinical Indication"
-                  : isTr
-                  ? "Kalıcı İyileşme İçin Bireysel Terapi Konseptleri"
-                  : isAr
-                  ? "مفاهيم علاجية مخصصة لتحقيق تعافٍ مستدام"
-                  : "Individuelle Therapiekonzepte für nachhaltige Genesung"}
-              </h2>
-              <p className="font-sans text-xs sm:text-sm text-[#556358] mt-3 leading-relaxed">
-                {isUz
-                  ? "Endoprotezlashdan keyin yurish qobiliyatini tiklashdan erta nevrologik reabilitatsiyagacha — biz tibbiy bilim va zamonaviy harakat terapiyasini birlashtiramiz."
-                  : isRu
-                  ? "От ортопедического восстановления после эндопротезирования до тонкой нейрореабилитации и возвращения в спорт — мы объединяем врачебную экспертизу и современные методики."
-                  : isEn
-                  ? "From orthopedic post-operative recovery to neurological re-education and competitive athletic return-to-play — our certified specialists guide every milestone."
-                  : isTr
-                  ? "Eklem protezi sonrası yürüme kabiliyetinin yeniden kazanılmasından erken nörolojik rehabilitasyona kadar tıbbi uzmanlığı modern hareket terapisiyle birleştiriyoruz."
-                  : isAr
-                  ? "من استعادة القدرة على المشي بعد استبدال المفاصل وحتى التأهيل العصبي المبكر، ندمج الخبرة الطبية المرموقة مع أحدث تقنيات العلاج الحركي."
-                  : "Von der Wiedererlangung der Gehfähigkeit nach Gelenkersatz bis hin zur neurologischen Frühreha bündeln wir medizinisches Fachwissen mit modernster Bewegungstherapie."}
-              </p>
+        <section className="relative pt-8 pb-16 sm:pt-10 sm:pb-20 lg:pt-12 lg:pb-24 bg-[#FAF8F5] overflow-hidden">
+          {/* Botanical leaf watermark in bottom-right matching reference photo */}
+          <div className="absolute -bottom-8 -right-8 w-64 h-64 sm:w-80 sm:h-80 pointer-events-none opacity-20 select-none sepia">
+            <Image
+              src="/images/areas/botanical-branch-clean.webp"
+              alt=""
+              fill
+              className="object-contain rotate-12"
+              unoptimized
+            />
+          </div>
+
+          <div className="relative z-10 w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Header: Left big title, right lead subtitle */}
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 sm:mb-12">
+              <div className="max-w-2xl">
+                <h2 className="font-serif text-[28px] sm:text-[36px] lg:text-[42px] text-[#132218] font-normal leading-[1.16]">
+                  {isUz
+                    ? "Har bir klinik maqsad uchun individual dasturlar"
+                    : isRu
+                    ? "Индивидуальные программы для каждой клинической цели"
+                    : isEn
+                    ? "Targeted Rehabilitation for Every Clinical Indication"
+                    : isTr
+                    ? "Kalıcı İyileşme İçin Bireysel Terapi Konseptleri"
+                    : isAr
+                    ? "مفاهيم علاجية مخصصة لتحقيق تعافٍ مستدام"
+                    : "Individuelle Therapiekonzepte für nachhaltige Genesung"}
+                </h2>
+              </div>
+              <div className="max-w-sm lg:max-w-md pb-1">
+                <p className="font-sans text-[12px] sm:text-[13px] text-[#556358] leading-relaxed">
+                  {isUz
+                    ? "Endoprotezlashdan keyin yurish qobiliyatini tiklashdan erta nevrologik reabilitatsiyagacha — biz tibbiy bilim va zamonaviy harakat terapiyasini birlashtiramiz."
+                    : isRu
+                    ? "От ортопедического восстановления после эндопротезирования до тонкой нейрореабилитации и возвращения в спорт — мы объединяем врачебную экспертизу и современные методики."
+                    : isEn
+                    ? "From orthopedic post-operative recovery to neurological re-education and competitive athletic return-to-play — our certified specialists guide every milestone."
+                    : isTr
+                    ? "Eklem protezi sonrası yürüme kabiliyetinin yeniden kazanılmasından erken nörolojik rehabilitasyona kadar tıbbi uzmanlığı modern hareket terapisiyle birleştiriyoruz."
+                    : isAr
+                    ? "من استعادة القدرة على المشي بعد استبدال المفاصل وحتى التأهيل العصبي المبكر، ندمج الخبرة الطبية المرموقة مع أحدث تقنيات العلاج الحركي."
+                    : "Von der Wiedererlangung der Gehfähigkeit nach Gelenkersatz bis hin zur neurologischen Frühreha bündeln wir medizinisches Fachwissen mit modernster Bewegungstherapie."}
+                </p>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
-              {specializations.map((spec) => (
-                <div
-                  key={spec.id}
-                  onClick={() => setSelectedSpecialization(spec)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      e.preventDefault();
-                      setSelectedSpecialization(spec);
-                    }
-                  }}
-                  className="bg-white rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878]/80 overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_32px_rgba(12,43,27,0.12)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group cursor-pointer text-left focus:outline-none focus:ring-2 focus:ring-[#D5B878]"
-                >
-                  <div>
-                    {/* Photo without Tag */}
-                    <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-neutral-100">
-                      <Image
-                        src={spec.image}
-                        alt={spec.title}
-                        fill
-                        className="object-cover group-hover:scale-104 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
-                    </div>
+            {/* 2-Column Layout Matching Photo 1:1 */}
+            {(() => {
+              const activeSpec = specializations.find((s) => s.id === activeSpecId) || specializations[0];
 
-                    {/* Body */}
-                    <div className="p-5 sm:p-6">
-                      <h3 className="font-serif text-lg sm:text-[19px] text-[#132218] font-normal leading-snug mb-2 group-hover:text-[#B89650] transition-colors">
-                        {spec.title}
-                      </h3>
-                      <p className="font-sans text-xs text-[#556358] leading-relaxed mb-4">
-                        {spec.desc}
-                      </p>
+              return (
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-7 lg:gap-8 items-stretch">
+                  {/* Left Column: Featured Card */}
+                  <div className="lg:col-span-7 xl:col-span-7 flex flex-col">
+                    <div className="bg-white rounded-[26px] sm:rounded-[30px] border border-[#EAE4D7] shadow-[0_4px_24px_rgba(19,34,24,0.04)] overflow-hidden flex-1 flex flex-col justify-between transition-all duration-300">
+                      {/* Photo with Tag */}
+                      <div className="relative h-[280px] sm:h-[340px] lg:h-[380px] w-full overflow-hidden bg-neutral-100">
+                        <Image
+                          src={activeSpec.image}
+                          alt={activeSpec.title}
+                          fill
+                          className="object-cover transition-transform duration-700 hover:scale-102"
+                          priority
+                        />
+                        {/* Floating Pill Tag at bottom-left */}
+                        <div className="absolute bottom-4 left-4 sm:bottom-5 sm:left-5 z-10">
+                          <span className="inline-flex items-center px-4 py-1.5 rounded-full text-[11px] sm:text-[12px] font-medium tracking-wide bg-[#D5B878]/85 text-[#142318] backdrop-blur-md border border-white/40 shadow-xs">
+                            {activeSpec.badge}
+                          </span>
+                        </div>
+                      </div>
 
-                      {/* Features list */}
-                      <div className="space-y-2 pt-2 border-t border-[#F0ECE1]">
-                        {spec.features.map((feat, fIdx) => (
-                          <div key={fIdx} className="flex items-center gap-2">
-                            <GoldCircleCheckIcon className="w-3.5 h-3.5 shrink-0" />
-                            <span className="font-sans text-[11.5px] text-[#3D4B40] font-medium">
-                              {feat}
-                            </span>
+                      {/* Content Area */}
+                      <div className="p-6 sm:p-7 lg:p-8 flex-1 flex flex-col justify-between">
+                        <div>
+                          {/* Title + Circular Arrow Button */}
+                          <div className="flex items-start justify-between gap-4">
+                            <h3 className="font-serif text-[22px] sm:text-[25px] lg:text-[27px] text-[#132218] font-normal leading-snug">
+                              {activeSpec.title}
+                            </h3>
+                            <button
+                              type="button"
+                              onClick={() => setSelectedSpecialization(activeSpec)}
+                              aria-label={activeSpec.title}
+                              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-[#D5B878]/70 hover:border-[#B89650] bg-white hover:bg-[#FAF6EE] flex items-center justify-center text-[#142318] transition-all duration-200 shrink-0 shadow-2xs hover:scale-105 cursor-pointer group/btn"
+                            >
+                              <ArrowRight className="w-4.5 h-4.5 text-[#8C6D2B] transition-transform duration-200 group-hover/btn:translate-x-0.5" />
+                            </button>
                           </div>
-                        ))}
+
+                          {/* Description */}
+                          <p className="font-sans text-[12.5px] sm:text-[13.5px] text-[#556358] leading-relaxed mt-2.5 mb-5 sm:mb-6">
+                            {activeSpec.desc}
+                          </p>
+                        </div>
+
+                        {/* Feature Tags at bottom */}
+                        <div className="flex flex-wrap items-center gap-x-5 sm:gap-x-6 gap-y-2.5 pt-4 sm:pt-5 border-t border-[#F0ECE1]">
+                          {activeSpec.features.map((feat, fIdx) => (
+                            <div key={fIdx} className="flex items-center gap-2">
+                              <span className="w-4 h-4 rounded-full border border-[#C5A56A] flex items-center justify-center shrink-0">
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#C5A56A]" />
+                              </span>
+                              <span className="font-sans text-[12px] sm:text-[12.5px] text-[#425045] font-medium">
+                                {feat}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="px-5 sm:px-6 pb-5 pt-0">
-                    <button
-                      type="button"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setSelectedSpecialization(spec);
-                      }}
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#142318] group-hover:text-[#B89650] transition-colors cursor-pointer"
-                    >
-                      <span>{isUz ? "Dastur haqida batafsil →" : isRu ? "Подробнее о программе →" : isEn ? "View Program Details →" : isTr ? "Program Detayları →" : isAr ? "تفاصيل البرنامج ←" : "Details zum Programm →"}</span>
-                    </button>
+                  {/* Right Column: 6 Specialty Tabs Stack */}
+                  <div className="lg:col-span-5 xl:col-span-5 flex flex-col justify-between gap-2.5 sm:gap-3">
+                    {specializations.map((spec) => {
+                      const isActive = spec.id === activeSpecId;
+                      const SpecIcon = specIconsMap[spec.id] || Stethoscope;
+
+                      return (
+                        <button
+                          key={spec.id}
+                          type="button"
+                          onClick={() => setActiveSpecId(spec.id)}
+                          className={`w-full text-left rounded-2xl p-3.5 sm:p-4 lg:py-3.5 lg:px-4.5 flex items-center justify-between gap-3 sm:gap-3.5 transition-all duration-300 cursor-pointer ${
+                            isActive
+                              ? "bg-[#0D2619] text-white shadow-md border border-[#173D28]"
+                              : "bg-white/90 hover:bg-white text-[#132218] border border-[#EAE4D7] hover:border-[#D5B878]/70 shadow-[0_2px_8px_rgba(0,0,0,0.02)]"
+                          }`}
+                        >
+                          {/* Left: Specialty Icon */}
+                          <div className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center shrink-0">
+                            <SpecIcon
+                              className={`w-5.5 h-5.5 sm:w-6 sm:h-6 transition-colors ${
+                                isActive ? "text-[#E6CF9C]" : "text-[#B89650]"
+                              }`}
+                            />
+                          </div>
+
+                          {/* Middle: Title */}
+                          <div className="flex-1 min-w-0 pr-1">
+                            <h4
+                              className={`text-[13px] sm:text-[14px] leading-snug line-clamp-2 transition-colors ${
+                                isActive
+                                  ? "font-medium text-white"
+                                  : "font-normal text-[#142318] hover:text-[#8C6D2B]"
+                              }`}
+                            >
+                              {spec.title}
+                            </h4>
+                          </div>
+
+                          {/* Right: Chevron */}
+                          <ChevronRight
+                            className={`w-4.5 h-4.5 shrink-0 transition-transform ${
+                              isActive
+                                ? "text-[#E6CF9C]"
+                                : "text-[#9EAAA0] group-hover:text-[#B89650] group-hover:translate-x-0.5"
+                            }`}
+                          />
+                        </button>
+                      );
+                    })}
                   </div>
                 </div>
-              ))}
-            </div>
+              );
+            })()}
           </div>
         </section>
       </RehabilitationCompanySection>
