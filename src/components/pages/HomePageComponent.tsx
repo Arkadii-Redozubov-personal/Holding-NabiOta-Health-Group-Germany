@@ -20,8 +20,8 @@ export function HomePageComponent({ locale = "de" }: HomePageComponentProps) {
       <Header currentLocale={locale} />
       <main id="main-content" className="flex-1">
         <HeroSection currentLocale={locale} />
-        <ServicesSection currentLocale={locale} />
         <AboutSection currentLocale={locale} />
+        <ServicesSection currentLocale={locale} />
         <ValuesSection currentLocale={locale} />
         <PartnersCareerSection currentLocale={locale} />
         <HomeFaqSection currentLocale={locale} />
