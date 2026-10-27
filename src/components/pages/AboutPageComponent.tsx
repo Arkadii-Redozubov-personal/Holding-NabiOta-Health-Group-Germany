@@ -1579,125 +1579,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         </section>
 
         {/* ══════════════════════════════════════════════════════════
-            SECTION 3: MISSION & VISION ("Что нами движет") + 4 STATS BAR
-        ══════════════════════════════════════════════════════════ */}
-        <section className="bg-[#FAF8F5] py-14 sm:py-18 lg:py-20 border-b border-[#ECE7DC]">
-          <Container size="wide">
-            {/* Top: Left Header + Right 2 Cards */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch mb-12 sm:mb-16">
-              {/* Left: Mission & Vision Heading */}
-              <div className="lg:col-span-5 flex flex-col justify-center">
-                <h2 className="font-serif text-[32px] sm:text-[38px] lg:text-[42px] font-normal text-[#142318] leading-[1.15] mb-4">
-                  {t.missionHeading}
-                </h2>
-                <p className="text-[13.5px] sm:text-[14px] text-[#5A635B] leading-[1.7] font-sans max-w-md">
-                  {t.missionLead}
-                </p>
-              </div>
-
-              {/* Right: 2 Distinct White Cards */}
-              <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                {/* Card 1: Our Mission */}
-                <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#EDE8DE] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:border-[#D5B878] hover:shadow-md transition-all flex flex-col justify-between">
-                  <div>
-                    <div className="text-[#B89650] flex items-center mb-3">
-                      <TargetIcon className="w-7.5 h-7.5 stroke-[1.6]" />
-                    </div>
-                    <h3 className="font-sans text-[16px] font-bold text-[#142318] mb-2">
-                      {t.cardMissionTitle}
-                    </h3>
-                    <p className="text-[12px] sm:text-[12.5px] text-[#5A635B] leading-relaxed">
-                      {t.cardMissionText}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Card 2: Our Vision */}
-                <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#EDE8DE] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:border-[#D5B878] hover:shadow-md transition-all flex flex-col justify-between">
-                  <div>
-                    <div className="text-[#B89650] flex items-center mb-3">
-                      <VisionEyeIcon className="w-7.5 h-7.5 stroke-[1.6]" />
-                    </div>
-                    <h3 className="font-sans text-[16px] font-bold text-[#142318] mb-2">
-                      {t.cardVisionTitle}
-                    </h3>
-                    <p className="text-[12px] sm:text-[12.5px] text-[#5A635B] leading-relaxed">
-                      {t.cardVisionText}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Bottom: 4 Key Stats Bar in single horizontal row with vertical dividers */}
-            <div className="bg-white rounded-2xl border border-[#EDE8DE] shadow-[0_2px_8px_rgba(0,0,0,0.02)] py-6 sm:py-7 px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-4 lg:gap-0 lg:divide-x lg:divide-[#EDE7DC]">
-                {/* Stat 1 */}
-                <div className="flex items-center gap-4 px-2 sm:px-4 lg:px-6">
-                  <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
-                    <TeamStatsIcon className="w-8 h-8 stroke-[1.6]" />
-                  </div>
-                  <div>
-                    <span className="block font-serif text-[28px] sm:text-[32px] font-bold text-[#142318] leading-none mb-1">
-                      {t.stat1Num}
-                    </span>
-                    <span className="block text-[11.5px] sm:text-[12px] text-[#6E756D] leading-snug">
-                      {t.stat1Label}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Stat 2 */}
-                <div className="flex items-center gap-4 px-2 sm:px-4 lg:px-6">
-                  <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
-                    <BuildingStatsIcon className="w-8 h-8 stroke-[1.6]" />
-                  </div>
-                  <div>
-                    <span className="block font-serif text-[28px] sm:text-[32px] font-bold text-[#142318] leading-none mb-1">
-                      {t.stat2Num}
-                    </span>
-                    <span className="block text-[11.5px] sm:text-[12px] text-[#6E756D] leading-snug">
-                      {t.stat2Label}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Stat 3 */}
-                <div className="flex items-center gap-4 px-2 sm:px-4 lg:px-6">
-                  <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
-                    <HandshakeIcon className="w-8 h-8 stroke-[1.6]" />
-                  </div>
-                  <div>
-                    <span className="block font-serif text-[28px] sm:text-[32px] font-bold text-[#142318] leading-none mb-1">
-                      {t.stat3Num}
-                    </span>
-                    <span className="block text-[11.5px] sm:text-[12px] text-[#6E756D] leading-snug">
-                      {t.stat3Label}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Stat 4 */}
-                <div className="flex items-center gap-4 px-2 sm:px-4 lg:px-6">
-                  <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
-                    <HeartStatsIcon className="w-8 h-8 stroke-[1.6]" />
-                  </div>
-                  <div>
-                    <span className="block font-serif text-[28px] sm:text-[32px] font-bold text-[#142318] leading-none mb-1">
-                      {t.stat4Num}
-                    </span>
-                    <span className="block text-[11.5px] sm:text-[12px] text-[#6E756D] leading-snug">
-                      {t.stat4Label}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
-
-        {/* ══════════════════════════════════════════════════════════
-            SECTION 4: ÄRZTLICHE FÜHRUNG & GRÜNDERTEAM (PDF Pages 2-4)
+            SECTION 3: ÄRZTLICHE FÜHRUNG & GRÜNDERTEAM (PDF Pages 2-4)
             - MVZ Design with full-bleed right-photo fade & botanical watermark
         ══════════════════════════════════════════════════════════ */}
         <section className="relative pt-0 pb-16 sm:pb-20 lg:pb-24 bg-[#FAF7F2] border-b border-[#ECE7DC] overflow-hidden">
@@ -1920,7 +1802,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         </section>
 
         {/* ══════════════════════════════════════════════════════════
-            SECTION 5: MEDICAL ADVISORY BOARD (Values-page background design)
+            SECTION 4: MEDICAL ADVISORY BOARD (Values-page background design)
         ══════════════════════════════════════════════════════════ */}
         <section className="relative py-10 sm:py-12 lg:py-14 bg-[#07160D] text-white overflow-hidden border-b border-[#D5B878]/20">
           <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -2070,7 +1952,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         </section>
 
         {/* ══════════════════════════════════════════════════════════
-            SECTION 6: ORGANIZATIONAL STRUCTURE (NabiOta® Health Group Germany GmbH)
+            SECTION 5: ORGANIZATIONAL STRUCTURE (NabiOta® Health Group Germany GmbH)
             - Background: photo1.webp
             - Compact, premium corporate organizational hierarchy matching Photo 2
         ══════════════════════════════════════════════════════════ */}
@@ -2194,8 +2076,126 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
           </Container>
         </section>
 
-        {/* SECTION 7: AUFGABEN UND UNTERNEHMENSGEGENSTAND DER HOLDING (PDF II) */}
+        {/* SECTION 6: AUFGABEN UND UNTERNEHMENSGEGENSTAND DER HOLDING (PDF II) */}
         <HoldingPurposeSection locale={locale} />
+
+        {/* ══════════════════════════════════════════════════════════
+            SECTION 7: MISSION & VISION ("Что нами движет") + 4 STATS BAR
+        ══════════════════════════════════════════════════════════ */}
+        <section className="bg-[#FAF8F5] py-14 sm:py-18 lg:py-20 border-b border-[#ECE7DC]">
+          <Container size="wide">
+            {/* Top: Left Header + Right 2 Cards */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch mb-12 sm:mb-16">
+              {/* Left: Mission & Vision Heading */}
+              <div className="lg:col-span-5 flex flex-col justify-center">
+                <h2 className="font-serif text-[32px] sm:text-[38px] lg:text-[42px] font-normal text-[#142318] leading-[1.15] mb-4">
+                  {t.missionHeading}
+                </h2>
+                <p className="text-[13.5px] sm:text-[14px] text-[#5A635B] leading-[1.7] font-sans max-w-md">
+                  {t.missionLead}
+                </p>
+              </div>
+
+              {/* Right: 2 Distinct White Cards */}
+              <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                {/* Card 1: Our Mission */}
+                <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#EDE8DE] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:border-[#D5B878] hover:shadow-md transition-all flex flex-col justify-between">
+                  <div>
+                    <div className="text-[#B89650] flex items-center mb-3">
+                      <TargetIcon className="w-7.5 h-7.5 stroke-[1.6]" />
+                    </div>
+                    <h3 className="font-sans text-[16px] font-bold text-[#142318] mb-2">
+                      {t.cardMissionTitle}
+                    </h3>
+                    <p className="text-[12px] sm:text-[12.5px] text-[#5A635B] leading-relaxed">
+                      {t.cardMissionText}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Card 2: Our Vision */}
+                <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#EDE8DE] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:border-[#D5B878] hover:shadow-md transition-all flex flex-col justify-between">
+                  <div>
+                    <div className="text-[#B89650] flex items-center mb-3">
+                      <VisionEyeIcon className="w-7.5 h-7.5 stroke-[1.6]" />
+                    </div>
+                    <h3 className="font-sans text-[16px] font-bold text-[#142318] mb-2">
+                      {t.cardVisionTitle}
+                    </h3>
+                    <p className="text-[12px] sm:text-[12.5px] text-[#5A635B] leading-relaxed">
+                      {t.cardVisionText}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom: 4 Key Stats Bar in single horizontal row with vertical dividers */}
+            <div className="bg-white rounded-2xl border border-[#EDE8DE] shadow-[0_2px_8px_rgba(0,0,0,0.02)] py-6 sm:py-7 px-4 sm:px-6 lg:px-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-4 lg:gap-0 lg:divide-x lg:divide-[#EDE7DC]">
+                {/* Stat 1 */}
+                <div className="flex items-center gap-4 px-2 sm:px-4 lg:px-6">
+                  <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
+                    <TeamStatsIcon className="w-8 h-8 stroke-[1.6]" />
+                  </div>
+                  <div>
+                    <span className="block font-serif text-[28px] sm:text-[32px] font-bold text-[#142318] leading-none mb-1">
+                      {t.stat1Num}
+                    </span>
+                    <span className="block text-[11.5px] sm:text-[12px] text-[#6E756D] leading-snug">
+                      {t.stat1Label}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Stat 2 */}
+                <div className="flex items-center gap-4 px-2 sm:px-4 lg:px-6">
+                  <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
+                    <BuildingStatsIcon className="w-8 h-8 stroke-[1.6]" />
+                  </div>
+                  <div>
+                    <span className="block font-serif text-[28px] sm:text-[32px] font-bold text-[#142318] leading-none mb-1">
+                      {t.stat2Num}
+                    </span>
+                    <span className="block text-[11.5px] sm:text-[12px] text-[#6E756D] leading-snug">
+                      {t.stat2Label}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Stat 3 */}
+                <div className="flex items-center gap-4 px-2 sm:px-4 lg:px-6">
+                  <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
+                    <HandshakeIcon className="w-8 h-8 stroke-[1.6]" />
+                  </div>
+                  <div>
+                    <span className="block font-serif text-[28px] sm:text-[32px] font-bold text-[#142318] leading-none mb-1">
+                      {t.stat3Num}
+                    </span>
+                    <span className="block text-[11.5px] sm:text-[12px] text-[#6E756D] leading-snug">
+                      {t.stat3Label}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Stat 4 */}
+                <div className="flex items-center gap-4 px-2 sm:px-4 lg:px-6">
+                  <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
+                    <HeartStatsIcon className="w-8 h-8 stroke-[1.6]" />
+                  </div>
+                  <div>
+                    <span className="block font-serif text-[28px] sm:text-[32px] font-bold text-[#142318] leading-none mb-1">
+                      {t.stat4Num}
+                    </span>
+                    <span className="block text-[11.5px] sm:text-[12px] text-[#6E756D] leading-snug">
+                      {t.stat4Label}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
 
         {/* ══════════════════════════════════════════════════════════
             SECTION 8: STRATEGIC DEVELOPMENT (Two-Phase Structure)
