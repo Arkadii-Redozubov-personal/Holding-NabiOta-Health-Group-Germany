@@ -147,6 +147,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
 
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [selectedProcedure, setSelectedProcedure] = useState<ProcedureModalData | null>(null);
+  const [activeProcId, setActiveProcId] = useState<string>("mrt");
 
   // Keyboard escape listener and body scroll lock for modal
   useEffect(() => {
@@ -1054,16 +1055,17 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
       <main className="flex-1 bg-[#FAF8F5]">
 
         {/* ══════════════════════════════════════════════════════════
-            SECTION 1 (PHOTO 2 TOP): UNSERE DIAGNOSTIKVERFAHREN
-            - Left: Eyebrow, Title, Description, Button
-            - Right: 6 Modality Cards (MRT, CT, Ultraschall, Röntgen, Labor, Kardio)
+            SECTION 1: MODERNE VERFAHREN FÜR GENAUE ERGEBNISSE
+            - Header: Left title, right lead text
+            - 2-Column interactive layout matching Rehabilitation:
+              - Left: Featured Card (compact photo, title, subtitle/desc, gold checkmarks, "Mehr über das Verfahren →")
+              - Right: Vertical stack of 6 modality tabs (thumbnail, title, chevron, active dark green border)
         ══════════════════════════════════════════════════════════ */}
-        <section className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-8 sm:pb-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-
-            {/* Left Header Column */}
-            <div className="lg:col-span-4 space-y-4 pt-1">
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-[38px] text-[#132218] font-normal leading-[1.18]">
+        <section className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-12 sm:pb-16">
+          {/* Header: Left big title, right lead subtitle */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 sm:mb-10">
+            <div className="max-w-2xl">
+              <h2 className="font-serif text-[28px] sm:text-[36px] lg:text-[42px] text-[#132218] font-normal leading-[1.16]">
                 {isUz
                   ? "Aniq natijalar uchun zamonaviy usullar"
                   : isRu
@@ -1076,8 +1078,9 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                   ? "تقنيات متقدمة لنتائج تشخيصية دقيقة"
                   : "Moderne Verfahren für genaue Ergebnisse"}
               </h2>
-
-              <p className="text-xs sm:text-[13px] text-[#556358] leading-relaxed font-sans max-w-md">
+            </div>
+            <div className="max-w-sm lg:max-w-md pb-1">
+              <p className="font-sans text-[12px] sm:text-[13px] text-[#556358] leading-relaxed">
                 {isUz
                   ? "Bizning diagnostika bo'limimiz ilg'or tibbiy texnologiyalarni ko'p yillik klinik tajriba bilan birlashtiradi. Bu kasalliklarni erta bosqichda aniqlash va eng maqbul davolashni belgilash imkonini beradi."
                   : isRu
@@ -1090,80 +1093,142 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                   ? "يجمع قسم التشخيص الطبي لدينا بين أحدث التقنيات الطبية والخبرة السريرية العريقة. هذا يتيح لنا الكشف عن الأمراض مبكراً وبدء أفضل مسار علاجي متاح."
                   : "Unsere Diagnostik vereint modernste Medizintechnik mit langjähriger Erfahrung. So können wir Erkrankungen frühzeitig erkennen, präzise beurteilen und die bestmögliche Therapie für Sie einleiten."}
               </p>
-
-              <div className="pt-2">
-                <Link
-                  href={`/${locale}/nabiota-diagnostics`}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#D5B878] text-[#142318] hover:bg-[#D5B878] hover:text-[#0C1C11] font-semibold text-xs tracking-wide transition-all shadow-sm group bg-white/70"
-                >
-                  <span>{isUz ? "Barcha muolajalar →" : isRu ? "Все процедуры →" : isEn ? "View all procedures →" : isTr ? "Tüm Yöntemleri Gör →" : isAr ? "عرض جميع الإجراءات التشخيصية ←" : "Alle Verfahren ansehen →"}</span>
-                </Link>
-              </div>
             </div>
+          </div>
 
-            {/* Right 6 Cards Grid (2 rows x 3 columns) - Compact height matching Photo 1 */}
-            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5 sm:gap-4">
-              {procedures.map((proc) => {
-                const ProcIcon = proc.icon;
-                return (
-                  <div
-                    key={proc.id}
-                    onClick={() => setSelectedProcedure(proc)}
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter" || e.key === " ") {
-                        e.preventDefault();
-                        setSelectedProcedure(proc);
-                      }
-                    }}
-                    className="bg-white rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878]/80 shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_24px_rgba(12,43,27,0.1)] transition-all duration-300 p-2 sm:p-2.5 flex flex-col justify-between group hover:-translate-y-0.5 cursor-pointer text-left focus:outline-none focus:ring-2 focus:ring-[#D5B878]"
-                  >
-                    <div>
-                      {/* Compact Inset Image */}
-                      <div className="relative aspect-[16/7.8] w-full rounded-xl overflow-hidden bg-neutral-900">
-                        <Image
-                          src={proc.image}
-                          alt={proc.title}
-                          fill
-                          className="object-cover group-hover:scale-104 transition-transform duration-500"
-                        />
+          {/* 2-Column Layout */}
+          {(() => {
+            const activeProc = procedures.find((p) => p.id === activeProcId) || procedures[0];
+
+            return (
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 lg:gap-7 items-stretch">
+                {/* Left Column: Featured Card (compact size) */}
+                <div className="lg:col-span-7 xl:col-span-7 flex flex-col">
+                  <div className="bg-white rounded-[22px] sm:rounded-[26px] border border-[#EAE4D7] shadow-[0_4px_24px_rgba(19,34,24,0.04)] overflow-hidden flex-1 flex flex-col justify-between transition-all duration-300">
+                    {/* Photo - compact height */}
+                    <div
+                      className="relative h-[190px] sm:h-[210px] lg:h-[225px] w-full overflow-hidden bg-neutral-100 cursor-pointer"
+                      onClick={() => setSelectedProcedure(activeProc)}
+                    >
+                      <Image
+                        src={activeProc.image}
+                        alt={activeProc.title}
+                        fill
+                        className="object-cover transition-transform duration-700 hover:scale-102"
+                        priority
+                      />
+                    </div>
+
+                    {/* Content Area */}
+                    <div className="p-4 sm:p-5 lg:p-5.5 flex-1 flex flex-col justify-between">
+                      <div>
+                        {/* Title */}
+                        <h3 className="font-serif text-[19px] sm:text-[21px] lg:text-[22px] text-[#132218] font-normal leading-snug">
+                          {activeProc.title}
+                        </h3>
+
+                        {/* Description */}
+                        <p className="font-sans text-[12px] sm:text-[12.5px] text-[#556358] leading-relaxed mt-1.5 mb-3">
+                          {activeProc.subtitle || activeProc.desc}
+                        </p>
+
+                        {/* Features Checklist with gold checkmarks */}
+                        <div className="space-y-1.5 sm:space-y-2 pt-3 border-t border-[#F0ECE1]">
+                          {activeProc.indications.slice(0, 3).map((ind, iIdx) => (
+                            <div key={iIdx} className="flex items-center gap-2">
+                              <GoldCircleCheckIcon className="w-3.5 h-3.5 shrink-0 text-[#B89650]" />
+                              <span className="font-sans text-[12px] sm:text-[12.5px] text-[#2C382F] font-normal">
+                                {ind}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
 
-                      {/* Compact Bottom Content Row (Icon + Title/Desc + Arrow) */}
-                      <div className="flex items-center gap-2.5 pt-2.5 pb-0.5 px-1">
-                        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#08170D] border border-[#D5B878]/60 flex items-center justify-center text-[#ECCF96] shrink-0 shadow-xs">
-                          <ProcIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[1.6]" />
-                        </div>
-
-                        <div className="flex-1 min-w-0">
-                          <h3 className="font-serif text-[13.5px] sm:text-[14.5px] text-[#142318] font-medium leading-tight group-hover:text-[#B89650] transition-colors truncate">
-                            {proc.title}
-                          </h3>
-                          <p className="text-[10px] sm:text-[10.5px] text-[#556358] leading-tight line-clamp-1 mt-0.5 font-sans">
-                            {proc.desc}
-                          </p>
-                        </div>
-
+                      {/* Bottom link: "Подробнее о процедуре" with arrow */}
+                      <div className="pt-3 mt-1 border-t border-[#F0ECE1]/60">
                         <button
                           type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setSelectedProcedure(proc);
-                          }}
-                          aria-label={proc.title}
-                          className="w-6 h-6 sm:w-7 sm:h-7 rounded-full border border-[#EDE8DE] bg-[#FAF8F5] group-hover:bg-[#D5B878] group-hover:border-[#D5B878] flex items-center justify-center text-[#6E756D] group-hover:text-[#0C1C11] shrink-0 transition-all cursor-pointer"
+                          onClick={() => setSelectedProcedure(activeProc)}
+                          className="inline-flex items-center gap-2 text-[12.5px] sm:text-[13px] font-medium text-[#8C6D2B] hover:text-[#6D521B] transition-colors group/link cursor-pointer"
                         >
-                          <ArrowRight className="w-3.5 h-3.5" />
+                          <span>
+                            {isUz
+                              ? "Muolaja haqida batafsil"
+                              : isRu
+                              ? "Подробнее о процедуре"
+                              : isEn
+                              ? "Learn more about the procedure"
+                              : isTr
+                              ? "Yöntem hakkında detaylı bilgi"
+                              : isAr
+                              ? "المزيد عن الإجراء التشخيصي"
+                              : "Mehr über das Verfahren"}
+                          </span>
+                          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover/link:translate-x-1" />
                         </button>
                       </div>
                     </div>
                   </div>
-                );
-              })}
-            </div>
-          </div>
+                </div>
+
+                {/* Right Column: 6 Modality Tabs Stack */}
+                <div className="lg:col-span-5 xl:col-span-5 flex flex-col justify-between gap-2 sm:gap-2.5">
+                  {procedures.map((proc) => {
+                    const isActive = proc.id === activeProcId;
+
+                    return (
+                      <button
+                        key={proc.id}
+                        type="button"
+                        onClick={() => setActiveProcId(proc.id)}
+                        className={`group w-full text-left rounded-xl sm:rounded-2xl p-2 sm:p-2.5 pr-3.5 sm:pr-4 min-h-[68px] sm:min-h-[74px] flex items-center gap-3 sm:gap-3.5 transition-all duration-200 cursor-pointer bg-white ${
+                          isActive
+                            ? "border-2 border-[#132B1E] shadow-sm"
+                            : "border-2 border-[#EAE4D7] hover:border-[#D5B878]/80 shadow-[0_1px_6px_rgba(0,0,0,0.02)]"
+                        }`}
+                      >
+                        {/* Left: Thumbnail Image */}
+                        <div className="relative w-13 h-13 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl overflow-hidden shrink-0 bg-neutral-100 border border-[#EAE4D7]">
+                          <Image
+                            src={proc.image}
+                            alt={proc.title}
+                            fill
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
+                            sizes="56px"
+                          />
+                        </div>
+
+                        {/* Middle: Title */}
+                        <div className="flex-1 min-w-0 pr-1">
+                          <h4
+                            className={`text-[13px] sm:text-[13.5px] leading-snug line-clamp-2 transition-colors ${
+                              isActive
+                                ? "font-semibold text-[#132B1E]"
+                                : "font-medium text-[#142318] group-hover:text-[#8C6D2B]"
+                            }`}
+                          >
+                            {proc.title}
+                          </h4>
+                        </div>
+
+                        {/* Right: Chevron */}
+                        <ChevronRight
+                          className={`w-4 h-4 shrink-0 transition-transform ${
+                            isActive
+                              ? "text-[#132B1E] translate-x-0.5"
+                              : "text-[#9EAAA0] group-hover:text-[#132B1E] group-hover:translate-x-0.5"
+                          }`}
+                        />
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })()}
         </section>
+
 
         {/* ══════════════════════════════════════════════════════════
             SECTION 4B: NABIOTA DIAGNOSTICS GMBH – PDF SECTION IV.4
