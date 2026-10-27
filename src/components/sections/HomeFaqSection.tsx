@@ -239,8 +239,11 @@ export function HomeFaqSection({ currentLocale = "de" }: HomeFaqSectionProps) {
               >
                 <button
                   type="button"
+                  id={`faq-question-${idx}`}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${idx}`}
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
-                  className="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 group cursor-pointer"
+                  className="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C8B896] rounded-2xl"
                 >
                   <span className="font-serif text-sm sm:text-base text-[#0F2A1D] font-medium leading-snug group-hover:text-[#9B7C38] transition-colors">
                     {item.q}
@@ -261,7 +264,12 @@ export function HomeFaqSection({ currentLocale = "de" }: HomeFaqSectionProps) {
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 pb-6 sm:px-6 sm:pb-7 pt-1 text-xs sm:text-sm text-[#4E6256] leading-relaxed border-t border-[#F2ECE1] mt-1 font-sans">
+                  <div
+                    id={`faq-answer-${idx}`}
+                    role="region"
+                    aria-labelledby={`faq-question-${idx}`}
+                    className="px-5 pb-6 sm:px-6 sm:pb-7 pt-1 text-xs sm:text-sm text-[#4E6256] leading-relaxed border-t border-[#F2ECE1] mt-1 font-sans"
+                  >
                     {item.a}
                   </div>
                 )}

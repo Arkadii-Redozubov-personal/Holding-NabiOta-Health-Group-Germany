@@ -2096,7 +2096,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                     </div>
 
                     {/* Featured Guiding Principle Quote (Leitgedanke) */}
-                    <div className="bg-gradient-to-r from-[#F7F4EB] to-[#FCFAF5] border-l-4 border-[#C5A859] rounded-r-2xl p-3.5 sm:p-4 my-2 shadow-xs">
+                    <div className="bg-[#FAF7F0] border border-[#E5DEC9] rounded-2xl p-4 my-2 shadow-xs">
                       <div className="flex items-start gap-3">
                         <Quote className="w-5 h-5 text-[#C5A859] shrink-0 mt-0.5" />
                         <p className="text-[13.5px] sm:text-[14px] font-serif italic text-[#1B3D2F] leading-relaxed">

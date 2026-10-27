@@ -1696,7 +1696,7 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
               {/* Modal Scrollable Content Body */}
               <div className="p-5 sm:p-6 overflow-y-auto space-y-4 sm:space-y-5 text-left font-sans">
                 {/* Subtitle / Clinical Scope */}
-                <div className="bg-[#FAF8F5] border-l-3 border-[#D5B878] px-3.5 py-2.5 rounded-r-lg">
+                <div className="bg-[#FAF8F5] border border-[#EDE6D8] px-4 py-3 rounded-xl shadow-xs">
                   <p className="text-[12px] sm:text-[13px] font-medium text-[#142318] leading-snug">
                     {selectedProcedure.subtitle}
                   </p>

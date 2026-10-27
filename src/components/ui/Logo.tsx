@@ -79,8 +79,8 @@ export function Logo({
               "font-display font-bold leading-[0.82] uppercase tracking-[0.02em] block",
               currentSize.brandText,
               isDarkBg
-                ? "bg-clip-text text-transparent bg-gradient-to-b from-[#FFF5D5] via-[#E2B34B] to-[#9E731C]"
-                : "bg-clip-text text-transparent bg-gradient-to-b from-[#9E7A32] via-[#856524] to-[#634912]"
+                ? "text-[#ECCF96]"
+                : "text-[#856524]"
             )}
             style={{
               filter: isDarkBg ? "drop-shadow(0 1px 2px rgba(0,0,0,0.5))" : "none",

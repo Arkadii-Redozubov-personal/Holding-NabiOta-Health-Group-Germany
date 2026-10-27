@@ -222,7 +222,7 @@ body {
   position: relative;
   padding: 16mm 18mm 23mm;
   color: #26362b;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 .stationery-print-letter-header {
