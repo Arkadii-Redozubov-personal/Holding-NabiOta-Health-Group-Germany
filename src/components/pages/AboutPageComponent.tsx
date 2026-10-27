@@ -993,91 +993,6 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         ? "يهدف عمله إلى ترسيخ هياكل واضحة، ورفع كفاءة العمليات التشغيلية، وتخفيف الأعباء الإدارية والتنظيمية عن الكوادر الطبية في الممارسة اليومية، جامعاً بين الفكر الريادي والفهم الدقيق لمتطلبات الرعاية الصحية الموجهة نحو خدمة المريض."
         : "Ziel seiner Arbeit ist es, klare Strukturen zu fördern, Prozesse effizient zu gestalten und die Teams im Praxisalltag organisatorisch zu entlasten. Dabei verbindet er unternehmerisches Denken mit einem Verständnis für die besonderen Anforderungen einer patientenorientierten Gesundheitsversorgung.",
     ],
-    consultantKeyPoints: [
-      {
-        title: isUz
-          ? "Jarayonlar"
-          : isRu
-          ? "Операционные процессы"
-          : isEn
-          ? "Operations"
-          : isTr
-          ? "Operasyonel Süreçler"
-          : isAr
-          ? "العمليات التشغيلية"
-          : "Operative Abläufe",
-        desc: isUz
-          ? "Ish jarayonlarini muvofiqlashtirish va loyihalarni boshqarish."
-          : isRu
-          ? "Координация рабочих процессов и ведение проектов."
-          : isEn
-          ? "Coordination of workflows and key project steering."
-          : isTr
-          ? "İş akışlarının koordinasyonu ve proje takibi."
-          : isAr
-          ? "تنسيق سير العمل ومتابعة المشاريع الحيوية."
-          : "Effiziente Prozesskoordination und Projektbegleitung.",
-      },
-      {
-        title: isUz
-          ? "Strategik aloqa"
-          : isRu
-          ? "Стратегия и связь"
-          : isEn
-          ? "Strategy & Network"
-          : isTr
-          ? "Stratejik İş Birliği"
-          : isAr
-          ? "التنسيق الاستراتيجي"
-          : "Strategische Brücke",
-        desc: isUz
-          ? "Rahbariyat va muassasalar o'rtasidagi mustahkam aloqa."
-          : isRu
-          ? "Связь между руководством холдинга и медцентрами."
-          : isEn
-          ? "Collaboration between leadership and individual centers."
-          : isTr
-          ? "Yönetim ile merkezler arası güçlü iletişim."
-          : isAr
-          ? "تعزيز التعاون بين الإدارة العليا والمراكز الطبية."
-          : "Verzahnung zwischen Führung und Einrichtungen.",
-      },
-      {
-        title: isUz
-          ? "Jamoalarni qo'llash"
-          : isRu
-          ? "Разгрузка команд"
-          : isEn
-          ? "Team Enablement"
-          : isTr
-          ? "Kurumsal Destek"
-          : isAr
-          ? "التنظيم والدعم"
-          : "Praxisentlastung",
-        desc: isUz
-          ? "Tibbiy jamoalarni ma'muriy yuklardan xalos etish."
-          : isRu
-          ? "Организационная разгрузка врачебных команд."
-          : isEn
-          ? "Relieving clinical teams of administrative burdens."
-          : isTr
-          ? "Ekiplerin idari yükünü hafifleten net yapılar."
-          : isAr
-          ? "تخفيف الأعباء الإدارية عن الكوادر الطبية في الميدان."
-          : "Klare Strukturen zur Entlastung der Praxisteams.",
-      },
-    ],
-    consultantQuote: isUz
-      ? "«Aniq tuzilmalar va optimallashtirilgan jarayonlar jamoalarni yengillatib, bemorlarga yuqori darajada e'tibor qaratish imkonini beradi»."
-      : isRu
-      ? "«Прозрачные структуры и выверенные процессы разгружают команды на местах и создают пространство для первоклассной заботы о пациентах»."
-      : isEn
-      ? "“Clear structures and optimized workflows relieve our teams in daily practice and ensure space for first-class patient care.”"
-      : isTr
-      ? "“Net kurumsal yapılar ve optimize edilmiş süreçler, ekiplerin yükünü hafifleterek birinci sınıf hasta bakımına odaklanmalarını sağlar.”"
-      : isAr
-      ? "«الهياكل الواضحة وسير العمل المنظم يخففان العبء عن الفرق الطبية في الممارسة اليومية ويفسحان المجال لرعاية استثنائية للمرضى»."
-      : "„Klare Strukturen und optimierte Abläufe entlasten die Teams im Praxisalltag und sichern Raum für erstklassige Patientenbetreuung.“",
 
     boardTitle: isUz
       ? "Shifokorlar kengashi va klinik standartlar"
@@ -2125,62 +2040,55 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
 
           <Container size="wide" className="relative z-10 mt-6 sm:mt-8">
             <div className="max-w-6xl mx-auto">
-              {/* 2-Column Grid: Kasim on Left, Azizbek on Right */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start mb-10 sm:mb-14">
-                {/* ── CARD 1 (LEFT): Dr. med. univ. Kasim Fischer-Rahimov (Gründer & Ärztlicher Leiter) ── */}
-                <div className="bg-white rounded-[28px] lg:rounded-[32px] border border-[#EDE6D8] shadow-[0_10px_40px_-24px_rgba(20,35,24,0.14)] relative overflow-hidden transition-all duration-300 flex flex-col h-full">
-                  {/* Portrait Header */}
-                  <div className="relative h-[380px] sm:h-[440px] lg:h-[420px] xl:h-[460px] w-full bg-[#0D1D13] overflow-hidden">
+              {/* Main Founder Spotlight Card */}
+              <div className="bg-white rounded-[28px] lg:rounded-[32px] border border-[#EDE6D8] shadow-[0_10px_40px_-24px_rgba(20,35,24,0.14)] mb-10 sm:mb-12 relative overflow-hidden transition-all duration-300">
+                {/* Upper grid: Portrait + Profile Summary */}
+                <div className="grid grid-cols-1 lg:grid-cols-[32%_minmax(0,1fr)]">
+                  {/* Left: portrait (fixed/natural, does not stretch) */}
+                  <div className="relative min-h-[380px] sm:min-h-[460px] lg:min-h-full bg-[#0D1D13] overflow-hidden">
                     <Image
                       src="/images/about/dr-kasim-fischer-rahimov.jpg"
                       alt={t.founderName}
                       fill
-                      priority
-                      sizes="(min-width: 1024px) 50vw, 100vw"
+                      sizes="(min-width: 1024px) 36vw, 100vw"
                       className="object-cover object-[50%_15%]"
                     />
-                    <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0D1D13]/85 via-[#0D1D13]/35 to-transparent pointer-events-none" />
-                    <div className="absolute bottom-4 left-5 right-5 flex items-center justify-between">
-                      <span className="inline-block px-3 py-1 rounded-full bg-[#BEA06B]/90 backdrop-blur-xs text-[11px] font-bold uppercase tracking-wider text-[#142318] shadow-xs">
-                        {t.founderRole}
-                      </span>
-                    </div>
                   </div>
 
-                  {/* Doctor information body */}
-                  <div className="p-6 sm:p-7 xl:p-8 flex flex-col flex-1">
-                    <h3 className="font-serif text-[24px] sm:text-[28px] lg:text-[30px] font-bold text-[#142318] leading-[1.15]">
+                  {/* Right: doctor information */}
+                  <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
+                    <h3 className="font-serif text-[26px] sm:text-[32px] lg:text-[36px] font-bold text-[#142318] leading-[1.12]">
                       {t.founderName}
                     </h3>
-                    <p className="text-[12.5px] sm:text-[13px] font-semibold tracking-wide text-[#8B7347] mt-1 font-sans">
+                    <p className="text-[13px] sm:text-[14px] font-semibold tracking-wide text-[#8B7347] mt-1.5 font-sans">
                       {t.founderRole}
                     </p>
 
                     {/* Introductory core paragraphs */}
-                    <div className="space-y-3 text-[13px] sm:text-[13.5px] text-[#4E5650] leading-[1.7] font-sans mt-4">
+                    <div className="space-y-3.5 text-[13px] sm:text-[13.5px] lg:text-[14px] text-[#4E5650] leading-[1.7] font-sans mt-5">
                       {t.founderIntroParagraphs.map((para: string, idx: number) => (
                         <p key={idx}>{para}</p>
                       ))}
                     </div>
 
-                    {/* Key Highlights (3 cards) */}
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 my-4">
+                    {/* Key Highlights (3 cards) - Compact & Shortened */}
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 my-3.5">
                       {t.founderKeyPoints.map((point: { title: string; desc: string }, idx: number) => (
                         <div
                           key={idx}
-                          className="bg-[#FAF7F0] border border-[#EBE3D3] rounded-xl p-2.5 flex flex-col justify-start transition-all hover:border-[#D5B878]/70 hover:shadow-xs"
+                          className="bg-[#FAF7F0] border border-[#EBE3D3] rounded-xl p-2.5 sm:p-3 flex flex-col justify-start transition-all hover:border-[#D5B878]/70 hover:shadow-xs"
                         >
-                          <div className="flex items-center gap-1.5 mb-1">
-                            <div className="w-5 h-5 rounded-md bg-white border border-[#E8DFC8] text-[#1B3D2F] flex items-center justify-center shrink-0 shadow-2xs">
-                              {idx === 0 && <Stethoscope className="w-3 h-3 text-[#1B3D2F]" />}
-                              {idx === 1 && <HeartHandshake className="w-3 h-3 text-[#1B3D2F]" />}
-                              {idx === 2 && <ShieldCheck className="w-3 h-3 text-[#1B3D2F]" />}
+                          <div className="flex items-center gap-2 mb-1">
+                            <div className="w-6 h-6 rounded-lg bg-white border border-[#E8DFC8] text-[#1B3D2F] flex items-center justify-center shrink-0 shadow-2xs">
+                              {idx === 0 && <Stethoscope className="w-3.5 h-3.5 text-[#1B3D2F]" />}
+                              {idx === 1 && <HeartHandshake className="w-3.5 h-3.5 text-[#1B3D2F]" />}
+                              {idx === 2 && <ShieldCheck className="w-3.5 h-3.5 text-[#1B3D2F]" />}
                             </div>
-                            <h4 className="text-[11.5px] font-bold text-[#142318] leading-tight">
+                            <h4 className="text-[12px] font-bold text-[#142318] leading-tight">
                               {point.title}
                             </h4>
                           </div>
-                          <p className="text-[10.5px] text-[#5C645E] leading-snug font-sans">
+                          <p className="text-[11px] text-[#5C645E] leading-snug font-sans">
                             {point.desc}
                           </p>
                         </div>
@@ -2188,21 +2096,21 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                     </div>
 
                     {/* Featured Guiding Principle Quote (Leitgedanke) */}
-                    <div className="bg-[#FAF7F0] border border-[#E5DEC9] rounded-2xl p-3.5 sm:p-4 my-2 shadow-xs">
+                    <div className="bg-[#FAF7F0] border border-[#E5DEC9] rounded-2xl p-4 my-2 shadow-xs">
                       <div className="flex items-start gap-3">
-                        <Quote className="w-4.5 h-4.5 text-[#C5A859] shrink-0 mt-0.5" />
-                        <p className="text-[12.5px] sm:text-[13px] font-serif italic text-[#1B3D2F] leading-relaxed">
+                        <Quote className="w-5 h-5 text-[#C5A859] shrink-0 mt-0.5" />
+                        <p className="text-[13.5px] sm:text-[14px] font-serif italic text-[#1B3D2F] leading-relaxed">
                           {t.founderQuote}
                         </p>
                       </div>
                     </div>
 
-                    {/* Expand/Collapse Toggle Button */}
-                    <div className="mt-3 pt-0.5">
+                    {/* Expand/Collapse Toggle Button - Full Width, Background matches Card */}
+                    <div className="mt-3.5 pt-0.5">
                       <button
                         type="button"
                         onClick={() => setIsFounderExpanded(!isFounderExpanded)}
-                        className="w-full group inline-flex items-center justify-center gap-2 text-[12.5px] sm:text-[13px] font-semibold text-[#1B3D2F] hover:text-[#8B7347] bg-white hover:bg-[#FAF8F5] active:scale-[0.995] transition-all duration-200 py-2.5 px-4 rounded-xl border border-[#EDE6D8] hover:border-[#D5B878] cursor-pointer shadow-xs"
+                        className="w-full group inline-flex items-center justify-center gap-2 text-[13px] sm:text-[13.5px] font-semibold text-[#1B3D2F] hover:text-[#8B7347] bg-white hover:bg-[#FAF8F5] active:scale-[0.995] transition-all duration-200 py-3 px-5 rounded-2xl border border-[#EDE6D8] hover:border-[#D5B878] cursor-pointer shadow-xs"
                         aria-expanded={isFounderExpanded}
                       >
                         <span>{isFounderExpanded ? t.founderCollapseBtn : t.founderExpandBtn}</span>
@@ -2213,98 +2121,80 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                         )}
                       </button>
                     </div>
+                  </div>
+                </div>
 
-                    {/* Expandable Section */}
-                    <div
-                      className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                        isFounderExpanded
-                          ? "max-h-[2200px] opacity-100 border-t border-[#EDE6D8] bg-white mt-4 pt-4"
-                          : "max-h-0 opacity-0"
-                      }`}
-                    >
-                      <div className="space-y-4 text-[12.5px] sm:text-[13px] text-[#4E5650] leading-[1.75] font-sans">
-                        <div className="flex items-center gap-2 mb-2">
-                          <div className="h-px bg-[#E2D8C3] flex-1" />
-                          <h4 className="text-[11.5px] font-bold uppercase tracking-wider text-[#8B7347] font-sans px-1">
-                            {t.founderExpandedTitle}
-                          </h4>
-                          <div className="h-px bg-[#E2D8C3] flex-1" />
-                        </div>
-                        {t.founderExpandedParagraphs.map((para: string, idx: number) => (
+                {/* Bottom: FULL-WIDTH Expandable Section across the entire card container */}
+                <div
+                  className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                    isFounderExpanded
+                      ? "max-h-[2200px] opacity-100 border-t border-[#EDE6D8] bg-white"
+                      : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div className="p-6 sm:p-8 lg:p-10">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="h-px bg-[#E2D8C3] flex-1" />
+                      <h4 className="text-[12.5px] font-bold uppercase tracking-wider text-[#8B7347] font-sans px-2">
+                        {t.founderExpandedTitle}
+                      </h4>
+                      <div className="h-px bg-[#E2D8C3] flex-1" />
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 text-[13.5px] sm:text-[14px] text-[#4E5650] leading-[1.8] font-sans">
+                      <div className="space-y-4">
+                        {t.founderExpandedParagraphs.slice(0, 3).map((para: string, idx: number) => (
+                          <p key={idx}>{para}</p>
+                        ))}
+                      </div>
+                      <div className="space-y-4">
+                        {t.founderExpandedParagraphs.slice(3).map((para: string, idx: number) => (
                           <p key={idx}>{para}</p>
                         ))}
                       </div>
                     </div>
+
+                    <div className="mt-8 pt-4 border-t border-[#EDE6D8]/60 flex justify-end">
+                      <button
+                        type="button"
+                        onClick={() => setIsFounderExpanded(false)}
+                        className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-[#8B7347] hover:text-[#1B3D2F] transition-colors cursor-pointer"
+                      >
+                        <span>{t.founderCollapseBtn}</span>
+                        <ChevronUp className="w-4 h-4" />
+                      </button>
+                    </div>
                   </div>
                 </div>
+              </div>
 
-                {/* ── CARD 2 (RIGHT): Azizbek Fischer-Rahimov (Manager & Consultant) ── */}
-                <div className="bg-white rounded-[28px] lg:rounded-[32px] border border-[#EDE6D8] shadow-[0_10px_40px_-24px_rgba(20,35,24,0.14)] relative overflow-hidden transition-all duration-300 flex flex-col h-full">
-                  {/* Portrait Header */}
-                  <div className="relative h-[380px] sm:h-[440px] lg:h-[420px] xl:h-[460px] w-full bg-[#0D1D13] overflow-hidden">
+              {/* Azizbek Fischer-Rahimov Card (Son, Manager-Consultant) */}
+              <div className="bg-white rounded-[28px] lg:rounded-[32px] border border-[#EDE6D8] shadow-[0_10px_40px_-24px_rgba(20,35,24,0.14)] mb-8 relative overflow-hidden">
+                <div className="grid grid-cols-1 lg:grid-cols-[32%_minmax(0,1fr)]">
+                  {/* Left: portrait */}
+                  <div className="relative min-h-[260px] sm:min-h-[320px] lg:min-h-full">
                     <Image
                       src="/images/about/son-rahimov.png"
                       alt={t.consultantName}
                       fill
-                      sizes="(min-width: 1024px) 50vw, 100vw"
+                      sizes="(min-width: 1024px) 36vw, 100vw"
                       className="object-cover object-[50%_15%]"
                     />
-                    <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0D1D13]/85 via-[#0D1D13]/35 to-transparent pointer-events-none" />
-                    <div className="absolute bottom-4 left-5 right-5 flex items-center justify-between">
-                      <span className="inline-block px-3 py-1 rounded-full bg-[#BEA06B]/90 backdrop-blur-xs text-[11px] font-bold uppercase tracking-wider text-[#142318] shadow-xs">
-                        {t.consultantRole}
-                      </span>
-                    </div>
                   </div>
 
-                  {/* Consultant information body */}
-                  <div className="p-6 sm:p-7 xl:p-8 flex flex-col flex-1">
-                    <h3 className="font-serif text-[24px] sm:text-[28px] lg:text-[30px] font-bold text-[#142318] leading-[1.15]">
+                  {/* Right: consultant information */}
+                  <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
+                    <h3 className="font-serif text-[26px] sm:text-[32px] lg:text-[36px] font-bold text-[#142318] leading-[1.12]">
                       {t.consultantName}
                     </h3>
-                    <p className="text-[12.5px] sm:text-[13px] font-semibold tracking-wide text-[#8B7347] mt-1 font-sans">
+                    <p className="text-[13px] sm:text-[14px] font-semibold tracking-wide text-[#8B7347] mt-1.5 font-sans">
                       {t.consultantRole}
                     </p>
 
-                    {/* Bio paragraphs */}
-                    <div className="space-y-3.5 text-[13px] sm:text-[13.5px] text-[#4E5650] leading-[1.7] font-sans mt-4">
+                    <div className="space-y-3.5 text-[13px] sm:text-[13.5px] lg:text-[14px] text-[#4E5650] leading-[1.7] font-sans mt-5">
                       {t.consultantParagraphs.map((para: string, idx: number) => (
                         <p key={idx}>{para}</p>
                       ))}
-                    </div>
-
-                    {/* Key Focus Highlights (3 cards) */}
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 my-4">
-                      {t.consultantKeyPoints.map((point: { title: string; desc: string }, idx: number) => (
-                        <div
-                          key={idx}
-                          className="bg-[#FAF7F0] border border-[#EBE3D3] rounded-xl p-2.5 flex flex-col justify-start transition-all hover:border-[#D5B878]/70 hover:shadow-xs"
-                        >
-                          <div className="flex items-center gap-1.5 mb-1">
-                            <div className="w-5 h-5 rounded-md bg-white border border-[#E8DFC8] text-[#1B3D2F] flex items-center justify-center shrink-0 shadow-2xs">
-                              {idx === 0 && <Briefcase className="w-3 h-3 text-[#1B3D2F]" />}
-                              {idx === 1 && <Users className="w-3 h-3 text-[#1B3D2F]" />}
-                              {idx === 2 && <ShieldCheck className="w-3 h-3 text-[#1B3D2F]" />}
-                            </div>
-                            <h4 className="text-[11.5px] font-bold text-[#142318] leading-tight">
-                              {point.title}
-                            </h4>
-                          </div>
-                          <p className="text-[10.5px] text-[#5C645E] leading-snug font-sans">
-                            {point.desc}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Featured Guiding Principle Quote */}
-                    <div className="bg-[#FAF7F0] border border-[#E5DEC9] rounded-2xl p-3.5 sm:p-4 my-2 shadow-xs mt-auto">
-                      <div className="flex items-start gap-3">
-                        <Quote className="w-4.5 h-4.5 text-[#C5A859] shrink-0 mt-0.5" />
-                        <p className="text-[12.5px] sm:text-[13px] font-serif italic text-[#1B3D2F] leading-relaxed">
-                          {t.consultantQuote}
-                        </p>
-                      </div>
                     </div>
                   </div>
                 </div>
