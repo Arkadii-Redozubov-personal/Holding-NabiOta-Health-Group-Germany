@@ -283,7 +283,7 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
                 </h2>
                 <p>
                   {isUz
-                    ? "NabiOta® — NabiOta® Health Group Germany GmbH kompaniyasining ro'yxatdan o'tkazilgan va qonun bilan muhofaza qilinadigan tovar belgisidir. Tovar belgisi, logotiplar, korporativ belgilar va boshqa himoyalangan aktivlardan foydalanish faqat huquq egasining oldindan berilgan yozma roziligi bilan ruxsat etiladi."
+                    ? "NabiOta® - NabiOta® Health Group Germany GmbH kompaniyasining ro'yxatdan o'tkazilgan va qonun bilan muhofaza qilinadigan tovar belgisidir. Tovar belgisi, logotiplar, korporativ belgilar va boshqa himoyalangan aktivlardan foydalanish faqat huquq egasining oldindan berilgan yozma roziligi bilan ruxsat etiladi."
                     : isRu
                     ? "NabiOta® является зарегистрированным и охраняемым законом товарным знаком NabiOta® Health Group Germany GmbH. Использование товарного знака, логотипов, фирменных наименований и иных охраняемых элементов допускается только с предварительного письменного согласия правообладателя."
                     : isEn
@@ -302,9 +302,9 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
                 </h2>
                 <p>
                   {isUz
-                    ? "NabiOta® Health Group Germany GmbH — Germaniya qonunchiligiga muvofiq tuzilgan va tijorat reestrida ro'yxatdan o'tgan mas'uliyati cheklangan jamiyat (GmbH)."
+                    ? "NabiOta® Health Group Germany GmbH - Germaniya qonunchiligiga muvofiq tuzilgan va tijorat reestrida ro'yxatdan o'tgan mas'uliyati cheklangan jamiyat (GmbH)."
                     : isRu
-                    ? "NabiOta® Health Group Germany GmbH — общество с ограниченной ответственностью, зарегистрированное в торговом реестре в соответствии с законодательством Германии."
+                    ? "NabiOta® Health Group Germany GmbH - общество с ограниченной ответственностью, зарегистрированное в торговом реестре в соответствии с законодательством Германии."
                     : isEn
                     ? "NabiOta® Health Group Germany GmbH is a limited liability company incorporated under German law and registered in the commercial register."
                     : isTr
@@ -315,9 +315,9 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
                 </p>
                 <p className="mt-2">
                   {isUz
-                    ? "NabiOta® — NabiOta® Health Group Germany GmbH kompaniyasining himoyalangan tovar belgisi. Tovar belgisi, logotiplar, kompaniya nomlari yoki boshqa muhofaza qilinadigan elementlardan foydalanish huquq egasining oldindan yozma roziligini talab qiladi."
+                    ? "NabiOta® - NabiOta® Health Group Germany GmbH kompaniyasining himoyalangan tovar belgisi. Tovar belgisi, logotiplar, kompaniya nomlari yoki boshqa muhofaza qilinadigan elementlardan foydalanish huquq egasining oldindan yozma roziligini talab qiladi."
                     : isRu
-                    ? "NabiOta® — охраняемый товарный знак NabiOta® Health Group Germany GmbH. Использование товарного знака, логотипов, фирменных обозначений или иных охраняемых элементов требует предварительного письменного согласия правообладателя."
+                    ? "NabiOta® - охраняемый товарный знак NabiOta® Health Group Germany GmbH. Использование товарного знака, логотипов, фирменных обозначений или иных охраняемых элементов требует предварительного письменного согласия правообладателя."
                     : isEn
                     ? "NabiOta® is a protected trademark of NabiOta® Health Group Germany GmbH. The use of the trademark, logos, company identifiers or other protected components requires the prior written consent of the rights holder."
                     : isTr
@@ -340,7 +340,7 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
                     : "© 2026 NabiOta® Health Group Germany GmbH. Alle Rechte vorbehalten."}
                   <br />
                   {isUz
-                    ? "NabiOta® — NabiOta® Health Group Germany GmbH kompaniyasining ro'yxatdan o'tgan tovar belgisi."
+                    ? "NabiOta® - NabiOta® Health Group Germany GmbH kompaniyasining ro'yxatdan o'tgan tovar belgisi."
                     : isRu
                     ? "NabiOta® является зарегистрированным товарным знаком NabiOta® Health Group Germany GmbH."
                     : isEn

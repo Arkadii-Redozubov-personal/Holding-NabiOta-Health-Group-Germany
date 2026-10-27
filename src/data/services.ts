@@ -192,7 +192,7 @@ export const holdingServices: Service[] = [
     subtitle: "Klinische & Öffentliche Arzneimittelversorgung",
     shortDescription: "Ganzheitliche pharmazeutische Betreuung, Klinikversorgung und patientenindividuelle Medikation.",
     description:
-      "Unter der Marke NabiOta Pharmacy sichern wir die zuverlässige Versorgung ambulanter und stationärer Einrichtungen mit Arzneimitteln, sterilen Infusionslösungen und Verbandstoffen – kombiniert mit qualifizierter pharmazeutischer Medikationsanalyse.",
+      "Unter der Marke NabiOta Pharmacy sichern wir die zuverlässige Versorgung ambulanter und stationärer Einrichtungen mit Arzneimitteln, sterilen Infusionslösungen und Verbandstoffen - kombiniert mit qualifizierter pharmazeutischer Medikationsanalyse.",
     image: "/images/services/wundversorgung.webp",
     iconName: "Pill",
     category: "Pharmazie",

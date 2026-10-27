@@ -34,7 +34,7 @@ import {
 import { Container } from "@/components/layout/Container";
 
 /**
- * PDF Section IV.2 – "NabiOta MVZ für Chirurgie und Anästhesiologie GmbH"
+ * PDF Section IV.2 - "NabiOta MVZ für Chirurgie und Anästhesiologie GmbH"
  * Unternehmensgegenstand, medizinische/organisatorische Aufgaben, rechtliche/betriebliche Pflichten.
  */
 
@@ -781,7 +781,7 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
       <Container size="wide" className="relative z-10 mt-10 sm:mt-12">
         <div className="max-w-6xl mx-auto space-y-12 sm:space-y-14">
 
-          {/* Gegenstand – Row 1: Left & Right 50/50 (Design 1:1 with Photo 1, Default Container Width, No Button) */}
+          {/* Gegenstand - Row 1: Left & Right 50/50 (Design 1:1 with Photo 1, Default Container Width, No Button) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-7 items-stretch pt-2 sm:pt-4">
             {[0, 2].map((cardIdx) => {
               const p = c.paragraphs[cardIdx];
@@ -844,7 +844,7 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
         </div>
       </Container>
 
-      {/* ── Card 1: Facilities & Cooperations – 100% FULL WIDTH EDGE-TO-EDGE (Photo 2 Style, No Frames) ── */}
+      {/* ── Card 1: Facilities & Cooperations - 100% FULL WIDTH EDGE-TO-EDGE (Photo 2 Style, No Frames) ── */}
       <div className="w-full relative overflow-hidden mt-8 sm:mt-10 lg:mt-12 mb-0">
         {/* Full-bleed background image across 100% of the screen */}
         <div className="absolute inset-0 pointer-events-none select-none z-0">
@@ -911,7 +911,7 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
 
     </section>
 
-    {/* Rechtliche und betriebliche Pflichten – FULL WIDTH SCREEN SECTION (leaves_bag.png background) */}
+    {/* Rechtliche und betriebliche Pflichten - FULL WIDTH SCREEN SECTION (leaves_bag.png background) */}
     <section className="relative w-full bg-[#011B0B] text-white pt-6 sm:pt-8 lg:pt-10 pb-12 sm:pb-16 lg:pb-20 overflow-hidden border-b border-[#D5B878]/25">
       {/* Full-width foliage & background layer spanning 100% of the screen width */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
@@ -950,7 +950,7 @@ export function MvzSurgeryCareSection({ locale = "de" }: { locale?: string }) {
           </p>
         </div>
 
-        {/* 8 Cards Grid (2 Columns, 4 Rows) – Lighter Card Background & High Text Contrast */}
+        {/* 8 Cards Grid (2 Columns, 4 Rows) - Lighter Card Background & High Text Contrast */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4.5">
           {c.duties.map((d, i) => {
             const Icon = d.icon;

@@ -39,16 +39,16 @@ export function HomeCtaBannerSection({ currentLocale = "de" }: HomeCtaBannerSect
       ? "Partnering for a Healthier, Forward-Thinking Future."
       : "Gemeinsam für eine zukunftssichere Gesundheitsversorgung.",
     desc: isRu
-      ? "Ищете ли вы высокотехнологичную медицинскую помощь, планируете партнерство в рамках врачебной практики или развиваете инвестиционные проекты в здравоохранении — команда NabiOta® открыта к надежному диалогу."
+      ? "Ищете ли вы высокотехнологичную медицинскую помощь, планируете партнерство в рамках врачебной практики или развиваете инвестиционные проекты в здравоохранении - команда NabiOta® открыта к надежному диалогу."
       : isTr
-      ? "İster birinci sınıf tıbbi bakım arayan bir hasta, ister güçlü bir ortaklık arayan bir hekim, ister sağlık projeleri geliştiren bir kurum olun – NabiOta® Health Group güvenilir yol arkadaşınızdır."
+      ? "İster birinci sınıf tıbbi bakım arayan bir hasta, ister güçlü bir ortaklık arayan bir hekim, ister sağlık projeleri geliştiren bir kurum olun - NabiOta® Health Group güvenilir yol arkadaşınızdır."
       : isAr
-      ? "سواء كنتم مرضى تبحثون عن رعاية طبية ألمانية رفيعة، أو أطباء تتطلعون لشراكة متينة، أو مستثمرين يطورون مشاريع طبية – مجموعة نابي أوتا هي شريككم الموثوق."
+      ? "سواء كنتم مرضى تبحثون عن رعاية طبية ألمانية رفيعة، أو أطباء تتطلعون لشراكة متينة، أو مستثمرين يطورون مشاريع طبية - مجموعة نابي أوتا هي شريككم الموثوق."
       : isUz
-      ? "Siz yuqori darajadagi tibbiy yordam izlayotgan bemor bo'lasizmi, shifokorlik amaliyotida mustahkam sheriklikni xohlovchi mutaxassis bo'lasizmi yoki tibbiy infratuzilma loyihalarini amalga oshiruvchi tashkilot bo'lasizmi — NabiOta® Health Group sizning ishonchli hamkoringizdir."
+      ? "Siz yuqori darajadagi tibbiy yordam izlayotgan bemor bo'lasizmi, shifokorlik amaliyotida mustahkam sheriklikni xohlovchi mutaxassis bo'lasizmi yoki tibbiy infratuzilma loyihalarini amalga oshiruvchi tashkilot bo'lasizmi - NabiOta® Health Group sizning ishonchli hamkoringizdir."
       : isEn
-      ? "Whether you are a patient seeking top-tier clinical care, a physician exploring collaborative network opportunities, or a partner realizing medical infrastructure — NabiOta® is your committed companion."
-      : "Ob Sie als Patient erstklassige medizinische Betreuung suchen, als Arzt eine starke partnerschaftliche Praxisstruktur schätzen oder als Träger zukunftssichere Projekte realisieren möchten – die NabiOta® Health Group ist Ihr verlässlicher Begleiter.",
+      ? "Whether you are a patient seeking top-tier clinical care, a physician exploring collaborative network opportunities, or a partner realizing medical infrastructure - NabiOta® is your committed companion."
+      : "Ob Sie als Patient erstklassige medizinische Betreuung suchen, als Arzt eine starke partnerschaftliche Praxisstruktur schätzen oder als Träger zukunftssichere Projekte realisieren möchten - die NabiOta® Health Group ist Ihr verlässlicher Begleiter.",
     btnPrimary: isRu
       ? "Связаться с нами"
       : isTr

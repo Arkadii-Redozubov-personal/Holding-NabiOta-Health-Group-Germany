@@ -111,16 +111,16 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
       ? "الاستشارات والتطوير العقاري الطبي"
       : "Beratung & Immobilienentwicklung",
     subtitle: isUz
-      ? "NabiOta Real Estate GmbH – Kalit ostida tibbiy ko'chmas mulk"
+      ? "NabiOta Real Estate GmbH - Kalit ostida tibbiy ko'chmas mulk"
       : isRu
-      ? "NabiOta Real Estate GmbH – Медицинская недвижимость под ключ"
+      ? "NabiOta Real Estate GmbH - Медицинская недвижимость под ключ"
       : isEn
-      ? "NabiOta Real Estate GmbH – Healthcare Real Estate & Medical Infrastructure"
+      ? "NabiOta Real Estate GmbH - Healthcare Real Estate & Medical Infrastructure"
       : isTr
-      ? "NabiOta Real Estate GmbH – Sağlık Sektörü İçin Özel Gayrimenkuller"
+      ? "NabiOta Real Estate GmbH - Sağlık Sektörü İçin Özel Gayrimenkuller"
       : isAr
-      ? "NabiOta Real Estate GmbH – عقارات وبنية تحتية متخصصة للرعاية الصحية"
-      : "NabiOta Real Estate GmbH – Spezialimmobilien für das Gesundheitswesen",
+      ? "NabiOta Real Estate GmbH - عقارات وبنية تحتية متخصصة للرعاية الصحية"
+      : "NabiOta Real Estate GmbH - Spezialimmobilien für das Gesundheitswesen",
     eyebrow: isUz
       ? "NABIOTA REAL ESTATE GMBH • TIBBIY INFRATUZILMA"
       : isRu
@@ -767,7 +767,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
             ]
           : isEn
           ? [
-              "Vibration-decoupled reinforced concrete foundations supporting 10–15 ton static loads",
+              "Vibration-decoupled reinforced concrete foundations supporting 10-15 ton static loads",
               "High-attenuation copper Faraday RF shielding enclosures for 3T MRI",
               "Silicon steel flux magnetic shielding containing the 5-Gauss exclusion zone",
               "Stainless steel emergency helium quench conduits routed safely above roof level",
@@ -1000,7 +1000,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         specifications: isUz
           ? [
               "Elastik amortizatsiyalovchi pol qoplamasiga ega keng MTT mashg'ulot zallari",
-              "32–34°C gacha isitiladigan va ko'targichlar bilan jihozlangan gidroterapiya havzalari",
+              "32-34°C gacha isitiladigan va ko'targichlar bilan jihozlangan gidroterapiya havzalari",
               "Fizio-, ergo- va logopediya uchun individual tovush o'tkazmaydigan xonalar",
               "Nogironlar aravachalari uchun to'siqsiz yechinish xonalari, dushlar va sanuzellar",
               "Basseyn zonasida issiqlik rekuperatsiyasi va havoni quritishga ega ventilatsiya qurilmalari",
@@ -1009,7 +1009,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isRu
           ? [
               "Просторные тренировочные залы MTT с упругими амортизирующими полами",
-              "Гидротерапевтические бассейны с подогревом до 32–34°C и подъемниками",
+              "Гидротерапевтические бассейны с подогревом до 32-34°C и подъемниками",
               "Индивидуальные звукоизолированные кабинеты для физио-, эрго- и логопедии",
               "Безбарьерные раздевалки, душевые и санитарные узлы для инвалидных колясок",
               "Вентиляционные установки с рекуперацией тепла и осушением воздуха в зоне бассейна",
@@ -1018,7 +1018,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isEn
           ? [
               "Column-free MTT medical training gym floors with point-elastic sports flooring",
-              "Hydrotherapy exercise pools heated to 32–34°C featuring disabled hoist lifters",
+              "Hydrotherapy exercise pools heated to 32-34°C featuring disabled hoist lifters",
               "Acoustically isolated private suites for physiotherapy, occupational therapy, and speech therapy",
               "Spacious, barrier-free locker rooms, accessible roll-in showers, and ADA restrooms",
               "Specialized humidity-controlled HVAC systems with heat recovery for pool halls",
@@ -1027,7 +1027,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           : isTr
           ? [
               "MTT için nokta elastik spor zemin kaplamalı, kolonsuz ferah antrenman salonları",
-              "32–34°C su sıcaklığına ve tavan vinçlerine sahip hidroterapi egzersiz havuzları",
+              "32-34°C su sıcaklığına ve tavan vinçlerine sahip hidroterapi egzersiz havuzları",
               "Manuel terapi, ergoterapi ve konuşma terapisi için ses yalıtımlı bağımsız tedavi kabinleri",
               "Tekerlekli sandalyeye uygun duşlar, kilitli dolaplar ve engelsiz WC'lere sahip geniş soyunma alanları",
               "Islak hacimler için ısı geri kazanımlı ve nem alıcılı özel havalandırma sistemleri (VDI 2089)",
@@ -1044,7 +1044,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
             ]
           : [
               "Großzügige, stützenarme Trainingslandschaften mit punktelastischen Sportböden für MTT",
-              "Hydrotherapeutische Therapiebecken mit Wassertemperaturen bis 32–34°C und Deckenliftern",
+              "Hydrotherapeutische Therapiebecken mit Wassertemperaturen bis 32-34°C und Deckenliftern",
               "Akustisch gedämpfte Einzelbehandlungskabinen für Manuelle Therapie, Ergotherapie und Logopädie",
               "Großraumumkleiden mit rollstuhlgerechten Duschen, Spindsystemen und Pflege-WCs",
               "Spezielle Lüftungsanlagen mit Wärmerückgewinnung und Entfeuchtung für Nassbereiche (VDI 2089)",
@@ -1392,9 +1392,9 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
           ? "نماذج الإيجار والتشغيل الاستثماري"
           : "Pacht- & Betreibermodelle",
         legalText: isUz
-          ? "Investorlar uchun barqaror ijtimoiy daromadni va parvarish xizmatining uzluksiz faoliyatini ta'minlovchi 20–25 yillik uzoq muddatli ijara shartnomalari."
+          ? "Investorlar uchun barqaror ijtimoiy daromadni va parvarish xizmatining uzluksiz faoliyatini ta'minlovchi 20-25 yillik uzoq muddatli ijara shartnomalari."
           : isRu
-          ? "Долгосрочные договоры аренды на 20–25 лет, обеспечивающие надежный социальный доход инвесторам и стабильную работу службы ухода."
+          ? "Долгосрочные договоры аренды на 20-25 лет, обеспечивающие надежный социальный доход инвесторам и стабильную работу службы ухода."
           : isEn
           ? "Long-term institutional 20 to 25-year lease structures delivering dependable, socially responsible returns."
           : isTr
@@ -1478,7 +1478,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         description: isUz
           ? "Shifokorlar va malakali hamshiralar uchun kuchli raqobat sharoitida ish joyi yonida sifatli hamyonbop uy-joy mavjudligi muvaffaqiyatning hal qiluvchi omilidir. NabiOta Real Estate GmbH Medical Recruitment Services GmbH orqali jalb qilinayotgan mutaxassislarning qulay moslashuvi uchun zamonaviy apart-otellar va mikro-kvartiralarni quradi."
           : isRu
-          ? "В условиях острой конкуренции за врачей и квалифицированных медсестер наличие доступного качественного жилья рядом с местом работы — решающий фактор успеха. NabiOta Real Estate GmbH строит стильные апарт-отели и микро-квартиры для комфортной адаптации специалистов, привлекаемых через Medical Recruitment Services GmbH."
+          ? "В условиях острой конкуренции за врачей и квалифицированных медсестер наличие доступного качественного жилья рядом с местом работы - решающий фактор успеха. NabiOta Real Estate GmbH строит стильные апарт-отели и микро-квартиры для комфортной адаптации специалистов, привлекаемых через Medical Recruitment Services GmbH."
           : isEn
           ? "In the competitive landscape for certified physicians and international nursing talent, immediate access to quality housing near the hospital campus is an invaluable differentiator. NabiOta Real Estate develops boutique boardinghouses and serviced micro-apartments that make relocation and onboarding seamless."
           : isTr
@@ -1692,16 +1692,16 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         ? "استشارات شاملة لحلول صحية مستدامة."
         : "Ganzheitliche Beratung für nachhaltige Lösungen.",
       desc: isUz
-        ? "Biz siz bilan birgalikda kelajakka mos konsepsiyalarni tahlil qilamiz, maslahat beramiz va ishlab chiqamiz — individual, amaliy hamda sifat, samaradorlik va insonparvarlikka aniq e'tibor qaratgan holda."
+        ? "Biz siz bilan birgalikda kelajakka mos konsepsiyalarni tahlil qilamiz, maslahat beramiz va ishlab chiqamiz - individual, amaliy hamda sifat, samaradorlik va insonparvarlikka aniq e'tibor qaratgan holda."
         : isRu
-        ? "Мы анализируем, консультируем и разрабатываем вместе с вами перспективные концепции — индивидуально, практично и с четким фокусом на качестве, эффективности и человечности."
+        ? "Мы анализируем, консультируем и разрабатываем вместе с вами перспективные концепции - индивидуально, практично и с четким фокусом на качестве, эффективности и человечности."
         : isEn
-        ? "We analyze, advise, and develop future-proof concepts together with you — personalized, hands-on, and with a clear focus on quality, efficiency, and human-centric care."
+        ? "We analyze, advise, and develop future-proof concepts together with you - personalized, hands-on, and with a clear focus on quality, efficiency, and human-centric care."
         : isTr
         ? "Geleceğe hazır konseptleri sizinle birlikte analiz ediyor, danışmanlık yapıyor ve geliştiriyoruz; bireysel, uygulamaya dönük ve kalite, verimlilik ile insani değerlere net bir odaklanmayla."
         : isAr
         ? "نحلل ونقدم المشورة ونطور معكم مفاهيم مستقبلية مستدامة؛ فردية وعملية مع تركيز واضح على الجودة والكفاءة والإنسانية."
-        : "Wir analysieren, beraten und entwickeln gemeinsam mit Ihnen zukunftsfähige Konzepte – individuell, praxisnah und mit einem klaren Fokus auf Qualität, Effizienz und Menschlichkeit.",
+        : "Wir analysieren, beraten und entwickeln gemeinsam mit Ihnen zukunftsfähige Konzepte - individuell, praxisnah und mit einem klaren Fokus auf Qualität, Effizienz und Menschlichkeit.",
       btn: isUz
         ? "Xizmatlar haqida batafsil"
         : isRu
@@ -1809,14 +1809,14 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
       desc: isUz
         ? "Biz sog'liqni saqlash sohasida yangi tibbiyot markazlari va klinikalardan tortib mavjud ob'ektlarni kengaytirish hamda qayta tuzilishigacha bo'lgan loyihalarni ishlab chiqamiz va amalga oshiramiz. Bunda biz iqtisodiy rentabellikni ijtimoiy mas'uliyat va eng yuqori sifat bilan uyg'unlashtiramiz."
         : isRu
-        ? "Мы разрабатываем и реализуем проекты в сфере здравоохранения — от новых медицинских центров и клиник до расширения и реструктуризации существующих объектов. При этом мы сочетаем экономическую рентабельность с социальной ответственностью и высочайшим качеством."
+        ? "Мы разрабатываем и реализуем проекты в сфере здравоохранения - от новых медицинских центров и клиник до расширения и реструктуризации существующих объектов. При этом мы сочетаем экономическую рентабельность с социальной ответственностью и высочайшим качеством."
         : isEn
-        ? "We develop and implement healthcare infrastructure projects — whether new medical facilities, expansions, or restructuring programs. We combine economic viability with social responsibility and top-tier quality."
+        ? "We develop and implement healthcare infrastructure projects - whether new medical facilities, expansions, or restructuring programs. We combine economic viability with social responsibility and top-tier quality."
         : isTr
         ? "Sağlık sektöründe projeler geliştiriyor ve hayata geçiriyoruz: Yeni tesisler, kapasite artırımları veya yeniden yapılandırmalar. Bu süreçte ekonomik sürdürülebilirliği sosyal sorumluluk ve en yüksek kaliteyle birleştiriyoruz."
         : isAr
         ? "نطور وننفذ مشاريع في قطاع الرعاية الصحية؛ سواء كانت منشآت جديدة أو توسعات أو إعادة هيكلة. نجمع بين الجدوى الاقتصادية والمسؤولية الاجتماعية وأعلى معايير الجودة."
-        : "Wir entwickeln und realisieren Projekte im Gesundheitswesen – ob neue Einrichtungen, Erweiterungen oder Umstrukturierungen. Dabei verbinden wir wirtschaftliche Tragfähigkeit mit sozialer Verantwortung und höchster Qualität.",
+        : "Wir entwickeln und realisieren Projekte im Gesundheitswesen - ob neue Einrichtungen, Erweiterungen oder Umstrukturierungen. Dabei verbinden wir wirtschaftliche Tragfähigkeit mit sozialer Verantwortung und höchster Qualität.",
       btn: isUz
         ? "Loyihalar bilan tanishish"
         : isRu
@@ -1922,16 +1922,16 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         ? "5 خطوات لتحقيق نجاح مشروعك."
         : "In 5 Schritten zu Ihrem Projekterfolg.",
       desc: isUz
-        ? "Shaffof jarayonlar, yaqin hamkorlik va tajribali ekspertlar jamoasi — biz loyihangizni maqsadga ishonchli va xavfsiz yetkazamiz."
+        ? "Shaffof jarayonlar, yaqin hamkorlik va tajribali ekspertlar jamoasi - biz loyihangizni maqsadga ishonchli va xavfsiz yetkazamiz."
         : isRu
-        ? "Прозрачные процессы, тесное взаимодействие и опытная команда экспертов — так мы надежно доводим ваш проект до цели."
+        ? "Прозрачные процессы, тесное взаимодействие и опытная команда экспертов - так мы надежно доводим ваш проект до цели."
         : isEn
-        ? "Transparent workflows, close collaboration, and an experienced interdisciplinary team — ensuring your healthcare project reaches its goals safely."
+        ? "Transparent workflows, close collaboration, and an experienced interdisciplinary team - ensuring your healthcare project reaches its goals safely."
         : isTr
         ? "Şeffaf süreçler, yakın işbirliği ve deneyimli bir uzman ekip ile projenizi hedefe güvenle ulaştırıyoruz."
         : isAr
         ? "إجراءات شفافة، تعاون وثيق، وفريق خبراء متمرس؛ هكذا نقود مشروعك بأمان نحو النجاح."
-        : "Transparente Abläufe, enge Zusammenarbeit und ein erfahrenes Team – so bringen wir Ihr Projekt sicher ans Ziel.",
+        : "Transparente Abläufe, enge Zusammenarbeit und ein erfahrenes Team - so bringen wir Ihr Projekt sicher ans Ziel.",
       steps: [
         {
           num: "1",
@@ -2035,7 +2035,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
             ? "Güvenli bir sonuç için maliyetleri, takvimi ve kaliteyi sürekli kontrol altında tutuyoruz."
             : isAr
             ? "نراقب التكاليف والجداول الزمنية والجودة بدقة لتحقيق نتائج موثوقة."
-            : "Wir behalten Kosten, Zeit und Qualität im Blick – für ein sicheres Ergebnis.",
+            : "Wir behalten Kosten, Zeit und Qualität im Blick - für ein sicheres Ergebnis.",
         },
         {
           num: "5",
@@ -2214,16 +2214,16 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
             : "Leitung Gesundheitszentrum",
           avatar: "/images/beratung/avatar-weber.webp",
           quote: isUz
-            ? "«Murosasiz malaka, fidoyilik va klinik jarayonlarimizni chuqur tushunish — NABIOTA'ni haqiqatan ham qadrli va ishonchli hamkorga aylantiradigan asosiy jihatlardir.»"
+            ? "«Murosasiz malaka, fidoyilik va klinik jarayonlarimizni chuqur tushunish - NABIOTA'ni haqiqatan ham qadrli va ishonchli hamkorga aylantiradigan asosiy jihatlardir.»"
             : isRu
-            ? "«Компетентность, вовлеченность и глубокое понимание клинических потребностей — именно это делает NABIOTA по-настоящему ценным партнером.»"
+            ? "«Компетентность, вовлеченность и глубокое понимание клинических потребностей - именно это делает NABIOTA по-настоящему ценным партнером.»"
             : isEn
-            ? "“Uncompromising competence, commitment, and a deep understanding of our clinical workflows — that is what makes NABIOTA an invaluable partner.”"
+            ? "“Uncompromising competence, commitment, and a deep understanding of our clinical workflows - that is what makes NABIOTA an invaluable partner.”"
             : isTr
             ? "“Yetkinlik, adanmışlık ve klinik ihtiyaçlarımızı derinlemesine anlama; NABIOTA'yı gerçekten değerli bir ortak yapan özellikler bunlardır.”"
             : isAr
             ? "“الكفاءة والالتزام والفهم العميق لاحتياجاتنا السريرية؛ هذا هو ما يجعل NABIOTA شريكاً لا يُقدّر بثمن.”"
-            : "„Kompetenz, Engagement und ein tiefes Verständnis für unsere Bedürfnisse – das macht NABIOTA zu einem wertvollen Partner.“",
+            : "„Kompetenz, Engagement und ein tiefes Verständnis für unsere Bedürfnisse - das macht NABIOTA zu einem wertvollen Partner.“",
         },
       ],
     },
@@ -2251,16 +2251,16 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         ? "نسعد بتواصلكم واستفساراتكم."
         : "Wir freuen uns auf Ihre Anfrage.",
       desc: isUz
-        ? "Dastlabki g'oya bo'ladimi yoki aniq kengaytirish loyihasi — jamoamiz sizga shaxsan va hech qanday majburiyatlarsiz maslahat berishdan mamnun bo'ladi."
+        ? "Dastlabki g'oya bo'ladimi yoki aniq kengaytirish loyihasi - jamoamiz sizga shaxsan va hech qanday majburiyatlarsiz maslahat berishdan mamnun bo'ladi."
         : isRu
-        ? "Будь то первая идея или конкретный проект расширения — наша команда с удовольствием проконсультирует вас лично и без обязательств."
+        ? "Будь то первая идея или конкретный проект расширения - наша команда с удовольствием проконсультирует вас лично и без обязательств."
         : isEn
-        ? "Whether an initial concept or an imminent development project — our team will be delighted to advise you personally."
+        ? "Whether an initial concept or an imminent development project - our team will be delighted to advise you personally."
         : isTr
         ? "İster ilk fikir ister somut bir proje olsun; ekibimiz olanaklar hakkında sizi kişisel ve bağlayıcı olmayan bir şekilde bilgilendirmekten mutluluk duyar."
         : isAr
         ? "سواء كانت فكرة أولية أو مشروعاً محدداً؛ يسعد فريقنا بتقديم المشورة لكم شخصياً وبشكل غير ملزم حول أفضل الإمكانيات."
-        : "Ob erste Idee oder konkretes Vorhaben – unser Team berät Sie gerne persönlich und unverbindlich zu Ihren Möglichkeiten.",
+        : "Ob erste Idee oder konkretes Vorhaben - unser Team berät Sie gerne persönlich und unverbindlich zu Ihren Möglichkeiten.",
       btn: isUz
         ? "Biz bilan bog'lanish"
         : isRu
@@ -2391,7 +2391,7 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 1B: NABIOTA REAL ESTATE GMBH – PDF SECTION IV.7                   */}
+        {/* SECTION 1B: NABIOTA REAL ESTATE GMBH - PDF SECTION IV.7                   */}
         {/* ========================================================================= */}
         <RealEstateCompanySection locale={locale} />
 

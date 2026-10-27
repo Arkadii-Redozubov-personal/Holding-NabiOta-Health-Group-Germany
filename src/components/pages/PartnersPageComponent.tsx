@@ -570,9 +570,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
         description: isUz
           ? "NabiOta® Health Group Germaniyaning sog'liqni saqlash bozorida barqaror va xatarlardan himoyalangan loyihalarni amalga oshiradi. Biz xususiy investorlar va institutsional fondlarga zamonaviy tibbiy binolar, ko'p tarmoqli klinik kampuslar va ixtisoslashtirilgan parvarish uylarini rivojlantirishda ishonchli hamkorlikni taklif etamiz."
           : isRu
-          ? "Рынок здравоохранения Германии демонстрирует высокую устойчивость к кризисам и инфляции. Холдинг NabiOta® (HRB 16787, уставный капитал 50.000 EUR) предлагает институциональным инвесторам и Family Offices участие в девелопменте медицинских центров, операционных блоков и объектов персонала через NabiOta Real Estate GmbH с долгосрочными индексированными договорами аренды (15–20 лет)."
+          ? "Рынок здравоохранения Германии демонстрирует высокую устойчивость к кризисам и инфляции. Холдинг NabiOta® (HRB 16787, уставный капитал 50.000 EUR) предлагает институциональным инвесторам и Family Offices участие в девелопменте медицинских центров, операционных блоков и объектов персонала через NabiOta Real Estate GmbH с долгосрочными индексированными договорами аренды (15-20 лет)."
           : isEn
-          ? "German healthcare real estate offers defensive growth resilient to macroeconomic turbulence. NabiOta® Health Group Germany GmbH (HRB 16787, EUR 50,000 capital) invites institutional partners to co-invest in ambulatory surgery centers, medical centers, and healthcare quarters via NabiOta Real Estate GmbH, backed by indexed long-term leases (15–20 years)."
+          ? "German healthcare real estate offers defensive growth resilient to macroeconomic turbulence. NabiOta® Health Group Germany GmbH (HRB 16787, EUR 50,000 capital) invites institutional partners to co-invest in ambulatory surgery centers, medical centers, and healthcare quarters via NabiOta Real Estate GmbH, backed by indexed long-term leases (15-20 years)."
           : isTr
           ? "Sağlık sektörü, Avrupa'nın krizlere en dayanıklı yatırım sınıflarından biridir. NabiOta Real Estate GmbH aracılığıyla ortaklar; birinci sınıf sağlık merkezlerine, ayakta cerrahi kliniklerine ve hekim binalarına yatırım yapar. Güçlü mali yapıya sahip tıbbi işletme şirketleriyle yapılan uzun vadeli, endeksli ticari kira sözleşmeleri (15-20 yıl) öngörülebilir nakit akışı ve değer koruması sağlar."
           : isAr
@@ -592,7 +592,7 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
           : isRu
           ? [
               "Специализированные объекты: амбулаторные центры (MVZ), хирургические комплексы, радиология",
-              "Долгосрочные индексированные договоры аренды (Triple-Net / Double-Net) сроком 15–20 лет",
+              "Долгосрочные индексированные договоры аренды (Triple-Net / Double-Net) сроком 15-20 лет",
               "Полное соответствие стандартам зеленого строительства и ESG (энергоэффективность KfW 40)",
               "Стабильная доходность за счет гарантированного спроса на медицинские услуги населения",
               "Четкое юридическое разделение владения зданиями и врачебных лицензий",
@@ -601,7 +601,7 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
           : isEn
           ? [
               "Asset class: ambulatory surgery centers, medical office buildings (MVZ), and imaging clinics",
-              "Long-term inflation-indexed commercial lease agreements (Triple-Net / Double-Net) of 15–20 years",
+              "Long-term inflation-indexed commercial lease agreements (Triple-Net / Double-Net) of 15-20 years",
               "Full compliance with sustainable building criteria and ESG governance (KfW 40 efficiency)",
               "Defensive yields underpinned by non-cyclical, demographic-driven healthcare demand",
               "Strict statutory demarcation between property ownership and clinical licensing",
@@ -1008,7 +1008,7 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                 </h2>
                 <p className="text-xs sm:text-sm text-[#4A5D52] leading-relaxed">
                   {isUz
-                    ? "Hamkorlikning to'rtta ixtisoslashtirilgan modeli — praksis vorisligidan tortib institutsional investitsiyalargacha."
+                    ? "Hamkorlikning to'rtta ixtisoslashtirilgan modeli - praksis vorisligidan tortib institutsional investitsiyalargacha."
                     : isRu
                     ? "Четыре специализированные модели сотрудничества, разработанные в строгом соответствии с немецким законодательством (SGB V, GewO, ApoG)."
                     : isEn
@@ -1060,10 +1060,10 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                   <div
                     key={pillar.id}
                     onClick={() => setSelectedPillar(pillar)}
-                    className="group bg-white rounded-2xl p-3 sm:p-3.5 border border-[#EDE8DE] hover:border-[#D5B878] shadow-[0_3px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_24px_rgba(213,184,120,0.14)] transition-all duration-300 flex flex-col cursor-pointer"
+                    className="group bg-white rounded-2xl p-2.5 sm:p-3 border border-[#EDE8DE] hover:border-[#D5B878] shadow-[0_3px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_24px_rgba(213,184,120,0.14)] transition-all duration-300 flex flex-col cursor-pointer"
                   >
                     {/* Top Photo */}
-                    <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-[#0C1C11]/5">
+                    <div className="relative aspect-[16/8] w-full rounded-xl overflow-hidden bg-[#0C1C11]/5">
                       <Image
                         src={pillar.image}
                         alt={pillar.title}
@@ -1074,10 +1074,10 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                     </div>
 
                     {/* Card Content Row */}
-                    <div className="pt-3.5 pb-1.5 px-1 flex items-center justify-between gap-3">
+                    <div className="pt-2.5 pb-1 px-1 flex items-center justify-between gap-3">
                       <div className="flex items-center gap-3 min-w-0 flex-1">
                         <div className="text-[#9E7D3B] flex items-center justify-center shrink-0">
-                          <IconComponent className="w-7 h-7 sm:w-8 sm:h-8" />
+                          <IconComponent className="w-6 h-6 sm:w-7 sm:h-7" />
                         </div>
 
                         <div className="min-w-0 flex-1">
@@ -1899,11 +1899,11 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
 
                 <p className="text-xs sm:text-[13px] text-[#4A5D52] leading-relaxed max-w-sm font-sans">
                   {isUz
-                    ? "Praksis vorisligi, sektorlararo klinika loyihasi yoki investitsion ishtirok bo'ladimi — biz siz bilan shaxsan uchrashishdan mamnun bo'lamiz."
+                    ? "Praksis vorisligi, sektorlararo klinika loyihasi yoki investitsion ishtirok bo'ladimi - biz siz bilan shaxsan uchrashishdan mamnun bo'lamiz."
                     : isRu
-                    ? "Будь то преемственность праксиса, межсекторальное партнерство с клиникой или инвестиции — мы гарантируем полную конфиденциальность."
+                    ? "Будь то преемственность праксиса, межсекторальное партнерство с клиникой или инвестиции - мы гарантируем полную конфиденциальность."
                     : isEn
-                    ? "Whether practice succession, clinical hospital networks, or healthcare equity — we ensure maximum confidentiality."
+                    ? "Whether practice succession, clinical hospital networks, or healthcare equity - we ensure maximum confidentiality."
                     : isTr
                     ? "İster muayenehane devri, ister klinik ağı, ister gayrimenkul yatırımı olsun: Yönetimimiz size gizlilik içinde ve memnuniyetle danışmanlık sağlar."
                     : isAr

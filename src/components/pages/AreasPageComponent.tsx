@@ -148,11 +148,11 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
       ? "كفاءات متنوعة ورؤية موحدة."
       : "Vielfältige Kompetenzen. Eine gemeinsame Vision.",
     description: isUz
-      ? "Ilg'or diagnostikadan tortib ixtisoslashtirilgan davolashgacha — bizning barcha yo'nalishlarimiz eng yuqori darajadagi bemorga yo'naltirilgan tibbiy xizmatni taqdim etish uchun o'zaro hamjihatlikda ishlaydi."
+      ? "Ilg'or diagnostikadan tortib ixtisoslashtirilgan davolashgacha - bizning barcha yo'nalishlarimiz eng yuqori darajadagi bemorga yo'naltirilgan tibbiy xizmatni taqdim etish uchun o'zaro hamjihatlikda ishlaydi."
       : isRu
-      ? "От передовой диагностики до специализированного лечения — наши направления работают в синергии, обеспечивая пациентоориентированную помощь высшего качества."
+      ? "От передовой диагностики до специализированного лечения - наши направления работают в синергии, обеспечивая пациентоориентированную помощь высшего качества."
       : isEn
-      ? "From advanced diagnostics to specialized treatment, our divisions work together to provide comprehensive, patient-centered care. Each area brings unique expertise — united by a common goal: better health, brighter futures."
+      ? "From advanced diagnostics to specialized treatment, our divisions work together to provide comprehensive, patient-centered care. Each area brings unique expertise - united by a common goal: better health, brighter futures."
       : isTr
       ? "İleri tanı yöntemlerinden uzmanlaşmış tedaviye kadar, faaliyet alanlarımız en üst düzeyde hasta odaklı bakım sunmak için uyum içinde çalışmaktadır."
       : isAr
@@ -194,14 +194,14 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
     description: isUz
       ? "Bizning tibbiy bo'limlarimiz profilaktikadan tortib yuqori texnologiyali jarrohlikkacha bo'lgan keng qamrovli xizmatlarni taqdim etadi. Eng zamonaviy uskunalar va fanlararo hamkorlik tufayli siz individual va yaxlit tibbiy xizmatga ega bo'lasiz."
       : isRu
-      ? "Наши медицинские направления охватывают широкий спектр услуг — от профилактики до высокотехнологичной хирургии. Благодаря передовому оснащению и междисциплинарному взаимодействию вы получаете индивидуально подобранную и комплексную помощь."
+      ? "Наши медицинские направления охватывают широкий спектр услуг - от профилактики до высокотехнологичной хирургии. Благодаря передовому оснащению и междисциплинарному взаимодействию вы получаете индивидуально подобранную и комплексную помощь."
       : isEn
-      ? "Our medical departments cover a broad spectrum – from prevention to highly specialized surgery. Thanks to state-of-the-art technology and interdisciplinary collaboration, you receive individually tailored and holistic care."
+      ? "Our medical departments cover a broad spectrum - from prevention to highly specialized surgery. Thanks to state-of-the-art technology and interdisciplinary collaboration, you receive individually tailored and holistic care."
       : isTr
       ? "Tıbbi uzmanlık alanlarımız, önleyici hekimlikten yüksek teknolojili cerrahiye kadar geniş bir yelpazeyi kapsar. En modern teknoloji ve disiplinler arası iş birliği sayesinde bireysel ve bütüncül bir bakım alırsınız."
       : isAr
-      ? "تغطي أقسامنا الطبية نطاقاً واسعاً من الخدمات – بدءاً من الطب الوقائي وحتى الجراحات الدقيقة عالية التخصص. بفضل أحدث التقنيات والتعاون بين مختلف التخصصات، نوفر لكم رعاية فردية متكاملة."
-      : "Unsere medizinischen Fachbereiche decken ein breites Spektrum ab – von der Prävention bis zur hochspezialisierten Chirurgie. Dank modernster Technologie und interdisziplinärer Zusammenarbeit erhalten Sie eine individuell abgestimmte und ganzheitliche Betreuung.",
+      ? "تغطي أقسامنا الطبية نطاقاً واسعاً من الخدمات - بدءاً من الطب الوقائي وحتى الجراحات الدقيقة عالية التخصص. بفضل أحدث التقنيات والتعاون بين مختلف التخصصات، نوفر لكم رعاية فردية متكاملة."
+      : "Unsere medizinischen Fachbereiche decken ein breites Spektrum ab - von der Prävention bis zur hochspezialisierten Chirurgie. Dank modernster Technologie und interdisziplinärer Zusammenarbeit erhalten Sie eine individuell abgestimmte und ganzheitliche Betreuung.",
     btn: isUz ? "Barcha yo'nalishlar" : isRu ? "Все направления" : isEn ? "Explore All Divisions" : isTr ? "Tüm Alanları Keşfedin" : isAr ? "استكشف كافة القطاعات" : "Alle Bereiche entdecken",
     cardTitle: isUz
       ? "Diagnostikadan to reabilitatsiyagacha"
@@ -217,14 +217,14 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
     cardDescription: isUz
       ? "Bizning bo'limlarimiz sizga eng ilg'or, ehtiyotkor va shaxsiy ehtiyojlaringizga moslashtirilgan eng yaxshi davolanishni taqdim etish uchun yaqindan hamkorlik qiladi."
       : isRu
-      ? "Наши отделения работают в тесном сотрудничестве, чтобы предоставить вам наилучшее лечение — современное, щадящее и ориентированное на ваши индивидуальные потребности."
+      ? "Наши отделения работают в тесном сотрудничестве, чтобы предоставить вам наилучшее лечение - современное, щадящее и ориентированное на ваши индивидуальные потребности."
       : isEn
-      ? "Our departments work closely together to provide you with the best possible treatment – modern, gentle, and tailored to your individual needs."
+      ? "Our departments work closely together to provide you with the best possible treatment - modern, gentle, and tailored to your individual needs."
       : isTr
       ? "Bölümlerimiz, size mümkün olan en iyi tedaviyi sunmak için yakın iş birliği içinde çalışır; modern, koruyucu ve kişisel ihtiyaçlarınıza göre uyarlanmış."
       : isAr
-      ? "تعمل أقسامنا بتنسيق وثيق لتقديم أفضل علاج ممكن – عصري، آمن، ومصمم خصيصاً لتلبية احتياجاتكم الفردية."
-      : "Unsere Fachbereiche arbeiten eng zusammen, um Ihnen die bestmögliche Behandlung zu bieten – modern, schonend und auf Ihre individuellen Bedürfnisse abgestimmt.",
+      ? "تعمل أقسامنا بتنسيق وثيق لتقديم أفضل علاج ممكن - عصري، آمن، ومصمم خصيصاً لتلبية احتياجاتكم الفردية."
+      : "Unsere Fachbereiche arbeiten eng zusammen, um Ihnen die bestmögliche Behandlung zu bieten - modern, schonend und auf Ihre individuellen Bedürfnisse abgestimmt.",
     features: [
       {
         icon: QualityHeartIcon,
@@ -441,7 +441,7 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
       {
         icon: Heart,
         title: isUz ? "Insonlar" : isRu ? "Люди" : isEn ? "People" : isTr ? "İnsan Odaklılık" : isAr ? "الإنسان أولاً" : "People",
-        desc: isUz ? "Bemorlarimiz — bizning asosiy ustuvorligimiz." : isRu ? "Наши пациенты — наш главный приоритет." : isEn ? "Our patients, our priority." : isTr ? "Hastalarımız, bizim önceliğimiz." : isAr ? "مرضانا هم أولويتنا القصوى." : "Our patients, our priority.",
+        desc: isUz ? "Bemorlarimiz - bizning asosiy ustuvorligimiz." : isRu ? "Наши пациенты - наш главный приоритет." : isEn ? "Our patients, our priority." : isTr ? "Hastalarımız, bizim önceliğimiz." : isAr ? "مرضانا هم أولويتنا القصوى." : "Our patients, our priority.",
       },
     ],
   };
@@ -470,7 +470,7 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
         quote: isUz
           ? "Shifokorlar va xodimlar juda professional va g'amxo'r edi. Tashxis qo'yishdan to sog'ayishgacha bo'lgan har bir qadamda o'zimni qo'llab-quvvatlangan his qildim. Ularning tajribasi va mehmondo'stligidan cheksiz minnatdorman."
           : isRu
-          ? "Врачи и медицинский персонал были невероятно профессиональны и заботливы. Я чувствовала искреннюю поддержку на каждом этапе — от первой диагностики до полного выздоровления. Безмерно благодарна за их чуткость и экспертность."
+          ? "Врачи и медицинский персонал были невероятно профессиональны и заботливы. Я чувствовала искреннюю поддержку на каждом этапе - от первой диагностики до полного выздоровления. Безмерно благодарна за их чуткость и экспертность."
           : isEn
           ? "The doctors and staff were incredibly professional and caring. I felt supported at every step, from diagnosis to recovery. I'm truly grateful for their expertise and kindness."
           : isTr
@@ -534,9 +534,9 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
   const ctaData = {
     eyebrow: isUz ? "BIZ BILAN BOG'LANING" : isRu ? "СВЯЖИТЕСЬ С НАМИ" : isEn ? "GET IN TOUCH" : isTr ? "İLETİŞİME GEÇİN" : isAr ? "تواصل معنا" : "GET IN TOUCH",
     title: isUz
-      ? "Sizning salomatligingiz —\nbizning burchimiz."
+      ? "Sizning salomatligingiz -\nbizning burchimiz."
       : isRu
-      ? "Ваше здоровье —\nнаша миссия."
+      ? "Ваше здоровье -\nнаша миссия."
       : isEn
       ? "Your Health is\nOur Mission."
       : isTr

@@ -19,7 +19,7 @@ import {
 import { Container } from "@/components/layout/Container";
 
 /**
- * PDF Section IV.5 – "NabiOta Rehabilitation & Therapy GmbH"
+ * PDF Section IV.5 - "NabiOta Rehabilitation & Therapy GmbH"
  * (Ambulante Reha, Physiotherapie und Rehabilitation)
  * Unternehmensgegenstand, Zielgruppen, 4 Leistungssäulen,
  * Reha-Ziele (Teilhabe) & Abrechnung mit Kostenträgern (GKV, DRV, BG).
@@ -545,7 +545,7 @@ export function RehabilitationCompanySection({
             </p>
           </div>
 
-          {/* 4 Cards Grid (2 Columns, 2 Rows) – Matching Photo 4 */}
+          {/* 4 Cards Grid (2 Columns, 2 Rows) - Matching Photo 4 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4.5">
             {c.payersList.map((payer, idx) => {
               const Icon = payerIcons[idx % payerIcons.length];

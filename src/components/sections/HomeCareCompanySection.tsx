@@ -25,7 +25,7 @@ import {
 import { Container } from "@/components/layout/Container";
 
 /**
- * PDF Section IV.8 – "NabiOta HomeCare GmbH"
+ * PDF Section IV.8 - "NabiOta HomeCare GmbH"
  * (Pflege / Wundversorgung)
  * Unternehmensgegenstand, 8 Leistungsfelder, Touren- & Qualitätsorganisation,
  * Verbundzusammenarbeit (freie Wahl der Leistungserbringer),

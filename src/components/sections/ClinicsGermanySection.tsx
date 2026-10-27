@@ -21,7 +21,7 @@ import {
 import { Container } from "@/components/layout/Container";
 
 /**
- * PDF Section IV.3 – "NabiOta Clinics Germany GmbH"
+ * PDF Section IV.3 - "NabiOta Clinics Germany GmbH"
  * Unternehmensgegenstand, geplante Fachabteilungen, stationäre Entwicklung.
  */
 
@@ -218,7 +218,7 @@ const c = {
       text: {
         de: "Neurologie wird je nach OP-Spektrum angebunden.",
         en: "Neurology is integrated according to the surgical spectrum.",
-        ru: "Неврология — в зависимости от операционного спектра.",
+        ru: "Неврология - в зависимости от операционного спектра.",
         tr: "Nöroloji, cerrahi ve klinik operasyon yelpazesine göre entegre edilir.",
         ar: "يتم ربط طب الأعصاب بحسب نطاق العمليات التخصصية.",
         uz: "Nevrologiya jarrohlik va klinik operatsiyalar hajmiga qarab integratsiya qilinadi.",
@@ -237,7 +237,7 @@ const c = {
       text: {
         de: "Endoskopie wird je nach OP-Spektrum angebunden.",
         en: "Endoscopy is integrated according to the surgical spectrum.",
-        ru: "Эндоскопия — в зависимости от операционного спектра.",
+        ru: "Эндоскопия - в зависимости от операционного спектра.",
         tr: "Endoskopi, cerrahi ve tanısal operasyon yelpazesine göre entegre edilir.",
         ar: "يتم ربط وحدات التنظير وفقاً لنطاق الإجراءات الجراحية والتشخيصية.",
         uz: "Endoskopiya jarrohlik va diagnostik operatsiyalar doirasiga qarab integratsiya qilinadi.",

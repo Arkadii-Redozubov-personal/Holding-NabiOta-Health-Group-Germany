@@ -405,16 +405,16 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
   const spotlight = {
     eyebrow: isUz ? "DIQQAT MARKAZIDA" : isRu ? "В ФОКУСЕ" : isEn ? "IN FOCUS" : isTr ? "ODAK NOKTASI" : isAr ? "تسليط الضوء" : "IM FOKUS",
     title: isUz
-      ? "Kardiologiya — sog'lom yurak\nuchun aniqlik"
+      ? "Kardiologiya - sog'lom yurak\nuchun aniqlik"
       : isRu
-      ? "Кардиология — точность\nдля здорового сердца"
+      ? "Кардиология - точность\nдля здорового сердца"
       : isEn
-      ? "Cardiology – Precision\nfor a Healthy Heart"
+      ? "Cardiology - Precision\nfor a Healthy Heart"
       : isTr
-      ? "Kardiyoloji – Sağlıklı Bir Kalp\nİçin Yüksek Hassasiyet"
+      ? "Kardiyoloji - Sağlıklı Bir Kalp\nİçin Yüksek Hassasiyet"
       : isAr
-      ? "طب القلب – دقة متناهية\nمن أجل قلب سليم"
-      : "Kardiologie – Präzision\nfür ein gesundes Herz",
+      ? "طب القلب - دقة متناهية\nمن أجل قلب سليم"
+      : "Kardiologie - Präzision\nfür ein gesundes Herz",
     desc: isUz
       ? "Bizning kardiologiya jamoamiz yurak-qon tomir kasalliklarini kompleks tashxislash va individual davolashni taklif etadi. Zamonaviy texnologiyalar va ko'p yillik tajriba bilan biz sizga yana yuqori hayot sifatini qaytaramiz."
       : isRu
@@ -502,14 +502,14 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
     desc: isUz
       ? "Biz tibbiy mukammallikni insoniylik bilan uyg'unlashtiramiz. Taniqli mutaxassis shifokorlardan iborat fanlararo jamoamiz sog'lig'ingiz, ishonchingiz va kelajagingiz uchun birgalikda ishlaydi."
       : isRu
-      ? "Мы объединяем передовую медицину с искренней человечностью. Наша междисциплинарная команда ведущих врачей-специалистов работает сообща — ради вашего здоровья, доверия и уверенного будущего."
+      ? "Мы объединяем передовую медицину с искренней человечностью. Наша междисциплинарная команда ведущих врачей-специалистов работает сообща - ради вашего здоровья, доверия и уверенного будущего."
       : isEn
-      ? "We combine medical excellence with human care. Our interdisciplinary team of renowned medical specialists works hand in hand – for your health, your trust, and your future."
+      ? "We combine medical excellence with human care. Our interdisciplinary team of renowned medical specialists works hand in hand - for your health, your trust, and your future."
       : isTr
       ? "Tıbbi mükemmeliyeti insani şefkatle birleştiriyoruz. Seçkin uzman hekimlerden oluşan disiplinler arası ekibimiz, sağlığınız, güveniniz ve geleceğiniz için el ele çalışıyor."
       : isAr
-      ? "نجمع بين التميز الطبي واللمسة الإنسانية الصادقة. يعمل فريقنا الطبي متعدد التخصصات يداً بيد – من أجل صحتكم وثقتكم ومستقبلكم."
-      : "Wir verbinden medizinische Exzellenz mit Menschlichkeit. Unser interdisziplinäres Team aus renommierten Fachärztinnen und Fachärzten arbeitet Hand in Hand – für Ihre Gesundheit, Ihr Vertrauen und Ihre Zukunft.",
+      ? "نجمع بين التميز الطبي واللمسة الإنسانية الصادقة. يعمل فريقنا الطبي متعدد التخصصات يداً بيد - من أجل صحتكم وثقتكم ومستقبلكم."
+      : "Wir verbinden medizinische Exzellenz mit Menschlichkeit. Unser interdisziplinäres Team aus renommierten Fachärztinnen und Fachärzten arbeitet Hand in Hand - für Ihre Gesundheit, Ihr Vertrauen und Ihre Zukunft.",
     btn: isUz ? "Qadriyatlarimiz" : isRu ? "Наши ценности" : isEn ? "Our Values" : isTr ? "Değerlerimiz" : isAr ? "قيمنا المؤسسية" : "Unsere Werte",
     stats: [
       {
@@ -644,16 +644,16 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
       ? "هل لديك استفسارات حول\nأقسامنا الطبية التخصصية؟"
       : "Sie haben Fragen zu unseren\nmedizinischen Fachbereichen?",
     desc: isUz
-      ? "Bizning jamoamiz sizga shaxsan — malakali, samimiy va shaxsiy ehtiyojlaringizga mos ravishda maslahat berishdan mamnun."
+      ? "Bizning jamoamiz sizga shaxsan - malakali, samimiy va shaxsiy ehtiyojlaringizga mos ravishda maslahat berishdan mamnun."
       : isRu
-      ? "Наша команда с радостью проконсультирует вас лично — профессионально, внимательно и с учетом ваших индивидуальных потребностей."
+      ? "Наша команда с радостью проконсультирует вас лично - профессионально, внимательно и с учетом ваших индивидуальных потребностей."
       : isEn
-      ? "Our team is happy to advise you personally – competently, empathetically, and tailored to your individual needs."
+      ? "Our team is happy to advise you personally - competently, empathetically, and tailored to your individual needs."
       : isTr
       ? "Ekibimiz size kişisel olarak danışmanlık yapmaktan mutluluk duyar; yetkin, empatik ve bireysel ihtiyaçlarınıza göre uyarlanmış."
       : isAr
-      ? "يسعد فريقنا بتقديم المشورة الشخصية لكم – بكفاءة عالية، وتعاطف تام، ووفقاً لاحتياجاتكم الفردية."
-      : "Unser Team berät Sie gerne persönlich – kompetent, einfühlsam und auf Ihre individuellen Bedürfnisse abgestimmt.",
+      ? "يسعد فريقنا بتقديم المشورة الشخصية لكم - بكفاءة عالية، وتعاطف تام، ووفقاً لاحتياجاتكم الفردية."
+      : "Unser Team berät Sie gerne persönlich - kompetent, einfühlsam und auf Ihre individuellen Bedürfnisse abgestimmt.",
     btn: isUz ? "Bog'lanish" : isRu ? "Связаться с нами" : isEn ? "Contact Us" : isTr ? "İletişime Geçin" : isAr ? "تواصل معنا" : "Kontakt aufnehmen",
   };
 
@@ -695,7 +695,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
 
         {/* ══════════════════════════════════════════════════════════
             SECTION 2: SPOTLIGHT KARDIOLOGIE
-            - "а под ней должна сразу быть часть Кардиология — точность для здорового сердца"
+            - "а под ней должна сразу быть часть Кардиология - точность для здорового сердца"
             - Left: Ultrasound doctor photo with floating card
             - Right: Heart contour background, Eyebrow, Title, Description, 3 feature icons, Link
         ══════════════════════════════════════════════════════════ */}
@@ -1041,13 +1041,13 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
           </div>
         </section>
 
-        {/* SECTION 3B: MVZ HAUSÄRZTLICH / FACHÄRZTLICH – PDF IV.1 */}
+        {/* SECTION 3B: MVZ HAUSÄRZTLICH / FACHÄRZTLICH - PDF IV.1 */}
         <MvzPrimaryCareSection locale={locale} />
 
-        {/* SECTION 3C: MVZ CHIRURGIE & ANÄSTHESIOLOGIE – PDF IV.2 */}
+        {/* SECTION 3C: MVZ CHIRURGIE & ANÄSTHESIOLOGIE - PDF IV.2 */}
         <MvzSurgeryCareSection locale={locale} />
 
-        {/* SECTION 3D: NABIOTA CLINICS GERMANY – PDF IV.3 */}
+        {/* SECTION 3D: NABIOTA CLINICS GERMANY - PDF IV.3 */}
         <ClinicsGermanySection locale={locale} />
 
 

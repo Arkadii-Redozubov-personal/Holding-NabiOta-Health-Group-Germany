@@ -55,7 +55,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
       left: {
         eyebrow: "UNSERE KONTAKTDATEN",
         title: "So erreichen Sie uns",
-        desc: "Wir freuen uns über Ihre Nachricht. Unser Team hilft Ihnen gerne weiter und ist für Sie da – telefonisch, per E-Mail oder vor Ort.",
+        desc: "Wir freuen uns über Ihre Nachricht. Unser Team hilft Ihnen gerne weiter und ist für Sie da - telefonisch, per E-Mail oder vor Ort.",
         addressTitle: "Postanschrift",
         street: "Aachener Straße 114",
         city: "41061 Mönchengladbach, Deutschland",
@@ -67,7 +67,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
         hqEmail: "Zentrale:",
         careerEmail: "Karriere:",
         hoursTitle: "Servicezeiten",
-        hours: "Montag – Freitag: 08:00 – 18:00 Uhr",
+        hours: "Montag - Freitag: 08:00 - 18:00 Uhr",
         registryTitle: "Holding & Handelsregister",
         registryCourt: "Amtsgericht Mönchengladbach",
         registryHrb: "Registernummer: HRB 16787",
@@ -77,7 +77,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
         eyebrow: "NACHRICHT SENDEN",
         title: "Wir freuen uns auf Ihre Nachricht",
         subtitle:
-          "Füllen Sie das Formular aus – wir setzen uns zeitnah mit Ihnen in Verbindung.",
+          "Füllen Sie das Formular aus - wir setzen uns zeitnah mit Ihnen in Verbindung.",
         nameLabel: "VOLLSTÄNDIGER NAME *",
         namePlaceholder: "Dr. med. Maria Muster",
         emailLabel: "E-MAIL *",
@@ -145,7 +145,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
       left: {
         eyebrow: "OUR CONTACT DETAILS",
         title: "How to Reach Us",
-        desc: "We look forward to hearing from you. Our team is at your disposal and here to assist you – by phone, email, or on site.",
+        desc: "We look forward to hearing from you. Our team is at your disposal and here to assist you - by phone, email, or on site.",
         addressTitle: "Postal Address",
         street: "Aachener Straße 114",
         city: "41061 Mönchengladbach, Germany",
@@ -157,7 +157,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
         hqEmail: "Headquarters:",
         careerEmail: "Careers:",
         hoursTitle: "Service Hours",
-        hours: "Monday – Friday: 08:00 – 18:00 CET",
+        hours: "Monday - Friday: 08:00 - 18:00 CET",
         registryTitle: "Holding & Commercial Register",
         registryCourt: "District Court Mönchengladbach",
         registryHrb: "Registration Number: HRB 16787",
@@ -166,7 +166,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
       form: {
         eyebrow: "SEND MESSAGE",
         title: "We Look Forward to Your Message",
-        subtitle: "Fill out the form – we will get in touch with you promptly.",
+        subtitle: "Fill out the form - we will get in touch with you promptly.",
         nameLabel: "FULL NAME *",
         namePlaceholder: "Dr. Maria Muster",
         emailLabel: "E-MAIL *",
@@ -234,7 +234,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
       left: {
         eyebrow: "НАШИ КОНТАКТНЫЕ ДАННЫЕ",
         title: "Как с нами связаться",
-        desc: "Мы рады вашему обращению. Наша команда всегда готова помочь вам и ответить на любые вопросы — по телефону, электронной почте или лично.",
+        desc: "Мы рады вашему обращению. Наша команда всегда готова помочь вам и ответить на любые вопросы - по телефону, электронной почте или лично.",
         addressTitle: "Почтовый адрес",
         street: "Aachener Straße 114",
         city: "41061 Mönchengladbach, Deutschland",
@@ -246,7 +246,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
         hqEmail: "Центральный офис:",
         careerEmail: "Отдел кадров / карьера:",
         hoursTitle: "Часы работы",
-        hours: "Понедельник – Пятница: 08:00 – 18:00",
+        hours: "Понедельник - Пятница: 08:00 - 18:00",
         registryTitle: "Холдинг и торговый реестр",
         registryCourt: "Участковый суд Менхенгладбаха",
         registryHrb: "Регистрационный номер: HRB 16787",
@@ -256,7 +256,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
         eyebrow: "ОТПРАВИТЬ СООБЩЕНИЕ",
         title: "Мы будем рады вашему обращению",
         subtitle:
-          "Заполните контактную форму — наши специалисты оперативно свяжутся с вами.",
+          "Заполните контактную форму - наши специалисты оперативно свяжутся с вами.",
         nameLabel: "ПОЛНОЕ ИМЯ *",
         namePlaceholder: "Д-р мед. Мария Мустер",
         emailLabel: "E-MAIL *",
@@ -336,7 +336,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
         hqEmail: "Merkez:",
         careerEmail: "Kariyer:",
         hoursTitle: "Hizmet Saatleri",
-        hours: "Pazartesi – Cuma: 08:00 – 18:00 OAS",
+        hours: "Pazartesi - Cuma: 08:00 - 18:00 OAS",
         registryTitle: "Holding & Ticaret Sicili",
         registryCourt: "Mönchengladbach Sulh Mahkemesi",
         registryHrb: "Kayıt No: HRB 16787",
@@ -345,7 +345,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
       form: {
         eyebrow: "MESAJ GÖNDERİN",
         title: "Mesajınızı Bekliyoruz",
-        subtitle: "Formu doldurun – en kısa sürede sizinle iletişime geçeceğiz.",
+        subtitle: "Formu doldurun - en kısa sürede sizinle iletişime geçeceğiz.",
         nameLabel: "AD SOYAD *",
         namePlaceholder: "Dr. Maria Muster",
         emailLabel: "E-POSTA *",
@@ -413,7 +413,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
       left: {
         eyebrow: "بيانات الاتصال بنا",
         title: "كيفية الوصول إلينا",
-        desc: "يسعدنا تلقي رسالتكم. فريقنا جاهز دائماً لمساعدتكم وتقديم الدعم – هاتفياً، عبر البريد الإلكتروني أو مباشرة في مقرنا.",
+        desc: "يسعدنا تلقي رسالتكم. فريقنا جاهز دائماً لمساعدتكم وتقديم الدعم - هاتفياً، عبر البريد الإلكتروني أو مباشرة في مقرنا.",
         addressTitle: "العنوان البريدي",
         street: "Aachener Straße 114",
         city: "41061 Mönchengladbach, Germany",
@@ -425,7 +425,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
         hqEmail: "المقر الرئيسي:",
         careerEmail: "التوظيف والمهن:",
         hoursTitle: "أوقات الدوام",
-        hours: "الاثنين – الجمعة: 08:00 – 18:00 بتوقيت وسط أوروبا",
+        hours: "الاثنين - الجمعة: 08:00 - 18:00 بتوقيت وسط أوروبا",
         registryTitle: "الشركة والسجل التجاري",
         registryCourt: "محكمة مونشنغلادباخ الابتدائية",
         registryHrb: "رقم السجل التجاري: HRB 16787",
@@ -434,7 +434,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
       form: {
         eyebrow: "إرسال رسالة",
         title: "نتطلع إلى استلام رسالتكم",
-        subtitle: "يرجى ملء النموذج أدناه – وسنتواصل معكم في أقرب وقت ممكن.",
+        subtitle: "يرجى ملء النموذج أدناه - وسنتواصل معكم في أقرب وقت ممكن.",
         nameLabel: "الاسم الكامل *",
         namePlaceholder: "د. ماريا موستر",
         emailLabel: "البريد الإلكتروني *",
@@ -502,7 +502,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
       left: {
         eyebrow: "BIZNING ALOQA MA'LUMOTLARIMIZ",
         title: "Biz bilan bog'lanish",
-        desc: "Murojaatingizdan mamnun bo'lamiz. Bizning jamoamiz sizga yordam berishga va savollaringizga javob berishga doim tayyor — telefon, elektron pochta orqali yoki shaxsan uchrashuvda.",
+        desc: "Murojaatingizdan mamnun bo'lamiz. Bizning jamoamiz sizga yordam berishga va savollaringizga javob berishga doim tayyor - telefon, elektron pochta orqali yoki shaxsan uchrashuvda.",
         addressTitle: "Pochta manzili",
         street: "Aachener Straße 114",
         city: "41061 Mönchengladbach, Deutschland",
@@ -514,7 +514,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
         hqEmail: "Bosh ofis:",
         careerEmail: "Kadrlar bo'limi / Karyera:",
         hoursTitle: "Ish vaqti",
-        hours: "Dushanba – Juma: 08:00 – 18:00",
+        hours: "Dushanba - Juma: 08:00 - 18:00",
         registryTitle: "Xolding va tijorat reestri",
         registryCourt: "Amtsgericht Mönchengladbach",
         registryHrb: "Reestr raqami: HRB 16787",
@@ -524,7 +524,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
         eyebrow: "XABAR YUBORISH",
         title: "Murojaatingizni kutib qolamiz",
         subtitle:
-          "Aloqa shaklini to'ldiring — mutaxassislarimiz tez orada siz bilan bog'lanishadi.",
+          "Aloqa shaklini to'ldiring - mutaxassislarimiz tez orada siz bilan bog'lanishadi.",
         nameLabel: "TO'LIQ ISM *",
         namePlaceholder: "masalan, Dr. med. Nodira Karimova",
         emailLabel: "E-MAIL *",
@@ -813,7 +813,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
               ? "Sorularınızı yanıtlamaktan, holdingin tıbbi uzmanlık alanları hakkında bilgi vermekten ve ortaklıkları görüşmekten memnuniyet duyarız."
               : locale === "ar"
               ? "يسعدنا الرد على استفساراتكم، وتقديم معلومات وافية حول قطاعات الرعاية التابعة للمجموعة، وبحث سبل التعاون المشترك."
-              : "Wir freuen uns über Ihre Nachricht. Unser Team hilft Ihnen gerne weiter und ist für Sie da – telefonisch, per E-Mail oder vor Ort in Mönchengladbach."
+              : "Wir freuen uns über Ihre Nachricht. Unser Team hilft Ihnen gerne weiter und ist für Sie da - telefonisch, per E-Mail oder vor Ort in Mönchengladbach."
           }
           badges={[
             {
@@ -1018,8 +1018,8 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                       {t.left.hoursTitle}
                     </h3>
                     <div className="font-sans text-[11.5px] sm:text-[12px] text-[#556358] leading-relaxed">
-                      <p>{locale === "uz" ? "Dushanba — Juma" : locale === "ru" ? "Понедельник — Пятница" : locale === "en" ? "Monday – Friday" : locale === "tr" ? "Pazartesi — Cuma" : locale === "ar" ? "الاثنين — الجمعة" : "Montag — Freitag"}</p>
-                      <p className="font-medium text-[#132218]">08:00 – 18:00</p>
+                      <p>{locale === "uz" ? "Dushanba - Juma" : locale === "ru" ? "Понедельник - Пятница" : locale === "en" ? "Monday - Friday" : locale === "tr" ? "Pazartesi - Cuma" : locale === "ar" ? "الاثنين - الجمعة" : "Montag - Freitag"}</p>
+                      <p className="font-medium text-[#132218]">08:00 - 18:00</p>
                     </div>
                   </div>
 

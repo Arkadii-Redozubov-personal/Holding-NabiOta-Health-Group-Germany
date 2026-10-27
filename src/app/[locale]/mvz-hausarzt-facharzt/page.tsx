@@ -26,7 +26,7 @@ const copy: Record<SupportedLocale, { title: string; note: string; link: string;
     back: "Back to medical departments",
   },
   ru: {
-    title: "NabiOta MVZ — центр семейной и специализированной медицинской помощи",
+    title: "NabiOta MVZ - центр семейной и специализированной медицинской помощи",
     note: "Сайт этого медицинского центра готовится.",
     link: "Перейти на сайт MVZ",
     back: "Вернуться к медицинским направлениям",
@@ -44,7 +44,7 @@ const copy: Record<SupportedLocale, { title: string; note: string; link: string;
     back: "العودة إلى التخصصات الطبية",
   },
   uz: {
-    title: "NabiOta MVZ — oilaviy va ixtisoslashtirilgan tibbiy yordam markazi",
+    title: "NabiOta MVZ - oilaviy va ixtisoslashtirilgan tibbiy yordam markazi",
     note: "Ushbu tibbiy markaz veb-sayti tayyorlanmoqda.",
     link: "MVZ veb-saytiga o‘tish",
     back: "Tibbiy yo‘nalishlarga qaytish",

@@ -30,7 +30,7 @@ import {
 import { Container } from "@/components/layout/Container";
 
 /**
- * PDF Section IV.7 – "NabiOta Real Estate GmbH"
+ * PDF Section IV.7 - "NabiOta Real Estate GmbH"
  * (Med. Immobilien)
  * Unternehmensgegenstand, 10 Kernaufgaben, Betreiberabstimmung,
  * langfristiger Werterhalt & rechtliche Abgrenzung (Keine Behandlungsaufgaben / § 34c GewO).
@@ -383,7 +383,7 @@ const c = {
   goalText: {
     de: "Ziel der Gesellschaft ist die langfristige Bereitstellung geeigneter und wirtschaftlich tragfähiger Immobilien für die NabiOta-Unternehmensgruppe und weitere Mieter. Sie unterstützt den Aufbau zusätzlicher Standorte, die bedarfsgerechte Erweiterung bestehender Einrichtungen und den nachhaltigen Werterhalt des Immobilienbestands.",
     en: "The company's mission is the sustainable provision of high-grade, economically resilient real estate assets for the NabiOta Group and external tenants, accelerating new hub development, tailored capacity expansion, and enduring value preservation.",
-    ru: "Цель компании — долгосрочное обеспечение пригодной и экономически окупаемой недвижимости для группы NabiOta и сторонних арендаторов. Компания поддерживает запуск новых локаций, планомерное расширение действующих центров и сохранение капитализации активов.",
+    ru: "Цель компании - долгосрочное обеспечение пригодной и экономически окупаемой недвижимости для группы NabiOta и сторонних арендаторов. Компания поддерживает запуск новых локаций, планомерное расширение действующих центров и сохранение капитализации активов.",
     tr: "Şirketin hedefi; NabiOta Şirketler Grubu ve harici kiracılar için uygun, nitelikli ve ekonomik açıdan sürdürülebilir gayrimenkullerin uzun vadeli teminidir. Yeni lokasyonların kurulmasını, mevcut merkezlerin genişletilmesini ve gayrimenkul portföyünün kalıcı değer artışını destekler.",
     ar: "يتمثل هدف الشركة في التوفير المستدام لعقارات عالية الجودة وذات جدوى اقتصادية متينة لمجموعة شركات NabiOta والمستأجرين الآخرين. تدعم الشركة إنشاء مواقع إضافية، والتوسع المدروس للمرافق الحالية، وصون القيمة الرأسمالية طويلة الأجل للأصول.",
     uz: "Kompaniyaning maqsadi NabiOta korxonalar guruhi va boshqa ijarachilar uchun yuqori sifatli va iqtisodiy jihatdan barqaror ko'chmas mulkni uzoq muddatli ta'minlashdir. U qo'shimcha filiallar ochishni, mavjud muassasalarni rejaviy kengaytirishni va ko'chmas mulk portfelining barqaror qiymatini saqlab qolishni qo'llab-quvvatlaydi.",

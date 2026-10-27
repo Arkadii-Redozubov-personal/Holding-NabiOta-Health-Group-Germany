@@ -16,7 +16,7 @@ import {
 import { Container } from "@/components/layout/Container";
 
 /**
- * PDF Section III – "Vertragliche Verbindung zwischen Holding und MVZ"
+ * PDF Section III - "Vertragliche Verbindung zwischen Holding und MVZ"
  * a) Aufbauphase mit ärztlicher Beteiligung
  * b) Erforderliche Vertragsbereiche
  * c) Anforderungen an die Zulassung

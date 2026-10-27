@@ -124,7 +124,7 @@ export function getHomeCareServices(
               "Qon bosimi va pulsni qat'iy nazorat qilishni talab qiluvchi yurak-qon tomir kasalliklari",
               "Antikoagulyant terapiya va teri ostiga geparin inyeksiyalari (s.c. / i.m.)",
               "Murakkab dori-darmon terapiyasi va nazoratli dori tayyorlash hamda berish",
-              "Kompressiya terapiyasi bilan surunkali venoz yetishmovchilik (I–IV sinf)",
+              "Kompressiya terapiyasi bilan surunkali venoz yetishmovchilik (I-IV sinf)",
               "Ambulator va statsionar jarrohlik amaliyotlaridan keyingi operatsiyadan keyingi kuzatuv",
             ]
           : isRu
@@ -151,7 +151,7 @@ export function getHomeCareServices(
               "Düzenli tansiyon ve nabız kontrolü gerektiren kardiyovasküler hastalıklar",
               "Antikoagülasyon tedavisi ve subkutan heparin enjeksiyonları (s.c. / i.m.)",
               "Karmaşık ilaç tedavileri, kontrollü ilaç hazırlama ve verme",
-              "Kompresyon tedavisi gerektiren kronik venöz yetmezlik (Sınıf I–IV)",
+              "Kompresyon tedavisi gerektiren kronik venöz yetmezlik (Sınıf I-IV)",
               "Ayakta veya yatarak ameliyatlar sonrası ameliyat sonrası takip",
             ]
           : isAr
@@ -160,7 +160,7 @@ export function getHomeCareServices(
               "أمراض القلب والأوعية الدموية ومراقبة ضغط الدم والنبض بدقة",
               "علاج تخثر الدم وحقن الهيبارين تحت الجلد (s.c. / i.m.)",
               "العلاجات الدوائية المعقدة وترتيب وتوزيع الجرعات بدقة",
-              "القصور الوريدي المزمن والعلاج بالضغط الطبي (الفئات I–IV)",
+              "القصور الوريدي المزمن والعلاج بالضغط الطبي (الفئات I-IV)",
               "المراقبة الطبية بعد العمليات الجراحية للمرضى الداخليين والخارجيين",
             ]
           : [
@@ -168,7 +168,7 @@ export function getHomeCareServices(
               "Kardiovaskuläre Erkrankungen mit engmaschiger Blutdruck- und Pulskontrolle",
               "Antikoagulationstherapie und subkutane Heparininjektionen (s.c. / i.m.)",
               "Komplexe medikamentöse Therapien und kontrolliertes Richten / Verabreichen",
-              "Chronische venöse Insuffizienz mit Kompressionstherapie (Klasse I–IV)",
+              "Chronische venöse Insuffizienz mit Kompressionstherapie (Klasse I-IV)",
               "Postoperative Überwachung nach ambulanten und stationären Eingriffen",
             ],
         scopeTitle: isUz ? "Tibbiy xizmatlar ko'lami" : isRu ? "Спектр медицинских услуг" : isEn ? "Scope of Interventions" : isTr ? "Hizmet Yelpazesi" : isAr ? "نطاق الخدمات التمريضية" : "Leistungsspektrum",
@@ -327,7 +327,7 @@ export function getHomeCareServices(
         indications: isUz
           ? [
               "Boldirning venoz, arterial yoki aralash trofik yaralari (Ulcus cruris)",
-              "Barcha bosqichdagi yotoq yaralari (Dekubitus I–IV daraja)",
+              "Barcha bosqichdagi yotoq yaralari (Dekubitus I-IV daraja)",
               "Neyropatik yoki ishemik zararlanishlar bilan diabetik tovon sindromi (DFS)",
               "Ikkilamchi bituvchi yoki infeksiyalangan operatsiya yaralari va chok ochilishlari",
               "Ortopedik va umumiy jarrohlik amaliyotlaridan keyingi yara bitish buzilishlari",
@@ -336,7 +336,7 @@ export function getHomeCareServices(
           : isRu
           ? [
               "Трофические язвы голени (Ulcus cruris venosum / arteriosum / mixtum)",
-              "Пролежни всех степеней тяжести (Dekubitus Grad I–IV)",
+              "Пролежни всех степеней тяжести (Dekubitus Grad I-IV)",
               "Синдром диабетической стопы (DFS) с нейропатическими/ишемическими язвами",
               "Вторично заживающие и инфицированные послеоперационные раны",
               "Раны после онкологических операций или лучевой терапии",
@@ -354,7 +354,7 @@ export function getHomeCareServices(
           : isTr
           ? [
               "Venöz, arteriyel veya mikst bacak ülserleri (Ulcus cruris)",
-              "Tüm evrelerde bası yaraları (Dekübitüs Evre I–IV)",
+              "Tüm evrelerde bası yaraları (Dekübitüs Evre I-IV)",
               "Diyabetik ayak sendromu (DFS) ve nöropatik/iskemik lezyonlar",
               "İkincil iyileşen veya enfekte ameliyat yaraları ve dikiş açılmaları",
               "Ortopedik ve cerrahi operasyonlar sonrası yara iyileşme bozuklukları",
@@ -461,16 +461,16 @@ export function getHomeCareServices(
     {
       id: "grundpflege",
       badge: isUz
-        ? "SGB XI • PARVARISH DARAJALARI 1–5"
+        ? "SGB XI • PARVARISH DARAJALARI 1-5"
         : isRu
-        ? "SGB XI • СТЕПЕНИ УХОДА 1–5"
+        ? "SGB XI • СТЕПЕНИ УХОДА 1-5"
         : isEn
-        ? "SGB XI • CARE LEVELS 1–5"
+        ? "SGB XI • CARE LEVELS 1-5"
         : isTr
-        ? "SGB XI • BAKIM DERECELERİ 1–5"
+        ? "SGB XI • BAKIM DERECELERİ 1-5"
         : isAr
-        ? "SGB XI • درجات الرعاية 1–5"
-        : "SGB XI • PFLEGEGRADE 1–5",
+        ? "SGB XI • درجات الرعاية 1-5"
+        : "SGB XI • PFLEGEGRADE 1-5",
       image: "/images/nursing/stage-senior.webp",
       iconType: "heart",
       title: isUz
@@ -532,7 +532,7 @@ export function getHomeCareServices(
         indicationsTitle: isUz ? "Kimlar uchun mo'ljallangan" : isRu ? "Для кого предназначен уход" : isEn ? "Target Audience" : isTr ? "Hedef Kitle ve Koşullar" : isAr ? "الفئات المستهدفة وشروط الاستحقاق" : "Zielgruppe & Voraussetzungen",
         indications: isUz
           ? [
-              "Tasdiqlangan parvarish darajasiga ega (Pflegegrad 1–5) parvarishga muhtoj insonlar",
+              "Tasdiqlangan parvarish darajasiga ega (Pflegegrad 1-5) parvarishga muhtoj insonlar",
               "Harakatlanish va motorikada yoshga bog'liq cheklovlari bo'lgan keksalar",
               "Og'ir kasalliklar, insult yoki bo'g'im protezlash amaliyotidan keyingi bemorlar",
               "Surunkali nevrologik kasalliklarga chalingan insonlar (masalan, Parkinson kasalligi)",
@@ -541,7 +541,7 @@ export function getHomeCareServices(
             ]
           : isRu
           ? [
-              "Люди пожилого возраста с присвоенной степенью ухода (Pflegegrad 1–5)",
+              "Люди пожилого возраста с присвоенной степенью ухода (Pflegegrad 1-5)",
               "Пациенты после тяжелых операций, инсультов или травм",
               "Люди с дегенеративными заболеваниями суставов и позвоночника",
               "Пациенты с болезнью Паркинсона или рассеянным склерозом",
@@ -559,7 +559,7 @@ export function getHomeCareServices(
             ]
           : isTr
           ? [
-              "Onaylanmış bakım derecesine sahip (Pflegegrad 1–5) bakıma muhtaç bireyler",
+              "Onaylanmış bakım derecesine sahip (Pflegegrad 1-5) bakıma muhtaç bireyler",
               "Yaşa bağlı hareketlilik ve motor beceri kısıtlılığı yaşayan yaşlılar",
               "Ağır hastalıklar, inme veya eklem protezi ameliyatları sonrası hastalar",
               "Kronik nörolojik hastalıkları olanlar (örn. Parkinson veya MS)",
@@ -641,11 +641,11 @@ export function getHomeCareServices(
         billingText: isUz
           ? "Xarajatlar tegishli Pflegegrad (1 dan 5 gacha) qonuniy me'yoriga muvofiq bevosita parvarish kassasi (Pflegekasse) bilan Pflegesachleistung sifatida hisob-kitob qilinadi. Shuningdek, pul shaklidagi nafaqa bilan kombinatsiya qilish imkoni mavjud. Biz mutlaqo shaffof narx hisob-kitobini taqdim etamiz."
           : isRu
-          ? "Услуги оплачиваются кассой по уходу (Pflegekasse) в виде натуральных пособий (Pflegesachleistungen) в соответствии с присвоенным Pflegegrad (1–5) либо в комбинации с Pflegegeld. Мы рассчитываем оптимальный индивидуальный тариф без скрытых затрат."
+          ? "Услуги оплачиваются кассой по уходу (Pflegekasse) в виде натуральных пособий (Pflegesachleistungen) в соответствии с присвоенным Pflegegrad (1-5) либо в комбинации с Pflegegeld. Мы рассчитываем оптимальный индивидуальный тариф без скрытых затрат."
           : isEn
-          ? "Services are billed directly to statutory and private long-term care insurance funds (Pflegekassen) via care in-kind benefits (Pflegesachleistungen) based on Pflegegrad 1–5, or as a combination with monetary care allowances."
+          ? "Services are billed directly to statutory and private long-term care insurance funds (Pflegekassen) via care in-kind benefits (Pflegesachleistungen) based on Pflegegrad 1-5, or as a combination with monetary care allowances."
           : isTr
-          ? "Masraflar, ilgili bakım derecesinin (1–5) yasal tavanına kadar ayni bakım yardımı (Pflegesachleistung) olarak doğrudan bakım sandığı (Pflegekasse) ile mahsuplaşılır. Nakdi bakım parası ile kombinasyon mümkündür."
+          ? "Masraflar, ilgili bakım derecesinin (1-5) yasal tavanına kadar ayni bakım yardımı (Pflegesachleistung) olarak doğrudan bakım sandığı (Pflegekasse) ile mahsuplaşılır. Nakdi bakım parası ile kombinasyon mümkündür."
           : isAr
           ? "تُسوى التكاليف مباشرة كخدمات عينية (Pflegesachleistung) مع صندوق الرعاية حتى السقف القانوني لدرجة الرعاية (1 إلى 5)، مع إمكانية الجمع بين المساعدة العينية والبدل النقدي."
           : "Die Kosten werden bis zum gesetzlichen Höchstbetrag des jeweiligen Pflegegrads (1 bis 5) direkt als Pflegesachleistung mit der Pflegekasse abgerechnet. Auch Kombinationsleistungen (Pflegegeld + Pflegedienst) sind möglich. Wir erstellen transparente, verständliche Kostenvoranschläge.",
@@ -940,7 +940,7 @@ export function getHomeCareServices(
           ? "Suprapubik kateterler, kolostomiler, port kateterler veya PEG beslenme tüpleri gibi invaziv sistemler azami özen ve mutlak asepsi gerektirir. Özel eğitimli uzman hemşirelerimiz, enfeksiyonları önlemek ve hastaların yaşam kalitesini korumak için steril teknikleri eksiksiz uygular."
           : isAr
           ? "تتطلب الأجهزة التداخلية مثل القساطر البولية، الفغرات، قساطر البورت، أو أنابيب التغذية PEG عناية دقيقة وتعقيماً مطلقاً. يتقن كادرنا التمريضي المتخصص تقنيات اللمس المعقم لمنع العدوى الخطيرة وحماية صحة المريض."
-          : "Invasive Zugangs- und Ableitungssysteme – wie suprapubische Katheter, Enterostomata, Portkatheter oder PEG-Ernährungssonden – verlangen äußerste Sorgfalt und strikte Asepsis. Unsere speziell geschulten Pflegefachkräfte beherrschen die sterile Non-Touch-Technik, um lebensbedrohliche Infektionen zu vermeiden und die Lebensqualität der Betroffenen zu sichern.",
+          : "Invasive Zugangs- und Ableitungssysteme - wie suprapubische Katheter, Enterostomata, Portkatheter oder PEG-Ernährungssonden - verlangen äußerste Sorgfalt und strikte Asepsis. Unsere speziell geschulten Pflegefachkräfte beherrschen die sterile Non-Touch-Technik, um lebensbedrohliche Infektionen zu vermeiden und die Lebensqualität der Betroffenen zu sichern.",
         indicationsTitle: isUz ? "Qo'llash sohalari" : isRu ? "Области применения" : isEn ? "Clinical Devices & Systems" : isTr ? "Bakım ve Uygulama Odakları" : isAr ? "محاور الرعاية والتطبيقات" : "Versorgungsschwerpunkte",
         indications: isUz
           ? [
@@ -1317,16 +1317,16 @@ export function getSanitaetshausServices(
         ? "الأجهزة التعويضية والضمادات التقويمية"
         : "Orthopädische Hilfsmittel & Bandagen",
       shortDesc: isUz
-        ? "Ortezlar, bo'g'im bandajlari, tayanch korsetlari va kompressiya trikotajini (I–IV sinf) individual tanlash va tayyorlash."
+        ? "Ortezlar, bo'g'im bandajlari, tayanch korsetlari va kompressiya trikotajini (I-IV sinf) individual tanlash va tayyorlash."
         : isRu
-        ? "Индивидуальный подбор и изготовление ортезов, суставных бандажей, поддерживающих корсетов и компрессионного трикотажа (I–IV класс)."
+        ? "Индивидуальный подбор и изготовление ортезов, суставных бандажей, поддерживающих корсетов и компрессионного трикотажа (I-IV класс)."
         : isEn
-        ? "Custom-fitted orthoses, dynamic joint braces, spinal support corsets, and medical compression garments (classes I–IV)."
+        ? "Custom-fitted orthoses, dynamic joint braces, spinal support corsets, and medical compression garments (classes I-IV)."
         : isTr
-        ? "Kişiye özel ortezler, fonksiyonel eklem bandajları, destek korseleri ve tıbbi kompresyon çorapları (I–IV. sınıf)."
+        ? "Kişiye özel ortezler, fonksiyonel eklem bandajları, destek korseleri ve tıbbi kompresyon çorapları (I-IV. sınıf)."
         : isAr
         ? "جبائر وتقويمات مخصصة، دعامات المفاصل الوظيفية، مشدات الظهر الداعمة، والجوارب الضاغطة الطبية (الفئات I-IV)."
-        : "Maßgefertigte Orthesen, funktionelle Gelenkbandagen, Stützkorsetts und medizinische Kompressionsversorgung (Klassen I–IV).",
+        : "Maßgefertigte Orthesen, funktionelle Gelenkbandagen, Stützkorsetts und medizinische Kompressionsversorgung (Klassen I-IV).",
       modal: {
         title: isUz
           ? "NabiOta Sanitätshaus: Ortopedik ta'minot"
@@ -1839,30 +1839,30 @@ export function getSanitaetshausServices(
         indications: isUz
           ? [
               "Og'ir kasalliklarda uzoq muddatli yoki doimiy yotoq tartibi",
-              "Yotoq yaralari paydo bo'lish xavfining yuqoriligi yoki I–IV darajali dekubitus terapiyasi",
+              "Yotoq yaralari paydo bo'lish xavfining yuqoriligi yoki I-IV darajali dekubitus terapiyasi",
               "Krovatdan mustaqil turishning qiyinligi va yon to'siqlarga bo'lgan ehtiyoj",
-              "Kundalik muolajalarni osonlashtirish uchun parvarish darajasi (Pflegegrad 1–5) belgilanishi",
+              "Kundalik muolajalarni osonlashtirish uchun parvarish darajasi (Pflegegrad 1-5) belgilanishi",
             ]
           : isRu
           ? [
               "Длительный или постоянный постельный режим при тяжелых заболеваниях",
-              "Высокий риск образования пролежней или терапия пролежней I–IV степени",
+              "Высокий риск образования пролежней или терапия пролежней I-IV степени",
               "Затрудненный самостоятельный подъем с кровати и необходимость в боковых ограждениях",
-              "Присвоение степени ухода (Pflegegrad 1–5) для облегчения ежедневных манипуляций",
+              "Присвоение степени ухода (Pflegegrad 1-5) для облегчения ежедневных манипуляций",
             ]
           : isEn
           ? [
               "Prolonged or permanent bedridden status due to chronic severe illnesses",
-              "High risk of decubitus pressure injuries or existing stage I–IV ulcers",
+              "High risk of decubitus pressure injuries or existing stage I-IV ulcers",
               "Inability to reposition independently and need for safety side rails",
-              "Accredited care level (Pflegegrad 1–5) requiring home nursing equipment",
+              "Accredited care level (Pflegegrad 1-5) requiring home nursing equipment",
             ]
           : isTr
           ? [
               "Ağır bakım ihtiyacında geçici veya kalıcı yatalaklık durumu",
               "Yüksek dekübitus riski veya I-IV. derece bası yaraları",
               "Kendi başına pozisyon değiştirmede zorlanma ve düşmeyi önleyici yan korkuluk gereksinimi",
-              "Evde bakımı güvenceye almak için onaylı bir bakım derecesi (Pflegegrad 1–5)",
+              "Evde bakımı güvenceye almak için onaylı bir bakım derecesi (Pflegegrad 1-5)",
             ]
           : isAr
           ? [
@@ -1875,7 +1875,7 @@ export function getSanitaetshausServices(
               "Dauerhafte oder vorübergehende Bettlägerigkeit bei schwerer Pflegebedürftigkeit",
               "Hohes Dekubitusrisiko oder bestehende Druckulzera der Grade I bis IV",
               "Erschwerter selbstständiger Positionswechsel und Notwendigkeit stürzverhindernder Seitengitter",
-              "Vorliegen eines Pflegegrads (PG 1–5) zur Sicherstellung der häuslichen Pflege",
+              "Vorliegen eines Pflegegrads (PG 1-5) zur Sicherstellung der häuslichen Pflege",
             ],
         scopeTitle: isUz
           ? "Uskunalar to'plami"
@@ -2073,21 +2073,21 @@ export function getSanitaetshausServices(
               "Surunkali yaralar: boldirning venoz yaralari, diabetik tovon, dekubitus",
               "Stomali bemorlar (kolostoma, ileostoma, urostoma)",
               "Doimiy yoki davriy siydik kateterlariga bo'lgan ehtiyoj",
-              "Parvarish paytida dezinfeksiya va himoyaga doimiy ehtiyoj (Pflegegrad 1–5)",
+              "Parvarish paytida dezinfeksiya va himoyaga doimiy ehtiyoj (Pflegegrad 1-5)",
             ]
           : isRu
           ? [
               "Хронические раны: венозные язвы голени, диабетическая стопа, пролежни",
               "Пациенты со стомой (колостома, илеостома, уростома)",
               "Необходимость в постоянных или периодических мочевых катетерах",
-              "Постоянная потребность в дезинфекции и защите при уходе (Pflegegrad 1–5)",
+              "Постоянная потребность в дезинфекции и защите при уходе (Pflegegrad 1-5)",
             ]
           : isEn
           ? [
               "Chronic hard-to-heal wounds: venous leg ulcers, diabetic foot syndrome, pressure sores",
               "Ostomy care management (colostomy, ileostomy, urostomy)",
               "Indwelling, suprapubic, or intermittent urological catheterization",
-              "Daily infection control and hygienic care (care level Pflegegrad 1–5)",
+              "Daily infection control and hygienic care (care level Pflegegrad 1-5)",
             ]
           : isTr
           ? [

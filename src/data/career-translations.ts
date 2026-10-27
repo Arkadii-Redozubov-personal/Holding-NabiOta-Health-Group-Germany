@@ -21,7 +21,7 @@ export const careerTranslations = {
         description:
           "Nationale & internationale Gewinnung medizinischer Fachkräfte, vollumfängliche Approbationsbegleitung und zukunftssichere Karrieren in den Einrichtungen der NabiOta-Gruppe und bei renommierten Partnern in ganz Deutschland.",
         cta: "Offene Stellen entdecken",
-        floatingQuote: "„Mehr als ein Job – eine sinnstiftende Aufgabe.“",
+        floatingQuote: "„Mehr als ein Job - eine sinnstiftende Aufgabe.“",
         badge1Title: "Full-Care",
         badge1Sub: "Approbation & Visum",
         badge2Title: "WHO-Standard",
@@ -51,7 +51,7 @@ export const careerTranslations = {
           badge: "Approbation & Facharzt",
           targetGroup: "Assistenzärzte, Fachärzte, Oberärzte & Leitende Mediziner",
           shortDesc: "Gezielte Vermittlung von Ärzten an Kliniken und MVZ mit vollumfänglicher Begleitung bei Approbation (§ 3 BÄO) und Berufserlaubnis (§ 10 BÄO).",
-          description: "Die NabiOta Medical Recruitment Services GmbH übernimmt die strukturierte Gewinnung und nachhaltige Vermittlung von Ärzten aus dem In- und Ausland. Ob Allgemeinmedizin, Kardiologie, Gastroenterologie, Chirurgie, Anästhesiologie, Neurologie oder Radiologie – wir bringen qualifizierte Mediziner mit modernsten Gesundheitseinrichtungen zusammen. Ausländische Kolleginnen und Kollegen begleiten wir schrittweise bis zur vollwertigen deutschen Approbation (§ 3 BÄO) und unbefristeten Festanstellung.",
+          description: "Die NabiOta Medical Recruitment Services GmbH übernimmt die strukturierte Gewinnung und nachhaltige Vermittlung von Ärzten aus dem In- und Ausland. Ob Allgemeinmedizin, Kardiologie, Gastroenterologie, Chirurgie, Anästhesiologie, Neurologie oder Radiologie - wir bringen qualifizierte Mediziner mit modernsten Gesundheitseinrichtungen zusammen. Ausländische Kolleginnen und Kollegen begleiten wir schrittweise bis zur vollwertigen deutschen Approbation (§ 3 BÄO) und unbefristeten Festanstellung.",
           image: "/images/careers/mission-doctors-highres.webp",
           rolesList: [
             "Fachärzte & Oberärzte (Kardiologie, Chirurgie, Allgemeinmedizin, Anästhesie)",
@@ -423,7 +423,7 @@ export const careerTranslations = {
         description:
           "National & international healthcare recruitment, comprehensive German medical licensing (Approbation) support, and future-proof clinical careers across the NabiOta Group and accredited partner institutions.",
         cta: "Explore Open Positions",
-        floatingQuote: "“More than a job – a purposeful mission.”",
+        floatingQuote: "“More than a job - a purposeful mission.”",
         badge1Title: "Full-Care",
         badge1Sub: "Approbation & Visa",
         badge2Title: "WHO Standard",
@@ -453,7 +453,7 @@ export const careerTranslations = {
           badge: "Approbation & Specialist",
           targetGroup: "Resident Physicians, Specialists, Senior Physicians & Medical Directors",
           shortDesc: "Targeted placement of doctors in hospitals and MVZs with full support for German medical licensure (§ 3 BÄO) and temporary practice permits (§ 10 BÄO).",
-          description: "NabiOta Medical Recruitment Services GmbH provides structured talent acquisition and sustainable placement of physicians from Germany and abroad. Whether Internal Medicine, Cardiology, Surgery, Anesthesiology, Neurology, or Radiology – we match qualified doctors with top-tier medical facilities. We guide international candidates step-by-step toward full German medical licensing (Approbation) and permanent employment.",
+          description: "NabiOta Medical Recruitment Services GmbH provides structured talent acquisition and sustainable placement of physicians from Germany and abroad. Whether Internal Medicine, Cardiology, Surgery, Anesthesiology, Neurology, or Radiology - we match qualified doctors with top-tier medical facilities. We guide international candidates step-by-step toward full German medical licensing (Approbation) and permanent employment.",
           image: "/images/careers/mission-doctors-highres.webp",
           rolesList: [
             "Specialists & Senior Physicians (Cardiology, Surgery, General Medicine, Anesthesiology)",
@@ -825,7 +825,7 @@ export const careerTranslations = {
         description:
           "Национальный и международный подбор врачей и медицинского персонала, полное сопровождение апробации (Approbation) и трудоустройство в клиниках и MVZ холдинга NabiOta и партнерских сетях Германии.",
         cta: "Смотреть открытые вакансии",
-        floatingQuote: "«Больше чем просто работа — благородная миссия.»",
+        floatingQuote: "«Больше чем просто работа - благородная миссия.»",
         badge1Title: "Full-Care",
         badge1Sub: "Апробация и виза",
         badge2Title: "Стандарт ВОЗ",
@@ -855,7 +855,7 @@ export const careerTranslations = {
           badge: "Апробация и специализация",
           targetGroup: "Врачи-ассистенты, врачи-специалисты (Fachärzte), заведующие отделениями",
           shortDesc: "Трудоустройство врачей в клиники и амбулаторные центры MVZ с полным сопровождением получения апробации (§ 3 BÄO) и разрешения на работу (§ 10 BÄO).",
-          description: "NabiOta Medical Recruitment Services GmbH осуществляет профессиональный подбор и интеграцию врачей в Германии и из-за рубежа. Терапия, кардиология, гастроэнтерология, хирургия, анестезиология, неврология или радиология — мы обеспечиваем прямое трудоустройство в передовые медицинские центры. Зарубежные коллеги получают комплексную юридическую поддержку вплоть до сдачи экзаменов и получения постоянной немецкой апробации (§ 3 BÄO).",
+          description: "NabiOta Medical Recruitment Services GmbH осуществляет профессиональный подбор и интеграцию врачей в Германии и из-за рубежа. Терапия, кардиология, гастроэнтерология, хирургия, анестезиология, неврология или радиология - мы обеспечиваем прямое трудоустройство в передовые медицинские центры. Зарубежные коллеги получают комплексную юридическую поддержку вплоть до сдачи экзаменов и получения постоянной немецкой апробации (§ 3 BÄO).",
           image: "/images/careers/mission-doctors-highres.webp",
           rolesList: [
             "Врачи-специалисты и Oberärzte (кардиология, хирургия, общая медицина, анестезиология)",
@@ -891,7 +891,7 @@ export const careerTranslations = {
           badge: "Государственное признание",
           targetGroup: "Дипломированные медсестры/медбратья, персонал реанимации и операционных",
           shortDesc: "Этичный рекрутинг и долгосрочная интеграция квалифицированных медсестер для отделений интенсивной терапии, хирургии и патронажа.",
-          description: "Медицинские сестры — основа надежной и чуткой заботы о пациентах. Мы трудоустраиваем дипломированный средний медперсонал в стационары, отделения анестезиологии и реанимации, операционные блоки и службы домашнего ухода (HomeCare). Иностранные специалисты получают полную поддержку при прохождении процедуры признания диплома по закону PflBG.",
+          description: "Медицинские сестры - основа надежной и чуткой заботы о пациентах. Мы трудоустраиваем дипломированный средний медперсонал в стационары, отделения анестезиологии и реанимации, операционные блоки и службы домашнего ухода (HomeCare). Иностранные специалисты получают полную поддержку при прохождении процедуры признания диплома по закону PflBG.",
           image: "/images/careers/hero-career-nurse.webp",
           rolesList: [
             "Дипломированные медицинские сестры и медбратья стационара",
@@ -1066,7 +1066,7 @@ export const careerTranslations = {
           {
             icon: Users,
             title: "Сильная и дружная команда",
-            text: "Взаимное уважение, открытая коммуникация и надежное плечо коллег — наш стандарт.",
+            text: "Взаимное уважение, открытая коммуникация и надежное плечо коллег - наш стандарт.",
           },
           {
             icon: Clock,
@@ -1190,10 +1190,10 @@ export const careerTranslations = {
           "Физиотерапевт / Реабилитолог (m/w/d)",
           "Рентген-лаборант MTRA (КТ/МРТ) (m/w/d)",
           "Медицинская сестра / эксперт по лечению ран ICW (m/w/d)",
-          "Инициативное резюме — Врачебный персонал (Апробация)",
-          "Инициативное резюме — Сестринский персонал",
-          "Инициативное резюме — Диагностика и MTA",
-          "Инициативное резюме — Физиотерапия и реабилитация",
+          "Инициативное резюме - Врачебный персонал (Апробация)",
+          "Инициативное резюме - Сестринский персонал",
+          "Инициативное резюме - Диагностика и MTA",
+          "Инициативное резюме - Физиотерапия и реабилитация",
         ],
         messageLabel: "Сообщение (необязательно)",
         messagePlaceholder: "Расскажите кратко о вашей специальности, текущем уровне немецкого языка и желаемых сроках начала работы...",
@@ -1227,7 +1227,7 @@ export const careerTranslations = {
         description:
           "Tıbbi personelin ulusal ve uluslararası düzeyde temini, kapsamlı denklik ve ruhsat (Approbation) danışmanlığı ile NabiOta Grubu tesislerinde ve Almanya genelindeki saygın ortak kurumlarda geleceğe güvenle bakan kariyerler.",
         cta: "Açık Pozisyonları İnceleyin",
-        floatingQuote: "„Bir işten çok daha fazlası – anlam dolu bir misyon.“",
+        floatingQuote: "„Bir işten çok daha fazlası - anlam dolu bir misyon.“",
         badge1Title: "Tam Destek",
         badge1Sub: "Ruhsat ve Vize",
         badge2Title: "DSÖ Standardı",
@@ -1644,7 +1644,7 @@ export const careerTranslations = {
         description:
           "استقطاب الكفاءات الطبية محلياً ودولياً، مرافقة متكاملة لإجراءات ترخيص مزاولة المهنة (Approbation) والتأشيرات، ومسارات مهنية واعدة ومستدامة داخل شبكة مراكز NabiOta والمستشفيات الشريكة في ألمانيا.",
         cta: "استكشاف الوظائف المتاحة",
-        floatingQuote: "«أكثر من مجرد وظيفة – رسالة إنسانية نبيلة.»",
+        floatingQuote: "«أكثر من مجرد وظيفة - رسالة إنسانية نبيلة.»",
         badge1Title: "رعاية شاملة",
         badge1Sub: "الترخيص والتأشيرة",
         badge2Title: "معايير منظمة الصحة",
@@ -1676,7 +1676,7 @@ export const careerTranslations = {
           shortDesc:
             "استقطاب وتوظيف منظم للأطباء في المستشفيات ومراكز MVZ مع إشراف كامل على ترخيص مزاولة المهنة الدائم (§ 3 BÄO) وتصريح العمل المؤقت (§ 10 BÄO).",
           description:
-            "تتولى شركة NabiOta Medical Recruitment Services GmbH استقطاب ودمج الأطباء من داخل ألمانيا وخارجها بأسلوب منهجي ومدروس. سواء في الطب الباطني، أو أمراض القلب، أو الجهاز الهضمي، أو الجراحة، أو التخدير، أو طب الأعصاب، أو الأشعة التشخيصية – نوفر للأطباء المؤهلين فرص العمل في أحدث المراكز الطبية. نرافق الزملاء الوافدين من الخارج خطوة بخطوة حتى نيل الترخيص الطبي الألماني الكامل (§ 3 BÄO) وعقد العمل الدائم غير محدد المدة.",
+            "تتولى شركة NabiOta Medical Recruitment Services GmbH استقطاب ودمج الأطباء من داخل ألمانيا وخارجها بأسلوب منهجي ومدروس. سواء في الطب الباطني، أو أمراض القلب، أو الجهاز الهضمي، أو الجراحة، أو التخدير، أو طب الأعصاب، أو الأشعة التشخيصية - نوفر للأطباء المؤهلين فرص العمل في أحدث المراكز الطبية. نرافق الزملاء الوافدين من الخارج خطوة بخطوة حتى نيل الترخيص الطبي الألماني الكامل (§ 3 BÄO) وعقد العمل الدائم غير محدد المدة.",
           image: "/images/careers/mission-doctors-highres.webp",
           rolesList: [
             "أطباء اختصاصيون وكبار الأطباء (القلب، الجراحة، الطب العام، التخدير)",
@@ -2061,7 +2061,7 @@ export const careerTranslations = {
         description:
           "Milliy va xalqaro tibbiyot mutaxassislarini jalb qilish, approbatsiya (Approbation) jarayonini to'liq qo'llab-quvvatlash va NabiOta xoldingi klinikalari, MVZ markazlari hamda butun Germaniyadagi nufuzli hamkorlarimizda ishonchli martaba.",
         cta: "Bo'sh ish o'rinlarini ko'rish",
-        floatingQuote: "„Shunchaki ish emas — yuksak insoniy burch.“",
+        floatingQuote: "„Shunchaki ish emas - yuksak insoniy burch.“",
         badge1Title: "Full-Care",
         badge1Sub: "Approbatsiya va viza",
         badge2Title: "JSST standarti",
@@ -2091,7 +2091,7 @@ export const careerTranslations = {
           badge: "Approbatsiya va ixtisoslik",
           targetGroup: "Assistent-shifokorlar, tor mutaxassislar (Fachärzte), bo'lim boshliqlari",
           shortDesc: "Shifokorlarni klinikalar va MVZ ambulator markazlariga to'liq approbatsiya (§ 3 BÄO) va tibbiy faoliyat ruxsatnomasi (§ 10 BÄO) yordami bilan ishga joylashtirish.",
-          description: "NabiOta Medical Recruitment Services GmbH Germaniyada va xorijda shifokorlarni tizimli jalb qilish va uzoq muddatli integratsiyalashni amalga oshiradi. Terapiya, kardiologiya, gastroenterologiya, jarrohlik, anesteziologiya, nevrologiya yoki radiologiya — biz malakali shifokorlarni eng ilg'or tibbiyot markazlari bilan birlashtiramiz. Xorijiy hamkasblarimizga davlat imtihonlarini topshirish va to'liq nemis approbatsiyasini (§ 3 BÄO) olgunga qadar har bosqichda yuridik ko'mak beramiz.",
+          description: "NabiOta Medical Recruitment Services GmbH Germaniyada va xorijda shifokorlarni tizimli jalb qilish va uzoq muddatli integratsiyalashni amalga oshiradi. Terapiya, kardiologiya, gastroenterologiya, jarrohlik, anesteziologiya, nevrologiya yoki radiologiya - biz malakali shifokorlarni eng ilg'or tibbiyot markazlari bilan birlashtiramiz. Xorijiy hamkasblarimizga davlat imtihonlarini topshirish va to'liq nemis approbatsiyasini (§ 3 BÄO) olgunga qadar har bosqichda yuridik ko'mak beramiz.",
           image: "/images/careers/mission-doctors-highres.webp",
           rolesList: [
             "Fachärzte va Oberärzte (kardiologiya, jarrohlik, umumiy amaliyot, anesteziologiya)",
@@ -2302,7 +2302,7 @@ export const careerTranslations = {
           {
             icon: Users,
             title: "Kuchli va ahil jamoa",
-            text: "O'zaro hurmat, ochiq muloqot va hamkasblarning ishonchli yelkadoshligi — bizning standartimiz.",
+            text: "O'zaro hurmat, ochiq muloqot va hamkasblarning ishonchli yelkadoshligi - bizning standartimiz.",
           },
           {
             icon: Clock,
@@ -2426,10 +2426,10 @@ export const careerTranslations = {
           "Fizioterapevt / Reabilitolog (m/w/d)",
           "Rentgen-laborant MTRA (KT/MRT) (m/w/d)",
           "Hamshira / yaralarni davolash bo'yicha ekspert ICW (m/w/d)",
-          "Tashabbuskor rezyume — Shifokorlar (Approbatsiya)",
-          "Tashabbuskor rezyume — Hamshiralar jamoasi",
-          "Tashabbuskor rezyume — Diagnostika va MTA",
-          "Tashabbuskor rezyume — Fizioterapiya va reabilitatsiya",
+          "Tashabbuskor rezyume - Shifokorlar (Approbatsiya)",
+          "Tashabbuskor rezyume - Hamshiralar jamoasi",
+          "Tashabbuskor rezyume - Diagnostika va MTA",
+          "Tashabbuskor rezyume - Fizioterapiya va reabilitatsiya",
         ],
         messageLabel: "Xabar (ixtiyoriy)",
         messagePlaceholder: "Mutaxassisligingiz, nemis tili darajangiz va qachon ish boshlay olishingiz haqida qisqacha ma'lumot bering...",

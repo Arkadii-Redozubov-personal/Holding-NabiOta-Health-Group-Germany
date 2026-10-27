@@ -14,7 +14,7 @@ interface PageHeroProps {
   imageAlt?: string;
   imagePosition?: string;
   className?: string;
-  /** Kept for API compatibility – layout is identical for all locales (no RTL mirroring). */
+  /** Kept for API compatibility - layout is identical for all locales (no RTL mirroring). */
   locale?: string;
 }
 

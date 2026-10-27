@@ -35,7 +35,7 @@ export const businessAreas: BusinessArea[] = [
     id: "diagnostik",
     slug: "diagnostik",
     title: "Diagnostik",
-    subtitle: "NabiOta Diagnostics GmbH – Präzisionstechnologie",
+    subtitle: "NabiOta Diagnostics GmbH - Präzisionstechnologie",
     description:
       "High-End Bildgebung mit 3T MRT, Low-Dose CT, digitalem Röntgen sowie neurophysiologische Diagnostik und Probenlogistik.",
     fullDescription:
@@ -97,7 +97,7 @@ export const businessAreas: BusinessArea[] = [
     id: "pflege",
     slug: "pflege",
     title: "Pflege",
-    subtitle: "NabiOta HomeCare GmbH – Pflege & Wundversorgung",
+    subtitle: "NabiOta HomeCare GmbH - Pflege & Wundversorgung",
     description:
       "Qualifizierte ambulante Krankenpflege, spezialisierte Wundversorgung und liebevolle Betreuung im vertrauten Zuhause.",
     fullDescription:

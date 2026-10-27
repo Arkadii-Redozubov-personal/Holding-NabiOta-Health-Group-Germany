@@ -1174,14 +1174,14 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
 
 
         {/* ══════════════════════════════════════════════════════════
-            SECTION 4B: NABIOTA DIAGNOSTICS GMBH – PDF SECTION IV.4
+            SECTION 4B: NABIOTA DIAGNOSTICS GMBH - PDF SECTION IV.4
             - Corporate purpose, legal separation, 8 core tasks
         ══════════════════════════════════════════════════════════ */}
         <DiagnosticsCompanySection locale={locale} />
 
         {/* ══════════════════════════════════════════════════════════
             SECTION 2 (PHOTO 3): FULL-WIDTH BANNER
-            "MODERNE TECHNOLOGIE - Mehr als nur Bilder – klare Antworten."
+            "MODERNE TECHNOLOGIE - Mehr als nur Bilder - klare Antworten."
             - Full-width edge-to-edge
             - Left: Scanner room image
             - Center: Heading & Description
@@ -1220,30 +1220,30 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
             <div className="w-full lg:w-[42%] xl:w-[40%] p-6 sm:p-10 lg:p-12 space-y-3 relative z-10">
               <h3 className="font-serif text-2xl sm:text-3xl lg:text-[34px] text-white font-normal leading-tight">
                 {isUz
-                  ? "Shunchaki tasvirlar emas — aniq javoblar."
+                  ? "Shunchaki tasvirlar emas - aniq javoblar."
                   : isRu
-                  ? "Больше чем снимки — ясные ответы."
+                  ? "Больше чем снимки - ясные ответы."
                   : isEn
-                  ? "More than Images – Clear Answers."
+                  ? "More than Images - Clear Answers."
                   : isTr
-                  ? "Yalnızca Görüntü Değil – Net Yanıtlar."
+                  ? "Yalnızca Görüntü Değil - Net Yanıtlar."
                   : isAr
-                  ? "أكثر من مجرد صور – إجابات سريرية واضحة."
-                  : "Mehr als nur Bilder – klare Antworten."}
+                  ? "أكثر من مجرد صور - إجابات سريرية واضحة."
+                  : "Mehr als nur Bilder - klare Antworten."}
               </h3>
 
               <p className="text-white/85 text-xs sm:text-[13.5px] leading-relaxed font-sans max-w-lg">
                 {isUz
-                  ? "Yuqori texnologiyali uskunalarimiz favqulodda aniq va xavfsiz diagnostikani ta'minlaydi — maksimal ishonch, to'g'ri qarorlar va samarali davolash uchun."
+                  ? "Yuqori texnologiyali uskunalarimiz favqulodda aniq va xavfsiz diagnostikani ta'minlaydi - maksimal ishonch, to'g'ri qarorlar va samarali davolash uchun."
                   : isRu
-                  ? "Наше высокотехнологичное оборудование обеспечивает исключительно точную и щадящую диагностику — для максимальной уверенности, правильных решений и эффективного лечения."
+                  ? "Наше высокотехнологичное оборудование обеспечивает исключительно точную и щадящую диагностику - для максимальной уверенности, правильных решений и эффективного лечения."
                   : isEn
-                  ? "Our cutting-edge equipment enables exceptionally precise and gentle diagnostics—for greater security, informed clinical decisions, and targeted therapy."
+                  ? "Our cutting-edge equipment enables exceptionally precise and gentle diagnostics-for greater security, informed clinical decisions, and targeted therapy."
                   : isTr
                   ? "Son teknoloji cihazlarımız son derece hassas ve konforlu bir tanı süreci sunar; daha yüksek güvenlik, doğru kararlar ve hedefe yönelik tedavi için."
                   : isAr
-                  ? "تتيح أجهزتنا الحديثة تشخيصاً عالي الدقة دون إجهاد للجسم – لمزيد من الأمان واتخاذ القرارات السريرية الصائبة."
-                  : "Unsere hochmodernen Geräte ermöglichen eine besonders präzise und schonende Diagnostik – für mehr Sicherheit, bessere Entscheidungen und eine gezielte Behandlung."}
+                  ? "تتيح أجهزتنا الحديثة تشخيصاً عالي الدقة دون إجهاد للجسم - لمزيد من الأمان واتخاذ القرارات السريرية الصائبة."
+                  : "Unsere hochmodernen Geräte ermöglichen eine besonders präzise und schonende Diagnostik - für mehr Sicherheit, bessere Entscheidungen und eine gezielte Behandlung."}
               </p>
             </div>
 
@@ -1305,16 +1305,16 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
 
               <p className="text-xs sm:text-[13px] text-[#556358] leading-relaxed font-sans max-w-sm">
                 {isUz
-                  ? "Birinchi murojaatdan xulosani olishgacha — biz har bir bosqichda sizga hamrohlik qilamiz."
+                  ? "Birinchi murojaatdan xulosani olishgacha - biz har bir bosqichda sizga hamrohlik qilamiz."
                   : isRu
-                  ? "От первого обращения до получения заключения — мы бережно сопровождаем вас на каждом этапе."
+                  ? "От первого обращения до получения заключения - мы бережно сопровождаем вас на каждом этапе."
                   : isEn
-                  ? "From initial inquiry to diagnostic report—we guide you through every single step."
+                  ? "From initial inquiry to diagnostic report-we guide you through every single step."
                   : isTr
                   ? "İlk başvurudan ayrıntılı rapora kadar her adımda yanınızdayız."
                   : isAr
-                  ? "من الاستفسار الأول وحتى تسليم التقرير النهائي – نرعاكم في كل خطوة."
-                  : "Von der ersten Untersuchung bis zum Befund – wir begleiten Sie auf jedem Schritt."}
+                  ? "من الاستفسار الأول وحتى تسليم التقرير النهائي - نرعاكم في كل خطوة."
+                  : "Von der ersten Untersuchung bis zum Befund - wir begleiten Sie auf jedem Schritt."}
               </p>
 
               <div className="pt-2">
@@ -1525,10 +1525,10 @@ export function DiagnostikPageComponent({ locale = "de" }: Props) {
                   : isEn
                   ? "Schedule your 3-Tesla MRI, low-dose CT, or digital X-ray at NabiOta® diagnostics centers. Fast appointments, maximum patient comfort, and reliable reports for you and your physicians."
                   : isTr
-                  ? "NabiOta® tanı merkezlerimizde 3T MR, düşük dozlu BT veya dijital röntgen için randevunuzu hemen planlayın – hızlı, dijital ve en yüksek radyolojik uzmanlıkla."
+                  ? "NabiOta® tanı merkezlerimizde 3T MR, düşük dozlu BT veya dijital röntgen için randevunuzu hemen planlayın - hızlı, dijital ve en yüksek radyolojik uzmanlıkla."
                   : isAr
-                  ? "احجز موعدك للتصوير بالرنين المغناطيسي 3 تسلا، الأشعة المقطعية منخفضة الجرعة أو الأشعة الرقمية في مراكز NabiOta® – سرعة في المواعيد وخبرة طبية لا تضاهى."
-                  : "Vereinbaren Sie Ihren Untersuchungstermin für 3T-MRT, Niedrigdosis-CT oder volldigitales Röntgen – schnell, digital und mit höchster radiologischer Fachexpertise."}
+                  ? "احجز موعدك للتصوير بالرنين المغناطيسي 3 تسلا، الأشعة المقطعية منخفضة الجرعة أو الأشعة الرقمية في مراكز NabiOta® - سرعة في المواعيد وخبرة طبية لا تضاهى."
+                  : "Vereinbaren Sie Ihren Untersuchungstermin für 3T-MRT, Niedrigdosis-CT oder volldigitales Röntgen - schnell, digital und mit höchster radiologischer Fachexpertise."}
               </p>
 
               <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5">

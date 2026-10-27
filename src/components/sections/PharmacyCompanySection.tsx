@@ -16,7 +16,7 @@ import {
 import { Container } from "@/components/layout/Container";
 
 /**
- * PDF Section IV.10 – "NabiOta Apotheke Mönchengladbach"
+ * PDF Section IV.10 - "NabiOta Apotheke Mönchengladbach"
  * (NabiOta Pharmacy)
  * Apothekengesetz structure: holding role (rooms + brand + org services),
  * independent licensed Erlaubnisinhaber, public pharmacy concept,
@@ -151,11 +151,11 @@ const c = {
         uz: "Xolding hissasi: xonalar, brend va tashkiliy masalalar",
       } as T,
       desc: {
-        de: "Die NabiOta-Gesellschaft stellt Räumlichkeiten und organisatorische Dienstleistungen bereit und überlässt die Marke «NabiOta Pharmacy» zur Nutzung – stets innerhalb der apothekenrechtlichen Grenzen und ohne Begründung eigener Betriebsrechte.",
-        en: "The NabiOta entity provides premises and organisational services and licences the brand «NabiOta Pharmacy» for use – always within pharmacy law boundaries and without establishing independent operating rights.",
-        ru: "Структура NabiOta предоставляет помещения и организационные услуги и передаёт в пользование бренд «NabiOta Pharmacy» — в пределах аптечного законодательства и без возникновения собственных прав на ведение деятельности.",
+        de: "Die NabiOta-Gesellschaft stellt Räumlichkeiten und organisatorische Dienstleistungen bereit und überlässt die Marke «NabiOta Pharmacy» zur Nutzung - stets innerhalb der apothekenrechtlichen Grenzen und ohne Begründung eigener Betriebsrechte.",
+        en: "The NabiOta entity provides premises and organisational services and licences the brand «NabiOta Pharmacy» for use - always within pharmacy law boundaries and without establishing independent operating rights.",
+        ru: "Структура NabiOta предоставляет помещения и организационные услуги и передаёт в пользование бренд «NabiOta Pharmacy» - в пределах аптечного законодательства и без возникновения собственных прав на ведение деятельности.",
         tr: "NabiOta şirketi, eczacılık hukuku sınırları içinde kalarak ve bağımsız işletme hakları doğurmaksızın mekânsal alanlar ve organizasyonel hizmetler temin eder ve «NabiOta Pharmacy» markasını kullanıma sunar.",
-        ar: "توفر شركة NabiOta المباني والخدمات التنظيمية وتمنح ترخيص استخدام العلامة التجارية «NabiOta Pharmacy» — دائماً ضمن الحدود الصارمة لقانون الصيدلة ودون إنشاء حقوق تشغيلية ذاتية.",
+        ar: "توفر شركة NabiOta المباني والخدمات التنظيمية وتمنح ترخيص استخدام العلامة التجارية «NabiOta Pharmacy» - دائماً ضمن الحدود الصارمة لقانون الصيدلة ودون إنشاء حقوق تشغيلية ذاتية.",
         uz: "NabiOta tuzilmasi dorixonalar to'g'risidagi qonun chegaralarida va mustaqil faoliyat huquqlarisiz binolar va tashkiliy xizmatlarni taqdim etadi hamda «NabiOta Pharmacy» brendidan foydalanish huquqini beradi.",
       } as T,
     },
@@ -200,29 +200,29 @@ const c = {
   legalBadges: {
     de: [
       "§ 14 Apothekengesetz (ApoG)",
-      "§ 2 ApoG – Betriebserlaubnis",
-      "§ 7 ApoG – Erlaubnisinhaber",
+      "§ 2 ApoG - Betriebserlaubnis",
+      "§ 7 ApoG - Erlaubnisinhaber",
       "Markenrecht & Firmenrecht",
       "DSGVO · Gesundheitsdaten",
     ],
     en: [
       "§ 14 Apothekengesetz (ApoG)",
-      "§ 2 ApoG – Operating Licence",
-      "§ 7 ApoG – Licence Holder",
+      "§ 2 ApoG - Operating Licence",
+      "§ 7 ApoG - Licence Holder",
       "Trademark & Corporate Law",
       "GDPR · Health Data",
     ],
     ru: [
       "§ 14 Apothekengesetz (ApoG)",
-      "§ 2 ApoG – Лицензия на эксплуатацию",
-      "§ 7 ApoG – Владелец лицензии",
+      "§ 2 ApoG - Лицензия на эксплуатацию",
+      "§ 7 ApoG - Владелец лицензии",
       "Товарные знаки и корпоративное право",
       "DSGVO · Медицинские данные",
     ],
     tr: [
       "§ 14 Apothekengesetz (ApoG)",
-      "§ 2 ApoG – İşletme Ruhsatı",
-      "§ 7 ApoG – Ruhsat Sahibi",
+      "§ 2 ApoG - İşletme Ruhsatı",
+      "§ 7 ApoG - Ruhsat Sahibi",
       "Marka ve Şirketler Hukuku",
       "GDPR · Sağlık Verileri",
     ],
@@ -235,8 +235,8 @@ const c = {
     ],
     uz: [
       "§ 14 Apothekengesetz (ApoG)",
-      "§ 2 ApoG – Faoliyat litsenziyasi",
-      "§ 7 ApoG – Litsenziya egasi",
+      "§ 2 ApoG - Faoliyat litsenziyasi",
+      "§ 7 ApoG - Litsenziya egasi",
       "Savdo belgilari va korporativ huquq",
       "DSGVO · Tibbiy ma'lumotlar",
     ],

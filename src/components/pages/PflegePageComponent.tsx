@@ -98,16 +98,16 @@ export function PflegePageComponent({ locale = "de" }: Props) {
       ? "التمريض المنزلي والرعاية المتكاملة"
       : "Pflege & HomeCare",
     subtitle: isUz
-      ? "NabiOta HomeCare GmbH – Uy sharoitida g'amxo'rlik va muolajalar"
+      ? "NabiOta HomeCare GmbH - Uy sharoitida g'amxo'rlik va muolajalar"
       : isRu
-      ? "NabiOta HomeCare GmbH – Забота и лечение на дому"
+      ? "NabiOta HomeCare GmbH - Забота и лечение на дому"
       : isEn
-      ? "NabiOta HomeCare GmbH – Compassionate Care at Home"
+      ? "NabiOta HomeCare GmbH - Compassionate Care at Home"
       : isTr
-      ? "NabiOta HomeCare GmbH – Alışık Olduğunuz Ev Ortamında Saygın ve Şefkatli Bakım"
+      ? "NabiOta HomeCare GmbH - Alışık Olduğunuz Ev Ortamında Saygın ve Şefkatli Bakım"
       : isAr
-      ? "NabiOta HomeCare GmbH – رعاية كريمة ودافئة في محيطكم الأسري المألوف"
-      : "NabiOta HomeCare GmbH – Würdevolle Fürsorge im vertrauten Umfeld",
+      ? "NabiOta HomeCare GmbH - رعاية كريمة ودافئة في محيطكم الأسري المألوف"
+      : "NabiOta HomeCare GmbH - Würdevolle Fürsorge im vertrauten Umfeld",
     eyebrow: isUz
       ? "NABIOTA HOMECARE GMBH • SGB V & SGB XI"
       : isRu
@@ -122,14 +122,14 @@ export function PflegePageComponent({ locale = "de" }: Props) {
     desc: isUz
       ? "NabiOta HomeCare GmbH odatiy uy muhitida malakali ambulator hamshiralik parvarishi, shifokor ko'rsatmasi bo'yicha tibbiy yordam (SGB V), sertifikatlangan yaralarni davolash (ICW®) va asosiy parvarishni (SGB XI) inson qadr-qimmatini e'zozlagan holda hamda yaqinlariga ko'mak berib ta'minlaydi."
       : isRu
-      ? "NabiOta HomeCare GmbH обеспечивает квалифицированный амбулаторный сестринский уход, медицинскую помощь по назначению врачей (SGB V), сертифицированное ведение ран (ICW®) и базовый уход (SGB XI) в привычном домашнем окружении — с высочайшим уважением к достоинству человека и поддержкой его близких."
+      ? "NabiOta HomeCare GmbH обеспечивает квалифицированный амбулаторный сестринский уход, медицинскую помощь по назначению врачей (SGB V), сертифицированное ведение ран (ICW®) и базовый уход (SGB XI) в привычном домашнем окружении - с высочайшим уважением к достоинству человека и поддержкой его близких."
       : isEn
-      ? "NabiOta HomeCare GmbH provides accredited outpatient nursing care, prescribed medical treatment nursing (SGB V), certified wound care (ICW®), and personal care support (SGB XI) at home — preserving personal independence, dignity, and active relief for family caregivers."
+      ? "NabiOta HomeCare GmbH provides accredited outpatient nursing care, prescribed medical treatment nursing (SGB V), certified wound care (ICW®), and personal care support (SGB XI) at home - preserving personal independence, dignity, and active relief for family caregivers."
       : isTr
-      ? "NabiOta HomeCare GmbH, ev ortamında güvenilir ve ihtiyaca uygun bakım sunar. Hizmet yelpazemiz hekim tarafından reçete edilen tedavi bakımını (SGB V), sertifikalı yara yönetimini (ICW®), vücut odaklı temel bakımı (SGB XI) ve hastane taburculuğu sonrası kesintisiz geçiş yönetimini kapsar — saygı, şefkat ve tıbbi uzmanlıkla."
+      ? "NabiOta HomeCare GmbH, ev ortamında güvenilir ve ihtiyaca uygun bakım sunar. Hizmet yelpazemiz hekim tarafından reçete edilen tedavi bakımını (SGB V), sertifikalı yara yönetimini (ICW®), vücut odaklı temel bakımı (SGB XI) ve hastane taburculuğu sonrası kesintisiz geçiş yönetimini kapsar - saygı, şefkat ve tıbbi uzmanlıkla."
       : isAr
-      ? "تضمن شركة NabiOta HomeCare GmbH رعاية تمريضية منزلية موثوقة ومفصلة وفق احتياجاتكم. تشمل خدماتنا الرعاية الطبية والعلاجية الموصوفة من الطبيب (SGB V)، إدارة وعلاج الجروح المعتمدة (ICW®)، الرعاية الشخصية الأساسية (SGB XI)، وإدارة الانتقال السلس بعد الخروج من المستشفى — بروح من الاحترام والاهتمام والخبرة التمريضية المتخصصة."
-      : "Die NabiOta HomeCare GmbH gewährleistet eine verlässliche, bedarfsgerechte Pflege im häuslichen Umfeld. Unser Spektrum umfasst die ärztlich verordnete Behandlungspflege (SGB V), zertifiziertes Wundmanagement (ICW®), körperbezogene Grundpflege (SGB XI) sowie eine nahtlose Überleitung nach Klinikaufenthalten – getragen von Respekt, Zuwendung und Fachkompetenz.",
+      ? "تضمن شركة NabiOta HomeCare GmbH رعاية تمريضية منزلية موثوقة ومفصلة وفق احتياجاتكم. تشمل خدماتنا الرعاية الطبية والعلاجية الموصوفة من الطبيب (SGB V)، إدارة وعلاج الجروح المعتمدة (ICW®)، الرعاية الشخصية الأساسية (SGB XI)، وإدارة الانتقال السلس بعد الخروج من المستشفى - بروح من الاحترام والاهتمام والخبرة التمريضية المتخصصة."
+      : "Die NabiOta HomeCare GmbH gewährleistet eine verlässliche, bedarfsgerechte Pflege im häuslichen Umfeld. Unser Spektrum umfasst die ärztlich verordnete Behandlungspflege (SGB V), zertifiziertes Wundmanagement (ICW®), körperbezogene Grundpflege (SGB XI) sowie eine nahtlose Überleitung nach Klinikaufenthalten - getragen von Respekt, Zuwendung und Fachkompetenz.",
   };
 
   const heroBadges = [
@@ -297,11 +297,11 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         ? "رعاية مستمرة وسلسة ضمن شبكة مجموعة NabiOta®"
         : "Nahtlose Betreuung im Verbund der NabiOta® Gruppe",
       desc: isUz
-        ? "NabiOta HomeCare GmbH tibbiy xoldingimizning barcha bo'g'inlari bilan uzviy bog'langan — poliklinika va statsionardan tortib to uy o'rnigacha bo'lgan uzluksiz zanjirni ta'minlaydi."
+        ? "NabiOta HomeCare GmbH tibbiy xoldingimizning barcha bo'g'inlari bilan uzviy bog'langan - poliklinika va statsionardan tortib to uy o'rnigacha bo'lgan uzluksiz zanjirni ta'minlaydi."
         : isRu
-        ? "NabiOta HomeCare GmbH тесно связана со всеми звеньями нашего медицинского холдинга — обеспечивая непрерывную цепочку от поликлиники и стационара до домашней постели."
+        ? "NabiOta HomeCare GmbH тесно связана со всеми звеньями нашего медицинского холдинга - обеспечивая непрерывную цепочку от поликлиники и стационара до домашней постели."
         : isEn
-        ? "NabiOta HomeCare GmbH collaborates seamlessly with all specialized entities across the NabiOta Group — delivering uninterrupted continuity from clinic to bedside."
+        ? "NabiOta HomeCare GmbH collaborates seamlessly with all specialized entities across the NabiOta Group - delivering uninterrupted continuity from clinic to bedside."
         : isTr
         ? "NabiOta şirketler grubunun bir parçası olan NabiOta HomeCare GmbH, ağın diğer tüm tıbbi birimleriyle yakın iş birliği içinde çalışır. Bu sayede hastalar ve yakınları için bakım boşlukları oluşmaz, medikal cihazlara hızlıca ulaşılır ve doktor ile bakım ekibi arasında güvenilir iletişim sağlanır."
         : isAr
@@ -444,20 +444,20 @@ export function PflegePageComponent({ locale = "de" }: Props) {
     commitment: {
       eyebrow: isUz ? "BIZNING BURCHIMIZ" : isRu ? "НАШЕ ОБЯЗАТЕЛЬСТВО" : isEn ? "OUR COMMITMENT" : isTr ? "SÖZÜMÜZ VE TAAHHÜDÜMÜZ" : isAr ? "عهدنا والتزامنا" : "UNSER VERSPRECHEN",
       title: isUz
-        ? "Parvarishdan ham ortiq — samimiy insoniylik"
+        ? "Parvarishdan ham ortiq - samimiy insoniylik"
         : isRu
-        ? "Больше чем уход — искренняя человечность"
+        ? "Больше чем уход - искренняя человечность"
         : isEn
-        ? "More Than Just Care — Human Dignity & Warmth"
+        ? "More Than Just Care - Human Dignity & Warmth"
         : isTr
-        ? "Bakımdan Daha Fazlası – Saygı, Onur ve İnsan Odaklılık"
+        ? "Bakımdan Daha Fazlası - Saygı, Onur ve İnsan Odaklılık"
         : isAr
-        ? "أكثر من مجرد رعاية – احترام وكرامة وإنسانية خالصة"
-        : "Mehr als nur Pflege – Respekt, Würde und Menschlichkeit",
+        ? "أكثر من مجرد رعاية - احترام وكرامة وإنسانية خالصة"
+        : "Mehr als nur Pflege - Respekt, Würde und Menschlichkeit",
       desc: isUz
-        ? "Biz mijozlarimiz va ularning oilalari bilan uzoq muddatli ishonchli munosabatlar o'rnatamiz, nafaqat malakali tibbiy yordam, balki samimiy ruhiy xotirjamlikni ham ta'minlaymiz. Sizning salomatligingiz — bizning bosh ustuvor vazifamizdir."
+        ? "Biz mijozlarimiz va ularning oilalari bilan uzoq muddatli ishonchli munosabatlar o'rnatamiz, nafaqat malakali tibbiy yordam, balki samimiy ruhiy xotirjamlikni ham ta'minlaymiz. Sizning salomatligingiz - bizning bosh ustuvor vazifamizdir."
         : isRu
-        ? "Мы строим долгосрочные доверительные отношения с клиентами и их семьями, обеспечивая не только квалифицированную медицинскую помощь, но и искреннее эмоциональное спокойствие. Ваше благополучие — наш главный приоритет."
+        ? "Мы строим долгосрочные доверительные отношения с клиентами и их семьями, обеспечивая не только квалифицированную медицинскую помощь, но и искреннее эмоциональное спокойствие. Ваше благополучие - наш главный приоритет."
         : isEn
         ? "We build lasting relationships with our clients and their families, providing not just medical excellence, but emotional support and peace of mind. Your well-being is our top priority."
         : isTr
@@ -498,16 +498,16 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         ? "رعاية شاملة لكل مرحلة من مراحل الحياة"
         : "Ganzheitliche Pflege für jede Lebensphase",
       desc: isUz
-        ? "Operatsiyadan keyin sog'ayishdan tortib keksa yoshdagi uzoq muddatli qo'llab-quvvatlashgacha — bizning hamshiralik parvarishimiz sizning ehtiyojlaringizga moslashadi, hamisha mehr va professionallik bilan."
+        ? "Operatsiyadan keyin sog'ayishdan tortib keksa yoshdagi uzoq muddatli qo'llab-quvvatlashgacha - bizning hamshiralik parvarishimiz sizning ehtiyojlaringizga moslashadi, hamisha mehr va professionallik bilan."
         : isRu
-        ? "От выздоровления после операции до долгосрочной поддержки в пожилом возрасте — наш сестринский уход гибко подстраивается под ваши потребности, неизменно с теплом и профессионализмом."
+        ? "От выздоровления после операции до долгосрочной поддержки в пожилом возрасте - наш сестринский уход гибко подстраивается под ваши потребности, неизменно с теплом и профессионализмом."
         : isEn
-        ? "From recovery and rehabilitation to long-term elderly support, our nursing care adapts to your needs — always with compassion and professionalism."
+        ? "From recovery and rehabilitation to long-term elderly support, our nursing care adapts to your needs - always with compassion and professionalism."
         : isTr
-        ? "Ameliyat sonrası iyileşmeden uzun vadeli yaşlı bakımına kadar; bakım hizmetimiz ihtiyaçlarınıza esnek şekilde uyum sağlar – her zaman şefkat ve yüksek uzmanlıkla."
+        ? "Ameliyat sonrası iyileşmeden uzun vadeli yaşlı bakımına kadar; bakım hizmetimiz ihtiyaçlarınıza esnek şekilde uyum sağlar - her zaman şefkat ve yüksek uzmanlıkla."
         : isAr
-        ? "من التعافي بعد الجراحة وحتى الرعاية طويلة الأمد لكبار السن، تتكيف خدماتنا التمريضية بمرونة مع متطلباتكم – دائماً بإنسانية وكفاءة مهنية راقية."
-        : "Von der Genesung nach Operationen bis zur verlässlichen Langzeitbetreuung passt sich unsere Pflege flexibel Ihren Bedürfnissen an – stets mit Mitgefühl und höchster Fachkompetenz.",
+        ? "من التعافي بعد الجراحة وحتى الرعاية طويلة الأمد لكبار السن، تتكيف خدماتنا التمريضية بمرونة مع متطلباتكم - دائماً بإنسانية وكفاءة مهنية راقية."
+        : "Von der Genesung nach Operationen bis zur verlässlichen Langzeitbetreuung passt sich unsere Pflege flexibel Ihren Bedürfnissen an - stets mit Mitgefühl und höchster Fachkompetenz.",
       btn: isUz ? "Xizmatlar haqida ko'proq bilish" : isRu ? "Узнать больше об услугах" : isEn ? "Explore Our Services" : isTr ? "Hizmetlerimizi Keşfedin" : isAr ? "استكشف خدماتنا" : "Leistungen entdecken",
       stages: [
         {
@@ -665,13 +665,13 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             ? "ما الفرق بين الرعاية الطبية العلاجية (SGB V) والرعاية الأساسية (SGB XI)؟"
             : "Was ist der Unterschied zwischen Behandlungspflege (SGB V) und Grundpflege (SGB XI)?",
           a: isUz
-            ? "Behandlungspflege (SGB V) — bu shifokor tomonidan tayinlangan tibbiy muolajalardir (inyeksiyalar, bog'lamalar, tomchilatib quyish, dorilar). Ular tibbiy sug'urta tomonidan 100% to'lanadi. Grundpflege (SGB XI) — bu gigiyena, ovqatlanish va kiyinishdagi yordam bo'lib, tayinlangan Pflegegrad bo'yicha parvarish kassasi tomonidan moliyalashtiriladi."
+            ? "Behandlungspflege (SGB V) - bu shifokor tomonidan tayinlangan tibbiy muolajalardir (inyeksiyalar, bog'lamalar, tomchilatib quyish, dorilar). Ular tibbiy sug'urta tomonidan 100% to'lanadi. Grundpflege (SGB XI) - bu gigiyena, ovqatlanish va kiyinishdagi yordam bo'lib, tayinlangan Pflegegrad bo'yicha parvarish kassasi tomonidan moliyalashtiriladi."
             : isRu
-            ? "Behandlungspflege (SGB V) — это медицинские процедуры, назначенные врачом (уколы, перевязки, капельницы, таблетки). Они на 100% оплачиваются медицинской страховкой. Grundpflege (SGB XI) — это помощь в гигиене, питании и одевании, которая финансируется кассой по уходу в соответствии с присвоенным Pflegegrad."
+            ? "Behandlungspflege (SGB V) - это медицинские процедуры, назначенные врачом (уколы, перевязки, капельницы, таблетки). Они на 100% оплачиваются медицинской страховкой. Grundpflege (SGB XI) - это помощь в гигиене, питании и одевании, которая финансируется кассой по уходу в соответствии с присвоенным Pflegegrad."
             : isEn
-            ? "Treatment care (SGB V) consists of clinical interventions prescribed by a doctor (injections, wound dressings, IVs, medications) and is 100% paid by health insurance. Basic care (SGB XI) covers personal hygiene, mobilization, and nutrition, funded by the long-term care insurance according to your Pflegegrad (1–5)."
+            ? "Treatment care (SGB V) consists of clinical interventions prescribed by a doctor (injections, wound dressings, IVs, medications) and is 100% paid by health insurance. Basic care (SGB XI) covers personal hygiene, mobilization, and nutrition, funded by the long-term care insurance according to your Pflegegrad (1-5)."
             : isTr
-            ? "SGB V kapsamındaki tedavi bakımı (Behandlungspflege), hekim tarafından reçete edilen tıbbi uygulamaları kapsar (örneğin enjeksiyonlar, yara pansumanları, ilaç verilmesi) ve masrafları tamamen sağlık sigortası tarafından karşılanır. SGB XI kapsamındaki temel bakım (Grundpflege) ise vücut temizliği, giyinme ve beslenme gibi bedensel yardımları içerir ve ilgili bakım derecesinin (Pflegegrad 1–5) ayni yardım bütçesi üzerinden finanse edilir."
+            ? "SGB V kapsamındaki tedavi bakımı (Behandlungspflege), hekim tarafından reçete edilen tıbbi uygulamaları kapsar (örneğin enjeksiyonlar, yara pansumanları, ilaç verilmesi) ve masrafları tamamen sağlık sigortası tarafından karşılanır. SGB XI kapsamındaki temel bakım (Grundpflege) ise vücut temizliği, giyinme ve beslenme gibi bedensel yardımları içerir ve ilgili bakım derecesinin (Pflegegrad 1-5) ayni yardım bütçesi üzerinden finanse edilir."
             : isAr
             ? "تشمل الرعاية الطبية العلاجية (SGB V) التدابير الطبية الموصوفة من الطبيب (مثل الحقن، تبديل الضمادات، إعطاء الأدوية) ويغطيها التأمين الصحي بالكامل بنسبة 100%. أما الرعاية التمريضية الأساسية (SGB XI) فتشمل المساعدة الجسدية (النظافة، ارتداء الملابس، التغذية) وتُمول عبر ميزانية درجة الرعاية المعتمدة للمريض (Pflegegrad 1-5)."
             : "Die Behandlungspflege nach SGB V umfasst ärztlich verordnete medizinische Maßnahmen (z.B. Injektionen, Wundverbände, Medikamentengabe) und wird vollständig von der Krankenkasse bezahlt. Die Grundpflege nach SGB XI umfasst körperbezogene Hilfen (Waschen, Kleiden, Ernährung) und wird über das Sachleistungsbudget des jeweiligen Pflegegrads finanziert.",
@@ -689,16 +689,16 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             ? "ما مدى سرعة NabiOta HomeCare في بدء تقديم الرعاية؟"
             : "Wie schnell kann die NabiOta HomeCare die Versorgung aufnehmen?",
           a: isUz
-            ? "Shoshilinch holatlarda (masalan, statsionardan chiqarilganda yoki o'tkir yarada) biz birinchi qo'ng'iroq yoki retsept topshirilgandan keyin 24–48 soat ichida parvarishni boshlaymiz."
+            ? "Shoshilinch holatlarda (masalan, statsionardan chiqarilganda yoki o'tkir yarada) biz birinchi qo'ng'iroq yoki retsept topshirilgandan keyin 24-48 soat ichida parvarishni boshlaymiz."
             : isRu
-            ? "В срочных случаях (например, при выписке из стационара или острой ране) мы начинаем уход в течение 24–48 часов после первого звонка или передачи рецепта."
+            ? "В срочных случаях (например, при выписке из стационара или острой ране) мы начинаем уход в течение 24-48 часов после первого звонка или передачи рецепта."
             : isEn
             ? "In urgent cases, such as immediate hospital discharge or acute wound treatment, we can initiate care within 24 to 48 hours following an initial phone consultation or recipe transfer."
             : isTr
-            ? "Acil durumlarda — özellikle kısa süreli hastane taburculuklarında veya taze ameliyat yaralarında — iletişime geçtikten sonra genellikle 24 ila 48 saat içinde bakımı başlatabiliyoruz."
+            ? "Acil durumlarda - özellikle kısa süreli hastane taburculuklarında veya taze ameliyat yaralarında - iletişime geçtikten sonra genellikle 24 ila 48 saat içinde bakımı başlatabiliyoruz."
             : isAr
-            ? "في الحالات العاجلة – وخاصة عند الخروج السريع من المستشفى أو وجود جروح جراحية طازجة – يمكننا عادةً بدء تقديم الرعاية في غضون 24 إلى 48 ساعة من التواصل معنا."
-            : "In dringlichen Fällen – insbesondere bei kurzfristiger Krankenhausentlassung oder frischen Operationswunden – können wir die Versorgung in der Regel innerhalb von 24 bis 48 Stunden nach Kontaktaufnahme starten.",
+            ? "في الحالات العاجلة - وخاصة عند الخروج السريع من المستشفى أو وجود جروح جراحية طازجة - يمكننا عادةً بدء تقديم الرعاية في غضون 24 إلى 48 ساعة من التواصل معنا."
+            : "In dringlichen Fällen - insbesondere bei kurzfristiger Krankenhausentlassung oder frischen Operationswunden - können wir die Versorgung in der Regel innerhalb von 24 bis 48 Stunden nach Kontaktaufnahme starten.",
         },
         {
           q: isUz
@@ -713,11 +713,11 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             ? "هل تقومون بإجراء زيارات الاستشارة القانونية الإلزامية وفق § 37 Abs. 3 SGB XI؟"
             : "Führen Sie gesetzliche Beratungseinsätze nach § 37 Abs. 3 SGB XI durch?",
           a: isUz
-            ? "Ha, bizning sertifikatlangan maslahatchilarimiz Pflegegeld oluvchilar uchun uyda majburiy tashriflarni o'tkazadilar (Pflegegrad 2–3 uchun har yarim yilda bir marta, Pflegegrad 4–5 uchun har chorakda bir marta) va hisobotni to'g'ridan-to'g'ri sug'urta kassangizga yuboradilar."
+            ? "Ha, bizning sertifikatlangan maslahatchilarimiz Pflegegeld oluvchilar uchun uyda majburiy tashriflarni o'tkazadilar (Pflegegrad 2-3 uchun har yarim yilda bir marta, Pflegegrad 4-5 uchun har chorakda bir marta) va hisobotni to'g'ridan-to'g'ri sug'urta kassangizga yuboradilar."
             : isRu
-            ? "Да, наши сертифицированные консультанты проводят обязательные визиты на дому для получателей Pflegegeld (раз в полгода для Pflegegrad 2–3, раз в квартал для Pflegegrad 4–5) и сразу направляют отчет в вашу страховую кассу."
+            ? "Да, наши сертифицированные консультанты проводят обязательные визиты на дому для получателей Pflegegeld (раз в полгода для Pflegegrad 2-3, раз в квартал для Pflegegrad 4-5) и сразу направляют отчет в вашу страховую кассу."
             : isEn
-            ? "Yes, our certified care advisors conduct official home visits for recipients of statutory care allowances (semi-annually for Pflegegrad 2–3, quarterly for Pflegegrad 4–5) and submit documentation directly to your insurer."
+            ? "Yes, our certified care advisors conduct official home visits for recipients of statutory care allowances (semi-annually for Pflegegrad 2-3, quarterly for Pflegegrad 4-5) and submit documentation directly to your insurer."
             : isTr
             ? "Evet, diplomalı bakım danışmanlarımız yasal olarak zorunlu olan danışmanlık ziyaretlerini evinizde gerçekleştirir ve bakım parası (Pflegegeld) hakkınızın kesintisiz devam etmesi için onay belgesini doğrudan bakım sandığınıza iletir."
             : isAr
@@ -761,9 +761,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
             ? "هل جميع أفراد طاقم التمريض مؤهلون وحاصلون على شهادات معتمدة؟"
             : "Sind alle Pflegekräfte examiniert und geschult?",
           a: isUz
-            ? "Barcha xodimlarimiz — davlat namunasidagi diplomli hamshiralar (Pflegefachkräfte / Krankenschwester) bo'lib, Wundexperte ICW® sertifikatlariga ega va muntazam malaka oshirish kurslaridan o'tadilar."
+            ? "Barcha xodimlarimiz - davlat namunasidagi diplomli hamshiralar (Pflegefachkräfte / Krankenschwester) bo'lib, Wundexperte ICW® sertifikatlariga ega va muntazam malaka oshirish kurslaridan o'tadilar."
             : isRu
-            ? "Все наши сотрудники — это дипломированные медицинские сестры государственного образца (Pflegefachkräfte / Krankenschwester) с сертификатами Wundexperte ICW® и регулярными курсами повышения квалификации."
+            ? "Все наши сотрудники - это дипломированные медицинские сестры государственного образца (Pflegefachkräfte / Krankenschwester) с сертификатами Wundexperte ICW® и регулярными курсами повышения квалификации."
             : isEn
             ? "All our caregivers are state-certified registered nurses with specialized training in ICW® wound care and continuous professional development adhering to German medical standards."
             : isTr
@@ -777,9 +777,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
     cta: {
       eyebrow: isUz ? "BIZ BILAN BOG'LANING" : isRu ? "СВЯЖИТЕСЬ С НАМИ" : isEn ? "GET IN TOUCH" : isTr ? "BİZİMLE İLETİŞİME GEÇİN" : isAr ? "تواصلوا معنا الآن" : "JETZT KONTAKT AUFNEHMEN",
       title: isUz
-        ? "Sizning salomatligingiz va xotirjamligingiz — ishonchli qo'llarda"
+        ? "Sizning salomatligingiz va xotirjamligingiz - ishonchli qo'llarda"
         : isRu
-        ? "Ваше здоровье и покой — в надежных руках"
+        ? "Ваше здоровье и покой - в надежных руках"
         : isEn
         ? "Your Well-Being. Our Dedicated Mission."
         : isTr
@@ -882,17 +882,17 @@ export function PflegePageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 3B: NABIOTA HOMECARE GMBH – PDF SECTION IV.8                      */}
+        {/* SECTION 3B: NABIOTA HOMECARE GMBH - PDF SECTION IV.8                      */}
         {/* ========================================================================= */}
         <HomeCareCompanySection locale={locale} />
 
         {/* ========================================================================= */}
-        {/* SECTION 3C: NABIOTA SANITÄTSHAUS GMBH – PDF SECTION IV.9                  */}
+        {/* SECTION 3C: NABIOTA SANITÄTSHAUS GMBH - PDF SECTION IV.9                  */}
         {/* ========================================================================= */}
         <SanitaetshausCompanySection locale={locale} />
 
         {/* ========================================================================= */}
-        {/* SECTION 3D: NABIOTA APOTHEKE MÖNCHENGLADBACH – PDF SECTION IV.10          */}
+        {/* SECTION 3D: NABIOTA APOTHEKE MÖNCHENGLADBACH - PDF SECTION IV.10          */}
         {/* ========================================================================= */}
         <PharmacyCompanySection locale={locale} />
 

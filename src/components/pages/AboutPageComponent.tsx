@@ -299,8 +299,8 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isTr
       ? "Merkezi Mönchengladbach'ta bulunan NabiOta® Health Group Germany GmbH; birinci basamak sağlık hizmetlerini, ileri tanı merkezlerini, rehabilitasyonu, evde bakım ve entegre klinik servislerini tek bir çatı altında birleştirerek hastalar, çalışanlar ve paydaşlar için kalıcı değerler üretir."
       : isAr
-      ? "تجمع شركة NabiOta® Health Group Germany GmbH، ومقرها مونشنغلادباخ، بين الرعاية الطبية الأولية، التشخيص المتقدم، إعادة التأهيل، الرعاية التمريضية المنزلية والخدمات الصحية الشاملة تحت مظلة موحدة — لصناعة قيمة مستدامة للمرضى والكوادر والشركاء."
-      : "Die NabiOta® Health Group Germany GmbH mit Sitz in Mönchengladbach vereint medizinische Grundversorgung, Diagnostik, Rehabilitation, Pflege und angrenzende Gesundheitsleistungen unter einer gemeinsamen Marke – für nachhaltige Werte für Patienten, Mitarbeitende und Partner.",
+      ? "تجمع شركة NabiOta® Health Group Germany GmbH، ومقرها مونشنغلادباخ، بين الرعاية الطبية الأولية، التشخيص المتقدم، إعادة التأهيل، الرعاية التمريضية المنزلية والخدمات الصحية الشاملة تحت مظلة موحدة - لصناعة قيمة مستدامة للمرضى والكوادر والشركاء."
+      : "Die NabiOta® Health Group Germany GmbH mit Sitz in Mönchengladbach vereint medizinische Grundversorgung, Diagnostik, Rehabilitation, Pflege und angrenzende Gesundheitsleistungen unter einer gemeinsamen Marke - für nachhaltige Werte für Patienten, Mitarbeitende und Partner.",
     badge1Title: isUz ? "Inson" : isRu ? "Человек" : isEn ? "People" : isTr ? "İnsan" : isAr ? "الإنسان" : "Mensch",
     badge1Sub: isUz
       ? "diqqat markazida"
@@ -373,12 +373,12 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : "Für die Zukunft aufgestellt.",
     rootsP1: isUz ? (
       <>
-        NabiOta® Health Group Germany GmbH Mönchengladbach shahar sudida (Amtsgericht) HRB 16787 raqami ostida ro'yxatga olingan. 2026-yil 9-yanvardagi ro'yxatdan o'tkazish bildirishnomasida 50.000 EUR ustav kapitali va rasmiy yuridik manzil ko'rsatilgan: Aachener Straße 114, 41061 Mönchengladbach. Faoliyat maqsadi — sog'liqni saqlash sohasida ulushlarni boshqarish va markazlashtirilgan boshqaruv xizmatlarini ko'rsatishdan iborat. Guruhning ildizlari strategik tibbiy ekspertiza hamda{" "}
+        NabiOta® Health Group Germany GmbH Mönchengladbach shahar sudida (Amtsgericht) HRB 16787 raqami ostida ro'yxatga olingan. 2026-yil 9-yanvardagi ro'yxatdan o'tkazish bildirishnomasida 50.000 EUR ustav kapitali va rasmiy yuridik manzil ko'rsatilgan: Aachener Straße 114, 41061 Mönchengladbach. Faoliyat maqsadi - sog'liqni saqlash sohasida ulushlarni boshqarish va markazlashtirilgan boshqaruv xizmatlarini ko'rsatishdan iborat. Guruhning ildizlari strategik tibbiy ekspertiza hamda{" "}
         <strong className="font-bold text-[#142318]">Medical A-Z Consulting GmbH</strong> merosiga borib taqaladi; tuzilmaviy korporativ rivojlanish va litsenziyalangan shifokorlarning ishtiroki tufayli uzoq muddatli integratsiyalashgan tibbiy guruhning mustahkam poydevori yaratildi.
       </>
     ) : isRu ? (
       <>
-        NabiOta® Health Group Germany GmbH зарегистрирована в Amtsgericht Mönchengladbach под номером HRB 16787. Уведомление о регистрации от 9 января 2026 года указывает уставный капитал 50.000 EUR и юридический адрес: Aachener Straße 114, 41061 Mönchengladbach. Предмет деятельности — управление участиями и централизованные управленческие услуги в сфере здравоохранения. Корни группы восходят к стратегическому развитию медицинской экспертизы и{" "}
+        NabiOta® Health Group Germany GmbH зарегистрирована в Amtsgericht Mönchengladbach под номером HRB 16787. Уведомление о регистрации от 9 января 2026 года указывает уставный капитал 50.000 EUR и юридический адрес: Aachener Straße 114, 41061 Mönchengladbach. Предмет деятельности - управление участиями и централизованные управленческие услуги в сфере здравоохранения. Корни группы восходят к стратегическому развитию медицинской экспертизы и{" "}
         <strong className="font-bold text-[#142318]">Medical A-Z Consulting GmbH</strong>. Благодаря расширению корпоративной структуры и привлечению лицензированных специалистов был заложен фундамент долгосрочной медицинской группы.
       </>
     ) : isEn ? (
@@ -403,9 +403,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       </>
     ),
     rootsP2: isUz
-      ? "Maqsad — umumiy amaliyot va ichki kasalliklar, nevrologiya va jarrohlik yordamini, shuningdek, dastlabki bosqichda § 30 GewO bo'yicha faoliyat yuritadigan xususiy klinikani yagona tarmoqqa birlashtirishdir. Xolding markaziy iqtisodiy va tashkiliy vazifalarni o'z zimmasiga oladi. Litsenziyalar (Zulassungen), tibbiy mas'uliyat va xizmatlar ko'rsatish tegishli vakolatli operatorlar tasarrufida qoladi. Davlat tibbiy sug'urtasiga ega bemorlarni keyingi statsionar davolash va MVZ ta'sischisi sifatida kasalxona boshqaruv kompaniyasini tashkil etish alohida rivojlanish bosqichlari sifatida tayyorlanmoqda."
+      ? "Maqsad - umumiy amaliyot va ichki kasalliklar, nevrologiya va jarrohlik yordamini, shuningdek, dastlabki bosqichda § 30 GewO bo'yicha faoliyat yuritadigan xususiy klinikani yagona tarmoqqa birlashtirishdir. Xolding markaziy iqtisodiy va tashkiliy vazifalarni o'z zimmasiga oladi. Litsenziyalar (Zulassungen), tibbiy mas'uliyat va xizmatlar ko'rsatish tegishli vakolatli operatorlar tasarrufida qoladi. Davlat tibbiy sug'urtasiga ega bemorlarni keyingi statsionar davolash va MVZ ta'sischisi sifatida kasalxona boshqaruv kompaniyasini tashkil etish alohida rivojlanish bosqichlari sifatida tayyorlanmoqda."
       : isRu
-      ? "Цель — объединение семейной и терапевтической, неврологической и хирургической помощи, а также частной клиники, которая на первом этапе работает по § 30 GewO. Холдинг берет на себя центральные экономические и организационные задачи. Допуски (Zulassungen), медицинская ответственность и оказание услуг остаются у соответствующих уполномоченных операторов. Последующее стационарное обслуживание пациентов обязательного медицинского страхования и больничное общество как учредитель MVZ готовятся как отдельные этапы развития."
+      ? "Цель - объединение семейной и терапевтической, неврологической и хирургической помощи, а также частной клиники, которая на первом этапе работает по § 30 GewO. Холдинг берет на себя центральные экономические и организационные задачи. Допуски (Zulassungen), медицинская ответственность и оказание услуг остаются у соответствующих уполномоченных операторов. Последующее стационарное обслуживание пациентов обязательного медицинского страхования и больничное общество как учредитель MVZ готовятся как отдельные этапы развития."
       : isEn
       ? "The goal is a network of general practice and internal medicine, neurological and surgical care, as well as a private clinic initially operated under § 30 GewO. The holding assumes central economic and organizational tasks. Approvals, medical responsibility and service provision remain with the respective authorized operators. Later inpatient care for statutorily insured patients and a hospital company acting as MVZ sponsor are being prepared as separate development steps."
       : isTr
@@ -459,9 +459,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       ? "رسالتنا"
       : "Unser Auftrag",
     cardMissionText: isUz
-      ? "Insonlarga yuqori sifatli, mehr-oqibatli va shaxsiylashtirilgan tibbiy xizmat ko'rsatish orqali eng yaxshi yordamni taqdim etish — birlamchi bo'g'indan tortib reabilitatsiyagacha."
+      ? "Insonlarga yuqori sifatli, mehr-oqibatli va shaxsiylashtirilgan tibbiy xizmat ko'rsatish orqali eng yaxshi yordamni taqdim etish - birlamchi bo'g'indan tortib reabilitatsiyagacha."
       : isRu
-      ? "Оказывать людям наилучшую поддержку посредством высококачественной медицинской помощи, современной диагностики, индивидуального ухода и инновационных услуг — надежно сопровождая пациентов на всем пути лечения."
+      ? "Оказывать людям наилучшую поддержку посредством высококачественной медицинской помощи, современной диагностики, индивидуального ухода и инновационных услуг - надежно сопровождая пациентов на всем пути лечения."
       : isEn
       ? "To provide people with the best possible support through high-quality medical care, modern diagnostics, personalized attention, and innovative healthcare services throughout their entire treatment journey."
       : isTr
@@ -559,10 +559,10 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       : isEn
       ? "Holding & Subsidiary Entities"
       : isTr
-      ? "Şirket Yapısı – Holding ve İştirakler"
+      ? "Şirket Yapısı - Holding ve İştirakler"
       : isAr
-      ? "الهيكل المؤسسي – القابضة والشركات التابعة"
-      : "Unternehmensstruktur – Holding & Tochtergesellschaften",
+      ? "الهيكل المؤسسي - القابضة والشركات التابعة"
+      : "Unternehmensstruktur - Holding & Tochtergesellschaften",
     holdingBadge: isUz
       ? "XOLDING / KONSERN"
       : isRu
@@ -894,9 +894,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
 
     founderExpandedParagraphs: [
       isUz
-        ? "Bizning maqsadimiz — shaxsiylashtirilgan, ko'p tarmoqli va muvofiqlashtirilgan tibbiy parvarish. Birlamchi tibbiy yordamdan boshlab ixtisoslashgan diagnostika va keyingi davolanishgacha barcha xizmatlar o'zaro uzviy bog'lanishi kerak."
+        ? "Bizning maqsadimiz - shaxsiylashtirilgan, ko'p tarmoqli va muvofiqlashtirilgan tibbiy parvarish. Birlamchi tibbiy yordamdan boshlab ixtisoslashgan diagnostika va keyingi davolanishgacha barcha xizmatlar o'zaro uzviy bog'lanishi kerak."
         : isRu
-        ? "Наша цель — персональное, междисциплинарное и четко скоординированное сопровождение. От первичного амбулаторного приема и специализированной диагностики до последующего лечения — все медицинские звенья должны работать слаженно и гармонично."
+        ? "Наша цель - персональное, междисциплинарное и четко скоординированное сопровождение. От первичного амбулаторного приема и специализированной диагностики до последующего лечения - все медицинские звенья должны работать слаженно и гармонично."
         : isEn
         ? "Our objective is personalized, cross-disciplinary, and well-coordinated care. From initial primary consultation through specialized diagnostics to continuous treatment, medical services should meaningfully interlock."
         : isTr
@@ -973,7 +973,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
       isUz
         ? "Azizbek Fisher-Raximov NabiOta Health Group Germany kompaniyasining tashkiliy va strategik rivojlanishini qo'llab-quvvatlaydi. Uning asosiy yo'nalishi operatsion jarayonlarni muvofiqlashtirish, loyihalarni boshqarish hamda rahbariyat va alohida muassasalar o'rtasidagi hamkorlikni ta'minlashdan iborat."
         : isRu
-        ? "Азизбек Фишер-Рахимов сопровождает организационное и стратегическое развитие NabiOta Health Group Germany. В фокусе его работы — координация операционных процессов, сопровождение ключевых проектов и взаимодействие между руководством холдинга и отдельными медицинскими подразделениями."
+        ? "Азизбек Фишер-Рахимов сопровождает организационное и стратегическое развитие NabiOta Health Group Germany. В фокусе его работы - координация операционных процессов, сопровождение ключевых проектов и взаимодействие между руководством холдинга и отдельными медицинскими подразделениями."
         : isEn
         ? "Azizbek Fischer-Rahimov supports the organizational and strategic expansion of NabiOta Health Group Germany. His focus lies on coordinating operational workflows, overseeing projects, and facilitating cooperation between executive leadership and individual healthcare centers."
         : isTr
@@ -982,9 +982,9 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         ? "يدعم عزيز بيك فيشر-رحيموف التطوير المؤسسي والاستراتيجي لمجموعة NabiOta Health Group Germany. ويتركز نشاطه على تنسيق العمليات التشغيلية، ومتابعة المشاريع، وتعزيز التعاون بين الإدارة التنفيذية ومختلف المنشآت الطبية التابعة للمجموعة."
         : "Azizbek Fischer-Rahimov unterstützt die organisatorische und strategische Weiterentwicklung der NabiOta Health Group Germany. Sein Schwerpunkt liegt auf der Koordination betrieblicher Abläufe, der Begleitung von Projekten und der Zusammenarbeit zwischen Geschäftsführung und den einzelnen Einrichtungen.",
       isUz
-        ? "Ushbu faoliyatning maqsadi — aniq tuzilmalarni shakllantirish, jarayonlar samaradorligini oshirish va kundalik amaliyotda jamoalarni tashkiliy jihatdan yengillatishdir. U tadbirkorlik tafakkurini bemorlarga yo'naltirilgan sog'liqni saqlashning o'ziga xos talablarini chuqur tushunish bilan uyg'unlashtiradi."
+        ? "Ushbu faoliyatning maqsadi - aniq tuzilmalarni shakllantirish, jarayonlar samaradorligini oshirish va kundalik amaliyotda jamoalarni tashkiliy jihatdan yengillatishdir. U tadbirkorlik tafakkurini bemorlarga yo'naltirilgan sog'liqni saqlashning o'ziga xos talablarini chuqur tushunish bilan uyg'unlashtiradi."
         : isRu
-        ? "Цель его деятельности — содействие прозрачным структурам, повышение эффективности процессов и организационная разгрузка команд на местах в повседневной практике. Он сочетает предпринимательский подход с пониманием особых требований пациент-ориентированного здравоохранения."
+        ? "Цель его деятельности - содействие прозрачным структурам, повышение эффективности процессов и организационная разгрузка команд на местах в повседневной практике. Он сочетает предпринимательский подход с пониманием особых требований пациент-ориентированного здравоохранения."
         : isEn
         ? "The goal of his work is to promote clear structures, optimize operating processes, and relieve healthcare teams of administrative burdens in daily practice. He unites entrepreneurial thinking with a deep appreciation for the unique requirements of patient-oriented healthcare."
         : isTr
@@ -1198,16 +1198,16 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         {
           name: "“NabiOta” Klinik Germany GmbH",
           sub: isUz
-            ? "Tibbiy klinika (§ 30 GewO bo'yicha) — statsionar, kunduzgi va ambulator jarrohlik o'rinlari"
+            ? "Tibbiy klinika (§ 30 GewO bo'yicha) - statsionar, kunduzgi va ambulator jarrohlik o'rinlari"
             : isRu
-            ? "Медицинская клиника (по § 30 GewO) — стационарные, дневные и операционные центры"
+            ? "Медицинская клиника (по § 30 GewO) - стационарные, дневные и операционные центры"
             : isEn
-            ? "Inpatient & Specialty Clinic (acc. to § 30 GewO) — Inpatient surgery & recovery"
+            ? "Inpatient & Specialty Clinic (acc. to § 30 GewO) - Inpatient surgery & recovery"
             : isTr
-            ? "Klinik Germany GmbH (§ 30 KH / GewO uyarınca) — Yataklı, günübirlik ve cerrahi tedavi merkezleri"
+            ? "Klinik Germany GmbH (§ 30 KH / GewO uyarınca) - Yataklı, günübirlik ve cerrahi tedavi merkezleri"
             : isAr
-            ? "Klinik Germany GmbH (وفق § 30 GewO) — رعاية استشفائية سريرية وجراحية متكاملة"
-            : "Klinik Germany GmbH (n. § 30 KH / GewO) — Stationäre, teilstationäre & operative Versorgung",
+            ? "Klinik Germany GmbH (وفق § 30 GewO) - رعاية استشفائية سريرية وجراحية متكاملة"
+            : "Klinik Germany GmbH (n. § 30 KH / GewO) - Stationäre, teilstationäre & operative Versorgung",
           badge: "§ 30 GewO",
           href: `/${locale}/nabiota-clinics-germany`,
           icon: BuildingStatsIcon,
@@ -1215,16 +1215,16 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         {
           name: "“NabiOta” Rehabilitation Center",
           sub: isUz
-            ? "Reabilitatsiya va terapiya markazi (Rehabilitation & Therapy GmbH) — ambulator harakat va nevrologik reabilitatsiya"
+            ? "Reabilitatsiya va terapiya markazi (Rehabilitation & Therapy GmbH) - ambulator harakat va nevrologik reabilitatsiya"
             : isRu
-            ? "Центр реабилитации и терапии (Rehabilitation & Therapy GmbH) — физиотерапия, эрготерапия, логопедия"
+            ? "Центр реабилитации и терапии (Rehabilitation & Therapy GmbH) - физиотерапия, эрготерапия, логопедия"
             : isEn
-            ? "Rehabilitation & Therapy Center — Physiotherapy, Occupational & Speech therapy"
+            ? "Rehabilitation & Therapy Center - Physiotherapy, Occupational & Speech therapy"
             : isTr
-            ? "Rehabilitasyon ve Terapi Merkezi (GmbH) — Fizyoterapi, Ergoterapi, Logopedi ve Medikal Egzersiz Terapisi"
+            ? "Rehabilitasyon ve Terapi Merkezi (GmbH) - Fizyoterapi, Ergoterapi, Logopedi ve Medikal Egzersiz Terapisi"
             : isAr
-            ? "مركز إعادة التأهيل والعلاج (GmbH) — علاج طبيعي، علاج وظيفي، علاج النطق، وتمارين تأهيلية"
-            : "Rehabilitation & Therapy Center (GmbH) — Physiotherapie, Ergotherapie, Logopädie & MTT",
+            ? "مركز إعادة التأهيل والعلاج (GmbH) - علاج طبيعي، علاج وظيفي، علاج النطق، وتمارين تأهيلية"
+            : "Rehabilitation & Therapy Center (GmbH) - Physiotherapie, Ergotherapie, Logopädie & MTT",
           badge: isTr ? "Ayakta Reha" : isAr ? "تأهيل متنقل" : "Ambulante Reha",
           href: `/${locale}/nabiota-rehabilitation`,
           icon: ActivityRehabIcon,
@@ -1313,11 +1313,11 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         {
           name: "“NabiOta” Medical Recruitment",
           sub: isUz
-            ? "Tibbiy rekruting xizmati (GmbH) — xalqaro shifokorlar va malakali hamshiralarni jalb qilish hamda Approbation dasturi"
+            ? "Tibbiy rekruting xizmati (GmbH) - xalqaro shifokorlar va malakali hamshiralarni jalb qilish hamda Approbation dasturi"
             : isRu
-            ? "Служба медицинского рекрутинга (GmbH) — привлечение врачей и медперсонала, нострификация и Approbation"
+            ? "Служба медицинского рекрутинга (GmbH) - привлечение врачей и медперсонала, нострификация и Approbation"
             : isEn
-            ? "Medical Recruitment Services GmbH — Healthcare staffing & degree recognition (Approbation)"
+            ? "Medical Recruitment Services GmbH - Healthcare staffing & degree recognition (Approbation)"
             : isTr
             ? "Medical Recruitment Services GmbH (Tıbbi aracılık hizmeti & Approbation ruhsat refakati)"
             : isAr
@@ -1330,11 +1330,11 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         {
           name: "“NabiOta” Real Estate GmbH",
           sub: isUz
-            ? "Tibbiy ko'chmas mulk — sog'liqni saqlash ob'ektlarini ishlab chiqish, qayta rejalashtirish va boshqarish"
+            ? "Tibbiy ko'chmas mulk - sog'liqni saqlash ob'ektlarini ishlab chiqish, qayta rejalashtirish va boshqarish"
             : isRu
-            ? "Медицинская недвижимость — девелопмент, перепланировка и управление специализированными зданиями клиник и MVZ"
+            ? "Медицинская недвижимость - девелопмент, перепланировка и управление специализированными зданиями клиник и MVZ"
             : isEn
-            ? "Medical Real Estate GmbH — Acquisition, clinic construction & medical facility management"
+            ? "Medical Real Estate GmbH - Acquisition, clinic construction & medical facility management"
             : isTr
             ? "Real Estate GmbH (Medikal gayrimenkul, klinik planlama ve işletme konseptleri)"
             : isAr
@@ -1351,7 +1351,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             : isRu
             ? "Ортопедические салоны (Sanitätshaus GmbH), обеспечение медикаментами клиник и NabiOta Pharmacy"
             : isEn
-            ? "Medical Supplies & NabiOta Pharmacy — Orthopedic aids, rehab products & clinical pharmacy"
+            ? "Medical Supplies & NabiOta Pharmacy - Orthopedic aids, rehab products & clinical pharmacy"
             : isTr
             ? "İlaç Tedariki & Sanitätshaus GmbH (Medikal ortopedi araçları & NabiOta Eczanesi)"
             : isAr

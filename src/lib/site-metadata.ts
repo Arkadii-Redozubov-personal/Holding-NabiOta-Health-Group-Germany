@@ -19,7 +19,7 @@ export function getSiteMetadata(locale: SupportedLocale): Metadata {
       default: `${companyInfo.name} | ${companyInfo.slogan}`,
     },
     description:
-      "NabiOta® Health Group Germany GmbH – Eine zukunftsweisende Unternehmensgruppe im Gesundheitswesen. Medizinische Fachbereiche, Diagnostik, Rehabilitation, Pflege und zukunftsfähige Gesundheitsprojekte.",
+      "NabiOta® Health Group Germany GmbH - Eine zukunftsweisende Unternehmensgruppe im Gesundheitswesen. Medizinische Fachbereiche, Diagnostik, Rehabilitation, Pflege und zukunftsfähige Gesundheitsprojekte.",
     keywords: [
       "NabiOta",
       "Health Group Germany",
@@ -34,7 +34,7 @@ export function getSiteMetadata(locale: SupportedLocale): Metadata {
     authors: [{ name: companyInfo.name }],
     metadataBase: new URL(siteUrl),
     openGraph: {
-      title: `${companyInfo.name} – ${companyInfo.slogan}`,
+      title: `${companyInfo.name} - ${companyInfo.slogan}`,
       description: companyInfo.mission,
       url: siteUrl,
       siteName: companyInfo.name,

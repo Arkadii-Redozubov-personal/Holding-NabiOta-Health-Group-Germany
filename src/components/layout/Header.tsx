@@ -379,7 +379,7 @@ export function Header({ currentLocale = "de" }: HeaderProps) {
                         )}
                       </button>
 
-                      {/* Desktop Dropdown — compact glassmorphism */}
+                      {/* Desktop Dropdown - compact glassmorphism */}
                       {areasDropdownOpen && (
                         <div
                           className="absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50 pointer-events-auto"

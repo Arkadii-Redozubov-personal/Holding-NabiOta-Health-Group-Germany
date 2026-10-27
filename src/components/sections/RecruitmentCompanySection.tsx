@@ -26,7 +26,7 @@ import {
 import { Container } from "@/components/layout/Container";
 
 /**
- * PDF Section IV.6 – "NabiOta Medical Recruitment Services GmbH"
+ * PDF Section IV.6 - "NabiOta Medical Recruitment Services GmbH"
  * (Medizinische Fachkraft Vermittlungsservice)
  * Unternehmensgegenstand, Fachberufe, 4 Leistungsbereiche,
  * Behördenzuständigkeit, Trennung Personalvermittlung vs. Arbeitnehmerüberlassung (AÜG).

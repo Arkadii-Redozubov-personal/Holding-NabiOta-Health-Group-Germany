@@ -771,7 +771,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isRu
               ? [
                   "Экспертное второе мнение (Second Opinion) ведущих хирургов и онкологов Германии",
-                  "Телерадиология: удаленный аудит снимков МРТ, КТ и рентгена с заключением за 24–48 часов",
+                  "Телерадиология: удаленный аудит снимков МРТ, КТ и рентгена с заключением за 24-48 часов",
                   "Интерактивные телеконсилиумы в режиме реального времени с демонстрацией операционного поля",
                   "Телекардиология: дистанционный анализ холтеровского мониторирования и ЭКГ",
                   "Телепатология: цифровой пересмотр гистологических и цитологических микропрепаратов",
@@ -780,7 +780,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isEn
               ? [
                   "Specialist German second opinions in spine surgery, joint replacement, oncology, and neurology",
-                  "Teleradiology: remote audit of MRI, CT, and X-ray studies with verified report within 24–48 hours",
+                  "Teleradiology: remote audit of MRI, CT, and X-ray studies with verified report within 24-48 hours",
                   "Real-time interactive tele-consultations with live surgical view and diagnostic sharing",
                   "Telecardiology: remote interpretation of multi-day Holter ECGs and stress telemetry",
                   "Telepathology: digital slide scanning and histological second reviews for oncology staging",
@@ -789,7 +789,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isTr
               ? [
                   "Ortopedi, beyin ve omurga cerrahisi, onkoloji ve kardiyoloji için uzman hekim ikinci görüşleri (Second Opinion)",
-                  "Teleradyoloji: 24–48 saat içinde MRG ve BT görüntülerinin bağımsız uzman raporlaması",
+                  "Teleradyoloji: 24-48 saat içinde MRG ve BT görüntülerinin bağımsız uzman raporlaması",
                   "Tedavi eden yerel doktor ile NabiOta uzmanları arasında canlı tele-konsültasyonlar",
                   "Uzun süreli EKG, kalp pili ve efor verilerinin telekardiyolojik değerlendirmesi",
                   "Biyopsi ve onkolojik doku bulgularının doğrulanması için dijital telepatoloji",
@@ -806,7 +806,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                 ]
               : [
                   "Facharzt-Zweitmeinungen (Second Opinion) für Orthopädie, Neurochirurgie, Onkologie und Kardiologie",
-                  "Teleradiologie: Unabhängige Zweitbefundung von MRT- und CT-Aufnahmen binnen 24–48 Stunden",
+                  "Teleradiologie: Unabhängige Zweitbefundung von MRT- und CT-Aufnahmen binnen 24-48 Stunden",
                   "Live-Telekonsile zwischen behandelndem Arzt vor Ort und NabiOta-Spezialisten",
                   "Telekardiologische Beurteilung von Langzeit-EKGs, Schrittmacher- und Belastungsdaten",
                   "Digitale Telepathologie zur Verifizierung bioptischer und onkologischer Gewebebefunde",
@@ -1193,9 +1193,9 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               ? "مفاهيم تعليمية معتمدة، دورات جراحية تخصصية متقدمة، ونقل معرفي بين التخصصات"
               : "Zertifizierte Fortbildungskonzepte, chirurgische Masterclasses und interdisziplinärer Wissenstransfer",
             description: isUz
-              ? "NabiOta Academy — xoldingning ta'lim bo'linmasi bo'lib, xorijiy shifokorlar va boshqaruvchilarga zamonaviy nemis tibbiyoti standartlarini yetkazadi. Dasturlar laparoskopiya, robotlashtirilgan jarrohlik, shoshilinch yordam, zamonaviy diagnostika va sog'liqni saqlash menejmentini o'z ichiga oladi."
+              ? "NabiOta Academy - xoldingning ta'lim bo'linmasi bo'lib, xorijiy shifokorlar va boshqaruvchilarga zamonaviy nemis tibbiyoti standartlarini yetkazadi. Dasturlar laparoskopiya, robotlashtirilgan jarrohlik, shoshilinch yordam, zamonaviy diagnostika va sog'liqni saqlash menejmentini o'z ichiga oladi."
               : isRu
-              ? "NabiOta Academy — образовательное подразделение холдинга, реализующее программы повышения квалификации для зарубежных врачей и медицинских менеджеров. Мы организуем интенсивные клинические стажировки в центрах холдинга, мастер-классы по артроскопии, эндоскопии, микрохирургии и радиационной безопасности, транслируя передовой немецкий медицинский опыт."
+              ? "NabiOta Academy - образовательное подразделение холдинга, реализующее программы повышения квалификации для зарубежных врачей и медицинских менеджеров. Мы организуем интенсивные клинические стажировки в центрах холдинга, мастер-классы по артроскопии, эндоскопии, микрохирургии и радиационной безопасности, транслируя передовой немецкий медицинский опыт."
               : isEn
               ? "NabiOta Academy is the group's educational arm dedicated to international physician education and healthcare management training. We offer intensive surgical observerships, hands-on workshops in arthroscopy, endoscopy, and microsurgery, and structured courses in radiation protection, equipping global clinicians with German medical excellence."
               : isTr
@@ -1515,7 +1515,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               : isRu
               ? [
                   "Партнерство с местными министерствами здравоохранения и аккредитованными НКО",
-                  "Отказ от разовых акций — акцент на обучении местных специалистов для самостоятельной работы",
+                  "Отказ от разовых акций - акцент на обучении местных специалистов для самостоятельной работы",
                   "Обеспечение долгосрочной доступности запасных частей и сервиса оборудования",
                   "Прозрачная отчетность и аудит целевого использования направляемых средств",
                   "Соответствие целям устойчивого развития ООН (SDG 3: Хорошее здоровье и благополучие)",
@@ -1680,7 +1680,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               ? [
                   "Малоинвазивная ортопедическая хирургия: эндопротезирование тазобедренных и коленных суставов",
                   "Специализированная нейрохирургия позвоночника (грыжи дисков, спондилодез, декомпрессия)",
-                  "Комплексные программы Check-up обследования с 3T MRT и кардиоваскулярной диагностикой за 1–2 дня",
+                  "Комплексные программы Check-up обследования с 3T MRT и кардиоваскулярной диагностикой за 1-2 дня",
                   "Реконструктивная, пластическая и эстетическая хирургия с постоперационным стационаром",
                   "Курсы ранней нейрологической и ортопедической реабилитации в собственном терапевтическом центре",
                   "Амбулаторная специализированная онкологическая и кардиологическая диагностика",
@@ -1741,7 +1741,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                 ]
               : isRu
               ? [
-                  "Первичный аудит медицинских документов немецким врачом в течение 24–48 часов",
+                  "Первичный аудит медицинских документов немецким врачом в течение 24-48 часов",
                   "Официальное медицинское приглашение (Einladung) для ускоренного оформления визы в посольстве",
                   "Прозрачная смета расходов (Kostenvoranschlag) на основе немецкого тарифного справочника GOÄ",
                   "Встреча в аэропорту Дюссельдорфа/Кёльна и персональный трансфер в клинику или отель",
@@ -1750,7 +1750,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                 ]
               : isEn
               ? [
-                  "Physician review and preliminary clinical assessment within 24–48 hours of file submission",
+                  "Physician review and preliminary clinical assessment within 24-48 hours of file submission",
                   "Official hospital visa invitation letter for accelerated processing at German embassies and consulates",
                   "Transparent cost estimates based strictly on official German medical fee schedules (GOÄ)",
                   "VIP airport pickup at Düsseldorf (DUS) or Cologne-Bonn (CGN) with private clinic transfer",
@@ -1759,7 +1759,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                 ]
               : isTr
               ? [
-                  "Tıbbi belgelerin başhekimler tarafından incelenmesi ve 24–48 saat içinde tedavi önerisi sunulması",
+                  "Tıbbi belgelerin başhekimler tarafından incelenmesi ve 24-48 saat içinde tedavi önerisi sunulması",
                   "Hızlandırılmış vize başvurusu için resmi tıbbi davet mektuplarının (Einladung) düzenlenmesi",
                   "Alman Resmi Hekim Ücret Tarifesi (GOÄ) temelinde şeffaf maliyet tahmini (Kostenvoranschlag)",
                   "Düsseldorf (DUS) veya Köln/Bonn (CGN) havalimanından VIP karşılama ve otel koordinasyonu",
@@ -1776,7 +1776,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                   "ترجمة معتمدة لكافة تقارير الخروج وسجلات العمليات وخطط الأدوية إلى الإنجليزية أو العربية",
                 ]
               : [
-                  "Vorab-Prüfung der Unterlagen durch Chefärzte mit Therapieempfehlung binnen 24–48 Stunden",
+                  "Vorab-Prüfung der Unterlagen durch Chefärzte mit Therapieempfehlung binnen 24-48 Stunden",
                   "Ausstellung offizieller medizinischer Einladungsschreiben für das beschleunigte Visumverfahren",
                   "Transparenter Kostenvoranschlag auf Basis der Gebührenordnung für Ärzte (GOÄ)",
                   "VIP-Abholservice vom Flughafen Düsseldorf (DUS) oder Köln/Bonn (CGN) mit Hotelkoordination",
@@ -2098,16 +2098,16 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         ? "معاً من أجل الصحة العالمية."
         : "Gemeinsam für globale Gesundheit.",
       desc: isUz
-        ? "Hamkor, homiy yoki ko'ngilli sifatida bo'ladimi — biz sog'lom kelajakni birgalikda yaratish yo'lidagi har qanday hamkorlikni mamnuniyat bilan qutlaymiz."
+        ? "Hamkor, homiy yoki ko'ngilli sifatida bo'ladimi - biz sog'lom kelajakni birgalikda yaratish yo'lidagi har qanday hamkorlikni mamnuniyat bilan qutlaymiz."
         : isRu
-        ? "В качестве партнера, спонсора или волонтера — мы рады любой форме сотрудничества ради здорового будущего."
+        ? "В качестве партнера, спонсора или волонтера - мы рады любой форме сотрудничества ради здорового будущего."
         : isEn
-        ? "Whether as an institutional partner, benefactor, or contributor — we welcome every collaboration to advance worldwide wellbeing."
+        ? "Whether as an institutional partner, benefactor, or contributor - we welcome every collaboration to advance worldwide wellbeing."
         : isTr
-        ? "İster kurumsal ortak, ister destekçi, isterse gönüllü olarak — sağlıklı bir geleceği inşa etmek için her türlü işbirliğini memnuniyetle karşılıyoruz."
+        ? "İster kurumsal ortak, ister destekçi, isterse gönüllü olarak - sağlıklı bir geleceği inşa etmek için her türlü işbirliğini memnuniyetle karşılıyoruz."
         : isAr
-        ? "سواء بصفتك شريكاً مؤسسياً، داعماً، أو مساهماً متطوعاً — نرحب بكل أشكال التعاون لبناء مستقبل صحي للجميع."
-        : "Ob als Partner, Förderer oder ehrenamtlicher Unterstützer – wir freuen uns über jede Form der Zusammenarbeit.",
+        ? "سواء بصفتك شريكاً مؤسسياً، داعماً، أو مساهماً متطوعاً - نرحب بكل أشكال التعاون لبناء مستقبل صحي للجميع."
+        : "Ob als Partner, Förderer oder ehrenamtlicher Unterstützer - wir freuen uns über jede Form der Zusammenarbeit.",
       btn: isUz
         ? "Biz bilan bog'lanish"
         : isRu
@@ -2204,7 +2204,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         </section>
 
         {/* ========================================================================= */}
-        {/* SECTION 2B: NABIOTA MEDICAL RECRUITMENT SERVICES GMBH – PDF IV.6         */}
+        {/* SECTION 2B: NABIOTA MEDICAL RECRUITMENT SERVICES GMBH - PDF IV.6         */}
         {/* ========================================================================= */}
         <RecruitmentCompanySection locale={locale} />
 

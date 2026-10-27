@@ -879,14 +879,14 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
     desc: isUz
       ? "Uzoq muddatli shifo topishingiz uchun biz tibbiy ekspertizani ilg'or terapiya texnologiyalari va individual g'amxo'rlik bilan birlashtiramiz."
       : isRu
-      ? "Мы объединяем медицинскую экспертизу с передовыми технологиями терапии и персонализированным вниманием — для вашего долгосрочного выздоровления."
+      ? "Мы объединяем медицинскую экспертизу с передовыми технологиями терапии и персонализированным вниманием - для вашего долгосрочного выздоровления."
       : isEn
       ? "We combine clinical excellence with state-of-the-art physical therapy and compassionate support for lasting mobility."
       : isTr
       ? "Kalıcı iyileşmeniz ve hareketliliğiniz için tıbbi uzmanlığı en modern terapi teknolojileri ve birebir ilgiyle birleştiriyoruz."
       : isAr
       ? "نجمع بين الخبرة الطبية المرموقة وأحدث تقنيات العلاج والرعاية الفردية الدافئة لتحقيق تعافيكم المستدام."
-      : "Wir kombinieren medizinische Expertise mit modernster Therapie und persönlicher Betreuung – für Ihren langfristigen Erfolg.",
+      : "Wir kombinieren medizinische Expertise mit modernster Therapie und persönlicher Betreuung - für Ihren langfristigen Erfolg.",
     stats: [
       {
         val: "100+",
@@ -970,14 +970,14 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
         desc: isUz
           ? "Reabilitatsiyadan keyin ham barqaror salomatligingiz uchun yoningizda qolamiz."
           : isRu
-          ? "Мы остаемся рядом и после завершения курса – для вашего устойчивого здоровья."
+          ? "Мы остаемся рядом и после завершения курса - для вашего устойчивого здоровья."
           : isEn
           ? "We continue by your side even after graduation for enduring mobility and health."
           : isTr
           ? "Rehabilitasyon sonrasında da kalıcı sağlığınız ve hareketliliğiniz için yanınızdayız."
           : isAr
           ? "نبقى بجانبكم حتى بعد انتهاء البرنامج للحفاظ على حركتكم وصحتكم المستدامة."
-          : "Auch nach der Reha bleiben wir an Ihrer Seite – für Ihre nachhaltige Gesundheit.",
+          : "Auch nach der Reha bleiben wir an Ihrer Seite - für Ihre nachhaltige Gesundheit.",
         icon: <Heart className="w-6 h-6 text-[#142318]" />,
       },
     ],
@@ -1091,9 +1091,9 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
     {
       q: isUz ? "NabiOta reabilitatsiya markaziga qanday qilib yo'llanma olish mumkin?" : isRu ? "Как получить направление в ваш центр?" : isEn ? "How do I get a prescription or referral to NabiOta?" : isTr ? "NabiOta Reha Merkezi için nasıl sevk/reçete alabilirim?" : isAr ? "كيف أحصل على تحويل أو وصفة طبية لمركز NabiOta؟" : "Wie erhalte ich eine Verordnung für das NabiOta Rehazentrum?",
       a: isUz
-        ? "Yo'llanma operatsiyadan so'ng statsionar ijtimoiy xizmati orqali (AHB – Anschlussheilbehandlung) yoki sizni davolovchi mutaxassis shifokor (ortoped, nevrolog, terapevt) tomonidan rasmiylashtiriladi."
+        ? "Yo'llanma operatsiyadan so'ng statsionar ijtimoiy xizmati orqali (AHB - Anschlussheilbehandlung) yoki sizni davolovchi mutaxassis shifokor (ortoped, nevrolog, terapevt) tomonidan rasmiylashtiriladi."
         : isRu
-        ? "Направление оформляется лечащим хирургом в стационаре перед выпиской (AHB — Anschlussheilbehandlung) либо вашим участковым ортопедом/неврологом через стандартную форму направления (Muster 61 или рецепт на физиотерапию)."
+        ? "Направление оформляется лечащим хирургом в стационаре перед выпиской (AHB - Anschlussheilbehandlung) либо вашим участковым ортопедом/неврологом через стандартную форму направления (Muster 61 или рецепт на физиотерапию)."
         : isEn
         ? "Referrals can be initiated directly by your hospital surgeon prior to discharge (Anschlussheilbehandlung - AHB) or prescribed by your resident orthopedic specialist or neurologist."
         : isTr
@@ -1221,7 +1221,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
       </section>
 
       {/* ══════════════════════════════════════════════════════════
-          SECTION 5B: NABIOTA REHABILITATION & THERAPY GMBH – PDF IV.5
+          SECTION 5B: NABIOTA REHABILITATION & THERAPY GMBH - PDF IV.5
           - Corporate purpose, 4 pillars, goals & payer framework
       ══════════════════════════════════════════════════════════ */}
       <RehabilitationCompanySection locale={locale}>
@@ -1263,11 +1263,11 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
               <div className="max-w-sm lg:max-w-md pb-1">
                 <p className="font-sans text-[12px] sm:text-[13px] text-[#556358] leading-relaxed">
                   {isUz
-                    ? "Endoprotezlashdan keyin yurish qobiliyatini tiklashdan erta nevrologik reabilitatsiyagacha — biz tibbiy bilim va zamonaviy harakat terapiyasini birlashtiramiz."
+                    ? "Endoprotezlashdan keyin yurish qobiliyatini tiklashdan erta nevrologik reabilitatsiyagacha - biz tibbiy bilim va zamonaviy harakat terapiyasini birlashtiramiz."
                     : isRu
-                    ? "От ортопедического восстановления после эндопротезирования до тонкой нейрореабилитации и возвращения в спорт — мы объединяем врачебную экспертизу и современные методики."
+                    ? "От ортопедического восстановления после эндопротезирования до тонкой нейрореабилитации и возвращения в спорт - мы объединяем врачебную экспертизу и современные методики."
                     : isEn
-                    ? "From orthopedic post-operative recovery to neurological re-education and competitive athletic return-to-play — our certified specialists guide every milestone."
+                    ? "From orthopedic post-operative recovery to neurological re-education and competitive athletic return-to-play - our certified specialists guide every milestone."
                     : isTr
                     ? "Eklem protezi sonrası yürüme kabiliyetinin yeniden kazanılmasından erken nörolojik rehabilitasyona kadar tıbbi uzmanlığı modern hareket terapisiyle birleştiriyoruz."
                     : isAr

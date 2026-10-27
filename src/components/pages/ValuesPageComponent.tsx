@@ -84,16 +84,16 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
     heroTitle2: isUz ? "kelajak sari birgalikda." : isRu ? "здорового будущего." : isEn ? "healthier future." : isTr ? "gelecek için birlikte." : isAr ? "مستقبل أكثر صحة." : "gesündere Zukunft.",
     heroTitle3: "",
     heroDesc: isUz
-      ? "NabiOta® Health Group Germany GmbH — zamonaviy tibbiyot, innovatsion yechimlar va insoniy g'amxo'rlikni birlashtirgan integratsiyalashgan sog'liqni saqlash kompaniyasidir. Bizning maqsadimiz — bugun va kelajakda insonlar hayot sifatini barqaror yaxshilashdir."
+      ? "NabiOta® Health Group Germany GmbH - zamonaviy tibbiyot, innovatsion yechimlar va insoniy g'amxo'rlikni birlashtirgan integratsiyalashgan sog'liqni saqlash kompaniyasidir. Bizning maqsadimiz - bugun va kelajakda insonlar hayot sifatini barqaror yaxshilashdir."
       : isRu
-      ? "NabiOta® Health Group Germany GmbH — интегрированная компания в сфере здравоохранения, объединяющая современную медицину, инновационные решения и человеческую заботу. Наша цель — устойчиво улучшать качество жизни людей сегодня и в будущем."
+      ? "NabiOta® Health Group Germany GmbH - интегрированная компания в сфере здравоохранения, объединяющая современную медицину, инновационные решения и человеческую заботу. Наша цель - устойчиво улучшать качество жизни людей сегодня и в будущем."
       : isEn
-      ? "NabiOta® Health Group Germany GmbH is an integrated healthcare enterprise uniting modern medicine, innovative solutions, and human compassion. Our goal is to sustainably enhance the quality of life for people – today and in the future."
+      ? "NabiOta® Health Group Germany GmbH is an integrated healthcare enterprise uniting modern medicine, innovative solutions, and human compassion. Our goal is to sustainably enhance the quality of life for people - today and in the future."
       : isTr
       ? "NabiOta® Health Group Germany GmbH, modern tıbbı, yenilikçi çözümleri ve insani şefkati bir araya getiren entegre bir sağlık kuruluşudur. Amacımız, insanların yaşam kalitesini bugün ve gelecekte kalıcı olarak yükseltmektir."
       : isAr
-      ? "تعد مجموعة NabiOta® Health Group Germany GmbH مؤسسة رعاية صحية متكاملة تجمع بين الطب الحديث، والحلول المبتكرة، والرعاية الإنسانية الشاملة. هدفنا هو تحسين جودة حياة المرضى بصورة مستدامة – اليوم وفي المستقبل."
-      : "NabiOta® Health Group Germany GmbH ist ein integriertes Gesundheitsunternehmen, das moderne Medizin, innovative Lösungen und menschliche Fürsorge vereint. Unser Ziel ist es, die Lebensqualität von Menschen nachhaltig zu verbessern – heute und in Zukunft.",
+      ? "تعد مجموعة NabiOta® Health Group Germany GmbH مؤسسة رعاية صحية متكاملة تجمع بين الطب الحديث، والحلول المبتكرة، والرعاية الإنسانية الشاملة. هدفنا هو تحسين جودة حياة المرضى بصورة مستدامة - اليوم وفي المستقبل."
+      : "NabiOta® Health Group Germany GmbH ist ein integriertes Gesundheitsunternehmen, das moderne Medizin, innovative Lösungen und menschliche Fürsorge vereint. Unser Ziel ist es, die Lebensqualität von Menschen nachhaltig zu verbessern - heute und in Zukunft.",
     heroBtn: isUz ? "Bizning tariximiz" : isRu ? "Наша история" : isEn ? "Our Story" : isTr ? "Hikayemiz" : isAr ? "مسيرتنا وقصتنا" : "Unsere Geschichte",
     badge1Title: isUz ? "Teng huquqli" : isRu ? "Партнерство" : isEn ? "Partnership" : isTr ? "Ortaklık" : isAr ? "شراكة موثوقة" : "Partnerschaft",
     badge1Sub: isUz ? "hamkorlik" : isRu ? "на равных" : isEn ? "on equal footing" : isTr ? "eşit düzeyde" : isAr ? "على قدم المساواة" : "auf Augenhöhe",
@@ -106,9 +106,9 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
     missionHeading1: isUz ? "Shunchaki tibbiy yordamdan" : isRu ? "Больше, чем просто" : isEn ? "More than just" : isTr ? "Sadece sağlık hizmetinden" : isAr ? "أكثر من مجرد" : "Mehr als nur",
     missionHeading2: isUz ? "ancha ortig'i." : isRu ? "медицинская помощь." : isEn ? "healthcare." : isTr ? "çok daha fazlası." : isAr ? "رعاية صحية تقليدية." : "Gesundheitsversorgung.",
     missionText: isUz
-      ? "NabiOta® da biz insonni diqqat markaziga qo'yadigan yaxlit sog'liqni saqlashga ishonamiz. Bizning missiyamiz — shifo topish, profilaktika va hayot sifatini uzoq muddatli yaxshilashga xizmat qiladigan yuqori sifatli tibbiy xizmatlar, innovatsion davolash usullari va qo'llab-quvvatlovchi ekotizimni yaratishdir."
+      ? "NabiOta® da biz insonni diqqat markaziga qo'yadigan yaxlit sog'liqni saqlashga ishonamiz. Bizning missiyamiz - shifo topish, profilaktika va hayot sifatini uzoq muddatli yaxshilashga xizmat qiladigan yuqori sifatli tibbiy xizmatlar, innovatsion davolash usullari va qo'llab-quvvatlovchi ekotizimni yaratishdir."
       : isRu
-      ? "В NabiOta® мы верим в целостное здравоохранение, в центре которого стоит человек. Наша миссия — создавать высококачественные медицинские услуги, инновационные методы лечения и поддерживающую экосистему, способствующую выздоровлению, профилактике и долгосрочному улучшению качества жизни."
+      ? "В NabiOta® мы верим в целостное здравоохранение, в центре которого стоит человек. Наша миссия - создавать высококачественные медицинские услуги, инновационные методы лечения и поддерживающую экосистему, способствующую выздоровлению, профилактике и долгосрочному улучшению качества жизни."
       : isEn
       ? "At NabiOta®, we believe in holistic healthcare that puts people first. Our mission is to provide high-quality medical services, innovative therapies, and a supportive network that sustainably fosters healing, prevention, and quality of life."
       : isTr
@@ -119,7 +119,7 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
     missionQuote: isUz
       ? "„Salomatlik hamma narsa emas, ammo salomatliksiz qolgan barcha narsa hech narsadir.“"
       : isRu
-      ? "„Здоровье — это не всё, но без здоровья всё — ничто.“"
+      ? "„Здоровье - это не всё, но без здоровья всё - ничто.“"
       : isEn
       ? "“Health is not everything, but without health, everything is nothing.”"
       : isTr
@@ -172,18 +172,18 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
     govPillar1Desc: isUz
       ? "Tibbiy rahbariyat va shifokorlar diagnostika, ko'rsatmalar va davolash to'g'risidagi qarorlarni faqat tibbiy zarurat asosida qabul qiladilar."
       : isRu
-      ? "Медицинское руководство и врачи принимают решения о диагностике, показаниях и лечении исключительно на основе врачебного искусства и блага пациента — без каких-либо коммерческих указаний руководства холдинга."
+      ? "Медицинское руководство и врачи принимают решения о диагностике, показаниях и лечении исключительно на основе врачебного искусства и блага пациента - без каких-либо коммерческих указаний руководства холдинга."
       : isEn
-      ? "Clinical directors and attending physicians determine diagnostics, indications, and therapy solely according to medical expertise and patient welfare – free from economic directives of holding management."
+      ? "Clinical directors and attending physicians determine diagnostics, indications, and therapy solely according to medical expertise and patient welfare - free from economic directives of holding management."
       : isTr
       ? "Tıbbi direktörlerimiz ve hekimlerimiz; teşhis, endikasyon ve tedavi kararlarını holding yönetiminin ticari yönlendirmelerinden bağımsız olarak, yalnızca tıp sanatının kuralları ve hasta yararı doğrultusunda alırlar."
       : isAr
-      ? "تتخذ الإدارة الطبية وكافة الأطباء المعالجين قرارات التشخيص وتحديد العلاج وفقاً لأصول الطب ورعاية المريض فقط – دون أي توجيهات تجارية من إدارة المجموعة."
-      : "Die medizinische Leitung und alle behandelnden Ärzte entscheiden über Diagnostik, Indikation und Therapie ausschließlich nach den Regeln der ärztlichen Kunst und dem Patientenwohl – frei von wirtschaftlichen Weisungen der Holding-Gesellschafter.",
+      ? "تتخذ الإدارة الطبية وكافة الأطباء المعالجين قرارات التشخيص وتحديد العلاج وفقاً لأصول الطب ورعاية المريض فقط - دون أي توجيهات تجارية من إدارة المجموعة."
+      : "Die medizinische Leitung und alle behandelnden Ärzte entscheiden über Diagnostik, Indikation und Therapie ausschließlich nach den Regeln der ärztlichen Kunst und dem Patientenwohl - frei von wirtschaftlichen Weisungen der Holding-Gesellschafter.",
     govPillar1Points: [
       isUz ? "Davolash usullarini erkin tanlash" : isRu ? "Свободный выбор методов лечения" : isEn ? "Free choice of medical treatment" : isTr ? "Meslek kurallarına uygun serbest tedavi yöntemi seçimi" : isAr ? "حرية كاملة في اختيار مناهج العلاج المعتمدة طبياً" : "Freie Methodenwahl nach Berufsordnung",
       isUz ? "Muolajalar uchun tijoriy kvotalarni taqiqlash" : isRu ? "Запрет коммерческих квот на процедуры" : isEn ? "No revenue quotas for medical decisions" : isTr ? "Tıbbi kararlarda ticari vaka sayısı veya ciro kotalarının bulunmaması" : isAr ? "عدم فرض أي حصص أو مستهدفات تجارية على القرارات الطبية" : "Keine ökonomischen Fallzahl- oder Therapievorgaben",
-      isUz ? "Bosh ustuvorlik — bemor farovonligi" : isRu ? "Главный приоритет — благополучие пациента" : isEn ? "Absolute focus on patient welfare" : isTr ? "Hasta sağlığı ve yararının koşulsuz önceliği" : isAr ? "الأولوية المطلقة لصحة وسلامة المريض" : "Bedingungsloses Primat des Patientenwohls",
+      isUz ? "Bosh ustuvorlik - bemor farovonligi" : isRu ? "Главный приоритет - благополучие пациента" : isEn ? "Absolute focus on patient welfare" : isTr ? "Hasta sağlığı ve yararının koşulsuz önceliği" : isAr ? "الأولوية المطلقة لصحة وسلامة المريض" : "Bedingungsloses Primat des Patientenwohls",
     ],
 
     govPillar2Title: isUz ? "Klinik sifat va bemorlar xavfsizligi" : isRu ? "Клиническое качество и безопасность пациентов" : isEn ? "Clinical Quality & Patient Safety" : isTr ? "Klinik Kalite ve Hasta Güvenliği Yönetimi" : isAr ? "إدارة الجودة السريرية وإدارة المخاطر وسلامة المرضى" : "Klinisches Qualitäts- & Risikomanagement",
@@ -259,14 +259,14 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
     areasText: isUz
       ? "Bizning tajribamiz yagona brend ostida birlashgan tibbiy va terapevtik yo'nalishlarning keng spektrini qamrab oladi."
       : isRu
-      ? "Наш опыт охватывает широкий спектр медицинских и терапевтических направлений — от профилактики до узкоспециализированного лечения."
+      ? "Наш опыт охватывает широкий спектр медицинских и терапевтических направлений - от профилактики до узкоспециализированного лечения."
       : isEn
-      ? "Our expertise spans a wide spectrum of medical and therapeutic disciplines – from prevention to specialized clinical care."
+      ? "Our expertise spans a wide spectrum of medical and therapeutic disciplines - from prevention to specialized clinical care."
       : isTr
       ? "Uzmanlığımız; koruyucu hekimlikten yüksek düzeyde özelleşmiş klinik tedavilere kadar geniş bir tıbbi ve terapötik yelpazeyi kapsar."
       : isAr
-      ? "تغطي خبراتنا طيفاً واسعاً من التخصصات الطبية والعلاجية – بدءاً من الطب الوقائي وحتى الرعاية السريرية المتخصصة."
-      : "Unsere Expertise deckt ein breites Spektrum medizinischer und therapeutischer Bereiche ab – von der Prävention bis zur spezialisierten Behandlung.",
+      ? "تغطي خبراتنا طيفاً واسعاً من التخصصات الطبية والعلاجية - بدءاً من الطب الوقائي وحتى الرعاية السريرية المتخصصة."
+      : "Unsere Expertise deckt ein breites Spektrum medizinischer und therapeutischer Bereiche ab - von der Prävention bis zur spezialisierten Behandlung.",
     areasBtn: isUz ? "Barcha yo'nalishlar" : isRu ? "Все направления" : isEn ? "All Divisions" : isTr ? "Tüm Faaliyet Alanları" : isAr ? "كافة القطاعات الطبية" : "Alle Bereiche",
 
     // 9 Competencies Grid
@@ -313,14 +313,14 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
     founderQuote: isUz
       ? "„Sog'liqni saqlash kelajagini mas'uliyatni o'z zimmasiga olishga va bemorni doimo birinchi o'ringa qo'yishga tayyor insonlar yaratadi.“"
       : isRu
-      ? "„Будущее здравоохранения создают люди, готовые брать на себя ответственность — и обладающие смелостью идти новыми путями.“"
+      ? "„Будущее здравоохранения создают люди, готовые брать на себя ответственность - и обладающие смелостью идти новыми путями.“"
       : isEn
-      ? "“The future of healthcare is shaped by people who take responsibility – and who have the courage to break new ground.”"
+      ? "“The future of healthcare is shaped by people who take responsibility - and who have the courage to break new ground.”"
       : isTr
       ? "„Sağlık hizmetlerinin geleceği; sorumluluk alan ve yeni yollar açma cesaretine sahip olan insanlar tarafından inşa edilir.“"
       : isAr
-      ? "«إن مستقبل الرعاية الصحية يصنعه أولئك الذين يتحملون المسؤولية – ويمتلكون الشجاعة لابتكار آفاق جديدة.»"
-      : "„Die Zukunft der Gesundheitsversorgung entsteht durch Menschen, die Verantwortung übernehmen – und die den Mut haben, neue Wege zu gehen.“",
+      ? "«إن مستقبل الرعاية الصحية يصنعه أولئك الذين يتحملون المسؤولية - ويمتلكون الشجاعة لابتكار آفاق جديدة.»"
+      : "„Die Zukunft der Gesundheitsversorgung entsteht durch Menschen, die Verantwortung übernehmen - und die den Mut haben, neue Wege zu gehen.“",
     founderRole: isUz ? "Xolding rahbariyati" : isRu ? "Руководство холдинга" : isEn ? "Managing Director" : isTr ? "Holding Yönetimi" : isAr ? "الإدارة التنفيذية للمجموعة" : "Geschäftsführung",
   };
 

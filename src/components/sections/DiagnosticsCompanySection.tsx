@@ -23,7 +23,7 @@ import {
 import { Container } from "@/components/layout/Container";
 
 /**
- * PDF Section IV.4 – "NabiOta Diagnostics GmbH"
+ * PDF Section IV.4 - "NabiOta Diagnostics GmbH"
  * (Diagnostische Infrastruktur und medizinische Diagnostik)
  * Unternehmensgegenstand zur notariellen Prüfung, Infrastruktur- & GKV-Abgrenzung,
  * 8 medizinische und organisatorische Aufgaben.

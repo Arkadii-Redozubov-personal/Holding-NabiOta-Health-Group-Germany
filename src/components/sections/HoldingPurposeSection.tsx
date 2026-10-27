@@ -16,7 +16,7 @@ import {
 import { Container } from "@/components/layout/Container";
 
 /**
- * PDF Section II – "Aufgaben und Unternehmensgegenstand der Holding"
+ * PDF Section II - "Aufgaben und Unternehmensgegenstand der Holding"
  * (NabiOta Health Group Germany GmbH). Wording follows the PDF.
  */
 
@@ -163,10 +163,10 @@ const content = {
       text: {
         de: "Die Gesellschaft bildet die wirtschaftliche und organisatorische Verbindung der rechtlich selbstständigen Einrichtungen. Ziel ist es, gemeinsame Ressourcen effizient einzusetzen, Verwaltungsabläufe zu vereinheitlichen und die Weiterentwicklung der Unternehmensgruppe zu unterstützen.",
         en: "The company forms the economic and organizational link between the legally independent facilities. The aim is to use shared resources efficiently, standardize administrative processes and support the further development of the group.",
-        ru: "Общество является экономическим и организационным связующим звеном юридически самостоятельных учреждений. Цель — эффективно использовать общие ресурсы, унифицировать административные процессы и поддерживать дальнейшее развитие группы.",
+        ru: "Общество является экономическим и организационным связующим звеном юридически самостоятельных учреждений. Цель - эффективно использовать общие ресурсы, унифицировать административные процессы и поддерживать дальнейшее развитие группы.",
         tr: "Şirket, hukuken bağımsız kuruluşlar arasındaki ekonomik ve organizasyonel bağı oluşturur. Amaç, ortak kaynakları verimli kullanmak, idari süreçleri standartlaştırmak ve şirketler grubunun gelişimini desteklemektir.",
         ar: "تشكل الشركة الرابط الاقتصادي والتنظيمي بين المرافق المستقلة قانونياً، بهدف الاستخدام الفعال للموارد المشتركة وتوحيد الإجراءات الإدارية ودعم التطور المستمر للمجموعة الصحية.",
-        uz: "Jamiyat qonuniy jihatdan mustaqil muassasalar o'rtasidagi iqtisodiy va tashkiliy bog'lovchi zanjirni tashkil etadi. Maqsad — umumiy resurslardan samarali foydalanish, ma'muriy jarayonlarni standartlashtirish va kompaniyalar guruhining rivojlanishini qo'llab-quvvatlashdir.",
+        uz: "Jamiyat qonuniy jihatdan mustaqil muassasalar o'rtasidagi iqtisodiy va tashkiliy bog'lovchi zanjirni tashkil etadi. Maqsad - umumiy resurslardan samarali foydalanish, ma'muriy jarayonlarni standartlashtirish va kompaniyalar guruhining rivojlanishini qo'llab-quvvatlashdir.",
       },
     },
   ] as Block[],
