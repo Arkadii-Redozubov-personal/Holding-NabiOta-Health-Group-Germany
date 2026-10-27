@@ -219,45 +219,45 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
           </Link>
         </div>
 
-        {/* ── 6 Business Area Cards in 2 Rows of 3 ────────────── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4 lg:gap-4.5">
+        {/* ── 6 Business Area Cards in 2 Columns (2 cards per row) ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 lg:gap-5.5">
           {areas.map((area) => {
             const Icon = area.icon;
             return (
               <Link
                 key={area.slug}
                 href={getLocalePath(currentLocale, `areas/${area.slug}`)}
-                className="group relative flex flex-row items-stretch rounded-2xl bg-white border border-[#EDE8DE] shadow-[0_2px_10px_rgba(0,0,0,0.03)] overflow-hidden transition-all duration-300 hover:border-[#D5B878] hover:shadow-[0_6px_20px_rgba(197,165,106,0.14)] hover:-translate-y-0.5 focus:outline-none h-[146px] sm:h-[152px] lg:h-[156px]"
+                className="group relative flex flex-row items-stretch rounded-2xl bg-white border border-[#EDE8DE] shadow-[0_2px_10px_rgba(0,0,0,0.03)] overflow-hidden transition-all duration-300 hover:border-[#D5B878] hover:shadow-[0_6px_20px_rgba(197,165,106,0.14)] hover:-translate-y-0.5 focus:outline-none min-h-[148px] sm:h-[156px] lg:h-[160px]"
               >
                 {/* Left Thumbnail Image */}
-                <div className="relative h-full flex-shrink-0 overflow-hidden bg-[#07170E]/5 w-[38%] sm:w-[40%] lg:w-[42%]">
+                <div className="relative h-full flex-shrink-0 overflow-hidden bg-[#07170E]/5 w-[35%] sm:w-[36%] lg:w-[38%]">
                   <Image
                     src={area.image}
                     alt={area.title}
                     fill
-                    sizes="(max-width: 640px) 140px, (max-width: 1024px) 200px, 240px"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
 
                 {/* Right Content */}
-                <div className="flex-1 min-w-0 p-3 sm:p-3.5 lg:p-4 flex flex-col justify-between h-full bg-white">
+                <div className="flex-1 min-w-0 p-3.5 sm:p-4 lg:p-4.5 flex flex-col justify-between h-full bg-white">
                   <div>
-                    <div className="flex items-start gap-2 sm:gap-2.5">
+                    <div className="flex items-start gap-2.5 sm:gap-3">
                       <div className="flex-shrink-0 text-[#C5A56A] mt-0.5">
                         <Icon className="w-6 h-6 sm:w-6.5 sm:h-6.5 stroke-[1.6]" />
                       </div>
-                      <h3 className="font-serif font-bold text-[#142318] leading-[1.2] group-hover:text-[#BFA267] transition-colors text-[13px] sm:text-[14px] lg:text-[14.5px] line-clamp-2">
+                      <h3 className="font-serif font-bold text-[#142318] leading-[1.2] group-hover:text-[#BFA267] transition-colors text-[14px] sm:text-[15px] lg:text-[15.5px] line-clamp-2">
                         {area.title}
                       </h3>
                     </div>
 
-                    <p className="text-[10.5px] sm:text-[11px] lg:text-[11.5px] text-[#636861] leading-[1.35] line-clamp-2 mt-1.5">
+                    <p className="text-[11px] sm:text-[11.5px] lg:text-[12px] text-[#636861] leading-[1.4] line-clamp-2 mt-2 font-sans">
                       {area.subtitle}
                     </p>
                   </div>
 
-                  {/* Bottom-right: Clean ArrowRight transition without circular border */}
+                  {/* Bottom-right: Clean ArrowRight transition */}
                   <div className="flex justify-end mt-auto pt-1">
                     <div className="text-[#B89650] group-hover:text-[#7D6532] transition-colors flex items-center justify-center flex-shrink-0">
                       <ArrowRight className="w-4.5 h-4.5 stroke-[1.8] transition-transform duration-300 group-hover:translate-x-1" />
