@@ -1410,8 +1410,8 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                   {/* Left Column: Featured Card */}
                   <div className="lg:col-span-7 xl:col-span-7 flex flex-col">
                     <div className="bg-white rounded-[24px] sm:rounded-[28px] border border-[#EAE4D7] shadow-[0_4px_24px_rgba(19,34,24,0.04)] overflow-hidden flex-1 flex flex-col justify-between transition-all duration-300">
-                      {/* Photo */}
-                      <div className="relative h-[210px] sm:h-[240px] lg:h-[260px] w-full overflow-hidden bg-neutral-100">
+                      {/* Photo - occupies more room */}
+                      <div className="relative h-[270px] sm:h-[300px] lg:h-[330px] w-full overflow-hidden bg-neutral-100">
                         <Image
                           src={activeSpec.image}
                           alt={activeSpec.title}
@@ -1422,48 +1422,60 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                       </div>
 
                       {/* Content Area */}
-                      <div className="p-5 sm:p-6 lg:p-6.5 flex-1 flex flex-col justify-between">
+                      <div className="p-5 sm:p-6 lg:p-7 flex-1 flex flex-col justify-between">
                         <div>
-                          {/* Title + Circular Arrow Button */}
-                          <div className="flex items-start justify-between gap-4">
-                            <h3 className="font-serif text-[20px] sm:text-[22px] lg:text-[24px] text-[#132218] font-normal leading-snug">
-                              {activeSpec.title}
-                            </h3>
-                            <button
-                              type="button"
-                              onClick={() => setSelectedSpecialization(activeSpec)}
-                              aria-label={activeSpec.title}
-                              className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#D5B878]/70 hover:border-[#B89650] bg-white hover:bg-[#FAF6EE] flex items-center justify-center text-[#142318] transition-all duration-200 shrink-0 shadow-2xs hover:scale-105 cursor-pointer group/btn"
-                            >
-                              <ArrowRight className="w-4 h-4 text-[#8C6D2B] transition-transform duration-200 group-hover/btn:translate-x-0.5" />
-                            </button>
-                          </div>
+                          {/* Title without side arrow button */}
+                          <h3 className="font-serif text-[22px] sm:text-[25px] lg:text-[26px] text-[#132218] font-normal leading-snug">
+                            {activeSpec.title}
+                          </h3>
 
                           {/* Description */}
-                          <p className="font-sans text-[12px] sm:text-[13px] text-[#556358] leading-relaxed mt-2 mb-4">
+                          <p className="font-sans text-[12.5px] sm:text-[13.5px] text-[#556358] leading-relaxed mt-2 mb-4">
                             {activeSpec.desc}
                           </p>
+
+                          {/* Features Checklist with gold checkmarks matching Photo 3 */}
+                          <div className="space-y-2.5 pt-3.5 border-t border-[#F0ECE1]">
+                            {activeSpec.features.map((feat, fIdx) => (
+                              <div key={fIdx} className="flex items-center gap-2.5">
+                                <GoldCircleCheckIcon className="w-4 h-4 shrink-0 text-[#B89650]" />
+                                <span className="font-sans text-[12.5px] sm:text-[13px] text-[#2C382F] font-normal">
+                                  {feat}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
                         </div>
 
-                        {/* Feature Tags at bottom */}
-                        <div className="flex flex-wrap items-center gap-x-4 sm:gap-x-5 gap-y-2 pt-3 sm:pt-3.5 border-t border-[#F0ECE1]">
-                          {activeSpec.features.map((feat, fIdx) => (
-                            <div key={fIdx} className="flex items-center gap-2">
-                              <span className="w-3.5 h-3.5 rounded-full border border-[#C5A56A] flex items-center justify-center shrink-0">
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#C5A56A]" />
-                              </span>
-                              <span className="font-sans text-[11.5px] sm:text-[12px] text-[#425045] font-medium">
-                                {feat}
-                              </span>
-                            </div>
-                          ))}
+                        {/* Bottom link: "Подробнее о программе" with arrow */}
+                        <div className="pt-4 mt-2">
+                          <button
+                            type="button"
+                            onClick={() => setSelectedSpecialization(activeSpec)}
+                            className="inline-flex items-center gap-2 text-[13px] sm:text-[13.5px] font-medium text-[#8C6D2B] hover:text-[#6D521B] transition-colors group/link cursor-pointer"
+                          >
+                            <span>
+                              {isUz
+                                ? "Dastur haqida batafsil"
+                                : isRu
+                                ? "Подробнее о программе"
+                                : isEn
+                                ? "Learn more about the program"
+                                : isTr
+                                ? "Program hakkında detaylı bilgi"
+                                : isAr
+                                ? "المزيد عن البرنامج"
+                                : "Mehr über das Programm"}
+                            </span>
+                            <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover/link:translate-x-1" />
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
 
                   {/* Right Column: 6 Specialty Tabs Stack */}
-                  <div className="lg:col-span-5 xl:col-span-5 flex flex-col justify-between gap-2.5 sm:gap-3">
+                  <div className="lg:col-span-5 xl:col-span-5 flex flex-col justify-between gap-1.5 sm:gap-2">
                     {specializations.map((spec) => {
                       const isActive = spec.id === activeSpecId;
 
@@ -1472,27 +1484,27 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                           key={spec.id}
                           type="button"
                           onClick={() => setActiveSpecId(spec.id)}
-                          className={`group w-full text-left rounded-2xl p-2.5 sm:p-3 flex items-center gap-3 sm:gap-3.5 transition-all duration-200 cursor-pointer bg-white ${
+                          className={`group w-full text-left rounded-xl sm:rounded-2xl py-2 px-2.5 sm:py-2.5 sm:px-3 flex items-center gap-2.5 sm:gap-3 transition-all duration-200 cursor-pointer bg-white ${
                             isActive
                               ? "border-2 border-[#132B1E] shadow-sm"
                               : "border-2 border-[#EAE4D7] hover:border-[#D5B878]/80 shadow-[0_1px_6px_rgba(0,0,0,0.02)]"
                           }`}
                         >
                           {/* Left: Thumbnail Image */}
-                          <div className="relative w-12 h-12 sm:w-13 sm:h-13 rounded-xl overflow-hidden shrink-0 bg-neutral-100 border border-[#EAE4D7]">
+                          <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl overflow-hidden shrink-0 bg-neutral-100 border border-[#EAE4D7]">
                             <Image
                               src={spec.image}
                               alt={spec.title}
                               fill
                               className="object-cover transition-transform duration-300 group-hover:scale-105"
-                              sizes="52px"
+                              sizes="44px"
                             />
                           </div>
 
                           {/* Middle: Title */}
                           <div className="flex-1 min-w-0 pr-1">
                             <h4
-                              className={`text-[13px] sm:text-[13.5px] leading-snug line-clamp-2 transition-colors ${
+                              className={`text-[12.5px] sm:text-[13px] leading-snug line-clamp-2 transition-colors ${
                                 isActive
                                   ? "font-semibold text-[#132B1E]"
                                   : "font-medium text-[#142318] group-hover:text-[#8C6D2B]"
@@ -1504,7 +1516,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
 
                           {/* Right: Chevron */}
                           <ChevronRight
-                            className={`w-4 h-4 shrink-0 transition-transform ${
+                            className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 transition-transform ${
                               isActive
                                 ? "text-[#132B1E] translate-x-0.5"
                                 : "text-[#9EAAA0] group-hover:text-[#132B1E] group-hover:translate-x-0.5"
