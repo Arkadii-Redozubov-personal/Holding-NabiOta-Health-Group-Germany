@@ -948,9 +948,6 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                       {/* Division 1: MVZ */}
                       <div className="p-3.5 sm:p-4 rounded-xl bg-white border border-[#EDE7D9] shadow-2xs hover:border-[#C5A56A] hover:shadow-xs transition-all flex flex-col justify-between">
                         <div>
-                          <span className="text-[9.5px] sm:text-[10px] font-bold tracking-[0.2em] text-[#C5A56A] uppercase font-sans mb-1.5 block">
-                            MVZ · § 95 SGB V
-                          </span>
                           <h4 className="font-serif font-bold text-[13px] text-forest-950 leading-snug mb-1">
                             {t.directory.div1Title}
                           </h4>
@@ -979,9 +976,6 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                       {/* Division 2: Diagnostik & Reha */}
                       <div className="p-3.5 sm:p-4 rounded-xl bg-white border border-[#EDE7D9] shadow-2xs hover:border-[#C5A56A] hover:shadow-xs transition-all flex flex-col justify-between">
                         <div>
-                          <span className="text-[9.5px] sm:text-[10px] font-bold tracking-[0.2em] text-[#C5A56A] uppercase font-sans mb-1.5 block">
-                            3T MRT · REHA
-                          </span>
                           <h4 className="font-serif font-bold text-[13px] text-forest-950 leading-snug mb-1">
                             {t.directory.div2Title}
                           </h4>
@@ -1010,17 +1004,6 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                       {/* Division 3: HomeCare, Sanitätshaus & Pharmacy */}
                       <div className="p-3.5 sm:p-4 rounded-xl bg-white border border-[#EDE7D9] shadow-2xs hover:border-[#C5A56A] hover:shadow-xs transition-all flex flex-col justify-between">
                         <div>
-                          <span className="text-[9.5px] sm:text-[10px] font-bold tracking-[0.2em] text-[#C5A56A] uppercase font-sans mb-1.5 block">
-                            {locale === "tr"
-                              ? "BAKIM · MEDİKAL · ECZANE"
-                              : locale === "ar"
-                              ? "رعاية · مستلزمات · صيدلية"
-                              : locale === "uz"
-                              ? "PARVARISH · TIBBIY BUYUMLAR · DORIXONA"
-                              : locale === "ru"
-                              ? "УХОД · МЕДТЕХНИКА · АПТЕКА"
-                              : "PFLEGE · SANITÄTSHAUS · APOTHEKE"}
-                          </span>
                           <h4 className="font-serif font-bold text-[13px] text-forest-950 leading-snug mb-1">
                             {t.directory.div3Title}
                           </h4>
@@ -1049,17 +1032,6 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                       {/* Division 4: Holding HQ, Real Estate & Staffing */}
                       <div className="p-3.5 sm:p-4 rounded-xl bg-white border border-[#EDE7D9] shadow-2xs hover:border-[#C5A56A] hover:shadow-xs transition-all flex flex-col justify-between">
                         <div>
-                          <span className="text-[9.5px] sm:text-[10px] font-bold tracking-[0.2em] text-[#C5A56A] uppercase font-sans mb-1.5 block">
-                            {locale === "tr"
-                              ? "HOLDİNG · GAYRİMENKUL · İSTİHDAM"
-                              : locale === "ar"
-                              ? "القابضة · العقارات · الكوادر"
-                              : locale === "uz"
-                              ? "XOLDING · KO'CHMAS MULK · REKRUTING"
-                              : locale === "ru"
-                              ? "ХОЛДИНГ · НЕДВИЖИМОСТЬ · РЕКРУТИНГ"
-                              : "HOLDING · IMMOBILIEN · RECRUITING"}
-                          </span>
                           <h4 className="font-serif font-bold text-[13px] text-forest-950 leading-snug mb-1">
                             {t.directory.div4Title}
                           </h4>
