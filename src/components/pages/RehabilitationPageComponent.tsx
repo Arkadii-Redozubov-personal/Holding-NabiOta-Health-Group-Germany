@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
-  ArrowLeft,
   Heart,
   Activity,
   FileText,
@@ -1059,129 +1058,6 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
         ],
   };
 
-  // ── Team Doctors ──
-  const teamDoctors = [
-    {
-      name: "Dr. med. Michael Weber",
-      role: isUz ? "Reabilitatsiya bo'limi bosh shifokori" : isRu ? "Главный врач отделения реабилитации" : isEn ? "Chief Physician Rehabilitation & Sports Medicine" : isTr ? "Fiziksel ve Rehabilitatif Tıp Bölüm Başkanı" : isAr ? "رئيس قسم الطب الطبيعي والتأهيلي" : "Chefarzt Physikalische & Rehabilitative Medizin",
-      spec: isUz ? "Ortopediya, manual terapiya, sport tibbiyoti" : isRu ? "Ортопедия, мануальная терапия, спортивная медицина" : isEn ? "Orthopedics, Manual Medicine, Sports Science" : isTr ? "Ortopedi, Kiropraktik, Spor Hekimliği" : isAr ? "طب العظام، العلاج اليدوي والطب الرياضي" : "Orthopädie, Chirotherapie, Sportmedizin",
-      image: "/images/areas/doc-michael-weber.webp",
-      quote: isUz
-        ? "„Bizning maqsadimiz faqat og'riqni yo'qotish emas, balki bemorning to'liq harakat erkinligi va har bir qadamiga ishonchini qaytarishdir.“"
-        : isRu
-        ? "„Наша цель — не просто устранить боль, а полностью восстановить биомеханику и уверенность пациента в каждом движении.“"
-        : isEn
-        ? "“Our mission is not merely pain relief, but restoring complete biomechanical freedom and confidence in every step.”"
-        : isTr
-        ? "„Hedefimiz sadece ağrıyı dindirmek değil, hastamızın hareket kabiliyetini ve yaşam sevincini bütünüyle yeniden kazandırmaktır.“"
-        : isAr
-        ? "«هدفنا لا يقتصر على تسكين الألم فحسب، بل استعادة كامل الحركة وثقة المريض في كل خطوة بحياته اليومية.»"
-        : "„Unser Ziel ist nicht nur Schmerzfreiheit, sondern die vollständige Wiedererlangung Ihrer Mobilität und Lebensfreude im Alltag.“",
-    },
-    {
-      name: "Julia Keller, M.Sc.",
-      role: isUz ? "Yetakchi fizioterapevt va dasturlar koordinatori" : isRu ? "Ведущий физиотерапевт и координатор программ" : isEn ? "Lead Physical Therapist & Rehabilitation Coordinator" : isTr ? "Baş Fizyoterapist & Reha Koordinatörü" : isAr ? "كبير أخصائيي العلاج الطبيعي ومنسق البرامج" : "Leitende Physiotherapeutin & Reha-Koordinatorin",
-      spec: isUz ? "AlterG, OMT va tizza bo'g'imi reabilitatsiyasi mutaxassisi" : isRu ? "Специалист по AlterG, OMT и реабилитации коленного сустава" : isEn ? "OMT Certified, AlterG Specialist, Knee & Hip Rehab" : isTr ? "Manuel Terapi (OMT), AlterG® Uzmanı, Diz & Kalça Reha" : isAr ? "العلاج اليدوي المعتمد (OMT)، أخصائية AlterG®، وتأهيل الركبة والورك" : "Manuelle Therapie (OMT), AlterG®-Trainerin, Knie- & Hüftreha",
-      image: "/images/areas/doc-anna-keller.webp",
-      quote: isUz
-        ? "„Har bir bemor aniq hisoblangan yuklama darajasi bilan individual rejaga ega bo'ladi.“"
-        : isRu
-        ? "„Каждый пациент получает персонализированный план с точно дозированным шагом нагрузки.“"
-        : isEn
-        ? "“Every recovery plan is engineered like high-performance athletic coaching, calibrated to individual limits.”"
-        : isTr
-        ? "„Empati, son teknoloji cihazlar ve hassas dozlanmış yüklenmeyle hedeflere adım adım ulaşıyoruz.“"
-        : isAr
-        ? "«بالتعاطف الإنساني وأحدث الأجهزة الطبية وتدرج الأحمال، نصل إلى أهداف التعافي خطوة بخطوة.»"
-        : "„Mit Empathie, modernster Technik und exakt dosierter Belastung erreichen wir Meilensteine Schritt für Schritt.“",
-    },
-    {
-      name: "Dr. med. Sarah Hoffmann",
-      role: isUz ? "Nevrolog shifokor, neyroreabilitatsiya mutaxassisi" : isRu ? "Врач-невролог, специалист по нейрореабилитации" : isEn ? "Specialist in Neurological Rehabilitation" : isTr ? "Nöroloji & Nörorehabilitasyon Uzmanı" : isAr ? "استشارية طب الأعصاب وإعادة التأهيل العصبي" : "Fachärztin für Neurologie & Neurorehabilitation",
-      spec: isUz ? "Insult oqibatlari, Parkinson kasalligi, robotlashtirilgan yurish" : isRu ? "Инсульты, болезнь Паркинсона, роботизированная ходьба" : isEn ? "Neuroplasticity, Stroke Recovery, Robotic Locomotion" : isTr ? "İnme Takibi, Parkinson Terapisi, Yürüme Rehabilitasyonu" : isAr ? "رعاية السكتة الدماغية، علاج باركنسون وإعادة تأهيل المشي" : "Schlaganfallnachsorge, Parkinson-Therapie, Gangrehabilitation",
-      image: "/images/areas/doc-sarah-hoffmann.webp",
-      quote: isUz
-        ? "„Miya muntazam neyroplastik mashg'ulotlar orqali har qanday yoshda ham tiklanish salohiyatiga ega.“"
-        : isRu
-        ? "„Мозг способен к восстановлению в любом возрасте благодаря регулярному нейропластическому тренингу.“"
-        : isEn
-        ? "“The nervous system possesses remarkable plasticity when stimulated with structured, repetitive movement.”"
-        : isTr
-        ? "„Sinir sistemi, hedefe yönelik ve düzenli uyarıldığında olağanüstü bir yenilenme potansiyeline sahiptir.“"
-        : isAr
-        ? "«يمتلك الجهاز العصبي قدرات مذهلة على التجدد والترميم الذاتي عند تحفيزه بحركات موجهة ومتكررة.»"
-        : "„Das Nervensystem verfügt über enorme Regenerationspotenziale, wenn es gezielt und repetitiv gefördert wird.“",
-    },
-  ];
-
-  // ── Skrin 5 Data: Testimonials (Patientenstimmen with exact cropped avatars) ──
-  const testimonialsData = {
-    eyebrow: isUz ? "BEMORLAR FIKRLARI" : isRu ? "ОТЗЫВЫ ПАЦИЕНТОВ" : isEn ? "PATIENT STORIES" : isTr ? "HASTA GÖRÜŞLERİ" : isAr ? "آراء وتجارب المرضى" : "PATIENTENSTIMMEN",
-    title: isUz ? "Haqiqiy insonlar.\nHaqiqiy yutuqlar." : isRu ? "Реальные истории.\nНастоящие успехи." : isEn ? "Real People.\nReal Success." : isTr ? "Gerçek İnsanlar.\nGerçek Başarılar." : isAr ? "تجارب حقيقية.\nنجاحات ملموسة." : "Echte Menschen.\nEchte Erfolge.",
-    desc: isUz
-      ? "Bemorlarimiz tiklanish tajribasi, erishgan natijalari va hayot sifatining yaxshilanishi bilan o'rtoqlashadilar."
-      : isRu
-      ? "Наши пациенты делятся своим опытом восстановления, достигнутыми результатами и новым качеством активной жизни."
-      : isEn
-      ? "Our patients share their rehabilitation milestones, recovery journeys, and renewed quality of life."
-      : isTr
-      ? "Hastalarımız deneyimlerini, kaydettikleri ilerlemeleri ve yeniden kazandıkları hareket kabiliyetini paylaşıyor."
-      : isAr
-      ? "مرضانا يشاركونكم تجاربهم العلاجية، مراحل تقدمهم، واستعادتهم لجودة حياتهم وحركتهم."
-      : "Unsere Patienten berichten von ihren Erfahrungen, Fortschritten und neuen Lebensperspektiven.",
-    btn: isUz ? "Barcha sharhlar" : isRu ? "Все отзывы пациентов" : isEn ? "View all reviews" : isTr ? "Tüm Değerlendirmeleri Gör" : isAr ? "عرض جميع تقييمات المرضى" : "Alle Bewertungen ansehen",
-    cards: [
-      {
-        name: "Sabine M.",
-        role: isUz ? "Ortopedik reabilitatsiya" : isRu ? "Ортопедическая реабилитация" : isEn ? "Orthopedic Rehabilitation" : isTr ? "Ortopedik Rehabilitasyon" : isAr ? "إعادة التأهيل العظمي" : "Orthopädische Rehabilitation",
-        quote: isUz
-          ? "„Professional g'amxo'rlik tufayli tizzamdagi operatsiyadan so'ng kutilganidan ancha tez yura boshladim. Butun jamoaga samimiy minnatdorchilik bildiraman!“"
-          : isRu
-          ? "„Благодаря профессиональной заботе и тренировкам я смогла уверенно ходить после операции на колене гораздо быстрее, чем ожидала. Огромное спасибо всей команде!“"
-          : isEn
-          ? "“Thanks to professional care and progressive rehabilitation, I was able to walk smoothly after my knee replacement much faster than expected. Heartfelt thanks to the team!”"
-          : isTr
-          ? "„Profesyonel bakım sayesinde diz ameliyatımdan sonra beklediğimden çok daha hızlı yürümeye başladım. Tüm ekibe yürekten teşekkür ederim.“"
-          : isAr
-          ? "«بفضل الرعاية المتخصصة وبرامج التأهيل، تمكنت من المشي بسلاسة بعد جراحة الركبة في وقت أسرع بكثير مما توقعت. شكراً جزيلاً للفريق!»"
-          : "„Dank der professionellen Betreuung konnte ich nach meiner Knie-OP schneller als erwartet wieder laufen. Ich bin dem ganzen Team sehr dankbar.“",
-        image: "/images/testimonials/sabine-m.webp",
-      },
-      {
-        name: "Thomas K.",
-        role: isUz ? "Nevrologik reabilitatsiya" : isRu ? "Неврологическая реабилитация" : isEn ? "Neurological Rehabilitation" : isTr ? "Nörolojik Rehabilitasyon" : isAr ? "إعادة التأهيل العصبي" : "Neurologische Rehabilitation",
-        quote: isUz
-          ? "„Menga moslashtirilgan terapiya va zamonaviy apparatlar harakatlanish erkinligimni qaytarishga juda katta yordam berdi.“"
-          : isRu
-          ? "„Индивидуальная терапия и современные реабилитационные аппараты очень помогли мне вернуть подвижность и уверенность в каждом движении.“"
-          : isEn
-          ? "“The tailored therapy regimen and state-of-the-art assistive devices greatly helped me regain movement and functional independence.”"
-          : isTr
-          ? "„Bana özel hazırlanan terapi ve modern cihazlar hareket kabiliyetimi yeniden kazanmamda çok büyük rol oynadı.“"
-          : isAr
-          ? "«الخطة العلاجية الفردية والأجهزة المتطورة ساعدتني للغاية في استعادة حركتي وثقتي بنفسي.»"
-          : "„Die individuelle Therapie und die modernen Geräte haben mir sehr geholfen, meine Beweglichkeit zurückzugewinnen.“",
-        image: "/images/testimonials/thomas-k.webp",
-      },
-      {
-        name: "Julia R.",
-        role: isUz ? "Kardiologik reabilitatsiya" : isRu ? "Кардиологическая реабилитация" : isEn ? "Cardiological Rehabilitation" : isTr ? "Kardiyolojik Rehabilitasyon" : isAr ? "إعادة التأهيل القلبي" : "Kardiologische Rehabilitation",
-        quote: isUz
-          ? "„Birinchi kundanoq ishonchli qo'llarda ekanligimni his qildim. Tibbiy ekspertiza va insoniy samimiylik bu yerda har bir detalda sezilib turadi.“"
-          : isRu
-          ? "„С самого первого дня я чувствовала чуткую поддержку. Сочетание высокой врачебной компетентности и теплого человеческого отношения здесь чувствуется в каждой детали.“"
-          : isEn
-          ? "“From day one, I felt in the best possible hands. The combination of medical expertise and genuine empathy is truly felt here.”"
-          : isTr
-          ? "„İlk günden itibaren emin ellerde olduğumu hissettim. Buradaki yüksek tıbbi uzmanlık ile insani yaklaşımın birleşimi gerçekten hissediliyor.“"
-          : isAr
-          ? "«منذ اليوم الأول شعرت بأنني في أيدٍ أمينة تماماً. المزج بين الكفاءة الطبية الرفيعة والتعامل الإنساني الراقي ملموس في كل تفصيل.»"
-          : "„Ich habe mich von Anfang an gut aufgehoben gefühlt. Die Kombination aus Fachwissen und Menschlichkeit ist hier wirklich spürbar.“",
-        image: "/images/testimonials/julia-r.webp",
-      },
-    ],
-  };
-
   // ── FAQs ──
   const faqs = [
     {
@@ -1474,7 +1350,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                     </div>
                   </div>
 
-                  {/* Right Column: 6 Specialty Tabs Stack (restored thumbnail size, minimal outer photo padding) */}
+                  {/* Right Column: 6 Specialty Tabs Stack (taller cards, same gaps between them) */}
                   <div className="lg:col-span-5 xl:col-span-5 flex flex-col justify-between gap-2 sm:gap-2.5">
                     {specializations.map((spec) => {
                       const isActive = spec.id === activeSpecId;
@@ -1484,27 +1360,27 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                           key={spec.id}
                           type="button"
                           onClick={() => setActiveSpecId(spec.id)}
-                          className={`group w-full text-left rounded-xl sm:rounded-2xl p-1.5 sm:p-1.5 pr-3 sm:pr-3.5 flex items-center gap-2.5 sm:gap-3 transition-all duration-200 cursor-pointer bg-white ${
+                          className={`group w-full text-left rounded-xl sm:rounded-2xl p-2 sm:p-2.5 pr-3.5 sm:pr-4 min-h-[68px] sm:min-h-[74px] flex items-center gap-3 sm:gap-3.5 transition-all duration-200 cursor-pointer bg-white ${
                             isActive
                               ? "border-2 border-[#132B1E] shadow-sm"
                               : "border-2 border-[#EAE4D7] hover:border-[#D5B878]/80 shadow-[0_1px_6px_rgba(0,0,0,0.02)]"
                           }`}
                         >
-                          {/* Left: Thumbnail Image - previous size with tight surrounding padding */}
-                          <div className="relative w-12 h-12 sm:w-13 sm:h-13 rounded-lg sm:rounded-xl overflow-hidden shrink-0 bg-neutral-100 border border-[#EAE4D7]">
+                          {/* Left: Thumbnail Image */}
+                          <div className="relative w-13 h-13 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl overflow-hidden shrink-0 bg-neutral-100 border border-[#EAE4D7]">
                             <Image
                               src={spec.image}
                               alt={spec.title}
                               fill
                               className="object-cover transition-transform duration-300 group-hover:scale-105"
-                              sizes="52px"
+                              sizes="56px"
                             />
                           </div>
 
                           {/* Middle: Title */}
                           <div className="flex-1 min-w-0 pr-1">
                             <h4
-                              className={`text-[12.5px] sm:text-[13px] leading-snug line-clamp-2 transition-colors ${
+                              className={`text-[13px] sm:text-[13.5px] leading-snug line-clamp-2 transition-colors ${
                                 isActive
                                   ? "font-semibold text-[#132B1E]"
                                   : "font-medium text-[#142318] group-hover:text-[#8C6D2B]"
@@ -1588,200 +1464,6 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                   )}
                 </div>
               ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════════
-          SECTION 5: INTERDISCIPLINARY MEDICAL LEADERSHIP
-      ══════════════════════════════════════════════════════════ */}
-      <section className="py-16 sm:py-22 bg-white border-t border-[#EDE8DE]">
-        <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <h2 className="font-serif text-3xl sm:text-4xl text-[#132218] font-normal leading-tight">
-              {isUz
-                ? "Malakali shifokorlar nazorati va tajribali terapevtlar"
-                : isRu
-                ? "Высокая врачебная квалификация и чуткая забота"
-                : isEn
-                ? "Dedicated Physicians & Master Clinicians"
-                : isTr
-                ? "Uzman Hekim Yönetimi ve Deneyimli Terapistler"
-                : isAr
-                ? "إشراف طبي استشاري وخبرات علاجية رفيعة"
-                : "Fachärztliche Leitung & erfahrene Therapeuten"}
-            </h2>
-            <p className="font-sans text-xs sm:text-sm text-[#556358] mt-3 leading-relaxed">
-              {isUz
-                ? "Doimiy mutaxassis shifokorlar nazorati ostida terapevtlarimiz har bir davolash qadamini siz bilan yaqindan muvofiqlashtiradi."
-                : isRu
-                ? "Реабилитация под постоянным наблюдением профильных врачей высшей категории и сертифицированных терапевтов."
-                : isEn
-                ? "Your recovery is orchestrated by board-certified physiatrists, physical therapists, and sports medicine directors."
-                : isTr
-                ? "Sürekli uzman hekim gözetimi altında terapistlerimiz her tedavi adımını sizinle yakın iş birliği içinde koordine eder."
-                : isAr
-                ? "تحت إشراف طبي متخصص ومستمر، ينسق معالجونا كل خطوة علاجية بعناية فائقة معكم."
-                : "Unter ständiger fachärztlicher Aufsicht stimmen unsere Therapeuten jeden Behandlungsschritt eng mit Ihnen ab."}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            {teamDoctors.map((doc, idx) => (
-              <div
-                key={idx}
-                className="bg-[#FAF8F5] rounded-2xl border border-[#EDE8DE] overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] transition-all duration-300 flex flex-col justify-between group"
-              >
-                <div>
-                  <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-neutral-100">
-                    <Image
-                      src={doc.image}
-                      alt={doc.name}
-                      fill
-                      className="object-cover object-top group-hover:scale-103 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-
-                  </div>
-
-                  <div className="p-5 sm:p-6">
-                    <h3 className="font-serif text-xl text-[#132218] font-normal mb-1">
-                      {doc.name}
-                    </h3>
-                    <p className="font-sans text-xs text-[#B89650] font-semibold mb-3">
-                      {doc.role}
-                    </p>
-                    <p className="font-serif italic text-xs text-[#556358] leading-relaxed">
-                      {doc.quote}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="p-5 sm:p-6 pt-0">
-                  <Link
-                    href={`/${locale}/nabiota-rehabilitation`}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#142318] group-hover:text-[#B89650] transition-colors"
-                  >
-                    <span>{isUz ? "Qabulga yozilish" : isRu ? "Консультация с врачом" : isEn ? "Book appointment" : isTr ? "Randevu Talebi" : isAr ? "طلب موعد واستشارة" : "Termin anfragen"}</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════════
-          SECTION 6: PATIENT TESTIMONIALS (EXACTLY MATCHING TARGET LAYOUT)
-          - Compact vertical height (py-8 sm:py-10 lg:py-12)
-          - Left block aligned and vertically centered with cards
-          - 3 wider, shorter cards with avatars at top-left
-          - Carousel navigation buttons centered closely under cards
-          - Full-bleed photo2.webp background
-      ══════════════════════════════════════════════════════════ */}
-      <section className="w-full py-8 sm:py-10 lg:py-12 bg-[#091E13] text-white relative overflow-hidden border-t border-[#D5B878]/30">
-        {/* Full-bleed background: photo2.webp */}
-        <div className="absolute inset-0 pointer-events-none z-0">
-          <Image
-            src="/images/about/photo2.webp"
-            alt="Patient Testimonials Background"
-            fill
-            className="object-cover object-center opacity-95"
-            priority
-          />
-        </div>
-
-        <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8">
-            {/* Left Column: Title, Description, Button */}
-            <div className="w-full lg:w-[28%] xl:w-[27%] shrink-0 space-y-3">
-              <h2 className="font-serif text-2xl sm:text-3xl text-white font-normal leading-[1.14] whitespace-pre-line">
-                {testimonialsData.title}
-              </h2>
-              <p className="font-sans text-[11px] sm:text-[12px] text-white/80 leading-relaxed max-w-xs pt-0.5">
-                {testimonialsData.desc}
-              </p>
-              <div className="pt-2">
-                <Link
-                  href={`/${locale}/nabiota-rehabilitation`}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] font-semibold text-xs tracking-wide shadow-sm transition-all duration-200 hover:scale-[1.02]"
-                >
-                  <span>{testimonialsData.btn}</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Right Column: 3 Wider, Shorter Cards in a Compact Row + Centered Arrows */}
-            <div className="w-full lg:w-[70%] xl:w-[71%] flex flex-col items-center">
-              <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-4">
-                {testimonialsData.cards.map((c, idx) => (
-                  <div
-                    key={idx}
-                    className="bg-[#FAF8F5] rounded-[24px] p-5 sm:p-5.5 shadow-md flex flex-col justify-between text-[#132218] border border-[#EBE6DC] hover:-translate-y-1 transition-all duration-300 min-h-[235px] sm:min-h-[250px]"
-                  >
-                    <div>
-                      {/* Top-left Avatar */}
-                      <div className="relative w-16 h-16 rounded-full overflow-hidden mb-3 bg-neutral-100 shadow-sm border-2 border-white">
-                        <Image
-                          src={c.image}
-                          alt={c.name}
-                          fill
-                          className="object-cover object-top"
-                          priority
-                        />
-                      </div>
-
-                      {/* Quote Text with Gold Quote mark */}
-                      <div className="flex items-start gap-1">
-                        <span className="text-[#C5A56A] text-base font-serif font-bold leading-none select-none shrink-0 mt-0.5">
-                          “
-                        </span>
-                        <p className="font-sans text-[11px] sm:text-[11.5px] text-[#334237] leading-[1.5]">
-                          {c.quote}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Card Footer: Author, Role & 5 Gold Stars (no divider line matching reference) */}
-                    <div className="mt-3.5 pt-0">
-                      <h4 className="font-sans text-xs sm:text-[12.5px] font-bold text-[#0B2516] leading-tight">
-                        {c.name}
-                      </h4>
-                      <p className="font-sans text-[10px] sm:text-[10.5px] text-[#69796C] mt-0.5 leading-tight">
-                        {c.role}
-                      </p>
-                      <div className="flex items-center gap-0.5 mt-1 text-[#E5B338] text-[11px]">
-                        <span>★</span>
-                        <span>★</span>
-                        <span>★</span>
-                        <span>★</span>
-                        <span>★</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Carousel Navigation Buttons Below (Close to Cards, centered) */}
-              <div className="flex items-center justify-center gap-2 pt-3.5">
-                <button
-                  type="button"
-                  aria-label="Previous"
-                  className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#07150C] flex items-center justify-center transition-colors shadow-xs"
-                >
-                  <ArrowLeft className="w-3.5 h-3.5" />
-                </button>
-                <button
-                  type="button"
-                  aria-label="Next"
-                  className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-white/20 bg-black/20 hover:border-white/40 text-white/70 flex items-center justify-center transition-colors"
-                >
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
             </div>
           </div>
         </div>
