@@ -59,7 +59,7 @@ export function getHomeCareServices(
         : isAr
         ? "SGB V • وصفة طبية معتمدة"
         : "SGB V • ÄRZTLICHE VERORDNUNG",
-      image: "/images/services/homecare.webp",
+      image: "/images/care/behandlungspflege.webp",
       iconType: "stethoscope",
       title: isUz
         ? "Tibbiy davolash parvarishi (SGB V)"
@@ -265,7 +265,7 @@ export function getHomeCareServices(
         : isAr
         ? "ICW® • إدارة وعلاج الجروح"
         : "ICW® • ZERTIFIZIERTES MANAGEMENT",
-      image: "/images/services/wundversorgung.webp",
+      image: "/images/care/wound-care.webp",
       iconType: "award",
       title: isUz
         ? "Sertifikatlangan yaralarni davolash (ICW®)"
@@ -471,7 +471,7 @@ export function getHomeCareServices(
         : isAr
         ? "SGB XI • درجات الرعاية 1-5"
         : "SGB XI • PFLEGEGRADE 1-5",
-      image: "/images/nursing/stage-senior.webp",
+      image: "/images/care/grundpflege.webp",
       iconType: "heart",
       title: isUz
         ? "Tana parvarishi va kundalik yordam (SGB XI)"
@@ -677,7 +677,7 @@ export function getHomeCareServices(
         : isAr
         ? "إدارة الانتقال من المستشفيات ومراكز MVZ"
         : "KLINIK- & MVZ-ÜBERLEITUNG",
-      image: "/images/nursing/stage-postsurgical.webp",
+      image: "/images/care/post-op.webp",
       iconType: "shield",
       title: isUz
         ? "Operatsiyadan keyingi patronaj va parvarish"
@@ -883,7 +883,7 @@ export function getHomeCareServices(
         : isAr
         ? "علاج ورعاية متخصصة"
         : "SPEZIALISIERTE BEHANDLUNG",
-      image: "/images/nursing/why-choose-nurse.webp",
+      image: "/images/care/intensivpflege.webp",
       iconType: "pill",
       title: isUz
         ? "Stomalar, kateterlar va port-tizimlar"
@@ -1089,7 +1089,7 @@ export function getHomeCareServices(
         : isAr
         ? "§ 37.3 SGB XI ودعم أسر المرضى"
         : "§ 37.3 SGB XI & ENTLASTUNG",
-      image: "/images/nursing/hero-nurse.webp",
+      image: "/images/care/beratung.webp",
       iconType: "users",
       title: isUz
         ? "Maslahatlar, profilaktika va yaqinlarni qo'llab-quvvatlash"
