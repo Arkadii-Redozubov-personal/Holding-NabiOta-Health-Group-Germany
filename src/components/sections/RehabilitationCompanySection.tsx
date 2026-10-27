@@ -406,8 +406,8 @@ export function RehabilitationCompanySection({
                         key={idx}
                         className="group relative rounded-xl bg-white/85 hover:bg-white border border-[#EAE4D7] hover:border-[#D5B878]/70 py-2.5 px-3 sm:py-2.5 sm:px-3.5 flex items-center gap-2.5 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-sm transition-all duration-300 backdrop-blur-xs"
                       >
-                        <div className="w-7 h-7 sm:w-7.5 sm:h-7.5 rounded-full bg-[#FAF5EB] border border-[#EFE5D5] flex items-center justify-center shrink-0 group-hover:bg-[#F3EAD9] transition-colors">
-                          <SpecIcon className="w-3.5 h-3.5 text-[#9E7D3B]" />
+                        <div className="w-6 h-6 flex items-center justify-center shrink-0">
+                          <SpecIcon className="w-4 h-4 text-[#9E7D3B]" />
                         </div>
                         <div className="flex-1 min-w-0">
                           <h4 className="font-serif text-[12px] sm:text-[12.5px] text-[#142318] font-medium leading-tight">
@@ -464,8 +464,8 @@ export function RehabilitationCompanySection({
                           <span className="font-serif text-[22px] sm:text-[24px] text-[#C5A56A] font-normal leading-none w-8 shrink-0">
                             {numStr}
                           </span>
-                          <div className="w-9 h-9 rounded-full bg-[#FAF3E8] border border-[#E8DFC8] text-[#9E7D3B] flex items-center justify-center shrink-0 group-hover:bg-[#F0E5CD] transition-colors">
-                            <Icon className="w-4 h-4" />
+                          <div className="w-7 h-7 flex items-center justify-center shrink-0 text-[#9E7D3B]">
+                            <Icon className="w-5 h-5" />
                           </div>
                         </div>
 
@@ -498,8 +498,8 @@ export function RehabilitationCompanySection({
 
             {/* Overarching Rehabilitation Mandate Callout */}
             <div className="flex flex-col sm:flex-row items-start gap-4 rounded-xl sm:rounded-2xl border border-[#E0D5C1] bg-[#FAF5EC] p-5 sm:p-6 shadow-xs">
-              <div className="w-10 h-10 rounded-full bg-[#FAF0DC] border border-[#E0D0AE] text-[#9E7D3B] flex items-center justify-center shrink-0 mt-0.5">
-                <Sparkles className="w-5 h-5" />
+              <div className="w-7 h-7 flex items-center justify-center shrink-0 text-[#9E7D3B] mt-0.5">
+                <Sparkles className="w-6 h-6" />
               </div>
               <div className="space-y-1">
                 <h4 className="font-serif text-[16px] sm:text-[17.5px] text-[#142318] font-semibold">
@@ -572,8 +572,8 @@ export function RehabilitationCompanySection({
                       <span className="font-serif text-[22px] sm:text-[25px] text-[#F4DFC0] font-normal leading-none shrink-0 w-7 sm:w-8">
                         {numStr}
                       </span>
-                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D5B878]/50 bg-[#164329] text-[#F4DFC0] flex items-center justify-center shrink-0 group-hover:border-[#ECCF96] group-hover:bg-[#1b4e31] group-hover:scale-105 transition-all shadow-xs">
-                        <Icon className="w-4 h-4 sm:w-4.5 sm:h-4.5" />
+                      <div className="w-7 h-7 flex items-center justify-center shrink-0 text-[#F4DFC0]">
+                        <Icon className="w-5 h-5 sm:w-5.5 sm:h-5.5" />
                       </div>
                       <h4 className="font-serif font-medium text-[15px] sm:text-[16px] text-white leading-snug">
                         {payer.title[l]}

@@ -842,7 +842,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "نحلل حالتكم الصحية بدقة ونحدد أهداف التعافي المشتركة."
           : "Wir analysieren Ihre Situation und definieren gemeinsam Ihre Ziele.",
-        icon: <Stethoscope className="w-5 h-5 text-[#ECCF96]" />,
+        icon: <Stethoscope className="w-6 h-6 text-[#142318]" />,
       },
       {
         step: "02",
@@ -858,7 +858,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "برنامج تأهيلي مفصل بدقة وفق قدراتكم الجسدية واحتياجاتكم."
           : "Ein maßgeschneiderter Plan auf Basis Ihrer Bedürfnisse und Möglichkeiten.",
-        icon: <FileText className="w-5 h-5 text-[#ECCF96]" />,
+        icon: <FileText className="w-6 h-6 text-[#142318]" />,
       },
       {
         step: "03",
@@ -874,7 +874,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "يرافقكم خبراؤنا واختصاصيونا خطوة بخطوة خلال مسار التأهيل بأكمله."
           : "Unsere Experten begleiten Sie engmaschig durch den gesamten Rehabilitationsprozess.",
-        icon: <Activity className="w-5 h-5 text-[#ECCF96]" />,
+        icon: <Activity className="w-6 h-6 text-[#142318]" />,
       },
       {
         step: "04",
@@ -890,7 +890,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
           : isAr
           ? "نبقى بجانبكم حتى بعد انتهاء البرنامج للحفاظ على حركتكم وصحتكم المستدامة."
           : "Auch nach der Reha bleiben wir an Ihrer Seite – für Ihre nachhaltige Gesundheit.",
-        icon: <Heart className="w-5 h-5 text-[#ECCF96]" />,
+        icon: <Heart className="w-6 h-6 text-[#142318]" />,
       },
     ],
   };
@@ -1240,9 +1240,9 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
               {/* Checklist with gold circular checkmarks */}
               <div className="relative z-10 space-y-3 pt-6">
                 {innovationCard.items.map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-[#FAF5EC] border border-[#C5A56A] flex items-center justify-center text-[#8C6D2B] shrink-0 shadow-xs">
-                      <Check className="w-3 h-3 stroke-[2.4]" />
+                  <div key={idx} className="flex items-center gap-2.5">
+                    <div className="text-[#8C6D2B] shrink-0 flex items-center justify-center">
+                      <Check className="w-4 h-4 stroke-[2.2]" />
                     </div>
                     <span className="font-sans text-xs sm:text-[13px] text-[#1A2E20] font-medium">
                       {item}
@@ -1394,15 +1394,12 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
               {processData.steps.map((st, idx) => (
                 <div
                   key={idx}
-                  className="bg-white/95 backdrop-blur-xs rounded-2xl p-5 sm:p-6 pt-8 sm:pt-9 border border-[#E5ECE3] shadow-md relative flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group mt-4 sm:mt-0"
+                  className="bg-white/95 backdrop-blur-xs rounded-2xl p-5 sm:p-6 border border-[#E5ECE3] shadow-md relative flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
                 >
-                  {/* Top round green badge overlapping top edge */}
-                  <div className="absolute -top-5 left-5 w-11 h-11 rounded-full bg-[#0B2516] border-2 border-white flex items-center justify-center text-[#ECCF96] shadow-md group-hover:scale-105 transition-transform z-10">
-                    {st.icon}
-                  </div>
-
                   <div>
-
+                    <div className="text-[#0B2516] mb-3 flex items-center">
+                      {st.icon}
+                    </div>
 
                     <h4 className="font-serif text-base text-[#0B2516] font-medium leading-snug mb-2">
                       {st.title}
@@ -1797,7 +1794,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 pt-6 mt-4 border-t border-white/15">
               {approachData.stats.map((s, idx) => (
                 <div key={idx} className="space-y-2">
-                  <div className="w-10 h-10 rounded-full border border-[#D5B878]/60 bg-[#0A2316]/90 flex items-center justify-center text-[#ECCF96] shadow-sm">
+                  <div className="text-[#ECCF96] flex items-center mb-1">
                     {s.icon}
                   </div>
 

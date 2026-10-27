@@ -461,9 +461,9 @@ export function SanitaetshausCompanySection({ locale = "de" }: { locale?: string
                       key={item.num}
                       className="group relative rounded-[18px] bg-white border border-[#EAE4D7] p-3.5 sm:p-4 flex items-center justify-between gap-3 sm:gap-4 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:shadow-md hover:border-[#D5B878]/60 transition-all duration-300"
                     >
-                      {/* Left: Icon circle */}
-                      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#FAF5EB] border border-[#EFE5D5] flex items-center justify-center shrink-0 group-hover:bg-[#F3EAD9] transition-colors">
-                        <ItemIcon className="w-5 h-5 text-[#9E7D3B]" />
+                      {/* Left: Icon */}
+                      <div className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center shrink-0 text-[#9E7D3B]">
+                        <ItemIcon className="w-6 h-6" />
                       </div>
 
                       {/* Center: Title + Description */}
@@ -476,9 +476,9 @@ export function SanitaetshausCompanySection({ locale = "de" }: { locale?: string
                         </p>
                       </div>
 
-                      {/* Right: Round button with arrow */}
-                      <Link href={`/${l}/nabiota-sanitaetshaus`} aria-label={item.title[l]} className="w-8.5 h-8.5 rounded-full border border-[#D5B878]/50 flex items-center justify-center text-[#9E7D3B] shrink-0 group-hover:bg-[#9E7D3B] group-hover:text-white group-hover:border-[#9E7D3B] transition-all duration-300">
-                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                      {/* Right: Arrow link */}
+                      <Link href={`/${l}/nabiota-sanitaetshaus`} aria-label={item.title[l]} className="text-[#9E7D3B] hover:text-[#142318] shrink-0 p-1.5 transition-colors">
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                       </Link>
                     </div>
                   );
@@ -490,8 +490,8 @@ export function SanitaetshausCompanySection({ locale = "de" }: { locale?: string
           {/* Network + Pharmacy info cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
             <div className="rounded-2xl sm:rounded-3xl p-6 sm:p-7 bg-[#F4F9F6] border border-[#D0E3D6] flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-[#1E3B29]/10 border border-[#1E3B29]/30 flex items-center justify-center text-[#1E3B29] shrink-0 mt-0.5">
-                <Network className="w-5 h-5" />
+              <div className="w-7 h-7 flex items-center justify-center text-[#1E3B29] shrink-0 mt-0.5">
+                <Network className="w-6 h-6" />
               </div>
               <div className="space-y-1.5 flex-1">
                 <h4 className="font-serif text-[16.5px] sm:text-[17.5px] text-[#142318] font-semibold">
@@ -504,8 +504,8 @@ export function SanitaetshausCompanySection({ locale = "de" }: { locale?: string
             </div>
 
             <div className="rounded-2xl sm:rounded-3xl p-6 sm:p-7 bg-[#FAF5EB] border border-[#E7DDC9] flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-[#C5A56A]/20 border border-[#C5A56A] flex items-center justify-center text-[#8C6D2B] shrink-0 mt-0.5">
-                <ShieldCheck className="w-5 h-5" />
+              <div className="w-7 h-7 flex items-center justify-center text-[#8C6D2B] shrink-0 mt-0.5">
+                <ShieldCheck className="w-6 h-6" />
               </div>
               <div className="space-y-1.5 flex-1">
                 <h4 className="font-serif text-[16.5px] sm:text-[17.5px] text-[#142318] font-semibold">
@@ -556,8 +556,8 @@ export function SanitaetshausCompanySection({ locale = "de" }: { locale?: string
                     className="bg-[#0A1F13]/85 hover:bg-[#0D2618]/95 border border-[#D5B878]/30 hover:border-[#D5B878]/70 backdrop-blur-md rounded-xl sm:rounded-2xl p-3.5 sm:p-4 transition-all duration-300 hover:-translate-y-1 shadow-[0_6px_20px_rgba(0,0,0,0.3)] group flex flex-col justify-between"
                   >
                     <div>
-                      <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#D5B878] bg-[#122B1B]/80 flex items-center justify-center text-[#ECCF96] mb-2.5 shadow-[0_0_8px_rgba(213,184,120,0.2)] group-hover:scale-105 transition-transform">
-                        <RowIcon className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.6]" />
+                      <div className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center text-[#ECCF96] mb-2.5">
+                        <RowIcon className="w-5 h-5 sm:w-5.5 sm:h-5.5 stroke-[1.6]" />
                       </div>
                       <h4 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-white mb-1 group-hover:text-[#ECCF96] transition-colors leading-snug">
                         {row.area[l]}

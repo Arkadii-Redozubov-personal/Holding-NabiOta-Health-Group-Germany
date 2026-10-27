@@ -743,8 +743,8 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                   {/* Floating Pill Overlay Card */}
                   <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-auto sm:max-w-md bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-full px-4 sm:px-5 py-2.5 sm:py-3 shadow-lg flex items-center justify-between gap-3 border border-white/60">
                     <div className="flex items-center gap-3 min-w-0">
-                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#0C1C11] border border-[#D5B878]/60 flex items-center justify-center text-[#ECCF96] shadow-sm shrink-0">
-                        <CloverEmblemIcon className="w-4.5 h-4.5 stroke-[1.6]" />
+                      <div className="w-8 h-8 flex items-center justify-center text-[#ECCF96] shrink-0">
+                        <CloverEmblemIcon className="w-6 h-6 stroke-[1.6]" />
                       </div>
                       <div className="min-w-0">
                         <h4 className="text-[13.5px] sm:text-[14px] font-bold text-[#142318] truncate leading-tight">
@@ -759,9 +759,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                     <Link
                       href={`/${locale}/mvz-hausarzt-facharzt`}
                       aria-label={spotlight.linkText}
-                      className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#142318]/15 bg-white flex items-center justify-center text-[#142318] hover:bg-[#D5B878] hover:border-[#D5B878] hover:text-[#0C1C11] transition-all shrink-0 ml-1"
+                      className="text-[#142318] hover:text-[#B89650] transition-colors flex items-center justify-center shrink-0 ml-1 p-1"
                     >
-                      <ArrowRight className="w-3.5 h-3.5" />
+                      <ArrowRight className="w-4 h-4 transition-transform hover:translate-x-0.5" />
                     </Link>
                   </div>
                 </div>
@@ -782,9 +782,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                   {spotlight.features.map((feat, idx) => {
                     const FeatureIcon = feat.icon;
                     return (
-                      <div key={idx} className="flex items-center gap-2.5">
-                        <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D5B878] bg-[#FAF8F5] flex items-center justify-center text-[#B89650] shrink-0 shadow-sm">
-                          <FeatureIcon className="w-4 h-4 stroke-[1.6]" />
+                      <div key={idx} className="flex items-center gap-2">
+                        <div className="text-[#B89650] flex items-center justify-center shrink-0">
+                          <FeatureIcon className="w-5 h-5 stroke-[1.6]" />
                         </div>
                         <span className="text-[11.5px] sm:text-xs font-medium text-[#425046] leading-snug">
                           {feat.label}
@@ -856,8 +856,8 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                   </div>
 
                   {/* Light Holding Emblem */}
-                  <div className="absolute top-8 left-2 sm:left-3 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#FAF3E8] border border-[#D5B878] flex items-center justify-center text-[#9E7D3B] shadow-md z-20">
-                    <Building2 className="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.6]" />
+                  <div className="absolute top-8 left-2 sm:left-3 text-[#9E7D3B] z-20">
+                    <Building2 className="w-8 h-8 sm:w-9 sm:h-9" />
                   </div>
                 </div>
 
@@ -920,9 +920,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                       {overviewData.advantages.map((item, idx) => {
                         const AdvantageIcon = [Users, Heart, Clock, ShieldCheck][idx] || ShieldCheck;
                         return (
-                          <div key={idx} className="flex items-center gap-2.5">
-                            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#EBF1ED] border border-[#DCE6E0] flex items-center justify-center text-[#1E3B29] shrink-0 shadow-xs">
-                              <AdvantageIcon className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.6]" />
+                          <div key={idx} className="flex items-center gap-2">
+                            <div className="text-[#1E3B29] flex items-center justify-center shrink-0">
+                              <AdvantageIcon className="w-5 h-5 sm:w-5.5 sm:h-5.5 stroke-[1.6]" />
                             </div>
                             <span className="text-[11.5px] sm:text-[12px] text-[#334237] font-normal leading-snug font-sans">
                               {item}
@@ -993,10 +993,10 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                         {entity.sub}
                       </div>
 
-                      {/* Icon & Title Row (Larger Circular Icon) */}
-                      <div className="flex items-center gap-3.5 mb-2.5">
-                        <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#E8F1EC] border border-[#D4E3D8] flex items-center justify-center text-[#183B26] shrink-0 group-hover:bg-[#D5B878]/15 group-hover:border-[#D5B878] group-hover:text-[#8C6D2B] transition-colors shadow-xs">
-                          <EntityIcon className="w-5.5 h-5.5 sm:w-6 sm:h-6 stroke-[1.6]" />
+                      {/* Icon & Title Row */}
+                      <div className="flex items-center gap-3 mb-2.5">
+                        <div className="text-[#183B26] group-hover:text-[#8C6D2B] flex items-center justify-center shrink-0 transition-colors">
+                          <EntityIcon className="w-7 h-7 sm:w-8 sm:h-8" />
                         </div>
                         <h4 className="font-serif text-[15.5px] sm:text-[16.5px] text-[#142318] font-bold leading-snug group-hover:text-[#B89650] transition-colors">
                           {entity.title}
@@ -1024,13 +1024,13 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                           aria-label={entity.title}
                           target={eIdx === 1 ? "_blank" : undefined}
                           rel={eIdx === 1 ? "noopener noreferrer" : undefined}
-                          className="w-6.5 h-6.5 sm:w-7 sm:h-7 rounded-full border border-[#DCD5C6] bg-[#FAF8F5] group-hover:border-[#C5A56A] group-hover:bg-[#C5A56A] group-hover:text-white text-[#B89650] flex items-center justify-center transition-all shadow-xs"
+                          className="text-[#B89650] hover:text-[#8C6D2B] flex items-center justify-center transition-colors p-1"
                         >
-                          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                         </Link>
                       ) : (
-                        <div className="w-6.5 h-6.5 sm:w-7 sm:h-7 rounded-full border border-[#DCD5C6] bg-[#FAF8F5] group-hover:border-[#C5A56A] group-hover:bg-[#C5A56A] group-hover:text-white text-[#B89650] flex items-center justify-center transition-all shadow-xs">
-                          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                        <div className="text-[#B89650] flex items-center justify-center p-1">
+                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                         </div>
                       )}
                     </div>
@@ -1139,9 +1139,9 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                           aria-label={isRu ? `Открыть подразделение: ${doc.role}` : isEn ? `Open department: ${doc.role}` : isTr ? `Bölümü aç: ${doc.role}` : isAr ? `افتح القسم: ${doc.role}` : isUz ? `Bo‘limni ochish: ${doc.role}` : `Fachbereich öffnen: ${doc.role}`}
                           target={idx === 1 ? "_blank" : undefined}
                           rel={idx === 1 ? "noopener noreferrer" : undefined}
-                          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-[#142318]/15 group-hover:border-[#D5B878] group-hover:bg-[#D5B878] group-hover:text-[#0C1C11] flex items-center justify-center text-[#142318] transition-all shrink-0"
+                          className="text-[#142318] group-hover:text-[#B89650] flex items-center justify-center transition-colors shrink-0 p-1"
                         >
-                          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                         </Link>
                       </div>
                     </div>

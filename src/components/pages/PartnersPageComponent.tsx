@@ -1075,10 +1075,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
 
                     {/* Card Content Row */}
                     <div className="pt-3.5 pb-1.5 px-1 flex items-center justify-between gap-3">
-                      <div className="flex items-center gap-3.5 min-w-0 flex-1">
-                        {/* Circular Light Emblem Icon Badge */}
-                        <div className="w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-[#FAF3E8] border border-[#E8DFC8] flex items-center justify-center text-[#9E7D3B] shadow-2xs shrink-0 group-hover:bg-[#F0E5CD] group-hover:border-[#D5B878] group-hover:scale-105 transition-all">
-                          <IconComponent className="w-5.5 h-5.5 sm:w-6 sm:h-6 stroke-[1.6]" />
+                      <div className="flex items-center gap-3 min-w-0 flex-1">
+                        <div className="text-[#9E7D3B] flex items-center justify-center shrink-0">
+                          <IconComponent className="w-7 h-7 sm:w-8 sm:h-8" />
                         </div>
 
                         <div className="min-w-0 flex-1">
@@ -1091,9 +1090,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                         </div>
                       </div>
 
-                      {/* Right Round Arrow Button */}
-                      <div className="w-8 h-8 rounded-full border border-[#142318]/15 group-hover:border-[#D5B878] group-hover:bg-[#D5B878] group-hover:text-[#0C1C11] flex items-center justify-center text-[#142318] transition-all shrink-0 ml-1">
-                        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                      {/* Right Arrow */}
+                      <div className="text-[#142318] group-hover:text-[#B89650] flex items-center justify-center transition-colors shrink-0 ml-1 p-1">
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                       </div>
                     </div>
                   </div>
@@ -1302,11 +1301,11 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                         : "Dr. Fischer-Rahimov hält die MVZ-Anteile direkt auf Basis seiner berufsrechtlichen Vertragsarzt-Eigenschaft (§ 95 SGB V). Die Holding NabiOta® Health Group Germany GmbH erbringt zentrale Management-, Abrechnungs-, IT- und Einkaufsdienstleistungen über individuelle Servicevereinbarungen."}
                     </p>
 
-                    {/* 3 Circular Medal Items */}
+                    {/* 3 Medal Items */}
                     <div className="space-y-3 pt-2">
-                      <div className="flex items-center gap-3.5">
-                        <div className="w-9 h-9 rounded-full bg-[#FAF6EE] border border-[#E8DEC8] text-[#8C6D37] flex items-center justify-center shrink-0 shadow-2xs">
-                          <ShieldCheck className="w-4 h-4 stroke-[1.8]" />
+                      <div className="flex items-center gap-3">
+                        <div className="text-[#8C6D37] flex items-center justify-center shrink-0">
+                          <ShieldCheck className="w-5 h-5 stroke-[1.8]" />
                         </div>
                         <span className="text-[12.5px] sm:text-[13px] text-[#2C3E32] font-normal leading-snug">
                           {isUz
@@ -1323,9 +1322,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                         </span>
                       </div>
 
-                      <div className="flex items-center gap-3.5">
-                        <div className="w-9 h-9 rounded-full bg-[#FAF6EE] border border-[#E8DEC8] text-[#8C6D37] flex items-center justify-center shrink-0 shadow-2xs">
-                          <FileText className="w-4 h-4 stroke-[1.8]" />
+                      <div className="flex items-center gap-3">
+                        <div className="text-[#8C6D37] flex items-center justify-center shrink-0">
+                          <FileText className="w-5 h-5 stroke-[1.8]" />
                         </div>
                         <span className="text-[12.5px] sm:text-[13px] text-[#2C3E32] font-normal leading-snug">
                           {isUz
@@ -1342,9 +1341,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                         </span>
                       </div>
 
-                      <div className="flex items-center gap-3.5">
-                        <div className="w-9 h-9 rounded-full bg-[#FAF6EE] border border-[#E8DEC8] text-[#8C6D37] flex items-center justify-center shrink-0 shadow-2xs">
-                          <Users className="w-4 h-4 stroke-[1.8]" />
+                      <div className="flex items-center gap-3">
+                        <div className="text-[#8C6D37] flex items-center justify-center shrink-0">
+                          <Users className="w-5 h-5 stroke-[1.8]" />
                         </div>
                         <span className="text-[12.5px] sm:text-[13px] text-[#2C3E32] font-normal leading-snug">
                           {isUz
@@ -1489,11 +1488,11 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                         : "Die Holding baut die stationäre Betreibergesellschaft (NabiOta Clinics Germany GmbH nach § 30 GewO) auf. Mit Erhalt der Zulassung als Plankrankenhaus (§ 108/109 SGB V) erwirbt die Gesellschaft die unmittelbare gesetzliche Gründungsberechtigung für MVZ. Anteile können sodann direkt und ohne persönliche Arztbindung gehalten werden."}
                     </p>
 
-                    {/* 3 Circular Medal Items */}
+                    {/* 3 Items */}
                     <div className="space-y-3 pt-2">
-                      <div className="flex items-center gap-3.5">
-                        <div className="w-9 h-9 rounded-full bg-[#132E1E] border border-[#D5B878]/40 text-[#ECCF96] flex items-center justify-center shrink-0 shadow-2xs">
-                          <GitFork className="w-4 h-4 stroke-[1.8]" />
+                      <div className="flex items-center gap-3">
+                        <div className="text-[#ECCF96] flex items-center justify-center shrink-0">
+                          <GitFork className="w-5 h-5 stroke-[1.8]" />
                         </div>
                         <span className="text-[12.5px] sm:text-[13px] text-white/90 font-normal leading-snug">
                           {isUz
@@ -1510,9 +1509,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                         </span>
                       </div>
 
-                      <div className="flex items-center gap-3.5">
-                        <div className="w-9 h-9 rounded-full bg-[#132E1E] border border-[#D5B878]/40 text-[#ECCF96] flex items-center justify-center shrink-0 shadow-2xs">
-                          <TrendingUp className="w-4 h-4 stroke-[1.8]" />
+                      <div className="flex items-center gap-3">
+                        <div className="text-[#ECCF96] flex items-center justify-center shrink-0">
+                          <TrendingUp className="w-5 h-5 stroke-[1.8]" />
                         </div>
                         <span className="text-[12.5px] sm:text-[13px] text-white/90 font-normal leading-snug">
                           {isUz
@@ -1529,9 +1528,9 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                         </span>
                       </div>
 
-                      <div className="flex items-center gap-3.5">
-                        <div className="w-9 h-9 rounded-full bg-[#132E1E] border border-[#D5B878]/40 text-[#ECCF96] flex items-center justify-center shrink-0 shadow-2xs">
-                          <Link2 className="w-4 h-4 stroke-[1.8]" />
+                      <div className="flex items-center gap-3">
+                        <div className="text-[#ECCF96] flex items-center justify-center shrink-0">
+                          <Link2 className="w-5 h-5 stroke-[1.8]" />
                         </div>
                         <span className="text-[12.5px] sm:text-[13px] text-white/90 font-normal leading-snug">
                           {isUz
@@ -1803,10 +1802,10 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
 
                   {/* Top Content: Medallion and Numeral, Title, Description */}
                   <div className="relative z-10 space-y-3.5 sm:space-y-4">
-                    {/* Medallion + Serif Italic Number */}
+                    {/* Icon + Serif Italic Number */}
                     <div className="flex items-center gap-3">
-                      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#FAF5EB] border border-[#E5DAC6] flex items-center justify-center text-[#4A6353] shadow-2xs shrink-0 group-hover:border-[#C5A56A] group-hover:text-[#274632] transition-colors">
-                        <step.icon className="w-5 h-5 stroke-[1.8]" />
+                      <div className="text-[#4A6353] group-hover:text-[#274632] flex items-center justify-center shrink-0 transition-colors">
+                        <step.icon className="w-7 h-7 stroke-[1.8]" />
                       </div>
                       <span className="font-serif italic text-2xl sm:text-[27px] text-[#C5A56A] font-light leading-none select-none pl-0.5">
                         {step.num}
@@ -1940,27 +1939,27 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                 <div className="w-full max-w-[340px] space-y-3.5 sm:space-y-4">
                   <a
                     href="tel:+4921614794000"
-                    className="flex items-center gap-3.5 text-xs sm:text-[13.5px] text-[#1B3A29] hover:text-[#0D2619] transition-colors group"
+                    className="flex items-center gap-3 text-xs sm:text-[13.5px] text-[#1B3A29] hover:text-[#0D2619] transition-colors group"
                   >
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/80 border border-[#DFCDBA] flex items-center justify-center text-[#8C6D37] shrink-0 shadow-2xs group-hover:bg-[#E5DFC9] transition-colors">
-                      <Phone className="w-4 h-4 fill-[#8C6D37] text-[#8C6D37]" />
+                    <div className="text-[#8C6D37] flex items-center justify-center shrink-0">
+                      <Phone className="w-4.5 h-4.5 fill-[#8C6D37] text-[#8C6D37]" />
                     </div>
                     <span className="font-medium font-sans">+49 2161 4794000</span>
                   </a>
 
                   <a
                     href="mailto:partner@nabiota-health-group.de"
-                    className="flex items-center gap-3.5 text-xs sm:text-[13.5px] text-[#1B3A29] hover:text-[#0D2619] transition-colors group"
+                    className="flex items-center gap-3 text-xs sm:text-[13.5px] text-[#1B3A29] hover:text-[#0D2619] transition-colors group"
                   >
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/80 border border-[#DFCDBA] flex items-center justify-center text-[#0F2A1D] shrink-0 shadow-2xs group-hover:bg-[#E5DFC9] transition-colors">
-                      <Mail className="w-4 h-4 fill-[#0F2A1D] text-[#0F2A1D]" />
+                    <div className="text-[#0F2A1D] flex items-center justify-center shrink-0">
+                      <Mail className="w-4.5 h-4.5 fill-[#0F2A1D] text-[#0F2A1D]" />
                     </div>
                     <span className="font-medium font-sans">partner@nabiota-health-group.de</span>
                   </a>
 
-                  <div className="flex items-center gap-3.5 text-xs sm:text-[13.5px] text-[#1B3A29]">
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/80 border border-[#DFCDBA] flex items-center justify-center text-[#0F2A1D] shrink-0 shadow-2xs">
-                      <MapPin className="w-4 h-4 fill-[#0F2A1D] text-[#0F2A1D]" />
+                  <div className="flex items-center gap-3 text-xs sm:text-[13.5px] text-[#1B3A29]">
+                    <div className="text-[#0F2A1D] flex items-center justify-center shrink-0">
+                      <MapPin className="w-4.5 h-4.5 fill-[#0F2A1D] text-[#0F2A1D]" />
                     </div>
                     <span className="font-medium font-sans">Mönchengladbach, Germany</span>
                   </div>

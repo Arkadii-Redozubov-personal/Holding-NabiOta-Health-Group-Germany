@@ -73,29 +73,27 @@ export function IconCircle({
   };
 
   const iconSizes = {
-    sm: "w-4 h-4",
-    md: "w-5 h-5 md:w-6 md:h-6",
-    lg: "w-7 h-7",
+    sm: "w-5 h-5",
+    md: "w-7 h-7 md:w-8 md:h-8",
+    lg: "w-9 h-9",
   };
 
   const variantClasses = {
-    gold: "border border-gold-400/50 text-gold-500 bg-gold-400/5",
-    forest: "border border-forest-800/30 text-forest-800 bg-forest-800/5",
-    dark: "border border-gold-400/40 text-gold-300 bg-forest-900/60 shadow-inner",
+    gold: "text-[#B89650]",
+    forest: "text-[#173824]",
+    dark: "text-[#ECCF96]",
   };
 
   return (
     <div
       className={cn(
-        "rounded-full flex items-center justify-center transition-all duration-300 flex-shrink-0",
-        sizeClasses[size],
+        "flex items-center justify-center transition-colors duration-300 flex-shrink-0",
         variantClasses[variant],
         className
       )}
     >
       <IconComponent
         className={cn(iconSizes[size])}
-        strokeWidth={1.5}
       />
     </div>
   );

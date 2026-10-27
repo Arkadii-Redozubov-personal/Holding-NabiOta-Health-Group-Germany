@@ -866,9 +866,9 @@ export function PflegePageComponent({ locale = "de" }: Props) {
                 {/* 4 Checklist Items with Dark Green Badges */}
                 <div className="space-y-3.5 pt-2">
                   {t.whyChoose.checks.map((checkText, idx) => (
-                    <div key={idx} className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#133924] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
-                        <Check className="w-3 h-3 stroke-[3]" />
+                    <div key={idx} className="flex items-center gap-2.5">
+                      <div className="text-[#133924] flex items-center justify-center flex-shrink-0">
+                        <Check className="w-4 h-4 stroke-[2.4]" />
                       </div>
                       <span className="text-xs sm:text-sm font-medium text-[#1E382A]">
                         {checkText}
@@ -947,8 +947,8 @@ export function PflegePageComponent({ locale = "de" }: Props) {
                   const IconComp = b.icon;
                   return (
                     <div key={idx} className="flex flex-col items-center text-center space-y-1.5 group">
-                      <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#D5B878]/70 bg-white/5 flex items-center justify-center text-[#ECCF96] transition-transform duration-300 group-hover:scale-105 shadow-[0_0_12px_rgba(213,184,120,0.12)]">
-                        <IconComp className="w-4 h-4 sm:w-5 sm:h-5 stroke-[1.6]" />
+                      <div className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center text-[#ECCF96]">
+                        <IconComp className="w-5 h-5 sm:w-6 sm:h-6 stroke-[1.6]" />
                       </div>
                       <span className="text-[11.5px] sm:text-xs font-medium text-[#F4EFE6] leading-tight">
                         {b.title}
@@ -1097,18 +1097,18 @@ export function PflegePageComponent({ locale = "de" }: Props) {
                     </div>
 
                     <div className="relative z-10">
-                      {/* Icon badge */}
+                      {/* Icon */}
                       <div className="mb-3 sm:mb-3.5">
                         <div
-                          className={`w-10 h-10 sm:w-10.5 sm:h-10.5 rounded-full border flex items-center justify-center shrink-0 transition-colors ${
+                          className={`w-7 h-7 flex items-center justify-center shrink-0 ${
                             idx === 0
-                              ? "bg-[#F3F7F4] border-[#DCE8DF] text-[#1E3B29] group-hover:bg-[#E5EFE8]"
-                              : "bg-[#FAF5EB] border-[#EFE5D5] text-[#9E7D3B] group-hover:bg-[#F3EAD9]"
+                              ? "text-[#1E3B29]"
+                              : "text-[#9E7D3B]"
                           }`}
                         >
-                          {idx === 0 && <ShieldCheck className="w-4.5 h-4.5 stroke-[1.8]" />}
-                          {idx === 1 && <Hospital className="w-4.5 h-4.5 stroke-[1.8]" />}
-                          {idx === 2 && <Pill className="w-4.5 h-4.5 stroke-[1.8]" />}
+                          {idx === 0 && <ShieldCheck className="w-6 h-6 stroke-[1.8]" />}
+                          {idx === 1 && <Hospital className="w-6 h-6 stroke-[1.8]" />}
+                          {idx === 2 && <Pill className="w-6 h-6 stroke-[1.8]" />}
                         </div>
                       </div>
 
@@ -1286,11 +1286,11 @@ export function PflegePageComponent({ locale = "de" }: Props) {
                           <span className="font-serif text-xs sm:text-[13.5px] md:text-sm text-[#153424] font-medium group-hover:text-[#0D2619] transition-colors">
                             {item.q}
                           </span>
-                          <span className="w-5 h-5 rounded-full flex items-center justify-center text-[#285038] group-hover:bg-[#EBF0EA] transition-colors flex-shrink-0">
+                          <span className="text-[#285038] group-hover:text-[#0D2619] transition-colors flex-shrink-0">
                             {isOpen ? (
-                              <Minus className="w-3.5 h-3.5" />
+                              <Minus className="w-4 h-4" />
                             ) : (
-                              <Plus className="w-3.5 h-3.5" />
+                              <Plus className="w-4 h-4" />
                             )}
                           </span>
                         </button>

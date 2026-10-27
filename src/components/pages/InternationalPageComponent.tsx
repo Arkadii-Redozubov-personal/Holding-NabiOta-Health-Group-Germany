@@ -2265,13 +2265,13 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
                       </p>
                     </div>
 
-                    {/* Bottom Action Area: Details Pill Button + Circle Arrow Button */}
+                    {/* Bottom Action Area: Details Pill Button + Arrow */}
                     <div className="pt-2 flex items-center justify-between border-t border-[#EBE5DA]/60">
                       <span className="text-[11px] font-semibold text-[#8C6D37] group-hover:text-[#0B2516] transition-colors">
                         {t.s4.openModalBtn}
                       </span>
-                      <div className="w-8 h-8 rounded-full border border-[#D8C7A5] flex items-center justify-center text-[#B8934A] group-hover:bg-[#0B2516] group-hover:text-[#ECCF96] group-hover:border-[#0B2516] transition-all">
-                        <ArrowRight className="w-3.5 h-3.5" />
+                      <div className="text-[#B8934A] group-hover:text-[#0B2516] transition-colors flex items-center justify-center">
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                       </div>
                     </div>
                   </div>

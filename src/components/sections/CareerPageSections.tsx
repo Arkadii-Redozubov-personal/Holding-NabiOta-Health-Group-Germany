@@ -225,13 +225,13 @@ export function CareerPillarCatalog({ t, onSelect }: { t: CareerContent; onSelec
                       </svg>
                     </div>
 
-                    {/* Circular Icon with light green background overlapping the photo on the left */}
-                    <div className="relative -mt-9 mb-3.5 z-10">
-                      <div className="w-12 h-12 rounded-full bg-[#E5F0E8] border border-[#CCE0D2] flex items-center justify-center text-[#1C3E2A] shadow-xs group-hover:scale-105 transition-transform">
-                        {pillar.id === "aerzte" && <Stethoscope className="w-6 h-6 stroke-[1.8]" />}
-                        {pillar.id === "pflege" && <FileCheck className="w-6 h-6 stroke-[1.8]" />}
-                        {pillar.id === "diagnostik" && <Settings className="w-6 h-6 stroke-[1.8]" />}
-                        {pillar.id === "therapie" && <HeartHandshake className="w-6 h-6 stroke-[1.8]" />}
+                    {/* Icon overlapping the photo on the left */}
+                    <div className="relative -mt-7 mb-3 z-10">
+                      <div className="text-[#1C3E2A] flex items-center">
+                        {pillar.id === "aerzte" && <Stethoscope className="w-7 h-7" />}
+                        {pillar.id === "pflege" && <FileCheck className="w-7 h-7" />}
+                        {pillar.id === "diagnostik" && <Settings className="w-7 h-7" />}
+                        {pillar.id === "therapie" && <HeartHandshake className="w-7 h-7" />}
                       </div>
                     </div>
 
@@ -250,8 +250,8 @@ export function CareerPillarCatalog({ t, onSelect }: { t: CareerContent; onSelec
                       <span className="px-4 py-2 rounded-full bg-[#FAF3E7] text-[#93712C] text-xs font-semibold group-hover:bg-[#F5EAD4] transition-colors">
                         {t.pillarSection.openModalBtn}
                       </span>
-                      <div className="w-9 h-9 rounded-full bg-[#FAF3E7] border border-[#EADBBE] flex items-center justify-center text-[#93712C] group-hover:bg-[#C5A56A] group-hover:text-white group-hover:border-[#C5A56A] transition-all">
-                        <ArrowRight className="w-4 h-4" />
+                      <div className="text-[#93712C] group-hover:text-[#1C3E2A] transition-colors flex items-center justify-center">
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                       </div>
                     </div>
                   </div>
@@ -312,8 +312,8 @@ export function CareerJobsSection({ t, onSelectJob }: { t: CareerContent; onSele
                       className="p-4 sm:p-5 rounded-2xl bg-white/95 backdrop-blur-xs border border-[#EDE7D9] hover:border-[#C5A56A] shadow-xs hover:shadow-md transition-all duration-200 flex items-center justify-between group cursor-pointer"
                     >
                       <div className="flex items-center gap-4">
-                        <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#FAF6EE] border border-[#E5D7B7] flex items-center justify-center text-[#C5A56A] flex-shrink-0 group-hover:bg-[#C5A56A] group-hover:text-white transition-colors duration-200">
-                          <JobIcon className="w-5 h-5 stroke-[1.75]" />
+                        <div className="w-8 h-8 flex items-center justify-center text-[#C5A56A] group-hover:text-[#8D6B27] flex-shrink-0 transition-colors">
+                          <JobIcon className="w-6 h-6" />
                         </div>
                         <div>
                           <h3 className="font-serif font-bold text-sm sm:text-base text-forest-950 group-hover:text-[#8D6B27] transition-colors leading-snug">
@@ -329,7 +329,7 @@ export function CareerJobsSection({ t, onSelectJob }: { t: CareerContent; onSele
                         </div>
                       </div>
 
-                      <div className="w-8 h-8 rounded-full flex items-center justify-center text-[#C5A56A] group-hover:translate-x-1 transition-transform">
+                      <div className="text-[#C5A56A] group-hover:translate-x-1 transition-transform flex items-center justify-center">
                         <ArrowRight className="w-4 h-4" />
                       </div>
                     </div>
@@ -657,9 +657,9 @@ export function CareerPillarModal({
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {pillar.benefitsPackage.map((benefit, idx) => (
-                    <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-[13px] text-[#243327]">
-                      <div className="w-4 h-4 rounded-full bg-[#FAF5EC] border border-[#C5A56A] flex items-center justify-center text-[#8D6B27] shrink-0 mt-0.5">
-                        <Check className="w-2.5 h-2.5 stroke-[2.5]" />
+                    <div key={idx} className="flex items-start gap-2 text-xs sm:text-[13px] text-[#243327]">
+                      <div className="text-[#8D6B27] shrink-0 mt-0.5 flex items-center justify-center">
+                        <Check className="w-3.5 h-3.5 stroke-[2.2]" />
                       </div>
                       <span>{benefit}</span>
                     </div>

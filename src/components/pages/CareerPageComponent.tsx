@@ -196,12 +196,12 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
                       <div className="w-8 h-8 rounded-full border border-[#D5B878]/70 text-[#ECCF96] font-serif font-bold text-xs sm:text-sm flex items-center justify-center">
                         {item.step}
                       </div>
-                      <div className="w-10 h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-white/80 shadow-xs group-hover:scale-105 transition-transform">
-                        {idx === 0 && <FileText className="w-5 h-5 stroke-[1.8]" />}
-                        {idx === 1 && <Search className="w-5 h-5 stroke-[1.8]" />}
-                        {idx === 2 && <Users className="w-5 h-5 stroke-[1.8]" />}
-                        {idx === 3 && <Building2 className="w-5 h-5 stroke-[1.8]" />}
-                        {idx === 4 && <Plane className="w-5 h-5 stroke-[1.8]" />}
+                      <div className="text-[#ECCF96] flex items-center justify-center">
+                        {idx === 0 && <FileText className="w-6 h-6" />}
+                        {idx === 1 && <Search className="w-6 h-6" />}
+                        {idx === 2 && <Users className="w-6 h-6" />}
+                        {idx === 3 && <Building2 className="w-6 h-6" />}
+                        {idx === 4 && <Plane className="w-6 h-6" />}
                       </div>
                     </div>
 
@@ -311,8 +311,8 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
                   key={idx}
                   className="p-6 sm:p-7 rounded-2xl bg-white border border-[#E0D4C0] shadow-xs flex items-start gap-4"
                 >
-                  <div className="w-9 h-9 rounded-full bg-[#FAF5EC] border border-[#C5A56A] flex items-center justify-center text-[#8D6B27] shrink-0 mt-0.5">
-                    <ShieldCheck className="w-5 h-5" />
+                  <div className="text-[#8D6B27] shrink-0 mt-0.5">
+                    <ShieldCheck className="w-6 h-6" />
                   </div>
                   <div className="space-y-1.5">
                     <h3 className="font-serif text-base font-bold text-[#142318]">
@@ -365,8 +365,8 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
                   <div className="lg:hidden absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#07160C] to-transparent pointer-events-none z-10" />
 
                   <div className="absolute bottom-4 right-4 sm:bottom-5 sm:right-5 bg-[#FAF7F0] rounded-2xl px-5 py-3 shadow-[0_12px_28px_rgba(0,0,0,0.22)] border border-[#EAE3D4] flex items-center gap-3.5 z-20">
-                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#FAF6EE] border border-[#E5D7B7] flex items-center justify-center flex-shrink-0 text-[#C5A56A] shadow-xs">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 sm:w-6 sm:h-6">
+                    <div className="text-[#C5A56A] flex items-center justify-center flex-shrink-0">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 sm:w-7 sm:h-7">
                         <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
                         <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
                       </svg>

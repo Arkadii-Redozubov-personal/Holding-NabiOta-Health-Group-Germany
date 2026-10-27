@@ -539,8 +539,8 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
 
                   {/* Floating Pill Card Overlaid at the Bottom of Photo */}
                   <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 bg-white/95 backdrop-blur-md border border-[#E8DFD0] rounded-2xl p-3.5 sm:p-4 shadow-lg flex items-center gap-3 sm:gap-3.5">
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D5B878] bg-[#FAF8F4] flex items-center justify-center text-[#B89650] flex-shrink-0 shadow-[0_0_8px_rgba(213,184,120,0.18)]">
-                      <Heart className="w-4.5 h-4.5 fill-[#B89650]/20 stroke-[1.8]" />
+                    <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
+                      <Heart className="w-6 h-6 fill-[#B89650]/20 stroke-[1.8]" />
                     </div>
                     <p className="text-[12px] sm:text-[12.5px] text-[#142318] font-sans italic leading-snug">
                       {t.missionQuote}
@@ -589,8 +589,8 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
                 {/* Card 1: Verlässlicher Partner */}
                 <div className="bg-[#0A1F13]/85 hover:bg-[#0D2618]/95 border border-[#D5B878]/30 hover:border-[#D5B878]/70 backdrop-blur-md rounded-xl sm:rounded-2xl p-3.5 sm:p-4 transition-all duration-300 hover:-translate-y-1 shadow-[0_6px_20px_rgba(0,0,0,0.3)] group flex flex-col justify-between">
                   <div>
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#D5B878] bg-[#122B1B]/80 flex items-center justify-center text-[#ECCF96] mb-2.5 shadow-[0_0_8px_rgba(213,184,120,0.2)] group-hover:scale-105 transition-transform">
-                      <HeartHandshake className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.6]" />
+                    <div className="text-[#ECCF96] mb-2.5 flex items-center transition-transform group-hover:scale-105">
+                      <HeartHandshake className="w-6 h-6 stroke-[1.6]" />
                     </div>
                     <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-white mb-1 group-hover:text-[#ECCF96] transition-colors leading-snug">
                       {t.val1Title}
@@ -604,8 +604,8 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
                 {/* Card 2: Innovative Lösungen */}
                 <div className="bg-[#0A1F13]/85 hover:bg-[#0D2618]/95 border border-[#D5B878]/30 hover:border-[#D5B878]/70 backdrop-blur-md rounded-xl sm:rounded-2xl p-3.5 sm:p-4 transition-all duration-300 hover:-translate-y-1 shadow-[0_6px_20px_rgba(0,0,0,0.3)] group flex flex-col justify-between">
                   <div>
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#D5B878] bg-[#122B1B]/80 flex items-center justify-center text-[#ECCF96] mb-2.5 shadow-[0_0_8px_rgba(213,184,120,0.2)] group-hover:scale-105 transition-transform">
-                      <Lightbulb className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.6]" />
+                    <div className="text-[#ECCF96] mb-2.5 flex items-center transition-transform group-hover:scale-105">
+                      <Lightbulb className="w-6 h-6 stroke-[1.6]" />
                     </div>
                     <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-white mb-1 group-hover:text-[#ECCF96] transition-colors leading-snug">
                       {t.val2Title}
@@ -619,8 +619,8 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
                 {/* Card 3: Living Responsibility */}
                 <div className="bg-[#0A1F13]/85 hover:bg-[#0D2618]/95 border border-[#D5B878]/30 hover:border-[#D5B878]/70 backdrop-blur-md rounded-xl sm:rounded-2xl p-3.5 sm:p-4 transition-all duration-300 hover:-translate-y-1 shadow-[0_6px_20px_rgba(0,0,0,0.3)] group flex flex-col justify-between">
                   <div>
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#D5B878] bg-[#122B1B]/80 flex items-center justify-center text-[#ECCF96] mb-2.5 shadow-[0_0_8px_rgba(213,184,120,0.2)] group-hover:scale-105 transition-transform">
-                      <Shield className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.6]" />
+                    <div className="text-[#ECCF96] mb-2.5 flex items-center transition-transform group-hover:scale-105">
+                      <Shield className="w-6 h-6 stroke-[1.6]" />
                     </div>
                     <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-white mb-1 group-hover:text-[#ECCF96] transition-colors leading-snug">
                       {t.val3Title}
@@ -634,8 +634,8 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
                 {/* Card 4: People Development */}
                 <div className="bg-[#0A1F13]/85 hover:bg-[#0D2618]/95 border border-[#D5B878]/30 hover:border-[#D5B878]/70 backdrop-blur-md rounded-xl sm:rounded-2xl p-3.5 sm:p-4 transition-all duration-300 hover:-translate-y-1 shadow-[0_6px_20px_rgba(0,0,0,0.3)] group flex flex-col justify-between">
                   <div>
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#D5B878] bg-[#122B1B]/80 flex items-center justify-center text-[#ECCF96] mb-2.5 shadow-[0_0_8px_rgba(213,184,120,0.2)] group-hover:scale-105 transition-transform">
-                      <Users className="w-4 h-4 sm:w-4.5 sm:h-4.5 stroke-[1.6]" />
+                    <div className="text-[#ECCF96] mb-2.5 flex items-center transition-transform group-hover:scale-105">
+                      <Users className="w-6 h-6 stroke-[1.6]" />
                     </div>
                     <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-white mb-1 group-hover:text-[#ECCF96] transition-colors leading-snug">
                       {t.val4Title}
@@ -822,8 +822,8 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
               <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                 <div className="flex items-start sm:items-center gap-4 sm:gap-5 max-w-3xl">
                   {/* Gold monogram / emblem */}
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border border-[#D5B878] bg-[#122B1B]/90 flex items-center justify-center text-[#ECCF96] shadow-[0_0_12px_rgba(213,184,120,0.25)] shrink-0">
-                    <svg className="w-6 h-6 sm:w-7 sm:h-7 text-[#ECCF96]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-[#ECCF96] shrink-0">
+                    <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#ECCF96]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                       <path d="M12 2C12 7 7 12 2 12C7 12 12 17 12 22C12 17 17 12 22 12C17 12 12 7 12 2Z" />
                       <circle cx="12" cy="12" r="3" />
                     </svg>
@@ -1035,8 +1035,8 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
 
                   {/* Floating Pill Card Overlaid at the Bottom of Photo */}
                   <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 bg-white/95 backdrop-blur-md border border-[#E8DFD0] rounded-2xl p-3.5 sm:p-4 shadow-lg flex items-center gap-3 sm:gap-3.5">
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#D5B878] bg-[#FAF8F4] flex items-center justify-center text-[#B89650] flex-shrink-0 shadow-[0_0_8px_rgba(213,184,120,0.18)]">
-                      <Users className="w-4.5 h-4.5 stroke-[1.8]" />
+                    <div className="w-6 h-6 flex items-center justify-center text-[#B89650] flex-shrink-0">
+                      <Users className="w-5 h-5" />
                     </div>
                     <p className="text-[12.5px] sm:text-[13px] font-semibold text-[#142318] font-sans leading-snug">
                       {t.teamBadge}

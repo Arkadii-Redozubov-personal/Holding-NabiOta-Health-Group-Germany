@@ -648,9 +648,9 @@ export function ClinicsGermanySection({ locale = "de" }: { locale?: string }) {
                   key={i}
                   className="group relative rounded-[18px] bg-white border border-[#EAE4D7] p-3.5 sm:p-4 flex items-center gap-3.5 sm:gap-4 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:shadow-md hover:border-[#D5B878]/60 transition-all duration-300"
                 >
-                  {/* Left: Icon circle */}
-                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#FAF5EB] border border-[#EFE5D5] flex items-center justify-center shrink-0 group-hover:bg-[#F3EAD9] transition-colors">
-                    <Icon className="w-5 h-5 text-[#9E7D3B]" strokeWidth={1.7} />
+                  {/* Left: Icon */}
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center shrink-0 text-[#9E7D3B]">
+                    <Icon className="w-6 h-6" />
                   </div>
 
                   {/* Center: Title + Description */}
@@ -662,8 +662,8 @@ export function ClinicsGermanySection({ locale = "de" }: { locale?: string }) {
                       {d.text[l]}
                     </p>
                   </div>
-                  <Link href={`/${l}/nabiota-clinics-germany`} aria-label={d.title[l]} className="w-8 h-8 rounded-full border border-[#D5B878]/50 flex items-center justify-center text-[#9E7D3B] shrink-0 hover:bg-[#9E7D3B] hover:text-white transition-all">
-                    <ArrowRight className="w-3.5 h-3.5" />
+                  <Link href={`/${l}/nabiota-clinics-germany`} aria-label={d.title[l]} className="text-[#9E7D3B] hover:text-[#142318] shrink-0 p-1.5 transition-colors">
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                   </Link>
                 </div>
               );

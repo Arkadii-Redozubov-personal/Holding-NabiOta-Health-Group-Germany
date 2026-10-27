@@ -81,15 +81,15 @@ export function CareServicesCatalog({
                       </svg>
                     </div>
 
-                    {/* Circular Icon with light green background overlapping photo */}
-                    <div className="relative -mt-9 mb-3.5 z-10">
-                      <div className="w-12 h-12 rounded-full bg-[#E5F0E8] border border-[#CCE0D2] flex items-center justify-center text-[#1C3E2A] shadow-xs group-hover:scale-105 transition-transform">
-                        {svc.iconType === "stethoscope" && <Stethoscope className="w-6 h-6 stroke-[1.8]" />}
-                        {svc.iconType === "award" && <Award className="w-6 h-6 stroke-[1.8]" />}
-                        {svc.iconType === "heart" && <Heart className="w-6 h-6 stroke-[1.8]" />}
-                        {svc.iconType === "shield" && <ShieldCheck className="w-6 h-6 stroke-[1.8]" />}
-                        {svc.iconType === "pill" && <Pill className="w-6 h-6 stroke-[1.8]" />}
-                        {svc.iconType === "users" && <Users className="w-6 h-6 stroke-[1.8]" />}
+                    {/* Icon overlapping photo */}
+                    <div className="relative -mt-7 mb-3 z-10">
+                      <div className="text-[#1C3E2A] flex items-center">
+                        {svc.iconType === "stethoscope" && <Stethoscope className="w-7 h-7" />}
+                        {svc.iconType === "award" && <Award className="w-7 h-7" />}
+                        {svc.iconType === "heart" && <Heart className="w-7 h-7" />}
+                        {svc.iconType === "shield" && <ShieldCheck className="w-7 h-7" />}
+                        {svc.iconType === "pill" && <Pill className="w-7 h-7" />}
+                        {svc.iconType === "users" && <Users className="w-7 h-7" />}
                       </div>
                     </div>
 
@@ -108,8 +108,8 @@ export function CareServicesCatalog({
                       <span className="px-4 py-2 rounded-full bg-[#FAF3E7] text-[#93712C] text-xs font-semibold group-hover:bg-[#F5EAD4] transition-colors">
                         {actionLabel}
                       </span>
-                      <div className="w-9 h-9 rounded-full bg-[#FAF3E7] border border-[#EADBBE] flex items-center justify-center text-[#93712C] group-hover:bg-[#C5A56A] group-hover:text-white group-hover:border-[#C5A56A] transition-all">
-                        <ArrowRight className="w-4 h-4" />
+                      <div className="text-[#93712C] group-hover:text-[#1C3E2A] transition-colors flex items-center justify-center">
+                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                       </div>
                     </div>
                   </div>
@@ -162,10 +162,10 @@ export function SanitaetshausCatalog({
 
                     {/* Card Content */}
                     <div className="p-6">
-                      <div className="w-10 h-10 rounded-2xl bg-[#FAF6EE] border border-[#EADBBE] flex items-center justify-center text-[#93712C] mb-4 group-hover:bg-[#C5A56A] group-hover:text-white transition-colors">
-                        {supply.iconType === "accessibility" && <Accessibility className="w-5 h-5 stroke-[1.8]" />}
-                        {supply.iconType === "home" && <Home className="w-5 h-5 stroke-[1.8]" />}
-                        {supply.iconType === "pill" && <Pill className="w-5 h-5 stroke-[1.8]" />}
+                      <div className="text-[#93712C] mb-3 flex items-center">
+                        {supply.iconType === "accessibility" && <Accessibility className="w-6 h-6" />}
+                        {supply.iconType === "home" && <Home className="w-6 h-6" />}
+                        {supply.iconType === "pill" && <Pill className="w-6 h-6" />}
                       </div>
 
                       <h3 className="font-serif text-lg font-bold text-[#0F2A1D] mb-2 leading-snug">

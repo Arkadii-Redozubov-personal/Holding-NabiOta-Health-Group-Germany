@@ -155,37 +155,37 @@ export function Footer({ currentLocale = "de" }: FooterProps) {
                   href="https://www.linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center text-white/80 hover:border-[#ECCF96] hover:text-[#ECCF96] transition-colors"
+                  className="text-white/75 hover:text-[#ECCF96] transition-colors p-1 flex items-center justify-center"
                   aria-label="NabiOta auf LinkedIn"
                 >
-                  <Linkedin className="w-4 h-4" />
+                  <Linkedin className="w-4.5 h-4.5" />
                 </a>
                 <a
                   href="https://www.xing.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center text-white/80 hover:border-[#ECCF96] hover:text-[#ECCF96] transition-colors"
+                  className="text-white/75 hover:text-[#ECCF96] transition-colors p-1 flex items-center justify-center"
                   aria-label="NabiOta auf XING"
                 >
-                  <Briefcase className="w-4 h-4" />
+                  <Briefcase className="w-4.5 h-4.5" />
                 </a>
                 <a
                   href="https://www.instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center text-white/80 hover:border-[#ECCF96] hover:text-[#ECCF96] transition-colors"
+                  className="text-white/75 hover:text-[#ECCF96] transition-colors p-1 flex items-center justify-center"
                   aria-label="NabiOta auf Instagram"
                 >
-                  <Instagram className="w-4 h-4" />
+                  <Instagram className="w-4.5 h-4.5" />
                 </a>
                 <a
                   href="https://www.youtube.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center text-white/80 hover:border-[#ECCF96] hover:text-[#ECCF96] transition-colors"
+                  className="text-white/75 hover:text-[#ECCF96] transition-colors p-1 flex items-center justify-center"
                   aria-label="NabiOta auf YouTube"
                 >
-                  <Youtube className="w-4 h-4" />
+                  <Youtube className="w-4.5 h-4.5" />
                 </a>
               </div>
             </div>
