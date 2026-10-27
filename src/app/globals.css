@@ -43,6 +43,26 @@ body {
   width: 100%;
 }
 
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Progressive Typographic Line Balancing & Orphan Prevention ── */
+h1, h2, h3, h4, h5, h6,
+.font-display,
+.font-serif,
+.page-hero-title {
+  text-wrap: balance;
+}
+
+p,
+li,
+.hero-text-wrap {
+  text-wrap: pretty;
+}
+
 /* ── Academic University Medicine Typography (Variant 2: Lora + Plus Jakarta Sans) ── */
 .font-display {
   font-family: var(--font-serif), Georgia, Cambria, serif;
