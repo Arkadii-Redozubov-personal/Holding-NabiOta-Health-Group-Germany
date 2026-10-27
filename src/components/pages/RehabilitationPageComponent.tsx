@@ -1406,12 +1406,12 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
               const activeSpec = specializations.find((s) => s.id === activeSpecId) || specializations[0];
 
               return (
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-7 lg:gap-8 items-stretch">
-                  {/* Left Column: Featured Card */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 lg:gap-7 items-stretch">
+                  {/* Left Column: Featured Card (smaller, compact size) */}
                   <div className="lg:col-span-7 xl:col-span-7 flex flex-col">
-                    <div className="bg-white rounded-[24px] sm:rounded-[28px] border border-[#EAE4D7] shadow-[0_4px_24px_rgba(19,34,24,0.04)] overflow-hidden flex-1 flex flex-col justify-between transition-all duration-300">
-                      {/* Photo - occupies more room */}
-                      <div className="relative h-[270px] sm:h-[300px] lg:h-[330px] w-full overflow-hidden bg-neutral-100">
+                    <div className="bg-white rounded-[22px] sm:rounded-[26px] border border-[#EAE4D7] shadow-[0_4px_24px_rgba(19,34,24,0.04)] overflow-hidden flex-1 flex flex-col justify-between transition-all duration-300">
+                      {/* Photo - compact height */}
+                      <div className="relative h-[190px] sm:h-[210px] lg:h-[225px] w-full overflow-hidden bg-neutral-100">
                         <Image
                           src={activeSpec.image}
                           alt={activeSpec.title}
@@ -1422,24 +1422,24 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                       </div>
 
                       {/* Content Area */}
-                      <div className="p-5 sm:p-6 lg:p-7 flex-1 flex flex-col justify-between">
+                      <div className="p-4 sm:p-5 lg:p-5.5 flex-1 flex flex-col justify-between">
                         <div>
-                          {/* Title without side arrow button */}
-                          <h3 className="font-serif text-[22px] sm:text-[25px] lg:text-[26px] text-[#132218] font-normal leading-snug">
+                          {/* Title */}
+                          <h3 className="font-serif text-[19px] sm:text-[21px] lg:text-[22px] text-[#132218] font-normal leading-snug">
                             {activeSpec.title}
                           </h3>
 
                           {/* Description */}
-                          <p className="font-sans text-[12.5px] sm:text-[13.5px] text-[#556358] leading-relaxed mt-2 mb-4">
+                          <p className="font-sans text-[12px] sm:text-[12.5px] text-[#556358] leading-relaxed mt-1.5 mb-3">
                             {activeSpec.desc}
                           </p>
 
                           {/* Features Checklist with gold checkmarks matching Photo 3 */}
-                          <div className="space-y-2.5 pt-3.5 border-t border-[#F0ECE1]">
+                          <div className="space-y-1.5 sm:space-y-2 pt-3 border-t border-[#F0ECE1]">
                             {activeSpec.features.map((feat, fIdx) => (
-                              <div key={fIdx} className="flex items-center gap-2.5">
-                                <GoldCircleCheckIcon className="w-4 h-4 shrink-0 text-[#B89650]" />
-                                <span className="font-sans text-[12.5px] sm:text-[13px] text-[#2C382F] font-normal">
+                              <div key={fIdx} className="flex items-center gap-2">
+                                <GoldCircleCheckIcon className="w-3.5 h-3.5 shrink-0 text-[#B89650]" />
+                                <span className="font-sans text-[12px] sm:text-[12.5px] text-[#2C382F] font-normal">
                                   {feat}
                                 </span>
                               </div>
@@ -1448,11 +1448,11 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                         </div>
 
                         {/* Bottom link: "Подробнее о программе" with arrow */}
-                        <div className="pt-4 mt-2">
+                        <div className="pt-3 mt-1 border-t border-[#F0ECE1]/60">
                           <button
                             type="button"
                             onClick={() => setSelectedSpecialization(activeSpec)}
-                            className="inline-flex items-center gap-2 text-[13px] sm:text-[13.5px] font-medium text-[#8C6D2B] hover:text-[#6D521B] transition-colors group/link cursor-pointer"
+                            className="inline-flex items-center gap-2 text-[12.5px] sm:text-[13px] font-medium text-[#8C6D2B] hover:text-[#6D521B] transition-colors group/link cursor-pointer"
                           >
                             <span>
                               {isUz
@@ -1467,15 +1467,15 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                                 ? "المزيد عن البرنامج"
                                 : "Mehr über das Programm"}
                             </span>
-                            <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover/link:translate-x-1" />
+                            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover/link:translate-x-1" />
                           </button>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* Right Column: 6 Specialty Tabs Stack */}
-                  <div className="lg:col-span-5 xl:col-span-5 flex flex-col justify-between gap-1.5 sm:gap-2">
+                  {/* Right Column: 6 Specialty Tabs Stack (restored thumbnail size, minimal outer photo padding) */}
+                  <div className="lg:col-span-5 xl:col-span-5 flex flex-col justify-between gap-2 sm:gap-2.5">
                     {specializations.map((spec) => {
                       const isActive = spec.id === activeSpecId;
 
@@ -1484,20 +1484,20 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                           key={spec.id}
                           type="button"
                           onClick={() => setActiveSpecId(spec.id)}
-                          className={`group w-full text-left rounded-xl sm:rounded-2xl py-2 px-2.5 sm:py-2.5 sm:px-3 flex items-center gap-2.5 sm:gap-3 transition-all duration-200 cursor-pointer bg-white ${
+                          className={`group w-full text-left rounded-xl sm:rounded-2xl p-1.5 sm:p-1.5 pr-3 sm:pr-3.5 flex items-center gap-2.5 sm:gap-3 transition-all duration-200 cursor-pointer bg-white ${
                             isActive
                               ? "border-2 border-[#132B1E] shadow-sm"
                               : "border-2 border-[#EAE4D7] hover:border-[#D5B878]/80 shadow-[0_1px_6px_rgba(0,0,0,0.02)]"
                           }`}
                         >
-                          {/* Left: Thumbnail Image */}
-                          <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl overflow-hidden shrink-0 bg-neutral-100 border border-[#EAE4D7]">
+                          {/* Left: Thumbnail Image - previous size with tight surrounding padding */}
+                          <div className="relative w-12 h-12 sm:w-13 sm:h-13 rounded-lg sm:rounded-xl overflow-hidden shrink-0 bg-neutral-100 border border-[#EAE4D7]">
                             <Image
                               src={spec.image}
                               alt={spec.title}
                               fill
                               className="object-cover transition-transform duration-300 group-hover:scale-105"
-                              sizes="44px"
+                              sizes="52px"
                             />
                           </div>
 
@@ -1516,7 +1516,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
 
                           {/* Right: Chevron */}
                           <ChevronRight
-                            className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 transition-transform ${
+                            className={`w-4 h-4 shrink-0 transition-transform ${
                               isActive
                                 ? "text-[#132B1E] translate-x-0.5"
                                 : "text-[#9EAAA0] group-hover:text-[#132B1E] group-hover:translate-x-0.5"
