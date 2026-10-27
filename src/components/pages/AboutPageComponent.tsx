@@ -1545,7 +1545,532 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         </section>
 
         {/* ══════════════════════════════════════════════════════════
-            SECTION 2: ORGANIZATIONAL STRUCTURE (NabiOta® Health Group Germany GmbH)
+            SECTION 2: OUR ROOTS & HISTORY ("Опыт десятилетий.")
+        ══════════════════════════════════════════════════════════ */}
+        <section className="bg-white py-14 sm:py-18 lg:py-20 border-b border-[#ECE7DC] relative">
+          <Container size="wide" className="relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+              {/* Left: Doctor-Patient Photo */}
+              <div className="lg:col-span-6 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-[#EDE7D9] bg-white">
+                <Image
+                  src="/images/about/doctor-patient.webp"
+                  alt="Ärztliche Betreuung bei NabiOta Health Group"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Right: History Text */}
+              <div className="lg:col-span-6 flex flex-col justify-center">
+                <h2 className="font-serif text-[32px] sm:text-[38px] xl:text-[44px] font-normal leading-[1.14] text-[#142318] mb-5">
+                  {t.rootsTitle1}
+                  <br />
+                  {t.rootsTitle2}
+                </h2>
+
+                <div className="space-y-4 text-[13.5px] sm:text-[14.5px] text-[#4E5650] leading-[1.72] font-sans">
+                  <p>{t.rootsP1}</p>
+                  <p>{t.rootsP2}</p>
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* ══════════════════════════════════════════════════════════
+            SECTION 3: MISSION & VISION ("Что нами движет") + 4 STATS BAR
+        ══════════════════════════════════════════════════════════ */}
+        <section className="bg-[#FAF8F5] py-14 sm:py-18 lg:py-20 border-b border-[#ECE7DC]">
+          <Container size="wide">
+            {/* Top: Left Header + Right 2 Cards */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch mb-12 sm:mb-16">
+              {/* Left: Mission & Vision Heading */}
+              <div className="lg:col-span-5 flex flex-col justify-center">
+                <h2 className="font-serif text-[32px] sm:text-[38px] lg:text-[42px] font-normal text-[#142318] leading-[1.15] mb-4">
+                  {t.missionHeading}
+                </h2>
+                <p className="text-[13.5px] sm:text-[14px] text-[#5A635B] leading-[1.7] font-sans max-w-md">
+                  {t.missionLead}
+                </p>
+              </div>
+
+              {/* Right: 2 Distinct White Cards */}
+              <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                {/* Card 1: Our Mission */}
+                <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#EDE8DE] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:border-[#D5B878] hover:shadow-md transition-all flex flex-col justify-between">
+                  <div>
+                    <div className="text-[#B89650] flex items-center mb-3">
+                      <TargetIcon className="w-7.5 h-7.5 stroke-[1.6]" />
+                    </div>
+                    <h3 className="font-sans text-[16px] font-bold text-[#142318] mb-2">
+                      {t.cardMissionTitle}
+                    </h3>
+                    <p className="text-[12px] sm:text-[12.5px] text-[#5A635B] leading-relaxed">
+                      {t.cardMissionText}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Card 2: Our Vision */}
+                <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#EDE8DE] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:border-[#D5B878] hover:shadow-md transition-all flex flex-col justify-between">
+                  <div>
+                    <div className="text-[#B89650] flex items-center mb-3">
+                      <VisionEyeIcon className="w-7.5 h-7.5 stroke-[1.6]" />
+                    </div>
+                    <h3 className="font-sans text-[16px] font-bold text-[#142318] mb-2">
+                      {t.cardVisionTitle}
+                    </h3>
+                    <p className="text-[12px] sm:text-[12.5px] text-[#5A635B] leading-relaxed">
+                      {t.cardVisionText}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom: 4 Key Stats Bar in single horizontal row with vertical dividers */}
+            <div className="bg-white rounded-2xl border border-[#EDE8DE] shadow-[0_2px_8px_rgba(0,0,0,0.02)] py-6 sm:py-7 px-4 sm:px-6 lg:px-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-4 lg:gap-0 lg:divide-x lg:divide-[#EDE7DC]">
+                {/* Stat 1 */}
+                <div className="flex items-center gap-4 px-2 sm:px-4 lg:px-6">
+                  <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
+                    <TeamStatsIcon className="w-8 h-8 stroke-[1.6]" />
+                  </div>
+                  <div>
+                    <span className="block font-serif text-[28px] sm:text-[32px] font-bold text-[#142318] leading-none mb-1">
+                      {t.stat1Num}
+                    </span>
+                    <span className="block text-[11.5px] sm:text-[12px] text-[#6E756D] leading-snug">
+                      {t.stat1Label}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Stat 2 */}
+                <div className="flex items-center gap-4 px-2 sm:px-4 lg:px-6">
+                  <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
+                    <BuildingStatsIcon className="w-8 h-8 stroke-[1.6]" />
+                  </div>
+                  <div>
+                    <span className="block font-serif text-[28px] sm:text-[32px] font-bold text-[#142318] leading-none mb-1">
+                      {t.stat2Num}
+                    </span>
+                    <span className="block text-[11.5px] sm:text-[12px] text-[#6E756D] leading-snug">
+                      {t.stat2Label}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Stat 3 */}
+                <div className="flex items-center gap-4 px-2 sm:px-4 lg:px-6">
+                  <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
+                    <HandshakeIcon className="w-8 h-8 stroke-[1.6]" />
+                  </div>
+                  <div>
+                    <span className="block font-serif text-[28px] sm:text-[32px] font-bold text-[#142318] leading-none mb-1">
+                      {t.stat3Num}
+                    </span>
+                    <span className="block text-[11.5px] sm:text-[12px] text-[#6E756D] leading-snug">
+                      {t.stat3Label}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Stat 4 */}
+                <div className="flex items-center gap-4 px-2 sm:px-4 lg:px-6">
+                  <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
+                    <HeartStatsIcon className="w-8 h-8 stroke-[1.6]" />
+                  </div>
+                  <div>
+                    <span className="block font-serif text-[28px] sm:text-[32px] font-bold text-[#142318] leading-none mb-1">
+                      {t.stat4Num}
+                    </span>
+                    <span className="block text-[11.5px] sm:text-[12px] text-[#6E756D] leading-snug">
+                      {t.stat4Label}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* ══════════════════════════════════════════════════════════
+            SECTION 4: ÄRZTLICHE FÜHRUNG & GRÜNDERTEAM (PDF Pages 2-4)
+            - MVZ Design with full-bleed right-photo fade & botanical watermark
+        ══════════════════════════════════════════════════════════ */}
+        <section className="relative pt-0 pb-16 sm:pb-20 lg:pb-24 bg-[#FAF7F2] border-b border-[#ECE7DC] overflow-hidden">
+          {/* Subtle ambient lighting */}
+          <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-[#EBDDC0]/20 blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-[#D5B878]/15 blur-3xl pointer-events-none" />
+
+          {/* ── Hero Banner: Full-width banner with soft right-photo fade (MVZ Style) ── */}
+          <div className="relative z-10 w-full overflow-hidden pb-8 sm:pb-10 lg:pb-12">
+            {/* Soft Background Photo with smooth horizontal fade */}
+            <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[62%] xl:w-[58%] pointer-events-none overflow-hidden select-none">
+              <Image
+                src="/images/areas/consulting.webp"
+                alt="Medical Leadership & Founder"
+                fill
+                className="object-cover object-center lg:object-right"
+                priority
+                sizes="(max-width: 1024px) 100vw, 58vw"
+              />
+              {/* Horizontal gradient fade into page background #FAF7F2 */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FAF7F2] from-0% via-[#FAF7F2]/80 via-20% via-[#FAF7F2]/25 via-42% to-transparent to-75%" />
+              {/* Vertical gradient fade for mobile */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#FAF7F2] via-[#FAF7F2]/50 via-15% to-transparent lg:hidden" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#FAF7F2] from-0% via-[#FAF7F2]/20 via-10% to-transparent hidden lg:block" />
+            </div>
+
+            {/* Botanical foliage watermark on far left (matching MVZ reference) */}
+            <div className="absolute top-2 left-0 w-44 sm:w-56 h-72 pointer-events-none opacity-35 select-none sepia hue-rotate-[15deg]">
+              <Image
+                src="/images/areas/botanical-branch-clean.webp"
+                alt=""
+                fill
+                className="object-contain object-left"
+                unoptimized
+              />
+            </div>
+
+            {/* Hero Content Container */}
+            <Container size="wide" className="relative z-10 pt-8 sm:pt-12 lg:pt-14">
+              <div className="max-w-6xl mx-auto">
+                <div className="max-w-xl lg:max-w-2xl">
+                  {/* Title with highlighted word in serif */}
+                  <h2 className="font-serif text-[28px] sm:text-[38px] lg:text-[44px] text-[#142318] font-normal leading-[1.18] mb-3 sm:mb-3.5">
+                    {t.leadershipHeading1}{" "}
+                    <span className="font-serif text-[#C5A56A]">{t.leadershipHeading2}</span>
+                  </h2>
+
+                  {/* Lead text */}
+                  <p className="text-[13px] sm:text-[14px] text-[#556057] leading-relaxed max-w-xl">
+                    {t.leadershipSubtitle}
+                  </p>
+                </div>
+              </div>
+            </Container>
+          </div>
+
+          <Container size="wide" className="relative z-10 mt-6 sm:mt-8">
+            <div className="max-w-6xl mx-auto">
+              {/* Main Founder Spotlight Card */}
+              <div className="bg-white rounded-[28px] lg:rounded-[32px] border border-[#EDE6D8] shadow-[0_10px_40px_-24px_rgba(20,35,24,0.14)] mb-10 sm:mb-12 relative overflow-hidden transition-all duration-300">
+                {/* Upper grid: Portrait + Profile Summary */}
+                <div className="grid grid-cols-1 lg:grid-cols-[32%_minmax(0,1fr)]">
+                  {/* Left: portrait (fixed/natural, does not stretch) */}
+                  <div className="relative min-h-[380px] sm:min-h-[460px] lg:min-h-full bg-[#0D1D13] overflow-hidden">
+                    <Image
+                      src="/images/about/dr-kasim-fischer-rahimov.jpg"
+                      alt={t.founderName}
+                      fill
+                      sizes="(min-width: 1024px) 36vw, 100vw"
+                      className="object-cover object-[50%_15%]"
+                    />
+                  </div>
+
+                  {/* Right: doctor information */}
+                  <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
+                    <h3 className="font-serif text-[26px] sm:text-[32px] lg:text-[36px] font-bold text-[#142318] leading-[1.12]">
+                      {t.founderName}
+                    </h3>
+                    <p className="text-[13px] sm:text-[14px] font-semibold tracking-wide text-[#8B7347] mt-1.5 font-sans">
+                      {t.founderRole}
+                    </p>
+
+                    {/* Introductory core paragraphs */}
+                    <div className="space-y-3.5 text-[13px] sm:text-[13.5px] lg:text-[14px] text-[#4E5650] leading-[1.7] font-sans mt-5">
+                      {t.founderIntroParagraphs.map((para: string, idx: number) => (
+                        <p key={idx}>{para}</p>
+                      ))}
+                    </div>
+
+                    {/* Key Highlights (3 cards) - Compact & Shortened */}
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 my-3.5">
+                      {t.founderKeyPoints.map((point: { title: string; desc: string }, idx: number) => (
+                        <div
+                          key={idx}
+                          className="bg-[#FAF7F0] border border-[#EBE3D3] rounded-xl p-2.5 sm:p-3 flex flex-col justify-start transition-all hover:border-[#D5B878]/70 hover:shadow-xs"
+                        >
+                          <div className="flex items-center gap-2 mb-1">
+                            <div className="w-6 h-6 rounded-lg bg-white border border-[#E8DFC8] text-[#1B3D2F] flex items-center justify-center shrink-0 shadow-2xs">
+                              {idx === 0 && <Stethoscope className="w-3.5 h-3.5 text-[#1B3D2F]" />}
+                              {idx === 1 && <HeartHandshake className="w-3.5 h-3.5 text-[#1B3D2F]" />}
+                              {idx === 2 && <ShieldCheck className="w-3.5 h-3.5 text-[#1B3D2F]" />}
+                            </div>
+                            <h4 className="text-[12px] font-bold text-[#142318] leading-tight">
+                              {point.title}
+                            </h4>
+                          </div>
+                          <p className="text-[11px] text-[#5C645E] leading-snug font-sans">
+                            {point.desc}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Featured Guiding Principle Quote (Leitgedanke) */}
+                    <div className="bg-[#FAF7F0] border border-[#E5DEC9] rounded-2xl p-4 my-2 shadow-xs">
+                      <div className="flex items-start gap-3">
+                        <Quote className="w-5 h-5 text-[#C5A859] shrink-0 mt-0.5" />
+                        <p className="text-[13.5px] sm:text-[14px] font-serif italic text-[#1B3D2F] leading-relaxed">
+                          {t.founderQuote}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Expand/Collapse Toggle Button - Full Width, Background matches Card */}
+                    <div className="mt-3.5 pt-0.5">
+                      <button
+                        type="button"
+                        onClick={() => setIsFounderExpanded(!isFounderExpanded)}
+                        className="w-full group inline-flex items-center justify-center gap-2 text-[13px] sm:text-[13.5px] font-semibold text-[#1B3D2F] hover:text-[#8B7347] bg-white hover:bg-[#FAF8F5] active:scale-[0.995] transition-all duration-200 py-3 px-5 rounded-2xl border border-[#EDE6D8] hover:border-[#D5B878] cursor-pointer shadow-xs"
+                        aria-expanded={isFounderExpanded}
+                      >
+                        <span>{isFounderExpanded ? t.founderCollapseBtn : t.founderExpandBtn}</span>
+                        {isFounderExpanded ? (
+                          <ChevronUp className="w-4 h-4 transition-transform duration-200 group-hover:-translate-y-0.5 text-[#8B7347]" />
+                        ) : (
+                          <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:translate-y-0.5 text-[#8B7347]" />
+                        )}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom: FULL-WIDTH Expandable Section across the entire card container */}
+                <div
+                  className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                    isFounderExpanded
+                      ? "max-h-[2200px] opacity-100 border-t border-[#EDE6D8] bg-white"
+                      : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div className="p-6 sm:p-8 lg:p-10">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="h-px bg-[#E2D8C3] flex-1" />
+                      <h4 className="text-[12.5px] font-bold uppercase tracking-wider text-[#8B7347] font-sans px-2">
+                        {t.founderExpandedTitle}
+                      </h4>
+                      <div className="h-px bg-[#E2D8C3] flex-1" />
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 text-[13.5px] sm:text-[14px] text-[#4E5650] leading-[1.8] font-sans">
+                      <div className="space-y-4">
+                        {t.founderExpandedParagraphs.slice(0, 3).map((para: string, idx: number) => (
+                          <p key={idx}>{para}</p>
+                        ))}
+                      </div>
+                      <div className="space-y-4">
+                        {t.founderExpandedParagraphs.slice(3).map((para: string, idx: number) => (
+                          <p key={idx}>{para}</p>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="mt-8 pt-4 border-t border-[#EDE6D8]/60 flex justify-end">
+                      <button
+                        type="button"
+                        onClick={() => setIsFounderExpanded(false)}
+                        className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-[#8B7347] hover:text-[#1B3D2F] transition-colors cursor-pointer"
+                      >
+                        <span>{t.founderCollapseBtn}</span>
+                        <ChevronUp className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Azizbek Fischer-Rahimov Card (Son, Manager-Consultant) */}
+              <div className="bg-white rounded-[28px] lg:rounded-[32px] border border-[#EDE6D8] shadow-[0_10px_40px_-24px_rgba(20,35,24,0.14)] mb-8 relative overflow-hidden">
+                <div className="grid grid-cols-1 lg:grid-cols-[32%_minmax(0,1fr)]">
+                  {/* Left: portrait */}
+                  <div className="relative min-h-[260px] sm:min-h-[320px] lg:min-h-full">
+                    <Image
+                      src="/images/about/son-rahimov.png"
+                      alt={t.consultantName}
+                      fill
+                      sizes="(min-width: 1024px) 36vw, 100vw"
+                      className="object-cover object-[50%_15%]"
+                    />
+                  </div>
+
+                  {/* Right: consultant information */}
+                  <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
+                    <h3 className="font-serif text-[26px] sm:text-[32px] lg:text-[36px] font-bold text-[#142318] leading-[1.12]">
+                      {t.consultantName}
+                    </h3>
+                    <p className="text-[13px] sm:text-[14px] font-semibold tracking-wide text-[#8B7347] mt-1.5 font-sans">
+                      {t.consultantRole}
+                    </p>
+
+                    <div className="space-y-3.5 text-[13px] sm:text-[13.5px] lg:text-[14px] text-[#4E5650] leading-[1.7] font-sans mt-5">
+                      {t.consultantParagraphs.map((para: string, idx: number) => (
+                        <p key={idx}>{para}</p>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* ══════════════════════════════════════════════════════════
+            SECTION 5: MEDICAL ADVISORY BOARD (Values-page background design)
+        ══════════════════════════════════════════════════════════ */}
+        <section className="relative py-10 sm:py-12 lg:py-14 bg-[#07160D] text-white overflow-hidden border-b border-[#D5B878]/20">
+          <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+            <Image
+              src="/images/values/leaves-bg.webp"
+              alt="Botanical Background"
+              fill
+              sizes="100vw"
+              className="object-cover object-[left_center]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#07160D]/80 to-[#07160D] hidden lg:block" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#07160D]/65 via-[#07160D]/90 to-[#07160D] lg:hidden" />
+          </div>
+
+          <Container size="wide" className="relative z-10">
+            <div className="lg:ml-auto lg:w-[78%] xl:w-[75%]">
+              <div className="max-w-xl mb-5 sm:mb-6">
+                <h2 className="font-serif text-[28px] sm:text-[34px] lg:text-[38px] font-normal leading-[1.15] text-white mb-2 sm:mb-2.5">
+                  {t.boardTitle}
+                </h2>
+                <p className="text-[12.5px] sm:text-[13.5px] text-[#C2D2C5] leading-relaxed font-sans max-w-lg">
+                  {t.boardDesc}
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-3.5">
+                {[
+                  {
+                    Icon: Stethoscope,
+                    title: isUz
+                      ? "Terapevtik erkinlik"
+                      : isRu
+                      ? "Терапевтическая свобода"
+                      : isEn
+                      ? "Clinical Autonomy"
+                      : isTr
+                      ? "Serbest Tedavi Seçimi"
+                      : isAr
+                      ? "حرية اختيار العلاج"
+                      : "Freie Therapiewahl",
+                    desc: isUz
+                      ? "Tijoriy rejalarsiz, faqat shifokorlik burchi va bemor manfaatlariga qat'iy rioya qilish."
+                      : isRu
+                      ? "Строгое следование врачебному долгу без навязанных планов по процедурам."
+                      : isEn
+                      ? "Strict adherence to medical duty without commercial treatment quotas."
+                      : isTr
+                      ? "Tedavi eden hekimler için hiçbir ekonomik vaka sayısı veya tedavi kotası dayatılmaz."
+                      : isAr
+                      ? "لا توجد أي حصص أو أهداف عددية أو علاجية اقتصادية مفروضة على الأطباء المعالجين."
+                      : "Keine ökonomischen Fallzahl- oder Therapievorgaben für behandelnde Ärzte.",
+                  },
+                  {
+                    Icon: ShieldCheck,
+                    title: isUz
+                      ? "AWMF va CIRS sifati"
+                      : isRu
+                      ? "Качество AWMF & CIRS"
+                      : isEn
+                      ? "AWMF & CIRS Guidelines"
+                      : isTr
+                      ? "AWMF Kılavuzları & CIRS"
+                      : isAr
+                      ? "إرشادات AWMF ونظام CIRS"
+                      : "AWMF-Leitlinien & CIRS",
+                    desc: isUz
+                      ? "Fanlararo konsiliumlar va hodisalar monitoringi (CIRS) orqali xatolarni erta oldini olish tizimi."
+                      : isRu
+                      ? "Междисциплинарные консилиумы и система контроля инцидентов CIRS."
+                      : isEn
+                      ? "Regular case conferences and active clinical incident reporting."
+                      : isTr
+                      ? "Disiplinler arası kalite çemberleri ve sistematik CIRS hata bildirim sistemi."
+                      : isAr
+                      ? "حلقات جودة متعددة التخصصات ونظام إبلاغ وتحليل للأخطاء الطبية (CIRS)."
+                      : "Interdisziplinäre Qualitätszirkel und systematisches CIRS-Fehlermeldesystem.",
+                  },
+                  {
+                    Icon: GraduationCap,
+                    title: isUz
+                      ? "Ordinatorlarni o'qitish"
+                      : isRu
+                      ? "Обучение ординаторов"
+                      : isEn
+                      ? "Residency Training"
+                      : isTr
+                      ? "Uzman Hekimlik Eğitimi"
+                      : isAr
+                      ? "التدريب التخصصي للأطباء"
+                      : "Facharzt-Weiterbildung",
+                    desc: isUz
+                      ? "Mintaqada yosh shifokorlar va mutaxassislarni tayyorlash bo'yicha rasmiy vakolatlar."
+                      : isRu
+                      ? "Официальные полномочия на подготовку молодых специалистов в MVZ."
+                      : isEn
+                      ? "Accredited residency authorizations for junior doctors across our MVZ network."
+                      : isTr
+                      ? "Genç hekimlerin uzmanlık eğitimi için akredite resmi eğitim yetkileri."
+                      : isAr
+                      ? "صلاحيات وتراخيص أكاديمية معتمدة لتدريب وتأهيل الأطباء المقيمين والشباب."
+                      : "Akkreditierte Weiterbildungsbefugnisse zur Ausbildung junger Mediziner.",
+                  },
+                  {
+                    Icon: HeartHandshake,
+                    title: isUz
+                      ? "Yaxlit konsiliumlar"
+                      : isRu
+                      ? "Сквозные консилиумы"
+                      : isEn
+                      ? "Interdisciplinary Care"
+                      : isTr
+                      ? "Sektörler Arası Eşgüdüm"
+                      : isAr
+                      ? "تنسيق متكامل عابر للقطاعات"
+                      : "Sektorübergreifend",
+                    desc: isUz
+                      ? "Terapevtlar, jarrohlar, diagnostlar va reabilitatsiya xizmati o'rtasida to'g'ridan-to'g'ri muloqot."
+                      : isRu
+                      ? "Прямой диалог терапевтов, хирургов, диагностов и службы реабилитации."
+                      : isEn
+                      ? "Direct communication between primary care, surgeons, imaging, and rehab."
+                      : isTr
+                      ? "Aile hekimleri, cerrahlar, tanı ve rehabilitasyon arasında doğrudan koordinasyon."
+                      : isAr
+                      ? "تنسيق مباشر ومستمر بين أطباء الأسرة، الجراحين، مراكز التشخيص، والتأهيل."
+                      : "Direkte Abstimmung zwischen Hausärzten, Operateuren, Diagnostik und Reha.",
+                  },
+                ].map(({ Icon, title, desc }, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-[#0A1F13]/85 hover:bg-[#0D2618]/95 border border-[#D5B878]/30 hover:border-[#D5B878]/70 backdrop-blur-md rounded-xl sm:rounded-2xl p-3.5 sm:p-4 transition-all duration-300 hover:-translate-y-1 shadow-[0_6px_20px_rgba(0,0,0,0.3)] group flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="text-[#ECCF96] mb-2.5 flex items-center transition-transform group-hover:scale-105">
+                        <Icon className="w-7 h-7 stroke-[1.6]" />
+                      </div>
+                      <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-white mb-1 group-hover:text-[#ECCF96] transition-colors leading-snug">
+                        {title}
+                      </h3>
+                      <p className="text-[11px] sm:text-[11.5px] text-[#A6B8AA] leading-snug font-sans">{desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* ══════════════════════════════════════════════════════════
+            SECTION 6: ORGANIZATIONAL STRUCTURE (NabiOta® Health Group Germany GmbH)
             - Background: photo1.webp
             - Compact, premium corporate organizational hierarchy matching Photo 2
         ══════════════════════════════════════════════════════════ */}
@@ -1669,11 +2194,11 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
           </Container>
         </section>
 
-        {/* SECTION 2C: AUFGABEN UND UNTERNEHMENSGEGENSTAND DER HOLDING (PDF II) */}
+        {/* SECTION 7: AUFGABEN UND UNTERNEHMENSGEGENSTAND DER HOLDING (PDF II) */}
         <HoldingPurposeSection locale={locale} />
 
         {/* ══════════════════════════════════════════════════════════
-            SECTION 3: STRATEGIC DEVELOPMENT (Two-Phase Structure)
+            SECTION 8: STRATEGIC DEVELOPMENT (Two-Phase Structure)
             - Background: photo2.webp
             - Wider blocks, tighter section height, larger serif numerals, larger right icons (matching Photo 1)
         ══════════════════════════════════════════════════════════ */}
@@ -1947,532 +2472,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         </section>
 
         {/* ══════════════════════════════════════════════════════════
-            SECTION 3: OUR ROOTS & HISTORY ("Опыт десятилетий.")
-        ══════════════════════════════════════════════════════════ */}
-        <section className="bg-white py-14 sm:py-18 lg:py-20 border-b border-[#ECE7DC] relative">
-          <Container size="wide" className="relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-              {/* Left: Doctor-Patient Photo */}
-              <div className="lg:col-span-6 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-[#EDE7D9] bg-white">
-                <Image
-                  src="/images/about/doctor-patient.webp"
-                  alt="Ärztliche Betreuung bei NabiOta Health Group"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
-
-              {/* Right: History Text */}
-              <div className="lg:col-span-6 flex flex-col justify-center">
-                <h2 className="font-serif text-[32px] sm:text-[38px] xl:text-[44px] font-normal leading-[1.14] text-[#142318] mb-5">
-                  {t.rootsTitle1}
-                  <br />
-                  {t.rootsTitle2}
-                </h2>
-
-                <div className="space-y-4 text-[13.5px] sm:text-[14.5px] text-[#4E5650] leading-[1.72] font-sans">
-                  <p>{t.rootsP1}</p>
-                  <p>{t.rootsP2}</p>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
-
-        {/* ══════════════════════════════════════════════════════════
-            SECTION 3B: ÄRZTLICHE FÜHRUNG & GRÜNDERTEAM (PDF Pages 2-4)
-            - MVZ Design with full-bleed right-photo fade & botanical watermark
-        ══════════════════════════════════════════════════════════ */}
-        <section className="relative pt-0 pb-16 sm:pb-20 lg:pb-24 bg-[#FAF7F2] border-b border-[#ECE7DC] overflow-hidden">
-          {/* Subtle ambient lighting */}
-          <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-[#EBDDC0]/20 blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-[#D5B878]/15 blur-3xl pointer-events-none" />
-
-          {/* ── Hero Banner: Full-width banner with soft right-photo fade (MVZ Style) ── */}
-          <div className="relative z-10 w-full overflow-hidden pb-8 sm:pb-10 lg:pb-12">
-            {/* Soft Background Photo with smooth horizontal fade */}
-            <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[62%] xl:w-[58%] pointer-events-none overflow-hidden select-none">
-              <Image
-                src="/images/areas/consulting.webp"
-                alt="Medical Leadership & Founder"
-                fill
-                className="object-cover object-center lg:object-right"
-                priority
-                sizes="(max-width: 1024px) 100vw, 58vw"
-              />
-              {/* Horizontal gradient fade into page background #FAF7F2 */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#FAF7F2] from-0% via-[#FAF7F2]/80 via-20% via-[#FAF7F2]/25 via-42% to-transparent to-75%" />
-              {/* Vertical gradient fade for mobile */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#FAF7F2] via-[#FAF7F2]/50 via-15% to-transparent lg:hidden" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#FAF7F2] from-0% via-[#FAF7F2]/20 via-10% to-transparent hidden lg:block" />
-            </div>
-
-            {/* Botanical foliage watermark on far left (matching MVZ reference) */}
-            <div className="absolute top-2 left-0 w-44 sm:w-56 h-72 pointer-events-none opacity-35 select-none sepia hue-rotate-[15deg]">
-              <Image
-                src="/images/areas/botanical-branch-clean.webp"
-                alt=""
-                fill
-                className="object-contain object-left"
-                unoptimized
-              />
-            </div>
-
-            {/* Hero Content Container */}
-            <Container size="wide" className="relative z-10 pt-8 sm:pt-12 lg:pt-14">
-              <div className="max-w-6xl mx-auto">
-                <div className="max-w-xl lg:max-w-2xl">
-                  {/* Title with highlighted word in serif */}
-                  <h2 className="font-serif text-[28px] sm:text-[38px] lg:text-[44px] text-[#142318] font-normal leading-[1.18] mb-3 sm:mb-3.5">
-                    {t.leadershipHeading1}{" "}
-                    <span className="font-serif text-[#C5A56A]">{t.leadershipHeading2}</span>
-                  </h2>
-
-                  {/* Lead text */}
-                  <p className="text-[13px] sm:text-[14px] text-[#556057] leading-relaxed max-w-xl">
-                    {t.leadershipSubtitle}
-                  </p>
-                </div>
-              </div>
-            </Container>
-          </div>
-
-          <Container size="wide" className="relative z-10 mt-6 sm:mt-8">
-            <div className="max-w-6xl mx-auto">
-              {/* Main Founder Spotlight Card */}
-              <div className="bg-white rounded-[28px] lg:rounded-[32px] border border-[#EDE6D8] shadow-[0_10px_40px_-24px_rgba(20,35,24,0.14)] mb-10 sm:mb-12 relative overflow-hidden transition-all duration-300">
-                {/* Upper grid: Portrait + Profile Summary */}
-                <div className="grid grid-cols-1 lg:grid-cols-[32%_minmax(0,1fr)]">
-                  {/* Left: portrait (fixed/natural, does not stretch) */}
-                  <div className="relative min-h-[380px] sm:min-h-[460px] lg:min-h-full bg-[#0D1D13] overflow-hidden">
-                    <Image
-                      src="/images/about/dr-kasim-fischer-rahimov.jpg"
-                      alt={t.founderName}
-                      fill
-                      sizes="(min-width: 1024px) 36vw, 100vw"
-                      className="object-cover object-[50%_15%]"
-                    />
-                  </div>
-
-                  {/* Right: doctor information */}
-                  <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
-                    <h3 className="font-serif text-[26px] sm:text-[32px] lg:text-[36px] font-bold text-[#142318] leading-[1.12]">
-                      {t.founderName}
-                    </h3>
-                    <p className="text-[13px] sm:text-[14px] font-semibold tracking-wide text-[#8B7347] mt-1.5 font-sans">
-                      {t.founderRole}
-                    </p>
-
-                    {/* Introductory core paragraphs */}
-                    <div className="space-y-3.5 text-[13px] sm:text-[13.5px] lg:text-[14px] text-[#4E5650] leading-[1.7] font-sans mt-5">
-                      {t.founderIntroParagraphs.map((para: string, idx: number) => (
-                        <p key={idx}>{para}</p>
-                      ))}
-                    </div>
-
-                    {/* Key Highlights (3 cards) - Compact & Shortened */}
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 my-3.5">
-                      {t.founderKeyPoints.map((point: { title: string; desc: string }, idx: number) => (
-                        <div
-                          key={idx}
-                          className="bg-[#FAF7F0] border border-[#EBE3D3] rounded-xl p-2.5 sm:p-3 flex flex-col justify-start transition-all hover:border-[#D5B878]/70 hover:shadow-xs"
-                        >
-                          <div className="flex items-center gap-2 mb-1">
-                            <div className="w-6 h-6 rounded-lg bg-white border border-[#E8DFC8] text-[#1B3D2F] flex items-center justify-center shrink-0 shadow-2xs">
-                              {idx === 0 && <Stethoscope className="w-3.5 h-3.5 text-[#1B3D2F]" />}
-                              {idx === 1 && <HeartHandshake className="w-3.5 h-3.5 text-[#1B3D2F]" />}
-                              {idx === 2 && <ShieldCheck className="w-3.5 h-3.5 text-[#1B3D2F]" />}
-                            </div>
-                            <h4 className="text-[12px] font-bold text-[#142318] leading-tight">
-                              {point.title}
-                            </h4>
-                          </div>
-                          <p className="text-[11px] text-[#5C645E] leading-snug font-sans">
-                            {point.desc}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Featured Guiding Principle Quote (Leitgedanke) */}
-                    <div className="bg-[#FAF7F0] border border-[#E5DEC9] rounded-2xl p-4 my-2 shadow-xs">
-                      <div className="flex items-start gap-3">
-                        <Quote className="w-5 h-5 text-[#C5A859] shrink-0 mt-0.5" />
-                        <p className="text-[13.5px] sm:text-[14px] font-serif italic text-[#1B3D2F] leading-relaxed">
-                          {t.founderQuote}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Expand/Collapse Toggle Button - Full Width, Background matches Card */}
-                    <div className="mt-3.5 pt-0.5">
-                      <button
-                        type="button"
-                        onClick={() => setIsFounderExpanded(!isFounderExpanded)}
-                        className="w-full group inline-flex items-center justify-center gap-2 text-[13px] sm:text-[13.5px] font-semibold text-[#1B3D2F] hover:text-[#8B7347] bg-white hover:bg-[#FAF8F5] active:scale-[0.995] transition-all duration-200 py-3 px-5 rounded-2xl border border-[#EDE6D8] hover:border-[#D5B878] cursor-pointer shadow-xs"
-                        aria-expanded={isFounderExpanded}
-                      >
-                        <span>{isFounderExpanded ? t.founderCollapseBtn : t.founderExpandBtn}</span>
-                        {isFounderExpanded ? (
-                          <ChevronUp className="w-4 h-4 transition-transform duration-200 group-hover:-translate-y-0.5 text-[#8B7347]" />
-                        ) : (
-                          <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:translate-y-0.5 text-[#8B7347]" />
-                        )}
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom: FULL-WIDTH Expandable Section across the entire card container */}
-                <div
-                  className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                    isFounderExpanded
-                      ? "max-h-[2200px] opacity-100 border-t border-[#EDE6D8] bg-white"
-                      : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <div className="p-6 sm:p-8 lg:p-10">
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="h-px bg-[#E2D8C3] flex-1" />
-                      <h4 className="text-[12.5px] font-bold uppercase tracking-wider text-[#8B7347] font-sans px-2">
-                        {t.founderExpandedTitle}
-                      </h4>
-                      <div className="h-px bg-[#E2D8C3] flex-1" />
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 text-[13.5px] sm:text-[14px] text-[#4E5650] leading-[1.8] font-sans">
-                      <div className="space-y-4">
-                        {t.founderExpandedParagraphs.slice(0, 3).map((para: string, idx: number) => (
-                          <p key={idx}>{para}</p>
-                        ))}
-                      </div>
-                      <div className="space-y-4">
-                        {t.founderExpandedParagraphs.slice(3).map((para: string, idx: number) => (
-                          <p key={idx}>{para}</p>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="mt-8 pt-4 border-t border-[#EDE6D8]/60 flex justify-end">
-                      <button
-                        type="button"
-                        onClick={() => setIsFounderExpanded(false)}
-                        className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-[#8B7347] hover:text-[#1B3D2F] transition-colors cursor-pointer"
-                      >
-                        <span>{t.founderCollapseBtn}</span>
-                        <ChevronUp className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Azizbek Fischer-Rahimov Card (Son, Manager-Consultant) */}
-              <div className="bg-white rounded-[28px] lg:rounded-[32px] border border-[#EDE6D8] shadow-[0_10px_40px_-24px_rgba(20,35,24,0.14)] mb-8 relative overflow-hidden">
-                <div className="grid grid-cols-1 lg:grid-cols-[32%_minmax(0,1fr)]">
-                  {/* Left: portrait */}
-                  <div className="relative min-h-[260px] sm:min-h-[320px] lg:min-h-full">
-                    <Image
-                      src="/images/about/son-rahimov.png"
-                      alt={t.consultantName}
-                      fill
-                      sizes="(min-width: 1024px) 36vw, 100vw"
-                      className="object-cover object-[50%_15%]"
-                    />
-                  </div>
-
-                  {/* Right: consultant information */}
-                  <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
-                    <h3 className="font-serif text-[26px] sm:text-[32px] lg:text-[36px] font-bold text-[#142318] leading-[1.12]">
-                      {t.consultantName}
-                    </h3>
-                    <p className="text-[13px] sm:text-[14px] font-semibold tracking-wide text-[#8B7347] mt-1.5 font-sans">
-                      {t.consultantRole}
-                    </p>
-
-                    <div className="space-y-3.5 text-[13px] sm:text-[13.5px] lg:text-[14px] text-[#4E5650] leading-[1.7] font-sans mt-5">
-                      {t.consultantParagraphs.map((para: string, idx: number) => (
-                        <p key={idx}>{para}</p>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
-
-        {/* ══════════════════════════════════════════════════════════
-            SECTION 3C: MEDICAL ADVISORY BOARD (Values-page background design)
-        ══════════════════════════════════════════════════════════ */}
-        <section className="relative py-10 sm:py-12 lg:py-14 bg-[#07160D] text-white overflow-hidden border-b border-[#D5B878]/20">
-          <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-            <Image
-              src="/images/values/leaves-bg.webp"
-              alt="Botanical Background"
-              fill
-              sizes="100vw"
-              className="object-cover object-[left_center]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#07160D]/80 to-[#07160D] hidden lg:block" />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#07160D]/65 via-[#07160D]/90 to-[#07160D] lg:hidden" />
-          </div>
-
-          <Container size="wide" className="relative z-10">
-            <div className="lg:ml-auto lg:w-[78%] xl:w-[75%]">
-              <div className="max-w-xl mb-5 sm:mb-6">
-                <h2 className="font-serif text-[28px] sm:text-[34px] lg:text-[38px] font-normal leading-[1.15] text-white mb-2 sm:mb-2.5">
-                  {t.boardTitle}
-                </h2>
-                <p className="text-[12.5px] sm:text-[13.5px] text-[#C2D2C5] leading-relaxed font-sans max-w-lg">
-                  {t.boardDesc}
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-3.5">
-                {[
-                  {
-                    Icon: Stethoscope,
-                    title: isUz
-                      ? "Terapevtik erkinlik"
-                      : isRu
-                      ? "Терапевтическая свобода"
-                      : isEn
-                      ? "Clinical Autonomy"
-                      : isTr
-                      ? "Serbest Tedavi Seçimi"
-                      : isAr
-                      ? "حرية اختيار العلاج"
-                      : "Freie Therapiewahl",
-                    desc: isUz
-                      ? "Tijoriy rejalarsiz, faqat shifokorlik burchi va bemor manfaatlariga qat'iy rioya qilish."
-                      : isRu
-                      ? "Строгое следование врачебному долгу без навязанных планов по процедурам."
-                      : isEn
-                      ? "Strict adherence to medical duty without commercial treatment quotas."
-                      : isTr
-                      ? "Tedavi eden hekimler için hiçbir ekonomik vaka sayısı veya tedavi kotası dayatılmaz."
-                      : isAr
-                      ? "لا توجد أي حصص أو أهداف عددية أو علاجية اقتصادية مفروضة على الأطباء المعالجين."
-                      : "Keine ökonomischen Fallzahl- oder Therapievorgaben für behandelnde Ärzte.",
-                  },
-                  {
-                    Icon: ShieldCheck,
-                    title: isUz
-                      ? "AWMF va CIRS sifati"
-                      : isRu
-                      ? "Качество AWMF & CIRS"
-                      : isEn
-                      ? "AWMF & CIRS Guidelines"
-                      : isTr
-                      ? "AWMF Kılavuzları & CIRS"
-                      : isAr
-                      ? "إرشادات AWMF ونظام CIRS"
-                      : "AWMF-Leitlinien & CIRS",
-                    desc: isUz
-                      ? "Fanlararo konsiliumlar va hodisalar monitoringi (CIRS) orqali xatolarni erta oldini olish tizimi."
-                      : isRu
-                      ? "Междисциплинарные консилиумы и система контроля инцидентов CIRS."
-                      : isEn
-                      ? "Regular case conferences and active clinical incident reporting."
-                      : isTr
-                      ? "Disiplinler arası kalite çemberleri ve sistematik CIRS hata bildirim sistemi."
-                      : isAr
-                      ? "حلقات جودة متعددة التخصصات ونظام إبلاغ وتحليل للأخطاء الطبية (CIRS)."
-                      : "Interdisziplinäre Qualitätszirkel und systematisches CIRS-Fehlermeldesystem.",
-                  },
-                  {
-                    Icon: GraduationCap,
-                    title: isUz
-                      ? "Ordinatorlarni o'qitish"
-                      : isRu
-                      ? "Обучение ординаторов"
-                      : isEn
-                      ? "Residency Training"
-                      : isTr
-                      ? "Uzman Hekimlik Eğitimi"
-                      : isAr
-                      ? "التدريب التخصصي للأطباء"
-                      : "Facharzt-Weiterbildung",
-                    desc: isUz
-                      ? "Mintaqada yosh shifokorlar va mutaxassislarni tayyorlash bo'yicha rasmiy vakolatlar."
-                      : isRu
-                      ? "Официальные полномочия на подготовку молодых специалистов в MVZ."
-                      : isEn
-                      ? "Accredited residency authorizations for junior doctors across our MVZ network."
-                      : isTr
-                      ? "Genç hekimlerin uzmanlık eğitimi için akredite resmi eğitim yetkileri."
-                      : isAr
-                      ? "صلاحيات وتراخيص أكاديمية معتمدة لتدريب وتأهيل الأطباء المقيمين والشباب."
-                      : "Akkreditierte Weiterbildungsbefugnisse zur Ausbildung junger Mediziner.",
-                  },
-                  {
-                    Icon: HeartHandshake,
-                    title: isUz
-                      ? "Yaxlit konsiliumlar"
-                      : isRu
-                      ? "Сквозные консилиумы"
-                      : isEn
-                      ? "Interdisciplinary Care"
-                      : isTr
-                      ? "Sektörler Arası Eşgüdüm"
-                      : isAr
-                      ? "تنسيق متكامل عابر للقطاعات"
-                      : "Sektorübergreifend",
-                    desc: isUz
-                      ? "Terapevtlar, jarrohlar, diagnostlar va reabilitatsiya xizmati o'rtasida to'g'ridan-to'g'ri muloqot."
-                      : isRu
-                      ? "Прямой диалог терапевтов, хирургов, диагностов и службы реабилитации."
-                      : isEn
-                      ? "Direct communication between primary care, surgeons, imaging, and rehab."
-                      : isTr
-                      ? "Aile hekimleri, cerrahlar, tanı ve rehabilitasyon arasında doğrudan koordinasyon."
-                      : isAr
-                      ? "تنسيق مباشر ومستمر بين أطباء الأسرة، الجراحين، مراكز التشخيص، والتأهيل."
-                      : "Direkte Abstimmung zwischen Hausärzten, Operateuren, Diagnostik und Reha.",
-                  },
-                ].map(({ Icon, title, desc }, idx) => (
-                  <div
-                    key={idx}
-                    className="bg-[#0A1F13]/85 hover:bg-[#0D2618]/95 border border-[#D5B878]/30 hover:border-[#D5B878]/70 backdrop-blur-md rounded-xl sm:rounded-2xl p-3.5 sm:p-4 transition-all duration-300 hover:-translate-y-1 shadow-[0_6px_20px_rgba(0,0,0,0.3)] group flex flex-col justify-between"
-                  >
-                    <div>
-                      <div className="text-[#ECCF96] mb-2.5 flex items-center transition-transform group-hover:scale-105">
-                        <Icon className="w-7 h-7 stroke-[1.6]" />
-                      </div>
-                      <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-white mb-1 group-hover:text-[#ECCF96] transition-colors leading-snug">
-                        {title}
-                      </h3>
-                      <p className="text-[11px] sm:text-[11.5px] text-[#A6B8AA] leading-snug font-sans">{desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Container>
-        </section>
-
-        {/* ══════════════════════════════════════════════════════════
-            SECTION 4: MISSION & VISION ("Что нами движет") + 4 STATS BAR
-        ══════════════════════════════════════════════════════════ */}
-        <section className="bg-[#FAF8F5] py-14 sm:py-18 lg:py-20 border-b border-[#ECE7DC]">
-          <Container size="wide">
-            {/* Top: Left Header + Right 2 Cards */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch mb-12 sm:mb-16">
-              {/* Left: Mission & Vision Heading */}
-              <div className="lg:col-span-5 flex flex-col justify-center">
-                <h2 className="font-serif text-[32px] sm:text-[38px] lg:text-[42px] font-normal text-[#142318] leading-[1.15] mb-4">
-                  {t.missionHeading}
-                </h2>
-                <p className="text-[13.5px] sm:text-[14px] text-[#5A635B] leading-[1.7] font-sans max-w-md">
-                  {t.missionLead}
-                </p>
-              </div>
-
-              {/* Right: 2 Distinct White Cards */}
-              <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-                {/* Card 1: Our Mission */}
-                <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#EDE8DE] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:border-[#D5B878] hover:shadow-md transition-all flex flex-col justify-between">
-                  <div>
-                    <div className="text-[#B89650] flex items-center mb-3">
-                      <TargetIcon className="w-7.5 h-7.5 stroke-[1.6]" />
-                    </div>
-                    <h3 className="font-sans text-[16px] font-bold text-[#142318] mb-2">
-                      {t.cardMissionTitle}
-                    </h3>
-                    <p className="text-[12px] sm:text-[12.5px] text-[#5A635B] leading-relaxed">
-                      {t.cardMissionText}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Card 2: Our Vision */}
-                <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#EDE8DE] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:border-[#D5B878] hover:shadow-md transition-all flex flex-col justify-between">
-                  <div>
-                    <div className="text-[#B89650] flex items-center mb-3">
-                      <VisionEyeIcon className="w-7.5 h-7.5 stroke-[1.6]" />
-                    </div>
-                    <h3 className="font-sans text-[16px] font-bold text-[#142318] mb-2">
-                      {t.cardVisionTitle}
-                    </h3>
-                    <p className="text-[12px] sm:text-[12.5px] text-[#5A635B] leading-relaxed">
-                      {t.cardVisionText}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Bottom: 4 Key Stats Bar in single horizontal row with vertical dividers */}
-            <div className="bg-white rounded-2xl border border-[#EDE8DE] shadow-[0_2px_8px_rgba(0,0,0,0.02)] py-6 sm:py-7 px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-4 lg:gap-0 lg:divide-x lg:divide-[#EDE7DC]">
-                {/* Stat 1 */}
-                <div className="flex items-center gap-4 px-2 sm:px-4 lg:px-6">
-                  <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
-                    <TeamStatsIcon className="w-8 h-8 stroke-[1.6]" />
-                  </div>
-                  <div>
-                    <span className="block font-serif text-[28px] sm:text-[32px] font-bold text-[#142318] leading-none mb-1">
-                      {t.stat1Num}
-                    </span>
-                    <span className="block text-[11.5px] sm:text-[12px] text-[#6E756D] leading-snug">
-                      {t.stat1Label}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Stat 2 */}
-                <div className="flex items-center gap-4 px-2 sm:px-4 lg:px-6">
-                  <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
-                    <BuildingStatsIcon className="w-8 h-8 stroke-[1.6]" />
-                  </div>
-                  <div>
-                    <span className="block font-serif text-[28px] sm:text-[32px] font-bold text-[#142318] leading-none mb-1">
-                      {t.stat2Num}
-                    </span>
-                    <span className="block text-[11.5px] sm:text-[12px] text-[#6E756D] leading-snug">
-                      {t.stat2Label}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Stat 3 */}
-                <div className="flex items-center gap-4 px-2 sm:px-4 lg:px-6">
-                  <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
-                    <HandshakeIcon className="w-8 h-8 stroke-[1.6]" />
-                  </div>
-                  <div>
-                    <span className="block font-serif text-[28px] sm:text-[32px] font-bold text-[#142318] leading-none mb-1">
-                      {t.stat3Num}
-                    </span>
-                    <span className="block text-[11.5px] sm:text-[12px] text-[#6E756D] leading-snug">
-                      {t.stat3Label}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Stat 4 */}
-                <div className="flex items-center gap-4 px-2 sm:px-4 lg:px-6">
-                  <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
-                    <HeartStatsIcon className="w-8 h-8 stroke-[1.6]" />
-                  </div>
-                  <div>
-                    <span className="block font-serif text-[28px] sm:text-[32px] font-bold text-[#142318] leading-none mb-1">
-                      {t.stat4Num}
-                    </span>
-                    <span className="block text-[11.5px] sm:text-[12px] text-[#6E756D] leading-snug">
-                      {t.stat4Label}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
-
-        {/* ══════════════════════════════════════════════════════════
-            SECTION 5: UNSERE WERTE ("Das macht uns besonders.")
+            SECTION 9: UNSERE WERTE ("Das macht uns besonders.")
         ══════════════════════════════════════════════════════════ */}
         <section className="relative py-14 sm:py-18 lg:py-20 border-b border-[#ECE7DC] overflow-hidden bg-[#FAF8F5]">
           {/* Background: photo2.png from public/images/about/ */}
@@ -2561,7 +2561,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
         </section>
 
         {/* ══════════════════════════════════════════════════════════
-            SECTION 6: DARK CALL-TO-ACTION PRE-FOOTER BANNER
+            SECTION 10: DARK CALL-TO-ACTION PRE-FOOTER BANNER
         ══════════════════════════════════════════════════════════ */}
         <section className="bg-[#07160D] text-white py-12 sm:py-14 relative overflow-hidden">
           {/* Botanical leaf silhouette watermark accents */}
