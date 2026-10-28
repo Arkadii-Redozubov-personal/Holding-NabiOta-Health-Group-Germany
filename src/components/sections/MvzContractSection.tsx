@@ -274,9 +274,8 @@ export function MvzContractSection({ locale = "de" }: { locale?: string }) {
   const l: Lang = locale === "uz" ? "uz" : locale === "tr" ? "tr" : locale === "ar" ? "ar" : locale === "ru" ? "ru" : locale === "en" ? "en" : "de";
 
   const SubLabel = ({ children }: { children: React.ReactNode }) => (
-    <h3 className="flex items-center gap-3 font-serif text-[20px] sm:text-[23px] font-normal text-[#142318] mb-5 sm:mb-6">
-      <span className="w-6 sm:w-8 h-[1.5px] bg-[#C5A56A] shrink-0" />
-      <span>{children}</span>
+    <h3 className="font-serif text-[20px] sm:text-[23px] font-normal text-[#142318] mb-5 sm:mb-6">
+      {children}
     </h3>
   );
 
@@ -328,13 +327,6 @@ export function MvzContractSection({ locale = "de" }: { locale?: string }) {
               <h2 className="font-serif text-[28px] sm:text-[38px] lg:text-[44px] text-[#142318] font-normal leading-[1.15]">
                 {c.title[l]}
               </h2>
-
-              {/* Supplementary gold text underneath the title (Photo 1) */}
-              <div className="mt-3.5 sm:mt-4">
-                <span className="text-[10.5px] sm:text-[11.5px] font-bold tracking-[0.22em] text-[#C5A56A] uppercase font-sans">
-                  {c.subEyebrow[l]}
-                </span>
-              </div>
             </div>
           </div>
         </Container>

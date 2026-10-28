@@ -943,93 +943,101 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
                   {/* Card 1: Postal address */}
-                  <div className="bg-[#FAF7F0] border border-[#EAE4D7] rounded-2xl p-4 sm:p-4.5 flex flex-col justify-start">
-                    <div className="w-9 h-9 rounded-full bg-[#EAE2D0] text-[#7B5F22] flex items-center justify-center mb-3 shrink-0">
-                      <MapPin className="w-4 h-4 stroke-[1.75]" />
+                  <div className="bg-[#FAF7F0] border border-[#EAE4D7] rounded-2xl p-4 sm:p-5 flex items-start gap-3.5 sm:gap-4">
+                    <div className="shrink-0 text-[#8C6D2B] pt-0.5">
+                      <MapPin className="w-7 h-7 stroke-[1.6]" />
                     </div>
-                    <h3 className="font-serif font-bold text-[13px] sm:text-[13.5px] text-[#132218] mb-1">
-                      {t.left.addressTitle}
-                    </h3>
-                    <p className="font-sans text-[11.5px] sm:text-[12px] text-[#556358] leading-relaxed">
-                      {t.left.street}
-                      <br />
-                      {t.left.city}
-                    </p>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-serif font-bold text-[13.5px] sm:text-[14px] text-[#132218] mb-1 leading-snug">
+                        {t.left.addressTitle}
+                      </h3>
+                      <p className="font-sans text-[11.5px] sm:text-[12px] text-[#556358] leading-relaxed">
+                        {t.left.street}
+                        <br />
+                        {t.left.city}
+                      </p>
+                    </div>
                   </div>
 
                   {/* Card 2: Phone */}
-                  <div className="bg-[#FAF7F0] border border-[#EAE4D7] rounded-2xl p-4 sm:p-4.5 flex flex-col justify-start">
-                    <div className="w-9 h-9 rounded-full bg-[#EAE2D0] text-[#7B5F22] flex items-center justify-center mb-3 shrink-0">
-                      <Phone className="w-4 h-4 stroke-[1.75]" />
+                  <div className="bg-[#FAF7F0] border border-[#EAE4D7] rounded-2xl p-4 sm:p-5 flex items-start gap-3.5 sm:gap-4">
+                    <div className="shrink-0 text-[#8C6D2B] pt-0.5">
+                      <Phone className="w-7 h-7 stroke-[1.6]" />
                     </div>
-                    <h3 className="font-serif font-bold text-[13px] sm:text-[13.5px] text-[#132218] mb-1">
-                      {t.left.phoneTitle}
-                    </h3>
-                    <div className="font-sans text-[11px] sm:text-[11.5px] text-[#556358] leading-relaxed space-y-0.5">
-                      <p className="flex justify-between sm:justify-start gap-2">
-                        <span className="text-[#7B867D]">{t.left.reception}</span>{" "}
-                        <a href="tel:+4921619170016" className="text-[#132218] hover:text-[#8C6D2B] transition-colors">
-                          +49 2161 9170016
-                        </a>
-                      </p>
-                      <p className="flex justify-between sm:justify-start gap-2">
-                        <span className="text-[#7B867D]">{t.left.admission}</span>{" "}
-                        <a href="tel:+4921619170017" className="text-[#132218] hover:text-[#8C6D2B] transition-colors">
-                          +49 2161 9170017
-                        </a>
-                      </p>
-                      <p className="flex justify-between sm:justify-start gap-2">
-                        <span className="text-[#7B867D]">{t.left.executive}</span>{" "}
-                        <a href="tel:+4921619170018" className="text-[#132218] hover:text-[#8C6D2B] transition-colors">
-                          +49 2161 9170018
-                        </a>
-                      </p>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-serif font-bold text-[13.5px] sm:text-[14px] text-[#132218] mb-1 leading-snug">
+                        {t.left.phoneTitle}
+                      </h3>
+                      <div className="font-sans text-[11px] sm:text-[11.5px] text-[#556358] leading-relaxed space-y-0.5">
+                        <p className="flex justify-between sm:justify-start gap-2">
+                          <span className="text-[#7B867D]">{t.left.reception}</span>{" "}
+                          <a href="tel:+4921619170016" className="text-[#132218] hover:text-[#8C6D2B] transition-colors font-medium">
+                            +49 2161 9170016
+                          </a>
+                        </p>
+                        <p className="flex justify-between sm:justify-start gap-2">
+                          <span className="text-[#7B867D]">{t.left.admission}</span>{" "}
+                          <a href="tel:+4921619170017" className="text-[#132218] hover:text-[#8C6D2B] transition-colors font-medium">
+                            +49 2161 9170017
+                          </a>
+                        </p>
+                        <p className="flex justify-between sm:justify-start gap-2">
+                          <span className="text-[#7B867D]">{t.left.executive}</span>{" "}
+                          <a href="tel:+4921619170018" className="text-[#132218] hover:text-[#8C6D2B] transition-colors font-medium">
+                            +49 2161 9170018
+                          </a>
+                        </p>
+                      </div>
                     </div>
                   </div>
 
                   {/* Card 3: Email */}
-                  <div className="bg-[#FAF7F0] border border-[#EAE4D7] rounded-2xl p-4 sm:p-4.5 flex flex-col justify-start">
-                    <div className="w-9 h-9 rounded-full bg-[#EAE2D0] text-[#7B5F22] flex items-center justify-center mb-3 shrink-0">
-                      <Mail className="w-4 h-4 stroke-[1.75]" />
+                  <div className="bg-[#FAF7F0] border border-[#EAE4D7] rounded-2xl p-4 sm:p-5 flex items-start gap-3.5 sm:gap-4">
+                    <div className="shrink-0 text-[#8C6D2B] pt-0.5">
+                      <Mail className="w-7 h-7 stroke-[1.6]" />
                     </div>
-                    <h3 className="font-serif font-bold text-[13px] sm:text-[13.5px] text-[#132218] mb-1">
-                      {t.left.emailTitle}
-                    </h3>
-                    <div className="font-sans text-[11px] sm:text-[11.5px] text-[#556358] leading-relaxed space-y-0.5">
-                      <p>
-                        <a href="mailto:kontakt@nabiota-health-group.de" className="text-[#132218] hover:text-[#8C6D2B] transition-colors truncate block">
-                          kontakt@nabiota-health-group.de
-                        </a>
-                      </p>
-                      <p>
-                        <a href="mailto:karriere@nabiota.de" className="text-[#132218] hover:text-[#8C6D2B] transition-colors truncate block">
-                          karriere@nabiota.de
-                        </a>
-                      </p>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-serif font-bold text-[13.5px] sm:text-[14px] text-[#132218] mb-1 leading-snug">
+                        {t.left.emailTitle}
+                      </h3>
+                      <div className="font-sans text-[11px] sm:text-[11.5px] text-[#556358] leading-relaxed space-y-0.5">
+                        <p>
+                          <a href="mailto:kontakt@nabiota-health-group.de" className="text-[#132218] hover:text-[#8C6D2B] transition-colors font-medium truncate block">
+                            kontakt@nabiota-health-group.de
+                          </a>
+                        </p>
+                        <p>
+                          <a href="mailto:karriere@nabiota.de" className="text-[#132218] hover:text-[#8C6D2B] transition-colors font-medium truncate block">
+                            karriere@nabiota.de
+                          </a>
+                        </p>
+                      </div>
                     </div>
                   </div>
 
                   {/* Card 4: Hours */}
-                  <div className="bg-[#FAF7F0] border border-[#EAE4D7] rounded-2xl p-4 sm:p-4.5 flex flex-col justify-start">
-                    <div className="w-9 h-9 rounded-full bg-[#EAE2D0] text-[#7B5F22] flex items-center justify-center mb-3 shrink-0">
-                      <Clock className="w-4 h-4 stroke-[1.75]" />
+                  <div className="bg-[#FAF7F0] border border-[#EAE4D7] rounded-2xl p-4 sm:p-5 flex items-start gap-3.5 sm:gap-4">
+                    <div className="shrink-0 text-[#8C6D2B] pt-0.5">
+                      <Clock className="w-7 h-7 stroke-[1.6]" />
                     </div>
-                    <h3 className="font-serif font-bold text-[13px] sm:text-[13.5px] text-[#132218] mb-1">
-                      {t.left.hoursTitle}
-                    </h3>
-                    <div className="font-sans text-[11.5px] sm:text-[12px] text-[#556358] leading-relaxed">
-                      <p>{locale === "uz" ? "Dushanba - Juma" : locale === "ru" ? "Понедельник - Пятница" : locale === "en" ? "Monday - Friday" : locale === "tr" ? "Pazartesi - Cuma" : locale === "ar" ? "الاثنين - الجمعة" : "Montag - Freitag"}</p>
-                      <p className="font-medium text-[#132218]">08:00 - 18:00</p>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-serif font-bold text-[13.5px] sm:text-[14px] text-[#132218] mb-1 leading-snug">
+                        {t.left.hoursTitle}
+                      </h3>
+                      <div className="font-sans text-[11.5px] sm:text-[12px] text-[#556358] leading-relaxed">
+                        <p>{locale === "uz" ? "Dushanba - Juma" : locale === "ru" ? "Понедельник - Пятница" : locale === "en" ? "Monday - Friday" : locale === "tr" ? "Pazartesi - Cuma" : locale === "ar" ? "الاثنين - الجمعة" : "Montag - Freitag"}</p>
+                        <p className="font-medium text-[#132218]">08:00 - 18:00</p>
+                      </div>
                     </div>
                   </div>
 
                   {/* Card 5: Holding & Registry (Full Width) */}
-                  <div className="sm:col-span-2 bg-[#FAF7F0] border border-[#EAE4D7] rounded-2xl p-4 sm:p-4.5 flex items-start gap-3.5">
-                    <div className="w-9 h-9 rounded-full bg-[#EAE2D0] text-[#7B5F22] flex items-center justify-center shrink-0 mt-0.5">
-                      <ShieldCheck className="w-4 h-4 stroke-[1.75]" />
+                  <div className="sm:col-span-2 bg-[#FAF7F0] border border-[#EAE4D7] rounded-2xl p-4 sm:p-5 flex items-start gap-3.5 sm:gap-4">
+                    <div className="shrink-0 text-[#8C6D2B] pt-0.5">
+                      <ShieldCheck className="w-7 h-7 stroke-[1.6]" />
                     </div>
-                    <div>
-                      <h3 className="font-serif font-bold text-[13px] sm:text-[13.5px] text-[#132218] mb-1">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-serif font-bold text-[13.5px] sm:text-[14px] text-[#132218] mb-1 leading-snug">
                         {t.left.registryTitle}
                       </h3>
                       <div className="font-sans text-[11px] sm:text-[11.5px] text-[#556358] space-y-0.5">
