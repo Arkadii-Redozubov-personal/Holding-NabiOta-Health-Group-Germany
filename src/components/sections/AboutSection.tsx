@@ -17,10 +17,10 @@ export function AboutSection({ currentLocale = "de" }: AboutSectionProps) {
       {/* ── Full-width banner: Image FLUSH to left edge ─────────── */}
       <div className="w-full flex flex-col lg:flex-row items-stretch">
         {/* ── LEFT: Doctor-Patient Photo FLUSH TO THE EDGE with METALLIC GOLD ARC (Compact Height) ─ */}
-        <div className="w-full lg:w-[44%] xl:w-[42%] 2xl:w-[40%] relative min-h-[300px] sm:min-h-[350px] lg:min-h-[390px] xl:min-h-[410px] flex-shrink-0">
+        <div className="w-full lg:w-[44%] xl:w-[42%] 2xl:w-[40%] relative min-h-[220px] sm:min-h-[260px] lg:min-h-[290px] xl:min-h-[310px] 2xl:min-h-[320px] flex-shrink-0">
           <svg
             className="w-full h-full block"
-            viewBox="0 0 540 400"
+            viewBox="0 0 540 310"
             preserveAspectRatio="none"
           >
             <defs>
@@ -35,7 +35,7 @@ export function AboutSection({ currentLocale = "de" }: AboutSectionProps) {
 
               {/* ClipPath: Left side touches screen edge (x=0), right side sweeps out in convex curve */}
               <clipPath id="aboutDoctorArcMask">
-                <path d="M 0 0 L 415 0 C 510 110, 510 290, 415 400 L 0 400 Z" />
+                <path d="M 0 0 L 415 0 C 505 80, 505 230, 415 310 L 0 310 Z" />
               </clipPath>
             </defs>
 
@@ -46,32 +46,32 @@ export function AboutSection({ currentLocale = "de" }: AboutSectionProps) {
                 x="0"
                 y="0"
                 width="540"
-                height="400"
+                height="310"
                 preserveAspectRatio="xMidYMid slice"
               />
             </g>
 
             {/* Ambient gold glow */}
             <path
-              d="M 415 0 C 510 110, 510 290, 415 400"
+              d="M 415 0 C 505 80, 505 230, 415 310"
               fill="none"
               stroke="#C9A35A"
-              strokeWidth="10"
+              strokeWidth="9"
               strokeOpacity="0.22"
             />
 
             {/* Main metallic gold ribbon arc */}
             <path
-              d="M 415 0 C 510 110, 510 290, 415 400"
+              d="M 415 0 C 505 80, 505 230, 415 310"
               fill="none"
               stroke="url(#aboutGoldMetallic)"
-              strokeWidth="5"
+              strokeWidth="4.5"
               strokeLinecap="round"
             />
 
             {/* Sharp inner highlight reflection */}
             <path
-              d="M 415 0 C 510 110, 510 290, 415 400"
+              d="M 415 0 C 505 80, 505 230, 415 310"
               fill="none"
               stroke="#FFFFFF"
               strokeWidth="1"
@@ -81,23 +81,23 @@ export function AboutSection({ currentLocale = "de" }: AboutSectionProps) {
         </div>
 
         {/* ── RIGHT: Center Content & Benefits (Compact Height) ─ */}
-        <div className="flex-1 flex flex-col xl:flex-row items-center justify-between py-6 sm:py-8 lg:py-9 pl-6 sm:pl-8 lg:pl-10 xl:pl-12 pr-6 sm:pr-8 lg:pr-10 xl:pr-14 gap-6 xl:gap-8">
+        <div className="flex-1 flex flex-col xl:flex-row items-center justify-between py-4 sm:py-5 lg:py-6 pl-5 sm:pl-7 lg:pl-8 xl:pl-10 pr-5 sm:pr-7 lg:pr-8 xl:pr-10 gap-5 xl:gap-6">
           {/* ── Center Content: Heading, Text, Button ── */}
           <div className="flex-1 max-w-xl flex flex-col justify-center">
             {/* Heading in serif */}
-            <h2 className="font-serif text-[26px] sm:text-[30px] xl:text-[34px] font-normal leading-[1.16] tracking-[-0.01em] text-[#142318] mb-3 sm:mb-3.5">
+            <h2 className="font-serif text-[22px] sm:text-[25px] xl:text-[28px] font-normal leading-[1.16] tracking-[-0.01em] text-[#142318] mb-2 sm:mb-2.5">
               {dict.about.heading}
             </h2>
 
             {/* Description */}
-            <p className="text-[13px] sm:text-[13.5px] text-[#4A473E] leading-[1.65] font-sans mb-4 sm:mb-5 font-normal">
+            <p className="text-[12px] sm:text-[12.5px] text-[#4A473E] leading-[1.55] font-sans mb-3 sm:mb-3.5 font-normal">
               {dict.about.description}
             </p>
 
             {/* CTA - Golden pill button */}
             <Link
               href={getLocalePath(currentLocale, "about")}
-              className="group inline-flex items-center gap-2 px-5 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-[#ECCF93] to-[#D4AF67] text-[#142217] font-sans font-semibold text-[12px] sm:text-[12.5px] tracking-wide shadow-sm hover:from-[#F2DAB0] hover:to-[#DEBD7A] transition-all duration-300 self-start"
+              className="group inline-flex items-center gap-2 px-4.5 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-[#ECCF93] to-[#D4AF67] text-[#142217] font-sans font-semibold text-[11.5px] sm:text-[12px] tracking-wide shadow-xs hover:from-[#F2DAB0] hover:to-[#DEBD7A] transition-all duration-300 self-start"
             >
               <span>{dict.about.cta}</span>
               <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -105,24 +105,24 @@ export function AboutSection({ currentLocale = "de" }: AboutSectionProps) {
           </div>
 
           {/* ── Hairline vertical divider ───────────────────── */}
-          <div className="w-[1px] h-32 bg-[#E2DBD0] hidden xl:block flex-shrink-0 mx-1" />
+          <div className="w-[1px] h-20 bg-[#E2DBD0] hidden xl:block flex-shrink-0 mx-1" />
 
           {/* ── Right: 3 Benefits with Golden Circles ───────── */}
-          <div className="w-full xl:w-[270px] 2xl:w-[290px] space-y-3.5 sm:space-y-4 flex-shrink-0">
+          <div className="w-full xl:w-[260px] 2xl:w-[280px] space-y-2 sm:space-y-2.5 flex-shrink-0">
             {dict.about.benefits.map((benefit, idx) => {
               const IconComponent = benefitIcons[idx] || Handshake;
               return (
-                <div key={idx} className="flex items-center gap-3.5 group">
+                <div key={idx} className="flex items-center gap-3 group">
                   {/* Icon without circle */}
                   <div className="text-[#9C8145] group-hover:text-[#7D6532] flex items-center justify-center flex-shrink-0 transition-colors">
-                    <IconComponent className="w-6.5 h-6.5 sm:w-7 sm:h-7 stroke-[1.5]" />
+                    <IconComponent className="w-5.5 h-5.5 sm:w-6 sm:h-6 stroke-[1.5]" />
                   </div>
 
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-sans text-[12.5px] sm:text-[13px] font-bold text-[#142318] leading-tight mb-0.5">
+                    <h3 className="font-sans text-[12px] sm:text-[12.5px] font-bold text-[#142318] leading-tight mb-0.5">
                       {benefit.title}
                     </h3>
-                    <p className="text-[11px] sm:text-[11.5px] text-[#6E756D] leading-snug">
+                    <p className="text-[10.5px] sm:text-[11px] text-[#6E756D] leading-snug">
                       {benefit.description}
                     </p>
                   </div>
