@@ -16,42 +16,39 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
     <section dir="ltr" className="relative w-full min-h-screen lg:h-screen lg:min-h-[700px] lg:max-h-[1080px] flex flex-col justify-between bg-[#07130B] text-[#FAF8F5] overflow-x-hidden">
       {/* ── Main Hero Area (Fills height from Header down to Strip) ─ */}
       <div className="relative flex-1 flex items-center overflow-hidden w-full py-10 lg:py-0">
-        {/* ── Background: Cinematic Hero Video (Zoomed out & right-anchored for high definition) ── */}
+        {/* ── Background: Cinematic Hero Video (Extends up to title with smooth blur) ── */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-[#07130B]">
-          {/* Video positioned to right half with zoomed-out framing so it is not pixelated */}
-          <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[68%] xl:w-[64%] h-full overflow-hidden flex items-center justify-end">
+          {/* Video zoomed out & right-anchored for sharpness */}
+          <div className="absolute inset-0 w-full h-full overflow-hidden flex items-center justify-end">
             <video
               autoPlay
               loop
               muted
               playsInline
               poster="/videos/hero-background.mp4.png"
-              className="w-full h-full object-cover object-[72%_center] lg:scale-[0.92] xl:scale-[0.88] 2xl:scale-[0.85] origin-right transition-transform duration-700"
+              className="w-full h-full object-cover object-[74%_center] lg:scale-[0.92] xl:scale-[0.88] 2xl:scale-[0.85] origin-right transition-transform duration-700"
             >
               <source src="/videos/hero-background.mp4" type="video/mp4" />
             </video>
-
-            {/* Seamless gradient fade from left into #07130B */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#07130B] via-[#07130B]/60 via-25% to-transparent pointer-events-none" />
           </div>
 
-          {/* ── Left side: feathered blur layer ────────── */}
+          {/* ── Left side: feathered blur layer up to title words ────────── */}
           <div
-            className="absolute inset-y-0 w-full sm:w-[70%] lg:w-[58%] pointer-events-none left-0"
+            className="absolute inset-y-0 left-0 w-full sm:w-[65%] lg:w-[50%] xl:w-[46%] pointer-events-none"
             style={{
-              backdropFilter: "blur(20px)",
-              WebkitBackdropFilter: "blur(20px)",
-              maskImage: "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 25%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.15) 75%, transparent 100%)",
-              WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 25%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.15) 75%, transparent 100%)",
+              backdropFilter: "blur(16px)",
+              WebkitBackdropFilter: "blur(16px)",
+              maskImage: "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.92) 55%, rgba(0,0,0,0.35) 82%, transparent 100%)",
+              WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.92) 55%, rgba(0,0,0,0.35) 82%, transparent 100%)",
             }}
           />
 
           {/* ── Left side: dark gradient overlay for text readability ── */}
           <div
-            className="absolute inset-y-0 w-full sm:w-[75%] lg:w-[60%] pointer-events-none left-0"
+            className="absolute inset-y-0 left-0 w-full sm:w-[68%] lg:w-[52%] xl:w-[48%] pointer-events-none"
             style={{
               background:
-                "linear-gradient(to right, rgba(7,19,11,0.95) 0%, rgba(7,19,11,0.88) 32%, rgba(7,19,11,0.52) 58%, rgba(7,19,11,0.15) 78%, transparent 100%)",
+                "linear-gradient(to right, rgba(7,19,11,0.96) 0%, rgba(7,19,11,0.88) 52%, rgba(7,19,11,0.40) 80%, transparent 100%)",
             }}
           />
 

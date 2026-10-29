@@ -473,27 +473,27 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
           onTouchEnd={handleTouchEnd}
         >
           {/* ── Desktop/Tablet Layout: Centered Active Card with Left & Right Peeks ── */}
-          <div className="relative flex items-center justify-center min-h-[380px] sm:min-h-[410px] lg:min-h-[430px]">
-            {/* ── LEFT PEEK CARD (Previous Slide - Compact Height) ── */}
+          <div className="relative flex items-center justify-center min-h-[380px] sm:min-h-[410px] lg:min-h-[420px]">
+            {/* ── LEFT PEEK CARD (Previous Slide - Wider & Visible) ── */}
             <div
               onClick={handlePrev}
-              className="hidden xl:flex flex-col absolute left-[-60px] 2xl:left-[-20px] top-1/2 -translate-y-1/2 w-[210px] 2xl:w-[240px] h-[350px] rounded-[22px] bg-white border border-[#EBE5D8] shadow-xs overflow-hidden opacity-70 hover:opacity-100 transition-all duration-400 cursor-pointer z-10 hover:shadow-md"
+              className="hidden lg:flex flex-col absolute left-[-40px] xl:left-[10px] 2xl:left-[40px] top-1/2 -translate-y-1/2 w-[260px] xl:w-[290px] 2xl:w-[320px] h-[340px] sm:h-[355px] rounded-[22px] bg-white border border-[#EBE5D8] shadow-xs overflow-hidden opacity-75 hover:opacity-100 transition-all duration-400 cursor-pointer z-10 hover:shadow-md"
             >
-              <div className="relative w-full h-[170px] overflow-hidden bg-[#07170E]/5">
+              <div className="relative w-full h-[175px] overflow-hidden bg-[#07170E]/5">
                 <Image
                   src={prevArea.image}
                   alt={prevArea.title[lang]}
                   fill
-                  sizes="240px"
+                  sizes="320px"
                   className="object-cover"
                 />
               </div>
-              <div className="p-3.5 flex flex-col justify-between flex-1 bg-white">
+              <div className="p-4 flex flex-col justify-between flex-1 bg-white">
                 <div>
-                  <div className="w-6 h-6 text-[#B89650] mb-1.5 flex items-center">
+                  <div className="w-6.5 h-6.5 text-[#B89650] mb-1.5 flex items-center">
                     <PrevIcon className="w-5.5 h-5.5 stroke-[1.6]" />
                   </div>
-                  <h4 className="font-serif font-bold text-[#142318] text-[14px] leading-snug line-clamp-2">
+                  <h4 className="font-serif font-bold text-[#142318] text-[14.5px] leading-snug line-clamp-2">
                     {prevArea.title[lang]}
                   </h4>
                   <p className="text-[11px] text-[#636861] mt-1 line-clamp-2 font-sans leading-relaxed">
@@ -501,7 +501,7 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
                   </p>
                 </div>
                 <div className="flex justify-end pt-1">
-                  <div className="w-6.5 h-6.5 rounded-full border border-[#EDE8DE] text-[#B89650] flex items-center justify-center">
+                  <div className="w-7 h-7 rounded-full border border-[#EDE8DE] text-[#B89650] flex items-center justify-center">
                     <ArrowRight className="w-3.5 h-3.5" />
                   </div>
                 </div>
@@ -513,25 +513,25 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
               onClick={handlePrev}
               disabled={animating}
               aria-label="Previous slide"
-              className="absolute left-2 sm:left-4 xl:left-[160px] 2xl:left-[200px] top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white shadow-[0_4px_16px_rgba(0,0,0,0.12)] border border-[#EDE8DE] text-[#142318] flex items-center justify-center hover:bg-[#FAF8F4] hover:scale-105 active:scale-95 transition-all cursor-pointer disabled:opacity-50"
+              className="absolute left-2 sm:left-4 lg:left-[170px] xl:left-[210px] 2xl:left-[250px] top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white shadow-[0_4px_16px_rgba(0,0,0,0.12)] border border-[#EDE8DE] text-[#142318] flex items-center justify-center hover:bg-[#FAF8F4] hover:scale-105 active:scale-95 transition-all cursor-pointer disabled:opacity-50"
             >
               <ChevronLeft className="w-5 h-5 stroke-[2] text-[#142318]" />
             </button>
 
-            {/* ── CENTER ACTIVE HERO CARD (Compact Height with Smooth Fluid Animation) ── */}
-            <div className="relative z-20 w-full max-w-[890px] xl:max-w-[930px] 2xl:max-w-[980px] rounded-[24px] sm:rounded-[28px] bg-white border border-[#EDE8DE] shadow-[0_6px_28px_rgba(20,35,24,0.06)] overflow-hidden transition-all duration-400">
-              <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[360px] sm:min-h-[380px] lg:min-h-[400px]">
-                {/* Left Column: Photo with Smooth Animation & 01/06 Badge */}
-                <div className="relative lg:col-span-6 h-[220px] sm:h-[260px] lg:h-full min-h-[220px] lg:min-h-[390px] overflow-hidden bg-[#07170E]/5">
+            {/* ── CENTER ACTIVE HERO CARD (Slightly Smaller Width with Smooth Animation, No Number Badge) ── */}
+            <div className="relative z-20 w-full max-w-[780px] lg:max-w-[820px] xl:max-w-[850px] rounded-[24px] sm:rounded-[28px] bg-white border border-[#EDE8DE] shadow-[0_6px_28px_rgba(20,35,24,0.06)] overflow-hidden transition-all duration-400">
+              <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[360px] sm:min-h-[380px] lg:min-h-[395px]">
+                {/* Left Column: Photo with Smooth Animation (Badge removed as requested) */}
+                <div className="relative lg:col-span-6 h-[220px] sm:h-[260px] lg:h-full min-h-[220px] lg:min-h-[385px] overflow-hidden bg-[#07170E]/5">
                   <div
-                    className="relative w-full h-full transition-all duration-400 ease-[cubic-bezier(0.25,1,0.5,1)]"
+                    className="relative w-full h-full transition-all duration-400 ease-[cubic-bezier(0.2,0.8,0.2,1)]"
                     style={{
                       transform: animating
                         ? direction === "next"
-                          ? "scale(1.05) translateX(-12px)"
-                          : "scale(1.05) translateX(12px)"
+                          ? "scale(1.06) translateX(-14px)"
+                          : "scale(1.06) translateX(14px)"
                         : "scale(1) translateX(0)",
-                      opacity: animating ? 0.35 : 1,
+                      opacity: animating ? 0.3 : 1,
                     }}
                   >
                     <Image
@@ -544,16 +544,11 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
                       className="object-cover object-center"
                     />
                   </div>
-
-                  {/* Badge: 01 / 06 */}
-                  <div className="absolute top-3.5 left-3.5 sm:top-4 sm:left-4 z-10 px-3 py-1 rounded-full bg-[#B89650]/90 backdrop-blur-xs text-white text-[11px] font-sans font-medium tracking-wider shadow-xs">
-                    {String(currentIndex + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
-                  </div>
                 </div>
 
                 {/* Right Column: Editorial Details with Smooth Directional Fade */}
                 <div
-                  className="relative lg:col-span-6 p-5 sm:p-6 lg:p-7 flex flex-col justify-between bg-white transition-all duration-350 ease-[cubic-bezier(0.25,1,0.5,1)]"
+                  className="relative lg:col-span-6 p-5 sm:p-6 lg:p-7 flex flex-col justify-between bg-white transition-all duration-350 ease-[cubic-bezier(0.2,0.8,0.2,1)]"
                   style={{
                     transform: animating
                       ? direction === "next"
@@ -581,7 +576,7 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
                     </div>
 
                     {/* Title */}
-                    <h3 className="font-serif text-[21px] sm:text-[24px] lg:text-[26px] font-normal text-[#112318] leading-[1.18] tracking-[-0.01em] mb-2">
+                    <h3 className="font-serif text-[20px] sm:text-[23px] lg:text-[25px] font-normal text-[#112318] leading-[1.18] tracking-[-0.01em] mb-2">
                       {currentArea.title[lang]}
                     </h3>
 
@@ -622,31 +617,31 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
               onClick={handleNext}
               disabled={animating}
               aria-label="Next slide"
-              className="absolute right-2 sm:right-4 xl:right-[160px] 2xl:right-[200px] top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white shadow-[0_4px_16px_rgba(0,0,0,0.12)] border border-[#EDE8DE] text-[#142318] flex items-center justify-center hover:bg-[#FAF8F4] hover:scale-105 active:scale-95 transition-all cursor-pointer disabled:opacity-50"
+              className="absolute right-2 sm:right-4 lg:right-[170px] xl:right-[210px] 2xl:right-[250px] top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white shadow-[0_4px_16px_rgba(0,0,0,0.12)] border border-[#EDE8DE] text-[#142318] flex items-center justify-center hover:bg-[#FAF8F4] hover:scale-105 active:scale-95 transition-all cursor-pointer disabled:opacity-50"
             >
               <ChevronRight className="w-5 h-5 stroke-[2] text-[#142318]" />
             </button>
 
-            {/* ── RIGHT PEEK CARD (Next Slide - Compact Height) ── */}
+            {/* ── RIGHT PEEK CARD (Next Slide - Wider & Visible) ── */}
             <div
               onClick={handleNext}
-              className="hidden xl:flex flex-col absolute right-[-60px] 2xl:right-[-20px] top-1/2 -translate-y-1/2 w-[210px] 2xl:w-[240px] h-[350px] rounded-[22px] bg-white border border-[#EBE5D8] shadow-xs overflow-hidden opacity-70 hover:opacity-100 transition-all duration-400 cursor-pointer z-10 hover:shadow-md"
+              className="hidden lg:flex flex-col absolute right-[-40px] xl:right-[10px] 2xl:right-[40px] top-1/2 -translate-y-1/2 w-[260px] xl:w-[290px] 2xl:w-[320px] h-[340px] sm:h-[355px] rounded-[22px] bg-white border border-[#EBE5D8] shadow-xs overflow-hidden opacity-75 hover:opacity-100 transition-all duration-400 cursor-pointer z-10 hover:shadow-md"
             >
-              <div className="relative w-full h-[170px] overflow-hidden bg-[#07170E]/5">
+              <div className="relative w-full h-[175px] overflow-hidden bg-[#07170E]/5">
                 <Image
                   src={nextArea.image}
                   alt={nextArea.title[lang]}
                   fill
-                  sizes="240px"
+                  sizes="320px"
                   className="object-cover"
                 />
               </div>
-              <div className="p-3.5 flex flex-col justify-between flex-1 bg-white">
+              <div className="p-4 flex flex-col justify-between flex-1 bg-white">
                 <div>
-                  <div className="w-6 h-6 text-[#B89650] mb-1.5 flex items-center">
+                  <div className="w-6.5 h-6.5 text-[#B89650] mb-1.5 flex items-center">
                     <NextIcon className="w-5.5 h-5.5 stroke-[1.6]" />
                   </div>
-                  <h4 className="font-serif font-bold text-[#142318] text-[14px] leading-snug line-clamp-2">
+                  <h4 className="font-serif font-bold text-[#142318] text-[14.5px] leading-snug line-clamp-2">
                     {nextArea.title[lang]}
                   </h4>
                   <p className="text-[11px] text-[#636861] mt-1 line-clamp-2 font-sans leading-relaxed">
@@ -654,7 +649,7 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
                   </p>
                 </div>
                 <div className="flex justify-end pt-1">
-                  <div className="w-6.5 h-6.5 rounded-full border border-[#EDE8DE] text-[#B89650] flex items-center justify-center">
+                  <div className="w-7 h-7 rounded-full border border-[#EDE8DE] text-[#B89650] flex items-center justify-center">
                     <ArrowRight className="w-3.5 h-3.5" />
                   </div>
                 </div>
