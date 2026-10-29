@@ -16,46 +16,41 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
     <section dir="ltr" className="relative w-full min-h-screen lg:h-screen lg:min-h-[700px] lg:max-h-[1080px] flex flex-col justify-between bg-[#07130B] text-[#FAF8F5] overflow-x-hidden">
       {/* ── Main Hero Area (Fills height from Header down to Strip) ─ */}
       <div className="relative flex-1 flex items-center overflow-hidden w-full py-10 lg:py-0">
-        {/* ── Background: Cinematic Hero Video (Extends up to title with smooth blur) ── */}
-        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-[#07130B]">
-          {/* Video zoomed out & right-anchored for sharpness */}
-          <div className="absolute inset-0 w-full h-full overflow-hidden flex items-center justify-end">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              poster="/videos/hero-background.mp4.png"
-              className="w-full h-full object-cover object-[74%_center] lg:scale-[0.92] xl:scale-[0.88] 2xl:scale-[0.85] origin-right transition-transform duration-700"
-            >
-              <source src="/videos/hero-background.mp4" type="video/mp4" />
-            </video>
-          </div>
+        {/* ── Background: Building photo ─────────────────── */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <Image
+            src="/images/hero/building_new.webp"
+            alt="NabiOta Health Group Germany Headquarters"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
 
-          {/* ── Left side: feathered blur layer up to title words ────────── */}
+          {/* ── Left side: feathered blur layer ────────── */}
           <div
-            className="absolute inset-y-0 left-0 w-full sm:w-[65%] lg:w-[50%] xl:w-[46%] pointer-events-none"
+            className="absolute inset-y-0 w-full sm:w-[70%] lg:w-[58%] pointer-events-none left-0"
             style={{
-              backdropFilter: "blur(16px)",
-              WebkitBackdropFilter: "blur(16px)",
-              maskImage: "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.92) 55%, rgba(0,0,0,0.35) 82%, transparent 100%)",
-              WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.92) 55%, rgba(0,0,0,0.35) 82%, transparent 100%)",
+              backdropFilter: "blur(20px)",
+              WebkitBackdropFilter: "blur(20px)",
+              maskImage:
+                "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 25%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.15) 75%, transparent 100%)",
+              WebkitMaskImage:
+                "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 25%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.15) 75%, transparent 100%)",
             }}
           />
 
           {/* ── Left side: dark gradient overlay for text readability ── */}
           <div
-            className="absolute inset-y-0 left-0 w-full sm:w-[68%] lg:w-[52%] xl:w-[48%] pointer-events-none"
+            className="absolute inset-y-0 w-full sm:w-[75%] lg:w-[60%] pointer-events-none left-0"
             style={{
               background:
-                "linear-gradient(to right, rgba(7,19,11,0.96) 0%, rgba(7,19,11,0.88) 52%, rgba(7,19,11,0.40) 80%, transparent 100%)",
+                "linear-gradient(to right, rgba(7,19,11,0.92) 0%, rgba(7,19,11,0.86) 32%, rgba(7,19,11,0.48) 58%, rgba(7,19,11,0.12) 78%, transparent 100%)",
             }}
           />
 
           {/* Top subtle vignette for header integration */}
           <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#07130B]/75 to-transparent pointer-events-none" />
-          {/* Bottom subtle vignette */}
-          <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#07130B] to-transparent pointer-events-none" />
         </div>
 
 
