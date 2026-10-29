@@ -482,10 +482,10 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
                 : "translateX(0)",
             }}
           >
-            {/* ── 1. LEFT PEEK CARD (Previous Area - Equal Height to Center Card) ── */}
+            {/* ── 1. LEFT PEEK CARD (Previous Area - Wider Side Card) ── */}
             <div
               onClick={handlePrev}
-              className="group hidden md:flex flex-col w-[270px] lg:w-[300px] xl:w-[330px] h-[405px] sm:h-[420px] lg:h-[435px] shrink-0 rounded-[24px] sm:rounded-[28px] bg-white border border-[#EDE8DE] shadow-[0_4px_20px_rgba(20,35,24,0.04)] overflow-hidden opacity-85 hover:opacity-100 transition-all duration-300 cursor-pointer hover:shadow-lg hover:-translate-y-0.5"
+              className="group hidden md:flex flex-col w-[300px] lg:w-[340px] xl:w-[370px] h-[405px] sm:h-[420px] lg:h-[435px] shrink-0 rounded-[24px] sm:rounded-[28px] bg-white border border-[#EDE8DE] shadow-[0_4px_20px_rgba(20,35,24,0.04)] overflow-hidden opacity-85 hover:opacity-100 transition-all duration-300 cursor-pointer hover:shadow-lg hover:-translate-y-0.5"
             >
               {/* Top Image (Fills ~50% of card) */}
               <div className="relative w-full h-[50%] overflow-hidden bg-[#07170E]/5 shrink-0">
@@ -493,7 +493,7 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
                   src={prevArea.image}
                   alt={prevArea.title[lang]}
                   fill
-                  sizes="(max-width: 1280px) 300px, 330px"
+                  sizes="(max-width: 1280px) 340px, 370px"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
@@ -522,8 +522,8 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
               </div>
             </div>
 
-            {/* ── 2. CENTER ACTIVE CARD (2-Column Hero Card, Equal Height to Side Cards) ── */}
-            <div className="relative w-full max-w-[740px] lg:max-w-[800px] xl:max-w-[850px] h-[405px] sm:h-[420px] lg:h-[435px] shrink-0 rounded-[24px] sm:rounded-[28px] bg-white border border-[#EDE8DE] shadow-[0_10px_35px_rgba(20,35,24,0.06),0_1px_3px_rgba(20,35,24,0.04)] overflow-visible">
+            {/* ── 2. CENTER ACTIVE CARD (2-Column Hero Card - Slightly Narrower) ── */}
+            <div className="relative w-full max-w-[660px] lg:max-w-[720px] xl:max-w-[760px] h-[405px] sm:h-[420px] lg:h-[435px] shrink-0 rounded-[24px] sm:rounded-[28px] bg-white border border-[#EDE8DE] shadow-[0_10px_35px_rgba(20,35,24,0.06),0_1px_3px_rgba(20,35,24,0.04)] overflow-visible">
               {/* Floating Left Arrow Button on the Card Seam */}
               <button
                 onClick={handlePrev}
@@ -565,7 +565,7 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
                       alt={currentArea.title[lang]}
                       fill
                       priority
-                      sizes="(max-width: 1024px) 100vw, 420px"
+                      sizes="(max-width: 1024px) 100vw, 380px"
                       className="object-cover object-center"
                     />
                   </div>
@@ -573,7 +573,7 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
 
                 {/* Right Column: Editorial Details with Smooth Directional Fade */}
                 <div
-                  className="relative lg:col-span-6 p-5 sm:p-6 lg:p-7 xl:p-8 flex flex-col justify-between bg-white transition-all duration-350 ease-[cubic-bezier(0.2,0.8,0.2,1)]"
+                  className="relative lg:col-span-6 p-4 sm:p-5 lg:p-6 xl:p-7 flex flex-col justify-between bg-white transition-all duration-350 ease-[cubic-bezier(0.2,0.8,0.2,1)]"
                   style={{
                     transform: animating
                       ? direction === "next"
@@ -596,22 +596,22 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
 
                   <div className="relative z-10">
                     {/* Top Gold Icon */}
-                    <div className="text-[#B89650] mb-2 sm:mb-2.5">
-                      <CurrentIcon className="w-7 h-7 sm:w-8 sm:h-8 stroke-[1.5]" />
+                    <div className="text-[#B89650] mb-2">
+                      <CurrentIcon className="w-7 h-7 stroke-[1.5]" />
                     </div>
 
                     {/* Headline in Serif */}
-                    <h3 className="font-serif text-[22px] sm:text-[25px] lg:text-[28px] font-normal text-[#112419] leading-[1.15] tracking-tight mb-2">
+                    <h3 className="font-serif text-[20px] sm:text-[23px] lg:text-[25px] font-normal text-[#112419] leading-[1.15] tracking-tight mb-1.5">
                       {currentArea.title[lang]}
                     </h3>
 
                     {/* Subtitle */}
-                    <p className="font-sans text-[12px] sm:text-[12.5px] text-[#556358] leading-relaxed mb-3 sm:mb-3.5 font-light line-clamp-2">
+                    <p className="font-sans text-[11.5px] sm:text-[12px] text-[#556358] leading-relaxed mb-3 font-light line-clamp-2">
                       {currentArea.subtitle[lang]}
                     </p>
 
                     {/* 3 Bespoke Checkmark Highlights */}
-                    <ul className="space-y-1.5 sm:space-y-2 mb-4 font-sans text-[11.5px] sm:text-[12px] text-[#2C3B30]">
+                    <ul className="space-y-1.5 mb-3.5 font-sans text-[11px] sm:text-[11.5px] text-[#2C3B30]">
                       {currentArea.highlights[lang].map((point, idx) => (
                         <li key={idx} className="flex items-center gap-2">
                           <span className="w-4 h-4 rounded-full border border-[#CCA86A] text-[#B89650] flex items-center justify-center shrink-0">
@@ -627,7 +627,7 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
                   <div className="relative z-10 pt-1">
                     <Link
                       href={getLocalePath(currentLocale, `areas/${currentArea.slug}`)}
-                      className="group inline-flex items-center gap-2 px-5 sm:px-6 py-2 sm:py-2.5 rounded-full bg-[#CCA86A] hover:bg-[#BF9A58] text-[#142318] font-sans font-medium text-[12.5px] sm:text-[13px] transition-all shadow-xs hover:shadow-sm"
+                      className="group inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#CCA86A] hover:bg-[#BF9A58] text-[#142318] font-sans font-medium text-[12px] sm:text-[12.5px] transition-all shadow-xs hover:shadow-sm"
                     >
                       <span>{ctaLabels[lang]}</span>
                       <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
@@ -637,10 +637,10 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
               </div>
             </div>
 
-            {/* ── 3. RIGHT PEEK CARD (Next Area - Equal Height to Center Card) ── */}
+            {/* ── 3. RIGHT PEEK CARD (Next Area - Wider Side Card) ── */}
             <div
               onClick={handleNext}
-              className="group hidden md:flex flex-col w-[270px] lg:w-[300px] xl:w-[330px] h-[405px] sm:h-[420px] lg:h-[435px] shrink-0 rounded-[24px] sm:rounded-[28px] bg-white border border-[#EDE8DE] shadow-[0_4px_20px_rgba(20,35,24,0.04)] overflow-hidden opacity-85 hover:opacity-100 transition-all duration-300 cursor-pointer hover:shadow-lg hover:-translate-y-0.5"
+              className="group hidden md:flex flex-col w-[300px] lg:w-[340px] xl:w-[370px] h-[405px] sm:h-[420px] lg:h-[435px] shrink-0 rounded-[24px] sm:rounded-[28px] bg-white border border-[#EDE8DE] shadow-[0_4px_20px_rgba(20,35,24,0.04)] overflow-hidden opacity-85 hover:opacity-100 transition-all duration-300 cursor-pointer hover:shadow-lg hover:-translate-y-0.5"
             >
               {/* Top Image (Fills ~50% of card) */}
               <div className="relative w-full h-[50%] overflow-hidden bg-[#07170E]/5 shrink-0">
@@ -648,7 +648,7 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
                   src={nextArea.image}
                   alt={nextArea.title[lang]}
                   fill
-                  sizes="(max-width: 1280px) 300px, 330px"
+                  sizes="(max-width: 1280px) 340px, 370px"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
