@@ -16,16 +16,18 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
     <section dir="ltr" className="relative w-full min-h-screen lg:h-screen lg:min-h-[700px] lg:max-h-[1080px] flex flex-col justify-between bg-[#07130B] text-[#FAF8F5] overflow-x-hidden">
       {/* ── Main Hero Area (Fills height from Header down to Strip) ─ */}
       <div className="relative flex-1 flex items-center overflow-hidden w-full py-10 lg:py-0">
-        {/* ── Background: Building photo ─────────────────── */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <Image
-            src="/images/hero/building_new.webp"
-            alt="NabiOta Health Group Germany Headquarters"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
+        {/* ── Background: Cinematic Hero Video ─────────────────── */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/images/hero/building_new.webp"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          >
+            <source src="/videos/hero-background.mp4" type="video/mp4" />
+          </video>
 
           {/* ── Left side: feathered blur layer ────────── */}
           <div
