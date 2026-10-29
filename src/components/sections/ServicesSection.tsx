@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -26,6 +26,8 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
   const dict = getDictionary(currentLocale);
   const lang = (currentLocale as "de" | "en" | "ru" | "tr" | "ar" | "uz") || "de";
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState<"next" | "prev">("next");
+  const [animating, setAnimating] = useState(false);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
 
   const areas = [
@@ -353,12 +355,25 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
   const prevIndex = (currentIndex - 1 + total) % total;
   const nextIndex = (currentIndex + 1) % total;
 
+  const goToSlide = (targetIndex: number, dir?: "next" | "prev") => {
+    if (animating || targetIndex === currentIndex) return;
+    const chosenDir = dir || (targetIndex > currentIndex ? "next" : "prev");
+    setDirection(chosenDir);
+    setAnimating(true);
+    setTimeout(() => {
+      setCurrentIndex(targetIndex);
+      setTimeout(() => {
+        setAnimating(false);
+      }, 50);
+    }, 200);
+  };
+
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + total) % total);
+    goToSlide(prevIndex, "prev");
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % total);
+    goToSlide(nextIndex, "next");
   };
 
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -409,9 +424,9 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
   };
 
   return (
-    <section className="relative bg-[#FAF8F5] pt-12 sm:pt-16 pb-14 sm:pb-20 border-b border-[#EAE5DA] overflow-hidden select-none">
+    <section className="relative bg-[#FAF8F5] pt-10 sm:pt-14 pb-12 sm:pb-16 border-b border-[#EAE5DA] overflow-hidden select-none">
       {/* ── Soft Ambient Botanical Foliage Watermarks ── */}
-      <div className="absolute top-0 left-0 w-64 h-64 pointer-events-none opacity-40 select-none hidden lg:block">
+      <div className="absolute top-0 left-0 w-56 h-56 pointer-events-none opacity-40 select-none hidden lg:block">
         <Image
           src="/images/areas/botanical-branch-clean.webp"
           alt=""
@@ -420,7 +435,7 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
           unoptimized
         />
       </div>
-      <div className="absolute bottom-0 right-0 w-72 h-72 pointer-events-none opacity-40 select-none hidden lg:block">
+      <div className="absolute bottom-0 right-0 w-64 h-64 pointer-events-none opacity-40 select-none hidden lg:block">
         <Image
           src="/images/areas/botanical-branch-clean.webp"
           alt=""
@@ -432,19 +447,19 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
 
       <div className="relative z-10 w-full max-w-[1540px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
         {/* ── Section Header ───────────── */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 sm:mb-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 mb-6 sm:mb-8">
           <div>
-            <h2 className="font-serif text-[28px] sm:text-[34px] lg:text-[40px] font-normal text-[#112318] tracking-tight leading-[1.15]">
+            <h2 className="font-serif text-[26px] sm:text-[32px] lg:text-[36px] font-normal text-[#112318] tracking-tight leading-[1.15]">
               {sectionTitles[lang]}
             </h2>
-            <p className="font-sans text-[13px] sm:text-[14px] text-[#556358] mt-2 max-w-2xl font-light">
+            <p className="font-sans text-[12.5px] sm:text-[13.5px] text-[#556358] mt-1.5 max-w-2xl font-light">
               {sectionSubtitles[lang]}
             </p>
           </div>
 
           <Link
             href={getLocalePath(currentLocale, "areas")}
-            className="group inline-flex items-center gap-1.5 text-xs sm:text-[13.5px] font-semibold text-[#9C8145] hover:text-[#7D6532] transition-colors self-start md:self-end whitespace-nowrap mb-1"
+            className="group inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-semibold text-[#9C8145] hover:text-[#7D6532] transition-colors self-start md:self-end whitespace-nowrap mb-1"
           >
             <span>{dict.areas.cta}</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -458,35 +473,35 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
           onTouchEnd={handleTouchEnd}
         >
           {/* ── Desktop/Tablet Layout: Centered Active Card with Left & Right Peeks ── */}
-          <div className="relative flex items-center justify-center min-h-[460px] sm:min-h-[500px] lg:min-h-[520px]">
-            {/* ── LEFT PEEK CARD (Previous Slide) ── */}
+          <div className="relative flex items-center justify-center min-h-[380px] sm:min-h-[410px] lg:min-h-[430px]">
+            {/* ── LEFT PEEK CARD (Previous Slide - Compact Height) ── */}
             <div
               onClick={handlePrev}
-              className="hidden xl:flex flex-col absolute left-[-60px] 2xl:left-[-20px] top-1/2 -translate-y-1/2 w-[220px] 2xl:w-[260px] h-[440px] rounded-[24px] bg-white border border-[#EBE5D8] shadow-sm overflow-hidden opacity-75 hover:opacity-100 transition-all duration-500 cursor-pointer z-10 hover:shadow-md"
+              className="hidden xl:flex flex-col absolute left-[-60px] 2xl:left-[-20px] top-1/2 -translate-y-1/2 w-[210px] 2xl:w-[240px] h-[350px] rounded-[22px] bg-white border border-[#EBE5D8] shadow-xs overflow-hidden opacity-70 hover:opacity-100 transition-all duration-400 cursor-pointer z-10 hover:shadow-md"
             >
-              <div className="relative w-full h-[220px] overflow-hidden bg-[#07170E]/5">
+              <div className="relative w-full h-[170px] overflow-hidden bg-[#07170E]/5">
                 <Image
                   src={prevArea.image}
                   alt={prevArea.title[lang]}
                   fill
-                  sizes="260px"
+                  sizes="240px"
                   className="object-cover"
                 />
               </div>
-              <div className="p-4 flex flex-col justify-between flex-1 bg-white">
+              <div className="p-3.5 flex flex-col justify-between flex-1 bg-white">
                 <div>
-                  <div className="w-7 h-7 text-[#B89650] mb-2 flex items-center">
-                    <PrevIcon className="w-6 h-6 stroke-[1.6]" />
+                  <div className="w-6 h-6 text-[#B89650] mb-1.5 flex items-center">
+                    <PrevIcon className="w-5.5 h-5.5 stroke-[1.6]" />
                   </div>
-                  <h4 className="font-serif font-bold text-[#142318] text-[15px] leading-snug line-clamp-2">
+                  <h4 className="font-serif font-bold text-[#142318] text-[14px] leading-snug line-clamp-2">
                     {prevArea.title[lang]}
                   </h4>
-                  <p className="text-[11px] text-[#636861] mt-1.5 line-clamp-3 font-sans leading-relaxed">
+                  <p className="text-[11px] text-[#636861] mt-1 line-clamp-2 font-sans leading-relaxed">
                     {prevArea.subtitle[lang]}
                   </p>
                 </div>
-                <div className="flex justify-end pt-2">
-                  <div className="w-7 h-7 rounded-full border border-[#EDE8DE] text-[#B89650] flex items-center justify-center">
+                <div className="flex justify-end pt-1">
+                  <div className="w-6.5 h-6.5 rounded-full border border-[#EDE8DE] text-[#B89650] flex items-center justify-center">
                     <ArrowRight className="w-3.5 h-3.5" />
                   </div>
                 </div>
@@ -496,36 +511,60 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
             {/* ── LEFT FLOATING CIRCLE ARROW BUTTON ── */}
             <button
               onClick={handlePrev}
+              disabled={animating}
               aria-label="Previous slide"
-              className="absolute left-2 sm:left-4 xl:left-[170px] 2xl:left-[210px] top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.12)] border border-[#EDE8DE] text-[#142318] flex items-center justify-center hover:bg-[#FAF8F4] hover:scale-105 active:scale-95 transition-all cursor-pointer"
+              className="absolute left-2 sm:left-4 xl:left-[160px] 2xl:left-[200px] top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white shadow-[0_4px_16px_rgba(0,0,0,0.12)] border border-[#EDE8DE] text-[#142318] flex items-center justify-center hover:bg-[#FAF8F4] hover:scale-105 active:scale-95 transition-all cursor-pointer disabled:opacity-50"
             >
               <ChevronLeft className="w-5 h-5 stroke-[2] text-[#142318]" />
             </button>
 
-            {/* ── CENTER ACTIVE HERO CARD (2-Column Large Card) ── */}
-            <div className="relative z-20 w-full max-w-[940px] xl:max-w-[980px] 2xl:max-w-[1040px] rounded-[28px] sm:rounded-[32px] bg-white border border-[#EDE8DE] shadow-[0_8px_32px_rgba(20,35,24,0.06)] overflow-hidden transition-all duration-500">
-              <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[460px] sm:min-h-[500px]">
-                {/* Left Column: Big Photo with 01/06 Badge */}
-                <div className="relative lg:col-span-7 h-[260px] sm:h-[340px] lg:h-full min-h-[300px] overflow-hidden bg-[#07170E]/5">
-                  <Image
-                    key={currentArea.image}
-                    src={currentArea.image}
-                    alt={currentArea.title[lang]}
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 55vw"
-                    className="object-cover object-center transition-all duration-700 animate-fadeIn"
-                  />
+            {/* ── CENTER ACTIVE HERO CARD (Compact Height with Smooth Fluid Animation) ── */}
+            <div className="relative z-20 w-full max-w-[890px] xl:max-w-[930px] 2xl:max-w-[980px] rounded-[24px] sm:rounded-[28px] bg-white border border-[#EDE8DE] shadow-[0_6px_28px_rgba(20,35,24,0.06)] overflow-hidden transition-all duration-400">
+              <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[360px] sm:min-h-[380px] lg:min-h-[400px]">
+                {/* Left Column: Photo with Smooth Animation & 01/06 Badge */}
+                <div className="relative lg:col-span-6 h-[220px] sm:h-[260px] lg:h-full min-h-[220px] lg:min-h-[390px] overflow-hidden bg-[#07170E]/5">
+                  <div
+                    className="relative w-full h-full transition-all duration-400 ease-[cubic-bezier(0.25,1,0.5,1)]"
+                    style={{
+                      transform: animating
+                        ? direction === "next"
+                          ? "scale(1.05) translateX(-12px)"
+                          : "scale(1.05) translateX(12px)"
+                        : "scale(1) translateX(0)",
+                      opacity: animating ? 0.35 : 1,
+                    }}
+                  >
+                    <Image
+                      key={currentArea.image}
+                      src={currentArea.image}
+                      alt={currentArea.title[lang]}
+                      fill
+                      priority
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="object-cover object-center"
+                    />
+                  </div>
+
                   {/* Badge: 01 / 06 */}
-                  <div className="absolute top-4 left-4 sm:top-5 sm:left-5 z-10 px-3.5 py-1.5 rounded-full bg-[#B89650]/90 backdrop-blur-xs text-white text-[11px] sm:text-[12px] font-sans font-medium tracking-wider shadow-sm">
+                  <div className="absolute top-3.5 left-3.5 sm:top-4 sm:left-4 z-10 px-3 py-1 rounded-full bg-[#B89650]/90 backdrop-blur-xs text-white text-[11px] font-sans font-medium tracking-wider shadow-xs">
                     {String(currentIndex + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
                   </div>
                 </div>
 
-                {/* Right Column: Editorial Details */}
-                <div className="relative lg:col-span-5 p-6 sm:p-8 lg:p-9 flex flex-col justify-between bg-white">
+                {/* Right Column: Editorial Details with Smooth Directional Fade */}
+                <div
+                  className="relative lg:col-span-6 p-5 sm:p-6 lg:p-7 flex flex-col justify-between bg-white transition-all duration-350 ease-[cubic-bezier(0.25,1,0.5,1)]"
+                  style={{
+                    transform: animating
+                      ? direction === "next"
+                        ? "translateX(18px)"
+                        : "translateX(-18px)"
+                      : "translateX(0)",
+                    opacity: animating ? 0 : 1,
+                  }}
+                >
                   {/* Subtle botanical branch watermark in corner */}
-                  <div className="absolute -bottom-4 -right-4 w-36 h-36 pointer-events-none opacity-30 select-none hidden sm:block">
+                  <div className="absolute -bottom-4 -right-4 w-32 h-32 pointer-events-none opacity-25 select-none hidden sm:block">
                     <Image
                       src="/images/areas/botanical-branch-clean.webp"
                       alt=""
@@ -537,25 +576,25 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
 
                   <div className="relative z-10">
                     {/* Gold Icon */}
-                    <div className="text-[#B89650] mb-3">
-                      <CurrentIcon className="w-8 h-8 sm:w-9 sm:h-9 stroke-[1.6]" />
+                    <div className="text-[#B89650] mb-2">
+                      <CurrentIcon className="w-7 h-7 sm:w-8 sm:h-8 stroke-[1.6]" />
                     </div>
 
                     {/* Title */}
-                    <h3 className="font-serif text-[24px] sm:text-[28px] lg:text-[32px] font-normal text-[#112318] leading-[1.18] tracking-[-0.01em] mb-3">
+                    <h3 className="font-serif text-[21px] sm:text-[24px] lg:text-[26px] font-normal text-[#112318] leading-[1.18] tracking-[-0.01em] mb-2">
                       {currentArea.title[lang]}
                     </h3>
 
                     {/* Subtitle */}
-                    <p className="font-sans text-[12.5px] sm:text-[13px] text-[#556358] leading-relaxed mb-6 font-light">
+                    <p className="font-sans text-[12px] sm:text-[12.5px] text-[#556358] leading-relaxed mb-4 font-light">
                       {currentArea.subtitle[lang]}
                     </p>
 
                     {/* 3 Bespoke Checkmark Highlights */}
-                    <ul className="space-y-2.5 sm:space-y-3 mb-7 font-sans text-[12px] sm:text-[12.5px] text-[#2C3B30]">
+                    <ul className="space-y-1.5 sm:space-y-2 mb-5 font-sans text-[11.5px] sm:text-[12px] text-[#2C3B30]">
                       {currentArea.highlights[lang].map((point, idx) => (
-                        <li key={idx} className="flex items-center gap-2.5">
-                          <span className="w-4.5 h-4.5 rounded-full border border-[#C5A56A] text-[#B89650] flex items-center justify-center shrink-0">
+                        <li key={idx} className="flex items-center gap-2">
+                          <span className="w-4 h-4 rounded-full border border-[#C5A56A] text-[#B89650] flex items-center justify-center shrink-0">
                             <Check className="w-2.5 h-2.5 stroke-[2.5]" />
                           </span>
                           <span className="leading-snug">{point}</span>
@@ -565,13 +604,13 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
                   </div>
 
                   {/* Golden Pill CTA Button */}
-                  <div className="relative z-10 pt-2">
+                  <div className="relative z-10 pt-1">
                     <Link
                       href={getLocalePath(currentLocale, `areas/${currentArea.slug}`)}
-                      className="inline-flex items-center gap-2 px-6 py-2.5 sm:py-3 rounded-full bg-[#D4B574] hover:bg-[#C8A45C] text-[#142318] font-sans font-semibold text-[13px] sm:text-[13.5px] transition-all shadow-sm hover:shadow-md"
+                      className="inline-flex items-center gap-2 px-5 py-2 sm:py-2.5 rounded-full bg-[#D4B574] hover:bg-[#C8A45C] text-[#142318] font-sans font-semibold text-[12.5px] sm:text-[13px] transition-all shadow-xs hover:shadow-sm"
                     >
                       <span>{ctaLabels[lang]}</span>
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </div>
                 </div>
@@ -581,40 +620,41 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
             {/* ── RIGHT FLOATING CIRCLE ARROW BUTTON ── */}
             <button
               onClick={handleNext}
+              disabled={animating}
               aria-label="Next slide"
-              className="absolute right-2 sm:right-4 xl:right-[170px] 2xl:right-[210px] top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white shadow-[0_4px_20px_rgba(0,0,0,0.12)] border border-[#EDE8DE] text-[#142318] flex items-center justify-center hover:bg-[#FAF8F4] hover:scale-105 active:scale-95 transition-all cursor-pointer"
+              className="absolute right-2 sm:right-4 xl:right-[160px] 2xl:right-[200px] top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white shadow-[0_4px_16px_rgba(0,0,0,0.12)] border border-[#EDE8DE] text-[#142318] flex items-center justify-center hover:bg-[#FAF8F4] hover:scale-105 active:scale-95 transition-all cursor-pointer disabled:opacity-50"
             >
               <ChevronRight className="w-5 h-5 stroke-[2] text-[#142318]" />
             </button>
 
-            {/* ── RIGHT PEEK CARD (Next Slide) ── */}
+            {/* ── RIGHT PEEK CARD (Next Slide - Compact Height) ── */}
             <div
               onClick={handleNext}
-              className="hidden xl:flex flex-col absolute right-[-60px] 2xl:right-[-20px] top-1/2 -translate-y-1/2 w-[220px] 2xl:w-[260px] h-[440px] rounded-[24px] bg-white border border-[#EBE5D8] shadow-sm overflow-hidden opacity-75 hover:opacity-100 transition-all duration-500 cursor-pointer z-10 hover:shadow-md"
+              className="hidden xl:flex flex-col absolute right-[-60px] 2xl:right-[-20px] top-1/2 -translate-y-1/2 w-[210px] 2xl:w-[240px] h-[350px] rounded-[22px] bg-white border border-[#EBE5D8] shadow-xs overflow-hidden opacity-70 hover:opacity-100 transition-all duration-400 cursor-pointer z-10 hover:shadow-md"
             >
-              <div className="relative w-full h-[220px] overflow-hidden bg-[#07170E]/5">
+              <div className="relative w-full h-[170px] overflow-hidden bg-[#07170E]/5">
                 <Image
                   src={nextArea.image}
                   alt={nextArea.title[lang]}
                   fill
-                  sizes="260px"
+                  sizes="240px"
                   className="object-cover"
                 />
               </div>
-              <div className="p-4 flex flex-col justify-between flex-1 bg-white">
+              <div className="p-3.5 flex flex-col justify-between flex-1 bg-white">
                 <div>
-                  <div className="w-7 h-7 text-[#B89650] mb-2 flex items-center">
-                    <NextIcon className="w-6 h-6 stroke-[1.6]" />
+                  <div className="w-6 h-6 text-[#B89650] mb-1.5 flex items-center">
+                    <NextIcon className="w-5.5 h-5.5 stroke-[1.6]" />
                   </div>
-                  <h4 className="font-serif font-bold text-[#142318] text-[15px] leading-snug line-clamp-2">
+                  <h4 className="font-serif font-bold text-[#142318] text-[14px] leading-snug line-clamp-2">
                     {nextArea.title[lang]}
                   </h4>
-                  <p className="text-[11px] text-[#636861] mt-1.5 line-clamp-3 font-sans leading-relaxed">
+                  <p className="text-[11px] text-[#636861] mt-1 line-clamp-2 font-sans leading-relaxed">
                     {nextArea.subtitle[lang]}
                   </p>
                 </div>
-                <div className="flex justify-end pt-2">
-                  <div className="w-7 h-7 rounded-full border border-[#EDE8DE] text-[#B89650] flex items-center justify-center">
+                <div className="flex justify-end pt-1">
+                  <div className="w-6.5 h-6.5 rounded-full border border-[#EDE8DE] text-[#B89650] flex items-center justify-center">
                     <ArrowRight className="w-3.5 h-3.5" />
                   </div>
                 </div>
@@ -622,49 +662,44 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
             </div>
           </div>
 
-          {/* ── Bottom Controls: Counter, Line with Dots, Arrow Buttons ── */}
-          <div className="flex items-center justify-between max-w-xl mx-auto mt-8 sm:mt-10 px-4">
-            {/* Slide counter */}
-            <div className="text-[12.5px] sm:text-[13px] font-sans font-medium text-[#B89650] tracking-wider shrink-0">
-              {String(currentIndex + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+          {/* ── Bottom Controls Matching Reference Image Exactly: [ ← ] ▬ - - - - - [ → ] ── */}
+          <div className="flex items-center justify-center gap-4 sm:gap-5 mt-7 sm:mt-9 select-none">
+            {/* Left Circle Arrow Button */}
+            <button
+              onClick={handlePrev}
+              disabled={animating}
+              aria-label="Previous slide"
+              className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#E7DFD2] bg-white text-[#B89650] hover:border-[#B89650] hover:text-[#7A6129] hover:bg-[#FAF8F5] active:scale-95 flex items-center justify-center transition-all cursor-pointer shadow-xs disabled:opacity-50"
+            >
+              <ArrowLeft className="w-4.5 h-4.5 stroke-[1.8]" />
+            </button>
+
+            {/* Pill Indicators: Active is elongated gold pill ▬, inactive are smaller rounded pills - */}
+            <div className="flex items-center gap-2 sm:gap-2.5">
+              {areas.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => goToSlide(idx, idx > currentIndex ? "next" : "prev")}
+                  disabled={animating}
+                  aria-label={`Go to slide ${idx + 1}`}
+                  className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                    currentIndex === idx
+                      ? "w-7 sm:w-8 bg-[#B89650] shadow-xs"
+                      : "w-3 sm:w-3.5 bg-[#E2DBD0] hover:bg-[#B89650]/60"
+                  }`}
+                />
+              ))}
             </div>
 
-            {/* Hairline timeline with 6 dots */}
-            <div className="flex-1 mx-6 relative flex items-center justify-center">
-              <div className="absolute inset-x-0 h-[1.5px] bg-[#E5DFD3]" />
-              <div className="relative z-10 flex items-center justify-between w-full max-w-[200px]">
-                {areas.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setCurrentIndex(idx)}
-                    aria-label={`Go to slide ${idx + 1}`}
-                    className={`transition-all duration-300 rounded-full cursor-pointer ${
-                      currentIndex === idx
-                        ? "w-3 h-3 bg-[#B89650] ring-4 ring-[#B89650]/20 scale-110"
-                        : "w-2 h-2 bg-[#D4CDC0] hover:bg-[#B89650]/60"
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* Arrow navigation buttons */}
-            <div className="flex items-center gap-2 shrink-0">
-              <button
-                onClick={handlePrev}
-                aria-label="Previous slide"
-                className="w-9 h-9 rounded-full border border-[#D8D2C5] text-[#7A694A] hover:border-[#B89650] hover:text-[#142318] hover:bg-white flex items-center justify-center transition-all cursor-pointer"
-              >
-                <ArrowLeft className="w-4 h-4 stroke-[1.8]" />
-              </button>
-              <button
-                onClick={handleNext}
-                aria-label="Next slide"
-                className="w-9 h-9 rounded-full border border-[#D8D2C5] text-[#7A694A] hover:border-[#B89650] hover:text-[#142318] hover:bg-white flex items-center justify-center transition-all cursor-pointer"
-              >
-                <ArrowRight className="w-4 h-4 stroke-[1.8]" />
-              </button>
-            </div>
+            {/* Right Circle Arrow Button */}
+            <button
+              onClick={handleNext}
+              disabled={animating}
+              aria-label="Next slide"
+              className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[#E7DFD2] bg-white text-[#B89650] hover:border-[#B89650] hover:text-[#7A6129] hover:bg-[#FAF8F5] active:scale-95 flex items-center justify-center transition-all cursor-pointer shadow-xs disabled:opacity-50"
+            >
+              <ArrowRight className="w-4.5 h-4.5 stroke-[1.8]" />
+            </button>
           </div>
         </div>
       </div>

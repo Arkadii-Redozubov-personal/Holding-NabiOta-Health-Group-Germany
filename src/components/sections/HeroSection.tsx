@@ -16,18 +16,24 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
     <section dir="ltr" className="relative w-full min-h-screen lg:h-screen lg:min-h-[700px] lg:max-h-[1080px] flex flex-col justify-between bg-[#07130B] text-[#FAF8F5] overflow-x-hidden">
       {/* ── Main Hero Area (Fills height from Header down to Strip) ─ */}
       <div className="relative flex-1 flex items-center overflow-hidden w-full py-10 lg:py-0">
-        {/* ── Background: Cinematic Hero Video ─────────────────── */}
-        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            poster="/images/hero/building_new.webp"
-            className="absolute inset-0 w-full h-full object-cover object-center"
-          >
-            <source src="/videos/hero-background.mp4" type="video/mp4" />
-          </video>
+        {/* ── Background: Cinematic Hero Video (Zoomed out & right-anchored for high definition) ── */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden bg-[#07130B]">
+          {/* Video positioned to right half with zoomed-out framing so it is not pixelated */}
+          <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[68%] xl:w-[64%] h-full overflow-hidden flex items-center justify-end">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster="/videos/hero-background.mp4.png"
+              className="w-full h-full object-cover object-[72%_center] lg:scale-[0.92] xl:scale-[0.88] 2xl:scale-[0.85] origin-right transition-transform duration-700"
+            >
+              <source src="/videos/hero-background.mp4" type="video/mp4" />
+            </video>
+
+            {/* Seamless gradient fade from left into #07130B */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#07130B] via-[#07130B]/60 via-25% to-transparent pointer-events-none" />
+          </div>
 
           {/* ── Left side: feathered blur layer ────────── */}
           <div
@@ -45,12 +51,14 @@ export function HeroSection({ currentLocale = "de" }: HeroSectionProps) {
             className="absolute inset-y-0 w-full sm:w-[75%] lg:w-[60%] pointer-events-none left-0"
             style={{
               background:
-                "linear-gradient(to right, rgba(7,19,11,0.92) 0%, rgba(7,19,11,0.86) 32%, rgba(7,19,11,0.48) 58%, rgba(7,19,11,0.12) 78%, transparent 100%)",
+                "linear-gradient(to right, rgba(7,19,11,0.95) 0%, rgba(7,19,11,0.88) 32%, rgba(7,19,11,0.52) 58%, rgba(7,19,11,0.15) 78%, transparent 100%)",
             }}
           />
 
           {/* Top subtle vignette for header integration */}
           <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#07130B]/75 to-transparent pointer-events-none" />
+          {/* Bottom subtle vignette */}
+          <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#07130B] to-transparent pointer-events-none" />
         </div>
 
 
