@@ -26,7 +26,7 @@ import {
   Home,
   Heart,
   ArrowRight,
-} from "lucide-react";
+} from "@/lib/icons";
 import { Container } from "@/components/layout/Container";
 
 /**

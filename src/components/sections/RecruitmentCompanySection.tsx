@@ -22,7 +22,7 @@ import {
   HeartPulse,
   Microscope,
   Activity,
-} from "lucide-react";
+} from "@/lib/icons";
 import { Container } from "@/components/layout/Container";
 
 /**

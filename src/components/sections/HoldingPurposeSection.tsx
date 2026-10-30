@@ -12,7 +12,7 @@ import {
   Scale,
   ChevronDown,
   ChevronUp,
-} from "lucide-react";
+} from "@/lib/icons";
 import { Container } from "@/components/layout/Container";
 
 /**

@@ -2,11 +2,12 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { LogOut, Printer, Globe, ArrowLeft, Shield, User } from "lucide-react";
+import { LogOut, Printer, Globe, ArrowLeft, Shield, User } from "@/lib/icons";
 import { Logo } from "@/components/ui/Logo";
 import { CorporateStationerySection } from "@/components/sections/CorporateStationerySection";
 import { SupportedLocale } from "@/lib/i18n";
 import Link from "next/link";
+import "@/app/admin/stationery.css";
 
 interface AdminStationeryPanelProps {
   userEmail: string;

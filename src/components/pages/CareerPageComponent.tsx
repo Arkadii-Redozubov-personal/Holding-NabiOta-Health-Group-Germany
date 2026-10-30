@@ -24,7 +24,7 @@ import {
   Search,
   ShieldCheck,
   Users,
-} from "lucide-react";
+} from "@/lib/icons";
 
 interface CareerPageComponentProps {
   locale?: SupportedLocale;

@@ -19,8 +19,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "lucide-react": ["./src/lib/icons/index.tsx"]
+      "@/*": ["./src/*"]
     }
   },
   "include": [

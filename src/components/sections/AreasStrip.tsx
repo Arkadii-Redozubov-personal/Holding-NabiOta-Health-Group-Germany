@@ -1,441 +1,60 @@
 import React from "react";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
-import { getDictionary, getLocalePath, SupportedLocale } from "@/lib/i18n";
+import { getLocalePath, SupportedLocale } from "@/lib/i18n";
+import {
+  StethoscopeIcon,
+  MicroscopeIcon,
+  HeartPulseIcon,
+  PflegeIcon,
+  OrgChartIcon,
+  GlobeIcon,
+  ShieldCheckIcon,
+  NetworkBoxesIcon,
+  TeamIcon,
+  InfinityIcon,
+} from "@/components/icons/AreasStripIcons";
+import {
+  areasStripHeadings,
+  areasStripStats,
+} from "@/data/translations/areas-strip";
+import { MEDICAL_AREAS } from "@/data/medical-areas";
 
 interface AreasStripProps {
   currentLocale?: SupportedLocale;
 }
 
-/* ── Custom SVGs matching Reference Photo 1:1 ────────────────────────── */
+const CATEGORY_ICONS = [
+  StethoscopeIcon,
+  MicroscopeIcon,
+  HeartPulseIcon,
+  PflegeIcon,
+  OrgChartIcon,
+  GlobeIcon,
+];
 
-// 1. Stethoscope
-function StethoscopeIcon({ className = "w-7 h-7" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 28 28"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="M7 4.5v5.5a7 7 0 0 0 14 0V4.5" />
-      <path d="M5.5 4.5h3M19.5 4.5h3" />
-      <path d="M14 17v2.5a4.5 4.5 0 0 0 9 0v-1" />
-      <circle cx="23" cy="18.5" r="2.2" />
-    </svg>
-  );
-}
-
-// 2. Microscope
-function MicroscopeIcon({ className = "w-7 h-7" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 28 28"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="M6 23.5h16" />
-      <path d="M10 20.5h8" />
-      <path d="M14 20.5v-4" />
-      <rect
-        x="13"
-        y="4"
-        width="5"
-        height="8.5"
-        rx="1.5"
-        transform="rotate(45 15.5 8.25)"
-      />
-      <path d="M17 9.5l-4 4" />
-      <path d="M19.5 15.5a5 5 0 0 1-5.5 5" />
-      <circle cx="10" cy="16.5" r="1.5" />
-    </svg>
-  );
-}
-
-// 3. Heart with ECG pulse inside (Rehabilitation)
-function HeartPulseIcon({ className = "w-7 h-7" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 28 28"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="M22.5 12.5 C24 9 22.5 5.5 19 4.8 C16.5 4.2 14.5 6.2 14 7 C13.5 6.2 11.5 4.2 9 4.8 C5.5 5.5 4 9 5.5 12.5 C7.5 16.5 14 23 14 23 C14 23 20.5 16.5 22.5 12.5 Z" />
-      <path d="M8.5 13.5 h2 l1.5 -3 l2 5.5 l1.8 -3.5 h2.2" />
-    </svg>
-  );
-}
-
-// 4. Pflege: 3 people bust outline
-function PflegeIcon({ className = "w-7 h-7" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 28 28"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <circle cx="14" cy="9" r="3" />
-      <path d="M8.5 21.5c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5" />
-      <circle cx="7.5" cy="11.5" r="2.2" />
-      <path d="M3 21.5c0-2.2 1.8-4 4-4.2" />
-      <circle cx="20.5" cy="11.5" r="2.2" />
-      <path d="M21 17.3c2.2.2 4 2 4 4.2" />
-    </svg>
-  );
-}
-
-// 5. Org Chart: 1 box top, 3 boxes bottom (Beratung & Projektentwicklung)
-function OrgChartIcon({ className = "w-7 h-7" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 28 28"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <rect x="11" y="3.5" width="6" height="5" rx="0.75" />
-      <path d="M14 8.5v3.5" />
-      <path d="M6 12h16" />
-      <path d="M6 12v3.5M14 12v3.5M22 12v3.5" />
-      <rect x="3" y="15.5" width="6" height="5" rx="0.75" />
-      <rect x="11" y="15.5" width="6" height="5" rx="0.75" />
-      <rect x="19" y="15.5" width="6" height="5" rx="0.75" />
-    </svg>
-  );
-}
-
-// 6. Globe with latitude & longitude lines (Internationale Kooperationen)
-function GlobeIcon({ className = "w-7 h-7" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 28 28"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <circle cx="14" cy="14" r="9.5" />
-      <path d="M4.5 14h19" />
-      <ellipse cx="14" cy="14" rx="4.8" ry="9.5" />
-    </svg>
-  );
-}
-
-// Stats Icon 1: Shield with checkmark (Starke Marke)
-function ShieldCheckIcon({ className = "w-6 h-6" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 28 28"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="M14 3.5 L4.5 7.5 L4.5 13.5 C4.5 19.5 8.5 23.5 14 25.5 C19.5 23.5 23.5 19.5 23.5 13.5 L23.5 7.5 Z" />
-      <path d="M10 13.5 L12.8 16.5 L18 10.5" />
-    </svg>
-  );
-}
-
-// Stats Icon 2: 3 Network Boxes (6+ Unternehmensbereiche)
-function NetworkBoxesIcon({ className = "w-6 h-6" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 28 28"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <rect x="11" y="4" width="6" height="5" rx="0.75" />
-      <path d="M14 9v4" />
-      <path d="M7 13h14" />
-      <path d="M7 13v4M21 13v4" />
-      <rect x="4" y="17" width="6" height="5" rx="0.75" />
-      <rect x="18" y="17" width="6" height="5" rx="0.75" />
-    </svg>
-  );
-}
-
-// Stats Icon 3: Team People (100+ Experten)
-function TeamIcon({ className = "w-6 h-6" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 28 28"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <circle cx="14" cy="9" r="3" />
-      <path d="M8.5 21.5c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5" />
-      <circle cx="7.5" cy="11.5" r="2.2" />
-      <path d="M3 21.5c0-2.2 1.8-4 4-4.2" />
-      <circle cx="20.5" cy="11.5" r="2.2" />
-      <path d="M21 17.3c2.2.2 4 2 4 4.2" />
-    </svg>
-  );
-}
-
-// Stats Icon 4: Infinity Icon (Eine Mission)
-function InfinityIcon({ className = "w-6 h-6" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 32 32"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="M23 11c3.5 0 5 2.5 5 5s-1.5 5-5 5c-4 0-6.5-5-9-5s-5 5-9 5c-3.5 0-5-2.5-5-5s1.5-5 5-5c4 0 6.5 5 9 5s5-5 9-5Z" />
-    </svg>
-  );
-}
+const STAT_ICONS = [
+  ShieldCheckIcon,
+  NetworkBoxesIcon,
+  TeamIcon,
+  InfinityIcon,
+];
 
 export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
-  const dict = getDictionary(currentLocale);
+  const heading = areasStripHeadings[currentLocale] || areasStripHeadings.de;
 
-  const categories = [
-    {
-      icon: StethoscopeIcon,
-      slug: "medizinische-fachbereiche",
-      label:
-        currentLocale === "ru"
-          ? "Медицинские\nнаправления"
-          : currentLocale === "tr"
-          ? "Tıbbi\nUzmanlıklar"
-          : currentLocale === "ar"
-          ? "التخصصات\nالطبية"
-          : currentLocale === "uz"
-          ? "Tibbiyot\nyo'nalishlari"
-          : currentLocale === "en"
-          ? "Medical\nSpecialties"
-          : "Medizinische\nFachbereiche",
-    },
-    {
-      icon: MicroscopeIcon,
-      slug: "diagnostik",
-      label:
-        currentLocale === "ru"
-          ? "Диагностика"
-          : currentLocale === "tr"
-          ? "Tanı ve\nTeşhis"
-          : currentLocale === "ar"
-          ? "التشخيص\nوالأشعة"
-          : currentLocale === "uz"
-          ? "Diagnostika"
-          : currentLocale === "en"
-          ? "Diagnostics"
-          : "Diagnostik",
-    },
-    {
-      icon: HeartPulseIcon,
-      slug: "rehabilitation",
-      label:
-        currentLocale === "ru"
-          ? "Реабилитация"
-          : currentLocale === "tr"
-          ? "Tıbbi\nRehabilitasyon"
-          : currentLocale === "ar"
-          ? "التأهيل\nالطبي"
-          : currentLocale === "uz"
-          ? "Reabilitatsiya"
-          : currentLocale === "en"
-          ? "Rehabilitation"
-          : "Rehabilitation",
-    },
-    {
-      icon: PflegeIcon,
-      slug: "pflege",
-      label:
-        currentLocale === "ru"
-          ? "Уход и\nпатронаж"
-          : currentLocale === "tr"
-          ? "Hasta Bakımı\nve Destek"
-          : currentLocale === "ar"
-          ? "التمريض\nوالرعاية"
-          : currentLocale === "uz"
-          ? "Parvarish va\npatronaj"
-          : currentLocale === "en"
-          ? "Nursing &\nCare"
-          : "Pflege",
-    },
-    {
-      icon: OrgChartIcon,
-      slug: "beratung-projektentwicklung",
-      label:
-        currentLocale === "ru"
-          ? "Консалтинг &\nпроекты"
-          : currentLocale === "tr"
-          ? "Danışmanlık &\nProje Geliştirme"
-          : currentLocale === "ar"
-          ? "الاستشارات وتطوير\nالمشاريع"
-          : currentLocale === "uz"
-          ? "Konsalting &\nloyihalar"
-          : currentLocale === "en"
-          ? "Consulting &\nDevelopment"
-          : "Beratung &\nProjektentwicklung",
-    },
-    {
-      icon: GlobeIcon,
-      slug: "internationale-kooperationen",
-      label:
-        currentLocale === "ru"
-          ? "Международное\nсотрудничество"
-          : currentLocale === "tr"
-          ? "Uluslararası\nİş Birlikleri"
-          : currentLocale === "ar"
-          ? "التعاون الطبي\nالدولي"
-          : currentLocale === "uz"
-          ? "Xalqaro\nhamkorlik"
-          : currentLocale === "en"
-          ? "International\nCooperation"
-          : "Internationale\nKooperationen",
-    },
-  ];
+  const categories = MEDICAL_AREAS.map((area, idx) => ({
+    icon: CATEGORY_ICONS[idx] || StethoscopeIcon,
+    slug: area.slug,
+    label: area.stripLabels[currentLocale] || area.stripLabels.de,
+  }));
 
-  const stats = [
-    {
-      icon: ShieldCheckIcon,
-      number: null,
-      title:
-        currentLocale === "ru"
-          ? "Сильный бренд"
-          : currentLocale === "tr"
-          ? "Güçlü Marka"
-          : currentLocale === "ar"
-          ? "علامة رائدة"
-          : currentLocale === "uz"
-          ? "Kuchli brend"
-          : currentLocale === "en"
-          ? "Strong Brand"
-          : "Starke Marke",
-      subtitle:
-        currentLocale === "ru"
-          ? "Для более здорового общества."
-          : currentLocale === "tr"
-          ? "Daha sağlıklı bir toplum için."
-          : currentLocale === "ar"
-          ? "من أجل مجتمع أكثر صحة."
-          : currentLocale === "uz"
-          ? "Sog'lom jamiyat sari."
-          : currentLocale === "en"
-          ? "For a healthier society."
-          : "Für eine gesündere Gesellschaft.",
-    },
-    {
-      icon: NetworkBoxesIcon,
-      number: "6+",
-      title:
-        currentLocale === "ru"
-          ? "Направлений бизнеса"
-          : currentLocale === "tr"
-          ? "Faaliyet Alanı"
-          : currentLocale === "ar"
-          ? "قطاعات رئيسية"
-          : currentLocale === "uz"
-          ? "Faoliyat yo'nalishi"
-          : currentLocale === "en"
-          ? "Business Divisions"
-          : "Unternehmensbereiche",
-      subtitle:
-        currentLocale === "ru"
-          ? "Компетенции под одной крышей."
-          : currentLocale === "tr"
-          ? "Tek çatı altında uzmanlık."
-          : currentLocale === "ar"
-          ? "كفاءات تحت مظلة واحدة."
-          : currentLocale === "uz"
-          ? "Barcha sohalar yagona tizimda."
-          : currentLocale === "en"
-          ? "Competence under one roof."
-          : "Kompetenz unter einem Dach.",
-    },
-    {
-      icon: TeamIcon,
-      number: "100+",
-      title:
-        currentLocale === "ru"
-          ? "Экспертов в сети"
-          : currentLocale === "tr"
-          ? "Ağ İçi Uzman"
-          : currentLocale === "ar"
-          ? "خبير ومتخصص"
-          : currentLocale === "uz"
-          ? "Tarmoq mutaxassislari"
-          : currentLocale === "en"
-          ? "Experts in Network"
-          : "Experten im Netzwerk",
-      subtitle:
-        currentLocale === "ru"
-          ? "Опыт. Вовлеченность. Результат."
-          : currentLocale === "tr"
-          ? "Deneyim. Özveri. Etki."
-          : currentLocale === "ar"
-          ? "خبرة. تفانٍ. نتائج موثوقة."
-          : currentLocale === "uz"
-          ? "Tajriba. Fidoyilik. Natija."
-          : currentLocale === "en"
-          ? "Experience. Commitment. Impact."
-          : "Erfahrung. Engagement. Wirkung.",
-    },
-    {
-      icon: InfinityIcon,
-      number: null,
-      title:
-        currentLocale === "ru"
-          ? "Одна миссия"
-          : currentLocale === "tr"
-          ? "Ortak Misyon"
-          : currentLocale === "ar"
-          ? "رسالة مشتركة"
-          : currentLocale === "uz"
-          ? "Yagona missiya"
-          : currentLocale === "en"
-          ? "One Mission"
-          : "Eine Mission",
-      subtitle:
-        currentLocale === "ru"
-          ? "Устойчивое здравоохранение для будущих поколений."
-          : currentLocale === "tr"
-          ? "Gelecek nesiller için sürdürülebilir sağlık."
-          : currentLocale === "ar"
-          ? "رعاية صحية مستدامة للأجيال القادمة."
-          : currentLocale === "uz"
-          ? "Kelajak avlodlar uchun barqaror sog'liqni saqlash."
-          : currentLocale === "en"
-          ? "Sustainable healthcare for coming generations."
-          : "Nachhaltige Gesundheitsversorgung für kommende Generationen.",
-    },
-  ];
+  const stats = areasStripStats.map((stat, idx) => ({
+    icon: STAT_ICONS[idx] || ShieldCheckIcon,
+    number: stat.number,
+    title: stat.titles[currentLocale] || stat.titles.de,
+    subtitle: stat.subtitles[currentLocale] || stat.subtitles.de,
+  }));
 
   return (
     <div className="w-full max-w-full overflow-hidden select-none">
@@ -446,27 +65,11 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
             {/* Left: Heading block */}
             <div className="flex-shrink-0 w-full lg:w-[260px] xl:w-[290px] text-left">
               <h2 className="font-display text-[22px] sm:text-[25px] lg:text-[28px] font-medium leading-[1.12] tracking-[-0.01em] text-[#142318]">
-                {currentLocale === "ru" ? (
-                  <>Многогранная компетенция для здорового будущего.</>
-                ) : currentLocale === "tr" ? (
-                  <>Sağlıklı bir gelecek için çok yönlü uzmanlık.</>
-                ) : currentLocale === "ar" ? (
-                  <>كفاءات متعددة لمستقبل أكثر صحة.</>
-                ) : currentLocale === "uz" ? (
-                  <>Sog'lom kelajak uchun ko'p tarmoqli salohiyat.</>
-                ) : currentLocale === "en" ? (
-                  <>Diverse expertise for a healthier future.</>
-                ) : (
-                  <>
-                    Vielfältige Kompetenz
-                    <br />
-                    für eine gesündere Zukunft.
-                  </>
-                )}
+                {heading}
               </h2>
             </div>
 
-            {/* Right: 6 Category Cards arranged into 3 cards per row on mobile matching user request */}
+            {/* Right: 6 Category Cards */}
             <div className="flex-1 w-full grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-6 gap-1.5 sm:gap-2.5 xl:gap-3">
               {categories.map((cat, idx) => {
                 const IconComp = cat.icon;
@@ -498,7 +101,7 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
         </Container>
       </div>
 
-      {/* ═══════════ ROW 2: Deep Forest Green Stats Bar (Generous Height & Padding) ═══════════ */}
+      {/* ═══════════ ROW 2: Deep Forest Green Stats Bar ═══════════ */}
       <div className="bg-[#07160D] border-t border-[#122E1B] py-4 sm:py-5 lg:py-6">
         <Container size="wide">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-0 lg:divide-x lg:divide-white/10">
@@ -509,12 +112,10 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
                   key={idx}
                   className="flex items-center gap-3.5 sm:gap-4 px-3 sm:px-4 lg:px-6 xl:px-8"
                 >
-                  {/* Icon without circle */}
                   <div className="text-[#ECCF96] flex items-center justify-center flex-shrink-0">
                     <IconComp className="w-8 h-8 sm:w-9 sm:h-9 stroke-[1.5]" />
                   </div>
 
-                  {/* Text content (untruncated, clear line-height) */}
                   <div className="flex-1 min-w-0">
                     {stat.number ? (
                       <div>

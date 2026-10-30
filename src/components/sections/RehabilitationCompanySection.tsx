@@ -15,7 +15,7 @@ import {
   Wind,
   ArrowRight,
   Info,
-} from "lucide-react";
+} from "@/lib/icons";
 import { Container } from "@/components/layout/Container";
 
 /**

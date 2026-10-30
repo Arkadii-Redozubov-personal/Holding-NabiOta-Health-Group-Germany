@@ -12,7 +12,7 @@ import {
   Monitor,
   Brain,
   ArrowRight,
-} from "lucide-react";
+} from "@/lib/icons";
 import { Container } from "@/components/layout/Container";
 
 /**

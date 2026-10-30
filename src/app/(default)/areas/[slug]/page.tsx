@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronRight, CheckCircle2, Award, Stethoscope, Building2 } from "lucide-react";
+import { ChevronRight, CheckCircle2, Award, Stethoscope, Building2 } from "@/lib/icons";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";

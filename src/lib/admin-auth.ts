@@ -68,7 +68,15 @@ export async function loginAdmin(
     }
   }
 
-  // Check env or default credentials
+  // Check env or credentials (disallow default password in production)
+  const isProd = process.env.NODE_ENV === "production";
+  if (isProd && !process.env.ADMIN_PASSWORD) {
+    return {
+      success: false,
+      error: "Admin-Zugang in der Produktionsumgebung erfordert die Konfiguration von ADMIN_PASSWORD.",
+    };
+  }
+
   const validEmail = (process.env.ADMIN_EMAIL || "admin@nabiota-health-group.de").toLowerCase();
   const validPassword = process.env.ADMIN_PASSWORD || "admin123";
 

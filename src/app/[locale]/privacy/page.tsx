@@ -3,7 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { PageHero } from "@/components/layout/PageHero";
-import { ShieldCheck, Lock, FileText } from "lucide-react";
+import { ShieldCheck, Lock, FileText } from "@/lib/icons";
 import { companyInfo } from "@/data/company";
 import { SupportedLocale } from "@/lib/i18n";
 import { Metadata } from "next";

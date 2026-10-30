@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Globe, Mail, Phone, Linkedin, Instagram, Youtube, Briefcase } from "lucide-react";
+import { MapPin, Globe, Mail, Phone, Linkedin, Instagram, Youtube, Briefcase } from "@/lib/icons";
 import { Container } from "./Container";
 import { Logo } from "@/components/ui/Logo";
 import { companyInfo } from "@/data/company";

@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CalendarDays } from "lucide-react";
+import { ArrowRight, CalendarDays } from "@/lib/icons";
 import { getDictionary, getLocalePath, SupportedLocale } from "@/lib/i18n";
 import { AreasStrip } from "@/components/sections/AreasStrip";
 

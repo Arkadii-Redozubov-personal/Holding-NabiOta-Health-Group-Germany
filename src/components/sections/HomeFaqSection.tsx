@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Plus, Minus } from "lucide-react";
+import { Plus, Minus } from "@/lib/icons";
 import { SupportedLocale } from "@/lib/i18n";
 
 interface HomeFaqSectionProps {

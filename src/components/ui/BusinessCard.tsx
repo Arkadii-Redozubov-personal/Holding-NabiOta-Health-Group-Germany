@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowButton } from "./ArrowButton";
 import { BusinessArea } from "@/types/content";
 import { getLocalePath, SupportedLocale } from "@/lib/i18n";
+import { getLocalizedMedicalAreaBySlug } from "@/data/medical-areas";
 
 interface BusinessCardProps {
   area: BusinessArea;
@@ -11,59 +12,10 @@ interface BusinessCardProps {
   currentLocale?: SupportedLocale;
 }
 
-const areaTitles: Record<string, Record<SupportedLocale, string>> = {
-  "medizinische-fachbereiche": {
-    de: "Medizinische Fachbereiche",
-    en: "Medical Departments",
-    ru: "Медицинские направления",
-    tr: "Tıbbi Uzmanlık Alanları",
-    ar: "الأقسام الطبية التخصصية",
-    uz: "Tibbiyot yo'nalishlari",
-  },
-  "diagnostik": {
-    de: "Diagnostik",
-    en: "Diagnostics",
-    ru: "Диагностика",
-    tr: "Tanı & Teşhis",
-    ar: "التشخيص والتحاليل",
-    uz: "Diagnostika",
-  },
-  "rehabilitation": {
-    de: "Rehabilitation",
-    en: "Rehabilitation",
-    ru: "Реабилитация",
-    tr: "Rehabilitasyon",
-    ar: "إعادة التأهيل",
-    uz: "Reabilitatsiya",
-  },
-  "pflege": {
-    de: "Pflege & Betreuung",
-    en: "Care & Support",
-    ru: "Уход и забота",
-    tr: "Hasta Bakımı & Destek",
-    ar: "التمريض والرعاية المنزلية",
-    uz: "Parvarish va qo'llab-quvvatlash",
-  },
-  "beratung-projektentwicklung": {
-    de: "Beratung & Services",
-    en: "Consulting & Services",
-    ru: "Консалтинг и сервис",
-    tr: "Danışmanlık & Hizmetler",
-    ar: "الاستشارات والخدمات",
-    uz: "Konsalting va xizmatlar",
-  },
-  "internationale-kooperationen": {
-    de: "Internationale Kooperationen",
-    en: "International Partnerships",
-    ru: "Международная деятельность",
-    tr: "Uluslararası İş Birlikleri",
-    ar: "التعاون الدولي والكوادر",
-    uz: "Xalqaro hamkorlik",
-  },
-};
-
 export function BusinessCard({ area, priority = false, currentLocale = "de" }: BusinessCardProps) {
-  const displayTitle = areaTitles[area.slug]?.[currentLocale] || area.title;
+  const localizedArea = getLocalizedMedicalAreaBySlug(area.slug, currentLocale);
+  const displayTitle = localizedArea?.title || area.title;
+
 
   return (
     <Link

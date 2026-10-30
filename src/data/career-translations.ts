@@ -9,7 +9,7 @@ import {
   Activity,
   Upload,
   X,
-} from "lucide-react";
+} from "@/lib/icons";
 
 export const careerTranslations = {
     de: {

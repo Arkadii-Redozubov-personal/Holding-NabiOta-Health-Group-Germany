@@ -23,7 +23,7 @@ import {
   Leaf,
   Briefcase,
   LucideIcon,
-} from "lucide-react";
+} from "@/lib/icons";
 import { cn } from "@/lib/utils";
 
 const iconMap: Record<string, LucideIcon> = {

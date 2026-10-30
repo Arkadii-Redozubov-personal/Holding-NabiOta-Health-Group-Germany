@@ -12,7 +12,7 @@ import {
   ShieldCheck,
   Stethoscope,
   Users,
-} from "lucide-react";
+} from "@/lib/icons";
 import { Container } from "@/components/layout/Container";
 import type { CareServiceModalData } from "@/data/care-services";
 

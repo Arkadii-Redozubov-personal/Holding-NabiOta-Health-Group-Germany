@@ -22,7 +22,7 @@ import {
   Upload,
   Users,
   X,
-} from "lucide-react";
+} from "@/lib/icons";
 
 export function CareerHero({ locale, t }: { locale: SupportedLocale; t: CareerContent }) {
   return (

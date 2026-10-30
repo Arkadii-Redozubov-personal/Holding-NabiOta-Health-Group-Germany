@@ -17,6 +17,8 @@ export interface IconProps extends React.SVGProps<SVGSVGElement> {
 export type LucideIcon = React.ForwardRefExoticComponent<
   IconProps & React.RefAttributes<SVGSVGElement>
 >;
+export type IconComponent = LucideIcon;
+
 
 function createIcon(Component: React.ComponentType<any>): LucideIcon {
   const WrappedIcon = React.forwardRef<SVGSVGElement, IconProps>(function PhosphorIconWrapper(

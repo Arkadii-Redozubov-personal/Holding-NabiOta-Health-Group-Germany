@@ -2,7 +2,7 @@
 
 import { useCallback, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
-import { Printer } from "lucide-react";
+import { Printer } from "@/lib/icons";
 import { Container } from "@/components/layout/Container";
 import { Logo } from "@/components/ui/Logo";
 import { companyInfo } from "@/data/company";

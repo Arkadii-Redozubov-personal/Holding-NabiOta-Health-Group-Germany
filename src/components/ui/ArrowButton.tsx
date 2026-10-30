@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "@/lib/icons";
 import { cn } from "@/lib/utils";
 
 interface ArrowButtonProps {

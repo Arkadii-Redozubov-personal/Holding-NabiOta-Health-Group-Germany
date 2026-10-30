@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Lock, Mail, ArrowRight, AlertCircle, Loader2 } from "lucide-react";
+import { Lock, Mail, ArrowRight, AlertCircle, Loader2 } from "@/lib/icons";
 import { Logo } from "@/components/ui/Logo";
 
 export default function AdminLoginPage() {

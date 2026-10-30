@@ -8,13 +8,8 @@ import {
   X,
   ChevronDown,
   Globe,
-  Stethoscope,
-  Microscope,
-  HeartPulse,
-  Users,
-  Network,
   ArrowRight,
-} from "lucide-react";
+} from "@/lib/icons";
 import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
 import { Container } from "./Container";
@@ -28,133 +23,12 @@ import {
   SupportedLocale,
 } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
+import { medicalAreaNavItems as areaNavItems } from "@/data/medical-areas";
 
 interface HeaderProps {
   currentLocale?: SupportedLocale;
 }
 
-const areaNavItems = [
-  {
-    slug: "medizinische-fachbereiche",
-    icon: Stethoscope,
-    titles: {
-      de: "Medizinische Fachbereiche",
-      en: "Medical Departments",
-      ru: "Медицинские направления",
-      tr: "Tıbbi Bölümler",
-      ar: "الأقسام الطبية التخصصية",
-      uz: "Tibbiyot yo'nalishlari",
-    },
-    subtitles: {
-      de: "Ambulante & Fachärztliche Spitzenmedizin",
-      en: "Outpatient & Specialist Medicine",
-      ru: "Амбулаторная и специализированная медицина",
-      tr: "Ayakta Tedavi & Uzman Hekimlik",
-      ar: "الرعاية المتنقلة والطب التخصصي",
-      uz: "Ambulator va ixtisoslashgan ilg'or tibbiyot",
-    },
-  },
-  {
-    slug: "diagnostik",
-    icon: Microscope,
-    titles: {
-      de: "Diagnostik",
-      en: "Diagnostics",
-      ru: "Диагностика",
-      tr: "Tanı & Görüntüleme",
-      ar: "التشخيص والتصوير الطبي",
-      uz: "Diagnostika",
-    },
-    subtitles: {
-      de: "MRT, CT & Präzisionstechnologie",
-      en: "MRI, CT & High-Precision Imaging",
-      ru: "МРТ, КТ и высокоточная диагностика",
-      tr: "3T MRT, CT & Yüksek Teknoloji",
-      ar: "الرنين المغناطيسي والأشعة المقطعية",
-      uz: "MRT, KT va yuqori aniqlikdagi texnologiyalar",
-    },
-  },
-  {
-    slug: "rehabilitation",
-    icon: HeartPulse,
-    titles: {
-      de: "Rehabilitation",
-      en: "Rehabilitation",
-      ru: "Реабилитация",
-      tr: "Rehabilitasyon",
-      ar: "التأهيل والعلاج الطبيعي",
-      uz: "Reabilitatsiya",
-    },
-    subtitles: {
-      de: "Ganzheitliche Genesung & Therapie",
-      en: "Holistic Recovery & Therapy",
-      ru: "Комплексное восстановление и терапия",
-      tr: "Bütüncül İyileşme & Fizik Tedavi",
-      ar: "التعافي الشامل والبرامج العلاجية",
-      uz: "Keng qamrovli tiklanish va terapiya",
-    },
-  },
-  {
-    slug: "pflege",
-    icon: Users,
-    titles: {
-      de: "Pflege",
-      en: "Nursing Care",
-      ru: "Патронаж и уход",
-      tr: "Hasta Bakımı & HomeCare",
-      ar: "التمريض والرعاية المنزلية",
-      uz: "Parvarish va patronaj",
-    },
-    subtitles: {
-      de: "Ambulante Pflege & HomeCare",
-      en: "Outpatient Care & HomeCare",
-      ru: "Амбулаторная помощь и HomeCare",
-      tr: "Evde Bakım & Medikal Malzeme",
-      ar: "الرعاية المتنقلة والمستلزمات الطبية",
-      uz: "Ambulator parvarish va HomeCare",
-    },
-  },
-  {
-    slug: "beratung-projektentwicklung",
-    icon: Network,
-    titles: {
-      de: "Beratung & Projektentwicklung",
-      en: "Consulting & Development",
-      ru: "Консалтинг и девелопмент",
-      tr: "Danışmanlık & Proje Geliştirme",
-      ar: "الاستشارات والتطوير الطبي",
-      uz: "Konsalting va loyihalar boshqaruvi",
-    },
-    subtitles: {
-      de: "Gesundheitsimmobilien & MVZ-Strukturen",
-      en: "Healthcare Facilities & Centers",
-      ru: "Медицинские центры и девелопмент",
-      tr: "Sağlık Tesisleri & Klinik Projeleri",
-      ar: "تطوير المرافق والمجمعات الطبية",
-      uz: "Tibbiy ko'chmas mulk va MVZ tuzilmalari",
-    },
-  },
-  {
-    slug: "internationale-kooperationen",
-    icon: Globe,
-    titles: {
-      de: "Internationale Kooperationen",
-      en: "International Cooperations",
-      ru: "Международное сотрудничество",
-      tr: "Uluslararası İş Birlikleri",
-      ar: "التعاون الطبي الدولي",
-      uz: "Xalqaro hamkorlik",
-    },
-    subtitles: {
-      de: "Partnerschaften & Wissenstransfer",
-      en: "Partnerships & Knowledge Transfer",
-      ru: "Партнёрство и трансфер знаний",
-      tr: "Stratejik Ortaklıklar & Bilgi Transferi",
-      ar: "الشراكات ونقل المعرفة والخبرات",
-      uz: "Hamkorlik va bilim almashinuvi",
-    },
-  },
-];
 
 const overviewLabels: Record<string, string> = {
   de: "Alle Bereiche im Überblick",

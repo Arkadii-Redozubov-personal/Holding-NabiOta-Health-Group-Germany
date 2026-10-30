@@ -3,7 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { PageHero } from "@/components/layout/PageHero";
-import { Scale, Building2, FileCheck } from "lucide-react";
+import { Scale, Building2, FileCheck } from "@/lib/icons";
 import { companyInfo } from "@/data/company";
 import { getLocaleAlternates } from "@/lib/seo";
 

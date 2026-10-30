@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Handshake, Lightbulb, ShieldCheck } from "lucide-react";
+import { ArrowRight, Handshake, Lightbulb, ShieldCheck } from "@/lib/icons";
 import { getDictionary, getLocalePath, SupportedLocale } from "@/lib/i18n";
 
 interface AboutSectionProps {
