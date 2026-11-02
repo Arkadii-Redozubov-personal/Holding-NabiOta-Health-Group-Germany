@@ -3,7 +3,6 @@
 Corporate web portal for **NabiOta Health Group Germany GmbH**, an ambulatory healthcare holding based in Mönchengladbach, Germany.
 
 - **Live Site**: [holding-nabiota.netlify.app](https://holding-nabiota.netlify.app/)
-- **Repository**: [github.com/Arkadii-Redozubov-personal/Holding-NabiOta-Health-Group-Germany](https://github.com/Arkadii-Redozubov-personal/Holding-NabiOta-Health-Group-Germany)
 
 ---
 
