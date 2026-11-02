@@ -578,7 +578,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                       {t.founderKeyPoints.map((point: { title: string; desc: string }, idx: number) => (
                         <div
                           key={idx}
-                          className="bg-[#FAF7F0] border border-[#EBE3D3] rounded-xl p-2.5 sm:p-3 flex flex-col justify-start transition-all hover:border-[#D5B878]/70 hover:shadow-xs"
+                          className="bg-[#FAF7F0] border border-[#EBE3D3] rounded-xl p-2.5 sm:p-3 flex flex-col justify-start"
                         >
                           <div className="flex items-center gap-2 mb-1">
                             <div className="w-6 h-6 rounded-lg bg-white border border-[#E8DFC8] text-[#1B3D2F] flex items-center justify-center shrink-0 shadow-2xs">
@@ -837,13 +837,13 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                 ].map(({ Icon, title, desc }, idx) => (
                   <div
                     key={idx}
-                    className="bg-[#0A1F13]/85 hover:bg-[#0D2618]/95 border border-[#D5B878]/30 hover:border-[#D5B878]/70 backdrop-blur-md rounded-xl sm:rounded-2xl p-3.5 sm:p-4 transition-all duration-300 hover:-translate-y-1 shadow-[0_6px_20px_rgba(0,0,0,0.3)] group flex flex-col justify-between"
+                    className="bg-[#0A1F13]/85 border border-[#D5B878]/30 backdrop-blur-md rounded-xl sm:rounded-2xl p-3.5 sm:p-4 shadow-[0_6px_20px_rgba(0,0,0,0.3)] flex flex-col justify-between"
                   >
                     <div>
-                      <div className="text-[#ECCF96] mb-2.5 flex items-center transition-transform group-hover:scale-105">
+                      <div className="text-[#ECCF96] mb-2.5 flex items-center">
                         <Icon className="w-7 h-7 stroke-[1.6]" />
                       </div>
-                      <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-white mb-1 group-hover:text-[#ECCF96] transition-colors leading-snug">
+                      <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-white mb-1 leading-snug">
                         {title}
                       </h3>
                       <p className="text-[11px] sm:text-[11.5px] text-[#A6B8AA] leading-snug font-sans">{desc}</p>
@@ -1015,7 +1015,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             {/* Two wide phase cards side by side (matching Photo 1: wider width max-w-6xl) */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 max-w-6xl mx-auto items-stretch">
               {/* Card 1: Phase 1 */}
-              <div className="h-full bg-white/95 backdrop-blur-xs rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-[#EAE4D7] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all flex flex-col justify-between">
+              <div className="h-full bg-white/95 backdrop-blur-xs rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-[#EAE4D7] shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex flex-col justify-between">
                 <div>
                   {/* Card Header: Large serif numeral 1 (left) + Title + Large Circular Icon (right) */}
                   <div className="flex items-center gap-4 mb-4">
@@ -1112,7 +1112,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
               </div>
 
               {/* Card 2: Phase 2 */}
-              <div className="h-full bg-white/95 backdrop-blur-xs rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-[#EAE4D7] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all flex flex-col justify-between">
+              <div className="h-full bg-white/95 backdrop-blur-xs rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-[#EAE4D7] shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex flex-col justify-between">
                 <div>
                   {/* Card Header: Large serif numeral 2 (left) + Title + Large Circular Icon (right) */}
                   <div className="flex items-center gap-4 mb-4">
@@ -1277,7 +1277,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
               {/* Right: 2 Distinct White Cards */}
               <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                 {/* Card 1: Our Mission */}
-                <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#EDE8DE] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:border-[#D5B878] hover:shadow-md transition-all flex flex-col justify-between">
+                <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#EDE8DE] shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex flex-col justify-between">
                   <div>
                     <div className="text-[#B89650] flex items-center mb-3">
                       <TargetIcon className="w-7.5 h-7.5 stroke-[1.6]" />
@@ -1292,7 +1292,7 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
                 </div>
 
                 {/* Card 2: Our Vision */}
-                <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#EDE8DE] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:border-[#D5B878] hover:shadow-md transition-all flex flex-col justify-between">
+                <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#EDE8DE] shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex flex-col justify-between">
                   <div>
                     <div className="text-[#B89650] flex items-center mb-3">
                       <VisionEyeIcon className="w-7.5 h-7.5 stroke-[1.6]" />
@@ -1402,12 +1402,12 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
             {/* 4 Value Cards in a single row - horizontal layout matching screenshot 1:1 */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
               {/* Card 1 */}
-              <div className="bg-white rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878] p-4 sm:p-5 flex items-center gap-3.5 sm:gap-4 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all group">
-                <div className="text-[#B89650] group-hover:text-[#9C8145] flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110">
+              <div className="bg-white rounded-2xl border border-[#EDE8DE] p-4 sm:p-5 flex items-center gap-3.5 sm:gap-4 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
                   <HandshakeIcon className="w-8 h-8 stroke-[1.6]" />
                 </div>
                 <div>
-                  <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-[#142318] mb-0.5 group-hover:text-[#BFA267] transition-colors leading-snug">
+                  <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-[#142318] mb-0.5 leading-snug">
                     {t.val1Title}
                   </h3>
                   <p className="text-[11.5px] sm:text-[12px] text-[#6E756D] leading-snug">
@@ -1417,12 +1417,12 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
               </div>
 
               {/* Card 2 */}
-              <div className="bg-white rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878] p-4 sm:p-5 flex items-center gap-3.5 sm:gap-4 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all group">
-                <div className="text-[#B89650] group-hover:text-[#9C8145] flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110">
+              <div className="bg-white rounded-2xl border border-[#EDE8DE] p-4 sm:p-5 flex items-center gap-3.5 sm:gap-4 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
                   <LightbulbValuesIcon className="w-8 h-8 stroke-[1.6]" />
                 </div>
                 <div>
-                  <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-[#142318] mb-0.5 group-hover:text-[#BFA267] transition-colors leading-snug">
+                  <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-[#142318] mb-0.5 leading-snug">
                     {t.val2Title}
                   </h3>
                   <p className="text-[11.5px] sm:text-[12px] text-[#6E756D] leading-snug">
@@ -1432,12 +1432,12 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
               </div>
 
               {/* Card 3 */}
-              <div className="bg-white rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878] p-4 sm:p-5 flex items-center gap-3.5 sm:gap-4 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all group">
-                <div className="text-[#B89650] group-hover:text-[#9C8145] flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110">
+              <div className="bg-white rounded-2xl border border-[#EDE8DE] p-4 sm:p-5 flex items-center gap-3.5 sm:gap-4 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
                   <LeafIcon className="w-8 h-8 stroke-[1.6]" />
                 </div>
                 <div>
-                  <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-[#142318] mb-0.5 group-hover:text-[#BFA267] transition-colors leading-snug">
+                  <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-[#142318] mb-0.5 leading-snug">
                     {t.val3Title}
                   </h3>
                   <p className="text-[11.5px] sm:text-[12px] text-[#6E756D] leading-snug">
@@ -1447,12 +1447,12 @@ export function AboutPageComponent({ locale = "de" }: AboutPageComponentProps) {
               </div>
 
               {/* Card 4 */}
-              <div className="bg-white rounded-2xl border border-[#EDE8DE] hover:border-[#D5B878] p-4 sm:p-5 flex items-center gap-3.5 sm:gap-4 shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all group">
-                <div className="text-[#B89650] group-hover:text-[#9C8145] flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110">
+              <div className="bg-white rounded-2xl border border-[#EDE8DE] p-4 sm:p-5 flex items-center gap-3.5 sm:gap-4 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+                <div className="text-[#B89650] flex items-center justify-center flex-shrink-0">
                   <TeamStatsIcon className="w-8 h-8 stroke-[1.6]" />
                 </div>
                 <div>
-                  <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-[#142318] mb-0.5 group-hover:text-[#BFA267] transition-colors leading-snug">
+                  <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-[#142318] mb-0.5 leading-snug">
                     {t.val4Title}
                   </h3>
                   <p className="text-[11.5px] sm:text-[12px] text-[#6E756D] leading-snug">

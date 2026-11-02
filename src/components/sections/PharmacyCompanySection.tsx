@@ -338,10 +338,10 @@ export function PharmacyCompanySection({ locale = "de" }: { locale?: string }) {
                   return (
                     <div
                       key={idx}
-                      className="group relative rounded-[18px] bg-white border border-[#EAE4D7] p-3.5 sm:p-4 flex items-center justify-between gap-3 sm:gap-4 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:shadow-md hover:border-[#D5B878]/60 transition-all duration-300"
+                      className="relative rounded-[18px] bg-white border border-[#EAE4D7] p-3.5 sm:p-4 flex items-center justify-between gap-3 sm:gap-4 shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
                     >
                       {/* Left: Icon circle */}
-                      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#FAF5EB] border border-[#EFE5D5] flex items-center justify-center shrink-0 group-hover:bg-[#F3EAD9] transition-colors">
+                      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#FAF5EB] border border-[#EFE5D5] flex items-center justify-center shrink-0">
                         <ItemIcon className="w-5 h-5 text-[#9E7D3B]" />
                       </div>
 
@@ -355,9 +355,9 @@ export function PharmacyCompanySection({ locale = "de" }: { locale?: string }) {
                         </p>
                       </div>
 
-                      {/* Right: Round button with arrow */}
-                      <div className="w-8.5 h-8.5 rounded-full border border-[#D5B878]/50 flex items-center justify-center text-[#9E7D3B] shrink-0 group-hover:bg-[#9E7D3B] group-hover:text-white group-hover:border-[#9E7D3B] transition-all duration-300">
-                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                      {/* Right: Round indicator with arrow */}
+                      <div className="w-8.5 h-8.5 rounded-full border border-[#D5B878]/50 flex items-center justify-center text-[#9E7D3B] shrink-0">
+                        <ArrowRight className="w-3.5 h-3.5" />
                       </div>
                     </div>
                   );

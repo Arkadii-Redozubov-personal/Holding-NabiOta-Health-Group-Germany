@@ -1,6 +1,7 @@
 import React from "react";
-import Link from "next/link";
 import { Container } from "@/components/layout/Container";
+import { AreaCategoryCard } from "@/components/ui/AreaCategoryCard";
+import { MobileSnapSlider } from "@/components/ui/MobileSnapSlider";
 import { getLocalePath, SupportedLocale } from "@/lib/i18n";
 import {
   StethoscopeIcon,
@@ -59,44 +60,32 @@ export function AreasStrip({ currentLocale = "de" }: AreasStripProps) {
   return (
     <div className="w-full max-w-full overflow-hidden select-none">
       {/* ═══════════ ROW 1: White/Cream Areas Grid Section (Compact Height) ═══════════ */}
-      <div className="bg-[#FFFFFF] border-t border-[#EDE8DE] py-3.5 sm:py-4 lg:py-4.5">
+      <div className="bg-[#FFFFFF] border-t border-[#EDE8DE] pt-6 pb-4 sm:py-4 lg:py-4.5">
         <Container size="wide">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-6 xl:gap-8">
             {/* Left: Heading block */}
             <div className="flex-shrink-0 w-full lg:w-[260px] xl:w-[290px] text-left">
-              <h2 className="font-display text-[22px] sm:text-[25px] lg:text-[28px] font-medium leading-[1.12] tracking-[-0.01em] text-[#142318]">
+              <h2 className="font-display text-[22px] sm:text-[25px] lg:text-[28px] font-semibold lg:font-medium leading-[1.15] tracking-[-0.01em] text-[#142318]">
                 {heading}
               </h2>
             </div>
 
-            {/* Right: 6 Category Cards */}
-            <div className="flex-1 w-full grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-6 gap-1.5 sm:gap-2.5 xl:gap-3">
-              {categories.map((cat, idx) => {
-                const IconComp = cat.icon;
-                return (
-                  <Link
-                    key={idx}
-                    href={getLocalePath(currentLocale, `areas/${cat.slug}`)}
-                    className="group bg-[#FAF8F3]/60 hover:bg-[#F3EFE6] border border-[#EFECE3]/70 hover:border-[#DFD5C2] rounded-xl sm:rounded-2xl px-1.5 py-2 sm:px-2.5 sm:py-3.5 flex flex-col items-center justify-between text-center min-h-[102px] sm:min-h-[132px] transition-all duration-200 hover:shadow-sm"
-                  >
-                    {/* Icon without circle */}
-                    <div className="text-[#1A261D] group-hover:text-[#9C8145] transition-colors mb-1.5 flex items-center justify-center flex-shrink-0">
-                      <IconComp className="w-7.5 h-7.5 sm:w-9 sm:h-9 stroke-[1.5]" />
-                    </div>
-
-                    {/* Centered Category Label */}
-                    <span className="text-[10px] sm:text-[12.5px] xl:text-[13px] font-bold text-[#18261C] leading-[1.18] text-center whitespace-pre-line px-0.5 my-auto">
-                      {cat.label}
-                    </span>
-
-                    {/* Gold Arrow at bottom */}
-                    <span className="text-[#C5A56A] font-bold text-[10px] sm:text-sm leading-none mt-0.5 transition-transform duration-200 group-hover:translate-x-0.5">
-                      →
-                    </span>
-                  </Link>
-                );
-              })}
-            </div>
+            {/* Right: 6 category cards — swipe slider on mobile, grid from sm up */}
+            <MobileSnapSlider
+              className="flex-1 w-full"
+              trackClassName="gap-2.5 sm:grid sm:grid-cols-3 lg:grid-cols-6 xl:gap-3 sm:overflow-visible"
+              slideClassName="w-[calc((100%-1.25rem)/3)] sm:w-auto"
+            >
+              {categories.map((cat) => (
+                <AreaCategoryCard
+                  key={cat.slug}
+                  href={getLocalePath(currentLocale, `areas/${cat.slug}`)}
+                  label={cat.label}
+                  icon={cat.icon}
+                  className="h-full"
+                />
+              ))}
+            </MobileSnapSlider>
           </div>
         </Container>
       </div>

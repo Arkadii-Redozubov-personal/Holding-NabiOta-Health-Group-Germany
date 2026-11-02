@@ -283,10 +283,10 @@ export function PflegePageComponent({ locale = "de" }: Props) {
                 return (
                   <div
                     key={idx}
-                    className="p-6 sm:p-7 rounded-3xl bg-[#0D2418]/70 border border-[#D5B878]/30 backdrop-blur-md flex flex-col justify-between hover:border-[#D5B878] transition-all duration-300 group"
+                    className="p-6 sm:p-7 rounded-3xl bg-[#0D2418]/70 border border-[#D5B878]/30 backdrop-blur-md flex flex-col justify-between"
                   >
                     <div>
-                      <div className="w-12 h-12 rounded-2xl bg-[#D5B878]/15 border border-[#D5B878]/40 flex items-center justify-center text-[#ECCF96] mb-5 group-hover:scale-105 transition-transform">
+                      <div className="w-12 h-12 rounded-2xl bg-[#D5B878]/15 border border-[#D5B878]/40 flex items-center justify-center text-[#ECCF96] mb-5">
                         <IconComp className="w-6 h-6 stroke-[1.8]" />
                       </div>
                       <h3 className="font-serif text-lg sm:text-xl font-bold text-white mb-2 leading-snug">
@@ -365,7 +365,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
                 {t.pharmacySection.points.map((pt, idx) => (
                   <div
                     key={idx}
-                    className="group relative rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-xs border border-[#EAE4D7] p-5 sm:p-5.5 shadow-[0_3px_14px_rgba(0,0,0,0.02)] hover:shadow-md hover:border-[#D5B878]/60 transition-all duration-300 overflow-hidden"
+                    className="relative rounded-xl sm:rounded-2xl bg-white/95 backdrop-blur-xs border border-[#EAE4D7] p-5 sm:p-5.5 shadow-[0_3px_14px_rgba(0,0,0,0.02)] overflow-hidden"
                   >
                     {/* Leaf watermark in bottom-right corner */}
                     <div className="absolute -bottom-3 -right-3 w-20 h-20 pointer-events-none opacity-15 select-none sepia">
@@ -492,7 +492,7 @@ export function PflegePageComponent({ locale = "de" }: Props) {
               {t.testimonials.cards.map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-white rounded-3xl p-8 sm:p-10 border border-[#EBE4D8] shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between space-y-6"
+                  className="bg-white rounded-3xl p-8 sm:p-10 border border-[#EBE4D8] shadow-md flex flex-col justify-between space-y-6"
                 >
                   {/* Top: 5 Gold Stars & Quote */}
                   <div className="space-y-4">

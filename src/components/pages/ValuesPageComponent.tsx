@@ -343,12 +343,12 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
               {/* 4 Value Cards in ONE row on desktop matching user request */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-3.5">
                 {/* Card 1: Verlässlicher Partner */}
-                <div className="bg-[#0A1F13]/85 hover:bg-[#0D2618]/95 border border-[#D5B878]/30 hover:border-[#D5B878]/70 backdrop-blur-md rounded-xl sm:rounded-2xl p-3.5 sm:p-4 transition-all duration-300 hover:-translate-y-1 shadow-[0_6px_20px_rgba(0,0,0,0.3)] group flex flex-col justify-between">
+                <div className="bg-[#0A1F13]/85 border border-[#D5B878]/30 backdrop-blur-md rounded-xl sm:rounded-2xl p-3.5 sm:p-4 shadow-[0_6px_20px_rgba(0,0,0,0.3)] flex flex-col justify-between">
                   <div>
-                    <div className="text-[#ECCF96] mb-2.5 flex items-center transition-transform group-hover:scale-105">
+                    <div className="text-[#ECCF96] mb-2.5 flex items-center">
                       <HeartHandshake className="w-7 h-7 stroke-[1.6]" />
                     </div>
-                    <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-white mb-1 group-hover:text-[#ECCF96] transition-colors leading-snug">
+                    <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-white mb-1 leading-snug">
                       {t.val1Title}
                     </h3>
                     <p className="text-[11px] sm:text-[11.5px] text-[#A6B8AA] leading-snug font-sans">
@@ -358,12 +358,12 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
                 </div>
 
                 {/* Card 2: Innovative Lösungen */}
-                <div className="bg-[#0A1F13]/85 hover:bg-[#0D2618]/95 border border-[#D5B878]/30 hover:border-[#D5B878]/70 backdrop-blur-md rounded-xl sm:rounded-2xl p-3.5 sm:p-4 transition-all duration-300 hover:-translate-y-1 shadow-[0_6px_20px_rgba(0,0,0,0.3)] group flex flex-col justify-between">
+                <div className="bg-[#0A1F13]/85 border border-[#D5B878]/30 backdrop-blur-md rounded-xl sm:rounded-2xl p-3.5 sm:p-4 shadow-[0_6px_20px_rgba(0,0,0,0.3)] flex flex-col justify-between">
                   <div>
-                    <div className="text-[#ECCF96] mb-2.5 flex items-center transition-transform group-hover:scale-105">
+                    <div className="text-[#ECCF96] mb-2.5 flex items-center">
                       <Lightbulb className="w-7 h-7 stroke-[1.6]" />
                     </div>
-                    <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-white mb-1 group-hover:text-[#ECCF96] transition-colors leading-snug">
+                    <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-white mb-1 leading-snug">
                       {t.val2Title}
                     </h3>
                     <p className="text-[11px] sm:text-[11.5px] text-[#A6B8AA] leading-snug font-sans">
@@ -373,12 +373,12 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
                 </div>
 
                 {/* Card 3: Living Responsibility */}
-                <div className="bg-[#0A1F13]/85 hover:bg-[#0D2618]/95 border border-[#D5B878]/30 hover:border-[#D5B878]/70 backdrop-blur-md rounded-xl sm:rounded-2xl p-3.5 sm:p-4 transition-all duration-300 hover:-translate-y-1 shadow-[0_6px_20px_rgba(0,0,0,0.3)] group flex flex-col justify-between">
+                <div className="bg-[#0A1F13]/85 border border-[#D5B878]/30 backdrop-blur-md rounded-xl sm:rounded-2xl p-3.5 sm:p-4 shadow-[0_6px_20px_rgba(0,0,0,0.3)] flex flex-col justify-between">
                   <div>
-                    <div className="text-[#ECCF96] mb-2.5 flex items-center transition-transform group-hover:scale-105">
+                    <div className="text-[#ECCF96] mb-2.5 flex items-center">
                       <Shield className="w-7 h-7 stroke-[1.6]" />
                     </div>
-                    <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-white mb-1 group-hover:text-[#ECCF96] transition-colors leading-snug">
+                    <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-white mb-1 leading-snug">
                       {t.val3Title}
                     </h3>
                     <p className="text-[11px] sm:text-[11.5px] text-[#A6B8AA] leading-snug font-sans">
@@ -388,12 +388,12 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
                 </div>
 
                 {/* Card 4: People Development */}
-                <div className="bg-[#0A1F13]/85 hover:bg-[#0D2618]/95 border border-[#D5B878]/30 hover:border-[#D5B878]/70 backdrop-blur-md rounded-xl sm:rounded-2xl p-3.5 sm:p-4 transition-all duration-300 hover:-translate-y-1 shadow-[0_6px_20px_rgba(0,0,0,0.3)] group flex flex-col justify-between">
+                <div className="bg-[#0A1F13]/85 border border-[#D5B878]/30 backdrop-blur-md rounded-xl sm:rounded-2xl p-3.5 sm:p-4 shadow-[0_6px_20px_rgba(0,0,0,0.3)] flex flex-col justify-between">
                   <div>
-                    <div className="text-[#ECCF96] mb-2.5 flex items-center transition-transform group-hover:scale-105">
+                    <div className="text-[#ECCF96] mb-2.5 flex items-center">
                       <Users className="w-7 h-7 stroke-[1.6]" />
                     </div>
-                    <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-white mb-1 group-hover:text-[#ECCF96] transition-colors leading-snug">
+                    <h3 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-white mb-1 leading-snug">
                       {t.val4Title}
                     </h3>
                     <p className="text-[11px] sm:text-[11.5px] text-[#A6B8AA] leading-snug font-sans">
@@ -429,7 +429,7 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
             {/* 4 Pillars Grid Matching Reference Photo */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-7 mb-10 sm:mb-12">
               {/* Pillar 1: Weisungsfreiheit § 95 SGB V (Image LEFT, Content RIGHT) */}
-              <div className="bg-white/95 rounded-2xl sm:rounded-3xl border border-[#EAE4D7] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-[#D5B878]/70 transition-all duration-300 flex flex-col sm:flex-row items-stretch overflow-hidden group">
+              <div className="bg-white/95 rounded-2xl sm:rounded-3xl border border-[#EAE4D7] shadow-[0_2px_12px_rgba(0,0,0,0.03)] flex flex-col sm:flex-row items-stretch overflow-hidden">
                 <div className="w-full sm:w-[36%] lg:w-[35%] shrink-0 relative min-h-[170px] sm:min-h-[190px] p-3 sm:p-3.5">
                   <div className="relative w-full h-full min-h-[160px] sm:min-h-[180px] rounded-xl sm:rounded-2xl overflow-hidden shadow-xs">
                     <Image
@@ -437,7 +437,7 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
                       alt={t.govPillar1Title}
                       fill
                       sizes="(min-width: 1024px) 20vw, 40vw"
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover object-center"
                     />
                   </div>
                 </div>
@@ -462,7 +462,7 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
               </div>
 
               {/* Pillar 2: QM & Patientensicherheit (Content LEFT, Image RIGHT) */}
-              <div className="bg-white/95 rounded-2xl sm:rounded-3xl border border-[#EAE4D7] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-[#D5B878]/70 transition-all duration-300 flex flex-col-reverse sm:flex-row items-stretch overflow-hidden group">
+              <div className="bg-white/95 rounded-2xl sm:rounded-3xl border border-[#EAE4D7] shadow-[0_2px_12px_rgba(0,0,0,0.03)] flex flex-col-reverse sm:flex-row items-stretch overflow-hidden">
                 <div className="p-4 sm:p-5 lg:p-5.5 flex-1 flex flex-col justify-center">
                   <div>
                     <h3 className="font-serif text-[17px] sm:text-[18.5px] font-bold text-[#142318] mb-1.5 leading-snug">
@@ -488,14 +488,14 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
                       alt={t.govPillar2Title}
                       fill
                       sizes="(min-width: 1024px) 20vw, 40vw"
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover object-center"
                     />
                   </div>
                 </div>
               </div>
 
               {/* Pillar 3: Schweigepflicht & Datenschutz (Image LEFT, Content RIGHT) */}
-              <div className="bg-white/95 rounded-2xl sm:rounded-3xl border border-[#EAE4D7] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-[#D5B878]/70 transition-all duration-300 flex flex-col sm:flex-row items-stretch overflow-hidden group">
+              <div className="bg-white/95 rounded-2xl sm:rounded-3xl border border-[#EAE4D7] shadow-[0_2px_12px_rgba(0,0,0,0.03)] flex flex-col sm:flex-row items-stretch overflow-hidden">
                 <div className="w-full sm:w-[36%] lg:w-[35%] shrink-0 relative min-h-[170px] sm:min-h-[190px] p-3 sm:p-3.5">
                   <div className="relative w-full h-full min-h-[160px] sm:min-h-[180px] rounded-xl sm:rounded-2xl overflow-hidden shadow-xs">
                     <Image
@@ -503,7 +503,7 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
                       alt={t.govPillar3Title}
                       fill
                       sizes="(min-width: 1024px) 20vw, 40vw"
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover object-center"
                     />
                   </div>
                 </div>
@@ -528,7 +528,7 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
               </div>
 
               {/* Pillar 4: Kassen & KVNO Partnerschaft (Content LEFT, Image RIGHT) */}
-              <div className="bg-white/95 rounded-2xl sm:rounded-3xl border border-[#EAE4D7] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-[#D5B878]/70 transition-all duration-300 flex flex-col-reverse sm:flex-row items-stretch overflow-hidden group">
+              <div className="bg-white/95 rounded-2xl sm:rounded-3xl border border-[#EAE4D7] shadow-[0_2px_12px_rgba(0,0,0,0.03)] flex flex-col-reverse sm:flex-row items-stretch overflow-hidden">
                 <div className="p-4 sm:p-5 lg:p-5.5 flex-1 flex flex-col justify-center">
                   <div>
                     <h3 className="font-serif text-[17px] sm:text-[18.5px] font-bold text-[#142318] mb-1.5 leading-snug">
@@ -554,7 +554,7 @@ export function ValuesPageComponent({ locale = "de" }: ValuesPageComponentProps)
                       alt={t.govPillar4Title}
                       fill
                       sizes="(min-width: 1024px) 20vw, 40vw"
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover object-center"
                     />
                   </div>
                 </div>

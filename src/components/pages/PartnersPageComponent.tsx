@@ -307,14 +307,14 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
               {/* ============================================================= */}
               {/* CARD 1: PHASE 1 (Light Luxury Medical Interior)              */}
               {/* ============================================================= */}
-              <div className="group relative overflow-hidden rounded-[26px] sm:rounded-[30px] bg-white border border-[#E2DBD0] shadow-[0_8px_30px_rgba(20,35,24,0.04)] flex flex-col justify-between transition-all duration-300 hover:shadow-[0_12px_36px_rgba(20,35,24,0.08)]">
+              <div className="relative overflow-hidden rounded-[26px] sm:rounded-[30px] bg-white border border-[#E2DBD0] shadow-[0_8px_30px_rgba(20,35,24,0.04)] flex flex-col justify-between">
                 {/* Right Photo Column with organic curve and golden ribbons */}
                 <div className="absolute right-0 top-0 bottom-0 w-[42%] lg:w-[44%] overflow-hidden pointer-events-none select-none hidden md:block">
                   <Image
                     src="/images/partners/phase1-office.jpg"
                     alt="Phase 1 - Active Establishment"
                     fill
-                    className="object-cover object-[center_right] scale-105 group-hover:scale-100 transition-transform duration-700 ease-out"
+                    className="object-cover object-[center_right]"
                     sizes="(max-width: 1024px) 50vw, 40vw"
                   />
                   {/* Organic wave mask transition with gold rim */}
@@ -494,14 +494,14 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
               {/* ============================================================= */}
               {/* CARD 2: PHASE 2 (Deep Emerald Luxury Hospital Exterior)      */}
               {/* ============================================================= */}
-              <div className="group relative overflow-hidden rounded-[26px] sm:rounded-[30px] bg-[#0B2116] border border-[#D5B878]/35 shadow-[0_8px_30px_rgba(20,35,24,0.12)] flex flex-col justify-between transition-all duration-300 hover:shadow-[0_12px_36px_rgba(20,35,24,0.18)]">
+              <div className="relative overflow-hidden rounded-[26px] sm:rounded-[30px] bg-[#0B2116] border border-[#D5B878]/35 shadow-[0_8px_30px_rgba(20,35,24,0.12)] flex flex-col justify-between">
                 {/* Right Photo Column with organic curve and golden ribbons */}
                 <div className="absolute right-0 top-0 bottom-0 w-[42%] lg:w-[44%] overflow-hidden pointer-events-none select-none hidden md:block">
                   <Image
                     src="/images/partners/phase2-clinic.jpg"
                     alt="Phase 2 - Hospital Licensing"
                     fill
-                    className="object-cover object-[center_right] scale-105 group-hover:scale-100 transition-transform duration-700 ease-out"
+                    className="object-cover object-[center_right]"
                     sizes="(max-width: 1024px) 50vw, 40vw"
                   />
                   {/* Organic wave mask transition with gold rim */}
@@ -888,10 +888,10 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
               {processSteps.map((step, idx) => (
                 <div
                   key={idx}
-                  className={`group relative overflow-hidden rounded-[22px] sm:rounded-[24px] bg-[#FCFAF7] p-5 sm:p-6 lg:p-6.5 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_12px_36px_rgba(20,35,24,0.08)] ${
+                  className={`relative overflow-hidden rounded-[22px] sm:rounded-[24px] bg-[#FCFAF7] p-5 sm:p-6 lg:p-6.5 flex flex-col justify-between ${
                     idx === 0
                       ? "border-[1.5px] border-[#55755E] shadow-[0_4px_24px_rgba(85,117,94,0.08)]"
-                      : "border border-[#E7E1D4] shadow-[0_4px_20px_rgba(20,35,24,0.03)] hover:border-[#8C6D37]/50"
+                      : "border border-[#E7E1D4] shadow-[0_4px_20px_rgba(20,35,24,0.03)]"
                   }`}
                 >
                   {/* Top-right soft photo container with delicate fade */}
@@ -900,7 +900,7 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                       src={step.image}
                       alt={step.title}
                       fill
-                      className="object-cover object-right-top transition-transform duration-700 ease-out group-hover:scale-105"
+                      className="object-cover object-right-top"
                       sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw"
                     />
                     {/* Horizontal fade into card background #FCFAF7 */}
@@ -913,7 +913,7 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
                   <div className="relative z-10 space-y-3.5 sm:space-y-4">
                     {/* Icon + Serif Italic Number */}
                     <div className="flex items-center gap-3">
-                      <div className="text-[#4A6353] group-hover:text-[#274632] flex items-center justify-center shrink-0 transition-colors">
+                      <div className="text-[#4A6353] flex items-center justify-center shrink-0">
                         <step.icon className="w-8 h-8 stroke-[1.8]" />
                       </div>
                       <span className="font-serif italic text-2xl sm:text-[27px] text-[#C5A56A] font-light leading-none select-none pl-0.5">

@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
+  ArrowLeft,
   Search,
   Lightbulb,
   Users,
@@ -54,6 +55,41 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
   const isAr = locale === "ar";
 
   const [selectedDomain, setSelectedDomain] = useState<RealEstateDomain | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(12);
+  const [enableTransition, setEnableTransition] = useState(true);
+  const [visibleCount, setVisibleCount] = useState(4);
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const w = window.innerWidth;
+      if (w < 640) {
+        setVisibleCount(1);
+      } else if (w < 980) {
+        setVisibleCount(2);
+      } else if (w < 1200) {
+        setVisibleCount(3);
+      } else {
+        setVisibleCount(4);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (!enableTransition) {
+      const raf = requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setEnableTransition(true);
+        });
+      });
+      return () => cancelAnimationFrame(raf);
+    }
+  }, [enableTransition]);
 
   // Lock body scroll and handle Escape key for modal
   useEffect(() => {
@@ -170,88 +206,269 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
         <RealEstateCompanySection locale={locale} />
 
         {/* ========================================================================= */}
-        {/* SECTION 1C: SPECIALIZED HEALTHCARE REAL ESTATE PORTFOLIO       */}
+        {/* SECTION 1C: SPECIALIZED HEALTHCARE REAL ESTATE PORTFOLIO                  */}
         {/* ========================================================================= */}
-        <section id="immobilien" className="py-14 sm:py-20 bg-[#FAF9F5] border-t border-[#EAE3D5]">
-          <Container size="wide">
-            <div className="max-w-3xl mb-12 sm:mb-16">
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] text-forest-950 font-normal leading-tight mb-4">
-                {t.s4.title}
-              </h2>
-              <p className="text-sm sm:text-base text-[#4E5650] leading-relaxed max-w-2xl">
-                {t.s4.desc}
-              </p>
+        <section id="immobilien" className="py-14 sm:py-20 bg-[#FAF9F5] border-t border-[#EAE3D5] overflow-hidden">
+          <Container size="wide" className="max-w-[1520px] px-2 sm:px-4 md:px-6 lg:px-8">
+            {/* Header matching screenshot: Title | Description ... All Areas -> (Aligned with cards) */}
+            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-10 sm:mb-14 sm:pl-14 md:pl-16 sm:pr-14 md:pr-16">
+              <div className="flex flex-col md:flex-row md:items-center gap-6 lg:gap-8 flex-1">
+                <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] text-[#142318] font-normal leading-[1.18] max-w-lg lg:max-w-xl">
+                  {t.s4.title}
+                </h2>
+                <div className="hidden md:block w-px h-14 bg-[#C5A56A]/60 shrink-0" />
+                <p className="text-xs sm:text-sm text-[#55695C] leading-relaxed max-w-md">
+                  {t.s4.desc}
+                </p>
+              </div>
+              <a
+                href="#immobilien"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#8C6D37] hover:text-[#705527] transition-colors shrink-0"
+              >
+                {t.s4.allAreas}
+                <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
 
-            {/* 6 Cards Grid: 3 cols x 2 rows with User-Approved Styling */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
-              {realEstateDomains.map((domain) => (
-                <div
-                  key={domain.id}
-                  onClick={() => setSelectedDomain(domain)}
-                  className="rounded-3xl bg-white border border-[#EAE4D7] shadow-sm hover:shadow-xl hover:border-[#C5A56A] transition-all duration-300 flex flex-col justify-between overflow-hidden group cursor-pointer"
-                >
-                  {/* Photo without pill badge */}
-                  <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-[#07150C]">
-                    <Image
-                      src={domain.image}
-                      alt={domain.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
+            {/* ── INFINITE RESPONSIVE SLIDER (4 CARDS IN A ROW) ── */}
+            {(() => {
+              const gap = 16; // px - reduced gap between cards
+              const N = realEstateDomains.length; // 6
+              const clonedDomains = [
+                ...realEstateDomains,
+                ...realEstateDomains,
+                ...realEstateDomains,
+                ...realEstateDomains,
+                ...realEstateDomains,
+              ];
+
+              const handlePrev = () => {
+                setEnableTransition(true);
+                setCurrentIndex((prev) => prev - 1);
+              };
+
+              const handleNext = () => {
+                setEnableTransition(true);
+                setCurrentIndex((prev) => prev + 1);
+              };
+
+              const handleTransitionEnd = () => {
+                const baseOffset = 2 * N; // 12
+                const currentMod = ((currentIndex % N) + N) % N;
+                const normalized = baseOffset + currentMod;
+                if (normalized !== currentIndex) {
+                  setEnableTransition(false);
+                  setCurrentIndex(normalized);
+                }
+              };
+
+              const activeDot = ((currentIndex % N) + N) % N;
+
+              const goToDot = (di: number) => {
+                setEnableTransition(true);
+                let diff = di - activeDot;
+                if (diff > 3) diff -= 6;
+                if (diff < -3) diff += 6;
+                setCurrentIndex((prev) => prev + diff);
+              };
+
+              const onTouchStart = (e: React.TouchEvent) => {
+                touchStartX.current = e.targetTouches[0].clientX;
+                touchEndX.current = null;
+              };
+
+              const onTouchMove = (e: React.TouchEvent) => {
+                touchEndX.current = e.targetTouches[0].clientX;
+              };
+
+              const onTouchEnd = () => {
+                if (!touchStartX.current || !touchEndX.current) return;
+                const distance = touchStartX.current - touchEndX.current;
+                if (distance > 45) {
+                  handleNext();
+                } else if (distance < -45) {
+                  handlePrev();
+                }
+                touchStartX.current = null;
+                touchEndX.current = null;
+              };
+
+              return (
+                <div className="space-y-8 sm:space-y-10">
+                  {/* Slider Row with Side Buttons closer to cards */}
+                  <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3.5 lg:gap-4">
+                    {/* Left Arrow Button */}
+                    <button
+                      type="button"
+                      onClick={handlePrev}
+                      aria-label="Previous slide"
+                      className="hidden sm:flex shrink-0 w-11 h-11 md:w-13 md:h-13 rounded-full bg-white border border-[#EAE4D7] shadow-[0_4px_16px_rgba(0,0,0,0.07)] items-center justify-center text-[#8C6D37] hover:border-[#C5A56A] hover:bg-[#FAF6EE] hover:text-[#6D5324] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
+                    >
+                      <ArrowLeft className="w-5 h-5 md:w-5.5 md:h-5.5 stroke-[2.2]" />
+                    </button>
+
+                    {/* Cards Viewport Container */}
+                    <div
+                      ref={sliderRef}
+                      className="flex-1 min-w-0 overflow-hidden"
+                      onTouchStart={onTouchStart}
+                      onTouchMove={onTouchMove}
+                      onTouchEnd={onTouchEnd}
+                    >
+                      <div
+                        onTransitionEnd={handleTransitionEnd}
+                        className={`flex gap-4 ${
+                          enableTransition ? "transition-transform duration-500 ease-out" : ""
+                        }`}
+                        style={{
+                          transform: `translateX(calc(-${currentIndex * (100 / visibleCount)}% - ${
+                            currentIndex * (gap / visibleCount)
+                          }px))`,
+                        }}
+                      >
+                        {clonedDomains.map((domain, idx) => (
+                          <div
+                            key={`${domain.id}-${idx}`}
+                            onClick={() => setSelectedDomain(domain)}
+                            className="rounded-3xl bg-white border border-[#EAE4D7] shadow-sm hover:border-[#C5A56A]/60 hover:shadow-md flex flex-col justify-between overflow-hidden cursor-pointer flex-shrink-0 transition-all duration-300 select-none"
+                            style={{
+                              flex: `0 0 calc(${100 / visibleCount}% - ${
+                                (gap * (visibleCount - 1)) / visibleCount
+                              }px)`,
+                            }}
+                          >
+                            {/* Photo */}
+                            <div className="relative h-44 sm:h-48 md:h-50 w-full overflow-hidden bg-[#07150C]">
+                              <Image
+                                src={domain.image}
+                                alt={domain.title}
+                                fill
+                                sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                                className="object-cover"
+                              />
+                            </div>
+
+                            {/* Card Content with SVG Wave */}
+                            <div className="relative bg-white pt-2 pb-5 px-4.5 sm:px-5 flex-1 flex flex-col justify-between">
+                              {/* Wave Divider */}
+                              <div className="absolute -top-5 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none">
+                                <svg
+                                  viewBox="0 0 400 32"
+                                  preserveAspectRatio="none"
+                                  className="w-full h-6 fill-white"
+                                >
+                                  <path d="M 0,16 C 18,5 34,0 64,0 C 98,0 118,13 145,17 C 225,27 325,16 400,13 L 400,32 L 0,32 Z" />
+                                </svg>
+                              </div>
+
+                              {/* Mint Icon Badge */}
+                              <div className="relative -mt-7 sm:-mt-8 mb-3 z-10">
+                                <div className="w-10 h-10 rounded-full bg-[#E5F0E8] border border-[#CCE0D2] flex items-center justify-center text-[#1C3E2A] shadow-xs">
+                                  {domain.iconType === "building" && (
+                                    <Building2 className="w-5 h-5 stroke-[1.8]" />
+                                  )}
+                                  {domain.iconType === "stethoscope" && (
+                                    <Stethoscope className="w-5 h-5 stroke-[1.8]" />
+                                  )}
+                                  {domain.iconType === "activity" && (
+                                    <Activity className="w-5 h-5 stroke-[1.8]" />
+                                  )}
+                                  {domain.iconType === "heartpulse" && (
+                                    <HeartPulse className="w-5 h-5 stroke-[1.8]" />
+                                  )}
+                                  {domain.iconType === "heart" && (
+                                    <Heart className="w-5 h-5 stroke-[1.8]" />
+                                  )}
+                                  {domain.iconType === "home" && (
+                                    <Home className="w-5 h-5 stroke-[1.8]" />
+                                  )}
+                                </div>
+                              </div>
+
+                              {/* Title & Description */}
+                              <div className="space-y-1.5 mb-4 flex-1">
+                                <h3 className="font-serif text-[16.5px] sm:text-[17.5px] font-bold text-[#142318] leading-[1.25]">
+                                  {domain.title}
+                                </h3>
+                                <p className="text-[11.5px] sm:text-xs text-[#55695C] leading-relaxed line-clamp-3">
+                                  {domain.shortDesc}
+                                </p>
+                              </div>
+
+                              {/* Bottom Actions Bar */}
+                              <div className="pt-3.5 mt-auto border-t border-[#F2ECE1] flex items-center justify-between">
+                                <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-[#FAF3E7] hover:bg-[#F3E8D5] text-[#8C6D37] text-[11px] sm:text-xs font-semibold transition-colors">
+                                  {t.s4.openModalBtn}
+                                  <ArrowRight className="w-3.5 h-3.5" />
+                                </span>
+                                <div className="w-8.5 h-8.5 rounded-full bg-[#FAF3E7] hover:bg-[#F3E8D5] border border-[#EADBBE] flex items-center justify-center text-[#8C6D37] transition-colors">
+                                  <ArrowRight className="w-3.5 h-3.5" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Right Arrow Button */}
+                    <button
+                      type="button"
+                      onClick={handleNext}
+                      aria-label="Next slide"
+                      className="hidden sm:flex shrink-0 w-11 h-11 md:w-13 md:h-13 rounded-full bg-white border border-[#EAE4D7] shadow-[0_4px_16px_rgba(0,0,0,0.07)] items-center justify-center text-[#8C6D37] hover:border-[#C5A56A] hover:bg-[#FAF6EE] hover:text-[#6D5324] hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
+                    >
+                      <ArrowRight className="w-5 h-5 md:w-5.5 md:h-5.5 stroke-[2.2]" />
+                    </button>
                   </div>
 
-                  {/* Card Content with circular icon overlapping the image & gentle wave */}
-                  <div className="relative bg-white pt-2 pb-6 px-6 sm:px-7 flex-1 flex flex-col justify-between">
-                    {/* Curved wave transition at top */}
-                    <div className="absolute -top-6 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none">
-                      <svg
-                        viewBox="0 0 400 32"
-                        preserveAspectRatio="none"
-                        className="w-full h-7 fill-white"
-                      >
-                        <path d="M 0,16 C 18,5 34,0 64,0 C 98,0 118,13 145,17 C 225,27 325,16 400,13 L 400,32 L 0,32 Z" />
-                      </svg>
+                  {/* Bottom Controls: Arrow Left, Dots, Arrow Right (Never disabled) */}
+                  <div className="flex items-center justify-center gap-3">
+                    {/* Prev dot-arrow */}
+                    <button
+                      type="button"
+                      onClick={handlePrev}
+                      aria-label="Previous slide"
+                      className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#D5C9B5] bg-transparent flex items-center justify-center text-[#8C6D37] hover:border-[#8C6D37] hover:bg-[#FAF3E7] transition-colors cursor-pointer"
+                    >
+                      <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    </button>
+
+                    {/* 6 Dots */}
+                    <div className="flex items-center gap-2 px-1">
+                      {realEstateDomains.map((_, di) => {
+                        const isActive = di === activeDot;
+                        return (
+                          <button
+                            key={di}
+                            type="button"
+                            onClick={() => goToDot(di)}
+                            aria-label={`Go to slide ${di + 1}`}
+                            className={`rounded-full transition-all duration-300 cursor-pointer ${
+                              isActive
+                                ? "w-6 h-2.5 bg-[#8C6D37] ring-2 ring-[#8C6D37]/25"
+                                : "w-2.5 h-2.5 bg-[#D5C9B5] hover:bg-[#8C6D37]/50"
+                            }`}
+                          />
+                        );
+                      })}
                     </div>
 
-                    {/* Circular Icon with light green background overlapping photo */}
-                    <div className="relative -mt-9 mb-3.5 z-10">
-                      <div className="w-12 h-12 rounded-full bg-[#E5F0E8] border border-[#CCE0D2] flex items-center justify-center text-[#1C3E2A] shadow-xs group-hover:scale-105 transition-transform">
-                        {domain.iconType === "building" && <Building2 className="w-6 h-6 stroke-[1.8]" />}
-                        {domain.iconType === "stethoscope" && <Stethoscope className="w-6 h-6 stroke-[1.8]" />}
-                        {domain.iconType === "activity" && <Activity className="w-6 h-6 stroke-[1.8]" />}
-                        {domain.iconType === "heartpulse" && <HeartPulse className="w-6 h-6 stroke-[1.8]" />}
-                        {domain.iconType === "heart" && <Heart className="w-6 h-6 stroke-[1.8]" />}
-                        {domain.iconType === "home" && <Home className="w-6 h-6 stroke-[1.8]" />}
-                      </div>
-                    </div>
-
-                    {/* Title & Description on white background */}
-                    <div className="space-y-2 mb-4">
-                      <h3 className="font-serif text-xl sm:text-[21px] font-bold text-[#142318] leading-tight group-hover:text-[#8D6B27] transition-colors">
-                        {domain.title}
-                      </h3>
-                      <p className="text-xs sm:text-[13px] text-[#55695C] leading-relaxed">
-                        {domain.shortDesc}
-                      </p>
-                    </div>
-
-                    {/* Bottom Action Area: Pill Button + Circle Arrow Button */}
-                    <div className="pt-4 mt-auto border-t border-[#F2ECE1] flex items-center justify-between">
-                      <span className="px-4 py-2 rounded-full bg-[#FAF3E7] text-[#93712C] text-xs font-semibold group-hover:bg-[#F5EAD4] transition-colors">
-                        {t.s4.openModalBtn}
-                      </span>
-                      <div className="w-9 h-9 rounded-full bg-[#FAF3E7] border border-[#EADBBE] flex items-center justify-center text-[#93712C] group-hover:bg-[#C5A56A] group-hover:text-white group-hover:border-[#C5A56A] transition-all">
-                        <ArrowRight className="w-4 h-4" />
-                      </div>
-                    </div>
+                    {/* Next dot-arrow */}
+                    <button
+                      type="button"
+                      onClick={handleNext}
+                      aria-label="Next slide"
+                      className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-[#D5C9B5] bg-transparent flex items-center justify-center text-[#8C6D37] hover:border-[#8C6D37] hover:bg-[#FAF3E7] transition-colors cursor-pointer"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    </button>
                   </div>
                 </div>
-              ))}
-            </div>
+              );
+            })()}
           </Container>
         </section>
-
 
         {/* ========================================================================= */}
         {/* SECTION 2: PROJEKTENTWICKLUNG - VON DER IDEE ZUR UMSETZUNG               */}
@@ -510,14 +727,14 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
               <div className="lg:col-span-4 flex justify-start lg:justify-start lg:pl-4 xl:pl-6">
                 <div className="w-full max-w-[340px] space-y-3.5 sm:space-y-4">
                   <div className="flex items-center gap-3.5 text-xs sm:text-[13.5px] text-[#1B3A29]">
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/80 border border-[#DFCDBA] flex items-center justify-center text-[#8C6D37] shrink-0 shadow-2xs group-hover:bg-[#E5DFC9] transition-colors">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/80 border border-[#DFCDBA] flex items-center justify-center text-[#8C6D37] shrink-0 shadow-2xs">
                       <Phone className="w-4 h-4 fill-[#8C6D37] text-[#8C6D37]" />
                     </div>
                     <span className="font-medium font-sans">{t.s6.phone}</span>
                   </div>
 
                   <div className="flex items-center gap-3.5 text-xs sm:text-[13.5px] text-[#1B3A29]">
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/80 border border-[#DFCDBA] flex items-center justify-center text-[#0F2A1D] shrink-0 shadow-2xs group-hover:bg-[#E5DFC9] transition-colors">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/80 border border-[#DFCDBA] flex items-center justify-center text-[#0F2A1D] shrink-0 shadow-2xs">
                       <Mail className="w-4 h-4 fill-[#0F2A1D] text-[#0F2A1D]" />
                     </div>
                     <span className="font-medium font-sans">{t.s6.email}</span>

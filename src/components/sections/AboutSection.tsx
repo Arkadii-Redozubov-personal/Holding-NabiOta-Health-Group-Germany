@@ -112,9 +112,9 @@ export function AboutSection({ currentLocale = "de" }: AboutSectionProps) {
             {dict.about.benefits.map((benefit, idx) => {
               const IconComponent = benefitIcons[idx] || Handshake;
               return (
-                <div key={idx} className="flex items-center gap-3.5 group">
+                <div key={idx} className="flex items-center gap-3.5">
                   {/* Icon without circle */}
-                  <div className="text-[#9C8145] group-hover:text-[#7D6532] flex items-center justify-center flex-shrink-0 transition-colors">
+                  <div className="text-[#9C8145] flex items-center justify-center flex-shrink-0">
                     <IconComponent className="w-6.5 h-6.5 sm:w-7 sm:h-7 stroke-[1.5]" />
                   </div>
 

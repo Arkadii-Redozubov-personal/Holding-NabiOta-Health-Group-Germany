@@ -877,7 +877,7 @@ export function getBeratungPageTranslations(locale: SupportedLocale = "de") {
         : isAr
         ? "التأهيل والعلاج الرياضي"
         : "REHA & SPORTTHERAPIE",
-      image: "/images/beratung/project-reha.webp",
+      image: "/images/areas/rehabilitation.webp",
       iconType: "heartpulse",
       title: isUz
         ? "Reabilitatsiya va terapiya markazlari"
@@ -2049,6 +2049,17 @@ export function getBeratungPageTranslations(locale: SupportedLocale = "de") {
         : isAr
         ? "التفاصيل والمخطط المعماري"
         : "Details & Raumkonzept",
+      allAreas: isUz
+        ? "Barcha yo'nalishlar"
+        : isRu
+        ? "Все направления"
+        : isEn
+        ? "All Areas"
+        : isTr
+        ? "Tüm Alanlar"
+        : isAr
+        ? "جميع المجالات"
+        : "Alle Bereiche",
     },
     s5: {
       eyebrow: isUz

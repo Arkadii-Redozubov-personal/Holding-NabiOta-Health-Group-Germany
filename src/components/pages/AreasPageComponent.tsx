@@ -196,7 +196,7 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
                       return (
                         <div
                           key={idx}
-                          className="flex items-center gap-3.5 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white/75 backdrop-blur-xs border border-[#EDE8DE] hover:border-[#D5B878]/60 hover:bg-white/95 transition-all shadow-xs"
+                          className="flex items-center gap-3.5 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white/75 backdrop-blur-xs border border-[#EDE8DE] shadow-xs"
                         >
                           <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-[#D5B878]/60 bg-white/95 flex items-center justify-center text-[#9E7D3B] shrink-0 shadow-2xs">
                             <FeatureIcon className="w-5 h-5 stroke-[1.6]" />
@@ -308,9 +308,9 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
                     return (
                       <div
                         key={pIdx}
-                        className="flex items-start gap-4 p-4 sm:p-5 rounded-2xl bg-white/75 backdrop-blur-xs border border-[#EAE4D7] hover:border-[#D5B878]/70 hover:bg-white transition-all shadow-2xs"
+                        className="flex items-start gap-4 p-4 sm:p-5 rounded-2xl bg-white/75 backdrop-blur-xs border border-[#EAE4D7] shadow-2xs"
                       >
-                        <div className="w-12 h-12 sm:w-13 sm:h-13 rounded-full border border-[#D5B878]/60 bg-[#FAF3E8] flex items-center justify-center text-[#9E7D3B] shrink-0 shadow-2xs hover:bg-[#F0E5CD] transition-colors">
+                        <div className="w-12 h-12 sm:w-13 sm:h-13 rounded-full border border-[#D5B878]/60 bg-[#FAF3E8] flex items-center justify-center text-[#9E7D3B] shrink-0 shadow-2xs">
                           <PillarIcon className="w-5 h-5 sm:w-5.5 sm:h-5.5 stroke-[1.6]" />
                         </div>
                         <div className="min-w-0">

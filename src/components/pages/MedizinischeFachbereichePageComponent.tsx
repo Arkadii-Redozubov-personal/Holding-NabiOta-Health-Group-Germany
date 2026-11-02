@@ -517,7 +517,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                 return (
                   <div
                     key={eIdx}
-                    className="bg-white rounded-[20px] sm:rounded-[22px] p-5 sm:p-5.5 border border-[#EDE8DE] hover:border-[#D5B878] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-md transition-all flex flex-col justify-between group"
+                    className="bg-white rounded-[20px] sm:rounded-[22px] p-5 sm:p-5.5 border border-[#EDE8DE] shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex flex-col justify-between"
                   >
                     <div>
                       {/* Entity descriptor */}
@@ -527,10 +527,10 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
 
                       {/* Icon & Title Row */}
                       <div className="flex items-center gap-3 mb-2.5">
-                        <div className="text-[#183B26] group-hover:text-[#8C6D2B] flex items-center justify-center shrink-0 transition-colors">
+                        <div className="text-[#183B26] flex items-center justify-center shrink-0">
                           <EntityIcon className="w-8 h-8 sm:w-9 sm:h-9" />
                         </div>
-                        <h4 className="font-serif text-[15.5px] sm:text-[16.5px] text-[#142318] font-bold leading-snug group-hover:text-[#B89650] transition-colors">
+                        <h4 className="font-serif text-[15.5px] sm:text-[16.5px] text-[#142318] font-bold leading-snug">
                           {entity.title}
                         </h4>
                       </div>
@@ -558,11 +558,11 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                           rel={eIdx === 1 ? "noopener noreferrer" : undefined}
                           className="text-[#B89650] hover:text-[#8C6D2B] flex items-center justify-center transition-colors p-1"
                         >
-                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                          <ArrowRight className="w-4 h-4" />
                         </Link>
                       ) : (
                         <div className="text-[#B89650] flex items-center justify-center p-1">
-                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+                          <ArrowRight className="w-4 h-4" />
                         </div>
                       )}
                     </div>
@@ -632,7 +632,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                   {teamSection.doctors.map((doc, idx) => (
                     <div
                       key={idx}
-                      className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 border border-[#EDE8DE] hover:border-[#D5B878] shadow-[0_4px_16px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_28px_rgba(213,184,120,0.16)] transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
+                      className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 border border-[#EDE8DE] shadow-[0_4px_16px_rgba(0,0,0,0.03)] flex flex-col justify-between"
                     >
                       <div>
                         {/* Doctor Photo - Generous Aspect Ratio */}
@@ -641,7 +641,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                             src={doc.image}
                             alt={doc.name}
                             fill
-                            className="object-cover group-hover:scale-104 transition-transform duration-500 ease-out"
+                            className="object-cover"
                             sizes="(max-width: 768px) 100vw, 320px"
                           />
                         </div>
@@ -651,7 +651,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                           <span className="text-[11px] font-medium text-[#6E756D] block">
                             {doc.role}
                           </span>
-                          <h4 className="text-[15px] sm:text-[16.5px] font-serif font-medium text-[#142318] group-hover:text-[#B89650] transition-colors leading-snug">
+                          <h4 className="text-[15px] sm:text-[16.5px] font-serif font-medium text-[#142318] leading-snug">
                             {doc.name}
                           </h4>
                           {/* Doctor Description */}
@@ -663,7 +663,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
 
                       {/* Bottom Row with Arrow Button */}
                       <div className="pt-3.5 mt-3.5 border-t border-[#EDE8DE]/70 flex items-center justify-between">
-                        <span className="text-[11px] font-medium text-[#142318]/70 group-hover:text-[#142318] transition-colors">
+                        <span className="text-[11px] font-medium text-[#142318]/70">
                           {isUz ? "Shifokor profili" : isRu ? "Профиль врача" : isEn ? "View Profile" : isTr ? "Hekim Profili" : isAr ? "الملف التعريفي للطبيب" : "Arztprofil"}
                         </span>
                         <Link
@@ -671,7 +671,7 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
                           aria-label={isRu ? `Открыть подразделение: ${doc.role}` : isEn ? `Open department: ${doc.role}` : isTr ? `Bölümü aç: ${doc.role}` : isAr ? `افتح القسم: ${doc.role}` : isUz ? `Bo‘limni ochish: ${doc.role}` : `Fachbereich öffnen: ${doc.role}`}
                           target={idx === 1 ? "_blank" : undefined}
                           rel={idx === 1 ? "noopener noreferrer" : undefined}
-                          className="text-[#142318] group-hover:text-[#B89650] flex items-center justify-center transition-colors shrink-0 p-1"
+                          className="text-[#142318] hover:text-[#B89650] flex items-center justify-center transition-colors shrink-0 p-1"
                         >
                           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
                         </Link>

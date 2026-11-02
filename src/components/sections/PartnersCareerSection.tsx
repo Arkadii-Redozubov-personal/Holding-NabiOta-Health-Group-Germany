@@ -16,7 +16,7 @@ export function PartnersCareerSection({ currentLocale = "de" }: PartnersCareerSe
       <div className="mx-auto w-full max-w-[1540px] 2xl:max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 xl:gap-6 items-stretch">
           {/* ── LEFT CARD: Partner & Kooperationen ───────────── */}
-          <div className="rounded-2xl bg-white border border-[#E5DFD5] shadow-[0_2px_14px_rgba(0,0,0,0.03)] overflow-hidden flex flex-col sm:flex-row items-stretch transition-all duration-300 hover:shadow-md group min-h-[290px] xl:min-h-[310px]">
+          <div className="rounded-2xl bg-white border border-[#E5DFD5] shadow-[0_2px_14px_rgba(0,0,0,0.03)] overflow-hidden flex flex-col sm:flex-row items-stretch min-h-[290px] xl:min-h-[310px]">
             {/* Left text column */}
             <div className="flex-1 p-6 sm:p-7 xl:p-8 flex flex-col justify-between">
               <div>
@@ -44,14 +44,14 @@ export function PartnersCareerSection({ currentLocale = "de" }: PartnersCareerSe
                 alt="Kooperationspartner im medizinischen Atrium"
                 fill
                 sizes="(max-width: 1024px) 100vw, 35vw"
-                className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                className="object-cover object-center"
               />
               <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-white to-transparent hidden sm:block pointer-events-none" />
             </div>
           </div>
 
           {/* ── RIGHT CARD: Karriere ─────────────────────────── */}
-          <div className="rounded-2xl bg-[#0C2417] text-white border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.15)] overflow-hidden flex flex-col sm:flex-row items-stretch transition-all duration-300 hover:shadow-xl group min-h-[290px] xl:min-h-[310px]">
+          <div className="rounded-2xl bg-[#0C2417] text-white border border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.15)] overflow-hidden flex flex-col sm:flex-row items-stretch min-h-[290px] xl:min-h-[310px]">
             {/* Left text column */}
             <div className="flex-1 p-6 sm:p-7 xl:p-8 flex flex-col justify-between">
               <div>
@@ -79,7 +79,7 @@ export function PartnersCareerSection({ currentLocale = "de" }: PartnersCareerSe
                 alt="Medizinisches Team der NabiOta Health Group"
                 fill
                 sizes="(max-width: 1024px) 100vw, 35vw"
-                className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                className="object-cover object-center"
               />
               <div className="absolute inset-y-0 left-0 w-14 bg-gradient-to-r from-[#0C2417] to-transparent hidden sm:block pointer-events-none" />
             </div>

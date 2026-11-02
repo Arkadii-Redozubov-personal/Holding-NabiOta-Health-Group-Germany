@@ -459,7 +459,7 @@ export function SanitaetshausCompanySection({ locale = "de" }: { locale?: string
                   return (
                     <div
                       key={item.num}
-                      className="group relative rounded-[18px] bg-white border border-[#EAE4D7] p-3.5 sm:p-4 flex items-center justify-between gap-3 sm:gap-4 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:shadow-md hover:border-[#D5B878]/60 transition-all duration-300"
+                      className="relative rounded-[18px] bg-white border border-[#EAE4D7] p-3.5 sm:p-4 flex items-center justify-between gap-3 sm:gap-4 shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
                     >
                       {/* Left: Icon */}
                       <div className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center shrink-0 text-[#9E7D3B]">
@@ -476,10 +476,10 @@ export function SanitaetshausCompanySection({ locale = "de" }: { locale?: string
                         </p>
                       </div>
 
-                      {/* Right: Arrow link */}
-                      <Link href={`/${l}/nabiota-sanitaetshaus`} aria-label={item.title[l]} className="text-[#9E7D3B] hover:text-[#142318] shrink-0 p-1.5 transition-colors">
-                        <ArrowRight className="w-4.5 h-4.5 transition-transform group-hover:translate-x-0.5" />
-                      </Link>
+                      {/* Right: Arrow */}
+                      <div className="text-[#9E7D3B] shrink-0 p-1.5">
+                        <ArrowRight className="w-4.5 h-4.5" />
+                      </div>
                     </div>
                   );
                 })}
@@ -553,13 +553,13 @@ export function SanitaetshausCompanySection({ locale = "de" }: { locale?: string
                 return (
                   <div
                     key={idx}
-                    className="bg-[#0A1F13]/85 hover:bg-[#0D2618]/95 border border-[#D5B878]/30 hover:border-[#D5B878]/70 backdrop-blur-md rounded-xl sm:rounded-2xl p-3.5 sm:p-4 transition-all duration-300 hover:-translate-y-1 shadow-[0_6px_20px_rgba(0,0,0,0.3)] group flex flex-col justify-between"
+                    className="bg-[#0A1F13]/85 border border-[#D5B878]/30 backdrop-blur-md rounded-xl sm:rounded-2xl p-3.5 sm:p-4 shadow-[0_6px_20px_rgba(0,0,0,0.3)] flex flex-col justify-between"
                   >
                     <div>
                       <div className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center text-[#ECCF96] mb-2.5">
                         <RowIcon className="w-6 h-6 sm:w-6.5 sm:h-6.5 stroke-[1.6]" />
                       </div>
-                      <h4 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-white mb-1 group-hover:text-[#ECCF96] transition-colors leading-snug">
+                      <h4 className="font-serif font-bold text-[14.5px] sm:text-[15.5px] text-white mb-1 leading-snug">
                         {row.area[l]}
                       </h4>
                       <p className="text-[11px] sm:text-[11.5px] text-[#A6B8AA] leading-relaxed font-sans">

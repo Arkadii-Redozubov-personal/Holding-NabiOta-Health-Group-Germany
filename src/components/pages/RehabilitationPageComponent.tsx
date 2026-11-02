@@ -240,12 +240,12 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
         <div className="w-full max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-stretch">
             {/* Left Card: Pool Photo with Button */}
-            <div className="relative rounded-3xl overflow-hidden shadow-xl border border-[#EDE8DE] min-h-[380px] sm:min-h-[420px] flex flex-col justify-end p-7 sm:p-9 group">
+            <div className="relative rounded-3xl overflow-hidden shadow-xl border border-[#EDE8DE] min-h-[380px] sm:min-h-[420px] flex flex-col justify-end p-7 sm:p-9">
               <Image
                 src="/images/rehabilitation/facility-pool.webp"
                 alt="Moderne Einrichtungen"
                 fill
-                className="object-cover object-center group-hover:scale-103 transition-transform duration-700"
+                className="object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
 
@@ -380,7 +380,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
                           src={activeSpec.image}
                           alt={activeSpec.title}
                           fill
-                          className="object-cover transition-transform duration-700 hover:scale-102"
+                          className="object-cover"
                           priority
                         />
                       </div>
@@ -528,7 +528,7 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
               {processData.steps.map((st, idx) => (
                 <div
                   key={idx}
-                  className="bg-white/95 backdrop-blur-xs rounded-2xl p-5 sm:p-6 border border-[#E5ECE3] shadow-md relative flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
+                  className="bg-white/95 backdrop-blur-xs rounded-2xl p-5 sm:p-6 border border-[#E5ECE3] shadow-md relative flex flex-col justify-between"
                 >
                   <div>
                     <div className="text-[#0B2516] mb-3 flex items-center">

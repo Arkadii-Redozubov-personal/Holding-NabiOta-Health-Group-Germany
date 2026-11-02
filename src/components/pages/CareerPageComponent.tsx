@@ -188,7 +188,7 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
               {t.pathway.map((item, idx) => (
                 <div
                   key={idx}
-                  className="rounded-2xl sm:rounded-3xl p-6 sm:p-7 bg-[#0A2214]/60 border border-[#1E432A] backdrop-blur-xs flex flex-col justify-between space-y-4 hover:border-[#D5B878]/60 transition-all duration-300 group shadow-xs"
+                  className="rounded-2xl sm:rounded-3xl p-6 sm:p-7 bg-[#0A2214]/60 border border-[#1E432A] backdrop-blur-xs flex flex-col justify-between space-y-4 shadow-xs"
                 >
                   <div className="space-y-4">
                     {/* Top Row: Left number circle + Right icon circle matching Photo 2 */}
@@ -235,7 +235,7 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
               {t.benefits.items.map((b, idx) => (
                 <div
                   key={idx}
-                  className="p-7 sm:p-8 rounded-2xl bg-white border border-[#EAE4D7] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:border-[#DFC894] transition-all duration-300 flex flex-col justify-between group"
+                  className="p-7 sm:p-8 rounded-2xl bg-white border border-[#EAE4D7] shadow-[0_2px_12px_rgba(0,0,0,0.03)] flex flex-col justify-between"
                 >
                   <div>
                     <div className="text-[#C5A56A] mb-5">

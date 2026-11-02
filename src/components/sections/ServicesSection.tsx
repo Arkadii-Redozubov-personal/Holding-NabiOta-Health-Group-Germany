@@ -169,7 +169,7 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
             {/* ── 1. LEFT PEEK CARD (Previous Area - Wider Side Card) ── */}
             <div
               onClick={handlePrev}
-              className="group hidden md:flex flex-col w-[300px] lg:w-[340px] xl:w-[370px] h-[405px] sm:h-[420px] lg:h-[435px] shrink-0 rounded-[24px] sm:rounded-[28px] bg-white border border-[#EDE8DE] shadow-[0_4px_20px_rgba(20,35,24,0.04)] overflow-hidden opacity-85 hover:opacity-100 transition-all duration-300 cursor-pointer hover:shadow-lg hover:-translate-y-0.5"
+              className="group hidden md:flex flex-col w-[300px] lg:w-[340px] xl:w-[370px] h-[340px] sm:h-[355px] lg:h-[370px] shrink-0 rounded-[24px] sm:rounded-[28px] bg-white border border-[#EDE8DE] shadow-[0_4px_20px_rgba(20,35,24,0.04)] overflow-hidden opacity-85 hover:opacity-100 transition-all duration-300 cursor-pointer hover:shadow-lg hover:-translate-y-0.5"
             >
               {/* Top Image (Fills ~50% of card) */}
               <div className="relative w-full h-[50%] overflow-hidden bg-[#07170E]/5 shrink-0">
@@ -207,7 +207,7 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
             </div>
 
             {/* ── 2. CENTER ACTIVE CARD (2-Column Hero Card - Slightly Narrower) ── */}
-            <div className="relative w-full max-w-[660px] lg:max-w-[720px] xl:max-w-[760px] h-[405px] sm:h-[420px] lg:h-[435px] shrink-0 rounded-[24px] sm:rounded-[28px] bg-white border border-[#EDE8DE] shadow-[0_10px_35px_rgba(20,35,24,0.06),0_1px_3px_rgba(20,35,24,0.04)] overflow-visible">
+            <div className="relative w-full max-w-[660px] lg:max-w-[720px] xl:max-w-[760px] h-[340px] sm:h-[355px] lg:h-[370px] shrink-0 rounded-[24px] sm:rounded-[28px] bg-white border border-[#EDE8DE] shadow-[0_10px_35px_rgba(20,35,24,0.06),0_1px_3px_rgba(20,35,24,0.04)] overflow-visible">
               {/* Floating Left Arrow Button on the Card Seam */}
               <button
                 onClick={handlePrev}
@@ -324,7 +324,7 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
             {/* ── 3. RIGHT PEEK CARD (Next Area - Wider Side Card) ── */}
             <div
               onClick={handleNext}
-              className="group hidden md:flex flex-col w-[300px] lg:w-[340px] xl:w-[370px] h-[405px] sm:h-[420px] lg:h-[435px] shrink-0 rounded-[24px] sm:rounded-[28px] bg-white border border-[#EDE8DE] shadow-[0_4px_20px_rgba(20,35,24,0.04)] overflow-hidden opacity-85 hover:opacity-100 transition-all duration-300 cursor-pointer hover:shadow-lg hover:-translate-y-0.5"
+              className="group hidden md:flex flex-col w-[300px] lg:w-[340px] xl:w-[370px] h-[340px] sm:h-[355px] lg:h-[370px] shrink-0 rounded-[24px] sm:rounded-[28px] bg-white border border-[#EDE8DE] shadow-[0_4px_20px_rgba(20,35,24,0.04)] overflow-hidden opacity-85 hover:opacity-100 transition-all duration-300 cursor-pointer hover:shadow-lg hover:-translate-y-0.5"
             >
               {/* Top Image (Fills ~50% of card) */}
               <div className="relative w-full h-[50%] overflow-hidden bg-[#07170E]/5 shrink-0">

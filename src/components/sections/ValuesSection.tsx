@@ -331,14 +331,14 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
             return (
               <div
                 key={val.id}
-                className="flex flex-col items-center text-center px-2 sm:px-3 lg:px-4 py-2 group"
+                className="flex flex-col items-center text-center px-2 sm:px-3 lg:px-4 py-2"
               >
                 {/* Icon without circle */}
-                <div className="text-[#9C8145] group-hover:text-[#B89650] mb-3 flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                <div className="text-[#9C8145] mb-3 flex items-center justify-center">
                   <Icon className="w-9 h-9 sm:w-10 sm:h-10 stroke-[1.4]" />
                 </div>
 
-                <h3 className="font-sans text-[13.5px] sm:text-[14.5px] font-bold text-[#112117] mb-1 group-hover:text-[#BFA267] transition-colors">
+                <h3 className="font-sans text-[13.5px] sm:text-[14.5px] font-bold text-[#112117] mb-1">
                   {val.title}
                 </h3>
                 <p className="text-[11px] sm:text-xs text-[#6B6659] leading-relaxed max-w-[155px] mx-auto">

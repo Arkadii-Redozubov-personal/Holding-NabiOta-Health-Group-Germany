@@ -282,7 +282,7 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
               {t.s6.items.map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-white rounded-2xl sm:rounded-3xl p-7 sm:p-8 border border-[#E5DFD3] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between space-y-6 min-h-[270px] sm:min-h-[290px]"
+                  className="bg-white rounded-2xl sm:rounded-3xl p-7 sm:p-8 border border-[#E5DFD3] shadow-xs flex flex-col justify-between space-y-6 min-h-[270px] sm:min-h-[290px]"
                 >
                   {/* Top: Avatar on left + Quote on right */}
                   <div className="flex items-start gap-4 sm:gap-5">
