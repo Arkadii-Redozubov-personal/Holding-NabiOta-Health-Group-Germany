@@ -9,6 +9,13 @@ ErrorDocument 404 /404.html
   # Serve index.html on root / and /index.htm (overrides default ALL-INKL placeholder)
   RewriteRule ^(index\.htm)?$ index.html [L]
 
+  # Serve static images directly when requested via Next.js /_next/image?url=%2Fimages%2F...
+  RewriteCond %{QUERY_STRING} (?:^|&)url=%2Fimages%2F([^&%]+)%2F([^&%]+)(?:&|$) [NC]
+  RewriteRule ^_next/image/?$ /images/%1/%2? [L]
+
+  RewriteCond %{QUERY_STRING} (?:^|&)url=%2Fimages%2F([^&%]+)(?:&|$) [NC]
+  RewriteRule ^_next/image/?$ /images/%1? [L]
+
   # Serve .html file if a matching .html file exists on disk (e.g. /de, /about, /de/about)
   RewriteCond %{DOCUMENT_ROOT}/$1.html -f
   RewriteRule ^(.+?)/?$ $1.html [L]
