@@ -92,7 +92,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
 
   const filteredLocations =
     activeCategory === "all"
-      ? locations.filter((l) => l.category !== "partners")
+      ? locations
       : locations.filter((l) => l.category === activeCategory);
 
   const activeLocation = locations.find((l) => l.id === activeLocationId) || locations[0];
@@ -692,108 +692,126 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                 </div>
               </div>
 
-              {/* Grid: 3 Location Cards (left) + Map Container with QR code (right) */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-stretch">
-                {/* 3 Location Cards */}
-                <div className="lg:col-span-7 xl:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-3.5 items-stretch">
-                  {filteredLocations.map((loc) => {
-                    const isActive = loc.id === activeLocationId;
-                    return (
-                      <div
-                        key={loc.id}
-                        onClick={() => setActiveLocationId(loc.id)}
-                        className={`rounded-2xl p-3 sm:p-3.5 flex flex-col justify-between transition-all duration-200 cursor-pointer ${
-                          isActive
-                            ? "bg-[#132B1E] text-white border-2 border-[#132B1E] shadow-sm"
-                            : "bg-white text-[#132218] border-2 border-[#EAE4D7] hover:border-[#D5B878]/80 shadow-[0_1px_6px_rgba(0,0,0,0.02)]"
-                        }`}
-                      >
-                        <div>
+              {/* Grid: Scrollable Location Cards (left) + Map Container with QR code (right) */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-stretch lg:h-[520px]">
+                {/* Left: Vertically Scrollable Stack of Horizontal Location Cards */}
+                <div className="lg:col-span-5 xl:col-span-5 flex flex-col min-h-0 h-full">
+                  <div className="nabiota-locations-scroll max-h-[460px] lg:max-h-none lg:h-full overflow-y-auto pe-1.5 space-y-3">
+                    {filteredLocations.map((loc) => {
+                      const isActive = loc.id === activeLocationId;
+                      return (
+                        <div
+                          key={loc.id}
+                          role="button"
+                          tabIndex={0}
+                          aria-pressed={isActive}
+                          onClick={() => setActiveLocationId(loc.id)}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter" || e.key === " ") {
+                              e.preventDefault();
+                              setActiveLocationId(loc.id);
+                            }
+                          }}
+                          className={`group rounded-2xl p-3 sm:p-3.5 flex flex-col sm:flex-row gap-3.5 transition-colors duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#BEA06B] ${
+                            isActive
+                              ? "bg-[#132B1E] text-white border border-[#132B1E]"
+                              : "bg-white text-[#132218] border border-[#EAE4D7] hover:border-[#C5A56A]"
+                          }`}
+                        >
                           {/* Image */}
-                          <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden mb-3 bg-neutral-900">
+                          <div className="relative w-full sm:w-[132px] aspect-[16/10] sm:aspect-auto sm:min-h-[116px] shrink-0 rounded-xl overflow-hidden bg-neutral-900">
                             <Image
                               src={loc.image}
                               alt={loc.title}
                               fill
-                              className="object-cover transition-transform duration-500 hover:scale-105"
-                              sizes="(max-width: 768px) 100vw, 300px"
+                              className="object-cover transition-transform duration-500 group-hover:scale-105"
+                              sizes="(max-width: 640px) 100vw, 132px"
                             />
                           </div>
 
-                          {/* Title */}
-                          <div className="flex items-center gap-1.5 mb-1.5">
-                            <MapPin className={`w-3.5 h-3.5 shrink-0 ${isActive ? "text-[#ECCF96]" : "text-[#8C6D2B]"}`} />
-                            <h3 className={`font-serif text-[13.5px] sm:text-[14px] font-medium leading-tight truncate ${isActive ? "text-white" : "text-[#132218]"}`}>
-                              {loc.title}
-                            </h3>
-                          </div>
+                          {/* Details */}
+                          <div className="flex-1 min-w-0 flex flex-col justify-between gap-2">
+                            <div>
+                              {/* Title */}
+                              <div className="flex items-start justify-between gap-2 mb-1">
+                                <div className="flex items-start gap-1.5 min-w-0">
+                                  <MapPin
+                                    className={`w-3.5 h-3.5 mt-0.5 shrink-0 ${
+                                      isActive ? "text-[#ECCF96]" : "text-[#8C6D2B]"
+                                    }`}
+                                  />
+                                  <h3
+                                    className={`font-serif text-[14.5px] font-medium leading-snug ${
+                                      isActive ? "text-white" : "text-[#132218]"
+                                    }`}
+                                  >
+                                    {loc.title}
+                                  </h3>
+                                </div>
+                                {isActive && (
+                                  <span
+                                    className="mt-1 w-2 h-2 rounded-full bg-[#ECCF96] shrink-0"
+                                    aria-hidden="true"
+                                  />
+                                )}
+                              </div>
 
-                          {/* Address */}
-                          <p className={`font-sans text-[11px] sm:text-[11.5px] leading-snug mb-3 whitespace-pre-line ${isActive ? "text-white/80" : "text-[#556358]"}`}>
-                            {loc.address}
-                          </p>
-
-                          {/* Phone & Mail */}
-                          <div className="space-y-1 font-sans text-[11px] mb-3">
-                            <div className="flex items-center gap-1.5">
-                              <Phone className={`w-3 h-3 shrink-0 ${isActive ? "text-white/60" : "text-[#8C6D2B]"}`} />
-                              <a
-                                href={`tel:${loc.phone.replace(/\s+/g, "")}`}
-                                onClick={(e) => e.stopPropagation()}
-                                className={`hover:underline truncate ${isActive ? "text-white/90" : "text-[#2C382F]"}`}
+                              {/* Address */}
+                              <p
+                                className={`font-sans text-[12px] leading-snug whitespace-pre-line ${
+                                  isActive ? "text-white/80" : "text-[#556358]"
+                                }`}
                               >
-                                {loc.phone}
-                              </a>
+                                {loc.address}
+                              </p>
                             </div>
-                            <div className="flex items-center gap-1.5">
-                              <Mail className={`w-3 h-3 shrink-0 ${isActive ? "text-white/60" : "text-[#8C6D2B]"}`} />
-                              <a
-                                href={`mailto:${loc.email}`}
-                                onClick={(e) => e.stopPropagation()}
-                                className={`hover:underline truncate ${isActive ? "text-white/90" : "text-[#2C382F]"}`}
-                              >
-                                {loc.email}
-                              </a>
+
+                            {/* Phone & Mail */}
+                            <div className="space-y-1 font-sans text-[12px] pt-1">
+                              <div className="flex items-center gap-1.5">
+                                <Phone
+                                  className={`w-3 h-3 shrink-0 ${
+                                    isActive ? "text-[#ECCF96]/80" : "text-[#8C6D2B]"
+                                  }`}
+                                />
+                                <a
+                                  href={`tel:${loc.phone.replace(/\s+/g, "")}`}
+                                  dir="ltr"
+                                  onClick={(e) => e.stopPropagation()}
+                                  className={`hover:underline break-words ${
+                                    isActive ? "text-white/95" : "text-[#2C382F]"
+                                  }`}
+                                >
+                                  {loc.phone}
+                                </a>
+                              </div>
+                              <div className="flex items-center gap-1.5">
+                                <Mail
+                                  className={`w-3 h-3 shrink-0 ${
+                                    isActive ? "text-[#ECCF96]/80" : "text-[#8C6D2B]"
+                                  }`}
+                                />
+                                <a
+                                  href={`mailto:${loc.email}`}
+                                  onClick={(e) => e.stopPropagation()}
+                                  className={`hover:underline break-all sm:break-words ${
+                                    isActive ? "text-white/95" : "text-[#2C382F]"
+                                  }`}
+                                >
+                                  {loc.email}
+                                </a>
+                              </div>
                             </div>
                           </div>
                         </div>
-
-                        {/* Button: "Показать на карте" */}
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setActiveLocationId(loc.id);
-                          }}
-                          className={`w-full mt-2 py-2 px-3 rounded-full text-[11px] sm:text-[11.5px] font-medium flex items-center justify-center gap-1.5 transition-colors cursor-pointer ${
-                            isActive
-                              ? "border border-white/25 hover:border-white text-white bg-white/5 hover:bg-white/10"
-                              : "border border-[#DCD6C8] hover:border-[#132B1E] text-[#132218] bg-transparent hover:bg-[#FAF8F5]"
-                          }`}
-                        >
-                          <MapPin className="w-3 h-3 shrink-0" />
-                          <span>
-                            {locale === "uz"
-                              ? "Xaritada ko'rsatish"
-                              : locale === "ru"
-                              ? "Показать на карте"
-                              : locale === "en"
-                              ? "Show on map"
-                              : locale === "tr"
-                              ? "Haritada göster"
-                              : locale === "ar"
-                              ? "عرض على الخريطة"
-                              : "Auf der Karte zeigen"}
-                          </span>
-                        </button>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
+                  </div>
                 </div>
 
                 {/* Right: Map Container with bottom QR Card */}
-                <div className="lg:col-span-5 xl:col-span-5">
-                  <div className="relative rounded-[22px] overflow-hidden border border-[#EAE4D7] bg-[#EAE7DC] h-full min-h-[420px] sm:min-h-[460px] shadow-sm flex flex-col justify-between">
+                <div className="lg:col-span-7 xl:col-span-7 h-full">
+                  <div className="relative rounded-2xl overflow-hidden border border-[#EAE4D7] bg-[#EAE7DC] h-full min-h-[420px] lg:min-h-0 flex flex-col justify-between">
                     {/* Interactive Map iframe */}
                     <iframe
                       title={activeLocation.title}

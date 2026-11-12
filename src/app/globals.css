@@ -213,3 +213,26 @@ li,
   }
 }
 
+.nabiota-locations-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(190, 160, 107, 0.55) #F2ECE1;
+}
+
+.nabiota-locations-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.nabiota-locations-scroll::-webkit-scrollbar-track {
+  background: #F2ECE1;
+  border-radius: 9999px;
+}
+
+.nabiota-locations-scroll::-webkit-scrollbar-thumb {
+  background: rgba(190, 160, 107, 0.55);
+  border-radius: 9999px;
+}
+
+.nabiota-locations-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(166, 134, 78, 0.8);
+}
+
