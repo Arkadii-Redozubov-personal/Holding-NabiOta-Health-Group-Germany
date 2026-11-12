@@ -1,4 +1,7 @@
 import { MetadataRoute } from "next";
+
+export const dynamic = "force-static";
+
 import { businessAreas } from "@/data/areas";
 import { locales, defaultLocale } from "@/lib/i18n";
 import { getLocaleUrl, getLocaleAlternates } from "@/lib/seo";

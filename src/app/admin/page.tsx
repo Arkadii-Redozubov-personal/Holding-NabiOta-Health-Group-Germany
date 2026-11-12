@@ -1,15 +1,26 @@
-import { redirect } from "next/navigation";
-import { getAdminSession } from "@/lib/admin-auth";
+"use client";
+
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { AdminStationeryPanel } from "@/components/admin/AdminStationeryPanel";
 
-export const dynamic = "force-dynamic";
+export default function AdminDashboardPage() {
+  const router = useRouter();
+  const [userEmail, setUserEmail] = useState<string | null>(null);
 
-export default async function AdminDashboardPage() {
-  const session = await getAdminSession();
+  useEffect(() => {
+    // In client-side mode
+    const stored = localStorage.getItem("nabiota_admin_email");
+    if (!stored) {
+      router.push("/admin/login");
+    } else {
+      setUserEmail(stored);
+    }
+  }, [router]);
 
-  if (!session) {
-    redirect("/admin/login");
+  if (!userEmail) {
+    return null;
   }
 
-  return <AdminStationeryPanel userEmail={session.email} />;
+  return <AdminStationeryPanel userEmail={userEmail} />;
 }
