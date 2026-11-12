@@ -6,6 +6,9 @@ ErrorDocument 404 /404.html
   RewriteEngine On
   RewriteBase /
 
+  # Serve index.html on root / and /index.htm (overrides default ALL-INKL placeholder)
+  RewriteRule ^(index\.htm)?$ index.html [L]
+
   # Serve .html file if a matching .html file exists on disk (e.g. /de, /about, /de/about)
   RewriteCond %{DOCUMENT_ROOT}/$1.html -f
   RewriteRule ^(.+?)/?$ $1.html [L]
