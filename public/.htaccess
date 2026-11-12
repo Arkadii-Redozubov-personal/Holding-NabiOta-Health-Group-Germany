@@ -1,13 +1,12 @@
 Options -Indexes
+DirectoryIndex index.html index.php index.htm
 ErrorDocument 404 /404.html
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  RewriteRule .* - [E=DBG_DOCROOT:%{DOCUMENT_ROOT},E=DBG_FILE:%{REQUEST_FILENAME}]
-
-  # Serve .html file if a matching .html file exists on disk
+  # Serve .html file if a matching .html file exists on disk (e.g. /de, /about, /de/about)
   RewriteCond %{DOCUMENT_ROOT}/$1.html -f
   RewriteRule ^(.+?)/?$ $1.html [L]
 
@@ -15,11 +14,6 @@ ErrorDocument 404 /404.html
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
-</IfModule>
-
-<IfModule mod_headers.c>
-  Header always set X-Debug-DocRoot "%{DBG_DOCROOT}e"
-  Header always set X-Debug-File "%{DBG_FILE}e"
 </IfModule>
 
 <IfModule mod_deflate.c>
