@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/admin/", "/admin"],
     },
-    sitemap: "https://www.nabiota-health-group.de/sitemap.xml",
+    sitemap: "https://www.nabiota-health-group-germany.de/sitemap.xml",
   };
 }

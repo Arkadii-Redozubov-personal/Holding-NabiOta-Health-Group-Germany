@@ -6,7 +6,7 @@ import {
   type SupportedLocale,
 } from "@/lib/i18n";
 
-export const siteUrl = "https://www.nabiota-health-group.de";
+export const siteUrl = "https://www.nabiota-health-group-germany.de";
 
 export function getLocaleUrl(
   locale: SupportedLocale,
