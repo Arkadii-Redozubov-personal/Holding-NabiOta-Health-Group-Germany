@@ -148,7 +148,7 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
         />
       </div>
 
-      <div className="relative z-10 w-full max-w-[1540px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
+      <div className="relative z-10 w-full max-w-[1540px] 2xl:max-w-[1600px] mx-auto px-5 sm:px-10 lg:px-14">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 mb-7 sm:mb-9">
           <div>
@@ -258,12 +258,12 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
             </div>
           </div>
 
-          {/* Floating Desktop Arrows flanking the centered focus card */}
+          {/* Floating Arrows flanking each outer side of the slider */}
           <button
             type="button"
             onClick={isRtl ? handleNext : handlePrev}
             aria-label={isRtl ? "Next slide" : "Previous slide"}
-            className="hidden lg:flex absolute left-[calc(33.333%-14px)] top-[44%] -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white shadow-[0_8px_24px_rgba(17,33,23,0.14)] border border-[#E7DFD2] text-[#7D5F28] items-center justify-center hover:bg-[#FAF8F4] hover:border-[#BEA06B] hover:scale-105 active:scale-95 transition-all cursor-pointer focus-visible:outline-2 focus-visible:outline-[#BEA06B]"
+            className="hidden sm:flex absolute -left-5 lg:-left-7 top-[46%] -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white shadow-[0_8px_24px_rgba(17,33,23,0.14)] border border-[#E7DFD2] text-[#7D5F28] items-center justify-center hover:bg-[#FAF8F4] hover:border-[#BEA06B] hover:scale-105 active:scale-95 transition-all cursor-pointer focus-visible:outline-2 focus-visible:outline-[#BEA06B]"
           >
             <ArrowLeft className="w-4.5 h-4.5 stroke-[1.8]" />
           </button>
@@ -272,7 +272,7 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
             type="button"
             onClick={isRtl ? handlePrev : handleNext}
             aria-label={isRtl ? "Previous slide" : "Next slide"}
-            className="hidden lg:flex absolute right-[calc(33.333%-14px)] top-[44%] -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white shadow-[0_8px_24px_rgba(17,33,23,0.14)] border border-[#E7DFD2] text-[#7D5F28] items-center justify-center hover:bg-[#FAF8F4] hover:border-[#BEA06B] hover:scale-105 active:scale-95 transition-all cursor-pointer focus-visible:outline-2 focus-visible:outline-[#BEA06B]"
+            className="hidden sm:flex absolute -right-5 lg:-right-7 top-[46%] -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-white shadow-[0_8px_24px_rgba(17,33,23,0.14)] border border-[#E7DFD2] text-[#7D5F28] items-center justify-center hover:bg-[#FAF8F4] hover:border-[#BEA06B] hover:scale-105 active:scale-95 transition-all cursor-pointer focus-visible:outline-2 focus-visible:outline-[#BEA06B]"
           >
             <ArrowRight className="w-4.5 h-4.5 stroke-[1.8]" />
           </button>
@@ -301,7 +301,7 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
             <div className="hidden sm:block w-12 sm:w-16 h-px bg-[#EAE3D6]" />
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex sm:hidden items-center gap-2">
             <button
               type="button"
               onClick={handlePrev}

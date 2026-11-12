@@ -577,19 +577,6 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
               {/* Header with Title on Left, Tabs on Right */}
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 sm:mb-8">
                 <div>
-                  <span className="block text-[#8C6D2B] text-[11px] font-semibold tracking-wider uppercase mb-1">
-                    {locale === "uz"
-                      ? "BIZNING OFISLARIMIZ"
-                      : locale === "ru"
-                      ? "НАШИ ОФИСЫ"
-                      : locale === "en"
-                      ? "OUR LOCATIONS"
-                      : locale === "tr"
-                      ? "OFİSLERİMİZ"
-                      : locale === "ar"
-                      ? "مكاتبنا وعياداتنا"
-                      : "UNSERE STANDORTE"}
-                  </span>
                   <h2 className="font-serif text-[26px] sm:text-[34px] text-[#132218] font-normal leading-tight">
                     {locale === "uz"
                       ? "Bizni qayerdan topish mumkin"
