@@ -162,8 +162,8 @@ li,
 }
 
 .nabiota-areas-splide .splide__slide .area-slide-card {
-  opacity: 0.68;
-  transform: scale(0.91);
+  opacity: 0.72;
+  transform: scale(0.94);
   transform-origin: center center;
   box-shadow: 0 6px 20px -6px rgba(17, 33, 23, 0.08);
   transition:
@@ -173,8 +173,8 @@ li,
 }
 
 .nabiota-areas-splide .splide__slide:not(.is-active):hover .area-slide-card {
-  opacity: 0.9;
-  transform: scale(0.94);
+  opacity: 0.92;
+  transform: scale(0.96);
 }
 
 .nabiota-areas-splide .splide__slide:not(.is-active) .area-slide-cta {
