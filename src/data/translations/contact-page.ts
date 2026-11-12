@@ -588,70 +588,90 @@ export function getContactLocations(locale: SupportedLocale = "de"): LocationOff
           : "Holding-Hauptsitz",
     },
     {
-      id: "klinik-mg",
-      category: "clinics",
-      title:
-        locale === "uz"
-          ? "Myonxengladbax klinikasi"
-          : locale === "ru"
-          ? "Клиника Мёнхенгладбаха"
-          : locale === "en"
-          ? "Mönchengladbach Medical Center"
-          : locale === "tr"
-          ? "Mönchengladbach Kliniği"
-          : locale === "ar"
-          ? "عيادة مونشنغلادباخ"
-          : "Klinik Mönchengladbach",
-      address: "Lürriper Straße 39\n41065 Mönchengladbach",
-      phone: "+49 2161 9170017",
-      email: "klinik@nabiota-health-group.de",
-      image: "/images/contact/clinic-reception.webp",
-      query: "L%C3%BCrriper+Stra%C3%9Fe+39,+41065+M%C3%B6nchengladbach",
-      mapPin:
-        locale === "uz"
-          ? "Myonxengladbax klinikasi"
-          : locale === "ru"
-          ? "Клиника Мёнхенгладбаха"
-          : locale === "en"
-          ? "Mönchengladbach Clinic"
-          : locale === "tr"
-          ? "Mönchengladbach Kliniği"
-          : locale === "ar"
-          ? "عيادة مونشنغلادباخ"
-          : "Klinik Mönchengladbach",
-    },
-    {
       id: "klinik-dusseldorf",
       category: "clinics",
       title:
         locale === "uz"
-          ? "Dyusseldorf klinikasi"
+          ? "Dyusseldorf"
           : locale === "ru"
-          ? "Клиника Дюссельдорфа"
-          : locale === "en"
-          ? "Düsseldorf Medical Center"
-          : locale === "tr"
-          ? "Düsseldorf Kliniği"
+          ? "Дюссельдорф"
           : locale === "ar"
-          ? "عيادة دوسلدورف"
-          : "Klinik Düsseldorf",
-      address: "Kölner Landstraße 227\n40589 Düsseldorf",
+          ? "دوسلدورف"
+          : "Düsseldorf",
+      address: "Münsterstr. 519\n40472 Düsseldorf",
       phone: "+49 211 1234567",
       email: "duesseldorf@nabiota-health-group.de",
       image: "/images/partners/phase2-clinic.jpg",
-      query: "K%C3%B6lner+Landstra%C3%9Fe+227,+40589+D%C3%BCsseldorf",
+      query: "M%C3%BCnsterstr.+519,+40472+D%C3%BCsseldorf",
       mapPin:
         locale === "uz"
-          ? "Dyusseldorf klinikasi"
+          ? "Dyusseldorf"
           : locale === "ru"
-          ? "Клиника Дюссельдорфа"
-          : locale === "en"
-          ? "Düsseldorf Clinic"
-          : locale === "tr"
-          ? "Düsseldorf Kliniği"
+          ? "Дюссельдорф"
           : locale === "ar"
-          ? "عيادة دوسلدورف"
-          : "Klinik Düsseldorf",
+          ? "دوسلدورف"
+          : "Düsseldorf",
+    },
+    {
+      id: "klinik-viersen",
+      category: "clinics",
+      title:
+        locale === "uz"
+          ? "Firsen"
+          : locale === "ru"
+          ? "Фирсен"
+          : locale === "ar"
+          ? "فيرزن"
+          : "Viersen",
+      address: "Hauptstr. 76\n41747 Viersen",
+      phone: "+49 2161 9170017",
+      email: "klinik@nabiota-health-group.de",
+      image: "/images/areas/atrium-lounge.webp",
+      query: "Hauptstr.+76,+41747+Viersen",
+      mapPin:
+        locale === "uz"
+          ? "Firsen"
+          : locale === "ru"
+          ? "Фирсен"
+          : locale === "ar"
+          ? "فيرزن"
+          : "Viersen",
+    },
+    {
+      id: "klinik-mg",
+      category: "clinics",
+      title:
+        locale === "uz"
+          ? "Myonxengladbax"
+          : locale === "ru"
+          ? "Мёнхенгладбах"
+          : locale === "ar"
+          ? "مونشنغلادباخ"
+          : "Mönchengladbach",
+      address:
+        locale === "uz"
+          ? "Bismarckstr. 106\n41061 Mönchengladbach, 3-qavat"
+          : locale === "ru"
+          ? "Bismarckstr. 106\n41061 Mönchengladbach, 3-й этаж"
+          : locale === "en"
+          ? "Bismarckstr. 106\n41061 Mönchengladbach, 3rd floor"
+          : locale === "tr"
+          ? "Bismarckstr. 106\n41061 Mönchengladbach, 3. kat"
+          : locale === "ar"
+          ? "Bismarckstr. 106\n41061 Mönchengladbach، الطابق الثالث"
+          : "Bismarckstr. 106\n41061 Mönchengladbach, 3. OG",
+      phone: "+49 2161 9170017",
+      email: "klinik@nabiota-health-group.de",
+      image: "/images/contact/clinic-reception.webp",
+      query: "Bismarckstr.+106,+41061+M%C3%B6nchengladbach",
+      mapPin:
+        locale === "uz"
+          ? "Myonxengladbax"
+          : locale === "ru"
+          ? "Мёнхенгладбах"
+          : locale === "ar"
+          ? "مونشنغلادباخ"
+          : "Mönchengladbach",
     },
     {
       id: "partners-nrw",
