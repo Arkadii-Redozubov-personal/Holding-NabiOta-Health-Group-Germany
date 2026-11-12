@@ -158,24 +158,23 @@ li,
 
 .nabiota-areas-splide .splide__slide {
   display: flex;
-  opacity: 0.68;
-  transform: scale(0.91);
-  transform-origin: center center;
-  transition:
-    transform 520ms cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 420ms ease,
-    filter 420ms ease;
   cursor: pointer;
 }
 
-.nabiota-areas-splide .splide__slide:not(.is-active):hover {
-  opacity: 0.9;
-  transform: scale(0.94);
+.nabiota-areas-splide .splide__slide .area-slide-card {
+  opacity: 0.68;
+  transform: scale(0.91);
+  transform-origin: center center;
+  box-shadow: 0 6px 20px -6px rgba(17, 33, 23, 0.08);
+  transition:
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 420ms ease,
+    box-shadow 520ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.nabiota-areas-splide .splide__slide .area-slide-card {
-  box-shadow: 0 6px 20px -6px rgba(17, 33, 23, 0.08);
-  transition: box-shadow 520ms cubic-bezier(0.22, 1, 0.36, 1);
+.nabiota-areas-splide .splide__slide:not(.is-active):hover .area-slide-card {
+  opacity: 0.9;
+  transform: scale(0.94);
 }
 
 .nabiota-areas-splide .splide__slide:not(.is-active) .area-slide-cta {
@@ -185,12 +184,12 @@ li,
 
 .nabiota-areas-splide .splide__slide.is-active {
   z-index: 10;
-  opacity: 1;
-  transform: scale(1);
   cursor: default;
 }
 
 .nabiota-areas-splide .splide__slide.is-active .area-slide-card {
+  opacity: 1;
+  transform: scale(1);
   box-shadow:
     0 24px 52px -14px rgba(17, 33, 23, 0.16),
     0 6px 16px -4px rgba(190, 160, 107, 0.14);
