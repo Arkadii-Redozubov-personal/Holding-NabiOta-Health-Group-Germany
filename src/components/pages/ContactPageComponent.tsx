@@ -225,11 +225,11 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                 LEFT (6 cols): Контактная информация (5 Contact Cards Grid)
                 RIGHT (6 cols): Написать нам (Appointment & Inquiry Form)
             ══════════════════════════════════════════════════════════ */}
-            <section className="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-9 items-start">
+            <section className="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-9 items-stretch">
               {/* ── Left Column: Contact Information (5 Cards) ── */}
-              <div className="lg:col-span-6 flex flex-col justify-between">
-                <div className="mb-4 sm:mb-5">
-                  <h2 className="font-serif text-[26px] sm:text-[32px] text-[#132218] font-normal leading-tight mb-1">
+              <div className="lg:col-span-6 flex flex-col h-full">
+                <div className="mb-4 sm:mb-5 shrink-0">
+                  <h2 className="font-serif text-[26px] sm:text-[32px] text-[#132218] font-normal leading-tight">
                     {locale === "uz"
                       ? "Aloqa ma'lumotlari"
                       : locale === "ru"
@@ -242,25 +242,12 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                       ? "معلومات الاتصال"
                       : "Kontaktinformationen"}
                   </h2>
-                  <p className="font-sans text-[12.5px] sm:text-[13px] text-[#556358]">
-                    {locale === "uz"
-                      ? "Biz bilan bog'lanish uchun ma'lumotlar"
-                      : locale === "ru"
-                      ? "Наши данные для связи"
-                      : locale === "en"
-                      ? "Our direct contact details"
-                      : locale === "tr"
-                      ? "Bize ulaşabileceğiniz iletişim kanalları"
-                      : locale === "ar"
-                      ? "بيانات التواصل المباشر الخاصة بنا"
-                      : "Unsere Kontaktdaten auf einen Blick"}
-                  </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
+                <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-rows-3 gap-3 sm:gap-3.5">
                   {/* Card 1: Postal address */}
-                  <div className="bg-[#FAF7F0] border border-[#EAE4D7] rounded-2xl p-4 sm:p-5 flex items-start gap-3.5 sm:gap-4">
-                    <div className="shrink-0 text-[#8C6D2B] pt-0.5">
+                  <div className="bg-[#FAF7F0] border border-[#EAE4D7] rounded-2xl p-4 sm:p-5 flex items-center gap-3.5 sm:gap-4 h-full">
+                    <div className="shrink-0 text-[#8C6D2B]">
                       <MapPin className="w-7 h-7 stroke-[1.6]" />
                     </div>
                     <div className="flex-1 min-w-0">
@@ -276,8 +263,8 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                   </div>
 
                   {/* Card 2: Phone */}
-                  <div className="bg-[#FAF7F0] border border-[#EAE4D7] rounded-2xl p-4 sm:p-5 flex items-start gap-3.5 sm:gap-4">
-                    <div className="shrink-0 text-[#8C6D2B] pt-0.5">
+                  <div className="bg-[#FAF7F0] border border-[#EAE4D7] rounded-2xl p-4 sm:p-5 flex items-center gap-3.5 sm:gap-4 h-full">
+                    <div className="shrink-0 text-[#8C6D2B]">
                       <Phone className="w-7 h-7 stroke-[1.6]" />
                     </div>
                     <div className="flex-1 min-w-0">
@@ -308,8 +295,8 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                   </div>
 
                   {/* Card 3: Email */}
-                  <div className="bg-[#FAF7F0] border border-[#EAE4D7] rounded-2xl p-4 sm:p-5 flex items-start gap-3.5 sm:gap-4">
-                    <div className="shrink-0 text-[#8C6D2B] pt-0.5">
+                  <div className="bg-[#FAF7F0] border border-[#EAE4D7] rounded-2xl p-4 sm:p-5 flex items-center gap-3.5 sm:gap-4 h-full">
+                    <div className="shrink-0 text-[#8C6D2B]">
                       <Mail className="w-7 h-7 stroke-[1.6]" />
                     </div>
                     <div className="flex-1 min-w-0">
@@ -332,8 +319,8 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                   </div>
 
                   {/* Card 4: Hours */}
-                  <div className="bg-[#FAF7F0] border border-[#EAE4D7] rounded-2xl p-4 sm:p-5 flex items-start gap-3.5 sm:gap-4">
-                    <div className="shrink-0 text-[#8C6D2B] pt-0.5">
+                  <div className="bg-[#FAF7F0] border border-[#EAE4D7] rounded-2xl p-4 sm:p-5 flex items-center gap-3.5 sm:gap-4 h-full">
+                    <div className="shrink-0 text-[#8C6D2B]">
                       <Clock className="w-7 h-7 stroke-[1.6]" />
                     </div>
                     <div className="flex-1 min-w-0">
@@ -348,8 +335,8 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                   </div>
 
                   {/* Card 5: Holding & Registry (Full Width) */}
-                  <div className="sm:col-span-2 bg-[#FAF7F0] border border-[#EAE4D7] rounded-2xl p-4 sm:p-5 flex items-start gap-3.5 sm:gap-4">
-                    <div className="shrink-0 text-[#8C6D2B] pt-0.5">
+                  <div className="sm:col-span-2 bg-[#FAF7F0] border border-[#EAE4D7] rounded-2xl p-4 sm:p-5 flex items-center gap-3.5 sm:gap-4 h-full">
+                    <div className="shrink-0 text-[#8C6D2B]">
                       <ShieldCheck className="w-7 h-7 stroke-[1.6]" />
                     </div>
                     <div className="flex-1 min-w-0">
@@ -366,9 +353,9 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
               </div>
 
               {/* ── Right Column: Write to Us Form ── */}
-              <div className="lg:col-span-6">
-                <div className="bg-white rounded-[24px] p-5 sm:p-6 lg:p-7 border border-[#EAE4D7] shadow-[0_4px_24px_rgba(19,34,24,0.03)]">
-                  <h2 className="font-serif text-[24px] sm:text-[28px] text-[#132218] font-normal leading-tight mb-1">
+              <div className="lg:col-span-6 flex flex-col h-full">
+                <div className="flex-1 bg-white rounded-[24px] p-5 sm:p-6 lg:p-7 border border-[#EAE4D7] shadow-[0_4px_24px_rgba(19,34,24,0.03)]">
+                  <h2 className="font-serif text-[24px] sm:text-[28px] text-[#132218] font-normal leading-tight mb-5">
                     {locale === "uz"
                       ? "Bizga yozing"
                       : locale === "ru"
@@ -381,9 +368,6 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                       ? "راسلونا"
                       : "Nachricht schreiben"}
                   </h2>
-                  <p className="font-sans text-[12px] sm:text-[12.5px] text-[#556358] mb-5">
-                    {t.form.subtitle}
-                  </p>
 
                   {status === "success" && (
                     <div className="mb-4 p-3 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center gap-2.5 text-emerald-800 text-xs sm:text-[12.5px]">

@@ -309,18 +309,12 @@ export function ValuesSection({ currentLocale = "de" }: ValuesSectionProps) {
       </div>
 
       <Container size="wide" className="relative z-10">
-        {/* ── Section Header matching Reference Photo ───────── */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-14">
-          <div className="max-w-md">
+        {/* ── Section Header ────────────────────────────────── */}
+        <div className="mb-10 sm:mb-12">
+          <div className="max-w-xl">
             <h2 className="font-serif text-[30px] sm:text-[38px] lg:text-[44px] font-normal tracking-tight text-[#112117] leading-[1.12]">
               {dict.values.heading}
             </h2>
-          </div>
-
-          <div className="max-w-md">
-            <p className="text-xs sm:text-[13.5px] text-[#5E625A] leading-relaxed font-sans">
-              {dict.values.description}
-            </p>
           </div>
         </div>
 
