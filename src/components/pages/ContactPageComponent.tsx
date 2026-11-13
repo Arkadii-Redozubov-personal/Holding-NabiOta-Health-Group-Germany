@@ -695,7 +695,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
               {/* Grid: Scrollable Location Cards (left) + Map Container with QR code (right) */}
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-stretch lg:h-[520px]">
                 {/* Left: Vertically Scrollable Stack of Horizontal Location Cards */}
-                <div className="lg:col-span-7 xl:col-span-7 flex flex-col min-h-0 h-full">
+                <div className="lg:col-span-6 xl:col-span-6 flex flex-col min-h-0 h-full">
                   <div className="nabiota-locations-scroll max-h-[460px] lg:max-h-none lg:h-full overflow-y-auto pe-1.5 space-y-3">
                     {filteredLocations.map((loc) => {
                       const isActive = loc.id === activeLocationId;
@@ -712,20 +712,20 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                               setActiveLocationId(loc.id);
                             }
                           }}
-                          className={`group rounded-2xl p-3 sm:p-4 flex flex-col sm:flex-row gap-3.5 sm:gap-4 transition-colors duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#BEA06B] ${
+                          className={`group rounded-2xl p-3 sm:p-3.5 flex flex-col sm:flex-row gap-3.5 transition-colors duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#BEA06B] ${
                             isActive
                               ? "bg-[#132B1E] text-white border border-[#132B1E]"
                               : "bg-white text-[#132218] border border-[#EAE4D7] hover:border-[#C5A56A]"
                           }`}
                         >
                           {/* Image */}
-                          <div className="relative w-full sm:w-[164px] aspect-[16/10] sm:aspect-auto sm:min-h-[120px] shrink-0 rounded-xl overflow-hidden bg-neutral-900">
+                          <div className="relative w-full sm:w-[148px] aspect-[16/10] sm:aspect-auto sm:min-h-[118px] shrink-0 rounded-xl overflow-hidden bg-neutral-900">
                             <Image
                               src={loc.image}
                               alt={loc.title}
                               fill
                               className="object-cover transition-transform duration-500 group-hover:scale-105"
-                              sizes="(max-width: 640px) 100vw, 164px"
+                              sizes="(max-width: 640px) 100vw, 148px"
                             />
                           </div>
 
@@ -810,7 +810,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                 </div>
 
                 {/* Right: Map Container with bottom QR Card */}
-                <div className="lg:col-span-5 xl:col-span-5 h-full">
+                <div className="lg:col-span-6 xl:col-span-6 h-full">
                   <div className="relative rounded-2xl overflow-hidden border border-[#EAE4D7] bg-[#EAE7DC] h-full min-h-[420px] lg:min-h-0 flex flex-col justify-between">
                     {/* Interactive Map iframe */}
                     <iframe
