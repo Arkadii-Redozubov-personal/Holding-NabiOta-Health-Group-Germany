@@ -8,7 +8,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
 import { PageHero } from "@/components/layout/PageHero";
 import { SupportedLocale } from "@/lib/i18n";
-import { contactTranslations, getContactLocations, LocationOffice } from "@/data/translations/contact-page";
+import { getContactPageTranslations, getContactLocations, LocationOffice } from "@/data/translations/contact-page";
 import {
   MapPin,
   Phone,
@@ -51,7 +51,7 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
   const [activeCategory, setActiveCategory] = useState<"all" | "hq" | "clinics" | "partners">("all");
   const [mapZoom, setMapZoom] = useState<number>(15);
 
-  const t = contactTranslations[locale as keyof typeof contactTranslations] || contactTranslations.de;
+  const t = getContactPageTranslations(locale);
 
   const mapsUrl =
     "https://maps.google.com/?q=Aachener+Stra%C3%9Fe+114,+41061+M%C3%B6nchengladbach";

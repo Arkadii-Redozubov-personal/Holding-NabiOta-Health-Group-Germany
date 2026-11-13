@@ -21,14 +21,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { PageHero } from "@/components/layout/PageHero";
 import { SupportedLocale } from "@/lib/i18n";
-import {
-  areasHero,
-  areasIntro,
-  areasDivisions,
-  areasWhyNabiota,
-  areasPatientStories,
-  areasCta,
-} from "@/data/translations/areas-page";
+import { getAreasPageBundle } from "@/data/translations/areas-page";
 
 // ── Small decorative SVG icons ─────────────────────────────────────────────
 function QualityHeartIcon({ className = "w-5 h-5" }: { className?: string }) {
@@ -93,6 +86,14 @@ interface AreasPageComponentProps {
 export function AreasPageComponent({ locale }: AreasPageComponentProps) {
   const [activeStoryIndex, setActiveStoryIndex] = useState(0);
   const l = locale;
+  const {
+    areasHero,
+    areasIntro,
+    areasDivisions,
+    areasWhyNabiota,
+    areasPatientStories,
+    areasCta,
+  } = getAreasPageBundle(locale);
 
   const totalStories = areasPatientStories.stories.length;
   const currentFirstStory = areasPatientStories.stories[activeStoryIndex];

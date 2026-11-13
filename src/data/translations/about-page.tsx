@@ -1,5 +1,6 @@
 import React from "react";
 import { SupportedLocale } from "@/lib/i18n";
+import { applyNamespaceOverrides } from "@/lib/cms/cms-engine";
 
 export interface OrganigramItem {
   name: string;
@@ -23,7 +24,7 @@ export interface OrganigramColumn {
   items: OrganigramItem[];
 }
 
-export function getAboutPageTranslations(locale: SupportedLocale) {
+export function getBaseAboutPageTranslations(locale: SupportedLocale) {
   const isUz = locale === "uz";
   const isEn = locale === "en";
   const isRu = locale === "ru";
@@ -937,6 +938,14 @@ export function getAboutPageTranslations(locale: SupportedLocale) {
       ? "تواصل معنا ←"
       : "Kontakt aufnehmen →",
   };
+}
+
+export function getAboutPageTranslations(locale: SupportedLocale) {
+  return applyNamespaceOverrides(
+    getBaseAboutPageTranslations(locale),
+    locale,
+    "aboutPage"
+  );
 }
 
 export function getAboutOrganigramColumns(locale: SupportedLocale): OrganigramColumn[] {

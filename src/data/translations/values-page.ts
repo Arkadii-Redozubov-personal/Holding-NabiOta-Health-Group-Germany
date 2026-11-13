@@ -1,6 +1,7 @@
 import { SupportedLocale } from "@/lib/i18n";
+import { applyNamespaceOverrides } from "@/lib/cms/cms-engine";
 
-export function getValuesPageTranslations(locale: SupportedLocale = "de") {
+export function getBaseValuesPageTranslations(locale: SupportedLocale = "de") {
   const isUz = locale === "uz";
   const isEn = locale === "en";
   const isRu = locale === "ru";
@@ -253,4 +254,12 @@ export function getValuesPageTranslations(locale: SupportedLocale = "de") {
       : "„Die Zukunft der Gesundheitsversorgung entsteht durch Menschen, die Verantwortung übernehmen - und die den Mut haben, neue Wege zu gehen.“",
     founderRole: isUz ? "Xolding rahbariyati" : isRu ? "Руководство холдинга" : isEn ? "Managing Director" : isTr ? "Holding Yönetimi" : isAr ? "الإدارة التنفيذية للمجموعة" : "Geschäftsführung",
   };
+}
+
+export function getValuesPageTranslations(locale: SupportedLocale = "de") {
+  return applyNamespaceOverrides(
+    getBaseValuesPageTranslations(locale),
+    locale,
+    "valuesPage"
+  );
 }

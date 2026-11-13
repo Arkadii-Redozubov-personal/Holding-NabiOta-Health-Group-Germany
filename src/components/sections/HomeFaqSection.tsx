@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Plus, Minus } from "@/lib/icons";
 import { SupportedLocale } from "@/lib/i18n";
+import { applyNamespaceOverrides } from "@/lib/cms/cms-engine";
 
 interface HomeFaqSectionProps {
   currentLocale?: SupportedLocale;
@@ -17,7 +18,7 @@ export function HomeFaqSection({ currentLocale = "de" }: HomeFaqSectionProps) {
 
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
-  const t = {
+  const baseFaq = {
     eyebrow: isRu
       ? "ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ"
       : isTr
@@ -209,6 +210,8 @@ export function HomeFaqSection({ currentLocale = "de" }: HomeFaqSectionProps) {
       },
     ],
   };
+
+  const t = applyNamespaceOverrides(baseFaq, currentLocale, "homeExtras");
 
   return (
     <section className="bg-[#FAF8F5] py-16 sm:py-20 lg:py-24 border-t border-[#EAE3D5]/80">

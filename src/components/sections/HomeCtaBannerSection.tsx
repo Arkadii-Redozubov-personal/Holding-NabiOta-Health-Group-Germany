@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "@/lib/icons";
 import { getLocalePath, SupportedLocale } from "@/lib/i18n";
+import { applyNamespaceOverrides } from "@/lib/cms/cms-engine";
 
 interface HomeCtaBannerSectionProps {
   currentLocale?: SupportedLocale;
@@ -15,8 +16,8 @@ export function HomeCtaBannerSection({ currentLocale = "de" }: HomeCtaBannerSect
   const isUz = currentLocale === "uz";
   const isEn = currentLocale === "en";
 
-  const t = {
-    eyebrow: isRu
+  const baseT = {
+    ctaEyebrow: isRu
       ? "ОБЪЕДИНЯЯ ОПЫТ. СОЗДАВАЯ БУДУЩЕЕ МЕДИЦИНЫ."
       : isTr
       ? "UZMANLIĞI BİRLEŞTİRMEK. SAĞLIĞI ŞEKİLLENDİRMEK."
@@ -27,7 +28,7 @@ export function HomeCtaBannerSection({ currentLocale = "de" }: HomeCtaBannerSect
       : isEn
       ? "CONNECTING COMPETENCE. SHAPING HEALTHCARE."
       : "KOMPETENZ VERBINDEN. GESUNDHEIT GESTALTEN.",
-    title: isRu
+    ctaTitle: isRu
       ? "Вместе ради передовой и доступной медицины."
       : isTr
       ? "Geleceğe güvenle bakan bir sağlık hizmeti için birlikte."
@@ -38,7 +39,7 @@ export function HomeCtaBannerSection({ currentLocale = "de" }: HomeCtaBannerSect
       : isEn
       ? "Partnering for a Healthier, Forward-Thinking Future."
       : "Gemeinsam für eine zukunftssichere Gesundheitsversorgung.",
-    desc: isRu
+    ctaDesc: isRu
       ? "Ищете ли вы высокотехнологичную медицинскую помощь, планируете партнерство в рамках врачебной практики или развиваете инвестиционные проекты в здравоохранении - команда NabiOta® открыта к надежному диалогу."
       : isTr
       ? "İster birinci sınıf tıbbi bakım arayan bir hasta, ister güçlü bir ortaklık arayan bir hekim, ister sağlık projeleri geliştiren bir kurum olun - NabiOta® Health Group güvenilir yol arkadaşınızdır."
@@ -49,7 +50,7 @@ export function HomeCtaBannerSection({ currentLocale = "de" }: HomeCtaBannerSect
       : isEn
       ? "Whether you are a patient seeking top-tier clinical care, a physician exploring collaborative network opportunities, or a partner realizing medical infrastructure - NabiOta® is your committed companion."
       : "Ob Sie als Patient erstklassige medizinische Betreuung suchen, als Arzt eine starke partnerschaftliche Praxisstruktur schätzen oder als Träger zukunftssichere Projekte realisieren möchten - die NabiOta® Health Group ist Ihr verlässlicher Begleiter.",
-    btnPrimary: isRu
+    ctaBtnPrimary: isRu
       ? "Связаться с нами"
       : isTr
       ? "Bize Ulaşın"
@@ -60,7 +61,7 @@ export function HomeCtaBannerSection({ currentLocale = "de" }: HomeCtaBannerSect
       : isEn
       ? "Get in Touch With Us"
       : "Kontakt aufnehmen",
-    btnSecondary: isRu
+    ctaBtnSecondary: isRu
       ? "Направления холдинга"
       : isTr
       ? "Faaliyet Alanlarımız"
@@ -71,6 +72,14 @@ export function HomeCtaBannerSection({ currentLocale = "de" }: HomeCtaBannerSect
       : isEn
       ? "Explore Our Divisions"
       : "Unternehmensbereiche",
+  };
+  const overriddenCta = applyNamespaceOverrides(baseT, currentLocale, "homeExtras");
+  const t = {
+    eyebrow: overriddenCta.ctaEyebrow,
+    title: overriddenCta.ctaTitle,
+    desc: overriddenCta.ctaDesc,
+    btnPrimary: overriddenCta.ctaBtnPrimary,
+    btnSecondary: overriddenCta.ctaBtnSecondary,
   };
 
   return (

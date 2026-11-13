@@ -8,6 +8,7 @@ import "@splidejs/splide/css";
 import { ArrowRight, ArrowLeft, Check } from "@/lib/icons";
 import { getDictionary, getLocalePath, SupportedLocale } from "@/lib/i18n";
 import { MEDICAL_AREAS } from "@/data/medical-areas";
+import { applyNamespaceOverrides } from "@/lib/cms/cms-engine";
 
 interface ServicesSectionProps {
   currentLocale?: SupportedLocale;
@@ -44,6 +45,16 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
   const dict = getDictionary(currentLocale);
   const lang = currentLocale;
   const isRtl = lang === "ar";
+  const sliderHeader = applyNamespaceOverrides(
+    {
+      sliderTitle: SECTION_TITLES[lang],
+      sliderSubtitle: SECTION_SUBTITLES[lang],
+      sliderCta: CTA_LABELS[lang],
+    },
+    lang,
+    "homeExtras"
+  );
+  const sliderAreas = applyNamespaceOverrides(MEDICAL_AREAS, lang, "medicalAreas");
 
   const splideRef = useRef<HTMLDivElement | null>(null);
   const splideInstanceRef = useRef<Splide | null>(null);
@@ -153,11 +164,13 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 mb-7 sm:mb-9">
           <div>
             <h2 className="font-serif text-[26px] sm:text-[32px] lg:text-[36px] font-normal text-[#132018] tracking-tight leading-[1.15]">
-              {SECTION_TITLES[lang]}
+              {sliderHeader.sliderTitle}
             </h2>
-            <p className="font-sans text-[13px] sm:text-[14px] text-[#556358] mt-1.5 max-w-2xl font-light">
-              {SECTION_SUBTITLES[lang]}
-            </p>
+            {sliderHeader.sliderSubtitle && (
+              <p className="font-sans text-[13px] sm:text-[14px] text-[#556358] mt-1.5 max-w-2xl font-light">
+                {sliderHeader.sliderSubtitle}
+              </p>
+            )}
           </div>
 
           <Link
@@ -180,7 +193,7 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
           >
             <div className="splide__track">
               <ul className="splide__list">
-                {MEDICAL_AREAS.map((area, idx) => {
+                {sliderAreas.map((area, idx) => {
                   const Icon = area.icon;
                   const areaHref = getLocalePath(currentLocale, `areas/${area.slug}`);
                   const isFocused = activeIndex === idx;
@@ -245,7 +258,7 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
                               tabIndex={isFocused ? 0 : -1}
                               className="area-slide-cta group/cta inline-flex items-center gap-2 px-4.5 py-2 rounded-full bg-[#D7BF95] hover:bg-[#BEA06B] text-[#112117] font-sans font-semibold text-[12.5px] transition-colors focus-visible:outline-2 focus-visible:outline-[#112117] focus-visible:outline-offset-2"
                             >
-                              <span>{CTA_LABELS[lang]}</span>
+                              <span>{sliderHeader.sliderCta}</span>
                               <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/cta:translate-x-1 rtl:rotate-180 rtl:group-hover/cta:-translate-x-1" />
                             </Link>
                           </div>

@@ -1,4 +1,5 @@
 import { SupportedLocale } from "@/lib/i18n";
+import { applyNamespaceOverrides } from "@/lib/cms/cms-engine";
 
 export type LocaleStrings = Record<SupportedLocale, string>;
 
@@ -520,3 +521,18 @@ export const areasCta = {
     uz: "Bog'lanish",
   } as LocaleStrings,
 };
+
+export function getBaseAreasPageBundle() {
+  return {
+    areasHero,
+    areasIntro,
+    areasDivisions,
+    areasWhyNabiota,
+    areasPatientStories,
+    areasCta,
+  };
+}
+
+export function getAreasPageBundle(locale: SupportedLocale = "de") {
+  return applyNamespaceOverrides(getBaseAreasPageBundle(), locale, "areasPage");
+}

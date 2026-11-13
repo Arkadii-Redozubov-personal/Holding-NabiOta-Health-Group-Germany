@@ -1,4 +1,5 @@
 import { SupportedLocale } from "@/lib/i18n";
+import { applyNamespaceOverrides } from "@/lib/cms/cms-engine";
 
 export interface LocationOffice {
   id: string;
@@ -552,7 +553,22 @@ export const contactTranslations = {
     },
   };;
 
-export function getContactLocations(locale: SupportedLocale = "de"): LocationOffice[] {
+export function getBaseContactPageTranslations(locale: SupportedLocale = "de") {
+  return (
+    contactTranslations[locale as keyof typeof contactTranslations] ||
+    contactTranslations.de
+  );
+}
+
+export function getContactPageTranslations(locale: SupportedLocale = "de") {
+  return applyNamespaceOverrides(
+    getBaseContactPageTranslations(locale),
+    locale,
+    "contactPage"
+  );
+}
+
+export function getBaseContactLocations(locale: SupportedLocale = "de"): LocationOffice[] {
   return [
     {
       id: "hq",
@@ -706,5 +722,13 @@ export function getContactLocations(locale: SupportedLocale = "de"): LocationOff
           ? "شبكة الشركاء"
           : "Partnernetzwerk",
     },
-  ];;
+  ];
+}
+
+export function getContactLocations(locale: SupportedLocale = "de"): LocationOffice[] {
+  return applyNamespaceOverrides(
+    getBaseContactLocations(locale),
+    locale,
+    "contactLocations"
+  );
 }

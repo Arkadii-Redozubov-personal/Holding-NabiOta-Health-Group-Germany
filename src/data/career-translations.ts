@@ -10,6 +10,7 @@ import {
   Upload,
   X,
 } from "@/lib/icons";
+import { applyNamespaceOverrides } from "@/lib/cms/cms-engine";
 
 export const careerTranslations = {
     de: {
@@ -2459,10 +2460,18 @@ export const careerTranslations = {
 
 export type CareerContent = typeof careerTranslations.de;
 
-export function getCareerTranslation(locale: string): CareerContent {
+export function getBaseCareerTranslation(locale: string): CareerContent {
   return (
     (careerTranslations as Record<string, CareerContent>)[locale] ||
     careerTranslations.en ||
     careerTranslations.de
   );
+}
+
+export function getCareerTranslation(locale: string): CareerContent {
+  const base = getBaseCareerTranslation(locale);
+  const resolvedLocale = (["de", "en", "ru", "tr", "ar", "uz"].includes(locale)
+    ? locale
+    : "de") as "de" | "en" | "ru" | "tr" | "ar" | "uz";
+  return applyNamespaceOverrides(base, resolvedLocale, "careerPage");
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { SupportedLocale } from "@/lib/i18n";
+import { applyNamespaceOverrides } from "@/lib/cms/cms-engine";
 import {
   Handshake,
   Scale,
@@ -34,7 +35,7 @@ interface PartnershipPillar {
 }
 
 
-export function getPartnersPageTranslations(locale: SupportedLocale = "de") {
+export function getBasePartnersPageTranslations(locale: SupportedLocale = "de") {
   const isUz = locale === "uz";
   const isRu = locale === "ru";
   const isEn = locale === "en";
@@ -947,4 +948,12 @@ export function getPartnersPageTranslations(locale: SupportedLocale = "de") {
     pillars,
     processSteps,
   };
+}
+
+export function getPartnersPageTranslations(locale: SupportedLocale = "de") {
+  return applyNamespaceOverrides(
+    getBasePartnersPageTranslations(locale),
+    locale,
+    "partnersPage"
+  );
 }
