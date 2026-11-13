@@ -1,5 +1,6 @@
 import {
   signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider,
   signOut,
@@ -15,12 +16,16 @@ export interface AuthenticatedAdmin {
 
 const SESSION_EMAIL_KEY = "nabiota_admin_email";
 const SESSION_PROVIDER_KEY = "nabiota_admin_provider";
+const INITIAL_ADMIN_EMAIL = "admin@nabiota-health-group-germany.de";
+const INITIAL_ADMIN_PASS = "NabiOta-Admin-2026!";
 
 export async function signInAdmin(
   email: string,
   password: string
 ): Promise<{ success: boolean; admin?: AuthenticatedAdmin; error?: string }> {
   const cleanEmail = email.trim().toLowerCase();
+  const isInitialBootstrapAdmin =
+    cleanEmail === INITIAL_ADMIN_EMAIL && password === INITIAL_ADMIN_PASS;
 
   // 1. Primary: Firebase Authentication when configured
   const auth = getFirebaseAuthClient();
@@ -45,21 +50,67 @@ export async function signInAdmin(
         err && typeof err === "object" && "code" in err
           ? String((err as { code?: string }).code)
           : "";
+
+      // Auto-provision initial admin in Firebase Auth on first login if Email/Password provider is enabled
       if (
-        code === "auth/invalid-credential" ||
-        code === "auth/wrong-password" ||
-        code === "auth/user-not-found"
+        isInitialBootstrapAdmin &&
+        (code === "auth/user-not-found" || code === "auth/invalid-credential")
+      ) {
+        try {
+          const created = await createUserWithEmailAndPassword(
+            auth,
+            cleanEmail,
+            password
+          );
+          const createdEmail = created.user.email || cleanEmail;
+          if (typeof window !== "undefined") {
+            window.localStorage.setItem(SESSION_EMAIL_KEY, createdEmail);
+            window.localStorage.setItem(SESSION_PROVIDER_KEY, "firebase");
+          }
+          return {
+            success: true,
+            admin: {
+              email: createdEmail,
+              uid: created.user.uid,
+              provider: "firebase",
+            },
+          };
+        } catch {
+          // If user already exists with a different password or Email/Password is not enabled yet, continue below
+        }
+      }
+
+      if (
+        !isInitialBootstrapAdmin &&
+        (code === "auth/invalid-credential" ||
+          code === "auth/wrong-password" ||
+          code === "auth/user-not-found")
       ) {
         return {
           success: false,
           error: "Ungültige Firebase E-Mail-Adresse oder falsches Passwort.",
         };
       }
-      // If Firebase project has Email/Password disabled or unreachable in local dev, fall through to dev API check
     }
   }
 
-  // 2. Local development / server API route fallback
+  // 2. Initial bootstrap admin fallback (works on static export even before Firebase Auth Email/Password is toggled on)
+  if (isInitialBootstrapAdmin) {
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(SESSION_EMAIL_KEY, cleanEmail);
+      window.localStorage.setItem(SESSION_PROVIDER_KEY, "local-dev");
+    }
+    return {
+      success: true,
+      admin: {
+        email: cleanEmail,
+        uid: `local-${cleanEmail}`,
+        provider: "local-dev",
+      },
+    };
+  }
+
+  // 3. Local development / server API route fallback
   try {
     const res = await fetch("/api/admin/login", {
       method: "POST",
