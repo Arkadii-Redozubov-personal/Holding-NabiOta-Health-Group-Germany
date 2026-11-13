@@ -5,14 +5,6 @@ export type LocaleStrings = Record<SupportedLocale, string>;
 
 // ── Hero Section ──────────────────────────────────────────────────────────────
 export const areasHero = {
-  eyebrow: {
-    de: "UNTERNEHMENSBEREICHE",
-    en: "OUR DIVISIONS",
-    ru: "НАПРАВЛЕНИЯ ХОЛДИНГА",
-    tr: "HOLDİNG FAALİYET ALANLARI",
-    ar: "قطاعات أعمال المجموعة",
-    uz: "HOLDING YO'NALISHLARI",
-  } as LocaleStrings,
   title: {
     de: "Vielfältige Kompetenzen. Eine gemeinsame Vision.",
     en: "Diverse Competencies. One Shared Vision.",
@@ -81,14 +73,6 @@ export const areasHero = {
 
 // ── Intro Section ─────────────────────────────────────────────────────────────
 export const areasIntro = {
-  eyebrow: {
-    de: "UNSERE FACHBEREICHE",
-    en: "OUR SPECIALTIES",
-    ru: "НАШИ НАПРАВЛЕНИЯ",
-    tr: "UZMANLIK ALANLARIMIZ",
-    ar: "تخصصاتنا الطبية",
-    uz: "BIZNING YO'NALISHLAR",
-  } as LocaleStrings,
   title: {
     de: "Spezialisierte Versorgung\nfur jeden Bedarf",
     en: "Specialized Care\nfor Every Need",
@@ -295,14 +279,6 @@ export const areasDivisions = [
 
 // ── Why NabiOta Section ───────────────────────────────────────────────────────
 export const areasWhyNabiota = {
-  eyebrow: {
-    de: "WARUM NABIOTA",
-    en: "WHY NABIOTA",
-    ru: "ПОЧЕМУ НАБИОТА",
-    tr: "NEDEN NABIOTA",
-    ar: "لماذا نابي أوتا",
-    uz: "NEGA NABIOTA",
-  } as LocaleStrings,
   title: {
     de: "Mehr als Fachbereiche.\nEin starkes Team.",
     en: "More than Departments.\nA Stronger Team.",
@@ -395,14 +371,6 @@ export const areasWhyNabiota = {
 
 // ── Patient Stories ───────────────────────────────────────────────────────────
 export const areasPatientStories = {
-  eyebrow: {
-    de: "PATIENT STORIES",
-    en: "PATIENT STORIES",
-    ru: "ИСТОРИИ ПАЦИЕНТОВ",
-    tr: "HASTA HIKAYELERI",
-    ar: "قصص وتجارب المرضى",
-    uz: "BEMORLAR HIKOYALARI",
-  } as LocaleStrings,
   title: {
     de: "Real People.\nReal Impact.",
     en: "Real People.\nReal Impact.",
@@ -488,14 +456,6 @@ export const areasPatientStories = {
 
 // ── CTA Section ───────────────────────────────────────────────────────────────
 export const areasCta = {
-  eyebrow: {
-    de: "GET IN TOUCH",
-    en: "GET IN TOUCH",
-    ru: "СВЯЖИТЕСЬ С НАМИ",
-    tr: "ILETISIME GECIN",
-    ar: "تواصل معنا",
-    uz: "BIZ BILAN BOG'LANING",
-  } as LocaleStrings,
   title: {
     de: "Ihre Gesundheit ist\nunsere Mission.",
     en: "Your Health is\nOur Mission.",

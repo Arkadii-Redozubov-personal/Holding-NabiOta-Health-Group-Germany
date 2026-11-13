@@ -58,7 +58,6 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         <PageHero
           locale={locale}
           title={heroData.title}
-          eyebrow={heroData.eyebrow}
           description={heroData.desc}
           badges={heroBadges}
           imageSrc="/images/international/international-hero-doctors.webp"

@@ -41,11 +41,9 @@ const HOME_SLIDER_DEFAULTS: Record<
     sliderTitle: string;
     sliderSubtitle: string;
     sliderCta: string;
-    eyebrow: string;
     title: string;
     desc: string;
     contactCtaText: string;
-    ctaEyebrow: string;
     ctaTitle: string;
     ctaDesc: string;
     ctaBtnPrimary: string;
@@ -57,11 +55,9 @@ const HOME_SLIDER_DEFAULTS: Record<
     sliderSubtitle:
       "Moderne Medizin, menschliche Betreuung und innovative Konzepte - in allen Bereichen unserer Versorgung.",
     sliderCta: "Mehr erfahren",
-    eyebrow: "HÄUFIG GESTELLTE FRAGEN",
     title: "Wissenswertes über die NabiOta® Health Group",
     desc: "Antworten auf die wichtigsten Fragen rund um unsere Unternehmensbereiche, Patientenversorgung, Kooperationen und Qualitätsstandards.",
     contactCtaText: "Haben Sie weitere Fragen? Kontaktieren Sie uns",
-    ctaEyebrow: "KOMPETENZ VERBINDEN. GESUNDHEIT GESTALTEN.",
     ctaTitle: "Gemeinsam für eine zukunftssichere Gesundheitsversorgung.",
     ctaDesc:
       "Ob Sie als Patient erstklassige medizinische Betreuung suchen, als Arzt eine starke partnerschaftliche Praxisstruktur schätzen oder als Träger zukunftssichere Projekte realisieren möchten - die NabiOta® Health Group ist Ihr verlässlicher Begleiter.",
@@ -73,11 +69,9 @@ const HOME_SLIDER_DEFAULTS: Record<
     sliderSubtitle:
       "Современная медицина, забота о пациентах и инновационные концепции во всех сферах нашей помощи.",
     sliderCta: "Узнать больше",
-    eyebrow: "ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ",
     title: "Всё о NabiOta® Health Group",
     desc: "Ответы на главные вопросы о структуре холдинга, приеме пациентов, партнерстве и медицинских стандартах.",
     contactCtaText: "Остались вопросы? Свяжитесь с нами",
-    ctaEyebrow: "ОБЪЕДИНЯЯ ОПЫТ. СОЗДАВАЯ БУДУЩЕЕ МЕДИЦИНЫ.",
     ctaTitle: "Вместе ради передовой и доступной медицины.",
     ctaDesc:
       "Ищете ли вы высокотехнологичную медицинскую помощь, планируете партнерство в рамках врачебной практики или развиваете инвестиционные проекты в здравоохранении - команда NabiOta® открыта к надежному диалогу.",
@@ -89,11 +83,9 @@ const HOME_SLIDER_DEFAULTS: Record<
     sliderSubtitle:
       "Modern medicine, empathetic care, and innovative concepts across all areas of our provision.",
     sliderCta: "Learn more",
-    eyebrow: "FREQUENTLY ASKED QUESTIONS",
     title: "Insights into NabiOta® Health Group",
     desc: "Answers to key questions regarding our medical network, patient admissions, partnerships, and clinical standards.",
     contactCtaText: "Have more questions? Get in touch",
-    ctaEyebrow: "CONNECTING COMPETENCE. SHAPING HEALTHCARE.",
     ctaTitle: "Partnering for a Healthier, Forward-Thinking Future.",
     ctaDesc:
       "Whether you are a patient seeking top-tier clinical care, a physician exploring collaborative network opportunities, or a partner realizing medical infrastructure - NabiOta® is your committed companion.",
@@ -105,11 +97,9 @@ const HOME_SLIDER_DEFAULTS: Record<
     sliderSubtitle:
       "Modern tıp, insani ilgi ve yenilikçi yaklaşımlar - tüm sağlık alanlarımızda.",
     sliderCta: "Daha fazla bilgi",
-    eyebrow: "SIKÇA SORULAN SORULAR",
     title: "NabiOta® Health Group Hakkında Merak Edilenler",
     desc: "Holding yapımız, hasta kabulleri, ortaklık modelleri ve tıbbi kalite standartlarımız hakkındaki temel soruların yanıtları.",
     contactCtaText: "Başka sorularınız mı var? Bize ulaşın",
-    ctaEyebrow: "UZMANLIĞI BİRLEŞTİRMEK. SAĞLIĞI ŞEKİLLENDİRMEK.",
     ctaTitle: "Geleceğe güvenle bakan bir sağlık hizmeti için birlikte.",
     ctaDesc:
       "İster birinci sınıf tıbbi bakım arayan bir hasta, ister güçlü bir ortaklık arayan bir hekim, ister sağlık projeleri geliştiren bir kurum olun - NabiOta® Health Group güvenilir yol arkadaşınızdır.",
@@ -121,11 +111,9 @@ const HOME_SLIDER_DEFAULTS: Record<
     sliderSubtitle:
       "طب حديث، رعاية إنسانية ومفاهيم مبتكرة في جميع مجالات الرعاية الصحية لدينا.",
     sliderCta: "معرفة المزيد",
-    eyebrow: "الأسئلة الشائعة",
     title: "كل ما تريد معرفته عن مجموعة نابي أوتا الصحية",
     desc: "إجابات شاملة على الأسئلة الرئيسية حول هيكل المجموعة، استقبال المرضى، الشراكات الطبية والمعايير السريرية.",
     contactCtaText: "هل لديك أسئلة أخرى؟ تواصل معنا مباشرة",
-    ctaEyebrow: "توحيد الكفاءات. صياغة مستقبل الرعاية الصحية.",
     ctaTitle: "معاً من أجل رعاية صحية مستدامة ومتقدمة.",
     ctaDesc:
       "سواء كنتم مرضى تبحثون عن رعاية طبية ألمانية رفيعة، أو أطباء تتطلعون لشراكة متينة، أو مستثمرين يطورون مشاريع طبية - مجموعة نابي أوتا هي شريككم الموثوق.",
@@ -137,11 +125,9 @@ const HOME_SLIDER_DEFAULTS: Record<
     sliderSubtitle:
       "Zamonaviy tibbiyot, insoniy g'amxo'rlik va innovatsion yondashuvlar barcha xizmatlarimizda.",
     sliderCta: "Batafsil ma'lumot",
-    eyebrow: "KO'P SO'RALADIGAN SAVOLLAR",
     title: "NabiOta® Health Group haqida ma'lumotlar",
     desc: "Xolding tuzilmasi, bemorlarni qabul qilish, hamkorlik va tibbiy sifat standartlari bo'yicha asosiy savollarga javoblar.",
     contactCtaText: "Yana savollaringiz bormi? Biz bilan bog'laning",
-    ctaEyebrow: "KOMPETENTSIYALARNI BIRLASHTIRIB. TIBBIYOT KELAJAGINI SHAKLLANTIRAMIZ.",
     ctaTitle: "Kelajakka ishonch bilan boquvchi tibbiyot uchun birgalikda.",
     ctaDesc:
       "Siz yuqori darajadagi tibbiy yordam izlayotgan bemor bo'lasizmi, shifokorlik amaliyotida mustahkam sheriklikni xohlovchi mutaxassis bo'lasizmi yoki tibbiy infratuzilma loyihalarini amalga oshiruvchi tashkilot bo'lasizmi - NabiOta® Health Group sizning ishonchli hamkoringizdir.",
@@ -193,7 +179,6 @@ export function getCmsPagesSchema(locale: SupportedLocale): CmsPageDefinition[] 
           title: "1. Hero Banner (Hauptbildschirm)",
           subtitle: "Überschrift, Beschreibung und Call-to-Action-Buttons im oberen Kopfbereich",
           fields: [
-            makeField("home", dict, "hero.eyebrow", "Hero Eyebrow"),
             makeField("home", dict, "hero.headingLine1", "Hauptüberschrift Zeile 1"),
             makeField("home", dict, "hero.headingLine2", "Hauptüberschrift Zeile 2"),
             makeField("home", dict, "hero.description", "Hero Beschreibungstext", true),
@@ -225,7 +210,6 @@ export function getCmsPagesSchema(locale: SupportedLocale): CmsPageDefinition[] 
           title: "3. Über Uns Vorschau (About Section)",
           subtitle: "Vorstellung der Unternehmensgruppe mit 3 Kernvorteilen",
           fields: [
-            makeField("home", dict, "about.eyebrow", "Eyebrow (Über uns)"),
             makeField("home", dict, "about.heading", "Überschrift"),
             makeField("home", dict, "about.description", "Beschreibungstext", true),
             makeField("home", dict, "about.cta", "Button-Text (Unsere Geschichte)"),
@@ -268,7 +252,6 @@ export function getCmsPagesSchema(locale: SupportedLocale): CmsPageDefinition[] 
           title: "5. Unsere Werte (Values Section)",
           subtitle: "Überschrift und Einleitungstext der Werte-Sektion",
           fields: [
-            makeField("home", dict, "values.eyebrow", "Werte · Eyebrow"),
             makeField("home", dict, "values.heading", "Werte · Überschrift"),
             makeField("home", dict, "values.description", "Werte · Beschreibungstext", true),
           ],
@@ -278,11 +261,9 @@ export function getCmsPagesSchema(locale: SupportedLocale): CmsPageDefinition[] 
           title: "6. Partner & Karriere Doppelkarte (Split Section)",
           subtitle: "Zwei nebeneinanderliegende Karten für Partner und Karriere",
           fields: [
-            makeField("home", dict, "split.partners.eyebrow", "Partner-Karte · Eyebrow"),
             makeField("home", dict, "split.partners.heading", "Partner-Karte · Überschrift"),
             makeField("home", dict, "split.partners.description", "Partner-Karte · Beschreibung", true),
             makeField("home", dict, "split.partners.cta", "Partner-Karte · Button"),
-            makeField("home", dict, "split.career.eyebrow", "Karriere-Karte · Eyebrow"),
             makeField("home", dict, "split.career.heading", "Karriere-Karte · Überschrift"),
             makeField("home", dict, "split.career.description", "Karriere-Karte · Beschreibung", true),
             makeField("home", dict, "split.career.cta", "Karriere-Karte · Button"),
@@ -293,11 +274,9 @@ export function getCmsPagesSchema(locale: SupportedLocale): CmsPageDefinition[] 
           title: "7. FAQ & Abschluss-Banner (Bottom CTA)",
           subtitle: "Häufig gestellte Fragen und unterer Kontakt-Banner",
           fields: [
-            makeField("homeExtras", homeExtras, "eyebrow", "FAQ · Eyebrow"),
             makeField("homeExtras", homeExtras, "title", "FAQ · Überschrift"),
             makeField("homeExtras", homeExtras, "desc", "FAQ · Untertitel", true),
             makeField("homeExtras", homeExtras, "contactCtaText", "FAQ · Kontakt-Linktext"),
-            makeField("homeExtras", homeExtras, "ctaEyebrow", "Abschluss-Banner · Eyebrow"),
             makeField("homeExtras", homeExtras, "ctaTitle", "Abschluss-Banner · Überschrift"),
             makeField("homeExtras", homeExtras, "ctaDesc", "Abschluss-Banner · Beschreibung", true),
             makeField("homeExtras", homeExtras, "ctaBtnPrimary", "Abschluss-Banner · Primärer Button"),
@@ -319,7 +298,6 @@ export function getCmsPagesSchema(locale: SupportedLocale): CmsPageDefinition[] 
           title: "1. Hero & Badges",
           subtitle: "Kopfbereich der Über-uns-Seite mit 3 Highlight-Badges",
           fields: [
-            makeField("aboutPage", about, "heroEyebrow", "Hero Eyebrow"),
             makeField("aboutPage", about, "heroTitlePart1", "Hero Titel · Zeile 1"),
             makeField("aboutPage", about, "heroTitlePart2", "Hero Titel · Zeile 2"),
             makeField("aboutPage", about, "heroDesc", "Hero Beschreibung", true),
@@ -336,7 +314,6 @@ export function getCmsPagesSchema(locale: SupportedLocale): CmsPageDefinition[] 
           title: "2. Unsere Wurzeln & Geschichte",
           subtitle: "Herkunft und Hintergrund der Holding",
           fields: [
-            makeField("aboutPage", about, "rootsEyebrow", "Wurzeln · Eyebrow"),
             makeField("aboutPage", about, "rootsTitle1", "Wurzeln · Titel Teil 1"),
             makeField("aboutPage", about, "rootsTitle2", "Wurzeln · Titel Teil 2"),
             makeField("aboutPage", about, "rootsP2", "Wurzeln · Zusatzabsatz", true),
@@ -347,7 +324,6 @@ export function getCmsPagesSchema(locale: SupportedLocale): CmsPageDefinition[] 
           title: "3. Mission, Vision & Kennzahlen",
           subtitle: "Leitbild-Karten und statistische Kennzahlen",
           fields: [
-            makeField("aboutPage", about, "missionEyebrow", "Mission · Eyebrow"),
             makeField("aboutPage", about, "missionHeading", "Mission · Überschrift"),
             makeField("aboutPage", about, "missionLead", "Mission · Einleitungstext", true),
             makeField("aboutPage", about, "cardMissionTitle", "Karte Mission · Titel"),
@@ -369,10 +345,8 @@ export function getCmsPagesSchema(locale: SupportedLocale): CmsPageDefinition[] 
           title: "4. Organigramm & 2-Phasen-Architektur",
           subtitle: "Holding-Struktur und Phasenmodell",
           fields: [
-            makeField("aboutPage", about, "orgEyebrow", "Organigramm · Eyebrow"),
             makeField("aboutPage", about, "orgHeading", "Organigramm · Überschrift"),
             makeField("aboutPage", about, "holdingBadge", "Holding-Badge"),
-            makeField("aboutPage", about, "twoPhaseEyebrow", "2-Phasen · Eyebrow"),
             makeField("aboutPage", about, "twoPhaseTitle", "2-Phasen · Überschrift"),
             makeField("aboutPage", about, "twoPhaseDesc", "2-Phasen · Beschreibung", true),
             makeField("aboutPage", about, "phase1Title", "Phase 1 · Titel"),
@@ -388,7 +362,6 @@ export function getCmsPagesSchema(locale: SupportedLocale): CmsPageDefinition[] 
           title: "5. Führung & Beirat (Leadership)",
           subtitle: "Gründerprofil, Zitat und wissenschaftlicher Beirat",
           fields: [
-            makeField("aboutPage", about, "leadershipEyebrow", "Leadership · Eyebrow"),
             makeField("aboutPage", about, "leadershipHeading1", "Leadership · Überschrift 1"),
             makeField("aboutPage", about, "leadershipHeading2", "Leadership · Überschrift 2"),
             makeField("aboutPage", about, "leadershipSubtitle", "Leadership · Untertitel", true),
@@ -407,7 +380,6 @@ export function getCmsPagesSchema(locale: SupportedLocale): CmsPageDefinition[] 
           title: "6. Werte-Karten & Abschluss-CTA",
           subtitle: "Vier Werte-Karten und unterer Kontaktbereich",
           fields: [
-            makeField("aboutPage", about, "valuesEyebrow", "Werte · Eyebrow"),
             makeField("aboutPage", about, "valuesHeading", "Werte · Überschrift"),
             makeField("aboutPage", about, "val1Title", "Wert 1 · Titel"),
             makeField("aboutPage", about, "val1Desc", "Wert 1 · Beschreibung", true),
@@ -417,7 +389,6 @@ export function getCmsPagesSchema(locale: SupportedLocale): CmsPageDefinition[] 
             makeField("aboutPage", about, "val3Desc", "Wert 3 · Beschreibung", true),
             makeField("aboutPage", about, "val4Title", "Wert 4 · Titel"),
             makeField("aboutPage", about, "val4Desc", "Wert 4 · Beschreibung", true),
-            makeField("aboutPage", about, "ctaEyebrow", "CTA · Eyebrow"),
             makeField("aboutPage", about, "ctaHeading", "CTA · Überschrift"),
             makeField("aboutPage", about, "ctaBtn", "CTA · Button"),
           ],
@@ -437,10 +408,8 @@ export function getCmsPagesSchema(locale: SupportedLocale): CmsPageDefinition[] 
           title: "1. Hero & Einleitung",
           subtitle: "Kopfbereich und Einführung auf der Bereiche-Übersichtsseite",
           fields: [
-            makeField("areasPage", areasBundle, `areasHero.eyebrow.${locale}`, "Hero · Eyebrow"),
             makeField("areasPage", areasBundle, `areasHero.title.${locale}`, "Hero · Titel"),
             makeField("areasPage", areasBundle, `areasHero.description.${locale}`, "Hero · Beschreibung", true),
-            makeField("areasPage", areasBundle, `areasIntro.eyebrow.${locale}`, "Intro · Eyebrow"),
             makeField("areasPage", areasBundle, `areasIntro.title.${locale}`, "Intro · Überschrift"),
             makeField("areasPage", areasBundle, `areasIntro.description.${locale}`, "Intro · Beschreibung", true),
             makeField("areasPage", areasBundle, `areasIntro.btn.${locale}`, "Intro · Button"),
@@ -471,7 +440,6 @@ export function getCmsPagesSchema(locale: SupportedLocale): CmsPageDefinition[] 
           title: "3. Warum NabiOta (4 Säulen)",
           subtitle: "Qualitätsversprechen und Grundpfeiler",
           fields: [
-            makeField("areasPage", areasBundle, `areasWhyNabiota.eyebrow.${locale}`, "Eyebrow"),
             makeField("areasPage", areasBundle, `areasWhyNabiota.title.${locale}`, "Überschrift"),
             makeField("areasPage", areasBundle, `areasWhyNabiota.description.${locale}`, "Beschreibung", true),
             makeField("areasPage", areasBundle, `areasWhyNabiota.btn.${locale}`, "Button"),
@@ -490,10 +458,8 @@ export function getCmsPagesSchema(locale: SupportedLocale): CmsPageDefinition[] 
           title: "4. Patientenstimmen & Abschluss-CTA",
           subtitle: "Erfahrungsberichte und unterer Kontakt-Aufruf",
           fields: [
-            makeField("areasPage", areasBundle, `areasPatientStories.eyebrow.${locale}`, "Patientenstimmen · Eyebrow"),
             makeField("areasPage", areasBundle, `areasPatientStories.title.${locale}`, "Patientenstimmen · Titel"),
             makeField("areasPage", areasBundle, `areasPatientStories.desc.${locale}`, "Patientenstimmen · Beschreibung", true),
-            makeField("areasPage", areasBundle, `areasCta.eyebrow.${locale}`, "CTA · Eyebrow"),
             makeField("areasPage", areasBundle, `areasCta.title.${locale}`, "CTA · Überschrift"),
             makeField("areasPage", areasBundle, `areasCta.desc.${locale}`, "CTA · Beschreibung", true),
             makeField("areasPage", areasBundle, `areasCta.btn.${locale}`, "CTA · Button"),
@@ -514,7 +480,6 @@ export function getCmsPagesSchema(locale: SupportedLocale): CmsPageDefinition[] 
           title: "1. Hero & Leitbild (Mission)",
           subtitle: "Kopfbereich, Mission-Statement und Zitat der Geschäftsführung",
           fields: [
-            makeField("valuesPage", values, "heroEyebrow", "Hero · Eyebrow"),
             makeField("valuesPage", values, "heroTitle1", "Hero · Titel Zeile 1"),
             makeField("valuesPage", values, "heroTitle2", "Hero · Titel Zeile 2"),
             makeField("valuesPage", values, "heroDesc", "Hero · Beschreibung", true),
@@ -589,7 +554,6 @@ export function getCmsPagesSchema(locale: SupportedLocale): CmsPageDefinition[] 
           title: "1. Hero Banner (Partner & Investoren)",
           subtitle: "Kopfbereich der Partner-Seite",
           fields: [
-            makeField("partnersPage", partners, "heroData.eyebrow", "Hero · Eyebrow"),
             makeField("partnersPage", partners, "heroData.title", "Hero · Titel"),
             makeField("partnersPage", partners, "heroData.subtitle", "Hero · Untertitel"),
             makeField("partnersPage", partners, "heroData.desc", "Hero · Beschreibung", true),
@@ -631,7 +595,6 @@ export function getCmsPagesSchema(locale: SupportedLocale): CmsPageDefinition[] 
           title: "1. Karriere Hero & Badges",
           subtitle: "Kopfbereich von NabiOta Medical Recruitment Services",
           fields: [
-            makeField("careerPage", career, "hero.eyebrow", "Hero · Eyebrow"),
             makeField("careerPage", career, "hero.titlePrefix", "Hero · Titel Teil 1"),
             makeField("careerPage", career, "hero.titleMid", "Hero · Titel Hervorhebung 1"),
             makeField("careerPage", career, "hero.titleHighlight", "Hero · Titel Hervorhebung 2"),
@@ -645,11 +608,9 @@ export function getCmsPagesSchema(locale: SupportedLocale): CmsPageDefinition[] 
           title: "2. Leitbild & Fachkräftevermittlung",
           subtitle: "Mission und Überblick über die 4 Vermittlungssäulen",
           fields: [
-            makeField("careerPage", career, "mission.eyebrow", "Mission · Eyebrow"),
             makeField("careerPage", career, "mission.title", "Mission · Überschrift"),
             makeField("careerPage", career, "mission.desc", "Mission · Beschreibung", true),
             makeField("careerPage", career, "mission.role", "Mission · Unterzeichner-Rolle"),
-            makeField("careerPage", career, "pillarSection.eyebrow", "Vermittlung · Eyebrow"),
             makeField("careerPage", career, "pillarSection.title", "Vermittlung · Überschrift"),
             makeField("careerPage", career, "pillarSection.desc", "Vermittlung · Beschreibung", true),
           ],
@@ -680,7 +641,6 @@ export function getCmsPagesSchema(locale: SupportedLocale): CmsPageDefinition[] 
           title: "1. Kontaktinformationen (Linke Karte)",
           subtitle: "Postanschrift, Telefonnummern, E-Mail, Servicezeiten & Handelsregister",
           fields: [
-            makeField("contactPage", contact, "left.eyebrow", "Eyebrow"),
             makeField("contactPage", contact, "left.title", "Überschrift"),
             makeField("contactPage", contact, "left.desc", "Einleitungstext", true),
             makeField("contactPage", contact, "left.addressTitle", "Label · Postanschrift"),
@@ -701,7 +661,6 @@ export function getCmsPagesSchema(locale: SupportedLocale): CmsPageDefinition[] 
           title: "2. Kontaktformular (Rechte Karte)",
           subtitle: "Überschriften, Feldlabels und Statusmeldungen des Formulars",
           fields: [
-            makeField("contactPage", contact, "form.eyebrow", "Formular · Eyebrow"),
             makeField("contactPage", contact, "form.title", "Formular · Überschrift"),
             makeField("contactPage", contact, "form.subtitle", "Formular · Untertitel", true),
             makeField("contactPage", contact, "form.nameLabel", "Feldlabel · Name"),
@@ -752,7 +711,6 @@ export function getCmsPagesSchema(locale: SupportedLocale): CmsPageDefinition[] 
           title: "4. Direktkontakte & Tochtergesellschaften (4 Bereiche)",
           subtitle: "Direkte Durchwahlen der Fachabteilungen",
           fields: [
-            makeField("contactPage", contact, "directory.eyebrow", "Verzeichnis · Eyebrow"),
             makeField("contactPage", contact, "directory.title", "Verzeichnis · Überschrift"),
             makeField("contactPage", contact, "directory.desc", "Verzeichnis · Beschreibung", true),
             makeField("contactPage", contact, "directory.div1Title", "Abteilung 1 · Titel"),

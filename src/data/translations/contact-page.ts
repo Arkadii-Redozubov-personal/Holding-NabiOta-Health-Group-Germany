@@ -16,7 +16,6 @@ export interface LocationOffice {
 export const contactTranslations = {
     de: {
       left: {
-        eyebrow: "UNSERE KONTAKTDATEN",
         title: "So erreichen Sie uns",
         desc: "Wir freuen uns über Ihre Nachricht. Unser Team hilft Ihnen gerne weiter und ist für Sie da - telefonisch, per E-Mail oder vor Ort.",
         addressTitle: "Postanschrift",
@@ -37,7 +36,6 @@ export const contactTranslations = {
         registryCapital: "Stammkapital: 50.000 EUR",
       },
       form: {
-        eyebrow: "NACHRICHT SENDEN",
         title: "Wir freuen uns auf Ihre Nachricht",
         subtitle:
           "Füllen Sie das Formular aus - wir setzen uns zeitnah mit Ihnen in Verbindung.",
@@ -72,7 +70,6 @@ export const contactTranslations = {
         errorPrivacy: "Bitte stimmen Sie der Datenschutzerklärung zu.",
       },
       directory: {
-        eyebrow: "DIREKTKONTAKTE IM VERBUND",
         title: "Fachabteilungen & Tochtergesellschaften",
         desc: "Direkte Durchwahlen und spezialisierte Ansprechpartner für Patienten, Fachärzte, Kooperationspartner und Zuweiser.",
         div1Title: "Zentren für ambulante & chirurgische Versorgung",
@@ -106,7 +103,6 @@ export const contactTranslations = {
     },
     en: {
       left: {
-        eyebrow: "OUR CONTACT DETAILS",
         title: "How to Reach Us",
         desc: "We look forward to hearing from you. Our team is at your disposal and here to assist you - by phone, email, or on site.",
         addressTitle: "Postal Address",
@@ -127,7 +123,6 @@ export const contactTranslations = {
         registryCapital: "Share Capital: 50,000 EUR",
       },
       form: {
-        eyebrow: "SEND MESSAGE",
         title: "We Look Forward to Your Message",
         subtitle: "Fill out the form - we will get in touch with you promptly.",
         nameLabel: "FULL NAME *",
@@ -161,7 +156,6 @@ export const contactTranslations = {
         errorPrivacy: "Please accept the privacy policy to proceed.",
       },
       directory: {
-        eyebrow: "DIRECT CONTACT DIRECTORY",
         title: "Clinical Divisions & Group Subsidiaries",
         desc: "Direct telephone numbers and specialist contact persons for patients, medical professionals, institutional partners, and referrers.",
         div1Title: "Primary & Surgical Centers (MVZ)",
@@ -195,7 +189,6 @@ export const contactTranslations = {
     },
     ru: {
       left: {
-        eyebrow: "НАШИ КОНТАКТНЫЕ ДАННЫЕ",
         title: "Как с нами связаться",
         desc: "Мы рады вашему обращению. Наша команда всегда готова помочь вам и ответить на любые вопросы - по телефону, электронной почте или лично.",
         addressTitle: "Почтовый адрес",
@@ -216,7 +209,6 @@ export const contactTranslations = {
         registryCapital: "Уставный капитал: 50 000 EUR",
       },
       form: {
-        eyebrow: "ОТПРАВИТЬ СООБЩЕНИЕ",
         title: "Мы будем рады вашему обращению",
         subtitle:
           "Заполните контактную форму - наши специалисты оперативно свяжутся с вами.",
@@ -251,7 +243,6 @@ export const contactTranslations = {
         errorPrivacy: "Необходимо согласиться с политикой конфиденциальности.",
       },
       directory: {
-        eyebrow: "ПРЯМЫЕ КОНТАКТЫ ПОДРАЗДЕЛЕНИЙ",
         title: "Отделения и дочерние компании холдинга",
         desc: "Прямые телефоны и специализированные контактные лица для пациентов, врачей, партнеров и направляющих клиник.",
         div1Title: "Амбулаторные и хирургические центры (MVZ)",
@@ -285,7 +276,6 @@ export const contactTranslations = {
     },
     tr: {
       left: {
-        eyebrow: "İLETİŞİM BİLGİLERİMİZ",
         title: "Bize Ulaşın",
         desc: "Mesajınızdan memnuniyet duyarız. Ekibimiz telefon, e-posta veya doğrudan yerleşkemizde size yardımcı olmaktan mutluluk duyar.",
         addressTitle: "Posta Adresi",
@@ -306,7 +296,6 @@ export const contactTranslations = {
         registryCapital: "Şirket Sermayesi: 50.000 EUR",
       },
       form: {
-        eyebrow: "MESAJ GÖNDERİN",
         title: "Mesajınızı Bekliyoruz",
         subtitle: "Formu doldurun - en kısa sürede sizinle iletişime geçeceğiz.",
         nameLabel: "AD SOYAD *",
@@ -340,7 +329,6 @@ export const contactTranslations = {
         errorPrivacy: "Lütfen devam etmek için gizlilik politikasını onaylayın.",
       },
       directory: {
-        eyebrow: "BÖLÜM DOĞRUDAN İLETİŞİM",
         title: "Tıbbi Bölümler ve Bağlı İştirakler",
         desc: "Hastalar, hekimler, kurumsal ortaklar ve yönlendiriciler için doğrudan telefon numaraları ve uzman irtibat kişileri.",
         div1Title: "Temel & Cerrahi Merkezler (MVZ)",
@@ -374,7 +362,6 @@ export const contactTranslations = {
     },
     ar: {
       left: {
-        eyebrow: "بيانات الاتصال بنا",
         title: "كيفية الوصول إلينا",
         desc: "يسعدنا تلقي رسالتكم. فريقنا جاهز دائماً لمساعدتكم وتقديم الدعم - هاتفياً، عبر البريد الإلكتروني أو مباشرة في مقرنا.",
         addressTitle: "العنوان البريدي",
@@ -395,7 +382,6 @@ export const contactTranslations = {
         registryCapital: "رأس المال المصرح به: 50,000 يورو",
       },
       form: {
-        eyebrow: "إرسال رسالة",
         title: "نتطلع إلى استلام رسالتكم",
         subtitle: "يرجى ملء النموذج أدناه - وسنتواصل معكم في أقرب وقت ممكن.",
         nameLabel: "الاسم الكامل *",
@@ -429,7 +415,6 @@ export const contactTranslations = {
         errorPrivacy: "يرجى الموافقة على سياسة الخصوصية للمتابعة.",
       },
       directory: {
-        eyebrow: "دليل الاتصال المباشر بالأقسام",
         title: "الأقسام السريرية والشركات التابعة للمجموعة",
         desc: "أرقام هواتف مباشرة ومسؤولو اتصال متخصصون للمرضى، الأطباء، الشركاء والجهات المحيلة.",
         div1Title: "مراكز الرعاية الأولية والجراحية (MVZ)",
@@ -463,7 +448,6 @@ export const contactTranslations = {
     },
     uz: {
       left: {
-        eyebrow: "BIZNING ALOQA MA'LUMOTLARIMIZ",
         title: "Biz bilan bog'lanish",
         desc: "Murojaatingizdan mamnun bo'lamiz. Bizning jamoamiz sizga yordam berishga va savollaringizga javob berishga doim tayyor - telefon, elektron pochta orqali yoki shaxsan uchrashuvda.",
         addressTitle: "Pochta manzili",
@@ -484,7 +468,6 @@ export const contactTranslations = {
         registryCapital: "Ustav kapitali: 50 000 EUR",
       },
       form: {
-        eyebrow: "XABAR YUBORISH",
         title: "Murojaatingizni kutib qolamiz",
         subtitle:
           "Aloqa shaklini to'ldiring - mutaxassislarimiz tez orada siz bilan bog'lanishadi.",
@@ -519,7 +502,6 @@ export const contactTranslations = {
         errorPrivacy: "Maxfiylik siyosatiga rozilik bildirish majburiydir.",
       },
       directory: {
-        eyebrow: "BO'LINMALARNING TO'G'RIDAN-TO'G'RI ALOQALARI",
         title: "Xolding bo'limlari va sho''ba korxonalari",
         desc: "Bemorlar, shifokorlar, hamkorlar va yo'llovchi klinikalar uchun to'g'ridan-to'g'ri telefonlar va mutaxassislar.",
         div1Title: "Ambulator va jarrohlik markazlari (MVZ)",

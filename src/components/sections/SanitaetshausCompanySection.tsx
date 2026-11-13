@@ -263,15 +263,6 @@ const c = {
     ar: "يتم الإمداد الدوائي للعيادات والمستشفيات التابعة عبر صيدلية مرخصة قانوناً على أساس العقود الإلزامية. يجوز لشركة NabiOta Medical Supplies GmbH تقديم خدمات دعم تنظيمية ولوجستية في الحدود المسموح بها قانوناً، دون أن يمنحها ذلك ترخيصاً تشغيلياً أو صلاحية لصرف الأدوية بصفتها صيدلية مستقلة.",
     uz: "Hamkor klinikalarni dori-darmonlar bilan ta'minlash tegishli shartnomalar asosida vakolatli dorixona orqali amalga oshiriladi. NabiOta Medical Supplies GmbH qonun doirasida tashkiliy va logistik yordam ko'rsatishi mumkin; bu mustaqil dorixona faoliyati yoki dori tarqatish huquqini bermaydi.",
   } as T,
-
-  legalEyebrow: {
-    de: "Gesetzliche Vorgaben",
-    en: "Legal & Regulatory Framework",
-    ru: "Законодательные требования",
-    tr: "Yasal Çerçeve ve Yükümlülükler",
-    ar: "المتطلبات القانونية والتنظيمية",
-    uz: "Qonuniy talablar",
-  } as T,
   legalTitle: {
     de: "Für die Umsetzung sind insbesondere diese Vorschriften relevant",
     en: "Key Legal Requirements for Implementation",

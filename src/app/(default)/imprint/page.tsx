@@ -38,7 +38,6 @@ export default function ImprintPage() {
       <Header />
       <main className="flex-1 pb-20">
         <PageHero
-          eyebrow="RECHTLICHE PFLICHTANGABEN"
           title="Impressum"
           description="Angaben gemäß § 5 Telemediengesetz (TMG) und § 18 Abs. 2 Medienstaatsvertrag (MStV)."
           imageSrc="/images/heroes/hero-campus.webp"

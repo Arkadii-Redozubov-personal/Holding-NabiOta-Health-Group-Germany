@@ -38,7 +38,6 @@ export default function PrivacyPage() {
       <Header />
       <main className="flex-1 pb-20">
         <PageHero
-          eyebrow="DATENSCHUTZ & TRANSPARENZ"
           title="Datenschutzerklärung"
           description="Informationen über die Art, den Umfang und Zweck der Verarbeitung von personenbezogenen Daten."
           imageSrc="/images/heroes/hero-campus.webp"

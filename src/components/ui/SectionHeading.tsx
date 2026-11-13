@@ -1,9 +1,7 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-import { Eyebrow } from "./Eyebrow";
 
 interface SectionHeadingProps {
-  eyebrow?: string;
   title: string | React.ReactNode;
   description?: string;
   theme?: "light" | "dark";
@@ -14,7 +12,6 @@ interface SectionHeadingProps {
 }
 
 export function SectionHeading({
-  eyebrow,
   title,
   description,
   theme = "light",
@@ -34,9 +31,6 @@ export function SectionHeading({
       )}
     >
       <div className={cn("max-w-2xl", align === "center" && "mx-auto")}>
-        {eyebrow && (
-          <Eyebrow variant="gold">{eyebrow}</Eyebrow>
-        )}
         <HeadingTag
           className={cn(
             "font-display text-3xl sm:text-4xl md:text-5xl font-normal leading-[1.08] tracking-[-0.015em]",

@@ -448,12 +448,6 @@ const specialtyIconsList: React.ComponentType<{ className?: string }>[] = [
   Brain,
 ];
 
-const cardEyebrows: T[] = [
-  { de: "ÄRZTLICHE VERSORGUNG", en: "OUTPATIENT CARE", ru: "ВРАЧЕБНАЯ ПОМОЩЬ", tr: "HEKİMLİK HİZMETLERİ", ar: "الرعاية الطبية العيادية", uz: "SHIFOKORLIK YORDAMI" },
-  { de: "STANDORTE & NETZWERK", en: "FACILITIES & NETWORK", ru: "ИНФРАСТРУКТУРА И СЕТЬ", tr: "TESİSLER VE AĞ", ar: "المرافق والشبكة التعاونية", uz: "INFRATUZILMA VA TARMOQ" },
-  { de: "RECHTLICHER RAHMEN", en: "LEGAL FRAMEWORK", ru: "ПРАВОВАЯ БАЗА И ДОПУСКИ", tr: "YASAL ÇERÇEVE", ar: "الأطر القانونية والتراخيص", uz: "HUQUQIY ASOSLAR VA RUXSATNOMALAR" },
-];
-
 const facilitiesPointIcons = [Hospital, GitMerge, Users];
 
 const conciseCopy: Record<Lang, { lead: string; specialtiesNote: string; paragraphTexts: string[]; dutiesIntro: string; dutySummaries: string[] }> = {

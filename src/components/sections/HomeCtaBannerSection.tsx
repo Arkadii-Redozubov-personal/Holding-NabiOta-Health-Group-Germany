@@ -17,17 +17,6 @@ export function HomeCtaBannerSection({ currentLocale = "de" }: HomeCtaBannerSect
   const isEn = currentLocale === "en";
 
   const baseT = {
-    ctaEyebrow: isRu
-      ? "ОБЪЕДИНЯЯ ОПЫТ. СОЗДАВАЯ БУДУЩЕЕ МЕДИЦИНЫ."
-      : isTr
-      ? "UZMANLIĞI BİRLEŞTİRMEK. SAĞLIĞI ŞEKİLLENDİRMEK."
-      : isAr
-      ? "توحيد الكفاءات. صياغة مستقبل الرعاية الصحية."
-      : isUz
-      ? "KOMPETENTSIYALARNI BIRLASHTIRIB. TIBBIYOT KELAJAGINI SHAKLLANTIRAMIZ."
-      : isEn
-      ? "CONNECTING COMPETENCE. SHAPING HEALTHCARE."
-      : "KOMPETENZ VERBINDEN. GESUNDHEIT GESTALTEN.",
     ctaTitle: isRu
       ? "Вместе ради передовой и доступной медицины."
       : isTr
@@ -75,7 +64,6 @@ export function HomeCtaBannerSection({ currentLocale = "de" }: HomeCtaBannerSect
   };
   const overriddenCta = applyNamespaceOverrides(baseT, currentLocale, "homeExtras");
   const t = {
-    eyebrow: overriddenCta.ctaEyebrow,
     title: overriddenCta.ctaTitle,
     desc: overriddenCta.ctaDesc,
     btnPrimary: overriddenCta.ctaBtnPrimary,

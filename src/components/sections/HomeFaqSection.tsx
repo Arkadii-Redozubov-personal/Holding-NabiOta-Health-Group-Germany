@@ -19,17 +19,6 @@ export function HomeFaqSection({ currentLocale = "de" }: HomeFaqSectionProps) {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   const baseFaq = {
-    eyebrow: isRu
-      ? "ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ"
-      : isTr
-      ? "SIKÇA SORULAN SORULAR"
-      : isAr
-      ? "الأسئلة الشائعة"
-      : isUz
-      ? "KO'P SO'RALADIGAN SAVOLLAR"
-      : isEn
-      ? "FREQUENTLY ASKED QUESTIONS"
-      : "HÄUFIG GESTELLTE FRAGEN",
     title: isRu
       ? "Всё о NabiOta® Health Group"
       : isTr

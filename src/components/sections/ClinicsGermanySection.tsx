@@ -148,15 +148,6 @@ const c = {
     uz: "Barcha faoliyat qonuniy ruxsat etilgan doirada amalga oshiriladi. Ruxsatnoma va litsenziya talab qiladigan faoliyat turlari har bir manzilda faqat tegishli zaruriy shartlar mavjud bo'lgandagina boshlanadi. § 30 GewO bo'yicha ruxsatnomaning o'zi § 108 SGB V bo'yicha shifoxona ruxsatnomasini ham, tan olingan shifoxona sifatida MVZ tashkil etish huquqini ham ta'minlamaydi.",
   } as T,
 
-  deptEyebrow: {
-    de: "UNSERE PERSPEKTIVE",
-    en: "OUR PERSPECTIVE",
-    ru: "НАША ПЕРСПЕКТИВА",
-    tr: "PERSPEKTİFİMİZ",
-    ar: "رؤيتنا المستقبلية",
-    uz: "BIZNING ISTIQBOLIMIZ",
-  } as T,
-
   deptIntro: {
     de: "Die ambulanten Fachrichtungen orientieren sich am geplanten stationären Eingriffsspektrum, den beantragten Leistungsgruppen, deren Qualitätskriterien und dem regionalen Bedarf. Ärztliche Stellen, Bereitschaft, Pflege, Ausstattung und Kooperationen sind für den Klinikstandort gesondert nachzuweisen. MVZ-Fachrichtungen werden nicht automatisch zu Krankenhausabteilungen.",
     en: "Outpatient specialties will align with planned inpatient procedures, applied-for service groups, quality criteria and regional demand. Physician staffing, on-call cover, nursing, equipment and cooperations must be demonstrated separately for the hospital. MVZ specialties do not automatically become hospital departments.",

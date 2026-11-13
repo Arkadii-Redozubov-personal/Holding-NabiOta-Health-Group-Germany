@@ -39,15 +39,6 @@ const overviewLabels: Record<string, string> = {
   uz: "Barcha yo'nalishlar sharhi",
 };
 
-const dropdownEyebrow: Record<string, string> = {
-  de: "UNTERNEHMENSBEREICHE",
-  en: "BUSINESS DIVISIONS",
-  ru: "НАПРАВЛЕНИЯ ХОЛДИНГА",
-  tr: "KURUMSAL ALANLAR",
-  ar: "قطاعات المجموعة",
-  uz: "XOLDING YO'NALISHLARI",
-};
-
 export function Header({ currentLocale = "de" }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

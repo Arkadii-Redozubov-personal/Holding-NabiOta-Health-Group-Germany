@@ -282,15 +282,6 @@ const c = {
       } as T,
     },
   ],
-
-  governanceEyebrow: {
-    de: "Gesetzlicher Rahmen & Kostenträger",
-    en: "Statutory & Payer Framework",
-    ru: "Законодательная база и плательщики",
-    tr: "Yasal Çerçeve & Finansör Kurumlar",
-    ar: "الإطار التنظيمي وجهات التأمين",
-    uz: "Qonuniy asoslar va sug'urta jamg'armalari",
-  } as T,
   governanceTitle: {
     de: "Rechtliche Rahmenbedingungen, Kostenträger & Spezialisierungen",
     en: "Statutory Framework, Payers & Specialized Services",

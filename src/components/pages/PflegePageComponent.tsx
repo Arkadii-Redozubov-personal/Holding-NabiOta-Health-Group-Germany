@@ -99,7 +99,6 @@ export function PflegePageComponent({ locale = "de" }: Props) {
       <PageHero
           locale={locale}
         title={heroData.title}
-        eyebrow={heroData.eyebrow}
         description={heroData.desc}
         imageSrc="/images/areas/pflege.webp"
         imageAlt="NabiOta Health Group Pflege & HomeCare"

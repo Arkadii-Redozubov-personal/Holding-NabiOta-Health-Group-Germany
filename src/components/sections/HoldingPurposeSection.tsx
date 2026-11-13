@@ -30,14 +30,6 @@ interface Block {
 }
 
 const content = {
-  eyebrow: {
-    de: "UNTERNEHMENSGEGENSTAND",
-    en: "CORPORATE PURPOSE",
-    ru: "ПРЕДМЕТ ДЕЯТЕЛЬНОСТИ",
-    tr: "FAALİYET KONUSU",
-    ar: "موضوع نشاط الشركة",
-    uz: "FAOLIYAT MAQSADI",
-  },
   title: {
     de: "Aufgaben und Unternehmensgegenstand der Holding",
     en: "Tasks and Corporate Purpose of the Holding",

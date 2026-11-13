@@ -32,17 +32,6 @@ export function getBaseAboutPageTranslations(locale: SupportedLocale) {
   const isAr = locale === "ar";
 
   return {
-    heroEyebrow: isUz
-      ? "XOLDING HAQIDA"
-      : isRu
-      ? "О ХОЛДИНГЕ"
-      : isEn
-      ? "ABOUT THE HOLDING"
-      : isTr
-      ? "ŞİRKET GRUBU HAKKINDA"
-      : isAr
-      ? "عن مجموعة الشركات"
-      : "ÜBER DIE UNTERNEHMENSGRUPPE",
     heroTitlePart1: isUz
       ? "Kuchli guruh"
       : isRu
@@ -112,18 +101,6 @@ export function getBaseAboutPageTranslations(locale: SupportedLocale) {
       ? "غدٌ أكثر"
       : "Gesünderes",
     badge3Sub: isUz ? "ertangi kun" : isRu ? "завтра" : isEn ? "tomorrow" : isTr ? "bir yarın" : isAr ? "صحة وعافية" : "Morgen",
-
-    rootsEyebrow: isUz
-      ? "TARIX VA ILDIZLAR"
-      : isRu
-      ? "ИСТОРИЯ И КОРНИ"
-      : isEn
-      ? "OUR ROOTS & HISTORY"
-      : isTr
-      ? "KÖKLERİMİZ VE TARİHÇEMİZ"
-      : isAr
-      ? "جذورنا ومسيرتنا"
-      : "UNSERE WURZELN & GESCHICHTE",
     rootsTitle1: isUz
       ? "O'n yilliklar tajribasi."
       : isRu
@@ -188,18 +165,6 @@ export function getBaseAboutPageTranslations(locale: SupportedLocale) {
       : isAr
       ? "الهدف هو تأسيس شبكة رعاية طبية متكاملة تضم طب الأسرة والأمراض الباطنية، طب الأعصاب، الجراحة، بالإضافة إلى مستشفى خاص يعمل مبدئياً وفق § 30 GewO. تتولى القابضة المهام الاقتصادية والتنظيمية المركزية، بينما تظل التراخيص والمسؤولية الطبية وتقديم الرعاية السريرية تحت الإشراف الكامل والمستقل للأطباء المرخصين. ويجري التحضير لتقديم الرعاية السريرية لمرضى التأمين الصحي العام وتأسيس شركة مستشفيات كجهة مشغلة لمراكز MVZ كخطوات تطويرية منفصلة."
       : "Ziel ist ein Verbund aus hausärztlicher und internistischer Versorgung, neurologischer und chirurgischer Versorgung sowie einer zunächst nach § 30 GewO betriebenen Privatklinik. Die Holding übernimmt zentrale wirtschaftliche und organisatorische Aufgaben. Zulassungen, medizinische Verantwortung und Leistungserbringung verbleiben bei den jeweils berechtigten Betreibern. Die spätere stationäre Versorgung gesetzlich Versicherter und eine Krankenhausgesellschaft als MVZ-Trägerin werden als gesonderte Entwicklungsschritte vorbereitet.",
-
-    missionEyebrow: isUz
-      ? "MISSIYA VA QARASH"
-      : isRu
-      ? "МИССИЯ И ВИДЕНИЕ"
-      : isEn
-      ? "OUR MISSION & GOALS"
-      : isTr
-      ? "MİSYONUMUZ VE HEDEFLERİMİZ"
-      : isAr
-      ? "رسالتنا وأهدافنا"
-      : "UNSER AUFTRAG & ZIELE",
     missionHeading: isUz
       ? "Bizni nima harakatga keltiradi"
       : isRu
@@ -315,18 +280,6 @@ export function getBaseAboutPageTranslations(locale: SupportedLocale) {
       : isAr
       ? "واحدة مشتركة لمستقبل صحي واعد"
       : "Gemeinsame Mission für eine gesündere Zukunft",
-
-    orgEyebrow: isUz
-      ? "TASHKILIY TUZILMA"
-      : isRu
-      ? "ОРГАНИЗАЦИОННАЯ СТРУКТУРА"
-      : isEn
-      ? "ORGANIZATIONAL STRUCTURE"
-      : isTr
-      ? "ORGANİZASYON VE YAPI"
-      : isAr
-      ? "الهيكل التنظيمي والمؤسسي"
-      : "ORGANISATION & STRUKTUR",
     orgHeading: isUz
       ? "Xolding tuzilmasi va sho'ba korxonalar"
       : isRu
@@ -349,18 +302,6 @@ export function getBaseAboutPageTranslations(locale: SupportedLocale) {
       : isAr
       ? "الشركة القابضة / المجموعة"
       : "HOLDING / KONZERN",
-
-    twoPhaseEyebrow: isUz
-      ? "RIVOJLANISH STRATEGIYASI"
-      : isRu
-      ? "СТРАТЕГИЯ РАЗВИТИЯ"
-      : isEn
-      ? "DEVELOPMENT STRATEGY"
-      : isTr
-      ? "STRATEJİK GELİŞİM"
-      : isAr
-      ? "التطوير الاستراتيجي"
-      : "STRATEGISCHE ENTWICKLUNG",
     twoPhaseTitle: isUz
       ? "Ikki bosqichli ishtirok etish modeli"
       : isRu
@@ -450,19 +391,6 @@ export function getBaseAboutPageTranslations(locale: SupportedLocale) {
       : isAr
       ? "تتمتع المرافق الطبية بالاستقلالية التامة في القرارات العلاجية والتشخيصية والتنظيم السريري. وتظل الاستقلالية المهنية غير المقيدة للإدارة الطبية في مراكز MVZ مصونة بالكامل (§ 95 SGB V)."
       : "Die medizinischen Einrichtungen bleiben für Behandlungsentscheidungen, Diagnostik und ärztliche Organisation eigenverantwortlich. Die medizinische Weisungsfreiheit der ärztlichen Leitung eines MVZ bleibt uneingeschränkt gewahrt (§ 95 SGB V).",
-
-    // Section 3B: Medical Leadership & Founder (PDF Pages 2-4)
-    leadershipEyebrow: isUz
-      ? "SHIFOKORLAR RAHBARLIGI VA TA'SISCHI"
-      : isRu
-      ? "ВРАЧЕБНОЕ РУКОВОДСТВО И ОСНОВАТЕЛЬ"
-      : isEn
-      ? "MEDICAL LEADERSHIP & FOUNDER"
-      : isTr
-      ? "TIBBİ LİDERLİK VE KURUCU"
-      : isAr
-      ? "القيادة الطبية ومؤسس المجموعة"
-      : "ÄRZTLICHE FÜHRUNG & GRÜNDER",
     leadershipHeading1: isUz
       ? "Mas'uliyatli tibbiyot"
       : isRu
@@ -791,18 +719,6 @@ export function getBaseAboutPageTranslations(locale: SupportedLocale) {
       : isAr
       ? "تضمن الهيئة الاستشارية متعددة التخصصات من كبار الأطباء الاستشاريين جودة رعاية موحدة ومبنية على أحدث الأدلة الطبية وتوجه برامج تدريب الأطباء."
       : "Das interdisziplinäre Kollegium aus leitenden Fachärzten sichert die einheitliche Behandlungsqualität nach aktuellen Leitlinien und steuert die Weiterbildung.",
-
-    valuesEyebrow: isUz
-      ? "BIZNING QADRIYATLARIMIZ"
-      : isRu
-      ? "НАШИ ЦЕННОСТИ"
-      : isEn
-      ? "OUR VALUES"
-      : isTr
-      ? "DEĞERLERİMİZ"
-      : isAr
-      ? "قيمنا الجوهرية"
-      : "UNSERE WERTE",
     valuesHeading: isUz
       ? "Bizni nima o'ziga xos qiladi."
       : isRu
@@ -903,18 +819,6 @@ export function getBaseAboutPageTranslations(locale: SupportedLocale) {
       : isAr
       ? "تمكين مستمر للكوادر المتخصصة وصقل المواهب لغدٍ واعد."
       : "Gezielte Förderung von Fachkräften und Potenzialen für eine starke Zukunft.",
-
-    ctaEyebrow: isUz
-      ? "SOG'LOM KELAJAKNI BIRGALIKDA YARATAMIZ"
-      : isRu
-      ? "СОЗИДАЕМ ЗДОРОВОЕ БУДУЩЕЕ"
-      : isEn
-      ? "LET'S BUILD A HEALTHIER TOMORROW"
-      : isTr
-      ? "BİRLİKTE SAĞLIĞI ŞEKİLLENDİRELİM"
-      : isAr
-      ? "معاً نصنع مستقبل الصحة"
-      : "GEMEINSAM GESUNDHEIT GESTALTEN",
     ctaHeading: isUz
       ? "Sog'lom kelajak yo'lida bizning hamkorimizga aylaning."
       : isRu

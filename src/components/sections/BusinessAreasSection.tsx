@@ -33,7 +33,6 @@ export function BusinessAreasSection({ currentLocale = "de" }: BusinessAreasSect
       <Container size="wide" className="relative z-10">
         <SectionHeading
           theme="dark"
-          eyebrow={dict.areas.eyebrow}
           title={dict.areas.heading}
           description={dict.areas.description}
           action={

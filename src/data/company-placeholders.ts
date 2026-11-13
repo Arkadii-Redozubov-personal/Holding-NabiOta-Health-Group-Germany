@@ -9,7 +9,6 @@ interface RawCompanyCopy {
 }
 
 export interface CompanyMeta {
-  eyebrow: string;
   backPath: string;
   linkHref?: string;
   copy: Record<SupportedLocale, RawCompanyCopy>;
@@ -17,7 +16,6 @@ export interface CompanyMeta {
 
 export const companyPlaceholders: Record<string, CompanyMeta> = {
   "mvz-hausarzt-facharzt": {
-    eyebrow: "NabiOta MVZ",
     backPath: "areas/medizinische-fachbereiche",
     linkHref: "#",
     copy: {
@@ -60,7 +58,6 @@ export const companyPlaceholders: Record<string, CompanyMeta> = {
 },
   },
   "nabiota-clinics-germany": {
-    eyebrow: "NabiOta Clinics",
     backPath: "areas/medizinische-fachbereiche",
     linkHref: undefined,
     copy: {
@@ -103,7 +100,6 @@ export const companyPlaceholders: Record<string, CompanyMeta> = {
 },
   },
   "nabiota-diagnostics": {
-    eyebrow: "NabiOta Diagnostics",
     backPath: "areas/diagnostik",
     linkHref: undefined,
     copy: {
@@ -116,7 +112,6 @@ export const companyPlaceholders: Record<string, CompanyMeta> = {
 },
   },
   "nabiota-homecare": {
-    eyebrow: "NabiOta HomeCare",
     backPath: "areas/pflege",
     linkHref: undefined,
     copy: {
@@ -129,7 +124,6 @@ export const companyPlaceholders: Record<string, CompanyMeta> = {
 },
   },
   "nabiota-medical-recruitment": {
-    eyebrow: "NabiOta Medical Recruitment",
     backPath: "areas/internationale-kooperationen",
     linkHref: undefined,
     copy: {
@@ -142,7 +136,6 @@ export const companyPlaceholders: Record<string, CompanyMeta> = {
 },
   },
   "nabiota-real-estate": {
-    eyebrow: "NabiOta Real Estate",
     backPath: "areas/beratung-projektentwicklung",
     linkHref: undefined,
     copy: {
@@ -155,7 +148,6 @@ export const companyPlaceholders: Record<string, CompanyMeta> = {
 },
   },
   "nabiota-rehabilitation": {
-    eyebrow: "NabiOta Rehabilitation",
     backPath: "areas/rehabilitation",
     linkHref: undefined,
     copy: {
@@ -168,7 +160,6 @@ export const companyPlaceholders: Record<string, CompanyMeta> = {
 },
   },
   "nabiota-sanitaetshaus": {
-    eyebrow: "NabiOta Sanitätshaus",
     backPath: "areas/pflege",
     linkHref: undefined,
     copy: {
@@ -190,7 +181,6 @@ export function getCompanyPlaceholderData(
   if (!meta) return null;
   const c = meta.copy[locale] || meta.copy.de;
   return {
-    eyebrow: meta.eyebrow,
     title: c.title,
     note: c.note,
     link: c.link,

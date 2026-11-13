@@ -10,7 +10,6 @@ export function getBaseValuesPageTranslations(locale: SupportedLocale = "de") {
 
   return {
     // Section 1: Hero Section
-    heroEyebrow: isUz ? "XOLDING HAQIDA" : isRu ? "О ХОЛДИНГЕ" : isEn ? "ABOUT US" : isTr ? "HOLDİNG HAKKINDA" : isAr ? "عن المجموعة الصحية" : "ÜBER UNS",
     heroTitle1: isUz ? "Yana-da sog'lomroq" : isRu ? "Вместе ради более" : isEn ? "Together for a" : isTr ? "Daha sağlıklı bir" : isAr ? "معاً من أجل" : "Gemeinsam für eine",
     heroTitle2: isUz ? "kelajak sari birgalikda." : isRu ? "здорового будущего." : isEn ? "healthier future." : isTr ? "gelecek için birlikte." : isAr ? "مستقبل أكثر صحة." : "gesündere Zukunft.",
     heroTitle3: "",

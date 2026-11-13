@@ -6,7 +6,6 @@ import { ChevronRight, CheckCircle2, Award, Stethoscope, Building2 } from "@/lib
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
-import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { BusinessCard } from "@/components/ui/BusinessCard";
 import { PageHero } from "@/components/layout/PageHero";
@@ -120,7 +119,6 @@ export default async function AreaDetailPage({ params }: AreaDetailPageProps) {
               </div>
 
               <div className="lg:col-span-6 space-y-6">
-                <Eyebrow variant="forest">KOMPETENZ & ANSPRUCH</Eyebrow>
                 <h2 className="font-display text-3xl sm:text-4xl text-forest-950 leading-tight">
                   Strukturierte Spitzenversorgung nach deutschen Standards
                 </h2>

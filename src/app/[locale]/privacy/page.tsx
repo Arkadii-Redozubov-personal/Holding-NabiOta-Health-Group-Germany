@@ -61,19 +61,6 @@ export default async function LocalizedPrivacyPage({ params }: LocalizedPrivacyP
       <main className="flex-1 pb-20">
         <PageHero
           locale={locale}
-          eyebrow={
-            isUz
-              ? "MAXFIYLIK VA SHAFFOFLIK"
-              : isRu
-              ? "КОНФИДЕНЦИАЛЬНОСТЬ И ПРОЗРАЧНОСТЬ"
-              : isEn
-              ? "PRIVACY & TRANSPARENCY"
-              : isTr
-              ? "GİZLİLİK VE ŞEFFAFLIK"
-              : isAr
-              ? "الخصوصية والشفافية"
-              : "DATENSCHUTZ & TRANSPARENZ"
-          }
           title={
             isUz
               ? "Maxfiylik siyosati"

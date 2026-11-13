@@ -26,22 +26,6 @@ type Lang = "de" | "en" | "ru" | "tr" | "ar" | "uz";
 type T = Record<Lang, string>;
 
 const c = {
-  eyebrow: {
-    de: "HOLDING & MVZ",
-    en: "HOLDING & MVZ",
-    ru: "ХОЛДИНГ И MVZ",
-    tr: "HOLDİNG & MVZ",
-    ar: "القابضة والمراكز الطبية MVZ",
-    uz: "HOLDING VA MVZ",
-  } as T,
-  subEyebrow: {
-    de: "STRUKTUR · VERANTWORTLICHKEITEN · RECHTSRAHMEN",
-    en: "STRUCTURE · RESPONSIBILITIES · REGULATORY FRAMEWORK",
-    ru: "СТРУКТУРА · ОБЯЗАННОСТИ · ПРАВОВОЙ РЕГЛАМЕНТ",
-    tr: "YAPI · SORUMLULUKLAR · YASAL ÇERÇEVE",
-    ar: "الهيكل التنظيمي · المسؤوليات · الإطار القانوني",
-    uz: "TUZILMA · MAS'ULIYATLAR · HUQUQIY ASOSLAR",
-  } as T,
   title: {
     de: "Vertragliche Verbindung zwischen Holding und MVZ",
     en: "Contractual Link Between Holding and MVZ",

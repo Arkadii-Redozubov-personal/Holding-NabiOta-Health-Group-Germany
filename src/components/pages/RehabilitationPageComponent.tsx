@@ -217,7 +217,6 @@ export function RehabilitationPageComponent({ locale = "de" }: Props) {
       ══════════════════════════════════════════════════════════ */}
       <PageHero
           locale={locale}
-        eyebrow={heroData.eyebrow}
         title={heroData.title}
         description={heroData.desc}
         badges={heroBadges}

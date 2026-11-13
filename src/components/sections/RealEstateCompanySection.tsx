@@ -388,15 +388,6 @@ const c = {
     ar: "يتمثل هدف الشركة في التوفير المستدام لعقارات عالية الجودة وذات جدوى اقتصادية متينة لمجموعة شركات NabiOta والمستأجرين الآخرين. تدعم الشركة إنشاء مواقع إضافية، والتوسع المدروس للمرافق الحالية، وصون القيمة الرأسمالية طويلة الأجل للأصول.",
     uz: "Kompaniyaning maqsadi NabiOta korxonalar guruhi va boshqa ijarachilar uchun yuqori sifatli va iqtisodiy jihatdan barqaror ko'chmas mulkni uzoq muddatli ta'minlashdir. U qo'shimcha filiallar ochishni, mavjud muassasalarni rejaviy kengaytirishni va ko'chmas mulk portfelining barqaror qiymatini saqlab qolishni qo'llab-quvvatlaydi.",
   } as T,
-
-  governanceEyebrow: {
-    de: "RECHTLICHE RAHMENBEDINGUNGEN & COMPLIANCE",
-    en: "STATUTORY FRAMEWORK & COMPLIANCE",
-    ru: "ПРАВОВЫЕ ОСНОВЫ И КОМПЛАЕНС",
-    tr: "YASAL ÇERÇEVE VE UYUMLULUK (COMPLIANCE)",
-    ar: "الأطر القانونية والامتثال التنظيمي",
-    uz: "HUQUQIY ASOSLAR VA COMPLIANCE",
-  } as T,
   governanceTitle: {
     de: "Rechtliche Abgrenzung & Gesetzliche Pflichten (§ 34c GewO)",
     en: "Regulatory Separation & Statutory Licensing (§ 34c GewO)",

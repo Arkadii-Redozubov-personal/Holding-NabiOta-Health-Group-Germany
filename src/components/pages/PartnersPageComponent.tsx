@@ -88,7 +88,6 @@ export function PartnersPageComponent({ locale = "de" }: PartnersPageComponentPr
         <PageHero
           locale={locale}
           title={heroData.title}
-          eyebrow={heroData.eyebrow}
           description={heroData.desc}
           badges={heroBadges}
           imageSrc="/images/partners/artium.webp"

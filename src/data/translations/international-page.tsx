@@ -60,17 +60,6 @@ export function getInternationalPageTranslations(locale: SupportedLocale = "de")
       : isAr
       ? "شراكات عالمية من أجل رعاية صحية مستدامة حول العالم"
       : "Globale Partnerschaften für eine nachhaltige Gesundheitsversorgung",
-    eyebrow: isUz
-      ? "GLOBAL SOG'LIQNI SAQLASH VA AL'YANSLAR"
-      : isRu
-      ? "ГЛОБАЛЬНОЕ ЗДРАВООХРАНЕНИЕ"
-      : isEn
-      ? "GLOBAL HEALTHCARE & ALLIANCES"
-      : isTr
-      ? "KÜRESEL SAĞLIK VE İTTİFAKLAR"
-      : isAr
-      ? "الرعاية الصحية العالمية والتحالفات"
-      : "GLOBALE GESUNDHEIT & ALLIANZEN",
     desc: isUz
       ? "NabiOta® Health Group butun dunyo bo'ylab sog'liqni saqlash tizimlarini barqaror mustahkamlash va kelajakka mos tibbiy xizmat ko'rsatish tuzilmalarini barpo etish maqsadida ilg'or tibbiy tajriba, akademik tadqiqotlar va ko'p tomonlama strategik hamkorlikni birlashtiradi."
       : isRu
@@ -166,17 +155,6 @@ export function getInternationalPageTranslations(locale: SupportedLocale = "de")
   const t = {
     // Section 2: Vision
     s2: {
-      eyebrow: isUz
-        ? "BIZNING QARASHIMIZ"
-        : isRu
-        ? "НАШЕ ВИДЕНИЕ"
-        : isEn
-        ? "OUR VISION"
-        : isTr
-        ? "VİZYONUMUZ"
-        : isAr
-        ? "رؤيتنا"
-        : "UNSERE VISION",
       title: isUz
         ? "Salomatlik chegara bilmaydi."
         : isRu
@@ -367,17 +345,6 @@ export function getInternationalPageTranslations(locale: SupportedLocale = "de")
 
     // Section 4: 6 Key Strategic Programs & Cooperation Pillars (PDF Scope)
     s4: {
-      eyebrow: isUz
-        ? "STRATEGIK HAMKORLIK YO'NALISHLARI"
-        : isRu
-        ? "СТРАТЕГИЧЕСКИЕ НАПРАВЛЕНИЯ"
-        : isEn
-        ? "STRATEGIC COOPERATION FIELDS"
-        : isTr
-        ? "STRATEJİK İŞBİRLİĞİ ALANLARI"
-        : isAr
-        ? "مجالات التعاون الاستراتيجي"
-        : "STRATEGISCHE KOOPERATIONSFELDER",
       title: isUz
         ? "Xalqaro hamkorligimizning asosiy sohalari"
         : isRu
@@ -1795,17 +1762,6 @@ export function getInternationalPageTranslations(locale: SupportedLocale = "de")
 
     // Section 5: Impact Banner
     s5: {
-      eyebrow: isUz
-        ? "BIZNING NATIJAMIZ"
-        : isRu
-        ? "НАШ IMPACT"
-        : isEn
-        ? "OUR IMPACT"
-        : isTr
-        ? "ETKİMİZ"
-        : isAr
-        ? "أثرنا العالمي"
-        : "UNSER IMPACT",
       title: isUz
         ? "Yana-da ko'proq salomatlik. Yana-da ko'proq imkoniyatlar."
         : isRu
@@ -1916,17 +1872,6 @@ export function getInternationalPageTranslations(locale: SupportedLocale = "de")
 
     // Section 6: Testimonials
     s6: {
-      eyebrow: isUz
-        ? "MULOHAZALAR"
-        : isRu
-        ? "ОТЗЫВЫ"
-        : isEn
-        ? "EXPERIENCES"
-        : isTr
-        ? "DENEYİMLER"
-        : isAr
-        ? "تجارب وشهادات"
-        : "ERFAHRUNGEN",
       title: isUz
         ? "Hamkorligimiz ovozlari"
         : isRu
@@ -2047,17 +1992,6 @@ export function getInternationalPageTranslations(locale: SupportedLocale = "de")
 
     // Section 7: Bottom CTA Banner & Contact Strip
     s7: {
-      eyebrow: isUz
-        ? "XALQARO MISSIYAMIZNING BIR QISMIGA AYLANING"
-        : isRu
-        ? "СТАНЬТЕ ЧАСТЬЮ НАШЕЙ МЕЖДУНАРОДНОЙ МИССИИ"
-        : isEn
-        ? "BECOME PART OF OUR INTERNATIONAL MISSION"
-        : isTr
-        ? "ULUSLARARASI MİSYONUMUZUN PARÇASI OLUN"
-        : isAr
-        ? "كن جزءاً من رسالتنا الدولية"
-        : "WERDEN SIE TEIL UNSERER INTERNATIONALEN MISSION",
       title: isUz
         ? "Global salomatlik yo'lida birgalikda."
         : isRu

@@ -141,7 +141,6 @@ export function getRehabilitationPageTranslations(locale: SupportedLocale = "de"
 
   const heroData = {
     title: isUz ? "Reabilitatsiya" : isRu ? "Реабилитация" : isEn ? "Rehabilitation" : isTr ? "Rehabilitasyon ve Terapi" : isAr ? "إعادة التأهيل والعلاج الطبيعي" : "Rehabilitation",
-    eyebrow: isUz ? "TIKLANISH VA TERAPIYA" : isRu ? "ВОССТАНОВЛЕНИЕ И ТЕРАПИЯ" : isEn ? "REHABILITATION & MOBILITY" : isTr ? "İYİLEŞME VE TERAPİ" : isAr ? "التعافي والعلاج المتخصص" : "REHABILITATION & THERAPIE",
     desc: isUz
       ? "NabiOta® Reabilitatsiya va Terapiya Markazi to'laqonli hayotga tez va xavfsiz qaytish uchun dalillarga asoslangan fizioterapiya, robotlashtirilgan yurish mashqlari, gidroterapiya va individual tiklanish protokollarini birlashtiradi."
       : isRu
@@ -775,7 +774,6 @@ export function getRehabilitationPageTranslations(locale: SupportedLocale = "de"
 
   // ── Skrin 4 Data: Process (Your Pathway Back to Greater Quality of Life) ──
   const processData = {
-    eyebrow: isUz ? "BIZNING JARAYON" : isRu ? "НАШ ПРОЦЕСС" : isEn ? "OUR PROCESS" : isTr ? "SÜRECİMİZ" : isAr ? "مراحل رحلة العلاج" : "UNSER PROZESS",
     title: isUz ? "Hayot sifatini oshirish sari sizning yo'lingiz." : isRu ? "Ваш путь к возвращению качества жизни." : isEn ? "Your Pathway Back to Greater Quality of Life." : isTr ? "Daha Yüksek Yaşam Kalitesine Giden Yolunuz." : isAr ? "طريقكم نحو استعادة جودة الحياة والحركة." : "Ihr Weg zurück zu mehr Lebensqualität.",
     steps: [
       {
@@ -864,7 +862,6 @@ export function getRehabilitationPageTranslations(locale: SupportedLocale = "de"
   };
 
   const innovationCard = {
-    eyebrow: isUz ? "INNOVATSIYALAR VA EKSPERTIZA" : isRu ? "ИННОВАЦИИ И ЭКСПЕРТИЗА" : isEn ? "INNOVATION & EXPERTISE" : isTr ? "İNOVASYON VE UZMANLIK" : isAr ? "الابتكار والخبرة السريرية" : "INNOVATION & EXPERTISE",
     title: isUz ? "Salomatligingiz uchun ilg'or terapiya." : isRu ? "Передовая терапия для вашего здоровья." : isEn ? "Cutting-Edge Therapy for Your Health." : isTr ? "Sağlığınız İçin En Son Teknoloji Terapi." : isAr ? "أحدث التقنيات العلاجية من أجل صحتكم." : "Modernste Therapie für Ihre Gesundheit.",
     desc: isUz
       ? "Innovatsion usullar va zamonaviy uskunalar yordamida biz sizga faol va mustaqil hayotga qaytishingizga ko'maklashamiz."

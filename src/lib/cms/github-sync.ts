@@ -1,8 +1,8 @@
 import { type CmsOverridesDocument } from "@/lib/cms/cms-engine";
+import { getFirebaseAuthClient } from "@/lib/firebase/config";
 import {
   type GitHubSyncConfig,
   fetchGitHubConfigFromFirestore,
-  saveGitHubConfigToFirestore,
 } from "@/lib/firebase/cms-firestore";
 
 export interface GitHubCommitResult {
@@ -80,15 +80,15 @@ export async function resolveGitHubSyncConfig(): Promise<GitHubSyncConfig> {
   return local;
 }
 
-export async function persistGitHubSyncConfig(config: GitHubSyncConfig): Promise<void> {
-  if (typeof window !== "undefined") {
-    try {
-      window.localStorage.setItem(LOCAL_GH_CONFIG_KEY, JSON.stringify(config));
-    } catch {
-      // ignore
-    }
+async function getCurrentFirebaseIdToken(): Promise<string | null> {
+  try {
+    const auth = getFirebaseAuthClient();
+    const user = auth?.currentUser;
+    if (!user) return null;
+    return await user.getIdToken();
+  } catch {
+    return null;
   }
-  await saveGitHubConfigToFirestore(config);
 }
 
 export async function commitAndPushOverridesToGitHub(
@@ -159,9 +159,13 @@ export async function commitAndPushOverridesToGitHub(
       };
 
       // Also sync local file in dev if running locally
+      const idToken = await getCurrentFirebaseIdToken();
       await fetch("/api/admin/cms", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          ...(idToken ? { Authorization: `Bearer ${idToken}` } : {}),
+        },
         body: JSON.stringify({
           overridesDoc,
           commitMessage,
@@ -189,9 +193,13 @@ export async function commitAndPushOverridesToGitHub(
 
   // 2. Fallback: Local Dev Server Git CLI route (/api/admin/cms)
   try {
+    const idToken = await getCurrentFirebaseIdToken();
     const res = await fetch("/api/admin/cms", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        ...(idToken ? { Authorization: `Bearer ${idToken}` } : {}),
+      },
       body: JSON.stringify({
         overridesDoc,
         commitMessage,
@@ -212,56 +220,7 @@ export async function commitAndPushOverridesToGitHub(
     success: false,
     mode: "github-rest-api",
     error:
-      "Kein GitHub Personal Access Token konfiguriert. Änderungen wurden in Firebase / Browser gespeichert — bitte hinterlegen Sie im Tab 'Firebase & GitHub Setup' einen GitHub Token für automatische Commits.",
+      "Änderungen wurden in der Datenbank gespeichert. Automatische Veröffentlichung ist derzeit nicht konfiguriert.",
   };
-}
-
-export async function fetchLatestGitHubDeployRuns(
-  perPage = 4
-): Promise<GitHubWorkflowRunSummary[]> {
-  const cfg = getLocalGitHubSyncConfig();
-  try {
-    const headers: Record<string, string> = {
-      Accept: "application/vnd.github+json",
-    };
-    if (cfg.token) {
-      headers.Authorization = `Bearer ${cfg.token}`;
-    }
-
-    const res = await fetch(
-      `https://api.github.com/repos/${encodeURIComponent(
-        cfg.owner
-      )}/${encodeURIComponent(cfg.repo)}/actions/runs?per_page=${perPage}`,
-      {
-        headers,
-        cache: "no-store",
-      }
-    );
-
-    if (!res.ok) return [];
-    const data = (await res.json()) as {
-      workflow_runs?: Array<{
-        id: number;
-        name?: string;
-        head_sha?: string;
-        status?: string;
-        conclusion?: string | null;
-        html_url?: string;
-        created_at?: string;
-      }>;
-    };
-
-    return (data.workflow_runs || []).map((r) => ({
-      id: r.id,
-      name: r.name || "Deploy to ALL-INKL",
-      headSha: (r.head_sha || "").slice(0, 7),
-      status: r.status || "unknown",
-      conclusion: r.conclusion ?? null,
-      htmlUrl: r.html_url || "",
-      createdAt: r.created_at || "",
-    }));
-  } catch {
-    return [];
-  }
 }
 

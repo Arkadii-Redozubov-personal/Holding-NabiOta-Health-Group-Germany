@@ -44,17 +44,6 @@ export function getPflegePageTranslations(locale: SupportedLocale = "de") {
       : isAr
       ? "NabiOta HomeCare GmbH - رعاية كريمة ودافئة في محيطكم الأسري المألوف"
       : "NabiOta HomeCare GmbH - Würdevolle Fürsorge im vertrauten Umfeld",
-    eyebrow: isUz
-      ? "NABIOTA HOMECARE GMBH • SGB V & SGB XI"
-      : isRu
-      ? "NABIOTA HOMECARE GMBH • SGB V & SGB XI"
-      : isEn
-      ? "NABIOTA HOMECARE GMBH • SGB V & SGB XI"
-      : isTr
-      ? "NABIOTA HOMECARE GMBH • SGB V & SGB XI"
-      : isAr
-      ? "NABIOTA HOMECARE GMBH • SGB V & SGB XI"
-      : "NABIOTA HOMECARE GMBH • SGB V & SGB XI",
     desc: isUz
       ? "NabiOta HomeCare GmbH odatiy uy muhitida malakali ambulator hamshiralik parvarishi, shifokor ko'rsatmasi bo'yicha tibbiy yordam (SGB V), sertifikatlangan yaralarni davolash (ICW®) va asosiy parvarishni (SGB XI) inson qadr-qimmatini e'zozlagan holda hamda yaqinlariga ko'mak berib ta'minlaydi."
       : isRu
@@ -90,7 +79,6 @@ export function getPflegePageTranslations(locale: SupportedLocale = "de") {
 
   const t = {
     servicesSection: {
-      eyebrow: isUz ? "NABIOTA HOMECARE GMBH" : isRu ? "NABIOTA HOMECARE GMBH" : isEn ? "NABIOTA HOMECARE GMBH" : isTr ? "NABIOTA HOMECARE GMBH" : isAr ? "NABIOTA HOMECARE GMBH" : "NABIOTA HOMECARE GMBH",
       title: isUz
         ? "Kompleks ambulator va patronaj xizmatlari"
         : isRu
@@ -116,7 +104,6 @@ export function getPflegePageTranslations(locale: SupportedLocale = "de") {
       openModalBtn: isUz ? "Muolajalar haqida batafsil" : isRu ? "Подробнее о процедурах" : isEn ? "View Details" : isTr ? "Detaylar ve Endikasyonlar" : isAr ? "التفاصيل ودواعي الاستعمال" : "Details & Indikationen",
     },
     sanitaetshausSection: {
-      eyebrow: isUz ? "NABIOTA SANITÄTSHAUS GMBH" : isRu ? "NABIOTA SANITÄTSHAUS GMBH" : isEn ? "NABIOTA SANITÄTSHAUS GMBH" : isTr ? "NABIOTA SANITÄTSHAUS GMBH" : isAr ? "NABIOTA SANITÄTSHAUS GMBH" : "NABIOTA SANITÄTSHAUS GMBH",
       title: isUz
         ? "Ortopediya, reabilitatsiya va tibbiy buyumlar"
         : isRu
@@ -142,7 +129,6 @@ export function getPflegePageTranslations(locale: SupportedLocale = "de") {
       openModalBtn: isUz ? "Xususiyatlar va retsept" : isRu ? "Характеристики и рецепт" : isEn ? "Specs & Prescription" : isTr ? "Detaylar ve Reçete" : isAr ? "التفاصيل وطريقة الوصفة الطبية" : "Details & Verordnung",
     },
     pharmacySection: {
-      eyebrow: isUz ? "NABIOTA PHARMACY VA KLINIKALAR" : isRu ? "NABIOTA PHARMACY & КЛИНИКИ" : isEn ? "NABIOTA PHARMACY & CLINIC SUPPLY" : isTr ? "NABIOTA PHARMACY & KLİNİK İLAÇ TEDARİK" : isAr ? "NABIOTA PHARMACY وتوريد الأدوية للمستشفيات" : "NABIOTA PHARMACY & KLINIKVERSORGUNG",
       title: isUz
         ? "Dorixonalar to'g'risidagi qonun (§ 14 ApoG) bo'yicha dori ta'minoti konsepsiyasi"
         : isRu
@@ -218,7 +204,6 @@ export function getPflegePageTranslations(locale: SupportedLocale = "de") {
       ],
     },
     verbund: {
-      eyebrow: isUz ? "INTEGRATSIYALASHGAN EKOTIZIM" : isRu ? "ИНТЕГРИРОВАННАЯ ЭКОСИСТЕМА" : isEn ? "INTEGRATED HEALTHCARE NETWORK" : isTr ? "ENTEGRE SAĞLIK AĞI" : isAr ? "شبكة الرعاية الصحية المتكاملة" : "INTEGRIERTER VERSORGUNGSVERBUND",
       title: isUz
         ? "Uzluksiz g'amxo'rlik: NabiOta® Xoldingi"
         : isRu
@@ -305,7 +290,6 @@ export function getPflegePageTranslations(locale: SupportedLocale = "de") {
       ],
     },
     whyChoose: {
-      eyebrow: isUz ? "NEGA NABIOTA HOMECARE" : isRu ? "ПОЧЕМУ NABIOTA HOMECARE" : isEn ? "WHY CHOOSE US" : isTr ? "NEDEN NABIOTA HOMECARE" : isAr ? "لماذا تختار NABIOTA HOMECARE" : "WARUM NABIOTA HOMECARE",
       title: isUz
         ? "Individual g'amxo'rlik. Professional qo'llab-quvvatlash."
         : isRu
@@ -376,7 +360,6 @@ export function getPflegePageTranslations(locale: SupportedLocale = "de") {
       ],
     },
     commitment: {
-      eyebrow: isUz ? "BIZNING BURCHIMIZ" : isRu ? "НАШЕ ОБЯЗАТЕЛЬСТВО" : isEn ? "OUR COMMITMENT" : isTr ? "SÖZÜMÜZ VE TAAHHÜDÜMÜZ" : isAr ? "عهدنا والتزامنا" : "UNSER VERSPRECHEN",
       title: isUz
         ? "Parvarishdan ham ortiq - samimiy insoniylik"
         : isRu
@@ -419,7 +402,6 @@ export function getPflegePageTranslations(locale: SupportedLocale = "de") {
       ],
     },
     approach: {
-      eyebrow: isUz ? "BIZNING YONDASHUVIMIZ" : isRu ? "НАШ ПОДХОД" : isEn ? "OUR APPROACH" : isTr ? "BAKIM YAKLAŞIMIMIZ" : isAr ? "نهجنا في الرعاية" : "UNSER PFLEGEANSATZ",
       title: isUz
         ? "Hayotning har bir bosqichida kompleks parvarish"
         : isRu
@@ -507,7 +489,6 @@ export function getPflegePageTranslations(locale: SupportedLocale = "de") {
       ],
     },
     testimonials: {
-      eyebrow: isUz ? "BEMORLARNING FIKRLARI" : isRu ? "ОТЗЫВЫ ПАЦИЕНТОВ" : isEn ? "PATIENT TESTIMONIALS" : isTr ? "HASTA DENEYİMLERİ" : isAr ? "آراء المرضى وعائلاتهم" : "ERFAHRUNGSBERICHTE",
       title: isUz
         ? "Haqiqiy hikoyalar. Haqiqiy yordam."
         : isRu
@@ -583,7 +564,6 @@ export function getPflegePageTranslations(locale: SupportedLocale = "de") {
       ],
     },
     faq: {
-      eyebrow: "FAQ",
       title: isUz ? "Ko'p beriladigan savollar" : isRu ? "Часто задаваемые вопросы" : isEn ? "Frequently Asked Questions" : isTr ? "Sıkça Sorulan Sorular" : isAr ? "الأسئلة الشائعة" : "Häufig gestellte Fragen",
       items: [
         {
@@ -709,7 +689,6 @@ export function getPflegePageTranslations(locale: SupportedLocale = "de") {
       ],
     },
     cta: {
-      eyebrow: isUz ? "BIZ BILAN BOG'LANING" : isRu ? "СВЯЖИТЕСЬ С НАМИ" : isEn ? "GET IN TOUCH" : isTr ? "BİZİMLE İLETİŞİME GEÇİN" : isAr ? "تواصلوا معنا الآن" : "JETZT KONTAKT AUFNEHMEN",
       title: isUz
         ? "Sizning salomatligingiz va xotirjamligingiz - ishonchli qo'llarda"
         : isRu

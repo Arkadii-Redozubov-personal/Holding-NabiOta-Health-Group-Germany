@@ -7,7 +7,6 @@ import { Container } from "@/components/layout/Container";
 import { SupportedLocale } from "@/lib/i18n";
 
 export interface CompanyPlaceholderCopy {
-  eyebrow?: string;
   title: string;
   note: string;
   link: string;
@@ -31,11 +30,6 @@ export function CompanyPlaceholderPageComponent({
       <main id="main-content" className="flex flex-1 items-center bg-[#FAF8F5] py-24 sm:py-32">
         <Container size="wide">
           <div className="mx-auto max-w-3xl rounded-3xl border border-[#EDE8DE] bg-white p-8 text-center shadow-sm sm:p-12">
-            {data.eyebrow && (
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-[#9E7D3B]">
-                {data.eyebrow}
-              </p>
-            )}
             <h1 className="font-serif text-3xl leading-tight text-[#132218] sm:text-4xl">
               {data.title}
             </h1>

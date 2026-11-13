@@ -129,7 +129,6 @@ export function BeratungPageComponent({ locale = "de" }: Props) {
       <PageHero
           locale={locale}
         title={heroData.title}
-        eyebrow={heroData.eyebrow}
         description={heroData.desc}
         imageSrc="/images/areas/consulting.webp"
         imageAlt="NabiOta Health Group Beratung & Projektentwicklung"

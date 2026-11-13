@@ -4,7 +4,6 @@ import { Container } from "@/components/layout/Container";
 import { HeroBadges, HeroBadgeItem } from "@/components/ui/HeroBadges";
 
 interface PageHeroProps {
-  eyebrow?: string;
   breadcrumb?: React.ReactNode;
   title: React.ReactNode;
   description?: React.ReactNode;

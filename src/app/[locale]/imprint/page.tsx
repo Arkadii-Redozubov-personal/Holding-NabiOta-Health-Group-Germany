@@ -61,19 +61,6 @@ export default async function LocalizedImprintPage({ params }: LocalizedImprintP
       <main className="flex-1 pb-20">
         <PageHero
           locale={locale}
-          eyebrow={
-            isUz
-              ? "YURIDIK MA'LUMOTLAR"
-              : isRu
-              ? "ЮРИДИЧЕСКАЯ ИНФОРМАЦИЯ"
-              : isEn
-              ? "LEGAL NOTICE"
-              : isTr
-              ? "YASAL BİLGİLER"
-              : isAr
-              ? "بيانات النشر القانونية"
-              : "RECHTLICHE PFLICHTANGABEN"
-          }
           title={
             isUz
               ? "Chiqish ma'lumotlari (Impressum)"

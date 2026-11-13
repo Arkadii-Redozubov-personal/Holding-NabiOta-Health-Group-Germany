@@ -555,12 +555,6 @@ const specialtyIconsList: React.ComponentType<{ className?: string }>[] = [
   Syringe,
 ];
 
-const cardEyebrows: T[] = [
-  { de: "OPERATIVE MEDIZIN", en: "SURGICAL CARE", ru: "ОПЕРАТИВНАЯ ПОМОЩЬ", tr: "CERRAHİ HİZMETLER", ar: "الطب الجراحي", uz: "OPERATIV TIBBIYOT" },
-  { de: "INFRASTRUKTUR & OP-RÄUME", en: "FACILITIES & OR SUITES", ru: "ИНФРАСТРУКТУРА И ОПЕРБЛОКИ", tr: "TESİSLER VE AMELİYATHANELER", ar: "المرافق وأجنحة العمليات", uz: "INFRATUZILMA VA OPERATSIYA BLOKLARI" },
-  { de: "KLINIK-VERBUND & RECHT", en: "CLINIC NETWORK & LAW", ru: "КЛИНИЧЕСКАЯ СЕТЬ И ПРАВО", tr: "KLİNİK AĞI VE HUKUK", ar: "شبكة العيادات والأطر القانونية", uz: "KLINIKA TARMOG'I VA HUQUQ" },
-];
-
 const surgeryFacilitiesIcons = [Scissors, HeartPulse, Network];
 
 const cardPoints: Record<Lang, string[]>[] = [

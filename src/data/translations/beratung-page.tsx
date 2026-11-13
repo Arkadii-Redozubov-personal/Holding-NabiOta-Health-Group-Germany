@@ -70,17 +70,6 @@ export function getBeratungPageTranslations(locale: SupportedLocale = "de") {
       : isAr
       ? "NabiOta Real Estate GmbH - عقارات وبنية تحتية متخصصة للرعاية الصحية"
       : "NabiOta Real Estate GmbH - Spezialimmobilien für das Gesundheitswesen",
-    eyebrow: isUz
-      ? "NABIOTA REAL ESTATE GMBH • TIBBIY INFRATUZILMA"
-      : isRu
-      ? "NABIOTA REAL ESTATE GMBH • МЕДИЦИНСКАЯ ИНФРАСТРУКТУРА"
-      : isEn
-      ? "NABIOTA REAL ESTATE GMBH • HEALTHCARE INFRASTRUCTURE"
-      : isTr
-      ? "NABIOTA REAL ESTATE GMBH • SAĞLIK VE TIP ALTYAPISI"
-      : isAr
-      ? "NABIOTA REAL ESTATE GMBH • البنية التحتية والعقارات الطبية"
-      : "NABIOTA REAL ESTATE GMBH • MEDIZINISCHE IMMOBILIEN",
     desc: isUz
       ? "NabiOta Real Estate GmbH sog'liqni saqlash sohasi bo'yicha ixtisoslashtirilgan ko'chmas mulkni sotib oladi, loyihalashtiradi, rivojlantiradi va boshqaradi: zamonaviy klinika va ambulator jarrohlik markazlaridan (OP) tortib, diagnostika majmualari, reabilitatsiya klinikalari, parvarishlash maskanlari va tibbiyot xodimlari uchun qulay turar joylargacha."
       : isRu
@@ -1618,17 +1607,6 @@ export function getBeratungPageTranslations(locale: SupportedLocale = "de") {
 
   const t = {
     s1: {
-      eyebrow: isUz
-        ? "BIZNING KONSALTING XIZMATLARIMIZ"
-        : isRu
-        ? "НАШИ КОНСАЛТИНГОВЫЕ УСЛУГИ"
-        : isEn
-        ? "OUR CONSULTING SERVICES"
-        : isTr
-        ? "DANIŞMANLIK HİZMETLERİMİZ"
-        : isAr
-        ? "خدماتنا الاستشارية"
-        : "UNSERE BERATUNGSLEISTUNGEN",
       title: isUz
         ? "Barqaror yechimlar uchun kompleks konsalting."
         : isRu
@@ -1733,17 +1711,6 @@ export function getBeratungPageTranslations(locale: SupportedLocale = "de") {
       ],
     },
     s2: {
-      eyebrow: isUz
-        ? "LOYIHALARNI ISHLAB CHIQISH VA DEVELOPTMENT"
-        : isRu
-        ? "ДЕВЕЛОПМЕНТ ПРОЕКТОВ"
-        : isEn
-        ? "PROJECT DEVELOPMENT"
-        : isTr
-        ? "PROJE GELİŞTİRME"
-        : isAr
-        ? "تطوير المشاريع"
-        : "PROJEKTENTWICKLUNG",
       title: isUz
         ? "G'oyadan to'liq amalga oshirishgacha."
         : isRu
@@ -1848,17 +1815,6 @@ export function getBeratungPageTranslations(locale: SupportedLocale = "de") {
       ],
     },
     s3: {
-      eyebrow: isUz
-        ? "BIZNING JARAYON"
-        : isRu
-        ? "НАШ ПРОЦЕСС"
-        : isEn
-        ? "OUR PROCESS"
-        : isTr
-        ? "SÜRECİMİZ"
-        : isAr
-        ? "مراحل عملنا"
-        : "UNSER PROZESS",
       title: isUz
         ? "Loyihangiz muvaffaqiyati sari 5 qadam."
         : isRu
@@ -2015,7 +1971,6 @@ export function getBeratungPageTranslations(locale: SupportedLocale = "de") {
       ],
     },
     s4: {
-      eyebrow: "NABIOTA REAL ESTATE GMBH",
       title: isUz
         ? "Kalit ostida ixtisoslashtirilgan tibbiy ko'chmas mulk"
         : isRu
@@ -2062,17 +2017,6 @@ export function getBeratungPageTranslations(locale: SupportedLocale = "de") {
         : "Alle Bereiche",
     },
     s5: {
-      eyebrow: isUz
-        ? "HAMKORLARIMIZ FIKRLARI"
-        : isRu
-        ? "ОТЗЫВЫ ПАРТНЕРОВ"
-        : isEn
-        ? "PARTNER VOICES"
-        : isTr
-        ? "ORTAKLARIMIZIN GÖRÜŞLERİ"
-        : isAr
-        ? "آراء شركائنا"
-        : "STIMMEN UNSERER PARTNER",
       title: isUz
         ? "Ishonch taraqqiyot yaratadi."
         : isRu
@@ -2188,17 +2132,6 @@ export function getBeratungPageTranslations(locale: SupportedLocale = "de") {
       ],
     },
     s6: {
-      eyebrow: isUz
-        ? "BOG'LANISH"
-        : isRu
-        ? "КОНТАКТ"
-        : isEn
-        ? "CONTACT"
-        : isTr
-        ? "İLETİŞİM"
-        : isAr
-        ? "اتصل بنا"
-        : "KONTAKT",
       title: isUz
         ? "Murojaatingizni kutib qolamiz."
         : isRu

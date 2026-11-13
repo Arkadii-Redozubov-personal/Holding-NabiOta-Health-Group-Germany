@@ -200,7 +200,6 @@ export function getMedizinischeFachbereicheTranslations(locale: SupportedLocale 
 
   // ── Overview & Core Capabilities Section (From PDF & Previous Version) ──
   const overviewData = {
-    eyebrow: isUz ? "KOMPETENTSIYA VA TALABCHANLIK" : isRu ? "КОМПЕТЕНЦИИ И СТАНДАРТЫ" : isEn ? "COMPETENCE & QUALITY" : isTr ? "YETKİNLİK VE STANDARTLAR" : isAr ? "الكفاءة والمعايير" : "KOMPETENZ & ANSPRUCH",
     title: isUz
       ? "Nemis standartlari asosidagi tuzilmaviy yuqori darajali yordam"
       : isRu
@@ -379,7 +378,6 @@ export function getMedizinischeFachbereicheTranslations(locale: SupportedLocale 
 
   // ── Photo 1: Spotlight Section (Kardiologie) ──
   const spotlight = {
-    eyebrow: isUz ? "DIQQAT MARKAZIDA" : isRu ? "В ФОКУСЕ" : isEn ? "IN FOCUS" : isTr ? "ODAK NOKTASI" : isAr ? "تسليط الضوء" : "IM FOKUS",
     title: isUz
       ? "Kardiologiya - sog'lom yurak\nuchun aniqlik"
       : isRu
@@ -473,7 +471,6 @@ export function getMedizinischeFachbereicheTranslations(locale: SupportedLocale 
 
   // ── Photo 2: Full-Width Edge-to-Edge Section (Warum NabiOta? Mehr als Medizin.) ──
   const whySection = {
-    eyebrow: isUz ? "NEGA NABIOTA?" : isRu ? "ПОЧЕМУ НАБИОТА?" : isEn ? "WHY NABIOTA?" : isTr ? "NEDEN NABIOTA?" : isAr ? "لماذا نابي أوتا؟" : "WARUM NABIOTA?",
     title: isUz ? "Tibbiyotdan ko'prog'i." : isRu ? "Больше чем медицина." : isEn ? "More than Medicine." : isTr ? "Tıptan Daha Fazlası." : isAr ? "أكثر من مجرد طب." : "Mehr als Medizin.",
     desc: isUz
       ? "Biz tibbiy mukammallikni insoniylik bilan uyg'unlashtiramiz. Taniqli mutaxassis shifokorlardan iborat fanlararo jamoamiz sog'lig'ingiz, ishonchingiz va kelajagingiz uchun birgalikda ishlaydi."
@@ -519,7 +516,6 @@ export function getMedizinischeFachbereicheTranslations(locale: SupportedLocale 
 
   // ── Photo 3: Team Section (Unser Team - Kompetenz. Empathie. Teamgeist.) ──
   const teamSection = {
-    eyebrow: isUz ? "BIZNING JAMOA" : isRu ? "НАША КОМАНДА" : isEn ? "OUR TEAM" : isTr ? "EKİBİMİZ" : isAr ? "فريقنا الطبي" : "UNSER TEAM",
     title: isUz
       ? "Kompetentsiya. Hamdardlik.\nJamoaviy ruh."
       : isRu
@@ -597,17 +593,6 @@ export function getMedizinischeFachbereicheTranslations(locale: SupportedLocale 
 
   // ── Photo 4: Pre-footer Mountain Banner (Gesundheit beginnt mit Vertrauen) ──
   const ctaSection = {
-    eyebrow: isUz
-      ? "SALOMATLIK ISHONCHDAN BOSHLANADI"
-      : isRu
-      ? "ЗДОРОВЬЕ НАЧИНАЕТСЯ С ДОВЕРИЯ"
-      : isEn
-      ? "HEALTH BEGINS WITH TRUST"
-      : isTr
-      ? "SAĞLIK GÜVENLE BAŞLAR"
-      : isAr
-      ? "الصحة تبدأ بالثقة"
-      : "GESUNDHEIT BEGINNT MIT VERTRAUEN",
     title: isUz
       ? "Tibbiy mutaxassisliklarimiz haqida\nsavollaringiz bormi?"
       : isRu

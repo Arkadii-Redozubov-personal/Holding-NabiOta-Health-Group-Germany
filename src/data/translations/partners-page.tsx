@@ -65,9 +65,6 @@ export function getBasePartnersPageTranslations(locale: SupportedLocale = "de") 
       : isAr
       ? "خلق قيمة مستدامة للأطباء والمستشفيات والمستثمرين الصحيين"
       : "Gemeinsam Werte schaffen für das Gesundheitswesen von morgen",
-    eyebrow: isUz
-      ? "STRATEGIK AL'YANSLAR"
-      : isRu ? "ПАРТНЕРСКАЯ СЕТЬ" : isEn ? "PARTNERSHIP ECOSYSTEM" : isTr ? "ORTAKLIK EKOSİSTEMİ" : isAr ? "منظومة الشركاء والاستثمار" : "PARTNER & INVESTOREN",
     desc: isUz
       ? "NabiOta® Health Group Germany GmbH ambulator va statsionar tibbiyot, kadrlar va sog'liqni saqlash ko'chmas mulki bo'yicha mustahkam hamkorlikni rivojlantiradi. Biz shifokorlar, klinikalar, investorlar va munitsipalitetlar uchun Germaniya qonunchiligiga qat'iy mos keluvchi barqaror modellarni taklif etamiz."
       : isRu

@@ -2,7 +2,6 @@ import React from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/layout/Container";
-import { Eyebrow } from "@/components/ui/Eyebrow";
 import { IconCircle } from "@/components/ui/IconCircle";
 import { coreValues } from "@/data/values";
 import { SupportedLocale, getDictionary } from "@/lib/i18n";

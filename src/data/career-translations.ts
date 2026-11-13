@@ -15,7 +15,6 @@ import { applyNamespaceOverrides } from "@/lib/cms/cms-engine";
 export const careerTranslations = {
     de: {
       hero: {
-        eyebrow: "NABIOTA MEDICAL RECRUITMENT SERVICES GMBH",
         titlePrefix: "Gemeinsam für eine",
         titleMid: "gesündere",
         titleHighlight: "Zukunft.",
@@ -31,7 +30,6 @@ export const careerTranslations = {
         badge3Sub: "Klinik & MVZ",
       },
       mission: {
-        eyebrow: "UNTERNEHMENSGEGENSTAND & LEITBILD",
         title: "Gezielte Fachkräftegewinnung & nachhaltige Integration.",
         desc: "Die NabiOta Medical Recruitment Services GmbH verbindet qualifizierte Mediziner, Pflegefachkräfte, MTAs und Therapeuten mit erstklassigen Gesundheitseinrichtungen. Wir begleiten Fachkräfte ganzheitlich von der ersten Qualifikationsprüfung über Approbations- und Visaverfahren bis hin zu Spracherwerb, Relocation und langfristiger Karriereentwicklung in Deutschland.",
         role: "Geschäftsführung & Personalvorstand",
@@ -39,7 +37,6 @@ export const careerTranslations = {
         badgeLine2: "weil sie die Zukunft des Gesundheitswesens gestalten.",
       },
       pillarSection: {
-        eyebrow: "VERMITTLUNGSSPEKTRUM",
         title: "Die 4 Säulen unserer Fachkräftevermittlung",
         desc: "Strukturierte Personalrekrutierung für Krankenhäuser, medizinische Versorgungszentren (MVZ), Diagnostik- und Rehabilitationseinrichtungen.",
         openModalBtn: "Profil & Approbation ansehen",
@@ -191,7 +188,6 @@ export const careerTranslations = {
         },
       ],
       pathwaySection: {
-        eyebrow: "360° INTEGRATIONSSERVICE",
         title: "In 5 Schritten zur Festanstellung in Deutschland",
         desc: "Von der ersten Beglaubigung bis zum erfolgreichen Berufsstart in der Klinik: Unser strukturierter Pfad garantiert maximale Transparenz und Sicherheit.",
       },
@@ -223,7 +219,6 @@ export const careerTranslations = {
         },
       ],
       compliance: {
-        eyebrow: "RECHTLICHE STANDARDS & COMPLIANCE",
         title: "Rechtssichere, faire und transparente Fachkräftevermittlung",
         desc: "Die NabiOta Medical Recruitment Services GmbH handelt nach den strengen gesetzlichen Vorgaben der Bundesrepublik Deutschland sowie internationalen ethischen Standards.",
         points: [
@@ -246,7 +241,6 @@ export const careerTranslations = {
         ],
       },
       benefits: {
-        eyebrow: "WARUM NABIOTA®",
         title: "Ihre Vorteile bei uns.",
         desc: "Wir bieten Ihnen ein modernes Arbeitsumfeld, in dem Sie sich persönlich und beruflich weiterentwickeln können.",
         items: [
@@ -283,7 +277,6 @@ export const careerTranslations = {
         ],
       },
       jobs: {
-        eyebrow: "AKTUELLE STELLENANGEBOTE",
         title: "Finden Sie Ihren Platz in unserem Verbund.",
         desc: "Entdecken Sie erstklassige Karrierechancen an unseren Klinikstandorten, MVZ und Diagnostikzentren.",
         allButton: "Alle Stellenangebote anzeigen",
@@ -333,7 +326,6 @@ export const careerTranslations = {
         ],
       },
       culture: {
-        eyebrow: "UNSERE KULTUR",
         title: "Menschen. Werte. Miteinander.",
         desc: "Wir schaffen eine Arbeitsumgebung, in der Respekt, Vertrauen und Teamgeist gelebt werden. Bei NabiOta® zählen nicht nur Qualifikationen, sondern vor allem Menschen, die etwas bewegen wollen.",
         badgeTitle: "Gemeinsam wachsen.",
@@ -363,13 +355,11 @@ export const careerTranslations = {
         },
       ],
       cta: {
-        eyebrow: "BEREIT FÜR IHRE ZUKUNFT?",
         title: "Werden Sie Teil von NabiOta®.",
         desc: "Entdecken Sie unsere aktuellen Stellenangebote oder reichen Sie Ihre Initiativbewerbung für unser Recruitment-Programm ein.",
         button: "Jetzt bewerben",
       },
       applyForm: {
-        eyebrow: "DIREKT BEWERBEN",
         title: "Starten Sie Ihre Zukunft bei uns.",
         desc: "Senden Sie uns Ihre Unterlagen oder bewerben Sie sich unkompliziert. Unser Recruitment-Team prüft Ihre Qualifikationen und meldet sich innerhalb von 48 Stunden bei Ihnen.",
         nameLabel: "Vor- und Nachname",
@@ -417,7 +407,6 @@ export const careerTranslations = {
     },
     en: {
       hero: {
-        eyebrow: "NABIOTA MEDICAL RECRUITMENT SERVICES GMBH",
         titlePrefix: "Together for a",
         titleMid: "Healthier",
         titleHighlight: "Future.",
@@ -433,7 +422,6 @@ export const careerTranslations = {
         badge3Sub: "Hospitals & MVZs",
       },
       mission: {
-        eyebrow: "CORPORATE MANDATE & VISION",
         title: "Targeted Healthcare Recruitment & Sustainable Integration.",
         desc: "NabiOta Medical Recruitment Services GmbH connects qualified physicians, registered nurses, diagnostic technologists, and therapists with premier German medical institutions. We support healthcare professionals every step of the way: from initial qualification assessment to German medical licensing (Approbation), visa processing, specialized language acquisition, and long-term relocation.",
         role: "Executive Board & Head of Recruitment",
@@ -441,7 +429,6 @@ export const careerTranslations = {
         badgeLine2: "because they build the future of medicine.",
       },
       pillarSection: {
-        eyebrow: "STAFFING DOMAINS",
         title: "The 4 Pillars of Medical Recruitment",
         desc: "Structured healthcare staffing for acute care hospitals, medical healthcare centers (MVZ), diagnostic suites, and specialized rehabilitation clinics.",
         openModalBtn: "View Profile & Licensing",
@@ -593,7 +580,6 @@ export const careerTranslations = {
         },
       ],
       pathwaySection: {
-        eyebrow: "360° INTEGRATION PATHWAY",
         title: "5 Steps to Your Permanent Clinical Career in Germany",
         desc: "From initial diploma verification to permanent hospital placement: our proven roadmap guarantees total transparency and legal security.",
       },
@@ -625,7 +611,6 @@ export const careerTranslations = {
         },
       ],
       compliance: {
-        eyebrow: "LEGAL STANDARDS & COMPLIANCE",
         title: "Legally Secure, Fair & Transparent Healthcare Recruitment",
         desc: "NabiOta Medical Recruitment Services GmbH operates strictly under German federal laws and international ethical standards.",
         points: [
@@ -648,7 +633,6 @@ export const careerTranslations = {
         ],
       },
       benefits: {
-        eyebrow: "WHY NABIOTA®",
         title: "Your Benefits with Us.",
         desc: "We offer you a modern working environment where you can develop both personally and professionally.",
         items: [
@@ -685,7 +669,6 @@ export const careerTranslations = {
         ],
       },
       jobs: {
-        eyebrow: "CURRENT VACANCIES",
         title: "Find Your Place in Our Network.",
         desc: "Discover outstanding career opportunities across our specialized hospitals, ambulatory healthcare centers, and diagnostic institutes.",
         allButton: "View All Job Openings",
@@ -735,7 +718,6 @@ export const careerTranslations = {
         ],
       },
       culture: {
-        eyebrow: "OUR CULTURE",
         title: "People. Values. Together.",
         desc: "We cultivate a workplace where respect, trust, and teamwork thrive. At NabiOta®, what matters most are not just credentials, but individuals eager to make an impact.",
         badgeTitle: "Growing together.",
@@ -765,13 +747,11 @@ export const careerTranslations = {
         },
       ],
       cta: {
-        eyebrow: "READY FOR YOUR FUTURE?",
         title: "Become Part of NabiOta®.",
         desc: "Explore our current career opportunities or submit an open application for our international recruitment program.",
         button: "Apply Now",
       },
       applyForm: {
-        eyebrow: "APPLY DIRECTLY",
         title: "Start Your Future with NabiOta®.",
         desc: "Submit your credentials or send a quick application in just a few clicks. Our recruitment team reviews your profile and responds within 48 hours.",
         nameLabel: "Full Name",
@@ -819,7 +799,6 @@ export const careerTranslations = {
     },
     ru: {
       hero: {
-        eyebrow: "NABIOTA MEDICAL RECRUITMENT SERVICES GMBH",
         titlePrefix: "Вместе ради более",
         titleMid: "здорового",
         titleHighlight: "Будущего.",
@@ -835,7 +814,6 @@ export const careerTranslations = {
         badge3Sub: "Клиники и MVZ",
       },
       mission: {
-        eyebrow: "УСТАВНЫЕ ЗАДАЧИ И МИССИЯ ХОЛДИНГА",
         title: "Профессиональный подбор медицинских кадров и устойчивая интеграция.",
         desc: "NabiOta Medical Recruitment Services GmbH объединяет высококвалифицированных врачей, медсестринский персонал, технических ассистентов (MTA) и реабилитологов с передовыми учреждениями здравоохранения Германии. Мы берем на себя все этапы: от проверки диплома и получения апробации (Approbation / Berufserlaubnis) до курсов медицинского немецкого, визового сопровождения, релокации и постоянного трудоустройства.",
         role: "Руководство холдинга и отдел рекрутинга",
@@ -843,7 +821,6 @@ export const careerTranslations = {
         badgeLine2: "ведь именно люди формируют будущее медицины.",
       },
       pillarSection: {
-        eyebrow: "НАПРАВЛЕНИЯ ПОДБОРА ПЕРСОНАЛА",
         title: "4 ключевых направления медицинского рекрутмента",
         desc: "Системный подбор и юридическое сопровождение для больниц, центров амбулаторной помощи (MVZ), отделений лучевой диагностики и реабилитационных клиник.",
         openModalBtn: "Профиль и требования апробации",
@@ -995,7 +972,6 @@ export const careerTranslations = {
         },
       ],
       pathwaySection: {
-        eyebrow: "ПОШАГОВЫЙ ПЛАН ИНТЕГРАЦИИ",
         title: "5 шагов к бессрочному контракту в клинике Германии",
         desc: "От первой консультации и нотариального перевода до первого рабочего дня: наша система обеспечивает предсказуемость и надежность.",
       },
@@ -1027,7 +1003,6 @@ export const careerTranslations = {
         },
       ],
       compliance: {
-        eyebrow: "ПРАВОВЫЕ СТАНДАРТЫ И КОМПЛАЕНС",
         title: "Законный, этичный и прозрачный медицинский рекрутинг",
         desc: "Деятельность NabiOta Medical Recruitment Services GmbH строго соответствует законодательству Германии и нормам международного права.",
         points: [
@@ -1050,7 +1025,6 @@ export const careerTranslations = {
         ],
       },
       benefits: {
-        eyebrow: "ПОЧЕМУ NABIOTA®",
         title: "Ваши преимущества у нас.",
         desc: "Мы предлагаем современную рабочую среду, в которой вы сможете всесторонне развиваться личностно и профессионально.",
         items: [
@@ -1087,7 +1061,6 @@ export const careerTranslations = {
         ],
       },
       jobs: {
-        eyebrow: "АКТУАЛЬНЫЕ ВАКАНСИИ",
         title: "Найдите свое место в нашем холдинге.",
         desc: "Откройте для себя перспективы работы в стационарных клиниках, амбулаторных центрах MVZ и отделениях диагностики.",
         allButton: "Смотреть все вакансии",
@@ -1137,7 +1110,6 @@ export const careerTranslations = {
         ],
       },
       culture: {
-        eyebrow: "НАША КУЛЬТУРА",
         title: "Люди. Ценности. Единство.",
         desc: "Мы создаем рабочую атмосферу, в которой искренне ценятся уважение, доверие и командный дух. В NabiOta® важны не только дипломы, но и люди, искренне стремящиеся приносить пользу.",
         badgeTitle: "Вместе расти.",
@@ -1167,13 +1139,11 @@ export const careerTranslations = {
         },
       ],
       cta: {
-        eyebrow: "ГОТОВЫ К ВАШЕМУ БУДУЩЕМУ?",
         title: "Станьте частью NabiOta®.",
         desc: "Изучите открытые вакансии или отправьте резюме для участия в программе международного медицинского трудоустройства.",
         button: "Откликнуться сейчас",
       },
       applyForm: {
-        eyebrow: "БЫСТРЫЙ ОТКЛИК",
         title: "Начните свое будущее в NabiOta®.",
         desc: "Отправьте ваши документы или заполните быструю форму. Отдел рекрутинга изучит ваши квалификации и свяжется с вами в течение 48 часов.",
         nameLabel: "Имя и фамилия",
@@ -1221,7 +1191,6 @@ export const careerTranslations = {
     },
     tr: {
       hero: {
-        eyebrow: "NABIOTA MEDICAL RECRUITMENT SERVICES GMBH",
         titlePrefix: "Daha Sağlıklı Bir",
         titleMid: "Gelecek İçin",
         titleHighlight: "Birlikte.",
@@ -1237,7 +1206,6 @@ export const careerTranslations = {
         badge3Sub: "Klinik ve MVZ",
       },
       mission: {
-        eyebrow: "KURUMSAL FAALİYET VE VİZYON",
         title: "Nitelikli Sağlık İş Gücü ve Sürdürülebilir Entegrasyon.",
         desc: "NabiOta Medical Recruitment Services GmbH, nitelikli hekimleri, hemşireleri, radyoloji teknisyenlerini ve terapistleri Almanya'nın önde gelen sağlık kurumlarıyla buluşturur. Sağlık profesyonellerine ilk diploma analizinden resmi ruhsat (Approbation) ve vize süreçlerine, mesleki dil eğitiminden yerleşim ve uzun vadeli kariyer gelişimine kadar uçtan uca rehberlik ediyoruz.",
         role: "Yönetim Kurulu ve İK Direktörlüğü",
@@ -1245,7 +1213,6 @@ export const careerTranslations = {
         badgeLine2: "çünkü onlar sağlık hizmetlerinin geleceğini şekillendiriyor.",
       },
       pillarSection: {
-        eyebrow: "İSTİHDAM ALANLARI",
         title: "Sağlık Personeli Yerleştirmede 4 Temel Sütun",
         desc: "Yataklı hastaneler, tıp merkezleri (MVZ), görüntüleme laboratuvarları ve uzmanlaşmış rehabilitasyon klinikleri için yapılandırılmış işe alım süreçleri.",
         openModalBtn: "Profili ve Ruhsat Sürecini İnceleyin",
@@ -1409,7 +1376,6 @@ export const careerTranslations = {
         },
       ],
       pathwaySection: {
-        eyebrow: "360° ENTEGRASYON HİZMETİ",
         title: "Almanya'da Kadrolu İstihdama Giden 5 Adım",
         desc: "İlk diploma tasdikinden klinikteki başarılı göreve başlama anına kadar: Yapılandırılmış sürecimiz azami şeffaflık ve kesin sonuç güvencesi sunar.",
       },
@@ -1441,7 +1407,6 @@ export const careerTranslations = {
         },
       ],
       compliance: {
-        eyebrow: "YASAL STANDARTLAR VE UYUM",
         title: "Hukuken Güvenli, Adil ve Şeffaf Sağlık Personeli Temini",
         desc: "NabiOta Medical Recruitment Services GmbH, Almanya Federal Cumhuriyeti'nin katı mevzuatına ve uluslararası etik standartlara tam uyum içinde faaliyet gösterir.",
         points: [
@@ -1464,7 +1429,6 @@ export const careerTranslations = {
         ],
       },
       benefits: {
-        eyebrow: "NEDEN NABIOTA®",
         title: "Bizimle Çalışmanın Avantajları.",
         desc: "Hem kişisel hem de mesleki olarak gelişebileceğiniz modern, destekleyici ve dinamik bir çalışma ortamı sunuyoruz.",
         items: [
@@ -1501,7 +1465,6 @@ export const careerTranslations = {
         ],
       },
       jobs: {
-        eyebrow: "GÜNCEL İŞ İLANLARI",
         title: "Ağımızdaki İdeal Pozisyonunuzu Keşfedin.",
         desc: "Kliniklerimizde, MVZ polikliniklerimizde ve tanı merkezlerimizde prestijli kariyer fırsatlarını inceleyin.",
         allButton: "Tüm Açık Pozisyonları Görüntüleyin",
@@ -1551,7 +1514,6 @@ export const careerTranslations = {
         ],
       },
       culture: {
-        eyebrow: "KURUMSAL KÜLTÜRÜMÜZ",
         title: "İnsan. Değerler. Birliktelik.",
         desc: "Karşılıklı saygı, güven ve takım ruhunun canlı tutulduğu bir çalışma atmosferi sunuyoruz. NabiOta® için yalnızca diplomalar değil, fark yaratmak isteyen tutkulu insanlar önemlidir.",
         badgeTitle: "Birlikte büyüyoruz.",
@@ -1581,13 +1543,11 @@ export const careerTranslations = {
         },
       ],
       cta: {
-        eyebrow: "GELECEĞİNİZE ADIM ATMAYA HAZIR MISINIZ?",
         title: "NabiOta® Ailesine Katılın.",
         desc: "Açık pozisyonlarımızı inceleyin veya uluslararası işe alım programımız için genel başvurunuzu hemen iletin.",
         button: "Hemen Başvurun",
       },
       applyForm: {
-        eyebrow: "HIZLI BAŞVURU",
         title: "Kariyerinize Bizimle Başlayın.",
         desc: "Belgelerinizi yükleyin veya başvurunuzu kolayca iletin. İK ekibimiz niteliklerinizi inceleyecek ve 48 saat içinde sizinle irtibata geçecektir.",
         nameLabel: "Ad Soyad",
@@ -1638,7 +1598,6 @@ export const careerTranslations = {
     },
     ar: {
       hero: {
-        eyebrow: "NABIOTA MEDICAL RECRUITMENT SERVICES GMBH",
         titlePrefix: "معاً من أجل",
         titleMid: "مستقبل صحي",
         titleHighlight: "أكثر ازدهاراً.",
@@ -1654,7 +1613,6 @@ export const careerTranslations = {
         badge3Sub: "المستشفيات ومراكز MVZ",
       },
       mission: {
-        eyebrow: "الغرض المؤسسي والرؤية",
         title: "استقطاب الكفاءات الصحية والتكامل المهني المستدام.",
         desc: "تربط شركة NabiOta Medical Recruitment Services GmbH الكوادر الطبية المؤهلة والتمريض التخصصي وفنيي التشخيص والمعالجين بأرقى المؤسسات الصحية في ألمانيا. نرافق الكفاءات الطبية خطوة بخطوة: بدءاً من التدقيق الأولي للمؤهلات إلى معادلة الشهادات واستخراج ترخيص مزاولة المهنة (Approbation)، والتأشيرات، والتدريب اللغوي التخصصي، وحتى الاستقرار المهني والأسري طويل الأمد.",
         role: "مجلس الإدارة وإدارة الموارد البشرية والتوظيف",
@@ -1662,7 +1620,6 @@ export const careerTranslations = {
         badgeLine2: "لأنهم يصنعون مستقبل الرعاية الصحية المتقدمة.",
       },
       pillarSection: {
-        eyebrow: "مجالات التوظيف والوساطة",
         title: "الركائز الأربع لتوظيف الكوادر الطبية",
         desc: "برامج توظيف منظمة للمستشفيات الحادة، ومراكز الرعاية الطبية المتعددة (MVZ)، ومراكز التشخيص، ومؤسسات إعادة التأهيل.",
         openModalBtn: "عرض الملف ومتطلبات الترخيص",
@@ -1826,7 +1783,6 @@ export const careerTranslations = {
         },
       ],
       pathwaySection: {
-        eyebrow: "خدمة اندماج شاملة 360°",
         title: "خمس خطوات نحو التوظيف الدائم في ألمانيا",
         desc: "من التصديق الأولي للشهادات وحتى الانطلاق المهني الناجح في المستشفى: مسارنا المنظم يضمن أقصى درجات الشفافية والأمان.",
       },
@@ -1858,7 +1814,6 @@ export const careerTranslations = {
         },
       ],
       compliance: {
-        eyebrow: "المعايير القانونية والامتثال المؤسسي",
         title: "وساطة وتوظيف قانوني، عادل، وشفاف للكوادر الصحية",
         desc: "تعمل شركة NabiOta Medical Recruitment Services GmbH وفقاً للوائح القانونية الصارمة لجمهورية ألمانيا الاتحادية والمعايير الأخلاقية الدولية.",
         points: [
@@ -1881,7 +1836,6 @@ export const careerTranslations = {
         ],
       },
       benefits: {
-        eyebrow: "لماذا تختار NABIOTA®",
         title: "المزايا التي نقدمها لك.",
         desc: "نوفر لك بيئة عمل حديثة ومحفزة تتيح لك التطور الشخصي والارتقاء المهني المستمر.",
         items: [
@@ -1918,7 +1872,6 @@ export const careerTranslations = {
         ],
       },
       jobs: {
-        eyebrow: "الوظائف المتاحة حالياً",
         title: "ابحث عن موقعك المثالي في شبكتنا الطبية.",
         desc: "اكتشف فرصاً مهنية استثنائية في مواقع مستشفياتنا، ومراكز MVZ، ومجمعات التشخيص المتطورة.",
         allButton: "عرض جميع الوظائف الشاغرة",
@@ -1968,7 +1921,6 @@ export const careerTranslations = {
         ],
       },
       culture: {
-        eyebrow: "ثقافتنا المؤسسية",
         title: "الإنسان. القيم. التكاتف.",
         desc: "نصنع بيئة عمل تسودها مبادئ الاحترام المتبادل، والثقة، والتعاون المثمر. في NabiOta®، لا نكترث فقط بالمؤهلات والشهادات، بل بالإنسان الراغب في إحداث أثر إيجابي حقيقي.",
         badgeTitle: "ننمو معاً.",
@@ -1998,13 +1950,11 @@ export const careerTranslations = {
         },
       ],
       cta: {
-        eyebrow: "مستعد لبدء مستقبلك المهني؟",
         title: "انضم إلى أسرة NabiOta® الطبية.",
         desc: "اكتشف وظائفنا الشاغرة أو قدم طلب ترشحك المباشر لبرنامج الاستقطاب الطبي المخصص لدينا.",
         button: "التقديم الآن",
       },
       applyForm: {
-        eyebrow: "التقديم المباشر",
         title: "ابدأ مستقبلك المهني معنا.",
         desc: "أرسل سيرتك الذاتية أو قدم طلبك بسهولة. سيقوم فريق الموارد البشرية والتوظيف الطبي بفحص مؤهلاتك والتواصل معك خلال 48 ساعة.",
         nameLabel: "الاسم الكامل",
@@ -2055,7 +2005,6 @@ export const careerTranslations = {
     },
     uz: {
       hero: {
-        eyebrow: "NABIOTA MEDICAL RECRUITMENT SERVICES GMBH",
         titlePrefix: "Birgalikda yanada",
         titleMid: "sog'lom",
         titleHighlight: "Kelajak sari.",
@@ -2071,7 +2020,6 @@ export const careerTranslations = {
         badge3Sub: "Klinikalar va MVZ",
       },
       mission: {
-        eyebrow: "KOMPANIYA FAOLIYAT MAQSADI VA KONSEPSIYASI",
         title: "Malakali tibbiyot kadrlarini maqsadli jalb qilish va barqaror integratsiya.",
         desc: "NabiOta Medical Recruitment Services GmbH malakali shifokorlar, hamshiralar, MTA laboratoriya mutaxassislari va reabilitologlarni Germaniyaning yetakchi tibbiyot muassasalari bilan birlashtiradi. Biz mutaxassislarni diplomni baholash va approbatsiya (Approbation / Berufserlaubnis) olishdan tortib, tibbiy nemis tili, viza ko'magi, ko'chib o'tish (relokatsiya) va Germaniyada uzoq muddatli martaba qurishgacha har tomonlama qo'llab-quvvatlaymiz.",
         role: "Boshqaruv va kadrlar bo'limi",
@@ -2079,7 +2027,6 @@ export const careerTranslations = {
         badgeLine2: "chunki aynan insonlar sog'liqni saqlash kelajagini yaratadi.",
       },
       pillarSection: {
-        eyebrow: "MUTAXASSISLARNI JALB QILISH YO'NALISHLARI",
         title: "Tibbiy rekrutingimizning 4 ta asosiy ustuni",
         desc: "Kasalxonalar, ko'p tarmoqli ambulatoriya markazlari (MVZ), radiologik diagnostika va reabilitatsiya klinikalari uchun tizimli xodimlar saralashi.",
         openModalBtn: "Profil va approbatsiya talablarini ko'rish",
@@ -2231,7 +2178,6 @@ export const careerTranslations = {
         },
       ],
       pathwaySection: {
-        eyebrow: "BOSQICHMA-BOSQICH INTEGRATSIYA REJASI",
         title: "Germaniya klinikasida muddatsiz shartnomaga 5 qadam",
         desc: "Dastlabki maslahat va notarial tarjimadan boshlab birinchi ish kunigacha: bizning tizimimiz har bir bosqichning ishonchliligi va aniqligini kafolatlaydi.",
       },
@@ -2263,7 +2209,6 @@ export const careerTranslations = {
         },
       ],
       compliance: {
-        eyebrow: "HUQUQIY STANDARTLAR VA KOMPLAENS",
         title: "Qonuniy, odilona va shaffof tibbiy rekruting",
         desc: "NabiOta Medical Recruitment Services GmbH faoliyati Germaniya qonunchiligi va xalqaro huquq normalariga to'liq muvofiq keladi.",
         points: [
@@ -2286,7 +2231,6 @@ export const careerTranslations = {
         ],
       },
       benefits: {
-        eyebrow: "NEGA AYNAN NABIOTA®",
         title: "Bizdagi afzalliklaringiz.",
         desc: "Biz shaxsiy va kasbiy jihatdan har tomonlama o'sishingiz mumkin bo'lgan zamonaviy ish muhitini taklif etamiz.",
         items: [
@@ -2323,7 +2267,6 @@ export const careerTranslations = {
         ],
       },
       jobs: {
-        eyebrow: "DOLZARB BO'SH ISH O'RINLARI",
         title: "Xoldingimizda o'z o'rningizni toping.",
         desc: "Statsionar klinikalar, MVZ ambulator markazlari va diagnostika bo'limlarida ishlash istiqbollarini kashf eting.",
         allButton: "Barcha vakansiyalarni ko'rish",
@@ -2373,7 +2316,6 @@ export const careerTranslations = {
         ],
       },
       culture: {
-        eyebrow: "BIZNING MADANIYATIMIZ",
         title: "Insonlar. Qadriyatlar. Hamjihatlik.",
         desc: "Biz hurmat, ishonch va jamoaviy ruh chin dildan qadrlanadigan ish muhitini yaratamiz. NabiOta® da nafaqat diplomlar, balki jamiyatga samimiy naf keltirishga intiluvchi insonlar muhimdir.",
         badgeTitle: "Birgalikda o'sish.",
@@ -2403,13 +2345,11 @@ export const careerTranslations = {
         },
       ],
       cta: {
-        eyebrow: "KELAJAGINGIZGA TAYYORMISIZ?",
         title: "NabiOta® ning bir qismiga aylaning.",
         desc: "Mavjud bo'sh ish o'rinlarini o'rganing yoki xalqaro tibbiy ishga joylashish dasturida ishtirok etish uchun rezyumengizni yuboring.",
         button: "Hozir ariza topshirish",
       },
       applyForm: {
-        eyebrow: "TEZKOR ARIZA",
         title: "Kelajagingizni NabiOta® da boshlang.",
         desc: "Hujjatlaringizni yuboring yoki tezkor shaklni to'ldiring. Rekruting bo'limi sizning malakangizni o'rganib chiqadi va 48 soat ichida siz bilan bog'lanadi.",
         nameLabel: "Ism va familiya",
