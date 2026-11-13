@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-13T13:35:40.882Z",
+  "updatedAt": "2026-11-13T13:41:22.619Z",
   "updatedBy": "admin@nabiota-health-group-germany.de",
   "overrides": {
     "de": {},
@@ -9,6 +9,9 @@
       "home": {
         "hero.ctaMore": "Узнать больше!",
         "hero.headingLine1": "Привет"
+      },
+      "aboutPage": {
+        "missionHeading": "Что нами движет!"
       }
     },
     "tr": {},
