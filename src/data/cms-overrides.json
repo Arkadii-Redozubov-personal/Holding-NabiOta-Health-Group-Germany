@@ -1,14 +1,18 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-13T01:15:00.000Z",
-  "updatedBy": "admin@nabiota-health-group.de",
+  "updatedAt": "2026-11-13T13:35:40.882Z",
+  "updatedBy": "admin@nabiota-health-group-germany.de",
   "overrides": {
     "de": {},
     "en": {},
-    "ru": {},
+    "ru": {
+      "home": {
+        "hero.ctaMore": "Узнать больше!",
+        "hero.headingLine1": "Привет"
+      }
+    },
     "tr": {},
     "ar": {},
     "uz": {}
   }
 }
-
