@@ -822,15 +822,6 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                       loading="lazy"
                     />
 
-                    {/* Stylized Floating Map Pin Label */}
-                    <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex flex-col items-center pointer-events-none drop-shadow-md">
-                      <div className="bg-[#132B1E] text-white text-[11.5px] font-medium px-3.5 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg border border-white/20 whitespace-nowrap">
-                        <MapPin className="w-3 h-3 text-[#ECCF96]" />
-                        <span>{activeLocation.mapPin}</span>
-                      </div>
-                      <div className="w-0 h-0 border-x-4 border-x-transparent border-t-6 border-t-[#132B1E]" />
-                    </div>
-
                     {/* Map Zoom Controls */}
                     <div className="absolute top-3 right-3 z-10 flex flex-col rounded-lg overflow-hidden border border-black/10 bg-white/95 shadow-md">
                       <button

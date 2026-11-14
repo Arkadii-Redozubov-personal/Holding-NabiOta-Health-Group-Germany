@@ -12,6 +12,8 @@ import { applyNamespaceOverrides } from "@/lib/cms/cms-engine";
 
 interface ServicesSectionProps {
   currentLocale?: SupportedLocale;
+  sectionId?: string;
+  showViewAllLink?: boolean;
 }
 
 const SECTION_SUBTITLES: Record<SupportedLocale, string> = {
@@ -41,7 +43,11 @@ const CTA_LABELS: Record<SupportedLocale, string> = {
   uz: "Batafsil ma'lumot",
 };
 
-export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) {
+export function ServicesSection({
+  currentLocale = "de",
+  sectionId,
+  showViewAllLink = true,
+}: ServicesSectionProps) {
   const dict = getDictionary(currentLocale);
   const lang = currentLocale;
   const isRtl = lang === "ar";
@@ -138,7 +144,12 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
   };
 
   return (
-    <section className="relative bg-[#FAF8F5] pt-12 sm:pt-16 pb-14 sm:pb-18 border-b border-[#EAE5DA] overflow-hidden select-none">
+    <section
+      id={sectionId}
+      className={`relative bg-[#FAF8F5] pt-12 sm:pt-16 pb-14 sm:pb-18 border-b border-[#EAE5DA] overflow-hidden select-none${
+        sectionId ? " scroll-mt-24" : ""
+      }`}
+    >
       {/* Subtle Ambient Botanical Watermarks */}
       <div className="absolute top-0 left-0 w-56 h-56 pointer-events-none opacity-35 select-none hidden lg:block">
         <Image
@@ -173,13 +184,15 @@ export function ServicesSection({ currentLocale = "de" }: ServicesSectionProps) 
             )}
           </div>
 
-          <Link
-            href={getLocalePath(currentLocale, "areas")}
-            className="group inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-semibold text-[#8F7745] hover:text-[#6F592E] transition-colors self-start md:self-end whitespace-nowrap mb-1 focus-visible:outline-2 focus-visible:outline-[#BEA06B] focus-visible:outline-offset-4 rounded-sm"
-          >
-            <span>{dict.areas.cta}</span>
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
-          </Link>
+          {showViewAllLink && (
+            <Link
+              href={getLocalePath(currentLocale, "areas")}
+              className="group inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-semibold text-[#8F7745] hover:text-[#6F592E] transition-colors self-start md:self-end whitespace-nowrap mb-1 focus-visible:outline-2 focus-visible:outline-[#BEA06B] focus-visible:outline-offset-4 rounded-sm"
+            >
+              <span>{dict.areas.cta}</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1" />
+            </Link>
+          )}
         </div>
 
         {/* Splide Focus-Center Slider */}

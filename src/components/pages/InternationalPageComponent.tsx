@@ -191,10 +191,10 @@ export function InternationalPageComponent({ locale = "de" }: Props) {
         {/* ========================================================================= */}
         <section className="relative bg-[#07190F] text-white overflow-hidden border-y border-[#D5B878]/30">
           <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[420px]">
-            {/* Left Column: Camper van on canyon road (Photo 1) */}
+            {/* Left Column: Healthcare impact photograph */}
             <div className="lg:col-span-6 relative min-h-[280px] lg:min-h-[420px]">
               <Image
-                src="/images/international/impact-camper-van.webp"
+                src="/images/values/values-doctor-patient.webp"
                 alt="Sustainable Solutions for Healthy Communities"
                 fill
                 className="object-cover object-center"

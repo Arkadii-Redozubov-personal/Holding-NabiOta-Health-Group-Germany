@@ -514,83 +514,6 @@ export function getMedizinischeFachbereicheTranslations(locale: SupportedLocale 
     ],
   };
 
-  // ── Photo 3: Team Section (Unser Team - Kompetenz. Empathie. Teamgeist.) ──
-  const teamSection = {
-    title: isUz
-      ? "Kompetentsiya. Hamdardlik.\nJamoaviy ruh."
-      : isRu
-      ? "Компетентность. Эмпатия.\nКомандный дух."
-      : isEn
-      ? "Competence. Empathy.\nTeam Spirit."
-      : isTr
-      ? "Yetkinlik. Empati.\nTakım Ruhu."
-      : isAr
-      ? "الكفاءة. التعاطف.\nوروح الفريق."
-      : "Kompetenz. Empathie.\nTeamgeist.",
-    desc: isUz
-      ? "Bizning mutaxassis shifokorlarimiz eng yuqori tibbiy kompetentsiya, ko'p yillik tajriba va yaqin fanlararo hamkorlikni ta'minlaydi. Sizning salomatligingiz uchun birga."
-      : isRu
-      ? "Наши врачи-специалисты обеспечивают высочайший уровень медицинской экспертизы, многолетний практический опыт и слаженное междисциплинарное взаимодействие. Вместе ради вашего здоровья."
-      : isEn
-      ? "Our medical specialists stand for the highest clinical excellence, extensive experience, and seamless interdisciplinary cooperation. Together for your well-being."
-      : isTr
-      ? "Uzman hekimlerimiz en yüksek tıbbi yetkinliği, uzun yıllara dayanan klinik tecrübeyi ve yakın disiplinler arası iş birliğini temsil eder. Sağlığınız için birlikte çalışıyoruz."
-      : isAr
-      ? "يمثل أطباؤنا الاستشاريون أعلى درجات الكفاءة الطبية، والخبرة العملية الممتدة، والتعاون الوثيق بين مختلف التخصصات. معاً من أجل صحتكم."
-      : "Unsere Fachärztinnen und Fachärzte stehen für höchste medizinische Kompetenz, langjährige Erfahrung und eine enge, interdisziplinäre Zusammenarbeit. Gemeinsam für Ihre Gesundheit.",
-    btn: isUz ? "Jamoamiz haqida batafsil" : isRu ? "Подробнее о команде" : isEn ? "Meet Our Team" : isTr ? "Ekibimizi Tanıyın" : isAr ? "تعرف على فريقنا" : "Mehr über unser Team",
-    doctors: [
-      {
-        name: isRu ? "Д-р мед. Анна Келлер" : "Dr. med. Anna Keller",
-        role: isUz ? "Ichki kasalliklar va kardiologiya" : isRu ? "Терапия и кардиология" : isEn ? "Internal Medicine & Cardiology" : isTr ? "İç Hastalıkları ve Kardiyoloji" : isAr ? "الأمراض الباطنية وطب القلب" : "Innere Medizin & Kardiologie",
-        desc: isUz
-          ? "15 yildan ortiq klinik tajribaga ega ichki kasalliklar va noinvaziv kardiologiya bo'yicha yetakchi mutaxassis."
-          : isRu
-          ? "Ведущий специалист по комплексной терапии и неинвазивной кардиодиагностике с более чем 15-летним клиническим стажем."
-          : isEn
-          ? "Lead specialist in comprehensive internal medicine and non-invasive cardiovascular diagnostics with over 15 years of experience."
-          : isTr
-          ? "15 yılı aşkın klinik deneyimiyle kapsamlı iç hastalıkları ve non-invaziv kardiyolojik tanı alanında baş uzman hekim."
-          : isAr
-          ? "استشارية أولى في الأمراض الباطنية والتشخيص غير الجراحي لأمراض القلب بخبرة سريرية تزيد عن 15 عاماً."
-          : "Leitende Fachärztin für Innere Medizin und nicht-invasive Kardiologie mit über 15 Jahren fundierter klinischer Erfahrung.",
-        image: "/images/areas/doc-anna-keller.webp",
-      },
-      {
-        name: isRu ? "Проф. д-р Михаэль Вебер" : "Prof. Dr. Michael Weber",
-        role: isUz ? "Umumiy va visseral jarrohlik" : isRu ? "Хирургия" : isEn ? "General & Visceral Surgery" : isTr ? "Genel Cerrahi ve Operatif Tıp" : isAr ? "الجراحة العامة والجراحة التنظيرية" : "Chirurgie & Operative Medizin",
-        desc: isUz
-          ? "Umumiy va minimal invaziv jarrohlik bo'yicha taniqli ekspert, jarrohlik markazimiz rahbari."
-          : isRu
-          ? "Эксперт в области общей и малоинвазивной хирургии, руководитель междисциплинарного хирургического центра NabiOta."
-          : isEn
-          ? "Renowned specialist in general and minimally invasive surgery, leading our interdisciplinary surgical center."
-          : isTr
-          ? "Genel ve minimal invaziv cerrahi alanında tanınmış uzman, cerrahi tıp merkezimizin tıbbi direktörü."
-          : isAr
-          ? "خبير رائد في الجراحة العامة والجراحات طفيفة التوغل، ومدير مركزنا الجراحي متعدد التخصصات."
-          : "Renommierter Experte für Allgemein- und minimalinvasive Chirurgie, Leitung unseres operativen Facharztzentrums.",
-        image: "/images/areas/doc-michael-weber.webp",
-      },
-      {
-        name: isRu ? "Д-р мед. Сара Хоффманн" : "Dr. med. Sarah Hoffmann",
-        role: isUz ? "Nevrologiya va neyrodiagnostika" : isRu ? "Неврология" : isEn ? "Neurology & Neurodiagnostics" : isTr ? "Nöroloji ve Nörodiagnostik" : isAr ? "طب الأعصاب والتشخيص العصبي" : "Neurologie & Neurodiagnostik",
-        desc: isUz
-          ? "Zamonaviy neyrodiagnostika va yaxlit terapiya konsepsiyalariga ixtisoslashgan nevrolog shifokor."
-          : isRu
-          ? "Специалист по клинической неврологии и нейродиагностике, эксперт по персонализированным схемам лечения."
-          : isEn
-          ? "Specialist in clinical neurology, neurodiagnostics, and individual therapy concepts for neurological health."
-          : isTr
-          ? "Modern nörodiagnostik ve bütüncül terapi konseptleri üzerine uzmanlaşmış nöroloji uzmanı hekim."
-          : isAr
-          ? "استشارية طب الأعصاب المتخصصة في التشخيص العصبي الحديث ومفاهيم العلاج الشاملة."
-          : "Fachärztin für Neurologie mit Schwerpunkt auf moderner Neurodiagnostik und ganzheitlichen Therapiekonzepten.",
-        image: "/images/areas/doc-sarah-hoffmann.webp",
-      },
-    ],
-  };
-
   // ── Photo 4: Pre-footer Mountain Banner (Gesundheit beginnt mit Vertrauen) ──
   const ctaSection = {
     title: isUz
@@ -624,7 +547,6 @@ export function getMedizinischeFachbereicheTranslations(locale: SupportedLocale 
     overviewData,
     spotlight,
     whySection,
-    teamSection,
     ctaSection,
   };
 }

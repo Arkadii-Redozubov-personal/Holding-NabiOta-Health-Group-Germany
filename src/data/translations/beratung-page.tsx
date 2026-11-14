@@ -51,7 +51,7 @@ export function getBeratungPageTranslations(locale: SupportedLocale = "de") {
     title: isUz
       ? "Ko'chmas mulk va loyihalarni rivojlantirish"
       : isRu
-      ? "Недвижимость & Девелопмент"
+      ? "Консалтинг и девелопмент недвижимости"
       : isEn
       ? "Real Estate & Project Development"
       : isTr
@@ -86,7 +86,7 @@ export function getBeratungPageTranslations(locale: SupportedLocale = "de") {
   const heroBadges = [
     {
       icon: <Building2 className="w-5 h-5 text-[#ECCF96]" />,
-      title: isUz ? "Kalit ostida topshirish" : isRu ? "Turnkey Realisierung" : isEn ? "Turnkey Delivery" : isTr ? "Anahtar Teslim Proje" : isAr ? "تنفيذ تسليم مفتاح" : "Turnkey Realisierung",
+      title: isUz ? "Kalit ostida topshirish" : isRu ? "Реализация под ключ" : isEn ? "Turnkey Delivery" : isTr ? "Anahtar Teslim Proje" : isAr ? "تنفيذ تسليم مفتاح" : "Turnkey Realisierung",
       sub: isUz ? "A dan Z gacha kalit ostida" : isRu ? "Под ключ от А до Я" : isEn ? "Concept to Handover" : isTr ? "Fikirden Teslime Eksiksiz" : isAr ? "من المخطط حتى التسليم" : "Schlüsselfertig",
     },
     {
@@ -121,7 +121,7 @@ export function getBeratungPageTranslations(locale: SupportedLocale = "de") {
       title: isUz
         ? "Klinika binolari va ambulator jarrohlik markazlari"
         : isRu
-        ? "Клинические корпуса & Амбулаторные OP-центры"
+        ? "Клинические корпуса и амбулаторные хирургические центры"
         : isEn
         ? "Clinic Buildings & Outpatient Surgery Centers"
         : isTr
@@ -144,7 +144,7 @@ export function getBeratungPageTranslations(locale: SupportedLocale = "de") {
         title: isUz
           ? "Klinika binolari va ambulator jarrohlik markazlari"
           : isRu
-          ? "Клинические корпуса & Амбулаторные хирургические центры"
+          ? "Клинические корпуса и амбулаторные хирургические центры"
           : isEn
           ? "Hospital Buildings & Ambulatory Surgery Centers"
           : isTr
@@ -371,7 +371,7 @@ export function getBeratungPageTranslations(locale: SupportedLocale = "de") {
       title: isUz
         ? "Tibbiyot markazlari (MVZ) va shifokor praksislari"
         : isRu
-        ? "Медицинские центры (MVZ) & Врачебные праксисы"
+        ? "Медицинские центры (MVZ) и врачебные праксисы"
         : isEn
         ? "Medical Centers (MVZ) & Practice Spaces"
         : isTr
@@ -394,7 +394,7 @@ export function getBeratungPageTranslations(locale: SupportedLocale = "de") {
         title: isUz
           ? "Tibbiyot markazlari (MVZ) va shifokor praksislari"
           : isRu
-          ? "Медицинские центры (MVZ) & Врачебные праксисы"
+          ? "Медицинские центры (MVZ) и врачебные праксисы"
           : isEn
           ? "Medical Versorgungszentren (MVZ) & Healthcare Hubs"
           : isTr
@@ -621,7 +621,7 @@ export function getBeratungPageTranslations(locale: SupportedLocale = "de") {
       title: isUz
         ? "Diagnostika markazlari va radiatsion himoya"
         : isRu
-        ? "Диагностические центры & Радиационная защита"
+        ? "Диагностические центры и радиационная защита"
         : isEn
         ? "Diagnostic Centers & Radiation Shielding"
         : isTr
@@ -871,7 +871,7 @@ export function getBeratungPageTranslations(locale: SupportedLocale = "de") {
       title: isUz
         ? "Reabilitatsiya va terapiya markazlari"
         : isRu
-        ? "Реабилитационные & Терапевтические центры"
+        ? "Реабилитационные и терапевтические центры"
         : isEn
         ? "Rehabilitation & Physical Therapy Centers"
         : isTr
@@ -894,7 +894,7 @@ export function getBeratungPageTranslations(locale: SupportedLocale = "de") {
         title: isUz
           ? "Reabilitatsiya va terapiya markazlari"
           : isRu
-          ? "Реабилитационные & Терапевтические центры"
+          ? "Реабилитационные и терапевтические центры"
           : isEn
           ? "Outpatient Rehabilitation & Therapy Infrastructure"
           : isTr
@@ -1121,7 +1121,7 @@ export function getBeratungPageTranslations(locale: SupportedLocale = "de") {
       title: isUz
         ? "Parvarish uylari va to'siqsiz qarorgohlar"
         : isRu
-        ? "Дома ухода & Безбарьерные резиденции"
+        ? "Дома ухода и безбарьерные резиденции"
         : isEn
         ? "Nursing Homes & Barrier-Free Senior Living"
         : isTr
@@ -1371,7 +1371,7 @@ export function getBeratungPageTranslations(locale: SupportedLocale = "de") {
       title: isUz
         ? "Tibbiyot shaharchasi va tibbiy xodimlar uchun turar joy"
         : isRu
-        ? "Медицинский кампус & Жилье для медперсонала"
+        ? "Медицинский кампус и жильё для медперсонала"
         : isEn
         ? "Healthcare Campus & Staff Housing"
         : isTr
@@ -1394,7 +1394,7 @@ export function getBeratungPageTranslations(locale: SupportedLocale = "de") {
         title: isUz
           ? "Tibbiyot shaharchasi, apart-otellar va tibbiy xodimlar uchun turar joy"
           : isRu
-          ? "Медицинский кампус, апарт-отели & Жилье для медперсонала"
+          ? "Медицинский кампус, апарт-отели и жильё для медперсонала"
           : isEn
           ? "Medical Campus Infrastructure & Healthcare Staff Residences"
           : isTr
@@ -2015,121 +2015,6 @@ export function getBeratungPageTranslations(locale: SupportedLocale = "de") {
         : isAr
         ? "جميع المجالات"
         : "Alle Bereiche",
-    },
-    s5: {
-      title: isUz
-        ? "Ishonch taraqqiyot yaratadi."
-        : isRu
-        ? "Доверие создает прогресс."
-        : isEn
-        ? "Trust Drives Progress."
-        : isTr
-        ? "Güven İlerleme Yaratır."
-        : isAr
-        ? "الثقة تصنع التقدم."
-        : "Vertrauen schafft Fortschritt.",
-      desc: isUz
-        ? "Tibbiyot sohasi rahbarlari va mutaxassislar konsalting hamda infratuzilma loyihalaridagi hamkorligimiz haqida nimalarni aytishadi."
-        : isRu
-        ? "Что говорят наши партнеры и заказчики о совместной работе над проектами развития инфраструктуры."
-        : isEn
-        ? "What healthcare leaders and executives say about partnering with us on consulting and development projects."
-        : isTr
-        ? "Danışmanlık ve proje geliştirme projelerindeki işbirliğimiz hakkında müşterilerimiz ve ortaklarımız neler söylüyor."
-        : isAr
-        ? "ما يقوله عملاؤنا وشركاؤنا عن التعاون معنا في مشاريع الاستشارات والتطوير."
-        : "Das sagen unsere Kundinnen und Kunden über die Zusammenarbeit in Beratungs- und Projektentwicklungsprojekten.",
-      btn: isUz
-        ? "Jamoamiz bilan bog'lanish"
-        : isRu
-        ? "Связаться с нами"
-        : isEn
-        ? "Contact Our Team"
-        : isTr
-        ? "İletişime Geçin"
-        : isAr
-        ? "التواصل معنا"
-        : "Kontakt ansehen",
-      testimonials: [
-        {
-          name: "Dr. Thomas Berger",
-          role: isUz
-            ? "Boshqaruvchi direktor, Tibbiyot markazi (MVZ)"
-            : isRu
-            ? "Управляющий директор, MVZ"
-            : isEn
-            ? "Managing Director, Medical Center"
-            : isTr
-            ? "Genel Müdür, MVZ"
-            : isAr
-            ? "المدير التنفيذي، مركز MVZ"
-            : "Geschäftsführer, MVZ",
-          avatar: "/images/beratung/avatar-berger.webp",
-          quote: isUz
-            ? "«Hamkorlik ilk kundan boshlab yuqori professional, natijaga yo'naltirilgan va juda samimiy tarzda kechdi. Chuqur texnik ekspertiza va insoniy yondashuvning uyg'unligi bizda alohida taassurot qoldirdi.»"
-            : isRu
-            ? "«Сотрудничество с самого начала было высокопрофессиональным, ориентированным на решение задач и невероятно комфортным. Нас впечатлил баланс глубоких экспертных знаний и человеческого подхода.»"
-            : isEn
-            ? "“The collaboration was professional, solution-oriented, and remarkably pleasant right from day one. We were particularly impressed by the blend of deep technical expertise and genuine humanity.”"
-            : isTr
-            ? "“İşbirliği başından itibaren profesyonel, çözüm odaklı ve son derece verimliydi. Uzmanlık ve insani yaklaşımın birleşimi bizi özellikle etkiledi.”"
-            : isAr
-            ? "“كان التعاون منذ البداية احترافياً وموجهاً نحو الحلول ومريحاً للغاية. لقد أثار إعجابنا بشكل خاص الجمع بين الخبرة العميقة والتعامل الإنساني الراقي.”"
-            : "„Die Zusammenarbeit war von Anfang an professionell, lösungsorientiert und äußerst angenehm. Besonders beeindruckt hat uns die Kombination aus Fachwissen und Menschlichkeit.“",
-        },
-        {
-          name: "Sabine Keller",
-          role: isUz
-            ? "Qurilish infratuzilmasi rahbari"
-            : isRu
-            ? "Руководитель строительной инфраструктуры"
-            : isEn
-            ? "Head of Construction & Infrastructure"
-            : isTr
-            ? "İnşaat ve Altyapı Direktörü"
-            : isAr
-            ? "مديرة الإنشاءات والبنية التحتية"
-            : "Leiterin Bau & Infrastruktur",
-          avatar: "/images/beratung/avatar-keller.webp",
-          quote: isUz
-            ? "«Tizimli metodologiya va doimiy nazorat tufayli biz sog'liqni saqlash ob'ektimizni belgilangan muddatda va qat'iy tasdiqlangan byudjet doirasida muvaffaqiyatli yakunlay oldik.»"
-            : isRu
-            ? "«Благодаря структурированному подходу и постоянному сопровождению мы смогли завершить проект точно в срок и строго в рамках утвержденного бюджета.»"
-            : isEn
-            ? "“Thanks to their structured methodology and continuous oversight, we were able to deliver our healthcare facility strictly on schedule and within budget.”"
-            : isTr
-            ? "“Yapılandırılmış metodoloji ve yakın refakat sayesinde projemizi zamanında ve bütçe dahilinde başarıyla tamamlayabildik.”"
-            : isAr
-            ? "“بفضل النهج المنظم والمرافقة الدقيقة تمكنا من إنجاز مشروعنا في الموعد المحدد وضمن الميزانية المعتمدة تماماً.”"
-            : "„Dank der strukturierten Vorgehensweise und der engen Begleitung konnten wir unser Projekt termingerecht und budgetgerecht realisieren.“",
-        },
-        {
-          name: "Prof. Dr. Markus Weber",
-          role: isUz
-            ? "Tibbiyot kampusi bosh shifokori / direktori"
-            : isRu
-            ? "Главный врач медицинского центра"
-            : isEn
-            ? "Medical Director, Healthcare Campus"
-            : isTr
-            ? "Sağlık Merkezi Başhekimi / Direktörü"
-            : isAr
-            ? "مدير المركز الصحي والرئيس الطبي"
-            : "Leitung Gesundheitszentrum",
-          avatar: "/images/beratung/avatar-weber.webp",
-          quote: isUz
-            ? "«Murosasiz malaka, fidoyilik va klinik jarayonlarimizni chuqur tushunish - NABIOTA'ni haqiqatan ham qadrli va ishonchli hamkorga aylantiradigan asosiy jihatlardir.»"
-            : isRu
-            ? "«Компетентность, вовлеченность и глубокое понимание клинических потребностей - именно это делает NABIOTA по-настоящему ценным партнером.»"
-            : isEn
-            ? "“Uncompromising competence, commitment, and a deep understanding of our clinical workflows - that is what makes NABIOTA an invaluable partner.”"
-            : isTr
-            ? "“Yetkinlik, adanmışlık ve klinik ihtiyaçlarımızı derinlemesine anlama; NABIOTA'yı gerçekten değerli bir ortak yapan özellikler bunlardır.”"
-            : isAr
-            ? "“الكفاءة والالتزام والفهم العميق لاحتياجاتنا السريرية؛ هذا هو ما يجعل NABIOTA شريكاً لا يُقدّر بثمن.”"
-            : "„Kompetenz, Engagement und ein tiefes Verständnis für unsere Bedürfnisse - das macht NABIOTA zu einem wertvollen Partner.“",
-        },
-      ],
     },
     s6: {
       title: isUz

@@ -369,91 +369,6 @@ export const areasWhyNabiota = {
   } as LocaleStrings,
 };
 
-// ── Patient Stories ───────────────────────────────────────────────────────────
-export const areasPatientStories = {
-  title: {
-    de: "Real People.\nReal Impact.",
-    en: "Real People.\nReal Impact.",
-    ru: "Реальные люди.\nРеальные истории.",
-    tr: "Gercek Insanlar.\nGercek Deneyimler.",
-    ar: "تجارب واقعية.\nوأثر ملموس.",
-    uz: "Haqiqiy insonlar.\nHaqiqiy tajribalar.",
-  } as LocaleStrings,
-  desc: {
-    de: "Unsere Patienten berichten uber ihre Erfahrungen mit der NabiOta Health Group und die Betreuung, die sie in unseren Fachbereichen erhalten haben.",
-    en: "Hear from our patients about their experience with NabiOta Health Group and the care they received across our divisions.",
-    ru: "Узнайте от наших пациентов об их опыте лечения в NabiOta Health Group и качестве заботы в наших отделениях.",
-    tr: "Hastalarimizdan NabiOta Health Group buynyesindeki deneyimlerini ve bolumlerimizde aldiklari bakim kalitesini dinleyin.",
-    ar: "استمع إلى تجارب مرضانا في مجموعة نابي أوتا الصحية ومستوى الرعاية التي تلقوها في مختلف أقسامنا.",
-    uz: "Bemorlarimizdan NabiOta Health Group tajribasi va bo'limlarimizda ko'rsatilgan g'amxo'rlik haqida bilib oling.",
-  } as LocaleStrings,
-  stories: [
-    {
-      id: 1,
-      name: "Anna Muller",
-      photo: "/images/testimonials/anna-mueller.webp",
-      role: {
-        de: "Patient, Orthopadie",
-        en: "Patient, Orthopedics",
-        ru: "Пациентка, Ортопедия",
-        tr: "Hasta, Ortopedi",
-        ar: "مريضة، جراحة العظام",
-        uz: "Bemor, Ortopediya",
-      } as LocaleStrings,
-      quote: {
-        de: "Die Arzte und das Pflegepersonal waren unglaublich professionell und fursorglich. Ich fullte mich bei jedem Schritt unterstutzt, von der Diagnose bis zur Genesung.",
-        en: "The doctors and staff were incredibly professional and caring. I felt supported at every step, from diagnosis to recovery. I'm truly grateful for their expertise and kindness.",
-        ru: "Врачи и медицинский персонал были невероятно профессиональны и заботливы. Я чувствовала искреннюю поддержку на каждом этапе - от первой диагностики до полного выздоровления.",
-        tr: "Doktorlar ve personel son derece profesyonel ve ilgiliydi. Tanidan iyilesmeye kadar her adimda desteklendigimi hissettim.",
-        ar: "كان الأطباء وفريق التمريض على أعلى مستوى من الاحترافية والاهتمام. شعرت بالدعم الكامل في كل خطوة، من التشخيص وحتى التعافي.",
-        uz: "Shifokorlar va xodimlar juda professional va g'amxo'r edi. Tashxis qo'yishdan to sog'ayishgacha bo'lgan har bir qadamda o'zimni qo'llab-quvvatlangan his qildim.",
-      } as LocaleStrings,
-    },
-    {
-      id: 2,
-      name: "Thomas Becker",
-      photo: "/images/testimonials/thomas-becker.webp",
-      role: {
-        de: "Patient, Kardiologie",
-        en: "Patient, Cardiology",
-        ru: "Пациент, Кардиология",
-        tr: "Hasta, Kardiyoloji",
-        ar: "مريض، طب القلب",
-        uz: "Bemor, Kardiologiya",
-      } as LocaleStrings,
-      quote: {
-        de: "Das Niveau der medizinischen Versorgung hat alle Erwartungen ubertroffen. Ich schatze besonders den strukturierten und personlichen Ansatz des Teams.",
-        en: "The level of care was outstanding. I especially appreciate the structured and personalized approach of the team.",
-        ru: "Уровень медицинской помощи превзошел все ожидания. Особенно ценю четкий, структурированный и по-настоящему человечный подход команды к лечению.",
-        tr: "Bakim seviyesi olaganustu ydu. Ozellikle ekibin yapılandırılmıs ve kisiye ozel yaklasimini takdir ediyorum.",
-        ar: "كان مستوى الرعاية الطبية استثنائياً. وأثمن بشكل خاص النهج المنظم والمصمم بدقة بما يلائم حالتي من قبل الفريق الطبي.",
-        uz: "Tibbiy yordam darajasi a'lo darajada edi. Men jamoaning tizimli, aniq va individual yondashuvini juda qadrlayman.",
-      } as LocaleStrings,
-    },
-    {
-      id: 3,
-      name: "Elena Fischer",
-      photo: "/images/testimonials/elena-fischer.webp",
-      role: {
-        de: "Patient, Rehabilitation",
-        en: "Patient, Rehabilitation",
-        ru: "Пациентка, Реабилитация",
-        tr: "Hasta, Rehabilitasyon",
-        ar: "مريضة، إعادة التأهيل",
-        uz: "Bemor, Reabilitatsiya",
-      } as LocaleStrings,
-      quote: {
-        de: "Nach der Operation verlief meine Rehabilitation schnell und ohne Komplikationen. Der individuelle Therapieplan und die personliche Betreuung haben mir meinen aktiven Lebensstil vollstandig zuruckgegeben.",
-        en: "After surgery, my rehabilitation was rapid and seamless. The dedicated therapy plan and personal attention gave me my active lifestyle back completely.",
-        ru: "После операции восстановительный процесс прошел быстро и без осложнений. Индивидуальный план тренировок и поддержка физиотерапевтов вернули мне радость активной жизни.",
-        tr: "Ameliyat sonrasında rehabilitasyon surecim hizli ve sorunsuz getti. Ozel terapi plani ve yakin ilgi bana aktif yasam tarzimi tamamen geri kazandirdi.",
-        ar: "بعد الجراحة، كانت مرحلة إعادة التأهيل سريعة وسلسة للغاية. الخطة العلاجية المخصصة والاهتمام الشخصي أعادا إلي نمط حياتي النشط تماماً.",
-        uz: "Jarrohlikdan so'ng reabilitatsiyam juda tez va asoratsiz o'tdi. Maxsus terapiya rejasi va shaxsiy e'tibor menga faol hayot tarzimni to'liq qaytardi.",
-      } as LocaleStrings,
-    },
-  ],
-};
-
 // ── CTA Section ───────────────────────────────────────────────────────────────
 export const areasCta = {
   title: {
@@ -488,7 +403,6 @@ export function getBaseAreasPageBundle() {
     areasIntro,
     areasDivisions,
     areasWhyNabiota,
-    areasPatientStories,
     areasCta,
   };
 }

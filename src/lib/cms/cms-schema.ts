@@ -455,11 +455,9 @@ export function getCmsPagesSchema(locale: SupportedLocale): CmsPageDefinition[] 
         },
         {
           id: "areas-stories-cta",
-          title: "4. Patientenstimmen & Abschluss-CTA",
-          subtitle: "Erfahrungsberichte und unterer Kontakt-Aufruf",
+          title: "4. Abschluss-CTA",
+          subtitle: "Unterer Kontakt-Aufruf",
           fields: [
-            makeField("areasPage", areasBundle, `areasPatientStories.title.${locale}`, "Patientenstimmen · Titel"),
-            makeField("areasPage", areasBundle, `areasPatientStories.desc.${locale}`, "Patientenstimmen · Beschreibung", true),
             makeField("areasPage", areasBundle, `areasCta.title.${locale}`, "CTA · Überschrift"),
             makeField("areasPage", areasBundle, `areasCta.desc.${locale}`, "CTA · Beschreibung", true),
             makeField("areasPage", areasBundle, `areasCta.btn.${locale}`, "CTA · Button"),

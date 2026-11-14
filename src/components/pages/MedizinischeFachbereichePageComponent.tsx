@@ -185,7 +185,6 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
     overviewData,
     spotlight,
     whySection,
-    teamSection,
     ctaSection,
   } = getMedizinischeFachbereicheTranslations(locale);
 
@@ -581,108 +580,6 @@ export function MedizinischeFachbereichePageComponent({ locale }: MedizinischeFa
 
         {/* SECTION 3D: NABIOTA CLINICS GERMANY - PDF IV.3 */}
         <ClinicsGermanySection locale={locale} />
-
-
-
-        {/* ══════════════════════════════════════════════════════════
-            SECTION 5 (PHOTO 2): UNSER TEAM
-            - "фото 2 сделай карточки докторов больше и с небольшим описанием"
-            - Light cream background with botanical watermark in top-left
-            - Left: Header content
-            - Right: 3 ENLARGED Doctor Profile Cards with Descriptions & Photos
-        ══════════════════════════════════════════════════════════ */}
-        <section className="py-14 sm:py-18 lg:py-24 bg-[#FAF8F5] relative overflow-hidden">
-          {/* Top-Left Botanical Watermark Accent (Photo 2) */}
-          <div className="absolute -top-4 -left-4 w-52 sm:w-72 md:w-88 h-52 sm:h-72 md:h-88 pointer-events-none opacity-85 z-0 select-none">
-            <Image
-              src="/images/areas/botanical-branch-clean.webp"
-              alt="Botanical Foliage"
-              fill
-              className="object-contain object-top-left -scale-x-100"
-              priority
-            />
-          </div>
-
-          <Container size="wide" className="relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-              {/* Left Column: Eyebrow, Title, Description, Button */}
-              <div className="lg:col-span-4 space-y-4 pt-2">
-                <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] text-[#132218] font-normal leading-[1.18] whitespace-pre-line">
-                  {teamSection.title}
-                </h2>
-
-                <p className="text-xs sm:text-[13.5px] text-[#556358] leading-relaxed font-sans max-w-sm">
-                  {teamSection.desc}
-                </p>
-
-                <div className="pt-2">
-                  <Link
-                    href={`/${locale}/mvz-hausarzt-facharzt`}
-                    className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-[#E5D2A4] hover:bg-[#D4AF67] text-[#132218] font-semibold text-xs sm:text-[13px] tracking-wide shadow-sm hover:shadow transition-all duration-200 hover:scale-[1.02]"
-                  >
-                    <span>{teamSection.btn}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-
-              {/* Right Column: 3 ENLARGED Doctor Profile Cards with Descriptions (Photo 2) */}
-              <div className="lg:col-span-8">
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
-                  {teamSection.doctors.map((doc, idx) => (
-                    <div
-                      key={idx}
-                      className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 border border-[#EDE8DE] shadow-[0_4px_16px_rgba(0,0,0,0.03)] flex flex-col justify-between"
-                    >
-                      <div>
-                        {/* Doctor Photo - Generous Aspect Ratio */}
-                        <div className="relative aspect-[4/3.2] w-full rounded-xl sm:rounded-2xl overflow-hidden bg-[#0C1C11]/5 mb-3.5">
-                          <Image
-                            src={doc.image}
-                            alt={doc.name}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100vw, 320px"
-                          />
-                        </div>
-
-                        {/* Doctor Info */}
-                        <div className="space-y-1 px-0.5">
-                          <span className="text-[11px] font-medium text-[#6E756D] block">
-                            {doc.role}
-                          </span>
-                          <h4 className="text-[15px] sm:text-[16.5px] font-serif font-medium text-[#142318] leading-snug">
-                            {doc.name}
-                          </h4>
-                          {/* Doctor Description */}
-                          <p className="text-[11.5px] sm:text-xs text-[#556358] leading-relaxed font-sans line-clamp-3 pt-1">
-                            {doc.desc}
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Bottom Row with Arrow Button */}
-                      <div className="pt-3.5 mt-3.5 border-t border-[#EDE8DE]/70 flex items-center justify-between">
-                        <span className="text-[11px] font-medium text-[#142318]/70">
-                          {isUz ? "Shifokor profili" : isRu ? "Профиль врача" : isEn ? "View Profile" : isTr ? "Hekim Profili" : isAr ? "الملف التعريفي للطبيب" : "Arztprofil"}
-                        </span>
-                        <Link
-                          href={idx === 1 ? "https://my-bandscheibe.de/" : `/${locale}/mvz-hausarzt-facharzt`}
-                          aria-label={isRu ? `Открыть подразделение: ${doc.role}` : isEn ? `Open department: ${doc.role}` : isTr ? `Bölümü aç: ${doc.role}` : isAr ? `افتح القسم: ${doc.role}` : isUz ? `Bo‘limni ochish: ${doc.role}` : `Fachbereich öffnen: ${doc.role}`}
-                          target={idx === 1 ? "_blank" : undefined}
-                          rel={idx === 1 ? "noopener noreferrer" : undefined}
-                          className="text-[#142318] hover:text-[#B89650] flex items-center justify-center transition-colors shrink-0 p-1"
-                        >
-                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-                        </Link>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
 
         {/* ══════════════════════════════════════════════════════════
             SECTION 4 (PHOTO 4): PRE-FOOTER MOUNTAIN CTA BANNER

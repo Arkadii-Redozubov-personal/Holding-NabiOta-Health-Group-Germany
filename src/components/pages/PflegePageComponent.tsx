@@ -549,41 +549,80 @@ export function PflegePageComponent({ locale = "de" }: Props) {
 
             {/* Right: Accordion content */}
             <div className="w-full lg:w-[60%] xl:w-[62%] py-8 sm:py-10 lg:py-10 px-6 sm:px-10 lg:px-12 xl:px-16 flex flex-col justify-center">
-              <div className="max-w-2xl">
-                <h2 className="font-serif text-2xl sm:text-3xl text-[#0F2A1D] font-normal leading-tight mb-4">
-                  {t.faq.title}
-                </h2>
+              <div className="w-full max-w-2xl grid grid-cols-1">
+                {/* Invisible layout sizer so expanding/collapsing FAQ answers never resizes the container */}
+                <div
+                  aria-hidden="true"
+                  className="col-start-1 row-start-1 invisible pointer-events-none select-none"
+                >
+                  <h2 className="font-serif text-2xl sm:text-3xl text-[#0F2A1D] font-normal leading-tight mb-4">
+                    {t.faq.title}
+                  </h2>
 
-                <div className="divide-y divide-[#E6E0D3] border-y border-[#E6E0D3]">
-                  {t.faq.items.map((item, idx) => {
-                    const isOpen = openFaq === idx;
-                    return (
+                  <div className="divide-y divide-[#E6E0D3] border-y border-[#E6E0D3]">
+                    {t.faq.items.map((item, idx) => (
                       <div key={idx} className="py-2.5 sm:py-3">
-                        <button
-                          type="button"
-                          onClick={() => setOpenFaq(isOpen ? null : idx)}
-                          className="w-full flex items-center justify-between gap-4 text-left group"
-                        >
-                          <span className="font-serif text-xs sm:text-[13.5px] md:text-sm text-[#153424] font-medium group-hover:text-[#0D2619] transition-colors">
+                        <div className="w-full flex items-center justify-between gap-4 text-left">
+                          <span className="font-serif text-xs sm:text-[13.5px] md:text-sm text-[#153424] font-medium">
                             {item.q}
                           </span>
-                          <span className="text-[#285038] group-hover:text-[#0D2619] transition-colors flex-shrink-0">
-                            {isOpen ? (
-                              <Minus className="w-4 h-4" />
-                            ) : (
-                              <Plus className="w-4 h-4" />
-                            )}
-                          </span>
-                        </button>
+                          <span className="w-4 h-4 flex-shrink-0" />
+                        </div>
 
-                        {isOpen && (
-                          <div className="pt-2 pr-6 text-xs sm:text-[13px] text-[#4E6256] leading-relaxed">
-                            {item.a}
+                        {idx === 0 && (
+                          <div className="grid grid-cols-1">
+                            {t.faq.items.map((ansItem, ansIdx) => (
+                              <div
+                                key={ansIdx}
+                                className="col-start-1 row-start-1 pt-2 pr-6 text-xs sm:text-[13px] text-[#4E6256] leading-relaxed"
+                              >
+                                {ansItem.a}
+                              </div>
+                            ))}
                           </div>
                         )}
                       </div>
-                    );
-                  })}
+                    ))}
+                  </div>
+                </div>
+
+                {/* Interactive FAQ Accordion */}
+                <div className="col-start-1 row-start-1">
+                  <h2 className="font-serif text-2xl sm:text-3xl text-[#0F2A1D] font-normal leading-tight mb-4">
+                    {t.faq.title}
+                  </h2>
+
+                  <div className="divide-y divide-[#E6E0D3] border-y border-[#E6E0D3]">
+                    {t.faq.items.map((item, idx) => {
+                      const isOpen = openFaq === idx;
+                      return (
+                        <div key={idx} className="py-2.5 sm:py-3">
+                          <button
+                            type="button"
+                            onClick={() => setOpenFaq(isOpen ? null : idx)}
+                            className="w-full flex items-center justify-between gap-4 text-left group cursor-pointer"
+                          >
+                            <span className="font-serif text-xs sm:text-[13.5px] md:text-sm text-[#153424] font-medium group-hover:text-[#0D2619] transition-colors">
+                              {item.q}
+                            </span>
+                            <span className="text-[#285038] group-hover:text-[#0D2619] transition-colors flex-shrink-0">
+                              {isOpen ? (
+                                <Minus className="w-4 h-4" />
+                              ) : (
+                                <Plus className="w-4 h-4" />
+                              )}
+                            </span>
+                          </button>
+
+                          {isOpen && (
+                            <div className="pt-2 pr-6 text-xs sm:text-[13px] text-[#4E6256] leading-relaxed">
+                              {item.a}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </div>

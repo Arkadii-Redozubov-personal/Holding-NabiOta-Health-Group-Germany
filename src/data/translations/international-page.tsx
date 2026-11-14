@@ -1084,7 +1084,7 @@ export function getInternationalPageTranslations(locale: SupportedLocale = "de")
             : isAr
             ? "الأكاديمية والتدريب"
             : "AKADEMIE",
-          image: "/images/international/world-hands.webp",
+          image: "/images/international/world-map-hands.webp",
           iconType: "academy",
           title: isUz
             ? "Bilim transferi va klinik malaka oshirish (NabiOta Academy)"

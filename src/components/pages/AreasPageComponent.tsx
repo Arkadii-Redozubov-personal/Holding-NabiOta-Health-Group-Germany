@@ -1,25 +1,20 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Stethoscope,
-  Microscope,
-  HeartPulse,
   Users,
-  Briefcase,
-  Globe,
   ArrowRight,
-  ArrowLeft,
   ShieldCheck,
   Heart,
   Lightbulb,
 } from "@/lib/icons";
-import { Container } from "@/components/layout/Container";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { Container } from "@/components/layout/Container";
 import { PageHero } from "@/components/layout/PageHero";
+import { ServicesSection } from "@/components/sections/ServicesSection";
 import { SupportedLocale } from "@/lib/i18n";
 import { getAreasPageBundle } from "@/data/translations/areas-page";
 
@@ -69,38 +64,18 @@ function CarePeopleIcon({ className = "w-5 h-5" }: { className?: string }) {
   );
 }
 
-// Icon map matching division slugs
-const DIVISION_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
-  "medizinische-fachbereiche": Stethoscope,
-  "diagnostik": Microscope,
-  "rehabilitation": HeartPulse,
-  "pflege": Users,
-  "beratung-projektentwicklung": Briefcase,
-  "internationale-kooperationen": Globe,
-};
-
 interface AreasPageComponentProps {
   locale: SupportedLocale;
 }
 
 export function AreasPageComponent({ locale }: AreasPageComponentProps) {
-  const [activeStoryIndex, setActiveStoryIndex] = useState(0);
   const l = locale;
   const {
     areasHero,
     areasIntro,
-    areasDivisions,
     areasWhyNabiota,
-    areasPatientStories,
     areasCta,
   } = getAreasPageBundle(locale);
-
-  const totalStories = areasPatientStories.stories.length;
-  const currentFirstStory = areasPatientStories.stories[activeStoryIndex];
-  const currentSecondStory = areasPatientStories.stories[(activeStoryIndex + 1) % totalStories];
-
-  const handleNextStory = () => setActiveStoryIndex((prev) => (prev + 1) % totalStories);
-  const handlePrevStory = () => setActiveStoryIndex((prev) => (prev - 1 + totalStories) % totalStories);
 
   const heroBadges = [
     {
@@ -213,57 +188,16 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
               </div>
             </div>
           </div>
-
-          {/* 6 Cards Grid */}
-          <Container size="wide" className="py-12 sm:py-16">
-            <div id="divisions-grid" className="scroll-mt-24 mb-6 sm:mb-8" />
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-              {areasDivisions.map((item) => {
-                const ItemIcon = DIVISION_ICONS[item.slug] || Stethoscope;
-                return (
-                  <Link
-                    key={item.id}
-                    href={`/${locale}/areas/${item.slug}`}
-                    className="group bg-white rounded-2xl p-3 sm:p-3.5 border border-[#EDE8DE] hover:border-[#D5B878] shadow-[0_3px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_24px_rgba(213,184,120,0.14)] transition-all duration-300 flex flex-col"
-                  >
-                    {/* Image */}
-                    <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-[#0C1C11]/5">
-                      <Image
-                        src={item.image}
-                        alt={item.title[l]}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                    </div>
-
-                    {/* Card Content Row */}
-                    <div className="pt-3.5 pb-1.5 px-1 flex items-center justify-between gap-3">
-                      <div className="flex items-center gap-3.5 min-w-0">
-                        <div className="w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-[#FAF3E8] border border-[#E8DFC8] flex items-center justify-center text-[#9E7D3B] shadow-2xs shrink-0 group-hover:bg-[#F0E5CD] group-hover:border-[#D5B878] group-hover:scale-105 transition-all">
-                          <ItemIcon className="w-5.5 h-5.5 sm:w-6 sm:h-6 stroke-[1.6]" />
-                        </div>
-                        <div className="min-w-0">
-                          <h3 className="text-[14.5px] sm:text-[15px] font-bold text-[#142318] group-hover:text-[#B89650] transition-colors truncate">
-                            {item.title[l]}
-                          </h3>
-                          <p className="text-[11.5px] text-[#6E756D] leading-snug line-clamp-2 mt-0.5 font-sans">
-                            {item.desc[l]}
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="w-8 h-8 rounded-full border border-[#142318]/15 group-hover:border-[#D5B878] group-hover:bg-[#D5B878] group-hover:text-[#0C1C11] flex items-center justify-center text-[#142318] transition-all shrink-0 ml-1">
-                        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-                      </div>
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
-          </Container>
         </section>
+
+        {/* ══════════════════════════════════════════════════════════
+            SECTION 1B: HOLDING DIVISIONS SLIDER (SHARED WITH HOMEPAGE)
+        ══════════════════════════════════════════════════════════ */}
+        <ServicesSection
+          currentLocale={locale}
+          sectionId="divisions-grid"
+          showViewAllLink={false}
+        />
 
         {/* ══════════════════════════════════════════════════════════
             SECTION 2: WHY NABIOTA
@@ -329,106 +263,6 @@ export function AreasPageComponent({ locale }: AreasPageComponentProps) {
               </div>
             </div>
           </div>
-        </section>
-
-        {/* ══════════════════════════════════════════════════════════
-            SECTION 3: PATIENT STORIES
-        ══════════════════════════════════════════════════════════ */}
-        <section className="py-10 sm:py-12 lg:py-14 bg-[#FAF8F5]">
-          <Container size="wide">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-              {/* Left Column */}
-              <div className="lg:col-span-4 space-y-3">
-                <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] text-[#132218] font-normal leading-tight whitespace-pre-line">
-                  {areasPatientStories.title[l]}
-                </h2>
-
-                <p className="text-xs sm:text-sm text-[#556358] leading-relaxed font-sans max-w-sm">
-                  {areasPatientStories.desc[l]}
-                </p>
-
-                {/* Navigation */}
-                <div className="flex items-center gap-3 pt-4 sm:pt-6">
-                  <button
-                    onClick={handlePrevStory}
-                    aria-label="Previous patient story"
-                    className="w-8 h-8 rounded-full border border-[#142318]/25 hover:border-[#142318] hover:bg-[#142318] hover:text-white flex items-center justify-center text-[#142318] transition-all cursor-pointer shadow-sm"
-                  >
-                    <ArrowLeft className="w-3.5 h-3.5" />
-                  </button>
-                  <button
-                    onClick={handleNextStory}
-                    aria-label="Next patient story"
-                    className="w-8 h-8 rounded-full border border-[#142318]/25 hover:border-[#142318] hover:bg-[#142318] hover:text-white flex items-center justify-center text-[#142318] transition-all cursor-pointer shadow-sm"
-                  >
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-
-                  <div className="flex items-center gap-2.5 pl-3 text-xs font-mono font-medium text-[#7C857E]">
-                    {areasPatientStories.stories.map((_, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => setActiveStoryIndex(idx)}
-                        className={`transition-all cursor-pointer ${
-                          activeStoryIndex === idx
-                            ? "text-[#142318] font-bold text-sm underline decoration-[#D5B878] underline-offset-4"
-                            : "hover:text-[#142318]"
-                        }`}
-                      >
-                        0{idx + 1}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Column: Story Cards */}
-              <div className="lg:col-span-8 relative">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-                  {[currentFirstStory, currentSecondStory].map((story, idx) => (
-                    <div
-                      key={`${story.id}-${idx}`}
-                      className="bg-white rounded-2xl border border-[#EDE8DE] p-4 sm:p-5 shadow-[0_4px_16px_rgba(0,0,0,0.03)] flex flex-col sm:flex-row gap-4 sm:gap-5 items-stretch transition-all duration-300"
-                    >
-                      <div className="relative w-full sm:w-44 md:w-48 h-52 sm:h-60 rounded-xl overflow-hidden shrink-0 shadow-sm border border-[#EDE8DE]">
-                        <Image
-                          src={story.photo}
-                          alt={story.name}
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 768px) 100vw, 240px"
-                        />
-                      </div>
-
-                      <div className="flex flex-col justify-between py-1">
-                        <div>
-                          <span className="font-serif text-3xl sm:text-4xl text-[#D5B878] leading-none block select-none mb-1">
-                            &ldquo;
-                          </span>
-                          <p className="text-xs sm:text-[12.5px] text-[#556358] leading-relaxed font-sans italic">
-                            &ldquo;{story.quote[l]}&rdquo;
-                          </p>
-                        </div>
-
-                        <div className="pt-3 border-t border-[#EDE8DE]/60 mt-2">
-                          <h4 className="font-bold text-sm text-[#142318]">{story.name}</h4>
-                          <span className="text-[11px] text-[#869088] font-sans block">{story.role[l]}</span>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <button
-                  onClick={handleNextStory}
-                  aria-label="Next story"
-                  className="hidden md:flex absolute -right-3.5 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-white border border-[#142318]/20 shadow-md items-center justify-center text-[#142318] hover:bg-[#D5B878] hover:border-[#D5B878] hover:text-[#0C1C11] transition-all cursor-pointer"
-                >
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
-            </div>
-          </Container>
         </section>
 
         {/* ══════════════════════════════════════════════════════════

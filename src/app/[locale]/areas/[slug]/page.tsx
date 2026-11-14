@@ -64,7 +64,7 @@ const areaTitles: Record<string, Record<SupportedLocale, string>> = {
   "beratung-projektentwicklung": {
     de: "Beratung & Services",
     en: "Consulting & Services",
-    ru: "Консалтинг и сервис",
+    ru: "Консалтинг и девелопмент",
     tr: "Danışmanlık & Hizmetler",
     ar: "الاستشارات والخدمات",
     uz: "Konsalting va xizmatlar",

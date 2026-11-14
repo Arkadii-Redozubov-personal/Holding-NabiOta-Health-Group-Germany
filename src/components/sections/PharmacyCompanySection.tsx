@@ -6,7 +6,6 @@ import {
   ShieldCheck,
   Building2,
   BadgeCheck,
-  Scale,
   Lock,
   Store,
   FileText,
@@ -196,51 +195,6 @@ const c = {
     ar: "لا ينشئ هذا المخطط تصريحاً بتشغيل صيدلية أو التزاماً بالإخطار أو أي تعهد قانوني ملزم. ولن يتم الشروع في الأنشطة الخاضعة للترخيص والموافقة إلا بعد استيفاء جميع المتطلبات والشروط القانونية.",
     uz: "Mazkur rejalashtirish hujjati dorixona faoliyati litsenziyasini, xabardor qilish majburiyatini yoki boshqa har qanday yuridik majburiy va'dani anglatmaydi. Litsenziya va ruxsat talab qilinadigan faoliyat turlari faqat barcha qonuniy shartlar to'liq bajarilgandan so'ng boshlanadi.",
   } as T,
-
-  legalBadges: {
-    de: [
-      "§ 14 Apothekengesetz (ApoG)",
-      "§ 2 ApoG - Betriebserlaubnis",
-      "§ 7 ApoG - Erlaubnisinhaber",
-      "Markenrecht & Firmenrecht",
-      "DSGVO · Gesundheitsdaten",
-    ],
-    en: [
-      "§ 14 Apothekengesetz (ApoG)",
-      "§ 2 ApoG - Operating Licence",
-      "§ 7 ApoG - Licence Holder",
-      "Trademark & Corporate Law",
-      "GDPR · Health Data",
-    ],
-    ru: [
-      "§ 14 Apothekengesetz (ApoG)",
-      "§ 2 ApoG - Лицензия на эксплуатацию",
-      "§ 7 ApoG - Владелец лицензии",
-      "Товарные знаки и корпоративное право",
-      "DSGVO · Медицинские данные",
-    ],
-    tr: [
-      "§ 14 Apothekengesetz (ApoG)",
-      "§ 2 ApoG - İşletme Ruhsatı",
-      "§ 7 ApoG - Ruhsat Sahibi",
-      "Marka ve Şirketler Hukuku",
-      "GDPR · Sağlık Verileri",
-    ],
-    ar: [
-      "§ 14 قانون الصيدلة (ApoG)",
-      "§ 2 تصريح التشغيل",
-      "§ 7 صاحب التصريح",
-      "قانون العلامات والشركات",
-      "حماية البيانات الصحية (GDPR)",
-    ],
-    uz: [
-      "§ 14 Apothekengesetz (ApoG)",
-      "§ 2 ApoG - Faoliyat litsenziyasi",
-      "§ 7 ApoG - Litsenziya egasi",
-      "Savdo belgilari va korporativ huquq",
-      "DSGVO · Tibbiy ma'lumotlar",
-    ],
-  } as Record<Lang, string[]>,
 };
 
 export function PharmacyCompanySection({ locale = "de" }: { locale?: string }) {
@@ -364,19 +318,6 @@ export function PharmacyCompanySection({ locale = "de" }: { locale?: string }) {
                 })}
               </div>
             </div>
-          </div>
-
-          {/* Legal badges */}
-          <div className="flex flex-wrap gap-2 justify-center">
-            {c.legalBadges[l].map((badge, idx) => (
-              <span
-                key={idx}
-                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1E3B29]/8 border border-[#1E3B29]/20 text-[#1E3B29] text-[10.5px] font-bold tracking-[0.15em] uppercase"
-              >
-                <Scale className="w-3 h-3 opacity-60" />
-                {badge}
-              </span>
-            ))}
           </div>
 
           {/* Disclaimer dark box */}
