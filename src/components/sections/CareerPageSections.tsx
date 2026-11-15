@@ -5,6 +5,7 @@ import type { SupportedLocale } from "@/lib/i18n";
 import type { CareerContent } from "@/data/career-translations";
 import type { RecruitmentPillar } from "@/types/career";
 import {
+  AlertCircle,
   Award,
   ArrowRight,
   Briefcase,
@@ -350,6 +351,7 @@ type CareerApplicationFormProps = {
   formSubmitted: boolean;
   setFormSubmitted: Dispatch<SetStateAction<boolean>>;
   isSubmitting: boolean;
+  formError?: string;
   fileName: string;
   setFileName: Dispatch<SetStateAction<string>>;
   onSubmit: FormEventHandler<HTMLFormElement>;
@@ -362,6 +364,7 @@ export function CareerApplicationForm({
   formSubmitted,
   setFormSubmitted,
   isSubmitting,
+  formError,
   fileName,
   setFileName,
   onSubmit,
@@ -408,12 +411,30 @@ export function CareerApplicationForm({
                 onSubmit={onSubmit}
                 className="bg-white rounded-3xl p-7 sm:p-10 lg:p-12 border border-[#EDE7D9] shadow-lg space-y-6"
               >
+                <input
+                  type="text"
+                  name="website_url"
+                  defaultValue=""
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="hidden"
+                />
+
+                {formError ? (
+                  <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 flex items-center gap-2.5 text-rose-800 text-xs sm:text-sm">
+                    <AlertCircle className="w-4 h-4 shrink-0 text-rose-600" />
+                    <p>{formError}</p>
+                  </div>
+                ) : null}
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="space-y-1.5">
                     <label className="text-xs font-semibold text-forest-950 uppercase tracking-wider block">
                       {t.applyForm.nameLabel} <span className="text-[#C5A56A]">*</span>
                     </label>
                     <input
+                      name="name"
                       required
                       type="text"
                       placeholder={t.applyForm.namePlaceholder}
@@ -426,6 +447,7 @@ export function CareerApplicationForm({
                       {t.applyForm.emailLabel} <span className="text-[#C5A56A]">*</span>
                     </label>
                     <input
+                      name="email"
                       required
                       type="email"
                       placeholder={t.applyForm.emailPlaceholder}
@@ -438,6 +460,7 @@ export function CareerApplicationForm({
                       {t.applyForm.phoneLabel}
                     </label>
                     <input
+                      name="phone"
                       type="tel"
                       placeholder={t.applyForm.phonePlaceholder}
                       className="w-full px-4 py-3 rounded-xl bg-[#FCFAF7] border border-[#E2DBD0] text-forest-950 placeholder:text-[#A2ADA4] text-sm focus:outline-none focus:border-[#C5A56A] focus:ring-1 focus:ring-[#C5A56A] transition-all"
@@ -449,6 +472,7 @@ export function CareerApplicationForm({
                       {t.applyForm.positionLabel} <span className="text-[#C5A56A]">*</span>
                     </label>
                     <select
+                      name="position"
                       required
                       value={selectedPosition}
                       onChange={(e) => setSelectedPosition(e.target.value)}
@@ -469,6 +493,7 @@ export function CareerApplicationForm({
                     {t.applyForm.messageLabel}
                   </label>
                   <textarea
+                    name="message"
                     rows={4}
                     placeholder={t.applyForm.messagePlaceholder}
                     className="w-full px-4 py-3 rounded-xl bg-[#FCFAF7] border border-[#E2DBD0] text-forest-950 placeholder:text-[#A2ADA4] text-sm focus:outline-none focus:border-[#C5A56A] focus:ring-1 focus:ring-[#C5A56A] transition-all resize-y"
@@ -481,6 +506,7 @@ export function CareerApplicationForm({
                   </label>
                   <label className="flex flex-col items-center justify-center p-6 border-2 border-dashed border-[#DDD5C7] hover:border-[#C5A56A] rounded-2xl bg-[#FCFAF7] cursor-pointer transition-colors group">
                     <input
+                      name="cv"
                       type="file"
                       accept=".pdf,.docx,.doc"
                       className="hidden"

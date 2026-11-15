@@ -35,28 +35,28 @@ interface ContactPageComponentProps {
 }
 
 export function ContactPageComponent({ locale = "de" }: ContactPageComponentProps) {
+  const t = getContactPageTranslations(locale);
+
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     phone: "",
     company: "",
-    subject: "Allgemeine Anfrage",
+    subject: t.form.subjects[0] || "",
     message: "",
     privacyConsent: false,
   });
-
+  const [honeypot, setHoneypot] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [activeLocationId, setActiveLocationId] = useState<string>("hq");
   const [activeCategory, setActiveCategory] = useState<"all" | "hq" | "clinics" | "partners">("all");
   const [mapZoom, setMapZoom] = useState<number>(15);
 
-  const t = getContactPageTranslations(locale);
-
   const mapsUrl =
     "https://maps.google.com/?q=Aachener+Stra%C3%9Fe+114,+41061+M%C3%B6nchengladbach";
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!formData.fullName.trim() || !formData.email.trim() || !formData.message.trim()) {
@@ -74,18 +74,51 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
     setStatus("loading");
     setErrorMessage("");
 
-    setTimeout(() => {
+    try {
+      const response = await fetch("/send-mail.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          formType: "contact",
+          locale,
+          ...formData,
+          website_url: honeypot,
+        }),
+      });
+
+      const payload = (await response.json().catch(() => null)) as
+        | { success?: boolean; error?: string }
+        | null;
+
+      if (!response.ok || !payload?.success) {
+        setStatus("error");
+        setErrorMessage(payload?.error || t.form.errorRequired);
+        return;
+      }
+
       setStatus("success");
+      setHoneypot("");
       setFormData({
         fullName: "",
         email: "",
         phone: "",
         company: "",
-        subject: t.form.subjects[0],
+        subject: t.form.subjects[0] || "",
         message: "",
         privacyConsent: false,
       });
-    }, 900);
+    } catch {
+      setStatus("error");
+      setErrorMessage(
+        locale === "ru"
+          ? "Не удалось связаться с сервером. Пожалуйста, попробуйте позже или свяжитесь по телефону."
+          : locale === "en"
+          ? "Unable to reach the server. Please try again later or call us directly."
+          : "Verbindung zum Server fehlgeschlagen. Bitte versuchen Sie es später erneut oder rufen Sie uns direkt an."
+      );
+    }
   };
 
   const locations: LocationOffice[] = getContactLocations(locale);
@@ -384,6 +417,16 @@ export function ContactPageComponent({ locale = "de" }: ContactPageComponentProp
                   )}
 
                   <form onSubmit={handleSubmit} className="space-y-3 font-sans">
+                    <input
+                      type="text"
+                      name="website_url"
+                      value={honeypot}
+                      onChange={(e) => setHoneypot(e.target.value)}
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
+                      className="hidden"
+                    />
                     {/* Row 1: Name & Email */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <div>

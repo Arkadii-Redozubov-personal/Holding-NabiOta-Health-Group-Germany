@@ -38,6 +38,7 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
   const [selectedPosition, setSelectedPosition] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formError, setFormError] = useState("");
   const [fileName, setFileName] = useState("");
 
   // Modal dialog state for recruitment pillars
@@ -81,13 +82,54 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
     }
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const formEl = e.currentTarget;
+    const fd = new FormData(formEl);
+    fd.set("formType", "career");
+    fd.set("locale", locale);
+
     setIsSubmitting(true);
-    setTimeout(() => {
+    setFormError("");
+
+    try {
+      const response = await fetch("/send-mail.php", {
+        method: "POST",
+        body: fd,
+      });
+
+      const payload = (await response.json().catch(() => null)) as
+        | { success?: boolean; error?: string }
+        | null;
+
+      if (!response.ok || !payload?.success) {
+        setFormError(
+          payload?.error ||
+            (locale === "ru"
+              ? "Не удалось отправить заявку. Проверьте поля и размер файла."
+              : locale === "en"
+              ? "Unable to submit application. Please check all fields and file size."
+              : "Bewerbung konnte nicht gesendet werden. Bitte prüfen Sie Ihre Eingaben.")
+        );
+        setIsSubmitting(false);
+        return;
+      }
+
+      formEl.reset();
+      setSelectedPosition("");
+      setFileName("");
       setIsSubmitting(false);
       setFormSubmitted(true);
-    }, 800);
+    } catch {
+      setFormError(
+        locale === "ru"
+          ? "Ошибка соединения с сервером. Попробуйте позже или напишите на kontakt@nabiota-health-group-germany.de."
+          : locale === "en"
+          ? "Server connection error. Please try again later or email kontakt@nabiota-health-group-germany.de."
+          : "Verbindungsfehler zum Server. Bitte versuchen Sie es später erneut oder schreiben Sie an kontakt@nabiota-health-group-germany.de."
+      );
+      setIsSubmitting(false);
+    }
   };
 
   const t = getCareerTranslation(locale);
@@ -505,6 +547,7 @@ export function CareerPageComponent({ locale = "de" }: CareerPageComponentProps)
           formSubmitted={formSubmitted}
           setFormSubmitted={setFormSubmitted}
           isSubmitting={isSubmitting}
+          formError={formError}
           fileName={fileName}
           setFileName={setFileName}
           onSubmit={handleFormSubmit}
