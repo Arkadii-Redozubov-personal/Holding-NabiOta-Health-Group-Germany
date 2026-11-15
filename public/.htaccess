@@ -6,6 +6,10 @@ ErrorDocument 404 /404.html
   RewriteEngine On
   RewriteBase /
 
+  # Enforce canonical www host (301 redirect for SEO)
+  RewriteCond %{HTTP_HOST} ^nabiota-health-group-germany\.de$ [NC]
+  RewriteRule ^ https://www.nabiota-health-group-germany.de%{REQUEST_URI} [R=301,L]
+
   # Serve index.html on root / and /index.htm (overrides default ALL-INKL placeholder)
   RewriteRule ^(index\.htm)?$ index.html [L]
 

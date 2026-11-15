@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { companyInfo } from "@/data/company";
-import { siteUrl } from "@/lib/seo";
-import type { SupportedLocale } from "@/lib/i18n";
+import { siteUrl, getLocaleUrl } from "@/lib/seo";
+import { getBaseDictionary, type SupportedLocale } from "@/lib/i18n";
 
 const openGraphLocales: Record<SupportedLocale, string> = {
   de: "de_DE",
@@ -13,13 +13,17 @@ const openGraphLocales: Record<SupportedLocale, string> = {
 };
 
 export function getSiteMetadata(locale: SupportedLocale): Metadata {
+  const dict = getBaseDictionary(locale);
+  const localizedTitle = dict.meta?.title || `${companyInfo.name} | ${companyInfo.slogan}`;
+  const localizedDescription = dict.meta?.description || companyInfo.mission;
+  const localizedUrl = getLocaleUrl(locale, "", true);
+
   return {
     title: {
       template: `%s | ${companyInfo.name}`,
-      default: `${companyInfo.name} | ${companyInfo.slogan}`,
+      default: localizedTitle,
     },
-    description:
-      "NabiOta® Health Group Germany GmbH - Eine zukunftsweisende Unternehmensgruppe im Gesundheitswesen. Medizinische Fachbereiche, Diagnostik, Rehabilitation, Pflege und zukunftsfähige Gesundheitsprojekte.",
+    description: localizedDescription,
     keywords: [
       "NabiOta",
       "Health Group Germany",
@@ -34,9 +38,9 @@ export function getSiteMetadata(locale: SupportedLocale): Metadata {
     authors: [{ name: companyInfo.name }],
     metadataBase: new URL(siteUrl),
     openGraph: {
-      title: `${companyInfo.name} - ${companyInfo.slogan}`,
-      description: companyInfo.mission,
-      url: siteUrl,
+      title: localizedTitle,
+      description: localizedDescription,
+      url: localizedUrl,
       siteName: companyInfo.name,
       locale: openGraphLocales[locale],
       type: "website",
@@ -51,8 +55,8 @@ export function getSiteMetadata(locale: SupportedLocale): Metadata {
     },
     twitter: {
       card: "summary_large_image",
-      title: companyInfo.name,
-      description: companyInfo.slogan,
+      title: localizedTitle,
+      description: localizedDescription,
       images: ["/images/hero/campus.webp"],
     },
     robots: {

@@ -12,5 +12,9 @@ export const metadata: Metadata = {
 };
 
 export default function AdminLayout({ children }: { children: ReactNode }) {
-  return <RootDocument locale="de">{children}</RootDocument>;
+  return (
+    <RootDocument locale="de" includeStructuredData={false}>
+      {children}
+    </RootDocument>
+  );
 }

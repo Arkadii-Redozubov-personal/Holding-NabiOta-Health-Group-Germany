@@ -1,5 +1,5 @@
 import React from "react";
-import { SupportedLocale } from "@/lib/i18n";
+import { SupportedLocale, getBaseDictionary } from "@/lib/i18n";
 import { Metadata } from "next";
 import { CareerPageComponent } from "@/components/pages/CareerPageComponent";
 import { getLocaleAlternates } from "@/lib/seo";
@@ -20,6 +20,7 @@ export async function generateMetadata({ params }: LocalizedCareerProps): Promis
   };
   return {
     title: titles[locale] || titles.de,
+    description: getBaseDictionary(locale).split.career.description,
     alternates: getLocaleAlternates(locale, "career"),
   };
 }

@@ -79,6 +79,51 @@ const areaTitles: Record<string, Record<SupportedLocale, string>> = {
   },
 };
 
+const areaDescriptions: Record<string, Partial<Record<SupportedLocale, string>>> = {
+  "medizinische-fachbereiche": {
+    en: "Outpatient MVZ medical centers, neurosurgery, orthopedics, primary care, and specialized clinics across Germany within the NabiOta® Health Group.",
+    ru: "Многопрофильные амбулаторные центры MVZ, нейрохирургия, ортопедия, семейная медицина и специализированные клиники NabiOta® Health Group в Германии.",
+    tr: "NabiOta® Health Group bünyesinde ayakta tedavi MVZ tıp merkezleri, beyin ve sinir cerrahisi, ortopedi ve aile hekimliği hizmetleri.",
+    ar: "مراكز الرعاية الطبية المتنقلة MVZ، جراحة الأعصاب والعمود الفقري، طب العظام والرعاية الأولية ضمن مجموعة NabiOta® الصحية في ألمانيا.",
+    uz: "Germaniyadagi NabiOta® Health Group tarkibidagi MVZ ambulatoriya markazlari, neyroxirurgiya, ortopediya va ixtisoslashgan klinikalar.",
+  },
+  "diagnostik": {
+    en: "High-precision 3T MRI, CT, radiology, laboratory diagnostics, and preventive medical screening by NabiOta Diagnostics.",
+    ru: "Высокоточная МРТ 3 Тесла, КТ, лучевая и лабораторная диагностика, а также профилактические чекапы от NabiOta Diagnostics в Германии.",
+    tr: "NabiOta Diagnostics tarafından 3 Tesla MR, BT, radyoloji, laboratuvar tanısı ve kapsamlı koruyucu sağlık taramaları.",
+    ar: "تصوير بالرنين المغناطيسي 3 تسلا، الأشعة المقطعية، التحاليل المخبرية والفحوصات الوقائية الدقيقة من NabiOta Diagnostics.",
+    uz: "NabiOta Diagnostics tomonidan yuqori aniqlikdagi 3T MRT, KT, laboratoriya diagnostikasi va profilaktik tekshiruvlar.",
+  },
+  "rehabilitation": {
+    en: "Outpatient and inpatient orthopedic, neurological, and post-surgical rehabilitation concepts in Germany by NabiOta Rehabilitation.",
+    ru: "Амбулаторная и стационарная ортопедическая, неврологическая и послеоперационная реабилитация в Германии от NabiOta Rehabilitation.",
+    tr: "NabiOta Rehabilitation ile ortopedik, nörolojik ve ameliyat sonrası ayakta veya yatarak rehabilitasyon programları.",
+    ar: "برامج التأهيل الطبي العظمي والعصبي وما بعد الجراحة في ألمانيا من مجموعة NabiOta لإعادة التأهيل.",
+    uz: "NabiOta Rehabilitation tomonidan Germaniyada ortopedik, nevrologik va operatsiyadan keyingi reabilitatsiya dasturlari.",
+  },
+  "pflege": {
+    en: "Compassionate outpatient nursing care, homecare medical supplies, and Sanitätshaus services across North Rhine-Westphalia.",
+    ru: "Выездной сестринский уход (патронаж), снабжение медицинскими изделиями HomeCare и ортопедические салоны Sanitätshaus в Германии.",
+    tr: "Kuzey Ren-Vestfalya'da evde bakım (Pflege), HomeCare medikal tedarik ve Sanitätshaus ortopedi çözümleri.",
+    ar: "خدمات التمريض والرعاية المنزلية، وتوفير المستلزمات الطبية HomeCare، ومنتجات العظام والطوارئ الصحية في ألمانيا.",
+    uz: "Germaniyada uyda hamshiralik parvarishi, HomeCare tibbiy vositalar ta'minoti va Sanitätshaus xizmatlari.",
+  },
+  "beratung-projektentwicklung": {
+    en: "Turnkey medical real estate development, MVZ planning, clinical architecture, radiation protection, and healthcare consulting in Germany.",
+    ru: "Проектирование и девелопмент медицинских объектов под ключ, планирование MVZ и клиник, консалтинг в сфере здравоохранения Германии.",
+    tr: "Almanya'da anahtar teslim hastane ve klinik gayrimenkul geliştirme, MVZ planlama ve sağlık sektörü danışmanlığı.",
+    ar: "تطوير العقارات الطبية المتكاملة، وتخطيط المراكز الطبية والعيادات، والاستشارات الهندسية والتشغيلية في ألمانيا.",
+    uz: "Germaniyada tibbiy ko'chmas mulkni kalit topshirish asosida rivojlantirish, MVZ va klinikalar konsaltingi.",
+  },
+  "internationale-kooperationen": {
+    en: "Global healthcare partnerships, medical workforce recruitment, clinical knowledge transfer, and international patient support by NabiOta®.",
+    ru: "Международное медицинское партнёрство, привлечение медицинского персонала, трансфер знаний и сопровождение иностранных пациентов.",
+    tr: "Uluslararası sağlık iş birlikleri, uzman hekim/hemşire istihdamı, klinik eğitim ve yurt dışı hasta koordinasyonu.",
+    ar: "شراكات الرعاية الصحية الدولية، استقطاب الكوادر الطبية، نقل المعرفة السريرية، وخدمات المرضى الدوليين.",
+    uz: "Xalqaro tibbiy hamkorlik, tibbiyot kadrlarini jalb qilish, klinik tajriba almashish va xorijiy bemorlarni qo'llab-quvvatlash.",
+  },
+};
+
 export async function generateMetadata({ params }: LocalizedAreaDetailProps): Promise<Metadata> {
   const { locale, slug } = await params;
   const area = businessAreas.find((a) => a.slug === slug);
@@ -97,10 +142,11 @@ export async function generateMetadata({ params }: LocalizedAreaDetailProps): Pr
   if (!area) return { title: notFoundText };
 
   const displayTitle = areaTitles[slug]?.[locale] || area.title;
+  const displayDescription = areaDescriptions[slug]?.[locale] || area.description;
 
   return {
     title: `${displayTitle} | NabiOta® Health Group`,
-    description: area.description,
+    description: displayDescription,
     alternates: getLocaleAlternates(locale, `areas/${slug}`),
   };
 }

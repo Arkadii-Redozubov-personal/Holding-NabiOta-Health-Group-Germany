@@ -1,6 +1,6 @@
 import React from "react";
 import { AboutPageComponent } from "@/components/pages/AboutPageComponent";
-import { SupportedLocale } from "@/lib/i18n";
+import { SupportedLocale, getBaseDictionary } from "@/lib/i18n";
 import { Metadata } from "next";
 import { getLocaleAlternates } from "@/lib/seo";
 
@@ -20,6 +20,7 @@ export async function generateMetadata({ params }: LocalizedAboutProps): Promise
   };
   return {
     title: titles[locale] || titles.de,
+    description: getBaseDictionary(locale).about.description,
     alternates: getLocaleAlternates(locale, "about"),
   };
 }
